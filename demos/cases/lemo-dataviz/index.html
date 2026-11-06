@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>一百个夏天 · 数据叙事</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/engine.js",
+    "film/film.js",
+    "film/index.html",
+    "film/LICENSE",
+    "film/lines.json",
+    "film/main.js",
+    "film/timeline.js",
+    "film/core/lib.js",
+    "film/data/jja.json",
+    "film/voices/dur.json",
+    "film/voices/words_rel.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "A Hundred Summers";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: { duration: 50.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "一百个夏天 · 数据叙事",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#F6F3EC",
+  "accent": "#A8283A",
+  "bpm": 90,
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 42.0
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+    {
+      "t": 0,
+      "label": "第一个点"
+    },
+    {
+      "t": 2.6666666666666665,
+      "label": "标题与坐标轴"
+    },
+    {
+      "t": 5.333333333333333,
+      "label": "人生逐点描绘"
+    },
+    {
+      "t": 20.166666666666668,
+      "label": "升温攀爬"
+    },
+    {
+      "t": 26.666666666666668,
+      "label": "破框翻笔"
+    },
+    {
+      "t": 28.666666666666668,
+      "label": "密集记录"
+    },
+    {
+      "t": 31,
+      "label": "静默硬切"
+    },
+    {
+      "t": 32,
+      "label": "最后一点"
+    },
+    {
+      "t": 34,
+      "label": "全图展开"
+    },
+    {
+      "t": 37.333333333333336,
+      "label": "点线转条纹"
+    },
+    {
+      "t": 40,
+      "label": "拉入更长记录"
+    },
+    {
+      "t": 42.666666666666664,
+      "label": "下一格与片尾"
+    }
+  ]
+}
+    });
+  </script>
+</body>
+</html>

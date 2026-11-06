@@ -1,0 +1,13 @@
+import { renderFilm, setLines, subs, buildEvents, DUR } from './film.js';
+const cv = document.getElementById('c'), g = cv.getContext('2d');
+await Promise.all([300, 400, 500, 600, 700].flatMap(w => [`${w} 40px Inter`, `${w} 40px InterTight`, `${w} 40px JBMono`]).map(f => document.fonts.load(f)));
+const get = async (u, d) => { try { const r = await fetch(u); return r.ok ? await r.json() : d; } catch { return d; } };
+const lines = await get('lines.json', []);
+setLines(lines, await get('voices/dur.json', null));
+window.DUR = DUR;
+window.EV = buildEvents();
+window.SUBS = subs();
+window.ECHO_SUB = { t0: 34.5, t1: 37.0, text: 'Room to think.' };
+const Q = new URLSearchParams(location.search);
+window.render = t => renderFilm(g, t, { nosub: Q.has('nosub') });
+window.READY = true;

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>莱茵生命档案终端</title>
+</head>
+<body>
+  <main id="stage" data-stage></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({ styles: ['film/style.css'], modules: ['film/script.js'], data: ['film/config.js', 'film/app/index.html', 'film/app/film/clock-shim.js'], audio: ['audio/film-audio.ogg'] });
+    await MotionKit.load.script('film/config.js');
+    await MotionKit.load.module('film/script.js');
+  </script>
+</body>
+</html>

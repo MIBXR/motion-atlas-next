@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用零件造火箭 · 积木玩具</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/actors.js",
+    "film/bricks.js",
+    "film/core/lib.js",
+    "film/core/three/post.js",
+    "film/index.html",
+    "film/main.js",
+    "film/rockets.js",
+    "film/set.js",
+    "film/story.js",
+    "film/voices/dur.json",
+    "assets/desk_lamp_arm_01/desk_lamp_arm_01.bin",
+    "assets/desk_lamp_arm_01/desk_lamp_arm_01.gltf",
+    "assets/photo_studio_loft_hall_2k.hdr",
+    "assets/tea_set_01/tea_set_01.bin",
+    "assets/tea_set_01/tea_set_01.gltf"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ],
+  "images": [
+    "assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_arm_1k.jpg",
+    "assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_diff_1k.jpg",
+    "assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_nor_gl_1k.jpg",
+    "assets/tea_set_01/textures/tea_set_01_arm_1k.jpg",
+    "assets/tea_set_01/textures/tea_set_01_diff_1k.jpg",
+    "assets/tea_set_01/textures/tea_set_01_nor_gl_1k.jpg",
+    "assets/walnut_diff.jpg",
+    "assets/walnut_nor.jpg",
+    "assets/walnut_rough.jpg"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Rocket from Spare Parts";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 54.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "用零件造火箭 · 积木玩具",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#191a20",
+  "accent": "#f2cd37",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 38.88
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "一块积木"
+  },
+  {
+    "t": 4,
+    "label": "首次咔嗒"
+  },
+  {
+    "t": 6,
+    "label": "逐块拼搭"
+  },
+  {
+    "t": 17.37,
+    "label": "火箭崩塌"
+  },
+  {
+    "t": 20.9,
+    "label": "低处独坐"
+  },
+  {
+    "t": 25.2,
+    "label": "拾起零件"
+  },
+  {
+    "t": 29.9,
+    "label": "重建"
+  },
+  {
+    "t": 32.5,
+    "label": "准备发射"
+  },
+  {
+    "t": 36.5,
+    "label": "点火"
+  },
+  {
+    "t": 40,
+    "label": "伴飞"
+  },
+  {
+    "t": 44.2,
+    "label": "落月"
+  },
+  {
+    "t": 48,
+    "label": "揭示书桌"
+  },
+  {
+    "t": 51.71,
+    "label": "片尾"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+@font-face { font-family: 'LXGW Marker Gothic'; src: url('LXGWMarkerGothic-sub.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Noto Sans SC'; src: url('NotoSansSC-500-sub.woff2') format('woff2'); font-weight: 500; }
+@font-face { font-family: 'Noto Sans SC'; src: url('NotoSansSC-700-sub.woff2') format('woff2'); font-weight: 700; }
+@font-face { font-family: 'Noto Sans SC'; src: url('NotoSansSC-900-sub.woff2') format('woff2'); font-weight: 900; }
+@font-face { font-family: 'Archivo'; src: url('Archivo-VF.ttf') format('truetype'); font-weight: 100 900; font-stretch: 62% 125%; }
+@font-face { font-family: 'Plex Mono'; src: url('IBMPlexMono-Medium.ttf') format('truetype'); font-weight: 500; }
+@font-face { font-family: 'Plex Mono'; src: url('IBMPlexMono-SemiBold.ttf') format('truetype'); font-weight: 600; }

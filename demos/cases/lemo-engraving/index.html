@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>蜜蜂，第七号图版 · 铜版画</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/content.json",
+    "film/film.js",
+    "film/index.html",
+    "film/lines.json",
+    "film/main.js",
+    "film/core/lib.js",
+    "film/engine/burin.js",
+    "film/engine/copper.js",
+    "film/engine/index.js",
+    "film/engine/plate.js",
+    "film/engine/wash.js",
+    "film/subjects/bee.js",
+    "film/subjects/details.js",
+    "film/subjects/scallop.js",
+    "film/voices/dur.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "The Honeybee, Plate VII";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 40.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "蜜蜂，第七号图版 · 铜版画",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#f1e8d2",
+  "accent": "#bb8539",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 34.0
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "铜版跟刀"
+  },
+  {
+    "t": 2.5,
+    "label": "揭印"
+  },
+  {
+    "t": 3.2,
+    "label": "拉远刻线成形"
+  },
+  {
+    "t": 9.4,
+    "label": "复眼放大圈"
+  },
+  {
+    "t": 15,
+    "label": "翅钩放大圈"
+  },
+  {
+    "t": 19.4,
+    "label": "花粉篮放大圈"
+  },
+  {
+    "t": 23.75,
+    "label": "汇拢静默与上色"
+  },
+  {
+    "t": 31.25,
+    "label": "整版落定"
+  },
+  {
+    "t": 35.625,
+    "label": "薄护纸片尾"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

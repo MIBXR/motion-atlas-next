@@ -1,0 +1,107 @@
+{
+  "pixelsPerSemitone": 0.7987804878048781,
+  "rmsPixels": 0.08282364455613492,
+  "samples": [
+    {
+      "motif": 1,
+      "measurements": [
+        {
+          "degree": "7",
+          "yOffset": 1.5,
+          "semitonesFromTonic": -1
+        },
+        {
+          "degree": "1",
+          "yOffset": 0.5,
+          "semitonesFromTonic": 0
+        },
+        {
+          "degree": "3",
+          "yOffset": -2.5,
+          "semitonesFromTonic": 4
+        },
+        {
+          "degree": "5",
+          "yOffset": -5.0,
+          "semitonesFromTonic": 7
+        }
+      ]
+    },
+    {
+      "motif": 4,
+      "measurements": [
+        {
+          "degree": "7",
+          "yOffset": 3.5,
+          "semitonesFromTonic": -1
+        },
+        {
+          "degree": "1",
+          "yOffset": 2.5,
+          "semitonesFromTonic": 0
+        },
+        {
+          "degree": "3",
+          "yOffset": -0.5,
+          "semitonesFromTonic": 4
+        },
+        {
+          "degree": "5",
+          "yOffset": -3.0,
+          "semitonesFromTonic": 7
+        }
+      ]
+    },
+    {
+      "motif": 6,
+      "measurements": [
+        {
+          "degree": "7",
+          "yOffset": -1.5,
+          "semitonesFromTonic": -1
+        },
+        {
+          "degree": "1",
+          "yOffset": -2.5,
+          "semitonesFromTonic": 0
+        },
+        {
+          "degree": "3",
+          "yOffset": -5.5,
+          "semitonesFromTonic": 4
+        },
+        {
+          "degree": "5",
+          "yOffset": -8.0,
+          "semitonesFromTonic": 7
+        }
+      ]
+    },
+    {
+      "motif": 9,
+      "measurements": [
+        {
+          "degree": "1",
+          "yOffset": -4.5,
+          "semitonesFromTonic": 0
+        },
+        {
+          "degree": "7",
+          "yOffset": -3.5,
+          "semitonesFromTonic": -1
+        },
+        {
+          "degree": "5",
+          "yOffset": -0.5,
+          "semitonesFromTonic": -5
+        },
+        {
+          "degree": "3",
+          "yOffset": 2.0,
+          "semitonesFromTonic": -8
+        }
+      ]
+    }
+  ],
+  "scope": "relative pitch intervals in M1/M4/M6/M9; absolute row pitch/octave not given"
+}

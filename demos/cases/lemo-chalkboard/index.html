@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>汉字的故事 · 黑板粉笔</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/index.html",
+    "film/core/lib.js",
+    "film/js/ancient.js",
+    "film/js/app.js",
+    "film/js/chalk.js",
+    "film/js/film.js",
+    "film/js/hand.js",
+    "film/js/hz.js",
+    "film/js/lab.js",
+    "film/js/post.js",
+    "film/js/props.js",
+    "film/js/r2d.js",
+    "film/js/stage.js",
+    "fonts/EMSDelight.svg",
+    "fonts/EMSCasualHand.svg"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "The Story of Chinese Characters";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 49.266666666666666, width: 1920, height: 1080, fps: 30,
+        async renderAt(t) { await upstream.render(Math.round(t * 30) / 30); },
+      },
+      ...{
+  "title": "汉字的故事 · 黑板粉笔",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#253a35",
+  "accent": "#ee9858",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 42.5
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "片名书写"
+  },
+  {
+    "t": 2.7,
+    "label": "孩子的问题"
+  },
+  {
+    "t": 5.7,
+    "label": "射的错误拆字"
+  },
+  {
+    "t": 10.7,
+    "label": "矮的错误拆字"
+  },
+  {
+    "t": 17.5,
+    "label": "滑板揭开时间线"
+  },
+  {
+    "t": 18.5,
+    "label": "甲骨文弓箭"
+  },
+  {
+    "t": 21.8,
+    "label": "金文加手"
+  },
+  {
+    "t": 24.4,
+    "label": "小篆与楷书"
+  },
+  {
+    "t": 28.7,
+    "label": "箭作为尺"
+  },
+  {
+    "t": 33.5,
+    "label": "跨板线与原位擦写"
+  },
+  {
+    "t": 39.7,
+    "label": "没弄反"
+  },
+  {
+    "t": 43,
+    "label": "整面课堂"
+  },
+  {
+    "t": 45.2,
+    "label": "前板滑回片尾"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

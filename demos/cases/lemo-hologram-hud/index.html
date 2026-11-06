@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伏特·规格扫描 · 科幻全息界面</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/content.json",
+    "film/film.js",
+    "film/index.html",
+    "film/LICENSE",
+    "film/main.js",
+    "film/engine/holo.js",
+    "film/engine/hud.js",
+    "film/models/volt.json",
+    "film/voices/dur.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Volt \u00b7 Spec Scan";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: { duration: 39.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "伏特·规格扫描 · 科幻全息界面",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#01070a",
+  "accent": "#42e3ee",
+  "bpm": 120,
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 25.5
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+    {
+      "t": 0,
+      "label": "扫描入场"
+    },
+    {
+      "t": 8,
+      "label": "电池"
+    },
+    {
+      "t": 14,
+      "label": "电机"
+    },
+    {
+      "t": 18,
+      "label": "刹车放大镜"
+    },
+    {
+      "t": 22,
+      "label": "归拢"
+    },
+    {
+      "t": 24,
+      "label": "实体全息转台"
+    },
+    {
+      "t": 28,
+      "label": "规格落版"
+    },
+    {
+      "t": 34,
+      "label": "扫描擦除与片尾"
+    }
+  ]
+}
+    });
+  </script>
+</body>
+</html>

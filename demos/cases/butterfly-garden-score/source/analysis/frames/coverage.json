@@ -1,0 +1,99 @@
+{
+  "duration": 122.005,
+  "timelineCovered": 122.005,
+  "timelineIntervals": 90,
+  "frameDifferenceScan": {
+    "processed": 7320,
+    "total": 7320,
+    "ratio": 1
+  },
+  "captions": {
+    "states": 20,
+    "transcribed": 20,
+    "ratio": 1
+  },
+  "counters": {
+    "changes": 57,
+    "identified": 57,
+    "ratio": 1
+  },
+  "rows": {
+    "total": 16,
+    "panoramas": 16,
+    "ratio": 1
+  },
+  "notes": {
+    "extracted": 2013,
+    "totalUnknown": true,
+    "endpointsUnobserved": 20,
+    "fourFrameOriginalRectanglePixelRecall": 0.9579167033368763,
+    "unclassifiedPanoramaCandidates": 230
+  },
+  "shots": {
+    "events": 33,
+    "minimumSamples": 17,
+    "primaryEvents": 13,
+    "captionTransitions": 20
+  },
+  "assets": {
+    "sets": 12,
+    "png": 24,
+    "svg": 12,
+    "ratio": 1
+  },
+  "fonts": {
+    "categories": 7,
+    "compared": 7,
+    "ratio": 1
+  },
+  "redraw": [
+    {
+      "t": 8,
+      "frame": 480,
+      "drawnNotes": 130,
+      "originalRectanglePixels": 71957,
+      "redrawnRectanglePixels": 74038,
+      "unionPixels": 76623,
+      "geometryDifferenceRatio": 0.094632,
+      "pixelDifferenceRatio": 0.186928,
+      "threshold": 16,
+      "metric": "max absolute RGB channel difference above threshold, divided by union of original and redrawn rectangle pixels; playhead excluded"
+    },
+    {
+      "t": 36,
+      "frame": 2160,
+      "drawnNotes": 78,
+      "originalRectanglePixels": 111312,
+      "redrawnRectanglePixels": 114350,
+      "unionPixels": 118682,
+      "geometryDifferenceRatio": 0.0986,
+      "pixelDifferenceRatio": 0.220935,
+      "threshold": 16,
+      "metric": "max absolute RGB channel difference above threshold, divided by union of original and redrawn rectangle pixels; playhead excluded"
+    },
+    {
+      "t": 66,
+      "frame": 3960,
+      "drawnNotes": 207,
+      "originalRectanglePixels": 190587,
+      "redrawnRectanglePixels": 209270,
+      "unionPixels": 213595,
+      "geometryDifferenceRatio": 0.127966,
+      "pixelDifferenceRatio": 0.317386,
+      "threshold": 16,
+      "metric": "max absolute RGB channel difference above threshold, divided by union of original and redrawn rectangle pixels; playhead excluded"
+    },
+    {
+      "t": 100,
+      "frame": 6000,
+      "drawnNotes": 81,
+      "originalRectanglePixels": 216996,
+      "redrawnRectanglePixels": 223906,
+      "unionPixels": 237529,
+      "geometryDifferenceRatio": 0.143797,
+      "pixelDifferenceRatio": 0.343339,
+      "threshold": 16,
+      "metric": "max absolute RGB channel difference above threshold, divided by union of original and redrawn rectangle pixels; playhead excluded"
+    }
+  ]
+}

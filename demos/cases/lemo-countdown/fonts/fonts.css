@@ -1,0 +1,8 @@
+@font-face { font-family: 'BarlowC'; src: url('BarlowCondensed-SemiBold.ttf'); font-weight: 600; }
+@font-face { font-family: 'BarlowC'; src: url('BarlowCondensed-Medium.ttf'); font-weight: 500; }
+@font-face { font-family: 'Barlow'; src: url('Barlow-Medium.ttf'); font-weight: 500; }
+@font-face { font-family: 'Barlow'; src: url('Barlow-SemiBold.ttf'); font-weight: 600; }
+@font-face { font-family: 'Plex'; src: url('IBMPlexMono-Medium.ttf'); font-weight: 500; }
+@font-face { font-family: 'Plex'; src: url('IBMPlexMono-SemiBold.ttf'); font-weight: 600; }
+@font-face { font-family: 'NotoSC'; src: url('NotoSansSC-500-sub.woff2'); font-weight: 500; }
+@font-face { font-family: 'NotoSC'; src: url('NotoSansSC-700-sub.woff2'); font-weight: 700; }

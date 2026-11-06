@@ -1,0 +1,24 @@
+{
+  "count": 136,
+  "average": 0.9612756086622968,
+  "minimum": 0.9003370404243469,
+  "worstTime": 60,
+  "below90": [],
+  "controls": {
+    "checks": {
+      "defaultSoundOff": true,
+      "seek": true,
+      "keyboardPlay": true,
+      "keyboardPause": true,
+      "soundOn": true,
+      "audioPlaying": true,
+      "soundSeek": true,
+      "soundOff": true,
+      "reducedMotion": true,
+      "reducedInitial": true,
+      "narrow": true,
+      "consoleClean": true
+    },
+    "errors": []
+  }
+}

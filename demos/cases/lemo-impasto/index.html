@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>雨的颜色 · 油画厚涂</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/film.js",
+    "film/index.html",
+    "film/main.js",
+    "film/timeline.js",
+    "film/engine/impasto.js",
+    "film/engine/plate.js",
+    "film/scenes/cards.js",
+    "film/scenes/cellist.js",
+    "film/scenes/common.js",
+    "film/scenes/ecu.js",
+    "film/scenes/figures.js",
+    "film/scenes/girl.js",
+    "film/scenes/medium.js",
+    "film/scenes/top.js",
+    "film/scenes/wide.js"
+  ],
+  "images": [],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "The Colour of Rain";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 39.666666666666664, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "雨的颜色 · 油画厚涂",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#34507e",
+  "accent": "#dc2f28",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 28.58
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "琴身特写"
+  },
+  {
+    "t": 2.65,
+    "label": "灰色广场"
+  },
+  {
+    "t": 7.15,
+    "label": "静默推近"
+  },
+  {
+    "t": 12.18,
+    "label": "水洼仰抬红伞"
+  },
+  {
+    "t": 16.66,
+    "label": "抬弓重启"
+  },
+  {
+    "t": 19.39,
+    "label": "逐拍彩伞"
+  },
+  {
+    "t": 23.48,
+    "label": "轨迹成纹"
+  },
+  {
+    "t": 31.66,
+    "label": "全景重涂"
+  },
+  {
+    "t": 35.75,
+    "label": "刮涂片尾"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

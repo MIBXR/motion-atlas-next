@@ -1,0 +1,1384 @@
+[
+  {
+    "id": "motif-1",
+    "text": "M¹",
+    "row": "Ob.",
+    "sourceFrame": 480,
+    "sourceBox": [
+      794,
+      204,
+      1044,
+      304
+    ],
+    "globalAnchorX": 1453.5,
+    "firstVisibleFrame": 238,
+    "firstVisibleT": 3.966666666666667,
+    "timeEvidence": "viewport entry inferred from measured constant scroll; first low-opacity frame not independently resolved",
+    "soundStartFrame": 459,
+    "soundStartT": 7.65,
+    "numbers": [
+      {
+        "text": "7",
+        "noteId": 55,
+        "highlightFrame": 459,
+        "highlightT": 7.64210526,
+        "globalX": 1452.0,
+        "y": 295.5
+      },
+      {
+        "text": "1",
+        "noteId": 60,
+        "highlightFrame": 478,
+        "highlightT": 7.95789474,
+        "globalX": 1512.0,
+        "y": 294.5
+      },
+      {
+        "text": "3",
+        "noteId": 67,
+        "highlightFrame": 507,
+        "highlightT": 8.43684211,
+        "globalX": 1603.0,
+        "y": 291.5
+      },
+      {
+        "text": "5",
+        "noteId": 70,
+        "highlightFrame": 516,
+        "highlightT": 8.6,
+        "globalX": 1634.0,
+        "y": 289.0
+      }
+    ],
+    "animation": "bracket extends to the right; numerical labels change from pale to full emphasis as their note starts; motif connection arcs are dashed",
+    "samples": [
+      {
+        "frame": 238,
+        "t": 3.966666666666667,
+        "anchorX": 1579.833
+      },
+      {
+        "frame": 259,
+        "t": 4.316666666666666,
+        "anchorX": 1513.333
+      },
+      {
+        "frame": 280,
+        "t": 4.666666666666667,
+        "anchorX": 1446.833
+      },
+      {
+        "frame": 301,
+        "t": 5.016666666666667,
+        "anchorX": 1380.333
+      },
+      {
+        "frame": 322,
+        "t": 5.366666666666666,
+        "anchorX": 1313.833
+      },
+      {
+        "frame": 343,
+        "t": 5.716666666666667,
+        "anchorX": 1247.333
+      },
+      {
+        "frame": 364,
+        "t": 6.066666666666666,
+        "anchorX": 1180.833
+      },
+      {
+        "frame": 385,
+        "t": 6.416666666666667,
+        "anchorX": 1114.333
+      },
+      {
+        "frame": 406,
+        "t": 6.766666666666667,
+        "anchorX": 1047.833
+      },
+      {
+        "frame": 427,
+        "t": 7.116666666666666,
+        "anchorX": 981.333
+      },
+      {
+        "frame": 448,
+        "t": 7.466666666666667,
+        "anchorX": 914.833
+      },
+      {
+        "frame": 469,
+        "t": 7.816666666666666,
+        "anchorX": 848.333
+      },
+      {
+        "frame": 490,
+        "t": 8.166666666666666,
+        "anchorX": 781.833
+      },
+      {
+        "frame": 511,
+        "t": 8.516666666666667,
+        "anchorX": 715.333
+      },
+      {
+        "frame": 532,
+        "t": 8.866666666666667,
+        "anchorX": 648.833
+      },
+      {
+        "frame": 553,
+        "t": 9.216666666666667,
+        "anchorX": 582.333
+      },
+      {
+        "frame": 574,
+        "t": 9.566666666666666,
+        "anchorX": 515.833
+      }
+    ]
+  },
+  {
+    "id": "motif-2",
+    "text": "M²",
+    "row": "Va.",
+    "sourceFrame": 600,
+    "sourceBox": [
+      778,
+      516,
+      1028,
+      616
+    ],
+    "globalAnchorX": 1817.6666666666665,
+    "firstVisibleFrame": 353,
+    "firstVisibleT": 5.883333333333334,
+    "timeEvidence": "viewport entry inferred from measured constant scroll; first low-opacity frame not independently resolved",
+    "soundStartFrame": 574,
+    "soundStartT": 9.566666666666666,
+    "numbers": [
+      {
+        "text": "7",
+        "noteId": 89,
+        "highlightFrame": 574,
+        "highlightT": 9.55789474,
+        "globalX": 1816.0,
+        "y": 718.5
+      },
+      {
+        "text": "1",
+        "noteId": 98,
+        "highlightFrame": 593,
+        "highlightT": 9.87368421,
+        "globalX": 1876.0,
+        "y": 717.5
+      },
+      {
+        "text": "3",
+        "noteId": 109,
+        "highlightFrame": 622,
+        "highlightT": 10.35263158,
+        "globalX": 1967.0,
+        "y": 714.5
+      },
+      {
+        "text": "5",
+        "noteId": 113,
+        "highlightFrame": 631,
+        "highlightT": 10.51052632,
+        "globalX": 1997.0,
+        "y": 715.5
+      }
+    ],
+    "animation": "bracket extends to the right; numerical labels change from pale to full emphasis as their note starts; motif connection arcs are dashed",
+    "samples": [
+      {
+        "frame": 353,
+        "t": 5.883333333333334,
+        "anchorX": 1579.833
+      },
+      {
+        "frame": 388,
+        "t": 6.466666666666667,
+        "anchorX": 1469.0
+      },
+      {
+        "frame": 424,
+        "t": 7.066666666666666,
+        "anchorX": 1355.0
+      },
+      {
+        "frame": 459,
+        "t": 7.65,
+        "anchorX": 1244.167
+      },
+      {
+        "frame": 494,
+        "t": 8.233333333333333,
+        "anchorX": 1133.333
+      },
+      {
+        "frame": 530,
+        "t": 8.833333333333334,
+        "anchorX": 1019.333
+      },
+      {
+        "frame": 565,
+        "t": 9.416666666666666,
+        "anchorX": 908.5
+      },
+      {
+        "frame": 601,
+        "t": 10.016666666666667,
+        "anchorX": 794.5
+      },
+      {
+        "frame": 636,
+        "t": 10.6,
+        "anchorX": 683.667
+      },
+      {
+        "frame": 671,
+        "t": 11.183333333333334,
+        "anchorX": 572.833
+      },
+      {
+        "frame": 707,
+        "t": 11.783333333333333,
+        "anchorX": 458.833
+      },
+      {
+        "frame": 742,
+        "t": 12.366666666666667,
+        "anchorX": 348.0
+      },
+      {
+        "frame": 778,
+        "t": 12.966666666666667,
+        "anchorX": 234.0
+      },
+      {
+        "frame": 813,
+        "t": 13.55,
+        "anchorX": 123.167
+      },
+      {
+        "frame": 848,
+        "t": 14.133333333333333,
+        "anchorX": 12.333
+      },
+      {
+        "frame": 884,
+        "t": 14.733333333333333,
+        "anchorX": -101.667
+      },
+      {
+        "frame": 919,
+        "t": 15.316666666666666,
+        "anchorX": -212.5
+      }
+    ]
+  },
+  {
+    "id": "motif-3",
+    "text": "M³",
+    "row": "Hn.",
+    "sourceFrame": 960,
+    "sourceBox": [
+      730,
+      312,
+      980,
+      412
+    ],
+    "globalAnchorX": 2910.1666666666665,
+    "firstVisibleFrame": 698,
+    "firstVisibleT": 11.633333333333333,
+    "timeEvidence": "viewport entry inferred from measured constant scroll; first low-opacity frame not independently resolved",
+    "soundStartFrame": 919,
+    "soundStartT": 15.316666666666666,
+    "numbers": [
+      {
+        "text": "7",
+        "noteId": 260,
+        "highlightFrame": 919,
+        "highlightT": 15.31578947,
+        "globalX": 2910.0,
+        "y": 406.5
+      },
+      {
+        "text": "1",
+        "noteId": 272,
+        "highlightFrame": 939,
+        "highlightT": 15.63684211,
+        "globalX": 2971.0,
+        "y": 405.0
+      },
+      {
+        "text": "3",
+        "noteId": 291,
+        "highlightFrame": 968,
+        "highlightT": 16.12105263,
+        "globalX": 3063.0,
+        "y": 401.5
+      },
+      {
+        "text": "5",
+        "noteId": 298,
+        "highlightFrame": 978,
+        "highlightT": 16.28421053,
+        "globalX": 3094.0,
+        "y": 399.0
+      }
+    ],
+    "animation": "bracket extends to the right; numerical labels change from pale to full emphasis as their note starts; motif connection arcs are dashed",
+    "samples": [
+      {
+        "frame": 698,
+        "t": 11.633333333333333,
+        "anchorX": 1579.833
+      },
+      {
+        "frame": 740,
+        "t": 12.333333333333334,
+        "anchorX": 1446.833
+      },
+      {
+        "frame": 783,
+        "t": 13.05,
+        "anchorX": 1310.667
+      },
+      {
+        "frame": 826,
+        "t": 13.766666666666667,
+        "anchorX": 1174.5
+      },
+      {
+        "frame": 868,
+        "t": 14.466666666666667,
+        "anchorX": 1041.5
+      },
+      {
+        "frame": 910,
+        "t": 15.166666666666666,
+        "anchorX": 908.5
+      },
+      {
+        "frame": 953,
+        "t": 15.883333333333333,
+        "anchorX": 772.333
+      },
+      {
+        "frame": 996,
+        "t": 16.6,
+        "anchorX": 636.167
+      },
+      {
+        "frame": 1038,
+        "t": 17.3,
+        "anchorX": 503.167
+      },
+      {
+        "frame": 1080,
+        "t": 18.0,
+        "anchorX": 370.167
+      },
+      {
+        "frame": 1123,
+        "t": 18.716666666666665,
+        "anchorX": 234.0
+      },
+      {
+        "frame": 1166,
+        "t": 19.433333333333334,
+        "anchorX": 97.833
+      },
+      {
+        "frame": 1208,
+        "t": 20.133333333333333,
+        "anchorX": -35.167
+      },
+      {
+        "frame": 1250,
+        "t": 20.833333333333332,
+        "anchorX": -168.167
+      },
+      {
+        "frame": 1293,
+        "t": 21.55,
+        "anchorX": -304.333
+      },
+      {
+        "frame": 1336,
+        "t": 22.266666666666666,
+        "anchorX": -440.5
+      },
+      {
+        "frame": 1378,
+        "t": 22.966666666666665,
+        "anchorX": -573.5
+      }
+    ]
+  },
+  {
+    "id": "motif-4",
+    "text": "M⁴",
+    "row": "Cl.",
+    "sourceFrame": 1410,
+    "sourceBox": [
+      759,
+      236,
+      1009,
+      336
+    ],
+    "globalAnchorX": 4363.666666666666,
+    "firstVisibleFrame": 1157,
+    "firstVisibleT": 19.283333333333335,
+    "timeEvidence": "viewport entry inferred from measured constant scroll; first low-opacity frame not independently resolved",
+    "soundStartFrame": 1378,
+    "soundStartT": 22.966666666666665,
+    "numbers": [
+      {
+        "text": "7",
+        "noteId": 564,
+        "highlightFrame": 1378,
+        "highlightT": 22.96315789,
+        "globalX": 4363.0,
+        "y": 329.5
+      },
+      {
+        "text": "1",
+        "noteId": 579,
+        "highlightFrame": 1398,
+        "highlightT": 23.28421053,
+        "globalX": 4424.0,
+        "y": 328.5
+      },
+      {
+        "text": "3",
+        "noteId": 591,
+        "highlightFrame": 1426,
+        "highlightT": 23.75789474,
+        "globalX": 4514.0,
+        "y": 325.5
+      },
+      {
+        "text": "5",
+        "noteId": 595,
+        "highlightFrame": 1436,
+        "highlightT": 23.92105263,
+        "globalX": 4545.0,
+        "y": 323.0
+      }
+    ],
+    "animation": "bracket extends to the right; numerical labels change from pale to full emphasis as their note starts; motif connection arcs are dashed",
+    "samples": [
+      {
+        "frame": 1157,
+        "t": 19.283333333333335,
+        "anchorX": 1579.833
+      },
+      {
+        "frame": 1178,
+        "t": 19.633333333333333,
+        "anchorX": 1513.333
+      },
+      {
+        "frame": 1199,
+        "t": 19.983333333333334,
+        "anchorX": 1446.833
+      },
+      {
+        "frame": 1220,
+        "t": 20.333333333333332,
+        "anchorX": 1380.333
+      },
+      {
+        "frame": 1241,
+        "t": 20.683333333333334,
+        "anchorX": 1313.833
+      },
+      {
+        "frame": 1262,
+        "t": 21.033333333333335,
+        "anchorX": 1247.333
+      },
+      {
+        "frame": 1283,
+        "t": 21.383333333333333,
+        "anchorX": 1180.833
+      },
+      {
+        "frame": 1304,
+        "t": 21.733333333333334,
+        "anchorX": 1114.333
+      },
+      {
+        "frame": 1325,
+        "t": 22.083333333333332,
+        "anchorX": 1047.833
+      },
+      {
+        "frame": 1346,
+        "t": 22.433333333333334,
+        "anchorX": 981.333
+      },
+      {
+        "frame": 1367,
+        "t": 22.783333333333335,
+        "anchorX": 914.833
+      },
+      {
+        "frame": 1388,
+        "t": 23.133333333333333,
+        "anchorX": 848.333
+      },
+      {
+        "frame": 1409,
+        "t": 23.483333333333334,
+        "anchorX": 781.833
+      },
+      {
+        "frame": 1430,
+        "t": 23.833333333333332,
+        "anchorX": 715.333
+      },
+      {
+        "frame": 1451,
+        "t": 24.183333333333334,
+        "anchorX": 648.833
+      },
+      {
+        "frame": 1472,
+        "t": 24.533333333333335,
+        "anchorX": 582.333
+      },
+      {
+        "frame": 1493,
+        "t": 24.883333333333333,
+        "anchorX": 515.833
+      }
+    ]
+  },
+  {
+    "id": "motif-5",
+    "text": "M⁵",
+    "row": "Hn.",
+    "sourceFrame": 1530,
+    "sourceBox": [
+      743,
+      312,
+      993,
+      412
+    ],
+    "globalAnchorX": 4727.833333333333,
+    "firstVisibleFrame": 1272,
+    "firstVisibleT": 21.2,
+    "timeEvidence": "viewport entry inferred from measured constant scroll; first low-opacity frame not independently resolved",
+    "soundStartFrame": 1493,
+    "soundStartT": 24.883333333333333,
+    "numbers": [
+      {
+        "text": "7",
+        "noteId": 633,
+        "highlightFrame": 1493,
+        "highlightT": 24.87894737,
+        "globalX": 4727.0,
+        "y": 405.5
+      },
+      {
+        "text": "1",
+        "noteId": 648,
+        "highlightFrame": 1512,
+        "highlightT": 25.2,
+        "globalX": 4788.0,
+        "y": 401.5
+      },
+      {
+        "text": "3",
+        "noteId": 669,
+        "highlightFrame": 1541,
+        "highlightT": 25.67894737,
+        "globalX": 4879.0,
+        "y": 400.5
+      },
+      {
+        "text": "5",
+        "noteId": 674,
+        "highlightFrame": 1551,
+        "highlightT": 25.83684211,
+        "globalX": 4909.0,
+        "y": 397.0
+      }
+    ],
+    "animation": "bracket extends to the right; numerical labels change from pale to full emphasis as their note starts; motif connection arcs are dashed",
+    "samples": [
+      {
+        "frame": 1272,
+        "t": 21.2,
+        "anchorX": 1579.833
+      },
+      {
+        "frame": 1307,
+        "t": 21.783333333333335,
+        "anchorX": 1469.0
+      },
+      {
+        "frame": 1343,
+        "t": 22.383333333333333,
+        "anchorX": 1355.0
+      },
+      {
+        "frame": 1378,
+        "t": 22.966666666666665,
+        "anchorX": 1244.167
+      },
+      {
+        "frame": 1414,
+        "t": 23.566666666666666,
+        "anchorX": 1130.167
+      },
+      {
+        "frame": 1449,
+        "t": 24.15,
+        "anchorX": 1019.333
+      },
+      {
+        "frame": 1485,
+        "t": 24.75,
+        "anchorX": 905.333
+      },
+      {
+        "frame": 1520,
+        "t": 25.333333333333332,
+        "anchorX": 794.5
+      },
+      {
+        "frame": 1556,
+        "t": 25.933333333333334,
+        "anchorX": 680.5
+      },
+      {
+        "frame": 1591,
+        "t": 26.516666666666666,
+        "anchorX": 569.667
+      },
+      {
+        "frame": 1626,
+        "t": 27.1,
+        "anchorX": 458.833
+      },
+      {
+        "frame": 1662,
+        "t": 27.7,
+        "anchorX": 344.833
+      },
+      {
+        "frame": 1697,
+        "t": 28.283333333333335,
+        "anchorX": 234.0
+      },
+      {
+        "frame": 1733,
+        "t": 28.883333333333333,
+        "anchorX": 120.0
+      },
+      {
+        "frame": 1768,
+        "t": 29.466666666666665,
+        "anchorX": 9.167
+      },
+      {
+        "frame": 1804,
+        "t": 30.066666666666666,
+        "anchorX": -104.833
+      },
+      {
+        "frame": 1839,
+        "t": 30.65,
+        "anchorX": -215.667
+      }
+    ]
+  },
+  {
+    "id": "motif-6",
+    "text": "M⁶",
+    "row": "Fl.",
+    "sourceFrame": 1860,
+    "sourceBox": [
+      794,
+      172,
+      1044,
+      272
+    ],
+    "globalAnchorX": 5823.5,
+    "firstVisibleFrame": 1618,
+    "firstVisibleT": 26.966666666666665,
+    "timeEvidence": "viewport entry inferred from measured constant scroll; first low-opacity frame not independently resolved",
+    "soundStartFrame": 1839,
+    "soundStartT": 30.65,
+    "numbers": [
+      {
+        "text": "7",
+        "noteId": 769,
+        "highlightFrame": 1839,
+        "highlightT": 30.63684211,
+        "globalX": 5821.0,
+        "y": 260.5
+      },
+      {
+        "text": "1",
+        "noteId": 772,
+        "highlightFrame": 1858,
+        "highlightT": 30.95789474,
+        "globalX": 5882.0,
+        "y": 259.5
+      },
+      {
+        "text": "3",
+        "noteId": 776,
+        "highlightFrame": 1887,
+        "highlightT": 31.43684211,
+        "globalX": 5973.0,
+        "y": 256.5
+      },
+      {
+        "text": "5",
+        "noteId": 778,
+        "highlightFrame": 1896,
+        "highlightT": 31.59473684,
+        "globalX": 6003.0,
+        "y": 254.0
+      }
+    ],
+    "animation": "bracket extends to the right; numerical labels change from pale to full emphasis as their note starts; motif connection arcs are dashed",
+    "samples": [
+      {
+        "frame": 1618,
+        "t": 26.966666666666665,
+        "anchorX": 1579.833
+      },
+      {
+        "frame": 1750,
+        "t": 29.166666666666668,
+        "anchorX": 1161.833
+      },
+      {
+        "frame": 1883,
+        "t": 31.383333333333333,
+        "anchorX": 740.667
+      },
+      {
+        "frame": 2015,
+        "t": 33.583333333333336,
+        "anchorX": 322.667
+      },
+      {
+        "frame": 2147,
+        "t": 35.78333333333333,
+        "anchorX": -95.333
+      },
+      {
+        "frame": 2280,
+        "t": 38.0,
+        "anchorX": -516.5
+      },
+      {
+        "frame": 2412,
+        "t": 40.2,
+        "anchorX": -934.5
+      },
+      {
+        "frame": 2544,
+        "t": 42.4,
+        "anchorX": -1352.5
+      },
+      {
+        "frame": 2676,
+        "t": 44.6,
+        "anchorX": -1770.5
+      },
+      {
+        "frame": 2809,
+        "t": 46.81666666666667,
+        "anchorX": -2191.667
+      },
+      {
+        "frame": 2941,
+        "t": 49.016666666666666,
+        "anchorX": -2609.667
+      },
+      {
+        "frame": 3073,
+        "t": 51.21666666666667,
+        "anchorX": -3027.667
+      },
+      {
+        "frame": 3206,
+        "t": 53.43333333333333,
+        "anchorX": -3448.833
+      },
+      {
+        "frame": 3338,
+        "t": 55.63333333333333,
+        "anchorX": -3866.833
+      },
+      {
+        "frame": 3470,
+        "t": 57.833333333333336,
+        "anchorX": -4284.833
+      },
+      {
+        "frame": 3603,
+        "t": 60.05,
+        "anchorX": -4706.0
+      },
+      {
+        "frame": 3735,
+        "t": 62.25,
+        "anchorX": -5124.0
+      }
+    ]
+  },
+  {
+    "id": "motif-7",
+    "text": "M⁷",
+    "row": "Ob.",
+    "sourceFrame": 3750,
+    "sourceBox": [
+      812,
+      204,
+      1062,
+      304
+    ],
+    "globalAnchorX": 11827.5,
+    "firstVisibleFrame": 3514,
+    "firstVisibleT": 58.56666666666667,
+    "timeEvidence": "viewport entry inferred from measured constant scroll; first low-opacity frame not independently resolved",
+    "soundStartFrame": 3735,
+    "soundStartT": 62.25,
+    "numbers": [
+      {
+        "text": "7",
+        "noteId": 1339,
+        "highlightFrame": 3735,
+        "highlightT": 62.24210526,
+        "globalX": 11826.0,
+        "y": 298.5
+      },
+      {
+        "text": "1",
+        "noteId": 1347,
+        "highlightFrame": 3755,
+        "highlightT": 62.56842105,
+        "globalX": 11888.0,
+        "y": 298.5
+      },
+      {
+        "text": "3",
+        "noteId": 1357,
+        "highlightFrame": 3774,
+        "highlightT": 62.88947368,
+        "globalX": 11949.0,
+        "y": 294.5
+      },
+      {
+        "text": "7",
+        "noteId": 1368,
+        "highlightFrame": 3793,
+        "highlightT": 63.21578947,
+        "globalX": 12011.0,
+        "y": 288.5
+      },
+      {
+        "text": "5",
+        "noteId": 1376,
+        "highlightFrame": 3813,
+        "highlightT": 63.54210526,
+        "globalX": 12073.0,
+        "y": 292.0
+      }
+    ],
+    "animation": "bracket extends to the right; numerical labels change from pale to full emphasis as their note starts; motif connection arcs are dashed",
+    "samples": [
+      {
+        "frame": 3514,
+        "t": 58.56666666666667,
+        "anchorX": 1579.833
+      },
+      {
+        "frame": 3535,
+        "t": 58.916666666666664,
+        "anchorX": 1513.333
+      },
+      {
+        "frame": 3556,
+        "t": 59.266666666666666,
+        "anchorX": 1446.833
+      },
+      {
+        "frame": 3577,
+        "t": 59.61666666666667,
+        "anchorX": 1380.333
+      },
+      {
+        "frame": 3598,
+        "t": 59.96666666666667,
+        "anchorX": 1313.833
+      },
+      {
+        "frame": 3620,
+        "t": 60.333333333333336,
+        "anchorX": 1244.167
+      },
+      {
+        "frame": 3641,
+        "t": 60.68333333333333,
+        "anchorX": 1177.667
+      },
+      {
+        "frame": 3662,
+        "t": 61.03333333333333,
+        "anchorX": 1111.167
+      },
+      {
+        "frame": 3683,
+        "t": 61.38333333333333,
+        "anchorX": 1044.667
+      },
+      {
+        "frame": 3704,
+        "t": 61.733333333333334,
+        "anchorX": 978.167
+      },
+      {
+        "frame": 3725,
+        "t": 62.083333333333336,
+        "anchorX": 911.667
+      },
+      {
+        "frame": 3746,
+        "t": 62.43333333333333,
+        "anchorX": 845.167
+      },
+      {
+        "frame": 3768,
+        "t": 62.8,
+        "anchorX": 775.5
+      },
+      {
+        "frame": 3789,
+        "t": 63.15,
+        "anchorX": 709.0
+      },
+      {
+        "frame": 3810,
+        "t": 63.5,
+        "anchorX": 642.5
+      },
+      {
+        "frame": 3831,
+        "t": 63.85,
+        "anchorX": 576.0
+      },
+      {
+        "frame": 3852,
+        "t": 64.2,
+        "anchorX": 509.5
+      }
+    ]
+  },
+  {
+    "id": "motif-8",
+    "text": "M⁸",
+    "row": "Cl.",
+    "sourceFrame": 3870,
+    "sourceBox": [
+      803,
+      236,
+      1053,
+      336
+    ],
+    "globalAnchorX": 12198.0,
+    "firstVisibleFrame": 3631,
+    "firstVisibleT": 60.516666666666666,
+    "timeEvidence": "viewport entry inferred from measured constant scroll; first low-opacity frame not independently resolved",
+    "soundStartFrame": 3852,
+    "soundStartT": 64.2,
+    "numbers": [],
+    "animation": "bracket extends to the right; numerical labels change from pale to full emphasis as their note starts; motif connection arcs are dashed",
+    "samples": [
+      {
+        "frame": 3631,
+        "t": 60.516666666666666,
+        "anchorX": 1579.833
+      },
+      {
+        "frame": 3739,
+        "t": 62.31666666666667,
+        "anchorX": 1237.833
+      },
+      {
+        "frame": 3846,
+        "t": 64.1,
+        "anchorX": 899.0
+      },
+      {
+        "frame": 3954,
+        "t": 65.9,
+        "anchorX": 557.0
+      },
+      {
+        "frame": 4062,
+        "t": 67.7,
+        "anchorX": 215.0
+      },
+      {
+        "frame": 4170,
+        "t": 69.5,
+        "anchorX": -127.0
+      },
+      {
+        "frame": 4278,
+        "t": 71.3,
+        "anchorX": -469.0
+      },
+      {
+        "frame": 4385,
+        "t": 73.08333333333333,
+        "anchorX": -807.833
+      },
+      {
+        "frame": 4493,
+        "t": 74.88333333333334,
+        "anchorX": -1149.833
+      },
+      {
+        "frame": 4601,
+        "t": 76.68333333333334,
+        "anchorX": -1491.833
+      },
+      {
+        "frame": 4708,
+        "t": 78.46666666666667,
+        "anchorX": -1830.667
+      },
+      {
+        "frame": 4816,
+        "t": 80.26666666666667,
+        "anchorX": -2172.667
+      },
+      {
+        "frame": 4924,
+        "t": 82.06666666666666,
+        "anchorX": -2514.667
+      },
+      {
+        "frame": 5032,
+        "t": 83.86666666666666,
+        "anchorX": -2856.667
+      },
+      {
+        "frame": 5140,
+        "t": 85.66666666666667,
+        "anchorX": -3198.667
+      },
+      {
+        "frame": 5247,
+        "t": 87.45,
+        "anchorX": -3537.5
+      },
+      {
+        "frame": 5355,
+        "t": 89.25,
+        "anchorX": -3879.5
+      }
+    ]
+  },
+  {
+    "id": "motif-9",
+    "text": "M⁹",
+    "row": "Cl.",
+    "sourceFrame": 5400,
+    "sourceBox": [
+      718,
+      447,
+      968,
+      547
+    ],
+    "globalAnchorX": 16957.5,
+    "firstVisibleFrame": 5134,
+    "firstVisibleT": 85.56666666666666,
+    "timeEvidence": "viewport entry inferred from measured constant scroll; first low-opacity frame not independently resolved",
+    "soundStartFrame": 5355,
+    "soundStartT": 89.25,
+    "numbers": [
+      {
+        "text": "1",
+        "noteId": 1811,
+        "highlightFrame": 5355,
+        "highlightT": 89.24736842,
+        "globalX": 16957.0,
+        "y": 321.5
+      },
+      {
+        "text": "7",
+        "noteId": 1812,
+        "highlightFrame": 5379,
+        "highlightT": 89.64210526,
+        "globalX": 17032.0,
+        "y": 322.5
+      },
+      {
+        "text": "5",
+        "noteId": 1814,
+        "highlightFrame": 5414,
+        "highlightT": 90.23157895,
+        "globalX": 17144.0,
+        "y": 325.5
+      },
+      {
+        "text": "3",
+        "noteId": 1815,
+        "highlightFrame": 5426,
+        "highlightT": 90.42631579,
+        "globalX": 17181.0,
+        "y": 328.0
+      }
+    ],
+    "animation": "bracket extends to the right; numerical labels change from pale to full emphasis as their note starts; motif connection arcs are dashed",
+    "samples": [
+      {
+        "frame": 5134,
+        "t": 85.56666666666666,
+        "anchorX": 1579.833
+      },
+      {
+        "frame": 5252,
+        "t": 87.53333333333333,
+        "anchorX": 1206.167
+      },
+      {
+        "frame": 5369,
+        "t": 89.48333333333333,
+        "anchorX": 835.667
+      },
+      {
+        "frame": 5486,
+        "t": 91.43333333333334,
+        "anchorX": 465.167
+      },
+      {
+        "frame": 5604,
+        "t": 93.4,
+        "anchorX": 91.5
+      },
+      {
+        "frame": 5722,
+        "t": 95.36666666666666,
+        "anchorX": -282.167
+      },
+      {
+        "frame": 5839,
+        "t": 97.31666666666666,
+        "anchorX": -652.667
+      },
+      {
+        "frame": 5956,
+        "t": 99.26666666666667,
+        "anchorX": -1023.167
+      },
+      {
+        "frame": 6074,
+        "t": 101.23333333333333,
+        "anchorX": -1396.833
+      },
+      {
+        "frame": 6192,
+        "t": 103.2,
+        "anchorX": -1770.5
+      },
+      {
+        "frame": 6309,
+        "t": 105.15,
+        "anchorX": -2141.0
+      },
+      {
+        "frame": 6426,
+        "t": 107.1,
+        "anchorX": -2511.5
+      },
+      {
+        "frame": 6544,
+        "t": 109.06666666666666,
+        "anchorX": -2885.167
+      },
+      {
+        "frame": 6662,
+        "t": 111.03333333333333,
+        "anchorX": -3258.833
+      },
+      {
+        "frame": 6779,
+        "t": 112.98333333333333,
+        "anchorX": -3629.333
+      },
+      {
+        "frame": 6896,
+        "t": 114.93333333333334,
+        "anchorX": -3999.833
+      },
+      {
+        "frame": 7014,
+        "t": 116.9,
+        "anchorX": -4373.5
+      }
+    ]
+  },
+  {
+    "id": "ostinato-12",
+    "text": "ostinato ×12",
+    "sourceFrame": 480,
+    "box": [
+      267,
+      485,
+      622,
+      513
+    ],
+    "globalX0": 907,
+    "globalX1": 1262,
+    "firstVisibleFrame": 139,
+    "endFrame": 507,
+    "animation": "text and bracket translate with scroll; Mar./Pf. alternating short bars repeat; hidden by Ob./Va. focus",
+    "timeEvidence": "intro/viewport constrained; low-opacity first frame uncertain"
+  },
+  {
+    "id": "b-natural-circle",
+    "text": "B♮ · ♯4",
+    "sourceFrame": 480,
+    "box": [
+      502,
+      699,
+      597,
+      736
+    ],
+    "circleCenter": [
+      513,
+      725
+    ],
+    "radius": 10,
+    "globalCenterX": 1153,
+    "firstVisibleFrame": 143,
+    "endFrame": 507,
+    "animation": "circle and label translate with the Vc. pizzicato dot",
+    "timeEvidence": "viewport entry inferred; hidden by focus"
+  },
+  {
+    "id": "mf-giocoso",
+    "text": "mf giocoso",
+    "sourceFrame": 480,
+    "box": [
+      265,
+      780,
+      348,
+      806
+    ],
+    "globalX0": 905,
+    "firstVisibleFrame": 139,
+    "endFrame": 507,
+    "animation": "scrolls along dyn. row with fixed baseline about798",
+    "timeEvidence": "first visible score fade"
+  },
+  {
+    "id": "dynamic-opening-wedge",
+    "text": "",
+    "sourceFrame": 180,
+    "box": [
+      180,
+      789,
+      420,
+      803
+    ],
+    "row": "dyn.",
+    "firstVisibleFrame": 139,
+    "endFrame": 287,
+    "animation": "wedge widens toward f and moves with score",
+    "timeEvidence": "bar/viewport boundary; exact drawn endpoint sampled in source"
+  },
+  {
+    "id": "unison-and-ab",
+    "text": "unis. Fl. · Cl. · Vn.II\n𝄆 a\nb 𝄇 ×2",
+    "sourceFrame": 900,
+    "box": [
+      375,
+      218,
+      905,
+      287
+    ],
+    "firstVisibleFrame": 516,
+    "endFrame": 1209,
+    "animation": "section brackets and a/b text scroll; dotted repeat boundaries descend across rows",
+    "timeEvidence": "bar range; precise first visibility differs per element"
+  },
+  {
+    "id": "leggiero",
+    "text": "leggiero: 第 11–14 小节的叹息音型，移到了小提琴",
+    "sourceFrame": 3720,
+    "box": [
+      465,
+      509,
+      1000,
+      593
+    ],
+    "firstVisibleFrame": 3406,
+    "endFrame": 4419,
+    "animation": "three rising curved lines end in dots; growing curves accompany Vln. I figures",
+    "timeEvidence": "visible source and associated bars; exact individual curve reveals unmeasured"
+  },
+  {
+    "id": "clarinet-inversion-outline",
+    "text": "M⁹",
+    "sourceFrame": 5400,
+    "box": [
+      950,
+      367,
+      1620,
+      476
+    ],
+    "firstVisibleFrame": 5289,
+    "endFrame": 5589,
+    "animation": "hollow rounded bars above the filled clarinet melody show the interval inversion; focus matrix changes their scale",
+    "timeEvidence": "focus interval measured from adjacent frames"
+  },
+  {
+    "id": "motif-connection-arcs",
+    "text": "",
+    "sourceFrame": 900,
+    "box": [
+      200,
+      218,
+      1250,
+      750
+    ],
+    "firstVisibleFrame": 287,
+    "endFrame": 5589,
+    "animation": "dashed curved connections join successive motif entries; approximately 1.5px stroke, dash about7px with7px gaps",
+    "timeEvidence": "multiple events; per-arc first and last frames unmeasured"
+  },
+  {
+    "id": "other-dynamics",
+    "text": "f · espressivo\nmp dolce\nf dolce\nmf\np\ncresc.",
+    "row": "dyn.",
+    "sourceFrames": [
+      1320,
+      1800,
+      3720,
+      4800,
+      5100,
+      6000
+    ],
+    "firstVisibleFrame": 1209,
+    "endFrame": 7014,
+    "animation": "italic dynamic labels and cresc./dim. wedges translate with score; wedge endpoints grow or shrink",
+    "timeEvidence": "sampled frame text; all individual wedge paths/first-visible frames are not recovered"
+  }
+]

@@ -1,0 +1,326 @@
+[
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 1208
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 1228
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 1248
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 1278
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 1308
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 1338
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 1368
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 1388
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 1408
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 1208
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 1228
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 1248
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 1278
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 1308
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 1338
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 1368
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 1388
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 1408
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 2620
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 2640
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 2660
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 2692
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 2722
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 2752
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 2784
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 2804
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 2832
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 2618
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 2640
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 2660
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 2692
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 2726
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 2758
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 2790
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 2810
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 2832
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "entry",
+    "frame": 4871
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "entry",
+    "frame": 4893
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "entry",
+    "frame": 4913
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "hold",
+    "frame": 4945
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "hold",
+    "frame": 4979
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "hold",
+    "frame": 5011
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "exit",
+    "frame": 5043
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "exit",
+    "frame": 5065
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "exit",
+    "frame": 5087
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "entry",
+    "frame": 4869
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "entry",
+    "frame": 4891
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "entry",
+    "frame": 4911
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "hold",
+    "frame": 4945
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "hold",
+    "frame": 4979
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "hold",
+    "frame": 5009
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "exit",
+    "frame": 5043
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "exit",
+    "frame": 5065
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "exit",
+    "frame": 5087
+  }
+]

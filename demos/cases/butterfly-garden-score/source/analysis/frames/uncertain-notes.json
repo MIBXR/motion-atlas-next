@@ -1,0 +1,182 @@
+[
+  {
+    "id": 96,
+    "row": "Vln. II",
+    "t0": 9.81578947,
+    "t1": 10.88947368,
+    "x0": 1865.0,
+    "x1": 2069.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 567,
+    "row": "Pf.",
+    "t0": 22.96315789,
+    "t1": 23.68421053,
+    "x0": 4363.0,
+    "x1": 4500.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 568,
+    "row": "Vln. I",
+    "t0": 22.96315789,
+    "t1": 23.68421053,
+    "x0": 4363.0,
+    "x1": 4500.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 595,
+    "row": "Cl.",
+    "t0": 23.92105263,
+    "t1": 26.18421053,
+    "x0": 4545.0,
+    "x1": 4975.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 632,
+    "row": "Cl.",
+    "t0": 24.81578947,
+    "t1": 27.73157895,
+    "x0": 4715.0,
+    "x1": 5269.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 675,
+    "row": "Hn.",
+    "t0": 25.83684211,
+    "t1": 26.68421053,
+    "x0": 4909.0,
+    "x1": 5070.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 860,
+    "row": "Pf.",
+    "t0": 39.81578947,
+    "t1": 43.43157895,
+    "x0": 7565.0,
+    "x1": 8252.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1550,
+    "row": "Trp.",
+    "t0": 69.74210526,
+    "t1": 71.18421053,
+    "x0": 13251.0,
+    "x1": 13525.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1590,
+    "row": "Trp.",
+    "t0": 70.81578947,
+    "t1": 72.92105263,
+    "x0": 13455.0,
+    "x1": 13855.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1591,
+    "row": "Vln. I",
+    "t0": 70.81578947,
+    "t1": 71.35263158,
+    "x0": 13455.0,
+    "x1": 13557.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1592,
+    "row": "Vln. II",
+    "t0": 70.81578947,
+    "t1": 71.35263158,
+    "x0": 13455.0,
+    "x1": 13557.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1593,
+    "row": "Va.",
+    "t0": 70.81578947,
+    "t1": 71.68421053,
+    "x0": 13455.0,
+    "x1": 13620.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1813,
+    "row": "Ob.",
+    "t0": 89.81578947,
+    "t1": 90.8,
+    "x0": 17065.0,
+    "x1": 17252.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1854,
+    "row": "Pf.",
+    "t0": 98.13157895,
+    "t1": 99.68421053,
+    "x0": 18645.0,
+    "x1": 18940.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1858,
+    "row": "Pf.",
+    "t0": 98.81578947,
+    "t1": 100.3,
+    "x0": 18775.0,
+    "x1": 19057.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1887,
+    "row": "Pf.",
+    "t0": 101.31578947,
+    "t1": 102.94736842,
+    "x0": 19250.0,
+    "x1": 19560.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1917,
+    "row": "Pf.",
+    "t0": 103.42631579,
+    "t1": 104.68421053,
+    "x0": 19651.0,
+    "x1": 19890.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1919,
+    "row": "Pf.",
+    "t0": 103.81578947,
+    "t1": 105.59473684,
+    "x0": 19725.0,
+    "x1": 20063.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1949,
+    "row": "Vc.",
+    "t0": 105.81578947,
+    "t1": 108.27368421,
+    "x0": 20105.0,
+    "x1": 20572.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  },
+  {
+    "id": 1965,
+    "row": "Vln. I",
+    "t0": 107.31578947,
+    "t1": 109.6,
+    "x0": 20390.0,
+    "x1": 20824.0,
+    "reason": "at least one endpoint is outside all retained ordinary score views"
+  }
+]

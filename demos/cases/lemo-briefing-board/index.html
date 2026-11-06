@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>船说了算 · 工程简报板</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/index.html",
+    "film/kit/board.js",
+    "film/kit/objects/arch.json",
+    "film/kit/objects/beam.json",
+    "film/kit/objects/cable.json",
+    "film/kit/objects/print_arch.json",
+    "film/kit/objects/print_cable.json",
+    "film/kit/objects/print_ship.json",
+    "film/kit/objects/print_susp.json",
+    "film/kit/objects/ship.json",
+    "film/kit/objects/ship_side.json",
+    "film/kit/objects/suspension.json",
+    "film/scenes/film.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ],
+  "images": [
+    "film/kit/objects/arch.png",
+    "film/kit/objects/beam.png",
+    "film/kit/objects/cable.png",
+    "film/kit/objects/print_arch.png",
+    "film/kit/objects/print_cable.png",
+    "film/kit/objects/print_ship.png",
+    "film/kit/objects/print_susp.png",
+    "film/kit/objects/ship.png",
+    "film/kit/objects/ship_side.png",
+    "film/kit/objects/suspension.png"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "The Ship Decides";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 40.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "船说了算 · 工程简报板",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#8F8B83",
+  "accent": "#1f4fc8",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 39.9
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "河宽钩子"
+  },
+  {
+    "t": 1.2,
+    "label": "写下一千米"
+  },
+  {
+    "t": 2.9,
+    "label": "桥墩磁贴"
+  },
+  {
+    "t": 5.5,
+    "label": "船接近桥墩"
+  },
+  {
+    "t": 8,
+    "label": "碰撞与否决"
+  },
+  {
+    "t": 10.75,
+    "label": "新规则与钢尺"
+  },
+  {
+    "t": 14.4,
+    "label": "投影到立面"
+  },
+  {
+    "t": 15.25,
+    "label": "梁桥判断"
+  },
+  {
+    "t": 18.45,
+    "label": "拱桥落板"
+  },
+  {
+    "t": 19.25,
+    "label": "拱桥判断"
+  },
+  {
+    "t": 22.45,
+    "label": "斜拉桥落板"
+  },
+  {
+    "t": 23.4,
+    "label": "斜拉桥判断"
+  },
+  {
+    "t": 28.2,
+    "label": "悬索桥落板"
+  },
+  {
+    "t": 29.1,
+    "label": "悬索桥判断"
+  },
+  {
+    "t": 32.8,
+    "label": "船穿过答案"
+  },
+  {
+    "t": 35.75,
+    "label": "显出整墙"
+  },
+  {
+    "t": 38.15,
+    "label": "板上结语"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

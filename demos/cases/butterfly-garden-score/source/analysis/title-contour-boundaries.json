@@ -1,0 +1,2042 @@
+[
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 1208,
+    "sourceContourTopLine": [
+      0.06102130562067032,
+      421.8067246377468
+    ],
+    "sourceContourBottomLine": [
+      -0.06887105852365494,
+      673.9933587610722
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        282.5,
+        439.045
+      ],
+      [
+        794.5,
+        470.288
+      ],
+      [
+        794.5,
+        619.275
+      ],
+      [
+        282.5,
+        654.537
+      ]
+    ],
+    "nativeContourPoints": 1363
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 1228,
+    "sourceContourTopLine": [
+      0.07324065268039703,
+      412.48537677526474
+    ],
+    "sourceContourBottomLine": [
+      -0.07275786995887756,
+      675.4009939432144
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        286.0,
+        433.432
+      ],
+      [
+        797.0,
+        470.858
+      ],
+      [
+        797.0,
+        617.413
+      ],
+      [
+        286.0,
+        654.592
+      ]
+    ],
+    "nativeContourPoints": 1324
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 1248,
+    "sourceContourTopLine": [
+      0.07357656955718994,
+      412.3574728965759
+    ],
+    "sourceContourBottomLine": [
+      -0.06672297418117523,
+      673.2386898398399
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        290.0,
+        433.695
+      ],
+      [
+        799.5,
+        471.182
+      ],
+      [
+        799.5,
+        619.894
+      ],
+      [
+        290.0,
+        653.889
+      ]
+    ],
+    "nativeContourPoints": 1429
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 1278,
+    "sourceContourTopLine": [
+      0.07288870960474014,
+      412.25829753279686
+    ],
+    "sourceContourBottomLine": [
+      -0.06771539896726608,
+      674.1014871299267
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        295.0,
+        433.76
+      ],
+      [
+        803.0,
+        470.788
+      ],
+      [
+        803.0,
+        619.726
+      ],
+      [
+        295.0,
+        654.125
+      ]
+    ],
+    "nativeContourPoints": 1315
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 1308,
+    "sourceContourTopLine": [
+      0.07312534749507904,
+      411.7615643143654
+    ],
+    "sourceContourBottomLine": [
+      -0.06760546565055847,
+      674.2693766355515
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        299.5,
+        433.663
+      ],
+      [
+        806.5,
+        470.737
+      ],
+      [
+        806.5,
+        619.746
+      ],
+      [
+        299.5,
+        654.022
+      ]
+    ],
+    "nativeContourPoints": 1486
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 1338,
+    "sourceContourTopLine": [
+      0.07346722483634949,
+      411.4115220308304
+    ],
+    "sourceContourBottomLine": [
+      -0.06792706996202469,
+      674.6842925846577
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        303.0,
+        433.672
+      ],
+      [
+        808.5,
+        470.81
+      ],
+      [
+        808.5,
+        619.765
+      ],
+      [
+        303.0,
+        654.102
+      ]
+    ],
+    "nativeContourPoints": 1514
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 1368,
+    "sourceContourTopLine": [
+      0.07356582581996918,
+      411.1643586754799
+    ],
+    "sourceContourBottomLine": [
+      -0.06758977472782135,
+      674.5832596421242
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        306.0,
+        433.676
+      ],
+      [
+        810.5,
+        470.789
+      ],
+      [
+        810.5,
+        619.802
+      ],
+      [
+        306.0,
+        653.901
+      ]
+    ],
+    "nativeContourPoints": 1333
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 1388,
+    "sourceContourTopLine": [
+      0.07385290414094925,
+      410.80697295069695
+    ],
+    "sourceContourBottomLine": [
+      -0.06734447926282883,
+      674.5901615321636
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        306.5,
+        433.443
+      ],
+      [
+        811.0,
+        470.702
+      ],
+      [
+        811.0,
+        619.974
+      ],
+      [
+        306.5,
+        653.949
+      ]
+    ],
+    "nativeContourPoints": 1191
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 1408,
+    "sourceContourTopLine": [
+      0.07419919967651367,
+      410.6112003326416
+    ],
+    "sourceContourBottomLine": [
+      -0.06976277381181717,
+      676.0204928219318
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        306.5,
+        433.353
+      ],
+      [
+        811.5,
+        470.824
+      ],
+      [
+        811.5,
+        619.408
+      ],
+      [
+        306.5,
+        654.638
+      ]
+    ],
+    "nativeContourPoints": 1274
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 1208,
+    "sourceContourTopLine": [
+      0.0006661246297881007,
+      456.6823405553587
+    ],
+    "sourceContourBottomLine": [
+      0.07643916457891464,
+      542.2192172110081
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        972.0,
+        457.33
+      ],
+      [
+        1471.5,
+        457.663
+      ],
+      [
+        1471.5,
+        654.699
+      ],
+      [
+        972.0,
+        616.518
+      ]
+    ],
+    "nativeContourPoints": 971
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 1228,
+    "sourceContourTopLine": [
+      -0.055634256452322006,
+      525.3807749599218
+    ],
+    "sourceContourBottomLine": [
+      0.08360350131988525,
+      533.0185523033142
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        970.0,
+        471.416
+      ],
+      [
+        1468.0,
+        443.71
+      ],
+      [
+        1468.0,
+        655.748
+      ],
+      [
+        970.0,
+        614.114
+      ]
+    ],
+    "nativeContourPoints": 1125
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 1248,
+    "sourceContourTopLine": [
+      -0.06050470471382141,
+      530.8617659807205
+    ],
+    "sourceContourBottomLine": [
+      0.19467875361442566,
+      412.80151188373566
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        967.0,
+        472.354
+      ],
+      [
+        1464.0,
+        442.283
+      ],
+      [
+        1464.0,
+        697.811
+      ],
+      [
+        967.0,
+        601.056
+      ]
+    ],
+    "nativeContourPoints": 883
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 1278,
+    "sourceContourTopLine": [
+      -0.2072947770357132,
+      694.7917855381966
+    ],
+    "sourceContourBottomLine": [
+      0.19338777661323547,
+      414.66732490062714
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        963.5,
+        495.063
+      ],
+      [
+        1459.0,
+        392.349
+      ],
+      [
+        1459.0,
+        696.82
+      ],
+      [
+        963.5,
+        600.996
+      ]
+    ],
+    "nativeContourPoints": 885
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 1308,
+    "sourceContourTopLine": [
+      -0.2070910632610321,
+      693.8327320814133
+    ],
+    "sourceContourBottomLine": [
+      0.19389811158180237,
+      414.78239476680756
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        960.0,
+        495.025
+      ],
+      [
+        1454.5,
+        392.619
+      ],
+      [
+        1454.5,
+        696.807
+      ],
+      [
+        960.0,
+        600.925
+      ]
+    ],
+    "nativeContourPoints": 890
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 1338,
+    "sourceContourTopLine": [
+      -0.061467334628105164,
+      531.3165881037712
+    ],
+    "sourceContourBottomLine": [
+      0.18767580389976501,
+      421.38349401950836
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        958.0,
+        472.431
+      ],
+      [
+        1451.0,
+        442.127
+      ],
+      [
+        1451.0,
+        693.701
+      ],
+      [
+        958.0,
+        601.177
+      ]
+    ],
+    "nativeContourPoints": 882
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 1368,
+    "sourceContourTopLine": [
+      -0.06004226952791214,
+      529.5704903900623
+    ],
+    "sourceContourBottomLine": [
+      0.19106966257095337,
+      418.3964192867279
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        956.0,
+        472.17
+      ],
+      [
+        1448.5,
+        442.599
+      ],
+      [
+        1448.5,
+        695.161
+      ],
+      [
+        956.0,
+        601.059
+      ]
+    ],
+    "nativeContourPoints": 864
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 1388,
+    "sourceContourTopLine": [
+      -0.060060419142246246,
+      529.5458780825138
+    ],
+    "sourceContourBottomLine": [
+      0.19716684520244598,
+      412.60626631975174
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        955.5,
+        472.158
+      ],
+      [
+        1447.5,
+        442.608
+      ],
+      [
+        1447.5,
+        698.005
+      ],
+      [
+        955.5,
+        600.999
+      ]
+    ],
+    "nativeContourPoints": 883
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 1408,
+    "sourceContourTopLine": [
+      -0.20467033982276917,
+      690.6167503595352
+    ],
+    "sourceContourBottomLine": [
+      0.20112060010433197,
+      408.0777636170387
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        955.0,
+        495.157
+      ],
+      [
+        1447.5,
+        394.356
+      ],
+      [
+        1447.5,
+        699.2
+      ],
+      [
+        955.0,
+        600.148
+      ]
+    ],
+    "nativeContourPoints": 972
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 2620,
+    "sourceContourTopLine": [
+      0.07271187752485275,
+      413.2566778957844
+    ],
+    "sourceContourBottomLine": [
+      -0.06784330308437347,
+      673.175116956234
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        278.0,
+        433.471
+      ],
+      [
+        791.0,
+        470.772
+      ],
+      [
+        791.0,
+        619.511
+      ],
+      [
+        278.0,
+        654.315
+      ]
+    ],
+    "nativeContourPoints": 1257
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 2640,
+    "sourceContourTopLine": [
+      0.07236723601818085,
+      413.3492448925972
+    ],
+    "sourceContourBottomLine": [
+      -0.0653223991394043,
+      672.2578411102295
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        282.0,
+        433.757
+      ],
+      [
+        794.0,
+        470.809
+      ],
+      [
+        794.0,
+        620.392
+      ],
+      [
+        282.0,
+        653.837
+      ]
+    ],
+    "nativeContourPoints": 1295
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "entry",
+    "frame": 2660,
+    "sourceContourTopLine": [
+      0.07329246401786804,
+      412.4564677476883
+    ],
+    "sourceContourBottomLine": [
+      -0.06569600105285645,
+      672.7256135940552
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        286.0,
+        433.418
+      ],
+      [
+        797.0,
+        470.871
+      ],
+      [
+        797.0,
+        620.366
+      ],
+      [
+        286.0,
+        653.937
+      ]
+    ],
+    "nativeContourPoints": 1255
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 2692,
+    "sourceContourTopLine": [
+      0.0730414092540741,
+      412.25636875629425
+    ],
+    "sourceContourBottomLine": [
+      -0.06751082837581635,
+      673.8316544890404
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        292.0,
+        433.584
+      ],
+      [
+        801.0,
+        470.763
+      ],
+      [
+        801.0,
+        619.755
+      ],
+      [
+        292.0,
+        654.118
+      ]
+    ],
+    "nativeContourPoints": 1294
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 2722,
+    "sourceContourTopLine": [
+      0.0731717124581337,
+      411.97362288832664
+    ],
+    "sourceContourBottomLine": [
+      -0.06585493683815002,
+      673.3823543787003
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        297.0,
+        433.706
+      ],
+      [
+        804.5,
+        470.84
+      ],
+      [
+        804.5,
+        620.402
+      ],
+      [
+        297.0,
+        653.823
+      ]
+    ],
+    "nativeContourPoints": 1288
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "hold",
+    "frame": 2752,
+    "sourceContourTopLine": [
+      0.07364428043365479,
+      411.3689284324646
+    ],
+    "sourceContourBottomLine": [
+      -0.06758441776037216,
+      674.8986087739468
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        301.0,
+        433.536
+      ],
+      [
+        807.5,
+        470.837
+      ],
+      [
+        807.5,
+        620.324
+      ],
+      [
+        301.0,
+        654.556
+      ]
+    ],
+    "nativeContourPoints": 1249
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 2784,
+    "sourceContourTopLine": [
+      0.07348190993070602,
+      411.3116345703602
+    ],
+    "sourceContourBottomLine": [
+      -0.06332850456237793,
+      672.8143186569214
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        304.0,
+        433.65
+      ],
+      [
+        809.5,
+        470.795
+      ],
+      [
+        809.5,
+        621.55
+      ],
+      [
+        304.0,
+        653.562
+      ]
+    ],
+    "nativeContourPoints": 1308
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 2804,
+    "sourceContourTopLine": [
+      0.07491349428892136,
+      410.41146090626717
+    ],
+    "sourceContourBottomLine": [
+      -0.06576813012361526,
+      673.8262152969837
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        305.5,
+        433.298
+      ],
+      [
+        810.5,
+        471.129
+      ],
+      [
+        810.5,
+        620.521
+      ],
+      [
+        305.5,
+        653.734
+      ]
+    ],
+    "nativeContourPoints": 1292
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "exit",
+    "frame": 2832,
+    "sourceContourTopLine": [
+      0.07631851732730865,
+      409.56917279958725
+    ],
+    "sourceContourBottomLine": [
+      -0.06880027055740356,
+      675.1658108234406
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        307.0,
+        432.999
+      ],
+      [
+        811.0,
+        471.463
+      ],
+      [
+        811.0,
+        619.369
+      ],
+      [
+        307.0,
+        654.044
+      ]
+    ],
+    "nativeContourPoints": 1393
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 2618,
+    "sourceContourTopLine": [
+      -0.05933292210102081,
+      530.2393820881844
+    ],
+    "sourceContourBottomLine": [
+      0.07387126982212067,
+      545.1351808905602
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        977.0,
+        472.271
+      ],
+      [
+        1476.5,
+        442.634
+      ],
+      [
+        1476.5,
+        654.206
+      ],
+      [
+        977.0,
+        617.307
+      ]
+    ],
+    "nativeContourPoints": 1161
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 2640,
+    "sourceContourTopLine": [
+      -0.05964817851781845,
+      530.2774921357632
+    ],
+    "sourceContourBottomLine": [
+      0.07814498245716095,
+      540.4222318530083
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        973.5,
+        472.21
+      ],
+      [
+        1471.5,
+        442.505
+      ],
+      [
+        1471.5,
+        655.413
+      ],
+      [
+        973.5,
+        616.496
+      ]
+    ],
+    "nativeContourPoints": 995
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "entry",
+    "frame": 2660,
+    "sourceContourTopLine": [
+      -0.060089726001024246,
+      530.6231728345156
+    ],
+    "sourceContourBottomLine": [
+      0.07129397988319397,
+      549.1642907857895
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        970.5,
+        472.306
+      ],
+      [
+        1468.0,
+        442.411
+      ],
+      [
+        1468.0,
+        653.824
+      ],
+      [
+        970.5,
+        618.355
+      ]
+    ],
+    "nativeContourPoints": 1046
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 2692,
+    "sourceContourTopLine": [
+      -0.059534478932619095,
+      529.6610023528337
+    ],
+    "sourceContourBottomLine": [
+      0.07431130856275558,
+      545.785609036684
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        966.5,
+        472.121
+      ],
+      [
+        1462.0,
+        442.622
+      ],
+      [
+        1462.0,
+        654.429
+      ],
+      [
+        966.5,
+        617.607
+      ]
+    ],
+    "nativeContourPoints": 1039
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 2726,
+    "sourceContourTopLine": [
+      -0.0599081888794899,
+      529.8577996790409
+    ],
+    "sourceContourBottomLine": [
+      0.0739562138915062,
+      546.745224148035
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        962.5,
+        472.196
+      ],
+      [
+        1456.5,
+        442.602
+      ],
+      [
+        1456.5,
+        654.462
+      ],
+      [
+        962.5,
+        617.928
+      ]
+    ],
+    "nativeContourPoints": 972
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "hold",
+    "frame": 2758,
+    "sourceContourTopLine": [
+      -0.06008297950029373,
+      529.8378041088581
+    ],
+    "sourceContourBottomLine": [
+      0.07544975727796555,
+      544.9774358570576
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        959.5,
+        472.188
+      ],
+      [
+        1452.5,
+        442.567
+      ],
+      [
+        1452.5,
+        654.568
+      ],
+      [
+        959.5,
+        617.371
+      ]
+    ],
+    "nativeContourPoints": 984
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 2790,
+    "sourceContourTopLine": [
+      -0.06047013774514198,
+      530.1434685140848
+    ],
+    "sourceContourBottomLine": [
+      0.07342183589935303,
+      547.4456925392151
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        957.5,
+        472.243
+      ],
+      [
+        1449.5,
+        442.492
+      ],
+      [
+        1449.5,
+        653.871
+      ],
+      [
+        957.5,
+        617.747
+      ]
+    ],
+    "nativeContourPoints": 971
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 2810,
+    "sourceContourTopLine": [
+      -0.06049758940935135,
+      530.1061861813068
+    ],
+    "sourceContourBottomLine": [
+      0.07517942786216736,
+      545.7502733469009
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        956.5,
+        472.24
+      ],
+      [
+        1448.0,
+        442.506
+      ],
+      [
+        1448.0,
+        654.61
+      ],
+      [
+        956.5,
+        617.659
+      ]
+    ],
+    "nativeContourPoints": 983
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "exit",
+    "frame": 2832,
+    "sourceContourTopLine": [
+      -0.057786725461483,
+      527.1765786111355
+    ],
+    "sourceContourBottomLine": [
+      0.06663019210100174,
+      556.1273400485516
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        956.0,
+        471.932
+      ],
+      [
+        1447.0,
+        443.559
+      ],
+      [
+        1447.0,
+        652.541
+      ],
+      [
+        956.0,
+        619.826
+      ]
+    ],
+    "nativeContourPoints": 1181
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "entry",
+    "frame": 4871,
+    "sourceContourTopLine": [
+      0.07278786599636078,
+      413.5480552315712
+    ],
+    "sourceContourBottomLine": [
+      -0.06509137898683548,
+      672.0367956459522
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        278.0,
+        433.783
+      ],
+      [
+        791.0,
+        471.123
+      ],
+      [
+        791.0,
+        620.55
+      ],
+      [
+        278.0,
+        653.941
+      ]
+    ],
+    "nativeContourPoints": 1170
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "entry",
+    "frame": 4893,
+    "sourceContourTopLine": [
+      0.07201017439365387,
+      413.61144202947617
+    ],
+    "sourceContourBottomLine": [
+      -0.06516022235155106,
+      672.3115308582783
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        282.0,
+        433.918
+      ],
+      [
+        794.0,
+        470.788
+      ],
+      [
+        794.0,
+        620.574
+      ],
+      [
+        282.0,
+        653.936
+      ]
+    ],
+    "nativeContourPoints": 1250
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "entry",
+    "frame": 4913,
+    "sourceContourTopLine": [
+      0.07196309417486191,
+      413.31048479676247
+    ],
+    "sourceContourBottomLine": [
+      -0.06541695445775986,
+      672.5324254930019
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        286.0,
+        433.892
+      ],
+      [
+        797.0,
+        470.665
+      ],
+      [
+        797.0,
+        620.395
+      ],
+      [
+        286.0,
+        653.823
+      ]
+    ],
+    "nativeContourPoints": 1232
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "hold",
+    "frame": 4945,
+    "sourceContourTopLine": [
+      0.0724973976612091,
+      412.6397742033005
+    ],
+    "sourceContourBottomLine": [
+      -0.06863374263048172,
+      674.3355567753315
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        292.5,
+        433.845
+      ],
+      [
+        801.0,
+        470.71
+      ],
+      [
+        801.0,
+        619.36
+      ],
+      [
+        292.5,
+        654.26
+      ]
+    ],
+    "nativeContourPoints": 1242
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "hold",
+    "frame": 4979,
+    "sourceContourTopLine": [
+      0.07382788509130478,
+      411.447991758585
+    ],
+    "sourceContourBottomLine": [
+      -0.06614057719707489,
+      673.6276413798332
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        297.5,
+        433.412
+      ],
+      [
+        805.0,
+        470.879
+      ],
+      [
+        805.0,
+        620.384
+      ],
+      [
+        297.5,
+        653.951
+      ]
+    ],
+    "nativeContourPoints": 1214
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "hold",
+    "frame": 5011,
+    "sourceContourTopLine": [
+      0.07391765713691711,
+      411.11302840709686
+    ],
+    "sourceContourBottomLine": [
+      -0.06652513146400452,
+      674.1242014169693
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        302.0,
+        433.436
+      ],
+      [
+        808.0,
+        470.838
+      ],
+      [
+        808.0,
+        620.372
+      ],
+      [
+        302.0,
+        654.034
+      ]
+    ],
+    "nativeContourPoints": 1193
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "exit",
+    "frame": 5043,
+    "sourceContourTopLine": [
+      0.07287713885307312,
+      411.64438927173615
+    ],
+    "sourceContourBottomLine": [
+      -0.0680709257721901,
+      674.8953401148319
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        305.0,
+        433.872
+      ],
+      [
+        810.0,
+        470.675
+      ],
+      [
+        810.0,
+        619.758
+      ],
+      [
+        305.0,
+        654.134
+      ]
+    ],
+    "nativeContourPoints": 1216
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "exit",
+    "frame": 5065,
+    "sourceContourTopLine": [
+      0.07309400290250778,
+      411.4832721054554
+    ],
+    "sourceContourBottomLine": [
+      -0.06779870390892029,
+      674.7549213171005
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        306.0,
+        433.85
+      ],
+      [
+        811.0,
+        470.763
+      ],
+      [
+        811.0,
+        619.77
+      ],
+      [
+        306.0,
+        654.009
+      ]
+    ],
+    "nativeContourPoints": 1195
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "exit",
+    "frame": 5087,
+    "sourceContourTopLine": [
+      0.07359205186367035,
+      411.27903801202774
+    ],
+    "sourceContourBottomLine": [
+      -0.06881158798933029,
+      675.2303073108196
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        307.0,
+        433.872
+      ],
+      [
+        811.5,
+        470.999
+      ],
+      [
+        811.5,
+        619.39
+      ],
+      [
+        307.0,
+        654.105
+      ]
+    ],
+    "nativeContourPoints": 1273
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "entry",
+    "frame": 4869,
+    "sourceContourTopLine": [
+      -0.05908028781414032,
+      530.0427576899529
+    ],
+    "sourceContourBottomLine": [
+      0.07639313489198685,
+      541.96349427104
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        975.0,
+        472.439
+      ],
+      [
+        1476.5,
+        442.811
+      ],
+      [
+        1476.5,
+        654.758
+      ],
+      [
+        975.0,
+        616.447
+      ]
+    ],
+    "nativeContourPoints": 1381
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "entry",
+    "frame": 4891,
+    "sourceContourTopLine": [
+      -0.059292227029800415,
+      529.9157158136368
+    ],
+    "sourceContourBottomLine": [
+      0.07423659414052963,
+      545.3592912256718
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        971.5,
+        472.313
+      ],
+      [
+        1472.0,
+        442.638
+      ],
+      [
+        1472.0,
+        654.636
+      ],
+      [
+        971.5,
+        617.48
+      ]
+    ],
+    "nativeContourPoints": 1266
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "entry",
+    "frame": 4911,
+    "sourceContourTopLine": [
+      -0.06060434877872467,
+      531.270659506321
+    ],
+    "sourceContourBottomLine": [
+      0.07646125555038452,
+      542.7857611179352
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        968.5,
+        472.575
+      ],
+      [
+        1468.0,
+        442.303
+      ],
+      [
+        1468.0,
+        655.031
+      ],
+      [
+        968.5,
+        616.838
+      ]
+    ],
+    "nativeContourPoints": 1240
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "hold",
+    "frame": 4945,
+    "sourceContourTopLine": [
+      -0.05939594656229019,
+      529.5141750872135
+    ],
+    "sourceContourBottomLine": [
+      0.07668507099151611,
+      542.8586192131042
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        964.0,
+        472.256
+      ],
+      [
+        1461.5,
+        442.707
+      ],
+      [
+        1461.5,
+        654.934
+      ],
+      [
+        964.0,
+        616.783
+      ]
+    ],
+    "nativeContourPoints": 1271
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "hold",
+    "frame": 4979,
+    "sourceContourTopLine": [
+      -0.059816453605890274,
+      529.7286681085825
+    ],
+    "sourceContourBottomLine": [
+      0.07322774082422256,
+      547.5388503968716
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        960.0,
+        472.305
+      ],
+      [
+        1456.0,
+        442.636
+      ],
+      [
+        1456.0,
+        654.158
+      ],
+      [
+        960.0,
+        617.837
+      ]
+    ],
+    "nativeContourPoints": 1262
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "hold",
+    "frame": 5009,
+    "sourceContourTopLine": [
+      -0.06018657982349396,
+      529.9311512112617
+    ],
+    "sourceContourBottomLine": [
+      0.07940679788589478,
+      540.3575818538666
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        957.5,
+        472.303
+      ],
+      [
+        1452.5,
+        442.51
+      ],
+      [
+        1452.5,
+        655.696
+      ],
+      [
+        957.5,
+        616.39
+      ]
+    ],
+    "nativeContourPoints": 1300
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "exit",
+    "frame": 5043,
+    "sourceContourTopLine": [
+      -0.05987527221441269,
+      529.4183312356472
+    ],
+    "sourceContourBottomLine": [
+      0.07668372988700867,
+      543.8611994981766
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        955.0,
+        472.237
+      ],
+      [
+        1449.5,
+        442.629
+      ],
+      [
+        1449.5,
+        655.014
+      ],
+      [
+        955.0,
+        617.094
+      ]
+    ],
+    "nativeContourPoints": 1306
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "exit",
+    "frame": 5065,
+    "sourceContourTopLine": [
+      -0.06027686595916748,
+      529.843478679657
+    ],
+    "sourceContourBottomLine": [
+      0.07802585512399673,
+      542.1526916921139
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        954.0,
+        472.339
+      ],
+      [
+        1448.0,
+        442.563
+      ],
+      [
+        1448.0,
+        655.134
+      ],
+      [
+        954.0,
+        616.589
+      ]
+    ],
+    "nativeContourPoints": 1296
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "exit",
+    "frame": 5087,
+    "sourceContourTopLine": [
+      -0.057848233729600906,
+      527.0960794240236
+    ],
+    "sourceContourBottomLine": [
+      0.07946868985891342,
+      540.9222556650639
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        954.0,
+        471.909
+      ],
+      [
+        1448.0,
+        443.332
+      ],
+      [
+        1448.0,
+        655.993
+      ],
+      [
+        954.0,
+        616.735
+      ]
+    ],
+    "nativeContourPoints": 1328
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 0,
+    "phase": "anchor",
+    "frame": 1380,
+    "sourceContourTopLine": [
+      0.07388102263212204,
+      410.91854336857796
+    ],
+    "sourceContourBottomLine": [
+      -0.06616578996181488,
+      674.0479845404625
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        306.0,
+        433.526
+      ],
+      [
+        811.0,
+        470.836
+      ],
+      [
+        811.0,
+        620.388
+      ],
+      [
+        306.0,
+        653.801
+      ]
+    ],
+    "nativeContourPoints": 1215
+  },
+  {
+    "event": "giant-scene-ii",
+    "side": 1,
+    "phase": "anchor",
+    "frame": 1380,
+    "sourceContourTopLine": [
+      -0.06055399775505066,
+      530.1312655210495
+    ],
+    "sourceContourBottomLine": [
+      0.19458849728107452,
+      414.99465054273605
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        955.5,
+        472.272
+      ],
+      [
+        1448.0,
+        442.449
+      ],
+      [
+        1448.0,
+        696.759
+      ],
+      [
+        955.5,
+        600.924
+      ]
+    ],
+    "nativeContourPoints": 827
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 0,
+    "phase": "anchor",
+    "frame": 2700,
+    "sourceContourTopLine": [
+      0.07322333008050919,
+      412.02541837096214
+    ],
+    "sourceContourBottomLine": [
+      -0.06838767230510712,
+      674.2985560297966
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        293.5,
+        433.516
+      ],
+      [
+        802.0,
+        470.751
+      ],
+      [
+        802.0,
+        619.452
+      ],
+      [
+        293.5,
+        654.227
+      ]
+    ],
+    "nativeContourPoints": 1281
+  },
+  {
+    "event": "giant-scene-iii",
+    "side": 1,
+    "phase": "anchor",
+    "frame": 2700,
+    "sourceContourTopLine": [
+      -0.05952649191021919,
+      529.5592095404863
+    ],
+    "sourceContourBottomLine": [
+      0.07359273731708527,
+      546.5700337290764
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        965.5,
+        472.086
+      ],
+      [
+        1460.5,
+        442.621
+      ],
+      [
+        1460.5,
+        654.052
+      ],
+      [
+        965.5,
+        617.624
+      ]
+    ],
+    "nativeContourPoints": 1032
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 0,
+    "phase": "anchor",
+    "frame": 5000,
+    "sourceContourTopLine": [
+      0.07375884056091309,
+      411.3248300552368
+    ],
+    "sourceContourBottomLine": [
+      -0.06633031368255615,
+      673.9093337059021
+    ],
+    "verticalEdgeDxDy": 0.0,
+    "contourEnvelopeCorners": [
+      [
+        300.5,
+        433.489
+      ],
+      [
+        807.0,
+        470.848
+      ],
+      [
+        807.0,
+        620.381
+      ],
+      [
+        300.5,
+        653.977
+      ]
+    ],
+    "nativeContourPoints": 1166
+  },
+  {
+    "event": "giant-scene-iv",
+    "side": 1,
+    "phase": "anchor",
+    "frame": 5000,
+    "sourceContourTopLine": [
+      -0.06037823483347893,
+      530.2699233740568
+    ],
+    "sourceContourBottomLine": [
+      0.07599421590566635,
+      544.3008843958378
+    ],
+    "verticalEdgeDxDy": -0.0,
+    "contourEnvelopeCorners": [
+      [
+        958.0,
+        472.428
+      ],
+      [
+        1453.5,
+        442.51
+      ],
+      [
+        1453.5,
+        654.758
+      ],
+      [
+        958.0,
+        617.103
+      ]
+    ],
+    "nativeContourPoints": 1305
+  }
+]

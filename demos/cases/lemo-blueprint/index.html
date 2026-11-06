@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>专利申请中：接云机器 · 蓝图 / 工程制图</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/draw.js",
+    "film/film.js",
+    "film/index.html",
+    "film/lines.json",
+    "film/machine.js",
+    "film/main.js",
+    "film/paper.js",
+    "film/sheet.js",
+    "film/voices/dur.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Patent Pending: The Cloud Catcher";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 46.666666666666664, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "专利申请中：接云机器 · 蓝图 / 工程制图",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#18336B",
+  "accent": "#E7F0F9",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 33.62
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "纸卷铺开"
+  },
+  {
+    "t": 2.222222,
+    "label": "表头题字"
+  },
+  {
+    "t": 4.444444,
+    "label": "制图顺序"
+  },
+  {
+    "t": 11.111111,
+    "label": "斜投影与爆炸图"
+  },
+  {
+    "t": 17.777778,
+    "label": "沿传动链跟拍"
+  },
+  {
+    "t": 22.222222,
+    "label": "无云的缺陷"
+  },
+  {
+    "t": 25,
+    "label": "修订云线"
+  },
+  {
+    "t": 28.888889,
+    "label": "图符成真"
+  },
+  {
+    "t": 31.111111,
+    "label": "接云落雨与开花"
+  },
+  {
+    "t": 39.2,
+    "label": "全图盖章与标题栏"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

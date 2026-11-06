@@ -1,0 +1,6 @@
+VOICE
+- Chinese: Edge TTS (Microsoft), zh-CN-XiaoxiaoNeural, +15 %. English version: en-US-AvaNeural, +10 %.
+  Through the library's core/tts/tts_zh.py; checked with core/tts/asr_check.py (faster-whisper, MIT; Whisper models, MIT).
+
+Source: https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard/demo/CREDITS
+Microsoft services: https://www.microsoft.com/servicesagreement/

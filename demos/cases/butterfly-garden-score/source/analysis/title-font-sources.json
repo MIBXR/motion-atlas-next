@@ -1,0 +1,9 @@
+[
+  {
+    "family": "Noto Sans JP",
+    "weight": 900,
+    "commit": "8c3ea249848f15b7ff6092b3e16d44ef91771cad",
+    "source": "https://raw.githubusercontent.com/google/fonts/8c3ea249848f15b7ff6092b3e16d44ef91771cad/ofl/notosansjp/NotoSansJP%5Bwght%5D.ttf",
+    "fontFile": "source/fonts/NotoSansJP[wght].ttf"
+  }
+]

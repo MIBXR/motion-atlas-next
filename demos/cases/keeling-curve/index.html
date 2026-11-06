@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>基林曲线 · 同一条曲线，两种尺度</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js","./film/timeline.js"],
+  images: [],
+  data: ["assets/co2_mm_mlo.txt","assets/co2_annmean_mlo.txt"],
+  audio: ["audio/final.wav"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { DUR, FPS, SHOTS, EVENTS } = await MotionKit.load.module('./film/timeline.js');
+const labels = ['开场与早期锯齿', '续画到 2025', '推近', '2025 高亮', '拉远', '落版'];
+const markers = [
+  ...SHOTS.map((shot, i) => ({ t: shot.t0, label: labels[i] })),
+  { t: EVENTS.firstStroke, label: '音效① · 第一笔' },
+  { t: EVENTS.peak, label: '音效② · 峰值高亮' },
+  { t: EVENTS.source, label: '音效③ · 来源落定' },
+].sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.render, duration: DUR, width: 1920, height: 1080, fps: FPS },
+  title: document.title, root: '#c', orients: ['landscape'], sizes: { landscape: [1920, 1080] }, background: '#F3F1E9',
+  markers, accent: '#7fc5ff', step: 'frames', start: { t: 0, reduced: 18.5 },
+  audio: { src: 'audio/final.wav', mime: 'audio/wav' },
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "sampleRate": 48000,
+  "duration": 20,
+  "music": {
+    "start": 7.162,
+    "end": 27.162,
+    "fadeIn": 0.1,
+    "fadeOut": [
+      18.5,
+      20
+    ],
+    "fadeCurve": "linear amplitude",
+    "source": "audio/candidates/Dreams Become Real.mp3"
+  },
+  "events": [
+    {
+      "id": "firstStroke",
+      "target": 0.5,
+      "playbackStart": 0.4991041666666667,
+      "gain": 0.49212993057241117,
+      "gainDb": -6.158404421035491,
+      "file": "audio/kenney/impact-sounds/Audio/impactWood_light_001.ogg"
+    },
+    {
+      "id": "peak",
+      "target": 10.346,
+      "playbackStart": 10.341229166666666,
+      "gain": 0.12307103581908103,
+      "gainDb": -18.19688288353968,
+      "file": "audio/kenney/impact-sounds/Audio/impactSoft_medium_000.ogg"
+    },
+    {
+      "id": "source",
+      "target": 17.3,
+      "playbackStart": 17.2806875,
+      "gain": 0.5807872391772099,
+      "gainDb": -4.719658686923877,
+      "file": "audio/kenney/ui-audio/Audio/click1.ogg"
+    }
+  ],
+  "master": {
+    "tool": "demos/materials/motion-showreel/scripts/narration.mjs mix",
+    "bgm": "audio/bgm.wav",
+    "sfx": "audio/sfx.wav",
+    "bgmGain": 1,
+    "sfxGain": 1,
+    "narration": "none"
+  }
+}

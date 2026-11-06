@@ -1,0 +1,201 @@
+[
+  {
+    "name": "giraffe-medallion",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      39,
+      892,
+      129,
+      983
+    ],
+    "files": [
+      "giraffe-medallion-black.png",
+      "giraffe-medallion-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "official-white",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1652,
+      850,
+      1889,
+      961
+    ],
+    "files": [
+      "official-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "official-intro-red",
+    "sourceFrame": 120,
+    "t": 2,
+    "box1920": [
+      139,
+      702,
+      661,
+      936
+    ],
+    "files": [
+      "official-intro-red.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "instrument-01-ob",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1187,
+      926,
+      1209,
+      965
+    ],
+    "files": [
+      "instrument-01-ob-black.png",
+      "instrument-01-ob-red.png",
+      "instrument-01-ob-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "instrument-02-va",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1230,
+      926,
+      1253,
+      965
+    ],
+    "files": [
+      "instrument-02-va-black.png",
+      "instrument-02-va-red.png",
+      "instrument-02-va-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "instrument-03-hn",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1266,
+      926,
+      1304,
+      965
+    ],
+    "files": [
+      "instrument-03-hn-black.png",
+      "instrument-03-hn-red.png",
+      "instrument-03-hn-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "instrument-04-cl",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1314,
+      926,
+      1340,
+      965
+    ],
+    "files": [
+      "instrument-04-cl-black.png",
+      "instrument-04-cl-red.png",
+      "instrument-04-cl-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "instrument-05-hn",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1352,
+      926,
+      1390,
+      965
+    ],
+    "files": [
+      "instrument-05-hn-black.png",
+      "instrument-05-hn-red.png",
+      "instrument-05-hn-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "instrument-06-fl",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1395,
+      930,
+      1432,
+      956
+    ],
+    "files": [
+      "instrument-06-fl-black.png",
+      "instrument-06-fl-red.png",
+      "instrument-06-fl-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "instrument-07-ob",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1443,
+      926,
+      1470,
+      965
+    ],
+    "files": [
+      "instrument-07-ob-black.png",
+      "instrument-07-ob-red.png",
+      "instrument-07-ob-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "instrument-08-cl",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1486,
+      926,
+      1513,
+      965
+    ],
+    "files": [
+      "instrument-08-cl-black.png",
+      "instrument-08-cl-red.png",
+      "instrument-08-cl-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  },
+  {
+    "name": "instrument-09-cl",
+    "sourceFrame": 480,
+    "t": 8,
+    "box1920": [
+      1529,
+      926,
+      1556,
+      965
+    ],
+    "files": [
+      "instrument-09-cl-black.png",
+      "instrument-09-cl-red.png",
+      "instrument-09-cl-white.png"
+    ],
+    "trace": "OpenCV contours; epsilon 0.4 native pixels; evenodd holes; intro logo 16-color contours"
+  }
+]

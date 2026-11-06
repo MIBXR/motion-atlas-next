@@ -1,0 +1,1155 @@
+{
+  "summary": [
+    {
+      "background": "white",
+      "state": "past",
+      "rgb": [
+        18.21,
+        18.17,
+        18.17
+      ],
+      "samples": 30
+    },
+    {
+      "background": "white",
+      "state": "current",
+      "rgb": [
+        216.721,
+        4.138,
+        38.455
+      ],
+      "samples": 6
+    },
+    {
+      "background": "white",
+      "state": "future",
+      "rgb": [
+        117.013,
+        115.75,
+        113.564
+      ],
+      "samples": 18
+    },
+    {
+      "background": "red",
+      "state": "past",
+      "rgb": [
+        233.071,
+        254.216,
+        251.493
+      ],
+      "samples": 27
+    },
+    {
+      "background": "red",
+      "state": "current",
+      "rgb": [
+        242.681,
+        256.072,
+        254.036
+      ],
+      "samples": 5
+    },
+    {
+      "background": "red",
+      "state": "future",
+      "rgb": [
+        90.945,
+        5.999,
+        11.405
+      ],
+      "samples": 13
+    }
+  ],
+  "samples": [
+    {
+      "t": 8,
+      "icon": 0,
+      "state": "current",
+      "background": "white",
+      "rgb": [
+        209.026,
+        7.657,
+        44.092
+      ]
+    },
+    {
+      "t": 8,
+      "icon": 1,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        117.681,
+        116.391,
+        112.909
+      ]
+    },
+    {
+      "t": 8,
+      "icon": 2,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        118.476,
+        117.077,
+        115.066
+      ]
+    },
+    {
+      "t": 8,
+      "icon": 3,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        117.588,
+        116.382,
+        114.485
+      ]
+    },
+    {
+      "t": 8,
+      "icon": 4,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        118.398,
+        116.99,
+        114.758
+      ]
+    },
+    {
+      "t": 8,
+      "icon": 5,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        115.36,
+        113.878,
+        111.684
+      ]
+    },
+    {
+      "t": 8,
+      "icon": 6,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        117.419,
+        116.065,
+        116.325
+      ]
+    },
+    {
+      "t": 8,
+      "icon": 7,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        115.584,
+        115.746,
+        113.695
+      ]
+    },
+    {
+      "t": 8,
+      "icon": 8,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        116.944,
+        115.609,
+        113.954
+      ]
+    },
+    {
+      "t": 16,
+      "icon": 0,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        18.911,
+        18.911,
+        18.911
+      ]
+    },
+    {
+      "t": 16,
+      "icon": 1,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        22.002,
+        17.238,
+        14.719
+      ]
+    },
+    {
+      "t": 16,
+      "icon": 2,
+      "state": "current",
+      "background": "white",
+      "rgb": [
+        208.241,
+        8.262,
+        46.066
+      ]
+    },
+    {
+      "t": 16,
+      "icon": 3,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        117.082,
+        116.946,
+        113.757
+      ]
+    },
+    {
+      "t": 16,
+      "icon": 4,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        118.207,
+        116.735,
+        115.015
+      ]
+    },
+    {
+      "t": 16,
+      "icon": 5,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        115.736,
+        113.586,
+        110.407
+      ]
+    },
+    {
+      "t": 16,
+      "icon": 6,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        117.177,
+        115.536,
+        113.433
+      ]
+    },
+    {
+      "t": 16,
+      "icon": 7,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        115.869,
+        114.704,
+        112.704
+      ]
+    },
+    {
+      "t": 16,
+      "icon": 8,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        116.674,
+        115.623,
+        112.668
+      ]
+    },
+    {
+      "t": 24,
+      "icon": 0,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        232.856,
+        253.636,
+        250.848
+      ]
+    },
+    {
+      "t": 24,
+      "icon": 1,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        230.219,
+        254.093,
+        250.861
+      ]
+    },
+    {
+      "t": 24,
+      "icon": 2,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        233.071,
+        253.171,
+        248.62
+      ]
+    },
+    {
+      "t": 24,
+      "icon": 3,
+      "state": "current",
+      "background": "red",
+      "rgb": [
+        242.681,
+        255.456,
+        251.288
+      ]
+    },
+    {
+      "t": 24,
+      "icon": 4,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        92.865,
+        7.53,
+        11.458
+      ]
+    },
+    {
+      "t": 24,
+      "icon": 5,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        89.425,
+        6.445,
+        12.31
+      ]
+    },
+    {
+      "t": 24,
+      "icon": 6,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        91.45,
+        7.438,
+        12.57
+      ]
+    },
+    {
+      "t": 24,
+      "icon": 7,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        90.456,
+        5.673,
+        10.962
+      ]
+    },
+    {
+      "t": 24,
+      "icon": 8,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        90.762,
+        5.762,
+        8.492
+      ]
+    },
+    {
+      "t": 26,
+      "icon": 0,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        232.846,
+        254.216,
+        252.606
+      ]
+    },
+    {
+      "t": 26,
+      "icon": 1,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        230.884,
+        254.274,
+        251.493
+      ]
+    },
+    {
+      "t": 26,
+      "icon": 2,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        232.998,
+        253.954,
+        249.244
+      ]
+    },
+    {
+      "t": 26,
+      "icon": 3,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        243.399,
+        255.263,
+        252.729
+      ]
+    },
+    {
+      "t": 26,
+      "icon": 4,
+      "state": "current",
+      "background": "red",
+      "rgb": [
+        233.391,
+        253.611,
+        249.257
+      ]
+    },
+    {
+      "t": 26,
+      "icon": 5,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        89.383,
+        6.326,
+        12.353
+      ]
+    },
+    {
+      "t": 26,
+      "icon": 6,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        91.297,
+        7.581,
+        12.775
+      ]
+    },
+    {
+      "t": 26,
+      "icon": 7,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        91.017,
+        5.755,
+        11.405
+      ]
+    },
+    {
+      "t": 26,
+      "icon": 8,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        91.611,
+        5.7,
+        8.726
+      ]
+    },
+    {
+      "t": 32,
+      "icon": 0,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        19.304,
+        19.304,
+        19.304
+      ]
+    },
+    {
+      "t": 32,
+      "icon": 1,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        18.142,
+        18.142,
+        18.142
+      ]
+    },
+    {
+      "t": 32,
+      "icon": 2,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        19.034,
+        19.034,
+        19.034
+      ]
+    },
+    {
+      "t": 32,
+      "icon": 3,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        17.873,
+        17.873,
+        17.873
+      ]
+    },
+    {
+      "t": 32,
+      "icon": 4,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        21.618,
+        17.74,
+        16.484
+      ]
+    },
+    {
+      "t": 32,
+      "icon": 5,
+      "state": "current",
+      "background": "white",
+      "rgb": [
+        215.428,
+        1.704,
+        36.971
+      ]
+    },
+    {
+      "t": 32,
+      "icon": 6,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        117.419,
+        116.065,
+        116.325
+      ]
+    },
+    {
+      "t": 32,
+      "icon": 7,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        115.659,
+        115.748,
+        112.541
+      ]
+    },
+    {
+      "t": 32,
+      "icon": 8,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        116.803,
+        115.752,
+        113.326
+      ]
+    },
+    {
+      "t": 64,
+      "icon": 0,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        233.083,
+        253.727,
+        250.283
+      ]
+    },
+    {
+      "t": 64,
+      "icon": 1,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        230.96,
+        253.788,
+        250.837
+      ]
+    },
+    {
+      "t": 64,
+      "icon": 2,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        233.322,
+        253.355,
+        248.829
+      ]
+    },
+    {
+      "t": 64,
+      "icon": 3,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        243.129,
+        254.27,
+        251.236
+      ]
+    },
+    {
+      "t": 64,
+      "icon": 4,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        233.598,
+        253.301,
+        249.425
+      ]
+    },
+    {
+      "t": 64,
+      "icon": 5,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        235.272,
+        258.883,
+        257.498
+      ]
+    },
+    {
+      "t": 64,
+      "icon": 6,
+      "state": "current",
+      "background": "red",
+      "rgb": [
+        232.823,
+        256.072,
+        254.098
+      ]
+    },
+    {
+      "t": 64,
+      "icon": 7,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        90.945,
+        5.924,
+        12.198
+      ]
+    },
+    {
+      "t": 64,
+      "icon": 8,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        91.177,
+        5.846,
+        10.57
+      ]
+    },
+    {
+      "t": 66,
+      "icon": 0,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        232.574,
+        254.373,
+        254.09
+      ]
+    },
+    {
+      "t": 66,
+      "icon": 1,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        230.242,
+        254.538,
+        252.988
+      ]
+    },
+    {
+      "t": 66,
+      "icon": 2,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        233.054,
+        253.865,
+        250.329
+      ]
+    },
+    {
+      "t": 66,
+      "icon": 3,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        243.177,
+        255.368,
+        252.642
+      ]
+    },
+    {
+      "t": 66,
+      "icon": 4,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        233.018,
+        254.043,
+        250.987
+      ]
+    },
+    {
+      "t": 66,
+      "icon": 5,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        235.048,
+        259.851,
+        259.185
+      ]
+    },
+    {
+      "t": 66,
+      "icon": 6,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        233.375,
+        256.091,
+        255.517
+      ]
+    },
+    {
+      "t": 66,
+      "icon": 7,
+      "state": "current",
+      "background": "red",
+      "rgb": [
+        243.6,
+        257.598,
+        254.036
+      ]
+    },
+    {
+      "t": 66,
+      "icon": 8,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        90.312,
+        5.999,
+        10.733
+      ]
+    },
+    {
+      "t": 71,
+      "icon": 0,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        232.642,
+        254.202,
+        253.54
+      ]
+    },
+    {
+      "t": 71,
+      "icon": 1,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        230.196,
+        254.379,
+        252.848
+      ]
+    },
+    {
+      "t": 71,
+      "icon": 2,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        232.692,
+        253.817,
+        250.383
+      ]
+    },
+    {
+      "t": 71,
+      "icon": 3,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        243.301,
+        255.23,
+        252.553
+      ]
+    },
+    {
+      "t": 71,
+      "icon": 4,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        233.076,
+        253.723,
+        250.568
+      ]
+    },
+    {
+      "t": 71,
+      "icon": 5,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        235.048,
+        259.851,
+        259.185
+      ]
+    },
+    {
+      "t": 71,
+      "icon": 6,
+      "state": "past",
+      "background": "red",
+      "rgb": [
+        233.341,
+        256.088,
+        255.325
+      ]
+    },
+    {
+      "t": 71,
+      "icon": 7,
+      "state": "current",
+      "background": "red",
+      "rgb": [
+        243.25,
+        257.359,
+        255.869
+      ]
+    },
+    {
+      "t": 71,
+      "icon": 8,
+      "state": "future",
+      "background": "red",
+      "rgb": [
+        90.46,
+        6.183,
+        10.734
+      ]
+    },
+    {
+      "t": 80,
+      "icon": 0,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        18.809,
+        18.809,
+        18.809
+      ]
+    },
+    {
+      "t": 80,
+      "icon": 1,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        18.099,
+        18.099,
+        18.099
+      ]
+    },
+    {
+      "t": 80,
+      "icon": 2,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        19.081,
+        19.081,
+        19.081
+      ]
+    },
+    {
+      "t": 80,
+      "icon": 3,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        18.163,
+        18.163,
+        18.163
+      ]
+    },
+    {
+      "t": 80,
+      "icon": 4,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        19.403,
+        19.403,
+        19.403
+      ]
+    },
+    {
+      "t": 80,
+      "icon": 5,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        13.698,
+        13.698,
+        13.698
+      ]
+    },
+    {
+      "t": 80,
+      "icon": 6,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        17.244,
+        17.244,
+        17.244
+      ]
+    },
+    {
+      "t": 80,
+      "icon": 7,
+      "state": "current",
+      "background": "white",
+      "rgb": [
+        218.722,
+        3.579,
+        37.92
+      ]
+    },
+    {
+      "t": 80,
+      "icon": 8,
+      "state": "future",
+      "background": "white",
+      "rgb": [
+        116.918,
+        115.529,
+        112.455
+      ]
+    },
+    {
+      "t": 97,
+      "icon": 0,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        18.888,
+        18.888,
+        18.888
+      ]
+    },
+    {
+      "t": 97,
+      "icon": 1,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        18.177,
+        18.177,
+        18.177
+      ]
+    },
+    {
+      "t": 97,
+      "icon": 2,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        19.078,
+        19.078,
+        19.078
+      ]
+    },
+    {
+      "t": 97,
+      "icon": 3,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        18.192,
+        18.192,
+        18.192
+      ]
+    },
+    {
+      "t": 97,
+      "icon": 4,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        19.305,
+        19.305,
+        19.305
+      ]
+    },
+    {
+      "t": 97,
+      "icon": 5,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        13.698,
+        13.698,
+        13.698
+      ]
+    },
+    {
+      "t": 97,
+      "icon": 6,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        17.244,
+        17.244,
+        17.244
+      ]
+    },
+    {
+      "t": 97,
+      "icon": 7,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        15.672,
+        15.672,
+        15.672
+      ]
+    },
+    {
+      "t": 97,
+      "icon": 8,
+      "state": "current",
+      "background": "white",
+      "rgb": [
+        218.013,
+        3.959,
+        38.101
+      ]
+    },
+    {
+      "t": 110,
+      "icon": 0,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        19.047,
+        19.047,
+        19.047
+      ]
+    },
+    {
+      "t": 110,
+      "icon": 1,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        18.229,
+        18.229,
+        18.229
+      ]
+    },
+    {
+      "t": 110,
+      "icon": 2,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        19.179,
+        19.179,
+        19.179
+      ]
+    },
+    {
+      "t": 110,
+      "icon": 3,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        17.815,
+        17.815,
+        17.815
+      ]
+    },
+    {
+      "t": 110,
+      "icon": 4,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        19.323,
+        19.323,
+        19.323
+      ]
+    },
+    {
+      "t": 110,
+      "icon": 5,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        13.698,
+        13.698,
+        13.698
+      ]
+    },
+    {
+      "t": 110,
+      "icon": 6,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        17.244,
+        17.244,
+        17.244
+      ]
+    },
+    {
+      "t": 110,
+      "icon": 7,
+      "state": "past",
+      "background": "white",
+      "rgb": [
+        15.915,
+        15.915,
+        15.915
+      ]
+    },
+    {
+      "t": 110,
+      "icon": 8,
+      "state": "current",
+      "background": "white",
+      "rgb": [
+        219.2,
+        4.316,
+        38.809
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>星光饭店的午夜 · 装饰艺术</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/chars.js",
+    "film/engine/bulbs.js",
+    "film/engine/cam.js",
+    "film/engine/deco.js",
+    "film/engine/type.js",
+    "film/film.js",
+    "film/index.html",
+    "film/lines.json",
+    "film/main.js",
+    "film/scenes/lobby.js",
+    "film/scenes/roof.js",
+    "film/scenes/stairs.js",
+    "film/scenes/tower.js",
+    "film/shots_kitchen.js",
+    "film/shots_lobby.js",
+    "film/shots_misc.js",
+    "film/shots_out.js",
+    "film/shots_roof.js",
+    "film/shots_stairs.js",
+    "film/timeline.js",
+    "film/voices/dur.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Midnight at the Starlight Hotel";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 58.375, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "星光饭店的午夜 · 装饰艺术",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#0d0b09",
+  "accent": "#C9A24B",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 17.52
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "金线开场"
+  },
+  {
+    "t": 5.172413793103448,
+    "label": "拱门中轴开门"
+  },
+  {
+    "t": 6.206896551724139,
+    "label": "仰看目标"
+  },
+  {
+    "t": 12.413793103448278,
+    "label": "旋转门换景"
+  },
+  {
+    "t": 14.482758620689657,
+    "label": "电梯故障与决心"
+  },
+  {
+    "t": 18.10344827586207,
+    "label": "楼梯门换景"
+  },
+  {
+    "t": 18.620689655172416,
+    "label": "剖楼爬阶"
+  },
+  {
+    "t": 30.981266771531892,
+    "label": "厨房门换景"
+  },
+  {
+    "t": 33.15517981501015,
+    "label": "午夜前静默"
+  },
+  {
+    "t": 35.86,
+    "label": "十二钟点亮灯牌"
+  },
+  {
+    "t": 42.06689655172414,
+    "label": "扇舞锁成钟面"
+  },
+  {
+    "t": 48.273793103448284,
+    "label": "拉远全城"
+  },
+  {
+    "t": 52.411724137931046,
+    "label": "电梯与片尾"
+  },
+  {
+    "t": 53.446206896551736,
+    "label": "电梯门合拢"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

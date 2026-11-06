@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
+  <title>蝶の舞う庭 · 曲式赏析滚动总谱</title>
+</head>
+<body>
+  <main id="stage" class="stage" aria-label="蝶の舞う庭曲式赏析影片"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({ styles: ['film/style.css'] });
+    const film = await MotionKit.load.module('./film/scene.js');
+    MotionKit.mountFilm({
+      film,
+      root: '#stage',
+      title: '蝶の舞う庭 · 曲式赏析滚动总谱',
+      orients: ['landscape'],
+      background: '#ffffff',
+      accent: '#e80827',
+      audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+      markers: [
+        { t: 0, label: '序幕' },
+        { t: 4.8, label: '第一場' },
+        { t: 20.1, label: '第二場' },
+        { t: 27.8, label: '間奏' },
+        { t: 43.5, label: '第三場' },
+        { t: 60, label: '华尔兹全奏' },
+        { t: 81, label: '第四場' },
+        { t: 117.2, label: '调性梯子' }
+      ],
+      start: { t: 0, reduced: 66 },
+      step: 'frames'
+    });
+  </script>
+</body>
+</html>

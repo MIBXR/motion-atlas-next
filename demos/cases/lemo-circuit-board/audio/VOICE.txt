@@ -1,0 +1,4 @@
+配音来源：Microsoft edge-tts 在线服务。
+成片使用 zh-CN-XiaoxiaoNeural，语速 +20%。
+制作文件另保留 en-US-AvaNeural 英文版本的文本与时长。
+原始来源说明：CREDITS；制作入口：source/build.sh 与共享 core/tts/tts_zh.py。

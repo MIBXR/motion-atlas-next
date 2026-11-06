@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>提灯人 · HD-2D</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/chars.js",
+    "film/cliff.js",
+    "film/core/lib.js",
+    "film/forest.js",
+    "film/forest_art.js",
+    "film/fx.js",
+    "film/harbor.js",
+    "film/index.html",
+    "film/kit.js",
+    "film/main.js",
+    "film/post_ts.js",
+    "film/px.js",
+    "film/story.js",
+    "film/ui.js",
+    "film/voices/dur.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "The Lampbearer";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html?tilt=1';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 76.5, width: 1920, height: 1080, fps: 60,
+        async renderAt(t) { await upstream.render(Math.round(t * 60) / 60); },
+      },
+      ...{
+  "title": "提灯人 · HD-2D",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#050818",
+  "accent": "#ffb050",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 55.08
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "章节卡"
+  },
+  {
+    "t": 5.5,
+    "label": "海港灯灭"
+  },
+  {
+    "t": 15,
+    "label": "交接火种"
+  },
+  {
+    "t": 25.5,
+    "label": "穿过夜林"
+  },
+  {
+    "t": 35.5,
+    "label": "攀登风暴石阶"
+  },
+  {
+    "t": 42,
+    "label": "火光将熄"
+  },
+  {
+    "t": 45.6,
+    "label": "护火重燃"
+  },
+  {
+    "t": 49.5,
+    "label": "进入灯室"
+  },
+  {
+    "t": 53.5,
+    "label": "灯塔点亮"
+  },
+  {
+    "t": 58,
+    "label": "船灯归航"
+  },
+  {
+    "t": 67,
+    "label": "片名"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

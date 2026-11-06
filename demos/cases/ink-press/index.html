@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ink Press 纸墨宣传片</title>
+</head>
+<body>
+<div id="stage"><div id="film"></div></div>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ['film/style.css'],
+  modules: ['film/film.js'],
+  images: [
+    'assets/textures/live/card1.png',
+    'assets/textures/live/card2.png',
+    'assets/textures/live/card3.png',
+    'assets/textures/live/card4.png',
+    'assets/textures/live/card4-hires.png',
+    'assets/textures/live/card5.png',
+    'assets/textures/live/card6.png',
+    'assets/textures/live/card7.png',
+    'assets/textures/live/card8.png',
+    'assets/textures/live/card9.png',
+    'assets/textures/live/card10.png',
+    'assets/textures/live/detail-experiments.png',
+    'assets/textures/live/detail-full.png',
+    'assets/textures/live/float-filter.png',
+    'assets/textures/live/float-search.png',
+    'assets/textures/live/float-section.png',
+    'assets/textures/live/float-stats.png',
+    'assets/textures/live/nav.png',
+    'assets/textures/live/paper1.png',
+    'assets/textures/live/paper2.png',
+    'assets/textures/live/paper3.png',
+    'assets/textures/live/paper4.png',
+    'assets/textures/live/paper5.png',
+    'assets/textures/live/papers-full.png',
+    'assets/textures/live/projects-empty.png',
+    'assets/textures/live/projects-full.png',
+    'assets/textures/live/wbr-full.png',
+  ],
+  audio: ['audio/film.m4a'],
+});
+
+const { mountInk } = await MotionKit.load.module('film/film.js');
+const markers = [
+  { t: 0, label: '品牌开场' },
+  { t: 82 / 30, label: '聚光主角卡' },
+  { t: 220 / 30, label: '字卡一' },
+  { t: 275 / 30, label: '发牌飞入' },
+  { t: 465 / 30, label: '详情嵌入' },
+  { t: 565 / 30, label: '字卡二' },
+  { t: 620 / 30, label: '列表压入' },
+  { t: 725 / 30, label: '字卡三' },
+  { t: 775 / 30, label: '周报自写' },
+  { t: 885 / 30, label: '字卡四' },
+  { t: 940 / 30, label: '合影与字标' },
+];
+MotionKit.mountFilm({
+  film: mountInk(document.querySelector('#film')),
+  title: 'Ink Press 纸墨宣传片',
+  root: '#stage',
+  orients: ['landscape'],
+  background: '#f2eee6',
+  accent: '#955905',
+  step: 'frames',
+  start: { t: 0, reduced: 35.5 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+  markers,
+});
+</script>
+</body>
+</html>

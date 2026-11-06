@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>夜班入职指引 · 后室 / 新怪谈</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/core/lib.js",
+    "film/core/three/post.js",
+    "film/figures.js",
+    "film/index.html",
+    "vendor/three@0.170.0/build/three.module.js",
+    "vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+    "film/main.js",
+    "film/osd.js",
+    "film/story.js",
+    "film/subs.js",
+    "film/tex.js",
+    "film/thing2d.js",
+    "film/vhs.js",
+    "film/voices/dur.json",
+    "film/voices/words.json",
+    "film/world.js"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Night Shift Orientation";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 59.666666666666664, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "夜班入职指引 · 后室 / 新怪谈",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#000000",
+  "accent": "#d5bd66",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 35.82
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "录像与告示"
+  },
+  {
+    "t": 6,
+    "label": "显出走廊"
+  },
+  {
+    "t": 7.6,
+    "label": "例行巡视"
+  },
+  {
+    "t": 15.9,
+    "label": "重复告示"
+  },
+  {
+    "t": 20.9,
+    "label": "遵守守则"
+  },
+  {
+    "t": 31.9,
+    "label": "对焦显影"
+  },
+  {
+    "t": 36.05,
+    "label": "磁带跳时"
+  },
+  {
+    "t": 39.3,
+    "label": "走向出口"
+  },
+  {
+    "t": 52.83,
+    "label": "最后守则与停录"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

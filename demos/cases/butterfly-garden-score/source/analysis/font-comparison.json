@@ -1,0 +1,4044 @@
+[
+  {
+    "category": "scene-title",
+    "text": "第一場",
+    "referenceFrame": 480,
+    "sourceBox": [
+      35,
+      75,
+      250,
+      150
+    ],
+    "best": {
+      "family": "shipporimincho",
+      "file": "fonts-candidates/shipporimincho/ShipporiMincho-Bold.ttf",
+      "weight": 400,
+      "score": 0.93288,
+      "iou": 0.93288,
+      "horizontalScale": 1.00513,
+      "fontSize": 61.579,
+      "letterSpacing": 7.526,
+      "inkBox": [
+        42.5,
+        89.0,
+        238.5,
+        147.5
+      ],
+      "baseline": 142.03
+    },
+    "candidates": [
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Bold.ttf",
+        "weight": 400,
+        "score": 0.93288,
+        "iou": 0.93288,
+        "horizontalScale": 1.00513,
+        "fontSize": 61.579,
+        "letterSpacing": 7.526,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.03
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-ExtraBold.ttf",
+        "weight": 400,
+        "score": 0.93288,
+        "iou": 0.93288,
+        "horizontalScale": 1.00513,
+        "fontSize": 61.579,
+        "letterSpacing": 7.526,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.03
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 700,
+        "score": 0.9014,
+        "iou": 0.92211,
+        "horizontalScale": 0.95646,
+        "fontSize": 62.308,
+        "letterSpacing": 10.385,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.96
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 800,
+        "score": 0.88038,
+        "iou": 0.89605,
+        "horizontalScale": 0.96452,
+        "fontSize": 61.579,
+        "letterSpacing": 10.263,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.68
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 700,
+        "score": 0.82899,
+        "iou": 0.84461,
+        "horizontalScale": 0.9646,
+        "fontSize": 62.308,
+        "letterSpacing": 9.692,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.96
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 700,
+        "score": 0.82899,
+        "iou": 0.84461,
+        "horizontalScale": 0.9646,
+        "fontSize": 62.308,
+        "letterSpacing": 9.692,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.96
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 900,
+        "score": 0.82027,
+        "iou": 0.8319,
+        "horizontalScale": 0.97106,
+        "fontSize": 61.579,
+        "letterSpacing": 9.579,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.68
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-SemiBold.ttf",
+        "weight": 400,
+        "score": 0.81373,
+        "iou": 0.81373,
+        "horizontalScale": 1.00216,
+        "fontSize": 62.308,
+        "letterSpacing": 6.923,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.31
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 600,
+        "score": 0.79721,
+        "iou": 0.81126,
+        "horizontalScale": 0.96713,
+        "fontSize": 62.679,
+        "letterSpacing": 9.054,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.28
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 800,
+        "score": 0.79113,
+        "iou": 0.80931,
+        "horizontalScale": 0.96049,
+        "fontSize": 61.941,
+        "letterSpacing": 10.324,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.65
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 800,
+        "score": 0.79113,
+        "iou": 0.80931,
+        "horizontalScale": 0.96049,
+        "fontSize": 61.941,
+        "letterSpacing": 10.324,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.65
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 900,
+        "score": 0.77768,
+        "iou": 0.79235,
+        "horizontalScale": 0.96614,
+        "fontSize": 61.579,
+        "letterSpacing": 10.263,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.68
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 900,
+        "score": 0.77768,
+        "iou": 0.79235,
+        "horizontalScale": 0.96614,
+        "fontSize": 61.579,
+        "letterSpacing": 10.263,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.68
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 600,
+        "score": 0.7601,
+        "iou": 0.76897,
+        "horizontalScale": 0.97551,
+        "fontSize": 62.679,
+        "letterSpacing": 8.357,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.28
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 600,
+        "score": 0.7601,
+        "iou": 0.76897,
+        "horizontalScale": 0.97551,
+        "fontSize": 62.679,
+        "letterSpacing": 8.357,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.28
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Medium.ttf",
+        "weight": 400,
+        "score": 0.73161,
+        "iou": 0.73161,
+        "horizontalScale": 1.00693,
+        "fontSize": 62.679,
+        "letterSpacing": 6.268,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.28
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 500,
+        "score": 0.71474,
+        "iou": 0.72302,
+        "horizontalScale": 0.97648,
+        "fontSize": 63.054,
+        "letterSpacing": 7.707,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.25
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 500,
+        "score": 0.69261,
+        "iou": 0.69984,
+        "horizontalScale": 0.97818,
+        "fontSize": 63.054,
+        "letterSpacing": 7.707,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.25
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 500,
+        "score": 0.69261,
+        "iou": 0.69984,
+        "horizontalScale": 0.97818,
+        "fontSize": 63.054,
+        "letterSpacing": 7.707,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.25
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Regular.ttf",
+        "weight": 400,
+        "score": 0.63897,
+        "iou": 0.63897,
+        "horizontalScale": 1.00997,
+        "fontSize": 63.054,
+        "letterSpacing": 5.605,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.6
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 400,
+        "score": 0.62241,
+        "iou": 0.63792,
+        "horizontalScale": 0.96478,
+        "fontSize": 63.818,
+        "letterSpacing": 7.8,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.54
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 400,
+        "score": 0.62164,
+        "iou": 0.62721,
+        "horizontalScale": 0.9809,
+        "fontSize": 63.434,
+        "letterSpacing": 7.048,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.57
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 400,
+        "score": 0.62164,
+        "iou": 0.62721,
+        "horizontalScale": 0.9809,
+        "fontSize": 63.434,
+        "letterSpacing": 7.048,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.57
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 600,
+        "score": 0.56623,
+        "iou": 0.56623,
+        "horizontalScale": 0.99056,
+        "fontSize": 61.941,
+        "letterSpacing": 8.259,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.99
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 700,
+        "score": 0.56084,
+        "iou": 0.56084,
+        "horizontalScale": 1.00047,
+        "fontSize": 61.221,
+        "letterSpacing": 8.163,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.72
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 300,
+        "score": 0.55865,
+        "iou": 0.57416,
+        "horizontalScale": 0.96478,
+        "fontSize": 63.818,
+        "letterSpacing": 7.8,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.54
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 300,
+        "score": 0.55599,
+        "iou": 0.55666,
+        "horizontalScale": 0.98895,
+        "fontSize": 63.818,
+        "letterSpacing": 5.673,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.54
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 300,
+        "score": 0.55599,
+        "iou": 0.55666,
+        "horizontalScale": 0.98895,
+        "fontSize": 63.818,
+        "letterSpacing": 5.673,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.54
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 500,
+        "score": 0.55564,
+        "iou": 0.55564,
+        "horizontalScale": 0.99447,
+        "fontSize": 62.679,
+        "letterSpacing": 6.964,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.28
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 800,
+        "score": 0.55186,
+        "iou": 0.55186,
+        "horizontalScale": 0.99186,
+        "fontSize": 61.221,
+        "letterSpacing": 8.843,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.72
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 900,
+        "score": 0.54315,
+        "iou": 0.54315,
+        "horizontalScale": 0.99996,
+        "fontSize": 60.517,
+        "letterSpacing": 8.741,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 141.45
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 400,
+        "score": 0.5349,
+        "iou": 0.5349,
+        "horizontalScale": 0.9903,
+        "fontSize": 63.054,
+        "letterSpacing": 7.006,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.25
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 200,
+        "score": 0.51116,
+        "iou": 0.51116,
+        "horizontalScale": 0.99072,
+        "fontSize": 63.818,
+        "letterSpacing": 5.673,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.54
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 200,
+        "score": 0.50027,
+        "iou": 0.51784,
+        "horizontalScale": 0.96148,
+        "fontSize": 64.601,
+        "letterSpacing": 7.178,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.83
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 300,
+        "score": 0.43955,
+        "iou": 0.43955,
+        "horizontalScale": 0.99787,
+        "fontSize": 63.818,
+        "letterSpacing": 5.673,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.54
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 200,
+        "score": 0.40737,
+        "iou": 0.40737,
+        "horizontalScale": 0.99072,
+        "fontSize": 63.818,
+        "letterSpacing": 6.382,
+        "inkBox": [
+          42.5,
+          89.0,
+          238.5,
+          147.5
+        ],
+        "baseline": 142.54
+      }
+    ],
+    "metric": "ink masks at equal bounding box; horizontalScale is separately penalized; red=source cyan=candidate"
+  },
+  {
+    "category": "sidebar-title",
+    "text": "蝶",
+    "referenceFrame": 480,
+    "sourceBox": [
+      1730,
+      60,
+      1855,
+      170
+    ],
+    "best": {
+      "family": "shipporimincho",
+      "file": "fonts-candidates/shipporimincho/ShipporiMincho-Bold.ttf",
+      "weight": 400,
+      "score": 0.92911,
+      "iou": 0.92911,
+      "horizontalScale": 1.00747,
+      "fontSize": 102.706,
+      "letterSpacing": 0.0,
+      "inkBox": [
+        1753.0,
+        73.0,
+        1849.0,
+        170.0
+      ],
+      "baseline": 160.87
+    },
+    "candidates": [
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Bold.ttf",
+        "weight": 400,
+        "score": 0.92911,
+        "iou": 0.92911,
+        "horizontalScale": 1.00747,
+        "fontSize": 102.706,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.87
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-ExtraBold.ttf",
+        "weight": 400,
+        "score": 0.92911,
+        "iou": 0.92911,
+        "horizontalScale": 1.00747,
+        "fontSize": 102.706,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.87
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 700,
+        "score": 0.89054,
+        "iou": 0.90826,
+        "horizontalScale": 0.96125,
+        "fontSize": 103.314,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.82
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 800,
+        "score": 0.88479,
+        "iou": 0.9024,
+        "horizontalScale": 0.96141,
+        "fontSize": 102.706,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.87
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-SemiBold.ttf",
+        "weight": 400,
+        "score": 0.84893,
+        "iou": 0.84893,
+        "horizontalScale": 1.00161,
+        "fontSize": 103.929,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.34
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 700,
+        "score": 0.83247,
+        "iou": 0.84324,
+        "horizontalScale": 0.97243,
+        "fontSize": 103.314,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.82
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 700,
+        "score": 0.83247,
+        "iou": 0.84324,
+        "horizontalScale": 0.97243,
+        "fontSize": 103.314,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.82
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 900,
+        "score": 0.82599,
+        "iou": 0.8435,
+        "horizontalScale": 0.96157,
+        "fontSize": 102.105,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.36
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 800,
+        "score": 0.81254,
+        "iou": 0.82671,
+        "horizontalScale": 0.96694,
+        "fontSize": 102.706,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.3
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 800,
+        "score": 0.81254,
+        "iou": 0.82671,
+        "horizontalScale": 0.96694,
+        "fontSize": 102.706,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.3
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 600,
+        "score": 0.7944,
+        "iou": 0.8158,
+        "horizontalScale": 0.95537,
+        "fontSize": 104.551,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.29
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 900,
+        "score": 0.78011,
+        "iou": 0.7942,
+        "horizontalScale": 0.96707,
+        "fontSize": 102.105,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.36
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 900,
+        "score": 0.78011,
+        "iou": 0.7942,
+        "horizontalScale": 0.96707,
+        "fontSize": 102.105,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.36
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Medium.ttf",
+        "weight": 400,
+        "score": 0.77011,
+        "iou": 0.77011,
+        "horizontalScale": 0.99569,
+        "fontSize": 105.181,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.82
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 500,
+        "score": 0.73162,
+        "iou": 0.74604,
+        "horizontalScale": 0.96654,
+        "fontSize": 104.551,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.29
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 600,
+        "score": 0.73023,
+        "iou": 0.75176,
+        "horizontalScale": 0.95517,
+        "fontSize": 105.181,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.23
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 600,
+        "score": 0.73023,
+        "iou": 0.75176,
+        "horizontalScale": 0.95517,
+        "fontSize": 105.181,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.23
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Regular.ttf",
+        "weight": 400,
+        "score": 0.68342,
+        "iou": 0.68342,
+        "horizontalScale": 1.00183,
+        "fontSize": 105.818,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 162.36
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 500,
+        "score": 0.67818,
+        "iou": 0.69983,
+        "horizontalScale": 0.95496,
+        "fontSize": 105.818,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.77
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 500,
+        "score": 0.67818,
+        "iou": 0.69983,
+        "horizontalScale": 0.95496,
+        "fontSize": 105.818,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.77
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 800,
+        "score": 0.65513,
+        "iou": 0.66584,
+        "horizontalScale": 0.97253,
+        "fontSize": 102.706,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.87
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 700,
+        "score": 0.65275,
+        "iou": 0.66353,
+        "horizontalScale": 0.97243,
+        "fontSize": 103.314,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.82
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 600,
+        "score": 0.64831,
+        "iou": 0.66273,
+        "horizontalScale": 0.96654,
+        "fontSize": 104.551,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.29
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 900,
+        "score": 0.64634,
+        "iou": 0.65699,
+        "horizontalScale": 0.97263,
+        "fontSize": 102.105,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 160.36
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 400,
+        "score": 0.64563,
+        "iou": 0.66741,
+        "horizontalScale": 0.95476,
+        "fontSize": 106.463,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 162.31
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 500,
+        "score": 0.64165,
+        "iou": 0.64901,
+        "horizontalScale": 0.97798,
+        "fontSize": 104.551,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.29
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 400,
+        "score": 0.63827,
+        "iou": 0.65286,
+        "horizontalScale": 0.96627,
+        "fontSize": 105.818,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.77
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 400,
+        "score": 0.63827,
+        "iou": 0.65286,
+        "horizontalScale": 0.96627,
+        "fontSize": 105.818,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.77
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 400,
+        "score": 0.60384,
+        "iou": 0.60767,
+        "horizontalScale": 0.98376,
+        "fontSize": 105.181,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.23
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 300,
+        "score": 0.59189,
+        "iou": 0.60648,
+        "horizontalScale": 0.96627,
+        "fontSize": 105.818,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.77
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 300,
+        "score": 0.57817,
+        "iou": 0.59284,
+        "horizontalScale": 0.96613,
+        "fontSize": 106.463,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.72
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 300,
+        "score": 0.57817,
+        "iou": 0.59284,
+        "horizontalScale": 0.96613,
+        "fontSize": 106.463,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.72
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 200,
+        "score": 0.53601,
+        "iou": 0.54704,
+        "horizontalScale": 0.97202,
+        "fontSize": 105.818,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.77
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 200,
+        "score": 0.51678,
+        "iou": 0.53868,
+        "horizontalScale": 0.95455,
+        "fontSize": 107.117,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 162.26
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 300,
+        "score": 0.50271,
+        "iou": 0.50292,
+        "horizontalScale": 0.98969,
+        "fontSize": 105.818,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 161.77
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 200,
+        "score": 0.43295,
+        "iou": 0.44048,
+        "horizontalScale": 0.97769,
+        "fontSize": 107.117,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1753.0,
+          73.0,
+          1849.0,
+          170.0
+        ],
+        "baseline": 162.26
+      }
+    ],
+    "metric": "ink masks at equal bounding box; horizontalScale is separately penalized; red=source cyan=candidate"
+  },
+  {
+    "category": "latin-italic",
+    "text": "Scene I — Section A",
+    "referenceFrame": 480,
+    "sourceBox": [
+      300,
+      73,
+      513,
+      101
+    ],
+    "best": {
+      "family": "cormorantinfant",
+      "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+      "weight": 500,
+      "score": 0.8023,
+      "iou": 0.80271,
+      "horizontalScale": 0.98937,
+      "fontSize": 26.154,
+      "letterSpacing": 1.162,
+      "inkBox": [
+        303.5,
+        81.5,
+        509.5,
+        98.5
+      ],
+      "baseline": 98.21
+    },
+    "candidates": [
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.8023,
+        "iou": 0.80271,
+        "horizontalScale": 0.98937,
+        "fontSize": 26.154,
+        "letterSpacing": 1.162,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.21
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.8023,
+        "iou": 0.80271,
+        "horizontalScale": 0.98937,
+        "fontSize": 26.154,
+        "letterSpacing": 1.162,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.21
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.78157,
+        "iou": 0.78574,
+        "horizontalScale": 0.98319,
+        "fontSize": 26.154,
+        "letterSpacing": 1.162,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.21
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.78157,
+        "iou": 0.78574,
+        "horizontalScale": 0.98319,
+        "fontSize": 26.154,
+        "letterSpacing": 1.162,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.21
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.74209,
+        "iou": 0.74209,
+        "horizontalScale": 1.00413,
+        "fontSize": 25.932,
+        "letterSpacing": 1.153,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.07
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.74209,
+        "iou": 0.74209,
+        "horizontalScale": 1.00413,
+        "fontSize": 25.932,
+        "letterSpacing": 1.153,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.07
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.67087,
+        "iou": 0.67367,
+        "horizontalScale": 0.98545,
+        "fontSize": 25.932,
+        "letterSpacing": 1.153,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.21
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.67087,
+        "iou": 0.67367,
+        "horizontalScale": 0.98545,
+        "fontSize": 25.932,
+        "letterSpacing": 1.153,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.21
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 300,
+        "score": 0.62182,
+        "iou": 0.62182,
+        "horizontalScale": 1.00909,
+        "fontSize": 25.932,
+        "letterSpacing": 1.153,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.07
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 300,
+        "score": 0.62182,
+        "iou": 0.62182,
+        "horizontalScale": 1.00909,
+        "fontSize": 25.932,
+        "letterSpacing": 1.153,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.07
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.38113,
+        "iou": 0.38113,
+        "horizontalScale": 0.99849,
+        "fontSize": 24.48,
+        "letterSpacing": 1.088,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.09
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.34995,
+        "iou": 0.37286,
+        "horizontalScale": 1.04936,
+        "fontSize": 24.286,
+        "letterSpacing": 1.079,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.1
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.33625,
+        "iou": 0.35291,
+        "horizontalScale": 0.96294,
+        "fontSize": 24.48,
+        "letterSpacing": 1.088,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.09
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.27973,
+        "iou": 0.31627,
+        "horizontalScale": 0.93155,
+        "fontSize": 24.677,
+        "letterSpacing": 0.96,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.09
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 500,
+        "score": 0.2698,
+        "iou": 0.27531,
+        "horizontalScale": 1.01938,
+        "fontSize": 21.549,
+        "letterSpacing": 0.958,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 600,
+        "score": 0.26726,
+        "iou": 0.26726,
+        "horizontalScale": 1.00274,
+        "fontSize": 21.549,
+        "letterSpacing": 0.958,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 800,
+        "score": 0.26297,
+        "iou": 0.30209,
+        "horizontalScale": 0.92756,
+        "fontSize": 24.48,
+        "letterSpacing": 0.816,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.09
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 700,
+        "score": 0.26274,
+        "iou": 0.26274,
+        "horizontalScale": 0.99233,
+        "fontSize": 21.549,
+        "letterSpacing": 0.838,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 800,
+        "score": 0.25744,
+        "iou": 0.25799,
+        "horizontalScale": 1.01099,
+        "fontSize": 21.549,
+        "letterSpacing": 0.359,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 400,
+        "score": 0.25634,
+        "iou": 0.2708,
+        "horizontalScale": 1.0347,
+        "fontSize": 21.549,
+        "letterSpacing": 0.958,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 900,
+        "score": 0.25045,
+        "iou": 0.25045,
+        "horizontalScale": 0.99463,
+        "fontSize": 21.549,
+        "letterSpacing": 0.239,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 800,
+        "score": 0.19331,
+        "iou": 0.19331,
+        "horizontalScale": 1.00921,
+        "fontSize": 21.549,
+        "letterSpacing": 0.479,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 900,
+        "score": 0.19272,
+        "iou": 0.19272,
+        "horizontalScale": 1.00864,
+        "fontSize": 21.25,
+        "letterSpacing": 0.472,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.15
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.18584,
+        "iou": 0.18584,
+        "horizontalScale": 0.99405,
+        "fontSize": 21.549,
+        "letterSpacing": 0.838,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.18065,
+        "iou": 0.18065,
+        "horizontalScale": 0.99106,
+        "fontSize": 21.702,
+        "letterSpacing": 0.965,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.16661,
+        "iou": 0.16718,
+        "horizontalScale": 1.01101,
+        "fontSize": 21.857,
+        "letterSpacing": 0.85,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.14
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.15479,
+        "iou": 0.15479,
+        "horizontalScale": 1.0092,
+        "fontSize": 22.014,
+        "letterSpacing": 0.978,
+        "inkBox": [
+          303.5,
+          81.5,
+          509.5,
+          98.5
+        ],
+        "baseline": 98.13
+      }
+    ],
+    "metric": "ink masks at equal bounding box; horizontalScale is separately penalized; red=source cyan=candidate"
+  },
+  {
+    "category": "bar-counter",
+    "text": "04",
+    "referenceFrame": 480,
+    "sourceBox": [
+      1450,
+      64,
+      1565,
+      168
+    ],
+    "best": {
+      "family": "cormorantgaramond",
+      "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+      "weight": 600,
+      "score": 0.90135,
+      "iou": 0.90135,
+      "horizontalScale": 1.00646,
+      "fontSize": 110.833,
+      "letterSpacing": 0.0,
+      "inkBox": [
+        1465.0,
+        98.5,
+        1553.0,
+        165.0
+      ],
+      "baseline": 143.45
+    },
+    "candidates": [
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.90135,
+        "iou": 0.90135,
+        "horizontalScale": 1.00646,
+        "fontSize": 110.833,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 143.45
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.85003,
+        "iou": 0.8564,
+        "horizontalScale": 1.02084,
+        "fontSize": 110.833,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 143.45
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.83359,
+        "iou": 0.83359,
+        "horizontalScale": 0.99248,
+        "fontSize": 110.833,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 143.45
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.73698,
+        "iou": 0.74335,
+        "horizontalScale": 1.02084,
+        "fontSize": 110.833,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 143.45
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 300,
+        "score": 0.6219,
+        "iou": 0.63257,
+        "horizontalScale": 1.02818,
+        "fontSize": 110.833,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 143.45
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.46204,
+        "iou": 0.48716,
+        "horizontalScale": 1.05325,
+        "fontSize": 102.308,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.86
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.43659,
+        "iou": 0.47091,
+        "horizontalScale": 1.06952,
+        "fontSize": 101.441,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.87
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.42443,
+        "iou": 0.46288,
+        "horizontalScale": 1.0769,
+        "fontSize": 101.441,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.87
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.42263,
+        "iou": 0.46995,
+        "horizontalScale": 0.91497,
+        "fontSize": 98.926,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 150.71
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.42206,
+        "iou": 0.46466,
+        "horizontalScale": 1.08438,
+        "fontSize": 101.441,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.31
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.40653,
+        "iou": 0.47075,
+        "horizontalScale": 0.88956,
+        "fontSize": 98.926,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 151.26
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.38699,
+        "iou": 0.4741,
+        "horizontalScale": 0.85626,
+        "fontSize": 98.926,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 151.26
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 500,
+        "score": 0.37827,
+        "iou": 0.43884,
+        "horizontalScale": 0.89499,
+        "fontSize": 85.5,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 164.05
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.37759,
+        "iou": 0.48053,
+        "horizontalScale": 0.83396,
+        "fontSize": 98.926,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 150.71
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 600,
+        "score": 0.37347,
+        "iou": 0.45399,
+        "horizontalScale": 0.86572,
+        "fontSize": 85.5,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 164.05
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 400,
+        "score": 0.3664,
+        "iou": 0.41229,
+        "horizontalScale": 0.91714,
+        "fontSize": 85.5,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 164.05
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 800,
+        "score": 0.36203,
+        "iou": 0.47546,
+        "horizontalScale": 0.81951,
+        "fontSize": 98.115,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 150.83
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 300,
+        "score": 0.35793,
+        "iou": 0.40472,
+        "horizontalScale": 1.09196,
+        "fontSize": 101.441,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.31
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 900,
+        "score": 0.35121,
+        "iou": 0.47774,
+        "horizontalScale": 0.80181,
+        "fontSize": 97.317,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 150.94
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 700,
+        "score": 0.34531,
+        "iou": 0.44785,
+        "horizontalScale": 0.83452,
+        "fontSize": 85.5,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 164.05
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.33772,
+        "iou": 0.35974,
+        "horizontalScale": 0.95439,
+        "fontSize": 100.588,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.32
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.32334,
+        "iou": 0.33434,
+        "horizontalScale": 0.97206,
+        "fontSize": 100.588,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.32
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.30177,
+        "iou": 0.34521,
+        "horizontalScale": 0.9209,
+        "fontSize": 100.588,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.32
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 800,
+        "score": 0.29902,
+        "iou": 0.4254,
+        "horizontalScale": 0.80201,
+        "fontSize": 85.5,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 164.05
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.25985,
+        "iou": 0.32399,
+        "horizontalScale": 0.88968,
+        "fontSize": 100.588,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.32
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 900,
+        "score": 0.24562,
+        "iou": 0.39992,
+        "horizontalScale": 0.76555,
+        "fontSize": 85.5,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 164.05
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 800,
+        "score": 0.23247,
+        "iou": 0.3083,
+        "horizontalScale": 0.87251,
+        "fontSize": 99.75,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          1465.0,
+          98.5,
+          1553.0,
+          165.0
+        ],
+        "baseline": 163.34
+      }
+    ],
+    "metric": "ink masks at equal bounding box; horizontalScale is separately penalized; red=source cyan=candidate"
+  },
+  {
+    "category": "row-name",
+    "text": "Fl.",
+    "referenceFrame": 480,
+    "sourceBox": [
+      132,
+      228,
+      162,
+      255
+    ],
+    "best": {
+      "family": "cormorantinfant",
+      "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+      "weight": 500,
+      "score": 0.75802,
+      "iou": 0.75802,
+      "horizontalScale": 0.9918,
+      "fontSize": 24.361,
+      "letterSpacing": 0.0,
+      "inkBox": [
+        138.0,
+        231.5,
+        158.0,
+        249.5
+      ],
+      "baseline": 249.23
+    },
+    "candidates": [
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.75802,
+        "iou": 0.75802,
+        "horizontalScale": 0.9918,
+        "fontSize": 24.361,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.23
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.75802,
+        "iou": 0.75802,
+        "horizontalScale": 0.9918,
+        "fontSize": 24.361,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.23
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.75511,
+        "iou": 0.76602,
+        "horizontalScale": 0.97222,
+        "fontSize": 24.361,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.23
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.75511,
+        "iou": 0.76602,
+        "horizontalScale": 0.97222,
+        "fontSize": 24.361,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.23
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.67365,
+        "iou": 0.67365,
+        "horizontalScale": 0.9985,
+        "fontSize": 24.361,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.23
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.67365,
+        "iou": 0.67365,
+        "horizontalScale": 0.9985,
+        "fontSize": 24.361,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.23
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.66937,
+        "iou": 0.68812,
+        "horizontalScale": 0.9596,
+        "fontSize": 24.361,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.23
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.66937,
+        "iou": 0.68812,
+        "horizontalScale": 0.9596,
+        "fontSize": 24.361,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.23
+      },
+      {
+        "family": "cormorantgaramond",
+        "file": "fonts-candidates/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+        "weight": 300,
+        "score": 0.60215,
+        "iou": 0.6079,
+        "horizontalScale": 1.01979,
+        "fontSize": 24.179,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.1
+      },
+      {
+        "family": "cormorantinfant",
+        "file": "fonts-candidates/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+        "weight": 300,
+        "score": 0.60215,
+        "iou": 0.6079,
+        "horizontalScale": 1.01979,
+        "fontSize": 24.179,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.1
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.44685,
+        "iou": 0.51069,
+        "horizontalScale": 0.89012,
+        "fontSize": 22.345,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.13
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 400,
+        "score": 0.4255,
+        "iou": 0.53538,
+        "horizontalScale": 0.82437,
+        "fontSize": 23.478,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.24
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.42393,
+        "iou": 0.5,
+        "horizontalScale": 0.87216,
+        "fontSize": 22.192,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.13
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.42159,
+        "iou": 0.51357,
+        "horizontalScale": 0.84933,
+        "fontSize": 22.192,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.13
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 500,
+        "score": 0.39176,
+        "iou": 0.52691,
+        "horizontalScale": 0.79038,
+        "fontSize": 23.478,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.24
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.37861,
+        "iou": 0.49219,
+        "horizontalScale": 0.8193,
+        "fontSize": 22.192,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.13
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 800,
+        "score": 0.35198,
+        "iou": 0.48052,
+        "horizontalScale": 0.79912,
+        "fontSize": 22.192,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.13
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 600,
+        "score": 0.34669,
+        "iou": 0.50311,
+        "horizontalScale": 0.76285,
+        "fontSize": 23.478,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.24
+      },
+      {
+        "family": "playfairdisplay",
+        "file": "fonts-candidates/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+        "weight": 900,
+        "score": 0.32497,
+        "iou": 0.4669,
+        "horizontalScale": 0.7815,
+        "fontSize": 22.041,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.13
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 500,
+        "score": 0.28314,
+        "iou": 0.38767,
+        "horizontalScale": 0.83175,
+        "fontSize": 24.733,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 248.95
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 400,
+        "score": 0.27387,
+        "iou": 0.34672,
+        "horizontalScale": 0.87684,
+        "fontSize": 24.733,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.09
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 700,
+        "score": 0.26655,
+        "iou": 0.44925,
+        "horizontalScale": 0.73016,
+        "fontSize": 23.478,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.24
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 600,
+        "score": 0.26507,
+        "iou": 0.39187,
+        "horizontalScale": 0.80146,
+        "fontSize": 24.545,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 248.82
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 700,
+        "score": 0.24095,
+        "iou": 0.39341,
+        "horizontalScale": 0.76789,
+        "fontSize": 24.545,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 248.82
+      },
+      {
+        "family": "ebgaramond",
+        "file": "fonts-candidates/ebgaramond/EBGaramond-Italic[wght].ttf",
+        "weight": 800,
+        "score": 0.21783,
+        "iou": 0.38127,
+        "horizontalScale": 0.75397,
+        "fontSize": 24.361,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 248.69
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 800,
+        "score": 0.18132,
+        "iou": 0.39465,
+        "horizontalScale": 0.69382,
+        "fontSize": 23.478,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.24
+      },
+      {
+        "family": "bodonimoda",
+        "file": "fonts-candidates/bodonimoda/BodoniModa-Italic[opsz,wght].ttf",
+        "weight": 900,
+        "score": 0.10092,
+        "iou": 0.34598,
+        "horizontalScale": 0.65808,
+        "fontSize": 23.478,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          138.0,
+          231.5,
+          158.0,
+          249.5
+        ],
+        "baseline": 249.24
+      }
+    ],
+    "metric": "ink masks at equal bounding box; horizontalScale is separately penalized; red=source cyan=candidate"
+  },
+  {
+    "category": "caption-body",
+    "text": "马林巴与钢琴",
+    "referenceFrame": 480,
+    "sourceBox": [
+      155,
+      970,
+      310,
+      1004
+    ],
+    "best": {
+      "family": "sourcehanserifsc",
+      "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+      "weight": 500,
+      "score": 0.81977,
+      "iou": 0.81977,
+      "horizontalScale": 0.99844,
+      "fontSize": 25.03,
+      "letterSpacing": 0.0,
+      "inkBox": [
+        157.5,
+        976.0,
+        305.5,
+        999.5
+      ],
+      "baseline": 997.14
+    },
+    "candidates": [
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 500,
+        "score": 0.81977,
+        "iou": 0.81977,
+        "horizontalScale": 0.99844,
+        "fontSize": 25.03,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.14
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 500,
+        "score": 0.81977,
+        "iou": 0.81977,
+        "horizontalScale": 0.99844,
+        "fontSize": 25.03,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.14
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 400,
+        "score": 0.79582,
+        "iou": 0.7979,
+        "horizontalScale": 0.98663,
+        "fontSize": 25.329,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.25
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 400,
+        "score": 0.79582,
+        "iou": 0.7979,
+        "horizontalScale": 0.98663,
+        "fontSize": 25.329,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.25
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 600,
+        "score": 0.77626,
+        "iou": 0.77626,
+        "horizontalScale": 0.99657,
+        "fontSize": 25.03,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.14
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 600,
+        "score": 0.77626,
+        "iou": 0.77626,
+        "horizontalScale": 0.99657,
+        "fontSize": 25.03,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.14
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 300,
+        "score": 0.73524,
+        "iou": 0.73676,
+        "horizontalScale": 0.98755,
+        "fontSize": 25.329,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.25
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 300,
+        "score": 0.73524,
+        "iou": 0.73676,
+        "horizontalScale": 0.98755,
+        "fontSize": 25.329,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.25
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 700,
+        "score": 0.65658,
+        "iou": 0.65658,
+        "horizontalScale": 1.00392,
+        "fontSize": 24.593,
+        "letterSpacing": 0.273,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.04
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 700,
+        "score": 0.65658,
+        "iou": 0.65658,
+        "horizontalScale": 1.00392,
+        "fontSize": 24.593,
+        "letterSpacing": 0.273,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.04
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 200,
+        "score": 0.64792,
+        "iou": 0.6561,
+        "horizontalScale": 0.97664,
+        "fontSize": 25.636,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.36
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 800,
+        "score": 0.58759,
+        "iou": 0.58759,
+        "horizontalScale": 1.00535,
+        "fontSize": 24.31,
+        "letterSpacing": 0.54,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.07
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 800,
+        "score": 0.58759,
+        "iou": 0.58759,
+        "horizontalScale": 1.00535,
+        "fontSize": 24.31,
+        "letterSpacing": 0.54,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.07
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 900,
+        "score": 0.53716,
+        "iou": 0.53716,
+        "horizontalScale": 1.00927,
+        "fontSize": 24.171,
+        "letterSpacing": 0.537,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.08
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 900,
+        "score": 0.53716,
+        "iou": 0.53716,
+        "horizontalScale": 1.00927,
+        "fontSize": 24.171,
+        "letterSpacing": 0.537,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.08
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 500,
+        "score": 0.51326,
+        "iou": 0.51326,
+        "horizontalScale": 0.99938,
+        "fontSize": 25.03,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.14
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Medium.ttf",
+        "weight": 400,
+        "score": 0.51242,
+        "iou": 0.51242,
+        "horizontalScale": 0.99815,
+        "fontSize": 25.179,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.4
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 600,
+        "score": 0.49522,
+        "iou": 0.49522,
+        "horizontalScale": 1.00529,
+        "fontSize": 24.882,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.15
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-SemiBold.ttf",
+        "weight": 400,
+        "score": 0.49451,
+        "iou": 0.49451,
+        "horizontalScale": 1.00315,
+        "fontSize": 25.03,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.41
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 700,
+        "score": 0.48175,
+        "iou": 0.48175,
+        "horizontalScale": 0.99257,
+        "fontSize": 24.737,
+        "letterSpacing": 0.55,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.03
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Regular.ttf",
+        "weight": 400,
+        "score": 0.47475,
+        "iou": 0.47475,
+        "horizontalScale": 0.99221,
+        "fontSize": 25.329,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.53
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 500,
+        "score": 0.47225,
+        "iou": 0.49754,
+        "horizontalScale": 1.05355,
+        "fontSize": 23.5,
+        "letterSpacing": 0.261,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.63
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Bold.ttf",
+        "weight": 400,
+        "score": 0.46979,
+        "iou": 0.47005,
+        "horizontalScale": 1.01048,
+        "fontSize": 24.593,
+        "letterSpacing": 0.273,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.18
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-ExtraBold.ttf",
+        "weight": 400,
+        "score": 0.46979,
+        "iou": 0.47005,
+        "horizontalScale": 1.01048,
+        "fontSize": 24.593,
+        "letterSpacing": 0.273,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.18
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 800,
+        "score": 0.45793,
+        "iou": 0.45793,
+        "horizontalScale": 1.00233,
+        "fontSize": 24.451,
+        "letterSpacing": 0.543,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.92
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 600,
+        "score": 0.4558,
+        "iou": 0.4695,
+        "horizontalScale": 1.03338,
+        "fontSize": 23.5,
+        "letterSpacing": 0.783,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.63
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 400,
+        "score": 0.45544,
+        "iou": 0.4564,
+        "horizontalScale": 0.98848,
+        "fontSize": 25.329,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.39
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 700,
+        "score": 0.44467,
+        "iou": 0.44467,
+        "horizontalScale": 1.00498,
+        "fontSize": 23.5,
+        "letterSpacing": 1.567,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.63
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 900,
+        "score": 0.4335,
+        "iou": 0.4335,
+        "horizontalScale": 1.00812,
+        "fontSize": 24.31,
+        "letterSpacing": 0.54,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.93
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 400,
+        "score": 0.42564,
+        "iou": 0.45149,
+        "horizontalScale": 1.05453,
+        "fontSize": 23.5,
+        "letterSpacing": 0.261,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.63
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 800,
+        "score": 0.42522,
+        "iou": 0.42522,
+        "horizontalScale": 0.99527,
+        "fontSize": 23.5,
+        "letterSpacing": 1.828,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.63
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 900,
+        "score": 0.415,
+        "iou": 0.41625,
+        "horizontalScale": 1.01216,
+        "fontSize": 23.5,
+        "letterSpacing": 1.306,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.63
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 300,
+        "score": 0.40442,
+        "iou": 0.41512,
+        "horizontalScale": 0.97255,
+        "fontSize": 25.793,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.49
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 300,
+        "score": 0.39866,
+        "iou": 0.42508,
+        "horizontalScale": 1.05551,
+        "fontSize": 23.5,
+        "letterSpacing": 0.261,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.63
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 200,
+        "score": 0.36634,
+        "iou": 0.39893,
+        "horizontalScale": 1.06643,
+        "fontSize": 23.5,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 996.63
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 200,
+        "score": 0.31689,
+        "iou": 0.3307,
+        "horizontalScale": 0.96753,
+        "fontSize": 25.951,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          976.0,
+          305.5,
+          999.5
+        ],
+        "baseline": 997.63
+      }
+    ],
+    "metric": "ink masks at equal bounding box; horizontalScale is separately penalized; red=source cyan=candidate"
+  },
+  {
+    "category": "caption-title",
+    "text": "F 大调 · 动机 M 登场",
+    "referenceFrame": 480,
+    "sourceBox": [
+      153,
+      916,
+      533,
+      959
+    ],
+    "best": {
+      "family": "notoserifsc",
+      "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+      "weight": 700,
+      "score": 0.92401,
+      "iou": 0.92401,
+      "horizontalScale": 0.99658,
+      "fontSize": 37.895,
+      "letterSpacing": 1.684,
+      "inkBox": [
+        157.5,
+        922.5,
+        525.5,
+        958.5
+      ],
+      "baseline": 954.92
+    },
+    "candidates": [
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 700,
+        "score": 0.92401,
+        "iou": 0.92401,
+        "horizontalScale": 0.99658,
+        "fontSize": 37.895,
+        "letterSpacing": 1.684,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.92
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 700,
+        "score": 0.92401,
+        "iou": 0.92401,
+        "horizontalScale": 0.99658,
+        "fontSize": 37.895,
+        "letterSpacing": 1.684,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.92
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 800,
+        "score": 0.86054,
+        "iou": 0.86327,
+        "horizontalScale": 0.98555,
+        "fontSize": 37.674,
+        "letterSpacing": 2.093,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.73
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 800,
+        "score": 0.86054,
+        "iou": 0.86327,
+        "horizontalScale": 0.98555,
+        "fontSize": 37.674,
+        "letterSpacing": 2.093,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.73
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 600,
+        "score": 0.81919,
+        "iou": 0.81919,
+        "horizontalScale": 0.99613,
+        "fontSize": 38.571,
+        "letterSpacing": 1.286,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.07
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 600,
+        "score": 0.81919,
+        "iou": 0.81919,
+        "horizontalScale": 0.99613,
+        "fontSize": 38.571,
+        "letterSpacing": 1.286,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.07
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 900,
+        "score": 0.81069,
+        "iou": 0.81376,
+        "horizontalScale": 0.985,
+        "fontSize": 37.674,
+        "letterSpacing": 2.093,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.73
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 900,
+        "score": 0.81069,
+        "iou": 0.81376,
+        "horizontalScale": 0.985,
+        "fontSize": 37.674,
+        "letterSpacing": 2.093,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.73
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 500,
+        "score": 0.74648,
+        "iou": 0.74648,
+        "horizontalScale": 0.99671,
+        "fontSize": 38.571,
+        "letterSpacing": 1.286,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.07
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 500,
+        "score": 0.74648,
+        "iou": 0.74648,
+        "horizontalScale": 0.99671,
+        "fontSize": 38.571,
+        "letterSpacing": 1.286,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.07
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 400,
+        "score": 0.62796,
+        "iou": 0.62973,
+        "horizontalScale": 0.98714,
+        "fontSize": 39.036,
+        "letterSpacing": 1.301,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.25
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 400,
+        "score": 0.62796,
+        "iou": 0.62973,
+        "horizontalScale": 0.98714,
+        "fontSize": 39.036,
+        "letterSpacing": 1.301,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.25
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 300,
+        "score": 0.55424,
+        "iou": 0.55424,
+        "horizontalScale": 1.00289,
+        "fontSize": 39.036,
+        "letterSpacing": 0.867,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.25
+      },
+      {
+        "family": "sourcehanserifsc",
+        "file": "fonts-candidates/sourcehanserifsc/SourceHanSerifSC-VF.ttf",
+        "weight": 300,
+        "score": 0.55424,
+        "iou": 0.55424,
+        "horizontalScale": 1.00289,
+        "fontSize": 39.036,
+        "letterSpacing": 0.867,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.25
+      },
+      {
+        "family": "notoserifsc",
+        "file": "fonts-candidates/notoserifsc/NotoSerifSC[wght].ttf",
+        "weight": 200,
+        "score": 0.50142,
+        "iou": 0.50142,
+        "horizontalScale": 0.99744,
+        "fontSize": 39.273,
+        "letterSpacing": 0.873,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.23
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 800,
+        "score": 0.37782,
+        "iou": 0.43178,
+        "horizontalScale": 1.10511,
+        "fontSize": 36.0,
+        "letterSpacing": 0.4,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.1
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 900,
+        "score": 0.36902,
+        "iou": 0.42298,
+        "horizontalScale": 1.10511,
+        "fontSize": 36.0,
+        "letterSpacing": 0.4,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.1
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 700,
+        "score": 0.36264,
+        "iou": 0.41768,
+        "horizontalScale": 1.1071,
+        "fontSize": 36.0,
+        "letterSpacing": 0.4,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.1
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 600,
+        "score": 0.3462,
+        "iou": 0.41144,
+        "horizontalScale": 1.12607,
+        "fontSize": 36.0,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.1
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 900,
+        "score": 0.34121,
+        "iou": 0.34121,
+        "horizontalScale": 1.00518,
+        "fontSize": 37.895,
+        "letterSpacing": 0.421,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.92
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 800,
+        "score": 0.33968,
+        "iou": 0.33968,
+        "horizontalScale": 1.00924,
+        "fontSize": 37.895,
+        "letterSpacing": 0.421,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.92
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 700,
+        "score": 0.33069,
+        "iou": 0.33069,
+        "horizontalScale": 1.00682,
+        "fontSize": 38.118,
+        "letterSpacing": 0.424,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.11
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 500,
+        "score": 0.32487,
+        "iou": 0.381,
+        "horizontalScale": 1.1091,
+        "fontSize": 36.0,
+        "letterSpacing": 0.4,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.1
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Regular.ttf",
+        "weight": 400,
+        "score": 0.31964,
+        "iou": 0.33624,
+        "horizontalScale": 1.03839,
+        "fontSize": 38.802,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.27
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 600,
+        "score": 0.31737,
+        "iou": 0.31737,
+        "horizontalScale": 1.00498,
+        "fontSize": 38.343,
+        "letterSpacing": 0.426,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.09
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Medium.ttf",
+        "weight": 400,
+        "score": 0.31636,
+        "iou": 0.33764,
+        "horizontalScale": 1.04652,
+        "fontSize": 38.571,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.29
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-SemiBold.ttf",
+        "weight": 400,
+        "score": 0.31513,
+        "iou": 0.33997,
+        "horizontalScale": 1.05275,
+        "fontSize": 38.343,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.09
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 500,
+        "score": 0.30597,
+        "iou": 0.30708,
+        "horizontalScale": 1.01192,
+        "fontSize": 38.802,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.27
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-Bold.ttf",
+        "weight": 400,
+        "score": 0.30407,
+        "iou": 0.33561,
+        "horizontalScale": 1.06456,
+        "fontSize": 37.895,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.92
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 400,
+        "score": 0.29122,
+        "iou": 0.33873,
+        "horizontalScale": 1.09329,
+        "fontSize": 36.0,
+        "letterSpacing": 0.8,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.1
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 400,
+        "score": 0.2764,
+        "iou": 0.28037,
+        "horizontalScale": 1.01674,
+        "fontSize": 38.802,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.27
+      },
+      {
+        "family": "shipporimincho",
+        "file": "fonts-candidates/shipporimincho/ShipporiMincho-ExtraBold.ttf",
+        "weight": 400,
+        "score": 0.27307,
+        "iou": 0.30533,
+        "horizontalScale": 1.06585,
+        "fontSize": 37.895,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.92
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 300,
+        "score": 0.26845,
+        "iou": 0.31631,
+        "horizontalScale": 1.09394,
+        "fontSize": 36.0,
+        "letterSpacing": 0.8,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.1
+      },
+      {
+        "family": "notoserifjp",
+        "file": "fonts-candidates/notoserifjp/NotoSerifJP[wght].ttf",
+        "weight": 200,
+        "score": 0.25091,
+        "iou": 0.28086,
+        "horizontalScale": 1.06174,
+        "fontSize": 36.0,
+        "letterSpacing": 1.6,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 954.1
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 300,
+        "score": 0.21552,
+        "iou": 0.21727,
+        "horizontalScale": 1.01301,
+        "fontSize": 39.273,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.45
+      },
+      {
+        "family": "notosanssc",
+        "file": "fonts-candidates/notosanssc/NotoSansSC[wght].ttf",
+        "weight": 200,
+        "score": 0.18958,
+        "iou": 0.18958,
+        "horizontalScale": 1.00869,
+        "fontSize": 39.512,
+        "letterSpacing": 0.0,
+        "inkBox": [
+          157.5,
+          922.5,
+          525.5,
+          958.5
+        ],
+        "baseline": 955.43
+      }
+    ],
+    "metric": "ink masks at equal bounding box; horizontalScale is separately penalized; red=source cyan=candidate"
+  }
+]

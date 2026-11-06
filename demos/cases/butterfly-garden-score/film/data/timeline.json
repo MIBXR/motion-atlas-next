@@ -1,0 +1,2005 @@
+[
+  {
+    "t0": 0.0,
+    "t1": 2.31666667,
+    "scene": "序幕",
+    "sceneEn": "Prologue — bars 1–2",
+    "keyJa": null,
+    "keyEn": null,
+    "barsRange": [
+      1,
+      2
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Prologue — bars 1–2",
+      "title": "蝶の舞う庭",
+      "body": "劇場版 少女☆歌劇 レヴュースタァライト 劇伴"
+    },
+    "bgState": "white",
+    "shot": [
+      "intro"
+    ]
+  },
+  {
+    "t0": 2.31666667,
+    "t1": 3.01666667,
+    "scene": "序幕",
+    "sceneEn": "Prologue — bars 1–2",
+    "keyJa": null,
+    "keyEn": null,
+    "barsRange": [
+      1,
+      2
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 1–2 — Prologue",
+      "title": "幕起",
+      "body": "弦乐 trill 渐强到 f，3/8 小节里竖琴滑奏，帷幕升起"
+    },
+    "bgState": "white",
+    "shot": [
+      "intro",
+      "caption-01"
+    ]
+  },
+  {
+    "t0": 3.01666667,
+    "t1": 3.21666667,
+    "scene": "序幕",
+    "sceneEn": "Prologue — bars 1–2",
+    "keyJa": null,
+    "keyEn": null,
+    "barsRange": [
+      1,
+      2
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 1–2 — Prologue",
+      "title": "幕起",
+      "body": "弦乐 trill 渐强到 f，3/8 小节里竖琴滑奏，帷幕升起"
+    },
+    "bgState": "white",
+    "shot": [
+      "intro"
+    ]
+  },
+  {
+    "t0": 3.21666667,
+    "t1": 3.83333333,
+    "scene": "序幕",
+    "sceneEn": "Prologue — bars 1–2",
+    "keyJa": null,
+    "keyEn": null,
+    "barsRange": [
+      1,
+      2
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 1–2 — Prologue",
+      "title": "幕起",
+      "body": "弦乐 trill 渐强到 f，3/8 小节里竖琴滑奏，帷幕升起"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 3.83333333,
+    "t1": 4.58333333,
+    "scene": "序幕",
+    "sceneEn": "Prologue — bars 1–2",
+    "keyJa": null,
+    "keyEn": null,
+    "barsRange": [
+      1,
+      2
+    ],
+    "meter": "3/8",
+    "caption": {
+      "eyebrow": "Bars 1–2 — Prologue",
+      "title": "幕起",
+      "body": "弦乐 trill 渐强到 f，3/8 小节里竖琴滑奏，帷幕升起"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 4.58333333,
+    "t1": 4.78333333,
+    "scene": "序幕",
+    "sceneEn": "Prologue — bars 1–2",
+    "keyJa": null,
+    "keyEn": null,
+    "barsRange": [
+      1,
+      2
+    ],
+    "meter": "3/8",
+    "caption": {
+      "eyebrow": "Bars 1–2 — Prologue",
+      "title": "幕起",
+      "body": "弦乐 trill 渐强到 f，3/8 小节里竖琴滑奏，帷幕升起"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-02"
+    ]
+  },
+  {
+    "t0": 4.78333333,
+    "t1": 5.43333333,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 3–4 — Section A · Oboe",
+      "title": "F 大调 · 动机 M 登场",
+      "body": "马林巴与钢琴 giocoso 铺底；双簧管吹出 7 1 3 5，少女歌剧标志性的「呼唤」"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-02"
+    ]
+  },
+  {
+    "t0": 5.43333333,
+    "t1": 8.41666667,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 3–4 — Section A · Oboe",
+      "title": "F 大调 · 动机 M 登场",
+      "body": "马林巴与钢琴 giocoso 铺底；双簧管吹出 7 1 3 5，少女歌剧标志性的「呼唤」"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 8.41666667,
+    "t1": 8.45,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 3–4 — Section A · Oboe",
+      "title": "F 大调 · 动机 M 登场",
+      "body": "马林巴与钢琴 giocoso 铺底；双簧管吹出 7 1 3 5，少女歌剧标志性的「呼唤」"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-03"
+    ]
+  },
+  {
+    "t0": 8.45,
+    "t1": 8.6,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 3–4 — Section A · Oboe",
+      "title": "F 大调 · 动机 M 登场",
+      "body": "马林巴与钢琴 giocoso 铺底；双簧管吹出 7 1 3 5，少女歌剧标志性的「呼唤」"
+    },
+    "bgState": "white",
+    "shot": [
+      "focus-ob-va",
+      "caption-03"
+    ]
+  },
+  {
+    "t0": 8.6,
+    "t1": 9.21666667,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 5–6 — Viola",
+      "title": "第一次呼应",
+      "body": "中提琴晚一小节模仿动机 M；低音拨弦里的 B♮ 带来明亮的悬浮感"
+    },
+    "bgState": "white",
+    "shot": [
+      "focus-ob-va",
+      "caption-03"
+    ]
+  },
+  {
+    "t0": 9.21666667,
+    "t1": 12.05,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 5–6 — Viola",
+      "title": "第一次呼应",
+      "body": "中提琴晚一小节模仿动机 M；低音拨弦里的 B♮ 带来明亮的悬浮感"
+    },
+    "bgState": "white",
+    "shot": [
+      "focus-ob-va"
+    ]
+  },
+  {
+    "t0": 12.05,
+    "t1": 12.25,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 5–6 — Viola",
+      "title": "第一次呼应",
+      "body": "中提琴晚一小节模仿动机 M；低音拨弦里的 B♮ 带来明亮的悬浮感"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 12.25,
+    "t1": 12.43333333,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 5–6 — Viola",
+      "title": "第一次呼应",
+      "body": "中提琴晚一小节模仿动机 M；低音拨弦里的 B♮ 带来明亮的悬浮感"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-04"
+    ]
+  },
+  {
+    "t0": 12.43333333,
+    "t1": 13.01666667,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 7–8 — Flute, Clarinet, Vn.II · Horns",
+      "title": "动机传入铜管",
+      "body": "三个声部齐奏断奏音型，如蝶翅轻振；圆号齐奏接过动机 M"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-04"
+    ]
+  },
+  {
+    "t0": 13.01666667,
+    "t1": 16.11666667,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 7–8 — Flute, Clarinet, Vn.II · Horns",
+      "title": "动机传入铜管",
+      "body": "三个声部齐奏断奏音型，如蝶翅轻振；圆号齐奏接过动机 M"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 16.11666667,
+    "t1": 16.28333333,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 7–8 — Flute, Clarinet, Vn.II · Horns",
+      "title": "动机传入铜管",
+      "body": "三个声部齐奏断奏音型，如蝶翅轻振；圆号齐奏接过动机 M"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-05"
+    ]
+  },
+  {
+    "t0": 16.28333333,
+    "t1": 16.83333333,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 9–10 — Texture",
+      "title": "四层织体，推向转调",
+      "body": "长音线 · 拨弦低音 · 断奏音型 · 键盘底色；铜管渐强，吊镲滚奏"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-05"
+    ]
+  },
+  {
+    "t0": 16.83333333,
+    "t1": 19.98333333,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 9–10 — Texture",
+      "title": "四层织体，推向转调",
+      "body": "长音线 · 拨弦低音 · 断奏音型 · 键盘底色；铜管渐强，吊镲滚奏"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 19.98333333,
+    "t1": 20.08333333,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 9–10 — Texture",
+      "title": "四层织体，推向转调",
+      "body": "长音线 · 拨弦低音 · 断奏音型 · 键盘底色；铜管渐强，吊镲滚奏"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-06"
+    ]
+  },
+  {
+    "t0": 20.08333333,
+    "t1": 20.15,
+    "scene": "第一場",
+    "sceneEn": "Scene I — Section A · bars 3–10",
+    "keyJa": "ヘ長調",
+    "keyEn": "F major",
+    "barsRange": [
+      3,
+      10
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 9–10 — Texture",
+      "title": "四层织体，推向转调",
+      "body": "长音线 · 拨弦低音 · 断奏音型 · 键盘底色；铜管渐强，吊镲滚奏"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-1",
+      "caption-06"
+    ]
+  },
+  {
+    "t0": 20.15,
+    "t1": 21.06666667,
+    "scene": "第二場",
+    "sceneEn": "Scene II — Section B · bars 11–14",
+    "keyJa": "ニ長調",
+    "keyEn": "D major",
+    "barsRange": [
+      11,
+      14
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 11–12 — Section B",
+      "title": "F → D：下行小三度转调",
+      "body": "全体 f；第一小提琴 espressivo 唱出主题，单簧管接住动机 M"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-1",
+      "giant-scene-ii",
+      "caption-06"
+    ]
+  },
+  {
+    "t0": 21.06666667,
+    "t1": 21.13333333,
+    "scene": "第二場",
+    "sceneEn": "Scene II — Section B · bars 11–14",
+    "keyJa": "ニ長調",
+    "keyEn": "D major",
+    "barsRange": [
+      11,
+      14
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 11–12 — Section B",
+      "title": "F → D：下行小三度转调",
+      "body": "全体 f；第一小提琴 espressivo 唱出主题，单簧管接住动机 M"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-1",
+      "giant-scene-ii"
+    ]
+  },
+  {
+    "t0": 21.13333333,
+    "t1": 23.11666667,
+    "scene": "第二場",
+    "sceneEn": "Scene II — Section B · bars 11–14",
+    "keyJa": "ニ長調",
+    "keyEn": "D major",
+    "barsRange": [
+      11,
+      14
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 11–12 — Section B",
+      "title": "F → D：下行小三度转调",
+      "body": "全体 f；第一小提琴 espressivo 唱出主题，单簧管接住动机 M"
+    },
+    "bgState": "red",
+    "shot": [
+      "giant-scene-ii"
+    ]
+  },
+  {
+    "t0": 23.11666667,
+    "t1": 23.58333333,
+    "scene": "第二場",
+    "sceneEn": "Scene II — Section B · bars 11–14",
+    "keyJa": "ニ長調",
+    "keyEn": "D major",
+    "barsRange": [
+      11,
+      14
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 11–12 — Section B",
+      "title": "F → D：下行小三度转调",
+      "body": "全体 f；第一小提琴 espressivo 唱出主题，单簧管接住动机 M"
+    },
+    "bgState": "red",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 23.58333333,
+    "t1": 23.93333333,
+    "scene": "第二場",
+    "sceneEn": "Scene II — Section B · bars 11–14",
+    "keyJa": "ニ長調",
+    "keyEn": "D major",
+    "barsRange": [
+      11,
+      14
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 11–12 — Section B",
+      "title": "F → D：下行小三度转调",
+      "body": "全体 f；第一小提琴 espressivo 唱出主题，单簧管接住动机 M"
+    },
+    "bgState": "red",
+    "shot": [
+      "caption-07"
+    ]
+  },
+  {
+    "t0": 23.93333333,
+    "t1": 24.61666667,
+    "scene": "第二場",
+    "sceneEn": "Scene II — Section B · bars 11–14",
+    "keyJa": "ニ長調",
+    "keyEn": "D major",
+    "barsRange": [
+      11,
+      14
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 13–14 — Horns",
+      "title": "一问一答",
+      "body": "圆号晚一小节回应单簧管，动机在木管与铜管之间往返"
+    },
+    "bgState": "red",
+    "shot": [
+      "caption-07"
+    ]
+  },
+  {
+    "t0": 24.61666667,
+    "t1": 27.58333333,
+    "scene": "第二場",
+    "sceneEn": "Scene II — Section B · bars 11–14",
+    "keyJa": "ニ長調",
+    "keyEn": "D major",
+    "barsRange": [
+      11,
+      14
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 13–14 — Horns",
+      "title": "一问一答",
+      "body": "圆号晚一小节回应单簧管，动机在木管与铜管之间往返"
+    },
+    "bgState": "red",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 27.58333333,
+    "t1": 27.66666667,
+    "scene": "第二場",
+    "sceneEn": "Scene II — Section B · bars 11–14",
+    "keyJa": "ニ長調",
+    "keyEn": "D major",
+    "barsRange": [
+      11,
+      14
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 13–14 — Horns",
+      "title": "一问一答",
+      "body": "圆号晚一小节回应单簧管，动机在木管与铜管之间往返"
+    },
+    "bgState": "red",
+    "shot": [
+      "caption-08"
+    ]
+  },
+  {
+    "t0": 27.66666667,
+    "t1": 27.76666667,
+    "scene": "第二場",
+    "sceneEn": "Scene II — Section B · bars 11–14",
+    "keyJa": "ニ長調",
+    "keyEn": "D major",
+    "barsRange": [
+      11,
+      14
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 13–14 — Horns",
+      "title": "一问一答",
+      "body": "圆号晚一小节回应单簧管，动机在木管与铜管之间往返"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-2",
+      "caption-08"
+    ]
+  },
+  {
+    "t0": 27.76666667,
+    "t1": 28.68333333,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 15–16 — Interlude · Flute",
+      "title": "D → B♭ · 首尾呼应",
+      "body": "mp dolce；动机 M 回到长笛，7 1 3 5 第四次出现，每四小节一次"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-2",
+      "caption-08"
+    ]
+  },
+  {
+    "t0": 28.68333333,
+    "t1": 28.9,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 15–16 — Interlude · Flute",
+      "title": "D → B♭ · 首尾呼应",
+      "body": "mp dolce；动机 M 回到长笛，7 1 3 5 第四次出现，每四小节一次"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-2"
+    ]
+  },
+  {
+    "t0": 28.9,
+    "t1": 31.41666667,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 15–16 — Interlude · Flute",
+      "title": "D → B♭ · 首尾呼应",
+      "body": "mp dolce；动机 M 回到长笛，7 1 3 5 第四次出现，每四小节一次"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 31.41666667,
+    "t1": 31.6,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 15–16 — Interlude · Flute",
+      "title": "D → B♭ · 首尾呼应",
+      "body": "mp dolce；动机 M 回到长笛，7 1 3 5 第四次出现，每四小节一次"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-09"
+    ]
+  },
+  {
+    "t0": 31.6,
+    "t1": 32.08333333,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 17–20 — Interlude",
+      "title": "长笛再次呼出 7135",
+      "body": "mp dolce；动机 M 回到长笛，7 1 3 5 第四次出现，每四小节一次"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-09"
+    ]
+  },
+  {
+    "t0": 32.08333333,
+    "t1": 39.05,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 17–20 — Interlude",
+      "title": "长笛再次呼出 7135",
+      "body": "mp dolce；动机 M 回到长笛，7 1 3 5 第四次出现，每四小节一次"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 39.05,
+    "t1": 39.23333333,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 17–20 — Interlude",
+      "title": "长笛再次呼出 7135",
+      "body": "mp dolce；动机 M 回到长笛，7 1 3 5 第四次出现，每四小节一次"
+    },
+    "bgState": "white",
+    "shot": [
+      "cadence-key-ladder",
+      "caption-10"
+    ]
+  },
+  {
+    "t0": 39.23333333,
+    "t1": 40.03333333,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 21–22 — Cadence",
+      "title": "结构仍属间奏，调性已入 A",
+      "body": "非常精巧的衔接段。结构属于前段，调性属于后段，A 大调先于第 23 小节的调号到来"
+    },
+    "bgState": "white",
+    "shot": [
+      "cadence-key-ladder",
+      "caption-10"
+    ]
+  },
+  {
+    "t0": 40.03333333,
+    "t1": 43.28333333,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 21–22 — Cadence",
+      "title": "结构仍属间奏，调性已入 A",
+      "body": "非常精巧的衔接段。结构属于前段，调性属于后段，A 大调先于第 23 小节的调号到来"
+    },
+    "bgState": "white",
+    "shot": [
+      "cadence-key-ladder"
+    ]
+  },
+  {
+    "t0": 43.28333333,
+    "t1": 43.46666667,
+    "scene": "間奏",
+    "sceneEn": "Interlude — bars 15–22",
+    "keyJa": "変ロ長調",
+    "keyEn": "B♭ major",
+    "barsRange": [
+      15,
+      22
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 21–22 — Cadence",
+      "title": "结构仍属间奏，调性已入 A",
+      "body": "非常精巧的衔接段。结构属于前段，调性属于后段，A 大调先于第 23 小节的调号到来"
+    },
+    "bgState": "white",
+    "shot": [
+      "cadence-key-ladder",
+      "caption-11"
+    ]
+  },
+  {
+    "t0": 43.46666667,
+    "t1": 43.6,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 23–26 — Section C",
+      "title": "B♭ → A：下行半音 · scherzando",
+      "body": "♩.=61；长笛、短笛与第一小提琴重拾第 7–10 小节的断奏音型"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-11"
+    ]
+  },
+  {
+    "t0": 43.6,
+    "t1": 44.01666667,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 23–26 — Section C",
+      "title": "B♭ → A：下行半音 · scherzando",
+      "body": "♩.=61；长笛、短笛与第一小提琴重拾第 7–10 小节的断奏音型"
+    },
+    "bgState": "white",
+    "shot": [
+      "giant-scene-iii",
+      "caption-11"
+    ]
+  },
+  {
+    "t0": 44.01666667,
+    "t1": 47.31666667,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 23–26 — Section C",
+      "title": "B♭ → A：下行半音 · scherzando",
+      "body": "♩.=61；长笛、短笛与第一小提琴重拾第 7–10 小节的断奏音型"
+    },
+    "bgState": "white",
+    "shot": [
+      "giant-scene-iii"
+    ]
+  },
+  {
+    "t0": 47.31666667,
+    "t1": 50.88333333,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 23–26 — Section C",
+      "title": "B♭ → A：下行半音 · scherzando",
+      "body": "♩.=61；长笛、短笛与第一小提琴重拾第 7–10 小节的断奏音型"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 50.88333333,
+    "t1": 51.08333333,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 23–26 — Section C",
+      "title": "B♭ → A：下行半音 · scherzando",
+      "body": "♩.=61；长笛、短笛与第一小提琴重拾第 7–10 小节的断奏音型"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-12"
+    ]
+  },
+  {
+    "t0": 51.08333333,
+    "t1": 51.61666667,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 27–31 — Build-up",
+      "title": "a b 三次反复，推向高潮",
+      "body": "第 30 小节渐强到 f；3/8 小节里竖琴滑奏、吊镲滚奏，落到 D 段"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-12"
+    ]
+  },
+  {
+    "t0": 51.61666667,
+    "t1": 56.46666667,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 27–31 — Build-up",
+      "title": "a b 三次反复，推向高潮",
+      "body": "第 30 小节渐强到 f；3/8 小节里竖琴滑奏、吊镲滚奏，落到 D 段"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 56.46666667,
+    "t1": 58.78333333,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 27–31 — Build-up",
+      "title": "a b 三次反复，推向高潮",
+      "body": "第 30 小节渐强到 f；3/8 小节里竖琴滑奏、吊镲滚奏，落到 D 段"
+    },
+    "bgState": "white",
+    "shot": [
+      "focus-cym-hp"
+    ]
+  },
+  {
+    "t0": 58.78333333,
+    "t1": 59.75,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "3/8",
+    "caption": {
+      "eyebrow": "Bars 27–31 — Build-up",
+      "title": "a b 三次反复，推向高潮",
+      "body": "第 30 小节渐强到 f；3/8 小节里竖琴滑奏、吊镲滚奏，落到 D 段"
+    },
+    "bgState": "white",
+    "shot": [
+      "focus-cym-hp"
+    ]
+  },
+  {
+    "t0": 59.75,
+    "t1": 59.85,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "3/8",
+    "caption": {
+      "eyebrow": "Bars 27–31 — Build-up",
+      "title": "a b 三次反复，推向高潮",
+      "body": "第 30 小节渐强到 f；3/8 小节里竖琴滑奏、吊镲滚奏，落到 D 段"
+    },
+    "bgState": "white",
+    "shot": [
+      "focus-cym-hp",
+      "caption-13"
+    ]
+  },
+  {
+    "t0": 59.85,
+    "t1": 59.95,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "3/8",
+    "caption": {
+      "eyebrow": "Bars 27–31 — Build-up",
+      "title": "a b 三次反复，推向高潮",
+      "body": "第 30 小节渐强到 f；3/8 小节里竖琴滑奏、吊镲滚奏，落到 D 段"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-3",
+      "focus-cym-hp",
+      "caption-13"
+    ]
+  },
+  {
+    "t0": 59.95,
+    "t1": 60.2,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 32–35 — Section D",
+      "title": "奏响吧！华尔兹全奏 f！",
+      "body": "克洛蒂娜落地起舞，大管与大提琴唱出新主题，小提琴 leggiero 如蝶翅轻扑；双簧管吹出\nhook 的变体"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-3",
+      "focus-cym-hp",
+      "caption-13"
+    ]
+  },
+  {
+    "t0": 60.2,
+    "t1": 60.86666667,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 32–35 — Section D",
+      "title": "奏响吧！华尔兹全奏 f！",
+      "body": "克洛蒂娜落地起舞，大管与大提琴唱出新主题，小提琴 leggiero 如蝶翅轻扑；双簧管吹出\nhook 的变体"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-3",
+      "caption-13"
+    ]
+  },
+  {
+    "t0": 60.86666667,
+    "t1": 60.91666667,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 32–35 — Section D",
+      "title": "奏响吧！华尔兹全奏 f！",
+      "body": "克洛蒂娜落地起舞，大管与大提琴唱出新主题，小提琴 leggiero 如蝶翅轻扑；双簧管吹出\nhook 的变体"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-3"
+    ]
+  },
+  {
+    "t0": 60.91666667,
+    "t1": 67.58333333,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 32–35 — Section D",
+      "title": "奏响吧！华尔兹全奏 f！",
+      "body": "克洛蒂娜落地起舞，大管与大提琴唱出新主题，小提琴 leggiero 如蝶翅轻扑；双簧管吹出\nhook 的变体"
+    },
+    "bgState": "red",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 67.58333333,
+    "t1": 67.78333333,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 32–35 — Section D",
+      "title": "奏响吧！华尔兹全奏 f！",
+      "body": "克洛蒂娜落地起舞，大管与大提琴唱出新主题，小提琴 leggiero 如蝶翅轻扑；双簧管吹出\nhook 的变体"
+    },
+    "bgState": "red",
+    "shot": [
+      "caption-14"
+    ]
+  },
+  {
+    "t0": 67.78333333,
+    "t1": 68.45,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 36–39 — Tutti",
+      "title": "木管与圓号齐唱 dolce",
+      "body": "双簧管、单簧管、圆号同奏一条旋律，小号长音托在上方，长号反拍推动"
+    },
+    "bgState": "red",
+    "shot": [
+      "caption-14"
+    ]
+  },
+  {
+    "t0": 68.45,
+    "t1": 75.25,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 36–39 — Tutti",
+      "title": "木管与圓号齐唱 dolce",
+      "body": "双簧管、单簧管、圆号同奏一条旋律，小号长音托在上方，长号反拍推动"
+    },
+    "bgState": "red",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 75.25,
+    "t1": 75.43333333,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 36–39 — Tutti",
+      "title": "木管与圓号齐唱 dolce",
+      "body": "双簧管、单簧管、圆号同奏一条旋律，小号长音托在上方，长号反拍推动"
+    },
+    "bgState": "red",
+    "shot": [
+      "caption-15"
+    ]
+  },
+  {
+    "t0": 75.43333333,
+    "t1": 76.2,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "3/8",
+    "caption": {
+      "eyebrow": "Bars 40–42 — Transition",
+      "title": "♩.=53，一次呼吸",
+      "body": "3/8 小节之后，木管、圆号与弦乐的长音涨到 mf 又退去"
+    },
+    "bgState": "red",
+    "shot": [
+      "caption-15"
+    ]
+  },
+  {
+    "t0": 76.2,
+    "t1": 76.3,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "3/8",
+    "caption": {
+      "eyebrow": "Bars 40–42 — Transition",
+      "title": "♩.=53，一次呼吸",
+      "body": "3/8 小节之后，木管、圆号与弦乐的长音涨到 mf 又退去"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-4",
+      "caption-15"
+    ]
+  },
+  {
+    "t0": 76.3,
+    "t1": 76.35,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 40–42 — Transition",
+      "title": "♩.=53，一次呼吸",
+      "body": "3/8 小节之后，木管、圆号与弦乐的长音涨到 mf 又退去"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-4",
+      "caption-15"
+    ]
+  },
+  {
+    "t0": 76.35,
+    "t1": 77.43333333,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 40–42 — Transition",
+      "title": "♩.=53，一次呼吸",
+      "body": "3/8 小节之后，木管、圆号与弦乐的长音涨到 mf 又退去"
+    },
+    "bgState": "pink",
+    "shot": [
+      "background-4"
+    ]
+  },
+  {
+    "t0": 77.43333333,
+    "t1": 80.85,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 40–42 — Transition",
+      "title": "♩.=53，一次呼吸",
+      "body": "3/8 小节之后，木管、圆号与弦乐的长音涨到 mf 又退去"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 80.85,
+    "t1": 81.01666667,
+    "scene": "第三場",
+    "sceneEn": "Scene III — Sections C–D · bars 23–42",
+    "keyJa": "イ長調",
+    "keyEn": "A major",
+    "barsRange": [
+      23,
+      42
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 40–42 — Transition",
+      "title": "♩.=53，一次呼吸",
+      "body": "3/8 小节之后，木管、圆号与弦乐的长音涨到 mf 又退去"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-16"
+    ]
+  },
+  {
+    "t0": 81.01666667,
+    "t1": 81.13333333,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 43–45 — Section E",
+      "title": "A → E · p",
+      "body": "织体骤然稀疏：大管、拨弦与零星的钢琴和弦，长笛轻轻附和"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-16"
+    ]
+  },
+  {
+    "t0": 81.13333333,
+    "t1": 81.61666667,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 43–45 — Section E",
+      "title": "A → E · p",
+      "body": "织体骤然稀疏：大管、拨弦与零星的钢琴和弦，长笛轻轻附和"
+    },
+    "bgState": "white",
+    "shot": [
+      "giant-scene-iv",
+      "caption-16"
+    ]
+  },
+  {
+    "t0": 81.61666667,
+    "t1": 84.85,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 43–45 — Section E",
+      "title": "A → E · p",
+      "body": "织体骤然稀疏：大管、拨弦与零星的钢琴和弦，长笛轻轻附和"
+    },
+    "bgState": "white",
+    "shot": [
+      "giant-scene-iv"
+    ]
+  },
+  {
+    "t0": 84.85,
+    "t1": 87.91666667,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 43–45 — Section E",
+      "title": "A → E · p",
+      "body": "织体骤然稀疏：大管、拨弦与零星的钢琴和弦，长笛轻轻附和"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 87.91666667,
+    "t1": 88.08333333,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 43–45 — Section E",
+      "title": "A → E · p",
+      "body": "织体骤然稀疏：大管、拨弦与零星的钢琴和弦，长笛轻轻附和"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-17"
+    ]
+  },
+  {
+    "t0": 88.08333333,
+    "t1": 88.15,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 46–49 — Clarinet",
+      "title": "hook 的倒影",
+      "body": "单簧管吹出 1 7 5 3：7 1 3 5 的音程上下翻转，节奏不变"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-17"
+    ]
+  },
+  {
+    "t0": 88.15,
+    "t1": 88.61666667,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 46–49 — Clarinet",
+      "title": "hook 的倒影",
+      "body": "单簧管吹出 1 7 5 3：7 1 3 5 的音程上下翻转，节奏不变"
+    },
+    "bgState": "white",
+    "shot": [
+      "focus-clarinet",
+      "caption-17"
+    ]
+  },
+  {
+    "t0": 88.61666667,
+    "t1": 93.15,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 46–49 — Clarinet",
+      "title": "hook 的倒影",
+      "body": "单簧管吹出 1 7 5 3：7 1 3 5 的音程上下翻转，节奏不变"
+    },
+    "bgState": "white",
+    "shot": [
+      "focus-clarinet"
+    ]
+  },
+  {
+    "t0": 93.15,
+    "t1": 97.51666667,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 46–49 — Clarinet",
+      "title": "hook 的倒影",
+      "body": "单簧管吹出 1 7 5 3：7 1 3 5 的音程上下翻转，节奏不变"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 97.51666667,
+    "t1": 97.68333333,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 46–49 — Clarinet",
+      "title": "hook 的倒影",
+      "body": "单簧管吹出 1 7 5 3：7 1 3 5 的音程上下翻转，节奏不变"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-18"
+    ]
+  },
+  {
+    "t0": 97.68333333,
+    "t1": 98.25,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 50–53 — Section F",
+      "title": "舞台少女诉说着她们的理想",
+      "body": "让长颈鹿落泪的琶音，第一小提琴沿 1 3 5 7 上行，钢琴琶音铺底，圆号轻声应和"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-18"
+    ]
+  },
+  {
+    "t0": 98.25,
+    "t1": 108.08333333,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 50–53 — Section F",
+      "title": "舞台少女诉说着她们的理想",
+      "body": "让长颈鹿落泪的琶音，第一小提琴沿 1 3 5 7 上行，钢琴琶音铺底，圆号轻声应和"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 108.08333333,
+    "t1": 108.28333333,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 50–53 — Section F",
+      "title": "舞台少女诉说着她们的理想",
+      "body": "让长颈鹿落泪的琶音，第一小提琴沿 1 3 5 7 上行，钢琴琶音铺底，圆号轻声应和"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-19"
+    ]
+  },
+  {
+    "t0": 108.28333333,
+    "t1": 108.81666667,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 54–55 — Colour",
+      "title": "Starlight 渐暗",
+      "body": "低音落到 C♮：E 大调里借来小调的色彩"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-19"
+    ]
+  },
+  {
+    "t0": 108.81666667,
+    "t1": 113.38333333,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 54–55 — Colour",
+      "title": "Starlight 渐暗",
+      "body": "低音落到 C♮：E 大调里借来小调的色彩"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 113.38333333,
+    "t1": 113.56666667,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "6/8",
+    "caption": {
+      "eyebrow": "Bars 54–55 — Colour",
+      "title": "Starlight 渐暗",
+      "body": "低音落到 C♮：E 大调里借来小调的色彩"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-20"
+    ]
+  },
+  {
+    "t0": 113.56666667,
+    "t1": 114.21666667,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "5/4",
+    "caption": {
+      "eyebrow": "Bars 56–57 — Close",
+      "title": "而下一曲即将奏响。",
+      "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。"
+    },
+    "bgState": "white",
+    "shot": [
+      "caption-20"
+    ]
+  },
+  {
+    "t0": 114.21666667,
+    "t1": 115.45,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "5/4",
+    "caption": {
+      "eyebrow": "Bars 56–57 — Close",
+      "title": "而下一曲即将奏响。",
+      "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 115.45,
+    "t1": 117.21666667,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "4/4",
+    "caption": {
+      "eyebrow": "Bars 56–57 — Close",
+      "title": "而下一曲即将奏响。",
+      "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。"
+    },
+    "bgState": "white",
+    "shot": [
+      "ordinary-scroll"
+    ]
+  },
+  {
+    "t0": 117.21666667,
+    "t1": 117.76666667,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "4/4",
+    "caption": {
+      "eyebrow": "Bars 56–57 — Close",
+      "title": "而下一曲即将奏响。",
+      "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。"
+    },
+    "bgState": "white",
+    "shot": [
+      "ending-key-ladder"
+    ]
+  },
+  {
+    "t0": 117.76666667,
+    "t1": 118.23333333,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "4/4",
+    "caption": {
+      "eyebrow": "Bars 56–57 — Close",
+      "title": "而下一曲即将奏响。",
+      "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。"
+    },
+    "bgState": "white",
+    "shot": [
+      "ending-key-ladder"
+    ]
+  },
+  {
+    "t0": 118.23333333,
+    "t1": 118.68333333,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "4/4",
+    "caption": {
+      "eyebrow": "Bars 56–57 — Close",
+      "title": "而下一曲即将奏响。",
+      "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。"
+    },
+    "bgState": "white",
+    "shot": [
+      "ending-key-ladder"
+    ]
+  },
+  {
+    "t0": 118.68333333,
+    "t1": 119.18333333,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "4/4",
+    "caption": {
+      "eyebrow": "Bars 56–57 — Close",
+      "title": "而下一曲即将奏响。",
+      "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。"
+    },
+    "bgState": "white",
+    "shot": [
+      "ending-key-ladder"
+    ]
+  },
+  {
+    "t0": 119.18333333,
+    "t1": 122.0,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "4/4",
+    "caption": {
+      "eyebrow": "Bars 56–57 — Close",
+      "title": "而下一曲即将奏响。",
+      "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。"
+    },
+    "bgState": "white",
+    "shot": [
+      "ending-key-ladder"
+    ]
+  },
+  {
+    "t0": 122.0,
+    "t1": 122.005,
+    "scene": "第四場",
+    "sceneEn": "Scene IV — Sections E–F · bars 43–57",
+    "keyJa": "ホ長調",
+    "keyEn": "E major",
+    "barsRange": [
+      43,
+      57
+    ],
+    "meter": "4/4",
+    "caption": {
+      "eyebrow": "Bars 56–57 — Close",
+      "title": "而下一曲即将奏响。",
+      "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。"
+    },
+    "bgState": "white",
+    "shot": [
+      "last-frame-hold-audio-tail"
+    ]
+  }
+]

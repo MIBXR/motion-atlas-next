@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>差两秒 · 档案灯台</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/film.js",
+    "film/index.html",
+    "film/timeline.js",
+    "film/out/cues.json",
+    "assets/tex/layers.json"
+  ],
+  "images": [
+    "assets/tex/news.jpg",
+    "assets/tex/p1.jpg",
+    "assets/tex/p1_bg.jpg",
+    "assets/tex/p1_fly.png",
+    "assets/tex/p1_mask.png",
+    "assets/tex/p1_wil.png",
+    "assets/tex/p2.jpg",
+    "assets/tex/p2_mask.png",
+    "assets/tex/p3.jpg",
+    "assets/tex/p3_mask.png",
+    "assets/tex/tg.jpg"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Two Seconds Short";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 40.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "差两秒 · 档案灯台",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#0E0F11",
+  "accent": "#FF5A1F",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 22.3
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "灯台亮起"
+  },
+  {
+    "t": 1.3,
+    "label": "放大镜落下"
+  },
+  {
+    "t": 2,
+    "label": "进入电报"
+  },
+  {
+    "t": 3.3,
+    "label": "电报原文亮起"
+  },
+  {
+    "t": 9.3,
+    "label": "抬镜转向剪报"
+  },
+  {
+    "t": 11.3,
+    "label": "剪报的57秒"
+  },
+  {
+    "t": 13.3,
+    "label": "移向第一次飞行"
+  },
+  {
+    "t": 14.7,
+    "label": "镜内负片转正"
+  },
+  {
+    "t": 16,
+    "label": "穿入照片"
+  },
+  {
+    "t": 18,
+    "label": "飞行照片分层"
+  },
+  {
+    "t": 22.7,
+    "label": "转向第四次飞行"
+  },
+  {
+    "t": 24.7,
+    "label": "放大镜与第四次飞行"
+  },
+  {
+    "t": 26.3,
+    "label": "透视量程"
+  },
+  {
+    "t": 30,
+    "label": "两份记录并排"
+  },
+  {
+    "t": 33.3,
+    "label": "划去57秒"
+  },
+  {
+    "t": 35.9,
+    "label": "灯台与索引"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

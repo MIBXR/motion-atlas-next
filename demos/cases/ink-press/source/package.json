@@ -1,0 +1,22 @@
+{
+  "name": "promo-template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "remotion studio ../film/src/index.ts",
+    "render": "remotion render ../film/src/index.ts AiflPromo out/promo.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.484",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "remotion": "4.0.484",
+    "@remotion/player": "4.0.484",
+    "esbuild": "0.28.2"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.17",
+    "typescript": "6.0.3"
+  }
+}

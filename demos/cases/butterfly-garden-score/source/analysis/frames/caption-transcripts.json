@@ -1,0 +1,442 @@
+[
+  {
+    "frame": 139,
+    "t": 2.316666666666667,
+    "bars": [
+      1,
+      2
+    ],
+    "eyebrow": "Bars 1–2 — Prologue",
+    "title": "幕起",
+    "body": "弦乐 trill 渐强到 f，3/8 小节里竖琴滑奏，帷幕升起",
+    "transition": {
+      "frame": 139,
+      "startFrame": 139,
+      "endFrame": 181,
+      "t0": 2.316666666666667,
+      "t1": 3.0166666666666666,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 199,
+    "sourceImage": "frames/caption-01.png"
+  },
+  {
+    "frame": 287,
+    "t": 4.783333333333333,
+    "bars": [
+      3,
+      4
+    ],
+    "eyebrow": "Bars 3–4 — Section A · Oboe",
+    "title": "F 大调 · 动机 M 登场",
+    "body": "马林巴与钢琴 giocoso 铺底；双簧管吹出 7 1 3 5，少女歌剧标志性的「呼唤」",
+    "transition": {
+      "frame": 287,
+      "startFrame": 275,
+      "endFrame": 326,
+      "t0": 4.583333333333333,
+      "t1": 5.433333333333334,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 347,
+    "sourceImage": "frames/caption-02.png"
+  },
+  {
+    "frame": 516,
+    "t": 8.6,
+    "bars": [
+      5,
+      6
+    ],
+    "eyebrow": "Bars 5–6 — Viola",
+    "title": "第一次呼应",
+    "body": "中提琴晚一小节模仿动机 M；低音拨弦里的 B♮ 带来明亮的悬浮感",
+    "transition": {
+      "frame": 516,
+      "startFrame": 505,
+      "endFrame": 553,
+      "t0": 8.416666666666666,
+      "t1": 9.216666666666667,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 576,
+    "sourceImage": "frames/caption-03.png"
+  },
+  {
+    "frame": 746,
+    "t": 12.433333333333334,
+    "bars": [
+      7,
+      8
+    ],
+    "eyebrow": "Bars 7–8 — Flute, Clarinet, Vn.II · Horns",
+    "title": "动机传入铜管",
+    "body": "三个声部齐奏断奏音型，如蝶翅轻振；圆号齐奏接过动机 M",
+    "transition": {
+      "frame": 746,
+      "startFrame": 735,
+      "endFrame": 781,
+      "t0": 12.25,
+      "t1": 13.016666666666667,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 806,
+    "sourceImage": "frames/caption-04.png"
+  },
+  {
+    "frame": 977,
+    "t": 16.283333333333335,
+    "bars": [
+      9,
+      10
+    ],
+    "eyebrow": "Bars 9–10 — Texture",
+    "title": "四层织体，推向转调",
+    "body": "长音线 · 拨弦低音 · 断奏音型 · 键盘底色；铜管渐强，吊镲滚奏",
+    "transition": {
+      "frame": 977,
+      "startFrame": 967,
+      "endFrame": 1010,
+      "t0": 16.116666666666667,
+      "t1": 16.833333333333332,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 1037,
+    "sourceImage": "frames/caption-05.png"
+  },
+  {
+    "frame": 1209,
+    "t": 20.15,
+    "bars": [
+      11,
+      12
+    ],
+    "eyebrow": "Bars 11–12 — Section B",
+    "title": "F → D：下行小三度转调",
+    "body": "全体 f；第一小提琴 espressivo 唱出主题，单簧管接住动机 M",
+    "transition": {
+      "frame": 1209,
+      "startFrame": 1199,
+      "endFrame": 1264,
+      "t0": 19.983333333333334,
+      "t1": 21.066666666666666,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 1269,
+    "sourceImage": "frames/caption-06.png"
+  },
+  {
+    "frame": 1436,
+    "t": 23.933333333333334,
+    "bars": [
+      13,
+      14
+    ],
+    "eyebrow": "Bars 13–14 — Horns",
+    "title": "一问一答",
+    "body": "圆号晚一小节回应单簧管，动机在木管与铜管之间往返",
+    "transition": {
+      "frame": 1436,
+      "startFrame": 1415,
+      "endFrame": 1477,
+      "t0": 23.583333333333332,
+      "t1": 24.616666666666667,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 1496,
+    "sourceImage": "frames/caption-07.png"
+  },
+  {
+    "frame": 1666,
+    "t": 27.766666666666666,
+    "bars": [
+      15,
+      16
+    ],
+    "eyebrow": "Bars 15–16 — Interlude · Flute",
+    "title": "D → B♭ · 首尾呼应",
+    "body": "mp dolce；动机 M 回到长笛，7 1 3 5 第四次出现，每四小节一次",
+    "transition": {
+      "frame": 1666,
+      "startFrame": 1655,
+      "endFrame": 1721,
+      "t0": 27.583333333333332,
+      "t1": 28.683333333333334,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 1726,
+    "sourceImage": "frames/caption-08.png"
+  },
+  {
+    "frame": 1896,
+    "t": 31.6,
+    "bars": [
+      17,
+      20
+    ],
+    "eyebrow": "Bars 17–20 — Interlude",
+    "title": "长笛再次呼出 7135",
+    "body": "mp dolce；动机 M 回到长笛，7 1 3 5 第四次出现，每四小节一次",
+    "transition": {
+      "frame": 1896,
+      "startFrame": 1885,
+      "endFrame": 1925,
+      "t0": 31.416666666666668,
+      "t1": 32.083333333333336,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 1956,
+    "sourceImage": "frames/caption-09.png"
+  },
+  {
+    "frame": 2354,
+    "t": 39.233333333333334,
+    "bars": [
+      21,
+      22
+    ],
+    "eyebrow": "Bars 21–22 — Cadence",
+    "title": "结构仍属间奏，调性已入 A",
+    "body": "非常精巧的衔接段。结构属于前段，调性属于后段，A 大调先于第 23 小节的调号到来",
+    "transition": {
+      "frame": 2354,
+      "startFrame": 2343,
+      "endFrame": 2402,
+      "t0": 39.05,
+      "t1": 40.03333333333333,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 2414,
+    "sourceImage": "frames/caption-10.png"
+  },
+  {
+    "frame": 2608,
+    "t": 43.46666666666667,
+    "bars": [
+      23,
+      26
+    ],
+    "eyebrow": "Bars 23–26 — Section C",
+    "title": "B♭ → A：下行半音 · scherzando",
+    "body": "♩.=61；长笛、短笛与第一小提琴重拾第 7–10 小节的断奏音型",
+    "transition": {
+      "frame": 2608,
+      "startFrame": 2597,
+      "endFrame": 2641,
+      "t0": 43.28333333333333,
+      "t1": 44.016666666666666,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 2668,
+    "sourceImage": "frames/caption-11.png"
+  },
+  {
+    "frame": 3065,
+    "t": 51.083333333333336,
+    "bars": [
+      27,
+      31
+    ],
+    "eyebrow": "Bars 27–31 — Build-up",
+    "title": "a b 三次反复，推向高潮",
+    "body": "第 30 小节渐强到 f；3/8 小节里竖琴滑奏、吊镲滚奏，落到 D 段",
+    "transition": {
+      "frame": 3065,
+      "startFrame": 3053,
+      "endFrame": 3097,
+      "t0": 50.88333333333333,
+      "t1": 51.61666666666667,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 3125,
+    "sourceImage": "frames/caption-12.png"
+  },
+  {
+    "frame": 3597,
+    "t": 59.95,
+    "bars": [
+      32,
+      35
+    ],
+    "eyebrow": "Bars 32–35 — Section D",
+    "title": "奏响吧！华尔兹全奏 f！",
+    "body": "克洛蒂娜落地起舞，大管与大提琴唱出新主题，小提琴 leggiero 如蝶翅轻扑；双簧管吹出\nhook 的变体",
+    "transition": {
+      "frame": 3597,
+      "startFrame": 3585,
+      "endFrame": 3652,
+      "t0": 59.75,
+      "t1": 60.86666666666667,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 3657,
+    "sourceImage": "frames/caption-13.png"
+  },
+  {
+    "frame": 4067,
+    "t": 67.78333333333333,
+    "bars": [
+      36,
+      39
+    ],
+    "eyebrow": "Bars 36–39 — Tutti",
+    "title": "木管与圓号齐唱 dolce",
+    "body": "双簧管、单簧管、圆号同奏一条旋律，小号长音托在上方，长号反拍推动",
+    "transition": {
+      "frame": 4067,
+      "startFrame": 4055,
+      "endFrame": 4107,
+      "t0": 67.58333333333333,
+      "t1": 68.45,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 4127,
+    "sourceImage": "frames/caption-14.png"
+  },
+  {
+    "frame": 4526,
+    "t": 75.43333333333334,
+    "bars": [
+      40,
+      42
+    ],
+    "eyebrow": "Bars 40–42 — Transition",
+    "title": "♩.=53，一次呼吸",
+    "body": "3/8 小节之后，木管、圆号与弦乐的长音涨到 mf 又退去",
+    "transition": {
+      "frame": 4526,
+      "startFrame": 4515,
+      "endFrame": 4581,
+      "t0": 75.25,
+      "t1": 76.35,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 4586,
+    "sourceImage": "frames/caption-15.png"
+  },
+  {
+    "frame": 4861,
+    "t": 81.01666666666667,
+    "bars": [
+      43,
+      45
+    ],
+    "eyebrow": "Bars 43–45 — Section E",
+    "title": "A → E · p",
+    "body": "织体骤然稀疏：大管、拨弦与零星的钢琴和弦，长笛轻轻附和",
+    "transition": {
+      "frame": 4861,
+      "startFrame": 4851,
+      "endFrame": 4897,
+      "t0": 80.85,
+      "t1": 81.61666666666666,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 4921,
+    "sourceImage": "frames/caption-16.png"
+  },
+  {
+    "frame": 5285,
+    "t": 88.08333333333333,
+    "bars": [
+      46,
+      49
+    ],
+    "eyebrow": "Bars 46–49 — Clarinet",
+    "title": "hook 的倒影",
+    "body": "单簧管吹出 1 7 5 3：7 1 3 5 的音程上下翻转，节奏不变",
+    "transition": {
+      "frame": 5285,
+      "startFrame": 5275,
+      "endFrame": 5317,
+      "t0": 87.91666666666667,
+      "t1": 88.61666666666666,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 5345,
+    "sourceImage": "frames/caption-17.png"
+  },
+  {
+    "frame": 5861,
+    "t": 97.68333333333334,
+    "bars": [
+      50,
+      53
+    ],
+    "eyebrow": "Bars 50–53 — Section F",
+    "title": "舞台少女诉说着她们的理想",
+    "body": "让长颈鹿落泪的琶音，第一小提琴沿 1 3 5 7 上行，钢琴琶音铺底，圆号轻声应和",
+    "transition": {
+      "frame": 5861,
+      "startFrame": 5851,
+      "endFrame": 5895,
+      "t0": 97.51666666666667,
+      "t1": 98.25,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 5921,
+    "sourceImage": "frames/caption-18.png"
+  },
+  {
+    "frame": 6497,
+    "t": 108.28333333333333,
+    "bars": [
+      54,
+      55
+    ],
+    "eyebrow": "Bars 54–55 — Colour",
+    "title": "Starlight 渐暗",
+    "body": "低音落到 C♮：E 大调里借来小调的色彩",
+    "transition": {
+      "frame": 6497,
+      "startFrame": 6485,
+      "endFrame": 6529,
+      "t0": 108.08333333333333,
+      "t1": 108.81666666666666,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 6557,
+    "sourceImage": "frames/caption-19.png"
+  },
+  {
+    "frame": 6814,
+    "t": 113.56666666666666,
+    "bars": [
+      56,
+      57
+    ],
+    "eyebrow": "Bars 56–57 — Close",
+    "title": "而下一曲即将奏响。",
+    "body": "低音部把借来的 C♮ 升回 C♯，织体只剩长音渐弱，色彩还原、织体收束。",
+    "transition": {
+      "frame": 6814,
+      "startFrame": 6803,
+      "endFrame": 6853,
+      "t0": 113.38333333333334,
+      "t1": 114.21666666666667,
+      "animation": "old text fades out; new text fades in with vertical displacement",
+      "thresholdMeanDifference": 0.03
+    },
+    "sourceFrame": 6874,
+    "sourceImage": "frames/caption-20.png"
+  }
+]
