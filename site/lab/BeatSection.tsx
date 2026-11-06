@@ -21,7 +21,7 @@ function Metronome() {
 export function BeatSection() {
   const lab = useLab(), { S } = lab;
   return <section className="section lab-section" id="s-beat" aria-labelledby="h-beat">
-    <header className="section-head"><h2 id="h-beat">感受节拍 <small className="muted">METRONOME</small></h2></header>
+    <header className="section-head"><h2 id="h-beat">感受节拍</h2></header>
     <p className="prose">节拍器把时间切成等长的格子：小节重拍最重，拍次之，细分最轻。调整速度、拍号、细分或摇摆，都会在下一个格子生效，相位保持连续，节拍器不会重启。先在这里选定速度。</p>
     <div className="lab-beat-grid"><Metronome /><div className="lab-pane">
       <Range label="速度" value={S.bpm} min={40} max={240} onChange={bpm => lab.update({ bpm })} />

@@ -10,7 +10,7 @@ export function RecordPanel() {
   const progress = rec.progress(beat === null ? 0 : lab.clock.clipAbs(beat));
   const mean = rec.taps.length ? rec.taps.reduce((s, t) => s + t.dev, 0) / rec.taps.length : 0;
   return <div className="lab-pane lab-record">
-    <h3>打拍录入 <small className="muted">TAP &amp; RECORD</small></h3>
+    <h3>打拍录入</h3>
     <p className="small muted">跟着节拍器点击打拍板（或按 <kbd>J</kbd>），实时查看敲击早 / 晚多少毫秒。点击“录入一遍”会从下一圈开头录入一整圈，录完后自动 A/B 交替播放：先听原始敲击，再听吸附后的事件。</p>
     <div className="lab-row"><Button variant="secondary" aria-pressed={!!T.rec} onClick={rec.recToggle}><Circle size={16} />{progress.label}<kbd className="lab-key">R</kbd></Button><Button variant="secondary" className="lab-pad" aria-describedby="pad-feedback" onPointerDown={e => { if (e.button === 0) { e.preventDefault(); rec.padTap(e.timeStamp); } }} onClick={e => { if (e.detail === 0) rec.padTap(e.timeStamp); }}>打拍板 <kbd>J</kbd></Button></div>
     {T.rec ? <Progress value={progress.value * 100} aria-label="录入进度" /> : null}

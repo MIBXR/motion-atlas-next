@@ -28,7 +28,7 @@ function CurveCanvas() {
 }
 export function CurveEditor() {
   const lab = useLab(), { S } = lab;
-  return <article className="lab-pane"><h3>缓动曲线 <small className="muted">CUBIC-BEZIER</small></h3>
+  return <article className="lab-pane"><h3>缓动曲线</h3>
     <Segments label="缓动预设" value={S.preset} items={Object.keys(PRESETS).map(k => [k, k])} onChange={k => { lab.setCurve(PRESETS[k], k); lab.curveClock.restartFree(); }} mobileSelect />
     <div className="lab-curve-wrap"><CurveCanvas /><div className="lab-curve-values" onKeyDown={e => { if (e.key === 'Enter' && e.target instanceof HTMLInputElement) e.target.blur(); }}>{['x1', 'y1', 'x2', 'y2'].map((key, i) => <NumberField key={key} label={key} value={S.curve[i]} min={i % 2 ? -1 : 0} max={i % 2 ? 2 : 1} step={.01} size="sm" limitHint={false} onValueChange={v => { const cv = [...S.curve]; cv[i] = v; lab.setCurve(cv); }} />)}<p className="small muted mono lab-curve-css">cubic-bezier({S.curve.join(', ')}) · {S.preset || '自定义'}</p></div></div>
   </article>;

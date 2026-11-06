@@ -30,10 +30,10 @@ export function ExportSection() {
     finally { setRendering(false); }
   }
   return <section className="section lab-section" id="s-export" aria-labelledby="h-export">
-    <header className="section-head"><h2 id="h-export">导出 <small className="muted">CSS · JS · PROMPT · WAV</small></h2></header>
+    <header className="section-head"><h2 id="h-export">导出</h2></header>
     <p className="prose">导出内容包含当前节拍、事件、曲线、时长与错峰参数。WAV 使用同一套音色，可拖入剪辑软件对拍。</p>
     <div className="lab-export-grid"><article className="lab-export" ref={code}><Tabs value={S.tab} onValueChange={tab => lab.update({ tab })}><TabsList aria-label="导出格式">{tabs.map(([key, label]) => <TabsTrigger key={key} value={key}>{label}</TabsTrigger>)}</TabsList>{tabs.map(([key, , language]) => <TabsContent key={key} value={key}><ScrollArea orientation="vertical" maxHeight={440} label="导出内容" fade={12}><CodeBlock code={lab.exportText(key)} language={language} /></ScrollArea></TabsContent>)}</Tabs></article>
-      <article className="lab-pane"><h3>导出 WAV <small className="muted">OFFLINE RENDER</small></h3><p className="small muted">WAV 包含当前节拍器和事件的声音，以及循环起点提示音与曲线提示音。节拍器保留三级音量，A/B 交替按圈切换。曲线跟随节拍时加入提示音。从第 0 秒开始导出整数圈，方便循环使用。</p>
+      <article className="lab-pane"><h3>导出 WAV</h3><p className="small muted">WAV 包含当前节拍器和事件的声音，以及循环起点提示音与曲线提示音。节拍器保留三级音量，A/B 交替按圈切换。曲线跟随节拍时加入提示音。从第 0 秒开始导出整数圈，方便循环使用。</p>
         <Segments label="长度" value={S.wavCycles} items={[[1, '1 圈'], [2, '2 圈'], [4, '4 圈']]} onChange={v => lab.update({ wavCycles: +v })} />
         <p className="small mono muted">{S.meter} · {S.bpm} BPM · {S.bars} 小节一圈（{c.L.toFixed(2)}s）× {S.wavCycles} = {(c.L * S.wavCycles).toFixed(2)}s · 事件 {MODES.find(([k]) => k === S.mode)![1]}</p>
         <div><Button disabled={rendering} onClick={() => void download()}><AudioWaveform size={16} />导出 WAV</Button></div><p className="small mono muted" aria-live="polite">{result}</p>

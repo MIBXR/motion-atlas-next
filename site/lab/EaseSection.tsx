@@ -11,9 +11,9 @@ import { r2 } from "./engine/math";
 export function EaseSection() {
   const lab = useLab(), { S, T } = lab, c = lab.clip(), tot = totalMs(S), bar = c.spb * c.bpb * 1000;
   return <section className="section lab-section" id="s-ease" aria-labelledby="h-ease">
-    <header className="section-head"><h2 id="h-ease">曲线 × 时长 × 拍子 <small className="muted">EASE / DURATION / STAGGER</small></h2></header>
+    <header className="section-head"><h2 id="h-ease">曲线 × 时长 × 拍子</h2></header>
     <p className="prose">曲线决定动作的速度变化，时长决定轻重感，错峰通过控制元素起步的间隔形成视觉层次。开启“跟随节拍”后，预览每小节重播。选择“落点踩重拍”，最后一个元素在重拍落定。起步时有呼啸音，每次落定时有提示音。</p>
-    <div className="lab-ease-grid"><CurveEditor /><article className="lab-pane"><h3>时长与错峰 <small className="muted">DURATION / STAGGER</small></h3>
+    <div className="lab-ease-grid"><CurveEditor /><article className="lab-pane"><h3>时长与错峰</h3>
       <Range label="时长" value={S.dur} min={80} max={2000} step={10} format={v => `${v}ms`} onChange={dur => lab.update({ dur })} />
       <Range label="错峰" value={S.stag} max={300} step={5} format={v => `${v}ms`} onChange={stag => lab.update({ stag })} />
       <Range label="位移" value={S.dist} min={20} format={v => `${v}%`} onChange={dist => lab.update({ dist })} />
