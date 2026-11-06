@@ -1,0 +1,36 @@
+.agent-sections { display: grid; gap: var(--space-6); }
+.agent-links { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); }
+.agent-section, .agent-pane { min-width: 0; }
+.agent-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-3); list-style: none; padding: 0; margin: 0; }
+.agent-steps li, .agent-pane { padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-control); background: var(--surface-muted); }
+.agent-steps b { font-size: var(--text-sm); color: var(--accent-strong); }
+.agent-steps p { margin-top: var(--space-2); color: var(--text-secondary); }
+.agent-page code { font-family: var(--font-mono); font-size: var(--text-xs); overflow-wrap: anywhere; }
+.agent-generator { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: var(--space-4); align-items: start; }
+.agent-pane { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
+.agent-output { position: sticky; top: calc(var(--sticky-top) + var(--space-4)); }
+.agent-items { display: grid; gap: var(--space-2); }
+.agent-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-2); align-items: start; padding: var(--space-3); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-control); }
+.agent-item[data-selected] { border-color: var(--accent); background: var(--accent-subtle); }
+.agent-item label { cursor: pointer; }
+.agent-item > div, .agent-item > div > div { min-width: 0; }
+.agent-item [id$="-description"] { overflow-wrap: anywhere; }
+.agent-warning { font-size: var(--text-sm); }
+.agent-warning:empty { display: none; }
+.agent-reference-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); align-items: start; }
+.agent-table { table-layout: fixed; }
+.agent-table th:first-child, .agent-table td:first-child { width: 48%; }
+.agent-table td { min-width: 0; }
+.agent-table code { overflow-wrap: anywhere; }
+.agent-page pre { white-space: pre-wrap; overflow-wrap: anywhere; overflow: visible; }
+.agent-page pre code { font-size: inherit; }
+.agent-toast { position: fixed; z-index: 60; bottom: var(--space-6); left: 50%; transform: translateX(-50%); width: min(calc(100vw - var(--space-8)), 26rem); }
+@media (max-width: 1100px) {
+  .agent-generator, .agent-reference-grid { grid-template-columns: minmax(0, 1fr); }
+  .agent-output { position: static; }
+  .agent-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .agent-steps { grid-template-columns: minmax(0, 1fr); }
+  .agent-section { padding: var(--space-4); }
+}

@@ -9,7 +9,7 @@ import { EntryCard } from "./blocks";
 import { useAtlas } from "./context";
 
 export function HomePage() {
-  const { data, name, tagline, facets, futureTools } = useAtlas();
+  const { data, name, tagline, facets, tools } = useAtlas();
   const route = useRoute();
   const fav = useFavorites();
   const q = route.params.get("q") ?? "";
@@ -83,9 +83,9 @@ export function HomePage() {
             <section className="home-block">
               <header className="block-head"><h2>工具</h2></header>
               <ul className="tool-list">
-                {futureTools.map(t => (
+                {tools.map(t => (
                   <li key={t.id}>
-                    <a href={`#/tools/${t.id}`}><span className="nav-icon" aria-hidden="true">{t.icon}</span><span><strong>{t.title}</strong><span className="muted">{t.description}</span></span><span className="nav-soon">规划中</span></a>
+                    <a href={`#/tools/${t.id}`}><span className="nav-icon" aria-hidden="true">{t.icon}</span><span><strong>{t.title}</strong><span className="muted">{t.description}</span></span></a>
                   </li>
                 ))}
               </ul>

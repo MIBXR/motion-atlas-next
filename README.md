@@ -14,7 +14,7 @@
 
 </div>
 
-案例提供完整作品，巧思拆解可借用的机制，素材提供制作资源。
+案例提供完整作品，巧思拆解可借用的机制，素材提供制作资源。节奏实验室用节拍器、A/B 吸附、曲线和错峰演示节奏，可导出 CSS、MotionKit 乐谱、Prompt 与 WAV。
 
 使用方式见[使用指南](docs/guide.md)，节拍与动效见[节奏方法](docs/rhythm.md)，代码出片见[渲染管线](docs/pipeline.md)。Agent 从[取材说明](docs/agent.md)和[结构化目录](agent/catalog.json)进入；也可使用[配套 skill](https://github.com/MIBXR/mibxr-skills/tree/main/skills/motion-atlas)。
 

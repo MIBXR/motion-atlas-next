@@ -14,7 +14,8 @@ import { DetailPage } from "./DetailPage";
 import { DocsPage } from "./DocsPage";
 import { ComparePage } from "./ComparePage";
 import { FavoritesPage } from "./FavoritesPage";
-import { FuturePage } from "./FuturePage";
+import { LabPage } from "../lab/LabPage";
+import { AgentPage } from "../agent/AgentPage";
 
 function Router() {
   const route = useRoute();
@@ -29,7 +30,8 @@ function Router() {
   if (first === "docs") return <DocsPage />;
   if (first === "compare") return <ComparePage />;
   if (first === "favorites") return <FavoritesPage />;
-  if (first === "tools" && second) return <FuturePage id={second} />;
+  if (first === "tools" && second === "rhythm-lab") return <LabPage />;
+  if (first === "tools" && second === "workflow") return <AgentPage />;
   return <HomePage />;
 }
 

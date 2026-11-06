@@ -8,21 +8,21 @@ import { href, useRoute } from "../core/router";
 import { effectiveTheme, setSidebarCollapsed, switchTheme, useCompare, useFavorites, useSidebarCollapsed, useTheme } from "../core/store";
 import { useAtlas } from "./context";
 
-interface LinkProps { to: string; icon: ReactNode; label: string; count?: number; active: boolean; soon?: boolean; collapsed: boolean }
+interface LinkProps { to: string; icon: ReactNode; label: string; count?: number; active: boolean; collapsed: boolean }
 
-function NavLink({ to, icon, label, count, active, soon, collapsed }: LinkProps) {
+function NavLink({ to, icon, label, count, active, collapsed }: LinkProps) {
   const link = (
-    <a className="nav-link" href={to} aria-current={active ? "page" : undefined} aria-label={collapsed ? label : undefined} data-soon={soon || undefined}>
+    <a className="nav-link" href={to} aria-current={active ? "page" : undefined} aria-label={collapsed ? label : undefined}>
       <span className="nav-icon" aria-hidden="true">{icon}</span>
       <span className="nav-label">{label}</span>
-      {soon ? <span className="nav-soon">规划中</span> : count !== undefined ? <span className="nav-count">{count}</span> : null}
+      {count !== undefined ? <span className="nav-count">{count}</span> : null}
     </a>
   );
-  return collapsed ? <Tooltip side="right" content={soon ? `${label}（规划中）` : count !== undefined ? `${label} ${count}` : label}>{link}</Tooltip> : link;
+  return collapsed ? <Tooltip side="right" content={count !== undefined ? `${label} ${count}` : label}>{link}</Tooltip> : link;
 }
 
 function Nav({ collapsed }: { collapsed: boolean }) {
-  const { data, futureTools } = useAtlas();
+  const { data, tools } = useAtlas();
   const route = useRoute();
   const fav = useFavorites();
   const compare = useCompare();
@@ -41,7 +41,7 @@ function Nav({ collapsed }: { collapsed: boolean }) {
       <NavLink collapsed={c} to="#/favorites" icon={<Star />} label="收藏" count={favCount} active={at === "favorites"} />
       <NavLink collapsed={c} to={href("/compare", { ids: compare })} icon={<GitCompareArrows />} label="比较" count={compare.length} active={at === "compare"} />
       <p className="nav-heading">工具</p>
-      {futureTools.map(t => <NavLink collapsed={c} key={t.id} to={`#/tools/${t.id}`} icon={t.icon} label={t.title} active={at === "tools" && route.segs[1] === t.id} soon />)}
+      {tools.map(t => <NavLink collapsed={c} key={t.id} to={`#/tools/${t.id}`} icon={t.icon} label={t.title} active={at === "tools" && route.segs[1] === t.id} />)}
     </nav>
   );
 }

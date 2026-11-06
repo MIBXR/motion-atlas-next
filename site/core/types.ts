@@ -63,7 +63,6 @@ export interface AtlasConfig {
   compareRows: CompareRow[];
   favorites: FavoritesFormat;
   detail: Record<Kind, (e: Entry) => ReactNode>;
-  /** 预留的实验室、工作流入口，原型阶段只显示占位页。 */
-  futureTools: { id: string; title: string; description: string; icon: ReactNode }[];
+  tools: { id: string; title: string; description: string; icon: ReactNode }[];
   legacyHash?: (hash: string) => string | null;
 }

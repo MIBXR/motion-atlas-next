@@ -50,17 +50,16 @@ svg.lucide { width: 16px; height: 16px; flex: none; stroke-width: 1.75; }
 .nav-icon { display: grid; place-items: center; }
 .nav-label { flex: 1; }
 .nav-count { font-size: var(--ui-xs); color: var(--text-muted); font-variant-numeric: tabular-nums; }
-.nav-soon { font-size: var(--ui-xs); color: var(--text-muted); border: 1px dashed var(--border-strong); border-radius: 99px; padding: 0 8px; white-space: nowrap; }
 .sidebar-foot { display: flex; align-items: center; gap: var(--space-2); justify-content: space-between; }
 .theme-control { display: flex; align-items: center; gap: var(--space-2); }
 .theme-system svg.lucide { width: 16px; height: 16px; }
 .sidebar-toggle { flex: none; }
-.brand-text, .nav-label, .nav-count, .nav-soon, .nav-heading { transition: opacity var(--duration-fast, .16s) var(--ease-standard, ease); }
+.brand-text, .nav-label, .nav-count, .nav-heading { transition: opacity var(--duration-fast, .16s) var(--ease-standard, ease); }
 .nav-link, .brand { white-space: nowrap; }
 /* 收起：只留图标，文字淡出并被裁掉；悬停用 Tooltip 提示名称。 */
 .shell[data-collapsed] .sidebar { padding-inline: 12px; }
 .shell[data-collapsed] .brand { padding-inline: 4px; }
-.shell[data-collapsed] :is(.brand-text, .nav-label, .nav-count, .nav-soon) { display: none; }
+.shell[data-collapsed] :is(.brand-text, .nav-label, .nav-count) { display: none; }
 /* 收起时分组标题变成一条细线：文字保留给读屏（字号不变，颜色透明并裁到 1px 高）。 */
 .shell[data-collapsed] .nav-heading { width: 28px; height: 1px; margin: var(--space-2) auto; padding: 0; background: var(--border); color: transparent; line-height: 1px; overflow: hidden; white-space: nowrap; }
 /* 窄条里每一项是 44px 的方块，高亮完整居中；Tooltip 以它为锚点出现在右侧、垂直居中。 */

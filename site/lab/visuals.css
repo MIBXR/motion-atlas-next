@@ -1,0 +1,83 @@
+.tl-lane { fill: var(--surface); stroke: var(--border); rx: var(--radius-control); }
+.tl-tag { font-weight: 700; font-size: 12px !important; fill: var(--text-secondary); }
+.tl-tag.b { fill: var(--accent); }
+.tl-off { fill: var(--accent-subtle); }
+.tl-offt { fill: var(--accent); }
+.g-bar { stroke: var(--accent); stroke-width: 2; }
+.g-acc { stroke: var(--warning); stroke-width: 1.5; }
+.g-beat { stroke: var(--text-secondary); stroke-opacity: .55; }
+.g-sub { stroke: var(--border-strong); stroke-dasharray: 3 3; }
+.tl-num { fill: var(--text-muted); }
+.tl-num.bar { font-weight: 700; fill: var(--accent); }
+.tl-end { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 2 4; }
+.tl-sec { stroke: var(--border-strong); }
+.tl-sect { fill: var(--text-muted); text-anchor: middle; }
+.tl-hitA { fill: transparent; cursor: copy; }
+.tl-arrow { fill: none; stroke-width: 1.6; pointer-events: none; }
+.tl-arrow.early { stroke: var(--series-3); }
+.tl-arrow.late { stroke: var(--accent); }
+.ah-e { fill: var(--series-3); }
+.ah-l { fill: var(--accent); }
+.tl-target { stroke: var(--text-secondary); stroke-dasharray: 2 2; pointer-events: none; }
+.tl-b { pointer-events: none; }
+.tl-b circle { fill: var(--accent); transform: scale(calc(1 + var(--hit, 0) * .7)); transform-box: fill-box; transform-origin: center; }
+.tl-b .dup-ring { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.tl-a { cursor: grab; outline: none; }
+.tl-a .hit-area { fill: transparent; }
+.tl-a .dot { fill: var(--surface); stroke: var(--foreground); stroke-width: 2.2; transform: scale(calc(1 + var(--hit, 0) * .7)); transform-box: fill-box; transform-origin: center; }
+.tl-a:hover .dot { stroke: var(--accent); }
+.tl-a:focus-visible .dot { stroke: var(--accent); stroke-width: 3.5; }
+.tl-dev { text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
+.tl-dev.early { fill: var(--series-3); }
+.tl-dev.late { fill: var(--accent); }
+.tl-dev.on { fill: var(--success); }
+.tl-head { pointer-events: none; opacity: 0; }
+.tl-head line { stroke: var(--foreground); stroke-width: 2; }
+.tl-head path { fill: var(--foreground); }
+.rec-tap { fill: var(--danger); pointer-events: none; }
+.lab-timeline-svg.rec .tl-a, .lab-timeline-svg.rec .tl-b, .lab-timeline-svg.rec .tl-arrow, .lab-timeline-svg.rec .tl-target { opacity: .22; }
+
+.bn-bg { fill: var(--surface-muted); stroke: var(--border); rx: var(--radius-control); }
+.bn-lane.live .bn-bg { stroke: var(--accent); stroke-width: 2; }
+.lab-bounce-svg .bn-title { font-family: var(--font-body); font-weight: 700; font-size: 12px; fill: var(--foreground); }
+.bn-live { fill: var(--accent); opacity: 0; }
+.bn-lane.live .bn-live { opacity: 1; }
+.bn-lamp { --glow: 0; fill: color-mix(in srgb, var(--foreground) calc(var(--glow) * 100%), var(--border-strong)); }
+.bn-lamp.bar { fill: color-mix(in srgb, var(--accent) calc(var(--glow) * 100%), var(--border-strong)); }
+.bn-lampt { fill: var(--text-muted); }
+.bn-ground { stroke: var(--border-strong); stroke-width: 2; }
+.bn-ball { fill: var(--foreground); }
+.lab-bounce-b .bn-ball { fill: var(--accent); }
+.bn-ring { fill: none; stroke: var(--text-secondary); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.bn-lab { fill: var(--text-secondary); }
+.bn-pos { fill: var(--text-muted); }
+.bn-lab[data-k="miss"] { fill: var(--accent); }
+.bn-lab[data-k="off"], .bn-lab[data-k="trip"], .bn-lab[data-k="weak"] { fill: var(--warning); }
+
+.lab-tap-hist { position: relative; height: 48px; padding: 12px; border-radius: var(--radius-control); border: 1px solid var(--border); background: linear-gradient(90deg, transparent calc(50% - 7%), color-mix(in srgb, var(--success) 16%, transparent) calc(50% - 7%) calc(50% + 7%)), var(--surface-muted); }
+.lab-tap-hist::before { content: "早"; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 12px; color: var(--series-3); }
+.lab-tap-hist::after { content: "晚"; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 12px; color: var(--accent-strong); }
+.lab-tap-hist i { position: absolute; top: 50%; left: calc(50% + var(--d) * 42%); width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: var(--radius-pill); background: var(--text-secondary); opacity: .35; }
+.lab-tap-hist i:last-of-type { opacity: 1; width: 12px; height: 12px; margin: -6px 0 0 -6px; }
+.lab-tap-hist i.early { background: var(--series-3); }
+.lab-tap-hist i.late { background: var(--accent); }
+.lab-tap-hist i.on { background: var(--success); }
+.lab-tap-hist span { position: absolute; left: 50%; bottom: -20px; transform: translateX(-50%); font: 12px/1 var(--font-mono); color: var(--text-muted); white-space: nowrap; }
+.lab-tap-hist:has(span) { margin-bottom: 18px; }
+
+.cv-box { fill: var(--surface-muted); stroke: var(--border-strong); }
+.cv-grid { stroke: var(--border); stroke-width: 1; }
+.cv-lin { stroke: var(--border-strong); stroke-width: 1.5; stroke-dasharray: 4 6; }
+.cv-path { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; }
+.cv-handle-line { stroke: var(--text-muted); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.cv-t { stroke: var(--accent); stroke-width: 1.5; opacity: .3; }
+.cv-pt { fill: var(--foreground); stroke: var(--surface); stroke-width: 3; cursor: grab; }
+.cv-pt:focus-visible { outline: none; stroke: var(--accent); stroke-width: 5; }
+.cv-dot { fill: var(--accent); }
+
+.lab-preview { position: relative; height: 230px; padding: 12px; border-radius: var(--radius-control); border: 1px solid var(--border); background: var(--surface-muted); overflow: hidden; }
+.lab-preview i { position: absolute; left: 14px; width: 34px; height: 14px; border-radius: var(--radius-control); }
+.lab-preview i.box { background: var(--accent); }
+.lab-preview i.ghost { border: 1.5px dashed var(--text-muted); }
+.lab-preview .lane { position: absolute; left: 14px; right: 14px; height: 1px; background: var(--border); }
+.lab-preview b.trail { position: absolute; width: 5px; height: 5px; border-radius: var(--radius-pill); background: var(--accent); opacity: .5; }

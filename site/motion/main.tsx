@@ -73,9 +73,9 @@ const config: AtlasConfig = {
     patterns: e => <PatternDetail e={e} />,
     materials: e => <MaterialDetail e={e} />,
   },
-  futureTools: [
-    { id: "rhythm-lab", title: "节奏实验室", description: "节拍器、吸附、缓动曲线，导出 CSS 与 WAV。", icon: <AudioWaveform /> },
-    { id: "workflow", title: "Agent 工作流", description: "按需求挑选条目，下载资料目录并生成交给 Agent 的 Prompt。", icon: <Workflow /> },
+  tools: [
+    { id: "rhythm-lab", title: "节奏实验室", description: "节拍器、A/B 吸附对比、打拍录入、曲线、时长与错峰", icon: <AudioWaveform /> },
+    { id: "workflow", title: "Agent 工作流", description: "选条目、生成任务说明、获取结构化资料", icon: <Workflow /> },
   ],
   legacyHash: hash => {
     const id = hash.split(/[/?&=]/).filter(Boolean).find(part => KINDS.some(k => byId(data[k], part)));
