@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "liquid-neck-leap",
+  "pattern": {
+    "id": "liquid-neck-leap",
+    "order": 63,
+    "title": "液团拉丝跃起",
+    "types": [
+      "transition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "液态流动"
+    ],
+    "summary": "液团起跳时拉出细颈，细颈变细断裂、两端回弹，液团沿抛物线并入大液团或落下，引出后续液浪。",
+    "mechanism": "液团起跳时拉出细颈，细颈变细断裂、两端回弹，液团沿抛物线并入大液团或落下，引出后续液浪。",
+    "trigger": "小液团融合拍点与主液团跃起节点到达时",
+    "effect": "起跳拉丝、断颈和回弹连接液团离地、飞行与融合落地。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-liquid 原片 1.3–4.4 秒；1 倍速，总时长 3.1 秒。"
+      },
+      {
+        "name": "跳滴拉丝并团参数",
+        "value": "  const MX = 960, GH = 5000, TH = 0.34;\n  hops.forEach((h) => { const d = drops[h.who]; h.side = Math.sign(d.x - MX); h.tTake = h.tc - TH; h.x0 = d.x; h.x1 = MX + h.side * 42; h.vy = GH * TH / 2 + 60 / TH; });\n          if (tt < 0.09 && rs === 1) {                        // take-off neck to the floor, snapping\n  else { float w = exp(-k*(d-f.m)); f.s += w; f.g += w*g; f.u += w*u; }"
+      },
+      {
+        "name": "液团拔丝跃起参数",
+        "value": "  const tLeap = cues.leap, tApex = cues.apex, tImpact = 4.0;\n          const rm = lerp(14, 0.7, Math.pow(k, 0.9));\n  const GL = 3750;                                      // leap gravity (surface-tension jump reads floatier)\n  \"thread_snap\": 3.433,"
+      }
+    ],
+    "useCases": [
+      "液团起跳并团",
+      "拉丝断裂后接液体转场"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-liquid 原片 1.3–4.4 秒；总时长 3.1 秒。液团起跳时拉出细颈，细颈变细断裂、两端回弹，液团沿抛物线并入大液团或落下，引出后续液浪。参数保持原作数值：  const MX = 960, GH = 5000, TH = 0.34;\n  hops.forEach((h) => { const d = drops[h.who]; h.side = Math.sign(d.x - MX); h.tTake = h.tc - TH; h.x0 = d.x; h.x1 = MX + h.side * 42; h.vy = GH * TH / 2 + 60 / TH; });\n          if (tt < 0.09 && rs === 1) {                        // take-off neck to the floor, snapping\n  else { float w = exp(-k*(d-f.m)); f.s += w; f.g += w*g; f.u += w*u; }\n  const tLeap = cues.leap, tApex = cues.apex, tImpact = 4.0;\n          const rm = lerp(14, 0.7, Math.pow(k, 0.9));\n  const GL = 3750;                                      // leap gravity (surface-tension jump reads floatier)\n  \"thread_snap\": 3.433,\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/liquid-neck-leap/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-liquid"
+      }
+    ],
+    "previewAt": 2,
+    "markers": [
+      {
+        "t": 0,
+        "label": "液态流动"
+      },
+      {
+        "t": 0.6,
+        "label": "机制画面 1"
+      },
+      {
+        "t": 2,
+        "label": "机制画面 2"
+      },
+      {
+        "t": 2.2,
+        "label": "机制画面 3"
+      }
+    ],
+    "preview": "previews/patterns/liquid-neck-leap.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-liquid",
+      "bundle": "agent/cases/mg-liquid.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 液团拉丝跃起\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速依次重放mg-liquid 原片 1.3–4.4 秒；总时长 3.1 秒。液团起跳时拉出细颈，细颈变细断裂、两端回弹，液团沿抛物线并入大液团或落下，引出后续液浪。参数保持原作数值：  const MX = 960, GH = 5000, TH = 0.34;\n  hops.forEach((h) => { const d = drops[h.who]; h.side = Math.sign(d.x - MX); h.tTake = h.tc - TH; h.x0 = d.x; h.x1 = MX + h.side * 42; h.vy = GH * TH / 2 + 60 / TH; });\n          if (tt < 0.09 && rs === 1) {                        // take-off neck to the floor, snapping\n  else { float w = exp(-k*(d-f.m)); f.s += w; f.g += w*g; f.u += w*u; }\n  const tLeap = cues.leap, tApex = cues.apex, tImpact = 4.0;\n          const rm = lerp(14, 0.7, Math.pow(k, 0.9));\n  const GL = 3750;                                      // leap gravity (surface-tension jump reads floatier)\n  \"thread_snap\": 3.433,\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-liquid 原片 1.3–4.4 秒；1 倍速，总时长 3.1 秒。\n- **跳滴拉丝并团参数**：  const MX = 960, GH = 5000, TH = 0.34;\n  hops.forEach((h) => { const d = drops[h.who]; h.side = Math.sign(d.x - MX); h.tTake = h.tc - TH; h.x0 = d.x; h.x1 = MX + h.side * 42; h.vy = GH * TH / 2 + 60 / TH; });\n          if (tt < 0.09 && rs === 1) {                        // take-off neck to the floor, snapping\n  else { float w = exp(-k*(d-f.m)); f.s += w; f.g += w*g; f.u += w*u; }\n- **液团拔丝跃起参数**：  const tLeap = cues.leap, tApex = cues.apex, tImpact = 4.0;\n          const rm = lerp(14, 0.7, Math.pow(k, 0.9));\n  const GL = 3750;                                      // leap gravity (surface-tension jump reads floatier)\n  \"thread_snap\": 3.433,\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段与中文节点，画面和声音使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/liquid-neck-leap/index.html) · [在库中查看](../../patterns.html#pattern/liquid-neck-leap)\n"
+  },
+  "entrypoint": "demos/patterns/liquid-neck-leap/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-liquid/LICENSES.md",
+      "bytes": 812,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/audio/film.m4a",
+      "bytes": 418545,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fidelity.md",
+      "bytes": 5964,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/cues.json",
+      "bytes": 1702,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/engine.js",
+      "bytes": 9243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/scene.js",
+      "bytes": 46421,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/shaders.js",
+      "bytes": 28643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/state.js",
+      "bytes": 669,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/textsdf.js",
+      "bytes": 5558,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/type.js",
+      "bytes": 2073,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/main.js",
+      "bytes": 3456,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/setup.js",
+      "bytes": 152,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/style.css",
+      "bytes": 143,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces-Liquid-72-900-Soft.ttf",
+      "bytes": 72996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces[SOFT,WONK,opsz,wght].ttf",
+      "bytes": 360440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/NotoSerifSC[wght].ttf",
+      "bytes": 25125512,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fonts.css",
+      "bytes": 494,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fraunces-OFL.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/notoserifsc-OFL.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/index.html",
+      "bytes": 1759,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/audio.py",
+      "bytes": 11884,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/cues.json",
+      "bytes": 1702,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/lookdev.js",
+      "bytes": 2622,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/scene.js",
+      "bytes": 56751,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/textsdf.js",
+      "bytes": 5558,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/out/cues_derived.json",
+      "bytes": 5548,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/liquid-neck-leap/index.html",
+      "bytes": 1391,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/liquid-neck-leap/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-liquid.json",
+      "bytes": 16286,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/liquid-neck-leap.json",
+      "bytes": 3601,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/liquid-neck-leap.jpg",
+      "bytes": 43532,
+      "role": "preview"
+    }
+  ]
+}

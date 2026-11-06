@@ -1,0 +1,66 @@
+{
+  "id": "fan-sunburst-clockface",
+  "order": 125,
+  "title": "对称扇面成钟",
+  "types": [
+    "composition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "八位扇舞者按八分音符开扇，镜头升高，俯拍八向对称的旭日纹；舞者转位、展开的扇面与两根金针合为十二点钟面。",
+  "mechanism": "八位扇舞者按八分音符开扇，镜头升高，俯拍八向对称的旭日纹；舞者转位、展开的扇面与两根金针合为十二点钟面。",
+  "trigger": "全乐队TUTTI进入，BALL1俯拍，BALL2开始成钟。",
+  "effect": "庆典群舞转为承接午夜主题的时间符号。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "42.066897–48.273793秒；1倍速，共6.206897秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "开扇与对称",
+      "value": "film/shots_misc.js:83–115：N=8，fanT(i)=TUTTI+i*B/2，.22秒开扇，rot=(t−BALL1)*.45。"
+    },
+    {
+      "name": "成钟",
+      "value": "film/shots_misc.js:116–144：form=eio(seg(t,BALL2,clockForm))；hour=[0,0,2,4,5,7,8,10]，前两人到半径115/260，指向XII，钟圈半径520。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-art-deco/film/shots_misc.js",
+    "demos/cases/lemo-art-deco/film/timeline.js",
+    "demos/cases/lemo-art-deco/film/chars.js"
+  ],
+  "locator": "shots_misc.js / timeline.js / chars.js",
+  "useCases": [
+    "庆典群舞转为承接午夜主题的时间符号。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-art-deco的原作render(t)，重放“对称扇面成钟”。八位扇舞者按八分音符开扇，镜头升成八向对称俯拍旭日纹；舞者转位、展开的扇面与两根金针合为十二点钟面。参数与源码：film/shots_misc.js:83–115：N=8，fanT(i)=TUTTI+i*B/2，.22秒开扇，rot=(t−BALL1)*.45。；film/shots_misc.js:116–144：form=eio(seg(t,BALL2,clockForm))；hour=[0,0,2,4,5,7,8,10]，前两人到半径115/260，指向XII，钟圈半径520。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/fan-sunburst-clockface/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-art-deco"
+    }
+  ],
+  "previewAt": 4.7,
+  "markers": [
+    {
+      "t": 0,
+      "label": "对称扇面成钟"
+    }
+  ]
+}

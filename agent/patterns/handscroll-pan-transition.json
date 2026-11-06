@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "handscroll-pan-transition",
+  "pattern": {
+    "id": "handscroll-pan-transition",
+    "order": 103,
+    "title": "画卷横移转场",
+    "types": [
+      "transition",
+      "camera"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "五幅画按SLOT从右向左铺在同一装裱长卷上，相机在两幅画的中心之间横移。穿过260px装裱留缝后，下一景到位；三次横移逐渐加快。",
+    "mechanism": "五幅画按SLOT从右向左铺在同一装裱长卷上，相机在两幅画的中心之间横移。穿过260px装裱留缝后，下一景到位；三次横移逐渐加快。",
+    "trigger": "稻田、雨桥和茶屋的景名落印之后。",
+    "effect": "场景换位保持实物画卷的连续关系，并逐步加快叙事。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "10.1–11.9秒；16–17.7秒；21.95–23.3秒；1倍速，总时长4.850000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "卷面位置",
+        "value": "film/story.js:GAP=260，SW=1920+GAP，SLOT(i)=(4-i)*SW。"
+      },
+      {
+        "name": "横移镜头",
+        "value": "film/story.js:T.pan12=[10.5,11.5]、pan23=[16.4,17.3]、pan34=[22.3,22.9]；film/main.js:camera用eio插值中心；第三次zoom由1.065回到1。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-ukiyoe/film/main.js",
+      "demos/cases/lemo-ukiyoe/film/story.js"
+    ],
+    "locator": "camera / SLOT / T.pan12 / T.pan23 / T.pan34",
+    "useCases": [
+      "场景换位保持实物画卷的连续关系，并逐步加快叙事。"
+    ],
+    "avoid": [
+      "同时叠加遮住主要动作的画面层"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-ukiyoe的原作render(t)，实现“画卷横移转场”：五幅画按SLOT从右向左铺在同一装裱长卷，相机在两幅画中心间横移，穿过260px装裱留缝后下一景到位，三次横移逐渐加快。参数与源码：film/story.js:GAP=260，SW=1920+GAP，SLOT(i)=(4-i)*SW。；film/story.js:T.pan12=[10.5,11.5]、pan23=[16.4,17.3]、pan34=[22.3,22.9]；film/main.js:camera用eio插值中心；第三次zoom由1.065回到1。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。",
+    "demo": "demos/patterns/handscroll-pan-transition/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-ukiyoe"
+      }
+    ],
+    "previewAt": 1,
+    "markers": [
+      {
+        "t": 0,
+        "label": "画卷横移转场"
+      },
+      {
+        "t": 1.8,
+        "label": "画卷横移转场"
+      },
+      {
+        "t": 3.5,
+        "label": "画卷横移转场"
+      }
+    ],
+    "preview": "previews/patterns/handscroll-pan-transition.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-ukiyoe",
+      "bundle": "agent/cases/lemo-ukiyoe.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 画卷横移转场\n\n## 实现 Prompt\n\n复用来源案例lemo-ukiyoe的原作render(t)，实现“画卷横移转场”：五幅画按SLOT从右向左铺在同一装裱长卷，相机在两幅画中心间横移，穿过260px装裱留缝后下一景到位，三次横移逐渐加快。参数与源码：film/story.js:GAP=260，SW=1920+GAP，SLOT(i)=(4-i)*SW。；film/story.js:T.pan12=[10.5,11.5]、pan23=[16.4,17.3]、pan34=[22.3,22.9]；film/main.js:camera用eio插值中心；第三次zoom由1.065回到1。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：10.1–11.9秒；16–17.7秒；21.95–23.3秒；1倍速，总时长4.850000秒。\n\n[打开 Demo](../../demos/patterns/handscroll-pan-transition/index.html) · [在库中查看](../../patterns.html#pattern/handscroll-pan-transition)\n"
+  },
+  "entrypoint": "demos/patterns/handscroll-pan-transition/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-ukiyoe/LICENSES.md",
+      "bytes": 934,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/audio/CREDITS",
+      "bytes": 1474,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/audio/film.m4a",
+      "bytes": 1376127,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/fidelity.md",
+      "bytes": 4603,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/index.html",
+      "bytes": 427,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/lines.json",
+      "bytes": 485,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/main.js",
+      "bytes": 18242,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/nature.js",
+      "bytes": 12111,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/print.js",
+      "bytes": 19583,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/story.js",
+      "bytes": 1485,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/traveler.js",
+      "bytes": 13600,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/views.js",
+      "bytes": 29228,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/film/wave.js",
+      "bytes": 12643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/fonts/OFL-shipporiminchob1.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/fonts/OFL-yujisyuku.txt",
+      "bytes": 4386,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/fonts/fonts.css",
+      "bytes": 543,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/fonts/shippori-500.woff2",
+      "bytes": 32472,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/fonts/shippori-700.woff2",
+      "bytes": 32676,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/fonts/shippori-kanji.woff2",
+      "bytes": 1828,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/fonts/yuji-kanji.woff2",
+      "bytes": 9332,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/index.html",
+      "bytes": 2412,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/CREDITS",
+      "bytes": 1474,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/README.md",
+      "bytes": 3076,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/build.sh",
+      "bytes": 1298,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/check_asr.py",
+      "bytes": 1033,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/events.json",
+      "bytes": 3149,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/mix.py",
+      "bytes": 10955,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/music/score.json",
+      "bytes": 5536,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/music/score.py",
+      "bytes": 20217,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/subs.py",
+      "bytes": 673,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ukiyoe/source/voices/words.json",
+      "bytes": 1043,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/handscroll-pan-transition/index.html",
+      "bytes": 1380,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/handscroll-pan-transition/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-ukiyoe.json",
+      "bytes": 9828,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/handscroll-pan-transition.json",
+      "bytes": 2676,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/handscroll-pan-transition.jpg",
+      "bytes": 136944,
+      "role": "preview"
+    }
+  ]
+}

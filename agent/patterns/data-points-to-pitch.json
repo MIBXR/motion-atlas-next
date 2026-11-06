@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "data-points-to-pitch",
+  "pattern": {
+    "id": "data-points-to-pitch",
+    "order": 167,
+    "title": "数据点映射音高",
+    "types": [
+      "sound",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "每个数据点在落笔时发出一个音：温度决定音高，时间轴上的点密度从四分音符加密到三十二分音符；低于中心的值吸附到 D 大调五声，极端值逐渐失谐。",
+    "mechanism": "每个数据点在落笔时发出一个音：温度决定音高，时间轴上的点密度从四分音符加密到三十二分音符；低于中心的值吸附到 D 大调五声，极端值逐渐失谐。",
+    "trigger": "原作时间轴进入所列动作区间。",
+    "effect": "每个数据点在落笔时发出一个音：温度决定音高，时间轴上的点密度从四分音符加密到三十二分音符；低于中心的值吸附到 D 大调五声，极端值逐渐失谐。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "5.200—31.000秒；32.000—34.000秒，1倍速。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "音高",
+        "value": "midi=62+(v+.4)×17；v<.25吸附D大调五声[2,4,6,9,11]；.25≤v<.7取整半音；v≥.7连续音高。2011—2025年从5增至45 cents，2025设为48 cents并叠加小二度影子。",
+        "source": "demos/cases/lemo-dataviz/source/music/score.py:31–38,70–71"
+      },
+      {
+        "name": "密度",
+        "value": "yearK依次以1、.5、.25、.125拍推进；90BPM、24fps使三十二分音符等于2帧。",
+        "source": "demos/cases/lemo-dataviz/film/timeline.js:yearK"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-dataviz/source/music/score.py",
+      "demos/cases/lemo-dataviz/film/timeline.js"
+    ],
+    "locator": "source/music/score.py:sonification；film/timeline.js:yearK",
+    "useCases": [
+      "数据点映射音高"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "以来源案例lemo-dataviz的原作render(t)重放“数据点映射音高”。每个数据点在落笔时发出一个音：温度决定音高，时间轴的点密度从四分音符加密到三十二分音符；低于中心的值吸附D大调五声，极端值逐渐失谐。 参数：midi=62+(v+.4)×17；低于中值吸附D大调五声；最后约15点偏移5—45 cents。；yearK依次以1、.5、.25、.125拍推进；90BPM、24fps使三十二分音符等于2帧。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+    "demo": "demos/patterns/data-points-to-pitch/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-dataviz"
+      }
+    ],
+    "previewAt": 23.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "数据点映射音高"
+      }
+    ],
+    "preview": "previews/patterns/data-points-to-pitch.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-dataviz",
+      "bundle": "agent/cases/lemo-dataviz.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 数据点映射音高\n\n## 实现 Prompt\n\n以来源案例lemo-dataviz的原作render(t)重放“数据点映射音高”。每个数据点在落笔时发出一个音：温度决定音高，时间轴的点密度从四分音符加密到三十二分音符；低于中心的值吸附D大调五声，极端值逐渐失谐。 参数：midi=62+(v+.4)×17；低于中值吸附D大调五声；最后约15点偏移5—45 cents。；yearK依次以1、.5、.25、.125拍推进；90BPM、24fps使三十二分音符等于2帧。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：5.200—31.000秒；32.000—34.000秒，1倍速。\n\n[打开 Demo](../../demos/patterns/data-points-to-pitch/index.html) · [在库中查看](../../patterns.html#pattern/data-points-to-pitch)\n"
+  },
+  "entrypoint": "demos/patterns/data-points-to-pitch/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-dataviz/LICENSES.md",
+      "bytes": 796,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/CREDITS",
+      "bytes": 1338,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/film.m4a",
+      "bytes": 1616589,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fidelity.md",
+      "bytes": 3291,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/data/jja.json",
+      "bytes": 1966,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/engine.js",
+      "bytes": 25179,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/film.js",
+      "bytes": 31998,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/index.html",
+      "bytes": 349,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/lines.json",
+      "bytes": 852,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/main.js",
+      "bytes": 2391,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/timeline.js",
+      "bytes": 2288,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/voices/words_rel.json",
+      "bytes": 1448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/Caveat-VF.ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/Newsreader-Italic-VF.ttf",
+      "bytes": 495684,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/Newsreader-VF.ttf",
+      "bytes": 451664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/caveat_OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/fonts.css",
+      "bytes": 569,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/ibmplexmono_OFL.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/newsreader_OFL.txt",
+      "bytes": 4394,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/index.html",
+      "bytes": 2641,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/CREDITS",
+      "bytes": 1338,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/README.md",
+      "bytes": 1633,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/build.sh",
+      "bytes": 1932,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/data/GLB.Ts+dSST.csv",
+      "bytes": 12887,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/events.json",
+      "bytes": 18365,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/mix.py",
+      "bytes": 10036,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/music/score.json",
+      "bytes": 8433,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/music/score.py",
+      "bytes": 11863,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/cuecheck.py",
+      "bytes": 1608,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/extract_data.py",
+      "bytes": 1769,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/final_asr.py",
+      "bytes": 1192,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/subs.py",
+      "bytes": 839,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/words.py",
+      "bytes": 1174,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/voices/words.json",
+      "bytes": 1195,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/data-points-to-pitch/index.html",
+      "bytes": 1043,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/data-points-to-pitch/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-dataviz.json",
+      "bytes": 9775,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/data-points-to-pitch.json",
+      "bytes": 2829,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/data-points-to-pitch.jpg",
+      "bytes": 65013,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "blade-sweep-print-next",
+  "order": 119,
+  "title": "刮板斜扫印出下一城",
+  "types": [
+    "transition",
+    "texture"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "斜向刮板沿边缘带噪声的裁切区扫过旧海报，在后方直接印出下一座城市；新海报的色组以并列墨珠的形式装载在刮板上。",
+  "mechanism": "斜向刮板沿边缘带噪声的裁切区扫过旧海报，在后方直接印出下一座城市；新海报的色组以并列墨珠的形式装载在刮板上。",
+  "trigger": "到达巴黎换景时刻 PAR.swap 时。",
+  "effect": "地标与色板从同一斜向前沿一起替换，刮板是可见的转场工具。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "13.700000–15.100000秒；1倍速，共1.400000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "斜向裁切",
+      "value": "film/film.js:183–204的swRegion / swFront / sweep：SW_BOX=[−500,−500,2920,2080]，噪边50/7；裁切drawB，前沿绘squeegee。"
+    },
+    {
+      "name": "换城时刻",
+      "value": "film/film.js:43–45、303–312：巴黎14.1667起.5秒、角−.32rad，布宜诺斯艾利斯17.7778起.6秒、角−.28rad；墨珠分别为巴黎四色和BOCA_INKS。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-silkscreen-poster/film/film.js",
+    "demos/cases/lemo-silkscreen-poster/film/engine/silk.js"
+  ],
+  "locator": "film.js / engine/silk.js",
+  "useCases": [
+    "地标与色板从同一斜向前沿一起替换，刮板是可见的转场工具。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-silkscreen-poster的原作render(t)，重放“刮板斜扫印出下一城”。斜向刮板沿带噪声边缘的裁切区扫过旧海报，后方直接印出下一座城市；刮板墨珠并列装载新海报的色组。参数与源码：film/film.js:183–204的swRegion / swFront / sweep：SW_BOX=[−500,−500,2920,2080]，噪边50/7；裁切drawB，前沿绘squeegee。；film/film.js:43–45、303–312：巴黎14.1667起.5秒、角−.32rad，布宜诺斯艾利斯17.7778起.6秒、角−.28rad；墨珠分别为巴黎四色和BOCA_INKS。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/blade-sweep-print-next/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-silkscreen-poster"
+    }
+  ],
+  "previewAt": 0.85,
+  "markers": [
+    {
+      "t": 0,
+      "label": "刮板斜扫印出下一城"
+    }
+  ]
+}

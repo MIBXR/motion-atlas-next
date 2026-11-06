@@ -1,0 +1,86 @@
+{
+  "id": "cutout-arc-flight-flutter",
+  "order": 74,
+  "title": "剪影弧线飞出",
+  "types": [
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15"
+  ],
+  "summary": "地球、鹰或蝴蝶 cue 到达后，剪影沿二次曲线飞出并落位，根据物件叠加落地压扁、俯冲或双姿势振翅效果。",
+  "mechanism": "地球、鹰或蝴蝶 cue 到达 → 剪影沿二次曲线飞出并落位，根据物件叠加落地压扁、俯冲或双姿势振翅效果。",
+  "trigger": "地球、鹰或蝴蝶 cue 到达时",
+  "effect": "剪影沿二次曲线飞出并落位，根据物件叠加落地压扁、俯冲或双姿势振翅效果。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-collage 原片 4.46–7.7 秒；1 倍速，总时长 3.24 秒。"
+    },
+    {
+      "name": "弧线飞出振翅",
+      "value": "const fl = 6, u = clamp(k / fl), e = eOut(u);\nif (it.mode === 'swoop' && Math.floor(tl * 6 + 1e-4) % 2) { sy = 0.74; skx = -0.12; r += 3 * DEG; }\nif (it.mode === 'flutter') sx = k < fl ? [1, 0.35][K(tl) % 2] : [1, 0.58][Math.floor(tl * 6 + 1e-4) % 2];"
+    }
+  ],
+  "useCases": [
+    "照片剪影沿弧线飞出并振翅的拼贴段落。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-collage 原片 4.46–7.7 秒；总时长 3.24 秒。地球、鹰或蝴蝶 cue 到达 → 剪影沿二次曲线飞出并落位，按物件叠加落地压扁、俯冲或双姿势振翅。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：const fl = 6, u = clamp(k / fl), e = eOut(u);\nif (it.mode === 'swoop' && Math.floor(tl * 6 + 1e-4) % 2) { sy = 0.74; skx = -0.12; r += 3 * DEG; }\nif (it.mode === 'flutter') sx = k < fl ? [1, 0.35][K(tl) % 2] : [1, 0.58][Math.floor(tl * 6 + 1e-4) % 2];。使用 1920×1080 横屏。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/cutout-arc-flight-flutter/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-collage"
+    }
+  ],
+  "previewAt": 1.34,
+  "markers": [
+    {
+      "t": 0,
+      "label": "脑洞拼贴"
+    },
+    {
+      "t": 1.8733333,
+      "label": "黑带拍入"
+    },
+    {
+      "t": 2.2066667,
+      "label": "脑洞大开"
+    },
+    {
+      "t": 3.04,
+      "label": "撕开纸页"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#16130F",
+      "#F2ECDF",
+      "#D2261C",
+      "#E0A355"
+    ],
+    "type": "Anton 400；Bebas Neue 400；Alimama ShuHeiTi 700；Noto Serif SC 900；Noto Sans SC 700；IBM Plex Mono 500。"
+  }
+}

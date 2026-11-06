@@ -1,0 +1,266 @@
+{
+  "id": "lemo-ascii-crt",
+  "order": 46,
+  "title": "静海日志 · ASCII / CRT 终端",
+  "subtitle": "Tranquility.log",
+  "carriers": [
+    "video"
+  ],
+  "style": "graphic-type",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "webgl"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "ASCII / CRT 终端",
+    "图形与排版",
+    "代码影片"
+  ],
+  "summary": "月球中继机沉默四十年后收到地球来信，把“I AM STILL HERE.”拆成字符并排成地出图，镜头推入一个由日志构成的字母，最后拉远到空无一人的月球房间并关机。",
+  "focus": "墨量决定字符在图像中的位置，字格大小的变化形成镜头缩放；匀速机器打字、手动来信和三次光标闪烁共同形成等待的节奏。",
+  "accent": "#ffb347",
+  "background": "#000000",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 50.23,
+  "rhythm": {
+    "duration": 59.791666666666664,
+    "bpm": 100,
+    "beats": [
+      {
+        "t": 0,
+        "label": "显像管唤醒",
+        "note": "原片0.000000–3.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 3,
+        "label": "文件名成为日志",
+        "note": "原片3.000000–8.400000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 8.4,
+        "label": "等待与来信",
+        "note": "原片8.400000–29.600000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 29.6,
+        "label": "打出回复",
+        "note": "原片29.600000–33.600000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 33.6,
+        "label": "文字排成地出",
+        "note": "原片33.600000–40.200000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 40.2,
+        "label": "字内日志",
+        "note": "原片40.200000–47.600000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 52.6,
+        "label": "月球房间与关机",
+        "note": "原片52.600000–59.791667秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 3,
+      "to": 0.35,
+      "label": "显像管唤醒",
+      "from": 0.15
+    },
+    {
+      "t0": 3,
+      "t1": 8.4,
+      "to": 0.5,
+      "label": "文件名成为日志",
+      "from": 0.35
+    },
+    {
+      "t0": 8.4,
+      "t1": 29.6,
+      "to": 0.3,
+      "label": "等待与来信",
+      "from": 0.5
+    },
+    {
+      "t0": 29.6,
+      "t1": 33.6,
+      "to": 0.8,
+      "label": "打出回复",
+      "from": 0.3
+    },
+    {
+      "t0": 33.6,
+      "t1": 40.2,
+      "to": 0.65,
+      "label": "文字排成地出",
+      "from": 0.8
+    },
+    {
+      "t0": 40.2,
+      "t1": 47.6,
+      "to": 0.45,
+      "label": "字内日志",
+      "from": 0.65
+    },
+    {
+      "t0": 47.6,
+      "t1": 52.6,
+      "from": 0.25,
+      "to": 0.35,
+      "label": "传输与微笑"
+    },
+    {
+      "t0": 52.6,
+      "t1": 59.791666666666664,
+      "to": 0.6,
+      "label": "月球房间与关机",
+      "from": 0.45
+    }
+  ],
+  "energyNote": "段落取自DEMO.md Shots与film内时间表；0–1为画面密度、动作和声音强度的相对编辑标注。",
+  "observations": [
+    "字格以20列标题、80列终端和240列图像改变尺度；字符由真实VT323图集绘制。",
+    "回复中的字母以测得的墨量分配到图像格，地球字先落到地平线后再升起。",
+    "40.2秒推入M，40列小字组成同一字符，内层为四十年的NO SIGNAL日志。",
+    "琥珀磷光贯穿全片，37.2秒只为地球开启蓝白第二通道。"
+  ],
+  "composition": {
+    "color": "暗玻璃、P3琥珀与地球蓝白#BFE4FF。",
+    "typography": "VT323等宽字图集；片名、正文、字符画与LOG字幕使用同一家族。",
+    "layout": "1920×1080；终端安全区和底部固定LOG条分离。",
+    "imagery": "离屏灰度场按墨量转为真实字母；WebGL2合成磷光、扫描线和弧面。",
+    "motion": "连续字格缩放、离散打字与粒子落位，关机时画面压缩成线点。",
+    "sound": "原片模拟合成器配乐、机械键盘、调制解调器、继电器与Kokoro机器旁白。",
+    "rhythm": "100BPM，三次光标停顿后回复，字符落位与一次换色形成峰值。",
+    "coherence": "同一回复既是台词也是地出图的全部字母来源。"
+  },
+  "layers": [
+    {
+      "name": "字符负片",
+      "role": "月面、地球、星点和房间转成格点亮度。"
+    },
+    {
+      "name": "字图集",
+      "role": "按墨量坡与三档亮度选择真实字符。"
+    },
+    {
+      "name": "LOG字幕",
+      "role": "按旁白词时间戳打字，独立于主画面缩放。"
+    },
+    {
+      "name": "显像管",
+      "role": "弧面、磷光辉光、余晖、开关机。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#000000",
+      "#ffb000",
+      "#ff6605",
+      "#BFE4FF"
+    ],
+    "type": "VT323 400，160px图集；fonts/VT323-Regular.ttf。",
+    "motion": [
+      {
+        "name": "字粒子",
+        "value": "film/main.js:buildFall / partPos / sFall：33.6秒拆分；18px→8px；落位闪光1.9倍，.12秒衰减。"
+      },
+      {
+        "name": "字内镜头",
+        "value": "film/main.js:fractalCW / sFractal：8→300→450px，K=40；40.2–47.6秒。"
+      },
+      {
+        "name": "显像管",
+        "value": "film/crt.js:COMP；film/main.js:T：.35–1.05秒开机，58.6–59.2秒关机。"
+      }
+    ]
+  },
+  "useCases": [
+    "开发工具短片",
+    "科幻叙事",
+    "技术品牌片头"
+  ],
+  "avoid": [
+    "依靠自由像素或矢量面板叙事的画面"
+  ],
+  "constraints": [
+    "保持VT323字体与图集墨量测量一致。",
+    "字格中心使用cw×2的行高。",
+    "主画面和字幕使用同一显像管后期。"
+  ],
+  "migration": [
+    {
+      "field": "film/main.js:buildFall / partPos / sFall",
+      "how": "修改该处的字粒子参数。"
+    },
+    {
+      "field": "film/main.js:fractalCW / sFractal",
+      "how": "修改该处的字内镜头参数。"
+    },
+    {
+      "field": "film/crt.js:COMP；film/main.js:T",
+      "how": "修改该处的显像管参数。"
+    }
+  ],
+  "prompt": "制作一支ASCII / CRT 终端时间线影片。月球中继机沉默四十年后收到地球来信，把“I AM STILL HERE.”拆成字符地出图，推入一个由日志构成的字母，最后拉远到空无一人的月球房间并关机。墨量决定字符的图像位置，字格大小承担镜头；匀速机器打字、手动来信和三次光标闪烁组织等待。画面构成：暗玻璃、P3琥珀与地球蓝白#BFE4FF。；VT323等宽字图集；片名、正文、字符画与LOG字幕使用同一家族。；1920×1080；终端安全区和底部固定LOG条分离。；离屏灰度场按墨量转为真实字母；WebGL2合成磷光、扫描线和弧面。；连续字格缩放、离散打字与粒子落位，关机压成线点。；原片模拟合成器配乐、机械键盘、调制解调器、继电器与Kokoro机器旁白。；100BPM，三次光标停顿后回复，字符落位与一次换色形成峰值。；同一回复既是台词也是地出图的全部字母来源。。实现入口为demos/cases/lemo-ascii-crt/film/，MotionKit适配层仅调用并等待原作render(t)，使用原片音轨同步播放。",
+  "demo": "demos/cases/lemo-ascii-crt/index.html",
+  "patternIds": [
+    "text-sorts-into-image",
+    "font-size-zoom",
+    "crt-line-dot-shutdown",
+    "crt-boot-shell",
+    "boot-typing"
+  ],
+  "fidelity": "demos/cases/lemo-ascii-crt/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/ascii-crt",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/ascii-crt/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；成片及静帧CC BY 4.0，署名LemoLab；第三方资源按CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/ascii-crt"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/ascii-crt.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/ascii-crt/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/ascii-crt)；代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原片模拟合成器配乐、机械键盘、调制解调器、继电器与Kokoro机器旁白。 原始署名见[audio/CREDITS](audio/CREDITS)，完整许可见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "VT323 400，160px图集；fonts/VT323-Regular.ttf。 OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

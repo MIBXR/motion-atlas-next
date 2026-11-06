@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "color-follows-wind",
+  "pattern": {
+    "id": "color-follows-wind",
+    "order": 114,
+    "title": "风过处上色",
+    "types": [
+      "texture",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "草帽沿风的路径飞过无彩钢笔公园，每隔0.04秒留下颜色扩散源；每个像素读取最早到达时刻，湿前沿铺上淡彩，树冠与天空源补足大色区。",
+    "mechanism": "草帽沿风的路径飞过无彩钢笔公园，每隔0.04秒留下颜色扩散源；每个像素读取最早到达时刻，湿前沿铺上淡彩，树冠与天空源补足大色区。",
+    "trigger": "6秒时，草帽飞离女孩头顶，路径持续到24秒接帽时。",
+    "effect": "颜色跟随可见事件到达，原先静止的线稿人物着色后开始行动。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "4.4–19.2秒；1倍速，总时长14.800000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "沿帽采样",
+        "value": "film/film.js:143–159：t=6…24、步长.04，源延迟.12秒、速度900，R=360/520/760/400，GW/GH=640/360。"
+      },
+      {
+        "name": "湿前沿与人物",
+        "value": "film/engine.js:arrivalField / sampleField / compositor；film.js:315–326从人物起点读取颜色，防止跑到未着色区失色。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-urban-sketch/film/film.js",
+      "demos/cases/lemo-urban-sketch/film/engine.js",
+      "demos/cases/lemo-urban-sketch/film/world.js"
+    ],
+    "locator": "沿帽采样 / 湿前沿与人物",
+    "useCases": [
+      "颜色跟随可见事件到达，原先静止的线稿人物着色后开始行动。"
+    ],
+    "avoid": [
+      "同时安排遮挡书写或湿边的主动作"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-urban-sketch的原作render(t)，重放“风过处上色”。草帽沿风的路径飞过无彩钢笔公园，每隔0.04秒留下颜色扩散源；每个像素读取最早到达时刻，湿前沿铺上淡彩，树冠与天空源补足大色区。参数与源码：film/film.js:143–159：t=6…24、步长.04，源延迟.12秒、速度900，R=360/520/760/400，GW/GH=640/360。；film/engine.js:arrivalField / sampleField / compositor；film.js:315–326从人物起点读取颜色，防止跑到未着色区失色。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/color-follows-wind/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-urban-sketch"
+      }
+    ],
+    "previewAt": 8.8,
+    "markers": [
+      {
+        "t": 0,
+        "label": "风过处上色"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/color-follows-wind.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-urban-sketch",
+      "bundle": "agent/cases/lemo-urban-sketch.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 风过处上色\n\n## 实现 Prompt\n\n复用来源案例lemo-urban-sketch的原作render(t)，重放“风过处上色”。草帽沿风的路径飞过无彩钢笔公园，每隔0.04秒留下颜色扩散源；每个像素读取最早到达时刻，湿前沿铺上淡彩，树冠与天空源补足大色区。参数与源码：film/film.js:143–159：t=6…24、步长.04，源延迟.12秒、速度900，R=360/520/760/400，GW/GH=640/360。；film/engine.js:arrivalField / sampleField / compositor；film.js:315–326从人物起点读取颜色，防止跑到未着色区失色。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：4.4–19.2秒；1倍速，总时长14.800000秒。\n\n[打开 Demo](../../demos/patterns/color-follows-wind/index.html) · [在库中查看](../../patterns.html#pattern/color-follows-wind)\n"
+  },
+  "entrypoint": "demos/patterns/color-follows-wind/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-urban-sketch/LICENSES.md",
+      "bytes": 898,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/audio/CREDITS",
+      "bytes": 819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/audio/film.m4a",
+      "bytes": 1070266,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fidelity.md",
+      "bytes": 5206,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/engine.js",
+      "bytes": 49735,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/film.js",
+      "bytes": 28063,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/index.html",
+      "bytes": 493,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/main.js",
+      "bytes": 228,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/poses.js",
+      "bytes": 4876,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/sheet.js",
+      "bytes": 1961,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/world.js",
+      "bytes": 35895,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/Caveat.ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/OFL-Caveat.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/OFL-ReenieBeanie.txt",
+      "bytes": 4359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/ReenieBeanie.ttf",
+      "bytes": 147036,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/fonts.css",
+      "bytes": 139,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/index.html",
+      "bytes": 2286,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/CREDITS",
+      "bytes": 819,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/README.md",
+      "bytes": 2587,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/api.js",
+      "bytes": 557,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/cues.json",
+      "bytes": 94380,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/foley.py",
+      "bytes": 10075,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/mix.py",
+      "bytes": 2687,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/score.py",
+      "bytes": 12654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/strokes.json",
+      "bytes": 66796,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/build.sh",
+      "bytes": 619,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/events.json",
+      "bytes": 1191,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/look.js",
+      "bytes": 784,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/subs.json",
+      "bytes": 243,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/tools/export_cues.mjs",
+      "bytes": 764,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/color-follows-wind/index.html",
+      "bytes": 798,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/color-follows-wind/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-urban-sketch.json",
+      "bytes": 10617,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/color-follows-wind.json",
+      "bytes": 2774,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/color-follows-wind.jpg",
+      "bytes": 155157,
+      "role": "preview"
+    }
+  ]
+}

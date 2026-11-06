@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "hand-tint-wash",
+  "pattern": {
+    "id": "hand-tint-wash",
+    "order": 117,
+    "title": "版画手工上色",
+    "types": [
+      "texture",
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "在已经完成的黑色刻线下按色区错峰铺透明水彩，各区从落笔点以带噪声的湿边扩张；淡彩独立缓存，保留溢色、偏位、边缘积色、回花与纸齿，黑墨始终盖在颜色上。",
+    "mechanism": "在已经完成的黑色刻线下按色区错峰铺透明水彩，各区从落笔点以带噪声的湿边扩张；淡彩独立缓存，保留溢色、偏位、边缘积色、回花与纸齿，黑墨始终盖在颜色上。",
+    "trigger": "25–26.25秒静默结束，26.35秒第一色区落水。",
+    "effect": "原本单色的博物志图版各区染上颜色，上色成为信息讲完后的视觉落点。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "25–31.25秒；1倍速，总时长6.250000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "区域时间与参数",
+        "value": "film/film.js:94–104：c0=T.colour[0]+.1，每区间隔.42秒，翅dur=1.6、其余1.25；alpha=.5/.95/.72，spill=2.5或3.5。"
+      },
+      {
+        "name": "独立洗色层",
+        "value": "film/engine/wash.js:37–74缓存各区的密度、回花、积色和纸齿；76–91以R=far×[1−(1−p)^2.2]×1.08的噪声环裁切，multiply合成，湿边宽5。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-engraving/film/film.js",
+      "demos/cases/lemo-engraving/film/engine/wash.js",
+      "demos/cases/lemo-engraving/film/engine/plate.js"
+    ],
+    "locator": "区域时间与参数 / 独立洗色层",
+    "useCases": [
+      "原本单色的博物志图版各区染上颜色，上色成为信息讲完后的视觉落点。"
+    ],
+    "avoid": [
+      "同时安排遮挡书写或湿边的主动作"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-engraving的原作render(t)，重放“版画手工上色”。在已经完成的黑色刻线下按色区错峰铺透明水彩，各区从落笔点以带噪声的湿边扩张；淡彩独立缓存，保留溢色、偏位、边缘积色、回花与纸齿，黑墨始终盖在颜色上。参数与源码：film/film.js:94–104：c0=T.colour[0]+.1，每区间隔.42秒，翅dur=1.6、其余1.25；alpha=.5/.95/.72，spill=2.5或3.5。；film/engine/wash.js:37–74缓存各区的密度、回花、积色和纸齿；76–91以R=far×[1−(1−p)^2.2]×1.08的噪声环裁切，multiply合成，湿边宽5。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/hand-tint-wash/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-engraving"
+      }
+    ],
+    "previewAt": 4.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "版画手工上色"
+      }
+    ],
+    "preview": "previews/patterns/hand-tint-wash.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-engraving",
+      "bundle": "agent/cases/lemo-engraving.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 版画手工上色\n\n## 实现 Prompt\n\n复用来源案例lemo-engraving的原作render(t)，重放“版画手工上色”。在已经完成的黑色刻线下按色区错峰铺透明水彩，各区从落笔点以带噪声的湿边扩张；淡彩独立缓存，保留溢色、偏位、边缘积色、回花与纸齿，黑墨始终盖在颜色上。参数与源码：film/film.js:94–104：c0=T.colour[0]+.1，每区间隔.42秒，翅dur=1.6、其余1.25；alpha=.5/.95/.72，spill=2.5或3.5。；film/engine/wash.js:37–74缓存各区的密度、回花、积色和纸齿；76–91以R=far×[1−(1−p)^2.2]×1.08的噪声环裁切，multiply合成，湿边宽5。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：25–31.25秒；1倍速，总时长6.250000秒。\n\n[打开 Demo](../../demos/patterns/hand-tint-wash/index.html) · [在库中查看](../../patterns.html#pattern/hand-tint-wash)\n"
+  },
+  "entrypoint": "demos/patterns/hand-tint-wash/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-engraving/LICENSES.md",
+      "bytes": 1027,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/CREDITS",
+      "bytes": 1754,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/film.m4a",
+      "bytes": 1324797,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fidelity.md",
+      "bytes": 3759,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/content.json",
+      "bytes": 2353,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/burin.js",
+      "bytes": 33064,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/copper.js",
+      "bytes": 12503,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/index.js",
+      "bytes": 2153,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/plate.js",
+      "bytes": 9974,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/wash.js",
+      "bytes": 7693,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/film.js",
+      "bytes": 27561,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/index.html",
+      "bytes": 462,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/lines.json",
+      "bytes": 914,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/main.js",
+      "bytes": 782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/subjects/bee.js",
+      "bytes": 24894,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/subjects/details.js",
+      "bytes": 16815,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/subjects/scallop.js",
+      "bytes": 6153,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/voices/dur.json",
+      "bytes": 78,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/BodoniModa-Italic-VF.ttf",
+      "bytes": 176300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/BodoniModa-VF.ttf",
+      "bytes": 162104,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/OFL-bodonimoda.txt",
+      "bytes": 4400,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/OFL.txt",
+      "bytes": 4384,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/PinyonScript-Regular.ttf",
+      "bytes": 151412,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/fonts.css",
+      "bytes": 397,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/index.html",
+      "bytes": 2438,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/CREDITS",
+      "bytes": 1754,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/README.md",
+      "bytes": 2897,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/build.sh",
+      "bytes": 1763,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/content_alt.json",
+      "bytes": 1803,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/events.json",
+      "bytes": 2157,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/example/index.html",
+      "bytes": 1830,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/mix.py",
+      "bytes": 10651,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/music/CREDITS_music.txt",
+      "bytes": 347,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/music/cues.json",
+      "bytes": 2555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/music/score.py",
+      "bytes": 26367,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/build_alt.sh",
+      "bytes": 1203,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/cuecheck.py",
+      "bytes": 2158,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/events.mjs",
+      "bytes": 825,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/readcheck/index.html",
+      "bytes": 2138,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/subs.py",
+      "bytes": 869,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/voices/words.json",
+      "bytes": 1498,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/hand-tint-wash/index.html",
+      "bytes": 801,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/hand-tint-wash/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-engraving.json",
+      "bytes": 10603,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/hand-tint-wash.json",
+      "bytes": 2975,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/hand-tint-wash.jpg",
+      "bytes": 132170,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "id": "lemo-midcentury-toon",
+  "order": 53,
+  "title": "认识皮普 · 50s 扁平卡通",
+  "subtitle": "Meet Pip",
+  "carriers": [
+    "video"
+  ],
+  "style": "dimensional",
+  "purpose": "explainer",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "50s 扁平卡通",
+    "卡通与动画",
+    "代码影片"
+  ],
+  "summary": "以1950年代教育片口吻介绍扫地机皮普：底座靠墙、手机配对、按下启动，最后把清扫路线拉成一张印刷平面图。",
+  "focus": "编号圆章既标示步骤层级，也作为转场入口；身体保持不动，手势和圆形放大细节解释每个操作。",
+  "accent": "#D35447",
+  "background": "#F4EAD5",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 3.2,
+  "rhythm": {
+    "duration": 40,
+    "beats": [
+      {
+        "t": 0,
+        "label": "开箱亮相"
+      },
+      {
+        "t": 7.2727272727272725,
+        "label": "底座靠墙"
+      },
+      {
+        "t": 12.727272727272727,
+        "label": "手机配对"
+      },
+      {
+        "t": 18.18181818181818,
+        "label": "按下启动"
+      },
+      {
+        "t": 21.818181818181817,
+        "label": "路线俯视"
+      },
+      {
+        "t": 27.272727272727273,
+        "label": "收好电线"
+      },
+      {
+        "t": 30.909090909090907,
+        "label": "三步海报"
+      },
+      {
+        "t": 36.36363636363636,
+        "label": "圈收片尾"
+      }
+    ],
+    "bpm": 132
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 7.2727272727272725,
+      "from": 0.5,
+      "to": 0.45,
+      "label": "开箱亮相"
+    },
+    {
+      "t0": 7.2727272727272725,
+      "t1": 12.727272727272727,
+      "from": 0.45,
+      "to": 0.6,
+      "label": "底座靠墙"
+    },
+    {
+      "t0": 12.727272727272727,
+      "t1": 18.18181818181818,
+      "from": 0.6,
+      "to": 0.7,
+      "label": "手机配对"
+    },
+    {
+      "t0": 18.18181818181818,
+      "t1": 21.818181818181817,
+      "from": 0.7,
+      "to": 0.9,
+      "label": "按下启动"
+    },
+    {
+      "t0": 21.818181818181817,
+      "t1": 27.272727272727273,
+      "from": 0.9,
+      "to": 0.3,
+      "label": "路线俯视"
+    },
+    {
+      "t0": 27.272727272727273,
+      "t1": 30.909090909090907,
+      "from": 0.3,
+      "to": 0.4,
+      "label": "收好电线"
+    },
+    {
+      "t0": 30.909090909090907,
+      "t1": 36.36363636363636,
+      "from": 0.4,
+      "to": 0.15,
+      "label": "三步海报"
+    },
+    {
+      "t0": 36.36363636363636,
+      "t1": 40,
+      "from": 0.15,
+      "to": 0.05,
+      "label": "圈收片尾"
+    }
+  ],
+  "energyNote": "段落取DEMO.md的Shots及源码时间线；0–1是根据动作、配乐、静默和画面密度标注的相对能量。",
+  "observations": [
+    "每块色片与断续细线分开绘制，套色偏移覆盖道具、人物与文字。",
+    "每次切换步骤时，圆章从边界前.5拍到后.4拍展开。",
+    "启动按钮用.28秒圆形开圈接入路线俯视，片尾圆收在产品上。",
+    "路线绕过家具逐区生成，单条路线拉远后成为整张平面的纹样。"
+  ],
+  "composition": {
+    "color": "#F4EAD5、#2B2420、#3FA7A0、#257A74、#E4613F、#E8B43A、#7F9CC0。",
+    "typography": "Oleo Script 400/700、Alfa Slab One 400、Jost 100–900。",
+    "layout": "1920×1080横屏，24fps；舞台等比缩放，字幕与画内信息保留原作位置。",
+    "imagery": "Canvas2D几何人物、四指手套、扫地机、手册图标与路线平面图。",
+    "motion": "角色与套色偏移按12fps跳动，镜头和开圈以24fps运动；俯视路线在局部跟随后以2.6×→1×反旋拉远。",
+    "sound": "132 BPM原创冷爵士；MuldjordKit鼓CC BY 4.0，Karoryfer、VSCO CE、VCSL采样CC0；Kokoro am_michael旁白与代码拟音。",
+    "rhythm": "132 BPM按小节分配步骤；清扫结果进入双倍律动，提示转半速，三步海报静留。",
+    "coherence": "产品保持青绿，场景底色轮换；圆章、放大细节、按钮和片尾共用圆形语法。"
+  },
+  "layers": [
+    {
+      "name": "纸与色片",
+      "role": "暖纸、场景单色平面与地面带。"
+    },
+    {
+      "name": "人物与产品",
+      "role": "保持姿势的身体、手部动作和圆形细节。"
+    },
+    {
+      "name": "说明",
+      "role": "编号、尺寸、信号环、步骤标题与字幕卡。"
+    },
+    {
+      "name": "路线与落版",
+      "role": "清扫路径、房间标签、三步海报及圆形片尾。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#F4EAD5",
+      "#2B2420",
+      "#3FA7A0",
+      "#257A74",
+      "#E4613F",
+      "#E8B43A",
+      "#7F9CC0"
+    ],
+    "type": "Oleo Script 400/700、Alfa Slab One 400、Jost 100–900。",
+    "motion": [
+      {
+        "name": "开圈",
+        "value": "film/film.js:renderFilm，边界−.5拍至+.4拍，半径104→1250px，圆心从上镜主体移到画幅中心。"
+      },
+      {
+        "name": "反旋拉远",
+        "value": "film/film.js:payoffCam，结果段第.4–5.2拍，z按对数从2.6→1，r由−.1rad→0，镜头中心从路径点移至[960,590]。"
+      }
+    ]
+  },
+  "useCases": [
+    "产品安装指南",
+    "帮助中心影片",
+    "操作教学"
+  ],
+  "avoid": [],
+  "constraints": [],
+  "migration": [
+    {
+      "field": "film/content.json",
+      "how": "修改产品、三步内容、尺寸、配色和路线房间。"
+    },
+    {
+      "field": "film/film.js → setup / payoffCam / renderFilm",
+      "how": "调整节拍、路线镜头与圆章、按钮开圈。"
+    }
+  ],
+  "prompt": "制作以1950年代教育片口吻介绍扫地机皮普：底座靠墙、手机配对、按下启动，最后把清扫路线拉成一张印刷平面图。 编号圆章同时承担步骤层级与转场入口；身体保持不动，手势和圆形放大细节解释每个操作。 角色与套色偏移按12fps跳动，镜头和开圈以24fps运动；俯视路线在局部跟随后以2.6×→1×反旋拉远。 Canvas2D几何人物、四指手套、扫地机、手册图标与路线平面图。 字体：Oleo Script 400/700、Alfa Slab One 400、Jost 100–900。 声音：132 BPM原创冷爵士；MuldjordKit鼓CC BY 4.0，Karoryfer、VSCO CE、VCSL采样CC0；Kokoro am_michael旁白与代码拟音。 实现沿用lemo-midcentury-toon的film/源码、素材与时间表。",
+  "demo": "demos/cases/lemo-midcentury-toon/index.html",
+  "patternIds": [
+    "medallion-iris-step",
+    "counter-rotate-pullback"
+  ],
+  "fidelity": "demos/cases/lemo-midcentury-toon/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/midcentury-toon",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/midcentury-toon/"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；示范成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS的许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/midcentury-toon"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/midcentury-toon.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/midcentury-toon/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/midcentury-toon)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "132 BPM原创冷爵士；MuldjordKit鼓CC BY 4.0，Karoryfer、VSCO CE、VCSL采样CC0；Kokoro am_michael旁白与代码拟音。 原始署名见[audio/CREDITS](audio/CREDITS)，许可全文见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Oleo Script 400/700、Alfa Slab One 400、Jost 100–900。 SIL OFL 1.1原文在fonts/，来源与重建方法见[source/README.md](source/README.md)。"
+    }
+  ]
+}

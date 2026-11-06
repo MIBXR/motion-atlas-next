@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-whiteboard",
+  "entry": {
+    "id": "lemo-whiteboard",
+    "order": 34,
+    "title": "口袋里的爱因斯坦 · 白板讲解",
+    "subtitle": "Einstein in Your Pocket",
+    "carriers": [
+      "video"
+    ],
+    "style": "hand-drawn",
+    "purpose": "explainer",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "白板讲解",
+      "手绘与绘画",
+      "代码影片"
+    ],
+    "summary": "从手机地图上的定位磁铁讲到GPS卫星、原子钟与相对论；每日38微秒的差别把定位推入海里，板擦倒抹轨迹，校准后拉远看见整堂课在同一块白板上。",
+    "focus": "以真实单线笔顺承载讲解，用旁白词级时间安排书写窗口；笔迹、相机、磁铁和板擦共用一张8000×4500白板。",
+    "accent": "#d56129",
+    "background": "#f5f6f4",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 55.5,
+    "rhythm": {
+      "duration": 111,
+      "beats": [
+        {
+          "t": 0,
+          "label": "手机地图",
+          "note": "0–10秒，手机地图。"
+        },
+        {
+          "t": 10,
+          "label": "板上片名",
+          "note": "10–14.5秒，板上片名。"
+        },
+        {
+          "t": 14.5,
+          "label": "卫星与原子钟",
+          "note": "14.5–24.6秒，卫星与原子钟。"
+        },
+        {
+          "t": 24.6,
+          "label": "信号与测距公式",
+          "note": "24.6–34.9秒，信号与测距公式。"
+        },
+        {
+          "t": 34.9,
+          "label": "三点定位",
+          "note": "34.9–44.4秒，三点定位。"
+        },
+        {
+          "t": 44.4,
+          "label": "便宜时钟的难题",
+          "note": "44.4–46.6秒，便宜时钟的难题。"
+        },
+        {
+          "t": 46.6,
+          "label": "双速刻度",
+          "note": "46.6–56.3秒，双速刻度。"
+        },
+        {
+          "t": 56.3,
+          "label": "相对论的两项修正",
+          "note": "56.3–70秒，相对论的两项修正。"
+        },
+        {
+          "t": 70,
+          "label": "每天十一公里",
+          "note": "70–76.5秒，每天十一公里。"
+        },
+        {
+          "t": 76.5,
+          "label": "七日漂移",
+          "note": "76.5–87秒，七日漂移。"
+        },
+        {
+          "t": 87,
+          "label": "倒抹与校准",
+          "note": "87–96.2秒，倒抹与校准。"
+        },
+        {
+          "t": 96.2,
+          "label": "整板拉远",
+          "note": "96.2–103.3秒，整板拉远。"
+        },
+        {
+          "t": 103.3,
+          "label": "片尾署名",
+          "note": "103.3–111秒，片尾署名。"
+        }
+      ],
+      "bpm": 120
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 10,
+        "to": 0.25,
+        "label": "手机地图",
+        "from": 0.25
+      },
+      {
+        "t0": 10,
+        "t1": 14.5,
+        "to": 0.45,
+        "label": "板上片名",
+        "from": 0.45
+      },
+      {
+        "t0": 14.5,
+        "t1": 24.6,
+        "to": 0.4,
+        "label": "卫星与原子钟",
+        "from": 0.4
+      },
+      {
+        "t0": 24.6,
+        "t1": 34.9,
+        "to": 0.45,
+        "label": "信号与测距公式",
+        "from": 0.45
+      },
+      {
+        "t0": 34.9,
+        "t1": 44.4,
+        "to": 0.45,
+        "label": "三点定位",
+        "from": 0.45
+      },
+      {
+        "t0": 44.4,
+        "t1": 46.6,
+        "to": 0.25,
+        "label": "便宜时钟的难题",
+        "from": 0.25
+      },
+      {
+        "t0": 46.6,
+        "t1": 56.3,
+        "to": 0.55,
+        "label": "双速刻度",
+        "from": 0.55
+      },
+      {
+        "t0": 56.3,
+        "t1": 70,
+        "to": 0.5,
+        "label": "相对论的两项修正",
+        "from": 0.5
+      },
+      {
+        "t0": 70,
+        "t1": 76.5,
+        "to": 0.5,
+        "label": "每天十一公里",
+        "from": 0.5
+      },
+      {
+        "t0": 76.5,
+        "t1": 87,
+        "to": 0.7,
+        "label": "七日漂移",
+        "from": 0.7
+      },
+      {
+        "t0": 87,
+        "t1": 96.2,
+        "to": 0.6,
+        "label": "倒抹与校准",
+        "from": 0.6
+      },
+      {
+        "t0": 96.2,
+        "t1": 103.3,
+        "to": 0.35,
+        "label": "整板拉远",
+        "from": 0.35
+      },
+      {
+        "t0": 103.3,
+        "t1": 111,
+        "to": 0.12,
+        "label": "片尾署名",
+        "from": 0.12
+      }
+    ],
+    "energyNote": "段落取自DEMO.md的Shots与源码场景时间表；0–1能量数值为依据画面与声音密度作出的相对编辑标注。",
+    "observations": [
+      "黑、蓝、橙分别承担结构、信号和时间重点；记号笔浮动书写，落笔墨点、干擦条纹与残影留在板面。",
+      "镜头沿新画轨道和信号线移到下一概念，读式时保持稳定，结束后露出铝框与笔槽。",
+      "两把尺以不同节拍画刻度，板擦逆着七天轨迹回走，再重画轨道钟刻度，使其同步。"
+    ],
+    "composition": {
+      "color": "暖白板#fbfbf9 / #eeede9，墨黑#23262c、信号蓝#2a5cb3、重点橙#d97757，旧课残迹为低透明灰与淡蓝。",
+      "typography": "板面采用逐笔绘制的EMS Tech单线字形；字幕使用Architects Daughter 44px，标题与署名也写在板上。",
+      "layout": "1920×1080、24fps，镜头在8000×4500板面内移动；底部12%留给字幕，最后拉远到墙面。",
+      "imagery": "Canvas2D代码绘制白板、手机、卫星、时钟、浮动记号笔、磁铁与板擦。",
+      "motion": "相机以1/z插值推拉，沿线横移和甩镜；移动超过14px/帧时，以最多12个子帧合成180°快门运动模糊。",
+      "sound": "Kokoro bm_george英语旁白，120BPM时钟式配乐、每笔干擦声、磁铁碰击、板擦摩擦和倒放压缩的回溯声音。",
+      "rhythm": "地图开场后沿空间推导GPS测距，以双速刻度和七日漂移给出冲突，静默后擦回校准，整板拉远收束。",
+      "coherence": "距离、时间和笔画共享词级旁白时刻；同一块板上的空间关系保留全部推导。"
+    },
+    "layers": [
+      {
+        "name": "底材与空间",
+        "role": "暖白板#fbfbf9 / #eeede9，墨黑#23262c、信号蓝#2a5cb3、重点橙#d97757，旧课残迹为低透明灰与淡蓝。"
+      },
+      {
+        "name": "主体与绘制",
+        "role": "Canvas2D代码绘制白板、手机、卫星、时钟、浮动记号笔、磁铁与板擦。"
+      },
+      {
+        "name": "镜头与时间",
+        "role": "相机以1/z插值推拉，沿线横移和甩镜；移动超过14px/帧时，以最多12个子帧合成180°快门运动模糊。"
+      },
+      {
+        "name": "文字与声音",
+        "role": "板面采用逐笔绘制的EMS Tech单线字形；字幕使用Architects Daughter 44px，标题与署名也写在板上。 Kokoro bm_george英语旁白，120BPM时钟式配乐、每笔干擦声、磁铁碰击、板擦摩擦和倒放压缩的回溯声音。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#fbfbf9",
+        "#eeede9",
+        "#23262c",
+        "#2a5cb3",
+        "#d97757",
+        "#d8d3ca"
+      ],
+      "type": "EMS Tech单线JSON；Architects Daughter 400。",
+      "motion": [
+        {
+          "name": "按词书写",
+          "value": "film/film.js:20–24的atS/atE查voices/words.json；D把各笔限制在a–b时间窗口。"
+        },
+        {
+          "name": "倒抹回溯",
+          "value": "film/film.js:230–232：87–89秒倒序trailSegs，宽230、擦除强度0.9。"
+        },
+        {
+          "name": "相机快门",
+          "value": "film/film.js:387–395：dt=1/24，sp>14时N=min(12,ceil(sp*.5/4))。"
+        }
+      ]
+    },
+    "useCases": [
+      "科学解说",
+      "在线课程",
+      "概念推导"
+    ],
+    "avoid": [
+      "以观众滚动阅读为主的页面"
+    ],
+    "constraints": [
+      "画面以原作render(t)按原帧率定位，字体和全部绘制输入预载后开始。",
+      "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+    ],
+    "migration": [
+      {
+        "field": "film/film.js → VO / atS / atE / EQ / cam",
+        "how": "更改旁白时刻、词级锚点、板面布局与相机键；词级输入在film/voices/words.json。"
+      },
+      {
+        "field": "film/engine/wb.js → Timeline / Pen / Camera",
+        "how": "调整笔顺调度、笔触材质、浮笔和白板相机。"
+      }
+    ],
+    "prompt": "制作一支白板讲解时间线影片。以真实单线笔顺承载讲解，用旁白词级时间安排书写窗口；笔迹、相机、磁铁和板擦共用一张8000×4500白板。暖白板#fbfbf9 / #eeede9，墨黑#23262c、信号蓝#2a5cb3、重点橙#d97757，旧课残迹为低透明灰与淡蓝。板面EMS Tech单线字形逐笔绘制；字幕Architects Daughter 44px，标题与署名也写在板上。1920×1080、24fps，镜头在8000×4500板面内移动；底部12%留给字幕，最后拉远到墙面。相机以1/z插值推拉，沿线横移和甩镜；移动超过14px/帧时最多12个子帧合成180°快门运动模糊。地图开场后沿空间推导GPS测距，以双速刻度和七日漂移给出冲突，静默后擦回校准，整板拉远收束。Kokoro bm_george英语旁白，120BPM时钟式配乐、每笔干擦声、磁铁碰击、板擦摩擦和倒放压缩的回溯声音。实现入口位于demos/cases/lemo-whiteboard/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+    "demo": "demos/cases/lemo-whiteboard/index.html",
+    "patternIds": [
+      "stroke-order-equation-sync",
+      "eraser-rewind",
+      "pen-led-camera",
+      "magnet-pieces-on-board"
+    ],
+    "fidelity": "demos/cases/lemo-whiteboard/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/whiteboard",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/whiteboard/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；成片和静帧CC BY 4.0，署名LemoLab；各字体、采样与语音来源见CREDITS及LICENSES.md。"
+    },
+    "sources": [
+      {
+        "label": "固定风格与制作源码",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/whiteboard"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/whiteboard.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/whiteboard/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/whiteboard)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Kokoro bm_george英语旁白，120BPM时钟式配乐、每笔干擦声、磁铁碰击、板擦摩擦和倒放压缩的回溯声音。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "EMS Tech单线JSON；Architects Daughter 400。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-whiteboard/LICENSES.md",
+    "preview": "previews/cases/lemo-whiteboard.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 口袋里的爱因斯坦 · 白板讲解 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-whiteboard.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载运行源码、字体、音轨，等待iframe的load与READY，以原帧率调用上游render(t)。 | 接入MotionKit舞台、时间线、声音与减少动态暂停。 |\n| `audio/film.m4a` | 从Release成片以-c:a copy流复制。 | 播放原作正式混音。 |\n| `source/` | 保存运行目录之外的上游制作脚本、事件、语音时长与替换示例。 | 保留制作资料。 |\n| `stills/` | 上游风格图与调试静帧留在来源。 | 成品绘制不读取这些静帧。 |\n| `film/index.html、film/core/lib.js` | 字体路径改为../fonts/；import map将/core/lib.js映射到./core/lib.js，lib.js取固定提交原文。 | 接入原字体与共享运行代码。 |\n| `film/film.js` | EMS Tech JSON路径由fonts/EMSTech.json改为../fonts/EMSTech.json。 | 保留独立字体目录。 |\n\n## 适配层\n\n`MotionKit.load.prepare`预载，同源iframe等待`load`与`window.READY === true`，`MotionKit.mountFilm`以1920×1080、24fps、111.000000秒接入。`renderAt(t)`等待`upstream.render(Math.round(t×24)/24)`；画面直接来自上游绘制函数。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时停在条目的`previewAt`，声音默认关闭。镜头标记取DEMO.md的Shots与源码场景时间表。\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，视口1920×1080、DPR1。等待`__motion.ready`，以`floor(t×fps+.5)`定位；参考PNG按Release成片相同帧号提取。WebGL使用本机Intel Iris Xe / ANGLE Direct3D11。\n\n**原始**列比较参考PNG与本库PNG；**编码链**列把本库PNG在过程目录按原作编码链编解码后比较。两图转yuv444p，取ffmpeg SSIM All。\n\nJPEG95 → libx264 medium CRF14 yuv420p → slow CRF19、fps=24、noise=c0s=2:allf=t、yuv420p。来源source/build.sh与共享core/render/video.mjs、mux.sh。\n\n测量采用单张I帧，颗粒从该测量帧起计算；连续成片的帧间参考和噪声历史由其原编码保留。运行页面直接执行原作render(t)，编码仅用于离线测量。\n\nDEMO.md的Shots为镜头语法说明；取样段落按同文故事结构和film时间表确定。其余按Shots表时段，片尾按公开成片实长。\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.995331 | 0.997544 | 开头 |\n| 2 | 1332 | 55.500000 | 55.500000 | 0.992492 | 0.995235 | frame_sec |\n| 3 | 120 | 5.000000 | 5.000000 | 0.991664 | 0.993404 | Shots · 手机地图中点 |\n| 4 | 294 | 12.250000 | 12.250000 | 0.994386 | 0.994655 | Shots · 板上片名中点 |\n| 5 | 469 | 19.550000 | 19.541667 | 0.992595 | 0.994030 | Shots · 卫星与原子钟中点 |\n| 6 | 714 | 29.750000 | 29.750000 | 0.992762 | 0.994132 | Shots · 信号与测距公式中点 |\n| 7 | 952 | 39.650000 | 39.666667 | 0.991279 | 0.992801 | Shots · 三点定位中点 |\n| 8 | 1092 | 45.500000 | 45.500000 | 0.990111 | 0.992040 | Shots · 便宜时钟的难题中点 |\n| 9 | 1235 | 51.450000 | 51.458333 | 0.992857 | 0.995351 | Shots · 双速刻度中点 |\n| 10 | 1516 | 63.150000 | 63.166667 | 0.994409 | 0.995674 | Shots · 相对论的两项修正中点 |\n| 11 | 1758 | 73.250000 | 73.250000 | 0.993275 | 0.995171 | Shots · 每天十一公里中点 |\n| 12 | 1962 | 81.750000 | 81.750000 | 0.995136 | 0.995626 | Shots · 七日漂移中点 |\n| 13 | 2198 | 91.600000 | 91.583333 | 0.992624 | 0.994794 | Shots · 倒抹与校准中点 |\n| 14 | 2394 | 99.750000 | 99.750000 | 0.990929 | 0.992383 | Shots · 整板拉远中点 |\n| 15 | 2572 | 107.150000 | 107.166667 | 0.992594 | 0.993189 | Shots · 片尾署名中点 |\n| 16 | 2640 | 110.000000 | 110.000000 | 0.992862 | 0.993225 | 片尾前1秒 |\n\n16帧：原始最低**0.990111**、最高**0.995331**，16/16达到0.95；编码链最低**0.992040**、最高**0.997544**，16/16达到0.95。\n\n\n声音：Release与本库音轨解码为48kHz单声道，每10ms取RMS包络，在±500ms内互相关；最佳偏移**0ms**，相关系数**1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-whiteboard.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）。\n- [audio/film.m4a](audio/film.m4a)流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/whiteboard.mp4)，成片按[audio/CC-BY-4.0.txt](audio/CC-BY-4.0.txt)发布，署名LemoLab并链接来源。\n- 音乐、声音与字体的原始署名：[audio/CREDITS](audio/CREDITS)；制作文件中的记录保留于[source/CREDITS](source/CREDITS)。\n- 原创配乐使用CC0乐器采样，原文：[audio/CC0-1.0.txt](audio/CC0-1.0.txt)；采样来自Versilian Studios / Sam Gossner的VSCO 2 CE与VCSL、FreePats。\n- Kokoro-82M旁白（bm_george，en-gb）：[audio/Apache-2.0.txt](audio/Apache-2.0.txt)，kokoro-onnx为MIT。\n- 字体SIL OFL 1.1原文：[OFL-ArchitectsDaughter.txt](fonts/OFL-ArchitectsDaughter.txt)、[OFL-EMSTech.txt](fonts/OFL-EMSTech.txt)。\n- EMS Tech的作者与派生关系原文在[fonts/OFL-EMSTech.txt](fonts/OFL-EMSTech.txt)；完整OFL条款在[fonts/OFL-ArchitectsDaughter.txt](fonts/OFL-ArchitectsDaughter.txt)。\n",
+    "prompt": "# 口袋里的爱因斯坦 · 白板讲解\n\n## 实现 Prompt\n\n制作一支白板讲解时间线影片。以真实单线笔顺承载讲解，用旁白词级时间安排书写窗口；笔迹、相机、磁铁和板擦共用一张8000×4500白板。暖白板#fbfbf9 / #eeede9，墨黑#23262c、信号蓝#2a5cb3、重点橙#d97757，旧课残迹为低透明灰与淡蓝。板面EMS Tech单线字形逐笔绘制；字幕Architects Daughter 44px，标题与署名也写在板上。1920×1080、24fps，镜头在8000×4500板面内移动；底部12%留给字幕，最后拉远到墙面。相机以1/z插值推拉，沿线横移和甩镜；移动超过14px/帧时最多12个子帧合成180°快门运动模糊。地图开场后沿空间推导GPS测距，以双速刻度和七日漂移给出冲突，静默后擦回校准，整板拉远收束。Kokoro bm_george英语旁白，120BPM时钟式配乐、每笔干擦声、磁铁碰击、板擦摩擦和倒放压缩的回溯声音。实现入口位于demos/cases/lemo-whiteboard/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。\n\n## 动效 Token\n\n- **按词书写**：film/film.js:20–24的atS/atE查voices/words.json；D把各笔限制在a–b时间窗口。\n- **倒抹回溯**：film/film.js:230–232：87–89秒倒序trailSegs，宽230、擦除强度0.9。\n- **相机快门**：film/film.js:387–395：dt=1/24，sp>14时N=min(12,ceil(sp*.5/4))。\n\n## 制作约束\n\n- 画面以原作render(t)按原帧率定位，字体和全部绘制输入预载后开始。\n- 声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。\n\n## 迁移\n\n- `film/film.js → VO / atS / atE / EQ / cam`：更改旁白时刻、词级锚点、板面布局与相机键；词级输入在film/voices/words.json。\n- `film/engine/wb.js → Timeline / Pen / Camera`：调整笔顺调度、笔触材质、浮笔和白板相机。\n\n[打开 Demo](../../demos/cases/lemo-whiteboard/index.html) · [在库中查看](../../cases.html#case/lemo-whiteboard)\n"
+  },
+  "entrypoint": "demos/cases/lemo-whiteboard/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-whiteboard/LICENSES.md",
+      "bytes": 1190,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CREDITS",
+      "bytes": 1394,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/film.m4a",
+      "bytes": 3730104,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fidelity.md",
+      "bytes": 4438,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/engine/wb.js",
+      "bytes": 32649,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/film.js",
+      "bytes": 30965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/index.html",
+      "bytes": 419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/lines.json",
+      "bytes": 3405,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/main.js",
+      "bytes": 421,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/voices/words.json",
+      "bytes": 4364,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/ArchitectsDaughter-Regular.ttf",
+      "bytes": 43352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/EMSTech.json",
+      "bytes": 35406,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/OFL-ArchitectsDaughter.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/OFL-EMSTech.txt",
+      "bytes": 442,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/fonts.css",
+      "bytes": 69,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/index.html",
+      "bytes": 2466,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/CREDITS",
+      "bytes": 1394,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/README.md",
+      "bytes": 3040,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/build.sh",
+      "bytes": 1588,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/events.json",
+      "bytes": 101156,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/mix.py",
+      "bytes": 12101,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/music.py",
+      "bytes": 13249,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/test.js",
+      "bytes": 1354,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/asr_check.py",
+      "bytes": 1502,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/cuecheck.py",
+      "bytes": 1716,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/subs.mjs",
+      "bytes": 669,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/svgfont2json.py",
+      "bytes": 997,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/voices/dur.json",
+      "bytes": 316,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-whiteboard.json",
+      "bytes": 11372,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-whiteboard.jpg",
+      "bytes": 49928,
+      "role": "preview"
+    }
+  ]
+}

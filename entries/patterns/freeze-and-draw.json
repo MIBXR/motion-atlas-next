@@ -1,0 +1,72 @@
+{
+  "id": "freeze-and-draw",
+  "order": 160,
+  "title": "定格画线",
+  "types": [
+    "hud",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "先播放真实比赛，到指定源帧冻结并短闪、急推和压暗；脚底圈、球路或跑位线、空间区域和发现标签按进度画入，图层与画面共用变换，随后从同一帧恢复播放。",
+  "mechanism": "先播放真实比赛，到指定源帧冻结并短闪、急推和压暗；脚底圈、球路或跑位线、空间区域和发现标签按进度画入，图层与画面共用变换，随后从同一帧恢复播放。",
+  "trigger": "传中F106、解围F001、接球F035与击球F056等关键源帧。",
+  "effect": "把运动过程拆成可指认的一次发现，画完后继续观察动作结果。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "5.2–10.6秒；22.4–33.2秒；1倍速，总时长16.2秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "播放与冻结",
+      "value": "film/timeline.json:g1live 5.2–6.8，g1fz 6.8–9，g1go 9–10.6；源片b的106帧前后接续。"
+    },
+    {
+      "name": "图层顺序",
+      "value": "film/index.html:overlayG1 / overlayAnalysis；环→路径或空间→标签错开.3–.6秒，追踪坐标由TRK插值。"
+    },
+    {
+      "name": "定格入场",
+      "value": "film/index.html:render；.1秒闪白、1.035倍急推在.35秒回定；分析叠层与画面使用同一punch变换。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-telestrator/film/index.html"
+  ],
+  "locator": "render / overlayG1 / overlayAnalysis / TRK",
+  "useCases": [
+    "比赛战术分析",
+    "教练复盘",
+    "多个机位的动作讲解"
+  ],
+  "avoid": [
+    "同一时刻叠加争夺主动作的多组信息"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-telestrator的原作render(t)重放“定格画线”。先播放真实比赛，到指定源帧冻结并短闪、急推和压暗；脚底圈、球路或跑位线、空间区域和发现标签按进度画入，图层与画面共用变换，随后从同一帧恢复播放。保留参数：film/timeline.json:g1live 5.2–6.8，g1fz 6.8–9，g1go 9–10.6；源片b的106帧前后接续。；film/index.html:overlayG1 / overlayAnalysis；环→路径或空间→标签错开.3–.6秒，追踪坐标由TRK插值。；film/index.html:render；.1秒闪白、1.035倍急推在.35秒回定；分析叠层与画面使用同一punch变换。。重放区间由入口segments配置，来源素材与音轨直接复用。",
+  "demo": "demos/patterns/freeze-and-draw/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-telestrator"
+    }
+  ],
+  "previewAt": 3,
+  "markers": [
+    {
+      "t": 0,
+      "label": "定格画线"
+    }
+  ]
+}

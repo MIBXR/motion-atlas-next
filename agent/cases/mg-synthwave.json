@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "mg-synthwave",
+  "entry": {
+    "id": "mg-synthwave",
+    "order": 15,
+    "title": "80 年代合成波 · NEON DRIVE — Midnight 1986",
+    "subtitle": "NEON DRIVE「霓虹夜驰 1986」",
+    "carriers": [
+      "video"
+    ],
+    "style": "dimensional",
+    "purpose": "title-art",
+    "tech": [
+      "canvas2d",
+      "threejs"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "合成波",
+      "霓虹网格",
+      "镀铬字",
+      "VHS",
+      "霓虹手写"
+    ],
+    "summary": "镜头沿霓虹网格公路追随跑车，条纹落日从地平线升起；磁带倒带与停顿后，NEON DRIVE 镀铬字落版，Midnight 霓虹手写字描出并点亮，最后显像管关机。",
+    "focus": "Three.js 场景和 VHS 后期共用 cues；网格速度、镜头视角、跑车加速与字标落点衔接，霓虹字按路径长度描绘，再按逐帧电平闪烁点亮。",
+    "accent": "#FF3DA8",
+    "background": "#000000",
+    "timeline": true,
+    "kit": true,
+    "rhythm": {
+      "duration": 10,
+      "bpm": 100,
+      "beats": [
+        {
+          "t": 0.1,
+          "label": "磁带播放",
+          "note": "PLAY 与磁带时码出现。"
+        },
+        {
+          "t": 1,
+          "label": "追踪锁定",
+          "note": "追踪噪声减弱，画幅由 4:3 打开为横屏。"
+        },
+        {
+          "t": 1.8,
+          "label": "跑车换道",
+          "note": "跑车横向换道，镜头侧倾。"
+        },
+        {
+          "t": 2.25,
+          "label": "对向擦身",
+          "note": "对向车灯擦过镜头。"
+        },
+        {
+          "t": 3.867,
+          "label": "磁带倒带",
+          "note": "画面倒退两帧，再以 15fps 拖慢。"
+        },
+        {
+          "t": 4.2,
+          "label": "镀铬落版",
+          "note": "NEON DRIVE 冲入，跑车向远处加速。"
+        },
+        {
+          "t": 5.8,
+          "label": "霓虹描写",
+          "note": "Midnight 沿真实字体轮廓逐段描出。"
+        },
+        {
+          "t": 6.6,
+          "label": "霓虹点亮",
+          "note": "按逐帧电平闪烁后稳定点亮。"
+        },
+        {
+          "t": 7.2,
+          "label": "标语展开",
+          "note": "SUMMER 1986 · IN HI-FI STEREO 展开。"
+        },
+        {
+          "t": 9.667,
+          "label": "磁带停止",
+          "note": "STOP 出现，磁带画面减速。"
+        },
+        {
+          "t": 9.833,
+          "label": "显像管关机",
+          "note": "整幅画面压成亮线，再收为亮点。"
+        }
+      ]
+    },
+    "layers": [
+      {
+        "name": "公路场景",
+        "role": "程序化霓虹网格、条纹落日、山脉、棕榈、跑车与对向车灯。"
+      },
+      {
+        "name": "镀铬标题",
+        "role": "Archivo 字面、挤出边、渐变反射、斜向扫光和星芒叠成 NEON DRIVE。"
+      },
+      {
+        "name": "霓虹与字幕",
+        "role": "用 Mr Dafoe 的真实轮廓描出 Midnight；夏日标语用 Michroma 排版，磁带 OSD 用 VT323 排版。"
+      },
+      {
+        "name": "模拟媒介",
+        "role": "VHS 后期包含追踪噪声、色偏、行撕裂、时码和 CRT 关机；AAC 音轨沿时间轴播放。"
+      }
+    ],
+    "composition": {
+      "color": "黑色底、洋红霓虹网格、青蓝镀铬高光与橙粉落日；原作强调色 #FF3DA8。",
+      "typography": "镀铬标题使用 Archivo Italic 900、125% 字宽；Midnight 使用 Mr Dafoe；标语使用 Michroma，OSD 使用 VT323。",
+      "layout": "1920×1080；公路透视收束于下移 75px 的地平线，镀铬标题在上部，霓虹手写字叠于标题下方，OSD 位于画面边缘。",
+      "imagery": "线框网格、切带落日、棕榈和后视跑车构成夜驰场景。",
+      "motion": "镜头追车、变焦、换道侧倾与迎面车灯形成推进；磁带倒退后标题两帧冲入，霓虹描出后闪烁点亮。",
+      "sound": "开启后播放原片 AAC 音轨；100BPM、A 小调 synthwave 配乐与换道、擦身、倒带、镀铬落版和点亮音效共用 cues。",
+      "rhythm": "1 秒锁定追踪，1.8–2.25 秒换道，3.867 秒倒带，4.2 秒主拍落版，6.6 秒霓虹点亮，9.833 秒开始关机。",
+      "coherence": "道路推进、标题冲击、霓虹电平和 VHS 播放状态均从同一时间与 cues 推导。"
+    },
+    "tokens": {
+      "palette": [
+        "#000000",
+        "#FF3DA8",
+        "#FFDB5C",
+        "#FF6647",
+        "#5FB8FF"
+      ],
+      "type": "Archivo Italic 900、125% 字宽；Mr Dafoe；Michroma；VT323。",
+      "motion": [
+        {
+          "name": "地平线偏移",
+          "value": "const SHIFT = 75;"
+        },
+        {
+          "name": "标题构成",
+          "value": "const TITLE = 'NEON DRIVE', TS = 1.5, TITLE_W = 1400, TITLE_CY = 300;"
+        },
+        {
+          "name": "霓虹轮廓",
+          "value": "const SFS = 226, SCRIPT = 'Midnight', SCX = 1195, SCY = 470, SROT = -0.13;"
+        },
+        {
+          "name": "显像管末帧",
+          "value": "const CRT = { 295: [1, .30, .25, 0], 296: [1, .0019, 1, .030], 297: [.26, .0019, 1.1, .022], 298: [.0073, .013, 1.3, .036], 299: [.0055, .010, .35, .012] };"
+        }
+      ]
+    },
+    "useCases": [
+      "音乐视频",
+      "潮流品牌片",
+      "合成波片头"
+    ],
+    "constraints": [
+      "原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。",
+      "10 秒，1920×1080，30fps；只提供横屏原作画幅，复刻公开成片的默认版本。"
+    ],
+    "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n复古系（80s Synthwave / Y2K 千禧） Retro: 80s Synthwave / VHS / Y2K\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML WebGL (perspective grid, sun, mountains shader) + canvas chrome text + CSS/SVG glow; VHS pass\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「OUTRUN 1986」The quintessential 80s synthwave title sequence.\n- Starry night, striped retro sun (horizontal band cut-outs, magenta→orange→yellow), wireframe mountains, palm silhouettes, neon magenta/cyan perspective grid rushing toward the camera.\n- 0–1s: VHS tracking noise + 'PLAY ▶' OSD; 1–4s: camera flies low over the grid, sun rises; 4–6s: CHROME title (e.g. \"NEON DRIVE\", multi-stop metallic gradient, bevel highlight, star glint sweeping across) SLAMS in with a lens flare; 6–7.5s: pink neon script word (e.g. \"Midnight\") writes on like a neon tube with flicker; 7.5–10s: sustained ride, subtle VHS chroma bleed/scanlines, end on the hero frame.\n- Double glow (tight ~4px + wide ~30px), deep purple sky gradient.\nSound: synthwave — gated-reverb snare, arpeggiated saw bass, lush pads, big chord + crash on the title slam.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n对特定年代媒介美学的整体引用：80s synthwave 是霓虹网格+日落渐变+镀铬字；VHS 是扫描线+色偏+磁带噪声；Y2K 千禧风是液态镀铬金属、酸性绿紫、拟物系统窗口和低保真 3D。近两年 Y2K 在音乐视频与潮流品牌片中强势回潮，B站模板市场大量供应'酸性镀铬'素材。\n视觉特征 霓虹辉光, 透视网格地平线, 扫描线与RGB色偏, 镀铬金属字, 酸性配色, 拟物窗口UI\n关键技法 synthwave 三件套：透视网格滚动（一点透视 grid + 纵向位移循环）、日落多层渐变球、双层辉光（内层紧 4px 高亮+外层散 30px 低透明）\nVHS 做旧链：RGB split（红蓝通道各偏 1~2px）→ 扫描线（2px 间隔 10% 黑条）→ 波浪扭曲抖动（每秒 1~2 次随机 glitch 抽帧）→ 4:3 圆角遮罩\nY2K 镀铬字：极高对比的多段金属渐变 + bevel 高光 + 环境映射感反光，配 lens flare\nY2K 运动语言：弹窗式 pop 出现、光标点击、窗口拖拽，界面拟物即动画叙事\n帧率故意不稳：关键段落抽帧到 15fps 或倒放 2 帧制造磁带卡顿\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+    "migration": [
+      {
+        "field": "film/scene.js → TITLE、SCRIPT、TAG",
+        "how": "调整镀铬标题、霓虹手写内容与标语。"
+      },
+      {
+        "field": "film/scene.js → speed、poseCam、carGap",
+        "how": "调整公路速度、镜头与跑车推进。"
+      },
+      {
+        "field": "film/cues.json",
+        "how": "调整换道、倒带、落版、描写、点亮和关机节点。"
+      },
+      {
+        "field": "index.html → MotionKit.mountFilm",
+        "how": "接入时间轴、原片音轨与窗口等比缩放。"
+      }
+    ],
+    "demo": "demos/cases/mg-synthwave/index.html",
+    "patternIds": [
+      "velocity-neon-grid-smear",
+      "striped-sun-rise",
+      "neon-write-on-ignition",
+      "tape-rewind-chrome-slam",
+      "vhs-event-row-tear",
+      "specular-sweep-glint",
+      "crt-line-dot-shutdown"
+    ],
+    "previewAt": 9.5,
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "原作《80 年代合成波 · NEON DRIVE — Midnight 1986》来自 [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)，作者 Vincentwei1021，固定提交 `49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`；原目录为 `demos/10-synthwave/`。代码、提示词、文档与成片采用 MIT 许可，许可原文见 [LICENSE](film/LICENSE)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "| 完整文件与版本 | 官方来源 | 许可原文 |\n| --- | --- | --- |\n| `Archivo-Italic[wdth,wght].ttf`，Version 2.001 | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/95f4904fc8bcf26d3420fe315560c96417c6dec7/ofl/archivo/Archivo-Italic%5Bwdth%2Cwght%5D.ttf) | [SIL OFL 1.1 原文](fonts/archivo-OFL.txt) |\n| `MrDafoe-Regular.ttf`，Version 1.000 | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/a99fe31b6b2cbcb0481ad633abe5d996a9399344/ofl/mrdafoe/MrDafoe-Regular.ttf) | [SIL OFL 1.1 原文](fonts/mrdafoe-OFL.txt) |\n| `Michroma-Regular.ttf`，Version 1.100; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.29] | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/michroma/Michroma-Regular.ttf) | [SIL OFL 1.1 原文](fonts/michroma-OFL.txt) |\n| `VT323-Regular.ttf`，Version 2.000 | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/2da41909d08a7bfeab32cfc163edb7be0c34395d/ofl/vt323/VT323-Regular.ttf) | [SIL OFL 1.1 原文](fonts/vt323-OFL.txt) |"
+      },
+      {
+        "scope": "第三方库",
+        "notes": "| 包与固定版本 | 来源 | 许可原文 |\n| --- | --- | --- |\n| `three@0.186.1` | [npm registry 原版 tarball](https://registry.npmjs.org/three/-/three-0.186.1.tgz) | [MIT 原文](vendor/three@0.186.1/LICENSE) |\n| `simplex-noise@4.0.3` | [npm registry 原版 tarball](https://registry.npmjs.org/simplex-noise/-/simplex-noise-4.0.3.tgz) | [MIT 原文](vendor/simplex-noise@4.0.3/LICENSE) |\n| `opentype.js@2.0.0` | [npm registry 原版 tarball](https://registry.npmjs.org/opentype.js/-/opentype.js-2.0.0.tgz) | [MIT 原文](vendor/opentype.js@2.0.0/LICENSE) |\n\n仅保存作品直接引用的文件及其运行依赖与许可证。\n\n本案例的画面贴图由运行代码生成，没有共享贴图文件。"
+      },
+      {
+        "scope": "配乐",
+        "notes": "`audio/film.m4a` 从固定提交的 `videos/10-synthwave.mp4` 以 `ffmpeg -vn -c:a copy` 抽取 AAC 音轨，保留原片混音；成片与自制音频采用原作 MIT 许可。配乐生成过程原样保存在 `source/audio.py`，使用原作 `lib/audio/mgaudio` 的配乐与音效合成器。"
+      }
+    ],
+    "relatedEntries": [
+      {
+        "kind": "material",
+        "id": "mg-styles-15",
+        "note": "提示词与配乐合成库所在素材"
+      }
+    ],
+    "energy": [
+      0.368,
+      0.369,
+      0.373,
+      0.426,
+      0.493,
+      0.546,
+      0.581,
+      0.589,
+      0.586,
+      0.543,
+      0.514,
+      0.525,
+      0.517,
+      0.515,
+      0.527,
+      0.655,
+      0.817,
+      0.793,
+      0.655,
+      0.428,
+      0.388,
+      0.369,
+      0.406,
+      0.425,
+      0.434,
+      0.565,
+      0.664,
+      0.764,
+      0.72,
+      0.693,
+      0.692,
+      0.69,
+      0.699,
+      0.734,
+      0.795,
+      0.755,
+      0.652,
+      0.511,
+      0.428,
+      0.391
+    ],
+    "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。",
+    "fidelity": "demos/cases/mg-synthwave/fidelity.md",
+    "licenses": "demos/cases/mg-synthwave/LICENSES.md",
+    "preview": "previews/cases/mg-synthwave.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 接入与保真说明\n\n复刻以公开默认成片为准，作品来源与固定版本见[条目 JSON](../../../entries/cases/mg-synthwave.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| 原 `index.html` → `film/scene.js`、`film/style.css`、`film/setup.js`、`index.html` | 拆分作品代码、样式与 DOM；案例入口加载字体、固定 vendor 与 MotionKit。 | 路径改写 |\n| `film/scene.js` | 删除 `V5`、`V5T`、`NOLINK`、中文镀铬标题、另一版手写字与标语布局、`tpt` 和 `linkAt`；所有条件表达式保留默认成片分支。 | 另一版剪辑分支 |\n| 原字体探针 DOM、错误监听、阶段日志；`film/scene.js` | 删除开发探针、阶段日志和 `nobloom`、`fixsky`、`fixvhs`、`hhk`、`mb` 查询调试；分析拖影保留默认 `MBS=1`、车灯倍率 3。 | 开发工具 |\n| `film/scene.js` | 删除始终不可见的独立标题倒影层及其每帧赋值。 | 过程文件 |\n| `film/scene.js`、`index.html`、`fonts/fonts.css` | 字体、运行 cues 和第三方库改为案例内相对路径；保留实际参与描写的 SVG 路径测量。 | 路径改写 |\n| `audio.py` → `source/audio.py` | 原样保存配乐与音效生成脚本。 | 移至 source |\n\n声音以 `ffmpeg -i videos/10-synthwave.mp4 -vn -c:a copy audio/film.m4a` 从公开成片抽取，未转码；来源与许可见 [LICENSES.md](LICENSES.md)。\n\nMr Dafoe 只有一个字重，直接使用官方完整 `MrDafoe-Regular.ttf`，不实例化。\n\n## 接入\n\n`MotionKit.mountFilm` 以原作 `renderAt(t)` 接入 1920×1080、30fps、10 秒横屏舞台；中文 markers 从 `film/cues.json` 换算。种子随机数接入 `MotionKit.rng`，保留原始种子与时间推导。声音默认关闭，开启后音轨与时间轴同步；`?embed`、`?render`、`?t=秒` 与减少动态偏好由共享运行时处理。\n\n`previewAt: 9.5`：镀铬标题、Midnight、夏日标语、落日与网格均已完整显现，尚未进入 9.667 秒磁带停止和关机段。减少动态时在同一时刻暂停。\n\n## 已接受差异\n\n原片生成阶段的 `harness/render.mjs` 子帧平均运动模糊属于已接受差异；作品代码内的解析拖影与片内时间采样保留。整理后的作品文本使用 UTF-8、LF；原样保存的配乐脚本与第三方文件保留原字节。\n\n## 与原片对照结果\n\n对照图位于工作区 `compare/mg-synthwave/`，左侧为原片 ffmpeg 取帧，右侧为 `shot.mjs` 在 1920×1080 的同刻截图。\n\n| 时刻 | 逐张结论 | 拼图 |\n| --- | --- | --- |\n| 1.0 秒 | 跑车、棕榈、山脉、网格和 4:3 圆角画幅对应；1 秒边界原片保留 TRACKING 与 OSD 邻帧混合，直取时刻已结束 TRACKING，属于原片快门子帧平均差异。 | `compare-1.0.png` |\n| 3.0 秒 | 跑车位置、条纹落日、棕榈、山脉和地平线对应；原片近路桩与灯帽被子帧平均拉成较宽拖影，直取时刻杆体更清晰；整秒 OSD 存在邻帧混合。 | `compare-3.0.png` |\n| 5.0 秒 | NEON DRIVE 镀铬字的字形、位置、渐变和星芒对应，落日、山脉与网格构图对应；近路桩及灯帽保留原片运动模糊差异，整秒 OSD 存在邻帧混合。 | `compare-5.0.png` |\n| 7.5 秒 | NEON DRIVE、Midnight、夏日标语、落日与地平线对应，字形和排布对应；原片近路桩及路面亮点的子帧拖影更宽。 | `compare-7.5.png` |\n| 9.5 秒 | 完整镀铬标题、霓虹手写、标语、扫光星芒、条纹落日和网格对应；原片近路桩与灯帽有子帧平均拖影，预览时刻尚未进入 STOP 与关机。 | `compare-9.5.png` |\n\n无头浏览器中，独立 Demo 和站点案例页的自动播放、暂停、实际指针拖动、`?t=5` 定位、声音开关与拖动后声音同步均通过。四次播放／拖动后的声画采样差为 42.5ms / 8.4ms / 50.3ms / 39.1ms；暂停时媒体同步暂停。定位截图及明细位于工作区 `compare/mg-synthwave/browser-standalone.png`、`browser-site.png` 与 `browser-results.json`。\n\n## 制作依赖与复现\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/10-synthwave && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "licenses": "# 第三方许可索引\n\n[来源、版本和许可事实](../../../entries/cases/mg-synthwave.json)\n\n- [film/LICENSE](film/LICENSE)\n- [fonts/archivo-OFL.txt](fonts/archivo-OFL.txt)\n- [fonts/mrdafoe-OFL.txt](fonts/mrdafoe-OFL.txt)\n- [fonts/michroma-OFL.txt](fonts/michroma-OFL.txt)\n- [fonts/vt323-OFL.txt](fonts/vt323-OFL.txt)\n- [vendor/three@0.186.1/LICENSE](vendor/three@0.186.1/LICENSE)\n- [vendor/simplex-noise@4.0.3/LICENSE](vendor/simplex-noise@4.0.3/LICENSE)\n- [vendor/opentype.js@2.0.0/LICENSE](vendor/opentype.js@2.0.0/LICENSE)\n\n## 制作依赖\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/10-synthwave && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "prompt": "# 80 年代合成波 · NEON DRIVE — Midnight 1986\n\n## 实现 Prompt\n\nYou are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n复古系（80s Synthwave / Y2K 千禧） Retro: 80s Synthwave / VHS / Y2K\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML WebGL (perspective grid, sun, mountains shader) + canvas chrome text + CSS/SVG glow; VHS pass\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「OUTRUN 1986」The quintessential 80s synthwave title sequence.\n- Starry night, striped retro sun (horizontal band cut-outs, magenta→orange→yellow), wireframe mountains, palm silhouettes, neon magenta/cyan perspective grid rushing toward the camera.\n- 0–1s: VHS tracking noise + 'PLAY ▶' OSD; 1–4s: camera flies low over the grid, sun rises; 4–6s: CHROME title (e.g. \"NEON DRIVE\", multi-stop metallic gradient, bevel highlight, star glint sweeping across) SLAMS in with a lens flare; 6–7.5s: pink neon script word (e.g. \"Midnight\") writes on like a neon tube with flicker; 7.5–10s: sustained ride, subtle VHS chroma bleed/scanlines, end on the hero frame.\n- Double glow (tight ~4px + wide ~30px), deep purple sky gradient.\nSound: synthwave — gated-reverb snare, arpeggiated saw bass, lush pads, big chord + crash on the title slam.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n对特定年代媒介美学的整体引用：80s synthwave 是霓虹网格+日落渐变+镀铬字；VHS 是扫描线+色偏+磁带噪声；Y2K 千禧风是液态镀铬金属、酸性绿紫、拟物系统窗口和低保真 3D。近两年 Y2K 在音乐视频与潮流品牌片中强势回潮，B站模板市场大量供应'酸性镀铬'素材。\n视觉特征 霓虹辉光, 透视网格地平线, 扫描线与RGB色偏, 镀铬金属字, 酸性配色, 拟物窗口UI\n关键技法 synthwave 三件套：透视网格滚动（一点透视 grid + 纵向位移循环）、日落多层渐变球、双层辉光（内层紧 4px 高亮+外层散 30px 低透明）\nVHS 做旧链：RGB split（红蓝通道各偏 1~2px）→ 扫描线（2px 间隔 10% 黑条）→ 波浪扭曲抖动（每秒 1~2 次随机 glitch 抽帧）→ 4:3 圆角遮罩\nY2K 镀铬字：极高对比的多段金属渐变 + bevel 高光 + 环境映射感反光，配 lens flare\nY2K 运动语言：弹窗式 pop 出现、光标点击、窗口拖拽，界面拟物即动画叙事\n帧率故意不稳：关键段落抽帧到 15fps 或倒放 2 帧制造磁带卡顿\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.\n\n## 动效 Token\n\n- **地平线偏移**：const SHIFT = 75;\n- **标题构成**：const TITLE = 'NEON DRIVE', TS = 1.5, TITLE_W = 1400, TITLE_CY = 300;\n- **霓虹轮廓**：const SFS = 226, SCRIPT = 'Midnight', SCX = 1195, SCY = 470, SROT = -0.13;\n- **显像管末帧**：const CRT = { 295: [1, .30, .25, 0], 296: [1, .0019, 1, .030], 297: [.26, .0019, 1.1, .022], 298: [.0073, .013, 1.3, .036], 299: [.0055, .010, .35, .012] };\n\n## 制作约束\n\n- 原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。\n- 10 秒，1920×1080，30fps；只提供横屏原作画幅，复刻公开成片的默认版本。\n\n## 迁移\n\n- `film/scene.js → TITLE、SCRIPT、TAG`：调整镀铬标题、霓虹手写内容与标语。\n- `film/scene.js → speed、poseCam、carGap`：调整公路速度、镜头与跑车推进。\n- `film/cues.json`：调整换道、倒带、落版、描写、点亮和关机节点。\n- `index.html → MotionKit.mountFilm`：接入时间轴、原片音轨与窗口等比缩放。\n\n[打开 Demo](../../demos/cases/mg-synthwave/index.html) · [在库中查看](../../cases.html#case/mg-synthwave)\n"
+  },
+  "entrypoint": "demos/cases/mg-synthwave/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-synthwave/LICENSES.md",
+      "bytes": 1068,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/audio/film.m4a",
+      "bytes": 403976,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fidelity.md",
+      "bytes": 4597,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/cues.json",
+      "bytes": 1312,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/scene.js",
+      "bytes": 70681,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/setup.js",
+      "bytes": 243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/style.css",
+      "bytes": 166,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Archivo-Italic[wdth,wght].ttf",
+      "bytes": 741368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Michroma-Regular.ttf",
+      "bytes": 64344,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/MrDafoe-Regular.ttf",
+      "bytes": 47976,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/VT323-Regular.ttf",
+      "bytes": 153116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/archivo-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/fonts.css",
+      "bytes": 636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/michroma-OFL.txt",
+      "bytes": 4395,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/mrdafoe-OFL.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/vt323-OFL.txt",
+      "bytes": 4367,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/index.html",
+      "bytes": 1976,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/audio.py",
+      "bytes": 11743,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/cues.json",
+      "bytes": 1312,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.core.js",
+      "bytes": 1458113,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.module.js",
+      "bytes": 662772,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 8501,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 4694,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/Pass.js",
+      "bytes": 4218,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/RenderPass.js",
+      "bytes": 4280,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 3228,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 15397,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/CopyShader.js",
+      "bytes": 729,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/mg-synthwave.json",
+      "bytes": 16835,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/mg-synthwave.jpg",
+      "bytes": 166422,
+      "role": "preview"
+    }
+  ]
+}

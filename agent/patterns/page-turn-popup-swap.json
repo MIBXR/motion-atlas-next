@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "page-turn-popup-swap",
+  "pattern": {
+    "id": "page-turn-popup-swap",
+    "order": 99,
+    "title": "翻页立体书换景",
+    "types": [
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "曲面纸页用旧地面作正面、新天空作背面，沿40段积分得到刚性弯曲；旧立体件折倒，新件绕底铰链弹起。",
+    "mechanism": "曲面纸页用旧地面作正面、新天空作背面，沿40段积分得到刚性弯曲；旧立体件折倒，新件绕底铰链弹起。",
+    "trigger": "story.js:TURNS的三次跨页时刻。",
+    "effect": "颜色与场景随实体纸页连续替换，纸机关的折起和落下清晰可见。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "48.600000–52.500000秒；71.600000–75.500000秒；86.800000–90.700000秒；1倍速，总时长11.700000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "翻页时刻",
+        "value": "film/story.js:TURNS=[[48.6,51.4],[71.6,74.4],[86.8,89.6]]；main.js:render在[a+.45,b−.3]用eio(seg)调用setLeaf。"
+      },
+      {
+        "name": "纸页曲面",
+        "value": "film/book.js:setLeaf：NS=40，th=π/2*u，L=.55*sin(πu)，逐段积分cos(phi)/sin(phi)；leafFront=旧ground，leafBack=下一skyLeaf或sky。"
+      },
+      {
+        "name": "弹起时序",
+        "value": "film/sets.js:RISE为各翻页结束前.9秒，FOLD为翻页开始；riseOf以.55秒back(...,1.7)升起，延迟(.3−z)*1.2，updatePops绕底边转dir*π/2*(1−k)。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-paper-popup/film/book.js",
+      "demos/cases/lemo-paper-popup/film/main.js",
+      "demos/cases/lemo-paper-popup/film/sets.js",
+      "demos/cases/lemo-paper-popup/film/story.js"
+    ],
+    "locator": "setLeaf / TURNS / riseOf / updatePops",
+    "useCases": [
+      "颜色与场景随实体纸页连续替换，纸机关的折起和落下清晰可见。"
+    ],
+    "avoid": [
+      "在关键动作或留白上叠加争夺注意的主动作"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "flip-tile-cascade"
+      ],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-paper-popup的原作render(t)重放“翻页立体书换景”。曲面纸页用旧地面作正面、新天空作背面，沿40段积分得到刚性弯曲；旧立体件折倒，新件绕底铰链弹起。保留参数：film/story.js:TURNS=[[48.6,51.4],[71.6,74.4],[86.8,89.6]]；main.js:render在[a+.45,b−.3]用eio(seg)调用setLeaf。；film/book.js:setLeaf：NS=40，th=π/2*u，L=.55*sin(πu)，逐段积分cos(phi)/sin(phi)；leafFront=旧ground，leafBack=下一skyLeaf或sky。；film/sets.js:RISE为各翻页结束前.9秒，FOLD为翻页开始；riseOf以.55秒back(...,1.7)升起，延迟(.3−z)*1.2，updatePops绕底边转dir*π/2*(1−k)。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/page-turn-popup-swap/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-paper-popup"
+      }
+    ],
+    "previewAt": 1.4,
+    "markers": [
+      {
+        "t": 0,
+        "label": "翻页立体书换景"
+      },
+      {
+        "t": 3.8999999999999986,
+        "label": "来源片段2"
+      },
+      {
+        "t": 7.800000000000004,
+        "label": "来源片段3"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/page-turn-popup-swap.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-paper-popup",
+      "bundle": "agent/cases/lemo-paper-popup.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 翻页立体书换景\n\n## 实现 Prompt\n\n用来源案例lemo-paper-popup的原作render(t)重放“翻页立体书换景”。曲面纸页用旧地面作正面、新天空作背面，沿40段积分得到刚性弯曲；旧立体件折倒，新件绕底铰链弹起。保留参数：film/story.js:TURNS=[[48.6,51.4],[71.6,74.4],[86.8,89.6]]；main.js:render在[a+.45,b−.3]用eio(seg)调用setLeaf。；film/book.js:setLeaf：NS=40，th=π/2*u，L=.55*sin(πu)，逐段积分cos(phi)/sin(phi)；leafFront=旧ground，leafBack=下一skyLeaf或sky。；film/sets.js:RISE为各翻页结束前.9秒，FOLD为翻页开始；riseOf以.55秒back(...,1.7)升起，延迟(.3−z)*1.2，updatePops绕底边转dir*π/2*(1−k)。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：48.600000–52.500000秒；71.600000–75.500000秒；86.800000–90.700000秒；1倍速，总时长11.700000秒。\n\n[打开 Demo](../../demos/patterns/page-turn-popup-swap/index.html) · [在库中查看](../../patterns.html#pattern/page-turn-popup-swap)\n"
+  },
+  "entrypoint": "demos/patterns/page-turn-popup-swap/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-paper-popup/LICENSES.md",
+      "bytes": 1896,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/SOURCES.md",
+      "bytes": 878,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/alarm_clock_01.bin",
+      "bytes": 284408,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/alarm_clock_01.gltf",
+      "bytes": 10056,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/textures/alarm_clock_01_arm_1k.jpg",
+      "bytes": 538163,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/textures/alarm_clock_01_diff_1k.jpg",
+      "bytes": 404998,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/textures/alarm_clock_01_nor_gl_1k.jpg",
+      "bytes": 420026,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/desk_lamp_arm_01.bin",
+      "bytes": 736804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/desk_lamp_arm_01.gltf",
+      "bytes": 4453,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_arm_1k.jpg",
+      "bytes": 780379,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_diff_1k.jpg",
+      "bytes": 702522,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_nor_gl_1k.jpg",
+      "bytes": 651826,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/lythwood_lounge_2k.hdr",
+      "bytes": 6090881,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/potted_plant_04.bin",
+      "bytes": 241800,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/potted_plant_04.gltf",
+      "bytes": 7081,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/textures/potted_plant_04_arm_1k.jpg",
+      "bytes": 478413,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/textures/potted_plant_04_diff_1k.jpg",
+      "bytes": 577545,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/textures/potted_plant_04_nor_gl_1k.jpg",
+      "bytes": 817786,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/tea_set_01.bin",
+      "bytes": 941776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/tea_set_01.gltf",
+      "bytes": 15836,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/textures/tea_set_01_arm_1k.jpg",
+      "bytes": 559750,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/textures/tea_set_01_diff_1k.jpg",
+      "bytes": 509631,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/textures/tea_set_01_nor_gl_1k.jpg",
+      "bytes": 255598,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/walnut_diff.jpg",
+      "bytes": 2418767,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/walnut_nor.jpg",
+      "bytes": 1959270,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/walnut_rough.jpg",
+      "bytes": 2865130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/CREDITS",
+      "bytes": 2971,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/LICENSE-Dreamy-Flashback.txt",
+      "bytes": 321,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/LICENSE-Heartwarming.txt",
+      "bytes": 350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/LICENSE-Jaunty-Gumption.txt",
+      "bytes": 369,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/film.m4a",
+      "bytes": 4515726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fidelity.md",
+      "bytes": 6279,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/actors.js",
+      "bytes": 6780,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/art.js",
+      "bytes": 34405,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/book.js",
+      "bytes": 9220,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/cutmesh.js",
+      "bytes": 3648,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/hud.js",
+      "bytes": 9242,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/index.html",
+      "bytes": 737,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/lib.js",
+      "bytes": 2783,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/main.js",
+      "bytes": 40357,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/paper.js",
+      "bytes": 4793,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/post.js",
+      "bytes": 4827,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/sets.js",
+      "bytes": 16136,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/story.js",
+      "bytes": 4085,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/voices/dur.json",
+      "bytes": 192,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/OFL-fredoka.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/OFL-imfellenglish.txt",
+      "bytes": 4359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/OFL-lilitaone.txt",
+      "bytes": 4392,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/OFL-zcoolkuaile.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f0.woff2",
+      "bytes": 20196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f1.woff2",
+      "bytes": 8776,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f2.woff2",
+      "bytes": 4564,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f3.woff2",
+      "bytes": 29704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f4.woff2",
+      "bytes": 1376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f5.woff2",
+      "bytes": 10676,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f6.woff2",
+      "bytes": 57808,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f7.woff2",
+      "bytes": 59880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/fonts.css",
+      "bytes": 6199,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/index.html",
+      "bytes": 4770,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/CREDITS",
+      "bytes": 2971,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/README.md",
+      "bytes": 4019,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/asr.py",
+      "bytes": 360,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/events.json",
+      "bytes": 9050,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/fetch_fonts.mjs",
+      "bytes": 1254,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/fonts.css",
+      "bytes": 6379,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/gltest.mjs",
+      "bytes": 1396,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/make_srt.mjs",
+      "bytes": 1847,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/mix.py",
+      "bytes": 13956,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/music/edit.py",
+      "bytes": 1348,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/music/jump.py",
+      "bytes": 1623,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/music/jump2.py",
+      "bytes": 1472,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/music/survey.py",
+      "bytes": 1203,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/mux.sh",
+      "bytes": 605,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/package-lock.json",
+      "bytes": 1012,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/package.json",
+      "bytes": 331,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/probe.mjs",
+      "bytes": 706,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/render.mjs",
+      "bytes": 3953,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/serve.mjs",
+      "bytes": 926,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/sheet.html",
+      "bytes": 2159,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/shot.mjs",
+      "bytes": 909,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/test.html",
+      "bytes": 2800,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/tile.py",
+      "bytes": 654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/tts/gen.py",
+      "bytes": 1006,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/tts/gen1.py",
+      "bytes": 1087,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/tts/lines.json",
+      "bytes": 1339,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/words.py",
+      "bytes": 403,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+      "bytes": 110273,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+      "bytes": 11377,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/page-turn-popup-swap/index.html",
+      "bytes": 1463,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/page-turn-popup-swap/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-paper-popup.json",
+      "bytes": 12616,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/page-turn-popup-swap.json",
+      "bytes": 3341,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/page-turn-popup-swap.jpg",
+      "bytes": 65181,
+      "role": "preview"
+    }
+  ]
+}

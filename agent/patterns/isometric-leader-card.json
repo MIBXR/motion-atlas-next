@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "isometric-leader-card",
+  "pattern": {
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "kit": true,
+    "timeline": true,
+    "avoid": [],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#DAD3F7",
+        "#B7ECD6",
+        "#FFC4AC",
+        "#A8D2FF",
+        "#FBFAFF",
+        "#62F0F2",
+        "#2C2960"
+      ],
+      "type": "HarmonyOS Sans SC 500、700；JetBrains Mono 500；Unbounded 800。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "id": "isometric-leader-card",
+    "order": 37,
+    "title": "等轴引线数据卡",
+    "types": [
+      "hud",
+      "composition",
+      "rhythm"
+    ],
+    "summary": "引线从世界锚点画出，数据卡沿等轴侧面以弹性动效横向展开，随后数值计数、柱条生长，离场时卡片和引线同步收回。",
+    "mechanism": "引线先从世界锚点画到空白处，卡片沿等轴侧面以弹性动效横向展开，数值计数、柱条错峰生长，端点弹出并扩圈，离场时卡片与引线同步收回。",
+    "trigger": "6.5、6.75、7秒的数据卡节点到达，引线提前.2秒开始描画。",
+    "effect": "清洁能源、平均通勤、数据吞吐三张卡片从城市锚点延伸到空白处，保持等轴角度并按屏幕纵坐标排序。",
+    "timing": [
+      {
+        "name": "等轴矩阵",
+        "value": "右面rotate(-30deg) skewX(-30deg) scaleY(.86602)；左面rotate(30deg) skewX(30deg) scaleY(.86602)。"
+      },
+      {
+        "name": "卡片尺寸",
+        "value": "CW=360，CH=210；S=.8165*60*zoom*.01。"
+      },
+      {
+        "name": "引线与卡片",
+        "value": "A.easeOutCubic(A.inv(-.2,0,tau))；A.spring(tau,20,.55,8)；callouts=[6.5,6.75,7]。"
+      },
+      {
+        "name": "数值与柱条",
+        "value": "A.easeOutCubic(A.inv(.04,.46,tau))；A.easeOutBack(A.inv(.06+i*.035,.28+i*.035,tau),1.6)。"
+      },
+      {
+        "name": "退出",
+        "value": "tOut=7.62/7.66/7.7；A.easeInCubic(A.inv(d.tOut,d.tOut+.22,T))。"
+      },
+      {
+        "name": "时长",
+        "value": "2.02s；原片6.1–8.12s。"
+      }
+    ],
+    "useCases": [
+      "等轴场景数据说明",
+      "连接三维世界锚点的浮动信息卡"
+    ],
+    "prompt": "复用等距 2.5D 来源案例的原作 window.renderAt(t)，重放原片6.1–8.12秒，时长2.02秒。三张数据卡节点为6.5、6.75、7秒，引线提前.2秒从世界锚点沿竖直短桩与等轴轴线画出，卡片到点后以A.spring(tau,20,.55,8)横向展开。右面矩阵rotate(-30deg) skewX(-30deg) scaleY(.86602)，左面矩阵rotate(30deg) skewX(30deg) scaleY(.86602)；CW=360，CH=210，S=.8165*60*zoom*.01。保留.04–.46秒数值计数、i*.035秒柱条错峰、端点弹出扩圈与按屏幕y排序。退出节点7.62/7.66/7.7，卡片与引线在.22秒内同步收回。保留原作模型、字体、颜色和提示音，1920×1080、30fps，同区间原片音轨默认关闭。",
+    "markers": [
+      {
+        "t": 0,
+        "label": "城市运行"
+      },
+      {
+        "t": 0.2,
+        "label": "引线先行"
+      },
+      {
+        "t": 0.4,
+        "label": "能源展开"
+      },
+      {
+        "t": 0.65,
+        "label": "通勤展开"
+      },
+      {
+        "t": 0.9,
+        "label": "数据展开"
+      },
+      {
+        "t": 1.52,
+        "label": "能源收回"
+      },
+      {
+        "t": 1.56,
+        "label": "通勤收回"
+      },
+      {
+        "t": 1.6,
+        "label": "数据收回"
+      },
+      {
+        "t": 1.82,
+        "label": "卡片收齐"
+      }
+    ],
+    "previewAt": 1.4,
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "demo": "demos/patterns/isometric-leader-card/index.html",
+    "sources": [
+      {
+        "caseId": "mg-isometric"
+      }
+    ],
+    "preview": "previews/patterns/isometric-leader-card.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-isometric",
+      "bundle": "agent/cases/mg-isometric.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 等轴引线数据卡\n\n## 实现 Prompt\n\n复用等距 2.5D 来源案例的原作 window.renderAt(t)，重放原片6.1–8.12秒，时长2.02秒。三张数据卡节点为6.5、6.75、7秒，引线提前.2秒从世界锚点沿竖直短桩与等轴轴线画出，卡片到点后以A.spring(tau,20,.55,8)横向展开。右面矩阵rotate(-30deg) skewX(-30deg) scaleY(.86602)，左面矩阵rotate(30deg) skewX(30deg) scaleY(.86602)；CW=360，CH=210，S=.8165*60*zoom*.01。保留.04–.46秒数值计数、i*.035秒柱条错峰、端点弹出扩圈与按屏幕y排序。退出节点7.62/7.66/7.7，卡片与引线在.22秒内同步收回。保留原作模型、字体、颜色和提示音，1920×1080、30fps，同区间原片音轨默认关闭。\n\n## 参数\n\n- **等轴矩阵**：右面rotate(-30deg) skewX(-30deg) scaleY(.86602)；左面rotate(30deg) skewX(30deg) scaleY(.86602)。\n- **卡片尺寸**：CW=360，CH=210；S=.8165*60*zoom*.01。\n- **引线与卡片**：A.easeOutCubic(A.inv(-.2,0,tau))；A.spring(tau,20,.55,8)；callouts=[6.5,6.75,7]。\n- **数值与柱条**：A.easeOutCubic(A.inv(.04,.46,tau))；A.easeOutBack(A.inv(.06+i*.035,.28+i*.035,tau),1.6)。\n- **退出**：tOut=7.62/7.66/7.7；A.easeInCubic(A.inv(d.tOut,d.tOut+.22,T))。\n- **时长**：2.02s；原片6.1–8.12s。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/isometric-leader-card/index.html) · [在库中查看](../../patterns.html#pattern/isometric-leader-card)\n"
+  },
+  "entrypoint": "demos/patterns/isometric-leader-card/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-isometric/LICENSES.md",
+      "bytes": 984,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/audio/film.m4a",
+      "bytes": 423677,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fidelity.md",
+      "bytes": 6117,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/anim.js",
+      "bytes": 3953,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/cues.json",
+      "bytes": 1240,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/main.js",
+      "bytes": 9777,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/render.js",
+      "bytes": 9205,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/setup.js",
+      "bytes": 216,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/style.css",
+      "bytes": 423,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/title.js",
+      "bytes": 8519,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/ui.js",
+      "bytes": 9547,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/world.js",
+      "bytes": 80534,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS-Sans-LICENSE.txt",
+      "bytes": 32768,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS_Sans_SC_Bold.ttf",
+      "bytes": 8158996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS_Sans_SC_Medium.ttf",
+      "bytes": 8227312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/JetBrainsMono-OFL.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/JetBrainsMono[wght].ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded-800-static.ttf",
+      "bytes": 423680,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded-OFL.txt",
+      "bytes": 4392,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded[wght].ttf",
+      "bytes": 778272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/fonts.css",
+      "bytes": 700,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/index.html",
+      "bytes": 2932,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/source/audio.py",
+      "bytes": 14263,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-isometric/source/cues.json",
+      "bytes": 1240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/build/three.core.js",
+      "bytes": 1458113,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/build/three.module.js",
+      "bytes": 662772,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/environments/RoomEnvironment.js",
+      "bytes": 4960,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "bytes": 6470,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/postprocessing/Pass.js",
+      "bytes": 4218,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 15397,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/shaders/CopyShader.js",
+      "bytes": 729,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 37712,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/isometric-leader-card/index.html",
+      "bytes": 1716,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/isometric-leader-card/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-isometric.json",
+      "bytes": 24989,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/isometric-leader-card.json",
+      "bytes": 3996,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/isometric-leader-card.jpg",
+      "bytes": 136839,
+      "role": "preview"
+    }
+  ]
+}

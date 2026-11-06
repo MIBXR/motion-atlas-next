@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-news-package",
+  "entry": {
+    "id": "lemo-news-package",
+    "order": 71,
+    "title": "本周 AI 四件事 · 电视新闻包装",
+    "subtitle": "The Week in AI",
+    "carriers": [
+      "video"
+    ],
+    "style": "documentary",
+    "purpose": "news",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "电视新闻包装",
+      "剪辑与纪实",
+      "代码影片"
+    ],
+    "summary": "LEMO AI NEWS的一周四则AI新闻从串联单开始，随后介绍模型开放、市场下跌、欧盟问询与开放权重，用翻牌价格表、阈值折线、地图信函和规格卡承载信息，再回到已勾选的串联单。",
+    "focus": "同一频道板、柠檬黄分类签与白色标题条组成连续包装；换镜时，带状遮罩同时切换标题条、来源签与画面。",
+    "accent": "#F2CF1D",
+    "background": "#121417",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 18.4,
+    "rhythm": {
+      "duration": 53.5,
+      "beats": [
+        {
+          "t": 0,
+          "label": "频道片头",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 1.5,
+          "label": "本周串联单",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 6,
+          "label": "模型开放",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 9,
+          "label": "翻牌价格",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 13,
+          "label": "行情阈值",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 20,
+          "label": "芯片股",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 24,
+          "label": "欧盟地图",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 30.5,
+          "label": "讲话引语",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 35.5,
+          "label": "规格卡",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 45,
+          "label": "勾选回顾",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 47.5,
+          "label": "片尾",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 1.5,
+        "to": 0.7,
+        "label": "频道主拍",
+        "from": 0.9
+      },
+      {
+        "t0": 1.5,
+        "t1": 6,
+        "to": 0.6,
+        "label": "串联单",
+        "from": 0.5
+      },
+      {
+        "t0": 6,
+        "t1": 13,
+        "to": 0.7,
+        "label": "模型与价格",
+        "from": 0.6
+      },
+      {
+        "t0": 13,
+        "t1": 20,
+        "to": 0.95,
+        "label": "跌破阈值",
+        "from": 0.65
+      },
+      {
+        "t0": 20,
+        "t1": 24,
+        "to": 0.65,
+        "label": "芯片股",
+        "from": 0.7
+      },
+      {
+        "t0": 24,
+        "t1": 35.5,
+        "to": 0.3,
+        "label": "政策",
+        "from": 0.45
+      },
+      {
+        "t0": 35.5,
+        "t1": 45,
+        "to": 0.65,
+        "label": "开放权重",
+        "from": 0.75
+      },
+      {
+        "t0": 45,
+        "t1": 53.5,
+        "to": 0.05,
+        "label": "回顾与片尾",
+        "from": 0.65
+      }
+    ],
+    "energyNote": "段落与时刻取上游DEMO.md镜头表及原作绘制函数；0–1为按配乐、原声和画面密度作的相对编辑标注。",
+    "observations": [
+      "片头频道板飞到右上角成为持续出现的频道标。",
+      "价格表的上下半牌分别裁切，旧值上半缩到零后，新值下半展开。",
+      "KOSPI曲线按真实收盘值推进，越过九月高点−20%线时配最重主拍与读数板。",
+      "地图只把27个欧盟成员国分开，其他陆地合成一个无内部边界的形状；布鲁塞尔发出两封问询函。",
+      "规格卡把816B总参数和42B激活参数放在同一尺度上，两台Mac Studio的内存格由括号汇总。"
+    ],
+    "composition": {
+      "color": "#121417、#1B1E23、#22262C、#F2CF1D、#F8DE4A、#D4B064、#F4F1E8",
+      "typography": "Noto Sans SC 900/700、Barlow Condensed 800/600及600斜体、IBM Plex Mono 500；SIL OFL 1.1子集。",
+      "layout": "1920×1080横屏；沿用原作各镜的画面分区与文字位置。",
+      "imagery": "代码绘制的新闻图形、真实KOSPI收盘数据、Natural Earth欧洲轮廓，以及上游已提交的机房与晶圆示意底图。",
+      "motion": "频道板砸入并缩至角标；串联单行翻入；上下半牌翻值；折线越阈值；地图推摇与信函弧线飞出。",
+      "sound": "Release原混音：120 BPM新闻主题、弦乐与铜管、翻牌声和图形节点拟音；豆包TTS 2.0解说小明2.0中文旁白受火山引擎服务条款约束，排除在CC BY 4.0之外。",
+      "rhythm": "片头1.5秒、串联单、四则报道、勾选回顾与片尾；阈值跌破前留一拍静默，政策与规格段改变配器。",
+      "coherence": "同一频道板、柠檬黄分类签与白色标题条组成连续包装；换镜时，带状遮罩同时切换标题条、来源签与画面。"
+    },
+    "layers": [
+      {
+        "name": "新闻底图",
+        "role": "墨黑演播背景与经过双色处理的两张示意图。"
+      },
+      {
+        "name": "单项信息图",
+        "role": "价格、行情、地图、引语与规格各占一屏。"
+      },
+      {
+        "name": "包装条",
+        "role": "分类签、标题条、来源行随各镜绘制。"
+      },
+      {
+        "name": "频道标与转场",
+        "role": "同一平行四边形板贯穿片头、角标和片尾。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#121417",
+        "#1B1E23",
+        "#22262C",
+        "#F2CF1D",
+        "#F8DE4A",
+        "#D4B064",
+        "#F4F1E8"
+      ],
+      "type": "Noto Sans SC 900/700、Barlow Condensed 800/600及600斜体、IBM Plex Mono 500；SIL OFL 1.1子集。",
+      "motion": [
+        {
+          "name": "标题条",
+          "value": "film/main.js:strap / layer / wipe；x=96，y=904，1250×104，分类签y=856；按每个镜头在wipe内部绘制。"
+        },
+        {
+          "name": "翻牌",
+          "value": "film/main.js:flipTile / shotPrice；上下半分别裁切，.26秒完成一轮，220×130牌。"
+        }
+      ]
+    },
+    "useCases": [
+      "每周新闻汇总",
+      "市场简报",
+      "产品规格报道"
+    ],
+    "avoid": [
+      "大字幕主导的社交短视频",
+      "虚拟演播厅、走马字幕与多页幻灯片"
+    ],
+    "constraints": [
+      "影像、字体和数据替换后同步调整原作取帧与文字时间表。",
+      "声音与画面沿用同一来源时间，音轨默认关闭。"
+    ],
+    "migration": [
+      {
+        "field": "film/main.js → SCENES / WIPES / STRAP",
+        "how": "修改报道次序、带状转场和标题条。"
+      },
+      {
+        "field": "film/main.js → KDATA / EUT / S4",
+        "how": "修改行情序列、地图与规格卡时刻。"
+      },
+      {
+        "field": "source/vo/lines.json / source/mix.py",
+        "how": "修改旁白与原作采样配乐。"
+      }
+    ],
+    "prompt": "制作一支电视新闻包装影片。同一频道板、柠檬黄分类签与白色标题条组成连续包装；换镜时标题条、来源签与画面一起被带状遮罩切换。频道板砸入并缩至角标；串联单行翻入；上下半牌翻值；折线越阈值；地图推摇与信函弧线飞出。沿用以下制作方法：代码绘制的新闻图形、真实KOSPI收盘数据、Natural Earth欧洲轮廓，以及上游已提交的机房与晶圆示意底图。声音采用Release原混音：120 BPM新闻主题、弦乐与铜管、翻牌声和图形节点拟音；豆包TTS 2.0解说小明2.0中文旁白受火山引擎服务条款约束，排除在CC BY 4.0之外。可编辑入口：film/main.js → SCENES / WIPES / STRAP；film/main.js → KDATA / EUT / S4；source/vo/lines.json / source/mix.py。",
+    "demo": "demos/cases/lemo-news-package/index.html",
+    "patternIds": [
+      "flap-board-price-table",
+      "lower-third-rundown"
+    ],
+    "fidelity": "demos/cases/lemo-news-package/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/news-package",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/news-package/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；原作影片及静帧CC BY 4.0，署名LemoLab；第三方素材和旁白按CREDITS各自许可。豆包TTS旁白受火山引擎服务条款约束，排除在CC BY 4.0之外。"
+    },
+    "sources": [
+      {
+        "label": "固定版本风格与制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/news-package"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/news-package.mp4"
+      },
+      {
+        "label": "原始素材与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/news-package/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）。固定源码接入MotionKit，原作画面按时间绘制；音轨从Release流复制。"
+      },
+      {
+        "scope": "影像与声音",
+        "notes": "原始作者、素材链接和许可见[LICENSES.md](LICENSES.md)及[audio/CREDITS](audio/CREDITS)。豆包TTS 2.0解说小明2.0旁白适用火山引擎服务条款，排除在CC BY 4.0之外。"
+      },
+      {
+        "scope": "字体",
+        "notes": "字体、字重与子集见tokens.type；OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-news-package/LICENSES.md",
+    "preview": "previews/cases/lemo-news-package.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 本周 AI 四件事 · 电视新闻包装 · 接入与保真说明\n\n复刻范围为完整53.5秒代码影片；来源与固定版本见[条目JSON](../../../entries/cases/lemo-news-package.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载字体、素材、绘制代码和音轨；等待iframe的READY，按原fps执行并等待render(t)。 | 接入MotionKit舞台、时间线、定位与声音。 |\n| `film/index.html`、`film/main.js` | 字体与assets相对路径指向本体对应目录。 | 本库目录接入。 |\n| `audio/film.m4a` | 从Release成片以`-c:a copy`流复制。 | 保留正式混音。 |\n| `source/` | 上游制作脚本、素材证据与非运行数据按原相对结构保存；文本转LF。 | 保留重建依赖。 |\n| `stills/` | 预览由本库capture生成。 | 成片绘制不读取上游静帧。 |\n\n## 适配层\n\n`MotionKit.load.prepare`预载后，同源iframe等待`READY === true`。`MotionKit.mountFilm`接入1920×1080、30fps舞台，`renderAt(t)`调用并等待原作`render(Math.round(t*30)/30)`。画面由上游Canvas2D代码直接绘制。`?embed`隐藏控制条，`?render`暂停播放，`?t=`定位；减少动态时停在18.4秒，声音默认关闭。\n\n许可索引见[LICENSES.md](LICENSES.md)。\n\n## 对照结果\n\n在1920×1080、DPR 1的无头Edge中，以30fps精确帧号对照Release成片。取开头、代表帧、DEMO镜头段中点与片尾前1秒，去重后14帧。\n\n| 项目 | 结果 |\n| --- | --- |\n| 原始PNG SSIM | 0.985578–0.997143 |\n| 按原作编码链编解码后的SSIM | 0.987054–0.998052 |\n| 音轨RMS包络最佳偏移 | 0ms |\n| 音轨包络相关系数 | 1.000000000 |\n\n测量编码链为原作`core/render/video.mjs`的JPEG95 → H.264 CRF14 / medium / yuv420p，再按`source/build.sh`指定的`core/render/mux.sh`执行fps=30、noise=0、H.264 CRF19 / slow / yuv420p；只在过程目录进行。原始画面和编解码后画面的全部采样SSIM均高于0.95。声音采用48kHz单声道、10ms窗口的RMS包络互相关。\n",
+    "licenses": "# 本周 AI 四件事 · 电视新闻包装 · 许可索引\n\n| 范围 | 作者与许可 | 原文 |\n| --- | --- | --- |\n| 原作代码与文档 | Lemomo / LemoLab，MIT | [film/LICENSE](film/LICENSE) |\n| 原作成片与静帧 | LemoLab，CC BY 4.0 | [CC BY 4.0](audio/CC-BY-4.0.txt) |\n| 原作配乐采样 | Versilian Studios / Sam Gossner，VSCO 2 CE与VCSL，CC0 1.0 | [CC0](audio/CC0-1.0.txt)、[CREDITS](audio/CREDITS) |\n| 中文旁白 | 中文旁白：Doubao TTS 2.0 / Volcengine seed-tts-2.0，解说小明2.0（zh_male_jieshuoxiaoming_uranus_bigtts），适用火山引擎服务条款，排除在CC BY 4.0之外。 | [旁白许可](audio/VOICE-LICENSE.md)、[CREDITS](audio/CREDITS) |\n\n## 第三方画面与原声\n\n| 素材 | 作者 | 许可 | 原地址 |\n| --- | --- | --- | --- |\n| 欧洲地图轮廓 | Natural Earth，world-atlas 2.0.2 | Natural Earth公有领域；[world-atlas ISC](source/vendor/LICENSE-world-atlas) | https://www.naturalearthdata.com/ 、https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json |\n| KOSPI收盘数据 | Korea Exchange，经Naver Finance取得 | 事实数据 | https://api.stock.naver.com/chart/domestic/index/KOSPI |\n| 机房、晶圆示意底图 | LemoLab，以Codex CLI image_gen生成 | 原作示意素材；提示词随制作文件保存 | [原图与来源](source/SOURCES.md) |\n\n## 字体\n\n| 字体 | 作者 | 许可与来源 |\n| --- | --- | --- |\n| Noto Sans SC | Google / Adobe | [SIL OFL 1.1](fonts/OFL-notosanssc.txt)，https://github.com/google/fonts/tree/main/ofl/notosanssc |\n| Barlow Condensed | Jeremy Tribby | [SIL OFL 1.1](fonts/OFL-barlowcondensed.txt)，https://github.com/google/fonts/tree/main/ofl/barlowcondensed |\n| IBM Plex Mono | IBM | [SIL OFL 1.1](fonts/OFL-ibmplexmono.txt)，https://github.com/google/fonts/tree/main/ofl/ibmplexmono |\n\n完整资源、处理方式与声音署名见[audio/CREDITS](audio/CREDITS)。\n",
+    "prompt": "# 本周 AI 四件事 · 电视新闻包装\n\n## 实现 Prompt\n\n制作一支电视新闻包装影片。同一频道板、柠檬黄分类签与白色标题条组成连续包装；换镜时标题条、来源签与画面一起被带状遮罩切换。频道板砸入并缩至角标；串联单行翻入；上下半牌翻值；折线越阈值；地图推摇与信函弧线飞出。沿用以下制作方法：代码绘制的新闻图形、真实KOSPI收盘数据、Natural Earth欧洲轮廓，以及上游已提交的机房与晶圆示意底图。声音采用Release原混音：120 BPM新闻主题、弦乐与铜管、翻牌声和图形节点拟音；豆包TTS 2.0解说小明2.0中文旁白受火山引擎服务条款约束，排除在CC BY 4.0之外。可编辑入口：film/main.js → SCENES / WIPES / STRAP；film/main.js → KDATA / EUT / S4；source/vo/lines.json / source/mix.py。\n\n## 动效 Token\n\n- **标题条**：film/main.js:strap / layer / wipe；x=96，y=904，1250×104，分类签y=856；按每个镜头在wipe内部绘制。\n- **翻牌**：film/main.js:flipTile / shotPrice；上下半分别裁切，.26秒完成一轮，220×130牌。\n\n## 制作约束\n\n- 影像、字体和数据替换后同步调整原作取帧与文字时间表。\n- 声音与画面沿用同一来源时间，音轨默认关闭。\n\n## 迁移\n\n- `film/main.js → SCENES / WIPES / STRAP`：修改报道次序、带状转场和标题条。\n- `film/main.js → KDATA / EUT / S4`：修改行情序列、地图与规格卡时刻。\n- `source/vo/lines.json / source/mix.py`：修改旁白与原作采样配乐。\n\n[打开 Demo](../../demos/cases/lemo-news-package/index.html) · [在库中查看](../../cases.html#case/lemo-news-package)\n"
+  },
+  "entrypoint": "demos/cases/lemo-news-package/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-news-package/LICENSES.md",
+      "bytes": 1897,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/europe.json",
+      "bytes": 374556,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/meta.json",
+      "bytes": 67,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/plate_datacenter.jpg",
+      "bytes": 280650,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/plate_wafer.jpg",
+      "bytes": 299860,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/plates/plate_datacenter.jpg",
+      "bytes": 298341,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/plates/plate_wafer.jpg",
+      "bytes": 344139,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/CREDITS",
+      "bytes": 2857,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/VOICE-LICENSE.md",
+      "bytes": 359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/film.m4a",
+      "bytes": 1775588,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fidelity.md",
+      "bytes": 2074,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/film/index.html",
+      "bytes": 1038,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/film/main.js",
+      "bytes": 61754,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/OFL-barlowcondensed.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/barlow600.woff2",
+      "bytes": 9764,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/barlow600i.woff2",
+      "bytes": 11064,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/barlow800.woff2",
+      "bytes": 9720,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/fonts.css",
+      "bytes": 673,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/plexmono500.woff2",
+      "bytes": 6128,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/sanssc700.woff2",
+      "bytes": 41124,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/sanssc900.woff2",
+      "bytes": 41324,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/index.html",
+      "bytes": 2336,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/CREDITS",
+      "bytes": 2857,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/FACTS.md",
+      "bytes": 15270,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/README.md",
+      "bytes": 2656,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/SOURCES.md",
+      "bytes": 3633,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/build.sh",
+      "bytes": 2747,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/data/kospi_daily.csv",
+      "bytes": 10472,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/data/kospi_raw_naver_api.json",
+      "bytes": 18376,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/data/kospi_raw_naver_mobile.json",
+      "bytes": 15605,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/events.json",
+      "bytes": 3678,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/mix.py",
+      "bytes": 13556,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/fonts.sh",
+      "bytes": 1101,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/footage.py",
+      "bytes": 12614,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/gen_image.py",
+      "bytes": 5915,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/gen_plates.sh",
+      "bytes": 1540,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/prep.py",
+      "bytes": 5942,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/subs.py",
+      "bytes": 1230,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/tts_doubao.py",
+      "bytes": 4170,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/vendor/LICENSE-world-atlas",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/vo/dur.json",
+      "bytes": 113,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/vo/lines.json",
+      "bytes": 2028,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/vo/words.json",
+      "bytes": 4374,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-news-package.json",
+      "bytes": 10131,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-news-package.jpg",
+      "bytes": 82867,
+      "role": "preview"
+    }
+  ]
+}

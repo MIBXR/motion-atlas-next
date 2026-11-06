@@ -1,0 +1,105 @@
+{
+  "id": "boot-typing",
+  "order": 13,
+  "title": "终端逐字开机序列",
+  "types": [
+    "type-motion",
+    "rhythm",
+    "sound"
+  ],
+  "carriers": [
+    "console",
+    "video"
+  ],
+  "summary": "按 25fps 帧表逐字显示权限请求，描出单轮廓标志，确认 JOYCE MOORE 身份，再经扫描与欢迎画面完成约 21.92 秒的开场。",
+  "mechanism": "直接复用当前案例的 bootMotion、单轮廓标志轨道与逐字字形。时间 t 先加 5 秒再换算为 25fps 原片帧号；权限文本使用非均匀字符数量表，身份、请求、处理和省略号按各自的采样帧显示。标志的前后端沿同一条轮廓移动，同时改变线宽、位置及加减符号。扫描和欢迎阶段继续使用同一份轨道，声音直接读取案例 audio/film-audio.ogg 的开场片段。",
+  "trigger": "时间轴从 0 秒播放或外部 seek 到开场任意时刻。",
+  "effect": "权限请求、RHINE·LAB 标志、ID CONFIRMED : JOYCE MOORE、扫描与欢迎按当前案例节拍依次出现。",
+  "timing": [
+    {
+      "name": "权限",
+      "value": "1.8s 开始，2.48s 揭完；4.08s 隐藏"
+    },
+    {
+      "name": "标志",
+      "value": "4.16s 显示；帧 229–264 沿单轮廓描绘，随后移向左侧"
+    },
+    {
+      "name": "身份",
+      "value": "6.28–8.56s；请求 9.68–10.56s；处理 11.92–13.28s"
+    },
+    {
+      "name": "扫描与欢迎",
+      "value": "14.48s 扫描；17.76s 欢迎；21.56–21.92s 缩小、失焦并淡出"
+    },
+    {
+      "name": "总时长",
+      "value": "21.92秒"
+    }
+  ],
+  "useCases": [
+    "操作台/终端开机",
+    "游戏内系统登录",
+    "发布会开场",
+    "待机唤醒"
+  ],
+  "avoid": [
+    "频繁重复的登录操作；该完整开场约 21.92 秒。"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "rolling-digits",
+      "decrypt-reveal",
+      "wave-array"
+    ],
+    "conflicts": [],
+    "notes": "作为完整开机支撑层；欢迎画面在 21.56–21.92 秒缩小、失焦并淡出，可在约 22 秒接入档案阵列。"
+  },
+  "prompt": "实现当前案例的约 21.92 秒终端开场：直接复用 bootMotion、bootLogoTrack、扫描轨道、BootSequence 与字形。以 floor((t+5)×25+0.00001) 取原片帧，权限帧 170–187 依 1,1,3,4,5,6,9,11,12,14,17,18,19,20,22,23,25,26 揭字；标志使用帧 229–264 的同一条轮廓前后端与 0.25→26 线宽，保留 RHINE·LAB。身份帧 282–339 保留 ID CONFIRMED : JOYCE MOORE；随后 REQUEST RECEIVED、START PROCESSING 及 449/453/457 帧的省略号，再在 14.48 秒进入扫描、17.76 秒进入欢迎。声音引用 ../../cases/archive-os/audio/film-audio.ogg，仅播放 0–21.92 秒，默认关闭。字体引用 ../../cases/archive-os/film/app/fonts/；render(t) 可任意 seek；减少动态时停在 20.5 秒欢迎画面。",
+  "demo": "demos/patterns/boot-typing/index.html",
+  "kit": true,
+  "previewAt": 8.6,
+  "sources": [
+    {
+      "caseId": "archive-os"
+    },
+    {
+      "caseId": "lemo-ascii-crt"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "时间基准",
+      "value": "25fps；原片帧号 floor((t+5)×25+0.00001)",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/boot-motion.ts:20-24,137-138"
+    },
+    {
+      "name": "权限逐字表",
+      "value": "帧 170–187；字符数 1,1,3,4,5,6,9,11,12,14,17,18,19,20,22,23,25,26",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/boot-motion.ts:24-26,60-68"
+    },
+    {
+      "name": "身份与处理帧表",
+      "value": "ID 282–295；JOYCE 321–339；请求 367–389；处理 423–440；省略号 449/453/457",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/boot-motion.ts:36-46"
+    },
+    {
+      "name": "单轮廓",
+      "value": "轮廓绘制帧 229–264，线宽 0.25→26；符号缩放帧 246–256",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/boot-logo-tracks.ts:3-42,114-144"
+    },
+    {
+      "name": "声音",
+      "value": "原样复用案例 film-audio.ogg；其中逐字音为 48kHz、三段 38ms 采样按实际揭字轮替",
+      "source": "demos/cases/archive-os/audio/film-audio.ogg；demos/cases/archive-os/source/rhinelabui/src/typing-rhythm.ts:5-29；demos/cases/archive-os/source/rhinelabui/src/audio.ts:36-55,238-241"
+    },
+    {
+      "name": "lemo-ascii-crt · 墨量决定字符的图像位置，字格大小承担镜头",
+      "value": "film/main.js:BOOT按.012秒/字，CMD按.038秒/字；MSG_T以[0,.14,.3,.62,.74,.86,1.02,1.12,1.24,1.36,1.52,1.62,1.74,1.86,1.98,2.3]×.82实现人工停顿与连击；msgBlinks=[19.8,20.4,21]，每次亮.3秒、余辉TAU=.12。"
+    }
+  ],
+  "videoPrompt": "制作 21.92 秒、25fps 帧表驱动的 RHINE LAB 开场。1.8 秒逐字出现 ACCESS PERMISSION REQUIRED，4.16 秒起沿一条共享轮廓描绘标志并移动，6.28 秒起确认 JOYCE MOORE 身份，9.68 秒起请求、11.92 秒起处理，14.48 秒扫描、17.76 秒欢迎，21.56 秒开始缩小失焦并于 21.92 秒结束。字形、材质色彩、轮廓轨迹与声音均使用当前 archive-os 文件。",
+  "negativePrompt": "不要双独立圆环，不要均匀每字间隔，不要 LUMEN、K. ARLEN 或 ANALYSIS OS 请求文案，不要方波替代逐字采样，不要添加块状闪烁光标或 180ms 反色闪，不要跨目录依赖案例。",
+  "markers": []
+}

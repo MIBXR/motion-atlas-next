@@ -1,0 +1,68 @@
+{
+  "id": "stroke-order-equation-sync",
+  "order": 112,
+  "title": "随旁白按笔顺写式",
+  "types": [
+    "type-motion",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "公式各项分别对应旁白的词级时间窗口，单线字形在窗口内依笔顺写出；速度与引力两项修正写完后，再写出每天多出的38微秒。",
+  "mechanism": "公式各项分别对应旁白的词级时间窗口，单线字形在窗口内依笔顺写出；速度与引力两项修正写完后，再写出每天多出的38微秒。",
+  "trigger": "旁白依次说到速度、7微秒、引力、45微秒和38微秒。",
+  "effect": "观众按说话顺序看见公式各项落笔，最终结果保留在同一板面。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "56.3–70秒；1倍速，总时长13.700000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "词级锚点",
+      "value": "film/film.js:20–24的atS/atE从voices/words.json读取词边界；184–195分别安排speed、−7μs、gravity、+45μs、+38μs。"
+    },
+    {
+      "name": "窗口与笔顺",
+      "value": "film/film.js:80的D调用Timeline.draw(pen,shapes,a,{by:b})；engine/wb.js的text将glyph.s按次序转换为笔画。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-whiteboard/film/film.js",
+    "demos/cases/lemo-whiteboard/film/engine/wb.js",
+    "demos/cases/lemo-whiteboard/film/voices/words.json"
+  ],
+  "locator": "词级锚点 / 窗口与笔顺",
+  "useCases": [
+    "观众按说话顺序看见公式各项落笔，最终结果保留在同一板面。"
+  ],
+  "avoid": [
+    "同时安排遮挡书写或湿边的主动作"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-whiteboard的原作render(t)，重放“随旁白按笔顺写式”。将各个公式项分配给旁白词级时间窗口，单线字形在窗口内依笔顺书写；速度与引力两项修正写完后，再写出每天多出的38微秒。参数与源码：film/film.js:20–24的atS/atE从voices/words.json读取词边界；184–195分别安排speed、−7μs、gravity、+45μs、+38μs。；film/film.js:80的D调用Timeline.draw(pen,shapes,a,{by:b})；engine/wb.js的text将glyph.s按次序转换为笔画。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/stroke-order-equation-sync/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-whiteboard"
+    }
+  ],
+  "previewAt": 10,
+  "markers": [
+    {
+      "t": 0,
+      "label": "随旁白按笔顺写式"
+    }
+  ]
+}

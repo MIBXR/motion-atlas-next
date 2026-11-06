@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "outro-group-photo-slam",
+  "pattern": {
+    "id": "outro-group-photo-slam",
+    "order": 87,
+    "title": "合影组装与字标砸落",
+    "types": [
+      "composition",
+      "sound"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "虚焦后，各页面元素组装成一张合影，铅印字标砸落，以 riser→impact→sparkle 的声音句式收尾；字标落定后停 1 秒。",
+    "mechanism": "九个页面切片按 ELS.cue=4,7,10,13,16,19,22,25,28 从四周飞入，各用 12 帧完成带超调的组装，合影层做吊臂推进并在字标出现时退后；字标按 round(42+i*1.8) 逐字砸落，8 帧内清晰落定；SFX 中 riser 帧 945（0.5）、impact 帧 980（0.55）、sparkle 帧 1005（0.3）。",
+    "trigger": "字卡四结束后进入结尾。",
+    "effect": "全片能量推到峰值，品牌字标落定并留出 1 秒静止。",
+    "timing": [
+      {
+        "name": "片段",
+        "value": "AIFL_SHOTS.outro：940–1085 帧，145/30 秒。"
+      },
+      {
+        "name": "组装与砸落",
+        "value": "ELS.cue=[4,7,10,13,16,19,22,25,28]，各飞行 12 帧；字标 delay=round(42+i*1.8)，各入场 8 帧。"
+      },
+      {
+        "name": "声音句式",
+        "value": "SFX：945 riser-cine.mp3 volume=0.5；980 impact-cine.mp3 volume=0.55；1005 sparkle.mp3 volume=0.3。"
+      },
+      {
+        "name": "收尾",
+        "value": "tag=68→80；fadeOut=duration-12→duration，即 133→145；字标完整后保留至少 30 帧。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "超调与镜头",
+        "value": "FLY_EASE=bezier(0.34,1.4,0.44,1)；CRANE_EASE=bezier(0.3,0,0.2,1)；camScale=1.06-0.06*craneT+0.035*pushT。"
+      },
+      {
+        "name": "字标",
+        "value": "wordmarkSize=148；translateY=(1-t)*28px；scale=1.35-0.35*t；blur=(1-t)*8px。"
+      },
+      {
+        "name": "合影后退",
+        "value": "recede=42→50；settledOpacity=opacity*(1-0.12*recede)；saturate=1-0.08*recede。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/ink-press/film/src/aifl/live/SceneOutroLive.tsx",
+      "demos/cases/ink-press/film/src/aifl/Main.tsx"
+    ],
+    "locator": "SceneOutroLive / ELS / FLY_EASE / SFX",
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "page-cam-25d"
+      ],
+      "conflicts": [],
+      "notes": ""
+    },
+    "prompt": "用来源案例 ink-press 的原作 renderAt(t) 重放合影组装与字标砸落。保留 ELS 九个页面切片、4 起每 3 帧一项的 cue 与 12 帧飞行，FLY_EASE=bezier(0.34,1.4,0.44,1)；字标按 round(42+i*1.8) 入场，各用 8 帧从 28px 下移、1.35 倍和 8px 模糊砸落。保留绝对帧 945/980/1005 的 riser→impact→sparkle 与音量 0.5/0.55/0.3，字标落定后停留一秒。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/outro-group-photo-slam/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "ink-press"
+      }
+    ],
+    "previewAt": 4.166666666666667,
+    "markers": [
+      {
+        "t": 0,
+        "label": "虚焦"
+      },
+      {
+        "t": 0.13333333333333333,
+        "label": "合影组装"
+      },
+      {
+        "t": 0.16666666666666666,
+        "label": "riser 蓄力"
+      },
+      {
+        "t": 1.3333333333333333,
+        "label": "组装落定与 impact"
+      },
+      {
+        "t": 1.4,
+        "label": "字标砸落"
+      },
+      {
+        "t": 2.1666666666666665,
+        "label": "sparkle 揭示"
+      },
+      {
+        "t": 2.6666666666666665,
+        "label": "字标与副标落定停留"
+      },
+      {
+        "t": 4.433333333333334,
+        "label": "收尾淡出"
+      }
+    ],
+    "preview": "previews/patterns/outro-group-photo-slam.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "ink-press",
+      "bundle": "agent/cases/ink-press.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 合影组装与字标砸落\n\n## 实现 Prompt\n\n用来源案例 ink-press 的原作 renderAt(t) 重放合影组装与字标砸落。保留 ELS 九个页面切片、4 起每 3 帧一项的 cue 与 12 帧飞行，FLY_EASE=bezier(0.34,1.4,0.44,1)；字标按 round(42+i*1.8) 入场，各用 8 帧从 28px 下移、1.35 倍和 8px 模糊砸落。保留绝对帧 945/980/1005 的 riser→impact→sparkle 与音量 0.5/0.55/0.3，字标落定后停留一秒。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **片段**：AIFL_SHOTS.outro：940–1085 帧，145/30 秒。\n- **组装与砸落**：ELS.cue=[4,7,10,13,16,19,22,25,28]，各飞行 12 帧；字标 delay=round(42+i*1.8)，各入场 8 帧。\n- **声音句式**：SFX：945 riser-cine.mp3 volume=0.5；980 impact-cine.mp3 volume=0.55；1005 sparkle.mp3 volume=0.3。\n- **收尾**：tag=68→80；fadeOut=duration-12→duration，即 133→145；字标完整后保留至少 30 帧。\n\n[打开 Demo](../../demos/patterns/outro-group-photo-slam/index.html) · [在库中查看](../../patterns.html#pattern/outro-group-photo-slam)\n"
+  },
+  "entrypoint": "demos/patterns/outro-group-photo-slam/index.html",
+  "files": [
+    {
+      "path": "demos/cases/ink-press/LICENSES.md",
+      "bytes": 1285,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/ATTRIBUTION.md",
+      "bytes": 22401,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/click-camera.mp3",
+      "bytes": 14406,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/impact-cine.mp3",
+      "bytes": 115904,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/keyboard.mp3",
+      "bytes": 513831,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/pop.mp3",
+      "bytes": 15239,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/riser-cine.mp3",
+      "bytes": 145112,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/sparkle.mp3",
+      "bytes": 143743,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/swoosh-quick.mp3",
+      "bytes": 27247,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/transition-snap.mp3",
+      "bytes": 19051,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/transition-soft.mp3",
+      "bytes": 41082,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/whoosh-big.mp3",
+      "bytes": 71724,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/whoosh-fast.mp3",
+      "bytes": 57624,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card1.png",
+      "bytes": 49799,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card10.png",
+      "bytes": 51587,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card2.png",
+      "bytes": 52017,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card3.png",
+      "bytes": 58681,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card4-hires.png",
+      "bytes": 123105,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card4.png",
+      "bytes": 59011,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card5.png",
+      "bytes": 59166,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card6.png",
+      "bytes": 55703,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card7.png",
+      "bytes": 62485,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card8.png",
+      "bytes": 54202,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card9.png",
+      "bytes": 59637,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/detail-experiments.png",
+      "bytes": 3257847,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/detail-full.png",
+      "bytes": 380073,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-filter.png",
+      "bytes": 2754,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-search.png",
+      "bytes": 11667,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-section.png",
+      "bytes": 4485,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-stats.png",
+      "bytes": 11497,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/nav.png",
+      "bytes": 12776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper1.png",
+      "bytes": 98212,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper2.png",
+      "bytes": 95517,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper3.png",
+      "bytes": 95131,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper4.png",
+      "bytes": 87621,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper5.png",
+      "bytes": 90661,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/papers-full.png",
+      "bytes": 594891,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/projects-empty.png",
+      "bytes": 104520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/projects-full.png",
+      "bytes": 617560,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/wbr-full.png",
+      "bytes": 487943,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/audio/film.m4a",
+      "bytes": 582866,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/fidelity.md",
+      "bytes": 4968,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/ink-press/film/LICENSE",
+      "bytes": 11340,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/film/entry.tsx",
+      "bytes": 2343,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/film.js",
+      "bytes": 1357605,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/Root.tsx",
+      "bytes": 396,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/Caption.tsx",
+      "bytes": 2299,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/DigitRoll.tsx",
+      "bytes": 1826,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/FlashCut.tsx",
+      "bytes": 892,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/Main.tsx",
+      "bytes": 9730,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/PaperTitleCard.tsx",
+      "bytes": 4194,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live-layout.json",
+      "bytes": 5601,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/PageCam.tsx",
+      "bytes": 6754,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneDetail.tsx",
+      "bytes": 6000,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneFlyIn.tsx",
+      "bytes": 20787,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneOpen.tsx",
+      "bytes": 25822,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneOutroLive.tsx",
+      "bytes": 17712,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/ScenePapers.tsx",
+      "bytes": 8247,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneWbr.tsx",
+      "bytes": 12767,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/index.ts",
+      "bytes": 93,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/ThemedFilm.tsx",
+      "bytes": 364,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/palette-assets.json",
+      "bytes": 105914,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/palette-assets.ts",
+      "bytes": 2209,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/palettes.json",
+      "bytes": 1547,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/visual-theme.tsx",
+      "bytes": 5346,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/style.css",
+      "bytes": 32,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/index.html",
+      "bytes": 2430,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/source/TEMPLATE.md",
+      "bytes": 8172,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/build.mjs",
+      "bytes": 358,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/package-lock.json",
+      "bytes": 120627,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/package.json",
+      "bytes": 529,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/remotion.config.ts",
+      "bytes": 220,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/tsconfig.json",
+      "bytes": 315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/react-dom@19.2.7/LICENSE",
+      "bytes": 1088,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/react@19.2.7/LICENSE",
+      "bytes": 1088,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/remotion-player@4.0.484/LICENSE.md",
+      "bytes": 2823,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/remotion@4.0.484/LICENSE.md",
+      "bytes": 2823,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/scheduler@0.27.0/LICENSE",
+      "bytes": 1088,
+      "role": "license"
+    },
+    {
+      "path": "demos/patterns/outro-group-photo-slam/index.html",
+      "bytes": 1393,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/outro-group-photo-slam/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/ink-press.json",
+      "bytes": 12883,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/outro-group-photo-slam.json",
+      "bytes": 3617,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/outro-group-photo-slam.jpg",
+      "bytes": 56417,
+      "role": "preview"
+    }
+  ]
+}

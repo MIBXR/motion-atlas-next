@@ -1,0 +1,301 @@
+{
+  "id": "lemo-brick-toy",
+  "order": 56,
+  "title": "用零件造火箭 · 积木玩具",
+  "subtitle": "Rocket from Spare Parts",
+  "carriers": [
+    "video"
+  ],
+  "style": "dimensional",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "threejs"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "积木玩具",
+    "材质与 3D",
+    "代码影片"
+  ],
+  "summary": "积木宇航员把高塔一块块搭起，火箭崩塌后把散落零件拼成更宽的新火箭，飞到积木月亮；镜头拉回真实书桌。",
+  "focus": "用连接凸点与咔嗒落位表现节拍；崩塌为下一次组装提供材料，结尾用真实尺度的桌上道具揭示玩具世界。",
+  "accent": "#f2cd37",
+  "background": "#191a20",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 38.88,
+  "rhythm": {
+    "duration": 54,
+    "beats": [
+      {
+        "t": 0,
+        "label": "一块积木"
+      },
+      {
+        "t": 4,
+        "label": "首次咔嗒"
+      },
+      {
+        "t": 6,
+        "label": "逐块拼搭"
+      },
+      {
+        "t": 17.37,
+        "label": "火箭崩塌"
+      },
+      {
+        "t": 20.9,
+        "label": "低处独坐"
+      },
+      {
+        "t": 25.2,
+        "label": "拾起零件"
+      },
+      {
+        "t": 29.9,
+        "label": "重建"
+      },
+      {
+        "t": 32.5,
+        "label": "准备发射"
+      },
+      {
+        "t": 36.5,
+        "label": "点火"
+      },
+      {
+        "t": 40,
+        "label": "伴飞"
+      },
+      {
+        "t": 44.2,
+        "label": "落月"
+      },
+      {
+        "t": 48,
+        "label": "揭示书桌"
+      },
+      {
+        "t": 51.71,
+        "label": "片尾"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "from": 0.2,
+      "to": 0.5,
+      "label": "一块积木"
+    },
+    {
+      "t0": 4,
+      "t1": 6,
+      "from": 0.5,
+      "to": 0.7,
+      "label": "首次咔嗒"
+    },
+    {
+      "t0": 6,
+      "t1": 17.37,
+      "from": 0.7,
+      "to": 0.95,
+      "label": "逐块拼搭"
+    },
+    {
+      "t0": 17.37,
+      "t1": 20.9,
+      "from": 0.95,
+      "to": 0.05,
+      "label": "火箭崩塌"
+    },
+    {
+      "t0": 20.9,
+      "t1": 25.2,
+      "from": 0.05,
+      "to": 0.3,
+      "label": "低处独坐"
+    },
+    {
+      "t0": 25.2,
+      "t1": 29.9,
+      "from": 0.3,
+      "to": 0.8,
+      "label": "拾起零件"
+    },
+    {
+      "t0": 29.9,
+      "t1": 32.5,
+      "from": 0.8,
+      "to": 0.5,
+      "label": "重建"
+    },
+    {
+      "t0": 32.5,
+      "t1": 36.5,
+      "from": 0.5,
+      "to": 1,
+      "label": "准备发射"
+    },
+    {
+      "t0": 36.5,
+      "t1": 40,
+      "from": 1,
+      "to": 0.8,
+      "label": "点火"
+    },
+    {
+      "t0": 40,
+      "t1": 44.2,
+      "from": 0.8,
+      "to": 0.45,
+      "label": "伴飞"
+    },
+    {
+      "t0": 44.2,
+      "t1": 48,
+      "from": 0.45,
+      "to": 0.35,
+      "label": "落月"
+    },
+    {
+      "t0": 48,
+      "t1": 51.71,
+      "from": 0.35,
+      "to": 0.15,
+      "label": "揭示书桌"
+    },
+    {
+      "t0": 51.71,
+      "t1": 54,
+      "from": 0.15,
+      "to": 0.05,
+      "label": "片尾"
+    }
+  ],
+  "energyNote": "段落取DEMO.md的Shots及源码时间线；0–1是根据动作、配乐、静默和画面密度标注的相对能量。",
+  "observations": [
+    "积木凸点、底管、圆角、细缝与塑料高光共同建立真实玩具尺度。",
+    "首次堆高在17.37秒崩塌，音乐切断；孤独低机位让角色与残骸同时进入画面。",
+    "29.9秒起使用相同散落部件，以.19秒间隔重组为稳定火箭。",
+    "48秒起镜头拉远，茶具、台灯、铅笔与书堆揭示出月面所在的真实书桌。"
+  ],
+  "composition": {
+    "color": "#c91a09、#0055bf、#f2cd37、#237841、#f4f4f1、#4f9e3a。",
+    "typography": "Fredoka 500/600声明与原片使用的600/700/400请求；沿用共享fonts.css的原始拉丁、拉丁扩展与希伯来子集。",
+    "layout": "1920×1080横屏，24fps；舞台等比缩放，字幕与画内信息保留原作位置。",
+    "imagery": "Three.js程序积木与角色；Poly Haven摄影棚HDRI、胡桃木、茶具及关节台灯。",
+    "motion": "角色和积木按12fps停格，镜头与烟焰按24fps更新；咔嗒落位带.35stud过冲，重建时积木逐块从崩塌终点飞回。",
+    "sound": "Kevin MacLeod《Monkeys Spinning Monkeys》《Heroic Age》CC BY 4.0；Kokoro bm_george、am_adam，代码合成塑料、崩塌与火箭拟音。",
+    "rhythm": "首次落块对齐143.555 BPM；崩塌切乐，重建逐块加速，点火切入管弦主击。",
+    "coherence": "所有积木使用同一凸点尺度，散落部件重组后仍保留原色与几何。"
+  },
+  "layers": [
+    {
+      "name": "真实桌面",
+      "role": "环境光、木纹、茶具、台灯和书堆。"
+    },
+    {
+      "name": "积木舞台",
+      "role": "底板、逐块拼装火箭与月面。"
+    },
+    {
+      "name": "停格演员",
+      "role": "宇航员双手、护目镜与逐帧姿态。"
+    },
+    {
+      "name": "后期与字卡",
+      "role": "景深、GTAO、塑料高光、字幕及片尾。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#c91a09",
+      "#0055bf",
+      "#f2cd37",
+      "#237841",
+      "#f4f4f1",
+      "#4f9e3a"
+    ],
+    "type": "Fredoka 500/600声明与原片使用的600/700/400请求；沿用共享fonts.css的原始拉丁、拉丁扩展与希伯来子集。",
+    "motion": [
+      {
+        "name": "落位与重建",
+        "value": "film/story.js:T.layer / fall / rebuild / rebuildStep；film/rockets.js:restPose从samples的末帧读取散落姿态，slots2复用v1中的同色积木。"
+      },
+      {
+        "name": "书桌揭示",
+        "value": "film/main.js:cam的reveal分支；48–51.71秒由月面机位拉到[38,78,100]，look到[−20,4,−18]，fov=38，aper=1100→380。"
+      }
+    ]
+  },
+  "useCases": [
+    "玩具影片",
+    "产品拼装",
+    "太空故事"
+  ],
+  "avoid": [],
+  "constraints": [],
+  "migration": [
+    {
+      "field": "film/story.js → T / SHOTS",
+      "how": "修改拼搭、崩塌、重建与升空节拍。"
+    },
+    {
+      "field": "film/rockets.js / bricks.js / set.js",
+      "how": "修改积木配色、连接结构、两次火箭造型与桌面道具。"
+    }
+  ],
+  "prompt": "制作积木宇航员把高塔一块块搭起，火箭崩塌后把散落零件拼成更宽的新火箭，飞到积木月亮；镜头拉回真实书桌。 连接凸点与咔嗒落位承担节拍；崩塌产生下一次组装的材料，结尾用真实尺度的桌上道具揭示玩具世界。 角色和积木按12fps停格，镜头与烟焰按24fps更新；咔嗒落位带.35stud过冲，重建逐块从崩塌终点飞回。 Three.js程序积木与角色；Poly Haven摄影棚HDRI、胡桃木、茶具及关节台灯。 字体：Fredoka 500/600声明与原片使用的600/700/400请求；沿用共享fonts.css的原始拉丁、拉丁扩展与希伯来子集。 声音：Kevin MacLeod《Monkeys Spinning Monkeys》《Heroic Age》CC BY 4.0；Kokoro bm_george、am_adam，代码合成塑料、崩塌与火箭拟音。 实现沿用lemo-brick-toy的film/源码、素材与时间表。",
+  "demo": "demos/cases/lemo-brick-toy/index.html",
+  "patternIds": [
+    "snap-build-collapse-rebuild",
+    "anchor-pullback-phone"
+  ],
+  "fidelity": "demos/cases/lemo-brick-toy/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/brick-toy",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/brick-toy/"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；示范成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS的许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/brick-toy"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/brick-toy.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/brick-toy/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/brick-toy)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "Kevin MacLeod《Monkeys Spinning Monkeys》《Heroic Age》CC BY 4.0；Kokoro bm_george、am_adam，代码合成塑料、崩塌与火箭拟音。 原始署名见[audio/CREDITS](audio/CREDITS)，许可全文见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Fredoka 500/600声明与原片使用的600/700/400请求；沿用共享fonts.css的原始拉丁、拉丁扩展与希伯来子集。 SIL OFL 1.1原文在fonts/，来源与重建方法见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

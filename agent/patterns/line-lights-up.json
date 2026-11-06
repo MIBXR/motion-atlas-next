@@ -1,0 +1,6208 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "line-lights-up",
+  "pattern": {
+    "id": "line-lights-up",
+    "order": 155,
+    "title": "逐行点亮原文",
+    "types": [
+      "type-motion"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "保留扫描文档的全部原文，按指定行的坐标推进高亮前沿，让正在引用的句子变亮或被荧光笔覆盖。",
+    "mechanism": "保留扫描文档的全部原文，按指定行的坐标推进高亮前沿，让正在引用的句子变亮或被荧光笔覆盖。",
+    "trigger": "来源时间线进入对应镜头与动作节点。",
+    "effect": "保留扫描文档的全部原文，按指定行的坐标推进高亮前沿，让正在引用的句子变亮或被荧光笔覆盖。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-archive-lighttable：2.5–9.3秒；lemo-archive-lighttable：11.5–13.3秒；lemo-caption-news：13–16秒；lemo-caption-news：27.5–30秒；1倍速，总时长14.100000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "电报与剪报",
+        "value": "lemo-archive-lighttable film/film.js:TG_DATE / TG_SUCC / TG_57L / NEWS_LINE / tgSweep / FS.band，2.667/4/7.333秒电报三行、12秒剪报行按扫描坐标点亮并压暗邻文。"
+      },
+      {
+        "name": "报告荧光笔",
+        "value": "lemo-caption-news film/main.js:paper / shotDoc6 / shotQuote，以220dpi的PT比例把PDF行框投到图片，multiply高亮宽度按eo(seg(...))推进，13.28秒标题持续.45秒。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-archive-lighttable/film/film.js",
+      "demos/cases/lemo-archive-lighttable/film/timeline.js",
+      "demos/cases/lemo-caption-news/film/main.js"
+    ],
+    "locator": "lemo-archive-lighttable film/film.js:TG_DATE / TG_SUCC / TG_57L / NEWS_LINE / tgSweep / FS.band；lemo-caption-news film/main.js:paper / shotDoc6 / shotQuote",
+    "useCases": [
+      "证据影像",
+      "数据解说",
+      "档案与科学短片"
+    ],
+    "avoid": [
+      "在主要读数和证据上叠加争夺注意的运动"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例的原作render(t)实现“逐行点亮原文”。保留扫描文档的全部原文，按指定行的坐标推进高亮前沿，让正在引用的句子变亮或被荧光笔覆盖。保留参数：lemo-archive-lighttable film/film.js:TG_DATE / TG_SUCC / TG_57L / NEWS_LINE / tgSweep / FS.band，2.667/4/7.333秒电报三行、12秒剪报行按扫描坐标点亮并压暗邻文。；lemo-caption-news film/main.js:paper / shotDoc6 / shotQuote，以220dpi的PT比例把PDF行框投到图片，multiply高亮宽度按eo(seg(...))推进，13.28秒标题持续.45秒。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/line-lights-up/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-archive-lighttable"
+      },
+      {
+        "caseId": "lemo-caption-news"
+      }
+    ],
+    "previewAt": 4.8,
+    "markers": [
+      {
+        "t": 0,
+        "label": "电报逐行点亮"
+      },
+      {
+        "t": 6.8,
+        "label": "剪报原句点亮"
+      },
+      {
+        "t": 8.6,
+        "label": "报告标题高亮"
+      },
+      {
+        "t": 11.6,
+        "label": "报告句子高亮"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/line-lights-up.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-archive-lighttable",
+      "bundle": "agent/cases/lemo-archive-lighttable.json"
+    },
+    {
+      "caseId": "lemo-caption-news",
+      "bundle": "agent/cases/lemo-caption-news.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 逐行点亮原文\n\n## 实现 Prompt\n\n用来源案例的原作render(t)实现“逐行点亮原文”。保留扫描文档的全部原文，按指定行的坐标推进高亮前沿，让正在引用的句子变亮或被荧光笔覆盖。保留参数：lemo-archive-lighttable film/film.js:TG_DATE / TG_SUCC / TG_57L / NEWS_LINE / tgSweep / FS.band，2.667/4/7.333秒电报三行、12秒剪报行按扫描坐标点亮并压暗邻文。；lemo-caption-news film/main.js:paper / shotDoc6 / shotQuote，以220dpi的PT比例把PDF行框投到图片，multiply高亮宽度按eo(seg(...))推进，13.28秒标题持续.45秒。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-archive-lighttable：2.5–9.3秒；lemo-archive-lighttable：11.5–13.3秒；lemo-caption-news：13–16秒；lemo-caption-news：27.5–30秒；1倍速，总时长14.100000秒。\n\n[打开 Demo](../../demos/patterns/line-lights-up/index.html) · [在库中查看](../../patterns.html#pattern/line-lights-up)\n"
+  },
+  "entrypoint": "demos/patterns/line-lights-up/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-archive-lighttable/LICENSES.md",
+      "bytes": 3234,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/layers.json",
+      "bytes": 83,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/news.jpg",
+      "bytes": 410911,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1.jpg",
+      "bytes": 5300115,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1_bg.jpg",
+      "bytes": 4963290,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1_fly.png",
+      "bytes": 1689356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1_mask.png",
+      "bytes": 7315,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1_wil.png",
+      "bytes": 52311,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p2.jpg",
+      "bytes": 6313025,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p2_mask.png",
+      "bytes": 4775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p3.jpg",
+      "bytes": 777897,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p3_mask.png",
+      "bytes": 15188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/tg.jpg",
+      "bytes": 991576,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/CREDITS",
+      "bytes": 3717,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/film.m4a",
+      "bytes": 1293288,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fidelity.md",
+      "bytes": 4533,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/film.js",
+      "bytes": 45107,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/index.html",
+      "bytes": 1102,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/out/cues.json",
+      "bytes": 1356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/timeline.js",
+      "bytes": 4361,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/IBMPlexMono-400.woff2",
+      "bytes": 5992,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/IBMPlexMono-500.woff2",
+      "bytes": 5908,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/IBMPlexSans-400.woff2",
+      "bytes": 11260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/IBMPlexSans-500.woff2",
+      "bytes": 12488,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/NotoSansSC-400.woff2",
+      "bytes": 21212,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/NotoSansSC-500.woff2",
+      "bytes": 21400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/NotoSansSC-600.woff2",
+      "bytes": 21464,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/NotoSerifSC-600.woff2",
+      "bytes": 28508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/OFL-ibmplexsans.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/fonts.css",
+      "bytes": 605,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/index.html",
+      "bytes": 2856,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/CREDITS",
+      "bytes": 3717,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/FACTS.md",
+      "bytes": 6318,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/README.md",
+      "bytes": 2516,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/build.sh",
+      "bytes": 3403,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/licenses/CC-BY-3.0.html",
+      "bytes": 51105,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/mix.py",
+      "bytes": 12221,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_cph.3b12982.xml",
+      "bytes": 5394,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_cph.3b18080.xml",
+      "bytes": 4529,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_ppprs.00610.xml",
+      "bytes": 15244,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_ppprs.00626.xml",
+      "bytes": 11731,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_ppprs.00629.xml",
+      "bytes": 7804,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/cuecheck.mjs",
+      "bytes": 989,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/export.mjs",
+      "bytes": 2298,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/fonts.py",
+      "bytes": 2316,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/prep.py",
+      "bytes": 8423,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/sru.py",
+      "bytes": 1003,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/subcheck.mjs",
+      "bytes": 1807,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/voice/lines.json",
+      "bytes": 948,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/voice/out/dur.json",
+      "bytes": 100,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/voice/out/words.json",
+      "bytes": 1131,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/LICENSES.md",
+      "bytes": 4991,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_001.jpg",
+      "bytes": 199331,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_002.jpg",
+      "bytes": 199783,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_003.jpg",
+      "bytes": 199396,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_004.jpg",
+      "bytes": 200504,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_005.jpg",
+      "bytes": 200366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_006.jpg",
+      "bytes": 200594,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_007.jpg",
+      "bytes": 200103,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_008.jpg",
+      "bytes": 200838,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_009.jpg",
+      "bytes": 201127,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_010.jpg",
+      "bytes": 201836,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_011.jpg",
+      "bytes": 200787,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_012.jpg",
+      "bytes": 200768,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_013.jpg",
+      "bytes": 200317,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_014.jpg",
+      "bytes": 200270,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_015.jpg",
+      "bytes": 199131,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_016.jpg",
+      "bytes": 198759,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_017.jpg",
+      "bytes": 198544,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_018.jpg",
+      "bytes": 199019,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_019.jpg",
+      "bytes": 198069,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_020.jpg",
+      "bytes": 199903,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_021.jpg",
+      "bytes": 199425,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_022.jpg",
+      "bytes": 198994,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_023.jpg",
+      "bytes": 197837,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_024.jpg",
+      "bytes": 198903,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_025.jpg",
+      "bytes": 201440,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_026.jpg",
+      "bytes": 201372,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_027.jpg",
+      "bytes": 200407,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_028.jpg",
+      "bytes": 200044,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_029.jpg",
+      "bytes": 199397,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_030.jpg",
+      "bytes": 199203,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_031.jpg",
+      "bytes": 198173,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_032.jpg",
+      "bytes": 198509,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_033.jpg",
+      "bytes": 198412,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_034.jpg",
+      "bytes": 198843,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_035.jpg",
+      "bytes": 198325,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_036.jpg",
+      "bytes": 200193,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_037.jpg",
+      "bytes": 199718,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_038.jpg",
+      "bytes": 199488,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_039.jpg",
+      "bytes": 198982,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_040.jpg",
+      "bytes": 201003,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_041.jpg",
+      "bytes": 200875,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_042.jpg",
+      "bytes": 200807,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_043.jpg",
+      "bytes": 200515,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_044.jpg",
+      "bytes": 199588,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_045.jpg",
+      "bytes": 198186,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_046.jpg",
+      "bytes": 197961,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_047.jpg",
+      "bytes": 197795,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_048.jpg",
+      "bytes": 197669,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_049.jpg",
+      "bytes": 196845,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_050.jpg",
+      "bytes": 196818,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_051.jpg",
+      "bytes": 197456,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_052.jpg",
+      "bytes": 199228,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_053.jpg",
+      "bytes": 198704,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_054.jpg",
+      "bytes": 198123,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_055.jpg",
+      "bytes": 197983,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_056.jpg",
+      "bytes": 200098,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_057.jpg",
+      "bytes": 197990,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_058.jpg",
+      "bytes": 198172,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_059.jpg",
+      "bytes": 197646,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_060.jpg",
+      "bytes": 198113,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_061.jpg",
+      "bytes": 197517,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_062.jpg",
+      "bytes": 197938,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_063.jpg",
+      "bytes": 197498,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_064.jpg",
+      "bytes": 197484,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_065.jpg",
+      "bytes": 196628,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_066.jpg",
+      "bytes": 196761,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_067.jpg",
+      "bytes": 195923,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_068.jpg",
+      "bytes": 197288,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_069.jpg",
+      "bytes": 196496,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_070.jpg",
+      "bytes": 195745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_071.jpg",
+      "bytes": 195668,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_072.jpg",
+      "bytes": 197413,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_073.jpg",
+      "bytes": 198799,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_074.jpg",
+      "bytes": 198785,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_075.jpg",
+      "bytes": 197971,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_076.jpg",
+      "bytes": 198999,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_077.jpg",
+      "bytes": 198110,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_078.jpg",
+      "bytes": 197722,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_079.jpg",
+      "bytes": 197231,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_080.jpg",
+      "bytes": 196918,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_081.jpg",
+      "bytes": 196647,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_082.jpg",
+      "bytes": 196516,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_083.jpg",
+      "bytes": 195982,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_084.jpg",
+      "bytes": 197166,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_085.jpg",
+      "bytes": 196667,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_086.jpg",
+      "bytes": 196970,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_087.jpg",
+      "bytes": 196789,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_088.jpg",
+      "bytes": 197263,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_089.jpg",
+      "bytes": 198717,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_090.jpg",
+      "bytes": 199412,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_091.jpg",
+      "bytes": 199956,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_092.jpg",
+      "bytes": 200193,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_093.jpg",
+      "bytes": 199734,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_094.jpg",
+      "bytes": 199133,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_095.jpg",
+      "bytes": 198463,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_096.jpg",
+      "bytes": 198562,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_097.jpg",
+      "bytes": 197454,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_098.jpg",
+      "bytes": 196796,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_099.jpg",
+      "bytes": 196242,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_100.jpg",
+      "bytes": 197843,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_101.jpg",
+      "bytes": 196724,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_102.jpg",
+      "bytes": 195788,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_103.jpg",
+      "bytes": 195153,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_104.jpg",
+      "bytes": 196207,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_105.jpg",
+      "bytes": 197675,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_106.jpg",
+      "bytes": 197994,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_107.jpg",
+      "bytes": 197525,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_108.jpg",
+      "bytes": 197438,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_109.jpg",
+      "bytes": 196502,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_110.jpg",
+      "bytes": 195617,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_111.jpg",
+      "bytes": 195141,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_112.jpg",
+      "bytes": 195351,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_113.jpg",
+      "bytes": 194352,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_114.jpg",
+      "bytes": 193758,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_115.jpg",
+      "bytes": 193546,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_116.jpg",
+      "bytes": 195808,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_117.jpg",
+      "bytes": 194516,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_118.jpg",
+      "bytes": 194077,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_119.jpg",
+      "bytes": 193532,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_120.jpg",
+      "bytes": 194614,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_121.jpg",
+      "bytes": 197524,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_122.jpg",
+      "bytes": 197660,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_123.jpg",
+      "bytes": 199314,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_124.jpg",
+      "bytes": 198323,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_125.jpg",
+      "bytes": 197669,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_126.jpg",
+      "bytes": 196612,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_127.jpg",
+      "bytes": 198760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_128.jpg",
+      "bytes": 197559,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_129.jpg",
+      "bytes": 197649,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_130.jpg",
+      "bytes": 196769,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_131.jpg",
+      "bytes": 197339,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_132.jpg",
+      "bytes": 197842,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_133.jpg",
+      "bytes": 198006,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_134.jpg",
+      "bytes": 196798,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_135.jpg",
+      "bytes": 196777,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_136.jpg",
+      "bytes": 198565,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_137.jpg",
+      "bytes": 198840,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_138.jpg",
+      "bytes": 198424,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_139.jpg",
+      "bytes": 198437,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_140.jpg",
+      "bytes": 199148,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_141.jpg",
+      "bytes": 198298,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_142.jpg",
+      "bytes": 197843,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_143.jpg",
+      "bytes": 197523,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_144.jpg",
+      "bytes": 197062,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_145.jpg",
+      "bytes": 196024,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_146.jpg",
+      "bytes": 196119,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_147.jpg",
+      "bytes": 196092,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_148.jpg",
+      "bytes": 197950,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_149.jpg",
+      "bytes": 197664,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/ed_150.jpg",
+      "bytes": 197637,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_001.jpg",
+      "bytes": 137337,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_002.jpg",
+      "bytes": 136566,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_003.jpg",
+      "bytes": 135604,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_004.jpg",
+      "bytes": 136013,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_005.jpg",
+      "bytes": 135652,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_006.jpg",
+      "bytes": 135493,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_007.jpg",
+      "bytes": 134876,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_008.jpg",
+      "bytes": 134766,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_009.jpg",
+      "bytes": 142352,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_010.jpg",
+      "bytes": 138708,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_011.jpg",
+      "bytes": 137488,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_012.jpg",
+      "bytes": 137520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_013.jpg",
+      "bytes": 137454,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_014.jpg",
+      "bytes": 136709,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_015.jpg",
+      "bytes": 135689,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/fz_016.jpg",
+      "bytes": 135803,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_001.jpg",
+      "bytes": 49129,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_002.jpg",
+      "bytes": 48853,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_003.jpg",
+      "bytes": 49531,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_004.jpg",
+      "bytes": 49531,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_005.jpg",
+      "bytes": 48809,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_006.jpg",
+      "bytes": 49276,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_007.jpg",
+      "bytes": 48899,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_008.jpg",
+      "bytes": 48899,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_009.jpg",
+      "bytes": 49114,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_010.jpg",
+      "bytes": 48555,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_011.jpg",
+      "bytes": 48713,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_012.jpg",
+      "bytes": 48660,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_013.jpg",
+      "bytes": 48660,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_014.jpg",
+      "bytes": 49206,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_015.jpg",
+      "bytes": 48621,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_016.jpg",
+      "bytes": 48810,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_017.jpg",
+      "bytes": 48505,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_018.jpg",
+      "bytes": 49146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_019.jpg",
+      "bytes": 49146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_020.jpg",
+      "bytes": 48627,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_021.jpg",
+      "bytes": 49070,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_022.jpg",
+      "bytes": 48760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_023.jpg",
+      "bytes": 48760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_024.jpg",
+      "bytes": 49313,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_025.jpg",
+      "bytes": 48993,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_026.jpg",
+      "bytes": 49098,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_027.jpg",
+      "bytes": 48949,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_028.jpg",
+      "bytes": 48949,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_029.jpg",
+      "bytes": 49784,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_030.jpg",
+      "bytes": 49573,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_031.jpg",
+      "bytes": 50106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_032.jpg",
+      "bytes": 50077,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_033.jpg",
+      "bytes": 50789,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_034.jpg",
+      "bytes": 50789,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_035.jpg",
+      "bytes": 51321,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_036.jpg",
+      "bytes": 52208,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_037.jpg",
+      "bytes": 53331,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_038.jpg",
+      "bytes": 53331,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_039.jpg",
+      "bytes": 55033,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_040.jpg",
+      "bytes": 54947,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_041.jpg",
+      "bytes": 55317,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_042.jpg",
+      "bytes": 55768,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_043.jpg",
+      "bytes": 55768,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_044.jpg",
+      "bytes": 56798,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_045.jpg",
+      "bytes": 56883,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_046.jpg",
+      "bytes": 57327,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_047.jpg",
+      "bytes": 57719,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_048.jpg",
+      "bytes": 58126,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_049.jpg",
+      "bytes": 58126,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_050.jpg",
+      "bytes": 58491,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_051.jpg",
+      "bytes": 58903,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_052.jpg",
+      "bytes": 59438,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_053.jpg",
+      "bytes": 59438,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_054.jpg",
+      "bytes": 60138,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_055.jpg",
+      "bytes": 59882,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_056.jpg",
+      "bytes": 60033,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_057.jpg",
+      "bytes": 60157,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_058.jpg",
+      "bytes": 60157,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_059.jpg",
+      "bytes": 60670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_060.jpg",
+      "bytes": 60619,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_061.jpg",
+      "bytes": 61147,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_062.jpg",
+      "bytes": 61120,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_063.jpg",
+      "bytes": 61879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_064.jpg",
+      "bytes": 61879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_065.jpg",
+      "bytes": 61522,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_066.jpg",
+      "bytes": 60706,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_067.jpg",
+      "bytes": 60475,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_068.jpg",
+      "bytes": 60475,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_069.jpg",
+      "bytes": 60482,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_070.jpg",
+      "bytes": 60271,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_071.jpg",
+      "bytes": 60141,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_072.jpg",
+      "bytes": 59966,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_073.jpg",
+      "bytes": 59966,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_074.jpg",
+      "bytes": 59985,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_075.jpg",
+      "bytes": 59006,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_076.jpg",
+      "bytes": 58308,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_077.jpg",
+      "bytes": 58012,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_078.jpg",
+      "bytes": 58247,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_079.jpg",
+      "bytes": 58247,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_080.jpg",
+      "bytes": 58748,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_081.jpg",
+      "bytes": 58199,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_082.jpg",
+      "bytes": 56593,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_083.jpg",
+      "bytes": 56593,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_084.jpg",
+      "bytes": 56851,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_085.jpg",
+      "bytes": 55349,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_086.jpg",
+      "bytes": 54864,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_087.jpg",
+      "bytes": 51890,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_088.jpg",
+      "bytes": 51890,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_089.jpg",
+      "bytes": 51010,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_090.jpg",
+      "bytes": 48997,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_091.jpg",
+      "bytes": 48263,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_092.jpg",
+      "bytes": 47857,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_093.jpg",
+      "bytes": 48332,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_094.jpg",
+      "bytes": 48332,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_095.jpg",
+      "bytes": 47572,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_096.jpg",
+      "bytes": 47982,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_097.jpg",
+      "bytes": 47980,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_098.jpg",
+      "bytes": 47980,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_099.jpg",
+      "bytes": 48259,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_100.jpg",
+      "bytes": 45445,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_101.jpg",
+      "bytes": 46040,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_102.jpg",
+      "bytes": 45071,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_103.jpg",
+      "bytes": 45071,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_104.jpg",
+      "bytes": 46177,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_105.jpg",
+      "bytes": 49054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_106.jpg",
+      "bytes": 46615,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_107.jpg",
+      "bytes": 46727,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_108.jpg",
+      "bytes": 45711,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_109.jpg",
+      "bytes": 45711,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_110.jpg",
+      "bytes": 47321,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_111.jpg",
+      "bytes": 45869,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_112.jpg",
+      "bytes": 46640,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_113.jpg",
+      "bytes": 46640,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_114.jpg",
+      "bytes": 45286,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_115.jpg",
+      "bytes": 47640,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_116.jpg",
+      "bytes": 45400,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_117.jpg",
+      "bytes": 45505,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_118.jpg",
+      "bytes": 45505,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_119.jpg",
+      "bytes": 44625,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/g1_120.jpg",
+      "bytes": 45710,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_001.jpg",
+      "bytes": 337021,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_002.jpg",
+      "bytes": 339629,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_003.jpg",
+      "bytes": 342428,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_004.jpg",
+      "bytes": 342428,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_005.jpg",
+      "bytes": 337034,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_006.jpg",
+      "bytes": 350074,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_007.jpg",
+      "bytes": 351338,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_008.jpg",
+      "bytes": 352115,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_009.jpg",
+      "bytes": 344567,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_010.jpg",
+      "bytes": 344567,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_011.jpg",
+      "bytes": 342022,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_012.jpg",
+      "bytes": 347883,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_013.jpg",
+      "bytes": 356981,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_014.jpg",
+      "bytes": 342538,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_015.jpg",
+      "bytes": 340111,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_016.jpg",
+      "bytes": 340111,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_017.jpg",
+      "bytes": 342436,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_018.jpg",
+      "bytes": 345568,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_019.jpg",
+      "bytes": 336776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_020.jpg",
+      "bytes": 350849,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_021.jpg",
+      "bytes": 349670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_022.jpg",
+      "bytes": 349670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_023.jpg",
+      "bytes": 350253,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_024.jpg",
+      "bytes": 341112,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_025.jpg",
+      "bytes": 337070,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_026.jpg",
+      "bytes": 339233,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_027.jpg",
+      "bytes": 342238,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_028.jpg",
+      "bytes": 342238,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_029.jpg",
+      "bytes": 333707,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_030.jpg",
+      "bytes": 333244,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_031.jpg",
+      "bytes": 334924,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_032.jpg",
+      "bytes": 337506,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_033.jpg",
+      "bytes": 329675,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_034.jpg",
+      "bytes": 329675,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_035.jpg",
+      "bytes": 340210,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_036.jpg",
+      "bytes": 340985,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_037.jpg",
+      "bytes": 341237,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_038.jpg",
+      "bytes": 333240,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_039.jpg",
+      "bytes": 329612,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_040.jpg",
+      "bytes": 329612,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_041.jpg",
+      "bytes": 333133,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_042.jpg",
+      "bytes": 334279,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_043.jpg",
+      "bytes": 325314,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_044.jpg",
+      "bytes": 322577,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h1_045.jpg",
+      "bytes": 330219,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_001.jpg",
+      "bytes": 76815,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_002.jpg",
+      "bytes": 77140,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_003.jpg",
+      "bytes": 76594,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_004.jpg",
+      "bytes": 76594,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_005.jpg",
+      "bytes": 76753,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_006.jpg",
+      "bytes": 76511,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_007.jpg",
+      "bytes": 77049,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_008.jpg",
+      "bytes": 77049,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_009.jpg",
+      "bytes": 76468,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_010.jpg",
+      "bytes": 76526,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_011.jpg",
+      "bytes": 76428,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_012.jpg",
+      "bytes": 76744,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_013.jpg",
+      "bytes": 76744,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_014.jpg",
+      "bytes": 76314,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_015.jpg",
+      "bytes": 76687,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_016.jpg",
+      "bytes": 76594,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_017.jpg",
+      "bytes": 77590,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_018.jpg",
+      "bytes": 76716,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_019.jpg",
+      "bytes": 76716,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_020.jpg",
+      "bytes": 76781,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_021.jpg",
+      "bytes": 76106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_022.jpg",
+      "bytes": 76542,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_023.jpg",
+      "bytes": 76542,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_024.jpg",
+      "bytes": 75433,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_025.jpg",
+      "bytes": 75824,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_026.jpg",
+      "bytes": 75628,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_027.jpg",
+      "bytes": 76302,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_028.jpg",
+      "bytes": 76302,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_029.jpg",
+      "bytes": 75424,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_030.jpg",
+      "bytes": 75820,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_031.jpg",
+      "bytes": 73474,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_032.jpg",
+      "bytes": 72355,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_033.jpg",
+      "bytes": 73821,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_034.jpg",
+      "bytes": 73821,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_035.jpg",
+      "bytes": 78832,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_036.jpg",
+      "bytes": 86135,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_037.jpg",
+      "bytes": 96130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_038.jpg",
+      "bytes": 96130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_039.jpg",
+      "bytes": 109079,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_040.jpg",
+      "bytes": 128409,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_041.jpg",
+      "bytes": 140658,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_042.jpg",
+      "bytes": 161909,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_043.jpg",
+      "bytes": 161909,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_044.jpg",
+      "bytes": 170343,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h2_045.jpg",
+      "bytes": 173380,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_001.jpg",
+      "bytes": 78421,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_002.jpg",
+      "bytes": 71760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_003.jpg",
+      "bytes": 71760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_004.jpg",
+      "bytes": 76189,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_005.jpg",
+      "bytes": 70345,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_006.jpg",
+      "bytes": 74097,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_007.jpg",
+      "bytes": 70889,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_008.jpg",
+      "bytes": 70889,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_009.jpg",
+      "bytes": 74606,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_010.jpg",
+      "bytes": 70348,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_011.jpg",
+      "bytes": 73458,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_012.jpg",
+      "bytes": 70726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_013.jpg",
+      "bytes": 70726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_014.jpg",
+      "bytes": 78412,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_015.jpg",
+      "bytes": 70501,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_016.jpg",
+      "bytes": 75446,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_017.jpg",
+      "bytes": 71260,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_018.jpg",
+      "bytes": 71260,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_019.jpg",
+      "bytes": 74831,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_020.jpg",
+      "bytes": 69873,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_021.jpg",
+      "bytes": 73475,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_022.jpg",
+      "bytes": 70824,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_023.jpg",
+      "bytes": 70824,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_024.jpg",
+      "bytes": 73849,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_025.jpg",
+      "bytes": 69790,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_026.jpg",
+      "bytes": 76614,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_027.jpg",
+      "bytes": 71676,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_028.jpg",
+      "bytes": 71676,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_029.jpg",
+      "bytes": 74445,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_030.jpg",
+      "bytes": 70208,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_031.jpg",
+      "bytes": 74260,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_032.jpg",
+      "bytes": 74260,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_033.jpg",
+      "bytes": 71146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_034.jpg",
+      "bytes": 73633,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_035.jpg",
+      "bytes": 69868,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_036.jpg",
+      "bytes": 73836,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_037.jpg",
+      "bytes": 73836,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_038.jpg",
+      "bytes": 70562,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_039.jpg",
+      "bytes": 76890,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_040.jpg",
+      "bytes": 70233,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_041.jpg",
+      "bytes": 73002,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_042.jpg",
+      "bytes": 70366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_043.jpg",
+      "bytes": 70366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_044.jpg",
+      "bytes": 73542,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_045.jpg",
+      "bytes": 69268,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_046.jpg",
+      "bytes": 74530,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_047.jpg",
+      "bytes": 74530,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_048.jpg",
+      "bytes": 70490,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_049.jpg",
+      "bytes": 73298,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_050.jpg",
+      "bytes": 68929,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_051.jpg",
+      "bytes": 76987,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_052.jpg",
+      "bytes": 76987,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_053.jpg",
+      "bytes": 70857,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_054.jpg",
+      "bytes": 73162,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_055.jpg",
+      "bytes": 69018,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_056.jpg",
+      "bytes": 73421,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_057.jpg",
+      "bytes": 73421,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_058.jpg",
+      "bytes": 70240,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_059.jpg",
+      "bytes": 73794,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/h3_060.jpg",
+      "bytes": 68850,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_001.jpg",
+      "bytes": 120701,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_002.jpg",
+      "bytes": 121221,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_003.jpg",
+      "bytes": 120972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_004.jpg",
+      "bytes": 120972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_005.jpg",
+      "bytes": 120990,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_006.jpg",
+      "bytes": 120960,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_007.jpg",
+      "bytes": 122432,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_008.jpg",
+      "bytes": 120775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_009.jpg",
+      "bytes": 120744,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_010.jpg",
+      "bytes": 120744,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_011.jpg",
+      "bytes": 120709,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_012.jpg",
+      "bytes": 120607,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_013.jpg",
+      "bytes": 120287,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_014.jpg",
+      "bytes": 119943,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_015.jpg",
+      "bytes": 119954,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_016.jpg",
+      "bytes": 119954,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_017.jpg",
+      "bytes": 120073,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_018.jpg",
+      "bytes": 119724,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_019.jpg",
+      "bytes": 119752,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_020.jpg",
+      "bytes": 119536,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_021.jpg",
+      "bytes": 119532,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_022.jpg",
+      "bytes": 119532,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_023.jpg",
+      "bytes": 119415,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_024.jpg",
+      "bytes": 128069,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_025.jpg",
+      "bytes": 125319,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_026.jpg",
+      "bytes": 124572,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_027.jpg",
+      "bytes": 124037,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_028.jpg",
+      "bytes": 124037,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_029.jpg",
+      "bytes": 124552,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_030.jpg",
+      "bytes": 123953,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_031.jpg",
+      "bytes": 123312,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_032.jpg",
+      "bytes": 123112,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_033.jpg",
+      "bytes": 122970,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_034.jpg",
+      "bytes": 122970,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_035.jpg",
+      "bytes": 122749,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_036.jpg",
+      "bytes": 122414,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_037.jpg",
+      "bytes": 122224,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_038.jpg",
+      "bytes": 122397,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_039.jpg",
+      "bytes": 121845,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_040.jpg",
+      "bytes": 121845,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_041.jpg",
+      "bytes": 123337,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_042.jpg",
+      "bytes": 121785,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_043.jpg",
+      "bytes": 122048,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_044.jpg",
+      "bytes": 121403,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_045.jpg",
+      "bytes": 121252,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_046.jpg",
+      "bytes": 121252,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_047.jpg",
+      "bytes": 121066,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_048.jpg",
+      "bytes": 121265,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_049.jpg",
+      "bytes": 120893,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_050.jpg",
+      "bytes": 120892,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_051.jpg",
+      "bytes": 120809,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_052.jpg",
+      "bytes": 120809,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_053.jpg",
+      "bytes": 120934,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_054.jpg",
+      "bytes": 120852,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_055.jpg",
+      "bytes": 121047,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_056.jpg",
+      "bytes": 120950,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_057.jpg",
+      "bytes": 121849,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_058.jpg",
+      "bytes": 121849,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_059.jpg",
+      "bytes": 120452,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_060.jpg",
+      "bytes": 120422,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_061.jpg",
+      "bytes": 120399,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_062.jpg",
+      "bytes": 120342,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_063.jpg",
+      "bytes": 120241,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_064.jpg",
+      "bytes": 120241,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_065.jpg",
+      "bytes": 120092,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_066.jpg",
+      "bytes": 120050,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_067.jpg",
+      "bytes": 120203,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_068.jpg",
+      "bytes": 119853,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_069.jpg",
+      "bytes": 119538,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_070.jpg",
+      "bytes": 119538,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_071.jpg",
+      "bytes": 119425,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_072.jpg",
+      "bytes": 119451,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_073.jpg",
+      "bytes": 119189,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_074.jpg",
+      "bytes": 120028,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_075.jpg",
+      "bytes": 119090,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_076.jpg",
+      "bytes": 119090,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_077.jpg",
+      "bytes": 119095,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_078.jpg",
+      "bytes": 118817,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_079.jpg",
+      "bytes": 118768,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_080.jpg",
+      "bytes": 118747,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_081.jpg",
+      "bytes": 118886,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_082.jpg",
+      "bytes": 118886,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_083.jpg",
+      "bytes": 118631,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_084.jpg",
+      "bytes": 118541,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_085.jpg",
+      "bytes": 118437,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_086.jpg",
+      "bytes": 118633,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_087.jpg",
+      "bytes": 118458,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_088.jpg",
+      "bytes": 118458,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_089.jpg",
+      "bytes": 119022,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/hf_090.jpg",
+      "bytes": 119045,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_001.jpg",
+      "bytes": 239773,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_002.jpg",
+      "bytes": 239756,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_003.jpg",
+      "bytes": 239771,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_004.jpg",
+      "bytes": 239771,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_005.jpg",
+      "bytes": 240169,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_006.jpg",
+      "bytes": 240110,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_007.jpg",
+      "bytes": 240349,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_008.jpg",
+      "bytes": 240349,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_009.jpg",
+      "bytes": 240752,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_010.jpg",
+      "bytes": 242139,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_011.jpg",
+      "bytes": 242009,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_012.jpg",
+      "bytes": 241968,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_013.jpg",
+      "bytes": 241968,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_014.jpg",
+      "bytes": 242188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_015.jpg",
+      "bytes": 243194,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_016.jpg",
+      "bytes": 243250,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_017.jpg",
+      "bytes": 243609,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_018.jpg",
+      "bytes": 243453,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_019.jpg",
+      "bytes": 243453,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_020.jpg",
+      "bytes": 245125,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_021.jpg",
+      "bytes": 244439,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_022.jpg",
+      "bytes": 244039,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_023.jpg",
+      "bytes": 244039,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_024.jpg",
+      "bytes": 243811,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_025.jpg",
+      "bytes": 239110,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_026.jpg",
+      "bytes": 237617,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_027.jpg",
+      "bytes": 237281,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_028.jpg",
+      "bytes": 237281,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_029.jpg",
+      "bytes": 235366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_030.jpg",
+      "bytes": 235181,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_031.jpg",
+      "bytes": 233130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_032.jpg",
+      "bytes": 233606,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_033.jpg",
+      "bytes": 235590,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_034.jpg",
+      "bytes": 235590,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_035.jpg",
+      "bytes": 237080,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_036.jpg",
+      "bytes": 237620,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_037.jpg",
+      "bytes": 237893,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_038.jpg",
+      "bytes": 237893,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_039.jpg",
+      "bytes": 237789,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_040.jpg",
+      "bytes": 238521,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_041.jpg",
+      "bytes": 238365,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_042.jpg",
+      "bytes": 238606,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_043.jpg",
+      "bytes": 238606,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_044.jpg",
+      "bytes": 238671,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_045.jpg",
+      "bytes": 239342,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_046.jpg",
+      "bytes": 239180,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_047.jpg",
+      "bytes": 239565,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_048.jpg",
+      "bytes": 239781,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_049.jpg",
+      "bytes": 239781,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_050.jpg",
+      "bytes": 240500,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_051.jpg",
+      "bytes": 240409,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_052.jpg",
+      "bytes": 240598,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_053.jpg",
+      "bytes": 240598,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_054.jpg",
+      "bytes": 240691,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_055.jpg",
+      "bytes": 242594,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_056.jpg",
+      "bytes": 242633,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_057.jpg",
+      "bytes": 243134,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_058.jpg",
+      "bytes": 243134,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_059.jpg",
+      "bytes": 243124,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_060.jpg",
+      "bytes": 243854,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_061.jpg",
+      "bytes": 243582,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_062.jpg",
+      "bytes": 243364,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_063.jpg",
+      "bytes": 243406,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_064.jpg",
+      "bytes": 243406,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_065.jpg",
+      "bytes": 242181,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_066.jpg",
+      "bytes": 241709,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_067.jpg",
+      "bytes": 241391,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_068.jpg",
+      "bytes": 241391,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_069.jpg",
+      "bytes": 240890,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_070.jpg",
+      "bytes": 240170,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_071.jpg",
+      "bytes": 239352,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_072.jpg",
+      "bytes": 239092,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_073.jpg",
+      "bytes": 239092,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_074.jpg",
+      "bytes": 238851,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_075.jpg",
+      "bytes": 238736,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_076.jpg",
+      "bytes": 238279,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_077.jpg",
+      "bytes": 237916,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_078.jpg",
+      "bytes": 237694,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_079.jpg",
+      "bytes": 237694,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_080.jpg",
+      "bytes": 237841,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_081.jpg",
+      "bytes": 236501,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_082.jpg",
+      "bytes": 236680,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_083.jpg",
+      "bytes": 236680,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_084.jpg",
+      "bytes": 236092,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_085.jpg",
+      "bytes": 235558,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_086.jpg",
+      "bytes": 235119,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_087.jpg",
+      "bytes": 235460,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_088.jpg",
+      "bytes": 235460,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_089.jpg",
+      "bytes": 235434,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_090.jpg",
+      "bytes": 236057,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_091.jpg",
+      "bytes": 235887,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_092.jpg",
+      "bytes": 236022,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_093.jpg",
+      "bytes": 235851,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_094.jpg",
+      "bytes": 235851,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_095.jpg",
+      "bytes": 236070,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_096.jpg",
+      "bytes": 235996,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_097.jpg",
+      "bytes": 236283,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_098.jpg",
+      "bytes": 236283,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_099.jpg",
+      "bytes": 236120,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_100.jpg",
+      "bytes": 236910,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_101.jpg",
+      "bytes": 244184,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_102.jpg",
+      "bytes": 243967,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_103.jpg",
+      "bytes": 243967,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_104.jpg",
+      "bytes": 244075,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/rb_105.jpg",
+      "bytes": 243755,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_001.jpg",
+      "bytes": 83206,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_002.jpg",
+      "bytes": 83633,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_003.jpg",
+      "bytes": 83466,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_004.jpg",
+      "bytes": 83466,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_005.jpg",
+      "bytes": 83524,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_006.jpg",
+      "bytes": 83542,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_007.jpg",
+      "bytes": 84411,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_008.jpg",
+      "bytes": 83344,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_009.jpg",
+      "bytes": 83408,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_010.jpg",
+      "bytes": 83408,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_011.jpg",
+      "bytes": 83371,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_012.jpg",
+      "bytes": 83323,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_013.jpg",
+      "bytes": 82903,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_014.jpg",
+      "bytes": 82600,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_015.jpg",
+      "bytes": 82803,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_016.jpg",
+      "bytes": 82803,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_017.jpg",
+      "bytes": 82996,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_018.jpg",
+      "bytes": 82722,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_019.jpg",
+      "bytes": 82709,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_020.jpg",
+      "bytes": 82605,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_021.jpg",
+      "bytes": 82659,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_022.jpg",
+      "bytes": 82659,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_023.jpg",
+      "bytes": 82507,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_024.jpg",
+      "bytes": 88385,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_025.jpg",
+      "bytes": 86603,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_026.jpg",
+      "bytes": 86188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_027.jpg",
+      "bytes": 85798,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_028.jpg",
+      "bytes": 85798,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_029.jpg",
+      "bytes": 85997,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_030.jpg",
+      "bytes": 85632,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_031.jpg",
+      "bytes": 84982,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_032.jpg",
+      "bytes": 84791,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_033.jpg",
+      "bytes": 84772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_034.jpg",
+      "bytes": 84772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_035.jpg",
+      "bytes": 84548,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_036.jpg",
+      "bytes": 84243,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_037.jpg",
+      "bytes": 84085,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_038.jpg",
+      "bytes": 84192,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_039.jpg",
+      "bytes": 83526,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_040.jpg",
+      "bytes": 83526,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_041.jpg",
+      "bytes": 84598,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_042.jpg",
+      "bytes": 83436,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_043.jpg",
+      "bytes": 83626,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_044.jpg",
+      "bytes": 83046,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_045.jpg",
+      "bytes": 82907,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_046.jpg",
+      "bytes": 82907,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_047.jpg",
+      "bytes": 82706,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_048.jpg",
+      "bytes": 82865,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_049.jpg",
+      "bytes": 82512,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_050.jpg",
+      "bytes": 82434,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_051.jpg",
+      "bytes": 82406,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_052.jpg",
+      "bytes": 82406,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_053.jpg",
+      "bytes": 82642,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_054.jpg",
+      "bytes": 82368,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_055.jpg",
+      "bytes": 82514,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_056.jpg",
+      "bytes": 82588,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_057.jpg",
+      "bytes": 83288,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_058.jpg",
+      "bytes": 83288,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_059.jpg",
+      "bytes": 82129,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_060.jpg",
+      "bytes": 81957,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_061.jpg",
+      "bytes": 81845,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_062.jpg",
+      "bytes": 81815,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_063.jpg",
+      "bytes": 81789,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_064.jpg",
+      "bytes": 81789,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_065.jpg",
+      "bytes": 81598,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_066.jpg",
+      "bytes": 81590,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_067.jpg",
+      "bytes": 81685,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_068.jpg",
+      "bytes": 81367,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_069.jpg",
+      "bytes": 81123,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_070.jpg",
+      "bytes": 81123,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_071.jpg",
+      "bytes": 81074,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_072.jpg",
+      "bytes": 81154,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_073.jpg",
+      "bytes": 80944,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_074.jpg",
+      "bytes": 81632,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_075.jpg",
+      "bytes": 80980,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_076.jpg",
+      "bytes": 80980,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_077.jpg",
+      "bytes": 81051,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_078.jpg",
+      "bytes": 80749,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_079.jpg",
+      "bytes": 80725,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_080.jpg",
+      "bytes": 80878,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_081.jpg",
+      "bytes": 80885,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_082.jpg",
+      "bytes": 80885,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_083.jpg",
+      "bytes": 80778,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_084.jpg",
+      "bytes": 80775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_085.jpg",
+      "bytes": 80664,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_086.jpg",
+      "bytes": 80793,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_087.jpg",
+      "bytes": 80705,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_088.jpg",
+      "bytes": 80705,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_089.jpg",
+      "bytes": 81101,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_090.jpg",
+      "bytes": 81269,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_091.jpg",
+      "bytes": 81623,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_092.jpg",
+      "bytes": 81037,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_093.jpg",
+      "bytes": 81073,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_094.jpg",
+      "bytes": 81073,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_095.jpg",
+      "bytes": 80989,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_096.jpg",
+      "bytes": 81049,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_097.jpg",
+      "bytes": 80847,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_098.jpg",
+      "bytes": 80858,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_099.jpg",
+      "bytes": 80814,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_100.jpg",
+      "bytes": 80814,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_101.jpg",
+      "bytes": 80897,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_102.jpg",
+      "bytes": 80569,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_103.jpg",
+      "bytes": 80531,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_104.jpg",
+      "bytes": 80377,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_105.jpg",
+      "bytes": 80435,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_106.jpg",
+      "bytes": 80435,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_107.jpg",
+      "bytes": 80091,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_108.jpg",
+      "bytes": 80661,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_109.jpg",
+      "bytes": 79951,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_110.jpg",
+      "bytes": 79905,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_111.jpg",
+      "bytes": 79667,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_112.jpg",
+      "bytes": 79667,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_113.jpg",
+      "bytes": 79579,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_114.jpg",
+      "bytes": 79674,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_115.jpg",
+      "bytes": 79806,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_116.jpg",
+      "bytes": 80083,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_117.jpg",
+      "bytes": 79502,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_118.jpg",
+      "bytes": 79502,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_119.jpg",
+      "bytes": 79288,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_120.jpg",
+      "bytes": 79521,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_121.jpg",
+      "bytes": 79275,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_122.jpg",
+      "bytes": 79329,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_123.jpg",
+      "bytes": 79262,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_124.jpg",
+      "bytes": 79262,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_125.jpg",
+      "bytes": 79441,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_126.jpg",
+      "bytes": 79666,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_127.jpg",
+      "bytes": 78245,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_128.jpg",
+      "bytes": 77601,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_129.jpg",
+      "bytes": 77517,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_130.jpg",
+      "bytes": 77517,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_131.jpg",
+      "bytes": 77477,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_132.jpg",
+      "bytes": 77110,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_133.jpg",
+      "bytes": 77116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_134.jpg",
+      "bytes": 76864,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sl_135.jpg",
+      "bytes": 77609,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_001.jpg",
+      "bytes": 98537,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_002.jpg",
+      "bytes": 100358,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_003.jpg",
+      "bytes": 97890,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_004.jpg",
+      "bytes": 97890,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_005.jpg",
+      "bytes": 101584,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_006.jpg",
+      "bytes": 99567,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_007.jpg",
+      "bytes": 102301,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_008.jpg",
+      "bytes": 102301,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_009.jpg",
+      "bytes": 100157,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_010.jpg",
+      "bytes": 101643,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_011.jpg",
+      "bytes": 99592,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_012.jpg",
+      "bytes": 100606,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_013.jpg",
+      "bytes": 100606,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_014.jpg",
+      "bytes": 99503,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_015.jpg",
+      "bytes": 103038,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_016.jpg",
+      "bytes": 100036,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_017.jpg",
+      "bytes": 101650,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_018.jpg",
+      "bytes": 100999,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_019.jpg",
+      "bytes": 100999,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_020.jpg",
+      "bytes": 103448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_021.jpg",
+      "bytes": 101933,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_022.jpg",
+      "bytes": 103534,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_023.jpg",
+      "bytes": 103534,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_024.jpg",
+      "bytes": 102384,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_025.jpg",
+      "bytes": 105601,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_026.jpg",
+      "bytes": 103480,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_027.jpg",
+      "bytes": 104408,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_028.jpg",
+      "bytes": 104408,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_029.jpg",
+      "bytes": 103057,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_030.jpg",
+      "bytes": 104633,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_031.jpg",
+      "bytes": 100772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_032.jpg",
+      "bytes": 101318,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_033.jpg",
+      "bytes": 98948,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_034.jpg",
+      "bytes": 98948,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_035.jpg",
+      "bytes": 99685,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_036.jpg",
+      "bytes": 97221,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_037.jpg",
+      "bytes": 99772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_038.jpg",
+      "bytes": 99772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_039.jpg",
+      "bytes": 100475,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_040.jpg",
+      "bytes": 103276,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_041.jpg",
+      "bytes": 101448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_042.jpg",
+      "bytes": 102796,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_043.jpg",
+      "bytes": 102796,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_044.jpg",
+      "bytes": 100838,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_045.jpg",
+      "bytes": 103085,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_046.jpg",
+      "bytes": 94721,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_047.jpg",
+      "bytes": 92149,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_048.jpg",
+      "bytes": 83938,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_049.jpg",
+      "bytes": 83938,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_050.jpg",
+      "bytes": 84989,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_051.jpg",
+      "bytes": 81745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_052.jpg",
+      "bytes": 86929,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_053.jpg",
+      "bytes": 86929,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_054.jpg",
+      "bytes": 96037,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_055.jpg",
+      "bytes": 107739,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_056.jpg",
+      "bytes": 123188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_057.jpg",
+      "bytes": 125662,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_058.jpg",
+      "bytes": 125662,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_059.jpg",
+      "bytes": 128190,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_060.jpg",
+      "bytes": 136233,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_061.jpg",
+      "bytes": 135371,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_062.jpg",
+      "bytes": 137029,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_063.jpg",
+      "bytes": 137013,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_064.jpg",
+      "bytes": 137013,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_065.jpg",
+      "bytes": 139424,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_066.jpg",
+      "bytes": 136735,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_067.jpg",
+      "bytes": 137353,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_068.jpg",
+      "bytes": 137353,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_069.jpg",
+      "bytes": 135502,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_070.jpg",
+      "bytes": 136762,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_071.jpg",
+      "bytes": 134842,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_072.jpg",
+      "bytes": 136382,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_073.jpg",
+      "bytes": 136382,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_074.jpg",
+      "bytes": 135782,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_075.jpg",
+      "bytes": 138381,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_076.jpg",
+      "bytes": 136801,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_077.jpg",
+      "bytes": 139670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_078.jpg",
+      "bytes": 138822,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_079.jpg",
+      "bytes": 138822,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_080.jpg",
+      "bytes": 141324,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_081.jpg",
+      "bytes": 139640,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_082.jpg",
+      "bytes": 142223,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_083.jpg",
+      "bytes": 142223,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_084.jpg",
+      "bytes": 141517,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_085.jpg",
+      "bytes": 146489,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_086.jpg",
+      "bytes": 143741,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_087.jpg",
+      "bytes": 146585,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_088.jpg",
+      "bytes": 146585,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_089.jpg",
+      "bytes": 147387,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_090.jpg",
+      "bytes": 151484,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_091.jpg",
+      "bytes": 152049,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_092.jpg",
+      "bytes": 157690,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_093.jpg",
+      "bytes": 158004,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_094.jpg",
+      "bytes": 158004,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_095.jpg",
+      "bytes": 160448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_096.jpg",
+      "bytes": 157367,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_097.jpg",
+      "bytes": 158633,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_098.jpg",
+      "bytes": 158633,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_099.jpg",
+      "bytes": 152242,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_100.jpg",
+      "bytes": 152483,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_101.jpg",
+      "bytes": 149442,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_102.jpg",
+      "bytes": 149641,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_103.jpg",
+      "bytes": 149641,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_104.jpg",
+      "bytes": 147270,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_105.jpg",
+      "bytes": 148951,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_106.jpg",
+      "bytes": 144729,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_107.jpg",
+      "bytes": 145083,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_108.jpg",
+      "bytes": 142368,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_109.jpg",
+      "bytes": 142368,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_110.jpg",
+      "bytes": 143986,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_111.jpg",
+      "bytes": 141532,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_112.jpg",
+      "bytes": 142947,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_113.jpg",
+      "bytes": 142947,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_114.jpg",
+      "bytes": 141775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_115.jpg",
+      "bytes": 144090,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_116.jpg",
+      "bytes": 141179,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_117.jpg",
+      "bytes": 142062,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_118.jpg",
+      "bytes": 142062,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_119.jpg",
+      "bytes": 140569,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_120.jpg",
+      "bytes": 143146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_121.jpg",
+      "bytes": 130673,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_122.jpg",
+      "bytes": 122169,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_123.jpg",
+      "bytes": 102948,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_124.jpg",
+      "bytes": 102948,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_125.jpg",
+      "bytes": 91628,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_126.jpg",
+      "bytes": 68795,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_127.jpg",
+      "bytes": 52224,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_128.jpg",
+      "bytes": 52224,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_129.jpg",
+      "bytes": 44632,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_130.jpg",
+      "bytes": 43055,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_131.jpg",
+      "bytes": 41300,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_132.jpg",
+      "bytes": 41006,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_133.jpg",
+      "bytes": 41006,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_134.jpg",
+      "bytes": 39771,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/sr_135.jpg",
+      "bytes": 39444,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_001.jpg",
+      "bytes": 125069,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_002.jpg",
+      "bytes": 125095,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_003.jpg",
+      "bytes": 127321,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_004.jpg",
+      "bytes": 126775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_005.jpg",
+      "bytes": 127023,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_006.jpg",
+      "bytes": 126225,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_007.jpg",
+      "bytes": 126329,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_008.jpg",
+      "bytes": 125993,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_009.jpg",
+      "bytes": 126022,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_010.jpg",
+      "bytes": 125148,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_011.jpg",
+      "bytes": 124815,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_012.jpg",
+      "bytes": 124557,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_013.jpg",
+      "bytes": 124744,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_014.jpg",
+      "bytes": 125468,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_015.jpg",
+      "bytes": 125469,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_016.jpg",
+      "bytes": 125057,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_017.jpg",
+      "bytes": 125319,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_018.jpg",
+      "bytes": 124754,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_019.jpg",
+      "bytes": 128127,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_020.jpg",
+      "bytes": 127666,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_021.jpg",
+      "bytes": 128507,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_022.jpg",
+      "bytes": 128268,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_023.jpg",
+      "bytes": 127537,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_024.jpg",
+      "bytes": 127201,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_025.jpg",
+      "bytes": 126779,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_026.jpg",
+      "bytes": 126962,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_027.jpg",
+      "bytes": 126000,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_028.jpg",
+      "bytes": 125054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_029.jpg",
+      "bytes": 124987,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_030.jpg",
+      "bytes": 126610,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_031.jpg",
+      "bytes": 125971,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_032.jpg",
+      "bytes": 125738,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_033.jpg",
+      "bytes": 125906,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_034.jpg",
+      "bytes": 126800,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_035.jpg",
+      "bytes": 127978,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_036.jpg",
+      "bytes": 128279,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_037.jpg",
+      "bytes": 128327,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_038.jpg",
+      "bytes": 128640,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_039.jpg",
+      "bytes": 127478,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_040.jpg",
+      "bytes": 126713,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_041.jpg",
+      "bytes": 126303,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_042.jpg",
+      "bytes": 126746,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_043.jpg",
+      "bytes": 126099,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_044.jpg",
+      "bytes": 125879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_045.jpg",
+      "bytes": 125664,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_046.jpg",
+      "bytes": 127913,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_047.jpg",
+      "bytes": 126618,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_048.jpg",
+      "bytes": 124157,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_049.jpg",
+      "bytes": 123962,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_050.jpg",
+      "bytes": 125168,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_051.jpg",
+      "bytes": 125732,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_052.jpg",
+      "bytes": 125517,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_053.jpg",
+      "bytes": 126044,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_054.jpg",
+      "bytes": 126031,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_055.jpg",
+      "bytes": 125983,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_056.jpg",
+      "bytes": 125712,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_057.jpg",
+      "bytes": 125605,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_058.jpg",
+      "bytes": 125375,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_059.jpg",
+      "bytes": 124521,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_060.jpg",
+      "bytes": 124332,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_061.jpg",
+      "bytes": 125041,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_062.jpg",
+      "bytes": 126278,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_063.jpg",
+      "bytes": 125435,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_064.jpg",
+      "bytes": 124814,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_065.jpg",
+      "bytes": 124753,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_066.jpg",
+      "bytes": 126821,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_067.jpg",
+      "bytes": 125706,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_068.jpg",
+      "bytes": 126026,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_069.jpg",
+      "bytes": 125960,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_070.jpg",
+      "bytes": 126758,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_071.jpg",
+      "bytes": 126166,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_072.jpg",
+      "bytes": 125995,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_073.jpg",
+      "bytes": 125572,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_074.jpg",
+      "bytes": 125720,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/st_075.jpg",
+      "bytes": 125064,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_001.jpg",
+      "bytes": 191374,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_002.jpg",
+      "bytes": 190809,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_003.jpg",
+      "bytes": 190457,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_004.jpg",
+      "bytes": 190386,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_005.jpg",
+      "bytes": 192947,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_006.jpg",
+      "bytes": 192468,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_007.jpg",
+      "bytes": 191631,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_008.jpg",
+      "bytes": 192103,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_009.jpg",
+      "bytes": 191927,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_010.jpg",
+      "bytes": 191912,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_011.jpg",
+      "bytes": 192660,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_012.jpg",
+      "bytes": 193120,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_013.jpg",
+      "bytes": 192588,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_014.jpg",
+      "bytes": 191984,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_015.jpg",
+      "bytes": 198253,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_016.jpg",
+      "bytes": 198014,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_017.jpg",
+      "bytes": 196910,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_018.jpg",
+      "bytes": 195986,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_019.jpg",
+      "bytes": 196049,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_020.jpg",
+      "bytes": 196162,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_021.jpg",
+      "bytes": 195741,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_022.jpg",
+      "bytes": 195770,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_023.jpg",
+      "bytes": 196541,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_024.jpg",
+      "bytes": 195437,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_025.jpg",
+      "bytes": 198676,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_026.jpg",
+      "bytes": 198133,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_027.jpg",
+      "bytes": 197480,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_028.jpg",
+      "bytes": 197643,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_029.jpg",
+      "bytes": 197639,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_030.jpg",
+      "bytes": 196711,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_031.jpg",
+      "bytes": 195802,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_032.jpg",
+      "bytes": 194096,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_033.jpg",
+      "bytes": 194511,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_034.jpg",
+      "bytes": 194535,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_035.jpg",
+      "bytes": 194160,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_036.jpg",
+      "bytes": 191554,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_037.jpg",
+      "bytes": 192399,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_038.jpg",
+      "bytes": 188988,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_039.jpg",
+      "bytes": 187689,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_040.jpg",
+      "bytes": 187497,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_041.jpg",
+      "bytes": 188294,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_042.jpg",
+      "bytes": 188070,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_043.jpg",
+      "bytes": 186896,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_044.jpg",
+      "bytes": 186630,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_045.jpg",
+      "bytes": 188932,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_046.jpg",
+      "bytes": 188868,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_047.jpg",
+      "bytes": 187301,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_048.jpg",
+      "bytes": 186861,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_049.jpg",
+      "bytes": 186900,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_050.jpg",
+      "bytes": 185617,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_051.jpg",
+      "bytes": 185505,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_052.jpg",
+      "bytes": 185332,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_053.jpg",
+      "bytes": 186007,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_054.jpg",
+      "bytes": 185134,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_055.jpg",
+      "bytes": 188026,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_056.jpg",
+      "bytes": 186586,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_057.jpg",
+      "bytes": 186799,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_058.jpg",
+      "bytes": 186755,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_059.jpg",
+      "bytes": 186662,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_060.jpg",
+      "bytes": 187047,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_061.jpg",
+      "bytes": 188858,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_062.jpg",
+      "bytes": 188574,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_063.jpg",
+      "bytes": 187899,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_064.jpg",
+      "bytes": 187691,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_065.jpg",
+      "bytes": 199368,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_066.jpg",
+      "bytes": 196887,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_067.jpg",
+      "bytes": 195635,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_068.jpg",
+      "bytes": 195219,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_069.jpg",
+      "bytes": 195476,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_070.jpg",
+      "bytes": 195312,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_071.jpg",
+      "bytes": 195077,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_072.jpg",
+      "bytes": 194583,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_073.jpg",
+      "bytes": 194117,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_074.jpg",
+      "bytes": 192836,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_075.jpg",
+      "bytes": 193331,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_076.jpg",
+      "bytes": 193216,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_077.jpg",
+      "bytes": 192307,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_078.jpg",
+      "bytes": 190454,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_079.jpg",
+      "bytes": 189987,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_080.jpg",
+      "bytes": 189725,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_081.jpg",
+      "bytes": 189386,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_082.jpg",
+      "bytes": 189312,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_083.jpg",
+      "bytes": 189180,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_084.jpg",
+      "bytes": 187959,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_085.jpg",
+      "bytes": 191635,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_086.jpg",
+      "bytes": 189754,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_087.jpg",
+      "bytes": 189569,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_088.jpg",
+      "bytes": 189615,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_089.jpg",
+      "bytes": 189338,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_090.jpg",
+      "bytes": 188933,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_091.jpg",
+      "bytes": 188936,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_092.jpg",
+      "bytes": 188675,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_093.jpg",
+      "bytes": 192001,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_094.jpg",
+      "bytes": 192030,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_095.jpg",
+      "bytes": 189986,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_096.jpg",
+      "bytes": 188971,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_097.jpg",
+      "bytes": 189117,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_098.jpg",
+      "bytes": 188475,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_099.jpg",
+      "bytes": 188441,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_100.jpg",
+      "bytes": 188291,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_101.jpg",
+      "bytes": 189263,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_102.jpg",
+      "bytes": 188019,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_103.jpg",
+      "bytes": 189526,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_104.jpg",
+      "bytes": 189180,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_105.jpg",
+      "bytes": 188133,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_106.jpg",
+      "bytes": 188033,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_107.jpg",
+      "bytes": 188963,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_108.jpg",
+      "bytes": 188952,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_109.jpg",
+      "bytes": 188633,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_110.jpg",
+      "bytes": 187960,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_111.jpg",
+      "bytes": 188147,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_112.jpg",
+      "bytes": 188103,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_113.jpg",
+      "bytes": 190034,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_114.jpg",
+      "bytes": 189722,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_115.jpg",
+      "bytes": 189469,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_116.jpg",
+      "bytes": 189547,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_117.jpg",
+      "bytes": 189637,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_118.jpg",
+      "bytes": 189446,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_119.jpg",
+      "bytes": 189336,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_120.jpg",
+      "bytes": 189506,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_121.jpg",
+      "bytes": 189535,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_122.jpg",
+      "bytes": 189326,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/fr/vd_123.jpg",
+      "bytes": 190314,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/img/almond.jpg",
+      "bytes": 292631,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/img/doc1.jpg",
+      "bytes": 798066,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/img/package.jpg",
+      "bytes": 697454,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/img/queen.jpg",
+      "bytes": 540360,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/img/sem.jpg",
+      "bytes": 1167937,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/states.json",
+      "bytes": 37815,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/swarm-end.wav",
+      "bytes": 950478,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/swarm-freeze.wav",
+      "bytes": 288078,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/assets/swarm-hook.wav",
+      "bytes": 499278,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/audio/CREDITS",
+      "bytes": 4000,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/audio/film.m4a",
+      "bytes": 1969634,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/fidelity.md",
+      "bytes": 4125,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/film/index.html",
+      "bytes": 877,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/film/main.js",
+      "bytes": 45521,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/film/timeline.json",
+      "bytes": 2592,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/fonts/OFL-intertight.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/fonts/fonts.css",
+      "bytes": 530,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/fonts/it500.woff2",
+      "bytes": 14840,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/fonts/it600i.woff2",
+      "bytes": 15796,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/fonts/it800.woff2",
+      "bytes": 14912,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/fonts/sc500.woff2",
+      "bytes": 23732,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/fonts/sc900.woff2",
+      "bytes": 23936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/index.html",
+      "bytes": 33576,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/CREDITS",
+      "bytes": 4000,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/FACTS.md",
+      "bytes": 11814,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/README.md",
+      "bytes": 2761,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/SOURCES.jsonl",
+      "bytes": 10507,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/SOURCES.md",
+      "bytes": 4574,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/audio/cues.json",
+      "bytes": 1745,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/audio/lines.json",
+      "bytes": 1840,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/audio/mix.py",
+      "bytes": 15562,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/audio/vo/dur.json",
+      "bytes": 182,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/audio/vo/words.json",
+      "bytes": 2956,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/build.sh",
+      "bytes": 2229,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/events.json",
+      "bytes": 3096,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/licenses/CC-BY-2.0.html",
+      "bytes": 34724,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/licenses/CC-BY-3.0.html",
+      "bytes": 51105,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/commons-tools/cinfo.py",
+      "bytes": 1293,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/commons-tools/pdfpage.py",
+      "bytes": 2364,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/commons-tools/peek.py",
+      "bytes": 1681,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/commons-tools/seg.py",
+      "bytes": 2546,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/commons_thumb.py",
+      "bytes": 2066,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/cues.py",
+      "bytes": 1247,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/fetch_sources.sh",
+      "bytes": 2112,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/final_check.sh",
+      "bytes": 912,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/fonts.sh",
+      "bytes": 1168,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/footage.py",
+      "bytes": 12612,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/map_prep.py",
+      "bytes": 1751,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-caption-news/source/tools/prep.sh",
+      "bytes": 3182,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/line-lights-up/index.html",
+      "bytes": 1770,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/line-lights-up/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-archive-lighttable.json",
+      "bytes": 11384,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/lemo-caption-news.json",
+      "bytes": 11673,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/line-lights-up.json",
+      "bytes": 3347,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/line-lights-up.jpg",
+      "bytes": 67335,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "card-expand-fullscreen",
+  "order": 5,
+  "title": "卡片展开为全屏",
+  "types": [
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "summary": "照片卡片由引线牵出，展开到全屏停留，再收回原位。",
+  "mechanism": "照片卡片在地图上浮入，引线连接地点。卡片展开占满画面，停留后收回，HUD持续可见。",
+  "trigger": "需要停下来细看一处风景时",
+  "effect": "从路线总览转向现场细节，再回到旅程。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "6.6s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "shutter、paper、whoosh、impact"
+    }
+  ],
+  "useCases": [
+    "影像高光",
+    "陈列界面展品放大",
+    "操作台详情查看"
+  ],
+  "avoid": [
+    "连续多次展开造成疲劳",
+    "卡片与全屏图片比例差距过大而又不允许裁切"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "corner-hud",
+      "vertical-title-blur",
+      "split-compare-stamp"
+    ],
+    "conflicts": []
+  },
+  "prompt": "照片卡片由引线牵出，展开到全屏停留，再收回原位。复用地图巡礼的 drawCards、drawLeader、drawMarkers、measureMarkerLabels、mountScene、sceneCanvas、paintScene 与对应 CSS。inari 标记、引线、照片卡片、全屏展开与收回。片段：caseT 18.4→24.6；时长 6.6s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。",
+  "demo": "demos/patterns/card-expand-fullscreen/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    }
+  ],
+  "previewAt": 1.6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "出卡"
+    },
+    {
+      "t": 2.6,
+      "label": "展开"
+    },
+    {
+      "t": 5.4,
+      "label": "收回"
+    }
+  ],
+  "sound": {
+    "voices": [
+      "shutter",
+      "paper",
+      "whoosh",
+      "impact"
+    ],
+    "score": "demos/patterns/card-expand-fullscreen/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "出卡",
+        "value": "0s"
+      },
+      {
+        "name": "展开",
+        "value": "2.6s"
+      },
+      {
+        "name": "收回",
+        "value": "5.4s"
+      },
+      {
+        "name": "时长",
+        "value": "6.6s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js → drawCards、drawLeader、mountScene",
+      "how": "修改卡片、引线、场景绘制与镜头的实现。"
+    },
+    {
+      "field": "index.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → tracks.cards[] → scene、caption、expand；tracks.camera、layout",
+      "how": "修改卡片、展开时刻、镜头与横竖布局；程序场景在 ../../cases/map-pilgrimage/film/scenes.js → paintScene。"
+    },
+    {
+      "field": "mechanism/config.js → segments / markers",
+      "how": "设置本巧思片段映射与标记；地图来源时刻：18.4→24.6。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ]
+}

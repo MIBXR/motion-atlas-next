@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "grid-reveals-score",
+  "pattern": {
+    "id": "grid-reveals-score",
+    "order": 91,
+    "title": "网格即乐谱",
+    "types": [
+      "composition",
+      "sound",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "海报旋转九十度后，七列读作七音、十六行读作两小节，条块与声音成为同一份乐谱。",
+    "mechanism": "画面和 music/score.py 同时读取 score.json，column 对应 A 多利亚调音高、row 对应八分音符起音、length 对应音长；旋转与标签先后完成后，playRow 扫到条块起点时，将条块染红并播放对应音符。",
+    "trigger": "红圆带动版面重排，29.25 秒开始把海报转成横向乐谱。",
+    "effect": "先前的平面构成被重新解释为能听见的系统。",
+    "timing": [
+      {
+        "name": "来源片段",
+        "value": "29.25–36.25 秒；29.25–30 秒旋转，30.5 秒标签开始，32–36 秒两小节扫奏。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "网格映射",
+        "value": "film/score.json:cols / midi / final：7列 A/B/C/D/E/F#/G，对应 MIDI 57/59/60/62/64/66/67；16行，每行 E8=.25 秒。"
+      },
+      {
+        "name": "揭示和播放",
+        "value": "film/film.js:T / drawUnits / drawScoreLabels / renderFilm：rotD=.75 秒；playRow=(t−32)/.25；film/score.json:timeline.sweep=[32,36]。"
+      },
+      {
+        "name": "音符尺寸",
+        "value": "film/film.js:PW/PH/CW/RH：海报706×1008，格91×40，条宽 CW−8，相邻段多画1px；source/music/score.py 从同一 final.lead/bass 取起音与音长。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-swiss-motion/film/score.json",
+      "demos/cases/lemo-swiss-motion/film/film.js",
+      "demos/cases/lemo-swiss-motion/film/ease.js"
+    ],
+    "locator": "T / drawUnits / drawScoreLabels / playRow；source/music/score.py",
+    "useCases": [
+      "先前的平面构成被重新解释为能听见的系统。"
+    ],
+    "avoid": [
+      "在该片段内叠加第二条争夺注意力的主动作"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [
+        "shared-cue-sheet",
+        "grid-beat-construction"
+      ],
+      "conflicts": [],
+      "notes": "构图与声音必须由同一份数据派生，适合在高潮重新解释前面出现的网格。"
+    },
+    "prompt": "用来源案例 lemo-swiss-motion 的原作 render(t) 重放“网格即乐谱”。score.json 同时被画面和 music/score.py 读取，column 对应 A 多利亚调音高、row 对应八分音符起音、length 对应音长；旋转与标签先后完成后，playRow 扫到条块起点时染红并播放对应音符。保留参数：film/score.json:cols / midi / final：7列 A/B/C/D/E/F#/G，对应 MIDI 57/59/60/62/64/66/67；16行，每行 E8=.25 秒。；film/film.js:T / drawUnits / drawScoreLabels / renderFilm：rotD=.75 秒；playRow=(t−32)/.25；film/score.json:timeline.sweep=[32,36]。；film/film.js:PW/PH/CW/RH：海报706×1008，格91×40，条宽 CW−8，相邻段多画1px；source/music/score.py 从同一 final.lead/bass 取起音与音长。。按 index.html 的 segments 把巧思时间映射到原片 29.25–36.25 秒，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/grid-reveals-score/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-swiss-motion"
+      }
+    ],
+    "previewAt": 4.25,
+    "markers": [
+      {
+        "t": 0,
+        "label": "网格即乐谱"
+      },
+      {
+        "t": 4.25,
+        "label": "机制展开"
+      }
+    ],
+    "preview": "previews/patterns/grid-reveals-score.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-swiss-motion",
+      "bundle": "agent/cases/lemo-swiss-motion.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 网格即乐谱\n\n## 实现 Prompt\n\n用来源案例 lemo-swiss-motion 的原作 render(t) 重放“网格即乐谱”。score.json 同时被画面和 music/score.py 读取，column 对应 A 多利亚调音高、row 对应八分音符起音、length 对应音长；旋转与标签先后完成后，playRow 扫到条块起点时染红并播放对应音符。保留参数：film/score.json:cols / midi / final：7列 A/B/C/D/E/F#/G，对应 MIDI 57/59/60/62/64/66/67；16行，每行 E8=.25 秒。；film/film.js:T / drawUnits / drawScoreLabels / renderFilm：rotD=.75 秒；playRow=(t−32)/.25；film/score.json:timeline.sweep=[32,36]。；film/film.js:PW/PH/CW/RH：海报706×1008，格91×40，条宽 CW−8，相邻段多画1px；source/music/score.py 从同一 final.lead/bass 取起音与音长。。按 index.html 的 segments 把巧思时间映射到原片 29.25–36.25 秒，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **来源片段**：29.25–36.25 秒；29.25–30 秒旋转，30.5 秒标签开始，32–36 秒两小节扫奏。\n\n[打开 Demo](../../demos/patterns/grid-reveals-score/index.html) · [在库中查看](../../patterns.html#pattern/grid-reveals-score)\n"
+  },
+  "entrypoint": "demos/patterns/grid-reveals-score/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-swiss-motion/LICENSES.md",
+      "bytes": 1382,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/CREDITS",
+      "bytes": 1092,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/film.m4a",
+      "bytes": 1438198,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fidelity.md",
+      "bytes": 5264,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/ease.js",
+      "bytes": 1851,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/film.js",
+      "bytes": 30232,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/index.html",
+      "bytes": 355,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/lines.json",
+      "bytes": 967,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/main.js",
+      "bytes": 878,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/score.json",
+      "bytes": 2138,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/voices/dur.json",
+      "bytes": 116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/voices/words_rel.json",
+      "bytes": 301,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/Archivo-VF.ttf",
+      "bytes": 658596,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/DMSerifDisplay-Regular.ttf",
+      "bytes": 76580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/OFL-Archivo.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/OFL-DMSerifDisplay.txt",
+      "bytes": 4512,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/OFL-UnifrakturMaguntia.txt",
+      "bytes": 4417,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/UnifrakturMaguntia-Regular.ttf",
+      "bytes": 88508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/fonts.css",
+      "bytes": 357,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/index.html",
+      "bytes": 2658,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/CREDITS",
+      "bytes": 1092,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/README.md",
+      "bytes": 3100,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/build.sh",
+      "bytes": 1591,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/events.json",
+      "bytes": 5043,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/mix.py",
+      "bytes": 6334,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/music/score.py",
+      "bytes": 9315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/music/score_meta.json",
+      "bytes": 778,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/tools/subs.py",
+      "bytes": 724,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/tools/words.py",
+      "bytes": 1150,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/voices/words.json",
+      "bytes": 1021,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/grid-reveals-score/index.html",
+      "bytes": 862,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/grid-reveals-score/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-swiss-motion.json",
+      "bytes": 11857,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/grid-reveals-score.json",
+      "bytes": 3532,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/grid-reveals-score.jpg",
+      "bytes": 54218,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "push-through-window",
+  "pattern": {
+    "id": "push-through-window",
+    "order": 19,
+    "title": "穿窗推镜",
+    "types": [
+      "camera",
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "从城市主窗连续推进到室内，重放预备拉回、穿窗过冲、速度条、闪白与到达镜震。",
+    "mechanism": "推镜前预备拉回，穿过窗口时过冲弹定，配放射速度条、单帧闪白与到达两帧镜震，回摆结束后继续向室内推进。",
+    "trigger": "镜头依次进入预备拉回、推进、穿玻璃和到达节点时。",
+    "effect": "嵌入主窗的室内沿用同一世界坐标并填满画面；速度条、亮闪和短帧镜震共同标记穿窗与到达。",
+    "timing": [
+      {
+        "name": "预备拉回",
+        "value": "86/30–90/30=2.867–3.000秒；A0=-.05；p=A0*E.ioQ(inv(camAntic,push,t))。"
+      },
+      {
+        "name": "连通推进",
+        "value": "90/30–105/30=3.000–3.500秒；S1=1920/64=30；NP=2.2；s=exp(lerp(log(1.12),log(30),p))。"
+      },
+      {
+        "name": "过冲弹定",
+        "value": "105/30–115/30=3.500–3.833秒；OB=1.2；kA=NP/(tg-tp)，kB=(OB+3)/(tS-tg)，PG=(kB+A0*kA)/(kA+kB)。"
+      },
+      {
+        "name": "放射速度条",
+        "value": "22条；f0=102+i%3；各持续2帧；ra=r0+320*u；len=200+rng*300。"
+      },
+      {
+        "name": "穿窗闪白",
+        "value": "fr===105；fill=#FFF6E9；持续1/30=.033秒。"
+      },
+      {
+        "name": "到达镜震",
+        "value": "112帧s*=1.03、cy-=9/s；113帧s*=.988、cx+=7/s。"
+      },
+      {
+        "name": "室内续推",
+        "value": "115/30–160/30=3.833–5.333秒；s*=1+.14*w；cx=P.x+100/S1*w；cy=P.y-40/S1*w。"
+      }
+    ],
+    "useCases": [
+      "街景进入室内",
+      "窗口作为镜头入口",
+      "连续推镜的穿越节点"
+    ],
+    "avoid": [
+      "竖屏重排",
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放穿窗推镜。保留86/30–90/30秒的负向预备、90/30–105/30秒的加速推进与105/30–115/30秒的过冲弹定；缩放按对数尺度计算，NP=2.2、OB=1.2。保留22条分三批出现且各持续2帧的速度条、105帧奶油色闪片、112与113帧的到达镜震，以及115/30–160/30秒的室内续推。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。",
+    "demo": "demos/patterns/push-through-window/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-flat-vector"
+      },
+      {
+        "caseId": "lemo-circuit-board"
+      }
+    ],
+    "previewAt": 1.3333333333333335,
+    "markers": [
+      {
+        "t": 0,
+        "label": "主窗入口"
+      },
+      {
+        "t": 0.20000000000000018,
+        "label": "预备拉回"
+      },
+      {
+        "t": 0.3333333333333335,
+        "label": "连续推镜"
+      },
+      {
+        "t": 0.7333333333333334,
+        "label": "放射速度条"
+      },
+      {
+        "t": 0.8333333333333335,
+        "label": "穿窗闪白"
+      },
+      {
+        "t": 1.0666666666666669,
+        "label": "到达镜震"
+      },
+      {
+        "t": 1.166666666666667,
+        "label": "室内续推"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#2B2BFF",
+        "#FF5A4E",
+        "#FFC62B",
+        "#2EE6A8",
+        "#FFF6E9",
+        "#151433"
+      ],
+      "type": "Fredoka 600、700；Resource Han Rounded CN Bold 700。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "lemo-circuit-board · 水流、交流和直流各有光的运动方式",
+        "value": "film/src/main.js:camStreet在34–34.6秒锁定SK.holeL，z从8.6×1.06对数推到2600；34.6秒换到charger层的LPAD，以2400→20反向退出，35.35秒显出充电器；孔内黑区承担尺度交接。"
+      }
+    ],
+    "preview": "previews/patterns/push-through-window.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-flat-vector",
+      "bundle": "agent/cases/mg-flat-vector.json"
+    },
+    {
+      "caseId": "lemo-circuit-board",
+      "bundle": "agent/cases/lemo-circuit-board.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 穿窗推镜\n\n## 实现 Prompt\n\n复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放穿窗推镜。保留86/30–90/30秒的负向预备、90/30–105/30秒的加速推进与105/30–115/30秒的过冲弹定；缩放按对数尺度计算，NP=2.2、OB=1.2。保留22条分三批出现且各持续2帧的速度条、105帧奶油色闪片、112与113帧的到达镜震，以及115/30–160/30秒的室内续推。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。\n\n## 参数\n\n- **预备拉回**：86/30–90/30=2.867–3.000秒；A0=-.05；p=A0*E.ioQ(inv(camAntic,push,t))。\n- **连通推进**：90/30–105/30=3.000–3.500秒；S1=1920/64=30；NP=2.2；s=exp(lerp(log(1.12),log(30),p))。\n- **过冲弹定**：105/30–115/30=3.500–3.833秒；OB=1.2；kA=NP/(tg-tp)，kB=(OB+3)/(tS-tg)，PG=(kB+A0*kA)/(kA+kB)。\n- **放射速度条**：22条；f0=102+i%3；各持续2帧；ra=r0+320*u；len=200+rng*300。\n- **穿窗闪白**：fr===105；fill=#FFF6E9；持续1/30=.033秒。\n- **到达镜震**：112帧s*=1.03、cy-=9/s；113帧s*=.988、cx+=7/s。\n- **室内续推**：115/30–160/30=3.833–5.333秒；s*=1+.14*w；cx=P.x+100/S1*w；cy=P.y-40/S1*w。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/push-through-window/index.html) · [在库中查看](../../patterns.html#pattern/push-through-window)\n"
+  },
+  "entrypoint": "demos/patterns/push-through-window/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-circuit-board/LICENSES.md",
+      "bytes": 572,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/CREDITS",
+      "bytes": 1695,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/VOICE.txt",
+      "bytes": 267,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/film.m4a",
+      "bytes": 1882472,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fidelity.md",
+      "bytes": 5107,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/data/subs_en.json",
+      "bytes": 1145,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/index.html",
+      "bytes": 445,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/charger.js",
+      "bytes": 7870,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/city.js",
+      "bytes": 4943,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/font.js",
+      "bytes": 9546,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/geo.js",
+      "bytes": 3640,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/hanzi.js",
+      "bytes": 9707,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/house.js",
+      "bytes": 6946,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/levels.js",
+      "bytes": 3041,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/loss.js",
+      "bytes": 2035,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/main.js",
+      "bytes": 24894,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/palette.js",
+      "bytes": 1046,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/parts.js",
+      "bytes": 10979,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/post.js",
+      "bytes": 3965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/render.js",
+      "bytes": 28647,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/world.js",
+      "bytes": 28070,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/voice/dur.json",
+      "bytes": 167,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/voice/lines.json",
+      "bytes": 1645,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fonts/NotoSansSC-Medium-sub.ttf",
+      "bytes": 50388,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fonts/OFL-NotoSansSC.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fonts/fonts.css",
+      "bytes": 81,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/index.html",
+      "bytes": 2671,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/CREDITS",
+      "bytes": 1695,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/FACTS.md",
+      "bytes": 5801,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/README.md",
+      "bytes": 2876,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/audio.py",
+      "bytes": 13179,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/build.sh",
+      "bytes": 3347,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/events.json",
+      "bytes": 3534,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/tools/sheet.sh",
+      "bytes": 510,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/tools/srt.py",
+      "bytes": 1062,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/tools/subset.py",
+      "bytes": 1362,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/voice/words.json",
+      "bytes": 6477,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/voice_en/dur.json",
+      "bytes": 165,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/voice_en/lines.json",
+      "bytes": 2946,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/LICENSES.md",
+      "bytes": 789,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/audio/film.m4a",
+      "bytes": 346596,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fidelity.md",
+      "bytes": 3942,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/cues.json",
+      "bytes": 906,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/scene.js",
+      "bytes": 63477,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/setup.js",
+      "bytes": 206,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/style.css",
+      "bytes": 111,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka[wdth,wght].ttf",
+      "bytes": 159184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRounded-OFL.txt",
+      "bytes": 4504,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRoundedCN-Bold.ttf",
+      "bytes": 13978508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/fonts.css",
+      "bytes": 376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/index.html",
+      "bytes": 2596,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/audio.py",
+      "bytes": 7610,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/cues.json",
+      "bytes": 906,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/push-through-window/index.html",
+      "bytes": 1682,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/push-through-window/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-circuit-board.json",
+      "bytes": 11419,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-flat-vector.json",
+      "bytes": 21215,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/push-through-window.json",
+      "bytes": 4326,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/push-through-window.jpg",
+      "bytes": 44845,
+      "role": "preview"
+    }
+  ]
+}

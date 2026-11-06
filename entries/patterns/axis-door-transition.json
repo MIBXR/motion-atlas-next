@@ -1,0 +1,65 @@
+{
+  "id": "axis-door-transition",
+  "order": 128,
+  "title": "中轴开门转场",
+  "types": [
+    "transition",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "旧镜头画面从中缝分开，成为左右两片门扇，以左右外缘为铰链。门扇在水平方向缩短，并加上阴影，露出新镜头；结尾两片电梯门反向合拢。",
+  "mechanism": "旧镜头画面从中缝分开，成为左右两片门扇，以左右外缘为铰链。门扇在水平方向缩短，并加上阴影，露出新镜头；结尾两片电梯门反向合拢。",
+  "trigger": "拱门、楼梯门、厨房门与电梯门节点。",
+  "effect": "转场保持中轴连续，门扇既是场景内部结构，也是转场载体。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "4.900000–6.550000秒；1倍速，共1.650000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "分门",
+      "value": "film/film.js:44–65：e=eio(seg(p,.12,1))，每扇w=960*(1−e)，旧画面左右半幅被缩放到外侧，门边阴影强度.55*e。"
+    },
+    {
+      "name": "门表",
+      "value": "film/film.js:32–40：archOpen→street、snare→stair、doors→ROOF0采用split；DOORS0→DOORS1用close，关闭后显示片尾。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-art-deco/film/film.js",
+    "demos/cases/lemo-art-deco/film/scenes/lobby.js"
+  ],
+  "locator": "film.js / scenes/lobby.js",
+  "useCases": [
+    "转场保持中轴连续，门扇既是场景内部结构，也是转场载体。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-art-deco的原作render(t)，重放“中轴开门转场”。旧镜头成为从中缝分开的左右门扇，左右外缘为铰链，门扇在水平方向缩短并加阴影露出新镜；结尾两片电梯门反向合拢。参数与源码：film/film.js:44–65：e=eio(seg(p,.12,1))，每扇w=960*(1−e)，旧画面左右半幅被缩放到外侧，门边阴影强度.55*e。；film/film.js:32–40：archOpen→street、snare→stair、doors→ROOF0采用split；DOORS0→DOORS1用close，关闭后显示片尾。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/axis-door-transition/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-art-deco"
+    }
+  ],
+  "previewAt": 0.85,
+  "markers": [
+    {
+      "t": 0,
+      "label": "中轴开门转场"
+    }
+  ]
+}

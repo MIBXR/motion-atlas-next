@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "pen-led-camera",
+  "pattern": {
+    "id": "pen-led-camera",
+    "order": 39,
+    "title": "笔尖牵引镜头与停笔节奏",
+    "types": [
+      "camera",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "镜头跟随笔尖，转角减速、停笔时刹停、续笔后追赶，最后拉远，呈现完整海报。",
+    "mechanism": "笔尖在转角密集处按加权路径长度减速，并在重复标记处停笔；镜头以高斯采样跟随，停笔时刹停、续笔后追赶，再把焦点交给标志和海报。",
+    "trigger": "笔尖进入转角、重复路径标记、标志聚焦和海报拉远节点时。",
+    "effect": "描绘、镜头和笔触声音共享停顿节奏，画面从局部跟随过渡到标志与完整海报的构图。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "0–10秒，1倍速；巧思时长10秒。"
+      },
+      {
+        "name": "转角减速",
+        "value": "const KCORN = 9; (1 + KCORN * Math.min(CORN[i], 0.3))。"
+      },
+      {
+        "name": "停笔区间",
+        "value": "2.083–2.233、3.5–3.65、4.75–4.9秒。"
+      },
+      {
+        "name": "镜头刹停追赶",
+        "value": "const HA = 0.133, HR = 0.5; const dt = k * 0.05；sigma: 0.3；lead: 0.08；hook lag: 0.067。"
+      },
+      {
+        "name": "焦点交接",
+        "value": "logo_from: 6.0；logo_to: 7.3；poster_from: 7.8；poster_to: 9.0；end_push amount: 0.03。"
+      },
+      {
+        "name": "笔触响度",
+        "value": "env = np.clip(spd / 3000.0, 0, 1) ** 0.6 * (tt < T_END + 0.02)；env = filters.lpf(env.astype(np.float32), 30.0)。"
+      }
+    ],
+    "useCases": [
+      "笔尖跟随镜头",
+      "连续路径的转角停顿",
+      "从局部描绘拉远，呈现海报"
+    ],
+    "avoid": [
+      "竖屏重排",
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 以1倍速重放原片0–10秒，巧思时长10秒。笔尖在转角密集处按加权路径长度减速，并在重复标记处停笔；镜头以高斯采样跟随，随停笔刹停与续笔追赶，再把焦点交给标志和海报。const KCORN = 9; (1 + KCORN * Math.min(CORN[i], 0.3))。2.083–2.233、3.5–3.65、4.75–4.9秒。const HA = 0.133, HR = 0.5; const dt = k * 0.05；sigma: 0.3；lead: 0.08；hook lag: 0.067。logo_from: 6.0；logo_to: 7.3；poster_from: 7.8；poster_to: 9.0；end_push amount: 0.03。env = np.clip(spd / 3000.0, 0, 1) ** 0.6 * (tt < T_END + 0.02)；env = filters.lpf(env.astype(np.float32), 30.0)。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。",
+    "demo": "demos/patterns/pen-led-camera/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-line-art"
+      },
+      {
+        "caseId": "lemo-whiteboard"
+      }
+    ],
+    "previewAt": 9.75,
+    "markers": [
+      {
+        "t": 0,
+        "label": "笔尖跟随"
+      },
+      {
+        "t": 0.2,
+        "label": "墨线刹停"
+      },
+      {
+        "t": 2.083,
+        "label": "屋梁停笔"
+      },
+      {
+        "t": 2.233,
+        "label": "续笔追赶"
+      },
+      {
+        "t": 3.5,
+        "label": "高塔停笔"
+      },
+      {
+        "t": 3.65,
+        "label": "续画塔身"
+      },
+      {
+        "t": 4.75,
+        "label": "尖塔停笔"
+      },
+      {
+        "t": 4.9,
+        "label": "地平续笔"
+      },
+      {
+        "t": 6,
+        "label": "聚焦标志"
+      },
+      {
+        "t": 7.8,
+        "label": "海报拉远"
+      },
+      {
+        "t": 9,
+        "label": "海报落定"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#0B1320",
+        "#E9D7A5",
+        "#967D50",
+        "#FFF6DC"
+      ],
+      "type": "Cormorant Garamond 500；Noto Serif SC 300。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "白板上的引线跟镜",
+        "value": "lemo-whiteboard：film/film.js:134–141、280–305：信号线24.75–27.55秒由卫星画向手机，cam键24.9→28秒从(3900,1640)移到(1900,2460)，随后30.3秒到公式；14.5–16.6秒镜头沿新画轨道横移。"
+      }
+    ],
+    "preview": "previews/patterns/pen-led-camera.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-line-art",
+      "bundle": "agent/cases/mg-line-art.json"
+    },
+    {
+      "caseId": "lemo-whiteboard",
+      "bundle": "agent/cases/lemo-whiteboard.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 笔尖牵引镜头与停笔节奏\n\n## 实现 Prompt\n\n复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 以1倍速重放原片0–10秒，巧思时长10秒。笔尖在转角密集处按加权路径长度减速，并在重复标记处停笔；镜头以高斯采样跟随，随停笔刹停与续笔追赶，再把焦点交给标志和海报。const KCORN = 9; (1 + KCORN * Math.min(CORN[i], 0.3))。2.083–2.233、3.5–3.65、4.75–4.9秒。const HA = 0.133, HR = 0.5; const dt = k * 0.05；sigma: 0.3；lead: 0.08；hook lag: 0.067。logo_from: 6.0；logo_to: 7.3；poster_from: 7.8；poster_to: 9.0；end_push amount: 0.03。env = np.clip(spd / 3000.0, 0, 1) ** 0.6 * (tt < T_END + 0.02)；env = filters.lpf(env.astype(np.float32), 30.0)。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：0–10秒，1倍速；巧思时长10秒。\n- **转角减速**：const KCORN = 9; (1 + KCORN * Math.min(CORN[i], 0.3))。\n- **停笔区间**：2.083–2.233、3.5–3.65、4.75–4.9秒。\n- **镜头刹停追赶**：const HA = 0.133, HR = 0.5; const dt = k * 0.05；sigma: 0.3；lead: 0.08；hook lag: 0.067。\n- **焦点交接**：logo_from: 6.0；logo_to: 7.3；poster_from: 7.8；poster_to: 9.0；end_push amount: 0.03。\n- **笔触响度**：env = np.clip(spd / 3000.0, 0, 1) ** 0.6 * (tt < T_END + 0.02)；env = filters.lpf(env.astype(np.float32), 30.0)。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/pen-led-camera/index.html) · [在库中查看](../../patterns.html#pattern/pen-led-camera)\n"
+  },
+  "entrypoint": "demos/patterns/pen-led-camera/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-whiteboard/LICENSES.md",
+      "bytes": 1190,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CREDITS",
+      "bytes": 1394,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/film.m4a",
+      "bytes": 3730104,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fidelity.md",
+      "bytes": 4438,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/engine/wb.js",
+      "bytes": 32649,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/film.js",
+      "bytes": 30965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/index.html",
+      "bytes": 419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/lines.json",
+      "bytes": 3405,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/main.js",
+      "bytes": 421,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/voices/words.json",
+      "bytes": 4364,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/ArchitectsDaughter-Regular.ttf",
+      "bytes": 43352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/EMSTech.json",
+      "bytes": 35406,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/OFL-ArchitectsDaughter.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/OFL-EMSTech.txt",
+      "bytes": 442,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/fonts.css",
+      "bytes": 69,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/index.html",
+      "bytes": 2466,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/CREDITS",
+      "bytes": 1394,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/README.md",
+      "bytes": 3040,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/build.sh",
+      "bytes": 1588,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/events.json",
+      "bytes": 101156,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/mix.py",
+      "bytes": 12101,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/music.py",
+      "bytes": 13249,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/test.js",
+      "bytes": 1354,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/asr_check.py",
+      "bytes": 1502,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/cuecheck.py",
+      "bytes": 1716,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/subs.mjs",
+      "bytes": 669,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/svgfont2json.py",
+      "bytes": 997,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/voices/dur.json",
+      "bytes": 316,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/LICENSES.md",
+      "bytes": 789,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/audio/film.m4a",
+      "bytes": 401088,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fidelity.md",
+      "bytes": 5828,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/cues.json",
+      "bytes": 3214,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/film.js",
+      "bytes": 33052,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/setup.js",
+      "bytes": 207,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/style.css",
+      "bytes": 193,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/CormorantGaramond-OFL.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/CormorantGaramond[wght].ttf",
+      "bytes": 1195560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/NotoSerifSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/NotoSerifSC-VF.ttf",
+      "bytes": 25125232,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/fonts.css",
+      "bytes": 352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/index.html",
+      "bytes": 2256,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/assets/fonts/fonts.css",
+      "bytes": 9135,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/audio.py",
+      "bytes": 9978,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/cues.json",
+      "bytes": 3214,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/film.js",
+      "bytes": 46982,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/index.html",
+      "bytes": 566,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/out/timing.json",
+      "bytes": 8840,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/tools/dump_timing.mjs",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/tools/retime.py",
+      "bytes": 4430,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/pen-led-camera/index.html",
+      "bytes": 1863,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/pen-led-camera/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-whiteboard.json",
+      "bytes": 11372,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-line-art.json",
+      "bytes": 19614,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/pen-led-camera.json",
+      "bytes": 4598,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/pen-led-camera.jpg",
+      "bytes": 36348,
+      "role": "preview"
+    }
+  ]
+}

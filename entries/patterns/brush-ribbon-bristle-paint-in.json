@@ -1,0 +1,78 @@
+{
+  "id": "brush-ribbon-bristle-paint-in",
+  "order": 88,
+  "title": "色带飞白逐笔画入",
+  "types": [
+    "texture",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "变宽的半透明色带与断续毛刷叠成飞白，植物按结构顺序画入，画完后以缓存精灵呈现并摇曳。",
+  "mechanism": "mk 为中心线生成宽度轮廓与噪声边缘，drawS 先填色带，再画断续毛刷；drawList 按顺序分配笔画进度，sprite 缓存画完的物体，scene.js 的 plantP 由物体进入屏幕的距离驱动。",
+  "trigger": "初始刷边揭景，或植物从右侧进入可视范围。",
+  "effect": "树干、枝条、叶群连续长成，交叠加深且纸白透出，完成后只保留轻微摇曳。",
+  "timing": [
+    {
+      "name": "来源片段",
+      "value": "10.2–22.8 秒，覆盖刷边揭景与沙漠标本入场。"
+    },
+    {
+      "name": "逐笔份额",
+      "value": "film/engine.js:drawList：dur=clamp(4/N,.12,.5)，第 j 笔从 j/N*(1−dur) 起。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "色带与毛刷",
+      "value": "film/engine.js:mk / drawS：rough=.22；w≥6 时 nb=clamp(round(w/3.2),3,9)，body 默认 a*.62，毛刷 alpha .3–.85、end .72–1，实线段 18–90px。"
+    },
+    {
+      "name": "入画与缓存",
+      "value": "film/scene.js:add / plantP / drawPlants：span 默认 380px；REV 在 10.2–13.4 秒从 −300 到 1650；完成时画 spr，未完成时画 drawList。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-watercolor/film/engine.js",
+    "demos/cases/lemo-watercolor/film/scene.js"
+  ],
+  "locator": "mk / drawS / drawList / sprite / plantP / drawPlants",
+  "useCases": [
+    "树干、枝条、叶群连续长成，交叠加深且纸白透出，完成后只保留轻微摇曳。"
+  ],
+  "avoid": [
+    "在该片段内叠加第二条争夺注意的主动作"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "gradient-walk-dolly"
+    ],
+    "conflicts": [],
+    "notes": "适合纸材质下的标本揭示，与沿梯度横移配合。"
+  },
+  "prompt": "用来源案例 lemo-watercolor 的原作 render(t) 重放“色带飞白逐笔画入”。mk 为中心线生成宽度轮廓与噪声边缘，drawS 先填色带，再画断续毛刷；drawList 顺序分配笔画进度，sprite 缓存完成物体，scene.js 的 plantP 由屏幕入场距离推动。保留参数：film/engine.js:mk / drawS：rough=.22；w≥6 时 nb=clamp(round(w/3.2),3,9)，body 默认 a*.62，毛刷 alpha .3–.85、end .72–1，实线段 18–90px。；film/scene.js:add / plantP / drawPlants：span 默认 380px；REV 在 10.2–13.4 秒从 −300 到 1650；完成时画 spr，未完成时画 drawList。。按 index.html 的 segments 把巧思时间映射到原片 10.2–22.8 秒，复用原作字体、素材与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/brush-ribbon-bristle-paint-in/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-watercolor"
+    }
+  ],
+  "previewAt": 6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "色带飞白逐笔画入"
+    },
+    {
+      "t": 6,
+      "label": "机制展开"
+    }
+  ]
+}

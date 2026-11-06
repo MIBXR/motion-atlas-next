@@ -1,0 +1,65 @@
+{
+  "id": "symbol-becomes-real",
+  "order": 121,
+  "title": "图符成真",
+  "types": [
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "纸上的修订云线保留同一云轮廓，转成有统一体积渐变、光晕与投影的实体云，原位置留下未曝光痕迹。",
+  "mechanism": "纸上的修订云线保留同一云轮廓，转成有统一体积渐变、光晕与投影的实体云，原位置留下未曝光痕迹。",
+  "trigger": "修订完成后B(14)的两次puff。",
+  "effect": "制图约定成为能被机器接住并下雨的物体，线稿世界的规则在一个节点改变。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "27.500000–31.700000秒；1倍速，共4.200000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "云形体积",
+      "value": "film/sheet.js:143–211的revCloud：15个轮廓波瓣与4个内瓣，以union统一填渐变；高光、union减位移蒙版与阴影由pf/lift驱动。"
+    },
+    {
+      "name": "叙事时刻",
+      "value": "film/film.js:171–184、241–286：revision/cloud参数驱动；B(14)=28.888889秒，B(15)=31.111111秒接住云。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-blueprint/film/sheet.js",
+    "demos/cases/lemo-blueprint/film/film.js"
+  ],
+  "locator": "sheet.js / film.js",
+  "useCases": [
+    "制图约定成为能被机器接住并下雨的物体，线稿世界的规则在一个节点改变。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-blueprint的原作render(t)，重放“图符成真”。纸上的修订云线保留同一云轮廓，转成有统一体积渐变、光晕与投影的实体云，原位置留下未曝光痕迹。参数与源码：film/sheet.js:143–211的revCloud：15个轮廓波瓣与4个内瓣，以union统一填渐变；高光、union减位移蒙版与阴影由pf/lift驱动。；film/film.js:171–184、241–286：revision/cloud参数驱动；B(14)=28.888889秒，B(15)=31.111111秒接住云。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/symbol-becomes-real/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-blueprint"
+    }
+  ],
+  "previewAt": 2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "图符成真"
+    }
+  ],
+  "renderer": "gpu"
+}

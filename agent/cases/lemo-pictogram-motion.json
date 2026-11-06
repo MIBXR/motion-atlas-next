@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-pictogram-motion",
+  "entry": {
+    "id": "lemo-pictogram-motion",
+    "order": 45,
+    "title": "被落下的伞 · 象形运动图形",
+    "subtitle": "Left Behind",
+    "carriers": [
+      "video"
+    ],
+    "style": "graphic-type",
+    "purpose": "story",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "象形运动图形",
+      "图形与排版",
+      "代码影片"
+    ],
+    "summary": "一把黄伞被落在公交车上，晴天里随车到终点，加入失物招领的312把伞；暴雨回来，313把伞同时撑开、变黄，伞墙成为网格纹样，再把干燥脚印送回雨中。",
+    "focus": "同一套圆盘、半圆、胶囊与圆头线构成伞、公交、天气和纹样；一个物件的故事从单个象形符号扩大到整墙。",
+    "accent": "#f2ba1d",
+    "background": "#24457d",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 9.2,
+    "rhythm": {
+      "duration": 50,
+      "bpm": 120,
+      "beats": [
+        {
+          "t": 0,
+          "label": "雨中开伞",
+          "note": "雨中开伞"
+        },
+        {
+          "t": 2.5,
+          "label": "伞留车内",
+          "note": "伞留车内"
+        },
+        {
+          "t": 3.88,
+          "label": "雨天转晴",
+          "note": "雨天转晴"
+        },
+        {
+          "t": 4.5,
+          "label": "脚印下车",
+          "note": "脚印下车"
+        },
+        {
+          "t": 6.5,
+          "label": "被落下的伞",
+          "note": "被落下的伞"
+        },
+        {
+          "t": 10.5,
+          "label": "逐站横移",
+          "note": "逐站横移"
+        },
+        {
+          "t": 13.5,
+          "label": "一秒一张时钟卡",
+          "note": "一秒一张时钟卡"
+        },
+        {
+          "t": 16.5,
+          "label": "终点站",
+          "note": "终点站"
+        },
+        {
+          "t": 18.5,
+          "label": "失物招领",
+          "note": "失物招领"
+        },
+        {
+          "t": 21.5,
+          "label": "拉远与计数313",
+          "note": "拉远与计数313"
+        },
+        {
+          "t": 25,
+          "label": "晴天等待",
+          "note": "晴天等待"
+        },
+        {
+          "t": 28,
+          "label": "暴雨回来",
+          "note": "暴雨回来"
+        },
+        {
+          "t": 31,
+          "label": "湿站台与干货架",
+          "note": "湿站台与干货架"
+        },
+        {
+          "t": 34,
+          "label": "拿一把",
+          "note": "拿一把"
+        },
+        {
+          "t": 36.5,
+          "label": "伞墙开成纹样",
+          "note": "伞墙开成纹样"
+        },
+        {
+          "t": 40.5,
+          "label": "每一站",
+          "note": "每一站"
+        },
+        {
+          "t": 44,
+          "label": "雨中的回声",
+          "note": "雨中的回声"
+        },
+        {
+          "t": 46.5,
+          "label": "网格片尾",
+          "note": "网格片尾"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 6.5,
+        "from": 0.5,
+        "to": 0.35,
+        "label": "雨转晴与遗落"
+      },
+      {
+        "t0": 6.5,
+        "t1": 13.5,
+        "from": 0.6,
+        "to": 0.75,
+        "label": "片名与沿线"
+      },
+      {
+        "t0": 13.5,
+        "t1": 18.5,
+        "from": 0.7,
+        "to": 0.45,
+        "label": "一整天"
+      },
+      {
+        "t0": 18.5,
+        "t1": 25,
+        "from": 0.6,
+        "to": 0.8,
+        "label": "失物架与计数"
+      },
+      {
+        "t0": 25,
+        "t1": 28,
+        "from": 0.3,
+        "to": 0.05,
+        "label": "晴天等待"
+      },
+      {
+        "t0": 28,
+        "t1": 31,
+        "from": 0.95,
+        "to": 0.8,
+        "label": "暴雨"
+      },
+      {
+        "t0": 31,
+        "t1": 36.5,
+        "from": 0.55,
+        "to": 0.1,
+        "label": "分屏与开门"
+      },
+      {
+        "t0": 36.5,
+        "t1": 40.5,
+        "from": 1,
+        "to": 0.9,
+        "label": "伞墙成纹"
+      },
+      {
+        "t0": 40.5,
+        "t1": 44,
+        "from": 0.85,
+        "to": 0.7,
+        "label": "送往每站"
+      },
+      {
+        "t0": 44,
+        "t1": 50,
+        "from": 0.5,
+        "to": 0.08,
+        "label": "雨中回声与片尾"
+      }
+    ],
+    "energyNote": "段落划分依据上游DEMO.md Shots与作品时间表；0–1数值是按画面密度、配乐与静默作出的相对编辑标注。",
+    "observations": [
+      "同一套圆盘、半圆、胶囊与圆头线构成伞、公交、天气和纹样；一个物件的故事从单个象形符号扩大到整墙。",
+      "横向整行交错、网格翻转、列坠落和四分圆切换；313把伞逐圈开合、按行变黄，再在半格错动中成为纹样。",
+      "伞冠是纹样半圆，舞台圆盘兼作时钟，交通站点与12格HUD和音符共用节点。"
+    ],
+    "composition": {
+      "color": "海军蓝、青绿、天蓝、珊瑚、信号黄与暴雨深墨各五阶；黄伞在早段是唯一暖色。",
+      "layout": "1920×1080、24fps；180px网格分为六行，标题与图符舞台分列，角落设有LINE 4时钟、章节天气与12站刻度。",
+      "imagery": "Canvas2D的圆、半圆、胶囊和圆头线绘制公交、伞、脚印、云雨、失物架与图案；字从遮罩下滑出。",
+      "motion": "横向整行交错、网格翻转、列坠落和四分圆切换；313把伞逐圈开合、按行变黄，再在半格错动中成为纹样。",
+      "sound": "Kokoro bf_emma旁白，电子底鼓、马林巴、钟琴、弓奏颤音琴和低音采样；开伞、脚步、公交、百叶门、雨与雷拟音。",
+      "rhythm": "120BPM，.5秒一拍；车站每拍掠过、时钟卡一秒一张，24秒计数落定，暴雨前只留时钟。",
+      "coherence": "伞冠是纹样半圆，舞台圆盘兼作时钟，交通站点与12格HUD和音符共用节点。",
+      "typography": "Inter Tight 900巨型标题；Noto Sans SC 700/900中文；DM Mono 500的HUD、标签和英语字幕。"
+    },
+    "layers": [
+      {
+        "name": "网格背景",
+        "role": "五阶单色图案、按行位移和格状转场。"
+      },
+      {
+        "name": "图符与物件",
+        "role": "黄伞、公交、脚印、货架与天气。"
+      },
+      {
+        "name": "排版与HUD",
+        "role": "双语标题、字幕、站点刻度、计数与时间。"
+      }
+    ],
+    "tokens": {
+      "palette": [],
+      "type": "Inter Tight 900巨型标题；Noto Sans SC 700/900中文；DM Mono 500的HUD、标签和英语字幕。",
+      "motion": [
+        {
+          "name": "伞墙成纹",
+          "value": "film/film.js:476–512、643–655：20×16格、格90，七格杂物、313把伞；bloomOpen按距离延迟.014，37.5秒起按行变黄。"
+        },
+        {
+          "name": "计数落定",
+          "value": "film/film.js:523–548：22.1–24秒按o3从1计到313；24秒起scale=1+.07×exp(−9Δt)，以90、470为锚点。"
+        }
+      ]
+    },
+    "useCases": [
+      "公共服务短片",
+      "城市物件故事",
+      "品牌活动识别"
+    ],
+    "avoid": [
+      "需要真人实拍或摄影素材作为主画面的作品"
+    ],
+    "constraints": [
+      "改字体与文案时按原作字体载入和子集范围同步取得资源。",
+      "图形、着色器与时间线通过film内原作render(t)绘制，音轨沿用成片混音。"
+    ],
+    "migration": [
+      {
+        "field": "film/engine.js → G.PAL / motif / umbrella",
+        "how": "修改色板、网格纹样与象形符号。"
+      },
+      {
+        "field": "film/film.js → SHOTS / TRANS / EV",
+        "how": "修改故事、镜头、转场与画音事件。"
+      },
+      {
+        "field": "film/voice/cues.js",
+        "how": "修改双语字幕与旁白时刻。"
+      }
+    ],
+    "prompt": "制作一支象形运动图形代码影片。一把黄伞被落在公交车上，晴天里随车到终点，加入失物招领的312把伞；暴雨回来，313把伞同时撑开、变黄，伞墙成为网格纹样，再把干燥脚印送回雨中。同一套圆盘、半圆、胶囊与圆头线构成伞、公交、天气和纹样；一个物件的故事从单个象形符号扩大到整墙。海军蓝、青绿、天蓝、珊瑚、信号黄与暴雨深墨各五阶；黄伞在早段是唯一暖色。1920×1080、24fps；180px网格六行，标题与图符舞台分列，角落LINE 4时钟、章节天气与12站刻度。横向整行交错、网格翻转、列坠落和四分圆切换；313把伞逐圈开合、按行变黄，再在半格错动中成为纹样。字体：Inter Tight 900巨型标题；Noto Sans SC 700/900中文；DM Mono 500的HUD、标签和英语字幕。声音：Kokoro bf_emma旁白，电子底鼓、马林巴、钟琴、弓奏颤音琴和低音采样；开伞、脚步、公交、百叶门、雨与雷拟音。按film目录的原作render(t)组织镜头与动作，采用MotionKit时间线逐帧定位，声音默认关闭。",
+    "demo": "demos/cases/lemo-pictogram-motion/index.html",
+    "patternIds": [
+      "icon-wall-pattern",
+      "count-up-slam"
+    ],
+    "fidelity": "demos/cases/lemo-pictogram-motion/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/pictogram-motion",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/pictogram-motion/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方资源与配音按audio/CREDITS许可。"
+    },
+    "sources": [
+      {
+        "label": "固定源码与风格说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/pictogram-motion"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/pictogram-motion.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/pictogram-motion/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/pictogram-motion)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Kokoro bf_emma旁白，电子底鼓、马林巴、钟琴、弓奏颤音琴和低音采样；开伞、脚步、公交、百叶门、雨与雷拟音。署名与许可见[audio/CREDITS](audio/CREDITS)及[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Inter Tight 900巨型标题；Noto Sans SC 700/900中文；DM Mono 500的HUD、标签和英语字幕。SIL OFL 1.1原文在fonts/，获取与重建见[source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-pictogram-motion/LICENSES.md",
+    "preview": "previews/cases/lemo-pictogram-motion.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 被落下的伞 · 象形运动图形 · 接入与保真说明\n\n完整代码影片的来源与固定版本见[条目JSON](../../../entries/cases/lemo-pictogram-motion.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载字体、运行文件和成片音轨，等待iframe load与READY，按原fps调用render(t)。 | 接入MotionKit的1920×1080舞台、时间线、声音与就绪协议。 |\n| `audio/film.m4a` | 从Release成片流复制音轨。 | 保留成片原混音与时间映射。 |\n| `source/` | 保存制作脚本、输入、模型页和风格说明。 | 保留重建资料。 |\n| `stills/` | 原作参考静帧保留在来源，本库预览由capture生成。 | 成片运行不读取静帧。 |\n| `film/index.html` | 内联@font-face的url(fonts/...)改为url(../fonts/...)；相同声明另放fonts/fonts.css预载。 | 接入同一字体并计入预载。 |\n\n作品绘制、着色器、数据表和时间轴沿用固定提交，文本复制为LF。许可索引见[LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html`使用`MotionKit.load.prepare`预载，在同源iframe的load及`window.READY === true`后，通过`MotionKit.mountFilm`接入1920×1080横屏、24fps、50.000000秒。`renderAt(t)`调用并等待`render(Math.round(t*24)/24)`，绘制直接来自原作。\n\n`?embed`隐藏独立控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时暂停在9.2秒，声音默认关闭。镜头标记取DEMO.md的Shots与代码时间表。\n\n## 与原片对照结果\n\n对照范围为开头、frame_sec、每个Shots段中点与片尾前1秒。参考PNG来自Release相同视频帧号，截图等待本库就绪和定位完成。\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，1920×1080、DPR 1；WebGL实际为Intel Iris Xe / ANGLE Direct3D11。等待`__motion.ready`，定位到`floor(t×24+.5)/24`，再等待两次requestAnimationFrame截图。\n\n**原始**比较参考PNG与本库PNG。**编码链**在独立测量页把同一PNG捕获为JPEG95，按上游`core/render/video.mjs`的libx264 medium CRF14、yuv420p编码，再按core/render/mux.sh以slow CRF19、24fps、grain 0、yuv420p编码并解码。两列均为ffmpeg yuv444p SSIM All；页面直接绘制原作render(t)。\n\n编码链测量使用单张I帧，grain从测量帧开始；正式成片的帧间压缩与颗粒历史保留在参考PNG中。左右拼图和测量文件位于过程目录`renders/lemo-pictogram-motion/`，左参考、右本库。\n\n| 序号 | 视频帧 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.994685 | 0.995620 | 开头 |\n| 2 | 221 | 9.200000 | 9.208333 | 0.990620 | 0.991586 | frame_sec |\n| 3 | 30 | 1.250000 | 1.250000 | 0.994087 | 0.994143 | Shots · 雨中开伞中点 |\n| 4 | 78 | 3.250000 | 3.250000 | 0.992641 | 0.992725 | Shots · 伞留车内中点 |\n| 5 | 102 | 4.250000 | 4.250000 | 0.989166 | 0.989905 | Shots · 雨天转晴中点 |\n| 6 | 132 | 5.500000 | 5.500000 | 0.993088 | 0.991886 | Shots · 脚印下车中点 |\n| 7 | 204 | 8.500000 | 8.500000 | 0.988780 | 0.989481 | Shots · 被落下的伞中点 |\n| 8 | 288 | 12.000000 | 12.000000 | 0.988475 | 0.990066 | Shots · 逐站横移中点 |\n| 9 | 360 | 15.000000 | 15.000000 | 0.992540 | 0.991278 | Shots · 一秒一张时钟卡中点 |\n| 10 | 420 | 17.500000 | 17.500000 | 0.994652 | 0.993697 | Shots · 终点站中点 |\n| 11 | 480 | 20.000000 | 20.000000 | 0.991745 | 0.990286 | Shots · 失物招领中点 |\n| 12 | 558 | 23.250000 | 23.250000 | 0.985761 | 0.989279 | Shots · 拉远与计数313中点 |\n| 13 | 636 | 26.500000 | 26.500000 | 0.987249 | 0.990539 | Shots · 晴天等待中点 |\n| 14 | 708 | 29.500000 | 29.500000 | 0.994223 | 0.994887 | Shots · 暴雨回来中点 |\n| 15 | 780 | 32.500000 | 32.500000 | 0.986590 | 0.989675 | Shots · 湿站台与干货架中点 |\n| 16 | 846 | 35.250000 | 35.250000 | 0.989913 | 0.991551 | Shots · 拿一把中点 |\n| 17 | 924 | 38.500000 | 38.500000 | 0.974780 | 0.980873 | Shots · 伞墙开成纹样中点 |\n| 18 | 1014 | 42.250000 | 42.250000 | 0.988851 | 0.989600 | Shots · 每一站中点 |\n| 19 | 1086 | 45.250000 | 45.250000 | 0.992817 | 0.992880 | Shots · 雨中的回声中点 |\n| 20 | 1158 | 48.250000 | 48.250000 | 0.991631 | 0.990022 | Shots · 网格片尾中点 |\n| 21 | 1176 | 49.000000 | 49.000000 | 0.991657 | 0.990090 | 片尾前1秒 |\n\n21帧：原始最低**0.974780**、最高**0.994685**，21/21达到0.95；编码链最低**0.980873**、最高**0.995620**，21/21达到0.95。\n\n全部取样帧的两列数值达到0.95；人物、构图与文字对应。\n\n声音：成片与`audio/film.m4a`解码为48kHz单声道，每10ms求RMS包络，在±500ms范围互相关；最佳偏移**0ms**，相关系数**1.000000**，参考与本库各解码2400000 / 2400000个采样。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-pictogram-motion.json)\n\n- 作品代码与制作文件：LemoLab，MIT原文[film/LICENSE](film/LICENSE)。\n- [audio/film.m4a](audio/film.m4a)以`-c:a copy`流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/pictogram-motion.mp4)，署名LemoLab × Claude Opus 5.5；[CC BY 4.0原文](audio/CC-BY-4.0.txt)。\n- 原始第三方资源清单：[audio/CREDITS](audio/CREDITS)。\n- 采样乐器：Versilian Studios的VCSL / VSCO 2 CE、FreePats，见[CC0 1.0原文](audio/CC0-1.0.txt)。\n- Kokoro-82M旁白：[Apache-2.0原文](audio/Apache-2.0.txt)，具体声音见CREDITS。\n- 字体：SIL OFL 1.1，[OFL-dmmono.txt](fonts/OFL-dmmono.txt)、[OFL-intertight.txt](fonts/OFL-intertight.txt)、[OFL-notosanssc.txt](fonts/OFL-notosanssc.txt)。\n",
+    "prompt": "# 被落下的伞 · 象形运动图形\n\n## 实现 Prompt\n\n制作一支象形运动图形代码影片。一把黄伞被落在公交车上，晴天里随车到终点，加入失物招领的312把伞；暴雨回来，313把伞同时撑开、变黄，伞墙成为网格纹样，再把干燥脚印送回雨中。同一套圆盘、半圆、胶囊与圆头线构成伞、公交、天气和纹样；一个物件的故事从单个象形符号扩大到整墙。海军蓝、青绿、天蓝、珊瑚、信号黄与暴雨深墨各五阶；黄伞在早段是唯一暖色。1920×1080、24fps；180px网格六行，标题与图符舞台分列，角落LINE 4时钟、章节天气与12站刻度。横向整行交错、网格翻转、列坠落和四分圆切换；313把伞逐圈开合、按行变黄，再在半格错动中成为纹样。字体：Inter Tight 900巨型标题；Noto Sans SC 700/900中文；DM Mono 500的HUD、标签和英语字幕。声音：Kokoro bf_emma旁白，电子底鼓、马林巴、钟琴、弓奏颤音琴和低音采样；开伞、脚步、公交、百叶门、雨与雷拟音。按film目录的原作render(t)组织镜头与动作，采用MotionKit时间线逐帧定位，声音默认关闭。\n\n## 动效 Token\n\n- **伞墙成纹**：film/film.js:476–512、643–655：20×16格、格90，七格杂物、313把伞；bloomOpen按距离延迟.014，37.5秒起按行变黄。\n- **计数落定**：film/film.js:523–548：22.1–24秒按o3从1计到313；24秒起scale=1+.07×exp(−9Δt)，以90、470为锚点。\n\n## 制作约束\n\n- 改字体与文案时按原作字体载入和子集范围同步取得资源。\n- 图形、着色器与时间线通过film内原作render(t)绘制，音轨沿用成片混音。\n\n## 迁移\n\n- `film/engine.js → G.PAL / motif / umbrella`：修改色板、网格纹样与象形符号。\n- `film/film.js → SHOTS / TRANS / EV`：修改故事、镜头、转场与画音事件。\n- `film/voice/cues.js`：修改双语字幕与旁白时刻。\n\n[打开 Demo](../../demos/cases/lemo-pictogram-motion/index.html) · [在库中查看](../../cases.html#case/lemo-pictogram-motion)\n"
+  },
+  "entrypoint": "demos/cases/lemo-pictogram-motion/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-pictogram-motion/LICENSES.md",
+      "bytes": 856,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/CREDITS",
+      "bytes": 1233,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/film.m4a",
+      "bytes": 1622984,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fidelity.md",
+      "bytes": 4982,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/engine.js",
+      "bytes": 18107,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/film.js",
+      "bytes": 56989,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/index.html",
+      "bytes": 985,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/voice/cues.js",
+      "bytes": 1454,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/DMMono-Medium.ttf",
+      "bytes": 50360,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/InterTightwght.ttf",
+      "bytes": 581588,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/NotoSansSCwght.ttf",
+      "bytes": 17772300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/OFL-dmmono.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/OFL-intertight.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/fonts.css",
+      "bytes": 277,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/index.html",
+      "bytes": 2580,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/CREDITS",
+      "bytes": 1233,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/DEMO.md",
+      "bytes": 15107,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/README.md",
+      "bytes": 3525,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/STYLE.md",
+      "bytes": 13325,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/build.sh",
+      "bytes": 3277,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/events.json",
+      "bytes": 2162,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/mix.py",
+      "bytes": 19754,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/style.json",
+      "bytes": 819,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/tools/cues.py",
+      "bytes": 1558,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/tools/fetch_fonts.sh",
+      "bytes": 478,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/voice/lines.json",
+      "bytes": 1167,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/voice/vo.json",
+      "bytes": 1148,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-pictogram-motion.json",
+      "bytes": 10793,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-pictogram-motion.jpg",
+      "bytes": 57914,
+      "role": "preview"
+    }
+  ]
+}

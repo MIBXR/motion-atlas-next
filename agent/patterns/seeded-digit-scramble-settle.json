@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "seeded-digit-scramble-settle",
+  "pattern": {
+    "id": "seeded-digit-scramble-settle",
+    "order": 67,
+    "title": "乱数跳变落定",
+    "types": [
+      "hud",
+      "type-motion"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "等宽数字按字符位置、帧号与种子确定性跳变，按从右到左的锁定门限逐字落定；空格、小数点、逗号与中点保持不变，完整锁定时读数转为琥珀色。",
+    "mechanism": "等宽数字按字符位置、帧号与种子确定性跳变，按从右到左的锁定门限逐字落定；空格、小数点、逗号与中点保持不变，完整锁定时读数转为琥珀色。",
+    "trigger": "原作时间轴进入所列动作区间。",
+    "effect": "等宽数字按字符位置、帧号与种子确定性跳变，按从右到左的锁定门限逐字落定；空格、小数点、逗号与中点保持不变，完整锁定时读数转为琥珀色。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "9.800—11.300秒；15.300—16.300秒；19.300—20.300秒，1倍速。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "字符门限",
+        "value": "order=(n−1−i)/max(1,n)，lockAt=.25+order×.7；hash(frame×13.7+i×7.1+seed)选字，frame=round(t×24)。",
+        "source": "demos/cases/lemo-hologram-hud/film/engine/hud.js:rollText"
+      },
+      {
+        "name": "规格读数",
+        "value": "数字使用0123456789，文字使用GLY_A；monoText以最宽数字固定adv；specCard在st.roll>=1时变琥珀色。",
+        "source": "demos/cases/lemo-hologram-hud/film/engine/hud.js:monoText / specCard"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-hologram-hud/film/engine/hud.js"
+    ],
+    "locator": "film/engine/hud.js:rollText；film/engine/hud.js:monoText / specCard",
+    "useCases": [
+      "乱数跳变落定"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "以来源案例lemo-hologram-hud的原作render(t)重放“乱数跳变落定”。等宽数字按字符位置、帧号与种子确定性跳变，按从右到左的锁定门限逐字落定；空格、小数点、逗号与中点保持，完整锁定时读数转为琥珀色。 参数：order=(n−1−i)/max(1,n)，lockAt=.25+order×.7；hash(frame×13.7+i×7.1+seed)选字，frame=round(t×24)。；数字使用0123456789，文字使用GLY_A；monoText以最宽数字固定adv；specCard在st.roll>=1时变琥珀色。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+    "demo": "demos/patterns/seeded-digit-scramble-settle/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-hologram-hud"
+      }
+    ],
+    "previewAt": 0.7,
+    "markers": [
+      {
+        "t": 0,
+        "label": "乱数跳变落定"
+      }
+    ],
+    "preview": "previews/patterns/seeded-digit-scramble-settle.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-hologram-hud",
+      "bundle": "agent/cases/lemo-hologram-hud.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 乱数跳变落定\n\n## 实现 Prompt\n\n以来源案例lemo-hologram-hud的原作render(t)重放“乱数跳变落定”。等宽数字按字符位置、帧号与种子确定性跳变，按从右到左的锁定门限逐字落定；空格、小数点、逗号与中点保持，完整锁定时读数转为琥珀色。 参数：order=(n−1−i)/max(1,n)，lockAt=.25+order×.7；hash(frame×13.7+i×7.1+seed)选字，frame=round(t×24)。；数字使用0123456789，文字使用GLY_A；monoText以最宽数字固定adv；specCard在st.roll>=1时变琥珀色。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：9.800—11.300秒；15.300—16.300秒；19.300—20.300秒，1倍速。\n\n[打开 Demo](../../demos/patterns/seeded-digit-scramble-settle/index.html) · [在库中查看](../../patterns.html#pattern/seeded-digit-scramble-settle)\n"
+  },
+  "entrypoint": "demos/patterns/seeded-digit-scramble-settle/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-hologram-hud/LICENSES.md",
+      "bytes": 573,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/CREDITS",
+      "bytes": 872,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/film.m4a",
+      "bytes": 1265555,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fidelity.md",
+      "bytes": 3031,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/content.json",
+      "bytes": 1745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/engine/holo.js",
+      "bytes": 19803,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/engine/hud.js",
+      "bytes": 21142,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/film.js",
+      "bytes": 25710,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/index.html",
+      "bytes": 377,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/main.js",
+      "bytes": 999,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/models/volt.json",
+      "bytes": 217665,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/voices/dur.json",
+      "bytes": 77,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/OFL-rajdhani.txt",
+      "bytes": 4373,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/OFL-sharetechmono.txt",
+      "bytes": 4429,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-Light.ttf",
+      "bytes": 383928,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-Medium.ttf",
+      "bytes": 384348,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-Regular.ttf",
+      "bytes": 377860,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-SemiBold.ttf",
+      "bytes": 390340,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/ShareTechMono-Regular.ttf",
+      "bytes": 43272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/fonts.css",
+      "bytes": 413,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/index.html",
+      "bytes": 2251,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/CREDITS",
+      "bytes": 872,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/README.md",
+      "bytes": 2063,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/build.sh",
+      "bytes": 3433,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/content_alt.json",
+      "bytes": 1920,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/events.json",
+      "bytes": 2643,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/frames.js",
+      "bytes": 1594,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/lines.json",
+      "bytes": 825,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/mix.py",
+      "bytes": 13494,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/gen_kite.mjs",
+      "bytes": 5547,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/gen_volt.mjs",
+      "bytes": 7544,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/kite.json",
+      "bytes": 102526,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/mkmodel.mjs",
+      "bytes": 15226,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/CREDITS_music.txt",
+      "bytes": 213,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/check.py",
+      "bytes": 1653,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/score.json",
+      "bytes": 18813,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/score.py",
+      "bytes": 14503,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/timeline.json",
+      "bytes": 1070,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/cuecheck.py",
+      "bytes": 1352,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/export.mjs",
+      "bytes": 1298,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/final_asr.py",
+      "bytes": 1925,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/make_lines.mjs",
+      "bytes": 1033,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/voices/words.json",
+      "bytes": 1172,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/seeded-digit-scramble-settle/index.html",
+      "bytes": 1304,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/seeded-digit-scramble-settle/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-hologram-hud.json",
+      "bytes": 8375,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/seeded-digit-scramble-settle.json",
+      "bytes": 2833,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/seeded-digit-scramble-settle.jpg",
+      "bytes": 94689,
+      "role": "preview"
+    }
+  ]
+}

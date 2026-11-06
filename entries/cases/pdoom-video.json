@@ -1,0 +1,359 @@
+{
+  "id": "pdoom-video",
+  "order": 83,
+  "title": "I'm Upping My P(doom) · 手绘卡通音乐录像",
+  "en": "I'm Upping My P(doom)",
+  "subtitle": "Clawd 从显示器里的涂鸦长到行星大小的九章舞台剧 MV",
+  "carriers": [
+    "video"
+  ],
+  "style": "hand-drawn",
+  "purpose": "story",
+  "tech": [
+    "webgl",
+    "canvas2d"
+  ],
+  "renderer": "gpu",
+  "orients": [
+    "landscape"
+  ],
+  "timeline": true,
+  "kit": true,
+  "previewAt": 24,
+  "tags": [
+    "p5.js",
+    "p5.brush",
+    "Clawd",
+    "歌词驱动",
+    "手绘卡通",
+    "舞台剧",
+    "Claude Opus 5.5"
+  ],
+  "summary": "JohnHeibel 用 Claude Opus 5.5 生成的 156.6 秒音乐录像。用 p5.brush 水彩笔触与 12fps 线条沸腾画出一场舞台剧：Clawd 在九章里从显示器里的涂鸦长到行星大小，四段副歌回到同一舞台逐次升级，每段都由打气筒推高 P(doom) 计量表，最后镜头拉远，揭示整场末日只是演出。",
+  "focus": "用同一舞台、打气筒和计量表连接四段升级的副歌；歌词的隐喻变成角色行动，章内以咬合、推进、坠落和爆闪接镜。",
+  "background": "#F3EBDC",
+  "accent": "#c8322b",
+  "rhythm": {
+    "duration": 156.6,
+    "bpm": 88,
+    "beats": [
+      {
+        "t": 0,
+        "label": "幕启",
+        "note": "红色幕布拉开，Clawd 从活板门冒出"
+      },
+      {
+        "t": 1.5,
+        "label": "实验室",
+        "note": "显示器里的小 Clawd 醒来"
+      },
+      {
+        "t": 23,
+        "label": "副歌一 · P(doom) 秀",
+        "note": "打气筒把计量表从 8 推到 34"
+      },
+      {
+        "t": 38.5,
+        "label": "升空",
+        "note": "天空到太空的追逐"
+      },
+      {
+        "t": 59,
+        "label": "副歌二 · 更大的秀",
+        "note": "竞技场与太空紫金"
+      },
+      {
+        "t": 73,
+        "label": "过时",
+        "note": "博物馆与公路"
+      },
+      {
+        "t": 95.4,
+        "label": "副歌三 · 回形针",
+        "note": "回形针淹没舞台"
+      },
+      {
+        "t": 109.4,
+        "label": "扩张",
+        "note": "数据中心，Clawd 长到行星大小"
+      },
+      {
+        "t": 123.5,
+        "label": "副歌四 · 红色警报",
+        "note": "计量表推到 99.9"
+      },
+      {
+        "t": 140.5,
+        "label": "谢幕",
+        "note": "拉远揭示一切是演出，全员鞠躬"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 1.5,
+      "from": 0.3,
+      "to": 0.5,
+      "label": "幕启"
+    },
+    {
+      "t0": 1.5,
+      "t1": 23,
+      "from": 0.4,
+      "to": 0.6,
+      "label": "实验室"
+    },
+    {
+      "t0": 23,
+      "t1": 38.5,
+      "from": 0.8,
+      "to": 0.85,
+      "label": "副歌一"
+    },
+    {
+      "t0": 38.5,
+      "t1": 59,
+      "from": 0.6,
+      "to": 0.7,
+      "label": "升空"
+    },
+    {
+      "t0": 59,
+      "t1": 73,
+      "from": 0.85,
+      "to": 0.9,
+      "label": "副歌二"
+    },
+    {
+      "t0": 73,
+      "t1": 95.4,
+      "from": 0.5,
+      "to": 0.6,
+      "label": "过时"
+    },
+    {
+      "t0": 95.4,
+      "t1": 109.4,
+      "from": 0.85,
+      "to": 0.9,
+      "label": "副歌三"
+    },
+    {
+      "t0": 109.4,
+      "t1": 123.5,
+      "from": 0.7,
+      "to": 0.8,
+      "label": "扩张"
+    },
+    {
+      "t0": 123.5,
+      "t1": 137.4,
+      "from": 0.95,
+      "to": 1,
+      "label": "副歌四"
+    },
+    {
+      "t0": 137.4,
+      "t1": 140.5,
+      "from": 1,
+      "to": 0.4,
+      "label": "揭幕"
+    },
+    {
+      "t0": 140.5,
+      "t1": 156.6,
+      "from": 0.6,
+      "to": 0.2,
+      "label": "谢幕"
+    }
+  ],
+  "energyNote": "按 STORYBOARD.md 章节与副歌位置估计",
+  "observations": [
+    "开场与片尾都回到红色幕布；137.4 秒时镜头拉远，揭示巨型 Clawd 与怪物其实是服装和舞台道具。",
+    "四段副歌回到同一舞台，依次增加烟火、竞技场、回形针洪水和红色警报，计量表从 8 推至 99.9。",
+    "角色以不透明 wash、低透明水彩 fill 和连续墨线分层绘制，纸齿与暗角在 2D 合成画布上 multiply。",
+    "底部歌词为 Shantell Sans 800：奶油白字在墨紫笔刷底上按字符进度逐词染成赭黄。",
+    "mood 在切换眼型前 0.08 秒挤眼，之后 0.16 秒睁眼并拉伸，0.16–0.4 秒挤压回弹。"
+  ],
+  "composition": {
+    "color": "暖纸与赤陶角色贯穿全片；实验室靛蓝、舞台玫瑰赭黄、升空天蓝、太空紫金、数据中心青绿、警报红黑，最后回到深红与金色。",
+    "typography": "Permanent Marker 绘制标题、漫画拟声和道具文字；Shantell Sans 800 绘制底部卡拉 OK 歌词。",
+    "layout": "1920×1080、24fps；歌词占 y≈978–1070 的底带，角落计量表锚在 x=1760、y=110，舞台已有表时隐藏。",
+    "imagery": "p5 WEBGL 主画布用 p5.brush 绘制角色、背景和道具，#out 的 Canvas2D 合成字体、纸纹与歌词。",
+    "motion": "镜头推拉、横移、旋转和按拍震动；角色舞步、squash/stretch 与表情 take 共享 88 BPM，笔触随机种子按 12fps 更新。",
+    "sound": "沿用上游 assets/pdoom.mp3 的整首歌曲，画面与原始 MP3 共用歌曲时刻。",
+    "rhythm": "幕启后进入九章；四次副歌提升同一计量道具，137.4 秒揭幕反转后全员谢幕。",
+    "coherence": "角色成长、反复出现的舞台与不断升高的 P(doom) 连接歌词里的 AI 隐喻，首尾的幕布将全片包成一次演出。"
+  },
+  "layers": [
+    {
+      "name": "纸与颜料",
+      "role": "固定种子生成纸底，水彩背景与 wash 角色经 WEBGL 绘制。"
+    },
+    {
+      "name": "镜头与角色",
+      "role": "chapter 选择完整镜头，camBegin 推拉，Clawd 与 Researcher 演绎歌词中的事件。"
+    },
+    {
+      "name": "舞台与计量道具",
+      "role": "副歌复用幕布、打气筒、计量表；未画舞台表时角落表补位。"
+    },
+    {
+      "name": "漫画字与擦除",
+      "role": "flushLetters 将拟声绘入场景；章节交界处用五道笔刷覆盖画面后再揭开。"
+    },
+    {
+      "name": "2D 合成与歌词",
+      "role": "#out 合成 WEBGL、文字、multiply 纸齿与最后一层卡拉 OK 歌词。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#F3EBDC",
+      "#2B2233",
+      "#D97757",
+      "#A84D33",
+      "#F2A283",
+      "#1F2550",
+      "#2F3C7A",
+      "#E27A92",
+      "#E8AA38",
+      "#6E9F58",
+      "#3A9C98",
+      "#7B5CA8",
+      "#FFF5E2",
+      "#8EC3E6"
+    ],
+    "type": "Permanent Marker 400；Shantell Sans 800（可变字体完整收录）。",
+    "motion": [
+      {
+        "name": "BPM",
+        "value": "88 · film/src/core.js:3"
+      },
+      {
+        "name": "OFF",
+        "value": "0.21s · film/src/core.js:3"
+      },
+      {
+        "name": "BOIL",
+        "value": "12fps · film/src/core.js:3/195"
+      },
+      {
+        "name": "WIPE_TR",
+        "value": "0.3s · film/src/timeline.js:12"
+      },
+      {
+        "name": "WIPES",
+        "value": "[1.5,38.5,73.0,109.4] · film/src/timeline.js:11"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "film/src/lyrics.js → LY",
+      "how": "修改歌词与逐句起止时刻；句内高亮由 timeline.js 按字符长度推进。"
+    },
+    {
+      "field": "film/src/ch/c01_lab.js…c09_finale.js → chapter(name,start,end,shots)",
+      "how": "修改九章镜头与注册区间；每个镜头 fn(t,lt,dur) 绘制完整画面。"
+    },
+    {
+      "field": "film/src/core.js:3 → BPM / BEAT / OFF / BOIL / DUR",
+      "how": "修改节拍、偏移、时长与线条沸腾频率；同步根 index.html 的 duration、fps 与 bpm。"
+    },
+    {
+      "field": "film/src/timeline.js:11–12 → WIPES / WIPE_TR",
+      "how": "修改换章擦除位置与边界两侧各 0.3 秒的过渡。"
+    },
+    {
+      "field": "film/src/timeline.js:14 → METER",
+      "how": "修改四段副歌的计量窗口与各段起止值。"
+    },
+    {
+      "field": "film/src/clawd.js → eyes / hat / emote / mood",
+      "how": "修改角色眼型、帽子、符号与表情过渡。"
+    },
+    {
+      "field": "film/src/cast.js",
+      "how": "修改 Researcher 等配角与舞步。"
+    },
+    {
+      "field": "film/src/props.js",
+      "how": "修改幕布、舞台、打气筒与计量表道具。"
+    }
+  ],
+  "useCases": [
+    "歌词驱动的手绘音乐录像",
+    "以重复场景逐次升级的叙事短片",
+    "角色表演、表情 take 与漫画转场参考"
+  ],
+  "avoid": [
+    "需要观众自行掌握阅读节奏的网页应用",
+    "要求实时 24fps 水彩绘制的低性能设备",
+    "以无字幕的安静画面为主的片段"
+  ],
+  "constraints": [
+    "每个镜头只由歌曲时刻 t 推导状态，并绘制完整画面；使用 hash 与按时刻重设的随机种子。",
+    "面孔与关键动作放在约 y=960 以上，避开歌词底带。",
+    "水彩 fill 与笔画数量决定逐帧成本；原作按离线逐帧绘制设计。",
+    "改动歌曲、时长或节拍时同步歌词区间、镜头时刻、METER、WIPES 与适配层配置。"
+  ],
+  "prompt": "用 p5.js 2.3.3 + p5.brush 2.2.3 制作一支 1920×1080、24fps 的歌词驱动手绘 MV。先按歌曲写分镜：幕启、叙事章节、四次回到同一舞台并升级的副歌、揭幕反转与谢幕；每句歌词对应一个可读的行动和由行动带出的转场。以赤陶色方块角色、暖纸、水彩背景和墨线统一画面，各章限制主色；角色用不透明 wash 加局部 fill，背景用半透明 fill，画面最后 multiply 纸齿与暗角。镜头注册为 chapter(name,start,end,shots)，每个 fn(t,lt,dur) 绘制完整一帧，全部状态由歌曲时刻 t 推导；以 BPM、OFF 和 BOIL=12 驱动舞步、命中和线条随机种子。用 mood 的挤眼、拉伸、挤压回弹与 emote 表演换情绪。仅在大章边界前后各 0.3 秒以错峰笔刷盖满再揭开，章内用咬合黑场、穿眼推进、坠落与爆闪接镜。底部用 Shantell Sans 800 绘制奶油白歌词，在逐句区间内按字符长度从左到右填赭黄，保留 0.18 秒进入和 0.12 秒退出；漫画标题用 Permanent Marker。四段副歌让打气筒逐拍推高同一计量表，舞台表与角落表互斥。沿用一条连续音轨，声音默认关闭，减少动态停在代表帧。实现位置为 demos/cases/pdoom-video/film/src/；根 index.html 用 MotionKit 预载字体、源码、库与音轨，等待 window.ready 后逐帧调用并等待 renderAt(t)。",
+  "negativePrompt": "机械匀速动作、直接换脸、无事件的静态镜头、每个镜头都用同一擦除、关键动作落在歌词带内、未设种子的帧间随机、把原作成片当作画面实现。",
+  "demo": "demos/cases/pdoom-video/index.html",
+  "fidelity": "demos/cases/pdoom-video/fidelity.md",
+  "research": "docs/cases/pdoom-video.md",
+  "patternIds": [
+    "brush-wipe-chapter-break",
+    "karaoke-word-fill",
+    "escalating-chorus-meter",
+    "emotion-take-morph",
+    "cel-line-boil"
+  ],
+  "upstream": {
+    "repository": "JohnHeibel/PDoomVideo",
+    "url": "https://github.com/JohnHeibel/PDoomVideo/tree/fa546a38092e75f2b079e6a86d6abc54dd525d17",
+    "commit": "fa546a38092e75f2b079e6a86d6abc54dd525d17"
+  },
+  "sources": [
+    {
+      "label": "固定源码与制作说明",
+      "url": "https://github.com/JohnHeibel/PDoomVideo/tree/fa546a38092e75f2b079e6a86d6abc54dd525d17"
+    },
+    {
+      "label": "YouTube 公开成片",
+      "url": "https://youtu.be/8j-hR4fJywU"
+    },
+    {
+      "label": "发现来源",
+      "url": "https://github.com/yihui-dev/awesome-opus5-5-videos/blob/92aee2f/prompts/doubleunplussed-181894.md"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "移植自 [JohnHeibel/PDoomVideo](https://github.com/JohnHeibel/PDoomVideo)，上游提交 `fa546a3`，作者 JohnHeibel；上游说明仓库内容全部由 Claude Opus 5.5 在 Claude Code 中两次生成，本库收录第二次生成的版本。上游仓库未附许可文件。"
+    },
+    {
+      "scope": "角色",
+      "notes": "Clawd 角色设计的权利归 Anthropic。"
+    },
+    {
+      "scope": "音乐",
+      "notes": "歌曲来自 [2024 年的 YouTube 视频](https://www.youtube.com/watch?v=uEB5E67vcPA)，歌词与逐句释义来自 [Osmarks](https://docs.osmarks.net/hypha/p(doom)_song_objectively_correct_interpretation)；灵感来自 [这条 X 帖子](https://x.com/slimer48484/status/2097752569212756134)。音频原字节保存在 audio/pdoom.mp3。"
+    },
+    {
+      "scope": "发现来源",
+      "notes": "[yihui-dev/awesome-opus5-5-videos](https://github.com/yihui-dev/awesome-opus5-5-videos) 提交 `92aee2f` 的 `prompts/doubleunplussed-181894.md` 引用了该仓库。"
+    },
+    {
+      "scope": "字体",
+      "notes": "[google/fonts 固定提交 6c1dbe2](https://github.com/google/fonts/tree/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec)：Permanent Marker 400（Apache-2.0，fonts/PermanentMarker-LICENSE.txt）；Shantell Sans 800，可变字体完整收录（SIL OFL 1.1，fonts/ShantellSans-OFL.txt）。"
+    },
+    {
+      "scope": "p5 与 p5.brush",
+      "notes": "p5 2.3.3（GNU LGPL 2.1，vendor/p5@2.3.3/license.txt）；p5.brush 2.2.3（MIT，vendor/p5.brush@2.2.3/LICENSE.md），运行脚本与许可取自对应 npm 包。"
+    }
+  ]
+}

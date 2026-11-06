@@ -1,0 +1,19 @@
+# 逐帧渲染输出与参考视频取帧（参考素材只在本地分析，不提交）
+renders/
+frames/
+*.mp4
+*.mov
+*.webm
+
+node_modules/
+/dist/
+.DS_Store
+Thumbs.db
+*.log
+
+# 本地工具配置
+.claude/
+
+# 打磨过程中的截图与临时产物
+dev/shots/
+!demos/materials/hyperframes-registry/vendor/kinetic-type-a-roll/a-roll.mp4

@@ -1,0 +1,178 @@
+{
+  "id": "split-compare-stamp",
+  "order": 7,
+  "title": "分屏对比与时间戳盖章",
+  "types": [
+    "transition",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "summary": "旧明信片与今日实景在横屏中左右对比，在竖屏中上下对比，分割线划过后盖上时间戳。综艺片的认证印章从 2.5 倍缩到落点，旋转回弹并带动相框镜震。",
+  "mechanism": "分割线隔开两侧插画，边框组织画面。时间戳以盖章动作落下，让两个时刻的景象并排对照。综艺片的认证印章从 2.5 倍缩到落点，旋转回弹并带动相框镜震。",
+  "trigger": "同一地点的今昔需要对照时",
+  "effect": "同一地点的时间差异一眼可见。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "6.133s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "whoosh、stamp、sub"
+    },
+    {
+      "name": "追加原片区间",
+      "value": "mg-hanazi 原片 8.167–9.5 秒；s = lerp(2.5, 1, E.inQuad(k)); o = clamp(k * 2.2);\ns = 1 - .09 * Math.exp(-w * 16) * Math.cos(w * 44);\nkick(t, C.stamp, 14, 10, 13)"
+    }
+  ],
+  "useCases": [
+    "巡礼对比",
+    "前后改造",
+    "设计方案对照",
+    "陈列界面复原对比",
+    "综艺片的认证印章从 2.5 倍缩到落点，旋转回弹并带动相框镜震。"
+  ],
+  "avoid": [
+    "两张图构图不对齐时（对比失去意义）"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "card-expand-fullscreen",
+      "vertical-title-blur",
+      "film-grain"
+    ],
+    "conflicts": []
+  },
+  "prompt": "旧明信片与今日实景在横屏左右、竖屏上下对比，分割线划过后盖上时间戳。复用地图巡礼的 drawCompare、mountScene、sceneCanvas、paintScene 与对应 CSS。drawCompare 的两侧插画、分割线、边框与时间戳印章。片段：caseT 29→33.4；时长 6.133s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。 按 index.html 内联 segments 在原有 4.8 秒之后重放mg-hanazi 原片 8.167–9.5 秒，总时长 6.133 秒。综艺片的认证印章从 2.5 倍缩到落点，旋转回弹并带动相框镜震。画面与音轨沿用同一映射，声音默认关闭。",
+  "demo": "demos/patterns/split-compare-stamp/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    },
+    {
+      "caseId": "mg-hanazi"
+    },
+    {
+      "caseId": "lemo-halftone-dossier"
+    },
+    {
+      "caseId": "lemo-telestrator"
+    }
+  ],
+  "previewAt": 2.4,
+  "markers": [
+    {
+      "t": 0,
+      "label": "分屏"
+    },
+    {
+      "t": 1.65,
+      "label": "盖章"
+    },
+    {
+      "t": 4.8,
+      "label": "综艺花字"
+    },
+    {
+      "t": 5.133,
+      "label": "猫主认证"
+    },
+    {
+      "t": 5.533,
+      "label": "下期见"
+    }
+  ],
+  "sound": {
+    "voices": [
+      "whoosh",
+      "stamp",
+      "sub"
+    ],
+    "score": "demos/patterns/split-compare-stamp/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "分屏",
+        "value": "0s"
+      },
+      {
+        "name": "盖章",
+        "value": "1.65s"
+      },
+      {
+        "name": "时长",
+        "value": "4.8s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js → drawCompare、mountScene",
+      "how": "修改分屏、两侧场景、边框与印章的实现。"
+    },
+    {
+      "field": "mechanism/scene.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → tracks.compare → scene、left、right、stamp、t、until；layout",
+      "how": "修改对比场景、两侧标签、印章与时刻；程序画面在 ../../cases/map-pilgrimage/film/scenes.js → paintScene。"
+    },
+    {
+      "field": "mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers",
+      "how": "mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 地图片段。地图来源时刻：29→33.4。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ],
+  "orients": [
+    "landscape",
+    "portrait"
+  ],
+  "previewAtPortrait": 5.4665,
+  "parameters": [
+    {
+      "name": "案卷印章主拍",
+      "value": "lemo-halftone-dossier：film/index.html:183–189的stampAnim：.09秒内scale=lerp(2.6,1,E.in(p))，落点后乘1+.05sin(30a)exp(−9a)；1037–1058在23秒叠26px/.45秒镜震及.12秒闪白。"
+    },
+    {
+      "name": "lemo-telestrator · 双机位分屏与VAR印章",
+      "value": "film/index.html:splitView / overlayG2；10.6–14.6秒两个960px窗口各自到达头球帧F046/F156后同拍定格；黄分割线6px、.32秒展开；15.55秒VAR印章由1.7倍落定。射门图shotMap在36.8秒以单应三角网格展开，不属于分屏机制。"
+    }
+  ]
+}

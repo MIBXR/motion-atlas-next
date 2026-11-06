@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-impasto",
+  "entry": {
+    "id": "lemo-impasto",
+    "order": 31,
+    "title": "雨的颜色 · 油画厚涂",
+    "subtitle": "The Colour of Rain",
+    "carriers": [
+      "video"
+    ],
+    "style": "hand-drawn",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "webgl"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "油画厚涂",
+      "手绘与绘画",
+      "代码影片"
+    ],
+    "summary": "灰色雨中，无人聆听大提琴手的演奏，女孩撑开第一把红伞；圆舞曲让雨伞逐拍染色，俯拍镜头中的群伞轨迹在地面累积成曼陀罗，终和弦把广场重涂成彩色。",
+    "focus": "同一组厚涂笔触保存灰与彩两种状态，音乐既推动换色，也让人群运动留下可读的彩色图案。",
+    "accent": "#dc2f28",
+    "background": "#34507e",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 28.58,
+    "rhythm": {
+      "duration": 39.666666666666664,
+      "beats": [
+        {
+          "t": 0,
+          "label": "琴身特写",
+          "note": "0–2.65秒，琴身特写。"
+        },
+        {
+          "t": 2.65,
+          "label": "灰色广场",
+          "note": "2.65–7.15秒，灰色广场。"
+        },
+        {
+          "t": 7.15,
+          "label": "静默推近",
+          "note": "7.15–12.4秒，静默推近。"
+        },
+        {
+          "t": 12.18,
+          "label": "水洼仰抬红伞",
+          "note": "12.18–16.66秒，水洼仰抬红伞。"
+        },
+        {
+          "t": 16.66,
+          "label": "抬弓重启",
+          "note": "16.66–19.39秒，抬弓重启。"
+        },
+        {
+          "t": 19.39,
+          "label": "逐拍彩伞",
+          "note": "19.39–23.48秒，逐拍彩伞。"
+        },
+        {
+          "t": 23.48,
+          "label": "轨迹成纹",
+          "note": "23.48–31.66秒，轨迹成纹。"
+        },
+        {
+          "t": 31.66,
+          "label": "全景重涂",
+          "note": "31.66–35.75秒，全景重涂。"
+        },
+        {
+          "t": 35.75,
+          "label": "刮涂片尾",
+          "note": "35.75–39.6667秒，刮涂片尾。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 2.65,
+        "to": 0.3,
+        "label": "琴身特写",
+        "from": 0.35
+      },
+      {
+        "t0": 2.65,
+        "t1": 7.15,
+        "to": 0.1,
+        "label": "灰色广场",
+        "from": 0.3
+      },
+      {
+        "t0": 7.15,
+        "t1": 12.18,
+        "to": 0.65,
+        "label": "静默推近",
+        "from": 0.1
+      },
+      {
+        "t0": 12.18,
+        "t1": 16.66,
+        "to": 0.5,
+        "label": "水洼仰抬红伞",
+        "from": 0.65
+      },
+      {
+        "t0": 16.66,
+        "t1": 19.39,
+        "to": 0.75,
+        "label": "抬弓重启",
+        "from": 0.5
+      },
+      {
+        "t0": 19.39,
+        "t1": 23.48,
+        "to": 0.95,
+        "label": "逐拍彩伞",
+        "from": 0.75
+      },
+      {
+        "t0": 23.48,
+        "t1": 31.66,
+        "to": 0.55,
+        "label": "轨迹成纹",
+        "from": 0.95
+      },
+      {
+        "t0": 31.66,
+        "t1": 35.75,
+        "to": 0.1,
+        "label": "全景重涂",
+        "from": 0.55
+      },
+      {
+        "t0": 35.75,
+        "t1": 39.666666666666664,
+        "to": 0.03,
+        "label": "刮涂片尾",
+        "from": 0.1
+      }
+    ],
+    "energyNote": "时段取DEMO.md的Shots与源码镜头表；0–1为按画面动作、音乐密度和静默作的相对编辑标注。",
+    "observations": [
+      "参考插画以形状组为单位转成由粗到细的刮刀笔触，底画覆盖笔触缝隙。",
+      "灰色状态使用同一笔触的冷调亮度，并保留5%颜色。",
+      "19把伞分成中心、6伞内环、12伞外环，轨迹逐笔保留在地面。",
+      "80BPM小调独奏经过静默后转入132BPM大调圆舞曲，终和弦响起时，掠光照出颜料脊。"
+    ],
+    "composition": {
+      "color": "钴蓝 #34507e、桃色 #d99a78、金色 #f7dca0与赭色外墙；雨伞用红 #dc2f28、黄 #f4bc2a、蓝 #2f62c0、绿 #23906c等高纯色。",
+      "typography": "Cormorant Garamond斜体300–700、Cormorant SC 500；大标题由刮刀铺出，片尾小字用DOM。",
+      "layout": "1920×1080横屏、24fps；构图与字幕沿用原作。",
+      "imagery": "WebGL2双倍超采样的颜色与高度场，刮刀斜面、颜料脊、薄底画与横向湿地反光。",
+      "motion": "雨伞随音乐拍点撑开并换色，镜头推、横移、仰抬、旋转俯拍与吊臂拉远，转场时笔触扫入。",
+      "sound": "原作无旁白；大提琴、手风琴、拨弦、竖琴、钟琴与打击采样，配雨、湿石脚步、尼龙伞和刮刀拟音。",
+      "rhythm": "同一组厚涂笔触保存灰与彩两种状态，音乐既推动换色，也让人群运动留下可读的彩色图案。",
+      "coherence": "材质、动作和声音共用原作时间表。"
+    },
+    "layers": [
+      {
+        "name": "材料与场景",
+        "role": "WebGL2双倍超采样的颜色与高度场，刮刀斜面、颜料脊、薄底画与横向湿地反光。"
+      },
+      {
+        "name": "角色与动作",
+        "role": "雨伞随音乐拍点撑开并换色，镜头推、横移、仰抬、旋转俯拍与吊臂拉远，转场时笔触扫入。"
+      },
+      {
+        "name": "文字与声音",
+        "role": "Cormorant Garamond斜体300–700、Cormorant SC 500；大标题由刮刀铺出，片尾小字用DOM。 原作无旁白；大提琴、手风琴、拨弦、竖琴、钟琴与打击采样，配雨、湿石脚步、尼龙伞和刮刀拟音。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#34507e",
+        "#d99a78",
+        "#f7dca0",
+        "#dc2f28",
+        "#f4bc2a",
+        "#2f62c0",
+        "#23906c"
+      ],
+      "type": "Cormorant Garamond斜体300–700、Cormorant SC 500；大标题由刮刀铺出，片尾小字用DOM。",
+      "motion": [
+        {
+          "name": "镜头与节拍",
+          "value": "音乐拍点撑伞与换色，镜头推、横移、仰抬、旋转俯拍与吊臂拉远，笔触扫入转场。"
+        }
+      ]
+    },
+    "useCases": [
+      "音乐短片",
+      "美术文化影像",
+      "情感品牌广告"
+    ],
+    "avoid": [
+      "需要写实摄影或自由三维转面的画面"
+    ],
+    "constraints": [
+      "同一笔触保持固定种子，静态颜料保持静止。",
+      "笔触按形状分组，人物与伞使用较低run-out。",
+      "相机保持在画板范围内，成片不加额外颗粒。"
+    ],
+    "migration": [
+      {
+        "field": "film/timeline.js → A / B / T / POPS",
+        "how": "修改音乐网格、镜头与逐拍撑伞。"
+      },
+      {
+        "field": "film/film.js → DANCE / dancePos / shotTop",
+        "how": "修改群伞队形、轨迹累积和俯拍镜头。"
+      }
+    ],
+    "prompt": "制作“雨的颜色 · 油画厚涂”对应的时间线影片。灰色雨中，大提琴手无人聆听，女孩撑开第一把红伞；圆舞曲让雨伞逐拍染色，俯拍下的群伞轨迹在地面累积成曼陀罗，终和弦把广场重涂成彩色。同一组厚涂笔触保存灰与彩两种状态，音乐既推动换色，也让人群运动留下可读的彩色图案。视觉与动作：WebGL2双倍超采样的颜色与高度场，刮刀斜面、颜料脊、薄底画与横向湿地反光。音乐拍点撑伞与换色，镜头推、横移、仰抬、旋转俯拍与吊臂拉远，笔触扫入转场。配色：钴蓝 #34507e、桃色 #d99a78、金色 #f7dca0与赭色外墙；雨伞用红 #dc2f28、黄 #f4bc2a、蓝 #2f62c0、绿 #23906c等高纯色。文字：Cormorant Garamond斜体300–700、Cormorant SC 500；大标题由刮刀铺出，片尾小字用DOM。声音：原作无旁白；大提琴、手风琴、拨弦、竖琴、钟琴与打击采样，配雨、湿石脚步、尼龙伞和刮刀拟音。直接使用demos/cases/lemo-impasto/film/中的原作绘制与时间表，按源码迁移字段修改，支持MotionKit播放、暂停和逐帧定位，声音默认关闭。",
+    "demo": "demos/cases/lemo-impasto/index.html",
+    "patternIds": [
+      "palette-knife-recolor",
+      "motion-trails-paint-mandala"
+    ],
+    "fidelity": "demos/cases/lemo-impasto/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/impasto",
+      "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+      "path": "styles/impasto/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+      "notes": "代码与文档MIT；成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与示范制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/impasto"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/impasto.mp4"
+      },
+      {
+        "label": "素材与声音署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/impasto/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/impasto)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "原作配乐、采样、拟音与旁白来源见[audio/CREDITS](audio/CREDITS)，许可原文见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "家族与字重见tokens.type，字体与OFL原文在fonts/，取得方法见[source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-impasto/LICENSES.md",
+    "preview": "previews/cases/lemo-impasto.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 雨的颜色 · 油画厚涂 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-impasto.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 从case-native模板接入同源iframe，预载字体、运行数据与音轨，等待load及READY后按原fps执行render(t)。 | 接入MotionKit舞台、时间线和声音。 |\n| `film/index.html` | 字体样式指向`../fonts/fonts.css`。 | 本库字体路径接入。 |\n| `audio/film.m4a` | 从Release成片以`-vn -c:a copy`流复制。 | 同步正式混音。 |\n| `fonts/` | 按原字体家族、字重与字符范围补齐上游未入Git的字体，附OFL原文。 | 取得运行依赖。 |\n| `source/` | 保存配乐、拟音、旁白与字幕工具、事件数据及模型页。 | 保留制作依赖与重建入口。 |\n| `stills/` | 原作风格帧留在来源，本库预览由capture生成。 | 成品绘制不读取静帧。 |\n\n`film/`的绘制、着色器、几何、数据表与时间表保持固定提交内容；复制的文本按任务要求统一为LF。许可索引见[LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n使用`MotionKit.load.prepare`预载，等待同源iframe的load事件与`window.READY === true`，再以`MotionKit.mountFilm`接入1920×1080横屏、24fps、39.666667秒舞台。`renderAt(t)`执行并等待`upstream.render(Math.round(t*24)/24)`。画面由上游直接绘制，音轨默认关闭。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时暂停在条目的`previewAt`。镜头标记取DEMO.md的Shots及源码时间表。\n\n## 已接受差异\n\n成片长39.666667秒，风格元数据写作39.7秒；本库按952帧／24fps接入。\n\n### 刮刀笔触与高度场\n\n`film/engine/plate.js:60–155`从Canvas2D颜色与形状编号读取像素，按逐级误差阈值选择落笔点并更新后续笔触；`film/engine/impasto.js:64–128`的`h1/h2`、断续刮痕、色混合与高度场生成微观表面，`:154–178`再由高度梯度计算掠光。地面、墙面、伞面与片尾的微观笔痕分布和Release有差异。人物位置、姿势、伞群队形、镜头构图及文字保持相符。\n\n本机D3D11与SwiftShader执行同一着色器的输出也不同；第809帧两者互比为0.868482，与参考分别为0.823514、0.824458。两张原始PNG仅在测量中同作6px高斯低通后为0.988324，低通结果用于定位材质细节，正式SSIM仍取原始PNG。页面沿用原作着色器与绘制。\n\n| 排除项 | 对照数字 |\n| --- | --- |\n| 参考取帧 | 809帧整片精确解码与快速定位后按帧号提取互比1.000000。 |\n| 时间映射 | 本库808／809／810帧对参考809帧为0.777114／0.823514／0.774399，809最高。 |\n| 适配与就绪 | 原作film入口与适配入口互比1.000000；重新开页和重复定位与首次截图均为1.000000。 |\n| 素材与字体 | 画面由代码生成，网络无缺失；原字体家族与字重均loaded，SSAA=2，1920×1080、DPR1。809帧场景没有文字。 |\n| 细节范围 | 809帧2px低通0.945056、6px低通0.988324；686帧6px低通0.980588；0帧6px低通0.995875。 |\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，视口1920×1080、DPR1；WebGL为Intel Iris Xe／ANGLE Direct3D11。等待`__motion.ready`并按视频帧号定位；参考PNG从Release相同帧号精确提取。\n\n**原始**列比较参考PNG与本库PNG；**编码链**列将本库PNG放入独立测量页，以Chrome截图JPEG95，再按上游链编解码：24fps → libx264 medium CRF14 yuv420p → libx264 slow CRF19、无额外颗粒。单张I帧测量，颗粒从该测量帧初始化；两图转yuv444p取ffmpeg SSIM All。编码只发生在过程目录。\n\n`compare-N.png`左参考、右本库原始PNG，`compare-encoded-N.png`左参考、右编码链PNG。采样覆盖开头、frame_sec、Shots每段中点与片尾前1秒，按帧号去重。\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.906916 | 0.908786 | 开头 |\n| 2 | 686 | 28.580000 | 28.583333 | 0.841619 | 0.847523 | frame_sec |\n| 3 | 32 | 1.325000 | 1.333333 | 0.904572 | 0.906824 | Shots · 琴身特写中点 |\n| 4 | 118 | 4.900000 | 4.916667 | 0.868579 | 0.871053 | Shots · 灰色广场中点 |\n| 5 | 235 | 9.775000 | 9.791667 | 0.916881 | 0.917292 | Shots · 静默推近中点 |\n| 6 | 346 | 14.420000 | 14.416667 | 0.884084 | 0.885194 | Shots · 水洼仰抬红伞中点 |\n| 7 | 433 | 18.025000 | 18.041667 | 0.907197 | 0.908475 | Shots · 抬弓重启中点 |\n| 8 | 514 | 21.435000 | 21.416667 | 0.858202 | 0.864233 | Shots · 逐拍彩伞中点 |\n| 9 | 662 | 27.570000 | 27.583333 | 0.860873 | 0.868320 | Shots · 轨迹成纹中点 |\n| 10 | 809 | 33.705000 | 33.708333 | 0.823514 | 0.840109 | Shots · 全景重涂中点 |\n| 11 | 905 | 37.708333 | 37.708333 | 0.930021 | 0.939804 | Shots · 刮涂片尾中点 |\n| 12 | 928 | 38.666667 | 38.666667 | 0.930010 | 0.939789 | 片尾前1秒 |\n\n12帧：原始最低 **0.823514**、最高 **0.930021**，0/12达到0.95；编码链最低 **0.840109**、最高 **0.939804**，0/12达到0.95。\n\n0.95以下的帧：\n\n| 帧号／秒 | 原始 | 编码链 | 代码位置与原因 |\n| --- | --- | --- | --- |\n| 0／0.000000 | 0.906916 | 0.908786 | film/film.js:shotEcu:62–71；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 686／28.583333 | 0.841619 | 0.847523 | film/film.js:shotTop:279–305；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 32／1.333333 | 0.904572 | 0.906824 | film/film.js:shotEcu:62–71；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 118／4.916667 | 0.868579 | 0.871053 | film/film.js:shotWideGrey:99–114；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 235／9.791667 | 0.916881 | 0.917292 | film/film.js:shotMedium:117–128；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 346／14.416667 | 0.884084 | 0.885194 | film/film.js:shotGirl:149–186；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 433／18.041667 | 0.907197 | 0.908475 | film/film.js:shotReact:190–202；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 514／21.416667 | 0.858202 | 0.864233 | film/film.js:shotStreet:235–248；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 662／27.583333 | 0.860873 | 0.868320 | film/film.js:shotTop:279–305；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 809／33.708333 | 0.823514 | 0.840109 | film/film.js:shotFinale:308–320；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 905／37.708333 | 0.930021 | 0.939804 | film/film.js:shotEnd:322–326；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n| 928／38.666667 | 0.930010 | 0.939789 | film/film.js:shotEnd:322–326；engine/plate.js:60–155的像素阈值铺笔与engine/impasto.js:64–128、154–178的刮痕、高度场和掠光细节。 |\n\n声音：成片与本库音轨解码为48kHz单声道，每10ms的RMS包络在±500ms内互相关；最佳偏移 **0ms**，相关系数 **1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-impasto.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者Lemomo。\n- [audio/film.m4a](audio/film.m4a)从[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/impasto.mp4)以`-c:a copy`流复制，混音保持原样；[CC BY 4.0原文](audio/CC-BY-4.0.txt)，署名LemoLab。\n- 配乐为上游原创，采样沿用VSCO2CE、VCSL、Karoryfer或FreePats的[CC0 1.0](audio/CC0-1.0.txt)，逐项来源与所用乐器见[audio/CREDITS](audio/CREDITS)。拟音由上游代码生成。\n- 字体SIL OFL 1.1：[OFL.txt](fonts/OFL.txt)。\n- 原作完整署名：[source/CREDITS](source/CREDITS)。\n",
+    "prompt": "# 雨的颜色 · 油画厚涂\n\n## 实现 Prompt\n\n制作“雨的颜色 · 油画厚涂”对应的时间线影片。灰色雨中，大提琴手无人聆听，女孩撑开第一把红伞；圆舞曲让雨伞逐拍染色，俯拍下的群伞轨迹在地面累积成曼陀罗，终和弦把广场重涂成彩色。同一组厚涂笔触保存灰与彩两种状态，音乐既推动换色，也让人群运动留下可读的彩色图案。视觉与动作：WebGL2双倍超采样的颜色与高度场，刮刀斜面、颜料脊、薄底画与横向湿地反光。音乐拍点撑伞与换色，镜头推、横移、仰抬、旋转俯拍与吊臂拉远，笔触扫入转场。配色：钴蓝 #34507e、桃色 #d99a78、金色 #f7dca0与赭色外墙；雨伞用红 #dc2f28、黄 #f4bc2a、蓝 #2f62c0、绿 #23906c等高纯色。文字：Cormorant Garamond斜体300–700、Cormorant SC 500；大标题由刮刀铺出，片尾小字用DOM。声音：原作无旁白；大提琴、手风琴、拨弦、竖琴、钟琴与打击采样，配雨、湿石脚步、尼龙伞和刮刀拟音。直接使用demos/cases/lemo-impasto/film/中的原作绘制与时间表，按源码迁移字段修改，支持MotionKit播放、暂停和逐帧定位，声音默认关闭。\n\n## 动效 Token\n\n- **镜头与节拍**：音乐拍点撑伞与换色，镜头推、横移、仰抬、旋转俯拍与吊臂拉远，笔触扫入转场。\n\n## 制作约束\n\n- 同一笔触保持固定种子，静态颜料保持静止。\n- 笔触按形状分组，人物与伞使用较低run-out。\n- 相机保持在画板范围内，成片不加额外颗粒。\n\n## 迁移\n\n- `film/timeline.js → A / B / T / POPS`：修改音乐网格、镜头与逐拍撑伞。\n- `film/film.js → DANCE / dancePos / shotTop`：修改群伞队形、轨迹累积和俯拍镜头。\n\n[打开 Demo](../../demos/cases/lemo-impasto/index.html) · [在库中查看](../../cases.html#case/lemo-impasto)\n"
+  },
+  "entrypoint": "demos/cases/lemo-impasto/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-impasto/LICENSES.md",
+      "bytes": 739,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/audio/CREDITS",
+      "bytes": 544,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/audio/film.m4a",
+      "bytes": 1277229,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fidelity.md",
+      "bytes": 8072,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/engine/impasto.js",
+      "bytes": 21794,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/engine/plate.js",
+      "bytes": 11816,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/film.js",
+      "bytes": 25696,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/index.html",
+      "bytes": 284,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/main.js",
+      "bytes": 239,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/cards.js",
+      "bytes": 1246,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/cellist.js",
+      "bytes": 15074,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/common.js",
+      "bytes": 1731,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/ecu.js",
+      "bytes": 3910,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/figures.js",
+      "bytes": 12157,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/girl.js",
+      "bytes": 9478,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/medium.js",
+      "bytes": 3511,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/top.js",
+      "bytes": 1840,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/wide.js",
+      "bytes": 11243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/timeline.js",
+      "bytes": 3923,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fonts/CormorantGaramond-Italic.woff2",
+      "bytes": 39304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fonts/CormorantSC.woff2",
+      "bytes": 20912,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fonts/OFL.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fonts/fonts.css",
+      "bytes": 257,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/index.html",
+      "bytes": 2437,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/CREDITS",
+      "bytes": 544,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/README.md",
+      "bytes": 2157,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/build.sh",
+      "bytes": 638,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/mix.py",
+      "bytes": 9090,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/music/score.py",
+      "bytes": 5396,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/test.js",
+      "bytes": 3309,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/tools/dump_timeline.mjs",
+      "bytes": 408,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-impasto.json",
+      "bytes": 9748,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-impasto.jpg",
+      "bytes": 199286,
+      "role": "preview"
+    }
+  ]
+}

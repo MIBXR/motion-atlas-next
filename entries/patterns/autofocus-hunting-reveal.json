@@ -1,0 +1,72 @@
+{
+  "id": "autofocus-hunting-reveal",
+  "order": 140,
+  "title": "对焦游移显隐",
+  "types": [
+    "camera",
+    "texture"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "镜头推向远处，并反复调整对焦距离；身影只在第一次正确对焦的短暂窗口内可见，失焦后消失，第二次锁定对焦时，只见清晰的空走廊。",
+  "mechanism": "镜头推向远处，并反复调整对焦距离；身影只在第一次正确对焦的短暂窗口内可见，失焦后消失，第二次锁定对焦时，只见清晰的空走廊。",
+  "trigger": "来源时间线进入对焦游移显隐段。",
+  "effect": "镜头推向远处，并反复调整对焦距离；身影只在第一次正确对焦的短暂窗口内可见，失焦后消失，第二次锁定对焦时，只见清晰的空走廊。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-backrooms：31.900000–35.900000秒，1倍速，总时长4.000000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "对焦与光圈",
+      "value": "film/story.js:FOCUS/APER与W；原时间33.15–33.65秒对焦约33m，W后32.85–33.35秒；APER从3升到14。"
+    },
+    {
+      "name": "身影窗口",
+      "value": "film/story.js:T.figOn原时间32.2–33.95；film/main.js:render按T.figOn切换thing.visible并将FOCUS/APER送给原作DOF。"
+    }
+  ],
+  "sourceFiles": [
+    "demos\\cases\\lemo-backrooms\\film\\story.js",
+    "demos\\cases\\lemo-backrooms\\film\\main.js",
+    "demos\\cases\\lemo-backrooms\\film\\vhs.js",
+    "demos\\cases\\lemo-backrooms\\film\\osd.js"
+  ],
+  "locator": "film/story.js / film/main.js / film/vhs.js / film/osd.js",
+  "useCases": [
+    "新怪谈短片",
+    "悬疑预告",
+    "游戏氛围片"
+  ],
+  "avoid": [
+    "在关键动作和证据上叠加争夺注意的运动"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“对焦游移显隐”。镜头推向远处并反复拉动对焦距离；身影只在第一次正确对焦的短暂窗口可见，失焦后消失，第二次清晰锁定留下空走廊。参数：film/story.js:FOCUS/APER与W；原时间33.15–33.65秒对焦约33m，W后32.85–33.35秒；APER从3升到14。；film/story.js:T.figOn原时间32.2–33.95；film/main.js:render按T.figOn切换thing.visible并将FOCUS/APER送给原作DOF。。复用来源字体、素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/autofocus-hunting-reveal/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-backrooms"
+    }
+  ],
+  "previewAt": 1.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "对焦游移显隐"
+    }
+  ],
+  "renderer": "gpu"
+}

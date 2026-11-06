@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "count-up-slam",
+  "pattern": {
+    "id": "count-up-slam",
+    "order": 129,
+    "title": "计数砸落",
+    "types": [
+      "type-motion",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "同一大字号数值按ease-out从1累计到313，到达终值时整体瞬间放大7%，再按指数衰减回到原尺寸并停住。",
+    "mechanism": "同一大字号数值按ease-out从1累计到313，到达终值时整体瞬间放大7%，再按指数衰减回到原尺寸并停住。",
+    "trigger": "22.1秒开始计数，24秒到达终值。",
+    "effect": "与整墙313把伞一起显出规模，最后一拍给终值明确重音。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "21.900000–25.000000秒；1倍速，共3.100000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "计数",
+        "value": "film/film.js:532：n=max(1,round(1+312*E.o3(inv(22.1,24,t))))，直接重绘数值。"
+      },
+      {
+        "name": "落定",
+        "value": "film/film.js:533–537：24秒起slam=1+.07*exp(−9*(t−24))，数字在[90,470]整体缩放，Inter Tight 900、270px。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-pictogram-motion/film/film.js",
+      "demos/cases/lemo-pictogram-motion/film/engine.js"
+    ],
+    "locator": "film.js / engine.js",
+    "useCases": [
+      "与整墙313把伞一起显出规模，最后一拍给终值明确重音。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-pictogram-motion的原作render(t)，重放“计数砸落”。同一大字号数值按ease-out从1累计到313，到终值时整体瞬间放大7%，以指数衰减回原尺寸并停住。参数与源码：film/film.js:532：n=max(1,round(1+312*E.o3(inv(22.1,24,t))))，直接重绘数值。；film/film.js:533–537：24秒起slam=1+.07*exp(−9*(t−24))，数字在[90,470]整体缩放，Inter Tight 900、270px。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/count-up-slam/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-pictogram-motion"
+      }
+    ],
+    "previewAt": 2.15,
+    "markers": [
+      {
+        "t": 0,
+        "label": "计数砸落"
+      }
+    ],
+    "preview": "previews/patterns/count-up-slam.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-pictogram-motion",
+      "bundle": "agent/cases/lemo-pictogram-motion.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 计数砸落\n\n## 实现 Prompt\n\n复用来源案例lemo-pictogram-motion的原作render(t)，重放“计数砸落”。同一大字号数值按ease-out从1累计到313，到终值时整体瞬间放大7%，以指数衰减回原尺寸并停住。参数与源码：film/film.js:532：n=max(1,round(1+312*E.o3(inv(22.1,24,t))))，直接重绘数值。；film/film.js:533–537：24秒起slam=1+.07*exp(−9*(t−24))，数字在[90,470]整体缩放，Inter Tight 900、270px。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：21.900000–25.000000秒；1倍速，共3.100000秒。\n\n[打开 Demo](../../demos/patterns/count-up-slam/index.html) · [在库中查看](../../patterns.html#pattern/count-up-slam)\n"
+  },
+  "entrypoint": "demos/patterns/count-up-slam/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-pictogram-motion/LICENSES.md",
+      "bytes": 856,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/CREDITS",
+      "bytes": 1233,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/audio/film.m4a",
+      "bytes": 1622984,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fidelity.md",
+      "bytes": 4982,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/engine.js",
+      "bytes": 18107,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/film.js",
+      "bytes": 56989,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/index.html",
+      "bytes": 985,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/film/voice/cues.js",
+      "bytes": 1454,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/DMMono-Medium.ttf",
+      "bytes": 50360,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/InterTightwght.ttf",
+      "bytes": 581588,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/NotoSansSCwght.ttf",
+      "bytes": 17772300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/OFL-dmmono.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/OFL-intertight.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/fonts/fonts.css",
+      "bytes": 277,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/index.html",
+      "bytes": 2580,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/CREDITS",
+      "bytes": 1233,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/DEMO.md",
+      "bytes": 15107,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/README.md",
+      "bytes": 3525,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/STYLE.md",
+      "bytes": 13325,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/build.sh",
+      "bytes": 3277,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/events.json",
+      "bytes": 2162,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/mix.py",
+      "bytes": 19754,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/style.json",
+      "bytes": 819,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/tools/cues.py",
+      "bytes": 1558,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/tools/fetch_fonts.sh",
+      "bytes": 478,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/voice/lines.json",
+      "bytes": 1167,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-pictogram-motion/source/voice/vo.json",
+      "bytes": 1148,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/count-up-slam/index.html",
+      "bytes": 800,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/count-up-slam/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-pictogram-motion.json",
+      "bytes": 10793,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/count-up-slam.json",
+      "bytes": 2322,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/count-up-slam.jpg",
+      "bytes": 86885,
+      "role": "preview"
+    }
+  ]
+}

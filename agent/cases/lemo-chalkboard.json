@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-chalkboard",
+  "entry": {
+    "id": "lemo-chalkboard",
+    "order": 36,
+    "title": "汉字的故事 · 黑板粉笔",
+    "subtitle": "The Story of Chinese Characters",
+    "carriers": [
+      "video"
+    ],
+    "style": "hand-drawn",
+    "purpose": "explainer",
+    "tech": [
+      "canvas2d",
+      "webgl"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "黑板粉笔",
+      "手绘与绘画",
+      "代码影片"
+    ],
+    "summary": "孩子在教室黑板上问“射和矮是不是弄反了”；老师把射从甲骨、金文、小篆写回楷书，用橙色追踪弓和箭，擦掉错误释义后在原位写回答案。",
+    "focus": "粉笔笔顺、彩色部件、推拉黑板与一次原位擦写共同承担汉字溯源讲解。",
+    "accent": "#ee9858",
+    "background": "#253a35",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 42.5,
+    "rhythm": {
+      "duration": 49.266666666666666,
+      "beats": [
+        {
+          "t": 0,
+          "label": "片名书写",
+          "note": "0–2.7秒，片名书写。"
+        },
+        {
+          "t": 2.7,
+          "label": "孩子的问题",
+          "note": "2.7–5.7秒，孩子的问题。"
+        },
+        {
+          "t": 5.7,
+          "label": "射的错误拆字",
+          "note": "5.7–10.7秒，射的错误拆字。"
+        },
+        {
+          "t": 10.7,
+          "label": "矮的错误拆字",
+          "note": "10.7–17.5秒，矮的错误拆字。"
+        },
+        {
+          "t": 17.5,
+          "label": "滑板揭开时间线",
+          "note": "17.5–18.5秒，滑板揭开时间线。"
+        },
+        {
+          "t": 18.5,
+          "label": "甲骨文弓箭",
+          "note": "18.5–21.8秒，甲骨文弓箭。"
+        },
+        {
+          "t": 21.8,
+          "label": "金文加手",
+          "note": "21.8–24.4秒，金文加手。"
+        },
+        {
+          "t": 24.4,
+          "label": "小篆与楷书",
+          "note": "24.4–28.7秒，小篆与楷书。"
+        },
+        {
+          "t": 28.7,
+          "label": "箭作为尺",
+          "note": "28.7–33.5秒，箭作为尺。"
+        },
+        {
+          "t": 33.5,
+          "label": "跨板线与原位擦写",
+          "note": "33.5–39.7秒，跨板线与原位擦写。"
+        },
+        {
+          "t": 39.7,
+          "label": "没弄反",
+          "note": "39.7–43秒，没弄反。"
+        },
+        {
+          "t": 43,
+          "label": "整面课堂",
+          "note": "43–45.2秒，整面课堂。"
+        },
+        {
+          "t": 45.2,
+          "label": "前板滑回片尾",
+          "note": "45.2–49.2667秒，前板滑回片尾。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 2.7,
+        "to": 0.2,
+        "label": "片名书写",
+        "from": 0.2
+      },
+      {
+        "t0": 2.7,
+        "t1": 5.7,
+        "to": 0.3,
+        "label": "孩子的问题",
+        "from": 0.3
+      },
+      {
+        "t0": 5.7,
+        "t1": 10.7,
+        "to": 0.4,
+        "label": "射的错误拆字",
+        "from": 0.4
+      },
+      {
+        "t0": 10.7,
+        "t1": 17.5,
+        "to": 0.4,
+        "label": "矮的错误拆字",
+        "from": 0.4
+      },
+      {
+        "t0": 17.5,
+        "t1": 18.5,
+        "to": 0.6,
+        "label": "滑板揭开时间线",
+        "from": 0.6
+      },
+      {
+        "t0": 18.5,
+        "t1": 21.8,
+        "to": 0.4,
+        "label": "甲骨文弓箭",
+        "from": 0.4
+      },
+      {
+        "t0": 21.8,
+        "t1": 24.4,
+        "to": 0.4,
+        "label": "金文加手",
+        "from": 0.4
+      },
+      {
+        "t0": 24.4,
+        "t1": 28.7,
+        "to": 0.45,
+        "label": "小篆与楷书",
+        "from": 0.45
+      },
+      {
+        "t0": 28.7,
+        "t1": 33.5,
+        "to": 0.5,
+        "label": "箭作为尺",
+        "from": 0.5
+      },
+      {
+        "t0": 33.5,
+        "t1": 39.7,
+        "to": 0.65,
+        "label": "跨板线与原位擦写",
+        "from": 0.65
+      },
+      {
+        "t0": 39.7,
+        "t1": 43,
+        "to": 0.35,
+        "label": "没弄反",
+        "from": 0.35
+      },
+      {
+        "t0": 43,
+        "t1": 45.2,
+        "to": 0.2,
+        "label": "整面课堂",
+        "from": 0.2
+      },
+      {
+        "t0": 45.2,
+        "t1": 49.266666666666666,
+        "to": 0.1,
+        "label": "前板滑回片尾",
+        "from": 0.1
+      }
+    ],
+    "energyNote": "段落取自DEMO.md的Shots与源码场景时间表；0–1能量数值是按画面与声音密度作出的相对编辑标注。",
+    "observations": [
+      "中文使用手写中心线与笔画类型数据，甲骨、金文和篆书使用手绘线形，字幕使用霞鹜文楷子集。",
+      "橙色弓在不同字形中保持对应高度，楷书身部七笔沿用同色；短和矮中的矢也由橙色突出。",
+      "跨板橙线将箭尺引回问题；宽360的板擦只擦掉释义和交叉箭头，随后在相同区域写下正确解释。"
+    ],
+    "composition": {
+      "color": "深绿板#0f1c15，白粉笔与橙粉笔，孩子的浅黄笔迹；暖白墙与绿色墙裙。",
+      "typography": "中文逐笔中心线，英文EMS Delight / EMS Casual Hand单线字；中英双语字幕使用LXGW WenKai v1.530的精确子集。",
+      "layout": "1920×1080、30fps，6400×1700板面，两块带田字格的前板与一块后板，字幕单独叠在底部。",
+      "imagery": "Canvas2D绘制教室、板框、滑板、粉笔和全部字形；WebGL2后期处理运动模糊、暗角、调色与抖动。",
+      "motion": "每笔按弧长显露粉粒，前板侧滑，镜头跨四个字形横移；橙线跨过板缝后，通过一次擦写给出结论。",
+      "sound": "Microsoft Edge TTS晓晓中文旁白；真实粉笔录音切粒、古琴物理模型、马林巴与拨奏低音、板轨与走廊铃。",
+      "rhythm": "先提出网上说法，再滑开前板追溯字形；箭尺与跨板线加速，擦写后留1.5秒阅读再写“没弄反”。",
+      "coherence": "橙色部件将历史字形、现代部件、尺量与答案连接在同一课堂空间。"
+    },
+    "layers": [
+      {
+        "name": "底材与空间",
+        "role": "深绿板#0f1c15，白粉笔与橙粉笔，孩子的浅黄笔迹；暖白墙与绿色墙裙。"
+      },
+      {
+        "name": "主体与绘制",
+        "role": "Canvas2D绘制教室、板框、滑板、粉笔和全部字形；WebGL2后期处理运动模糊、暗角、调色与抖动。"
+      },
+      {
+        "name": "镜头与时间",
+        "role": "每笔按弧长显露粉粒，前板侧滑，镜头跨四个字形横移；橙线跨过板缝后，通过一次擦写给出结论。"
+      },
+      {
+        "name": "文字与声音",
+        "role": "中文逐笔中心线，英文EMS Delight / EMS Casual Hand单线字；中英双语字幕使用LXGW WenKai v1.530的精确子集。 Microsoft Edge TTS晓晓中文旁白；真实粉笔录音切粒、古琴物理模型、马林巴与拨奏低音、板轨与走廊铃。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#0f1c15",
+        "#ece8d8",
+        "#ee9858",
+        "#e9d78b",
+        "#e3ddcf"
+      ],
+      "type": "EMS Delight / EMS Casual Hand单线SVG；LXGW WenKai v1.530、wenkai-sub.woff2。",
+      "motion": [
+        {
+          "name": "原位擦写",
+          "value": "film/js/film.js:182–200：wipe宽360、持续.75秒，q1/q2及英文标记wiped，重写中心沿用G1/G2。"
+        },
+        {
+          "name": "橙色部件",
+          "value": "film/js/ancient.js:39–46：L.o选择orange，楷书0–6笔着橙；film.js:151将短的0–4笔着橙。"
+        },
+        {
+          "name": "粉笔沉积",
+          "value": "film/js/chalk.js与r2d.js：板面覆盖精灵按弧长显露，2×2超采样粉粒沉积。"
+        }
+      ]
+    },
+    "useCases": [
+      "文字溯源",
+      "知识辟谣",
+      "课堂讲解"
+    ],
+    "avoid": [
+      "以观众滚动阅读为主的页面"
+    ],
+    "constraints": [
+      "画面以原作render(t)按原帧率定位，字体和全部绘制输入预载后开始。",
+      "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+    ],
+    "migration": [
+      {
+        "field": "film/js/film.js → SUB / VO / build",
+        "how": "更改中英字幕、配音时长、镜头与书写安排。"
+      },
+      {
+        "field": "film/js/hz.js / ancient.js",
+        "how": "修改中文笔顺数据与历史字形，原始依据在source/FACTS.md。"
+      }
+    ],
+    "prompt": "制作一支黑板粉笔时间线影片。粉笔笔顺、彩色部件、推拉黑板与一次原位擦写共同承担汉字溯源讲解。深绿板#0f1c15，白粉笔与橙粉笔，孩子的浅黄笔迹；暖白墙与绿色墙裙。中文逐笔中心线，英文EMS Delight / EMS Casual Hand单线字；中英双语字幕使用LXGW WenKai v1.530的精确子集。1920×1080、30fps，6400×1700板面，两块带田字格的前板与一块后板，字幕单独叠在底部。每笔按弧长显露粉粒，前板侧滑，镜头跨四个字形横移；橙线跨板缝后一次擦写落定结论。先提出网上说法，再滑开前板追溯字形；箭尺与跨板线加速，擦写后留1.5秒阅读再写“没弄反”。Microsoft Edge TTS晓晓中文旁白；真实粉笔录音切粒、古琴物理模型、马林巴与拨奏低音、板轨与走廊铃。实现入口位于demos/cases/lemo-chalkboard/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+    "demo": "demos/cases/lemo-chalkboard/index.html",
+    "patternIds": [
+      "write-wipe-rewrite",
+      "tracked-component-highlight"
+    ],
+    "fidelity": "demos/cases/lemo-chalkboard/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/chalkboard/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "?????MIT????????CC BY 4.0???LemoLab????Microsoft Edge TTS??????????????????CREDITS?LICENSES.md?"
+    },
+    "sources": [
+      {
+        "label": "固定风格与制作源码",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/chalkboard.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Microsoft Edge TTS晓晓中文旁白；真实粉笔录音切粒、古琴物理模型、马林巴与拨奏低音、板轨与走廊铃。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "EMS Delight / EMS Casual Hand单线SVG；LXGW WenKai v1.530、wenkai-sub.woff2。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-chalkboard/LICENSES.md",
+    "preview": "previews/cases/lemo-chalkboard.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 汉字的故事 · 黑板粉笔 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-chalkboard.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载运行源码、字体、音轨，等待iframe的load与READY，以原帧率调用上游render(t)。 | 接入MotionKit舞台、时间线、声音与减少动态暂停。 |\n| `audio/film.m4a` | 从Release成片以-c:a copy流复制。 | 播放原作正式混音。 |\n| `source/` | 保存运行目录之外的上游制作脚本、事件、语音时长与替换示例。 | 保留制作资料。 |\n| `stills/` | 上游风格图与调试静帧留在来源。 | 成品绘制不读取这些静帧。 |\n| `film/index.html、film/core/lib.js` | 字体路径改为../fonts/；import map将/core/lib.js映射到./core/lib.js，lib.js取固定提交原文。 | 接入原字体与共享运行代码。 |\n| `film/js/app.js` | EMS SVG字体读取路径由fonts/改为../fonts/。 | 接入原单线字形。 |\n| `fonts/wenkai-sub.woff2` | 按上游tools/subset.py从LXGW WenKai v1.530生成SUB与ASCII子集。 | 恢复上游未入Git的字幕字体。 |\n\n## 适配层\n\n`MotionKit.load.prepare`预载，同源iframe等待`load`与`window.READY === true`，`MotionKit.mountFilm`以1920×1080、30fps、49.266667秒接入。`renderAt(t)`等待`upstream.render(Math.round(t×30)/30)`；画面直接来自上游绘制函数。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时停在条目的`previewAt`，声音默认关闭。镜头标记取DEMO.md的Shots与源码场景时间表。\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，视口1920×1080、DPR1。等待`__motion.ready`，以`floor(t×fps+.5)`定位；参考PNG按Release成片相同帧号提取。WebGL使用本机Intel Iris Xe / ANGLE Direct3D11。\n\n**原始**列比较参考PNG与本库PNG；**编码链**列把本库PNG在过程目录按原作编码链编解码后比较。两图转yuv444p，取ffmpeg SSIM All。\n\nJPEG95 → libx264 medium CRF14 yuv420p → slow CRF19、fps=30、noise=c0s=1:allf=t、yuv420p。来源source/build.sh与共享core/render/video.mjs、mux.sh。\n\n测量采用单张I帧，颗粒从该测量帧起计算；连续成片的帧间参考和噪声历史由其原编码保留。运行页面直接执行原作render(t)，编码仅用于离线测量。\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.986744 | 0.980250 | 开头 |\n| 2 | 1275 | 42.500000 | 42.500000 | 0.986520 | 0.987979 | frame_sec |\n| 3 | 41 | 1.350000 | 1.366667 | 0.987742 | 0.984884 | Shots · 片名书写中点 |\n| 4 | 126 | 4.200000 | 4.200000 | 0.987951 | 0.992255 | Shots · 孩子的问题中点 |\n| 5 | 246 | 8.200000 | 8.200000 | 0.993345 | 0.994001 | Shots · 射的错误拆字中点 |\n| 6 | 423 | 14.100000 | 14.100000 | 0.987641 | 0.989662 | Shots · 矮的错误拆字中点 |\n| 7 | 540 | 18.000000 | 18.000000 | 0.990272 | 0.993797 | Shots · 滑板揭开时间线中点 |\n| 8 | 605 | 20.150000 | 20.166667 | 0.983952 | 0.981699 | Shots · 甲骨文弓箭中点 |\n| 9 | 693 | 23.100000 | 23.100000 | 0.981548 | 0.980859 | Shots · 金文加手中点 |\n| 10 | 796 | 26.550000 | 26.533333 | 0.983526 | 0.986346 | Shots · 小篆与楷书中点 |\n| 11 | 933 | 31.100000 | 31.100000 | 0.983471 | 0.986196 | Shots · 箭作为尺中点 |\n| 12 | 1098 | 36.600000 | 36.600000 | 0.987208 | 0.988948 | Shots · 跨板线与原位擦写中点 |\n| 13 | 1241 | 41.350000 | 41.366667 | 0.986532 | 0.988024 | Shots · 没弄反中点 |\n| 14 | 1323 | 44.100000 | 44.100000 | 0.984589 | 0.987556 | Shots · 整面课堂中点 |\n| 15 | 1417 | 47.233333 | 47.233333 | 0.989601 | 0.992243 | Shots · 前板滑回片尾中点 |\n| 16 | 1448 | 48.266667 | 48.266667 | 0.988976 | 0.991069 | 片尾前1秒 |\n\n16帧：原始最低**0.981548**、最高**0.993345**，16/16达到0.95；编码链最低**0.980250**、最高**0.994001**，16/16达到0.95。\n\n\n声音：Release与本库音轨解码为48kHz单声道，每10ms取RMS包络，在±500ms内互相关；最佳偏移**0ms**，相关系数**1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-chalkboard.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）。\n- [audio/film.m4a](audio/film.m4a)流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/chalkboard.mp4)，成片按[audio/CC-BY-4.0.txt](audio/CC-BY-4.0.txt)发布，署名LemoLab并链接来源。\n- 音乐、声音与字体的原始署名：[audio/CREDITS](audio/CREDITS)；制作文件中的记录保留于[source/CREDITS](source/CREDITS)。\n- 原创配乐使用CC0乐器采样，原文：[audio/CC0-1.0.txt](audio/CC0-1.0.txt)；采样来自Versilian Studios / Sam Gossner的VSCO 2 CE与VCSL。\n- Microsoft Edge TTS服务生成的中英旁白：[audio/VOICE-SOURCE.txt](audio/VOICE-SOURCE.txt)记录角色、语速与服务来源。\n- 粉笔录音：fattirewhitey与Tomproberts为CC0；Work With Sounds / La Fonderie、Wikimedia Sverige为CC BY 4.0，按原作切粒、滤波和分层。原始文件链接在[source/README.md](source/README.md)。\n- 字体SIL OFL 1.1原文：[OFL-EMS.txt](fonts/OFL-EMS.txt)、[OFL-LXGWWenKai.txt](fonts/OFL-LXGWWenKai.txt)。\n",
+    "prompt": "# 汉字的故事 · 黑板粉笔\n\n## 实现 Prompt\n\n制作一支黑板粉笔时间线影片。粉笔笔顺、彩色部件、推拉黑板与一次原位擦写共同承担汉字溯源讲解。深绿板#0f1c15，白粉笔与橙粉笔，孩子的浅黄笔迹；暖白墙与绿色墙裙。中文逐笔中心线，英文EMS Delight / EMS Casual Hand单线字；中英双语字幕使用LXGW WenKai v1.530的精确子集。1920×1080、30fps，6400×1700板面，两块带田字格的前板与一块后板，字幕单独叠在底部。每笔按弧长显露粉粒，前板侧滑，镜头跨四个字形横移；橙线跨板缝后一次擦写落定结论。先提出网上说法，再滑开前板追溯字形；箭尺与跨板线加速，擦写后留1.5秒阅读再写“没弄反”。Microsoft Edge TTS晓晓中文旁白；真实粉笔录音切粒、古琴物理模型、马林巴与拨奏低音、板轨与走廊铃。实现入口位于demos/cases/lemo-chalkboard/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。\n\n## 动效 Token\n\n- **原位擦写**：film/js/film.js:182–200：wipe宽360、持续.75秒，q1/q2及英文标记wiped，重写中心沿用G1/G2。\n- **橙色部件**：film/js/ancient.js:39–46：L.o选择orange，楷书0–6笔着橙；film.js:151将短的0–4笔着橙。\n- **粉笔沉积**：film/js/chalk.js与r2d.js：板面覆盖精灵按弧长显露，2×2超采样粉粒沉积。\n\n## 制作约束\n\n- 画面以原作render(t)按原帧率定位，字体和全部绘制输入预载后开始。\n- 声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。\n\n## 迁移\n\n- `film/js/film.js → SUB / VO / build`：更改中英字幕、配音时长、镜头与书写安排。\n- `film/js/hz.js / ancient.js`：修改中文笔顺数据与历史字形，原始依据在source/FACTS.md。\n\n[打开 Demo](../../demos/cases/lemo-chalkboard/index.html) · [在库中查看](../../cases.html#case/lemo-chalkboard)\n"
+  },
+  "entrypoint": "demos/cases/lemo-chalkboard/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-chalkboard/LICENSES.md",
+      "bytes": 1214,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/audio/CREDITS",
+      "bytes": 2831,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/audio/VOICE-SOURCE.txt",
+      "bytes": 425,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/audio/film.m4a",
+      "bytes": 1600328,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/fidelity.md",
+      "bytes": 4386,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/index.html",
+      "bytes": 562,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/ancient.js",
+      "bytes": 3808,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/app.js",
+      "bytes": 14440,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/chalk.js",
+      "bytes": 26663,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/film.js",
+      "bytes": 22993,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/hand.js",
+      "bytes": 11858,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/hz.js",
+      "bytes": 9457,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/lab.js",
+      "bytes": 1650,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/post.js",
+      "bytes": 3256,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/props.js",
+      "bytes": 7441,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/r2d.js",
+      "bytes": 4436,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/film/js/stage.js",
+      "bytes": 9000,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/fonts/EMSCasualHand.svg",
+      "bytes": 44217,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/fonts/EMSDelight.svg",
+      "bytes": 46630,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/fonts/LXGWWenKai-Regular.ttf",
+      "bytes": 25928940,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/fonts/OFL-EMS.txt",
+      "bytes": 4679,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/fonts/OFL-LXGWWenKai.txt",
+      "bytes": 5171,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/fonts/fonts.css",
+      "bytes": 143,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/fonts/wenkai-sub.woff2",
+      "bytes": 40592,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/index.html",
+      "bytes": 2639,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/CREDITS",
+      "bytes": 2831,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/FACTS.md",
+      "bytes": 2046,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/README.md",
+      "bytes": 3453,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/audio.py",
+      "bytes": 10696,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/build.sh",
+      "bytes": 4510,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/events.json",
+      "bytes": 45304,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/foley/lib/index.json",
+      "bytes": 55408,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/lines.json",
+      "bytes": 1785,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/lines_en.json",
+      "bytes": 2253,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/tools/foley_lib.py",
+      "bytes": 3402,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/tools/srt.py",
+      "bytes": 863,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/tools/subset.py",
+      "bytes": 1279,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/vo/dur.json",
+      "bytes": 126,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/vo/words.json",
+      "bytes": 3545,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-chalkboard/source/vo_en/dur.json",
+      "bytes": 126,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-chalkboard.json",
+      "bytes": 11353,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-chalkboard.jpg",
+      "bytes": 91407,
+      "role": "preview"
+    }
+  ]
+}

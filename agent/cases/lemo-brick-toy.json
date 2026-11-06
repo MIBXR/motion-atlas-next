@@ -1,0 +1,677 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-brick-toy",
+  "entry": {
+    "id": "lemo-brick-toy",
+    "order": 56,
+    "title": "用零件造火箭 · 积木玩具",
+    "subtitle": "Rocket from Spare Parts",
+    "carriers": [
+      "video"
+    ],
+    "style": "dimensional",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "threejs"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "积木玩具",
+      "材质与 3D",
+      "代码影片"
+    ],
+    "summary": "积木宇航员把高塔一块块搭起，火箭崩塌后把散落零件拼成更宽的新火箭，飞到积木月亮；镜头拉回真实书桌。",
+    "focus": "用连接凸点与咔嗒落位表现节拍；崩塌为下一次组装提供材料，结尾用真实尺度的桌上道具揭示玩具世界。",
+    "accent": "#f2cd37",
+    "background": "#191a20",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 38.88,
+    "rhythm": {
+      "duration": 54,
+      "beats": [
+        {
+          "t": 0,
+          "label": "一块积木"
+        },
+        {
+          "t": 4,
+          "label": "首次咔嗒"
+        },
+        {
+          "t": 6,
+          "label": "逐块拼搭"
+        },
+        {
+          "t": 17.37,
+          "label": "火箭崩塌"
+        },
+        {
+          "t": 20.9,
+          "label": "低处独坐"
+        },
+        {
+          "t": 25.2,
+          "label": "拾起零件"
+        },
+        {
+          "t": 29.9,
+          "label": "重建"
+        },
+        {
+          "t": 32.5,
+          "label": "准备发射"
+        },
+        {
+          "t": 36.5,
+          "label": "点火"
+        },
+        {
+          "t": 40,
+          "label": "伴飞"
+        },
+        {
+          "t": 44.2,
+          "label": "落月"
+        },
+        {
+          "t": 48,
+          "label": "揭示书桌"
+        },
+        {
+          "t": 51.71,
+          "label": "片尾"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 4,
+        "from": 0.2,
+        "to": 0.5,
+        "label": "一块积木"
+      },
+      {
+        "t0": 4,
+        "t1": 6,
+        "from": 0.5,
+        "to": 0.7,
+        "label": "首次咔嗒"
+      },
+      {
+        "t0": 6,
+        "t1": 17.37,
+        "from": 0.7,
+        "to": 0.95,
+        "label": "逐块拼搭"
+      },
+      {
+        "t0": 17.37,
+        "t1": 20.9,
+        "from": 0.95,
+        "to": 0.05,
+        "label": "火箭崩塌"
+      },
+      {
+        "t0": 20.9,
+        "t1": 25.2,
+        "from": 0.05,
+        "to": 0.3,
+        "label": "低处独坐"
+      },
+      {
+        "t0": 25.2,
+        "t1": 29.9,
+        "from": 0.3,
+        "to": 0.8,
+        "label": "拾起零件"
+      },
+      {
+        "t0": 29.9,
+        "t1": 32.5,
+        "from": 0.8,
+        "to": 0.5,
+        "label": "重建"
+      },
+      {
+        "t0": 32.5,
+        "t1": 36.5,
+        "from": 0.5,
+        "to": 1,
+        "label": "准备发射"
+      },
+      {
+        "t0": 36.5,
+        "t1": 40,
+        "from": 1,
+        "to": 0.8,
+        "label": "点火"
+      },
+      {
+        "t0": 40,
+        "t1": 44.2,
+        "from": 0.8,
+        "to": 0.45,
+        "label": "伴飞"
+      },
+      {
+        "t0": 44.2,
+        "t1": 48,
+        "from": 0.45,
+        "to": 0.35,
+        "label": "落月"
+      },
+      {
+        "t0": 48,
+        "t1": 51.71,
+        "from": 0.35,
+        "to": 0.15,
+        "label": "揭示书桌"
+      },
+      {
+        "t0": 51.71,
+        "t1": 54,
+        "from": 0.15,
+        "to": 0.05,
+        "label": "片尾"
+      }
+    ],
+    "energyNote": "段落取DEMO.md的Shots及源码时间线；0–1是根据动作、配乐、静默和画面密度标注的相对能量。",
+    "observations": [
+      "积木凸点、底管、圆角、细缝与塑料高光共同建立真实玩具尺度。",
+      "首次堆高在17.37秒崩塌，音乐切断；孤独低机位让角色与残骸同时进入画面。",
+      "29.9秒起使用相同散落部件，以.19秒间隔重组为稳定火箭。",
+      "48秒起镜头拉远，茶具、台灯、铅笔与书堆揭示出月面所在的真实书桌。"
+    ],
+    "composition": {
+      "color": "#c91a09、#0055bf、#f2cd37、#237841、#f4f4f1、#4f9e3a。",
+      "typography": "Fredoka 500/600声明与原片使用的600/700/400请求；沿用共享fonts.css的原始拉丁、拉丁扩展与希伯来子集。",
+      "layout": "1920×1080横屏，24fps；舞台等比缩放，字幕与画内信息保留原作位置。",
+      "imagery": "Three.js程序积木与角色；Poly Haven摄影棚HDRI、胡桃木、茶具及关节台灯。",
+      "motion": "角色和积木按12fps停格，镜头与烟焰按24fps更新；咔嗒落位带.35stud过冲，重建时积木逐块从崩塌终点飞回。",
+      "sound": "Kevin MacLeod《Monkeys Spinning Monkeys》《Heroic Age》CC BY 4.0；Kokoro bm_george、am_adam，代码合成塑料、崩塌与火箭拟音。",
+      "rhythm": "首次落块对齐143.555 BPM；崩塌切乐，重建逐块加速，点火切入管弦主击。",
+      "coherence": "所有积木使用同一凸点尺度，散落部件重组后仍保留原色与几何。"
+    },
+    "layers": [
+      {
+        "name": "真实桌面",
+        "role": "环境光、木纹、茶具、台灯和书堆。"
+      },
+      {
+        "name": "积木舞台",
+        "role": "底板、逐块拼装火箭与月面。"
+      },
+      {
+        "name": "停格演员",
+        "role": "宇航员双手、护目镜与逐帧姿态。"
+      },
+      {
+        "name": "后期与字卡",
+        "role": "景深、GTAO、塑料高光、字幕及片尾。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#c91a09",
+        "#0055bf",
+        "#f2cd37",
+        "#237841",
+        "#f4f4f1",
+        "#4f9e3a"
+      ],
+      "type": "Fredoka 500/600声明与原片使用的600/700/400请求；沿用共享fonts.css的原始拉丁、拉丁扩展与希伯来子集。",
+      "motion": [
+        {
+          "name": "落位与重建",
+          "value": "film/story.js:T.layer / fall / rebuild / rebuildStep；film/rockets.js:restPose从samples的末帧读取散落姿态，slots2复用v1中的同色积木。"
+        },
+        {
+          "name": "书桌揭示",
+          "value": "film/main.js:cam的reveal分支；48–51.71秒由月面机位拉到[38,78,100]，look到[−20,4,−18]，fov=38，aper=1100→380。"
+        }
+      ]
+    },
+    "useCases": [
+      "玩具影片",
+      "产品拼装",
+      "太空故事"
+    ],
+    "avoid": [],
+    "constraints": [],
+    "migration": [
+      {
+        "field": "film/story.js → T / SHOTS",
+        "how": "修改拼搭、崩塌、重建与升空节拍。"
+      },
+      {
+        "field": "film/rockets.js / bricks.js / set.js",
+        "how": "修改积木配色、连接结构、两次火箭造型与桌面道具。"
+      }
+    ],
+    "prompt": "制作积木宇航员把高塔一块块搭起，火箭崩塌后把散落零件拼成更宽的新火箭，飞到积木月亮；镜头拉回真实书桌。 连接凸点与咔嗒落位承担节拍；崩塌产生下一次组装的材料，结尾用真实尺度的桌上道具揭示玩具世界。 角色和积木按12fps停格，镜头与烟焰按24fps更新；咔嗒落位带.35stud过冲，重建逐块从崩塌终点飞回。 Three.js程序积木与角色；Poly Haven摄影棚HDRI、胡桃木、茶具及关节台灯。 字体：Fredoka 500/600声明与原片使用的600/700/400请求；沿用共享fonts.css的原始拉丁、拉丁扩展与希伯来子集。 声音：Kevin MacLeod《Monkeys Spinning Monkeys》《Heroic Age》CC BY 4.0；Kokoro bm_george、am_adam，代码合成塑料、崩塌与火箭拟音。 实现沿用lemo-brick-toy的film/源码、素材与时间表。",
+    "demo": "demos/cases/lemo-brick-toy/index.html",
+    "patternIds": [
+      "snap-build-collapse-rebuild",
+      "anchor-pullback-phone"
+    ],
+    "fidelity": "demos/cases/lemo-brick-toy/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/brick-toy",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/brick-toy/"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；示范成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS的许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/brick-toy"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/brick-toy.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/brick-toy/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/brick-toy)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Kevin MacLeod《Monkeys Spinning Monkeys》《Heroic Age》CC BY 4.0；Kokoro bm_george、am_adam，代码合成塑料、崩塌与火箭拟音。 原始署名见[audio/CREDITS](audio/CREDITS)，许可全文见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Fredoka 500/600声明与原片使用的600/700/400请求；沿用共享fonts.css的原始拉丁、拉丁扩展与希伯来子集。 SIL OFL 1.1原文在fonts/，来源与重建方法见[source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-brick-toy/LICENSES.md",
+    "preview": "previews/cases/lemo-brick-toy.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 用零件造火箭 · 积木玩具 · 接入与保真说明\n\n完整代码影片的来源与固定版本见[条目JSON](../../../entries/cases/lemo-brick-toy.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载运行文件、字体与音轨，等待iframe的load和READY，再按原fps调用并等待render(t)。 | 接入MotionKit舞台、时间线与声音。 |\n| `film/index.html` | 字体入口指向../fonts/；import map把/core/lib.js映射至./core/lib.js。 | 相对路径接入。 |\n| `film/core/lib.js` | 复制固定提交的共享运行代码，文本使用LF。 | 本地运行依赖。 |\n| `audio/film.m4a` | 从Release以-c:a copy流复制。 | 沿用正式混音。 |\n| `fonts/` | 按上游字体、字重和子集保存字体与OFL原文。 | 本地字体加载。 |\n| `source/` | 保存成品运行之外的上游制作文件及目录，文本统一LF。 | 保存制作依赖。 |\n| `stills/` | 风格帧与制作截图保留在上游，预览由capture生成。 | 成品绘制的输入为源码。 |\n| `film/index.html`、`vendor/three@0.170.0/` | Three.js入口与addons映射到本地固定0.170.0依赖链。 | 原作运行库接入。 |\n| `film/set.js` | PH从/core/assets/polyhaven/改为../assets/。 | 同源模型、贴图与HDR路径接入。 |\n| `film/index.html`、`film/core/three/post.js` | /core/three/post.js映射到原样复制的本地后期模块。 | 共享后期运行依赖。 |\n\n`film/`的绘制、材质、着色器、姿势和时间表沿用原作；许可索引见[LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html`通过`MotionKit.load.prepare`预载，以同源iframe加载`film/index.html`，等待`window.READY === true`后调用`MotionKit.mountFilm`。舞台1920×1080、24fps、54.000000秒；`renderAt(t)`等待`upstream.render(Math.round(t*24)/24)`。音轨来自Release正式混音，默认关闭。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时暂停在条目的previewAt。镜头标记取DEMO.md的Shots和源码时间表。\n\n## 已接受差异\n\n本次全部取样的原始列与编码链列均达到0.95。\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，1920×1080、DPR1。WebGL为Intel Iris Xe / ANGLE D3D11。等待`__motion.ready`、按`floor(t×fps+.5)`对齐帧号并等待定位完成；参考PNG从Release按该帧号精确提取。\n\n原始列比较本库PNG和参考PNG；编码链列在过程目录将PNG以浏览器捕获为JPEG95后，经过`JPEG95 → H264 medium CRF14 → H264 slow CRF19`，最终grain=2，解码为PNG再比较。SSIM取ffmpeg统一yuv444p后的All。\n\n| 序号 | 帧号 | 请求秒 | 对齐秒 | 原始SSIM | 编码链SSIM | 取样 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.994657 | 0.995008 | 开头 |\n| 2 | 933 | 38.880000 | 38.875000 | 0.992760 | 0.993173 | frame_sec |\n| 3 | 41 | 1.700000 | 1.708333 | 0.993157 | 0.993015 | Shots · 单块积木微距 |\n| 4 | 236 | 9.851416 | 9.833333 | 0.994430 | 0.995092 | Shots · 逐小节低机位拼搭 |\n| 5 | 503 | 20.950000 | 20.958333 | 0.992961 | 0.993079 | Shots · 崩塌与孤独全景 |\n| 6 | 616 | 25.650000 | 25.666667 | 0.990713 | 0.991018 | Shots · 双手与零件特写 |\n| 7 | 948 | 39.500000 | 39.500000 | 0.994126 | 0.994683 | Shots · 低机位升空与伴飞 |\n| 8 | 1197 | 49.855000 | 49.875000 | 0.984138 | 0.984943 | Shots · 拉远整张书桌 |\n| 9 | 1272 | 53.000000 | 53.000000 | 0.985845 | 0.984102 | 片尾前1秒 |\n\n9帧：原始最低**0.984138**、最高**0.994657**；编码链最低**0.984102**、最高**0.995092**。\n\n声音：成片与本库音轨解码为48kHz单声道，以10ms RMS包络在±500ms内互相关，最佳偏移**0ms**，相关系数**1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-brick-toy.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5。\n- [audio/film.m4a](audio/film.m4a)流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/brick-toy.mp4)，示范影片按[CC BY 4.0](audio/CC-BY-4.0.txt)发布，署名LemoLab并链接来源。\n- 音乐、声音与第三方来源：[audio/CREDITS](audio/CREDITS)；Kokoro配音许可为[Apache-2.0](audio/Apache-2.0.txt)。\n- Kevin MacLeod《Monkeys Spinning Monkeys》《Heroic Age》：[配乐署名](audio/LICENSE-music.txt)，[CC BY 4.0](audio/CC-BY-4.0.txt)。\n- Poly Haven环境、木纹、茶具与台灯：[素材来源](assets/SOURCES.md)，[CC0全文](assets/CC0-1.0.txt)。\n- 字体均为SIL OFL 1.1：[OFL-fredoka.txt](fonts/OFL-fredoka.txt)。\n- Three.js 0.170.0：[MIT全文](vendor/three@0.170.0/LICENSE)；保存实际入口的依赖链。\n",
+    "prompt": "# 用零件造火箭 · 积木玩具\n\n## 实现 Prompt\n\n制作积木宇航员把高塔一块块搭起，火箭崩塌后把散落零件拼成更宽的新火箭，飞到积木月亮；镜头拉回真实书桌。 连接凸点与咔嗒落位承担节拍；崩塌产生下一次组装的材料，结尾用真实尺度的桌上道具揭示玩具世界。 角色和积木按12fps停格，镜头与烟焰按24fps更新；咔嗒落位带.35stud过冲，重建逐块从崩塌终点飞回。 Three.js程序积木与角色；Poly Haven摄影棚HDRI、胡桃木、茶具及关节台灯。 字体：Fredoka 500/600声明与原片使用的600/700/400请求；沿用共享fonts.css的原始拉丁、拉丁扩展与希伯来子集。 声音：Kevin MacLeod《Monkeys Spinning Monkeys》《Heroic Age》CC BY 4.0；Kokoro bm_george、am_adam，代码合成塑料、崩塌与火箭拟音。 实现沿用lemo-brick-toy的film/源码、素材与时间表。\n\n## 动效 Token\n\n- **落位与重建**：film/story.js:T.layer / fall / rebuild / rebuildStep；film/rockets.js:restPose从samples的末帧读取散落姿态，slots2复用v1中的同色积木。\n- **书桌揭示**：film/main.js:cam的reveal分支；48–51.71秒由月面机位拉到[38,78,100]，look到[−20,4,−18]，fov=38，aper=1100→380。\n\n## 迁移\n\n- `film/story.js → T / SHOTS`：修改拼搭、崩塌、重建与升空节拍。\n- `film/rockets.js / bricks.js / set.js`：修改积木配色、连接结构、两次火箭造型与桌面道具。\n\n[打开 Demo](../../demos/cases/lemo-brick-toy/index.html) · [在库中查看](../../cases.html#case/lemo-brick-toy)\n"
+  },
+  "entrypoint": "demos/cases/lemo-brick-toy/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-brick-toy/LICENSES.md",
+      "bytes": 973,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/SOURCES.md",
+      "bytes": 512,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/desk_lamp_arm_01.bin",
+      "bytes": 736804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/desk_lamp_arm_01.gltf",
+      "bytes": 4453,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_arm_1k.jpg",
+      "bytes": 780379,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_diff_1k.jpg",
+      "bytes": 702522,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_nor_gl_1k.jpg",
+      "bytes": 651826,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/photo_studio_loft_hall_2k.hdr",
+      "bytes": 6432146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/tea_set_01.bin",
+      "bytes": 941776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/tea_set_01.gltf",
+      "bytes": 15836,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/textures/tea_set_01_arm_1k.jpg",
+      "bytes": 559750,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/textures/tea_set_01_diff_1k.jpg",
+      "bytes": 509631,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/textures/tea_set_01_nor_gl_1k.jpg",
+      "bytes": 255598,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/walnut_diff.jpg",
+      "bytes": 2418767,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/walnut_nor.jpg",
+      "bytes": 1959270,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/walnut_rough.jpg",
+      "bytes": 2865130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/CREDITS",
+      "bytes": 1027,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/LICENSE-music.txt",
+      "bytes": 405,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/film.m4a",
+      "bytes": 1779538,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fidelity.md",
+      "bytes": 3887,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/actors.js",
+      "bytes": 4221,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/bricks.js",
+      "bytes": 4915,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/core/three/post.js",
+      "bytes": 6482,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/index.html",
+      "bytes": 653,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/main.js",
+      "bytes": 21361,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/rockets.js",
+      "bytes": 19840,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/set.js",
+      "bytes": 7807,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/story.js",
+      "bytes": 3077,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/voices/dur.json",
+      "bytes": 114,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/OFL-fredoka.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/f1.woff2",
+      "bytes": 8776,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/f2.woff2",
+      "bytes": 4564,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/f3.woff2",
+      "bytes": 29704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/fonts.css",
+      "bytes": 2955,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/index.html",
+      "bytes": 3136,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/CREDITS",
+      "bytes": 1027,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/README.md",
+      "bytes": 2644,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/events.json",
+      "bytes": 4402,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/lines.json",
+      "bytes": 774,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/mix.py",
+      "bytes": 2975,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/music/edit.py",
+      "bytes": 1992,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/music/score.json",
+      "bytes": 76,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "bytes": 4625,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+      "bytes": 314097,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+      "bytes": 516,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+      "bytes": 110273,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+      "bytes": 11377,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/lemo-brick-toy.json",
+      "bytes": 9486,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-brick-toy.jpg",
+      "bytes": 42366,
+      "role": "preview"
+    }
+  ]
+}

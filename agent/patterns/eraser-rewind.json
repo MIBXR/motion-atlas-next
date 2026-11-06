@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "eraser-rewind",
+  "pattern": {
+    "id": "eraser-rewind",
+    "order": 113,
+    "title": "板擦倒抹回溯",
+    "types": [
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "将已经画出的七天轨迹倒序重组为板擦路径，板擦反向抹去轨迹，定位磁铁同步沿倒序轨迹回到起点。",
+    "mechanism": "将已经画出的七天轨迹倒序重组为板擦路径，板擦反向抹去轨迹，定位磁铁同步沿倒序轨迹回到起点。",
+    "trigger": "定位磁铁漂到海里之后，87秒启动两秒回溯。",
+    "effect": "擦除方向、磁铁回走与压缩倒放的声音共同表现时间倒退。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "84.5–90秒；1倍速，总时长5.500000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "逆序与擦除",
+        "value": "film/film.js:230–232：按d=6→0、k=末→首形成trailBack，tl.erase在87–89秒执行，路径y+42、宽230、强度.9。"
+      },
+      {
+        "name": "磁铁回走",
+        "value": "film/film.js:272–276：u=(t−87)/2沿trailBack插值，lift=.35sin(πu)，结束回PIN。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-whiteboard/film/film.js",
+      "demos/cases/lemo-whiteboard/film/engine/wb.js"
+    ],
+    "locator": "逆序与擦除 / 磁铁回走",
+    "useCases": [
+      "擦除方向、磁铁回走与压缩倒放的声音共同表现时间倒退。"
+    ],
+    "avoid": [
+      "同时安排遮挡书写或湿边的主动作"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-whiteboard的原作render(t)，重放“板擦倒抹回溯”。将已经画出的七天轨迹倒序重组为板擦路径，板擦反向抹去轨迹，定位磁铁同步沿倒序轨迹回到起点。参数与源码：film/film.js:230–232：按d=6→0、k=末→首形成trailBack，tl.erase在87–89秒执行，路径y+42、宽230、强度.9。；film/film.js:272–276：u=(t−87)/2沿trailBack插值，lift=.35sin(πu)，结束回PIN。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/eraser-rewind/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-whiteboard"
+      }
+    ],
+    "previewAt": 3,
+    "markers": [
+      {
+        "t": 0,
+        "label": "板擦倒抹回溯"
+      }
+    ],
+    "preview": "previews/patterns/eraser-rewind.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-whiteboard",
+      "bundle": "agent/cases/lemo-whiteboard.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 板擦倒抹回溯\n\n## 实现 Prompt\n\n复用来源案例lemo-whiteboard的原作render(t)，重放“板擦倒抹回溯”。将已经画出的七天轨迹倒序重组为板擦路径，板擦反向抹去轨迹，定位磁铁同步沿倒序轨迹回到起点。参数与源码：film/film.js:230–232：按d=6→0、k=末→首形成trailBack，tl.erase在87–89秒执行，路径y+42、宽230、强度.9。；film/film.js:272–276：u=(t−87)/2沿trailBack插值，lift=.35sin(πu)，结束回PIN。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：84.5–90秒；1倍速，总时长5.500000秒。\n\n[打开 Demo](../../demos/patterns/eraser-rewind/index.html) · [在库中查看](../../patterns.html#pattern/eraser-rewind)\n"
+  },
+  "entrypoint": "demos/patterns/eraser-rewind/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-whiteboard/LICENSES.md",
+      "bytes": 1190,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CREDITS",
+      "bytes": 1394,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/film.m4a",
+      "bytes": 3730104,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fidelity.md",
+      "bytes": 4438,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/engine/wb.js",
+      "bytes": 32649,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/film.js",
+      "bytes": 30965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/index.html",
+      "bytes": 419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/lines.json",
+      "bytes": 3405,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/main.js",
+      "bytes": 421,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/voices/words.json",
+      "bytes": 4364,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/ArchitectsDaughter-Regular.ttf",
+      "bytes": 43352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/EMSTech.json",
+      "bytes": 35406,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/OFL-ArchitectsDaughter.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/OFL-EMSTech.txt",
+      "bytes": 442,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/fonts.css",
+      "bytes": 69,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/index.html",
+      "bytes": 2466,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/CREDITS",
+      "bytes": 1394,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/README.md",
+      "bytes": 3040,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/build.sh",
+      "bytes": 1588,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/events.json",
+      "bytes": 101156,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/mix.py",
+      "bytes": 12101,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/music.py",
+      "bytes": 13249,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/test.js",
+      "bytes": 1354,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/asr_check.py",
+      "bytes": 1502,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/cuecheck.py",
+      "bytes": 1716,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/subs.mjs",
+      "bytes": 669,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/svgfont2json.py",
+      "bytes": 997,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/voices/dur.json",
+      "bytes": 316,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/eraser-rewind/index.html",
+      "bytes": 801,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/eraser-rewind/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-whiteboard.json",
+      "bytes": 11372,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/eraser-rewind.json",
+      "bytes": 2439,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/eraser-rewind.jpg",
+      "bytes": 20317,
+      "role": "preview"
+    }
+  ]
+}

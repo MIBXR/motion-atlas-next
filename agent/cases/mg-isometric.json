@@ -1,0 +1,766 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "mg-isometric",
+  "entry": {
+    "id": "mg-isometric",
+    "order": 5,
+    "title": "等距 2.5D · ISOPOLIS — Let the City Grow",
+    "subtitle": "让城市自己生长",
+    "carriers": [
+      "video"
+    ],
+    "style": "dimensional",
+    "purpose": "title-art",
+    "tech": [
+      "canvas2d",
+      "threejs"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "等距投影",
+      "微缩城市",
+      "楼房生长",
+      "数据流",
+      "平行运镜"
+    ],
+    "summary": "蓝图先描出网格，地块逐圈落位，住宅、楼房、风机与轨道相继生长；核心塔伸展后发出激活波，让灰模城市转为彩色，数据弧线、无人机与信息卡接续出现，镜头拉远显出 ISOPOLIS 和「让城市自己生长」。",
+    "focus": "等轴微缩城市采用 Three.js 正交相机，模型与材质全部由 film/ 代码生成；楼房分层生长、平行滑轨运镜和等轴信息卡保留无透视灭点的构图。",
+    "accent": "#A08CFF",
+    "background": "#DAD3F7",
+    "timeline": true,
+    "kit": true,
+    "rhythm": {
+      "duration": 10,
+      "bpm": 120,
+      "beats": [
+        {
+          "t": 0,
+          "label": "蓝图起绘",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 0.25,
+          "label": "地块环1",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 0.5,
+          "label": "地块环2",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 0.75,
+          "label": "地块环3",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 0.9,
+          "label": "蓝图成形",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 1,
+          "label": "地块环4",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 1.25,
+          "label": "地块环5",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 1.5,
+          "label": "地块环6",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 1.62,
+          "label": "土层伸展",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 1.75,
+          "label": "道路描出",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2,
+          "label": "生长前沿1",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.25,
+          "label": "风机1",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.25,
+          "label": "住宅1",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.25,
+          "label": "住宅2",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.35,
+          "label": "轨道构建",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.4375,
+          "label": "住宅3",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.4375,
+          "label": "住宅4",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.5,
+          "label": "风机2",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.6875,
+          "label": "住宅5",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.6875,
+          "label": "住宅6",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.75,
+          "label": "风机3",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.875,
+          "label": "住宅7",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.875,
+          "label": "住宅8",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.875,
+          "label": "楼房1",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 2.875,
+          "label": "生长前沿2",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3,
+          "label": "风机4",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.125,
+          "label": "楼房2",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.125,
+          "label": "楼房3",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.25,
+          "label": "住宅9",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.25,
+          "label": "住宅10",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.375,
+          "label": "楼房4",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.375,
+          "label": "楼房5",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.625,
+          "label": "楼房6",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.625,
+          "label": "楼房7",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.75,
+          "label": "住宅11",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.875,
+          "label": "楼房8",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 3.875,
+          "label": "楼房9",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.125,
+          "label": "楼房10",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.125,
+          "label": "楼房11",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.1875,
+          "label": "住宅12",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.1875,
+          "label": "住宅13",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.375,
+          "label": "楼房12",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.375,
+          "label": "生长前沿3",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.4375,
+          "label": "住宅14",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.625,
+          "label": "核心基座",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.625,
+          "label": "车辆入场",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.75,
+          "label": "核心一段",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.8,
+          "label": "生长前沿4",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 4.875,
+          "label": "列车启程",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 5,
+          "label": "核心二段",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 5.25,
+          "label": "核心三段",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 5.5,
+          "label": "核心天线",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 5.75,
+          "label": "核心光环",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 6,
+          "label": "城市激活",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 6.25,
+          "label": "无人机1",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 6.5,
+          "label": "无人机2",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 6.5,
+          "label": "数据卡1",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 6.75,
+          "label": "无人机3",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 6.75,
+          "label": "数据卡2",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 7,
+          "label": "无人机4",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 7,
+          "label": "数据卡3",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 7.75,
+          "label": "拉远开始",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 8.2,
+          "label": "拉远风声",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 8.5,
+          "label": "标题落版",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 8.5625,
+          "label": "字母起落",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 8.75,
+          "label": "拉远到位",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 9,
+          "label": "标语揭示",
+          "note": "原作 film/cues.json 的时间节点。"
+        },
+        {
+          "t": 10,
+          "label": "结束",
+          "note": "原作 film/cues.json 的时间节点。"
+        }
+      ]
+    },
+    "layers": [
+      {
+        "name": "蓝图与浮岛",
+        "role": "12×12 蓝图、逐圈落位地块、向下伸展的三层土体、道路和水面组成浮岛。"
+      },
+      {
+        "name": "微缩城市",
+        "role": "住宅、楼房、树木、风机、太阳能板与单轨按时间表依次生长，车辆和列车沿环路运行。"
+      },
+      {
+        "name": "核心与数据",
+        "role": "核心塔分段伸出，激活光柱与方形光波让城市着色，数据弧线连向屋顶，无人机搬运包裹。"
+      },
+      {
+        "name": "信息与落版",
+        "role": "清洁能源、平均通勤、数据吞吐三张等轴卡片依次展开，拉远后挤出字母落在地面，标语和状态行擦入。"
+      },
+      {
+        "name": "配乐音效",
+        "role": "120 BPM、D 大调配乐；马林巴音符、木质点击与短促弹音随地块、建筑及字母落点出现。"
+      }
+    ],
+    "composition": {
+      "color": "薰衣草背景 #DAD3F7、薄荷 #B7ECD6、蜜桃 #FFC4AC、天蓝 #A8D2FF、白 #FBFAFF、数据青 #62F0F2 和墨紫 #2C2960；城市受激活波扫描后，从灰模转为彩色。",
+      "typography": "HarmonyOS Sans SC 500、700；JetBrains Mono 500；Unbounded 800。ISOPOLIS 由静态字重轮廓挤出为三维字母，中文标语与状态行印在等轴地面。",
+      "layout": "1920×1080 横屏；正交相机保持等轴方向，以平移和缩放巡视 12×12 城市，结尾拉远并将标题排在同一地面。",
+      "imagery": "城市、道路、风机、树木、车辆、单轨和无人机由 Three.js 几何体构造；柔和阴影、环境遮蔽与辉光形成体积。",
+      "motion": "地块倾斜落地并微微回弹；建筑基座先落、墙体弹性伸展、屋顶延后；核心塔套筒伸出后激活全城，信息卡沿等轴面展开，字母翻落在地面。",
+      "sound": "复用原片 120 BPM、D 大调的马林巴与钟琴配乐及对应音效，播放从原片无损抽取的 AAC 音轨。",
+      "rhythm": "地块环从 0.25 至 1.5 秒逐圈落位，核心塔从 4.625 秒开始组装，6 秒激活，6.5、6.75、7 秒展开信息卡，7.75 至 8.75 秒拉远，9 秒揭示标语。",
+      "coherence": "同一城市按共享时间表从蓝图、灰模生长进入激活运行；青色网格与传播波贯穿开场、核心落点和标题落版。"
+    },
+    "tokens": {
+      "palette": [
+        "#DAD3F7",
+        "#B7ECD6",
+        "#FFC4AC",
+        "#A8D2FF",
+        "#FBFAFF",
+        "#62F0F2",
+        "#2C2960"
+      ],
+      "type": "HarmonyOS Sans SC 500、700；JetBrains Mono 500；Unbounded 800。",
+      "motion": [
+        {
+          "name": "地块环节点",
+          "value": "rings=[0.25,0.5,0.75,1.0,1.25,1.5]；角向错峰 ang*0.07。"
+        },
+        {
+          "name": "墙体生长",
+          "value": "A.spring(tau,14.8,0.61,0)；墙体延后 1/30 秒；roof_lag=0.375。"
+        },
+        {
+          "name": "激活波",
+          "value": "drop=6.0；PULSE_T=cues.drop-0.015；pulse_speed=15.0；FLIP_D=5/30。"
+        },
+        {
+          "name": "视差层",
+          "value": "前景、城市、背景为 1.0 : 0.8 : 0.6；相机不旋转。"
+        },
+        {
+          "name": "字母落点",
+          "value": "letters_start=8.5625；letters_step=0.0625；final=9.0。"
+        }
+      ]
+    },
+    "useCases": [
+      "科技架构动画",
+      "应用功能演示",
+      "微缩智慧城短片"
+    ],
+    "constraints": [
+      "原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。",
+      "10 秒，1920×1080，30fps；只提供横屏原作画幅，复刻公开成片的默认版本。"
+    ],
+    "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n等轴 2.5D Isometric / 2.5D\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: Three.js OrthographicCamera at true isometric angle + soft shadows + AO (three/addons postprocessing), or SVG with SSR matrix faces\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「微缩智慧城」An isometric miniature city / data campus that builds itself — the School-of-Motion isometric mograph showpiece.\n- True isometric camera (orthographic, 35.264° elevation, 45° azimuth), no perspective, pastel studio palette (lavender ground, mint, peach, sky blue, white) with soft shadows + ambient occlusion so it reads like a premium Dribbble/Behance hero.\n- 0–2s: ground tiles flip/drop in as a wave from the centre (tiny bounce each);\n- 2–5s: buildings GROW — base lands, walls scaleY from 0 with overshoot, roof caps 2–3 frames later; trees pop; windows light up in sequence;\n- 5–8s: life — cars loop along roads, a little train, drones carrying packets, glowing data streams pulse between buildings, a wind turbine spins; camera does parallel slides (no rotation) with 1 : 0.8 : 0.6 parallax layers (foreground clouds);\n- 8–10s: pull back to reveal the whole island floating in a pastel void; title card set ON the isometric plane (text skewed into iso space) e.g. \"SMART CITY OS\".\nSound: bright plucky tech melody (FM marimba/pluck), soft clicks/pops for every tile/building landing, airy whoosh on the pull-back.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n以 30° 等轴测投影展示微缩世界：小城市、办公室切片、数据机房，无灭点、处处等比。信息密度高又不失可爱，是科技公司架构图动画和 App 功能演示的标配。School of Motion 有专门的 isometric mograph 教程系列。\n视觉特征 30°等角投影, 无透视灭点, 微缩场景, 楼房生长动画, 平行滑轨式运镜\n关键技法 SSR 公式造等轴面：Scale 纵向 86.6% → Shear/skew ±30° → Rotate ∓30°，三个面分别做后拼合\n假 3D 靠图层排序：Z 序=画面 y 坐标，物体沿等轴网格移动时保持 2:1 像素斜率\n楼房'生长'：底面先落位，立面用 scaleY 从 0 拉起 + 顶面延迟 2~3 帧盖上\n运镜是整组平移（无旋转），配合前中后景 1:0.8:0.6 的视差速度\nAE 里可用真 3D 图层+正交相机（无透视）偷懒，Motion Design School 的 Isometric Camera 技巧即此路\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+    "migration": [
+      {
+        "field": "film/world.js → PAL、MAP 与模型定义",
+        "how": "调整城市配色、12×12 地块布局与模型参数。"
+      },
+      {
+        "field": "film/main.js → CAM、buildTitle、buildTags",
+        "how": "调整镜头轨道、品牌文字、标语与三张信息卡内容。"
+      },
+      {
+        "field": "film/cues.json",
+        "how": "调整地块、建筑、核心、数据卡与落版节点，画面与配乐共用时间表。"
+      },
+      {
+        "field": "index.html → MotionKit.mountFilm",
+        "how": "接入 Motion Kit 时间轴、原片音轨与窗口缩放。"
+      }
+    ],
+    "demo": "demos/cases/mg-isometric/index.html",
+    "patternIds": [
+      "blueprint-tile-drop-wave",
+      "staged-extrusion-build",
+      "core-ignition-wave",
+      "isometric-leader-card",
+      "route-draw-marker"
+    ],
+    "previewAt": 9.75,
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "原作《ISOPOLIS — Let the City Grow（让城市自己生长）》来自 [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)，作者 Vincentwei1021，固定提交 `49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`。代码、提示词、文档和成片按 MIT 许可发布，许可原文见 [LICENSE](film/LICENSE)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "本作品使用 HarmonyOS Sans SC 字体。\n\n| 字体与字重 | 官方完整文件与版本 | 许可原文 |\n| --- | --- | --- |\n| HarmonyOS Sans SC，500、700 | [华为官方 HarmonyOS-Sans.zip](https://developer.huawei.com/images/download/general/HarmonyOS-Sans.zip)，取 `HarmonyOS_Sans_SC_Medium.ttf`、`HarmonyOS_Sans_SC_Bold.ttf`，字体版本均为 1.0 | HarmonyOS Sans Fonts License Agreement，[HarmonyOS-Sans-LICENSE.txt](fonts/HarmonyOS-Sans-LICENSE.txt) |\n| JetBrains Mono，可变字重，画面用 500 | [Google Fonts：JetBrainsMono[wght].ttf](https://raw.githubusercontent.com/google/fonts/6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf)，字体版本 2.211，提交 `6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da` | SIL OFL 1.1，[JetBrainsMono-OFL.txt](fonts/JetBrainsMono-OFL.txt) |\n| Unbounded，可变字重，画面用 800 | [Google Fonts：Unbounded[wght].ttf](https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/unbounded/Unbounded%5Bwght%5D.ttf)，字体版本 1.701，提交 `8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5` | SIL OFL 1.1，[Unbounded-OFL.txt](fonts/Unbounded-OFL.txt) |\n\n完整原始可变字体保存在 `fonts/`，`fonts/Unbounded-800-static.ttf` 由 Unbounded 在 `wght=800` 实例化，命令见 [fidelity.md](fidelity.md)。"
+      },
+      {
+        "scope": "固定版本库",
+        "notes": "| 包 | 来源 | 实际文件 | 许可 |\n| --- | --- | --- | --- |\n| three 0.186.1 | [npm registry 原始 tarball](https://registry.npmjs.org/three/-/three-0.186.1.tgz) | `vendor/three@0.186.1/` 中的模块、几何体、环境、后处理及其导入依赖 | MIT，[原文](vendor/three@0.186.1/LICENSE) |\n| opentype.js 2.0.0 | [npm registry 原始 tarball](https://registry.npmjs.org/opentype.js/-/opentype.js-2.0.0.tgz) | `vendor/opentype.js@2.0.0/dist/opentype.mjs` | MIT，[原文](vendor/opentype.js@2.0.0/LICENSE) |\n\n本片的模型、材质和着色器由原作代码生成。"
+      },
+      {
+        "scope": "配乐",
+        "notes": "配乐由原作 `source/audio.py` 使用 [VCSL 乐器采样](https://github.com/sgossner/VCSL)（CC0）合成。`audio/film.m4a` 从固定提交的 `videos/03-isometric.mp4` 无损抽取 AAC 音轨，保留原片混音。\n\n```bash\nffmpeg -i ../../sources/mg-styles-15/videos/03-isometric.mp4 -vn -c:a copy demos/cases/mg-isometric/audio/film.m4a\n```"
+      }
+    ],
+    "relatedEntries": [
+      {
+        "kind": "material",
+        "id": "mg-styles-15",
+        "note": "提示词与配乐合成库所在素材"
+      }
+    ],
+    "energy": [
+      0.424,
+      0.464,
+      0.518,
+      0.561,
+      0.6,
+      0.655,
+      0.73,
+      0.766,
+      0.73,
+      0.657,
+      0.645,
+      0.711,
+      0.774,
+      0.826,
+      0.831,
+      0.858,
+      0.786,
+      0.828,
+      0.804,
+      0.828,
+      0.726,
+      0.666,
+      0.67,
+      0.788,
+      0.893,
+      0.891,
+      0.823,
+      0.778,
+      0.758,
+      0.677,
+      0.634,
+      0.611,
+      0.604,
+      0.536,
+      0.472,
+      0.437,
+      0.393,
+      0.337,
+      0.262,
+      0.224
+    ],
+    "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。",
+    "fidelity": "demos/cases/mg-isometric/fidelity.md",
+    "licenses": "demos/cases/mg-isometric/LICENSES.md",
+    "preview": "previews/cases/mg-isometric.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 等距 2.5D 接入与保真说明\n\n复刻以公开默认成片为准，作品来源与固定版本见[条目 JSON](../../../entries/cases/mg-isometric.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `film/main.js` | 移除 `V5`、`NOLINK`、夜景、另一版标题与镜头分支及独占参数；保留默认 `buildTitle` 块、默认标题和全部数值逻辑，以及 `spp`、`cam`、`ta`、`mono`、`mb` 等默认功能参数。 | 另一版剪辑分支 |\n| `js/title5.js`、`js/night5.js` | 移除只服务另一版剪辑的三维中文标题与夜景模块。 | 另一版剪辑分支 |\n| `film/main.js` | 移除 `window.linkAt` 及其另一剪辑的场景重定位导出。 | 开发工具 |\n| `index.html` | 字体样式改为 `fonts/fonts.css`；three、three/addons、opentype 导入映射改为固定版本 `vendor/`；原模块入口改为 `./film/main.js`，入口调用 `MotionKit.mountFilm`。 | 路径改写 |\n| `film/main.js` | 时间表从 `/demos/03-isometric/cues.json` 改为 `./film/cues.json`。 | 路径改写 |\n| `film/title.js` | 静态字重从 `/demos/03-isometric/assets/fonts/Unbounded-800-static.ttf` 改为 `./fonts/Unbounded-800-static.ttf`。 | 路径改写 |\n| `fonts/fonts.css` | 只声明默认画面的 HarmonyOS Sans SC 700/500、JetBrains Mono、Unbounded；URL 指向本地完整字体文件。 | 路径改写 |\n| `audio.py` → `source/audio.py` | 保存生成原作配乐的脚本，内容字节和内部路径保持不变。 | 移至 source |\n\n原作、字体、固定版本库与音轨的来源和许可见 [LICENSES.md](LICENSES.md)。\n\n静态字重：\n\n`fonts/Unbounded[wght].ttf` 为官方完整可变字体，字体版本 1.701。`fonts/Unbounded-800-static.ttf` 使用 `fonttools==4.53.1` 在 `wght=800` 实例化，保持原作文件名与相对路径。实例化命令在本仓库目录执行：\n\n```powershell\n& 'C:\\Users\\mibxr\\AppData\\Local\\Temp\\atlas-work\\mg-batch2\\.venv\\Scripts\\python.exe' -m fontTools.varLib.instancer 'demos/cases/mg-isometric/fonts/Unbounded[wght].ttf' wght=800 --output 'demos/cases/mg-isometric/fonts/Unbounded-800-static.ttf'\n```\n\n## 适配层\n\n`film/setup.js` 创建舞台节点并在后台初始化原作画面。`index.html` 读取 `film/cues.json` 后调用 `MotionKit.mountFilm`，通过 `MotionKit.preload` 登记画面与时间表准备任务。`renderAt(t)` 等待画面初始化后调用原作 `window.renderAt(t)`；时长、尺寸与帧率为 10 秒、1920×1080、30fps。`window.__motion.ready` 等待画面就绪，音轨在后台加载。\n\n`MotionKit.stage` 固定原作 `#stage` 的内部像素尺寸，仅通过根节点的 `translate` 与等比 `scale` 居中适配窗口，四周黑边，舞台背景保留原作薰衣草色。只提供 `landscape` 画幅。\n\nmarkers 和条目节拍取自 `film/cues.json` 的地块、土层、道路、建筑、风机、轨道、核心塔、车辆、激活、无人机、数据卡、拉远、标题和蓝图时间节点，label 译为不超过八字的中文。`roof_lag`、`pulse_speed`、`letters_step` 保留为原作参数。\n\n控制条支持播放、暂停、重播、拖动、中文倍速选择与声音开关。声音默认关闭，开启后播放 `audio/film.m4a`；seek、暂停与变速同步音轨，播放时校正超过 0.08 秒的偏移。浏览器阻止声音时回报待启用状态，在页面内点击或按键后继续。\n\n音轨在后台加载原始字节并创建 `audio/mp4` Blob，不参与首帧预加载；开启声音时等待媒体元数据后同步音轨。元数据未就绪时，暂停只停止播放，定位留待声音启用时完成。\n\n`?embed` 与 `?render` 隐藏控制条，`?render` 关闭自动播放与音轨；`?t=秒` 指定时刻。减少动态偏好下默认显示 9.75 秒并暂停，运行中启用该偏好会暂停。\n\n\n`previewAt: 9.75`。`film/title.js:156` 的状态行在 `cues.final + 0.62 = 9.62` 秒完全揭示；9.75 秒时镜头已拉远到完整浮岛，ISOPOLIS 字母全部落定，中文标语与状态行均完整，城市保留运行与轻微浮动。\n\n## 已接受差异\n\n复刻保留原作默认的 16 子样本绘制配置；未见构图、配色、字形或元素位置的实质差异，细微边缘和纹理差异符合视频压缩表现。\n\n## 与原片对照结果\n\n本案例预览与五时刻对照均已生成。参考 MP4 用 ffmpeg 取帧，复刻页由 `scripts/shot.mjs` 在 1920×1080 截图；拼图左侧为原片、右侧为复刻，保存在工作区 `mg-batch2/compare/mg-isometric/`。\n\n| 时刻 | 拼图 | 逐张结论 |\n| --- | --- | --- |\n| 1.0 秒 | `compare-1.png` | 蓝图网格、地块落位、翻转姿态、阴影与配色一致。 |\n| 3.0 秒 | `compare-3.png` | 住宅、树木、轨道、地块与完整浮岛前缘的构图、颜色和位置一致。 |\n| 5.0 秒 | `compare-5.png` | 灰模楼房、核心塔、风机、轨道与车辆的位置、颜色和生长状态一致。 |\n| 7.5 秒 | `compare-7.5.png` | 彩色城市、核心光环、引线与三张数据卡的构图、数值、字形和位置一致。 |\n| 9.5 秒 | `compare-9.5.png` | 浮岛、云层、ISOPOLIS 三维字标、中文标语、状态行与背景点阵位置一致，字形一致。 |\n\n浏览器验收使用 Edge，服务端口 4331。案例页自动播放，拖动后暂停在 7.1636 秒；独立 Demo 的 `?t=5&autoplay=0` 定位在 5 秒并暂停，声音默认关闭。声音开关与 1.5 倍速有效；按绘制帧抽样，音轨与时间轴均为 5.15 秒且均在播放，暂停后两者均为 5.3 秒并停止。\n\n## 制作依赖与复现\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/03-isometric && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "licenses": "# 第三方许可索引\n\n[来源、版本和许可事实](../../../entries/cases/mg-isometric.json)\n\n- [film/LICENSE](film/LICENSE)\n- [fonts/HarmonyOS-Sans-LICENSE.txt](fonts/HarmonyOS-Sans-LICENSE.txt)\n- [fonts/JetBrainsMono-OFL.txt](fonts/JetBrainsMono-OFL.txt)\n- [fonts/Unbounded-OFL.txt](fonts/Unbounded-OFL.txt)\n- [vendor/three@0.186.1/LICENSE](vendor/three@0.186.1/LICENSE)\n- [vendor/opentype.js@2.0.0/LICENSE](vendor/opentype.js@2.0.0/LICENSE)\n\n## 制作依赖\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/03-isometric && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "prompt": "# 等距 2.5D · ISOPOLIS — Let the City Grow\n\n## 实现 Prompt\n\nYou are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n等轴 2.5D Isometric / 2.5D\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: Three.js OrthographicCamera at true isometric angle + soft shadows + AO (three/addons postprocessing), or SVG with SSR matrix faces\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「微缩智慧城」An isometric miniature city / data campus that builds itself — the School-of-Motion isometric mograph showpiece.\n- True isometric camera (orthographic, 35.264° elevation, 45° azimuth), no perspective, pastel studio palette (lavender ground, mint, peach, sky blue, white) with soft shadows + ambient occlusion so it reads like a premium Dribbble/Behance hero.\n- 0–2s: ground tiles flip/drop in as a wave from the centre (tiny bounce each);\n- 2–5s: buildings GROW — base lands, walls scaleY from 0 with overshoot, roof caps 2–3 frames later; trees pop; windows light up in sequence;\n- 5–8s: life — cars loop along roads, a little train, drones carrying packets, glowing data streams pulse between buildings, a wind turbine spins; camera does parallel slides (no rotation) with 1 : 0.8 : 0.6 parallax layers (foreground clouds);\n- 8–10s: pull back to reveal the whole island floating in a pastel void; title card set ON the isometric plane (text skewed into iso space) e.g. \"SMART CITY OS\".\nSound: bright plucky tech melody (FM marimba/pluck), soft clicks/pops for every tile/building landing, airy whoosh on the pull-back.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n以 30° 等轴测投影展示微缩世界：小城市、办公室切片、数据机房，无灭点、处处等比。信息密度高又不失可爱，是科技公司架构图动画和 App 功能演示的标配。School of Motion 有专门的 isometric mograph 教程系列。\n视觉特征 30°等角投影, 无透视灭点, 微缩场景, 楼房生长动画, 平行滑轨式运镜\n关键技法 SSR 公式造等轴面：Scale 纵向 86.6% → Shear/skew ±30° → Rotate ∓30°，三个面分别做后拼合\n假 3D 靠图层排序：Z 序=画面 y 坐标，物体沿等轴网格移动时保持 2:1 像素斜率\n楼房'生长'：底面先落位，立面用 scaleY 从 0 拉起 + 顶面延迟 2~3 帧盖上\n运镜是整组平移（无旋转），配合前中后景 1:0.8:0.6 的视差速度\nAE 里可用真 3D 图层+正交相机（无透视）偷懒，Motion Design School 的 Isometric Camera 技巧即此路\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.\n\n## 动效 Token\n\n- **地块环节点**：rings=[0.25,0.5,0.75,1.0,1.25,1.5]；角向错峰 ang*0.07。\n- **墙体生长**：A.spring(tau,14.8,0.61,0)；墙体延后 1/30 秒；roof_lag=0.375。\n- **激活波**：drop=6.0；PULSE_T=cues.drop-0.015；pulse_speed=15.0；FLIP_D=5/30。\n- **视差层**：前景、城市、背景为 1.0 : 0.8 : 0.6；相机不旋转。\n- **字母落点**：letters_start=8.5625；letters_step=0.0625；final=9.0。\n\n## 制作约束\n\n- 原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。\n- 10 秒，1920×1080，30fps；只提供横屏原作画幅，复刻公开成片的默认版本。\n\n## 迁移\n\n- `film/world.js → PAL、MAP 与模型定义`：调整城市配色、12×12 地块布局与模型参数。\n- `film/main.js → CAM、buildTitle、buildTags`：调整镜头轨道、品牌文字、标语与三张信息卡内容。\n- `film/cues.json`：调整地块、建筑、核心、数据卡与落版节点，画面与配乐共用时间表。\n- `index.html → MotionKit.mountFilm`：接入 Motion Kit 时间轴、原片音轨与窗口缩放。\n\n[打开 Demo](../../demos/cases/mg-isometric/index.html) · [在库中查看](../../cases.html#case/mg-isometric)\n"
+  },
+  "entrypoint": "demos/cases/mg-isometric/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-isometric/LICENSES.md",
+      "bytes": 984,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/audio/film.m4a",
+      "bytes": 423677,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fidelity.md",
+      "bytes": 6117,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/anim.js",
+      "bytes": 3953,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/cues.json",
+      "bytes": 1240,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/main.js",
+      "bytes": 9777,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/render.js",
+      "bytes": 9205,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/setup.js",
+      "bytes": 216,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/style.css",
+      "bytes": 423,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/title.js",
+      "bytes": 8519,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/ui.js",
+      "bytes": 9547,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/world.js",
+      "bytes": 80534,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS-Sans-LICENSE.txt",
+      "bytes": 32768,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS_Sans_SC_Bold.ttf",
+      "bytes": 8158996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS_Sans_SC_Medium.ttf",
+      "bytes": 8227312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/JetBrainsMono-OFL.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/JetBrainsMono[wght].ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded-800-static.ttf",
+      "bytes": 423680,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded-OFL.txt",
+      "bytes": 4392,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded[wght].ttf",
+      "bytes": 778272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/fonts.css",
+      "bytes": 700,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/index.html",
+      "bytes": 2932,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/source/audio.py",
+      "bytes": 14263,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-isometric/source/cues.json",
+      "bytes": 1240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/build/three.core.js",
+      "bytes": 1458113,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/build/three.module.js",
+      "bytes": 662772,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/environments/RoomEnvironment.js",
+      "bytes": 4960,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "bytes": 6470,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/postprocessing/Pass.js",
+      "bytes": 4218,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 15397,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/shaders/CopyShader.js",
+      "bytes": 729,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 37712,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/mg-isometric.json",
+      "bytes": 24989,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/mg-isometric.jpg",
+      "bytes": 87334,
+      "role": "preview"
+    }
+  ]
+}

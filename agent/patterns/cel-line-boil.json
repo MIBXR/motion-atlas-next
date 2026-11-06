@@ -1,0 +1,1101 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "cel-line-boil",
+  "pattern": {
+    "id": "cel-line-boil",
+    "order": 30,
+    "title": "逐张重画：线条沸腾与换纸",
+    "types": [
+      "texture",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape",
+      "portrait"
+    ],
+    "summary": "重放由曝光表驱动的微差线稿循环、纸齿换位与尘点轮换，使停留的形体与纸面持续重画。 综艺片按帧号替换照片贴图边缘，以耳朵四帧扭动和三张炸毛轮换形成动作。 PDoom 以 randomSeed(1000+floor(T*BOIL))（BOIL=12，film/src/core.js:3/195）每 1/12 秒更换一次笔触随机种子，使 p5.brush 线条以 12fps 沸腾。",
+    "mechanism": "依据曝光表，按一拍一、二、三对绘制时间取整，循环使用噪声线稿变体，让静止形体持续轻抖；同一绘制编号同时切换纸齿采样区与尘点板。 综艺片按帧号替换照片贴图边缘，以耳朵四帧扭动和三张炸毛轮换形成动作。 PDoom 以 randomSeed(1000+floor(T*BOIL))（BOIL=12，film/src/core.js:3/195）每 1/12 秒更换一次笔触随机种子，使 p5.brush 线条以 12fps 沸腾。",
+    "trigger": "时间进入下一张曝光画格时。",
+    "effect": "线稿几何、纸齿位置与尘点板随绘制编号一起切换。",
+    "timing": [
+      {
+        "name": "曝光表",
+        "value": "SCHED=[[0,8,2],[8,24,1],[24,48,2],[48,60,1],[60,108,2],[108,120,3],[120,132,2],[132,168,1],[168,224,2],[224,230,1],[230,240,3]]；24fps。"
+      },
+      {
+        "name": "线稿变体",
+        "value": "bv=(D)=>(D.step===3?D.id%3:D.id%4)；boil(pts,seed,amp=2.4,scale=70)；z=seed*2.371+0.5。"
+      },
+      {
+        "name": "纸齿换位",
+        "value": "ox=floor(hs(v,51)*470)；oy=floor(hs(v,52)*310)；globalCompositeOperation=multiply；globalAlpha=0.5。"
+      },
+      {
+        "name": "尘点轮换",
+        "value": "IMG.dust[v%4]；globalAlpha=0.22；按v%2、v%3翻转。"
+      },
+      {
+        "name": "重放时长",
+        "value": "首段原片0–10秒，巧思总时长15.001秒。"
+      },
+      {
+        "name": "追加原片区间",
+        "value": "mg-hanazi 原片 1.3–1.834 秒；mg-hanazi 原片 5.8–7.967 秒；['e11', 'e16', 'e11', 'e6'][ef]\nconst pick = fm >= 0 && fm < 2 ? 'hL135' : (fm >= 2 && fm < 4) || (fd >= 2 && fd < 4) ? 'hL12' : fd < 2 ? 'hL06' : 'hB' + (Math.floor(tt * 12) % 3);"
+      },
+      {
+        "name": "线条沸腾种子",
+        "value": "pdoom-video · film/src/core.js:3/195：BOIL=12；randomSeed(1000+Math.floor(T*BOIL))；noiseSeed(77)。"
+      },
+      {
+        "name": "追加原片区间",
+        "value": "pdoom-video 原片3.6–5.9秒，追加2.3秒；总时长15.001秒。"
+      }
+    ],
+    "useCases": [
+      "逐帧手绘线稿的停留质感",
+      "纸纹与线稿共用曝光节奏",
+      "综艺片按帧号替换照片贴图边缘，以耳朵四帧扭动和三张炸毛轮换形成动作。",
+      "PDoom 以 randomSeed(1000+floor(T*BOIL))（BOIL=12，film/src/core.js:3/195）每 1/12 秒更换一次笔触随机种子，使 p5.brush 线条以 12fps 沸腾。"
+    ],
+    "avoid": [
+      "竖屏重排",
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [
+        "emotion-take-morph"
+      ],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例的原作渲染入口，按 index.html 内联 segments 顺序重放 mg-cel-boil 原片0–10秒、mg-hanazi 原片1.3–1.834秒与5.8–7.967秒、pdoom-video 原片3.6–5.9秒，全长15.001秒。保留24fps的SCHED曝光表，在一拍一、一拍二和一拍三之间切换；静态形体以D.id%4循环线稿，三帧曝光以D.id%3循环。沿用boil的amp=2.4、scale=70与z=seed*2.371+0.5；纸齿按同一绘制编号从470×310范围取偏移，以multiply、alpha=0.5合成；尘点以v%4轮换、alpha=0.22叠加并翻转。综艺片按帧号替换照片贴图边缘，以耳朵四帧扭动和三张炸毛轮换形成动作。PDoom以BOIL=12与randomSeed(1000+Math.floor(T*BOIL))每1/12秒更新笔触种子，调用并等待异步renderAt；源码位于film/src/core.js:3/195/209。沿用原画面、字体、纸纹和同区间成品音轨，保持1920×1080、24fps，画面与音轨使用同一映射，声音默认关闭。",
+    "demo": "demos/patterns/cel-line-boil/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-cel-boil"
+      },
+      {
+        "caseId": "mg-hanazi"
+      },
+      {
+        "caseId": "lemo-crayon-book"
+      },
+      {
+        "caseId": "pdoom-video"
+      }
+    ],
+    "previewAt": 9.75,
+    "markers": [
+      {
+        "t": 0,
+        "label": "一拍二"
+      },
+      {
+        "t": 0.3333333333333333,
+        "label": "一拍一"
+      },
+      {
+        "t": 1,
+        "label": "一拍二"
+      },
+      {
+        "t": 2,
+        "label": "快动作"
+      },
+      {
+        "t": 2.5,
+        "label": "舞段重画"
+      },
+      {
+        "t": 4.5,
+        "label": "一拍三"
+      },
+      {
+        "t": 5,
+        "label": "一拍二"
+      },
+      {
+        "t": 5.5,
+        "label": "旋转加密"
+      },
+      {
+        "t": 7,
+        "label": "烟火重画"
+      },
+      {
+        "t": 9.333333333333334,
+        "label": "翻页加密"
+      },
+      {
+        "t": 9.583333333333334,
+        "label": "结尾重画"
+      },
+      {
+        "t": 10,
+        "label": "综艺花字"
+      },
+      {
+        "t": 10.017,
+        "label": "小声旁白"
+      },
+      {
+        "t": 10.267,
+        "label": "快乐电池"
+      },
+      {
+        "t": 10.534,
+        "label": "综艺花字"
+      },
+      {
+        "t": 10.734,
+        "label": "炸毛主拍"
+      },
+      {
+        "t": 11.734,
+        "label": "发量爆表"
+      },
+      {
+        "t": 12.234,
+        "label": "定格收框"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#1c1613",
+        "#e5402b",
+        "#ffc425",
+        "#f4e9d0",
+        "#fff6e2",
+        "#d9573f"
+      ],
+      "type": "LXGW Marker Gothic 400；Caveat 500、600、700；Long Cang 400；手绘中文与英文标题。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "previewAtPortrait": 10.267,
+    "parameters": [
+      {
+        "name": "lemo-crayon-book · 蜡笔线条与入睡减幅",
+        "value": "film/main.js:BOIL.step=floor(t*12+1e-6)；film/crayon.js:BOIL控制线条偏移与波动；film/film.js:157在t>44.4后令BOIL.amp=.55，其余时刻为1。"
+      }
+    ],
+    "preview": "previews/patterns/cel-line-boil.jpg",
+    "previewPortrait": "previews/patterns/cel-line-boil-portrait.jpg"
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-cel-boil",
+      "bundle": "agent/cases/mg-cel-boil.json"
+    },
+    {
+      "caseId": "mg-hanazi",
+      "bundle": "agent/cases/mg-hanazi.json"
+    },
+    {
+      "caseId": "lemo-crayon-book",
+      "bundle": "agent/cases/lemo-crayon-book.json"
+    },
+    {
+      "caseId": "pdoom-video",
+      "bundle": "agent/cases/pdoom-video.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 逐张重画：线条沸腾与换纸\n\n## 实现 Prompt\n\n复用来源案例的原作渲染入口，按 index.html 内联 segments 顺序重放 mg-cel-boil 原片0–10秒、mg-hanazi 原片1.3–1.834秒与5.8–7.967秒、pdoom-video 原片3.6–5.9秒，全长15.001秒。保留24fps的SCHED曝光表，在一拍一、一拍二和一拍三之间切换；静态形体以D.id%4循环线稿，三帧曝光以D.id%3循环。沿用boil的amp=2.4、scale=70与z=seed*2.371+0.5；纸齿按同一绘制编号从470×310范围取偏移，以multiply、alpha=0.5合成；尘点以v%4轮换、alpha=0.22叠加并翻转。综艺片按帧号替换照片贴图边缘，以耳朵四帧扭动和三张炸毛轮换形成动作。PDoom以BOIL=12与randomSeed(1000+Math.floor(T*BOIL))每1/12秒更新笔触种子，调用并等待异步renderAt；源码位于film/src/core.js:3/195/209。沿用原画面、字体、纸纹和同区间成品音轨，保持1920×1080、24fps，画面与音轨使用同一映射，声音默认关闭。\n\n## 参数\n\n- **曝光表**：SCHED=[[0,8,2],[8,24,1],[24,48,2],[48,60,1],[60,108,2],[108,120,3],[120,132,2],[132,168,1],[168,224,2],[224,230,1],[230,240,3]]；24fps。\n- **线稿变体**：bv=(D)=>(D.step===3?D.id%3:D.id%4)；boil(pts,seed,amp=2.4,scale=70)；z=seed*2.371+0.5。\n- **纸齿换位**：ox=floor(hs(v,51)*470)；oy=floor(hs(v,52)*310)；globalCompositeOperation=multiply；globalAlpha=0.5。\n- **尘点轮换**：IMG.dust[v%4]；globalAlpha=0.22；按v%2、v%3翻转。\n- **重放时长**：首段原片0–10秒，巧思总时长15.001秒。\n- **追加原片区间**：mg-hanazi 原片 1.3–1.834 秒；mg-hanazi 原片 5.8–7.967 秒；['e11', 'e16', 'e11', 'e6'][ef]\nconst pick = fm >= 0 && fm < 2 ? 'hL135' : (fm >= 2 && fm < 4) || (fd >= 2 && fd < 4) ? 'hL12' : fd < 2 ? 'hL06' : 'hB' + (Math.floor(tt * 12) % 3);\n- **线条沸腾种子**：pdoom-video · film/src/core.js:3/195：BOIL=12；randomSeed(1000+Math.floor(T*BOIL))；noiseSeed(77)。\n- **追加原片区间**：pdoom-video 原片3.6–5.9秒，追加2.3秒；总时长15.001秒。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/cel-line-boil/index.html) · [在库中查看](../../patterns.html#pattern/cel-line-boil)\n"
+  },
+  "entrypoint": "demos/patterns/cel-line-boil/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-crayon-book/LICENSES.md",
+      "bytes": 1116,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/CREDITS",
+      "bytes": 1034,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/film.m4a",
+      "bytes": 1685306,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fidelity.md",
+      "bytes": 7740,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/chars.js",
+      "bytes": 32010,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/crayon.js",
+      "bytes": 13323,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/end.js",
+      "bytes": 15113,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/film.js",
+      "bytes": 16611,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/gl.js",
+      "bytes": 12352,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/index.html",
+      "bytes": 460,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/main.js",
+      "bytes": 904,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/pal.js",
+      "bytes": 899,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/rig.js",
+      "bytes": 2840,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/world.js",
+      "bytes": 12758,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/caveatbrush_CaveatBrush-Regular.ttf",
+      "bytes": 295568,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/caveatbrush_OFL.txt",
+      "bytes": 4351,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/fonts.css",
+      "bytes": 757,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gaegu_Gaegu-Bold.ttf",
+      "bytes": 2962664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gaegu_Gaegu-Regular.ttf",
+      "bytes": 3165816,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gaegu_OFL.txt",
+      "bytes": 4344,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gochihand_GochiHand-Regular.ttf",
+      "bytes": 37352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gochihand_OFL.txt",
+      "bytes": 4423,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/patrickhand_OFL.txt",
+      "bytes": 4376,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/patrickhand_PatrickHand-Regular.ttf",
+      "bytes": 214772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/shortstack_OFL.txt",
+      "bytes": 4401,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/shortstack_ShortStack-Regular.ttf",
+      "bytes": 68152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/sniglet_OFL.txt",
+      "bytes": 4499,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/sniglet_Sniglet-Regular.ttf",
+      "bytes": 75212,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/index.html",
+      "bytes": 2270,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/CREDITS",
+      "bytes": 1034,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/README.md",
+      "bytes": 4028,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/build.sh",
+      "bytes": 1223,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/events.json",
+      "bytes": 8635,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/lines.json",
+      "bytes": 723,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/mix.py",
+      "bytes": 14959,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/music/score.json",
+      "bytes": 404,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/music/score.py",
+      "bytes": 13914,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/sheet.js",
+      "bytes": 7994,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/subs.json",
+      "bytes": 583,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/subs.mjs",
+      "bytes": 702,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/test.js",
+      "bytes": 2713,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/tools/mux.sh",
+      "bytes": 1240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/voices/dur.json",
+      "bytes": 98,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/voices/words.json",
+      "bytes": 1164,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/LICENSES.md",
+      "bytes": 1181,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_01.png",
+      "bytes": 28357,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_02.png",
+      "bytes": 28707,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_03.png",
+      "bytes": 25600,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_04.png",
+      "bytes": 27879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_base.jpg",
+      "bytes": 483747,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_tooth.png",
+      "bytes": 1791819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/audio/film.m4a",
+      "bytes": 415190,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fidelity.md",
+      "bytes": 5403,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/cues.json",
+      "bytes": 2188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/engine.js",
+      "bytes": 13778,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/scene.js",
+      "bytes": 103043,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/setup.js",
+      "bytes": 764,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/style.css",
+      "bytes": 137,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat[wght].ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LongCang-Regular.ttf",
+      "bytes": 5162508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Longcang-OFL.txt",
+      "bytes": 4390,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/fonts.css",
+      "bytes": 509,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/index.html",
+      "bytes": 2718,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_01_3840x2160.png",
+      "bytes": 81508,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_02_3840x2160.png",
+      "bytes": 82662,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_03_3840x2160.png",
+      "bytes": 73739,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_04_3840x2160.png",
+      "bytes": 79891,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/audio.py",
+      "bytes": 24290,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/cues.json",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_dust.py",
+      "bytes": 707,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_paper.py",
+      "bytes": 2360,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/hitmax.py",
+      "bytes": 4168,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/LICENSES.md",
+      "bytes": 1047,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/grey_r2.jpg",
+      "bytes": 1358977,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B0.png",
+      "bytes": 1482239,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B1.png",
+      "bytes": 1488365,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B2.png",
+      "bytes": 1479775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L06.png",
+      "bytes": 1403484,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L12.png",
+      "bytes": 1523388,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L135.png",
+      "bytes": 1555269,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/tux_r1.jpg",
+      "bytes": 1380121,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_dof.jpg",
+      "bytes": 525250,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear11.png",
+      "bytes": 2491551,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear16.png",
+      "bytes": 2492949,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear6.png",
+      "bytes": 2489969,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/audio/film.m4a",
+      "bytes": 423783,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fidelity.md",
+      "bytes": 4658,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/cues.json",
+      "bytes": 1116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/scene.js",
+      "bytes": 48529,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/setup.js",
+      "bytes": 1511,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/style.css",
+      "bytes": 1332,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/AlimamaShuHeiTi-Bold.ttf",
+      "bytes": 1375772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/AlimamaShuHeiTi-LICENSE.txt",
+      "bytes": 2016,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/DouyinSans-OFL.txt",
+      "bytes": 4425,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/DouyinSansBold.ttf",
+      "bytes": 1919404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LuckiestGuy-LICENSE.txt",
+      "bytes": 11358,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LuckiestGuy-Regular.ttf",
+      "bytes": 73320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ResourceHanRounded-OFL.txt",
+      "bytes": 4504,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ResourceHanRoundedCN-Heavy.ttf",
+      "bytes": 13688972,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ZCOOLKuaiLe-OFL.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ZCOOLKuaiLe-Regular.ttf",
+      "bytes": 1514968,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/fonts.css",
+      "bytes": 1066,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/index.html",
+      "bytes": 2291,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep.py",
+      "bytes": 8811,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep_r2.py",
+      "bytes": 8193,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep_r2b.py",
+      "bytes": 4162,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/audio.py",
+      "bytes": 12031,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/cues.json",
+      "bytes": 1116,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/LICENSES.md",
+      "bytes": 1827,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/audio/pdoom.mp3",
+      "bytes": 3437188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fidelity.md",
+      "bytes": 5347,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/index.html",
+      "bytes": 1565,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/cast.js",
+      "bytes": 9723,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c01_lab.js",
+      "bytes": 40369,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c02_chorus1.js",
+      "bytes": 55643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c03_takeoff.js",
+      "bytes": 65878,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c04_chorus2.js",
+      "bytes": 68165,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c05_obsolete.js",
+      "bytes": 71664,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c06_chorus3.js",
+      "bytes": 56889,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c07_scale.js",
+      "bytes": 54754,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c08_chorus4.js",
+      "bytes": 64423,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c09_finale.js",
+      "bytes": 28289,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/clawd.js",
+      "bytes": 18959,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/core.js",
+      "bytes": 14844,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/lyrics.js",
+      "bytes": 2274,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/props.js",
+      "bytes": 7599,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/timeline.js",
+      "bytes": 6749,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/PermanentMarker-LICENSE.txt",
+      "bytes": 11358,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/PermanentMarker-Regular.ttf",
+      "bytes": 74632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/ShantellSans-OFL.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/ShantellSans[BNCE,INFM,SPAC,wght].ttf",
+      "bytes": 1284736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/fonts.css",
+      "bytes": 361,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/index.html",
+      "bytes": 3247,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/ANIMATION_GUIDE.md",
+      "bytes": 11677,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/README.md",
+      "bytes": 2836,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/STORYBOARD.md",
+      "bytes": 16064,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/package-lock.json",
+      "bytes": 20492,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/package.json",
+      "bytes": 345,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/render.mjs",
+      "bytes": 7555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/studio.html",
+      "bytes": 1810,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5.brush@2.2.3/LICENSE.md",
+      "bytes": 1084,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5.brush@2.2.3/p5.brush.js",
+      "bytes": 71792,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5@2.3.3/license.txt",
+      "bytes": 24480,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5@2.3.3/p5.min.js",
+      "bytes": 990372,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/cel-line-boil/index.html",
+      "bytes": 3208,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/cel-line-boil/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/pdoom-video.md",
+      "bytes": 3611,
+      "role": "doc"
+    },
+    {
+      "path": "entries/cases/lemo-crayon-book.json",
+      "bytes": 9634,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-cel-boil.json",
+      "bytes": 24679,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-hanazi.json",
+      "bytes": 19096,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/pdoom-video.json",
+      "bytes": 13469,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/cel-line-boil.json",
+      "bytes": 6603,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/cel-line-boil-portrait.jpg",
+      "bytes": 132482,
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/cel-line-boil.jpg",
+      "bytes": 142917,
+      "role": "preview"
+    }
+  ]
+}

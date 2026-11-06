@@ -1,0 +1,256 @@
+{
+  "id": "lemo-paper-lantern",
+  "order": 33,
+  "title": "末班夜车 · 纸雕灯影",
+  "subtitle": "The Last Night Train",
+  "carriers": [
+    "video"
+  ],
+  "style": "print-craft",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "threejs"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "纸雕灯影",
+    "东方传统",
+    "代码影片"
+  ],
+  "summary": "老夜车从雪山小站驶出，驶过高架桥、松林、隧道与河谷，开到海边；车窗开场逐节亮起，到站逐节熄灭，最后留下站灯与沿吊线落下的纸车票。",
+  "focus": "用层叠纸雕之间的距离、逐节车窗的灯光和镜像音符讲述最后一趟旅程；隧道黑场连接雪山蓝与河谷青绿。",
+  "accent": "#ffc46a",
+  "background": "#060b22",
+  "timeline": true,
+  "kit": true,
+  "renderer": "gpu",
+  "previewAt": 9.6,
+  "rhythm": {
+    "duration": 51,
+    "bpm": 96,
+    "beats": [
+      {
+        "t": 0,
+        "label": "雪山站与高架桥",
+        "note": "0–13.8秒，雪山站与高架桥。"
+      },
+      {
+        "t": 13.8,
+        "label": "林间伴行",
+        "note": "13.8–22秒，林间伴行。"
+      },
+      {
+        "t": 22,
+        "label": "隧道淡黑",
+        "note": "22–25.75秒，隧道淡黑。"
+      },
+      {
+        "t": 25.75,
+        "label": "河谷亮窗",
+        "note": "25.75–35.4秒，河谷亮窗。"
+      },
+      {
+        "t": 35.4,
+        "label": "海崖下摇",
+        "note": "35.4–40.2秒，海崖下摇。"
+      },
+      {
+        "t": 40.2,
+        "label": "终点灭灯与车票",
+        "note": "40.2–51秒，终点灭灯与车票。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 13.8,
+      "from": 0.2,
+      "to": 0.6,
+      "label": "雪山站与高架桥"
+    },
+    {
+      "t0": 13.8,
+      "t1": 22,
+      "from": 0.6,
+      "to": 0.7,
+      "label": "林间伴行"
+    },
+    {
+      "t0": 22,
+      "t1": 25.75,
+      "from": 0.75,
+      "to": 0,
+      "label": "隧道淡黑"
+    },
+    {
+      "t0": 25.75,
+      "t1": 35.4,
+      "from": 0.75,
+      "to": 0.65,
+      "label": "河谷亮窗"
+    },
+    {
+      "t0": 35.4,
+      "t1": 40.2,
+      "from": 0.6,
+      "to": 0.4,
+      "label": "海崖下摇"
+    },
+    {
+      "t0": 40.2,
+      "t1": 51,
+      "from": 0.4,
+      "to": 0.12,
+      "label": "终点灭灯与车票"
+    }
+  ],
+  "energyNote": "时段取DEMO.md的Shots和film/timeline.json；0–1为按列车速度、灯光、乐器密度与隧道静默作的相对编辑标注。",
+  "observations": [
+    "机车与七节车厢各为独立纸片，窗户由glow map发光，开场从1.5秒起每0.34秒亮一节。",
+    "三维景深、VSM软影、纸纤维与透光云纹共同显出图层距离；前景松树快速掠过，远山缓移。",
+    "HIT.dark为25.5–25.75秒，30fps帧格上的场景黑帧约0.27秒；出黑时硬切河谷并整体改用青绿色阶。",
+    "终点从42秒起依次灭灯，最后一节45.75秒熄灭；钟琴用同一组音高倒序对应灯灭。",
+    "47.5秒车票沿吊线落下，摆动逐渐衰减，相机拉回站灯与海面，画面始终在纸雕场景内。"
+  ],
+  "composition": {
+    "color": "雪山夜蓝#060b22、远峰#7385b6、桥体#1b2650；河谷从#04131c到#5f8c94，海崖靛紫#070a26到#7272b0；暖色只用于#ffc46a车窗、#ffc070站灯和#ffd590车头灯。",
+    "typography": "Noto Serif SC可变字体：中文字幕500、纸车票600、印章700；Cormorant Garamond可变字体：英文字幕600、站牌及车票标题700。",
+    "layout": "1920×1080、30fps；纸层用米制坐标，天空z=-.142、列车z=-.0785、前景约z=-.03，底部64px处放中英双语字幕。",
+    "imagery": "Canvas2D生成纸层、列车、站牌、松林、山谷、海浪与车票；Three.js 0.170.0、SSAA2、VSM阴影、96采样景深与bloom完成画面。",
+    "motion": "慢推后跟车拉远，松林伴行抬升，推向隧道后淡黑硬切，河谷横移，海崖吊臂下摇，终点近跟灭灯再拉回站灯。",
+    "sound": "原作96BPM竖琴与车轮节拍、钟琴亮灭镜像、长笛和弦乐，Kokoro bm_george旁白；保留轮声、风、河海、汽笛、刹车、灯开关与纸声。",
+    "rhythm": "开场亮窗与离站积累速度，隧道暗停分开冷暖两段，终点逐节灭窗减速收束。",
+    "coherence": "film/timeline.json同时定义旁白、字幕、灯光、发车、隧道、到站和车票时刻，画面与混音共读这张表。"
+  },
+  "layers": [
+    {
+      "name": "夜空与远山",
+      "role": "远层明亮且透光，按段落切换蓝、青绿与靛紫色阶。"
+    },
+    {
+      "name": "轨道与列车",
+      "role": "机车和七节车厢沿轨道布置，车窗发光与头灯光楔照到纸层。"
+    },
+    {
+      "name": "车站与前景",
+      "role": "站灯、站牌、树、芦苇和岩石形成近景遮挡，表现速度。"
+    },
+    {
+      "name": "车票与双语字幕",
+      "role": "吊线纸车票在终点落下，底部中英字幕按旁白提示点显隐。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#060b22",
+      "#7385b6",
+      "#1b2650",
+      "#080d24",
+      "#04131c",
+      "#5f8c94",
+      "#2c5260",
+      "#070a26",
+      "#7272b0",
+      "#ffc46a",
+      "#ffc070"
+    ],
+    "type": "Noto Serif SC 200–900字符子集；Cormorant Garamond 300–700可变字体。",
+    "motion": [
+      {
+        "name": "亮窗与灭窗",
+        "value": "film/timeline.json:HIT.cars=1.5+.34*i；HIT.off=[42,42.42,42.84,43.26,43.68,44.1,44.52,45.75]。"
+      },
+      {
+        "name": "隧道黑场",
+        "value": "film/src/shots.js:s3.grade用1-ss(seg(t,25.3,25.5))淡黑；timeline.json在25.75秒以cut接S4。"
+      },
+      {
+        "name": "吊线车票",
+        "value": "film/src/shots.js:s6.update：47.5秒起1.1秒back入场，摆角=.06*exp(-1.6*sw)*sin(5.5*sw)。"
+      }
+    ]
+  },
+  "useCases": [
+    "旅程与旅行短片",
+    "告别与周年影像",
+    "地方故事与纸雕场景"
+  ],
+  "avoid": [
+    "依赖真实铁路数据的纪实重建"
+  ],
+  "constraints": [
+    "灯光、旁白与动作时刻集中在film/timeline.json。",
+    "车窗使用独立glow map，站牌和车票避开灯光点。",
+    "全幅移动镜头的天空板跟随相机，图层长条覆盖行进范围。"
+  ],
+  "migration": [
+    {
+      "field": "film/timeline.json；source/tools/timeline.py",
+      "how": "修改旁白、双语字幕、镜头和HIT动作时刻，先运行制作时间表工具再渲染。"
+    },
+    {
+      "field": "film/src/world.js → world / car；film/src/shots.js → s2–s6",
+      "how": "修改列车、车站、景色和各段相机。"
+    },
+    {
+      "field": "source/mix.py → UP / speed / score",
+      "how": "修改亮灭音高、车速轮声与配乐，保持读取同一时间表。"
+    }
+  ],
+  "prompt": "制作51秒、1920×1080、30fps的纸雕灯影短片《末班夜车》：机车与七节车厢从雪山小站驶向海边终点；平行纸层以纤维、透光、软影、景深与少量暖灯显出距离。开场车窗每0.34秒逐节亮起，配D5到F♯6上行钟琴；越过弧形高架桥，镜头在松林伴行，推向隧道后淡入黑场，再硬切到青绿河谷。海崖段吊臂下摇，终点依次熄灭相同车窗，音符倒序下行，留下站灯；纸车票沿吊线落下作片尾。沿用原作Kokoro bm_george旁白、中英字幕和成片混音。直接修改demos/cases/lemo-paper-lantern/film/src/及timeline.json，保留原作render(t)、Three.js 0.170.0和SSAA2，以MotionKit接入播放、暂停、逐帧定位与默认静音。",
+  "demo": "demos/cases/lemo-paper-lantern/index.html",
+  "patternIds": [
+    "windows-light-car-by-car",
+    "tunnel-blink-black"
+  ],
+  "fidelity": "demos/cases/lemo-paper-lantern/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/paper-lantern",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/paper-lantern/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；成片及静帧CC BY 4.0，署名LemoLab；Kokoro旁白Apache-2.0，Salamander Grand Piano V3采样CC BY 3.0，VSCO2CE与VCSL采样CC0，字体SIL OFL 1.1。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/paper-lantern"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/paper-lantern.mp4"
+    },
+    {
+      "label": "声音与字体署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/paper-lantern/demo/CREDITS"
+    },
+    {
+      "label": "原作故事设定",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/paper-lantern/demo/FACTS.md"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/paper-lantern)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音",
+      "notes": "Kokoro-82M v1.0、bm_george旁白，Apache-2.0；Alexander Holm的Salamander Grand Piano V3，CC BY 3.0；VSCO2CE与VCSL乐器采样CC0。完整署名见[audio/CREDITS](audio/CREDITS)，许可见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体与运行库",
+      "notes": "Cormorant Garamond、Noto Serif SC字符子集，SIL OFL 1.1；Three.js 0.170.0，MIT。取得方法在[source/README.md](source/README.md)。"
+    }
+  ]
+}

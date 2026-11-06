@@ -1,0 +1,426 @@
+{
+  "id": "map-pilgrimage",
+  "order": 1,
+  "title": "地图巡礼 · 游戏过场式旅行影像",
+  "subtitle": "CARTOGRAPHIC PILGRIMAGE · MAP / HUD",
+  "carriers": [
+    "video"
+  ],
+  "style": "documentary",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "maplibre",
+    "dom"
+  ],
+  "tags": [
+    "地图叙事",
+    "游戏过场",
+    "HUD 四角",
+    "昼夜切换",
+    "分屏对比",
+    "竖排汉字",
+    "日本 · 关西",
+    "渐进缓冲"
+  ],
+  "summary": "地图串起上海至关西的三日旅程。四角HUD持续报时，照片、回忆与分屏随120 BPM乐谱切换。",
+  "focus": "以地图为稳定的背景，HUD持续更新，高光时切到全屏。60秒走过关西机场、伏见稻荷、鸭川、奈良公园和道顿堀。OpenStreetMap呈现3D建筑、铁路与水系。画面与乐谱共用一张时间表。",
+  "accent": "#d9562c",
+  "background": "#f1eee7",
+  "timeline": true,
+  "kit": true,
+  "energy": [
+    0.15,
+    0.3,
+    0.55,
+    0.5,
+    0.78,
+    0.7,
+    0.5,
+    0.6,
+    0.66,
+    0.6,
+    0.82,
+    0.6,
+    0.66,
+    0.86,
+    0.8,
+    0.74,
+    0.45,
+    0.4,
+    0.55,
+    0.6,
+    0.66,
+    0.55,
+    0.92,
+    0.8,
+    0.6,
+    0.76,
+    0.55,
+    0.45,
+    0.35,
+    0.2
+  ],
+  "rhythm": {
+    "duration": 60,
+    "bpm": 120,
+    "beats": [
+      {
+        "t": 0,
+        "label": "冷开场",
+        "note": "夜间地球缓推，上海与关西两个标记依次出现。"
+      },
+      {
+        "t": 3,
+        "label": "天亮",
+        "note": "底图约1秒经暗、灰转亮，呼啸落在钟声上。"
+      },
+      {
+        "t": 4,
+        "label": "片名",
+        "note": "関西周遊逐字160ms；'26打字；7.3s淡出。"
+      },
+      {
+        "t": 8,
+        "label": "航线",
+        "note": "MU 515虚线航线带镜头推到关西机场。"
+      },
+      {
+        "t": 11.6,
+        "label": "DAY 01 · 抵达",
+        "note": "DAY 01滚入，卡片浮入，计数×1并盖章。"
+      },
+      {
+        "t": 14.6,
+        "label": "特急 → 京都",
+        "note": "JR HARUKA沿铁路描出，车头领路。"
+      },
+      {
+        "t": 18,
+        "label": "伏见稻荷",
+        "note": "z14、俯仰48°，3D建筑与鸟居卡片出现。"
+      },
+      {
+        "t": 21,
+        "label": "卡片 → 全屏",
+        "note": "卡片0.6s展开，停2.2s后收回，HUD保留。"
+      },
+      {
+        "t": 24.4,
+        "label": "章节 · 鸭川",
+        "note": "CHAPTER 01打字，青色框线与方块回弹。"
+      },
+      {
+        "t": 25.6,
+        "label": "回忆",
+        "note": "方丈記1212回忆展开，竖排字幕配钟声。"
+      },
+      {
+        "t": 29.2,
+        "label": "分屏对比",
+        "note": "0.75s分屏1930s；10.01·17:40JST盖章。"
+      },
+      {
+        "t": 32.8,
+        "label": "入夜 · 便签",
+        "note": "地图入夜，通知与手写便签短暂出现。"
+      },
+      {
+        "t": 37,
+        "label": "DAY 02 · 奈良线",
+        "note": "DAY 02天亮，JR NARA LINE通向奈良。"
+      },
+      {
+        "t": 40.8,
+        "label": "奈良公园",
+        "note": "CHAPTER 02换琥珀色，鹿卡片与第三枚印章出现。"
+      },
+      {
+        "t": 45,
+        "label": "意外 · 改道",
+        "note": "红色误乘横幅擦入，错误路线画叉，改道提示闪烁。"
+      },
+      {
+        "t": 47.4,
+        "label": "改道 · 入夜",
+        "note": "近铁奈良线改道去难波，镜头拉到关西全景，途中入夜。"
+      },
+      {
+        "t": 50,
+        "label": "道顿堀",
+        "note": "z15.6俯仰58°，大阪3D夜景与霓虹卡出现。"
+      },
+      {
+        "t": 54.6,
+        "label": "DAY 03 · 鸟瞰",
+        "note": "DAY 03天亮，镜头拉远，全线路与标记同屏。"
+      },
+      {
+        "t": 56,
+        "label": "结尾统计",
+        "note": "统计320ms错峰堆叠，fin.配终止和弦。"
+      }
+    ]
+  },
+  "layers": [
+    {
+      "name": "世界层",
+      "role": "MapLibre GL 5底图含山影与星空，3D建筑从z14开始立起。"
+    },
+    {
+      "name": "路线层",
+      "role": "航线、铁路、步行与错误路线共用地图投影，车头与端点重合。"
+    },
+    {
+      "name": "标签层",
+      "role": "从8个位置中为站名选位，避开HUD与事件文字；放好标签后再绘制引线。"
+    },
+    {
+      "name": "媒体层",
+      "role": "五个日本场景各有照片、明信片、插画三种风格，全屏媒体依次切换。"
+    },
+    {
+      "name": "信息层 HUD",
+      "role": "四角显示日序、坐标、时钟、歌词、印章与计数，中央留给地图。"
+    },
+    {
+      "name": "事件层",
+      "role": "片名、地名、章节、警示与便签短暂出现，各有入场和离场。"
+    },
+    {
+      "name": "质感层",
+      "role": "颗粒随时间平移，回忆段加重；全屏图片上下压暗。"
+    },
+    {
+      "name": "声音层",
+      "role": "120 BPM乐谱叠加环境声、和弦、贝斯、鼓、拨弦与事件音。"
+    },
+    {
+      "name": "缓冲层（实时播放）",
+      "role": "缓冲45s/10s，内存20MB/10MB；缓冲<0.5s时暂停，达到4s时继续。"
+    }
+  ],
+  "composition": {
+    "color": "白天纸色#f1eee7与墨色#16171a。夜晚深蓝黑#0b1019，默认强调朱色#d9562c。鸭川青#2a8fae、奈良琥珀#c98a2a随章节切换。警示使用红色#e23b3b，路线、描边与框线同步换色。",
+    "typography": "竖排片名与地名用Yu Mincho / Noto Serif JP明朝体。英文标题用Segoe UI Variable / Helvetica。数据用Cascadia Mono / JetBrains Mono等宽字体。数据字距放宽，结尾改用衬线。网站界面文字≥12px。",
+    "layout": "固定画幅，两套构图。横屏1920×1080，边距64，规尺y=116。卡片靠右，大小824×464，地名靠左。右下印章与步进器同列。竖屏1080×1920，HUD在顶部276px内，规尺y=264。印章在右侧，968×544卡片放到下半屏。步进器在底部，fp单独控制竖屏取景。",
+    "imagery": "场景包括关西机场机窗、千本鸟居、鸭川、奈良鹿与东大寺、道顿堀。每处各有照片、旧明信片、插画三种风格，按画幅重绘。可在film/config.js填入真实照片。",
+    "motion": "镜头缓入缓出，长距离用单段ease-out推近。文字从模糊逐字变清晰。卡片550ms浮入、600ms展开。章节框线800ms描出，四角方块错峰回弹。盖章带回弹，结尾计数逐行堆叠。",
+    "sound": "默认静音，开启后播放120 BPM整段乐谱。调式为D大调与日本阳音阶D E G A B。以环境声打底，叠加和弦、贝斯、半拍鼓组与拨弦。标记、文字、路线、卡片、印章与章节各配事件音。回忆段有黑胶与逐字钟，夜景配霓虹嗡鸣。结尾阳音阶上行后落到终止和弦。离线音轨峰值约-1.7 dBFS，无削波。导出视频时加--audio同步导出声音。",
+    "rhythm": "120 BPM，1小节2秒，段落落在小节线上。约每4–6秒一个事件，每10–15秒一次地图与全屏切换。高光前后留1–2秒地图画面，缓和节奏。",
+    "coherence": "全屏、回忆与对比共享HUD、颗粒和强调色。标记、路线端点、车头、引线与标签共用同一投影。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#2a8fae",
+      "#c98a2a",
+      "#e23b3b",
+      "#0b1019"
+    ],
+    "type": "明朝体竖排汉字 + 无衬线英文标题 + 等宽数据 + 衬线结尾；横屏 ≥ 24px、竖屏 ≥ 36px",
+    "motion": [
+      {
+        "name": "blur-in 逐字",
+        "value": "550ms outCubic，字间160ms。模糊18px→0，上移14px→0。地名标题使用同样参数。"
+      },
+      {
+        "name": "type-in 打字",
+        "value": "按字符推进，前沿字符带 7px 模糊"
+      },
+      {
+        "name": "card-in",
+        "value": "550ms outCubic浮入，400ms inCubic离场。图片持续Ken Burns推近。"
+      },
+      {
+        "name": "card-expand",
+        "value": "600ms inOutCubic展开。停2.2s，Ken Burns缩放1.04→1.10。550ms收回，HUD转白字，上下压暗。"
+      },
+      {
+        "name": "day-night",
+        "value": "约 1s，逐图层插值；中途经过去饱和的灰，不整体反色"
+      },
+      {
+        "name": "chapter-frame",
+        "value": "标签350ms擦出，标题700ms打字。框线800ms inOutCubic描出。四角方块120ms错峰，300ms outBack。"
+      },
+      {
+        "name": "split-compare",
+        "value": "分割线750ms outQuart滑到中线。时间戳360ms outBack盖章。"
+      },
+      {
+        "name": "stamp",
+        "value": "车站印章与步进器同列，按到达依次盖下（回弹 + 印章音）"
+      },
+      {
+        "name": "stat-stack",
+        "value": "每行 320ms 错峰计数，衬线 fin. 在 2s 后"
+      },
+      {
+        "name": "buffering",
+        "value": "缓冲<0.5s时暂停，显示BUFFERING MAP xx%。攒够4s继续。"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "at": "0:04.8",
+      "what": "竖排「関西周遊」从模糊变清，英文逐字打出，每字配键击。"
+    },
+    {
+      "at": "0:13.5",
+      "what": "左上显示日序和日期，右上显示坐标、海拔、缩放和时钟；左下显示曲名和歌词，右下显示步进器和印章。"
+    },
+    {
+      "at": "0:19–0:20",
+      "what": "鸟居卡片沿引线浮入，MIKAN计数上滚，随后盖下京都印章。"
+    },
+    {
+      "at": "0:21–0:24",
+      "what": "鸟居卡片铺满画面，HUD转白；呼啸后接低音，随后收回卡片，回到地图。"
+    },
+    {
+      "at": "0:27.8",
+      "what": "河畔插画中，「ゆく河の流れは」「絶えずして」竖排显影，逐字配钟声。"
+    },
+    {
+      "at": "0:30.8",
+      "what": "明信片与实景并排，「10.01·17:40 JST」斜戳配盖章声。"
+    },
+    {
+      "at": "0:33.8",
+      "what": "地图逐层转为深蓝黑，HUD变浅色，下扫呼啸接低音。"
+    },
+    {
+      "at": "0:41.8",
+      "what": "奈良卡片浮入，琥珀色斜纹胶带与网点标出章节。"
+    },
+    {
+      "at": "0:45–0:47",
+      "what": "红色WRONG TRAIN横幅擦入，REROUTING省略号与蜂鸣同拍。"
+    },
+    {
+      "at": "0:58.8",
+      "what": "3天4站、4枚印章、×4目击、1次误乘与194km逐行计数，钟声收尾。"
+    }
+  ],
+  "useCases": [
+    "旅行 / 巡礼 Vlog",
+    "城市与文旅宣传",
+    "物流与路线回顾",
+    "活动巡回纪录",
+    "年度回顾影像",
+    "交互式行程展示"
+  ],
+  "avoid": [
+    "没有空间移动的内容",
+    "需要逐字阅读的长文",
+    "镜头要停在单一画面的访谈"
+  ],
+  "constraints": [
+    "画面、文字、地点与乐谱共同呈现关西三日旅程。",
+    "照片、明信片与插画按画幅绘制。",
+    "OpenFreeMap底图与AWS高程显示建筑、铁路、水系和地名。",
+    "在 film/scenes.js 的 paintScene 修改程序场景；film/config.js 的 tracks.cards[] 设置场景类型与时刻。",
+    "横屏1920×1080、竖屏1080×1920等比缩放，网站文字≥12px。",
+    "约730块/130MB；约290块/66MB必需。10Mbps缓冲1–2次。"
+  ],
+  "prompt": "用 HTML/CSS/JS 制作一支 60 秒、可逐帧定位的“地图巡礼”影像，固定画幅两套构图：横屏 1920×1080 与竖屏 1080×1920（舞台像素坐标，整体等比缩放）。舞台字号按设计决定，不设下限；网站界面 ≥ 12px。内容：关西三日（上海 → 关西机场 → 京都伏见稻荷 → 鸭川 → 奈良公园 → 道顿堀），只用真实地名。①世界层：MapLibre GL + OpenFreeMap positron，隐藏全部文字标注，z14 起 3D 建筑，加 AWS Terrain Tiles 山体阴影（z5.5–13）；镜头关键帧 {t, center, zoom, pitch, bearing, 焦点位置 f / 竖屏 fp}，用 padding 把地点放到指定的屏幕位置；开场地球投影 + 星空；长距离用一段 ease-out 一口气推近。②昼夜：按图层类别逐个插值白天与夜晚配色，约 1 秒、中途经过去饱和的灰，不整体反色。③路线：航线虚线 + 飞机、铁路发光实线（line-gradient 按进度截断；几何从矢量瓦片里的 rail 线最短路提取）+ 车头、步行圆点、错误路线红线打叉；所有点位由同一个投影函数计算，端点与圆心严格重合。④HUD：左上 DAY 01 / 03 + 日期，右上坐标 / ELEV·Z / JST 时钟，顶部规尺按旅程进度填充，左下 NOW PLAYING + 双语歌词打字，右下步进器与车站印章（竖屏改为顶部 HUD + 右侧印章栏 + 底部步进器），计数徽章变化时上滚回弹。⑤事件：竖排汉字逐字模糊入场（550ms，字间 160ms）+ 英文模糊前沿打字；照片卡片浮入并用引线连到地图标记；卡片展开为全屏、HUD 保留并压暗；章节换强调色并描出四角框线 / 斜纹胶带；全屏插画回忆（独立框、档案标签、竖排字幕逐字）；分屏对比（分割线滑到中线 + 倾斜时间戳盖章）；红色 WRONG TRAIN 通栏 + REROUTING 胶囊；大号日序；结尾统计逐行计数 + 衬线 fin.。⑥标签避让：站名固定宽度 + 多个候选位置，避开 HUD 保留区与事件文字；文字永不压线。⑦声音：WebAudio 合成 120 BPM 乐谱（环境底、和弦、贝斯、鼓、阳音阶拨弦 + 每个事件的音），默认静音，可离线渲染 WAV。⑧工程：render(t) 纯函数，时间全部写进 config 轨道；window.__motion = {duration, seek(t)→Promise, play, pause, on}；?render=1 时 seek 等待瓦片；实时播放先扫描全片镜头需要的瓦片，再按时间顺序两级缓冲（下载 / 解析，内存预算，快速推拉帧的低价值瓦片降级），前方不足就暂停显示缓冲提示；颗粒用独立合成层平移；离线退回网格底图。",
+  "videoPrompt": "60-second travel cutscene in the style of a video-game map interface, delivered in two fixed frames (1920×1080 landscape and 1080×1920 portrait with its own layout). A pale paper-colored 3D map of Japan's Kansai region (warm light-grey land, blue-grey water, white roads, thin grey railway lines, extruded white buildings in the city close-ups) is the persistent world; the camera glides with slow ease-in-out moves and gentle pitch. Fixed HUD: top-left 'DAY 01 / 03' with a monospace date, top-right latitude/longitude, 'ELEV 38 M · Z 14.1' and a large clock with a 'JST' superscript, a thin progress rule across the top, bottom-left 'NOW PLAYING' with an equalizer icon and bilingual lyric lines, bottom-right a four-stop stepper (KIX, KYOTO, NARA, OSAKA) with red station stamps. Beats: a night globe with stars → the map turns to day through grey → large vertical Japanese title characters '関西周遊' blur in one by one while 'KANSAI LOOP '26' types in → a dashed flight arc with a small plane sweeps from Shanghai and the camera dives straight into Kansai Airport → a glowing vermilion rail line draws along the real railway to Kyoto → close-up of Fushimi Inari with 3D buildings, a photo card of torii gates floats in with a thin leader line, then expands to full screen while the HUD stays on top → a teal chapter frame draws around the screen corners over the Kamo River → an illustrated flashback with its own frame and vertical Japanese subtitles revealing character by character → split screen: a divider slides to center revealing a 1930s sepia postcard against the modern river, a tilted timestamp stamps down → night falls on the map layer by layer, a handwritten note card drops in → day two: rail to Nara, deer park card with an amber tape decoration → a red 'WRONG TRAIN' banner wipes in, the wrong route turns red and ends with an X, a black 'REROUTING…' capsule blinks → night arrival at Dotonbori with neon and tall 3D blocks → the camera pulls back over the whole loop → stacked statistics count up and a serif 'fin.'. Clean, restrained, game-UI precision, subtle film grain, rhythmic edits on a 120 BPM beat, no camera shake.",
+  "negativePrompt": "不要整体反色做夜景；不要让多个全屏模式叠在一起；不要把 HUD 做成满屏发光科幻风；不要用卡通贴纸替代信息层；不要在高缩放时保留地图文字标注抢走注意力；不要让镜头连续快速甩动；不要让文字压在路线或标记上；不要横竖画幅共用一套自适应排版；不要使用动画作品名称、截图或无授权的照片与音乐；不要在地图没加载完时露白（缓冲时停在当前帧并提示）。",
+  "migration": [
+    {
+      "field": "film/config.js → meta",
+      "how": "设置片名、副标题、时区、总天数、时长与BPM。"
+    },
+    {
+      "field": "film/config.js → stops",
+      "how": "设置地点名称、经纬度、海拔与最小缩放，路线端点自动对齐。"
+    },
+    {
+      "field": "film/config.js → tracks.camera",
+      "how": "c中心、z缩放、p俯仰、b方位、f/fp取景、zp竖屏缩放、e缓动。"
+    },
+    {
+      "field": "film/paths.js",
+      "how": "设置铁路与步行经纬度，可用rail图层或GeoJSON线。"
+    },
+    {
+      "field": "film/config.js → tracks.*",
+      "how": "调整各事件轨道时刻，画面与乐谱同步改变节奏。"
+    },
+    {
+      "field": "film/config.js → chapters / stepper",
+      "how": "设置章节标题、强调色、框线或胶带，以及四站步进器与印章。"
+    },
+    {
+      "field": "film/config.js → sound",
+      "how": "设置和弦、阳音阶与到站提示音，按轨道生成乐谱。"
+    },
+    {
+      "field": "film/config.js → layout",
+      "how": "分别设置横竖规尺、步进器、印章、卡片、避让区与统计区。"
+    },
+    {
+      "field": "film/config.js → palette / mapPalette / map",
+      "how": "设置纸色、墨色、夜色、强调色与地图昼夜配色、样式和高程。"
+    },
+    {
+      "field": "film/scenes.js → paintScene；film/config.js → tracks.cards[]",
+      "how": "在 paintScene 修改程序绘制的照片、明信片与插画；tracks.cards[] 的 scene、caption、t、until、expand 设置场景、标签、时刻与展开。"
+    },
+    {
+      "field": "film/script.js → BUF_CFG",
+      "how": "设置开头门槛、解析与下载范围、内存预算、暂停与继续阈值。"
+    }
+  ],
+  "demo": "demos/cases/map-pilgrimage/index.html",
+  "patternIds": [
+    "corner-hud",
+    "vertical-title-blur",
+    "route-draw-marker",
+    "day-night-flip",
+    "card-expand-fullscreen",
+    "chapter-frame",
+    "split-compare-stamp",
+    "collect-counter",
+    "alert-reroute",
+    "outro-stat-stack",
+    "seekable-timeline",
+    "film-grain"
+  ],
+  "previewAt": 20.4,
+  "previewAtPortrait": 41.8,
+  "attribution": [
+    {
+      "scope": "参考",
+      "notes": "【眩晕瘫坐 旅游时拍的素材给Opus5.5剪出来是这样】（哔哩哔哩，<https://b23.tv/eBjaN0O>），画面署名 @DWTornier"
+    },
+    {
+      "scope": "素材",
+      "notes": "用户下载的本地成片，151.21 秒，1920×1080"
+    },
+    {
+      "scope": "观察日期",
+      "notes": "2026-10-14（初次）、2026-10-16（打磨第一轮复看：全片粗扫、9 段转场细扫、21 张全分辨率帧）"
+    },
+    {
+      "scope": "地图库",
+      "notes": "MapLibre GL JS 5.6.0，固定版本源码与许可：<https://github.com/maplibre/maplibre-gl-js/tree/v5.6.0>。"
+    },
+    {
+      "scope": "地图数据",
+      "notes": "OpenFreeMap 地图服务与来源：<https://openfreemap.org/>；OpenStreetMap 数据许可与署名：<https://www.openstreetmap.org/copyright>；OpenMapTiles 源码与许可：<https://github.com/openmaptiles/openmaptiles>。"
+    },
+    {
+      "scope": "高程数据",
+      "notes": "Terrain Tiles 高程数据来源与许可：<https://registry.opendata.aws/terrain-tiles/>。"
+    },
+    {
+      "scope": "字体",
+      "notes": "film/style.css 使用系统字体栈。Microsoft 字体目录：<https://learn.microsoft.com/en-us/typography/font-list/>；Apple 系统字体：<https://developer.apple.com/fonts/system-fonts/>；Noto CJK 来源与许可：<https://github.com/notofonts/noto-cjk>；JetBrains Mono 来源：<https://github.com/JetBrains/JetBrainsMono>，仓库内 OFL 原文：demos/cases/mg-isometric/fonts/JetBrainsMono-OFL.txt。"
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "kind": "materials",
+  "count": 10,
+  "materials": [
+    {
+      "id": "motion-showreel",
+      "title": "motion-showreel · 代码渲染短视频",
+      "summary": "把图形、文字与界面动画编排为确定性时间线，逐帧渲染并交付 MP4 与可编辑源码。",
+      "type": "agent-skill",
+      "useCases": [
+        "动效作品集、产品宣传片与发布预告",
+        "动态图文、界面动效演示和卡点排版",
+        "标志演绎、片头、频道短片与生成艺术循环",
+        "使用用户口播稿或录音制作最长 20 分钟的分章讲解视频"
+      ],
+      "avoid": [
+        "实拍制作、写实人物表演或一般视频剪辑",
+        "需要真实物理精度、复杂毛发或布料的写实场景",
+        "把点击推进的现场演示或普通网页当作本工具的主要产物",
+        "把效果图当成已提供源码的可复刻案例"
+      ],
+      "snapshotPath": "demos/materials/motion-showreel/",
+      "snapshotEntry": "SKILL.md",
+      "relatedEntries": [
+        {
+          "kind": "case",
+          "id": "keeling-curve",
+          "note": "用本 skill 按其完整工作流实际制作的 20 秒数据短片，配乐与音效来自公开素材库"
+        }
+      ],
+      "bundle": "agent/materials/motion-showreel.json"
+    },
+    {
+      "id": "web-video-presentation",
+      "title": "web-video-presentation · 网页演示录屏",
+      "summary": "把文章或口播稿变成按步骤推进的横屏网页演示，再通过录屏产出视频。",
+      "type": "agent-skill",
+      "useCases": [
+        "把文章或口播稿制作成视频平台的讲解内容",
+        "可录屏的产品演示、教程与视觉主题演讲",
+        "每屏聚焦一个观点、每次点击推进一个口播节拍的动态演示",
+        "需要统一主题并可选择合成口播音频的分章内容"
+      ],
+      "avoid": [
+        "把主题预览图当成完整页面源码或已复刻案例",
+        "需要直接交付 MP4、由确定性时间函数逐帧渲染的制作需求",
+        "没有原文、口播稿或素材大纲，却要求该 skill 代为构思全部内容",
+        "一般响应式网站或以自由浏览为主的网页应用"
+      ],
+      "snapshotPath": "demos/materials/web-video-presentation/",
+      "snapshotEntry": "SKILL.md",
+      "relatedEntries": [],
+      "bundle": "agent/materials/web-video-presentation.json"
+    },
+    {
+      "id": "mg-styles-15",
+      "title": "mg-styles-15 风格提示词套件",
+      "summary": "作者用一套“通用部分 + 风格四段”的提示词模板，让会写代码的 AI 按不同风格分别制作 10 秒动态设计短片，并通过独立 AI 评审迭代两轮；附用代码合成配乐的 mgaudio 库与 103 个乐器采样。",
+      "type": "prompt-kit",
+      "useCases": [
+        "用代码制作动态设计短片、品牌片头与风格练习",
+        "以模板编写新风格，或替换已有风格的故事、文案与配色",
+        "让独立 AI 按统一量表评审成片，再交回制作 AI 迭代",
+        "根据画面时间点合成配乐与音效"
+      ],
+      "avoid": [
+        "实拍剪辑、人物表演与依赖视频生成模型的制作",
+        "需要观众自行掌握阅读节奏的普通网站与网页应用",
+        "缺少命令执行环境、只能输出文字的 AI 对话"
+      ],
+      "snapshotPath": "demos/materials/mg-styles-15/",
+      "snapshotEntry": "README.zh-CN.md",
+      "relatedEntries": [
+        {
+          "kind": "case",
+          "id": "mg-flat-vector",
+          "note": "按 prompts/01-flat-vector.md 制作，作者 AI 终评 7.64 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-line-art",
+          "note": "按 prompts/02-line-art.md 制作，作者 AI 终评 7.64 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-isometric",
+          "note": "按 prompts/03-isometric.md 制作，作者 AI 终评 8.00 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-3d-render",
+          "note": "按 prompts/04-3d-render.md 制作，作者 AI 终评 7.71 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-cel-boil",
+          "note": "按 prompts/05-cel-boil.md 制作，作者 AI 终评 8.07 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-collage",
+          "note": "按 prompts/06-collage.md 制作，作者 AI 终评 8.14 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-liquid",
+          "note": "按 prompts/07-liquid.md 制作，作者 AI 终评 7.57 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-morph",
+          "note": "按 prompts/08-morph.md 制作，作者 AI 终评 7.64 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-bauhaus",
+          "note": "按 prompts/09-bauhaus.md 制作，作者 AI 终评 7.71 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-synthwave",
+          "note": "按 prompts/10-synthwave.md 制作，作者 AI 终评 8.21 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-aurora-glass",
+          "note": "按 prompts/12-aurora-glass.md 制作，作者 AI 终评 8.07 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-hanazi",
+          "note": "按 prompts/18-hanazi.md 制作，作者 AI 终评 7.64 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-paperclip",
+          "note": "按 prompts/19-paperclip.md 制作，作者 AI 终评 7.71 / 10"
+        },
+        {
+          "kind": "case",
+          "id": "mg-pixel",
+          "note": "按 prompts/20-pixel.md 制作，作者 AI 终评 8.07 / 10"
+        }
+      ],
+      "bundle": "agent/materials/mg-styles-15.json"
+    },
+    {
+      "id": "video-shotcraft",
+      "title": "video-shotcraft · 镜头配方卡宣传片",
+      "summary": "用 124 张镜头配方卡、150 个镜头样式与 Ink Press 模板，为 Web / 桌面产品制作电影感宣传片；音效按项目从 Freesound 选材，另有 5 首 BGM 备选。",
+      "type": "agent-skill",
+      "useCases": [
+        "Web / 桌面产品的宣传片、发布片与演示视频",
+        "从镜头卡取用单个动效镜头",
+        "把真实页面截图做成 2.5D 运镜镜头",
+        "为已有产品视频或镜头选择、替换和对齐音效"
+      ],
+      "avoid": [
+        "口播讲解视频（作者另有 video-talkcraft）",
+        "没有可截界面的产品",
+        "实拍剪辑"
+      ],
+      "snapshotPath": "demos/materials/video-shotcraft/",
+      "snapshotEntry": "SKILL.md",
+      "relatedEntries": [
+        {
+          "kind": "case",
+          "id": "ink-press",
+          "note": "skill 自带的 Ink Press 模板成片，按原工程复刻"
+        }
+      ],
+      "bundle": "agent/materials/video-shotcraft.json"
+    },
+    {
+      "id": "lemo-opuscar",
+      "title": "lemo-opuscar · 66 种代码影片风格",
+      "summary": "66 种影片风格，每种配一支完全由代码逐帧渲染的示范短片（Canvas / WebGL 画面、免费采样配乐、本地 TTS 旁白），附导演指南、技术指南与“改成我的风格”流程。",
+      "type": "agent-skill",
+      "useCases": [
+        "按指定风格制作主题短片与科普、旅行、品牌、纪实影片",
+        "借用笔刷、布局、点云、微缩模型、声音和逐帧渲染技术",
+        "把现有风格改成品牌或频道自己的风格，或从空白开始保存个人风格"
+      ],
+      "avoid": [
+        "上游声明该素材为 Claude Opus 5.5 调校，其他模型可能难以复现。",
+        "单支影片约需30–60分钟 Agent 时间与相应 token。",
+        "运行环境需要 Node 20+、ffmpeg 7+、Python 3.11+（或 uv）。"
+      ],
+      "snapshotPath": "demos/materials/lemo-opuscar/",
+      "snapshotEntry": "plugin/skills/lemo-opuscar/SKILL.md",
+      "relatedEntries": [
+        {
+          "kind": "case",
+          "id": "lemo-watercolor",
+          "note": "沿降雨梯度横移澳大利亚景观，再用大陆地图回溯干湿变化。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-swiss-motion",
+          "note": "让红圆脱离网格、带动海报重排，最后揭示版面中的乐谱。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-lidar-survey",
+          "note": "剥去森林点云的树冠，显出林下旧农田的石墙。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-memphis-diorama",
+          "note": "以主树回弹带动换季波，让微缩河湾依次经历四季。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-ink-wash",
+          "note": "用笔触和纸白演出侠客渡江，让书写动作斩开巨浪。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-woodcut",
+          "note": "逐刀刻出铸钟故事，用反刻字揭印和铜色表现钟声。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-spy-titles",
+          "note": "让特工穿过字母布景，以圆形硬切和斜线串联追逐。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-paper-popup",
+          "note": "随书页展开纸片谷、森林与海洋，让主角最终走进真实房间。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-ukiyoe",
+          "note": "把旅人的五段行程化作套印山景，最后拉远成一幅画轴。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-shadow-puppet",
+          "note": "每射落一个太阳便熄灭一盏灯，最后转到幕布背后。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-papercut-red",
+          "note": "让折剪的红纸展开成窗花，用镂空灯光化解年兽来袭。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-impasto",
+          "note": "让雨伞随圆舞曲逐拍染色，轨迹累积成广场上的曼陀罗。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-crayon-book",
+          "note": "以蜡笔防染显出星星，让女孩为失眠的月亮盖上拼布被。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-paper-lantern",
+          "note": "用层叠纸雕和逐节亮灭的车窗，讲述夜车驶向海边的旅程。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-whiteboard",
+          "note": "在同一块白板上逐步推演 GPS、原子钟与相对论的关系。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-urban-sketch",
+          "note": "让追逐草帽的路线在无彩速写中逐处晕开淡彩。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-chalkboard",
+          "note": "沿汉字字形的演变逐笔追踪弓箭，解释“射”的含义。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-risograph",
+          "note": "随骑行路线逐层叠加油墨色，让错版漂移在节拍上重新套准。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-halftone-dossier",
+          "note": "用三项猫咪捣乱证据组成案卷，最终盖下无罪释放印章。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-engraving",
+          "note": "逐层刻出蜜蜂图版，再放大细节、晕染淡彩并覆上护纸。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-silkscreen-poster",
+          "note": "以旅行海报和票根串联环球旅程，越过世界另一侧后返回北京。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-printed-long-take",
+          "note": "在同一河谷长镜头中反复再印，对照丹顶鹤数量的变化。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-art-deco",
+          "note": "跟随门童穿过饭店送达乐谱，用午夜钟声逐字点亮灯牌。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-blueprint",
+          "note": "让接云机器在蓝图中自行装配，再用修订云线为花朵降雨。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-stained-glass",
+          "note": "沿四格彩窗演出骑士寻龙的故事，以修补铅条完成转折。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-pictogram-motion",
+          "note": "让失物招领处的雨伞同时撑开，把伞墙转为网格纹样。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-ascii-crt",
+          "note": "将地球来信拆为字符地图，再拉远到无人值守的月球房间。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-dark-keynote",
+          "note": "把杂乱界面元素汇成光流，逐步显出产品窗口与性能指标。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-living-screencast",
+          "note": "让 Clawd 沿真实界面边缘跑跳，串联输入、审阅与预览操作。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-circuit-board",
+          "note": "跟随电流穿过水坝、换流站与插座，最后拉远成整张电路板。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-midcentury-toon",
+          "note": "以教育片式演示介绍扫地机，把清扫路线拉成印刷平面图。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-hd-2d",
+          "note": "跟随提灯人穿越夜林和风暴，点亮灯塔后唤起海上船灯。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-brick-toy",
+          "note": "让坍塌的积木火箭重新拼装并飞向月亮，最后拉回真实书桌。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-lowpoly-island",
+          "note": "让岛屿生长逐次奏出音符，再由灯塔扫光重奏旋律。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-backrooms",
+          "note": "用重复告示、对焦失灵和磁带断裂逐步瓦解夜班入职守则。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-satellite-briefing",
+          "note": "对照咸海历年海岸线与港口距离，再显出北咸海的回水。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-briefing-board",
+          "note": "在简报墙上比较四种桥型，让船只通行验证最终方案。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-white-model",
+          "note": "按建成年代点亮鹿特丹白模，以高度光层和阴影展示城市。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-archive-lighttable",
+          "note": "把负片转正并推入照片，对照电报与档案记录的飞行时长。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-microscope",
+          "note": "从真实玻片推入细胞核，逐像素比较两个区域的蓝色占比。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-caption-news",
+          "note": "用字幕、报告高亮和双栏账本解释蜂群损失与补建。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-visual-investigation",
+          "note": "按事件时刻交叉对照新闻片、照片、证词与报告，汇成证据地图。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-news-package",
+          "note": "用价格表、折线、地图信函与规格卡串联一周四则 AI 新闻。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-telestrator",
+          "note": "定格比赛画面圈人画线，再以双机位、倒带和俯视板拆解进球。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-countdown",
+          "note": "随发射倒计时展开多机位分屏，在点火瞬间合为一幅画面。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-kino-montage",
+          "note": "把工地实拍、工人照片与文档剪辑在一起，将人物叠成大厦。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-hologram-hud",
+          "note": "从扫描线生成电助力车线框，以部件爆炸、引线与读数呈现规格。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-teardown",
+          "note": "在连续镜头中逐层展开分体键盘，再合拢并标出实物尺寸。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-dataviz",
+          "note": "把百年夏季温度与人生批注叠合，最终将点线化作温度条纹。"
+        },
+        {
+          "kind": "case",
+          "id": "lemo-transit-map",
+          "note": "逐段描出上海地铁的扩张，以站名层级和里程表呈现规模。"
+        }
+      ],
+      "bundle": "agent/materials/lemo-opuscar.json"
+    },
+    {
+      "id": "claude-animation-base",
+      "title": "Claude Animation Base · 手绘卡通动画套件",
+      "summary": "JohnHeibel 从 P(doom) 音乐录像整理出的入门套件：p5.js + p5.brush 绘制、Clawd 角色（视角、31 种表情、帽子、符号与舞步）、镜头与笔刷擦除时间轴、逐帧渲染脚本，以及给模型读的 ANIMATION_GUIDE.md。让 Agent 先读指南、出分镜，再逐镜头写只取决于时刻 t 的场景函数。",
+      "type": "prompt-kit",
+      "useCases": [
+        "让会写代码的 Agent 从分镜开始制作手绘卡通短片",
+        "替换角色、表情、服装与参考图后制作新的角色演出",
+        "参考表情过渡、关键视角转身、镜头衔接与逐帧渲染"
+      ],
+      "avoid": [
+        "需要观众自由阅读的普通网页与网页应用",
+        "直接复制示例故事而不安排新事件的短片",
+        "没有命令执行环境的纯文字对话"
+      ],
+      "snapshotPath": "demos/materials/claude-animation-base/",
+      "snapshotEntry": "README.md",
+      "relatedEntries": [
+        {
+          "kind": "case",
+          "id": "pdoom-video",
+          "note": "套件整理自这支 MV 的代码，并加入作者对模型表现的分析"
+        }
+      ],
+      "bundle": "agent/materials/claude-animation-base.json"
+    },
+    {
+      "id": "remotion-skills",
+      "title": "Remotion Agent Skills · 官方 React 视频技能包",
+      "summary": "Remotion 官方维护的 12 个 Agent Skill，供 Claude Code、Codex、Cursor 等 Agent 在 Remotion 项目里写 React 视频。remotion-best-practices 是总入口，按任务转到具体技能；其余技能分别负责新建项目、画面与动画写法、字幕、地图动画、音视频处理、交互、预览、导出、在线应用、版本升级与文档检索。",
+      "type": "agent-skill",
+      "useCases": [
+        "新建 Remotion 项目或合成，用 React 编写按帧驱动的画面、排版、动画与特效",
+        "转录、导入与制作动态字幕，编排静态地图、路线标记与三维地理飞越镜头",
+        "在浏览器中用 Mediabunny 读取音视频元数据、处理媒体，并在 Studio 中预览和编辑时间线",
+        "导出视频、静帧或透明视频，把 Remotion Player 与渲染能力接入视频生成应用",
+        "升级 Remotion、相关包与项目技能，检索官方 API 和组件文档"
+      ],
+      "avoid": [
+        "脱离 Remotion 项目的一般网页开发",
+        "用 CSS transition、CSS animation 或 Tailwind 动画类驱动逐帧视频动画",
+        "未明确要求导出时跳过 Studio 预览直接渲染"
+      ],
+      "snapshotPath": "demos/materials/remotion-skills/",
+      "snapshotEntry": "skills/remotion-best-practices/SKILL.md",
+      "relatedEntries": [
+        {
+          "kind": "case",
+          "id": "ink-press",
+          "note": "用 Remotion 4.0.484 编写的宣传片，可对照 remotion-markup 的写法"
+        }
+      ],
+      "bundle": "agent/materials/remotion-skills.json"
+    },
+    {
+      "id": "hyperframes-skills",
+      "title": "HyperFrames Agent Skills · HTML 视频技能包",
+      "summary": "HyperFrames 的 8 个技能目录快照：/hyperframes 作为总入口，核心四项负责 HTML 合成约定、CLI、模块安装与媒体；其余四项处理 Figma、演示文稿、既有视频代码迁移与视频重建。",
+      "type": "agent-skill",
+      "useCases": [
+        "让编码 Agent 从计划开始制作 HTML 视频、产品宣传片、讲解片和竖屏短片",
+        "编排可定位动画、字幕、数据图表、地图与三维画面",
+        "检索并安装可编辑模块，取得图片、音视频和字幕媒体",
+        "把 Figma 设计、既有视频代码或视频重建为 HyperFrames 项目"
+      ],
+      "avoid": [
+        "脱离视频制作的一般网页开发",
+        "以墙钟时间、无种子的随机数或实时网络驱动画面",
+        "把 /slideshow 的现场演示文稿直接视为 MP4 成片"
+      ],
+      "snapshotPath": "demos/materials/hyperframes-skills/",
+      "snapshotEntry": "skills/hyperframes/SKILL.md",
+      "relatedEntries": [
+        {
+          "kind": "material",
+          "id": "hyperframes-registry",
+          "note": "同一上游的视频模块与模板精选，用 /hyperframes-registry 安装"
+        }
+      ],
+      "bundle": "agent/materials/hyperframes-skills.json"
+    },
+    {
+      "id": "hyperframes-registry",
+      "title": "HyperFrames Registry · 视频模块与模板精选",
+      "summary": "HyperFrames Registry 的 55 个精选模块与 8 个模板，提供可编辑的标题、字幕、转场、数据图表、三维场景、相机与质感源码。本地播放器预览精选项，完整索引覆盖 22 个官方分类的 448 个模块及 8 个模板。",
+      "type": "component-library",
+      "useCases": [
+        "在视频项目中复用标题、动态字幕、转场、社交卡片与图表",
+        "以可编辑源码组合三维画面、镜头运动、纹理和效果",
+        "从完整模板开始搭建视频，再替换文案、变量与媒体"
+      ],
+      "avoid": [
+        "把 component 当作自带完整时间线的独立 block 安装",
+        "用 hyperframes add 安装完整项目模板",
+        "用实时网络或不可定位动画驱动逐帧视频"
+      ],
+      "demo": "demos/materials/hyperframes-registry/index.html",
+      "relatedEntries": [
+        {
+          "kind": "material",
+          "id": "hyperframes-skills",
+          "note": "同一上游的 Agent Skill，/hyperframes-registry 负责安装这些模块与模板"
+        }
+      ],
+      "bundle": "agent/materials/hyperframes-registry.json"
+    },
+    {
+      "id": "starlight-bceg-motif",
+      "title": "少女歌剧 BCEG（7135）动机 · TV 原声带片段与节奏型",
+      "summary": "《少女歌剧》TV 原声带里反复出现的 7-1-3-5 动机：16 首曲目的音频片段、视频给出的谱例、移调级数和 9 种节奏型，可按曲目回听片段，也可将动机移到任意调试听取用。",
+      "type": "sound",
+      "useCases": [
+        "为舞台、星光、命运主题的配乐写一个可识别的短动机",
+        "研究一个动机如何靠移调和换节奏贯穿整张原声带",
+        "给视频里的高光或转场找一个四音“呼唤”"
+      ],
+      "avoid": [
+        "直接把原声带片段用于公开发布的作品配乐",
+        "把“音频候选”当作作曲者确认过的动机"
+      ],
+      "demo": "demos/materials/starlight-bceg-motif/index.html",
+      "relatedEntries": [
+        {
+          "kind": "case",
+          "id": "butterfly-garden-score",
+          "note": "《蝶の舞う庭》总谱可视化复刻，同一配乐世界里的完整曲目案例"
+        }
+      ],
+      "bundle": "agent/materials/starlight-bceg-motif.json"
+    }
+  ]
+}

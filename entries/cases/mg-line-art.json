@@ -1,0 +1,384 @@
+{
+  "id": "mg-line-art",
+  "order": 7,
+  "title": "线条艺术 · ATELIER LINEA — One Line",
+  "subtitle": "始于一线的一笔画",
+  "carriers": [
+    "video"
+  ],
+  "style": "hand-drawn",
+  "purpose": "brand",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15",
+    "线条动画",
+    "一笔画",
+    "线面转换",
+    "笔尖跟镜",
+    "品牌短片"
+  ],
+  "summary": "香槟金线在午夜蓝底上从种子长成幼苗，卷须展开为屋梁，延伸出建筑、天际与海浪；线条抬升成圆环拱门并填成金色徽章，镜头拉远，呈现 ATELIER LINEA 与“始于一线”的海报落版。",
+  "focus": "以单色细线为造型语言，连续路径按时间描绘，转角减速并作标点停顿；工具从同一路径导出转角和笔尖速度，供配乐卡点。",
+  "accent": "#E6CB8E",
+  "background": "#0B1320",
+  "timeline": true,
+  "kit": true,
+  "rhythm": {
+    "duration": 10,
+    "bpm": 72,
+    "beats": [
+      {
+        "t": 0,
+        "label": "墨线开场",
+        "note": "原作连续路径节点 ground0@0.7。"
+      },
+      {
+        "t": 0.2,
+        "label": "种子成形",
+        "note": "原作连续路径节点 seed。"
+      },
+      {
+        "t": 0.75,
+        "label": "茎节生长",
+        "note": "原作连续路径节点 stem1。"
+      },
+      {
+        "t": 0.814,
+        "label": "首叶展开",
+        "note": "原作连续路径节点 leaf1。"
+      },
+      {
+        "t": 1.116,
+        "label": "茎节延伸",
+        "note": "原作连续路径节点 stem2。"
+      },
+      {
+        "t": 1.214,
+        "label": "次叶展开",
+        "note": "原作连续路径节点 leaf2。"
+      },
+      {
+        "t": 1.486,
+        "label": "树梢生长",
+        "note": "原作连续路径节点 stem3。"
+      },
+      {
+        "t": 1.575,
+        "label": "三叶展开",
+        "note": "原作连续路径节点 leaf3。"
+      },
+      {
+        "t": 1.78,
+        "label": "枝梢伸展",
+        "note": "原作连续路径节点 shoot。"
+      },
+      {
+        "t": 1.918,
+        "label": "卷须生长",
+        "note": "原作连续路径节点 tendril。"
+      },
+      {
+        "t": 2.063,
+        "label": "卷须成梁",
+        "note": "卷须在 2.063–2.223 秒展开为屋梁。"
+      },
+      {
+        "t": 2.083,
+        "label": "屋梁展开",
+        "note": "原作连续路径节点 roof。"
+      },
+      {
+        "t": 2.233,
+        "label": "停顿续笔",
+        "note": "原作连续路径节点 roof。"
+      },
+      {
+        "t": 2.533,
+        "label": "亭阁成形",
+        "note": "原作连续路径节点 pavilion。"
+      },
+      {
+        "t": 3.214,
+        "label": "高塔生长",
+        "note": "原作连续路径节点 tower。"
+      },
+      {
+        "t": 3.5,
+        "label": "塔身落笔",
+        "note": "原作连续路径节点 tower2。"
+      },
+      {
+        "t": 3.65,
+        "label": "停顿续笔",
+        "note": "原作连续路径节点 tower2。"
+      },
+      {
+        "t": 3.85,
+        "label": "天际展开",
+        "note": "原作连续路径节点 sky。"
+      },
+      {
+        "t": 4.75,
+        "label": "尖塔落笔",
+        "note": "原作连续路径节点 sky2。"
+      },
+      {
+        "t": 4.9,
+        "label": "停顿续笔",
+        "note": "原作连续路径节点 sky2。"
+      },
+      {
+        "t": 5.135,
+        "label": "地平延伸",
+        "note": "原作连续路径节点 horizon。"
+      },
+      {
+        "t": 5.393,
+        "label": "海浪翻起",
+        "note": "原作连续路径节点 wave。"
+      },
+      {
+        "t": 5.62,
+        "label": "浪花卷曲",
+        "note": "原作连续路径节点 curl。"
+      },
+      {
+        "t": 6.12,
+        "label": "光线抬升",
+        "note": "原作连续路径节点 lift。"
+      },
+      {
+        "t": 6.458,
+        "label": "圆环描绘",
+        "note": "原作连续路径节点 ring。"
+      },
+      {
+        "t": 6.97,
+        "label": "圆环接续",
+        "note": "原作连续路径节点 foot。"
+      },
+      {
+        "t": 7.019,
+        "label": "拱门描绘",
+        "note": "原作连续路径节点 arch。"
+      },
+      {
+        "t": 7.5,
+        "label": "轮廓闭合",
+        "note": "原作连续路径节点 arch>。"
+      },
+      {
+        "t": 7.5,
+        "label": "线环成面",
+        "note": "圆环向内填成金色徽章，填充时长 0.367 秒。"
+      },
+      {
+        "t": 7.55,
+        "label": "光脉回溯",
+        "note": "光脉从徽章沿原路径返回种子。"
+      },
+      {
+        "t": 7.8,
+        "label": "海报拉远",
+        "note": "镜头在 7.8–9.0 秒回到完整海报构图。"
+      },
+      {
+        "t": 8.333,
+        "label": "字标入场",
+        "note": "ATELIER LINEA 从中心向两侧错峰收拢显现。"
+      },
+      {
+        "t": 8.75,
+        "label": "标语入场",
+        "note": "始于一线入场，0.9 秒完成。"
+      },
+      {
+        "t": 8.95,
+        "label": "光脉回流",
+        "note": "光脉从种子向徽章回流，至 9.5 秒。"
+      },
+      {
+        "t": 9,
+        "label": "海报落定",
+        "note": "末段保持约 3% 推镜。"
+      },
+      {
+        "t": 9.25,
+        "label": "细线签章",
+        "note": "标语两侧细线向外描出，至 9.6 秒。"
+      }
+    ]
+  },
+  "layers": [
+    {
+      "name": "连续金线",
+      "role": "同一条路径连接种子、幼苗、建筑、天际、海浪、圆环与拱门；旧线逐渐变暗，笔尖保持发光。"
+    },
+    {
+      "name": "跟随镜头",
+      "role": "镜头跟随笔尖，结构停顿时刹停，抬升后转向徽章中心，末段拉远，呈现完整海报。"
+    },
+    {
+      "name": "金色徽章",
+      "role": "圆环先收细作为预备动作，再向内填充，保留镂空拱门，叠加金属倒角、扩散回声与扫光。"
+    },
+    {
+      "name": "文字签章",
+      "role": "ATELIER LINEA 宽字距衬线字标逐字收拢；“始于一线”与两侧细线依次入场。"
+    },
+    {
+      "name": "颗粒与配乐",
+      "role": "颗粒、暗角与漂浮光尘叠在画面上；毡音钢琴、弦乐、竖琴、笔触声和钟声按同一时间表配合。"
+    }
+  ],
+  "composition": {
+    "color": "午夜蓝 #0B1320、香槟金 #E9D7A5；旧线使用 #967D50，笔尖与金属高光趋向 #FFF6DC。",
+    "typography": "Cormorant Garamond 500 与 Noto Serif SC 300；字标 ATELIER LINEA 与标语“始于一线”保留原文。",
+    "layout": "1920×1080 横屏 Canvas2D；笔尖带动局部构图，最终以圆形拱门徽章、天际线、字标和标语居中组成海报。",
+    "imagery": "SVG 路径采样为连续线，Canvas2D 分段绘制；圆环向内填成带镂空拱门的金色徽章。",
+    "motion": "描绘按转角密度减速，卷须形变成梁；镜头跟随笔尖，停顿、追赶、拉远与微推接续，光脉沿线往返。",
+    "sound": "复用原片 72 BPM、E 大调的毡音钢琴与弦乐配乐；笔触声响度跟随笔尖速度，浪花配竖琴滑奏，填面配和弦与钟声。",
+    "rhythm": "film/cues.json 的 draw 与 zoom 给出描绘和镜头节点；2.083、3.5、4.75 秒停顿，7.5 秒填面，8.333 秒字标，9.25 秒细线签章。",
+    "coherence": "上一图形的尾线作为下一图形的起线，同一路径连接植物、建筑、海浪与品牌徽章。"
+  },
+  "tokens": {
+    "palette": [
+      "#0B1320",
+      "#E9D7A5",
+      "#967D50",
+      "#FFF6DC"
+    ],
+    "type": "Cormorant Garamond 500；Noto Serif SC 300。",
+    "motion": [
+      {
+        "name": "描绘缓动",
+        "value": "cubicBezier(0.65, 0, 0.35, 1)；KCORN = 9；STEP = 0.5。"
+      },
+      {
+        "name": "笔尖跟随",
+        "value": "sigma: 0.3；lead: 0.08；hook lag: 0.067。"
+      },
+      {
+        "name": "线转面",
+        "value": "start: 7.5；swell: 0.367；cubicBezier(0.24, 0.3, 0.2, 1)。"
+      },
+      {
+        "name": "字标收拢",
+        "value": "start: 8.333；stagger: 0.045；dur: 0.95；track = 0.46。"
+      }
+    ]
+  },
+  "useCases": [
+    "奢侈品品牌片",
+    "金融品牌片",
+    "建筑品牌片",
+    "标志动画"
+  ],
+  "constraints": [
+    "原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。",
+    "10 秒，1920×1080，30fps；只提供横屏原作画幅。"
+  ],
+  "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n线条动画 Line Art / Line Animation\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: SVG paths + stroke-dashoffset (getTotalLength) + GSAP; a virtual camera that follows the pen tip\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「一笔画」One-line narrative for a luxury / architecture brand — the whole film is ONE continuous line.\n- Deep midnight ground (#0B1320 or near-black) + a single champagne-gold line (#E9D7A5), constant ~3px, round caps, a softly glowing pen tip that leads the draw.\n- Story (continuous path, the tail of each figure is the start of the next): a seed → sprouts into a sapling → branches become the structural lines of a building → the building outline extends into a skyline/horizon → the horizon line lifts and loops into a monogram logo → LINE-TO-FILL moment (logo fills with gold from its anchor) → thin letter-spaced serif wordmark (e.g. \"ATELIER LINEA\") fades up.\n- Draw speed eases into corners (cubic-bezier(0.65,0,0.35,1)); the virtual camera drifts/pushes to keep the tip in frame, then dollies out at the end to reveal the whole drawing composed as a poster; older line segments dim to ~35% as the camera moves on.\nSound: minimal felt piano + soft string swell; a pen-on-paper whisper whose loudness follows tip speed; delicate chime on the fill.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n以单色细线为唯一造型语言，线条自我描绘（draw-on）、延伸、转折并变形为下一个图形，一笔连成整支片子。极简高级感强，常见于奢侈品、金融、建筑类品牌片和 logo 动画。\n视觉特征 等宽细线, 单色或双色, 大量负空间, 线条连续生长, 线面转换瞬间\n关键技法 核心是 stroke 描绘：AE 用 Trim Paths 0→100%，Web 端用 SVG stroke-dasharray/dashoffset\n线宽全片恒定（2~4px），转角处让描绘速度略减速，用 easeInOut cubic-bezier(0.65,0,0.35,1)\n'一笔画'叙事：上一图形的尾线即下一图形的起线，路径提前在 Illustrator 里连好\n线转面：描完轮廓后用同路径的 fill 从锚点扩展填充\n配合微小的端点圆头（round cap）与路径抖动可增加手绘感\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+  "migration": [
+    {
+      "field": "film/film.js → PIECES、WV",
+      "how": "调整连续路径的图形、浪花与衔接位置。"
+    },
+    {
+      "field": "film/film.js → GOLD、AGED、HOT、NAVY 与 drawText",
+      "how": "调整配色、品牌字标与标语，并配套相应字体文件。"
+    },
+    {
+      "field": "film/cues.json → draw、zoom、camera、fill、wordmark",
+      "how": "调整描绘、镜头、线面转换与文字节点，配乐读取同一时间表。"
+    },
+    {
+      "field": "index.html → MotionKit.mountFilm",
+      "how": "接入 Motion Kit 时间轴、原片音轨与窗口缩放。"
+    }
+  ],
+  "demo": "demos/cases/mg-line-art/index.html",
+  "patternIds": [
+    "continuous-line-narrative",
+    "pen-led-camera",
+    "fresh-ink-aging",
+    "line-ring-to-medallion",
+    "center-out-tracking-in",
+    "film-grain",
+    "shared-cue-sheet"
+  ],
+  "previewAt": 9.75,
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "原作《ATELIER LINEA — One Line（一笔画）》来自 [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)，作者 Vincentwei1021，固定提交 `49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`。代码、提示词、文档和成片按 MIT 许可发布，许可原文见 [LICENSE](film/LICENSE)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "| 字体与字重 | 官方完整文件与版本 | 许可原文 |\n| --- | --- | --- |\n| Cormorant Garamond，可变字重 300–700，画面使用 500 | [Google Fonts：CormorantGaramond[wght].ttf](https://raw.githubusercontent.com/google/fonts/3dd78844021e948ceb633d1dcee3f7885561b5d9/ofl/cormorantgaramond/CormorantGaramond%5Bwght%5D.ttf)，来源提交 `3dd78844021e948ceb633d1dcee3f7885561b5d9`，保存为 `fonts/CormorantGaramond[wght].ttf` | SIL OFL 1.1，[CormorantGaramond-OFL.txt](fonts/CormorantGaramond-OFL.txt) |\n| Noto Serif SC，可变字重 200–900，画面使用 300 | [Noto CJK 官方仓库：NotoSerifSC-VF.ttf](https://raw.githubusercontent.com/notofonts/noto-cjk/9b0f1436e455d902de067a2501422e5dc71ad16b/Serif/Variable/TTF/Subset/NotoSerifSC-VF.ttf)，来源提交 `9b0f1436e455d902de067a2501422e5dc71ad16b` | SIL OFL 1.1，[NotoSerifSC-OFL.txt](fonts/NotoSerifSC-OFL.txt) |\n\n字体保留官方完整原文件，`fonts/fonts.css` 取自原作对应家族的声明，仅改资源 URL。"
+    },
+    {
+      "scope": "共享纹理",
+      "notes": "`assets/textures/grain/grain_fine_2048.png` 原样取自上述固定提交的 `assets/textures/grain/`。根据原仓库 [README 的许可一节](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/README.md#license)，项目自制文件按 MIT 许可提供。"
+    },
+    {
+      "scope": "配乐",
+      "notes": "配乐由保存在 `source/audio.py` 的原作脚本使用 [VCSL 乐器采样](https://github.com/sgossner/VCSL)（CC0）合成。`audio/film.m4a` 从固定提交的 `videos/02-line-art.mp4` 无损抽取 AAC 音轨，保留原片混音。原片及其自制音频采用上述 MIT 许可。\n\n```bash\nffmpeg -i ../../sources/mg-styles-15/videos/02-line-art.mp4 -vn -c:a copy demos/cases/mg-line-art/audio/film.m4a\n```\n\n本案例没有 vendor 包。"
+    }
+  ],
+  "relatedEntries": [
+    {
+      "kind": "material",
+      "id": "mg-styles-15",
+      "note": "提示词与配乐合成库所在素材"
+    }
+  ],
+  "energy": [
+    0.296,
+    0.283,
+    0.262,
+    0.246,
+    0.24,
+    0.276,
+    0.311,
+    0.377,
+    0.409,
+    0.401,
+    0.345,
+    0.288,
+    0.289,
+    0.356,
+    0.428,
+    0.437,
+    0.395,
+    0.357,
+    0.42,
+    0.435,
+    0.427,
+    0.364,
+    0.363,
+    0.392,
+    0.432,
+    0.495,
+    0.527,
+    0.533,
+    0.529,
+    0.664,
+    0.77,
+    0.872,
+    0.831,
+    0.778,
+    0.646,
+    0.511,
+    0.427,
+    0.366,
+    0.312,
+    0.269
+  ],
+  "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。"
+}

@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-stained-glass",
+  "entry": {
+    "id": "lemo-stained-glass",
+    "order": 44,
+    "title": "东窗之龙 · 彩色玻璃窗",
+    "subtitle": "The Dragon of the East Window",
+    "carriers": [
+      "video"
+    ],
+    "style": "graphic-type",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "webgl"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "彩色玻璃窗",
+      "图形与排版",
+      "代码影片"
+    ],
+    "summary": "阳光沿四格东窗从清晨走向黄昏，依次唤醒骑士寻龙的故事；一剑击裂玻璃后，他发现龙在守护太阳余烬，按拍修补铅条、放下长剑，夜里最后一格仍然发光。",
+    "focus": "光的颜色、位置和长度就是时间；同一花窗透到石地的光斑承接决斗，裂纹和重铅改变故事结局。",
+    "accent": "#dc9a22",
+    "background": "#0d0e12",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 40.68,
+    "rhythm": {
+      "duration": 56.5,
+      "bpm": 80,
+      "beats": [
+        {
+          "t": 0,
+          "label": "第一道晨光",
+          "note": "第一道晨光"
+        },
+        {
+          "t": 4.8,
+          "label": "全窗显规则",
+          "note": "全窗显规则"
+        },
+        {
+          "t": 9.6,
+          "label": "骑士领命",
+          "note": "骑士领命"
+        },
+        {
+          "t": 15.6,
+          "label": "移光换格",
+          "note": "移光换格"
+        },
+        {
+          "t": 17.2,
+          "label": "正午旅途",
+          "note": "正午旅途"
+        },
+        {
+          "t": 22.6,
+          "label": "光束引向地面",
+          "note": "光束引向地面"
+        },
+        {
+          "t": 24,
+          "label": "地面光斑决斗",
+          "note": "地面光斑决斗"
+        },
+        {
+          "t": 30,
+          "label": "暮色举剑",
+          "note": "暮色举剑"
+        },
+        {
+          "t": 31.8,
+          "label": "裂后静默",
+          "note": "击碎玻璃"
+        },
+        {
+          "t": 33.8,
+          "label": "发现余烬",
+          "note": "发现余烬"
+        },
+        {
+          "t": 41.3,
+          "label": "按拍重嵌铅",
+          "note": "按拍重嵌铅"
+        },
+        {
+          "t": 44.6,
+          "label": "余响与修补痕",
+          "note": "余响与修补痕"
+        },
+        {
+          "t": 47.2,
+          "label": "夜窗自持光",
+          "note": "夜窗自持光"
+        },
+        {
+          "t": 52.9,
+          "label": "石刻片尾",
+          "note": "石刻片尾"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 4.8,
+        "from": 0.15,
+        "to": 0.65,
+        "label": "第一道晨光"
+      },
+      {
+        "t0": 4.8,
+        "t1": 9.6,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "全窗显规则"
+      },
+      {
+        "t0": 9.6,
+        "t1": 15.6,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "骑士领命"
+      },
+      {
+        "t0": 15.6,
+        "t1": 17.2,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "移光换格"
+      },
+      {
+        "t0": 17.2,
+        "t1": 22.6,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "正午旅途"
+      },
+      {
+        "t0": 22.6,
+        "t1": 24,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "光束引向地面"
+      },
+      {
+        "t0": 24,
+        "t1": 30,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "地面光斑决斗"
+      },
+      {
+        "t0": 30,
+        "t1": 31.8,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "暮色举剑"
+      },
+      {
+        "t0": 31.8,
+        "t1": 33.8,
+        "from": 0.15,
+        "to": 0.05,
+        "label": "裂后静默"
+      },
+      {
+        "t0": 33.8,
+        "t1": 41.3,
+        "from": 0.2,
+        "to": 0.35,
+        "label": "发现余烬"
+      },
+      {
+        "t0": 41.3,
+        "t1": 44.6,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "按拍重嵌铅"
+      },
+      {
+        "t0": 44.6,
+        "t1": 47.2,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "余响与修补痕"
+      },
+      {
+        "t0": 47.2,
+        "t1": 52.9,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "夜窗自持光"
+      },
+      {
+        "t0": 52.9,
+        "t1": 56.5,
+        "from": 0.5,
+        "to": 0.12,
+        "label": "石刻片尾"
+      }
+    ],
+    "energyNote": "段落划分依据上游DEMO.md Shots与作品时间表；0–1数值按画面密度、配乐与静默作相对编辑标注。",
+    "observations": [
+      "光的颜色、位置和长度就是时间；同一花窗透到石地的光斑承接决斗，裂纹和重铅改变故事结局。",
+      "人物以8fps做硬片动作，光与镜头为24fps；离光的窗格冻结，裂纹在.28秒延伸，剑、腿、身、臂分组按拍修补。",
+      "玻璃随外部太阳苏醒，结尾由内部余烬维持光亮；修补铅线留在画面中，成为叙事结果。"
+    ],
+    "composition": {
+      "color": "钴蓝#1d3a9c与红宝石#a8101c为主，金#dc9a22与少量绿、紫；余烬#ff9a2a成为夜间光源。",
+      "layout": "1920×1080；四条竖向尖拱窗并列，上方玫瑰窗作太阳钟，下方石刻字带，光斑落在不规则石板地面。",
+      "imagery": "代码逐块裁出带纹理的玻璃、铅条与棕色grisaille；WebGL2统一合成透光、石墙、地面投影、光束、尘埃和辉光。",
+      "motion": "人物以8fps做硬片动作，光与镜头为24fps；离光的窗格冻结，裂纹在.28秒延伸，剑、腿、身、臂分组按拍修补。",
+      "sound": "Kokoro bf_alice故事旁白；D多利亚调管风琴、竖笛、竖琴、玻璃与钟采样；裂玻璃、铅条摩擦和焊接拟音。",
+      "rhythm": "80BPM、.75秒一拍；裂缝处音乐与余响硬停，静默中现出余烬，再以逐次焊接上行音恢复。",
+      "coherence": "玻璃随外部太阳苏醒，结尾由内部余烬维持光亮；修补铅线留在画面中，成为叙事结果。",
+      "typography": "Cinzel 600/700石刻标题，IM Fell English 400卷轴字幕；Cormorant Garamond和Uncial Antiqua用于原作模型页。"
+    },
+    "layers": [
+      {
+        "name": "玻璃与人物",
+        "role": "逐片纹理、铅网络、骑士与龙的刚性骨架。"
+      },
+      {
+        "name": "石室与地面",
+        "role": "尖拱、铁杆、石刻、石板与模糊彩色投影。"
+      },
+      {
+        "name": "照明与字幕",
+        "role": "太阳带、玫瑰窗、尘埃光束、余烬、焊光与卷轴字幕。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#1d3a9c",
+        "#a8101c",
+        "#dc9a22",
+        "#ff9a2a"
+      ],
+      "type": "Cinzel 600/700石刻标题，IM Fell English 400卷轴字幕；Cormorant Garamond和Uncial Antiqua用于原作模型页。",
+      "motion": [
+        {
+          "name": "光与时间",
+          "value": "film/story.js:28–52：sunU走过LX[0..3]；roseI=.45→1.3→.95→.65→0，人物在lancetI/II/III的离光时间停格。"
+        },
+        {
+          "name": "裂纹与重铅",
+          "value": "film/story.js:77–143：9条主裂纹与分支，.28秒展开；WELDS=[41.75,42.5,43.25,44,44.6]，修复后以3.2单位铅线保留裂痕。"
+        }
+      ]
+    },
+    "useCases": [
+      "传说故事",
+      "文化遗产影像",
+      "节日短片"
+    ],
+    "avoid": [
+      "需要真人实拍或摄影素材作为主画面的作品"
+    ],
+    "constraints": [
+      "改字体与文案时按原作字体载入和子集范围同步取得资源。",
+      "图形、着色器与时间线通过film内原作render(t)绘制，音轨沿用成片混音。"
+    ],
+    "migration": [
+      {
+        "field": "film/story.js → light / camera / WELDS",
+        "how": "修改太阳、镜头、故事动作与修补时刻。"
+      },
+      {
+        "field": "film/window.js / knight.js / dragon.js",
+        "how": "修改花窗布局、人物剪片和姿态。"
+      },
+      {
+        "field": "film/comp.js / glass.js",
+        "how": "修改透光、玻璃纹理、石地与投影。"
+      }
+    ],
+    "prompt": "制作一支彩色玻璃窗代码影片。阳光沿四格东窗从清晨走向黄昏，依次唤醒骑士寻龙的故事；一剑击裂玻璃后，他发现龙在守护太阳余烬，按拍修补铅条、放下长剑，夜里最后一格仍然发光。光的颜色、位置和长度就是时间；同一花窗透到石地的光斑承接决斗，裂纹和重铅改变故事结局。钴蓝#1d3a9c与红宝石#a8101c为主，金#dc9a22与少量绿、紫；余烬#ff9a2a成为夜间光源。1920×1080；四条竖向尖拱窗并列，上方玫瑰窗作太阳钟，下方石刻字带，光斑落在不规则石板地面。人物8fps硬片动作，光与镜头24fps；离光的窗格冻结，裂纹在.28秒延伸，剑腿身臂分组按拍修补。字体：Cinzel 600/700石刻标题，IM Fell English 400卷轴字幕；Cormorant Garamond和Uncial Antiqua用于原作模型页。声音：Kokoro bf_alice故事旁白；D多利亚调管风琴、竖笛、竖琴、玻璃与钟采样；裂玻璃、铅条摩擦和焊接拟音。按film目录的原作render(t)组织镜头与动作，采用MotionKit时间线逐帧定位，声音默认关闭。",
+    "demo": "demos/cases/lemo-stained-glass/index.html",
+    "patternIds": [
+      "light-is-time-panels",
+      "crack-and-relead"
+    ],
+    "fidelity": "demos/cases/lemo-stained-glass/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/stained-glass",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/stained-glass/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方资源与配音按audio/CREDITS许可。"
+    },
+    "sources": [
+      {
+        "label": "固定源码与风格说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/stained-glass"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/stained-glass.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/stained-glass/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/stained-glass)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Kokoro bf_alice故事旁白；D多利亚调管风琴、竖笛、竖琴、玻璃与钟采样；裂玻璃、铅条摩擦和焊接拟音。署名与许可见[audio/CREDITS](audio/CREDITS)及[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Cinzel 600/700石刻标题，IM Fell English 400卷轴字幕；Cormorant Garamond和Uncial Antiqua用于原作模型页。SIL OFL 1.1原文在fonts/，获取与重建见[source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-stained-glass/LICENSES.md",
+    "preview": "previews/cases/lemo-stained-glass.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 东窗之龙 · 彩色玻璃窗 · 接入与保真说明\n\n完整代码影片的来源与固定版本见[条目JSON](../../../entries/cases/lemo-stained-glass.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载字体、运行文件和成片音轨，等待iframe load与READY，按原fps调用render(t)。 | 接入MotionKit的1920×1080舞台、时间线、声音与就绪协议。 |\n| `audio/film.m4a` | 从Release成片流复制音轨。 | 保留成片原混音与时间映射。 |\n| `source/` | 保存制作脚本、输入、模型页和风格说明。 | 保留重建资料。 |\n| `stills/` | 原作参考静帧保留在来源，本库预览由capture生成。 | 成片运行不读取静帧。 |\n| `film/index.html` | 字体样式改为../fonts/fonts.css；import map把/core/lib.js映射到./core/lib.js。 | 接入字体与原作共享函数。 |\n| `film/main.js` | 移除test.js、frames.js的静态导入和?test/?frame分支，两个制作模块保存在source/。 | 模型与风格帧页面属于制作文件。 |\n\n作品绘制、着色器、数据表和时间轴沿用固定提交，文本复制为LF。许可索引见[LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html`使用`MotionKit.load.prepare`预载，在同源iframe的load及`window.READY === true`后，通过`MotionKit.mountFilm`接入1920×1080横屏、24fps、56.500000秒。`renderAt(t)`调用并等待`render(Math.round(t*24)/24)`，绘制直接来自原作。\n\n`?embed`隐藏独立控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时暂停在40.68秒，声音默认关闭。镜头标记取DEMO.md的Shots与代码时间表。\n\n## 与原片对照结果\n\n对照范围为开头、frame_sec、每个Shots段中点与片尾前1秒。参考PNG来自Release相同视频帧号，截图等待本库就绪和定位完成。\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，1920×1080、DPR 1；WebGL实际为Intel Iris Xe / ANGLE Direct3D11。等待`__motion.ready`，定位到`floor(t×24+.5)/24`，再等待两次requestAnimationFrame截图。\n\n**原始**比较参考PNG与本库PNG。**编码链**在独立测量页把同一PNG捕获为JPEG95，按上游`core/render/video.mjs`的libx264 medium CRF14、yuv420p编码，再按source/tools/mux.sh以slow CRF22、24fps、grain 4、yuv420p编码并解码。两列均为ffmpeg yuv444p SSIM All；页面直接绘制原作render(t)。\n\n编码链测量使用单张I帧，grain从测量帧开始；正式成片的帧间压缩与颗粒历史保留在参考PNG中。左右拼图和测量文件位于过程目录`renders/lemo-stained-glass/`，左参考、右本库。\n\n| 序号 | 视频帧 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.999382 | 1.000000 | 开头 |\n| 2 | 976 | 40.680000 | 40.666667 | 0.961931 | 0.965154 | frame_sec |\n| 3 | 58 | 2.400000 | 2.416667 | 0.974470 | 0.978417 | Shots · 第一道晨光中点 |\n| 4 | 173 | 7.200000 | 7.208333 | 0.987178 | 0.988148 | Shots · 全窗显规则中点 |\n| 5 | 302 | 12.600000 | 12.583333 | 0.974754 | 0.977861 | Shots · 骑士领命中点 |\n| 6 | 394 | 16.400000 | 16.416667 | 0.970041 | 0.975731 | Shots · 移光换格中点 |\n| 7 | 478 | 19.900000 | 19.916667 | 0.972636 | 0.975223 | Shots · 正午旅途中点 |\n| 8 | 559 | 23.300000 | 23.291667 | 0.969763 | 0.975777 | Shots · 光束引向地面中点 |\n| 9 | 648 | 27.000000 | 27.000000 | 0.987785 | 0.988148 | Shots · 地面光斑决斗中点 |\n| 10 | 742 | 30.900000 | 30.916667 | 0.970512 | 0.974414 | Shots · 暮色举剑中点 |\n| 11 | 763 | 31.800000 | 31.791667 | 0.966436 | 0.974110 | Shots · 击碎玻璃中点 |\n| 12 | 787 | 32.800000 | 32.791667 | 0.969235 | 0.974965 | Shots · 裂后静默中点 |\n| 13 | 901 | 37.550000 | 37.541667 | 0.960598 | 0.967100 | Shots · 发现余烬中点 |\n| 14 | 1031 | 42.950000 | 42.958333 | 0.964854 | 0.970544 | Shots · 按拍重嵌铅中点 |\n| 15 | 1102 | 45.900000 | 45.916667 | 0.963993 | 0.971024 | Shots · 余响与修补痕中点 |\n| 16 | 1201 | 50.050000 | 50.041667 | 0.972736 | 0.978539 | Shots · 夜窗自持光中点 |\n| 17 | 1313 | 54.700000 | 54.708333 | 0.968204 | 0.973950 | Shots · 石刻片尾中点 |\n| 18 | 1332 | 55.500000 | 55.500000 | 0.974956 | 0.980664 | 片尾前1秒 |\n\n18帧：原始最低**0.960598**、最高**0.999382**，18/18达到0.95；编码链最低**0.965154**、最高**1.000000**，18/18达到0.95。\n\n全部取样帧的两列数值达到0.95；人物、构图与文字对应。\n\n声音：成片与`audio/film.m4a`解码为48kHz单声道，每10ms求RMS包络，在±500ms范围互相关；最佳偏移**0ms**，相关系数**1.000000**，参考与本库各解码2712000 / 2712000个采样。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-stained-glass.json)\n\n- 作品代码与制作文件：LemoLab，MIT原文[film/LICENSE](film/LICENSE)。\n- [audio/film.m4a](audio/film.m4a)以`-c:a copy`流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/stained-glass.mp4)，署名LemoLab × Claude Opus 5.5；[CC BY 4.0原文](audio/CC-BY-4.0.txt)。\n- 原始第三方资源清单：[audio/CREDITS](audio/CREDITS)。\n- 采样乐器：Versilian Studios的VCSL / VSCO 2 CE、FreePats，见[CC0 1.0原文](audio/CC0-1.0.txt)。\n- Kokoro-82M旁白：[Apache-2.0原文](audio/Apache-2.0.txt)，具体声音见CREDITS。\n- 字体：SIL OFL 1.1，[OFL-IMFellEnglish.txt](fonts/OFL-IMFellEnglish.txt)、[OFL-cinzel.txt](fonts/OFL-cinzel.txt)、[OFL-cormorantgaramond.txt](fonts/OFL-cormorantgaramond.txt)、[OFL-uncialantiqua.txt](fonts/OFL-uncialantiqua.txt)。\n",
+    "prompt": "# 东窗之龙 · 彩色玻璃窗\n\n## 实现 Prompt\n\n制作一支彩色玻璃窗代码影片。阳光沿四格东窗从清晨走向黄昏，依次唤醒骑士寻龙的故事；一剑击裂玻璃后，他发现龙在守护太阳余烬，按拍修补铅条、放下长剑，夜里最后一格仍然发光。光的颜色、位置和长度就是时间；同一花窗透到石地的光斑承接决斗，裂纹和重铅改变故事结局。钴蓝#1d3a9c与红宝石#a8101c为主，金#dc9a22与少量绿、紫；余烬#ff9a2a成为夜间光源。1920×1080；四条竖向尖拱窗并列，上方玫瑰窗作太阳钟，下方石刻字带，光斑落在不规则石板地面。人物8fps硬片动作，光与镜头24fps；离光的窗格冻结，裂纹在.28秒延伸，剑腿身臂分组按拍修补。字体：Cinzel 600/700石刻标题，IM Fell English 400卷轴字幕；Cormorant Garamond和Uncial Antiqua用于原作模型页。声音：Kokoro bf_alice故事旁白；D多利亚调管风琴、竖笛、竖琴、玻璃与钟采样；裂玻璃、铅条摩擦和焊接拟音。按film目录的原作render(t)组织镜头与动作，采用MotionKit时间线逐帧定位，声音默认关闭。\n\n## 动效 Token\n\n- **光与时间**：film/story.js:28–52：sunU走过LX[0..3]；roseI=.45→1.3→.95→.65→0，人物在lancetI/II/III的离光时间停格。\n- **裂纹与重铅**：film/story.js:77–143：9条主裂纹与分支，.28秒展开；WELDS=[41.75,42.5,43.25,44,44.6]，修复后以3.2单位铅线保留裂痕。\n\n## 制作约束\n\n- 改字体与文案时按原作字体载入和子集范围同步取得资源。\n- 图形、着色器与时间线通过film内原作render(t)绘制，音轨沿用成片混音。\n\n## 迁移\n\n- `film/story.js → light / camera / WELDS`：修改太阳、镜头、故事动作与修补时刻。\n- `film/window.js / knight.js / dragon.js`：修改花窗布局、人物剪片和姿态。\n- `film/comp.js / glass.js`：修改透光、玻璃纹理、石地与投影。\n\n[打开 Demo](../../demos/cases/lemo-stained-glass/index.html) · [在库中查看](../../cases.html#case/lemo-stained-glass)\n"
+  },
+  "entrypoint": "demos/cases/lemo-stained-glass/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-stained-glass/LICENSES.md",
+      "bytes": 925,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/CREDITS",
+      "bytes": 922,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/film.m4a",
+      "bytes": 1868560,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fidelity.md",
+      "bytes": 4878,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/comp.js",
+      "bytes": 14934,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/dragon.js",
+      "bytes": 18374,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/glass.js",
+      "bytes": 12939,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/index.html",
+      "bytes": 469,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/knight.js",
+      "bytes": 17787,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/main.js",
+      "bytes": 931,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/scene.js",
+      "bytes": 6828,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/story.js",
+      "bytes": 15908,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/subs.js",
+      "bytes": 2350,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/window.js",
+      "bytes": 20091,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/Cinzel-VF.ttf",
+      "bytes": 125468,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/CormorantGaramond-VF.ttf",
+      "bytes": 1195560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/IMFellEnglish-Regular.ttf",
+      "bytes": 194992,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/OFL-IMFellEnglish.txt",
+      "bytes": 4359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/OFL-cinzel.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/OFL-cormorantgaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/OFL-uncialantiqua.txt",
+      "bytes": 4437,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/UncialAntiqua-Regular.ttf",
+      "bytes": 63404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/fonts.css",
+      "bytes": 368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/index.html",
+      "bytes": 2535,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/CREDITS",
+      "bytes": 922,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/DEMO.md",
+      "bytes": 12828,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/README.md",
+      "bytes": 4079,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/STYLE.md",
+      "bytes": 11945,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/build.sh",
+      "bytes": 1499,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/cues.json",
+      "bytes": 865,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/events.json",
+      "bytes": 2566,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/frames.js",
+      "bytes": 1714,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/lines.json",
+      "bytes": 1153,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/mix.py",
+      "bytes": 8244,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/music/cues.json",
+      "bytes": 502,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/music/score.py",
+      "bytes": 11323,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/style.json",
+      "bytes": 517,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/subs_export.py",
+      "bytes": 618,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/test.js",
+      "bytes": 8386,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/tools/mux.sh",
+      "bytes": 1240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/voices/dur.json",
+      "bytes": 113,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/voices/words.json",
+      "bytes": 2135,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-stained-glass.json",
+      "bytes": 11100,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-stained-glass.jpg",
+      "bytes": 134765,
+      "role": "preview"
+    }
+  ]
+}

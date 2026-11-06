@@ -1,0 +1,79 @@
+{
+  "id": "block-by-block-print-reveal",
+  "order": 102,
+  "title": "逐版套印成画",
+  "types": [
+    "texture",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "关键线、蓝、绿、红四块色版依次通过带噪声的斜向巴连遮罩印入空纸，同时消除各版的入场位移，保留固定套印偏差；浪后在空纸上再次按四版重印。",
+  "mechanism": "关键线、蓝、绿、红四块色版依次通过带噪声的斜向巴连遮罩印入空纸，同时消除各版的入场位移，保留固定套印偏差；浪后在空纸上再次按四版重印。",
+  "trigger": "开场四次套印，以及30.4–32.2秒留白之后。",
+  "effect": "完整画面从纸面逐版形成，节拍既是印刷动作也是场景重生。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "0–3.1秒；30.4–34.5秒；1倍速，总时长7.200000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "版次与时刻",
+      "value": "film/story.js:T.print1=[.35,1.05,1.70,2.30]，T.print5=[32.2,32.7,33.2,33.7]；REVEAL_DUR=.34秒。"
+    },
+    {
+      "name": "套印与入版",
+      "value": "film/main.js:REG=[[0,0],[2.2,-1.3],[-1.8,1.9],[1.5,2.2]]，SHIFT=[[4,-5],[-6,4],[5,5],[-5,-4]]；revFor / drawSheet调用print.js:stampLayer / stampFn。"
+    },
+    {
+      "name": "三专色按段加版",
+      "value": "lemo-risograph：film/film.js:53–59的plates：gate=[1,t>=8,t>=16]，蓝版.02秒、黄版8秒、粉版16秒分别以.55秒水平sweep扫入；riso.js按三通道墨量独立成版再相乘。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-ukiyoe/film/story.js",
+    "demos/cases/lemo-ukiyoe/film/main.js",
+    "demos/cases/lemo-ukiyoe/film/print.js"
+  ],
+  "locator": "revFor / drawSheet / stampLayer / stampFn",
+  "useCases": [
+    "完整画面从纸面逐版形成，节拍既是印刷动作也是场景重生。"
+  ],
+  "avoid": [
+    "同时叠加遮住主要动作的画面层"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-ukiyoe的原作render(t)，实现“逐版套印成画”：空纸上的关键线、蓝、绿、红四块色版依次用带噪声的斜向巴连遮罩印入，同时消除各版的入场位移，保留固定套印偏差；浪后空纸再次按四版重印。参数与源码：film/story.js:T.print1=[.35,1.05,1.70,2.30]，T.print5=[32.2,32.7,33.2,33.7]；REVEAL_DUR=.34秒。；film/main.js:REG=[[0,0],[2.2,-1.3],[-1.8,1.9],[1.5,2.2]]，SHIFT=[[4,-5],[-6,4],[5,5],[-5,-4]]；revFor / drawSheet调用print.js:stampLayer / stampFn。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。",
+  "demo": "demos/patterns/block-by-block-print-reveal/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-ukiyoe"
+    },
+    {
+      "caseId": "lemo-risograph"
+    }
+  ],
+  "previewAt": 5.6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "逐版套印成画"
+    },
+    {
+      "t": 3.1,
+      "label": "逐版套印成画"
+    }
+  ]
+}

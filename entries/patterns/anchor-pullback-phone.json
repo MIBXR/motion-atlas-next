@@ -1,0 +1,108 @@
+{
+  "id": "anchor-pullback-phone",
+  "order": 50,
+  "title": "锚点拉远显载体",
+  "types": [
+    "camera",
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15",
+    "贴纸科普"
+  ],
+  "summary": "以屏幕空间锚点约束两段拉远和旋转，先露出屏幕局部，再揭示全部内容都在一部手机内。",
+  "mechanism": "以屏幕空间锚点约束两段拉远和旋转，先露出屏幕局部，再揭示全部内容都在一部手机内。",
+  "trigger": "地图段结束、两段拉远开始时",
+  "effect": "镜头围绕给定的屏幕锚点改变距离并旋转，显露承载整张信息画布的手机。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-paperclip 原片 6.8–8.2 秒；1 倍速，巧思时长 1.4 秒。"
+    },
+    {
+      "name": "锚点拉远显手机",
+      "value": "L79: const EASE={fly:eFly,pull:ePull,pullA:bez(.3,0,.1,1),pullB:bez(.42,0,.22,1),hold:u=>u*u*(3-u)/2};；L85: const z=Math.exp(lerp(Math.log(s.a.z),Math.log(s.b.z),e)),r=lerp(ra,rb,e)+(s.b.swing||0)*Math.sin(Math.PI*e);"
+    }
+  ],
+  "useCases": [
+    "大画布拉远揭示载体",
+    "以锚点约束缩放和旋转"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-paperclip 原片 6.8–8.2 秒；总时长 1.4 秒。以屏幕空间锚点约束两段拉远和旋转，先露局部屏幕，再揭示全部内容都在一部手机内。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/anchor-pullback-phone/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "mg-paperclip"
+    },
+    {
+      "caseId": "lemo-ukiyoe"
+    },
+    {
+      "caseId": "lemo-shadow-puppet"
+    },
+    {
+      "caseId": "lemo-crayon-book"
+    },
+    {
+      "caseId": "lemo-brick-toy"
+    }
+  ],
+  "previewAt": 1.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "贴纸科普"
+    },
+    {
+      "t": 0.3,
+      "label": "机制画面"
+    },
+    {
+      "t": 0.7,
+      "label": "机制画面"
+    },
+    {
+      "t": 1.1,
+      "label": "机制画面"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "lemo-ukiyoe · 画轴载体",
+      "value": "film/main.js:camera，38.9–40.9秒，对数缩放1.02→1920*.94/(TOTAL+420)，五景、装裱与轴头进入画幅。"
+    },
+    {
+      "name": "lemo-shadow-puppet · 幕布与幕后台",
+      "value": "film/story.js:T.pull0=40.6、truck0=43.2、cutBack=43.8、truck1=44.5；film/main.js:camera / renderBack从故事拉回框架，再经幕柱遮挡绕到操偶手与灯。"
+    },
+    {
+      "name": "lemo-crayon-book · 桌上绘本",
+      "value": "film/film.js:camT在44.8–46秒回到[1600,900,.6]；film/end.js:endFrame使画页成为桌上绘本，47.6秒起翻页。"
+    },
+    {
+      "name": "lemo-brick-toy",
+      "value": "film/main.js:cam的reveal分支，48–51.71秒从积木月面拉到[38,78,100]、look到[−20,4,−18]，fov38；tea_set_01、desk_lamp_arm_01与书堆显示整个故事发生在真实书桌。"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "document-typewriter-reveal",
+  "order": 85,
+  "title": "文档打字机自写",
+  "types": [
+    "type-motion"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "周报页在键盘声里自己写出来，随后历史周报逐条弹入侧栏，每落一条配一个 pop。",
+  "mechanism": "正文两块一组，按 cueFor(i)=6+floor(i/2)*3.5 推进，纸遮罩向右收缩，琥珀光标跟随最新揭示边缘；侧栏 6 次弹入对应 SFX 中的 pop：840–865 帧，每 5 帧一次，音量从 0.4 开始，每次降 0.03。",
+  "trigger": "字卡三结束后切入周报页，键盘音同时开始。",
+  "effect": "文档像被实时写出，侧栏的历史条目一下下落位。",
+  "timing": [
+    {
+      "name": "片段",
+      "value": "AIFL_SHOTS.wbr：775–885 帧，110/30 秒。"
+    },
+    {
+      "name": "正文揭示",
+      "value": "cueFor(i)=6+floor(i/2)*3.5，WIPE=8；20 块正文的最后一组在 45.5 帧完成。"
+    },
+    {
+      "name": "侧栏与声音",
+      "value": "左栏 46→56、右栏 54→64；WEEK_CUE(i)=58+i*5，8 帧弹入；pop 绝对帧 840,845,850,855,860,865，volume=0.4-0.03*i。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "揭示缓动",
+      "value": "REVEAL_EASE=Easing.bezier(0.4,0,0.6,1)；遮罩 width=coverT*100%，right=0。"
+    },
+    {
+      "name": "历史条目",
+      "value": "6 条；WEEK_Y0=228，WEEK_H=56，translateY=-44*(1-t)；WEEK_DROP=bezier(0.2,1.15,0.3,1)。"
+    },
+    {
+      "name": "键盘声",
+      "value": "SFX：from=781，volume=0.34；sfxDuration=44 帧。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/ink-press/film/src/aifl/live/SceneWbr.tsx"
+  ],
+  "locator": "SceneWbr / cueFor / WEEK_CUE / WEEK_DROP；Main.SFX",
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "page-cam-25d"
+    ],
+    "conflicts": [],
+    "notes": ""
+  },
+  "prompt": "用来源案例 ink-press 的原作 renderAt(t) 重放文档打字机自写。保留正文两块一组、cueFor(i)=6+floor(i/2)*3.5、WIPE=8 和琥珀光标；历史侧栏按 58+i*5 帧启动，各用 8 帧完成 -44px 弹入。保留绝对帧 840–865、每 5 帧一次的六个 pop，音量 0.4、0.37、0.34、0.31、0.28、0.25，以及 781 帧开始的 44 帧键盘声。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/document-typewriter-reveal/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "ink-press"
+    }
+  ],
+  "previewAt": 3.3333333333333335,
+  "markers": [
+    {
+      "t": 0,
+      "label": "周报页显现"
+    },
+    {
+      "t": 0.2,
+      "label": "正文自写"
+    },
+    {
+      "t": 1.5166666666666666,
+      "label": "正文揭示完成"
+    },
+    {
+      "t": 1.5333333333333334,
+      "label": "左栏揭示"
+    },
+    {
+      "t": 1.8,
+      "label": "右栏揭示"
+    },
+    {
+      "t": 1.9333333333333333,
+      "label": "历史条目1弹入"
+    },
+    {
+      "t": 2.1,
+      "label": "历史条目2弹入"
+    },
+    {
+      "t": 2.2666666666666666,
+      "label": "历史条目3弹入"
+    },
+    {
+      "t": 2.433333333333333,
+      "label": "历史条目4弹入"
+    },
+    {
+      "t": 2.6,
+      "label": "历史条目5弹入"
+    },
+    {
+      "t": 2.7666666666666666,
+      "label": "历史条目6弹入"
+    },
+    {
+      "t": 3.033333333333333,
+      "label": "历史条目全部落位"
+    }
+  ]
+}

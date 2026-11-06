@@ -1,0 +1,66 @@
+{
+  "id": "eraser-rewind",
+  "order": 113,
+  "title": "板擦倒抹回溯",
+  "types": [
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "将已经画出的七天轨迹倒序重组为板擦路径，板擦反向抹去轨迹，定位磁铁同步沿倒序轨迹回到起点。",
+  "mechanism": "将已经画出的七天轨迹倒序重组为板擦路径，板擦反向抹去轨迹，定位磁铁同步沿倒序轨迹回到起点。",
+  "trigger": "定位磁铁漂到海里之后，87秒启动两秒回溯。",
+  "effect": "擦除方向、磁铁回走与压缩倒放的声音共同表现时间倒退。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "84.5–90秒；1倍速，总时长5.500000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "逆序与擦除",
+      "value": "film/film.js:230–232：按d=6→0、k=末→首形成trailBack，tl.erase在87–89秒执行，路径y+42、宽230、强度.9。"
+    },
+    {
+      "name": "磁铁回走",
+      "value": "film/film.js:272–276：u=(t−87)/2沿trailBack插值，lift=.35sin(πu)，结束回PIN。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-whiteboard/film/film.js",
+    "demos/cases/lemo-whiteboard/film/engine/wb.js"
+  ],
+  "locator": "逆序与擦除 / 磁铁回走",
+  "useCases": [
+    "擦除方向、磁铁回走与压缩倒放的声音共同表现时间倒退。"
+  ],
+  "avoid": [
+    "同时安排遮挡书写或湿边的主动作"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-whiteboard的原作render(t)，重放“板擦倒抹回溯”。将已经画出的七天轨迹倒序重组为板擦路径，板擦反向抹去轨迹，定位磁铁同步沿倒序轨迹回到起点。参数与源码：film/film.js:230–232：按d=6→0、k=末→首形成trailBack，tl.erase在87–89秒执行，路径y+42、宽230、强度.9。；film/film.js:272–276：u=(t−87)/2沿trailBack插值，lift=.35sin(πu)，结束回PIN。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/eraser-rewind/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-whiteboard"
+    }
+  ],
+  "previewAt": 3,
+  "markers": [
+    {
+      "t": 0,
+      "label": "板擦倒抹回溯"
+    }
+  ]
+}

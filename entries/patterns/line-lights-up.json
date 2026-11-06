@@ -1,0 +1,85 @@
+{
+  "id": "line-lights-up",
+  "order": 155,
+  "title": "逐行点亮原文",
+  "types": [
+    "type-motion"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "保留扫描文档的全部原文，按指定行的坐标推进高亮前沿，让正在引用的句子变亮或被荧光笔覆盖。",
+  "mechanism": "保留扫描文档的全部原文，按指定行的坐标推进高亮前沿，让正在引用的句子变亮或被荧光笔覆盖。",
+  "trigger": "来源时间线进入对应镜头与动作节点。",
+  "effect": "保留扫描文档的全部原文，按指定行的坐标推进高亮前沿，让正在引用的句子变亮或被荧光笔覆盖。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-archive-lighttable：2.5–9.3秒；lemo-archive-lighttable：11.5–13.3秒；lemo-caption-news：13–16秒；lemo-caption-news：27.5–30秒；1倍速，总时长14.100000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "电报与剪报",
+      "value": "lemo-archive-lighttable film/film.js:TG_DATE / TG_SUCC / TG_57L / NEWS_LINE / tgSweep / FS.band，2.667/4/7.333秒电报三行、12秒剪报行按扫描坐标点亮并压暗邻文。"
+    },
+    {
+      "name": "报告荧光笔",
+      "value": "lemo-caption-news film/main.js:paper / shotDoc6 / shotQuote，以220dpi的PT比例把PDF行框投到图片，multiply高亮宽度按eo(seg(...))推进，13.28秒标题持续.45秒。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-archive-lighttable/film/film.js",
+    "demos/cases/lemo-archive-lighttable/film/timeline.js",
+    "demos/cases/lemo-caption-news/film/main.js"
+  ],
+  "locator": "lemo-archive-lighttable film/film.js:TG_DATE / TG_SUCC / TG_57L / NEWS_LINE / tgSweep / FS.band；lemo-caption-news film/main.js:paper / shotDoc6 / shotQuote",
+  "useCases": [
+    "证据影像",
+    "数据解说",
+    "档案与科学短片"
+  ],
+  "avoid": [
+    "在主要读数和证据上叠加争夺注意的运动"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“逐行点亮原文”。保留扫描文档的全部原文，按指定行的坐标推进高亮前沿，让正在引用的句子变亮或被荧光笔覆盖。保留参数：lemo-archive-lighttable film/film.js:TG_DATE / TG_SUCC / TG_57L / NEWS_LINE / tgSweep / FS.band，2.667/4/7.333秒电报三行、12秒剪报行按扫描坐标点亮并压暗邻文。；lemo-caption-news film/main.js:paper / shotDoc6 / shotQuote，以220dpi的PT比例把PDF行框投到图片，multiply高亮宽度按eo(seg(...))推进，13.28秒标题持续.45秒。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/line-lights-up/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-archive-lighttable"
+    },
+    {
+      "caseId": "lemo-caption-news"
+    }
+  ],
+  "previewAt": 4.8,
+  "markers": [
+    {
+      "t": 0,
+      "label": "电报逐行点亮"
+    },
+    {
+      "t": 6.8,
+      "label": "剪报原句点亮"
+    },
+    {
+      "t": 8.6,
+      "label": "报告标题高亮"
+    },
+    {
+      "t": 11.6,
+      "label": "报告句子高亮"
+    }
+  ],
+  "renderer": "gpu"
+}

@@ -1,0 +1,456 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "gradient-walk-dolly",
+  "pattern": {
+    "id": "gradient-walk-dolly",
+    "order": 89,
+    "title": "沿梯度横移长镜",
+    "types": [
+      "camera",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "把降雨量映射为横向距离，相机沿单调分段路径穿过五区，四层视差与区域混色随数据变化。",
+    "mechanism": "RAINK 将世界坐标与雨量对应起来，rainAt 在量级间做对数插值；camXf 用 monotone 实现连续横移，LAY 派生各层位置，mixZone / zoneGrad 随区域混色，事件附近的相机键用于减速。",
+    "trigger": "刷边揭景完成，相机从红色腹地向绿色海岸前进。",
+    "effect": "观众通过连续路程读出一个测量梯度，并有时间在火、王桉和雨林处停留。",
+    "timing": [
+      {
+        "name": "来源片段",
+        "value": "10.3–70.3 秒；长镜头至 73 秒抵达世界 x=9800。"
+      },
+      {
+        "name": "事件减速",
+        "value": "film/scene.js:camXf：41→45 秒 x=5500→5850；54→58.5 秒 x=7300→7550。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "连续横移",
+        "value": "film/scene.js:camXf；film/engine.js:monotone：Fritsch–Carlson 单调三次插值；10.3 秒 x700，73 秒 x9800。"
+      },
+      {
+        "name": "四层视差",
+        "value": "film/scene.js:LAY：par=.25/.55/1/1.55；scale=.38/.62/1/1.75；alpha=.5/.78/1/.95。"
+      },
+      {
+        "name": "数值与色板",
+        "value": "film/scene.js:RAINK / rainAt / ZCOL / mixZone：雨量约 150–4000mm，经 log / exp 插值；地表与天空按区域位置混色。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-watercolor/film/scene.js",
+      "demos/cases/lemo-watercolor/film/engine.js"
+    ],
+    "locator": "camXf / LAY / RAINK / rainAt / ZCOL / mixZone / zoneGrad",
+    "useCases": [
+      "观众通过连续路程读出一个测量梯度，并有时间在火、王桉和雨林处停留。"
+    ],
+    "avoid": [
+      "在该片段内叠加第二条争夺注意的主动作"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [
+        "brush-ribbon-bristle-paint-in"
+      ],
+      "conflicts": [],
+      "notes": "需要沿单一量轴安排内容，每区的标本与事件服务于同一梯度。"
+    },
+    "prompt": "用来源案例 lemo-watercolor 的原作 render(t) 重放“沿梯度横移长镜”。RAINK 给世界坐标对应雨量，rainAt 在量级间做对数插值；camXf 用 monotone 连续横移，LAY 派生各层位置，mixZone / zoneGrad 随区域混色，事件附近的相机键减小速度。保留参数：film/scene.js:camXf；film/engine.js:monotone：Fritsch–Carlson 单调三次插值；10.3 秒 x700，73 秒 x9800。；film/scene.js:LAY：par=.25/.55/1/1.55；scale=.38/.62/1/1.75；alpha=.5/.78/1/.95。；film/scene.js:RAINK / rainAt / ZCOL / mixZone：雨量约 150–4000mm，经 log / exp 插值；地表与天空按区域位置混色。。按 index.html 的 segments 把巧思时间映射到原片 10.3–70.3 秒，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/gradient-walk-dolly/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-watercolor"
+      }
+    ],
+    "previewAt": 24,
+    "markers": [
+      {
+        "t": 0,
+        "label": "沿梯度横移长镜"
+      },
+      {
+        "t": 24,
+        "label": "机制展开"
+      }
+    ],
+    "preview": "previews/patterns/gradient-walk-dolly.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-watercolor",
+      "bundle": "agent/cases/lemo-watercolor.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 沿梯度横移长镜\n\n## 实现 Prompt\n\n用来源案例 lemo-watercolor 的原作 render(t) 重放“沿梯度横移长镜”。RAINK 给世界坐标对应雨量，rainAt 在量级间做对数插值；camXf 用 monotone 连续横移，LAY 派生各层位置，mixZone / zoneGrad 随区域混色，事件附近的相机键减小速度。保留参数：film/scene.js:camXf；film/engine.js:monotone：Fritsch–Carlson 单调三次插值；10.3 秒 x700，73 秒 x9800。；film/scene.js:LAY：par=.25/.55/1/1.55；scale=.38/.62/1/1.75；alpha=.5/.78/1/.95。；film/scene.js:RAINK / rainAt / ZCOL / mixZone：雨量约 150–4000mm，经 log / exp 插值；地表与天空按区域位置混色。。按 index.html 的 segments 把巧思时间映射到原片 10.3–70.3 秒，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **来源片段**：10.3–70.3 秒；长镜头至 73 秒抵达世界 x=9800。\n- **事件减速**：film/scene.js:camXf：41→45 秒 x=5500→5850；54→58.5 秒 x=7300→7550。\n\n[打开 Demo](../../demos/patterns/gradient-walk-dolly/index.html) · [在库中查看](../../patterns.html#pattern/gradient-walk-dolly)\n"
+  },
+  "entrypoint": "demos/patterns/gradient-walk-dolly/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-watercolor/LICENSES.md",
+      "bytes": 1683,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/CREDITS",
+      "bytes": 2421,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/film.m4a",
+      "bytes": 3761654,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fidelity.md",
+      "bytes": 5582,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/aus.js",
+      "bytes": 23419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/engine.js",
+      "bytes": 8486,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/index.html",
+      "bytes": 430,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/main.js",
+      "bytes": 19065,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/paper.jpg",
+      "bytes": 338137,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/plants.js",
+      "bytes": 14039,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/scene.js",
+      "bytes": 35322,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-caveat.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-cormorantgaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f0.woff2",
+      "bytes": 32356,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f1.woff2",
+      "bytes": 25196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f10.woff2",
+      "bytes": 23260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f11.woff2",
+      "bytes": 42888,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f12.woff2",
+      "bytes": 77224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f13.woff2",
+      "bytes": 29528,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f14.woff2",
+      "bytes": 74572,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f15.woff2",
+      "bytes": 4348,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f16.woff2",
+      "bytes": 5476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f17.woff2",
+      "bytes": 4000,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f18.woff2",
+      "bytes": 8860,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f19.woff2",
+      "bytes": 10052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f2.woff2",
+      "bytes": 21264,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f3.woff2",
+      "bytes": 11556,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f4.woff2",
+      "bytes": 34444,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f5.woff2",
+      "bytes": 39304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f6.woff2",
+      "bytes": 14076,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f7.woff2",
+      "bytes": 12896,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f8.woff2",
+      "bytes": 6760,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f9.woff2",
+      "bytes": 20188,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/fonts.css",
+      "bytes": 10250,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/index.html",
+      "bytes": 2285,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/CREDITS",
+      "bytes": 2421,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/README.md",
+      "bytes": 3974,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/asr.py",
+      "bytes": 499,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/extract_aus.mjs",
+      "bytes": 1359,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/fetch_fonts.mjs",
+      "bytes": 1135,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/fonts.css",
+      "bytes": 11293,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/mix.py",
+      "bytes": 8743,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/analyze.py",
+      "bytes": 1861,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/edit.py",
+      "bytes": 1816,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/jump.py",
+      "bytes": 1515,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/lag.py",
+      "bytes": 1308,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/prep.sh",
+      "bytes": 846,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/score_beats.json",
+      "bytes": 2927,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/wf_beats.json",
+      "bytes": 30235,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/mux.sh",
+      "bytes": 1039,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/paper.py",
+      "bytes": 1299,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/render.mjs",
+      "bytes": 4995,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/sheet.py",
+      "bytes": 537,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/tts/gen.py",
+      "bytes": 1090,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/tts/lines.json",
+      "bytes": 1268,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/LICENSE-topojson-client",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/LICENSE-world-atlas",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/countries-50m.json",
+      "bytes": 756420,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/topojson-client.min.cjs",
+      "bytes": 7169,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/voices/dur.json",
+      "bytes": 165,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/gradient-walk-dolly/index.html",
+      "bytes": 874,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/gradient-walk-dolly/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-watercolor.json",
+      "bytes": 11657,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/gradient-walk-dolly.json",
+      "bytes": 3391,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/gradient-walk-dolly.jpg",
+      "bytes": 67606,
+      "role": "preview"
+    }
+  ]
+}

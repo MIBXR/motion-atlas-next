@@ -1,0 +1,341 @@
+{
+  "title": "铸钟人 · 木刻版画",
+  "summary": "冬雪封路的村庄为钟楼铸钟，第一口钟开裂后，学徒献出指南针；铜色随第二次浇铸扩散，钟声响起时雪停在空中。",
+  "focus": "以黑木为底，光从逐刀刻出的痕迹中显现；反刻字经揭印转正，单一铜色只用于热量与最后的钟光。",
+  "accent": "#C8502A",
+  "background": "#EFE8D8",
+  "observations": [
+    "刻痕方向跟随形体，亮处由并排的宽刀口形成。",
+    "开头沿第一刀横向追踪，随后在刻出山村的同时拉远。",
+    "标题先在反刻木版上出现，滚墨、覆纸、擦压和卷纸揭印之后读为正字。",
+    "手部以高度场照明后，转为沿明暗等高线行进的刻痕；钟声第一次出现于47.3333秒。"
+  ],
+  "composition": {
+    "color": "黑墨#111111、暖纸#EFE8D8、原木#D8C29C与唯一铜色#C8502A。",
+    "typography": "IM Fell English及斜体用于纸边题注，IM Fell English SC刻入木版与片尾黑板。",
+    "layout": "1920×1080，图像位于(36,36)的1848×912印区，132px下纸边承载题注。",
+    "imagery": "刻痕遮罩、单色版和WebGL2印刷合成；木桌为Poly Haven核桃木纹。",
+    "motion": "逐刀显影、追刀拉远、卷纸揭印、逐拍献物、失败急推、浇铸放射刻痕与钟声拉远。",
+    "sound": "原成片低弦、木皮打击、合成铁砧与钟，Kokoro am_onyx四句旁白。",
+    "rhythm": "60BPM经3:2转90BPM；献物剪辑逐渐加速，两段静默分隔失败与首次钟鸣。",
+    "coherence": "刻刀、印版和纸共同组织画面变化；铜色先用于表现热量，片尾收为一处钟光。"
+  },
+  "avoid": [
+    "多色平涂海报或铜版画式白底细线",
+    "在钟出现前使用钟类音色"
+  ],
+  "constraints": [
+    "刀线沿形体与掠射光分布，暗部保留完整黑块。",
+    "雪与火花置于暗块前，使白色刀点可见。",
+    "每个镜头自行建立缓存，避免依赖其他镜头的先前绘制。",
+    "题注留在固定纸边，烟汽绘在主体之后。"
+  ],
+  "prompt": "制作一支黑木自刻成画的木刻影片：白光只从刀口生出，排线沿形体与掠射光行进，粗凿先于细线；每刀都有起始时间和推进速度。暖纸边框固定，活字题注置于下边，IM Fell English SC标题先反写于木版，经滚墨、覆纸、擦压与圆柱卷纸揭印后转正。人物12fps，镜头和光24fps，每次新印有两帧错位；只用一种强调色，随高潮扩散，最终收成一处高光。声音由低弦、木皮打击和材料拟音组织，静默后首次出现故事物件的音色，沿用原片混音。引擎位于 demos/cases/lemo-woodcut/film/engine/、shots.js 与 shots2.js。",
+  "patternIds": [
+    "carve-cut-by-cut-reveal",
+    "mirrored-block-pull-print"
+  ],
+  "id": "lemo-woodcut",
+  "order": 25,
+  "subtitle": "The Bell Founder",
+  "carriers": [
+    "video"
+  ],
+  "style": "print-craft",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "webgl"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "木刻版画",
+    "印刷与版画",
+    "代码影片"
+  ],
+  "timeline": true,
+  "kit": true,
+  "previewAt": 49.14,
+  "rhythm": {
+    "duration": 58.5,
+    "beats": [
+      {
+        "t": 0,
+        "label": "黑版与首刀",
+        "note": "1秒刻刀落下，2.8秒画完地平线。"
+      },
+      {
+        "t": 3,
+        "label": "逐刀造出村庄",
+        "note": "粗刀、屋顶、细线与反字依次出现。"
+      },
+      {
+        "t": 7,
+        "label": "第一次揭印",
+        "note": "滚墨、覆纸、擦压后8.5秒揭纸。"
+      },
+      {
+        "t": 9,
+        "label": "空钟楼",
+        "note": "全村成印，镜头靠近空钟楼。"
+      },
+      {
+        "t": 15,
+        "label": "手的工作",
+        "note": "四秒慢推手部。"
+      },
+      {
+        "t": 19,
+        "label": "村民献物",
+        "note": "以1、1、1、.5、.5、.25、.25秒加速。"
+      },
+      {
+        "t": 23,
+        "label": "第一炉铜光",
+        "note": "60至90BPM，熔铜成为第一个颜色。"
+      },
+      {
+        "t": 28.3333,
+        "label": "钟壁开裂",
+        "note": "急推后等待裂缝爬升。"
+      },
+      {
+        "t": 29.6667,
+        "label": "门内沉默",
+        "note": "只有远风与雪，32.3333秒指南针咔嗒。"
+      },
+      {
+        "t": 32.3333,
+        "label": "学徒的礼物",
+        "note": "指南针打开并投入。"
+      },
+      {
+        "t": 36.3333,
+        "label": "再次开炉",
+        "note": "泵风、提锅与第二次浇铸。"
+      },
+      {
+        "t": 39.3333,
+        "label": "刻出光",
+        "note": "放射刻痕由模具迸开，镜头起重。"
+      },
+      {
+        "t": 44.3333,
+        "label": "数字静默",
+        "note": "所有声音总线归零三秒。"
+      },
+      {
+        "t": 47.3333,
+        "label": "首次钟声",
+        "note": "钟鸣，雪停，48.3333秒D大调弦乐回归。"
+      },
+      {
+        "t": 55,
+        "label": "新印片尾",
+        "note": "最后一刀呼应首刀，钟保留铜色高光。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 3,
+      "from": 0.1,
+      "to": 0.25,
+      "label": "首刀"
+    },
+    {
+      "t0": 3,
+      "t1": 15,
+      "from": 0.3,
+      "to": 0.4,
+      "label": "村庄与揭印"
+    },
+    {
+      "t0": 15,
+      "t1": 19,
+      "from": 0.2,
+      "to": 0.25,
+      "label": "手作"
+    },
+    {
+      "t0": 19,
+      "t1": 23,
+      "from": 0.4,
+      "to": 0.75,
+      "label": "献物加速"
+    },
+    {
+      "t0": 23,
+      "t1": 29.6667,
+      "from": 0.75,
+      "to": 0.9,
+      "label": "首铸与失败"
+    },
+    {
+      "t0": 29.6667,
+      "t1": 32.3333,
+      "from": 0.03,
+      "to": 0.03,
+      "label": "远风"
+    },
+    {
+      "t0": 32.3333,
+      "t1": 36.3333,
+      "from": 0.2,
+      "to": 0.35,
+      "label": "献出指南针"
+    },
+    {
+      "t0": 36.3333,
+      "t1": 44.3333,
+      "from": 0.65,
+      "to": 0.95,
+      "label": "再铸"
+    },
+    {
+      "t0": 44.3333,
+      "t1": 47.3333,
+      "from": 0,
+      "to": 0,
+      "label": "静默"
+    },
+    {
+      "t0": 47.3333,
+      "t1": 48.3333,
+      "from": 1,
+      "to": 0.85,
+      "label": "钟"
+    },
+    {
+      "t0": 48.3333,
+      "t1": 58.5,
+      "from": 0.7,
+      "to": 0.1,
+      "label": "大调与收束"
+    }
+  ],
+  "energyNote": "段落依据DEMO.md的Shots、Score structure与源码时间表划分；0–1数值按画面动作、声音密度和静默作相对编辑标注。",
+  "layers": [
+    {
+      "name": "纸边与木桌",
+      "role": "纸边保持固定，木版镜头露出桌面。"
+    },
+    {
+      "name": "刻痕遮罩",
+      "role": "白为刀口、黑为未刻木材；每条刻痕按起点与速度显露。"
+    },
+    {
+      "name": "单一铜色版",
+      "role": "在白色刀口内显出熔铜、光与钟的强调色。"
+    },
+    {
+      "name": "人物与道具",
+      "role": "局部刻痕随肢体运动，手和指南针来自高度场。"
+    },
+    {
+      "name": "印刷与题注",
+      "role": "毛边、墨量、木纹、错版和下纸边的活字统一合成。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#111111",
+      "#EFE8D8",
+      "#D8C29C",
+      "#C8502A"
+    ],
+    "type": "IM Fell English 400、Italic 400、IM Fell English SC 400，SIL OFL 1.1。",
+    "motion": [
+      {
+        "name": "刀口推进",
+        "value": "film/engine/knife.js:progOf：u*(.55+.45*u)；hatch.js:hatch把reveal key映射为每刀t0。"
+      },
+      {
+        "name": "纸张揭印",
+        "value": "film/trans.js:peelState / curl：前22%慢揭，之后2.2次幂加速；3px条带、圆柱弯曲与透视。"
+      },
+      {
+        "name": "印次震动",
+        "value": "film/shots.js:jolt：前两帧[5,-3]、[-2,1]px；regJolt为[10,-6]、[6,1]再回[3,2]。"
+      },
+      {
+        "name": "放射刻痕",
+        "value": "film/shots2.js:39–41.6667秒：n=60、r0=62、r1=700–1500、w=22，39.3333秒起0.5秒刻出。"
+      }
+    ]
+  },
+  "useCases": [
+    "民间故事",
+    "工艺品牌影像",
+    "图书预告片"
+  ],
+  "migration": [
+    {
+      "field": "film/timeline.json → grid / keys",
+      "how": "修改速度网格、镜头与声音提示点。"
+    },
+    {
+      "field": "film/shots.js / shots2.js",
+      "how": "修改献物、两次铸钟、反刻标题与片尾。"
+    },
+    {
+      "field": "film/engine/knife.js / hatch.js / print.js",
+      "how": "修改刀宽、排线、木纹、纸白和错版。"
+    },
+    {
+      "field": "film/chars.js / hands.js / world.js",
+      "how": "修改人物、手部高度场和村庄。"
+    }
+  ],
+  "demo": "demos/cases/lemo-woodcut/index.html",
+  "fidelity": "demos/cases/lemo-woodcut/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/woodcut",
+    "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+    "path": "styles/woodcut/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+    "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方素材按CREDITS各自许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/woodcut"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/woodcut.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/woodcut/demo/CREDITS"
+    },
+    {
+      "label": "Poly Haven · American Walnut Veneer",
+      "url": "https://polyhaven.com/a/american_walnut_veneer"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/woodcut)。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "沿用公开成片混音，原始资源与署名见[audio/CREDITS](audio/CREDITS)，许可原文入口见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "字体家族与字重见tokens.type；OFL原文在fonts/，取得和重建方式见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

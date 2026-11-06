@@ -1,0 +1,300 @@
+{
+  "id": "lemo-ukiyoe",
+  "order": 28,
+  "title": "走向远山 · 浮世绘",
+  "subtitle": "Toward the Mountain",
+  "carriers": [
+    "video"
+  ],
+  "style": "print-craft",
+  "purpose": "story",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "浮世绘",
+    "东方传统",
+    "代码影片"
+  ],
+  "summary": "戴笠旅人走过稻田、雨桥与茶屋，巨浪冲出画框，将画面洗回空纸；四次套印重新显出山景，镜头拉远，露出五景画轴。",
+  "focus": "五幅版画以同一座山组织构图，色版、装裱留缝与纸白既用于造型和转场，也用于营造高潮。",
+  "accent": "#b8412f",
+  "background": "#eee2c6",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 26.4,
+  "rhythm": {
+    "duration": 44,
+    "beats": [
+      {
+        "t": 0,
+        "label": "空纸套印",
+        "note": "0–2.64秒，空纸套印。"
+      },
+      {
+        "t": 2.64,
+        "label": "稻田早景",
+        "note": "2.64–10.5秒，稻田早景。"
+      },
+      {
+        "t": 10.5,
+        "label": "手卷转雨桥",
+        "note": "10.5–11.5秒，手卷转雨桥。"
+      },
+      {
+        "t": 11.5,
+        "label": "雨桥",
+        "note": "11.5–16.4秒，雨桥。"
+      },
+      {
+        "t": 16.4,
+        "label": "手卷转茶屋",
+        "note": "16.4–17.3秒，手卷转茶屋。"
+      },
+      {
+        "t": 17.3,
+        "label": "圆窗缓推",
+        "note": "17.3–22.3秒，圆窗缓推。"
+      },
+      {
+        "t": 22.3,
+        "label": "手卷转海",
+        "note": "22.3–22.9秒，手卷转海。"
+      },
+      {
+        "t": 22.9,
+        "label": "海边旅人",
+        "note": "22.9–25.4秒，海边旅人。"
+      },
+      {
+        "t": 25.4,
+        "label": "巨浪高潮",
+        "note": "25.4–30.4秒，巨浪高潮。"
+      },
+      {
+        "t": 30.4,
+        "label": "留白重印",
+        "note": "30.4–34.04秒，留白重印。"
+      },
+      {
+        "t": 34.04,
+        "label": "远山脱笠",
+        "note": "34.04–38.9秒，远山脱笠。"
+      },
+      {
+        "t": 38.9,
+        "label": "画轴拉远",
+        "note": "38.9–44秒，画轴拉远。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2.64,
+      "to": 0.3,
+      "label": "空纸套印",
+      "from": 0.15
+    },
+    {
+      "t0": 2.64,
+      "t1": 10.5,
+      "to": 0.45,
+      "label": "稻田早景",
+      "from": 0.3
+    },
+    {
+      "t0": 10.5,
+      "t1": 11.5,
+      "to": 0.4,
+      "label": "手卷转雨桥",
+      "from": 0.45
+    },
+    {
+      "t0": 11.5,
+      "t1": 16.4,
+      "to": 0.5,
+      "label": "雨桥",
+      "from": 0.4
+    },
+    {
+      "t0": 16.4,
+      "t1": 17.3,
+      "to": 0.4,
+      "label": "手卷转茶屋",
+      "from": 0.5
+    },
+    {
+      "t0": 17.3,
+      "t1": 22.3,
+      "to": 0.6,
+      "label": "圆窗缓推",
+      "from": 0.4
+    },
+    {
+      "t0": 22.3,
+      "t1": 22.9,
+      "to": 0.5,
+      "label": "手卷转海",
+      "from": 0.6
+    },
+    {
+      "t0": 22.9,
+      "t1": 25.4,
+      "to": 0.95,
+      "label": "海边旅人",
+      "from": 0.5
+    },
+    {
+      "t0": 25.4,
+      "t1": 30.4,
+      "to": 0.08,
+      "label": "巨浪高潮",
+      "from": 0.95
+    },
+    {
+      "t0": 30.4,
+      "t1": 34.04,
+      "to": 0.3,
+      "label": "留白重印",
+      "from": 0.08
+    },
+    {
+      "t0": 34.04,
+      "t1": 38.9,
+      "to": 0.15,
+      "label": "远山脱笠",
+      "from": 0.3
+    },
+    {
+      "t0": 38.9,
+      "t1": 44,
+      "to": 0.05,
+      "label": "画轴拉远",
+      "from": 0.15
+    }
+  ],
+  "energyNote": "时段取自DEMO.md的Shots与源码镜头表；0–1是按画面动作、音乐密度和静默作出的相对编辑标注。",
+  "observations": [
+    "关键线、蓝、绿、红四版依次压印，色版有固定错位与入版位移。",
+    "人物与自然按8fps抽帧，雨与浪爪按12fps抽帧，相机保持24fps。",
+    "三次手卷横移从1秒加速到0.9秒、0.6秒。",
+    "浪峰越出纸框，30.4–32.2秒留白静默，38.9–40.9秒露出整卷。"
+  ],
+  "composition": {
+    "color": "和纸 #eee2c6、普鲁士蓝 #1d3a66、墨 #231f1c、朱红 #b8412f、赭黄 #cf9f4a与草绿 #8aa152。",
+    "typography": "Shippori Mincho B1 500/600/700、Yuji Syuku 400；横向字幕签、竖排景名与朱印。",
+    "layout": "1920×1080横屏、24fps；构图与字幕沿用原作。",
+    "imagery": "Canvas2D色版缓存，木纹、巴连擦痕、胡麻摺斑点、薄纤维与逐像素ぼかし渐层。",
+    "motion": "逐版套印、横向手卷、浪峰抬镜与冲入泡沫、对数尺度拉远。",
+    "sound": "原作三味线、尺八、太鼓、拍子木配乐，Kokoro am_adam旁白，纸木水声与巨浪后的绝对静默。",
+    "rhythm": "五幅版画以同一座山组织构图，色版、装裱留缝与纸白既用于造型和转场，也用于营造高潮。",
+    "coherence": "材质、动作和声音共用原作时间表。"
+  },
+  "layers": [
+    {
+      "name": "材料与场景",
+      "role": "Canvas2D色版缓存，木纹、巴连擦痕、胡麻摺斑点、薄纤维与逐像素ぼかし渐层。"
+    },
+    {
+      "name": "角色与动作",
+      "role": "逐版套印、横向手卷、浪峰抬镜与冲入泡沫、对数尺度拉远。"
+    },
+    {
+      "name": "文字与声音",
+      "role": "Shippori Mincho B1 500/600/700、Yuji Syuku 400；横向字幕签、竖排景名与朱印。 原作三味线、尺八、太鼓、拍子木配乐，Kokoro am_adam旁白，纸木水声与巨浪后的绝对静默。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#eee2c6",
+      "#1d3a66",
+      "#231f1c",
+      "#b8412f",
+      "#cf9f4a",
+      "#8aa152"
+    ],
+    "type": "Shippori Mincho B1 500/600/700、Yuji Syuku 400；横向字幕签、竖排景名与朱印。",
+    "motion": [
+      {
+        "name": "镜头与节拍",
+        "value": "逐版套印、横向手卷、浪峰抬镜与冲入泡沫、对数尺度拉远。"
+      }
+    ]
+  },
+  "useCases": [
+    "文化旅行短片",
+    "系列景观叙事",
+    "诗意品牌影像"
+  ],
+  "avoid": [
+    "需要写实摄影或自由三维转面的画面"
+  ],
+  "constraints": [
+    "色版分别缓存，保持套印偏移与纸齿。",
+    "波峰越界时同时避开纸面与边框裁切。",
+    "修改文字后，同步更新字体字符子集。"
+  ],
+  "migration": [
+    {
+      "field": "film/story.js → T / SLOT / SW",
+      "how": "修改五景时刻、转场、套印和画卷间距。"
+    },
+    {
+      "field": "film/views.js / wave.js / traveler.js",
+      "how": "修改景物、浪形与旅人姿势。"
+    }
+  ],
+  "prompt": "制作“走向远山 · 浮世绘”对应的时间线影片。戴笠旅人走过稻田、雨桥与茶屋，巨浪冲出画框并洗回空纸；四次套印重新显出山景，镜头拉远露出五景画轴。五幅版画以同一座山组织构图，色版、装裱留缝与纸白同时承担造型、转场和高潮。视觉与动作：Canvas2D色版缓存，木纹、巴连擦痕、胡麻摺斑点、薄纤维与逐像素ぼかし渐层。逐版套印、横向手卷、浪峰抬镜与冲入泡沫、对数尺度拉远。配色：和纸 #eee2c6、普鲁士蓝 #1d3a66、墨 #231f1c、朱红 #b8412f、赭黄 #cf9f4a与草绿 #8aa152。文字：Shippori Mincho B1 500/600/700、Yuji Syuku 400；横向字幕签、竖排景名与朱印。声音：原作三味线、尺八、太鼓、拍子木配乐，Kokoro am_adam旁白，纸木水声与巨浪后的绝对静默。直接使用demos/cases/lemo-ukiyoe/film/中的原作绘制与时间表，按源码迁移字段修改，支持MotionKit播放、暂停和逐帧定位，声音默认关闭。",
+  "demo": "demos/cases/lemo-ukiyoe/index.html",
+  "patternIds": [
+    "block-by-block-print-reveal",
+    "handscroll-pan-transition",
+    "anchor-pullback-phone"
+  ],
+  "fidelity": "demos/cases/lemo-ukiyoe/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/ukiyoe",
+    "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+    "path": "styles/ukiyoe/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+    "notes": "代码与文档MIT；成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/ukiyoe"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/ukiyoe.mp4"
+    },
+    {
+      "label": "素材与声音署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/ukiyoe/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/ukiyoe)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原作配乐、采样、拟音与旁白来源见[audio/CREDITS](audio/CREDITS)，许可原文见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "家族与字重见tokens.type，字体与OFL原文在fonts/，取得方法见[source/README.md](source/README.md)。"
+    }
+  ]
+}

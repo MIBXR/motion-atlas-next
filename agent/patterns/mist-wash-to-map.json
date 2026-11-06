@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "mist-wash-to-map",
+  "pattern": {
+    "id": "mist-wash-to-map",
+    "order": 90,
+    "title": "纸雾洗白转地图",
+    "types": [
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "两层波状纸色雾从下向上擦去长镜头中的世界，在同一纸面上重新画出大陆地图。",
+    "mechanism": "drawMist 用两条带噪声的上升边界裁切纸纹，先半透明再全不透明覆盖；drawMap 从 73.2 秒开始以海岸线笔画、径向填色和引线重新组织信息。",
+    "trigger": "长镜头抵达雨林末端，70.3 秒进入纸雾。",
+    "effect": "不剪切画面就把立体风景洗回空纸，再把空间行走转成地图与时间叙述。",
+    "timing": [
+      {
+        "name": "来源片段",
+        "value": "70.3–80.8 秒，洗白 70.3–73.6 秒，地图从 73.2 秒开始。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "两层雾",
+        "value": "film/main.js:drawMist：c=eio(seg(t,70.3,73.6))；top=1180−1400c−lift；[lift,alpha]=[120,.55]、[0,1]。"
+      },
+      {
+        "name": "波边与地图",
+        "value": "film/main.js:drawMist / drawMap：x 每 40px 取样；vnoise*.006 的边缘幅度 160px，sin(x*.01+t)*12；裁切后重画 PAPER_IMG，地图沿 AUS 逐段描画。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-watercolor/film/main.js"
+    ],
+    "locator": "drawMist / drawMap / AUS",
+    "useCases": [
+      "不剪切画面就把立体风景洗回空纸，再把空间行走转成地图与时间叙述。"
+    ],
+    "avoid": [
+      "在该片段内叠加第二条争夺注意的主动作"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "gradient-walk-dolly"
+      ],
+      "conflicts": [],
+      "notes": "转场的擦除介质应与底纸相同，适合从现场转入总图。"
+    },
+    "prompt": "用来源案例 lemo-watercolor 的原作 render(t) 重放“纸雾洗白转地图”。drawMist 用两条带噪声的上升边界裁切纸纹，先半透明再全不透明覆盖；drawMap 从 73.2 秒开始以海岸线笔画、径向填色和引线重新组织信息。保留参数：film/main.js:drawMist：c=eio(seg(t,70.3,73.6))；top=1180−1400c−lift；[lift,alpha]=[120,.55]、[0,1]。；film/main.js:drawMist / drawMap：x 每 40px 取样；vnoise*.006 的边缘幅度 160px，sin(x*.01+t)*12；裁切后重画 PAPER_IMG，地图沿 AUS 逐段描画。。按 index.html 的 segments 把巧思时间映射到原片 70.3–80.8 秒，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/mist-wash-to-map/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-watercolor"
+      }
+    ],
+    "previewAt": 5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "纸雾洗白转地图"
+      },
+      {
+        "t": 5,
+        "label": "机制展开"
+      }
+    ],
+    "preview": "previews/patterns/mist-wash-to-map.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-watercolor",
+      "bundle": "agent/cases/lemo-watercolor.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 纸雾洗白转地图\n\n## 实现 Prompt\n\n用来源案例 lemo-watercolor 的原作 render(t) 重放“纸雾洗白转地图”。drawMist 用两条带噪声的上升边界裁切纸纹，先半透明再全不透明覆盖；drawMap 从 73.2 秒开始以海岸线笔画、径向填色和引线重新组织信息。保留参数：film/main.js:drawMist：c=eio(seg(t,70.3,73.6))；top=1180−1400c−lift；[lift,alpha]=[120,.55]、[0,1]。；film/main.js:drawMist / drawMap：x 每 40px 取样；vnoise*.006 的边缘幅度 160px，sin(x*.01+t)*12；裁切后重画 PAPER_IMG，地图沿 AUS 逐段描画。。按 index.html 的 segments 把巧思时间映射到原片 70.3–80.8 秒，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **来源片段**：70.3–80.8 秒，洗白 70.3–73.6 秒，地图从 73.2 秒开始。\n\n[打开 Demo](../../demos/patterns/mist-wash-to-map/index.html) · [在库中查看](../../patterns.html#pattern/mist-wash-to-map)\n"
+  },
+  "entrypoint": "demos/patterns/mist-wash-to-map/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-watercolor/LICENSES.md",
+      "bytes": 1683,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/CREDITS",
+      "bytes": 2421,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/film.m4a",
+      "bytes": 3761654,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fidelity.md",
+      "bytes": 5582,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/aus.js",
+      "bytes": 23419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/engine.js",
+      "bytes": 8486,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/index.html",
+      "bytes": 430,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/main.js",
+      "bytes": 19065,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/paper.jpg",
+      "bytes": 338137,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/plants.js",
+      "bytes": 14039,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/scene.js",
+      "bytes": 35322,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-caveat.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-cormorantgaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f0.woff2",
+      "bytes": 32356,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f1.woff2",
+      "bytes": 25196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f10.woff2",
+      "bytes": 23260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f11.woff2",
+      "bytes": 42888,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f12.woff2",
+      "bytes": 77224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f13.woff2",
+      "bytes": 29528,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f14.woff2",
+      "bytes": 74572,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f15.woff2",
+      "bytes": 4348,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f16.woff2",
+      "bytes": 5476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f17.woff2",
+      "bytes": 4000,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f18.woff2",
+      "bytes": 8860,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f19.woff2",
+      "bytes": 10052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f2.woff2",
+      "bytes": 21264,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f3.woff2",
+      "bytes": 11556,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f4.woff2",
+      "bytes": 34444,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f5.woff2",
+      "bytes": 39304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f6.woff2",
+      "bytes": 14076,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f7.woff2",
+      "bytes": 12896,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f8.woff2",
+      "bytes": 6760,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f9.woff2",
+      "bytes": 20188,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/fonts.css",
+      "bytes": 10250,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/index.html",
+      "bytes": 2285,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/CREDITS",
+      "bytes": 2421,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/README.md",
+      "bytes": 3974,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/asr.py",
+      "bytes": 499,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/extract_aus.mjs",
+      "bytes": 1359,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/fetch_fonts.mjs",
+      "bytes": 1135,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/fonts.css",
+      "bytes": 11293,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/mix.py",
+      "bytes": 8743,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/analyze.py",
+      "bytes": 1861,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/edit.py",
+      "bytes": 1816,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/jump.py",
+      "bytes": 1515,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/lag.py",
+      "bytes": 1308,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/prep.sh",
+      "bytes": 846,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/score_beats.json",
+      "bytes": 2927,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/wf_beats.json",
+      "bytes": 30235,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/mux.sh",
+      "bytes": 1039,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/paper.py",
+      "bytes": 1299,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/render.mjs",
+      "bytes": 4995,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/sheet.py",
+      "bytes": 537,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/tts/gen.py",
+      "bytes": 1090,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/tts/lines.json",
+      "bytes": 1268,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/LICENSE-topojson-client",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/LICENSE-world-atlas",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/countries-50m.json",
+      "bytes": 756420,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/topojson-client.min.cjs",
+      "bytes": 7169,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/voices/dur.json",
+      "bytes": 165,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/mist-wash-to-map/index.html",
+      "bytes": 872,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/mist-wash-to-map/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-watercolor.json",
+      "bytes": 11657,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/mist-wash-to-map.json",
+      "bytes": 2833,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/mist-wash-to-map.jpg",
+      "bytes": 35999,
+      "role": "preview"
+    }
+  ]
+}

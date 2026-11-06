@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "crack-and-relead",
+  "pattern": {
+    "id": "crack-and-relead",
+    "order": 123,
+    "title": "裂纹与重铅",
+    "types": [
+      "transition",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "锯齿裂纹从受击点向外延伸，音乐硬停；剑、腿、躯干、手臂逐拍滑到新姿态，焊接后裂痕成为铅线留在玻璃中。",
+    "mechanism": "锯齿裂纹从受击点向外延伸，音乐硬停；剑、腿、躯干、手臂逐拍滑到新姿态，焊接后裂痕成为铅线留在玻璃中。",
+    "trigger": "31.8秒击碎与41.3秒开始修补。",
+    "effect": "材质破裂承担转折，修补后的跪姿和疤痕成为新画面。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "30.800000–45.200000秒；1倍速，共14.400000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "裂纹",
+        "value": "film/story.js:77–107：mulberry(31)固定9条主裂纹及分支，.28秒延伸，.45秒闪光，31.8–33.8秒配乐静默。"
+      },
+      {
+        "name": "重铅",
+        "value": "film/story.js:88、109–143：WELDS=[41.75,42.5,43.25,44,44.6]；每组前.5秒滑动，sin(uπ)*7外凸，修补裂纹以3.2单位铅条覆盖。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-stained-glass/film/story.js",
+      "demos/cases/lemo-stained-glass/film/knight.js"
+    ],
+    "locator": "story.js / knight.js",
+    "useCases": [
+      "材质破裂承担转折，修补后的跪姿和疤痕成为新画面。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-stained-glass的原作render(t)，重放“裂纹与重铅”。受击点向外延伸锯齿裂纹，音乐硬停；剑、腿、躯干、手臂逐拍滑到新姿态，焊接后裂痕成为铅线留在玻璃中。参数与源码：film/story.js:77–107：mulberry(31)固定9条主裂纹及分支，.28秒延伸，.45秒闪光，31.8–33.8秒配乐静默。；film/story.js:88、109–143：WELDS=[41.75,42.5,43.25,44,44.6]；每组前.5秒滑动，sin(uπ)*7外凸，修补裂纹以3.2单位铅条覆盖。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/crack-and-relead/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-stained-glass"
+      }
+    ],
+    "previewAt": 11.8,
+    "markers": [
+      {
+        "t": 0,
+        "label": "裂纹与重铅"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/crack-and-relead.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-stained-glass",
+      "bundle": "agent/cases/lemo-stained-glass.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 裂纹与重铅\n\n## 实现 Prompt\n\n复用来源案例lemo-stained-glass的原作render(t)，重放“裂纹与重铅”。受击点向外延伸锯齿裂纹，音乐硬停；剑、腿、躯干、手臂逐拍滑到新姿态，焊接后裂痕成为铅线留在玻璃中。参数与源码：film/story.js:77–107：mulberry(31)固定9条主裂纹及分支，.28秒延伸，.45秒闪光，31.8–33.8秒配乐静默。；film/story.js:88、109–143：WELDS=[41.75,42.5,43.25,44,44.6]；每组前.5秒滑动，sin(uπ)*7外凸，修补裂纹以3.2单位铅条覆盖。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：30.800000–45.200000秒；1倍速，共14.400000秒。\n\n[打开 Demo](../../demos/patterns/crack-and-relead/index.html) · [在库中查看](../../patterns.html#pattern/crack-and-relead)\n"
+  },
+  "entrypoint": "demos/patterns/crack-and-relead/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-stained-glass/LICENSES.md",
+      "bytes": 925,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/CREDITS",
+      "bytes": 922,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/audio/film.m4a",
+      "bytes": 1868560,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fidelity.md",
+      "bytes": 4878,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/comp.js",
+      "bytes": 14934,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/dragon.js",
+      "bytes": 18374,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/glass.js",
+      "bytes": 12939,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/index.html",
+      "bytes": 469,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/knight.js",
+      "bytes": 17787,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/main.js",
+      "bytes": 931,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/scene.js",
+      "bytes": 6828,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/story.js",
+      "bytes": 15908,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/subs.js",
+      "bytes": 2350,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/film/window.js",
+      "bytes": 20091,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/Cinzel-VF.ttf",
+      "bytes": 125468,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/CormorantGaramond-VF.ttf",
+      "bytes": 1195560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/IMFellEnglish-Regular.ttf",
+      "bytes": 194992,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/OFL-IMFellEnglish.txt",
+      "bytes": 4359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/OFL-cinzel.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/OFL-cormorantgaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/OFL-uncialantiqua.txt",
+      "bytes": 4437,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/UncialAntiqua-Regular.ttf",
+      "bytes": 63404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/fonts/fonts.css",
+      "bytes": 368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/index.html",
+      "bytes": 2535,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/CREDITS",
+      "bytes": 922,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/DEMO.md",
+      "bytes": 12828,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/README.md",
+      "bytes": 4079,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/STYLE.md",
+      "bytes": 11945,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/build.sh",
+      "bytes": 1499,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/cues.json",
+      "bytes": 865,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/events.json",
+      "bytes": 2566,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/frames.js",
+      "bytes": 1714,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/lines.json",
+      "bytes": 1153,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/mix.py",
+      "bytes": 8244,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/music/cues.json",
+      "bytes": 502,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/music/score.py",
+      "bytes": 11323,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/style.json",
+      "bytes": 517,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/subs_export.py",
+      "bytes": 618,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/test.js",
+      "bytes": 8386,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/tools/mux.sh",
+      "bytes": 1240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/voices/dur.json",
+      "bytes": 113,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-stained-glass/source/voices/words.json",
+      "bytes": 2135,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/crack-and-relead/index.html",
+      "bytes": 803,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/crack-and-relead/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-stained-glass.json",
+      "bytes": 11100,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/crack-and-relead.json",
+      "bytes": 2525,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/crack-and-relead.jpg",
+      "bytes": 113373,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "pulse-path-current",
+  "pattern": {
+    "id": "pulse-path-current",
+    "order": 134,
+    "title": "电流沿走线奔跑",
+    "types": [
+      "hud",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "把河流和电力路径画成板上走线，按路径弧长推进光；交流短划线来回摇摆，直流由单向光头、连续光流和余辉组成，换流器的内部边缘在转换时发光。",
+    "mechanism": "把河流和电力路径画成板上走线，按路径弧长推进光；交流短划线来回摇摆，直流由单向光头、连续光流和余辉组成，换流器的内部边缘在转换时发光。",
+    "trigger": "来源案例时间轴进入所列动作区间。",
+    "effect": "把河流和电力路径画成板上走线，按路径弧长推进光；交流短划线来回摇摆，直流由单向光头、连续光流和余辉组成，换流器的内部边缘在转换时发光。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "4.700000–10.100000秒；14.400000–23.500000秒；38.400000–41.500000秒；1倍速，总时长17.600000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "交流",
+        "value": "film/src/main.js:acPhase / sceneCorridor：5.4–10.1秒的相位按.55Hz变化，近景lam=8、amp=.42；film/src/render.js负责沿trace绘光。"
+      },
+      {
+        "name": "直流",
+        "value": "film/src/main.js:headS / sceneCorridor：16.5–23秒到终点；dcp/dcn双线，decay=520、floor=.7、v=200、minPx=6.5；23秒后decay=2000。"
+      },
+      {
+        "name": "充电器",
+        "value": "film/src/main.js:sceneCharger：T_DB=39.4，交流pL/L/L2→plus/minus/pri/sec/vbus单向光流。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-circuit-board/film/src/main.js",
+      "demos/cases/lemo-circuit-board/film/src/render.js",
+      "demos/cases/lemo-circuit-board/film/src/geo.js"
+    ],
+    "locator": "acPhase / headS / sceneCorridor / sceneCharger",
+    "useCases": [
+      "用光的移动形态解释电流、信号和多种流动。"
+    ],
+    "avoid": [
+      "在主动作发生时叠加争夺注意的另一主动作"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-circuit-board的原作render(t)重放“电流沿走线奔跑”。把河流和电力路径画成板上走线，按路径弧长推进光；交流短划线来回摇摆，直流由单向光头、连续光流和余辉组成，换流器的内部边缘在转换时发光。保留参数：film/src/main.js:acPhase / sceneCorridor：5.4–10.1秒的相位按.55Hz变化，近景lam=8、amp=.42；film/src/render.js负责沿trace绘光。；film/src/main.js:headS / sceneCorridor：16.5–23秒到终点；dcp/dcn双线，decay=520、floor=.7、v=200、minPx=6.5；23秒后decay=2000。；film/src/main.js:sceneCharger：T_DB=39.4，交流pL/L/L2→plus/minus/pri/sec/vbus单向光流。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/pulse-path-current/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-circuit-board"
+      }
+    ],
+    "previewAt": 8.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "电流沿走线奔跑"
+      }
+    ],
+    "preview": "previews/patterns/pulse-path-current.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-circuit-board",
+      "bundle": "agent/cases/lemo-circuit-board.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 电流沿走线奔跑\n\n## 实现 Prompt\n\n用来源案例lemo-circuit-board的原作render(t)重放“电流沿走线奔跑”。把河流和电力路径画成板上走线，按路径弧长推进光；交流短划线来回摇摆，直流由单向光头、连续光流和余辉组成，换流器的内部边缘在转换时发光。保留参数：film/src/main.js:acPhase / sceneCorridor：5.4–10.1秒的相位按.55Hz变化，近景lam=8、amp=.42；film/src/render.js负责沿trace绘光。；film/src/main.js:headS / sceneCorridor：16.5–23秒到终点；dcp/dcn双线，decay=520、floor=.7、v=200、minPx=6.5；23秒后decay=2000。；film/src/main.js:sceneCharger：T_DB=39.4，交流pL/L/L2→plus/minus/pri/sec/vbus单向光流。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：4.700000–10.100000秒；14.400000–23.500000秒；38.400000–41.500000秒；1倍速，总时长17.600000秒。\n\n[打开 Demo](../../demos/patterns/pulse-path-current/index.html) · [在库中查看](../../patterns.html#pattern/pulse-path-current)\n"
+  },
+  "entrypoint": "demos/patterns/pulse-path-current/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-circuit-board/LICENSES.md",
+      "bytes": 572,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/CREDITS",
+      "bytes": 1695,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/VOICE.txt",
+      "bytes": 267,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/film.m4a",
+      "bytes": 1882472,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fidelity.md",
+      "bytes": 5107,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/data/subs_en.json",
+      "bytes": 1145,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/index.html",
+      "bytes": 445,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/charger.js",
+      "bytes": 7870,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/city.js",
+      "bytes": 4943,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/font.js",
+      "bytes": 9546,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/geo.js",
+      "bytes": 3640,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/hanzi.js",
+      "bytes": 9707,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/house.js",
+      "bytes": 6946,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/levels.js",
+      "bytes": 3041,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/loss.js",
+      "bytes": 2035,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/main.js",
+      "bytes": 24894,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/palette.js",
+      "bytes": 1046,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/parts.js",
+      "bytes": 10979,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/post.js",
+      "bytes": 3965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/render.js",
+      "bytes": 28647,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/world.js",
+      "bytes": 28070,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/voice/dur.json",
+      "bytes": 167,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/voice/lines.json",
+      "bytes": 1645,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fonts/NotoSansSC-Medium-sub.ttf",
+      "bytes": 50388,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fonts/OFL-NotoSansSC.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fonts/fonts.css",
+      "bytes": 81,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/index.html",
+      "bytes": 2671,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/CREDITS",
+      "bytes": 1695,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/FACTS.md",
+      "bytes": 5801,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/README.md",
+      "bytes": 2876,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/audio.py",
+      "bytes": 13179,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/build.sh",
+      "bytes": 3347,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/events.json",
+      "bytes": 3534,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/tools/sheet.sh",
+      "bytes": 510,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/tools/srt.py",
+      "bytes": 1062,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/tools/subset.py",
+      "bytes": 1362,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/voice/words.json",
+      "bytes": 6477,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/voice_en/dur.json",
+      "bytes": 165,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/voice_en/lines.json",
+      "bytes": 2946,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/pulse-path-current/index.html",
+      "bytes": 1331,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/pulse-path-current/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-circuit-board.json",
+      "bytes": 11419,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/pulse-path-current.json",
+      "bytes": 3310,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/pulse-path-current.jpg",
+      "bytes": 114718,
+      "role": "preview"
+    }
+  ]
+}

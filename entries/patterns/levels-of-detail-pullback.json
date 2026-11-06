@@ -1,0 +1,68 @@
+{
+  "id": "levels-of-detail-pullback",
+  "order": 171,
+  "title": "拉远换细节层级",
+  "types": [
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "在同一张纸上持续拉远时，站点小标、普通站名与换乘站名按缩放层级退去，枢纽站名保留并相对放大；信息密度随取景范围改变，网络增长仍连续可见。",
+  "mechanism": "在同一张纸上持续拉远时，站点小标、普通站名与换乘站名按缩放层级退去，枢纽站名保留并相对放大；信息密度随取景范围改变，网络增长仍连续可见。",
+  "trigger": "原作时间轴进入所列动作区间。",
+  "effect": "在同一张纸上持续拉远时，站点小标、普通站名与换乘站名按缩放层级退去，枢纽站名保留并相对放大；信息密度随取景范围改变，网络增长仍连续可见。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "13.000—21.700秒，1倍速。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "镜头",
+      "value": "2000—2010段镜头由约78拉至52px/G，倾角12°到0°。",
+      "source": "demos/cases/lemo-transit-map/film/timeline.js:camera"
+    },
+    {
+      "name": "细节层级",
+      "value": "小站点ss(seg(z,55,85))；换乘站名ss(seg(z,62,90))；普通站名ss(seg(z,100,130))；枢纽放大min(1.75,(85/z)^.6)，labelOnly再按镜头筛选。",
+      "source": "demos/cases/lemo-transit-map/film/film.js:drawMap；film/timeline.js:labelOnly"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-transit-map/film/timeline.js",
+    "demos/cases/lemo-transit-map/film/film.js"
+  ],
+  "locator": "film/timeline.js:camera；film/film.js:drawMap；film/timeline.js:labelOnly",
+  "useCases": [
+    "拉远换细节层级"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": [],
+    "notes": "已有scale-reveal-ink-figure与counter-rotate-pullback揭示更大构图；本条同时改变同一地图的信息细节层级，保留枢纽可读性。"
+  },
+  "prompt": "以来源案例lemo-transit-map的原作render(t)重放“拉远换细节层级”。在同一张纸上持续拉远时，站点小标、普通站名与换乘站名按缩放层级退去，枢纽站名保留并相对放大；信息密度随取景范围改变，网络增长仍连续可见。 参数：2000—2010段镜头由约78拉至52px/G，倾角12°到0°。；小站点ss(seg(z,55,85))；换乘站名ss(seg(z,62,90))；普通站名ss(seg(z,100,130))；枢纽放大min(1.75,(85/z)^.6)，labelOnly再按镜头筛选。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+  "demo": "demos/patterns/levels-of-detail-pullback/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-transit-map"
+    }
+  ],
+  "previewAt": 5.6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "拉远换细节层级"
+    }
+  ],
+  "renderer": "gpu"
+}

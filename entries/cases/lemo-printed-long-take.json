@@ -1,0 +1,341 @@
+{
+  "id": "lemo-printed-long-take",
+  "order": 41,
+  "title": "三十三只 · 印刷长镜头",
+  "subtitle": "Thirty-Three Cranes",
+  "carriers": [
+    "video"
+  ],
+  "style": "print-craft",
+  "purpose": "data",
+  "tech": [
+    "canvas2d",
+    "threejs"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "印刷长镜头",
+    "印刷与版画",
+    "代码影片"
+  ],
+  "summary": "北海道雪地河谷一镜到底，丹顶鹤在河中苏醒，起飞后到达投喂田；同一地点四次再印，让1952年的33只与2025年的1927只在告示板旁对照。",
+  "focus": "三维地形通过刮版着色器化成墨与纸；长镜跟随红冠，固定机位的再印呈现时间变化。",
+  "accent": "#c4332b",
+  "background": "#ede5cd",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 15.4,
+  "rhythm": {
+    "duration": 60,
+    "bpm": 72,
+    "beats": [
+      {
+        "t": 0,
+        "label": "夜谷俯瞰",
+        "note": "夜谷俯瞰"
+      },
+      {
+        "t": 5.2,
+        "label": "低掠河面",
+        "note": "低掠河面"
+      },
+      {
+        "t": 7.5,
+        "label": "桥铭与温度",
+        "note": "桥铭与温度"
+      },
+      {
+        "t": 11.3,
+        "label": "河中睡鹤",
+        "note": "河中睡鹤"
+      },
+      {
+        "t": 14.1,
+        "label": "红冠苏醒",
+        "note": "红冠苏醒"
+      },
+      {
+        "t": 16.6,
+        "label": "起飞入雾",
+        "note": "起飞入雾"
+      },
+      {
+        "t": 19.35,
+        "label": "湿地俯瞰",
+        "note": "湿地俯瞰"
+      },
+      {
+        "t": 24.4,
+        "label": "降入玉米田",
+        "note": "降入玉米田"
+      },
+      {
+        "t": 29,
+        "label": "1952年清点板",
+        "note": "1952年清点板"
+      },
+      {
+        "t": 34,
+        "label": "33只与投喂",
+        "note": "33只与投喂"
+      },
+      {
+        "t": 38.3,
+        "label": "四次同地再印",
+        "note": "四次同地再印"
+      },
+      {
+        "t": 41.7,
+        "label": "2025年清点",
+        "note": "2025年清点"
+      },
+      {
+        "t": 46.1,
+        "label": "近危印章",
+        "note": "近危印章"
+      },
+      {
+        "t": 51.8,
+        "label": "鹤舞与升镜",
+        "note": "鹤舞与升镜"
+      },
+      {
+        "t": 56.8,
+        "label": "日空片尾",
+        "note": "日空片尾"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 5.2,
+      "from": 0.15,
+      "to": 0.65,
+      "label": "夜谷俯瞰"
+    },
+    {
+      "t0": 5.2,
+      "t1": 7.5,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "低掠河面"
+    },
+    {
+      "t0": 7.5,
+      "t1": 11.3,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "桥铭与温度"
+    },
+    {
+      "t0": 11.3,
+      "t1": 14.1,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "河中睡鹤"
+    },
+    {
+      "t0": 14.1,
+      "t1": 16.6,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "红冠苏醒"
+    },
+    {
+      "t0": 16.6,
+      "t1": 19.35,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "起飞入雾"
+    },
+    {
+      "t0": 19.35,
+      "t1": 24.4,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "湿地俯瞰"
+    },
+    {
+      "t0": 24.4,
+      "t1": 29,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "降入玉米田"
+    },
+    {
+      "t0": 29,
+      "t1": 34,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "1952年清点板"
+    },
+    {
+      "t0": 34,
+      "t1": 38.3,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "33只与投喂"
+    },
+    {
+      "t0": 38.3,
+      "t1": 41.7,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "四次同地再印"
+    },
+    {
+      "t0": 41.7,
+      "t1": 46.1,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "2025年清点"
+    },
+    {
+      "t0": 46.1,
+      "t1": 51.8,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "近危印章"
+    },
+    {
+      "t0": 51.8,
+      "t1": 56.8,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "鹤舞与升镜"
+    },
+    {
+      "t0": 56.8,
+      "t1": 60,
+      "from": 0.5,
+      "to": 0.12,
+      "label": "日空片尾"
+    }
+  ],
+  "energyNote": "段落划分依据上游DEMO.md Shots与作品时间表；0–1数值是按画面密度、配乐与静默作出的相对编辑标注。",
+  "observations": [
+    "三维地形通过刮版着色器化成墨与纸；长镜跟随红冠，固定机位的再印呈现时间变化。",
+    "连续长镜沿水面过桥，跟鹤起飞并降落；桥下时间平滑放慢，固定机位纸角揭开下一年。",
+    "景物明暗都由刀线密度构成，单一红冠引导镜头，四版叠印把数量和年代联系起来。"
+  ],
+  "composition": {
+    "color": "墨#16171b、纸#ede5cd，红#c4332b只用于鹤冠，暖黄#dfa443用于晨光与玉米。",
+    "layout": "1920×1080、30fps；天空、远山林带、中景河田与前景树栅分层；数值雕在世界内的桥铭、温度计和告示板上。",
+    "imagery": "three.js以2倍采样渲染地形、河道、桥梁、树木与16姿态鹤图集；最后通过纸墨通道合成。",
+    "motion": "连续长镜沿水面过桥，跟鹤起飞并降落；桥下时间平滑放慢，固定机位纸角揭开下一年。",
+    "sound": "Microsoft edge-tts en-US-AvaNeural英文旁白，VSCO/VCSL室内乐采样；河水、霜、鹤鸣、翼拍、木版与印章拟音。",
+    "rhythm": "72BPM三拍子，桥下慢镜同步映射旁白与事件；近乎静止的告示板段留出阅读时间。",
+    "coherence": "景物明暗都由刀线密度构成，单一红冠引导镜头，四版叠印把数量和年代联系起来。",
+    "typography": "Noto Serif SC 700；按scene.js、props.js、timeline.js的字符范围生成子集，仅保留kern、palt布局特性。"
+  },
+  "layers": [
+    {
+      "name": "三维世界",
+      "role": "地形、河道、桥、田与前后景林带。"
+    },
+    {
+      "name": "纸墨材质与鹤群",
+      "role": "世界坐标刀线、精灵图集和独立红冠版。"
+    },
+    {
+      "name": "印刷后期与文字",
+      "role": "两路场景缓冲的揭纸、纸纤维、字幕条与告示板。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#16171b",
+      "#ede5cd",
+      "#c4332b",
+      "#dfa443"
+    ],
+    "type": "Noto Serif SC 700；按scene.js、props.js、timeline.js字符范围子集，仅保留kern、palt布局特性。",
+    "motion": [
+      {
+        "name": "慢镜映射",
+        "value": "film/scene.js:636–646：WARP={a:9.95,b:11.75,d:.4}，render、TEXTS和EV统一变换。"
+      },
+      {
+        "name": "同地四版",
+        "value": "film/timeline.js:17–20、film/scene.js:546–569：三次peel=.3秒，红版延后.45秒，偏移(1.6×SS,−1.1×SS)。"
+      }
+    ]
+  },
+  "useCases": [
+    "野生动物纪录短片",
+    "地景长镜",
+    "生态年代对比"
+  ],
+  "avoid": [
+    "需要真人实拍或摄影素材作为主画面的作品"
+  ],
+  "constraints": [
+    "改字体与文案时按原作字体载入和子集范围同步取得资源。",
+    "图形、着色器与时间线通过film内原作render(t)绘制，音轨沿用成片混音。"
+  ],
+  "migration": [
+    {
+      "field": "film/world.js / textures.js",
+      "how": "修改地形、河道、布景与鹤的轮廓图集。"
+    },
+    {
+      "field": "film/timeline.js / scene.js → WARP / ERA_N",
+      "how": "修改长镜关键点、年代数量与慢镜时段。"
+    },
+    {
+      "field": "film/props.js",
+      "how": "修改桥铭、告示板与印章。"
+    }
+  ],
+  "prompt": "制作一支印刷长镜头代码影片。北海道雪地河谷一镜到底，丹顶鹤从河中苏醒、起飞到投喂田；同一地点四次再印，让1952年的33只与2025年的1927只在告示板旁对照。三维地形通过刮版着色器化成墨与纸；长镜跟随红冠，固定机位再印承担时间变化。墨#16171b、纸#ede5cd，红#c4332b只用于鹤冠，暖黄#dfa443用于晨光与玉米。1920×1080、30fps；天空、远山林带、中景河田与前景树栅分层；数值雕在世界内的桥铭、温度计和告示板。连续长镜沿水面过桥，跟鹤起飞并降落；桥下时间平滑放慢，固定机位纸角揭开下一年。字体：Noto Serif SC 700；按scene.js、props.js、timeline.js字符范围子集，仅保留kern、palt布局特性。声音：Microsoft edge-tts en-US-AvaNeural英文旁白，VSCO/VCSL室内乐采样；河水、霜、鹤鸣、翼拍、木版与印章拟音。按film目录的原作render(t)组织镜头与动作，采用MotionKit时间线逐帧定位，声音默认关闭。",
+  "demo": "demos/cases/lemo-printed-long-take/index.html",
+  "patternIds": [
+    "reprint-same-place"
+  ],
+  "fidelity": "demos/cases/lemo-printed-long-take/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/printed-long-take",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/printed-long-take/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方资源与配音按audio/CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "固定源码与风格说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/printed-long-take"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/printed-long-take.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/printed-long-take/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/printed-long-take)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "Microsoft edge-tts en-US-AvaNeural英文旁白，VSCO/VCSL室内乐采样；河水、霜、鹤鸣、翼拍、木版与印章拟音。署名与许可见[audio/CREDITS](audio/CREDITS)及[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Noto Serif SC 700；按scene.js、props.js、timeline.js字符范围子集，仅保留kern、palt布局特性。SIL OFL 1.1原文在fonts/，获取与重建见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

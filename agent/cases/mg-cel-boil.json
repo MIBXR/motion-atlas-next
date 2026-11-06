@@ -1,0 +1,734 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "mg-cel-boil",
+  "entry": {
+    "id": "mg-cel-boil",
+    "order": 4,
+    "title": "逐帧线条抖动 · HAND MADE",
+    "subtitle": "火柴点亮的逐帧手作",
+    "carriers": [
+      "video"
+    ],
+    "style": "hand-drawn",
+    "purpose": "title-art",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "逐帧手绘",
+      "线条沸腾",
+      "曝光表",
+      "拖影帧",
+      "纸张质感"
+    ],
+    "summary": "火柴在纸面划燃并翻转落定，火苗精灵醒来、跳跃与舞蹈；旋转蓄力后爆成烟火，火花逐笔写出「手作」与 HAND MADE，镜头拉回灯箱纸页。",
+    "focus": "Canvas 2D 自制笔刷引擎每两帧重画线条；快动作切一拍一，亮相和结尾切一拍三，搭配拖影帧、手绘烟火与纸纹。",
+    "accent": "#F5B730",
+    "background": "#f4e9d0",
+    "timeline": true,
+    "kit": true,
+    "rhythm": {
+      "duration": 10,
+      "bpm": 120,
+      "beats": [
+        {
+          "t": 0,
+          "label": "动作预备",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 0.333,
+          "label": "火柴划动",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 0.333,
+          "label": "摩擦火花1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 0.458,
+          "label": "摩擦火花2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 0.5,
+          "label": "点火闪光",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 1,
+          "label": "火柴落定",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 1.25,
+          "label": "眼睛睁开",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 1.417,
+          "label": "角色眨眼",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 1.5,
+          "label": "向左看",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 1.667,
+          "label": "向右看",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 1.75,
+          "label": "蹲下预备",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 2,
+          "label": "火苗起跳",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 2.5,
+          "label": "火苗落地",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 3,
+          "label": "舞步落点1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 3.5,
+          "label": "舞步落点2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 3.75,
+          "label": "转身跳跃1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 4,
+          "label": "舞步落点3",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 4,
+          "label": "转身跳跃2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 4.083,
+          "label": "摆动肩膀1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 4.25,
+          "label": "摆动肩膀2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 4.417,
+          "label": "摆动肩膀3",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 4.5,
+          "label": "亮相定格",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 4.625,
+          "label": "亮相闪光1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 4.75,
+          "label": "亮相闪光2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 4.875,
+          "label": "亮相闪光3",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 5,
+          "label": "聚力下蹲1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 5.25,
+          "label": "聚力下蹲2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 5.5,
+          "label": "旋转蓄力",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 6.25,
+          "label": "压缩蓄力",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 6.5,
+          "label": "爆炸开始",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 6.5,
+          "label": "冲击画格1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 6.542,
+          "label": "冲击画格2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 6.583,
+          "label": "道具吹飞",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 6.583,
+          "label": "爆炸碎片1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 6.667,
+          "label": "爆炸碎片2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 6.792,
+          "label": "爆炸碎片3",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 7.25,
+          "label": "火花写字1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 7.375,
+          "label": "火花写字2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 7.5,
+          "label": "火花写字3",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 7.625,
+          "label": "火花写字4",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 7.75,
+          "label": "火花写字5",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 7.875,
+          "label": "火花写字6",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8,
+          "label": "火花写字7",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.125,
+          "label": "火花写字8",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.25,
+          "label": "火花写字9",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.375,
+          "label": "火花写字10",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.5,
+          "label": "火花写字11",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.5,
+          "label": "标题落定",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.5,
+          "label": "标语擦入1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.583,
+          "label": "英文入场1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.667,
+          "label": "英文入场2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.75,
+          "label": "英文入场3",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.833,
+          "label": "英文入场4",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 8.833,
+          "label": "标语擦入2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 9.083,
+          "label": "镜头拉回",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 9.083,
+          "label": "红笔圈注",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 9.125,
+          "label": "火苗重生",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 9.25,
+          "label": "箭头画出",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 9.333,
+          "label": "纸页翻阅1",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 9.583,
+          "label": "纸页翻阅2",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 9.708,
+          "label": "火苗眨眼",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        },
+        {
+          "t": 10,
+          "label": "影片结束",
+          "note": "原作 film/cues.json 的画面与声音节点。"
+        }
+      ]
+    },
+    "layers": [
+      {
+        "name": "纸面与笔触",
+        "role": "暖纸底、multiply 纸齿、扫描尘点、压力变宽墨线与偏移填色随画格变化。"
+      },
+      {
+        "name": "火柴与火苗",
+        "role": "火柴预备、划燃、翻转与落定；火苗睁眼、起跳、舞蹈、旋转和压缩。"
+      },
+      {
+        "name": "手绘烟火",
+        "role": "两帧冲击画格后，星爆、烟团、干笔煤灰、火星与速度线扩散。"
+      },
+      {
+        "name": "手作落版",
+        "role": "火团汇成花边徽章，火星沿中文笔画写字，HAND MADE 与中文标语入场。"
+      },
+      {
+        "name": "灯箱纸页",
+        "role": "镜头拉回，呈现定位尺、叠纸、蓝色洋葱皮和拇指翻页，红笔圈出绘制张数。"
+      },
+      {
+        "name": "配乐音效",
+        "role": "120 BPM 摇摆爵士，拨弦低音、木琴、刷鼓和钢琴与划火、跳跃、旋转、爆炸和逐笔写字同步。"
+      }
+    ],
+    "composition": {
+      "color": "墨黑 #1c1613、番茄红 #e5402b、明黄 #ffc425、奶油纸 #f4e9d0；高光 #fff6e2 与红铅笔 #d9573f。",
+      "typography": "「手作」和 HAND MADE 以中心线与变宽笔刷手绘；LXGW Marker Gothic 用于火柴盒与中文标语，Caveat 用于画格注记，Long Cang 用于「第」「张」。",
+      "layout": "1920×1080 横屏 Canvas；划火近景、火苗醒来推近、舞蹈低机位和旋转推进接续，结尾拉回灯箱上的完整纸页。",
+      "imagery": "火柴、火柴盒、火苗精灵、烟团、火星与字形由 Canvas 2D 笔刷绘制；纸底与尘点使用原作纹理。",
+      "motion": "24fps 曝光表在一拍一、一拍二、一拍三之间切换；四张微差线稿循环，快动作使用拖影和多重残像，烟火变形成标题徽章。",
+      "sound": "复用原片由 source/audio.py 以 VCSL 乐器采样合成的配乐与音效，播放无损抽取的 AAC 音轨。",
+      "rhythm": "120 BPM；0.5 秒点火、2 秒起跳、2.5 秒舞段、4.5 秒亮相、5.5 秒旋转、6.5 秒爆炸、7.25–8.5 秒逐笔写字。",
+      "coherence": "同一火苗从火柴上醒来，变为烟火和写字的火星，再在标题旁重生；纸纹、线条沸腾和画格注记贯穿全片。"
+    },
+    "tokens": {
+      "palette": [
+        "#1c1613",
+        "#e5402b",
+        "#ffc425",
+        "#f4e9d0",
+        "#fff6e2",
+        "#d9573f"
+      ],
+      "type": "LXGW Marker Gothic 400；Caveat 500、600、700；Long Cang 400；手绘中文与英文标题。",
+      "motion": [
+        {
+          "name": "曝光表",
+          "value": "24fps；SCHED 中 step 为 1、2、3；D.step === 3 ? D.id % 3 : D.id % 4。"
+        },
+        {
+          "name": "填色套偏",
+          "value": "REG = { dx: -5, dy: 4 }。"
+        },
+        {
+          "name": "爆炸冲击",
+          "value": "impact_frames = [6.5, 6.542]；NSPARK = 30。"
+        },
+        {
+          "name": "逐笔写字",
+          "value": "strokes = [7.25, 7.375, 7.5, 7.625, 7.75, 7.875, 8.0, 8.125, 8.25, 8.375, 8.5]。"
+        }
+      ]
+    },
+    "useCases": [
+      "手绘品牌短片",
+      "逐帧动画片头",
+      "矢量主体的手绘特效层"
+    ],
+    "constraints": [
+      "原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。",
+      "10 秒，1920×1080，24fps；提供公开成片的默认版本与横屏原作画幅。"
+    ],
+    "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n逐帧手绘 / 线条沸腾 Cel Animation / Frame-by-Frame & Line Boil\n\n# Output (fixed)\n- 1920×1080, 24 fps, exactly 10.000 s (240 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML Canvas2D: custom variable-width brush renderer (centreline + pressure → outline polygon), boil = 3–4 jitter variants cycled every 2 frames; paper texture multiply\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「手作魔法」Hand-made frame-by-frame magic, Buck/Giant-Ant hybrid (clean shapes + hand-drawn cel FX), animated on 2s at 24 fps.\n- Warm paper ground; ink linework that BOILS (lines redrawn with slight variation every 2 frames); fills slightly off-register like hand colouring.\n- Story: a matchstick strikes (SMEAR frame, on 1s for the fast action) → a flame spirit character jumps out, anticipation + squash, dances (on 2s) → it bursts into cel FX: smoke puffs curling, sparks, star bursts, speed lines → the FX re-form into hand-lettered title (e.g. \"HAND MADE\" or 手作) that keeps boiling on a 1s hold (on 3s for the hold).\n- Palette 3–4 colours: ink black, tomato red, sunny yellow, cream paper; paper grain multiply 10–15%.\nSound: playful jazzy pizzicato/xylophone bed + cartoon SFX: strike, fwoosh, pop, poof, sparkle — synced to the frame.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n手绘逐帧或在矢量动画上叠加逐帧质感，标志性特征是 line boil——线条每隔几帧轻微抖动，仿佛画面在'呼吸'。Giant Ant、Buck 等工作室大量使用 cel 元素（烟、水花、速度线）点缀主动画，反数字精致感的核心手段。\n视觉特征 线条持续微抖(boil), 一拍二/一拍三节奏, smear拖影帧, 手绘烟火水花点缀, 纸纹底\n关键技法 打帧节奏：24fps 下'一拍二'（实际12fps）为主，快动作切'一拍一'，静止镜头'一拍三'\nline boil 伪造法：AE 用 Turbulent Displace（数量2~5、大小50）+ 每 2 帧随机化 evolution + Posterize Time 12fps；真 boil 则画 3~4 张微差线稿循环\nsmear frame：快速位移的中间帧把物体拉长 150%~300% 只保留 1 帧\ncel FX 点缀层：烟/水花/闪电用纯手绘逐帧叠在矢量主体上（Buck 式 hybrid）\n整体叠纸纹（multiply 10~15%）统一手作气质\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+    "migration": [
+      {
+        "field": "film/engine.js → PAL",
+        "how": "调整墨线、填色、纸面和红铅笔色板。"
+      },
+      {
+        "field": "film/scene.js → CHAR_SHOU、CHAR_ZUO、LET、TAG",
+        "how": "替换手绘字形与标语，并配套相应字体文件。"
+      },
+      {
+        "field": "film/cues.json → exposure 与动作节点",
+        "how": "调整曝光节奏和画音节点。"
+      },
+      {
+        "field": "index.html → MotionKit.mountFilm",
+        "how": "接入 Motion Kit 时间轴、原片音轨与窗口缩放。"
+      }
+    ],
+    "demo": "demos/cases/mg-cel-boil/index.html",
+    "patternIds": [
+      "cel-line-boil",
+      "smear-frame-strike",
+      "spark-stroke-handletter",
+      "flipbook-pullback",
+      "squash-stretch-bounce",
+      "shared-cue-sheet"
+    ],
+    "previewAt": 9.75,
+    "attribution": [
+      {
+        "scope": "原作",
+        "notes": "- 作者：Vincentwei1021。\n- 仓库：[mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)。\n- 固定提交：`49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`。\n- 原目录：`demos/05-cel-boil/`；原片：`videos/05-cel-boil.mp4`。\n- 在线页：[mg-styles-15](https://vincentwei1021.github.io/mg-styles-15/)。\n- 代码、Prompt、文档与原片采用 MIT 许可，原文副本见 [LICENSE](film/LICENSE)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "| 字体与版本 | 本地完整文件 | 官方来源 | 许可 |\n| --- | --- | --- | --- |\n| LXGW Marker Gothic 1.004，400 字重 | `fonts/LXGWMarkerGothic-Regular.ttf` | [作者官方 v1.004 发布归档](https://github.com/lxgw/LxgwMarkerGothic/releases/download/v1.004/LxgwMarkerGothic-v1.004.zip)，取 `fonts/ttf/LXGWMarkerGothic-Regular.ttf` | SIL OFL 1.1，[本地原文](fonts/LXGWMarkerGothic-OFL.txt) |\n| Caveat 2.000，500、600、700 字重 | `fonts/Caveat[wght].ttf` | [Google Fonts 官方完整可变字体](https://raw.githubusercontent.com/google/fonts/a85fc09e44c70c7159761adfdc9d5dd007792c15/ofl/caveat/Caveat%5Bwght%5D.ttf)，固定提交 `a85fc09e44c70c7159761adfdc9d5dd007792c15` | SIL OFL 1.1，[本地原文](fonts/Caveat-OFL.txt) |\n| Long Cang 2.001，400 字重 | `fonts/LongCang-Regular.ttf` | [Google Fonts 官方完整字体](https://raw.githubusercontent.com/google/fonts/20da2e7644bac5325abbc9f30848ae3162bfc974/ofl/longcang/LongCang-Regular.ttf)，固定提交 `20da2e7644bac5325abbc9f30848ae3162bfc974` | SIL OFL 1.1，[本地原文](fonts/Longcang-OFL.txt) |\n\n字体保留完整原文件与官方文件名；声明取自原作 `assets/fonts/fonts.css`。"
+      },
+      {
+        "scope": "固定版本库",
+        "notes": "| 包 | 本地文件 | 来源 | 许可 |\n| --- | --- | --- | --- |\n| opentype.js 2.0.0 | `vendor/opentype.js@2.0.0/dist/opentype.mjs` | [npm 2.0.0 tarball](https://registry.npmjs.org/opentype.js/-/opentype.js-2.0.0.tgz) | MIT，[本地原文](vendor/opentype.js@2.0.0/LICENSE) |\n| simplex-noise 4.0.3 | `vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js` | [npm 4.0.3 tarball](https://registry.npmjs.org/simplex-noise/-/simplex-noise-4.0.3.tgz) | MIT，[本地原文](vendor/simplex-noise@4.0.3/LICENSE) |"
+      },
+      {
+        "scope": "纸纹与尘点",
+        "notes": "`assets/paper_base.jpg` 与 `assets/paper_tooth.png` 由保存在 `source/gen_paper.py` 的原作脚本从 [ambientCG Paper001](https://ambientcg.com/view?id=Paper001) 生成，原始纹理采用 [CC0](https://docs.ambientcg.com/license/)。`assets/dust_ink_01.png` 至 `dust_ink_04.png` 由 `source/gen_dust.py` 生成，脚本原文将共享程序化尘点标注为 CC0。六张衍生纹理直接复制原作文件。"
+      },
+      {
+        "scope": "配乐",
+        "notes": "配乐由保存在 `source/audio.py` 的原作脚本使用 [VCSL 乐器采样](https://github.com/sgossner/VCSL)（CC0）合成。`audio/film.m4a` 从固定提交的 `videos/05-cel-boil.mp4` 无损抽取 AAC 音轨，保留原片混音。\n\n```bash\nffmpeg -i ../../sources/mg-styles-15/videos/05-cel-boil.mp4 -vn -c:a copy demos/cases/mg-cel-boil/audio/film.m4a\n```"
+      }
+    ],
+    "relatedEntries": [
+      {
+        "kind": "material",
+        "id": "mg-styles-15",
+        "note": "提示词与配乐合成库所在素材"
+      }
+    ],
+    "energy": [
+      0.413,
+      0.503,
+      0.561,
+      0.498,
+      0.392,
+      0.346,
+      0.341,
+      0.355,
+      0.388,
+      0.405,
+      0.368,
+      0.379,
+      0.338,
+      0.382,
+      0.353,
+      0.372,
+      0.35,
+      0.376,
+      0.36,
+      0.377,
+      0.404,
+      0.399,
+      0.396,
+      0.4,
+      0.599,
+      0.775,
+      0.785,
+      0.628,
+      0.457,
+      0.413,
+      0.394,
+      0.373,
+      0.356,
+      0.351,
+      0.354,
+      0.381,
+      0.39,
+      0.358,
+      0.253,
+      0.193
+    ],
+    "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。",
+    "fidelity": "demos/cases/mg-cel-boil/fidelity.md",
+    "licenses": "demos/cases/mg-cel-boil/LICENSES.md",
+    "preview": "previews/cases/mg-cel-boil.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 逐帧线条抖动接入与保真说明\n\n复刻以公开默认成片为准，作品来源与固定版本见[条目 JSON](../../../entries/cases/mg-cel-boil.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html`、`film/scene.js` | 删除 `V5`、`nolink`、`linkAt`、外部汉字数据载入、逐帧手绘／FRAME BY FRAME 字形及独占火种、链接边界计算；各条件保留默认值与调用顺序。 | 另一版剪辑分支 |\n| `index.html` | 字体表改为 `fonts/fonts.css`；import map 使用 `vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js` 与 `vendor/opentype.js@2.0.0/dist/opentype.mjs`；入口加载 `motion-kit.js` 后调用 `MotionKit.mountFilm`，依赖固定版本并接入播放控制。 | 路径改写 |\n| `film/scene.js` | 纸面、纸齿、四张尘点、时刻表和字形解析字体使用 `./assets/`、`./film/cues.json` 与 `./fonts/`，资源位于案例目录内。 | 路径改写 |\n| `fonts/fonts.css` | 保留原作三个字体声明，URL 指向同目录完整字体，Caveat 使用官方文件名 `Caveat[wght].ttf`，字体随案例独立交付。 | 路径改写 |\n| `audio.py`、`tools/gen_paper.py`、`tools/gen_dust.py` | 原样移动为 `source/audio.py`、`source/tools/gen_paper.py`、`source/tools/gen_dust.py`，脚本内部路径保持原文，独立保存配乐与现有素材的制作资料。 | 移至 source |\n| `tools/hitmax.py` | 原样移动为 `source/tools/hitmax.py`，保持与 `source/audio.py` 的相对位置。 | 移至 source |\n\nv5 分支属于另一版剪辑，已删除。\n\n原作 MIT 许可见 [LICENSE](film/LICENSE)，字体、固定版本库、纹理与音轨来源见 [LICENSES.md](LICENSES.md)。字体版本为 LXGW Marker Gothic 1.004、Caveat 2.000、Long Cang 2.001。\n\n## 适配层说明\n\n`index.html` 中的 `MotionKit.mountFilm` 等待原作 `window.__ready === true` 后接入。尺寸、帧率与时长取 `window.DEMO`：1920×1080、24fps、10 秒。`MotionKit.timeline` 的 `render(t)` 返回原作 `window.renderAt(t)` 的 Promise，通过 `MotionKit.expose`、`MotionKit.controls`、`MotionKit.start` 接入本库。\n\n`MotionKit.stage` 保持原 Canvas 内部像素，通过根节点的 `translate` 与等比 `scale` 居中适配窗口，四周黑边，仅提供横屏。markers 与条目节拍读取 `film/cues.json` 的动作节点，保留曝光表与一拍一、一拍二、一拍三节奏。\n\n中文控制条提供播放、暂停、重播、拖动、倍速与声音开关。声音默认关闭，开启后播放 `audio/film.m4a`；seek、暂停、变速同步，播放偏差超过 0.08 秒时校正。音轨加载为 `audio/mp4` Blob，等待元数据后启动。浏览器阻止发声时，页面内点击或按键后恢复。\n\n`?embed`、`?render` 隐藏控制条，`?render` 停止自动播放与音轨，`?t=秒` 定位。减少动态时显示 9.75 秒并暂停。\n\n`previewAt: 9.75`：拇指翻页已结束，「手作」、HAND MADE、中文标语、灯箱纸页、红笔张数圈注与眨眼火苗共同构成完整落版。\n\n## 已接受差异\n\n细微边缘与纹理差异符合视频压缩表现；五张对照未见字体版本导致的字形偏差。\n\n## 与原片对照结果\n\n对照图左侧为原片，右侧为复刻；两侧均为 1920×1080，路径相对本批工作区的上一级目录。\n\n| 时刻 | 对照图 | 逐张结论 |\n| --- | --- | --- |\n| 1.0 秒 | `mg-batch2/compare/mg-cel-boil/compare-1.png` | 火苗、火柴盒、黄光、标签及编号的构图、颜色、字形与位置一致。 |\n| 3.0 秒 | `mg-batch2/compare/mg-cel-boil/compare-3.png` | 火苗舞姿、手臂残影、火柴烟线、盒体及编号一致。 |\n| 5.0 秒 | `mg-batch2/compare/mg-cel-boil/compare-5.png` | 火苗表情、亮星、火柴、标签及编号一致。 |\n| 7.5 秒 | `mg-batch2/compare/mg-cel-boil/compare-7.5.png` | 红色花边徽章、前三笔、火星笔尖、外围烟团及编号一致。 |\n| 9.5 秒 | `mg-batch2/compare/mg-cel-boil/compare-9.5.png` | 灯箱、定位孔、叠纸、拇指掀角、重放画格及标签一致。 |\n\n浏览器验收使用 Edge，服务端口 4331。案例页自动播放，拖动后停在 7.1636 秒；独立 Demo 的 `?t=5&autoplay=0` 停在 5 秒并暂停，声音默认关闭。声音开关与 1.5 倍速有效；播放抽样时音轨为 5.166574 秒、时间轴为 5.15 秒，相差约 16.6ms；暂停后音轨与时间轴均为 5.42501 秒，媒体与时间轴均暂停。\n\n## 制作依赖与复现\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/05-cel-boil && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n\n配乐后处理调用 `source/tools/hitmax.py`。纸面生成器为 `source/tools/gen_paper.py`，读取素材快照 `assets/textures/paper/Paper001_4K_color.jpg`；尘点生成器为 `source/tools/gen_dust.py`，读取本案例 `source/assets/textures/dust/` 的四张原图。将这些输入合入复现根的同名 `assets/` 路径，案例现有输出位于 `assets/`。\n",
+    "licenses": "# 第三方许可索引\n\n[来源、版本和许可事实](../../../entries/cases/mg-cel-boil.json)\n\n- [film/LICENSE](film/LICENSE)\n- [fonts/LXGWMarkerGothic-OFL.txt](fonts/LXGWMarkerGothic-OFL.txt)\n- [fonts/Caveat-OFL.txt](fonts/Caveat-OFL.txt)\n- [fonts/Longcang-OFL.txt](fonts/Longcang-OFL.txt)\n- [vendor/opentype.js@2.0.0/LICENSE](vendor/opentype.js@2.0.0/LICENSE)\n- [vendor/simplex-noise@4.0.3/LICENSE](vendor/simplex-noise@4.0.3/LICENSE)\n\n## 制作依赖\n\n共用纸张原图位于素材快照的 [assets/textures/paper/Paper001_4K_color.jpg](../../materials/mg-styles-15/assets/textures/paper/Paper001_4K_color.jpg)，沿用上游 README 列明的 CC0 许可。\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/05-cel-boil && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "prompt": "# 逐帧线条抖动 · HAND MADE\n\n## 实现 Prompt\n\nYou are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n逐帧手绘 / 线条沸腾 Cel Animation / Frame-by-Frame & Line Boil\n\n# Output (fixed)\n- 1920×1080, 24 fps, exactly 10.000 s (240 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML Canvas2D: custom variable-width brush renderer (centreline + pressure → outline polygon), boil = 3–4 jitter variants cycled every 2 frames; paper texture multiply\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「手作魔法」Hand-made frame-by-frame magic, Buck/Giant-Ant hybrid (clean shapes + hand-drawn cel FX), animated on 2s at 24 fps.\n- Warm paper ground; ink linework that BOILS (lines redrawn with slight variation every 2 frames); fills slightly off-register like hand colouring.\n- Story: a matchstick strikes (SMEAR frame, on 1s for the fast action) → a flame spirit character jumps out, anticipation + squash, dances (on 2s) → it bursts into cel FX: smoke puffs curling, sparks, star bursts, speed lines → the FX re-form into hand-lettered title (e.g. \"HAND MADE\" or 手作) that keeps boiling on a 1s hold (on 3s for the hold).\n- Palette 3–4 colours: ink black, tomato red, sunny yellow, cream paper; paper grain multiply 10–15%.\nSound: playful jazzy pizzicato/xylophone bed + cartoon SFX: strike, fwoosh, pop, poof, sparkle — synced to the frame.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n手绘逐帧或在矢量动画上叠加逐帧质感，标志性特征是 line boil——线条每隔几帧轻微抖动，仿佛画面在'呼吸'。Giant Ant、Buck 等工作室大量使用 cel 元素（烟、水花、速度线）点缀主动画，反数字精致感的核心手段。\n视觉特征 线条持续微抖(boil), 一拍二/一拍三节奏, smear拖影帧, 手绘烟火水花点缀, 纸纹底\n关键技法 打帧节奏：24fps 下'一拍二'（实际12fps）为主，快动作切'一拍一'，静止镜头'一拍三'\nline boil 伪造法：AE 用 Turbulent Displace（数量2~5、大小50）+ 每 2 帧随机化 evolution + Posterize Time 12fps；真 boil 则画 3~4 张微差线稿循环\nsmear frame：快速位移的中间帧把物体拉长 150%~300% 只保留 1 帧\ncel FX 点缀层：烟/水花/闪电用纯手绘逐帧叠在矢量主体上（Buck 式 hybrid）\n整体叠纸纹（multiply 10~15%）统一手作气质\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.\n\n## 动效 Token\n\n- **曝光表**：24fps；SCHED 中 step 为 1、2、3；D.step === 3 ? D.id % 3 : D.id % 4。\n- **填色套偏**：REG = { dx: -5, dy: 4 }。\n- **爆炸冲击**：impact_frames = [6.5, 6.542]；NSPARK = 30。\n- **逐笔写字**：strokes = [7.25, 7.375, 7.5, 7.625, 7.75, 7.875, 8.0, 8.125, 8.25, 8.375, 8.5]。\n\n## 制作约束\n\n- 原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。\n- 10 秒，1920×1080，24fps；提供公开成片的默认版本与横屏原作画幅。\n\n## 迁移\n\n- `film/engine.js → PAL`：调整墨线、填色、纸面和红铅笔色板。\n- `film/scene.js → CHAR_SHOU、CHAR_ZUO、LET、TAG`：替换手绘字形与标语，并配套相应字体文件。\n- `film/cues.json → exposure 与动作节点`：调整曝光节奏和画音节点。\n- `index.html → MotionKit.mountFilm`：接入 Motion Kit 时间轴、原片音轨与窗口缩放。\n\n[打开 Demo](../../demos/cases/mg-cel-boil/index.html) · [在库中查看](../../cases.html#case/mg-cel-boil)\n"
+  },
+  "entrypoint": "demos/cases/mg-cel-boil/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-cel-boil/LICENSES.md",
+      "bytes": 1181,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_01.png",
+      "bytes": 28357,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_02.png",
+      "bytes": 28707,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_03.png",
+      "bytes": 25600,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_04.png",
+      "bytes": 27879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_base.jpg",
+      "bytes": 483747,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_tooth.png",
+      "bytes": 1791819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/audio/film.m4a",
+      "bytes": 415190,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fidelity.md",
+      "bytes": 5403,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/cues.json",
+      "bytes": 2188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/engine.js",
+      "bytes": 13778,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/scene.js",
+      "bytes": 103043,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/setup.js",
+      "bytes": 764,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/style.css",
+      "bytes": 137,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat[wght].ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LongCang-Regular.ttf",
+      "bytes": 5162508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Longcang-OFL.txt",
+      "bytes": 4390,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/fonts.css",
+      "bytes": 509,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/index.html",
+      "bytes": 2718,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_01_3840x2160.png",
+      "bytes": 81508,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_02_3840x2160.png",
+      "bytes": 82662,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_03_3840x2160.png",
+      "bytes": 73739,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_04_3840x2160.png",
+      "bytes": 79891,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/audio.py",
+      "bytes": 24290,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/cues.json",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_dust.py",
+      "bytes": 707,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_paper.py",
+      "bytes": 2360,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/hitmax.py",
+      "bytes": 4168,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/mg-cel-boil.json",
+      "bytes": 24679,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/mg-cel-boil.jpg",
+      "bytes": 139961,
+      "role": "preview"
+    }
+  ]
+}

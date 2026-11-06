@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "shape-docks-wordmark",
+  "pattern": {
+    "id": "shape-docks-wordmark",
+    "order": 45,
+    "title": "形体落位成字标",
+    "types": [
+      "type-motion",
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "形状变形",
+      "极光玻璃"
+    ],
+    "summary": "主体形状飞到字位，通过开合变成字标中的一个字母，其余字母随后显现；先重放圆环伸展为 morphe，再重放透镜开成 Aurora 的 o。",
+    "mechanism": "主体形状飞到字位，通过开合变成字标中的一个字母，其余字母随后显现；先重放圆环伸展为 morphe，再重放透镜开成 Aurora 的 o。",
+    "trigger": "主体形状进入字标的落位阶段时",
+    "effect": "叙事中的同一个形体成为字母，字标通过形体落位与其余字母显现完成。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-morph 原片 8.1–9.3 秒；mg-aurora-glass 原片 6.7–10 秒；1 倍速，巧思时长 4.5 秒。"
+      },
+      {
+        "name": "圆环伸展成字标",
+        "value": "L614: const MB = { t0: 8.30, t1: 8.6, arches: [[571.5, 497], [650, 497]], Ro: 55.5, Ri: 22.5,；L683: const LANE = [352, 352, 346, 340, 296, 290], _lp = {};"
+      },
+      {
+        "name": "透镜落入字母",
+        "value": "L533: const WORD_SIZE = 178, WORD_BASE = 596, WORD_TRACK = 4;；L565: const LETTER_T = [0.3, 0.15, 0.0, null, 0.02, 0.17].map((d) => d === null ? null : cues.word + d);；L595: { t: SETTLE, v: [O_CX, O_CY], m: [0, 0] },；L598: const lensHY = keysS([[5.95, 110], [6.45, 122], [T_FREE, 106], [7.7, 88], [SETTLE, O_R]], eSine);；L672: const wave = [700 * eOutSine(kw), 0.11 * Math.pow(1 - kw, 0.8) * wk, 6.5 * Math.pow(1 - kw, 0.45) * wk];"
+      }
+    ],
+    "useCases": [
+      "圆环与字干展开成字标",
+      "玻璃透镜落位成为字母"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-morph 原片 8.1–9.3 秒；mg-aurora-glass 原片 6.7–10 秒；总时长 4.5 秒。主体形状飞到字位、开合成字标中的一个字母，其余字母随后显现；先重放圆环伸展为 morphe，再重放透镜开成 Aurora 的 o。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/shape-docks-wordmark/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-morph"
+      },
+      {
+        "caseId": "mg-aurora-glass"
+      }
+    ],
+    "previewAt": 4,
+    "markers": [
+      {
+        "t": 0,
+        "label": "形状变形"
+      },
+      {
+        "t": 0.3,
+        "label": "机制画面"
+      },
+      {
+        "t": 0.7,
+        "label": "机制画面"
+      },
+      {
+        "t": 1.2,
+        "label": "极光玻璃"
+      },
+      {
+        "t": 2.8,
+        "label": "机制画面"
+      }
+    ],
+    "preview": "previews/patterns/shape-docks-wordmark.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-morph",
+      "bundle": "agent/cases/mg-morph.json"
+    },
+    {
+      "caseId": "mg-aurora-glass",
+      "bundle": "agent/cases/mg-aurora-glass.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 形体落位成字标\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速重放以下片段：mg-morph 原片 8.1–9.3 秒；mg-aurora-glass 原片 6.7–10 秒；总时长 4.5 秒。主体形状飞到字位、开合成字标中的一个字母，其余字母随后显现；先重放圆环伸展为 morphe，再重放透镜开成 Aurora 的 o。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-morph 原片 8.1–9.3 秒；mg-aurora-glass 原片 6.7–10 秒；1 倍速，巧思时长 4.5 秒。\n- **圆环伸展成字标**：L614: const MB = { t0: 8.30, t1: 8.6, arches: [[571.5, 497], [650, 497]], Ro: 55.5, Ri: 22.5,；L683: const LANE = [352, 352, 346, 340, 296, 290], _lp = {};\n- **透镜落入字母**：L533: const WORD_SIZE = 178, WORD_BASE = 596, WORD_TRACK = 4;；L565: const LETTER_T = [0.3, 0.15, 0.0, null, 0.02, 0.17].map((d) => d === null ? null : cues.word + d);；L595: { t: SETTLE, v: [O_CX, O_CY], m: [0, 0] },；L598: const lensHY = keysS([[5.95, 110], [6.45, 122], [T_FREE, 106], [7.7, 88], [SETTLE, O_R]], eSine);；L672: const wave = [700 * eOutSine(kw), 0.11 * Math.pow(1 - kw, 0.8) * wk, 6.5 * Math.pow(1 - kw, 0.45) * wk];\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/shape-docks-wordmark/index.html) · [在库中查看](../../patterns.html#pattern/shape-docks-wordmark)\n"
+  },
+  "entrypoint": "demos/patterns/shape-docks-wordmark/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-aurora-glass/LICENSES.md",
+      "bytes": 830,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/audio/film.m4a",
+      "bytes": 403616,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fidelity.md",
+      "bytes": 4331,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/cues.json",
+      "bytes": 881,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/main.js",
+      "bytes": 46612,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/out/env.json",
+      "bytes": 7901,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/setup.js",
+      "bytes": 153,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/shaders.js",
+      "bytes": 21381,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/style.css",
+      "bytes": 138,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/HarmonyOS-Sans-LICENSE.txt",
+      "bytes": 32768,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/HarmonyOS_Sans_SC_Light.ttf",
+      "bytes": 8336364,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/Inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/Sora-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/Sora[wght].ttf",
+      "bytes": 111400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/fonts.css",
+      "bytes": 497,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/index.html",
+      "bytes": 2091,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/source/audio.py",
+      "bytes": 10545,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/source/cues.json",
+      "bytes": 881,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-morph/LICENSES.md",
+      "bytes": 832,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/assets/textures/paper/Paper001_4K_color.jpg",
+      "bytes": 3684106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/audio/film.m4a",
+      "bytes": 342366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/fidelity.md",
+      "bytes": 4869,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/cues.json",
+      "bytes": 1541,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/glyphs.json",
+      "bytes": 24462,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/scene.js",
+      "bytes": 60329,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/setup.js",
+      "bytes": 257,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/style.css",
+      "bytes": 74,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/HarmonyOS-Sans-LICENSE.txt",
+      "bytes": 32768,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/HarmonyOS_Sans_SC_Medium.ttf",
+      "bytes": 8227312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/IBMPlexMono-OFL.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/Outfit-OFL.txt",
+      "bytes": 4389,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/Outfit-SemiBold.ttf",
+      "bytes": 55384,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/Outfit[wght].ttf",
+      "bytes": 110884,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/fonts.css",
+      "bytes": 475,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/index.html",
+      "bytes": 2250,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/source/audio.py",
+      "bytes": 8665,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-morph/source/cues.json",
+      "bytes": 1541,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-morph/source/tools/glyphs.py",
+      "bytes": 2387,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/shape-docks-wordmark/index.html",
+      "bytes": 1602,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/shape-docks-wordmark/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-aurora-glass.json",
+      "bytes": 16722,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-morph.json",
+      "bytes": 16052,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/shape-docks-wordmark.json",
+      "bytes": 3229,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/shape-docks-wordmark.jpg",
+      "bytes": 77327,
+      "role": "preview"
+    }
+  ]
+}

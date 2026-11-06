@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "screencast-camera",
+  "pattern": {
+    "id": "screencast-camera",
+    "order": 136,
+    "title": "录屏式相机",
+    "types": [
+      "camera"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "在可变DOM界面内部，对相机中心和对数缩放做连续插值；后续镜头从当前状态继续，慢段微漂移，跨面板急摇时由相机速度产生方向模糊，缩放不小于1。",
+    "mechanism": "在可变DOM界面内部，对相机中心和对数缩放做连续插值；后续镜头从当前状态继续，慢段微漂移，跨面板急摇时由相机速度产生方向模糊，缩放不小于1。",
+    "trigger": "来源案例时间轴进入所列动作区间。",
+    "effect": "在可变DOM界面内部，对相机中心和对数缩放做连续插值；后续镜头从当前状态继续，慢段微漂移，跨面板急摇时由相机速度产生方向模糊，缩放不小于1。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "9.000000–18.600000秒；28.800000–32.400000秒；1倍速，总时长13.200000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "连续取景",
+        "value": "film/film.js:camAt / cam：CAM0=[960,540,1.5]；每个MOVES逐个混合x/y/log(z)；sin(.7t)×1.2、sin(.53t+1)×.9微漂移。"
+      },
+      {
+        "name": "急摇",
+        "value": "film/main.js:render：用t−1/24求相机速度；max(0,abs(v)−30)×.3，上限36px；stdDeviation施加于未变换mbw层。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-living-screencast/film/film.js",
+      "demos/cases/lemo-living-screencast/film/main.js"
+    ],
+    "locator": "camAt / MOVES / render / mbw",
+    "useCases": [
+      "用连续推近、跨面板急摇和轻微漂移组织软件操作演示。"
+    ],
+    "avoid": [
+      "在主动作发生时叠加争夺注意的另一主动作"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-living-screencast的原作render(t)重放“录屏式相机”。在可变DOM界面内部连续插值相机中心和对数缩放；后续镜头从当前状态继续，慢段微漂移，跨面板急摇由相机速度产生方向模糊，缩放不小于1。保留参数：film/film.js:camAt / cam：CAM0=[960,540,1.5]；每个MOVES逐个混合x/y/log(z)；sin(.7t)×1.2、sin(.53t+1)×.9微漂移。；film/main.js:render：用t−1/24求相机速度；max(0,abs(v)−30)×.3，上限36px；stdDeviation施加于未变换mbw层。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/screencast-camera/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-living-screencast"
+      }
+    ],
+    "previewAt": 4,
+    "markers": [
+      {
+        "t": 0,
+        "label": "录屏式相机"
+      }
+    ],
+    "preview": "previews/patterns/screencast-camera.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-living-screencast",
+      "bundle": "agent/cases/lemo-living-screencast.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 录屏式相机\n\n## 实现 Prompt\n\n用来源案例lemo-living-screencast的原作render(t)重放“录屏式相机”。在可变DOM界面内部连续插值相机中心和对数缩放；后续镜头从当前状态继续，慢段微漂移，跨面板急摇由相机速度产生方向模糊，缩放不小于1。保留参数：film/film.js:camAt / cam：CAM0=[960,540,1.5]；每个MOVES逐个混合x/y/log(z)；sin(.7t)×1.2、sin(.53t+1)×.9微漂移。；film/main.js:render：用t−1/24求相机速度；max(0,abs(v)−30)×.3，上限36px；stdDeviation施加于未变换mbw层。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：9.000000–18.600000秒；28.800000–32.400000秒；1倍速，总时长13.200000秒。\n\n[打开 Demo](../../demos/patterns/screencast-camera/index.html) · [在库中查看](../../patterns.html#pattern/screencast-camera)\n"
+  },
+  "entrypoint": "demos/patterns/screencast-camera/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-living-screencast/LICENSES.md",
+      "bytes": 1212,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/CREDITS",
+      "bytes": 1050,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/film.m4a",
+      "bytes": 1974348,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fidelity.md",
+      "bytes": 5095,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/clawd.js",
+      "bytes": 5974,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/film.js",
+      "bytes": 36375,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/index.html",
+      "bytes": 18318,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/main.js",
+      "bytes": 10259,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/ui.js",
+      "bytes": 17112,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/voices/dur.json",
+      "bytes": 256,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/voices/words.json",
+      "bytes": 3078,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/JetBrainsMono-var.ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/Newsreader-Italic-VF.ttf",
+      "bytes": 495684,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/Newsreader-VF.ttf",
+      "bytes": 451664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/OFL-inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/OFL-jetbrainsmono.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/fonts.css",
+      "bytes": 326,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/newsreader_OFL.txt",
+      "bytes": 4394,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/index.html",
+      "bytes": 2365,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/CREDITS",
+      "bytes": 1050,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/README.md",
+      "bytes": 4134,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/build.sh",
+      "bytes": 1390,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/events.json",
+      "bytes": 11957,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/lines.json",
+      "bytes": 2242,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/sound.py",
+      "bytes": 15812,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/tools/asr_check.py",
+      "bytes": 1505,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/tools/mixcheck.py",
+      "bytes": 1057,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/tools/subs.mjs",
+      "bytes": 667,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/screencast-camera/index.html",
+      "bytes": 1068,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/screencast-camera/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-living-screencast.json",
+      "bytes": 11224,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/screencast-camera.json",
+      "bytes": 2864,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/screencast-camera.jpg",
+      "bytes": 31226,
+      "role": "preview"
+    }
+  ]
+}

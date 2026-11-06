@@ -1,0 +1,44 @@
+{
+  "id": "starlight-bceg-motif",
+  "order": 10,
+  "type": "sound",
+  "title": "少女歌剧 BCEG（7135）动机 · TV 原声带片段与节奏型",
+  "category": "音乐动机",
+  "tags": ["少女歌剧", "Revue Starlight", "藤澤慶昌", "加藤達也", "配乐", "动机", "7135", "节奏型", "原声带"],
+  "summary": "《少女歌剧》TV 原声带里反复出现的 7-1-3-5 动机：16 首曲目的音频片段、视频给出的谱例、移调级数和 9 种节奏型，可按曲目回听片段，也可将动机移到任意调试听取用。",
+  "carrierNote": "声音素材。可按曲目查找片段，节奏型可导出 MIDI。",
+  "workflow": [
+    "在“曲目”页按曲号回听片段，对照谱例和级数判断这个动机在该曲里怎么出现。",
+    "在“节奏型”页选调和速度，试听 R01–R09，下载 MIDI。",
+    "把 7-1-3-5 移到目标调，选好节奏型和清亮的钢琴类音色，再写进自己的配乐。",
+    "按“音频候选”的时刻回听原曲，判断是否属于这个动机后再引用。"
+  ],
+  "useCases": ["为舞台、星光、命运主题的配乐写一个可识别的短动机", "研究一个动机如何靠移调和换节奏贯穿整张原声带", "给视频里的高光或转场找一个四音“呼唤”"],
+  "avoid": ["直接把原声带片段用于公开发布的作品配乐", "把“音频候选”当作作曲者确认过的动机"],
+  "upstream": {
+    "url": "https://www.bilibili.com/video/BV1w5XfBYEPr/",
+    "author": "栎社大木",
+    "notes": "动机整理来自《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机。音乐为「少女☆歌劇 レヴュースタァライト」オリジナルサウンドトラック，藤澤慶昌・加藤達也，2018。"
+  },
+  "license": {
+    "name": "OST 版权所有；VexFlow MIT；Noto Serif JP SIL OFL 1.1",
+    "url": "demos/materials/starlight-bceg-motif/LICENSES.md",
+    "notes": "OST 各曲名、片段文件与曲号对应见 demo/data/motif.json；音乐与封面版权归原权利人，个人学习研究收录。视频动机整理归栎社大木。VexFlow 固定 4.2.5，采用 MIT；Noto Serif JP 700、900 完整字库采用 SIL OFL 1.1。"
+  },
+  "sources": [
+    { "title": "栎社大木：BCEG（7135）动机视频", "url": "https://www.bilibili.com/video/BV1w5XfBYEPr/" },
+    { "title": "TV 原声带：曲名、曲号及音频片段对应", "url": "demos/materials/starlight-bceg-motif/demo/data/motif.json" },
+    { "title": "VexFlow 4.2.5 npm tarball · MIT", "url": "https://registry.npmjs.org/vexflow/-/vexflow-4.2.5.tgz" },
+    { "title": "Noto Serif JP 完整字体与 OFL", "url": "https://github.com/google/fonts/tree/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notoserifjp" }
+  ],
+  "attribution": [
+    { "scope": "音乐", "name": "「少女☆歌劇 レヴュースタァライト」オリジナルサウンドトラック", "author": "藤澤慶昌・加藤達也", "notes": "2018；各曲名与使用时间见 motif.json。版权归原权利人，个人学习研究收录。" },
+    { "scope": "制作来源", "name": "BCEG（7135）动机整理", "author": "栎社大木", "url": "https://www.bilibili.com/video/BV1w5XfBYEPr/", "notes": "谱例与视频使用片段的来源。" },
+    { "scope": "运行库", "name": "VexFlow", "version": "4.2.5", "license": "MIT", "notes": "VexFlow 4.2.5，MIT；运行库与许可原文来自 npm tarball。", "url": "https://registry.npmjs.org/vexflow/-/vexflow-4.2.5.tgz" },
+    { "scope": "字体", "name": "Noto Serif JP", "license": "SIL OFL 1.1", "notes": "700、900 完整字库；固定来源提交 8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5。", "url": "https://github.com/google/fonts/tree/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notoserifjp" }
+  ],
+  "install": "页面直接运行；MIDI 在 `demo/midi/`，音频切片在 `demo/audio/`；重建数据运行 `source/build-data.py`",
+  "relatedEntries": [{ "kind": "case", "id": "butterfly-garden-score", "note": "《蝶の舞う庭》总谱可视化复刻，同一配乐世界里的完整曲目案例" }],
+  "demo": "demos/materials/starlight-bceg-motif/index.html",
+  "research": "docs/materials/starlight-bceg-motif.md"
+}

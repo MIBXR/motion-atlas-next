@@ -1,0 +1,794 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "flip-tile-cascade",
+  "pattern": {
+    "id": "flip-tile-cascade",
+    "order": 23,
+    "title": "方片翻牌级联波",
+    "types": [
+      "transition",
+      "composition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "方片按空间延迟翻转，以梯形与明暗表现卡面，切到背面三原色图形后向心归位。",
+    "mechanism": "方片按对角延迟逐片翻转，翻转中以梯形与明暗表现透视，背面换成新图形后向心归位。",
+    "trigger": "原片的方片自转、对角翻牌、背面复位与向心归牌节点依次到达。",
+    "effect": "正面网格先径向自转，再翻到黑底三原色构成；卡片转动时出现透视压窄与阴影，最后从外圈翻回正面。",
+    "timing": [
+      {
+        "name": "径向自转",
+        "value": "R1.start=6秒；中心(840,300)；dur=0.25，span=0.25，size=120，angle=90；s=1/(abs(cosθ)+abs(sinθ))。"
+      },
+      {
+        "name": "对角翻牌",
+        "value": "R2.start=6.5秒；dur=0.2，span=0.3，size=240；sc=cos(π*ease(u))；sc<0为背面。"
+      },
+      {
+        "name": "翻牌透视",
+        "value": "sn=sqrt(1-sc²)；xs=1-0.22*sn*(0.5+0.5*fs*ca/120)；gShade=cov*sn；col*=1-0.2*shd。"
+      },
+      {
+        "name": "黑床衔接",
+        "value": "board=mix(isK?1:0,back?fB:fF,smoothstep(0.72,0.96,abs(sc)))；abs(sc)<0.002时返回board。"
+      },
+      {
+        "name": "遮挡复位",
+        "value": "frontReset=7.1秒；rotTile在tt>=resetT时返回原q与coverage=1。"
+      },
+      {
+        "name": "背面三元",
+        "value": "reveal=7–7.2秒；黄色三角[(120,780),(600,780),(360,300)]；红方块(720,300,480,480)；蓝圆(1560,540,r240)。"
+      },
+      {
+        "name": "向心归牌",
+        "value": "R4.start=7.5秒；dur=0.2，span=0.3，size=240，中心(960,540)；delay=(maxRadius-distance)*span/(maxRadius-minRadius)；sc=-cos(π*ease(u))；8秒归位。"
+      }
+    ],
+    "useCases": [
+      "网格海报的双面图形切换",
+      "几何方片级联转场"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": [],
+      "notes": "lemo-paper-popup的昼夜天空采用同一空间延迟翻牌机制；定位见parameters。"
+    },
+    "prompt": "用来源案例的原作renderAt(t)重放方片翻牌级联波。6秒开始R1，120px方片按距(840,300)的径向延迟自转90°，dur=0.25、span=0.25，并用s=1/(abs(cosθ)+abs(sinθ))内缩。6.5秒开始R2，240px卡片按对角延迟绕横轴翻面，dur=0.2、span=0.3、sc=cos(π*ease(u))。保留xs=1-0.22*sn*(0.5+0.5*fs*ca/120)的梯形透视、col*=1-0.2*shd的明暗与黑床衔接。背面显示黄色三角、红色方块与蓝色圆形；7.1秒在背面遮挡时复位正面映射。7.5秒开始R4，卡片按距(960,540)的向心延迟绕竖轴翻回正面，dur=0.2、span=0.3、sc=-cos(π*ease(u))，8秒归位。按index.html 内联配置的segments映射时间，保留原作字体、素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/flip-tile-cascade/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-bauhaus"
+      },
+      {
+        "caseId": "lemo-paper-popup"
+      }
+    ],
+    "previewAt": 1,
+    "markers": [
+      {
+        "t": 0,
+        "label": "几何包豪斯"
+      },
+      {
+        "t": 0.2,
+        "label": "方片自转"
+      },
+      {
+        "t": 0.7,
+        "label": "对角翻牌"
+      },
+      {
+        "t": 1.2,
+        "label": "背面三元"
+      },
+      {
+        "t": 1.3,
+        "label": "遮挡复位"
+      },
+      {
+        "t": 1.7,
+        "label": "向心归牌"
+      },
+      {
+        "t": 2.2,
+        "label": "正面定格"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "纸片立体书天空翻板",
+        "value": "lemo-paper-popup：film/sets.js:buildSlats生成4块双面天空卡，宽(BW−.006)/4、高BD−.03；film/main.js:EX.slats在81.8+i*.28至82.5+i*.28秒，以rotation.y=π*eio(seg(...))从昼面翻到夜面。"
+      }
+    ],
+    "preview": "previews/patterns/flip-tile-cascade.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-bauhaus",
+      "bundle": "agent/cases/mg-bauhaus.json"
+    },
+    {
+      "caseId": "lemo-paper-popup",
+      "bundle": "agent/cases/lemo-paper-popup.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 方片翻牌级联波\n\n## 实现 Prompt\n\n用来源案例的原作renderAt(t)重放方片翻牌级联波。6秒开始R1，120px方片按距(840,300)的径向延迟自转90°，dur=0.25、span=0.25，并用s=1/(abs(cosθ)+abs(sinθ))内缩。6.5秒开始R2，240px卡片按对角延迟绕横轴翻面，dur=0.2、span=0.3、sc=cos(π*ease(u))。保留xs=1-0.22*sn*(0.5+0.5*fs*ca/120)的梯形透视、col*=1-0.2*shd的明暗与黑床衔接。背面显示黄色三角、红色方块与蓝色圆形；7.1秒在背面遮挡时复位正面映射。7.5秒开始R4，卡片按距(960,540)的向心延迟绕竖轴翻回正面，dur=0.2、span=0.3、sc=-cos(π*ease(u))，8秒归位。按index.html 内联配置的segments映射时间，保留原作字体、素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **径向自转**：R1.start=6秒；中心(840,300)；dur=0.25，span=0.25，size=120，angle=90；s=1/(abs(cosθ)+abs(sinθ))。\n- **对角翻牌**：R2.start=6.5秒；dur=0.2，span=0.3，size=240；sc=cos(π*ease(u))；sc<0为背面。\n- **翻牌透视**：sn=sqrt(1-sc²)；xs=1-0.22*sn*(0.5+0.5*fs*ca/120)；gShade=cov*sn；col*=1-0.2*shd。\n- **黑床衔接**：board=mix(isK?1:0,back?fB:fF,smoothstep(0.72,0.96,abs(sc)))；abs(sc)<0.002时返回board。\n- **遮挡复位**：frontReset=7.1秒；rotTile在tt>=resetT时返回原q与coverage=1。\n- **背面三元**：reveal=7–7.2秒；黄色三角[(120,780),(600,780),(360,300)]；红方块(720,300,480,480)；蓝圆(1560,540,r240)。\n- **向心归牌**：R4.start=7.5秒；dur=0.2，span=0.3，size=240，中心(960,540)；delay=(maxRadius-distance)*span/(maxRadius-minRadius)；sc=-cos(π*ease(u))；8秒归位。\n\n[打开 Demo](../../demos/patterns/flip-tile-cascade/index.html) · [在库中查看](../../patterns.html#pattern/flip-tile-cascade)\n"
+  },
+  "entrypoint": "demos/patterns/flip-tile-cascade/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-paper-popup/LICENSES.md",
+      "bytes": 1896,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/SOURCES.md",
+      "bytes": 878,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/alarm_clock_01.bin",
+      "bytes": 284408,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/alarm_clock_01.gltf",
+      "bytes": 10056,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/textures/alarm_clock_01_arm_1k.jpg",
+      "bytes": 538163,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/textures/alarm_clock_01_diff_1k.jpg",
+      "bytes": 404998,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/alarm_clock_01/textures/alarm_clock_01_nor_gl_1k.jpg",
+      "bytes": 420026,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/desk_lamp_arm_01.bin",
+      "bytes": 736804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/desk_lamp_arm_01.gltf",
+      "bytes": 4453,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_arm_1k.jpg",
+      "bytes": 780379,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_diff_1k.jpg",
+      "bytes": 702522,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_nor_gl_1k.jpg",
+      "bytes": 651826,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/lythwood_lounge_2k.hdr",
+      "bytes": 6090881,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/potted_plant_04.bin",
+      "bytes": 241800,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/potted_plant_04.gltf",
+      "bytes": 7081,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/textures/potted_plant_04_arm_1k.jpg",
+      "bytes": 478413,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/textures/potted_plant_04_diff_1k.jpg",
+      "bytes": 577545,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/potted_plant_04/textures/potted_plant_04_nor_gl_1k.jpg",
+      "bytes": 817786,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/tea_set_01.bin",
+      "bytes": 941776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/tea_set_01.gltf",
+      "bytes": 15836,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/textures/tea_set_01_arm_1k.jpg",
+      "bytes": 559750,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/textures/tea_set_01_diff_1k.jpg",
+      "bytes": 509631,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/tea_set_01/textures/tea_set_01_nor_gl_1k.jpg",
+      "bytes": 255598,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/walnut_diff.jpg",
+      "bytes": 2418767,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/walnut_nor.jpg",
+      "bytes": 1959270,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/assets/walnut_rough.jpg",
+      "bytes": 2865130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/CREDITS",
+      "bytes": 2971,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/LICENSE-Dreamy-Flashback.txt",
+      "bytes": 321,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/LICENSE-Heartwarming.txt",
+      "bytes": 350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/LICENSE-Jaunty-Gumption.txt",
+      "bytes": 369,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/audio/film.m4a",
+      "bytes": 4515726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fidelity.md",
+      "bytes": 6279,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/actors.js",
+      "bytes": 6780,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/art.js",
+      "bytes": 34405,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/book.js",
+      "bytes": 9220,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/cutmesh.js",
+      "bytes": 3648,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/hud.js",
+      "bytes": 9242,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/index.html",
+      "bytes": 737,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/lib.js",
+      "bytes": 2783,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/main.js",
+      "bytes": 40357,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/paper.js",
+      "bytes": 4793,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/post.js",
+      "bytes": 4827,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/sets.js",
+      "bytes": 16136,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/story.js",
+      "bytes": 4085,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/film/voices/dur.json",
+      "bytes": 192,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/OFL-fredoka.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/OFL-imfellenglish.txt",
+      "bytes": 4359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/OFL-lilitaone.txt",
+      "bytes": 4392,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/OFL-zcoolkuaile.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f0.woff2",
+      "bytes": 20196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f1.woff2",
+      "bytes": 8776,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f2.woff2",
+      "bytes": 4564,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f3.woff2",
+      "bytes": 29704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f4.woff2",
+      "bytes": 1376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f5.woff2",
+      "bytes": 10676,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f6.woff2",
+      "bytes": 57808,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/f7.woff2",
+      "bytes": 59880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/fonts/fonts.css",
+      "bytes": 6199,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/index.html",
+      "bytes": 4770,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/CREDITS",
+      "bytes": 2971,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/README.md",
+      "bytes": 4019,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/asr.py",
+      "bytes": 360,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/events.json",
+      "bytes": 9050,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/fetch_fonts.mjs",
+      "bytes": 1254,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/fonts.css",
+      "bytes": 6379,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/gltest.mjs",
+      "bytes": 1396,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/make_srt.mjs",
+      "bytes": 1847,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/mix.py",
+      "bytes": 13956,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/music/edit.py",
+      "bytes": 1348,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/music/jump.py",
+      "bytes": 1623,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/music/jump2.py",
+      "bytes": 1472,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/music/survey.py",
+      "bytes": 1203,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/mux.sh",
+      "bytes": 605,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/package-lock.json",
+      "bytes": 1012,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/package.json",
+      "bytes": 331,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/probe.mjs",
+      "bytes": 706,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/render.mjs",
+      "bytes": 3953,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/serve.mjs",
+      "bytes": 926,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/sheet.html",
+      "bytes": 2159,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/shot.mjs",
+      "bytes": 909,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/test.html",
+      "bytes": 2800,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/tile.py",
+      "bytes": 654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/tts/gen.py",
+      "bytes": 1006,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/tts/gen1.py",
+      "bytes": 1087,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/tts/lines.json",
+      "bytes": 1339,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/source/words.py",
+      "bytes": 403,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+      "bytes": 110273,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+      "bytes": 11377,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-popup/vendor/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/LICENSES.md",
+      "bytes": 765,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/paper/Paper001_4K_color.jpg",
+      "bytes": 3684106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/audio/film.m4a",
+      "bytes": 426687,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fidelity.md",
+      "bytes": 4011,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/cues.json",
+      "bytes": 3719,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/film.js",
+      "bytes": 35151,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/setup.js",
+      "bytes": 148,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/style.css",
+      "bytes": 172,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-VF.ttf",
+      "bytes": 17773132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-Black.ttf",
+      "bytes": 153440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-SemiBold.ttf",
+      "bytes": 157312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/fonts.css",
+      "bytes": 486,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/index.html",
+      "bytes": 2020,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/audio.py",
+      "bytes": 9344,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/cues.json",
+      "bytes": 3719,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/flip-tile-cascade/index.html",
+      "bytes": 1554,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/flip-tile-cascade/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-paper-popup.json",
+      "bytes": 12616,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-bauhaus.json",
+      "bytes": 19633,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/flip-tile-cascade.json",
+      "bytes": 3965,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/flip-tile-cascade.jpg",
+      "bytes": 61765,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "carve-cut-by-cut-reveal",
+  "pattern": {
+    "id": "carve-cut-by-cut-reveal",
+    "order": 96,
+    "title": "逐刀刻出画面",
+    "types": [
+      "texture",
+      "composition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "每条刻痕都有起始时刻、持续时间和刀宽，并沿刀路逐步显露；形体的reveal key用于分配粗细刀次，高潮处的光线由放射刻痕爆开。",
+    "mechanism": "每条刻痕都有起始时刻、持续时间和刀宽，并沿刀路逐步显露；形体的reveal key用于分配粗细刀次，高潮处的光线由放射刻痕爆开。",
+    "trigger": "首刀开始，随后reveal时刻按粗刀、村庄、细线推进；第二次浇铸触发放射刻痕。",
+    "effect": "时间可由刻刀读出，亮面随着木材被削去而显露，放射光成为真实刀痕。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "0.000000–7.000000秒；39.000000–41.666700秒；1倍速，总时长9.666700秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "单刀进度",
+        "value": "film/engine/knife.js:progOf：u=clamp((t−s.t0)/s.dur)，进度u*(.55+.45*u)；hatch.js:hatch依据key、speed和jit分配t0/dur。"
+      },
+      {
+        "name": "造出世界",
+        "value": "film/world.js:buildWorld：field在3–4.8秒，village从4+i*.08秒，sky在5–6.1秒；shots.js:buildOpen标题6–6.85秒，sp=3.2、wmax=4.4。"
+      },
+      {
+        "name": "刻光",
+        "value": "film/shots2.js:第二次浇铸的rays：39.3333秒起，t1=t0+.5，n=60、r0=62、r1=[700,1500]、w=22、jit=.8、bend=.03。"
+      },
+      {
+        "name": "铜版逐线雕刻",
+        "value": "lemo-engraving：film/film.js:42–47的Ink.schedule按ol0/ol/h1/h2/h3分配每条线的s0/s1；engine/burin.js的Ink.build / draw按单线进度显露鼓起并收尖的刻线，conc=1/16/70/70/90。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-woodcut/film/engine/knife.js",
+      "demos/cases/lemo-woodcut/film/engine/hatch.js",
+      "demos/cases/lemo-woodcut/film/world.js",
+      "demos/cases/lemo-woodcut/film/shots.js",
+      "demos/cases/lemo-woodcut/film/shots2.js"
+    ],
+    "locator": "progOf / hatch / buildWorld / buildOpen / rays2",
+    "useCases": [
+      "时间可由刻刀读出，亮面随着木材被削去而显露，放射光成为真实刀痕。"
+    ],
+    "avoid": [
+      "在关键动作或留白上叠加争夺注意的主动作"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [
+        "mirrored-block-pull-print"
+      ],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-woodcut的原作render(t)重放“逐刀刻出画面”。每条刻痕持有起始时刻、持续时间和刀宽，沿刀路逐步显露；形体的reveal key分配粗细刀次，高潮光线由放射刻痕爆开。保留参数：film/engine/knife.js:progOf：u=clamp((t−s.t0)/s.dur)，进度u*(.55+.45*u)；hatch.js:hatch依据key、speed和jit分配t0/dur。；film/world.js:buildWorld：field在3–4.8秒，village从4+i*.08秒，sky在5–6.1秒；shots.js:buildOpen标题6–6.85秒，sp=3.2、wmax=4.4。；film/shots2.js:第二次浇铸的rays：39.3333秒起，t1=t0+.5，n=60、r0=62、r1=[700,1500]、w=22、jit=.8、bend=.03。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/carve-cut-by-cut-reveal/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-woodcut"
+      },
+      {
+        "caseId": "lemo-engraving"
+      }
+    ],
+    "previewAt": 4.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "逐刀刻出画面"
+      },
+      {
+        "t": 7,
+        "label": "来源片段2"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/carve-cut-by-cut-reveal.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-woodcut",
+      "bundle": "agent/cases/lemo-woodcut.json"
+    },
+    {
+      "caseId": "lemo-engraving",
+      "bundle": "agent/cases/lemo-engraving.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 逐刀刻出画面\n\n## 实现 Prompt\n\n用来源案例lemo-woodcut的原作render(t)重放“逐刀刻出画面”。每条刻痕持有起始时刻、持续时间和刀宽，沿刀路逐步显露；形体的reveal key分配粗细刀次，高潮光线由放射刻痕爆开。保留参数：film/engine/knife.js:progOf：u=clamp((t−s.t0)/s.dur)，进度u*(.55+.45*u)；hatch.js:hatch依据key、speed和jit分配t0/dur。；film/world.js:buildWorld：field在3–4.8秒，village从4+i*.08秒，sky在5–6.1秒；shots.js:buildOpen标题6–6.85秒，sp=3.2、wmax=4.4。；film/shots2.js:第二次浇铸的rays：39.3333秒起，t1=t0+.5，n=60、r0=62、r1=[700,1500]、w=22、jit=.8、bend=.03。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：0.000000–7.000000秒；39.000000–41.666700秒；1倍速，总时长9.666700秒。\n\n[打开 Demo](../../demos/patterns/carve-cut-by-cut-reveal/index.html) · [在库中查看](../../patterns.html#pattern/carve-cut-by-cut-reveal)\n"
+  },
+  "entrypoint": "demos/patterns/carve-cut-by-cut-reveal/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-engraving/LICENSES.md",
+      "bytes": 1027,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/CREDITS",
+      "bytes": 1754,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/film.m4a",
+      "bytes": 1324797,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fidelity.md",
+      "bytes": 3759,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/content.json",
+      "bytes": 2353,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/burin.js",
+      "bytes": 33064,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/copper.js",
+      "bytes": 12503,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/index.js",
+      "bytes": 2153,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/plate.js",
+      "bytes": 9974,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/wash.js",
+      "bytes": 7693,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/film.js",
+      "bytes": 27561,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/index.html",
+      "bytes": 462,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/lines.json",
+      "bytes": 914,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/main.js",
+      "bytes": 782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/subjects/bee.js",
+      "bytes": 24894,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/subjects/details.js",
+      "bytes": 16815,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/subjects/scallop.js",
+      "bytes": 6153,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/voices/dur.json",
+      "bytes": 78,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/BodoniModa-Italic-VF.ttf",
+      "bytes": 176300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/BodoniModa-VF.ttf",
+      "bytes": 162104,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/OFL-bodonimoda.txt",
+      "bytes": 4400,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/OFL.txt",
+      "bytes": 4384,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/PinyonScript-Regular.ttf",
+      "bytes": 151412,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/fonts.css",
+      "bytes": 397,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/index.html",
+      "bytes": 2438,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/CREDITS",
+      "bytes": 1754,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/README.md",
+      "bytes": 2897,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/build.sh",
+      "bytes": 1763,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/content_alt.json",
+      "bytes": 1803,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/events.json",
+      "bytes": 2157,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/example/index.html",
+      "bytes": 1830,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/mix.py",
+      "bytes": 10651,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/music/CREDITS_music.txt",
+      "bytes": 347,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/music/cues.json",
+      "bytes": 2555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/music/score.py",
+      "bytes": 26367,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/build_alt.sh",
+      "bytes": 1203,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/cuecheck.py",
+      "bytes": 2158,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/events.mjs",
+      "bytes": 825,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/readcheck/index.html",
+      "bytes": 2138,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/subs.py",
+      "bytes": 869,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/voices/words.json",
+      "bytes": 1498,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/LICENSES.md",
+      "bytes": 1188,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/assets/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/assets/walnut_diff.jpg",
+      "bytes": 2418767,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/CREDITS",
+      "bytes": 1231,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/film.m4a",
+      "bytes": 1872471,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fidelity.md",
+      "bytes": 9341,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/chars.js",
+      "bytes": 21756,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/filter.js",
+      "bytes": 5883,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/hatch.js",
+      "bytes": 12224,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/index.js",
+      "bytes": 8018,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/knife.js",
+      "bytes": 7696,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/print.js",
+      "bytes": 7223,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/film.js",
+      "bytes": 2054,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/fx.js",
+      "bytes": 13916,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/hands.js",
+      "bytes": 15604,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/index.html",
+      "bytes": 770,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/interior.js",
+      "bytes": 8952,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/main.js",
+      "bytes": 785,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/rig.js",
+      "bytes": 3174,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/shots.js",
+      "bytes": 14674,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/shots2.js",
+      "bytes": 34188,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/stage.js",
+      "bytes": 2299,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/timeline.json",
+      "bytes": 1543,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/trans.js",
+      "bytes": 3802,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/views.js",
+      "bytes": 9336,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/voices/dur.json",
+      "bytes": 58,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/world.js",
+      "bytes": 14764,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/IMFellEnglish-Italic.ttf",
+      "bytes": 202368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/IMFellEnglish.ttf",
+      "bytes": 194992,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/IMFellEnglishSC.ttf",
+      "bytes": 183932,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/OFL-IMFell.txt",
+      "bytes": 4359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/fonts.css",
+      "bytes": 378,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/index.html",
+      "bytes": 2986,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/CREDITS",
+      "bytes": 1231,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/README.md",
+      "bytes": 3474,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/build.sh",
+      "bytes": 2019,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/events.json",
+      "bytes": 3505,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/lines.json",
+      "bytes": 437,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/mix.py",
+      "bytes": 16792,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/music/CREDITS.txt",
+      "bytes": 269,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/music/score.json",
+      "bytes": 1416,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/music/score.py",
+      "bytes": 27361,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/sheet.js",
+      "bytes": 7210,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/test.js",
+      "bytes": 7322,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/tools/cuecheck.py",
+      "bytes": 2902,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/tools/final_asr.py",
+      "bytes": 1505,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/tools/mux.sh",
+      "bytes": 770,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/tools/subs.py",
+      "bytes": 831,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/voices/words.json",
+      "bytes": 1047,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/carve-cut-by-cut-reveal/index.html",
+      "bytes": 1081,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/carve-cut-by-cut-reveal/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-engraving.json",
+      "bytes": 10603,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/lemo-woodcut.json",
+      "bytes": 10904,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/carve-cut-by-cut-reveal.json",
+      "bytes": 3731,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/carve-cut-by-cut-reveal.jpg",
+      "bytes": 239960,
+      "role": "preview"
+    }
+  ]
+}

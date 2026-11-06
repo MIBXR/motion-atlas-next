@@ -1,0 +1,136 @@
+{
+  "id": "push-through-window",
+  "order": 19,
+  "title": "穿窗推镜",
+  "types": [
+    "camera",
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "从城市主窗连续推进到室内，重放预备拉回、穿窗过冲、速度条、闪白与到达镜震。",
+  "mechanism": "推镜前预备拉回，穿过窗口时过冲弹定，配放射速度条、单帧闪白与到达两帧镜震，回摆结束后继续向室内推进。",
+  "trigger": "镜头依次进入预备拉回、推进、穿玻璃和到达节点时。",
+  "effect": "嵌入主窗的室内沿用同一世界坐标并填满画面；速度条、亮闪和短帧镜震共同标记穿窗与到达。",
+  "timing": [
+    {
+      "name": "预备拉回",
+      "value": "86/30–90/30=2.867–3.000秒；A0=-.05；p=A0*E.ioQ(inv(camAntic,push,t))。"
+    },
+    {
+      "name": "连通推进",
+      "value": "90/30–105/30=3.000–3.500秒；S1=1920/64=30；NP=2.2；s=exp(lerp(log(1.12),log(30),p))。"
+    },
+    {
+      "name": "过冲弹定",
+      "value": "105/30–115/30=3.500–3.833秒；OB=1.2；kA=NP/(tg-tp)，kB=(OB+3)/(tS-tg)，PG=(kB+A0*kA)/(kA+kB)。"
+    },
+    {
+      "name": "放射速度条",
+      "value": "22条；f0=102+i%3；各持续2帧；ra=r0+320*u；len=200+rng*300。"
+    },
+    {
+      "name": "穿窗闪白",
+      "value": "fr===105；fill=#FFF6E9；持续1/30=.033秒。"
+    },
+    {
+      "name": "到达镜震",
+      "value": "112帧s*=1.03、cy-=9/s；113帧s*=.988、cx+=7/s。"
+    },
+    {
+      "name": "室内续推",
+      "value": "115/30–160/30=3.833–5.333秒；s*=1+.14*w；cx=P.x+100/S1*w；cy=P.y-40/S1*w。"
+    }
+  ],
+  "useCases": [
+    "街景进入室内",
+    "窗口作为镜头入口",
+    "连续推镜的穿越节点"
+  ],
+  "avoid": [
+    "竖屏重排",
+    "片段边界无缝循环"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放穿窗推镜。保留86/30–90/30秒的负向预备、90/30–105/30秒的加速推进与105/30–115/30秒的过冲弹定；缩放按对数尺度计算，NP=2.2、OB=1.2。保留22条分三批出现且各持续2帧的速度条、105帧奶油色闪片、112与113帧的到达镜震，以及115/30–160/30秒的室内续推。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。",
+  "demo": "demos/patterns/push-through-window/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-flat-vector"
+    },
+    {
+      "caseId": "lemo-circuit-board"
+    }
+  ],
+  "previewAt": 1.3333333333333335,
+  "markers": [
+    {
+      "t": 0,
+      "label": "主窗入口"
+    },
+    {
+      "t": 0.20000000000000018,
+      "label": "预备拉回"
+    },
+    {
+      "t": 0.3333333333333335,
+      "label": "连续推镜"
+    },
+    {
+      "t": 0.7333333333333334,
+      "label": "放射速度条"
+    },
+    {
+      "t": 0.8333333333333335,
+      "label": "穿窗闪白"
+    },
+    {
+      "t": 1.0666666666666669,
+      "label": "到达镜震"
+    },
+    {
+      "t": 1.166666666666667,
+      "label": "室内续推"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#2B2BFF",
+      "#FF5A4E",
+      "#FFC62B",
+      "#2EE6A8",
+      "#FFF6E9",
+      "#151433"
+    ],
+    "type": "Fredoka 600、700；Resource Han Rounded CN Bold 700。"
+  },
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments",
+      "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+    },
+    {
+      "field": "index.html 内联配置 → markers / reduced",
+      "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "lemo-circuit-board · 水流、交流和直流各有光的运动方式",
+      "value": "film/src/main.js:camStreet在34–34.6秒锁定SK.holeL，z从8.6×1.06对数推到2600；34.6秒换到charger层的LPAD，以2400→20反向退出，35.35秒显出充电器；孔内黑区承担尺度交接。"
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "mg-morph",
+  "entry": {
+    "id": "mg-morph",
+    "order": 9,
+    "title": "形状变形 · morphe. — One Shape, Every Story",
+    "subtitle": "一形万象：咖啡杯、太阳、海鸥、纸飞机与字标的连续变形",
+    "carriers": [
+      "video"
+    ],
+    "style": "graphic-type",
+    "purpose": "brand",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "形状变形",
+      "中介形状",
+      "图形叙事",
+      "色域擦除",
+      "字标"
+    ],
+    "summary": "墨滴成为咖啡杯后，连续变形成太阳、海上落日、海鸥、纸飞机、定位钉和爱心，最后组成 morphe. 字标。",
+    "focus": "复杂轮廓先收敛为圆或胶囊再展开，主体位移、旋转与挤压拉伸同步；蒸汽、光芒和波浪随主体连续变形，背景以色块擦除切换。",
+    "accent": "#3D5BFF",
+    "background": "#F4EEE3",
+    "timeline": true,
+    "kit": true,
+    "rhythm": {
+      "duration": 10,
+      "bpm": 150,
+      "beats": [
+        {
+          "t": 0.4,
+          "label": "咖啡落定",
+          "note": "墨滴落地成杯，飞溅延展为蒸汽。"
+        },
+        {
+          "t": 2,
+          "label": "太阳落定",
+          "note": "杯形经过圆形中介成为太阳，色域从主体向外扩张。"
+        },
+        {
+          "t": 3.2,
+          "label": "落日成景",
+          "note": "太阳沉入海平线，光芒连续变成海面波浪。"
+        },
+        {
+          "t": 4.4,
+          "label": "海鸥展开",
+          "note": "落日经过圆形中介成为海鸥。"
+        },
+        {
+          "t": 5.4,
+          "label": "纸机成形",
+          "note": "海鸥经过圆形中介成为纸飞机。"
+        },
+        {
+          "t": 6.4,
+          "label": "定位落点",
+          "note": "纸飞机回环俯冲，经胶囊成为定位钉并触发扩张色域。"
+        },
+        {
+          "t": 7.6,
+          "label": "爱心成形",
+          "note": "定位钉经过圆形中介成为爱心，随后双拍搏动。"
+        },
+        {
+          "t": 8.6,
+          "label": "字标成形",
+          "note": "爱心成为 m，圆环与胶囊展开为其余字母。"
+        },
+        {
+          "t": 8.95,
+          "label": "标语入场",
+          "note": "中英文标语依次抬入。"
+        },
+        {
+          "t": 9.38,
+          "label": "圆点归位",
+          "note": "七颗章节圆点沿同一路线汇入句号。"
+        }
+      ]
+    },
+    "layers": [
+      {
+        "name": "主体轮廓",
+        "role": "Canvas 2D 绘制主体；SVG 路径等距采样后，按对齐的点序插值轮廓、孔洞、线条与折面。"
+      },
+      {
+        "name": "背景色域",
+        "role": "奶油、金黄、朱红、群青与墨色按同一时间表从主体位置向外擦除。"
+      },
+      {
+        "name": "章节与字标",
+        "role": "章节字幕、进度圆点、Outfit 字标轮廓和中英文标语由时间直接推导。"
+      },
+      {
+        "name": "纸面与声音",
+        "role": "纸纹、逐帧颗粒与暗角覆盖画面；原片音轨按同一 cues 同步形变与落点。"
+      }
+    ],
+    "composition": {
+      "color": "墨色 #16151B、奶油 #F4EEE3、金黄 #FFB627、朱红 #FF4F2B、群青 #2438E8；主体和背景交换明暗关系。",
+      "typography": "Outfit SemiBold 600 的真实字形轮廓构成 morphe；HarmonyOS Sans SC 500 排中文，IBM Plex Mono 500 排英文与编号。",
+      "layout": "1920×1080 横屏；主体居中，章节信息在左下，七颗进度圆点在右下；结尾字标与双语标语居中。",
+      "imagery": "咖啡杯、太阳、落日、海鸥、纸飞机、定位钉、爱心与字标由同一组点序和圆、胶囊、圆环几何构成。",
+      "motion": "轮廓经圆形或胶囊中介桥接，叠加位移、旋转、挤压拉伸；纸飞机绕回环飞行后落成定位钉，末段字母由圆环和胶囊展开。",
+      "sound": "开启后播放原片 AAC 音轨；原作 audio.py 中，150BPM、D 大调的 future bass 配乐与形变落点音效共用 cues。",
+      "rhythm": "0.4、2.0、3.2、4.4、5.4、6.4、7.6、8.6 秒依次落定各形象，8.95 秒标语入场，9.14–9.38 秒章节圆点依次归位。",
+      "coherence": "同一个主体、圆形中介、连续子件和章节色域贯穿整条叙事链；七颗圆点最终汇入字标句号。"
+    },
+    "tokens": {
+      "palette": [
+        "#16151B",
+        "#F4EEE3",
+        "#FFB627",
+        "#FF4F2B",
+        "#2438E8"
+      ],
+      "type": "Outfit SemiBold 600；HarmonyOS Sans SC 500；IBM Plex Mono 500。",
+      "motion": [
+        {
+          "name": "主体采样",
+          "value": "const NB = 240, NH = 72, NM = 24, NS = 60;"
+        },
+        {
+          "name": "形变缓动",
+          "value": "const EM = bez(0.7, 0, 0.3, 1);"
+        },
+        {
+          "name": "杯转太阳",
+          "value": "'cup>sun': { via: [0, 18, 116], rot: 24, ctrl: [70, -10], sq: 0.13 }"
+        },
+        {
+          "name": "归点时间",
+          "value": "const ED = { t0: 8.44, st: 0.04, dur: 0.70 };"
+        }
+      ]
+    },
+    "useCases": [
+      "图形叙事",
+      "形变品牌片",
+      "产品发布会动效"
+    ],
+    "constraints": [
+      "原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。",
+      "10 秒，1920×1080，30fps；只提供横屏原作画幅，复刻公开成片的默认版本。"
+    ],
+    "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n形变动画 Morphing / Shape Morph\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: SVG + flubber or GSAP MorphSVGPlugin (tune shapeIndex), color-field wipes\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「万物相连」Apple-keynote-grade morph chain: one hero shape continuously becomes 6–8 meaningful icons, on the beat.\n- Chain example: coffee cup → (circle) → sun → sunset over sea → gull → paper plane → location pin → heart → invented brand logo \"morphe\" with wordmark.\n- Every A→B goes through a simple intermediate (circle/capsule) with rotation and 10–15% squash&stretch; sub-parts morph in sync (steam → sun rays → waves).\n- Background color fields change with each morph (clean color-block wipes); ease cubic-bezier(0.7,0,0.3,1), 3-frame cushions at start/end; no knotting/tangling ever (check every morph mid-point stills).\nSound: rhythmic plucky arpeggio; a pitched whoosh per morph landing on the beat.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n一个图形丝滑连续地变成另一个图形：手机变成地图钉、咖啡杯变成落日。是图形叙事（visual storytelling）的核心语法，苹果发布会动效和高端 explainer 里最见功力的部分。\n视觉特征 轮廓连续过渡无跳变, 中介形状桥接, 形变伴随位移旋转, 变形瞬间的挤压拉伸\n关键技法 路径对齐是前提：两形状顶点数一致、首顶点方位对应（AE 里重设 first vertex），否则会打结\n复杂 A→B 不直接变：先收敛为中介简形（圆/胶囊）再展开，'A→圆→B'两段各 8~12 帧\n形变全程叠加 10~15% squash & stretch 与轻微旋转，掩盖插值的机械感\n速度曲线中段最快 cubic-bezier(0.7,0,0.3,1)：起止各留 3 帧缓冲\nWeb 端用 flubber/polymorph 库做最优顶点匹配插值，效果远好于朴素 SMIL\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+    "migration": [
+      {
+        "field": "film/scene.js → I、MP、C",
+        "how": "调整图形定义、形变中介、轮廓对应关系与配色。"
+      },
+      {
+        "field": "film/glyphs.json",
+        "how": "字标轮廓由 source/tools/glyphs.py 从字体提取。"
+      },
+      {
+        "field": "film/cues.json",
+        "how": "调整形变、落点、字幕、色域与圆点归位节点。"
+      },
+      {
+        "field": "index.html → MotionKit.mountFilm",
+        "how": "接入时间轴、原片音轨与窗口等比缩放。"
+      }
+    ],
+    "demo": "demos/cases/mg-morph/index.html",
+    "patternIds": [
+      "morph-primitive-bridge",
+      "sea-mask-sunset",
+      "shape-docks-wordmark",
+      "analytic-motion-blur",
+      "shape-wipe-transition",
+      "film-grain"
+    ],
+    "previewAt": 9.8,
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "原作《形状变形 · morphe. — One Shape, Every Story》来自 [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)，作者 Vincentwei1021，固定提交 `49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`；原目录为 `demos/08-morph/`。代码、提示词、文档与成片采用 MIT 许可，许可原文见 [LICENSE](film/LICENSE)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "| 完整文件与版本 | 官方来源 | 许可原文 |\n| --- | --- | --- |\n| `HarmonyOS_Sans_SC_Medium.ttf`，Version 1.0 | [华为官方完整归档](https://developer.huawei.com/images/download/general/HarmonyOS-Sans.zip) | [HarmonyOS Sans Fonts License Agreement 原文](fonts/HarmonyOS-Sans-LICENSE.txt) |\n| `IBMPlexMono-Medium.ttf`，Version 2.3 | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/01d5d9f05246fb7090a8403b81257535cb1a088b/ofl/ibmplexmono/IBMPlexMono-Medium.ttf) | [SIL OFL 1.1 原文](fonts/IBMPlexMono-OFL.txt) |\n| `Outfit-SemiBold.ttf`，Version 1.100;gftools[0.9.27] | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/outfit/Outfit%5Bwght%5D.ttf) | [SIL OFL 1.1 原文](fonts/Outfit-OFL.txt) |\n| `Outfit[wght].ttf`，Version 1.100;gftools[0.9.27] | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/outfit/Outfit%5Bwght%5D.ttf) | [SIL OFL 1.1 原文](fonts/Outfit-OFL.txt) |\n\n`Outfit-SemiBold.ttf` 由完整可变字体在 `wght=600` 实例化；命令见 [fidelity.md](fidelity.md)。`film/glyphs.json` 的字形轮廓由原作 `source/tools/glyphs.py` 从 Outfit 提取，沿用 Outfit 的 SIL OFL 1.1。"
+      },
+      {
+        "scope": "共享贴图",
+        "notes": "`assets/textures/paper/Paper001_4K_color.jpg` 原样取自上述固定提交的共享贴图；源纹理为 [ambientCG Paper001](https://ambientcg.com/view?id=Paper001)，采用 [CC0](https://docs.ambientcg.com/license/)。\n\n本案例没有 vendor 包。"
+      },
+      {
+        "scope": "配乐",
+        "notes": "`audio/film.m4a` 从固定提交的 `videos/08-morph.mp4` 以 `ffmpeg -vn -c:a copy` 无损抽取 AAC 音轨，保留原片混音；成片与自制音频采用原作 MIT 许可。配乐生成过程原样保存在 `source/audio.py`，使用 [VCSL 乐器采样](https://github.com/sgossner/VCSL)（CC0）与原作合成器。"
+      }
+    ],
+    "relatedEntries": [
+      {
+        "kind": "material",
+        "id": "mg-styles-15",
+        "note": "提示词与配乐合成库所在素材"
+      }
+    ],
+    "energy": [
+      0.236,
+      0.24,
+      0.229,
+      0.2,
+      0.197,
+      0.234,
+      0.325,
+      0.345,
+      0.316,
+      0.355,
+      0.363,
+      0.384,
+      0.256,
+      0.214,
+      0.193,
+      0.242,
+      0.272,
+      0.264,
+      0.205,
+      0.175,
+      0.179,
+      0.203,
+      0.217,
+      0.259,
+      0.445,
+      0.503,
+      0.523,
+      0.407,
+      0.517,
+      0.491,
+      0.519,
+      0.535,
+      0.569,
+      0.534,
+      0.404,
+      0.392,
+      0.34,
+      0.252,
+      0.17,
+      0.123
+    ],
+    "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。",
+    "fidelity": "demos/cases/mg-morph/fidelity.md",
+    "licenses": "demos/cases/mg-morph/LICENSES.md",
+    "preview": "previews/cases/mg-morph.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 接入与保真说明\n\n复刻以公开默认成片为准，作品来源与固定版本见[条目 JSON](../../../entries/cases/mg-morph.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| 原 `index.html` → `film/scene.js`、`film/style.css`、`film/setup.js`、`index.html` | 拆分原作代码、样式与 DOM；由案例入口加载字体并调用 `MotionKit.mountFilm`。 | 路径改写 |\n| `film/scene.js` | 删除 `V5`、`NOLINK`、`HIDE_DOT`、`HIDE_TITLE`、自制中文标题几何、另一版末段形变与标题构建；混合表达式保留默认分支。 | 另一版剪辑分支 |\n| `film/scene.js` | 删除 `linkAtV5`、`window.linkAt` 与专用元素位置、椭圆测量、遮罩和画面探针；删除未参与绘制的旧颗粒画布。 | 开发工具 |\n| `film/scene.js`、`fonts/fonts.css` | 字体、纸纹和运行数据改为案例内相对路径；`cues.json` 与 `glyphs.json` 留在 `film/`，保留原数据；仅声明默认片使用的字体与字重。 | 路径改写 |\n| `audio.py` → `source/audio.py`；`tools/glyphs.py` → `source/tools/glyphs.py` | 原样保存配乐与字形轮廓生成脚本，保持脚本字节与相对位置。 | 移至 source |\n\n声音以 `ffmpeg -i videos/08-morph.mp4 -vn -c:a copy audio/film.m4a` 从公开成片抽取，未转码；来源与许可见 [LICENSES.md](LICENSES.md)。\n\n## 字体实例化\n\n完整 `Outfit[wght].ttf` 为 Google Fonts 官方 1.100，使用指定虚拟环境的 `fonttools==4.53.1` 在 600 字重实例化，保留完整可变原文件与原作静态文件名。\n\n```powershell\nC:/Users/mibxr/AppData/Local/Temp/atlas-work/mg-batch3/.venv/Scripts/python.exe -m fontTools.varLib.instancer 'demos/cases/mg-morph/fonts/Outfit[wght].ttf' wght=600 --output demos/cases/mg-morph/fonts/Outfit-SemiBold.ttf\n```\n\n## 接入\n\n`MotionKit.mountFilm` 以原作 `renderAt(t)` 接入 1920×1080、30fps、10 秒横屏舞台；中文 markers 从 `film/cues.json` 换算。声音默认关闭，开启后音轨与播放、暂停、拖动和倍速同步；`?embed`、`?render` 与 `?t=秒` 由共享运行时处理。\n\n`previewAt: 9.8`：9.8 秒 morphe. 字标、中文“一形 · 万象”和英文标语均已完整显现，七颗章节圆点已归入句号。减少动态时在同一时刻暂停。\n\n## 已接受差异\n\n原片由 `harness/render.mjs` 按快门区间对子帧采样平均，实时页面与 `shot.mjs` 直接绘制指定时刻，快速运动边缘保留该渲染层造成的运动模糊差异；原作代码内的解析拖影与模糊保留。\n\n## 与原片对照结果\n\n对照图位于工作区 `compare/mg-morph/`，左侧为原片 ffmpeg 取帧，右侧为 `shot.mjs` 在 1920×1080 的同刻截图。\n\n| 时刻 | 逐张结论 | 拼图 |\n| --- | --- | --- |\n| 1.0 秒 | 咖啡杯轮廓、杯孔、折面、蒸汽、托盘、纸纹与“早安”字幕的位置、字形和构图对应一致。 | `compare-1.0.png` |\n| 3.0 秒 | 太阳、光芒、海平线、三条倒影与章节字幕对应一致，运动中的海面和倒影边缘保留原片子帧平均模糊差异。 | `compare-3.0.png` |\n| 5.0 秒 | 海鸥到纸飞机之间的中介轮廓、主体位置、群青色域与“海风”字幕对应一致，快速形变边缘保留子帧平均模糊差异。 | `compare-5.0.png` |\n| 7.5 秒 | 心形、折面、朱红色域、章节圆点与“心动”字幕对应一致；画面下角正在离场的奶油色边缘保留运动模糊差异。 | `compare-7.5.png` |\n| 9.5 秒 | morphe. 字标、句号、中英文标语与扩散环中心和半径对应一致；原片扩散环因子帧平均呈现更宽、更淡的边缘。 | `compare-9.5.png` |\n\n`capture.mjs` 在 9.8 秒生成完整预览图，`shot.mjs` 的五个指定时刻均已生成截图与左右拼图。\n\n浏览器中，独立页和站点案例页自动播放、拖动与声音开关正常；独立页 `?t=5&autoplay=0` 停在 5 秒，案例页 `#case/mg-morph?t=5` 将定位传给 Demo。站点播放中的一次声画采样差约 37ms，结束时画面和音轨同时暂停。\n\n## 制作依赖与复现\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/08-morph && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n\n字形准备脚本 `source/tools/glyphs.py` 从当前目录的 `assets/fonts/Outfit-SemiBold.ttf` 读取字体；复现时将本案例 `fonts/Outfit-SemiBold.ttf` 放到该位置，输出 `glyphs.json`，现有结果位于 `film/glyphs.json`。\n",
+    "licenses": "# 第三方许可索引\n\n[来源、版本和许可事实](../../../entries/cases/mg-morph.json)\n\n- [film/LICENSE](film/LICENSE)\n- [fonts/HarmonyOS-Sans-LICENSE.txt](fonts/HarmonyOS-Sans-LICENSE.txt)\n- [fonts/IBMPlexMono-OFL.txt](fonts/IBMPlexMono-OFL.txt)\n- [fonts/Outfit-OFL.txt](fonts/Outfit-OFL.txt)\n\n## 制作依赖\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/08-morph && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "prompt": "# 形状变形 · morphe. — One Shape, Every Story\n\n## 实现 Prompt\n\nYou are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n形变动画 Morphing / Shape Morph\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: SVG + flubber or GSAP MorphSVGPlugin (tune shapeIndex), color-field wipes\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「万物相连」Apple-keynote-grade morph chain: one hero shape continuously becomes 6–8 meaningful icons, on the beat.\n- Chain example: coffee cup → (circle) → sun → sunset over sea → gull → paper plane → location pin → heart → invented brand logo \"morphe\" with wordmark.\n- Every A→B goes through a simple intermediate (circle/capsule) with rotation and 10–15% squash&stretch; sub-parts morph in sync (steam → sun rays → waves).\n- Background color fields change with each morph (clean color-block wipes); ease cubic-bezier(0.7,0,0.3,1), 3-frame cushions at start/end; no knotting/tangling ever (check every morph mid-point stills).\nSound: rhythmic plucky arpeggio; a pitched whoosh per morph landing on the beat.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n一个图形丝滑连续地变成另一个图形：手机变成地图钉、咖啡杯变成落日。是图形叙事（visual storytelling）的核心语法，苹果发布会动效和高端 explainer 里最见功力的部分。\n视觉特征 轮廓连续过渡无跳变, 中介形状桥接, 形变伴随位移旋转, 变形瞬间的挤压拉伸\n关键技法 路径对齐是前提：两形状顶点数一致、首顶点方位对应（AE 里重设 first vertex），否则会打结\n复杂 A→B 不直接变：先收敛为中介简形（圆/胶囊）再展开，'A→圆→B'两段各 8~12 帧\n形变全程叠加 10~15% squash & stretch 与轻微旋转，掩盖插值的机械感\n速度曲线中段最快 cubic-bezier(0.7,0,0.3,1)：起止各留 3 帧缓冲\nWeb 端用 flubber/polymorph 库做最优顶点匹配插值，效果远好于朴素 SMIL\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.\n\n## 动效 Token\n\n- **主体采样**：const NB = 240, NH = 72, NM = 24, NS = 60;\n- **形变缓动**：const EM = bez(0.7, 0, 0.3, 1);\n- **杯转太阳**：'cup>sun': { via: [0, 18, 116], rot: 24, ctrl: [70, -10], sq: 0.13 }\n- **归点时间**：const ED = { t0: 8.44, st: 0.04, dur: 0.70 };\n\n## 制作约束\n\n- 原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。\n- 10 秒，1920×1080，30fps；只提供横屏原作画幅，复刻公开成片的默认版本。\n\n## 迁移\n\n- `film/scene.js → I、MP、C`：调整图形定义、形变中介、轮廓对应关系与配色。\n- `film/glyphs.json`：字标轮廓由 source/tools/glyphs.py 从字体提取。\n- `film/cues.json`：调整形变、落点、字幕、色域与圆点归位节点。\n- `index.html → MotionKit.mountFilm`：接入时间轴、原片音轨与窗口等比缩放。\n\n[打开 Demo](../../demos/cases/mg-morph/index.html) · [在库中查看](../../cases.html#case/mg-morph)\n"
+  },
+  "entrypoint": "demos/cases/mg-morph/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-morph/LICENSES.md",
+      "bytes": 832,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/assets/textures/paper/Paper001_4K_color.jpg",
+      "bytes": 3684106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/audio/film.m4a",
+      "bytes": 342366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/fidelity.md",
+      "bytes": 4869,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/cues.json",
+      "bytes": 1541,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/glyphs.json",
+      "bytes": 24462,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/scene.js",
+      "bytes": 60329,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/setup.js",
+      "bytes": 257,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/style.css",
+      "bytes": 74,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/HarmonyOS-Sans-LICENSE.txt",
+      "bytes": 32768,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/HarmonyOS_Sans_SC_Medium.ttf",
+      "bytes": 8227312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/IBMPlexMono-OFL.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/Outfit-OFL.txt",
+      "bytes": 4389,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/Outfit-SemiBold.ttf",
+      "bytes": 55384,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/Outfit[wght].ttf",
+      "bytes": 110884,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/fonts.css",
+      "bytes": 475,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/index.html",
+      "bytes": 2250,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/source/audio.py",
+      "bytes": 8665,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-morph/source/cues.json",
+      "bytes": 1541,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-morph/source/tools/glyphs.py",
+      "bytes": 2387,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/mg-morph.json",
+      "bytes": 16052,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/mg-morph.jpg",
+      "bytes": 66111,
+      "role": "preview"
+    }
+  ]
+}

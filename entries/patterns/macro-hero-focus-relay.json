@@ -1,0 +1,113 @@
+{
+  "id": "macro-hero-focus-relay",
+  "order": 71,
+  "title": "镜头焦点接力",
+  "types": [
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15"
+  ],
+  "summary": "各段相机 cue 到达后，镜头在微距、全字、金属球与正面落版之间换位，独立焦点跟随主角，片尾持续微推。",
+  "mechanism": "各段相机 cue 到达后，镜头在微距、全字、金属球与正面落版之间换位，独立焦点跟随主角，片尾持续微推。",
+  "trigger": "各段相机 cue 到达时",
+  "effect": "镜头在微距、全字、金属球与正面落版之间换位，独立焦点跟随主角，片尾持续微推。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-3d-render 原片 0–10 秒；1 倍速，总时长 10 秒。"
+    },
+    {
+      "name": "镜头焦点接力",
+      "value": "POSE3 = dict(pos=(0.0, -9.9, 3.6), tgt=(0.0, 0.0, 0.30), lens=55, fstop=0.42, roll=0.0)\nconst tc = t - 8.4, crp = tc <= 0 ? 0 : 0.0092 * (tc < 0.6 ? tc * tc / 1.2 : tc - 0.3);"
+    }
+  ],
+  "useCases": [
+    "产品微距、全景与主角焦点的镜头接力。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-3d-render 原片 0–10 秒；总时长 10 秒。各段相机 cue 到达 → 镜头在微距、全字、金属球与正面落版之间换位，独立焦点跟随主角，片尾持续微推。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：POSE3 = dict(pos=(0.0, -9.9, 3.6), tgt=(0.0, 0.0, 0.30), lens=55, fstop=0.42, roll=0.0)\nconst tc = t - 8.4, crp = tc <= 0 ? 0 : 0.0092 * (tc < 0.6 ? tc * tc / 1.2 : tc - 0.3);。使用 1920×1080 横屏。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/macro-hero-focus-relay/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-3d-render"
+    }
+  ],
+  "previewAt": 9.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "三维软床"
+    },
+    {
+      "t": 0.5,
+      "label": "首字落地"
+    },
+    {
+      "t": 1.5,
+      "label": "第二字落地"
+    },
+    {
+      "t": 2,
+      "label": "第三字落地"
+    },
+    {
+      "t": 2.5,
+      "label": "第四字落地"
+    },
+    {
+      "t": 3.375,
+      "label": "字母再起"
+    },
+    {
+      "t": 5.3,
+      "label": "金属球入场"
+    },
+    {
+      "t": 5.8,
+      "label": "金属球悬停"
+    },
+    {
+      "t": 6,
+      "label": "砸落主拍"
+    },
+    {
+      "t": 6.42,
+      "label": "冠状波悬停"
+    },
+    {
+      "t": 8,
+      "label": "标语入场"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#EFE2EA",
+      "#4A2E4E",
+      "#FF8FC0"
+    ],
+    "type": "Fredoka 700；DM Sans 600；Noto Sans SC 500。"
+  }
+}

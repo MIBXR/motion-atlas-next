@@ -1,0 +1,320 @@
+{
+  "id": "lemo-living-screencast",
+  "order": 48,
+  "title": "Clawd 搬进来 · 活体实机录屏",
+  "subtitle": "Clawd Moves In",
+  "carriers": [
+    "video"
+  ],
+  "style": "interface",
+  "purpose": "brand",
+  "tech": [
+    "dom"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "活体实机录屏",
+    "信息与发布",
+    "代码影片"
+  ],
+  "summary": "Clawd从终端字符标志中爬出并搬入Claude应用，沿真实DOM元素上边缘跑跳，演示输入、Plan、diff审阅、预览和并行会话，最后逐词跳出标语。",
+  "focus": "高分辨率DOM界面与低分辨率像素小人的反差；光标代表用户，小人代表软件，每个落点与真实界面状态绑定。",
+  "accent": "#D97757",
+  "background": "#F5F1E9",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 5.94,
+  "rhythm": {
+    "duration": 59.4,
+    "bpm": 100,
+    "beats": [
+      {
+        "t": 0,
+        "label": "从终端标志诞生",
+        "note": "原片0.000000–5.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 5,
+        "label": "落在应用标题",
+        "note": "原片5.000000–9.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 9,
+        "label": "输入与发送",
+        "note": "原片9.000000–14.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 14,
+        "label": "沿文件树阅读",
+        "note": "原片14.000000–19.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 19,
+        "label": "选择Plan",
+        "note": "原片19.000000–23.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 23,
+        "label": "计划与冻结聚光",
+        "note": "原片23.000000–29.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 29,
+        "label": "审阅diff",
+        "note": "原片29.000000–32.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 32,
+        "label": "逐行评论",
+        "note": "原片32.000000–37.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 37,
+        "label": "改写与复查",
+        "note": "原片37.000000–42.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 42,
+        "label": "深色主题扩散",
+        "note": "原片42.000000–50.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 50,
+        "label": "并行会话",
+        "note": "原片50.000000–56.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 56,
+        "label": "逐词落版",
+        "note": "原片56.000000–59.400000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 5,
+      "to": 0.35,
+      "label": "从终端标志诞生",
+      "from": 0.15
+    },
+    {
+      "t0": 5,
+      "t1": 9,
+      "to": 0.5,
+      "label": "落在应用标题",
+      "from": 0.35
+    },
+    {
+      "t0": 9,
+      "t1": 14,
+      "to": 0.3,
+      "label": "输入与发送",
+      "from": 0.5
+    },
+    {
+      "t0": 14,
+      "t1": 19,
+      "to": 0.8,
+      "label": "沿文件树阅读",
+      "from": 0.3
+    },
+    {
+      "t0": 19,
+      "t1": 23,
+      "to": 0.65,
+      "label": "选择Plan",
+      "from": 0.8
+    },
+    {
+      "t0": 23,
+      "t1": 29,
+      "to": 0.45,
+      "label": "计划与冻结聚光",
+      "from": 0.65
+    },
+    {
+      "t0": 29,
+      "t1": 32,
+      "to": 0.6,
+      "label": "审阅diff",
+      "from": 0.45
+    },
+    {
+      "t0": 32,
+      "t1": 37,
+      "to": 0.5,
+      "label": "逐行评论",
+      "from": 0.6
+    },
+    {
+      "t0": 37,
+      "t1": 42,
+      "to": 0.25,
+      "label": "改写与复查",
+      "from": 0.5
+    },
+    {
+      "t0": 42,
+      "t1": 50,
+      "to": 0.1,
+      "label": "深色主题扩散",
+      "from": 0.25
+    },
+    {
+      "t0": 50,
+      "t1": 56,
+      "to": 0.08,
+      "label": "并行会话",
+      "from": 0.1
+    },
+    {
+      "t0": 56,
+      "t1": 59.4,
+      "to": 0.08,
+      "label": "逐词落版",
+      "from": 0.08
+    }
+  ],
+  "energyNote": "段落划分取自 DEMO.md Shots 与 film 内时间表；0–1 为画面密度、动作和声音强度的相对编辑标注。",
+  "observations": [
+    "终端标志的象限字符逐块变成方像素，组成18×10像素的小人。",
+    "main.js每帧测量data-a元素的getBoundingClientRect，再除以相机缩放求世界坐标。",
+    "Actor将输入框、文件行、菜单、按钮和标题文字的顶部作为落脚点。",
+    "连续相机按对数插值缩放并叠加微漂移，只有快速摇镜启用方向高斯模糊。"
+  ],
+  "composition": {
+    "color": "沿用Claude应用明暗主题；陶土色#D97757的小人与中性毛玻璃字幕形成主次。",
+    "typography": "Inter界面、JetBrains Mono代码、Newsreader标题和标语。",
+    "layout": "1920×1080；应用浮在桌面壁纸上，字幕与键位HUD固定在屏幕层。",
+    "imagery": "HTML/CSS/SVG重绘界面，像素精灵与道具使用同一方格。",
+    "motion": "小人落在DOM上沿；相机一镜内推近、漂移、急摇，缩放始终不小于1。",
+    "sound": "原片钢琴、爵士贝斯、鼓与8位音色，UI拟音和Kokoro旁白。",
+    "rhythm": "100BPM；每章以像素块遮挡转场，动作按旁白单词定位。",
+    "coherence": "UI状态、镜头、吉祥物与声音事件由film.js中的同一时间表派生。"
+  },
+  "layers": [
+    {
+      "name": "明暗界面",
+      "role": "同一UI状态分别渲染到明暗DOM，圆形遮罩切换主题。"
+    },
+    {
+      "name": "像素演员",
+      "role": "Clawd、克隆、铅笔、星点和落地尘土。"
+    },
+    {
+      "name": "相机与模糊",
+      "role": "世界层共同变换，未变换的外包层承载方向模糊。"
+    },
+    {
+      "name": "屏幕HUD",
+      "role": "章节、按键、字幕和聚光。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#F5F1E9",
+      "#1F1E1C",
+      "#D97757",
+      "#BD5D3A",
+      "#EEEAE2",
+      "#E08565"
+    ],
+    "type": "Inter 100–900、Newsreader 200–800及斜体、JetBrains Mono 100–800。",
+    "motion": [
+      {
+        "name": "DOM锚点",
+        "value": "film/main.js:A：getBoundingClientRect→(screen−center)/z+cam；film/film.js:at / Actor.eval读取顶部fy=0。"
+      },
+      {
+        "name": "相机",
+        "value": "film/film.js:camAt：x/y线性混合、log(z)混合，后续move从当前结果继续；微漂移1.2/.9px。"
+      },
+      {
+        "name": "急摇模糊",
+        "value": "film/main.js:render：与t−1/24相机位置求速度，超过30px后×.3，上限36px。"
+      }
+    ]
+  },
+  "useCases": [
+    "产品功能教程",
+    "软件上手引导",
+    "吉祥物产品片"
+  ],
+  "avoid": [
+    "只用截图替代可变UI状态的画面"
+  ],
+  "constraints": [
+    "动作端点以现有DOM元素为锚点。",
+    "旁白词锚点与voices/words.json同步。",
+    "主题揭示与界面状态共用时间轴。"
+  ],
+  "migration": [
+    {
+      "field": "film/main.js:A",
+      "how": "修改该处的DOM锚点参数。"
+    },
+    {
+      "field": "film/film.js:camAt",
+      "how": "修改该处的相机参数。"
+    },
+    {
+      "field": "film/main.js:render",
+      "how": "修改该处的急摇模糊参数。"
+    }
+  ],
+  "prompt": "制作一支活体实机录屏时间线影片。Clawd从终端字符标志中爬出并搬入Claude应用，沿真实DOM元素上边缘跑跳，演示输入、Plan、diff审阅、预览和并行会话，最后逐词跳出标语。高分辨率DOM界面与低分辨率像素小人的反差；光标代表用户，小人代表软件，每个落点与真实界面状态绑定。画面构成：沿用Claude应用明暗主题；陶土#D97757的小人与中性毛玻璃字幕形成主次。；Inter界面、JetBrains Mono代码、Newsreader标题和标语。；1920×1080；应用浮在桌面壁纸上，字幕与键位HUD固定在屏幕层。；HTML/CSS/SVG重绘界面，像素精灵与道具使用同一方格。；小人落在DOM上沿；相机一镜内推近、漂移、急摇，缩放始终不小于1。；原片钢琴、爵士贝斯、鼓与8位音色，UI拟音和Kokoro旁白。；100BPM；每章以像素块遮挡转场，动作按旁白单词定位。；UI状态、镜头、吉祥物与声音事件由film.js同一时间表派生。。实现入口为demos/cases/lemo-living-screencast/film/，MotionKit适配层仅调用并等待原作render(t)，使用原片音轨同步播放。",
+  "demo": "demos/cases/lemo-living-screencast/index.html",
+  "patternIds": [
+    "mascot-on-ui-edges",
+    "screencast-camera"
+  ],
+  "fidelity": "demos/cases/lemo-living-screencast/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/living-screencast",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/living-screencast/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；成片及静帧CC BY 4.0，署名LemoLab；第三方资源按CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/living-screencast"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/living-screencast.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/living-screencast/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/living-screencast)；代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原片钢琴、爵士贝斯、鼓与8位音色，UI拟音和Kokoro旁白。 原始署名见[audio/CREDITS](audio/CREDITS)，完整许可见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Inter 100–900、Newsreader 200–800及斜体、JetBrains Mono 100–800。 OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+    },
+    {
+      "scope": "界面与角色",
+      "notes": "Clawd与Claude应用界面归Anthropic；来源作品为LemoLab制作的非官方同人短片，CREDITS保留原署名。"
+    }
+  ]
+}

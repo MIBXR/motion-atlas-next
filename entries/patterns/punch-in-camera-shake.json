@@ -1,0 +1,142 @@
+{
+  "id": "punch-in-camera-shake",
+  "order": 76,
+  "title": "分级急推镜震",
+  "types": [
+    "camera",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape",
+    "portrait"
+  ],
+  "tags": [
+    "mg-styles-15"
+  ],
+  "summary": "拍点到达后，镜头分级急推，每级在少数帧内完成推近、过冲与镜震，之后继续缓推或加强颤动。",
+  "mechanism": "拍点到达后，镜头分级急推，每级在少数帧内完成推近、过冲与镜震，之后继续缓推或加强颤动。",
+  "trigger": "拍点到达时",
+  "effect": "镜头分级急推，每级在少数帧内完成推近、过冲与镜震，之后继续缓推或加强颤动。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-collage 原片 1.13–7.7 秒；mg-hanazi 原片 4.7–6.2 秒；1 倍速，总时长 8.07 秒。"
+    },
+    {
+      "name": "逐格俯拍冲镜",
+      "value": "z = [1.11, 1.075, 1.056, 1.05][kp]; cx = [12, -8, 3, 0][kp]; cy = [26, -14, 6, 0][kp];\nif (q6 >= 5.5 - 1e-4) { z = 1 + 0.022 * eIO((q6 - 5.5) / 2.0); px = 900; py = 540; }"
+    },
+    {
+      "name": "预警三连推",
+      "value": "const u = tt - p, e = E.outExpo(clamp(u / (2 * FR)));\nos = 1 + .03 * Math.exp(-Math.pow((u - 1.6 * FR) / (.9 * FR), 2))\n9 + 4 * k\n\"pushZ\": [\n  1.4,\n  2.0,\n  2.9\n ]"
+    }
+  ],
+  "useCases": [
+    "分级急推与镜震强调的喜剧或主拍段落。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-collage 原片 1.13–7.7 秒；mg-hanazi 原片 4.7–6.2 秒；总时长 8.07 秒。拍点到达 → 镜头分级急推，每级在少数帧内完成推近、过冲与镜震，之后继续缓推或加强颤动。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：z = [1.11, 1.075, 1.056, 1.05][kp]; cx = [12, -8, 3, 0][kp]; cy = [26, -14, 6, 0][kp];\nif (q6 >= 5.5 - 1e-4) { z = 1 + 0.022 * eIO((q6 - 5.5) / 2.0); px = 900; py = 540; }；const u = tt - p, e = E.outExpo(clamp(u / (2 * FR)));\nos = 1 + .03 * Math.exp(-Math.pow((u - 1.6 * FR) / (.9 * FR), 2))\n9 + 4 * k\n\"pushZ\": [\n  1.4,\n  2.0,\n  2.9\n ]。横屏来源使用 1920×1080，竖屏来源使用 1080×1920。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/punch-in-camera-shake/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-collage"
+    },
+    {
+      "caseId": "mg-hanazi"
+    }
+  ],
+  "previewAt": 2.92,
+  "markers": [
+    {
+      "t": 0,
+      "label": "脑洞拼贴"
+    },
+    {
+      "t": 0.2033333,
+      "label": "纸偶开口"
+    },
+    {
+      "t": 1.2033333,
+      "label": "剪线盖印"
+    },
+    {
+      "t": 1.37,
+      "label": "剪开头盖"
+    },
+    {
+      "t": 2.5366667,
+      "label": "动作悬停"
+    },
+    {
+      "t": 2.87,
+      "label": "脑洞弹开"
+    },
+    {
+      "t": 3.2033333,
+      "label": "火箭飞出"
+    },
+    {
+      "t": 5.2033333,
+      "label": "黑带拍入"
+    },
+    {
+      "t": 5.5366667,
+      "label": "脑洞大开"
+    },
+    {
+      "t": 6.37,
+      "label": "撕开纸页"
+    },
+    {
+      "t": 6.57,
+      "label": "综艺花字"
+    },
+    {
+      "t": 6.77,
+      "label": "高能预警"
+    },
+    {
+      "t": 7.12,
+      "label": "三连推近"
+    },
+    {
+      "t": 7.87,
+      "label": "炸毛主拍"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#16130F",
+      "#F2ECDF",
+      "#D2261C",
+      "#E0A355",
+      "#FF3D7F",
+      "#FFE14D",
+      "#16B9F0",
+      "#FFFFFF",
+      "#1E2A78"
+    ],
+    "type": "Anton 400；Bebas Neue 400；Alimama ShuHeiTi 700；Noto Serif SC 900；Noto Sans SC 700；IBM Plex Mono 500。；Resource Han Rounded 900；Alimama ShuHeiTi 700；Douyin Sans 700；LXGW Marker Gothic 400；ZCOOL KuaiLe 400；Luckiest Guy 400。"
+  },
+  "renderer": "gpu",
+  "previewAtPortrait": 7.52
+}

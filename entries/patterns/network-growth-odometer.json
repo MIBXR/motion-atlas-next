@@ -1,0 +1,69 @@
+{
+  "id": "network-growth-odometer",
+  "order": 169,
+  "title": "线网按年生长",
+  "types": [
+    "composition",
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "线路依各年份的phase沿八方向路径逐段画出，笔尖经过时站点亮起；新线抵达后生成换乘胶囊，线路圆标带出年份，既有线网保持原位。",
+  "mechanism": "线路依各年份的phase沿八方向路径逐段画出，笔尖经过时站点亮起；新线抵达后生成换乘胶囊，线路圆标带出年份，既有线网保持原位。",
+  "trigger": "原作时间轴进入所列动作区间。",
+  "effect": "线路依各年份的phase沿八方向路径逐段画出，笔尖经过时站点亮起；新线抵达后生成换乘胶囊，线路圆标带出年份，既有线网保持原位。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "13.000—21.700秒，1倍速。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "年度生长",
+      "value": "14.3—21.7秒依次展开2002—2010线路；phase按t0/t1插值路径弧长，2010在19.9秒落定。",
+      "source": "demos/cases/lemo-transit-map/film/timeline.js:phases / WARP"
+    },
+    {
+      "name": "站点与换乘",
+      "value": "路径先画到tip，passed状态驱动站点显现与换乘；多线共享走廊用平行偏移保持可读。",
+      "source": "demos/cases/lemo-transit-map/film/film.js:phase / drawMap"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-transit-map/film/timeline.js",
+    "demos/cases/lemo-transit-map/film/film.js"
+  ],
+  "locator": "film/timeline.js:phases / WARP；film/film.js:phase / drawMap",
+  "useCases": [
+    "线网按年生长"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": [],
+    "notes": "机械里程表的逐位滚动归入rolling-digits，本条只拆解线网按年份生长的机制。"
+  },
+  "prompt": "以来源案例lemo-transit-map的原作render(t)重放“线网按年生长”。线路依各年份的phase沿八方向路径逐段画出，笔尖经过时站点亮起；新线抵达后生成换乘胶囊，线路圆标带出年份，既有线网保持原位。 参数：14.3—21.7秒依次展开2002—2010线路；phase按t0/t1插值路径弧长，2010在19.9秒落定。；路径先画到tip，passed状态驱动站点显现与换乘；多线共享走廊用平行偏移保持可读。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+  "demo": "demos/patterns/network-growth-odometer/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-transit-map"
+    }
+  ],
+  "previewAt": 6.9,
+  "markers": [
+    {
+      "t": 0,
+      "label": "线网按年生长"
+    }
+  ],
+  "renderer": "gpu"
+}

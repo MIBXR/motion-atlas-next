@@ -1,0 +1,98 @@
+{
+  "id": "key-change-color-flip",
+  "order": 178,
+  "title": "转调红白反色",
+  "types": [
+    "transition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "转调处全画面红白反色：转调竖线和文字标记随乐谱滚到播放线，底色、笔触、行名和音符同步经粉色过渡，调号与场次同时切换。",
+  "mechanism": "转调竖线（annotations.modulations，虚线 [3,6]）带着 globalX 世界坐标和文字标记（如 F → D · ↓ m3）一起左移，到达播放线时背景系数 q（shots.backgrounds，约 1 秒的曲线）从 0 升到 1。渲染里所有颜色都按 mix(白, 红, q) 或 mix(墨, 白, q) 插值：底色、行线、行名、音符、标题与徽章因此同时反色，中间经过粉色。场次头部（shots.headers）与调名（SCENES）在同一刻切换。转调回到白底时 q 由 1 降回 0，同一条曲线反向使用。",
+  "trigger": "转调竖线抵达播放线：F→D 的竖线在 3827.15÷190≈20.14 秒、D→B♭ 的竖线在 5274.325÷190≈27.76 秒。",
+  "effect": "画面在转调的瞬间由白底变红底（或退回白底），颜色整体反转，调号标题换成新一场。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "butterfly-garden-score：19.8–21.5秒；butterfly-garden-score：27.2–29.2秒；1倍速，总时长3.7秒。"
+    },
+    {
+      "name": "反色曲线",
+      "value": "backgrounds[0]：20.083–21.133 秒 q→1；backgrounds[1]：27.667–28.9 秒 q→0。"
+    },
+    {
+      "name": "转调线",
+      "value": "mod-0 globalX 3827.15，19.2–25.217 秒；mod-1 globalX 5274.325，26.8–32.817 秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "反色系数",
+      "value": "butterfly-garden-score film/scene.js:background / mix / rgb，q 取自 film/data/shots.json:backgrounds[].curve；C.white=[255,255,255]、C.red=[232,8,39]，画布底色为 mix(C.white, C.red, q)。"
+    },
+    {
+      "name": "转调线与标记",
+      "value": "butterfly-garden-score film/data/annotations.json:modulations / words（mod-0…mod-3），虚线 dash=[3,6]，宽度 1.45 至 1.75；film/scene.js:annotationsAt 按 positionX(globalX+.5) 绘制。"
+    },
+    {
+      "name": "场次与调号",
+      "value": "butterfly-garden-score film/scene.js:SCENES / header，第二場 t=20.15（ニ長調）、間奏 t=27.766667（変ロ長調）；film/data/shots.json:headers。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/butterfly-garden-score/film/scene.js",
+    "demos/cases/butterfly-garden-score/film/data/shots.json",
+    "demos/cases/butterfly-garden-score/film/data/annotations.json"
+  ],
+  "locator": "butterfly-garden-score film/scene.js:background / header / annotationsAt（modulations）",
+  "useCases": [
+    "调性、段落或情绪发生明显转折的音乐讲解",
+    "需要用一次整体换色标出结构分界的数据或曲式短片"
+  ],
+  "avoid": [
+    "全片转折很多，反色会反复出现而失去分量",
+    "配色没有对应反色版本、颜色靠渐变或照片承载的画面"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "scrolling-score-timeline",
+      "perspective-scene-title"
+    ],
+    "conflicts": [],
+    "notes": "转调线随卷轴滚入，反色与场次标题在同一时刻发生，需与滚动总谱共用时钟；整幅需要白红两套配色。"
+  },
+  "prompt": "用来源案例 butterfly-garden-score 的原作 renderAt(t) 重放“转调红白反色”。保留 [3,6] 虚线转调竖线与文字标记随卷轴滚入，到达播放线后 q 在约 1 秒内 0→1，经粉色把底、行线、行名、音符一并反色，场次与调号同步切换；27.7 秒再以同一曲线退回白底。按 index.html 内联配置的 segments 定位 19.8–21.5、27.2–29.2 秒，复用原作数据、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/key-change-color-flip/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "butterfly-garden-score"
+    }
+  ],
+  "previewAt": 0.9,
+  "markers": [
+    {
+      "t": 0,
+      "label": "F → D 转调线滚入"
+    },
+    {
+      "t": 0.9,
+      "label": "白底经粉色反为红底"
+    },
+    {
+      "t": 1.7,
+      "label": "D → B♭ 转调线滚入"
+    },
+    {
+      "t": 3,
+      "label": "红底经粉色退回白底"
+    }
+  ]
+}

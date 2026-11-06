@@ -1,0 +1,299 @@
+{
+  "id": "lemo-risograph",
+  "order": 37,
+  "title": "周日骑行 · Risograph 孔版印刷",
+  "subtitle": "Sunday Ride",
+  "carriers": [
+    "video"
+  ],
+  "style": "print-craft",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "webgl"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "Risograph 孔版印刷",
+    "印刷与版画",
+    "代码影片"
+  ],
+  "summary": "骑车人带着篮子穿过沉睡的蓝色街道，经过面包店时画面加入黄色，驶进公园时加入粉色，鸽子搭上法棍。套印圆盘转为河边太阳，静默时色版错位漂开，下拍锁回后转入分享面包的场景。",
+  "focus": "每块新增色版推进一个故事段落，透明专色叠印、固定网点和套版节拍构成完整画面。",
+  "accent": "#e64b83",
+  "background": "#f5eedb",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 28.8,
+  "rhythm": {
+    "duration": 40,
+    "beats": [
+      {
+        "t": 0,
+        "label": "车铃特写",
+        "note": "0–2秒，车铃特写。"
+      },
+      {
+        "t": 2,
+        "label": "蓝色街道",
+        "note": "2–8秒，蓝色街道。"
+      },
+      {
+        "t": 8,
+        "label": "黄色面包店",
+        "note": "8–16秒，黄色面包店。"
+      },
+      {
+        "t": 16,
+        "label": "粉色公园",
+        "note": "16–19秒，粉色公园。"
+      },
+      {
+        "t": 19,
+        "label": "鸽群爆发",
+        "note": "19–21.5秒，鸽群爆发。"
+      },
+      {
+        "t": 21.5,
+        "label": "法棍乘客",
+        "note": "21.5–24秒，法棍乘客。"
+      },
+      {
+        "t": 24,
+        "label": "圆盘吞景",
+        "note": "24–26秒，圆盘吞景。"
+      },
+      {
+        "t": 26,
+        "label": "河边静默与锁版",
+        "note": "26–29秒，河边静默与锁版。"
+      },
+      {
+        "t": 29,
+        "label": "分享面包",
+        "note": "29–32秒，分享面包。"
+      },
+      {
+        "t": 32,
+        "label": "俯拍拉远到印纸",
+        "note": "32–36秒，俯拍拉远到印纸。"
+      },
+      {
+        "t": 36,
+        "label": "片尾",
+        "note": "36–40秒，片尾。"
+      }
+    ],
+    "bpm": 120
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "to": 0.2,
+      "label": "车铃特写",
+      "from": 0.2
+    },
+    {
+      "t0": 2,
+      "t1": 8,
+      "to": 0.3,
+      "label": "蓝色街道",
+      "from": 0.3
+    },
+    {
+      "t0": 8,
+      "t1": 16,
+      "to": 0.5,
+      "label": "黄色面包店",
+      "from": 0.5
+    },
+    {
+      "t0": 16,
+      "t1": 19,
+      "to": 0.6,
+      "label": "粉色公园",
+      "from": 0.6
+    },
+    {
+      "t0": 19,
+      "t1": 21.5,
+      "to": 0.85,
+      "label": "鸽群爆发",
+      "from": 0.85
+    },
+    {
+      "t0": 21.5,
+      "t1": 24,
+      "to": 0.45,
+      "label": "法棍乘客",
+      "from": 0.45
+    },
+    {
+      "t0": 24,
+      "t1": 26,
+      "to": 0.6,
+      "label": "圆盘吞景",
+      "from": 0.6
+    },
+    {
+      "t0": 26,
+      "t1": 29,
+      "to": 0.2,
+      "label": "河边静默与锁版",
+      "from": 0.2
+    },
+    {
+      "t0": 29,
+      "t1": 32,
+      "to": 0.5,
+      "label": "分享面包",
+      "from": 0.5
+    },
+    {
+      "t0": 32,
+      "t1": 36,
+      "to": 0.35,
+      "label": "俯拍拉远到印纸",
+      "from": 0.35
+    },
+    {
+      "t0": 36,
+      "t1": 40,
+      "to": 0.1,
+      "label": "片尾",
+      "from": 0.1
+    }
+  ],
+  "energyNote": "段落划分取自DEMO.md的Shots与源码场景时间表；0–1能量数值是根据画面与声音密度作出的相对编辑标注。",
+  "observations": [
+    "画布RGB三个通道分别记录蓝、黄、粉版的墨量，lighter增加色版，WebGL2按独立网角与位移印到纸上。",
+    "0.02、8、16秒依次扫入三版，围巾在黄版加入前保持纸白。",
+    "24–25.5秒粉色圆盘先覆盖旧景再收成河上太阳；26–28秒色版漂移，28秒随合奏锁版。"
+  ],
+  "composition": {
+    "color": "纸#F6F1E6，蓝#0078BF、黄#FFE800、荧光粉#FF48B0，叠版产生绿、紫与橙。",
+    "typography": "Bricolage Grotesque 800粗标题与Jost 500–700字幕，片尾片名粉蓝两次落印相差10px。",
+    "layout": "1920×1080、24fps，宽景保留大块天空和小人物；面包交换、鸽子和分享使用中近景。",
+    "imagery": "代码绘制骑车人、自行车、法棍、鸽子与城市景观；专色密度画布经孔版印刷着色器输出。",
+    "motion": "人物动作12fps保持帧，车轮由路程驱动，双骨IK踩踏，围巾行波；色版在节拍上踢动并回弹。",
+    "sound": "120BPM原创巴萨诺瓦随版数加乐器，Kokoro am_adam旁白，单车铃、纸鼓、鸽翼、刹车与面包脆响。",
+    "rhythm": "蓝街—黄面包店—粉公园逐层充实，鸽群爆发后圆盘转场；一小节静默漂版，再在28秒下拍锁回。",
+    "coherence": "画面逐版加色对应配乐逐层加器乐，错版成为可听可见的停顿和落拍。"
+  },
+  "layers": [
+    {
+      "name": "底材与空间",
+      "role": "纸#F6F1E6，蓝#0078BF、黄#FFE800、荧光粉#FF48B0，叠版产生绿、紫与橙。"
+    },
+    {
+      "name": "主体与绘制",
+      "role": "代码绘制骑车人、自行车、法棍、鸽子与城市景观；专色密度画布经孔版印刷着色器输出。"
+    },
+    {
+      "name": "镜头与时间",
+      "role": "人物动作12fps保持帧，车轮由路程驱动，双骨IK踩踏，围巾行波；色版在节拍上踢动并回弹。"
+    },
+    {
+      "name": "文字与声音",
+      "role": "Bricolage Grotesque 800粗标题与Jost 500–700字幕，片尾片名粉蓝两次落印相差10px。 120BPM原创巴萨诺瓦随版数加乐器，Kokoro am_adam旁白，单车铃、纸鼓、鸽翼、刹车与面包脆响。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#F6F1E6",
+      "#0078BF",
+      "#FFE800",
+      "#FF48B0"
+    ],
+    "type": "Jost可变字体100–900；Bricolage Grotesque可变字体200–800、宽75%–100%。",
+    "motion": [
+      {
+        "name": "色版叠出",
+        "value": "film/film.js:53–59：gate=[1,t>=8,t>=16]，每版.55秒自−60扫到W+200。"
+      },
+      {
+        "name": "套版漂移",
+        "value": "film/film.js:36–50：26.05–27.9秒漂开，dv=[[-6,5],[24,-13],[-22,15]]；28秒以exp(−16a)cos(40a)锁回。"
+      },
+      {
+        "name": "孔版网点",
+        "value": "film/riso.js：周期7px，网角15°/0°/75°，独立旋转0/.0005/−.0004，grain=.55。"
+      }
+    ]
+  },
+  "useCases": [
+    "品牌短片",
+    "城市日常",
+    "专色插画叙事"
+  ],
+  "avoid": [
+    "以观众滚动阅读为主的页面"
+  ],
+  "constraints": [
+    "画面通过原作render(t)按原帧率定位，字体和全部绘制输入预载后再开始播放。",
+    "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+  ],
+  "migration": [
+    {
+      "field": "film/film.js → SHOTS / plates / regist",
+      "how": "更改镜头、加版时刻、套版节拍与圆盘交接。"
+    },
+    {
+      "field": "film/riso.js / draw.js / rider.js",
+      "how": "更改专色、网点、纸面与骑车人造型。"
+    }
+  ],
+  "prompt": "制作一支Risograph 孔版印刷时间线影片。每块新增色版推进一个故事段落，透明专色叠印、固定网点和套版节拍构成完整画面。纸#F6F1E6，蓝#0078BF、黄#FFE800、荧光粉#FF48B0，叠版产生绿、紫与橙。Bricolage Grotesque 800粗标题与Jost 500–700字幕，片尾片名粉蓝两次落印相差10px。1920×1080、24fps，宽景保留大块天空和小人物；面包交换、鸽子和分享使用中近景。人物动作12fps保持帧，车轮由路程驱动，双骨IK踩踏，围巾行波；色版在节拍上踢动并回弹。蓝街—黄面包店—粉公园逐层充实，鸽群爆发后圆盘转场；一小节静默漂版，再在28秒下拍锁回。120BPM原创巴萨诺瓦随版数加乐器，Kokoro am_adam旁白，单车铃、纸鼓、鸽翼、刹车与面包脆响。实现入口位于demos/cases/lemo-risograph/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+  "demo": "demos/cases/lemo-risograph/index.html",
+  "patternIds": [
+    "block-by-block-print-reveal",
+    "overprint-disc-transition",
+    "misregistration-lock"
+  ],
+  "fidelity": "demos/cases/lemo-risograph/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/risograph",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/risograph/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；成片和静帧CC BY 4.0，署名LemoLab；各字体、采样与语音来源见CREDITS及LICENSES.md。"
+  },
+  "sources": [
+    {
+      "label": "固定风格与制作源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/risograph"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/risograph.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/risograph/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/risograph)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "120BPM原创巴萨诺瓦随版数加乐器，Kokoro am_adam旁白，单车铃、纸鼓、鸽翼、刹车与面包脆响。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Jost可变字体100–900；Bricolage Grotesque可变字体200–800、宽75%–100%。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

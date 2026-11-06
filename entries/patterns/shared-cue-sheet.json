@@ -1,0 +1,122 @@
+{
+  "id": "shared-cue-sheet",
+  "order": 29,
+  "title": "画音共用节拍表",
+  "types": [
+    "rhythm",
+    "sound"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "依次重放三片的密集节点段，在画面上用中文标出当前节点，并沿用原片音轨。重放内容还包括逐帧手绘的旋转、爆炸与逐笔书写，以及线条艺术的停笔续笔段。",
+  "mechanism": "画面与配乐读取同一份 film/cues.json，将动作和对应音效定位在同一时间轴；三个来源依次重放，说明层显示当前节点的中文名称。 逐帧手绘共用划火、跳跃、爆炸与书写节点；线条艺术额外从同一路径导出笔尖速度与转角，供笔触响度和结构音使用。",
+  "trigger": "共享时间表中的画面与声音节点到达时。",
+  "effect": "同一节点同时决定原片画面的动作位置与对应音轨时刻，节点说明随来源和时间更新。",
+  "timing": [
+    {
+      "name": "画面时间基准",
+      "value": "1920×1080、30fps；原作帧号除以30换算为秒。"
+    },
+    {
+      "name": "扁平矢量落点",
+      "value": "180、195、210、225帧；6、6.5、7、7.5秒。"
+    },
+    {
+      "name": "包豪斯级联",
+      "value": "120BPM；R1=6、R2=6.5、R3=7.2、R4=7.5秒，8秒定格。"
+    },
+    {
+      "name": "像素开箱节点",
+      "value": "6秒震箱；6.2、6.3秒箱盖跳动；6.4秒开箱；6.8秒接物；7.2秒片名。"
+    },
+    {
+      "name": "逐帧手绘节点",
+      "value": "120BPM、24fps；6.5秒爆炸，7.25–8.5秒每0.125秒一笔。"
+    },
+    {
+      "name": "线条路径数据",
+      "value": "速度差分dt=1/600；按120Hz采样，CORN[i]>0.05且TD[i]-lastT>0.05时导出转角。"
+    },
+    {
+      "name": "总时长",
+      "value": "12.892秒；保留原三段，末尾追加逐帧手绘和线条艺术。"
+    }
+  ],
+  "useCases": [
+    "原片动作与音效节点对照",
+    "多来源节拍表展示",
+    "用逐帧手绘的动作表和线条艺术共享的笔尖速度、转角数据同步画面与声音。"
+  ],
+  "avoid": [
+    "片段边界无缝循环"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 引用五个来源案例的原作、字体、素材与成品音轨，以 index.html 内联配置 的 segments 依次重放密集节点段。保持1920×1080、30fps；画面调用原作 renderAt(t)，音轨使用同一时刻映射。扁平矢量保留180、195、210、225帧四个图标落点；包豪斯保留120BPM与6–8秒的级联；像素片保留6.4秒开箱、6.8秒接物和7.2秒片名。说明层使用中文显示当前 cue 名，声音默认关闭。 总时长12.892秒；末尾依次追加逐帧手绘5.3–9.075秒、线条艺术1.883–5.100秒，原有三段保持。逐帧手绘沿用同一film/cues.json的旋转、爆炸和逐笔书写时刻；线条艺术同时共享笔尖速度与转角数据，中文节点显示停笔和续笔。",
+  "demo": "demos/patterns/shared-cue-sheet/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "mg-flat-vector"
+    },
+    {
+      "caseId": "mg-bauhaus"
+    },
+    {
+      "caseId": "mg-pixel"
+    },
+    {
+      "caseId": "mg-cel-boil"
+    },
+    {
+      "caseId": "mg-line-art"
+    },
+    {
+      "caseId": "lemo-swiss-motion"
+    }
+  ],
+  "previewAt": 1.7,
+  "markers": [
+    {
+      "t": 0,
+      "label": "扁平矢量"
+    },
+    {
+      "t": 1.9,
+      "label": "几何包豪斯"
+    },
+    {
+      "t": 4.3,
+      "label": "像素艺术"
+    },
+    {
+      "t": 5.9,
+      "label": "逐帧手绘"
+    },
+    {
+      "t": 9.675,
+      "label": "线条艺术"
+    }
+  ],
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / cues",
+      "how": "设置来源片段与中文节点名称，画面和原音轨使用同一时刻映射。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "瑞士动态排版",
+      "value": "lemo-swiss-motion：film/score.json 的列→音高、行→起音、长度→音长由 film/main.js 与 source/music/score.py 共同读取；film/film.js:buildEvents 导出 source/events.json，供 source/mix.py 的拟音使用，32–36秒扫奏。"
+    }
+  ]
+}

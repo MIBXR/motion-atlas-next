@@ -1,0 +1,797 @@
+{
+  "id": "lemo-opuscar",
+  "order": 5,
+  "title": "lemo-opuscar · 66 种代码影片风格",
+  "type": "agent-skill",
+  "summary": "66 种影片风格，每种配一支完全由代码逐帧渲染的示范短片（Canvas / WebGL 画面、免费采样配乐、本地 TTS 旁白），附导演指南、技术指南与“改成我的风格”流程。",
+  "workflow": [
+    "确定主题并选风格，一次询问事实、用户素材、语言与是否先看分镜，再补齐简报的其余内容。",
+    "打开示范制作说明前，按 DIRECTOR.md 在 TREATMENT.md 中写出三套候选结构、取舍、镜头、节拍与声音安排。",
+    "读取所选 STYLE.md 的画面、色彩、字体、动作、镜头与声音不变量，用实际绘图代码做风格帧。",
+    "从 Demo 中学习笔刷、绑定、着色器与混音技术，围绕用户主题编写故事、道具、镜头和时间轴。",
+    "按 TECHNIQUE.md 完成旁白与语音识别、采样配乐、逐帧画面、拟音、混音和视频合成，优先采用风格规定的帧率。",
+    "按 DIRECTOR.md 自检声音、节奏、运镜、表演与交付文件，用户要求分镜时先等待分镜审阅。",
+    "MY-STYLES.md 的五步是逐题规划、确认摘要、用代码比较风格帧、制作15–30秒示范片、用户确认后保存到个人风格目录。"
+  ],
+  "useCases": [
+    "按指定风格制作主题短片与科普、旅行、品牌、纪实影片",
+    "借用笔刷、布局、点云、微缩模型、声音和逐帧渲染技术",
+    "把现有风格改成品牌或频道自己的风格，或从空白开始保存个人风格"
+  ],
+  "avoid": [
+    "上游声明该素材为 Claude Opus 5.5 调校，其他模型可能难以复现。",
+    "单支影片约需30–60分钟 Agent 时间与相应 token。",
+    "运行环境需要 Node 20+、ffmpeg 7+、Python 3.11+（或 uv）。"
+  ],
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "README 的 Licence 节：代码和文档（含风格文本）MIT；styles、画廊与 Releases 中的示范影片及静帧 CC BY 4.0，署名 LemoLab 并链接仓库，改编注明改动；用户新做影片归用户。孟菲斯微缩景观的风格与示范片作者为 Eian（YIAN6557 / EianLu）。画廊动画为原片截取 4 秒、缩放后的无声循环 WebP。game-show 的 macOS say 喊声、paper-lantern 的 Edge TTS 旁白、news-package 的豆包 TTS 旁白被明确排除在 CC BY 4.0 外。"
+  },
+  "install": "claude plugin marketplace add lemomo-ai/lemo-opuscar\nclaude plugin install lemo-opuscar@lemolab\n\n或：\ngit clone https://github.com/lemomo-ai/lemo-opuscar.git\ncd lemo-opuscar\nclaude",
+  "snapshotPath": "demos/materials/lemo-opuscar/",
+  "snapshotEntry": "plugin/skills/lemo-opuscar/SKILL.md",
+  "research": "docs/materials/lemo-opuscar.md",
+  "relatedEntries": [
+    {
+      "kind": "case",
+      "id": "lemo-watercolor",
+      "note": "沿降雨梯度横移澳大利亚景观，再用大陆地图回溯干湿变化。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-swiss-motion",
+      "note": "让红圆脱离网格、带动海报重排，最后揭示版面中的乐谱。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-lidar-survey",
+      "note": "剥去森林点云的树冠，显出林下旧农田的石墙。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-memphis-diorama",
+      "note": "以主树回弹带动换季波，让微缩河湾依次经历四季。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-ink-wash",
+      "note": "用笔触和纸白演出侠客渡江，让书写动作斩开巨浪。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-woodcut",
+      "note": "逐刀刻出铸钟故事，用反刻字揭印和铜色表现钟声。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-spy-titles",
+      "note": "让特工穿过字母布景，以圆形硬切和斜线串联追逐。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-paper-popup",
+      "note": "随书页展开纸片谷、森林与海洋，让主角最终走进真实房间。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-ukiyoe",
+      "note": "把旅人的五段行程化作套印山景，最后拉远成一幅画轴。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-shadow-puppet",
+      "note": "每射落一个太阳便熄灭一盏灯，最后转到幕布背后。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-papercut-red",
+      "note": "让折剪的红纸展开成窗花，用镂空灯光化解年兽来袭。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-impasto",
+      "note": "让雨伞随圆舞曲逐拍染色，轨迹累积成广场上的曼陀罗。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-crayon-book",
+      "note": "以蜡笔防染显出星星，让女孩为失眠的月亮盖上拼布被。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-paper-lantern",
+      "note": "用层叠纸雕和逐节亮灭的车窗，讲述夜车驶向海边的旅程。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-whiteboard",
+      "note": "在同一块白板上逐步推演 GPS、原子钟与相对论的关系。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-urban-sketch",
+      "note": "让追逐草帽的路线在无彩速写中逐处晕开淡彩。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-chalkboard",
+      "note": "沿汉字字形的演变逐笔追踪弓箭，解释“射”的含义。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-risograph",
+      "note": "随骑行路线逐层叠加油墨色，让错版漂移在节拍上重新套准。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-halftone-dossier",
+      "note": "用三项猫咪捣乱证据组成案卷，最终盖下无罪释放印章。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-engraving",
+      "note": "逐层刻出蜜蜂图版，再放大细节、晕染淡彩并覆上护纸。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-silkscreen-poster",
+      "note": "以旅行海报和票根串联环球旅程，越过世界另一侧后返回北京。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-printed-long-take",
+      "note": "在同一河谷长镜头中反复再印，对照丹顶鹤数量的变化。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-art-deco",
+      "note": "跟随门童穿过饭店送达乐谱，用午夜钟声逐字点亮灯牌。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-blueprint",
+      "note": "让接云机器在蓝图中自行装配，再用修订云线为花朵降雨。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-stained-glass",
+      "note": "沿四格彩窗演出骑士寻龙的故事，以修补铅条完成转折。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-pictogram-motion",
+      "note": "让失物招领处的雨伞同时撑开，把伞墙转为网格纹样。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-ascii-crt",
+      "note": "将地球来信拆为字符地图，再拉远到无人值守的月球房间。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-dark-keynote",
+      "note": "把杂乱界面元素汇成光流，逐步显出产品窗口与性能指标。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-living-screencast",
+      "note": "让 Clawd 沿真实界面边缘跑跳，串联输入、审阅与预览操作。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-circuit-board",
+      "note": "跟随电流穿过水坝、换流站与插座，最后拉远成整张电路板。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-midcentury-toon",
+      "note": "以教育片式演示介绍扫地机，把清扫路线拉成印刷平面图。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-hd-2d",
+      "note": "跟随提灯人穿越夜林和风暴，点亮灯塔后唤起海上船灯。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-brick-toy",
+      "note": "让坍塌的积木火箭重新拼装并飞向月亮，最后拉回真实书桌。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-lowpoly-island",
+      "note": "让岛屿生长逐次奏出音符，再由灯塔扫光重奏旋律。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-backrooms",
+      "note": "用重复告示、对焦失灵和磁带断裂逐步瓦解夜班入职守则。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-satellite-briefing",
+      "note": "对照咸海历年海岸线与港口距离，再显出北咸海的回水。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-briefing-board",
+      "note": "在简报墙上比较四种桥型，让船只通行验证最终方案。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-white-model",
+      "note": "按建成年代点亮鹿特丹白模，以高度光层和阴影展示城市。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-archive-lighttable",
+      "note": "把负片转正并推入照片，对照电报与档案记录的飞行时长。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-microscope",
+      "note": "从真实玻片推入细胞核，逐像素比较两个区域的蓝色占比。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-caption-news",
+      "note": "用字幕、报告高亮和双栏账本解释蜂群损失与补建。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-visual-investigation",
+      "note": "按事件时刻交叉对照新闻片、照片、证词与报告，汇成证据地图。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-news-package",
+      "note": "用价格表、折线、地图信函与规格卡串联一周四则 AI 新闻。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-telestrator",
+      "note": "定格比赛画面圈人画线，再以双机位、倒带和俯视板拆解进球。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-countdown",
+      "note": "随发射倒计时展开多机位分屏，在点火瞬间合为一幅画面。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-kino-montage",
+      "note": "把工地实拍、工人照片与文档剪辑在一起，将人物叠成大厦。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-hologram-hud",
+      "note": "从扫描线生成电助力车线框，以部件爆炸、引线与读数呈现规格。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-teardown",
+      "note": "在连续镜头中逐层展开分体键盘，再合拢并标出实物尺寸。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-dataviz",
+      "note": "把百年夏季温度与人生批注叠合，最终将点线化作温度条纹。"
+    },
+    {
+      "kind": "case",
+      "id": "lemo-transit-map",
+      "note": "逐段描出上海地铁的扩张，以站名层级和里程表呈现规模。"
+    }
+  ],
+  "sources": [
+    {
+      "label": "README.md",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/README.md"
+    },
+    {
+      "label": "AGENTS.md",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/AGENTS.md"
+    },
+    {
+      "label": "DIRECTOR.md",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/DIRECTOR.md"
+    },
+    {
+      "label": "styles/README.md",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/README.md"
+    },
+    {
+      "label": "Gallery 页面源码（固定提交）",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styleboard/index.html"
+    },
+    {
+      "label": "公开 Gallery",
+      "url": "https://lemomo-ai.github.io/lemo-opuscar/"
+    }
+  ],
+  "gallery": [
+    {
+      "path": "previews/materials/lemo-opuscar/opuscar98.webp",
+      "caption": "作者成片 · 奥斯卡九十八年 OPUSCAR 98：一个 Clawd 走过 1927–2025 年的 98 部最佳影片，每部换成贴合影片的画风。原片约 391.424 秒，此处为 130.475 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/opuscar98.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/caption-news.webp",
+      "caption": "作者成片 · 字幕新闻 Caption News：美国一年死掉 130 万箱蜜蜂，总数却涨了 6%：静音也能看懂的新闻。原片约 59.5 秒，此处为 22.3 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/caption-news.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/newsreel.webp",
+      "caption": "作者成片 · 1920s 新闻影片 1920s Newsreel：1926 年报纸说查尔斯顿会跳坏膝盖，福特工人野餐会上的孩子照跳不误。原片约 54.6 秒，此处为 30.2 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/newsreel.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/countdown.webp",
+      "caption": "作者成片 · 实时倒计时分屏 Live Countdown Split-screen：阿尔忒弥斯二号发射的最后一分钟，一秒不剪：格子从 1 开到 9，点火合成 1。原片约 59.5 秒，此处为 28.5 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/countdown.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/city-symphony.webp",
+      "caption": "作者成片 · 延时交响 Time-lapse Symphony：纽约的一天：延时光河、踩着十六分音符的网格，1899 年和今天并排。原片约 52 秒，此处为 11.2 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/city-symphony.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/visual-investigation.webp",
+      "caption": "作者成片 · 视觉调查 Visual Investigation：新闻片、照片、证词和调查报告排上同一条时间轴，五路来源指向一处。原片约 60 秒，此处为 30.9 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/visual-investigation.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/kino-montage.webp",
+      "caption": "作者成片 · 构成主义蒙太奇 Constructivist Montage：帝国大厦的小册子写着建造者，工地实拍和老照片给出答案：每天 2,500 人。原片约 60 秒，此处为 2.5 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/kino-montage.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/telestrator.webp",
+      "caption": "作者成片 · 体育战术板 Sports Telestrator：半场 0–3，费内巴切 12 分钟连进三球：冻住画面、画线、分屏、射门图。原片约 54.4 秒，此处为 13.6 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/telestrator.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/news-package.webp",
+      "caption": "作者成片 · 电视新闻包装 Broadcast News Package：一周四条 AI 新闻，一整套电视台包装：串联单、标题条、翻牌价格表、规格卡。原片约 53.5 秒，此处为 18.4 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/news-package.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。原片的豆包 TTS 旁白被上游排除在 CC BY 4.0 授权外。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/satellite-briefing.webp",
+      "caption": "作者成片 · 卫星简报 Satellite Briefing：卫星照着地图去找咸海，找到的是沙漠；只有筑了坝的那一块回来了。原片约 37.8 秒，此处为 13.6 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/satellite-briefing.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/briefing-board.webp",
+      "caption": "作者成片 · 工程简报板 Engineering Briefing Board：一条河要架桥，四种桥型在一面简报墙上逐个受检，拍板的是桥下要过的船。原片约 40 秒，此处为 36 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/briefing-board.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/lidar-survey.webp",
+      "caption": "作者成片 · 点云测绘 LiDAR Survey：激光点云剥掉一片森林的树冠，露出当年农田的石墙：3.4 公里。原片约 40 秒，此处为 18.6 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/lidar-survey.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/white-model.webp",
+      "caption": "作者成片 · 白模投影 Projection on White Model：投影机把数据一层层刷上鹿特丹白模：从 1940 年的空洞到今天的塔楼。原片约 40 秒，此处为 30.4 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/white-model.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/data-physical.webp",
+      "caption": "作者成片 · 数据实物化 Data Physicalization：十二年风电和太阳能装机叠成实物，绕表盘升成两条螺旋，2021 年太阳能反超。原片约 39.4 秒，此处为 35.375 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/data-physical.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/teardown.webp",
+      "caption": "作者成片 · 产品拆解 Exploded Teardown：开源键盘的一半在一次环绕中逐层拆开，看到主控再合拢，标上真实尺寸。原片约 38.8 秒，此处为 9.75 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/teardown.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/microscope.webp",
+      "caption": "作者成片 · 显微叙事 Microscope Story：一镜从肝组织玻片推到单个细胞核，两个圆逐像素数出 2.4 倍的蓝。原片约 39.5 秒，此处为 24.6 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/microscope.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/archive-lighttable.webp",
+      "caption": "作者成片 · 档案灯台 Archive Light Table：电报说最长飞了 57 秒；放大镜下，莱特兄弟的底片和档案说是 59 秒。原片约 40 秒，此处为 22.3 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/archive-lighttable.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/crayon-book.webp",
+      "caption": "作者成片 · 蜡笔儿童绘本 Crayon Picture Book：月亮失眠了，小女孩爬上屋顶给它唱摇篮曲。原片约 52 秒，此处为 43.68 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/crayon-book.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/watercolor.webp",
+      "caption": "作者成片 · 水彩笔刷 Watercolor Brush：跟着降雨从澳洲红色腹地一路画到绿色海岸，一镜到底。原片约 113.6 秒，此处为 68.16 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/watercolor.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/ink-wash.webp",
+      "caption": "作者成片 · 中国水墨 Chinese Ink Wash：侠客踏水过江，一剑断流。原片约 48 秒，此处为 34.56 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/ink-wash.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/impasto.webp",
+      "caption": "作者成片 · 油画厚涂 Impasto Oil Painting：灰色雨中广场，第一把红伞撑开，圆舞曲把整个广场刷上颜色。原片约 39.7 秒，此处为 28.58 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/impasto.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/one-line.webp",
+      "caption": "作者成片 · 一笔画 One-line Drawing：一根不离纸的线画完一个人的一生，再把笔交给孩子。原片约 47.5 秒，此处为 39.9 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/one-line.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/whiteboard.webp",
+      "caption": "作者成片 · 白板讲解 Whiteboard Explainer：手机怎么知道你在哪：GPS、原子钟，和相对论每天多出的 38 微秒。原片约 111 秒，此处为 55.5 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/whiteboard.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/urban-sketch.webp",
+      "caption": "作者成片 · 钢笔淡彩 Urban Sketch · Pen & Wash：公园只是一张钢笔速写，风把草帽吹到哪里，哪里才有颜色。原片约 32.4 秒，此处为 16.2 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/urban-sketch.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/chalkboard.webp",
+      "caption": "作者成片 · 黑板粉笔 Chalkboard：粉笔写下网上的说法，再一擦，把「射」写回三千年前。原片约 49.3 秒，此处为 42.5 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/chalkboard.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/shadow-puppet.webp",
+      "caption": "作者成片 · 皮影戏 Shadow Puppetry：十日炙烤大地，后羿张弓射日。原片约 54.4 秒，此处为 21.76 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/shadow-puppet.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/ukiyoe.webp",
+      "caption": "作者成片 · 浮世绘 Ukiyo-e：旅人走向远山，每个镜头都是一幅版画；巨浪是高潮，结尾是远山与整幅画轴拉远。原片约 44 秒，此处为 26.4 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/ukiyoe.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/papercut-red.webp",
+      "caption": "作者成片 · 红色窗花剪纸 Red Paper-cut：除夕年兽进村，小女孩剪出的大窗花照亮全村，把它吓跑。原片约 49 秒，此处为 35.28 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/papercut-red.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/paper-lantern.webp",
+      "caption": "作者成片 · 纸雕灯影 Paper-cut Lightbox：一列老夜车跑最后一趟：从雪山小站穿过长隧道开到海边，到站后车窗一扇扇熄灭。原片约 51 秒，此处为 9.6 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/paper-lantern.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。原片的Edge TTS 旁白被上游排除在 CC BY 4.0 授权外。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/risograph.webp",
+      "caption": "作者成片 · Risograph 孔版印刷 Risograph Print：周日早晨骑车穿过城市：面包店、公园、河边，每到一处加一版油墨，最后三版套印。原片约 40 秒，此处为 28.8 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/risograph.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/halftone-dossier.webp",
+      "caption": "作者成片 · 复古半调案卷 Halftone Dossier：橘猫胖橘被立案审查：测试重力、凌晨跑酷，最后无罪释放。原片约 30 秒，此处为 9 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/halftone-dossier.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/woodcut.webp",
+      "caption": "作者成片 · 木刻版画 Woodcut Print：村子用一整个冬天铸一口钟，钟声第一次响起，雪停了。原片约 58.5 秒，此处为 49.14 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/woodcut.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/engraving.webp",
+      "caption": "作者成片 · 铜版画 Copperplate Engraving：一张博物志图版自己刻出来：雕刀推开铜版，蜜蜂一线线成形，最后手工水彩上色。原片约 40 秒，此处为 34 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/engraving.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/silkscreen-poster.webp",
+      "caption": "作者成片 · 丝印旅行海报 Silkscreen Travel Poster：一张满屏丝印海报一座城，票根数着离家的公里数，走到世界的另一头，才发现那是回家的路。原片约 50 秒，此处为 44.5 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/silkscreen-poster.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/printed-long-take.webp",
+      "caption": "作者成片 · 印刷长镜头 Printed Long Take：刮版画的北海道河谷一镜到底，丹顶鹤从 33 只数回到 1,927 只。原片约 60 秒，此处为 15.4 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/printed-long-take.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/swiss-motion.webp",
+      "caption": "作者成片 · 瑞士动态排版 Swiss Motion Graphics：一张音乐会海报按瑞士设计的五条规则自己排版，第五条是只打破一条。原片约 44 秒，此处为 31.68 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/swiss-motion.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/spy-titles.webp",
+      "caption": "作者成片 · 60s 间谍片头 60s Spy Title Sequence：虚构 1964 年间谍片的片头：追一把被偷的钥匙，几何碎片最后拼成片名。原片约 44.1 秒，此处为 26.46 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/spy-titles.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/art-deco.webp",
+      "caption": "作者成片 · 装饰艺术 Art Deco：1930 年的大饭店，门童赶在午夜前把一封信送上顶楼。原片约 58.4 秒，此处为 17.52 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/art-deco.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/blueprint.webp",
+      "caption": "作者成片 · 蓝图 / 工程制图 Blueprint：发明家的蓝图自己画出一台接云机器，修订云线变成了真的雨云。原片约 46.7 秒，此处为 33.62 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/blueprint.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/stained-glass.webp",
+      "caption": "作者成片 · 彩色玻璃窗 Stained Glass：阳光从清晨移到黄昏，照到哪一格花窗，哪一格的故事就动起来。原片约 56.5 秒，此处为 40.68 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/stained-glass.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/pictogram-motion.webp",
+      "caption": "作者成片 · 象形运动图形 Pictogram Motion：一把被落在公交车上的黄伞，晴天里在失物招领的货架上等了一整天，暴雨回来时和另外 312 把一起撑开：物件、交通、天气和标识，都是卡着节拍的几何象形符号。原片约 50 秒，此处为 9.2 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/pictogram-motion.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/ascii-crt.webp",
+      "caption": "作者成片 · ASCII / CRT 终端 ASCII / CRT Terminal：月球基地的 AI 沉睡 40 年后被唤醒，用字符画出“家”来回复。原片约 59.8 秒，此处为 50.23 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/ascii-crt.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/dataviz.webp",
+      "caption": "作者成片 · 数据叙事 Data Storytelling：一百年的夏季气温，图表本身就是故事。原片约 50 秒，此处为 42 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/dataviz.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/iso-infographic.webp",
+      "caption": "作者成片 · 等距信息图 Isometric Infographic：一杯咖啡从种植园到你手里的旅程。原片约 58.8 秒，此处为 35.28 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/iso-infographic.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/dark-keynote.webp",
+      "caption": "作者成片 · 暗色科技发布 Dark Tech Keynote：虚构 app Tidy 的发布片：被埋掉的光标一键把几百个窗口归位。原片约 42 秒，此处为 8.4 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/dark-keynote.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/living-screencast.webp",
+      "caption": "作者成片 · 活体实机录屏 Living Screencast：像素小人 Clawd 搬进 Claude 应用，一镜到底演示 Plan 模式和自检。原片约 59.4 秒，此处为 5.94 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/living-screencast.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/hologram-hud.webp",
+      "caption": "作者成片 · 科幻全息界面 Sci-fi Hologram HUD：电助力车被扫描成全息线框，目标框依次锁定电池、电机、刹车。原片约 39 秒，此处为 25.5 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/hologram-hud.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/transit-map.webp",
+      "caption": "作者成片 · 地铁线路图 Transit Map：一张纸上的线路图，从 1993 年的 6 公里长到 21 条线、906 公里。原片约 47 秒，此处为 36.2 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/transit-map.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/isometric-picture-book.webp",
+      "caption": "作者成片 · 等距绘本 Isometric Picture Book：等距的登机口和机舱里，小人按顺序登机，讲清哪种叫法快将近一半。原片约 59.8 秒，此处为 37.5 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/isometric-picture-book.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/circuit-board.webp",
+      "caption": "作者成片 · 电路板 Circuit Board：江河变成电路板上的走线，电流从水坝跑 2,080 公里进手机充电器。原片约 60 秒，此处为 56 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/circuit-board.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/rubber-hose.webp",
+      "caption": "作者成片 · 1930s 橡皮管卡通 1930s Rubber Hose Cartoon：一只咖啡杯满厨房追一块逃跑的方糖。原片约 50 秒，此处为 30 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/rubber-hose.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/cel-anime-80s.webp",
+      "caption": "作者成片 · 80 年代赛璐璐动画 80s Cel Anime：快递少女骑车穿过雨后霓虹都市，赶在黎明发射前送到一盘磁带。原片约 59 秒，此处为 17.7 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/cel-anime-80s.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/scifi-toon.webp",
+      "caption": "作者成片 · 科幻情景喜剧卡通 Sci-Fi Sitcom Toon：厌世天才开传送门只想买杯咖啡，却穿过越来越离谱的平行宇宙。原片约 57.5 秒，此处为 11.5 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/scifi-toon.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/midcentury-toon.webp",
+      "caption": "作者成片 · 50s 扁平卡通 Mid-century Cartoon：用 50 年代教育片的口吻，三步教你装好一台扫地机。原片约 40 秒，此处为 3.2 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/midcentury-toon.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/pixel-rpg.webp",
+      "caption": "作者成片 · 16-bit 像素 RPG 16-bit Pixel RPG：勇士在最终 Boss 门前存档，存档画面闪回一路冒险。原片约 54.5 秒，此处为 27.25 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/pixel-rpg.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/hd-2d.webp",
+      "caption": "作者成片 · HD-2D HD-2D：灯塔熄灭，孙女提着最后一簇火穿过夜林、爬上风暴悬崖。原片约 76.5 秒，此处为 55.08 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/hd-2d.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/microgame.webp",
+      "caption": "作者成片 · 微游戏快闪 Microgame Frenzy：见习宇航员闯五秒训练营，越来越快，Boss 关亲手降落回地球。原片约 59.8 秒，此处为 23.92 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/microgame.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/game-show.webp",
+      "caption": "作者成片 · 综艺节奏扁平 Game Show Flat：把 AI 发展史做成一局节奏游戏，模型踩着拍登场，最后发成绩单。原片约 148.8 秒，此处为 74.4 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/game-show.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。原片的macOS say 喊声被上游排除在 CC BY 4.0 授权外。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/silent-film.webp",
+      "caption": "作者成片 · 1920s 默片 1920s Silent Film：面包店学徒追一个滚走的面包，最后掰成两半分给饿肚子的小女孩。原片约 54.2 秒，此处为 39.02 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/silent-film.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/backrooms.webp",
+      "caption": "作者成片 · 后室 / 新怪谈 Liminal Found Footage：新夜班员工拍下入职第一晚：无尽的黄色办公空间，和墙上的员工守则。原片约 59.7 秒，此处为 35.82 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/backrooms.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/brick-toy.webp",
+      "caption": "作者成片 · 积木玩具 Brick Toy：积木宇航员用零件拼出火箭，飞向积木月亮。原片约 54 秒，此处为 38.88 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/brick-toy.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/paper-popup.webp",
+      "caption": "作者成片 · 纸片立体书 Paper Pop-up Book：立体书在书桌上打开，小精灵 Pip 在纸片世界冒险，最后跳出书外。原片约 133 秒，此处为 26.6 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/paper-popup.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/tilt-shift.webp",
+      "caption": "作者成片 · 移轴微缩 Tilt-Shift Miniature：玩具城的早高峰，一切都像模型。原片约 38 秒，此处为 22.8 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/tilt-shift.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/lowpoly-island.webp",
+      "caption": "作者成片 · 低多边形等距 Low-poly Isometric Island：空海里一格格长出小岛和村庄，每放一块响一个音符，直到星空。原片约 53 秒，此处为 21.2 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/lowpoly-island.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/glass-product.webp",
+      "caption": "作者成片 · 玻璃质感产品 Glass Product Render：虚构玻璃耳机 Aura 的开箱与特写。原片约 32 秒，此处为 19.2 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/glass-product.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/memphis-diorama.webp",
+      "caption": "作者成片 · 孟菲斯微缩景观 Memphis Diorama：一个河湾一镜过完四季，大树一蹲一弹，就换一季。原片约 45 秒，此处为 25 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/memphis-diorama.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。风格与示范片作者为 Eian（YIAN6557 / EianLu）。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/desktop-flythrough.webp",
+      "caption": "作者成片 · 桌面穿梭 Desktop Flythrough：一张猫照片跳过桌上的应用卡片，从一台手机飞到朋友手机里，一镜跟到底。原片约 60 秒，此处为 55.966667 秒起 4 秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/desktop-flythrough.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    },
+    {
+      "path": "previews/materials/lemo-opuscar/my-style-material-grid.webp",
+      "caption": "作者成片 · 材质网格 Material Grid：保留瑞士网格、节拍与排版，把图形改成黏土、塑料、毛毡、玻璃和铬，从俯视海报倾斜成物件桌面。原片约31秒，此处为9秒起4秒片段的循环动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/my-style-material-grid.mp4",
+      "license": "CC BY 4.0；LemoLab × Claude Opus 5.5，来源 https://github.com/lemomo-ai/lemo-opuscar；本库截取4秒、缩放并转为无声循环 WebP，第三方资源沿用原片 CREDITS 的许可。"
+    }
+  ]
+}

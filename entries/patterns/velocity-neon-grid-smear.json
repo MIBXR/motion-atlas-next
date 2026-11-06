@@ -1,0 +1,78 @@
+{
+  "id": "velocity-neon-grid-smear",
+  "order": 56,
+  "title": "网格速度拖影",
+  "types": [
+    "texture",
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15",
+    "合成波"
+  ],
+  "summary": "透视霓虹网格随公路速度向镜头推进，横向线条按快门位移展宽并补偿亮度，路侧反光条同步拉长。",
+  "mechanism": "透视霓虹网格随公路速度向镜头推进，横向线条按快门位移展宽并补偿亮度，路侧反光条同步拉长。",
+  "trigger": "公路推进速度随时间曲线变化时",
+  "effect": "网格与反光条沿运动方向形成速度相关的连续拖影。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-synthwave 原片 0–9.867 秒；1 倍速，总时长 9.867 秒。"
+    },
+    {
+      "name": "网格速度拖影参数",
+      "value": "    vec2 fb = fw + vec2(0., uBlur);                       // transverse lines smeared by this sample's travel (no strobing)\n    float eC = max(1.5 * fw.y / (1.5 * fw.y + uBlur), .12), eG = max(6.8 * fw.y / (6.8 * fw.y + uBlur), .10);   // energy-conserving smear\n  U.uBlur.value = stepped ? 0 : speed(ts) * SHUT / FPS / MBS / 5;\n  postU.uStr.value = stepped ? 1 : 1 + speed(ts) * SHUT / FPS / MBS / CAP_L;"
+    }
+  ],
+  "useCases": [
+    "霓虹公路推进",
+    "透视网格的速度反馈"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-synthwave 原片 0–9.867 秒；总时长 9.867 秒。透视霓虹网格随公路速度向镜头推进，横向线条按快门位移展宽并补偿亮度，路侧反光条同步拉长。参数保持原作数值：    vec2 fb = fw + vec2(0., uBlur);                       // transverse lines smeared by this sample's travel (no strobing)\n    float eC = max(1.5 * fw.y / (1.5 * fw.y + uBlur), .12), eG = max(6.8 * fw.y / (6.8 * fw.y + uBlur), .10);   // energy-conserving smear\n  U.uBlur.value = stepped ? 0 : speed(ts) * SHUT / FPS / MBS / 5;\n  postU.uStr.value = stepped ? 1 : 1 + speed(ts) * SHUT / FPS / MBS / CAP_L;\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/velocity-neon-grid-smear/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "mg-synthwave"
+    }
+  ],
+  "previewAt": 3,
+  "markers": [
+    {
+      "t": 0,
+      "label": "合成波"
+    },
+    {
+      "t": 1.5,
+      "label": "机制画面 1"
+    },
+    {
+      "t": 3,
+      "label": "机制画面 2"
+    },
+    {
+      "t": 8.5,
+      "label": "机制画面 3"
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "mirrored-block-pull-print",
+  "pattern": {
+    "id": "mirrored-block-pull-print",
+    "order": 97,
+    "title": "反刻版揭印转正",
+    "types": [
+      "transition",
+      "type-motion"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "木版以镜像变换显示反刻标题；滚墨覆纸后，以圆柱卷纸的正、背面条带绘制揭纸过程，露出可读的正印。唯一的铜色随浇铸扩大，片尾收于小钟高光。",
+    "mechanism": "木版以镜像变换显示反刻标题；滚墨覆纸后，以圆柱卷纸的正、背面条带绘制揭纸过程，露出可读的正印。唯一的铜色随浇铸扩大，片尾收于小钟高光。",
+    "trigger": "反字刻完后进入7秒的滚墨、覆纸与揭纸流程；后续印张以同样的卷纸方式换景。",
+    "effect": "文字的正反来自实体印刷关系，色版在叙事高潮时覆盖范围最大，再收为片尾的一点。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "5.800000–10.500000秒；39.000000–41.666700秒；54.400000–58.500000秒；1倍速，总时长11.466700秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "反刻与揭印",
+        "value": "film/shots.js:blockFrame镜像木版；7秒滚墨、7.6667覆纸、8秒擦压、8.5–9秒peelState(u,230)并curl(F=1900)。"
+      },
+      {
+        "name": "卷纸",
+        "value": "film/trans.js:curl以step=3条带绕圆柱，F默认2400；peelState前22%缓慢揭起，其后指数2.2加速，半径4+rmax*sin(π*min(1,1.05u))^.7。"
+      },
+      {
+        "name": "单一色版",
+        "value": "film/engine/print.js:plate与白色刻痕相乘；shots2.js:39–41.6667秒浇铸扩大光，endScene在黑色片名板上保留小钟的铜色。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-woodcut/film/shots.js",
+      "demos/cases/lemo-woodcut/film/shots2.js",
+      "demos/cases/lemo-woodcut/film/trans.js",
+      "demos/cases/lemo-woodcut/film/engine/print.js"
+    ],
+    "locator": "blockFrame / peelState / curl / endScene",
+    "useCases": [
+      "文字的正反来自实体印刷关系，色版在叙事高潮时覆盖范围最大，再收为片尾的一点。"
+    ],
+    "avoid": [
+      "在关键动作或留白上叠加争夺注意的主动作"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "carve-cut-by-cut-reveal"
+      ],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-woodcut的原作render(t)重放“反刻版揭印转正”。木版以镜像变换显示反刻标题，滚墨覆纸后通过圆柱卷纸的正背条带绘制揭出可读正印；唯一铜色随浇铸放大，片尾收于小钟高光。保留参数：film/shots.js:blockFrame镜像木版；7秒滚墨、7.6667覆纸、8秒擦压、8.5–9秒peelState(u,230)并curl(F=1900)。；film/trans.js:curl以step=3条带绕圆柱，F默认2400；peelState前22%缓慢揭起，其后指数2.2加速，半径4+rmax*sin(π*min(1,1.05u))^.7。；film/engine/print.js:plate与白色刻痕相乘；shots2.js:39–41.6667秒浇铸扩大光，endScene在黑色片名板上保留小钟的铜色。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/mirrored-block-pull-print/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-woodcut"
+      }
+    ],
+    "previewAt": 3.1,
+    "markers": [
+      {
+        "t": 0,
+        "label": "反刻版揭印转正"
+      },
+      {
+        "t": 4.7,
+        "label": "来源片段2"
+      },
+      {
+        "t": 7.366699999999999,
+        "label": "来源片段3"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/mirrored-block-pull-print.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-woodcut",
+      "bundle": "agent/cases/lemo-woodcut.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 反刻版揭印转正\n\n## 实现 Prompt\n\n用来源案例lemo-woodcut的原作render(t)重放“反刻版揭印转正”。木版以镜像变换显示反刻标题，滚墨覆纸后通过圆柱卷纸的正背条带绘制揭出可读正印；唯一铜色随浇铸放大，片尾收于小钟高光。保留参数：film/shots.js:blockFrame镜像木版；7秒滚墨、7.6667覆纸、8秒擦压、8.5–9秒peelState(u,230)并curl(F=1900)。；film/trans.js:curl以step=3条带绕圆柱，F默认2400；peelState前22%缓慢揭起，其后指数2.2加速，半径4+rmax*sin(π*min(1,1.05u))^.7。；film/engine/print.js:plate与白色刻痕相乘；shots2.js:39–41.6667秒浇铸扩大光，endScene在黑色片名板上保留小钟的铜色。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：5.800000–10.500000秒；39.000000–41.666700秒；54.400000–58.500000秒；1倍速，总时长11.466700秒。\n\n[打开 Demo](../../demos/patterns/mirrored-block-pull-print/index.html) · [在库中查看](../../patterns.html#pattern/mirrored-block-pull-print)\n"
+  },
+  "entrypoint": "demos/patterns/mirrored-block-pull-print/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-woodcut/LICENSES.md",
+      "bytes": 1188,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/assets/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/assets/walnut_diff.jpg",
+      "bytes": 2418767,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/CREDITS",
+      "bytes": 1231,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/audio/film.m4a",
+      "bytes": 1872471,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fidelity.md",
+      "bytes": 9341,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/chars.js",
+      "bytes": 21756,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/filter.js",
+      "bytes": 5883,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/hatch.js",
+      "bytes": 12224,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/index.js",
+      "bytes": 8018,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/knife.js",
+      "bytes": 7696,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/engine/print.js",
+      "bytes": 7223,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/film.js",
+      "bytes": 2054,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/fx.js",
+      "bytes": 13916,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/hands.js",
+      "bytes": 15604,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/index.html",
+      "bytes": 770,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/interior.js",
+      "bytes": 8952,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/main.js",
+      "bytes": 785,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/rig.js",
+      "bytes": 3174,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/shots.js",
+      "bytes": 14674,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/shots2.js",
+      "bytes": 34188,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/stage.js",
+      "bytes": 2299,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/timeline.json",
+      "bytes": 1543,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/trans.js",
+      "bytes": 3802,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/views.js",
+      "bytes": 9336,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/voices/dur.json",
+      "bytes": 58,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/film/world.js",
+      "bytes": 14764,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/IMFellEnglish-Italic.ttf",
+      "bytes": 202368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/IMFellEnglish.ttf",
+      "bytes": 194992,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/IMFellEnglishSC.ttf",
+      "bytes": 183932,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/OFL-IMFell.txt",
+      "bytes": 4359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/fonts/fonts.css",
+      "bytes": 378,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/index.html",
+      "bytes": 2986,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/CREDITS",
+      "bytes": 1231,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/README.md",
+      "bytes": 3474,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/build.sh",
+      "bytes": 2019,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/events.json",
+      "bytes": 3505,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/lines.json",
+      "bytes": 437,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/mix.py",
+      "bytes": 16792,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/music/CREDITS.txt",
+      "bytes": 269,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/music/score.json",
+      "bytes": 1416,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/music/score.py",
+      "bytes": 27361,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/sheet.js",
+      "bytes": 7210,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/test.js",
+      "bytes": 7322,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/tools/cuecheck.py",
+      "bytes": 2902,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/tools/final_asr.py",
+      "bytes": 1505,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/tools/mux.sh",
+      "bytes": 770,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/tools/subs.py",
+      "bytes": 831,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-woodcut/source/voices/words.json",
+      "bytes": 1047,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/mirrored-block-pull-print/index.html",
+      "bytes": 1412,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/mirrored-block-pull-print/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-woodcut.json",
+      "bytes": 10904,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/mirrored-block-pull-print.json",
+      "bytes": 3609,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/mirrored-block-pull-print.jpg",
+      "bytes": 194400,
+      "role": "preview"
+    }
+  ]
+}

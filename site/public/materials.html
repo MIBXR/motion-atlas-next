@@ -1,0 +1,7 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>跳转到素材</title>
+<script>
+  var h = location.hash.slice(1);
+  location.replace("./#/materials" + (h.startsWith("material/") ? "/" + h.slice(9) : ""));
+</script>

@@ -1,0 +1,617 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-hd-2d",
+  "entry": {
+    "id": "lemo-hd-2d",
+    "order": 54,
+    "title": "提灯人 · HD-2D",
+    "subtitle": "The Lampbearer",
+    "carriers": [
+      "video"
+    ],
+    "style": "dimensional",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "threejs"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "HD-2D",
+      "游戏",
+      "代码影片"
+    ],
+    "summary": "灯塔熄灭，提灯人薇伦接过最后的火，穿越夜林与风暴石阶，重新点亮灯塔，海上的船灯随后逐盏亮起。",
+    "focus": "随身灯既是照明也是情节；像素角色进入真实三维光照、阴影与焦带，RPG任务对白串起三个夜景。",
+    "accent": "#ffb050",
+    "background": "#050818",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 55.08,
+    "rhythm": {
+      "duration": 76.5,
+      "beats": [
+        {
+          "t": 0,
+          "label": "章节卡"
+        },
+        {
+          "t": 5.5,
+          "label": "海港灯灭"
+        },
+        {
+          "t": 15,
+          "label": "交接火种"
+        },
+        {
+          "t": 25.5,
+          "label": "穿过夜林"
+        },
+        {
+          "t": 35.5,
+          "label": "攀登风暴石阶"
+        },
+        {
+          "t": 42,
+          "label": "火光将熄"
+        },
+        {
+          "t": 45.6,
+          "label": "护火重燃"
+        },
+        {
+          "t": 49.5,
+          "label": "进入灯室"
+        },
+        {
+          "t": 53.5,
+          "label": "灯塔点亮"
+        },
+        {
+          "t": 58,
+          "label": "船灯归航"
+        },
+        {
+          "t": 67,
+          "label": "片名"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 5.5,
+        "from": 0.1,
+        "to": 0.35,
+        "label": "章节卡"
+      },
+      {
+        "t0": 5.5,
+        "t1": 15,
+        "from": 0.35,
+        "to": 0.4,
+        "label": "海港灯灭"
+      },
+      {
+        "t0": 15,
+        "t1": 25.5,
+        "from": 0.4,
+        "to": 0.55,
+        "label": "交接火种"
+      },
+      {
+        "t0": 25.5,
+        "t1": 35.5,
+        "from": 0.55,
+        "to": 0.8,
+        "label": "穿过夜林"
+      },
+      {
+        "t0": 35.5,
+        "t1": 42,
+        "from": 0.8,
+        "to": 0.05,
+        "label": "攀登风暴石阶"
+      },
+      {
+        "t0": 42,
+        "t1": 45.6,
+        "from": 0.05,
+        "to": 0.45,
+        "label": "火光将熄"
+      },
+      {
+        "t0": 45.6,
+        "t1": 49.5,
+        "from": 0.45,
+        "to": 0.7,
+        "label": "护火重燃"
+      },
+      {
+        "t0": 49.5,
+        "t1": 53.5,
+        "from": 0.7,
+        "to": 1,
+        "label": "进入灯室"
+      },
+      {
+        "t0": 53.5,
+        "t1": 58,
+        "from": 1,
+        "to": 0.5,
+        "label": "灯塔点亮"
+      },
+      {
+        "t0": 58,
+        "t1": 67,
+        "from": 0.5,
+        "to": 0.2,
+        "label": "船灯归航"
+      },
+      {
+        "t0": 67,
+        "t1": 76.5,
+        "from": 0.2,
+        "to": 0.05,
+        "label": "片名"
+      }
+    ],
+    "energyNote": "段落取DEMO.md的Shots及源码时间线；0–1是根据动作、配乐、静默和画面密度标注的相对能量。",
+    "observations": [
+      "34×50px角色精灵以NearestFilter映入三维世界，表面保持24px/m纹理密度。",
+      "16.2秒点灯使两名角色的剪影投到木板上，17.3秒金边对话框交付任务。",
+      "41.3–42秒火光减弱，45.6秒重新燃起；灯光强度与精灵火焰共享lit参数。",
+      "移轴版本把带外模糊并入有符号散焦半径，同时保留近景遮挡关系。"
+    ],
+    "composition": {
+      "color": "#050818、#16223a、#152a48、#ffb050、#ff9d4a、#9fb2e8、#d8c28e。",
+      "typography": "Cinzel 500/700；Cormorant Garamond斜体500、正体500/600；Google Fonts拉丁子集。",
+      "layout": "1920×1080横屏，60fps；舞台等比缩放，字幕与画内信息保留原作位置。",
+      "imagery": "Three.js几何场景、逐像素纹理与角色图集、程序海水、火焰、雨与光束。",
+      "motion": "像素角色按姿势帧切换，镜头、光、焦点与粒子以60fps连续更新；tilt=1焦带追随角色屏幕高度。",
+      "sound": "Scott Buckley《Precipice》CC BY 4.0，经music/edit.py剪辑；Kokoro af_heart、bm_george配音，代码生成夜林、海港与风暴声。",
+      "rhythm": "任务交付后进入夜林与风暴，42秒压低声音和亮度，53.5秒在配乐主击点灯。",
+      "coherence": "冷蓝环境与琥珀火种贯穿三地，灯塔、提灯与远船的光互相呼应。"
+    },
+    "layers": [
+      {
+        "name": "地图式场景",
+        "role": "海港、森林、悬崖与灯室。"
+      },
+      {
+        "name": "像素角色",
+        "role": "薇伦和守灯人的姿势图集与投影。"
+      },
+      {
+        "name": "灯与天气",
+        "role": "随身光源、月光、火焰、雨、雷与扫光。"
+      },
+      {
+        "name": "后期与UI",
+        "role": "移轴散焦、辉光、章节卡、任务对白与片名。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#050818",
+        "#16223a",
+        "#152a48",
+        "#ffb050",
+        "#ff9d4a",
+        "#9fb2e8",
+        "#d8c28e"
+      ],
+      "type": "Cinzel 500/700；Cormorant Garamond斜体500、正体500/600；Google Fonts拉丁子集。",
+      "motion": [
+        {
+          "name": "情绪灯",
+          "value": "film/harbor.js、forest.js、cliff.js的lit与PointLight强度；film/story.js:T.light=16.2、dim=41.3、dark=42、relight=45.6。"
+        },
+        {
+          "name": "移轴",
+          "value": "film/main.js:tiltCenter；tiltAmt=17、tiltW=.075、tiltF=.3，角色高度加.7m后投影，中心夹在.2–.8；无角色广景用.34/.36。"
+        }
+      ]
+    },
+    "useCases": [
+      "游戏预告",
+      "奇幻故事",
+      "像素三维叙事"
+    ],
+    "avoid": [],
+    "constraints": [],
+    "migration": [
+      {
+        "field": "film/story.js → SHOTS / T / VO",
+        "how": "修改章节、光焰事件与对白；音轨制作起点同步到source/vo_times.json。"
+      },
+      {
+        "field": "film/chars.js / harbor.js / forest.js / cliff.js",
+        "how": "修改像素姿态、场景、灯光与相机轨道。"
+      }
+    ],
+    "prompt": "制作灯塔熄灭，提灯人薇伦接过最后的火，穿越夜林与风暴石阶，重新点亮灯塔，海上的船灯随后逐盏亮起。 随身灯既是照明也是情节；像素角色进入真实三维光照、阴影与焦带，RPG任务对白串起三个夜景。 像素角色按姿势帧切换，镜头、光、焦点与粒子以60fps连续更新；tilt=1焦带追随角色屏幕高度。 Three.js几何场景、逐像素纹理与角色图集、程序海水、火焰、雨与光束。 字体：Cinzel 500/700；Cormorant Garamond斜体500、正体500/600；Google Fonts拉丁子集。 声音：Scott Buckley《Precipice》CC BY 4.0，经music/edit.py剪辑；Kokoro af_heart、bm_george配音，代码生成夜林、海港与风暴声。 实现沿用lemo-hd-2d的film/源码、素材与时间表。",
+    "demo": "demos/cases/lemo-hd-2d/index.html",
+    "patternIds": [
+      "carried-light-meter",
+      "tilt-shift-focus-band",
+      "rpg-dialog-box"
+    ],
+    "fidelity": "demos/cases/lemo-hd-2d/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hd-2d",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/hd-2d/"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；示范成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS的许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hd-2d"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/hd-2d.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hd-2d/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hd-2d)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Scott Buckley《Precipice》CC BY 4.0，经music/edit.py剪辑；Kokoro af_heart、bm_george配音，代码生成夜林、海港与风暴声。 原始署名见[audio/CREDITS](audio/CREDITS)，许可全文见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Cinzel 500/700；Cormorant Garamond斜体500、正体500/600；Google Fonts拉丁子集。 SIL OFL 1.1原文在fonts/，来源与重建方法见[source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-hd-2d/LICENSES.md",
+    "preview": "previews/cases/lemo-hd-2d.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 提灯人 · HD-2D · 接入与保真说明\n\n完整代码影片的来源与固定版本见[条目JSON](../../../entries/cases/lemo-hd-2d.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载运行文件、字体与音轨，等待iframe的load和READY，再按原fps调用并等待render(t)。 | 接入MotionKit舞台、时间线与声音。 |\n| `film/index.html` | 字体入口指向../fonts/；import map把/core/lib.js映射至./core/lib.js。 | 相对路径接入。 |\n| `film/core/lib.js` | 复制固定提交的共享运行代码，文本使用LF。 | 本地运行依赖。 |\n| `audio/film.m4a` | 从Release以-c:a copy流复制。 | 沿用正式混音。 |\n| `fonts/` | 按上游字体、字重和子集保存字体与OFL原文。 | 本地字体加载。 |\n| `source/` | 保存成品运行之外的上游制作文件及目录，文本统一LF。 | 保存制作依赖。 |\n| `stills/` | 风格帧与制作截图保留在上游，预览由capture生成。 | 成品绘制的输入为源码。 |\n| `film/index.html`、`vendor/three@0.170.0/` | Three.js入口与addons映射到本地固定0.170.0依赖链。 | 原作运行库接入。 |\n\n`film/`的绘制、材质、着色器、姿势和时间表沿用原作；许可索引见[LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html`通过`MotionKit.load.prepare`预载，以同源iframe加载`film/index.html?tilt=1`，等待`window.READY === true`后调用`MotionKit.mountFilm`。舞台1920×1080、60fps、76.500000秒；`renderAt(t)`等待`upstream.render(Math.round(t*60)/60)`。音轨来自Release正式混音，默认关闭。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时暂停在条目的previewAt。镜头标记取DEMO.md的Shots和源码时间表。\n\n## 已接受差异\n\n本次全部取样的原始列与编码链列均达到0.95。\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，1920×1080、DPR1。WebGL为Intel Iris Xe / ANGLE D3D11。等待`__motion.ready`、按`floor(t×fps+.5)`对齐帧号并等待定位完成；参考PNG从Release按该帧号精确提取。\n\n原始列比较本库PNG和参考PNG；编码链列在过程目录将PNG以浏览器捕获为JPEG95后，经过`JPEG95 → H264 medium CRF14 → H264 medium CRF14拼接重编码 → H264 slow CRF19`，grain=0，解码为PNG再比较。SSIM取ffmpeg统一yuv444p后的All。\n\n| 序号 | 帧号 | 请求秒 | 对齐秒 | 原始SSIM | 编码链SSIM | 取样 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.997362 | 0.999111 | 开头 |\n| 2 | 3305 | 55.080000 | 55.083333 | 0.981263 | 0.980948 | frame_sec |\n| 3 | 615 | 10.250000 | 10.250000 | 0.984106 | 0.986016 | Shots · 海港极宽景 |\n| 4 | 1215 | 20.250000 | 20.250000 | 0.985727 | 0.985283 | Shots · 码头交付任务 |\n| 5 | 1830 | 30.500000 | 30.500000 | 0.990202 | 0.991264 | Shots · 夜林横向追踪 |\n| 6 | 2550 | 42.500000 | 42.500000 | 0.999114 | 0.999409 | Shots · 风暴石阶俯冲 |\n| 7 | 3225 | 53.750000 | 53.750000 | 0.987278 | 0.986937 | Shots · 点亮灯塔拉回 |\n| 8 | 4035 | 67.250000 | 67.250000 | 0.985028 | 0.987730 | Shots · 回到海港与片名 |\n| 9 | 4530 | 75.500000 | 75.500000 | 0.987730 | 0.987470 | 片尾前1秒 |\n\n9帧：原始最低**0.981263**、最高**0.999114**；编码链最低**0.980948**、最高**0.999409**。\n\n声音：成片与本库音轨解码为48kHz单声道，以10ms RMS包络在±500ms内互相关，最佳偏移**0ms**，相关系数**1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-hd-2d.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5。\n- [audio/film.m4a](audio/film.m4a)流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/hd-2d.mp4)，示范影片按[CC BY 4.0](audio/CC-BY-4.0.txt)发布，署名LemoLab并链接来源。\n- 音乐、声音与第三方来源：[audio/CREDITS](audio/CREDITS)；Kokoro配音许可为[Apache-2.0](audio/Apache-2.0.txt)。\n- Scott Buckley《Precipice》：[原曲](https://www.scottbuckley.com.au/library/precipice/)，[配乐署名](audio/CREDITS-music.txt)，[CC BY 4.0](audio/CC-BY-4.0.txt)；剪辑记录与输入见source/music/。\n- 字体均为SIL OFL 1.1：[OFL-Cinzel.txt](fonts/OFL-Cinzel.txt)、[OFL-CormorantGaramond.txt](fonts/OFL-CormorantGaramond.txt)。\n- Three.js 0.170.0：[MIT全文](vendor/three@0.170.0/LICENSE)；保存实际入口的依赖链。\n",
+    "prompt": "# 提灯人 · HD-2D\n\n## 实现 Prompt\n\n制作灯塔熄灭，提灯人薇伦接过最后的火，穿越夜林与风暴石阶，重新点亮灯塔，海上的船灯随后逐盏亮起。 随身灯既是照明也是情节；像素角色进入真实三维光照、阴影与焦带，RPG任务对白串起三个夜景。 像素角色按姿势帧切换，镜头、光、焦点与粒子以60fps连续更新；tilt=1焦带追随角色屏幕高度。 Three.js几何场景、逐像素纹理与角色图集、程序海水、火焰、雨与光束。 字体：Cinzel 500/700；Cormorant Garamond斜体500、正体500/600；Google Fonts拉丁子集。 声音：Scott Buckley《Precipice》CC BY 4.0，经music/edit.py剪辑；Kokoro af_heart、bm_george配音，代码生成夜林、海港与风暴声。 实现沿用lemo-hd-2d的film/源码、素材与时间表。\n\n## 动效 Token\n\n- **情绪灯**：film/harbor.js、forest.js、cliff.js的lit与PointLight强度；film/story.js:T.light=16.2、dim=41.3、dark=42、relight=45.6。\n- **移轴**：film/main.js:tiltCenter；tiltAmt=17、tiltW=.075、tiltF=.3，角色高度加.7m后投影，中心夹在.2–.8；无角色广景用.34/.36。\n\n## 迁移\n\n- `film/story.js → SHOTS / T / VO`：修改章节、光焰事件与对白；音轨制作起点同步到source/vo_times.json。\n- `film/chars.js / harbor.js / forest.js / cliff.js`：修改像素姿态、场景、灯光与相机轨道。\n\n[打开 Demo](../../demos/cases/lemo-hd-2d/index.html) · [在库中查看](../../cases.html#case/lemo-hd-2d)\n"
+  },
+  "entrypoint": "demos/cases/lemo-hd-2d/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-hd-2d/LICENSES.md",
+      "bytes": 979,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/CREDITS",
+      "bytes": 2037,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/CREDITS-music.txt",
+      "bytes": 245,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/film.m4a",
+      "bytes": 2501609,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fidelity.md",
+      "bytes": 3637,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/chars.js",
+      "bytes": 13883,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/cliff.js",
+      "bytes": 29856,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/forest.js",
+      "bytes": 12071,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/forest_art.js",
+      "bytes": 5926,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/fx.js",
+      "bytes": 13318,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/harbor.js",
+      "bytes": 22104,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/index.html",
+      "bytes": 599,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/kit.js",
+      "bytes": 10045,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/main.js",
+      "bytes": 3398,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/post_ts.js",
+      "bytes": 7263,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/px.js",
+      "bytes": 12560,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/story.js",
+      "bytes": 1690,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/ui.js",
+      "bytes": 8659,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/voices/dur.json",
+      "bytes": 114,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/OFL-Cinzel.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/OFL-CormorantGaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/fonts.css",
+      "bytes": 1695,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h0.woff2",
+      "bytes": 15056,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h1.woff2",
+      "bytes": 15224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h2.woff2",
+      "bytes": 23900,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h3.woff2",
+      "bytes": 23260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h4.woff2",
+      "bytes": 23384,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/index.html",
+      "bytes": 2397,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/CREDITS",
+      "bytes": 2037,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/README.md",
+      "bytes": 3344,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/lines.json",
+      "bytes": 1347,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/mix.py",
+      "bytes": 9289,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/music/CREDITS.txt",
+      "bytes": 245,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/music/CUES.md",
+      "bytes": 7944,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/music/edit.py",
+      "bytes": 24524,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/music/measure.json",
+      "bytes": 4704,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/sfx_events.json",
+      "bytes": 682,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/tools/render_range.mjs",
+      "bytes": 2736,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/tools/sheet/index.html",
+      "bytes": 1285,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/tools/srt.py",
+      "bytes": 957,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/vo_times.json",
+      "bytes": 199,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/voices/words.json",
+      "bytes": 2092,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/lemo-hd-2d.json",
+      "bytes": 8951,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-hd-2d.jpg",
+      "bytes": 74081,
+      "role": "preview"
+    }
+  ]
+}

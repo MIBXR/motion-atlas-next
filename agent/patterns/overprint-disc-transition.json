@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "overprint-disc-transition",
+  "pattern": {
+    "id": "overprint-disc-transition",
+    "order": 118,
+    "title": "套印圆盘吞景",
+    "types": [
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "粉色专版圆从车篮扩张至全屏，与原景蓝版透印叠成紫色；全屏时切换底景，再把同一粉圆收成河上的太阳。",
+    "mechanism": "以lighter增加独立粉版密度，透明墨色与旧景相乘；圆扩张到全屏时切换底景，随后收缩并移动到新景太阳的位置。",
+    "trigger": "24秒从法棍乘客镜头转入河边。",
+    "effect": "旧景先经套印改色，同一粉色圆盘随后变成新景中的太阳。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "23.5–26秒，1倍速，总时长2.5秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "加墨扩张与场景交接",
+        "value": "film/film.js:188–199的SHOT.sun：24–24.6秒粉版圆半径20→2300，24.6秒底景由passenger硬切riverRide，24.6–25.5秒圆收至330、中心到(1000,500)。"
+      },
+      {
+        "name": "透明套印而非遮罩",
+        "value": "film/draw.js:over临时使用globalCompositeOperation=lighter；圆以inkA([0,0,1])仅加粉版密度，film/riso.js以各版透射色相乘，圆内保留蓝版并变紫。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-risograph/film/film.js",
+      "demos/cases/lemo-risograph/film/draw.js",
+      "demos/cases/lemo-risograph/film/riso.js"
+    ],
+    "locator": "SHOT.sun / over / makeRiso",
+    "useCases": [
+      "透明专色叠印转场",
+      "将转场形体接为新场景物件"
+    ],
+    "avoid": [
+      "要求完全不透明遮住换景的片段"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "misregistration-lock"
+      ],
+      "conflicts": []
+    },
+    "prompt": "复用lemo-risograph原作render(t)，重放23.5–26秒的套印圆盘吞景。粉圆以lighter只增加粉版密度，透印蓝版并变紫；24–24.6秒半径从20增到2300，24.6秒切换河景，25.5秒缩至330成为太阳。保留riso.js专色相乘、网点、纸纹和同区间原音轨，通过MotionKit.replay接入播放和定位，声音默认关闭。",
+    "demo": "demos/patterns/overprint-disc-transition/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "lemo-risograph"
+      }
+    ],
+    "previewAt": 1.6,
+    "markers": [
+      {
+        "t": 0,
+        "label": "粉圆吞景"
+      },
+      {
+        "t": 1.1,
+        "label": "底景交接"
+      }
+    ],
+    "preview": "previews/patterns/overprint-disc-transition.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-risograph",
+      "bundle": "agent/cases/lemo-risograph.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 套印圆盘吞景\n\n## 实现 Prompt\n\n复用lemo-risograph原作render(t)，重放23.5–26秒的套印圆盘吞景。粉圆以lighter只增加粉版密度，透印蓝版并变紫；24–24.6秒半径从20增到2300，24.6秒切换河景，25.5秒缩至330成为太阳。保留riso.js专色相乘、网点、纸纹和同区间原音轨，通过MotionKit.replay接入播放和定位，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：23.5–26秒，1倍速，总时长2.5秒。\n\n[打开 Demo](../../demos/patterns/overprint-disc-transition/index.html) · [在库中查看](../../patterns.html#pattern/overprint-disc-transition)\n"
+  },
+  "entrypoint": "demos/patterns/overprint-disc-transition/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-risograph/LICENSES.md",
+      "bytes": 835,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/CREDITS",
+      "bytes": 1115,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/film.m4a",
+      "bytes": 1310009,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fidelity.md",
+      "bytes": 4713,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/draw.js",
+      "bytes": 6136,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/film.js",
+      "bytes": 19331,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/index.html",
+      "bytes": 419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/lines.json",
+      "bytes": 604,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/main.js",
+      "bytes": 2965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/rider.js",
+      "bytes": 23831,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/riso.js",
+      "bytes": 9145,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/scenes.js",
+      "bytes": 12235,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/scenes2.js",
+      "bytes": 12834,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/sheet.js",
+      "bytes": 5563,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Bricolage-OFL.txt",
+      "bytes": 4403,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Bricolage.ttf",
+      "bytes": 408496,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Jost-OFL.txt",
+      "bytes": 4384,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Jost.ttf",
+      "bytes": 134996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/fonts.css",
+      "bytes": 270,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/index.html",
+      "bytes": 2374,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/CREDITS",
+      "bytes": 1115,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/README.md",
+      "bytes": 2249,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/build.sh",
+      "bytes": 1619,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/events.json",
+      "bytes": 1224,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/mix.py",
+      "bytes": 8965,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/music/bell.py",
+      "bytes": 2315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/music/score.json",
+      "bytes": 8534,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/music/score.py",
+      "bytes": 21937,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/tools/mux.sh",
+      "bytes": 1340,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/tools/subs.py",
+      "bytes": 699,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/tools/video_png.mjs",
+      "bytes": 2412,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/voices/words.json",
+      "bytes": 1073,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/overprint-disc-transition/index.html",
+      "bytes": 853,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/overprint-disc-transition/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-risograph.json",
+      "bytes": 10576,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/overprint-disc-transition.json",
+      "bytes": 2536,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/overprint-disc-transition.jpg",
+      "bytes": 380591,
+      "role": "preview"
+    }
+  ]
+}

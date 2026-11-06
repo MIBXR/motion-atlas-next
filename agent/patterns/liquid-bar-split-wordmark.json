@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "liquid-bar-split-wordmark",
+  "pattern": {
+    "id": "liquid-bar-split-wordmark",
+    "order": 65,
+    "title": "液条断颈成字",
+    "types": [
+      "type-motion",
+      "transition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "液态流动"
+    ],
+    "summary": "液体在主拍前挤成横条，到主拍时沿字缝断颈。每段距离场切换为字形并弹开，碎滴与光环跟随冲量。",
+    "mechanism": "液体在主拍前挤成横条，到主拍时沿字缝断颈。每段距离场切换为字形并弹开，碎滴与光环跟随冲量。",
+    "trigger": "液体横条到达成字主拍时",
+    "effect": "同一条液体分裂成 drop 的四个字形，字间细颈断裂回缩。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-liquid 原片 5.55–7.1 秒；1 倍速，总时长 1.55 秒。"
+      },
+      {
+        "name": "液条断颈成字参数",
+        "value": "  const massY = word.massY ?? word.baseY - 100, SLOT = 0.55;   // v5 sets word.massY (CJK ink centre)\n        const m = clamp((ts * 30 - 0.6 * i + 1.5) / 2);\n        const tBr = tSnap + (br.i + 0.5) / 30;\n        S.ring = [960, massY + 10, 40 + 1360 * kr, 0.62 * (1 - 0.45 * kr) * (1 - smooth(inv(5 / 30, 12 / 30, tr)))];\n  \"logo_snap\": 6.4,"
+      }
+    ],
+    "useCases": [
+      "液体横条分裂成字标",
+      "距离场字形在主拍弹开"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-liquid 原片 5.55–7.1 秒；总时长 1.55 秒。液体在主拍前挤成横条，主拍沿字缝断颈，每段距离场切换为字形并弹开，碎滴与光环跟随冲量。参数保持原作数值：  const massY = word.massY ?? word.baseY - 100, SLOT = 0.55;   // v5 sets word.massY (CJK ink centre)\n        const m = clamp((ts * 30 - 0.6 * i + 1.5) / 2);\n        const tBr = tSnap + (br.i + 0.5) / 30;\n        S.ring = [960, massY + 10, 40 + 1360 * kr, 0.62 * (1 - 0.45 * kr) * (1 - smooth(inv(5 / 30, 12 / 30, tr)))];\n  \"logo_snap\": 6.4,\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/liquid-bar-split-wordmark/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-liquid"
+      }
+    ],
+    "previewAt": 1.05,
+    "markers": [
+      {
+        "t": 0,
+        "label": "液态流动"
+      },
+      {
+        "t": 0.65,
+        "label": "机制画面 1"
+      },
+      {
+        "t": 0.883333333,
+        "label": "机制画面 2"
+      },
+      {
+        "t": 1.15,
+        "label": "机制画面 3"
+      }
+    ],
+    "preview": "previews/patterns/liquid-bar-split-wordmark.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-liquid",
+      "bundle": "agent/cases/mg-liquid.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 液条断颈成字\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速依次重放mg-liquid 原片 5.55–7.1 秒；总时长 1.55 秒。液体在主拍前挤成横条，主拍沿字缝断颈，每段距离场切换为字形并弹开，碎滴与光环跟随冲量。参数保持原作数值：  const massY = word.massY ?? word.baseY - 100, SLOT = 0.55;   // v5 sets word.massY (CJK ink centre)\n        const m = clamp((ts * 30 - 0.6 * i + 1.5) / 2);\n        const tBr = tSnap + (br.i + 0.5) / 30;\n        S.ring = [960, massY + 10, 40 + 1360 * kr, 0.62 * (1 - 0.45 * kr) * (1 - smooth(inv(5 / 30, 12 / 30, tr)))];\n  \"logo_snap\": 6.4,\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-liquid 原片 5.55–7.1 秒；1 倍速，总时长 1.55 秒。\n- **液条断颈成字参数**：  const massY = word.massY ?? word.baseY - 100, SLOT = 0.55;   // v5 sets word.massY (CJK ink centre)\n        const m = clamp((ts * 30 - 0.6 * i + 1.5) / 2);\n        const tBr = tSnap + (br.i + 0.5) / 30;\n        S.ring = [960, massY + 10, 40 + 1360 * kr, 0.62 * (1 - 0.45 * kr) * (1 - smooth(inv(5 / 30, 12 / 30, tr)))];\n  \"logo_snap\": 6.4,\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段与中文节点，画面和声音使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/liquid-bar-split-wordmark/index.html) · [在库中查看](../../patterns.html#pattern/liquid-bar-split-wordmark)\n"
+  },
+  "entrypoint": "demos/patterns/liquid-bar-split-wordmark/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-liquid/LICENSES.md",
+      "bytes": 812,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/audio/film.m4a",
+      "bytes": 418545,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fidelity.md",
+      "bytes": 5964,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/cues.json",
+      "bytes": 1702,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/engine.js",
+      "bytes": 9243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/scene.js",
+      "bytes": 46421,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/shaders.js",
+      "bytes": 28643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/state.js",
+      "bytes": 669,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/textsdf.js",
+      "bytes": 5558,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/type.js",
+      "bytes": 2073,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/main.js",
+      "bytes": 3456,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/setup.js",
+      "bytes": 152,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/style.css",
+      "bytes": 143,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces-Liquid-72-900-Soft.ttf",
+      "bytes": 72996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces[SOFT,WONK,opsz,wght].ttf",
+      "bytes": 360440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/NotoSerifSC[wght].ttf",
+      "bytes": 25125512,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fonts.css",
+      "bytes": 494,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fraunces-OFL.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/notoserifsc-OFL.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/index.html",
+      "bytes": 1759,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/audio.py",
+      "bytes": 11884,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/cues.json",
+      "bytes": 1702,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/lookdev.js",
+      "bytes": 2622,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/scene.js",
+      "bytes": 56751,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/textsdf.js",
+      "bytes": 5558,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/out/cues_derived.json",
+      "bytes": 5548,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/liquid-bar-split-wordmark/index.html",
+      "bytes": 1403,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/liquid-bar-split-wordmark/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-liquid.json",
+      "bytes": 16286,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/liquid-bar-split-wordmark.json",
+      "bytes": 2989,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/liquid-bar-split-wordmark.jpg",
+      "bytes": 63845,
+      "role": "preview"
+    }
+  ]
+}

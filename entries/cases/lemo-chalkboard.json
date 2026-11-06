@@ -1,0 +1,322 @@
+{
+  "id": "lemo-chalkboard",
+  "order": 36,
+  "title": "汉字的故事 · 黑板粉笔",
+  "subtitle": "The Story of Chinese Characters",
+  "carriers": [
+    "video"
+  ],
+  "style": "hand-drawn",
+  "purpose": "explainer",
+  "tech": [
+    "canvas2d",
+    "webgl"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "黑板粉笔",
+    "手绘与绘画",
+    "代码影片"
+  ],
+  "summary": "孩子在教室黑板上问“射和矮是不是弄反了”；老师把射从甲骨、金文、小篆写回楷书，用橙色追踪弓和箭，擦掉错误释义后在原位写回答案。",
+  "focus": "粉笔笔顺、彩色部件、推拉黑板与一次原位擦写共同承担汉字溯源讲解。",
+  "accent": "#ee9858",
+  "background": "#253a35",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 42.5,
+  "rhythm": {
+    "duration": 49.266666666666666,
+    "beats": [
+      {
+        "t": 0,
+        "label": "片名书写",
+        "note": "0–2.7秒，片名书写。"
+      },
+      {
+        "t": 2.7,
+        "label": "孩子的问题",
+        "note": "2.7–5.7秒，孩子的问题。"
+      },
+      {
+        "t": 5.7,
+        "label": "射的错误拆字",
+        "note": "5.7–10.7秒，射的错误拆字。"
+      },
+      {
+        "t": 10.7,
+        "label": "矮的错误拆字",
+        "note": "10.7–17.5秒，矮的错误拆字。"
+      },
+      {
+        "t": 17.5,
+        "label": "滑板揭开时间线",
+        "note": "17.5–18.5秒，滑板揭开时间线。"
+      },
+      {
+        "t": 18.5,
+        "label": "甲骨文弓箭",
+        "note": "18.5–21.8秒，甲骨文弓箭。"
+      },
+      {
+        "t": 21.8,
+        "label": "金文加手",
+        "note": "21.8–24.4秒，金文加手。"
+      },
+      {
+        "t": 24.4,
+        "label": "小篆与楷书",
+        "note": "24.4–28.7秒，小篆与楷书。"
+      },
+      {
+        "t": 28.7,
+        "label": "箭作为尺",
+        "note": "28.7–33.5秒，箭作为尺。"
+      },
+      {
+        "t": 33.5,
+        "label": "跨板线与原位擦写",
+        "note": "33.5–39.7秒，跨板线与原位擦写。"
+      },
+      {
+        "t": 39.7,
+        "label": "没弄反",
+        "note": "39.7–43秒，没弄反。"
+      },
+      {
+        "t": 43,
+        "label": "整面课堂",
+        "note": "43–45.2秒，整面课堂。"
+      },
+      {
+        "t": 45.2,
+        "label": "前板滑回片尾",
+        "note": "45.2–49.2667秒，前板滑回片尾。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2.7,
+      "to": 0.2,
+      "label": "片名书写",
+      "from": 0.2
+    },
+    {
+      "t0": 2.7,
+      "t1": 5.7,
+      "to": 0.3,
+      "label": "孩子的问题",
+      "from": 0.3
+    },
+    {
+      "t0": 5.7,
+      "t1": 10.7,
+      "to": 0.4,
+      "label": "射的错误拆字",
+      "from": 0.4
+    },
+    {
+      "t0": 10.7,
+      "t1": 17.5,
+      "to": 0.4,
+      "label": "矮的错误拆字",
+      "from": 0.4
+    },
+    {
+      "t0": 17.5,
+      "t1": 18.5,
+      "to": 0.6,
+      "label": "滑板揭开时间线",
+      "from": 0.6
+    },
+    {
+      "t0": 18.5,
+      "t1": 21.8,
+      "to": 0.4,
+      "label": "甲骨文弓箭",
+      "from": 0.4
+    },
+    {
+      "t0": 21.8,
+      "t1": 24.4,
+      "to": 0.4,
+      "label": "金文加手",
+      "from": 0.4
+    },
+    {
+      "t0": 24.4,
+      "t1": 28.7,
+      "to": 0.45,
+      "label": "小篆与楷书",
+      "from": 0.45
+    },
+    {
+      "t0": 28.7,
+      "t1": 33.5,
+      "to": 0.5,
+      "label": "箭作为尺",
+      "from": 0.5
+    },
+    {
+      "t0": 33.5,
+      "t1": 39.7,
+      "to": 0.65,
+      "label": "跨板线与原位擦写",
+      "from": 0.65
+    },
+    {
+      "t0": 39.7,
+      "t1": 43,
+      "to": 0.35,
+      "label": "没弄反",
+      "from": 0.35
+    },
+    {
+      "t0": 43,
+      "t1": 45.2,
+      "to": 0.2,
+      "label": "整面课堂",
+      "from": 0.2
+    },
+    {
+      "t0": 45.2,
+      "t1": 49.266666666666666,
+      "to": 0.1,
+      "label": "前板滑回片尾",
+      "from": 0.1
+    }
+  ],
+  "energyNote": "段落取自DEMO.md的Shots与源码场景时间表；0–1能量数值是按画面与声音密度作出的相对编辑标注。",
+  "observations": [
+    "中文使用手写中心线与笔画类型数据，甲骨、金文和篆书使用手绘线形，字幕使用霞鹜文楷子集。",
+    "橙色弓在不同字形中保持对应高度，楷书身部七笔沿用同色；短和矮中的矢也由橙色突出。",
+    "跨板橙线将箭尺引回问题；宽360的板擦只擦掉释义和交叉箭头，随后在相同区域写下正确解释。"
+  ],
+  "composition": {
+    "color": "深绿板#0f1c15，白粉笔与橙粉笔，孩子的浅黄笔迹；暖白墙与绿色墙裙。",
+    "typography": "中文逐笔中心线，英文EMS Delight / EMS Casual Hand单线字；中英双语字幕使用LXGW WenKai v1.530的精确子集。",
+    "layout": "1920×1080、30fps，6400×1700板面，两块带田字格的前板与一块后板，字幕单独叠在底部。",
+    "imagery": "Canvas2D绘制教室、板框、滑板、粉笔和全部字形；WebGL2后期处理运动模糊、暗角、调色与抖动。",
+    "motion": "每笔按弧长显露粉粒，前板侧滑，镜头跨四个字形横移；橙线跨过板缝后，通过一次擦写给出结论。",
+    "sound": "Microsoft Edge TTS晓晓中文旁白；真实粉笔录音切粒、古琴物理模型、马林巴与拨奏低音、板轨与走廊铃。",
+    "rhythm": "先提出网上说法，再滑开前板追溯字形；箭尺与跨板线加速，擦写后留1.5秒阅读再写“没弄反”。",
+    "coherence": "橙色部件将历史字形、现代部件、尺量与答案连接在同一课堂空间。"
+  },
+  "layers": [
+    {
+      "name": "底材与空间",
+      "role": "深绿板#0f1c15，白粉笔与橙粉笔，孩子的浅黄笔迹；暖白墙与绿色墙裙。"
+    },
+    {
+      "name": "主体与绘制",
+      "role": "Canvas2D绘制教室、板框、滑板、粉笔和全部字形；WebGL2后期处理运动模糊、暗角、调色与抖动。"
+    },
+    {
+      "name": "镜头与时间",
+      "role": "每笔按弧长显露粉粒，前板侧滑，镜头跨四个字形横移；橙线跨过板缝后，通过一次擦写给出结论。"
+    },
+    {
+      "name": "文字与声音",
+      "role": "中文逐笔中心线，英文EMS Delight / EMS Casual Hand单线字；中英双语字幕使用LXGW WenKai v1.530的精确子集。 Microsoft Edge TTS晓晓中文旁白；真实粉笔录音切粒、古琴物理模型、马林巴与拨奏低音、板轨与走廊铃。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#0f1c15",
+      "#ece8d8",
+      "#ee9858",
+      "#e9d78b",
+      "#e3ddcf"
+    ],
+    "type": "EMS Delight / EMS Casual Hand单线SVG；LXGW WenKai v1.530、wenkai-sub.woff2。",
+    "motion": [
+      {
+        "name": "原位擦写",
+        "value": "film/js/film.js:182–200：wipe宽360、持续.75秒，q1/q2及英文标记wiped，重写中心沿用G1/G2。"
+      },
+      {
+        "name": "橙色部件",
+        "value": "film/js/ancient.js:39–46：L.o选择orange，楷书0–6笔着橙；film.js:151将短的0–4笔着橙。"
+      },
+      {
+        "name": "粉笔沉积",
+        "value": "film/js/chalk.js与r2d.js：板面覆盖精灵按弧长显露，2×2超采样粉粒沉积。"
+      }
+    ]
+  },
+  "useCases": [
+    "文字溯源",
+    "知识辟谣",
+    "课堂讲解"
+  ],
+  "avoid": [
+    "以观众滚动阅读为主的页面"
+  ],
+  "constraints": [
+    "画面以原作render(t)按原帧率定位，字体和全部绘制输入预载后开始。",
+    "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+  ],
+  "migration": [
+    {
+      "field": "film/js/film.js → SUB / VO / build",
+      "how": "更改中英字幕、配音时长、镜头与书写安排。"
+    },
+    {
+      "field": "film/js/hz.js / ancient.js",
+      "how": "修改中文笔顺数据与历史字形，原始依据在source/FACTS.md。"
+    }
+  ],
+  "prompt": "制作一支黑板粉笔时间线影片。粉笔笔顺、彩色部件、推拉黑板与一次原位擦写共同承担汉字溯源讲解。深绿板#0f1c15，白粉笔与橙粉笔，孩子的浅黄笔迹；暖白墙与绿色墙裙。中文逐笔中心线，英文EMS Delight / EMS Casual Hand单线字；中英双语字幕使用LXGW WenKai v1.530的精确子集。1920×1080、30fps，6400×1700板面，两块带田字格的前板与一块后板，字幕单独叠在底部。每笔按弧长显露粉粒，前板侧滑，镜头跨四个字形横移；橙线跨板缝后一次擦写落定结论。先提出网上说法，再滑开前板追溯字形；箭尺与跨板线加速，擦写后留1.5秒阅读再写“没弄反”。Microsoft Edge TTS晓晓中文旁白；真实粉笔录音切粒、古琴物理模型、马林巴与拨奏低音、板轨与走廊铃。实现入口位于demos/cases/lemo-chalkboard/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+  "demo": "demos/cases/lemo-chalkboard/index.html",
+  "patternIds": [
+    "write-wipe-rewrite",
+    "tracked-component-highlight"
+  ],
+  "fidelity": "demos/cases/lemo-chalkboard/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/chalkboard/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "?????MIT????????CC BY 4.0???LemoLab????Microsoft Edge TTS??????????????????CREDITS?LICENSES.md?"
+  },
+  "sources": [
+    {
+      "label": "固定风格与制作源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/chalkboard.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "Microsoft Edge TTS晓晓中文旁白；真实粉笔录音切粒、古琴物理模型、马林巴与拨奏低音、板轨与走廊铃。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "EMS Delight / EMS Casual Hand单线SVG；LXGW WenKai v1.530、wenkai-sub.woff2。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

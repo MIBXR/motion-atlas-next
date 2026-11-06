@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>素材样例 · Motion Atlas</title>
+  <link rel="stylesheet" href="demo/demo.css">
+</head>
+<body>
+  <nav aria-label="样例"><a href="?demo=pulse">呼吸</a><a href="?demo=slide">移动</a></nav>
+  <main><div id="sample">MOTION</div></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({ modules: ['demo/demo.js'] });
+    await MotionKit.load.module('demo/demo.js');
+  </script>
+</body>
+</html>

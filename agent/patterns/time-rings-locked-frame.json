@@ -1,0 +1,536 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "time-rings-locked-frame",
+  "pattern": {
+    "id": "time-rings-locked-frame",
+    "order": 144,
+    "title": "锁定画面里的时间环",
+    "types": [
+      "composition",
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "同一地理画面中，各年卫星图沿扫描条切换，旧岸线留在原地，形成逐年嵌套的时间环；年份加速落定后，画面停在今天的岸线。",
+    "mechanism": "同一地理画面中，各年卫星图沿扫描条切换，旧岸线留在原地，形成逐年嵌套的时间环；年份加速落定后，画面停在今天的岸线。",
+    "trigger": "来源时间线进入锁定画面里的时间环段。",
+    "effect": "同一地理画面中，各年卫星图沿扫描条切换，旧岸线留在原地，形成逐年嵌套的时间环；年份加速落定后，画面停在今天的岸线。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-satellite-briefing：7.800000–15.300000秒，1倍速，总时长7.500000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "年度节点",
+        "value": "film/timeline.js:RINGS在7.8/9.6/10.8/11.7/12.3/13.2秒依次落定1977/1989/2000/2009/2014/2025。"
+      },
+      {
+        "name": "地理锁定",
+        "value": "film/film.js:drawRings与ringScan按V.rings投影实际海岸线；并非数学同心圆；camKeys仍从980km推到600km并转−15°，岸线锁在同一地理坐标。"
+      }
+    ],
+    "sourceFiles": [
+      "demos\\cases\\lemo-satellite-briefing\\film\\film.js",
+      "demos\\cases\\lemo-satellite-briefing\\film\\timeline.js",
+      "demos\\cases\\lemo-satellite-briefing\\film\\engine.js",
+      "demos\\cases\\lemo-satellite-briefing\\film\\assets\\plates\\plates.json"
+    ],
+    "locator": "film/film.js / film/timeline.js / film/engine.js / film/assets/plates/plates.json",
+    "useCases": [
+      "环境实证影像",
+      "地理短片",
+      "新闻解说"
+    ],
+    "avoid": [
+      "在关键动作和证据上叠加争夺注意的运动"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例的原作render(t)实现“锁定画面里的时间环”。同一地理画面中各年卫星图沿扫描条切换，旧岸线留在原地形成逐年嵌套的时间环；年份加速落定后停在今天的岸线。参数：film/timeline.js:RINGS在7.8/9.6/10.8/11.7/12.3/13.2秒依次落定1977/1989/2000/2009/2014/2025。；film/film.js:drawRings与ringScan按V.rings投影实际海岸线；并非数学同心圆；camKeys仍从980km推到600km并转−15°，岸线锁在同一地理坐标。。复用来源字体、素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/time-rings-locked-frame/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-satellite-briefing"
+      }
+    ],
+    "previewAt": 5.8,
+    "markers": [
+      {
+        "t": 0,
+        "label": "锁定画面里的时间环"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/time-rings-locked-frame.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-satellite-briefing",
+      "bundle": "agent/cases/lemo-satellite-briefing.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 锁定画面里的时间环\n\n## 实现 Prompt\n\n用来源案例的原作render(t)实现“锁定画面里的时间环”。同一地理画面中各年卫星图沿扫描条切换，旧岸线留在原地形成逐年嵌套的时间环；年份加速落定后停在今天的岸线。参数：film/timeline.js:RINGS在7.8/9.6/10.8/11.7/12.3/13.2秒依次落定1977/1989/2000/2009/2014/2025。；film/film.js:drawRings与ringScan按V.rings投影实际海岸线；并非数学同心圆；camKeys仍从980km推到600km并转−15°，岸线锁在同一地理坐标。。复用来源字体、素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-satellite-briefing：7.800000–15.300000秒，1倍速，总时长7.500000秒。\n\n[打开 Demo](../../demos/patterns/time-rings-locked-frame/index.html) · [在库中查看](../../patterns.html#pattern/time-rings-locked-frame)\n"
+  },
+  "entrypoint": "demos/patterns/time-rings-locked-frame/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-satellite-briefing/LICENSES.md",
+      "bytes": 1170,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/audio/CREDITS",
+      "bytes": 3896,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/audio/film.m4a",
+      "bytes": 1244335,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fidelity.md",
+      "bytes": 7713,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/ca.jpg",
+      "bytes": 3580210,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/ko2001.jpg",
+      "bytes": 1531741,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/ko2001_w.png",
+      "bytes": 48366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/ko2009.jpg",
+      "bytes": 1606489,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/ko2009_w.png",
+      "bytes": 61050,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/ko2025.jpg",
+      "bytes": 1485574,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/ko2025_w.png",
+      "bytes": 56472,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/ko_grow.png",
+      "bytes": 86566,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/la2025.jpg",
+      "bytes": 1297919,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/mapfield.png",
+      "bytes": 563526,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/mu2025.jpg",
+      "bytes": 2238177,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/plates.json",
+      "bytes": 28959,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/r1977.jpg",
+      "bytes": 2233472,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/r1989.jpg",
+      "bytes": 2064140,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/r2000.jpg",
+      "bytes": 1996146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/r2009.jpg",
+      "bytes": 2161488,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/r2014.jpg",
+      "bytes": 2172019,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/r2025.jpg",
+      "bytes": 2177981,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/r2025_w.png",
+      "bytes": 41772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/plates/world.jpg",
+      "bytes": 1176813,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/assets/vectors.json",
+      "bytes": 187322,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/cues.json",
+      "bytes": 1324,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/engine.js",
+      "bytes": 18263,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/film.js",
+      "bytes": 42127,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/index.html",
+      "bytes": 1283,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/overlay.js",
+      "bytes": 5823,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/film/timeline.js",
+      "bytes": 4818,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/BarlowCondensed-Light.ttf",
+      "bytes": 101996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/BarlowCondensed-Medium.ttf",
+      "bytes": 103360,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/BarlowCondensed-Regular.ttf",
+      "bytes": 102480,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/BarlowCondensed-SemiBold.ttf",
+      "bytes": 109428,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/NotoSansSC-400.woff2",
+      "bytes": 21188,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/NotoSansSC-500.woff2",
+      "bytes": 21248,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/NotoSerifSC-600.woff2",
+      "bytes": 28492,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/OFL-barlow.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/fonts/fonts.css",
+      "bytes": 707,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/index.html",
+      "bytes": 3171,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/CREDITS",
+      "bytes": 3896,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/FACTS.md",
+      "bytes": 10504,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/README.md",
+      "bytes": 4526,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/build.sh",
+      "bytes": 3670,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/events.json",
+      "bytes": 2174,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/mix.py",
+      "bytes": 37634,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/timeline.json",
+      "bytes": 1719,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/audiocheck.py",
+      "bytes": 2364,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/bmng.py",
+      "bytes": 2643,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/cuecheck.py",
+      "bytes": 1711,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/export.mjs",
+      "bytes": 2652,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/fetch_gibs.py",
+      "bytes": 2433,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/fetch_landsat.py",
+      "bytes": 14844,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/finalasr.py",
+      "bytes": 1339,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/fonts.py",
+      "bytes": 2606,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/growth.py",
+      "bytes": 1362,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/impactcheck.py",
+      "bytes": 2440,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/lowcheck.py",
+      "bytes": 758,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/mapfield.py",
+      "bytes": 3435,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/motioncheck.py",
+      "bytes": 1627,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/plates.py",
+      "bytes": 14108,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/plates_spec.json",
+      "bytes": 4795,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/subcheck.mjs",
+      "bytes": 1154,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/vectors.py",
+      "bytes": 10709,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/tools/voicefix.py",
+      "bytes": 881,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/voice/lines.json",
+      "bytes": 1363,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/voice/out/dur.json",
+      "bytes": 142,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-satellite-briefing/source/voice/out/words.json",
+      "bytes": 1572,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/time-rings-locked-frame/index.html",
+      "bytes": 864,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/time-rings-locked-frame/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-satellite-briefing\\film\\assets\\plates\\plates.json",
+      "bytes": 28959,
+      "role": "asset"
+    },
+    {
+      "path": "demos\\cases\\lemo-satellite-briefing\\film\\engine.js",
+      "bytes": 18263,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-satellite-briefing\\film\\film.js",
+      "bytes": 42127,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-satellite-briefing\\film\\timeline.js",
+      "bytes": 4818,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-satellite-briefing.json",
+      "bytes": 12179,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/time-rings-locked-frame.json",
+      "bytes": 2987,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/time-rings-locked-frame.jpg",
+      "bytes": 168041,
+      "role": "preview"
+    }
+  ]
+}

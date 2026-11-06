@@ -1,0 +1,339 @@
+{
+  "id": "lemo-telestrator",
+  "order": 72,
+  "title": "定格 · 体育战术板",
+  "subtitle": "Freeze Frame",
+  "carriers": [
+    "video"
+  ],
+  "style": "documentary",
+  "purpose": "news",
+  "tech": [
+    "canvas2d",
+    "footage"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "体育战术板",
+    "剪辑与纪实",
+    "代码影片"
+  ],
+  "summary": "2019年贝西克塔斯对费内巴切的3–3比赛分析：先播放连续进球，再定格圈人、画线，用双机位对齐头球时刻，倒带拆解扳平远射，最后把射门帧压成俯视战术板。",
+  "focus": "每次定格只讲一个发现，跑位线、圈注与真实球员使用同一变换；数据来自源帧计数及球场标线透视。",
+  "accent": "#FFD400",
+  "background": "#0C1411",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 13.6,
+  "rhythm": {
+    "duration": 54.4,
+    "beats": [
+      {
+        "t": 0,
+        "label": "节目片头",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 1.6,
+        "label": "半场比分",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 5.2,
+        "label": "第一球播放",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 6.8,
+        "label": "传中定格",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 9,
+        "label": "恢复进球",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 10.6,
+        "label": "双机位并排",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 12.4,
+        "label": "头球定格",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 14.6,
+        "label": "进球与VAR",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 17.8,
+        "label": "扳平球原速",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 22.4,
+        "label": "倒带",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 23,
+        "label": "解围定格",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 25,
+        "label": "跑位慢放",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 26.6,
+        "label": "无人上抢",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 28.4,
+        "label": "接球计帧",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 29.6,
+        "label": "击球定格",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 31.6,
+        "label": "球路慢放",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 33.2,
+        "label": "反向重播",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 36.8,
+        "label": "透视展成射门图",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 42.6,
+        "label": "数据卡",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 47,
+        "label": "六十七分钟",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 49.6,
+        "label": "片尾",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 5.2,
+      "to": 0.55,
+      "label": "节目开场",
+      "from": 0.75
+    },
+    {
+      "t0": 5.2,
+      "t1": 10.6,
+      "to": 0.85,
+      "label": "第一球",
+      "from": 0.7
+    },
+    {
+      "t0": 10.6,
+      "t1": 17.8,
+      "to": 0.9,
+      "label": "第二球",
+      "from": 0.65
+    },
+    {
+      "t0": 17.8,
+      "t1": 23,
+      "to": 0.5,
+      "label": "第三球与倒带",
+      "from": 0.9
+    },
+    {
+      "t0": 23,
+      "t1": 31.6,
+      "to": 0.65,
+      "label": "逐层拆解",
+      "from": 0.45
+    },
+    {
+      "t0": 31.6,
+      "t1": 36.8,
+      "to": 0.6,
+      "label": "射门与重播",
+      "from": 0.8
+    },
+    {
+      "t0": 36.8,
+      "t1": 42.6,
+      "to": 0.5,
+      "label": "射门图",
+      "from": 0.7
+    },
+    {
+      "t0": 42.6,
+      "t1": 49.6,
+      "to": 0.8,
+      "label": "数据与主角",
+      "from": 0.5
+    },
+    {
+      "t0": 49.6,
+      "t1": 54.4,
+      "to": 0.05,
+      "label": "片尾",
+      "from": 0.5
+    }
+  ],
+  "energyNote": "段落与时刻取自上游DEMO.md镜头表及原作绘制函数；0–1是按配乐、原声和画面密度作出的相对编辑标注。",
+  "observations": [
+    "第一球在传中时冻结，圈出接应者并画出传球与跑位，再从同一源帧恢复。",
+    "第二球的两个角度各自推进到头球时刻并同时定格，左右窗口用黄色分割线分隔。",
+    "第三球倒放后依次标出解围、无人上抢与禁区外击球，秒表从接球帧到击球帧计为.84秒。",
+    "射门帧按球场标线拟合的单应矩阵分成三角网格，顶点移动到俯视板，再落下三次射门的位置。"
+  ],
+  "composition": {
+    "color": "#FFD400、#3FD8FF、#FF3B30、#F4F1E8、#0C1411",
+    "typography": "Noto Sans SC 500/700/900、Barlow Condensed 600/800斜体、IBM Plex Mono 500；SIL OFL 1.1子集。",
+    "layout": "1920×1080横屏；沿用原作各镜的画面分区与文字位置。",
+    "imagery": "beIN SPORTS Türkiye官方CC BY 3.0比赛摘要及Commons同源剪辑，Thomas Rodenbücher球员照片与Olos88球场照片。",
+    "motion": "原速播放、.6秒倒带、1.8–2.4秒定格，圈人→路径或区域→标签逐次画入，慢放用相邻源帧混合。",
+    "sound": "Release原混音：比赛解说与人群、Kokoro bm_george旁白、120 BPM乐队采样；定格时鼓组停止，进球和VAR印章配铜管主拍。",
+    "rhythm": "三球按时间推进，前两球作简要拆解，把完整倒带与三次定格留给第三球；射门图与数据卡留出阅读停顿。",
+    "coherence": "每次定格只讲一个发现，跑位线、圈注与真实球员使用同一变换；数据来自源帧计数及球场标线透视。"
+  },
+  "layers": [
+    {
+      "name": "真实比赛",
+      "role": "25fps源帧插值为30fps时间线。"
+    },
+    {
+      "name": "追踪分析",
+      "role": "脚底椭圆、虚线路径、红色空间与防守连接线。"
+    },
+    {
+      "name": "节目包装",
+      "role": "角标、比分条、机位签与黄色斜带。"
+    },
+    {
+      "name": "战术板",
+      "role": "单应矩阵展开、射门位置和计数数据。"
+    },
+    {
+      "name": "声音与字幕",
+      "role": "原场解说、双语旁白字幕和节点音效。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#FFD400",
+      "#3FD8FF",
+      "#FF3B30",
+      "#F4F1E8",
+      "#0C1411"
+    ],
+    "type": "Noto Sans SC 500/700/900、Barlow Condensed 600/800斜体、IBM Plex Mono 500；SIL OFL 1.1子集。",
+    "motion": [
+      {
+        "name": "定格画线",
+        "value": "film/index.html:overlayG1 / overlayAnalysis；6.8–9.0、23–25、26.6–28.4、29.6–31.6秒；闪白.1秒、1.035倍急推回定。"
+      },
+      {
+        "name": "双机位",
+        "value": "film/index.html:splitView / overlayG2；10.6–14.6秒，960px双窗，6px黄线，.32秒展开。"
+      }
+    ]
+  },
+  "useCases": [
+    "比赛战术分析",
+    "教练复盘",
+    "多个机位的动作讲解"
+  ],
+  "avoid": [
+    "只把精彩片段按音乐拼接的集锦",
+    "脱离真实球场位置的抽象战术图"
+  ],
+  "constraints": [
+    "替换影像、字体和数据后，同步调整原作取帧与文字时间表。",
+    "声音与画面沿用同一来源时间，音轨默认关闭。"
+  ],
+  "migration": [
+    {
+      "field": "film/timeline.json → segments / voice",
+      "how": "修改播放、定格、慢放与旁白区间。"
+    },
+    {
+      "field": "film/index.html → TRK / GOALS / overlayAnalysis / overlayG1",
+      "how": "修改球员脚底追踪、进球帧与分析图层。"
+    },
+    {
+      "field": "source/tools/pitch.json / source/tools/homography.py",
+      "how": "修改球场标线测点并重建战术板矩阵。"
+    }
+  ],
+  "prompt": "制作一支体育战术板影片。每次定格只讲一个发现，跑位线和圈注与真实球员处于同一变换下；数据来自源帧计数及球场标线透视。原速播放、.6秒倒带、1.8–2.4秒定格，圈人→路径或区域→标签逐次画入，慢放用相邻源帧混合。沿用以下制作方法：beIN SPORTS Türkiye官方CC BY 3.0比赛摘要及Commons同源剪辑，Thomas Rodenbücher球员照片与Olos88球场照片。声音采用Release原混音：比赛解说与人群、Kokoro bm_george旁白、120 BPM乐队采样；定格时鼓组停止，进球和VAR印章配铜管主拍。可编辑入口：film/timeline.json → segments / voice；film/index.html → TRK / GOALS / overlayAnalysis / overlayG1；source/tools/pitch.json / source/tools/homography.py。",
+  "demo": "demos/cases/lemo-telestrator/index.html",
+  "patternIds": [
+    "freeze-and-draw",
+    "split-compare-stamp"
+  ],
+  "fidelity": "demos/cases/lemo-telestrator/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/telestrator",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/telestrator/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原作影片及静帧CC BY 4.0，署名LemoLab；第三方素材和旁白按CREDITS各自许可。"
+  },
+  "sources": [
+    {
+      "label": "固定版本风格与制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/telestrator"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/telestrator.mp4"
+    },
+    {
+      "label": "原始素材与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/telestrator/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）。固定源码接入MotionKit，原作画面按时间绘制；音轨从Release流复制。"
+    },
+    {
+      "scope": "影像与声音",
+      "notes": "原始作者、素材链接和许可见[LICENSES.md](LICENSES.md)及[audio/CREDITS](audio/CREDITS)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "字体、字重与子集见tokens.type；OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+    }
+  ]
+}

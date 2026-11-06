@@ -1,0 +1,156 @@
+{
+  "id": "corner-hud",
+  "order": 1,
+  "title": "四角信息 HUD",
+  "types": [
+    "hud",
+    "composition"
+  ],
+  "carriers": [
+    "video",
+    "console"
+  ],
+  "summary": "日序、坐标、时钟、歌词与步进器钉在四角，数值随镜头与时间持续更新，中央留给地图。",
+  "mechanism": "日序、日期、规尺、指南针与坐标持续更新。海拔、缩放、时钟、歌词与步进器保持固定位置。比例尺和署名留在边缘，中央呈现地图。",
+  "trigger": "旅程开始、需要持续定位时",
+  "effect": "观众随时知道走到哪、过了多久。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "13.8s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "click、kick、sub"
+    }
+  ],
+  "useCases": [
+    "旅行与巡礼影像",
+    "直播/转播的持续信息层",
+    "操作台状态栏",
+    "陈列界面导览"
+  ],
+  "avoid": [
+    "信息本身不随时间变化的静态海报",
+    "需要大面积正文阅读的页面"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [
+      "route-draw-marker",
+      "chapter-frame",
+      "collect-counter",
+      "vertical-title-blur"
+    ],
+    "conflicts": []
+  },
+  "prompt": "日序、坐标、时钟、歌词与步进器钉在四角，数值随镜头与时间持续更新，中央留给地图。复用地图巡礼的 drawHud、cameraAt、clockAt、stepAtX、ruleX 与对应 CSS。仅 drawHud 的日序、日期、规尺、指南针、坐标、海拔、缩放、时钟、歌词、步进器、比例尺和署名。片段：caseT 7→13.6；caseT 35.8→42.4；时长 13.8s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。",
+  "demo": "demos/patterns/corner-hud/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    },
+    {
+      "caseId": "lemo-backrooms"
+    },
+    {
+      "caseId": "lemo-countdown"
+    }
+  ],
+  "previewAt": 7.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "顶部 HUD 入场"
+    },
+    {
+      "t": 6.6,
+      "label": "跨天"
+    }
+  ],
+  "sound": {
+    "voices": [
+      "click",
+      "kick",
+      "sub"
+    ],
+    "score": "demos/patterns/corner-hud/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "顶部 HUD 入场",
+        "value": "0s"
+      },
+      {
+        "name": "跨天",
+        "value": "6.6s"
+      },
+      {
+        "name": "时长",
+        "value": "13.8s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js → drawHud、clockAt、layout",
+      "how": "修改镜头、时钟、步进器与规尺函数的实现。"
+    },
+    {
+      "field": "index.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → meta、days、music.lyrics、stepper；tracks.day、tracks.clock、tracks.progress；layout",
+      "how": "修改日序、日期、歌词、时钟、步进器与横竖规尺。"
+    },
+    {
+      "field": "mechanism/config.js → segments / markers",
+      "how": "设置本巧思片段映射与标记；地图来源时刻：7→13.6/35.8→42.4。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "lemo-backrooms",
+      "value": "film/osd.js:drawOSD；REC左上、电量右上、日期/时钟右下，5×7位图白字黑边；story.js:clock/battery在36.35秒同时跳变。"
+    },
+    {
+      "name": "lemo-countdown · 任务时钟与控制条",
+      "value": "film/index.html:drawClock / HANDS / HAND_LAB；固定HUD_CLOCK=[24,872,656,184]，零点32.5秒T−转T+、橙底深字；.4/53.78秒控制段按.3秒ease-out填充；每秒整组数字从上方14px在.12秒落入，没有乱数或字轮。"
+    }
+  ]
+}

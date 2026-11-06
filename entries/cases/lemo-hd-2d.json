@@ -1,0 +1,281 @@
+{
+  "id": "lemo-hd-2d",
+  "order": 54,
+  "title": "提灯人 · HD-2D",
+  "subtitle": "The Lampbearer",
+  "carriers": [
+    "video"
+  ],
+  "style": "dimensional",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "threejs"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "HD-2D",
+    "游戏",
+    "代码影片"
+  ],
+  "summary": "灯塔熄灭，提灯人薇伦接过最后的火，穿越夜林与风暴石阶，重新点亮灯塔，海上的船灯随后逐盏亮起。",
+  "focus": "随身灯既是照明也是情节；像素角色进入真实三维光照、阴影与焦带，RPG任务对白串起三个夜景。",
+  "accent": "#ffb050",
+  "background": "#050818",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 55.08,
+  "rhythm": {
+    "duration": 76.5,
+    "beats": [
+      {
+        "t": 0,
+        "label": "章节卡"
+      },
+      {
+        "t": 5.5,
+        "label": "海港灯灭"
+      },
+      {
+        "t": 15,
+        "label": "交接火种"
+      },
+      {
+        "t": 25.5,
+        "label": "穿过夜林"
+      },
+      {
+        "t": 35.5,
+        "label": "攀登风暴石阶"
+      },
+      {
+        "t": 42,
+        "label": "火光将熄"
+      },
+      {
+        "t": 45.6,
+        "label": "护火重燃"
+      },
+      {
+        "t": 49.5,
+        "label": "进入灯室"
+      },
+      {
+        "t": 53.5,
+        "label": "灯塔点亮"
+      },
+      {
+        "t": 58,
+        "label": "船灯归航"
+      },
+      {
+        "t": 67,
+        "label": "片名"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 5.5,
+      "from": 0.1,
+      "to": 0.35,
+      "label": "章节卡"
+    },
+    {
+      "t0": 5.5,
+      "t1": 15,
+      "from": 0.35,
+      "to": 0.4,
+      "label": "海港灯灭"
+    },
+    {
+      "t0": 15,
+      "t1": 25.5,
+      "from": 0.4,
+      "to": 0.55,
+      "label": "交接火种"
+    },
+    {
+      "t0": 25.5,
+      "t1": 35.5,
+      "from": 0.55,
+      "to": 0.8,
+      "label": "穿过夜林"
+    },
+    {
+      "t0": 35.5,
+      "t1": 42,
+      "from": 0.8,
+      "to": 0.05,
+      "label": "攀登风暴石阶"
+    },
+    {
+      "t0": 42,
+      "t1": 45.6,
+      "from": 0.05,
+      "to": 0.45,
+      "label": "火光将熄"
+    },
+    {
+      "t0": 45.6,
+      "t1": 49.5,
+      "from": 0.45,
+      "to": 0.7,
+      "label": "护火重燃"
+    },
+    {
+      "t0": 49.5,
+      "t1": 53.5,
+      "from": 0.7,
+      "to": 1,
+      "label": "进入灯室"
+    },
+    {
+      "t0": 53.5,
+      "t1": 58,
+      "from": 1,
+      "to": 0.5,
+      "label": "灯塔点亮"
+    },
+    {
+      "t0": 58,
+      "t1": 67,
+      "from": 0.5,
+      "to": 0.2,
+      "label": "船灯归航"
+    },
+    {
+      "t0": 67,
+      "t1": 76.5,
+      "from": 0.2,
+      "to": 0.05,
+      "label": "片名"
+    }
+  ],
+  "energyNote": "段落取DEMO.md的Shots及源码时间线；0–1是根据动作、配乐、静默和画面密度标注的相对能量。",
+  "observations": [
+    "34×50px角色精灵以NearestFilter映入三维世界，表面保持24px/m纹理密度。",
+    "16.2秒点灯使两名角色的剪影投到木板上，17.3秒金边对话框交付任务。",
+    "41.3–42秒火光减弱，45.6秒重新燃起；灯光强度与精灵火焰共享lit参数。",
+    "移轴版本把带外模糊并入有符号散焦半径，同时保留近景遮挡关系。"
+  ],
+  "composition": {
+    "color": "#050818、#16223a、#152a48、#ffb050、#ff9d4a、#9fb2e8、#d8c28e。",
+    "typography": "Cinzel 500/700；Cormorant Garamond斜体500、正体500/600；Google Fonts拉丁子集。",
+    "layout": "1920×1080横屏，60fps；舞台等比缩放，字幕与画内信息保留原作位置。",
+    "imagery": "Three.js几何场景、逐像素纹理与角色图集、程序海水、火焰、雨与光束。",
+    "motion": "像素角色按姿势帧切换，镜头、光、焦点与粒子以60fps连续更新；tilt=1焦带追随角色屏幕高度。",
+    "sound": "Scott Buckley《Precipice》CC BY 4.0，经music/edit.py剪辑；Kokoro af_heart、bm_george配音，代码生成夜林、海港与风暴声。",
+    "rhythm": "任务交付后进入夜林与风暴，42秒压低声音和亮度，53.5秒在配乐主击点灯。",
+    "coherence": "冷蓝环境与琥珀火种贯穿三地，灯塔、提灯与远船的光互相呼应。"
+  },
+  "layers": [
+    {
+      "name": "地图式场景",
+      "role": "海港、森林、悬崖与灯室。"
+    },
+    {
+      "name": "像素角色",
+      "role": "薇伦和守灯人的姿势图集与投影。"
+    },
+    {
+      "name": "灯与天气",
+      "role": "随身光源、月光、火焰、雨、雷与扫光。"
+    },
+    {
+      "name": "后期与UI",
+      "role": "移轴散焦、辉光、章节卡、任务对白与片名。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#050818",
+      "#16223a",
+      "#152a48",
+      "#ffb050",
+      "#ff9d4a",
+      "#9fb2e8",
+      "#d8c28e"
+    ],
+    "type": "Cinzel 500/700；Cormorant Garamond斜体500、正体500/600；Google Fonts拉丁子集。",
+    "motion": [
+      {
+        "name": "情绪灯",
+        "value": "film/harbor.js、forest.js、cliff.js的lit与PointLight强度；film/story.js:T.light=16.2、dim=41.3、dark=42、relight=45.6。"
+      },
+      {
+        "name": "移轴",
+        "value": "film/main.js:tiltCenter；tiltAmt=17、tiltW=.075、tiltF=.3，角色高度加.7m后投影，中心夹在.2–.8；无角色广景用.34/.36。"
+      }
+    ]
+  },
+  "useCases": [
+    "游戏预告",
+    "奇幻故事",
+    "像素三维叙事"
+  ],
+  "avoid": [],
+  "constraints": [],
+  "migration": [
+    {
+      "field": "film/story.js → SHOTS / T / VO",
+      "how": "修改章节、光焰事件与对白；音轨制作起点同步到source/vo_times.json。"
+    },
+    {
+      "field": "film/chars.js / harbor.js / forest.js / cliff.js",
+      "how": "修改像素姿态、场景、灯光与相机轨道。"
+    }
+  ],
+  "prompt": "制作灯塔熄灭，提灯人薇伦接过最后的火，穿越夜林与风暴石阶，重新点亮灯塔，海上的船灯随后逐盏亮起。 随身灯既是照明也是情节；像素角色进入真实三维光照、阴影与焦带，RPG任务对白串起三个夜景。 像素角色按姿势帧切换，镜头、光、焦点与粒子以60fps连续更新；tilt=1焦带追随角色屏幕高度。 Three.js几何场景、逐像素纹理与角色图集、程序海水、火焰、雨与光束。 字体：Cinzel 500/700；Cormorant Garamond斜体500、正体500/600；Google Fonts拉丁子集。 声音：Scott Buckley《Precipice》CC BY 4.0，经music/edit.py剪辑；Kokoro af_heart、bm_george配音，代码生成夜林、海港与风暴声。 实现沿用lemo-hd-2d的film/源码、素材与时间表。",
+  "demo": "demos/cases/lemo-hd-2d/index.html",
+  "patternIds": [
+    "carried-light-meter",
+    "tilt-shift-focus-band",
+    "rpg-dialog-box"
+  ],
+  "fidelity": "demos/cases/lemo-hd-2d/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hd-2d",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/hd-2d/"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；示范成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS的许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hd-2d"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/hd-2d.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hd-2d/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hd-2d)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "Scott Buckley《Precipice》CC BY 4.0，经music/edit.py剪辑；Kokoro af_heart、bm_george配音，代码生成夜林、海港与风暴声。 原始署名见[audio/CREDITS](audio/CREDITS)，许可全文见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Cinzel 500/700；Cormorant Garamond斜体500、正体500/600；Google Fonts拉丁子集。 SIL OFL 1.1原文在fonts/，来源与重建方法见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

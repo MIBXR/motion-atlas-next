@@ -1,0 +1,5072 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "rolling-digits",
+  "pattern": {
+    "id": "rolling-digits",
+    "order": 14,
+    "title": "滚动数字与文字",
+    "types": [
+      "type-motion",
+      "feedback"
+    ],
+    "carriers": [
+      "console",
+      "video"
+    ],
+    "summary": "编号与文字按字符滚动 460ms。连按时，临界阻尼滚轮读取当前位置与速度，再向最新目标接续滚动。",
+    "mechanism": "直接提取当前案例内的滚动库。为每个字符独立建立 slot、reel 和 face；数字按输入方向滚动，direct 文字通过逐字符 wheel 更新，使用默认正向。49 点临界阻尼轨迹包含 exp(-10h)，重定向时读取当前动画位置与速度后接续，持续 460ms。SVG Gaussian blur 随字高和运动速度变化，数字系数为 0.35、文字为 0.2；不采用整行滑入淡出。上下方向键选档，左右方向键切列，字符保留语义文字；减少动态时直接显示最终字符。",
+    "trigger": "选档、切列导致编号与文字发生变化时。",
+    "effect": "X-001 等编号、行列计数、档案标题、权限与列名在同一次选择中逐字符滚动；快速连按保留中途运动状态。",
+    "timing": [
+      {
+        "name": "方向",
+        "value": "编号、行号与列号按导航方向；文字默认正向"
+      }
+    ],
+    "useCases": [
+      "档案编号",
+      "计数器与页码",
+      "时钟",
+      "分类标题切换"
+    ],
+    "avoid": [
+      "大段文字",
+      "每秒变化很多次的实时数据（改为直接替换）"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "wave-array",
+        "boot-typing",
+        "corner-hud"
+      ],
+      "conflicts": [],
+      "notes": "在档案阵列的同一次选择中更新编号、行列计数、标题、权限与列名；共享 460ms 时长，数字方向由导航决定，文字保持默认正向。机械里程表同样把每位数字拆成可滚动的字轮，通过竖向位移、裁切与速度模糊表达读数变化；digitsAt 按十进制进位，年与公里数仅在来源数值处停驻。"
+    },
+    "prompt": "实现当前 archive-os 的逐字符滚动：直接裁出案例 bundle 中的滚动库，使用 createRollingNumber/createRollingText，duration:460、motionBlur:true，文字 transition:direct、stagger:none。每个字符建独立 slot/reel/face，临界阻尼使用 49 点及 exp(-10h)；连续更新必须先通过 Bs.read 读取当前动画位置和速度，再向最新目标接续。数字按照上下、左右输入方向滚动；文字使用默认正向。数字 --rn-blur 为 0.35，文字为 0.2，SVG Gaussian blur 随字高和速度变化。档案数据保存在 mechanism/archives.json，字体引用 ../../cases/archive-os/film/app/fonts/，声音引用 ../../cases/archive-os/audio/film-audio.ogg。自动驾驶复用案例 62.6 秒后的四向输入，9 秒及 9.35 秒连续切列；真实输入接管，seek 恢复自动驾驶；默认静音并支持减少动态。",
+    "demo": "demos/patterns/rolling-digits/index.html",
+    "kit": true,
+    "previewAt": 9.5,
+    "sources": [
+      {
+        "caseId": "archive-os"
+      },
+      {
+        "caseId": "lemo-transit-map"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "滚动时长",
+        "value": "460ms；motionBlur:true",
+        "source": "demos/cases/archive-os/source/rhinelabui/src/main.ts:228-257"
+      },
+      {
+        "name": "文字模式",
+        "value": "transition:'direct'；stagger:'none'；逐字符 reel",
+        "source": "demos/cases/archive-os/source/rhinelabui/src/main.ts:252-277（textOptions、createRollingText）；demos/cases/archive-os/film/app/assets/index-s-1i48S1.js:2（makeColumn：rn-slot / rn-reel）"
+      },
+      {
+        "name": "轨迹",
+        "value": "49 点临界阻尼；e+(r+(v×s+10r)×h)×exp(-10h)；读取当前 position/velocity",
+        "source": "demos/cases/archive-os/film/app/assets/index-s-1i48S1.js:1（gn、yf、Bs.read）；:2（commit：读取当前 position / velocity 后接续）"
+      },
+      {
+        "name": "模糊系数",
+        "value": "SVG Gaussian blur 随字高与实时速度变化；数字 --rn-blur:0.35；文字 0.2；--rn-edge-fade:0.08em",
+        "source": "demos/cases/archive-os/source/rhinelabui/src/style.css:574-579,2126-2134"
+      },
+      {
+        "name": "自动输入",
+        "value": "从案例 62.6s 开始的 13s 四向浏览；9s 与 9.35s 接连切列，第二次从未完成动画的位置和速度接续",
+        "source": "demos/cases/archive-os/film/app/film/sequence.js:31-33"
+      },
+      {
+        "name": "内容与声音",
+        "value": "档案数据读取 mechanism/archives.json，音轨读取 ../../cases/archive-os/audio/film-audio.ogg；自动声音读取案例 62.6–75.6s 片段",
+        "source": "demos/cases/archive-os/source/rhinelabui/content/archives.json；demos/cases/archive-os/audio/film-audio.ogg"
+      },
+      {
+        "name": "里程表字轮",
+        "value": "digitsAt逐位计算整数与进位小数；drum裁切38×60px窗口，把floor(pos)邻位按分数偏移；过渡中加模糊，odometer按年份落定6.0／16.1／420.0／906.0。",
+        "source": "demos/cases/lemo-transit-map/film/timeline.js:digitsAt / drum / odometer"
+      }
+    ],
+    "videoPrompt": "制作档案 HUD 的 13 秒滚轮片段，时间与 archive-os 的 62.6–75.6 秒对应。显示当前 RHINE LAB 档案的 X- 编号、行列号、中文标题、权限和列名；每次选择以 460ms 临界阻尼逐字符翻动，9 秒与 9.35 秒连续切列时保持当前位置和速度。保留 MiSans、浅灰底、字高相关速度模糊与案例原声音片段。",
+    "negativePrompt": "不要 outCubic，不要整行文字滑入淡出，不要从上一次目标重启，不要固定像素正弦模糊，不要让文字与数字强制共用方向，不要 LUMEN 或固定 X-017 旧档案，不要跨目录读取案例。",
+    "preview": "previews/patterns/rolling-digits.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "archive-os",
+      "bundle": "agent/cases/archive-os.json"
+    },
+    {
+      "caseId": "lemo-transit-map",
+      "bundle": "agent/cases/lemo-transit-map.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 滚动数字与文字\n\n## 实现 Prompt\n\n实现当前 archive-os 的逐字符滚动：直接裁出案例 bundle 中的滚动库，使用 createRollingNumber/createRollingText，duration:460、motionBlur:true，文字 transition:direct、stagger:none。每个字符建独立 slot/reel/face，临界阻尼使用 49 点及 exp(-10h)；连续更新必须先通过 Bs.read 读取当前动画位置和速度，再向最新目标接续。数字按照上下、左右输入方向滚动；文字使用默认正向。数字 --rn-blur 为 0.35，文字为 0.2，SVG Gaussian blur 随字高和速度变化。档案数据保存在 mechanism/archives.json，字体引用 ../../cases/archive-os/film/app/fonts/，声音引用 ../../cases/archive-os/audio/film-audio.ogg。自动驾驶复用案例 62.6 秒后的四向输入，9 秒及 9.35 秒连续切列；真实输入接管，seek 恢复自动驾驶；默认静音并支持减少动态。\n\n## 视频生成 Prompt\n\n制作档案 HUD 的 13 秒滚轮片段，时间与 archive-os 的 62.6–75.6 秒对应。显示当前 RHINE LAB 档案的 X- 编号、行列号、中文标题、权限和列名；每次选择以 460ms 临界阻尼逐字符翻动，9 秒与 9.35 秒连续切列时保持当前位置和速度。保留 MiSans、浅灰底、字高相关速度模糊与案例原声音片段。\n\n## 负向约束\n\n不要 outCubic，不要整行文字滑入淡出，不要从上一次目标重启，不要固定像素正弦模糊，不要让文字与数字强制共用方向，不要 LUMEN 或固定 X-017 旧档案，不要跨目录读取案例。\n\n## 参数\n\n- **方向**：编号、行号与列号按导航方向；文字默认正向\n\n[打开 Demo](../../demos/patterns/rolling-digits/index.html) · [在库中查看](../../patterns.html#pattern/rolling-digits)\n"
+  },
+  "entrypoint": "demos/patterns/rolling-digits/index.html",
+  "files": [
+    {
+      "path": "demos/cases/archive-os/LICENSES.md",
+      "bytes": 637,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/archive-os/audio/film-audio.ogg",
+      "bytes": 1333228,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/fidelity.md",
+      "bytes": 2376,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/LICENSE",
+      "bytes": 1063,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-001.txt",
+      "bytes": 860,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-002.txt",
+      "bytes": 868,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-003.txt",
+      "bytes": 799,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-004.txt",
+      "bytes": 813,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-005.txt",
+      "bytes": 842,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-006.txt",
+      "bytes": 831,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-007.txt",
+      "bytes": 779,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-008.txt",
+      "bytes": 823,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-009.txt",
+      "bytes": 835,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-010.txt",
+      "bytes": 818,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-011.txt",
+      "bytes": 799,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-012.txt",
+      "bytes": 838,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-013.txt",
+      "bytes": 840,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-014.txt",
+      "bytes": 831,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-015.txt",
+      "bytes": 807,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-016.txt",
+      "bytes": 844,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-017.txt",
+      "bytes": 837,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-018.txt",
+      "bytes": 833,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-019.txt",
+      "bytes": 767,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-020.txt",
+      "bytes": 806,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-021.txt",
+      "bytes": 832,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-022.txt",
+      "bytes": 818,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-023.txt",
+      "bytes": 826,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-024.txt",
+      "bytes": 815,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-025.txt",
+      "bytes": 804,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-026.txt",
+      "bytes": 798,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-027.txt",
+      "bytes": 782,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-028.txt",
+      "bytes": 781,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-029.txt",
+      "bytes": 806,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-030.txt",
+      "bytes": 847,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-031.txt",
+      "bytes": 805,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-032.txt",
+      "bytes": 788,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-033.txt",
+      "bytes": 832,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-034.txt",
+      "bytes": 837,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-035.txt",
+      "bytes": 818,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-036.txt",
+      "bytes": 834,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-037.txt",
+      "bytes": 809,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-038.txt",
+      "bytes": 821,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-039.txt",
+      "bytes": 815,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/archives/RHINE-LAB-X-040.txt",
+      "bytes": 824,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/assets/archive-assembly.glb",
+      "bytes": 3343744,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/assets/archive-cassette.glb",
+      "bytes": 3565116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/assets/boot-lettering-notice.txt",
+      "bytes": 1697,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/assets/index-DYLPDZ1T.css",
+      "bytes": 668055,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/assets/index-s-1i48S1.js",
+      "bytes": 995073,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/audio/README.md",
+      "bytes": 949,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/audio/atmosphere.ogg",
+      "bytes": 537407,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/audio/motif.ogg",
+      "bytes": 674580,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/audio/observatory-preview.mp3",
+      "bytes": 1281645,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/audio/pulse.ogg",
+      "bytes": 371667,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/audio/score.json",
+      "bytes": 533,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/audio/typing-preview.wav",
+      "bytes": 192044,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/audio/typing-source.json",
+      "bytes": 711,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/favicon.svg",
+      "bytes": 295,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/film/clock-shim.js",
+      "bytes": 4543,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/film/sequence.js",
+      "bytes": 5281,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/MiSans-license.pdf",
+      "bytes": 79535,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/NOTICE.txt",
+      "bytes": 929,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/UPSTREAM-README.md",
+      "bytes": 4733,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/0.woff2",
+      "bytes": 41840,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/1.woff2",
+      "bytes": 1624,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/10.woff2",
+      "bytes": 2052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/100.woff2",
+      "bytes": 29972,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/101.woff2",
+      "bytes": 30272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/102.woff2",
+      "bytes": 34132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/103.woff2",
+      "bytes": 26320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/104.woff2",
+      "bytes": 28660,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/105.woff2",
+      "bytes": 36164,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/106.woff2",
+      "bytes": 32476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/107.woff2",
+      "bytes": 37908,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/108.woff2",
+      "bytes": 34596,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/109.woff2",
+      "bytes": 34824,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/11.woff2",
+      "bytes": 10612,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/110.woff2",
+      "bytes": 35972,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/111.woff2",
+      "bytes": 34216,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/112.woff2",
+      "bytes": 30484,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/113.woff2",
+      "bytes": 34404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/114.woff2",
+      "bytes": 36796,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/115.woff2",
+      "bytes": 43556,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/116.woff2",
+      "bytes": 45556,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/117.woff2",
+      "bytes": 36868,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/118.woff2",
+      "bytes": 36792,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/119.woff2",
+      "bytes": 30420,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/12.woff2",
+      "bytes": 13612,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/120.woff2",
+      "bytes": 41272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/121.woff2",
+      "bytes": 43772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/122.woff2",
+      "bytes": 36976,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/123.woff2",
+      "bytes": 41724,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/124.woff2",
+      "bytes": 37396,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/125.woff2",
+      "bytes": 39244,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/126.woff2",
+      "bytes": 42820,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/127.woff2",
+      "bytes": 39900,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/128.woff2",
+      "bytes": 46592,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/129.woff2",
+      "bytes": 50464,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/13.woff2",
+      "bytes": 15776,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/130.woff2",
+      "bytes": 54364,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/131.woff2",
+      "bytes": 58252,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/132.woff2",
+      "bytes": 32428,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/133.woff2",
+      "bytes": 32988,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/134.woff2",
+      "bytes": 38856,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/135.woff2",
+      "bytes": 35436,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/136.woff2",
+      "bytes": 28288,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/137.woff2",
+      "bytes": 36756,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/138.woff2",
+      "bytes": 33404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/139.woff2",
+      "bytes": 39160,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/14.woff2",
+      "bytes": 18548,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/140.woff2",
+      "bytes": 41312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/141.woff2",
+      "bytes": 50704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/142.woff2",
+      "bytes": 31416,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/143.woff2",
+      "bytes": 39484,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/144.woff2",
+      "bytes": 38640,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/145.woff2",
+      "bytes": 39112,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/146.woff2",
+      "bytes": 47352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/147.woff2",
+      "bytes": 41844,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/148.woff2",
+      "bytes": 52600,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/149.woff2",
+      "bytes": 37768,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/15.woff2",
+      "bytes": 20448,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/150.woff2",
+      "bytes": 33772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/151.woff2",
+      "bytes": 40336,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/152.woff2",
+      "bytes": 49208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/153.woff2",
+      "bytes": 51424,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/154.woff2",
+      "bytes": 37256,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/155.woff2",
+      "bytes": 46880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/156.woff2",
+      "bytes": 56140,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/157.woff2",
+      "bytes": 45684,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/158.woff2",
+      "bytes": 53196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/159.woff2",
+      "bytes": 42880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/16.woff2",
+      "bytes": 21284,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/160.woff2",
+      "bytes": 45468,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/161.woff2",
+      "bytes": 43556,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/162.woff2",
+      "bytes": 41652,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/163.woff2",
+      "bytes": 46464,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/164.woff2",
+      "bytes": 50264,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/165.woff2",
+      "bytes": 57136,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/166.woff2",
+      "bytes": 61580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/167.woff2",
+      "bytes": 54464,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/168.woff2",
+      "bytes": 48692,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/169.woff2",
+      "bytes": 40256,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/17.woff2",
+      "bytes": 22740,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/170.woff2",
+      "bytes": 45392,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/171.woff2",
+      "bytes": 56628,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/172.woff2",
+      "bytes": 52192,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/173.woff2",
+      "bytes": 53824,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/174.woff2",
+      "bytes": 48184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/175.woff2",
+      "bytes": 55156,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/176.woff2",
+      "bytes": 49568,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/177.woff2",
+      "bytes": 45768,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/178.woff2",
+      "bytes": 48856,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/179.woff2",
+      "bytes": 50336,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/18.woff2",
+      "bytes": 25260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/180.woff2",
+      "bytes": 61672,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/181.woff2",
+      "bytes": 49080,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/182.woff2",
+      "bytes": 58132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/183.woff2",
+      "bytes": 62976,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/184.woff2",
+      "bytes": 65380,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/185.woff2",
+      "bytes": 68644,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/186.woff2",
+      "bytes": 74432,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/187.woff2",
+      "bytes": 56056,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/188.woff2",
+      "bytes": 45352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/19.woff2",
+      "bytes": 25452,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/2.woff2",
+      "bytes": 3312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/20.woff2",
+      "bytes": 26552,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/21.woff2",
+      "bytes": 26304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/22.woff2",
+      "bytes": 28948,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/23.woff2",
+      "bytes": 31800,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/24.woff2",
+      "bytes": 32544,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/25.woff2",
+      "bytes": 33736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/26.woff2",
+      "bytes": 34612,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/27.woff2",
+      "bytes": 35636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/28.woff2",
+      "bytes": 35992,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/29.woff2",
+      "bytes": 37592,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/3.woff2",
+      "bytes": 1044,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/30.woff2",
+      "bytes": 38084,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/31.woff2",
+      "bytes": 39436,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/32.woff2",
+      "bytes": 37696,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/33.woff2",
+      "bytes": 40256,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/34.woff2",
+      "bytes": 40184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/35.woff2",
+      "bytes": 42168,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/36.woff2",
+      "bytes": 42548,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/37.woff2",
+      "bytes": 42484,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/38.woff2",
+      "bytes": 43064,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/39.woff2",
+      "bytes": 42940,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/4.woff2",
+      "bytes": 892,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/40.woff2",
+      "bytes": 44980,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/41.woff2",
+      "bytes": 44980,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/42.woff2",
+      "bytes": 47464,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/43.woff2",
+      "bytes": 46260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/44.woff2",
+      "bytes": 50420,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/45.woff2",
+      "bytes": 49824,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/46.woff2",
+      "bytes": 48052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/47.woff2",
+      "bytes": 48516,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/48.woff2",
+      "bytes": 8188,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/49.woff2",
+      "bytes": 10540,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/5.woff2",
+      "bytes": 964,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/50.woff2",
+      "bytes": 12596,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/51.woff2",
+      "bytes": 13832,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/52.woff2",
+      "bytes": 14432,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/53.woff2",
+      "bytes": 15920,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/54.woff2",
+      "bytes": 16332,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/55.woff2",
+      "bytes": 16808,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/56.woff2",
+      "bytes": 18280,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/57.woff2",
+      "bytes": 19120,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/58.woff2",
+      "bytes": 20040,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/59.woff2",
+      "bytes": 20856,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/6.woff2",
+      "bytes": 1832,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/60.woff2",
+      "bytes": 22028,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/61.woff2",
+      "bytes": 22256,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/62.woff2",
+      "bytes": 23288,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/63.woff2",
+      "bytes": 23688,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/64.woff2",
+      "bytes": 23188,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/65.woff2",
+      "bytes": 25000,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/66.woff2",
+      "bytes": 25204,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/67.woff2",
+      "bytes": 25644,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/68.woff2",
+      "bytes": 25312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/69.woff2",
+      "bytes": 26420,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/7.woff2",
+      "bytes": 6496,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/70.woff2",
+      "bytes": 26668,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/71.woff2",
+      "bytes": 26888,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/72.woff2",
+      "bytes": 28304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/73.woff2",
+      "bytes": 31048,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/74.woff2",
+      "bytes": 28576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/75.woff2",
+      "bytes": 17592,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/76.woff2",
+      "bytes": 8380,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/77.woff2",
+      "bytes": 7252,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/78.woff2",
+      "bytes": 2128,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/79.woff2",
+      "bytes": 884,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/8.woff2",
+      "bytes": 968,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/80.woff2",
+      "bytes": 4504,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/81.woff2",
+      "bytes": 3352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/82.woff2",
+      "bytes": 2412,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/83.woff2",
+      "bytes": 2404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/84.woff2",
+      "bytes": 5316,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/85.woff2",
+      "bytes": 5784,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/86.woff2",
+      "bytes": 3080,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/87.woff2",
+      "bytes": 3960,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/88.woff2",
+      "bytes": 7576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/89.woff2",
+      "bytes": 15844,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/9.woff2",
+      "bytes": 1116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/90.woff2",
+      "bytes": 22316,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/91.woff2",
+      "bytes": 21680,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/92.woff2",
+      "bytes": 17768,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/93.woff2",
+      "bytes": 24408,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/94.woff2",
+      "bytes": 23980,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/95.woff2",
+      "bytes": 27700,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/96.woff2",
+      "bytes": 27964,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/97.woff2",
+      "bytes": 21312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/98.woff2",
+      "bytes": 26044,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/99.woff2",
+      "bytes": 25988,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/bold/upstream.css.txt",
+      "bytes": 145399,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/0.woff2",
+      "bytes": 41404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/1.woff2",
+      "bytes": 1676,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/10.woff2",
+      "bytes": 2028,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/100.woff2",
+      "bytes": 32300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/101.woff2",
+      "bytes": 31216,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/102.woff2",
+      "bytes": 30304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/103.woff2",
+      "bytes": 26848,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/104.woff2",
+      "bytes": 33548,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/105.woff2",
+      "bytes": 35316,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/106.woff2",
+      "bytes": 31704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/107.woff2",
+      "bytes": 38400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/108.woff2",
+      "bytes": 34944,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/109.woff2",
+      "bytes": 34780,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/11.woff2",
+      "bytes": 10564,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/110.woff2",
+      "bytes": 34824,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/111.woff2",
+      "bytes": 32748,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/112.woff2",
+      "bytes": 34192,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/113.woff2",
+      "bytes": 36928,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/114.woff2",
+      "bytes": 37520,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/115.woff2",
+      "bytes": 44268,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/116.woff2",
+      "bytes": 43992,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/117.woff2",
+      "bytes": 35360,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/118.woff2",
+      "bytes": 33392,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/119.woff2",
+      "bytes": 39028,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/12.woff2",
+      "bytes": 13440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/120.woff2",
+      "bytes": 41784,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/121.woff2",
+      "bytes": 39340,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/122.woff2",
+      "bytes": 42300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/123.woff2",
+      "bytes": 38112,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/124.woff2",
+      "bytes": 36396,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/125.woff2",
+      "bytes": 45832,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/126.woff2",
+      "bytes": 38552,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/127.woff2",
+      "bytes": 47172,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/128.woff2",
+      "bytes": 49216,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/129.woff2",
+      "bytes": 55492,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/13.woff2",
+      "bytes": 15736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/130.woff2",
+      "bytes": 56720,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/131.woff2",
+      "bytes": 40424,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/132.woff2",
+      "bytes": 30424,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/133.woff2",
+      "bytes": 40192,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/134.woff2",
+      "bytes": 36484,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/135.woff2",
+      "bytes": 27168,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/136.woff2",
+      "bytes": 34876,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/137.woff2",
+      "bytes": 34656,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/138.woff2",
+      "bytes": 39240,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/139.woff2",
+      "bytes": 40804,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/14.woff2",
+      "bytes": 18420,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/140.woff2",
+      "bytes": 52136,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/141.woff2",
+      "bytes": 32052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/142.woff2",
+      "bytes": 39196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/143.woff2",
+      "bytes": 38392,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/144.woff2",
+      "bytes": 38852,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/145.woff2",
+      "bytes": 47728,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/146.woff2",
+      "bytes": 41852,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/147.woff2",
+      "bytes": 52720,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/148.woff2",
+      "bytes": 37760,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/149.woff2",
+      "bytes": 34088,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/15.woff2",
+      "bytes": 20296,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/150.woff2",
+      "bytes": 40544,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/151.woff2",
+      "bytes": 50636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/152.woff2",
+      "bytes": 50240,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/153.woff2",
+      "bytes": 38416,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/154.woff2",
+      "bytes": 47984,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/155.woff2",
+      "bytes": 54668,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/156.woff2",
+      "bytes": 49064,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/157.woff2",
+      "bytes": 53196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/158.woff2",
+      "bytes": 41300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/159.woff2",
+      "bytes": 46040,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/16.woff2",
+      "bytes": 21696,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/160.woff2",
+      "bytes": 42312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/161.woff2",
+      "bytes": 43964,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/162.woff2",
+      "bytes": 48328,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/163.woff2",
+      "bytes": 49548,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/164.woff2",
+      "bytes": 57888,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/165.woff2",
+      "bytes": 66624,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/166.woff2",
+      "bytes": 47152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/167.woff2",
+      "bytes": 50844,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/168.woff2",
+      "bytes": 36400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/169.woff2",
+      "bytes": 48772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/17.woff2",
+      "bytes": 22948,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/170.woff2",
+      "bytes": 54616,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/171.woff2",
+      "bytes": 55516,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/172.woff2",
+      "bytes": 56632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/173.woff2",
+      "bytes": 47172,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/174.woff2",
+      "bytes": 54144,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/175.woff2",
+      "bytes": 48656,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/176.woff2",
+      "bytes": 44780,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/177.woff2",
+      "bytes": 50024,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/178.woff2",
+      "bytes": 59496,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/179.woff2",
+      "bytes": 54204,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/18.woff2",
+      "bytes": 25072,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/180.woff2",
+      "bytes": 51432,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/181.woff2",
+      "bytes": 61460,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/182.woff2",
+      "bytes": 66920,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/183.woff2",
+      "bytes": 69064,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/184.woff2",
+      "bytes": 73044,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/185.woff2",
+      "bytes": 69224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/186.woff2",
+      "bytes": 46528,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/187.woff2",
+      "bytes": 17876,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/19.woff2",
+      "bytes": 24980,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/2.woff2",
+      "bytes": 3372,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/20.woff2",
+      "bytes": 26296,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/21.woff2",
+      "bytes": 26320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/22.woff2",
+      "bytes": 29312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/23.woff2",
+      "bytes": 31736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/24.woff2",
+      "bytes": 31940,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/25.woff2",
+      "bytes": 33472,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/26.woff2",
+      "bytes": 35636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/27.woff2",
+      "bytes": 35332,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/28.woff2",
+      "bytes": 36188,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/29.woff2",
+      "bytes": 36848,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/3.woff2",
+      "bytes": 1048,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/30.woff2",
+      "bytes": 38400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/31.woff2",
+      "bytes": 39420,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/32.woff2",
+      "bytes": 38144,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/33.woff2",
+      "bytes": 40920,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/34.woff2",
+      "bytes": 41448,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/35.woff2",
+      "bytes": 41168,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/36.woff2",
+      "bytes": 42820,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/37.woff2",
+      "bytes": 42328,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/38.woff2",
+      "bytes": 42556,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/39.woff2",
+      "bytes": 44132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/4.woff2",
+      "bytes": 904,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/40.woff2",
+      "bytes": 44128,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/41.woff2",
+      "bytes": 46432,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/42.woff2",
+      "bytes": 46440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/43.woff2",
+      "bytes": 48184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/44.woff2",
+      "bytes": 49344,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/45.woff2",
+      "bytes": 50296,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/46.woff2",
+      "bytes": 48484,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/47.woff2",
+      "bytes": 30380,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/48.woff2",
+      "bytes": 8152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/49.woff2",
+      "bytes": 10504,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/5.woff2",
+      "bytes": 968,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/50.woff2",
+      "bytes": 12476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/51.woff2",
+      "bytes": 13748,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/52.woff2",
+      "bytes": 14532,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/53.woff2",
+      "bytes": 15836,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/54.woff2",
+      "bytes": 16196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/55.woff2",
+      "bytes": 16736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/56.woff2",
+      "bytes": 18292,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/57.woff2",
+      "bytes": 18732,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/58.woff2",
+      "bytes": 20068,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/59.woff2",
+      "bytes": 20448,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/6.woff2",
+      "bytes": 1832,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/60.woff2",
+      "bytes": 21492,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/61.woff2",
+      "bytes": 22048,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/62.woff2",
+      "bytes": 22808,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/63.woff2",
+      "bytes": 23384,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/64.woff2",
+      "bytes": 23312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/65.woff2",
+      "bytes": 24236,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/66.woff2",
+      "bytes": 24780,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/67.woff2",
+      "bytes": 25184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/68.woff2",
+      "bytes": 25236,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/69.woff2",
+      "bytes": 26548,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/7.woff2",
+      "bytes": 6536,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/70.woff2",
+      "bytes": 26436,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/71.woff2",
+      "bytes": 26404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/72.woff2",
+      "bytes": 28336,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/73.woff2",
+      "bytes": 31052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/74.woff2",
+      "bytes": 28472,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/75.woff2",
+      "bytes": 17452,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/76.woff2",
+      "bytes": 8580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/77.woff2",
+      "bytes": 7896,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/78.woff2",
+      "bytes": 2040,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/79.woff2",
+      "bytes": 892,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/8.woff2",
+      "bytes": 976,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/80.woff2",
+      "bytes": 4440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/81.woff2",
+      "bytes": 3272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/82.woff2",
+      "bytes": 2440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/83.woff2",
+      "bytes": 2496,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/84.woff2",
+      "bytes": 5520,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/85.woff2",
+      "bytes": 6036,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/86.woff2",
+      "bytes": 2744,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/87.woff2",
+      "bytes": 4780,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/88.woff2",
+      "bytes": 8140,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/89.woff2",
+      "bytes": 16320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/9.woff2",
+      "bytes": 1160,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/90.woff2",
+      "bytes": 22352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/91.woff2",
+      "bytes": 21276,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/92.woff2",
+      "bytes": 18544,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/93.woff2",
+      "bytes": 23920,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/94.woff2",
+      "bytes": 25100,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/95.woff2",
+      "bytes": 30092,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/96.woff2",
+      "bytes": 25364,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/97.woff2",
+      "bytes": 23324,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/98.woff2",
+      "bytes": 25376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/99.woff2",
+      "bytes": 26184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/demibold/upstream.css.txt",
+      "bytes": 148750,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/0.woff2",
+      "bytes": 41164,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/1.woff2",
+      "bytes": 1632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/10.woff2",
+      "bytes": 1956,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/100.woff2",
+      "bytes": 32244,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/101.woff2",
+      "bytes": 31196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/102.woff2",
+      "bytes": 30312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/103.woff2",
+      "bytes": 27004,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/104.woff2",
+      "bytes": 33744,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/105.woff2",
+      "bytes": 35668,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/106.woff2",
+      "bytes": 31552,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/107.woff2",
+      "bytes": 38280,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/108.woff2",
+      "bytes": 35128,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/109.woff2",
+      "bytes": 34756,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/11.woff2",
+      "bytes": 10636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/110.woff2",
+      "bytes": 34376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/111.woff2",
+      "bytes": 32852,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/112.woff2",
+      "bytes": 34272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/113.woff2",
+      "bytes": 37156,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/114.woff2",
+      "bytes": 36904,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/115.woff2",
+      "bytes": 43984,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/116.woff2",
+      "bytes": 43872,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/117.woff2",
+      "bytes": 35504,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/118.woff2",
+      "bytes": 33656,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/119.woff2",
+      "bytes": 38932,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/12.woff2",
+      "bytes": 13484,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/120.woff2",
+      "bytes": 41468,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/121.woff2",
+      "bytes": 39824,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/122.woff2",
+      "bytes": 41928,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/123.woff2",
+      "bytes": 38196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/124.woff2",
+      "bytes": 36484,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/125.woff2",
+      "bytes": 44628,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/126.woff2",
+      "bytes": 38684,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/127.woff2",
+      "bytes": 46924,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/128.woff2",
+      "bytes": 48940,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/129.woff2",
+      "bytes": 55720,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/13.woff2",
+      "bytes": 15816,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/130.woff2",
+      "bytes": 56864,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/131.woff2",
+      "bytes": 40060,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/132.woff2",
+      "bytes": 30664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/133.woff2",
+      "bytes": 39968,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/134.woff2",
+      "bytes": 36628,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/135.woff2",
+      "bytes": 27232,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/136.woff2",
+      "bytes": 34900,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/137.woff2",
+      "bytes": 34772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/138.woff2",
+      "bytes": 39100,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/139.woff2",
+      "bytes": 41188,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/14.woff2",
+      "bytes": 18508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/140.woff2",
+      "bytes": 52508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/141.woff2",
+      "bytes": 31972,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/142.woff2",
+      "bytes": 39044,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/143.woff2",
+      "bytes": 38528,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/144.woff2",
+      "bytes": 38936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/145.woff2",
+      "bytes": 47792,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/146.woff2",
+      "bytes": 41996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/147.woff2",
+      "bytes": 52684,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/148.woff2",
+      "bytes": 37964,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/149.woff2",
+      "bytes": 34356,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/15.woff2",
+      "bytes": 20372,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/150.woff2",
+      "bytes": 40868,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/151.woff2",
+      "bytes": 50748,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/152.woff2",
+      "bytes": 50480,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/153.woff2",
+      "bytes": 38496,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/154.woff2",
+      "bytes": 47828,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/155.woff2",
+      "bytes": 54472,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/156.woff2",
+      "bytes": 49260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/157.woff2",
+      "bytes": 53012,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/158.woff2",
+      "bytes": 41240,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/159.woff2",
+      "bytes": 45864,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/16.woff2",
+      "bytes": 21840,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/160.woff2",
+      "bytes": 42452,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/161.woff2",
+      "bytes": 44292,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/162.woff2",
+      "bytes": 48484,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/163.woff2",
+      "bytes": 49060,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/164.woff2",
+      "bytes": 57608,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/165.woff2",
+      "bytes": 66660,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/166.woff2",
+      "bytes": 47104,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/167.woff2",
+      "bytes": 51404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/168.woff2",
+      "bytes": 36580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/169.woff2",
+      "bytes": 48620,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/17.woff2",
+      "bytes": 22712,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/170.woff2",
+      "bytes": 54216,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/171.woff2",
+      "bytes": 55380,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/172.woff2",
+      "bytes": 57132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/173.woff2",
+      "bytes": 47240,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/174.woff2",
+      "bytes": 54216,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/175.woff2",
+      "bytes": 48772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/176.woff2",
+      "bytes": 44872,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/177.woff2",
+      "bytes": 48004,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/178.woff2",
+      "bytes": 55768,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/179.woff2",
+      "bytes": 52652,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/18.woff2",
+      "bytes": 25500,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/180.woff2",
+      "bytes": 51476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/181.woff2",
+      "bytes": 60300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/182.woff2",
+      "bytes": 67260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/183.woff2",
+      "bytes": 69068,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/184.woff2",
+      "bytes": 72588,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/185.woff2",
+      "bytes": 68884,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/186.woff2",
+      "bytes": 46356,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/187.woff2",
+      "bytes": 18012,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/19.woff2",
+      "bytes": 24996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/2.woff2",
+      "bytes": 3376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/20.woff2",
+      "bytes": 26440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/21.woff2",
+      "bytes": 26004,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/22.woff2",
+      "bytes": 29900,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/23.woff2",
+      "bytes": 31704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/24.woff2",
+      "bytes": 31980,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/25.woff2",
+      "bytes": 33676,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/26.woff2",
+      "bytes": 35736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/27.woff2",
+      "bytes": 35452,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/28.woff2",
+      "bytes": 36248,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/29.woff2",
+      "bytes": 37236,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/3.woff2",
+      "bytes": 1000,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/30.woff2",
+      "bytes": 38576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/31.woff2",
+      "bytes": 39176,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/32.woff2",
+      "bytes": 38152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/33.woff2",
+      "bytes": 40704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/34.woff2",
+      "bytes": 41408,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/35.woff2",
+      "bytes": 41344,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/36.woff2",
+      "bytes": 42936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/37.woff2",
+      "bytes": 42416,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/38.woff2",
+      "bytes": 42580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/39.woff2",
+      "bytes": 44380,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/4.woff2",
+      "bytes": 884,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/40.woff2",
+      "bytes": 44156,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/41.woff2",
+      "bytes": 46560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/42.woff2",
+      "bytes": 46584,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/43.woff2",
+      "bytes": 48292,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/44.woff2",
+      "bytes": 49476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/45.woff2",
+      "bytes": 50580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/46.woff2",
+      "bytes": 48664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/47.woff2",
+      "bytes": 30504,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/48.woff2",
+      "bytes": 8152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/49.woff2",
+      "bytes": 10464,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/5.woff2",
+      "bytes": 960,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/50.woff2",
+      "bytes": 12456,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/51.woff2",
+      "bytes": 13816,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/52.woff2",
+      "bytes": 14368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/53.woff2",
+      "bytes": 15844,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/54.woff2",
+      "bytes": 16404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/55.woff2",
+      "bytes": 16572,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/56.woff2",
+      "bytes": 18232,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/57.woff2",
+      "bytes": 18784,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/58.woff2",
+      "bytes": 19948,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/59.woff2",
+      "bytes": 20592,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/6.woff2",
+      "bytes": 1800,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/60.woff2",
+      "bytes": 21528,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/61.woff2",
+      "bytes": 21780,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/62.woff2",
+      "bytes": 23036,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/63.woff2",
+      "bytes": 23352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/64.woff2",
+      "bytes": 22948,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/65.woff2",
+      "bytes": 24092,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/66.woff2",
+      "bytes": 24668,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/67.woff2",
+      "bytes": 25484,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/68.woff2",
+      "bytes": 25100,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/69.woff2",
+      "bytes": 26548,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/7.woff2",
+      "bytes": 6340,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/70.woff2",
+      "bytes": 26152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/71.woff2",
+      "bytes": 26320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/72.woff2",
+      "bytes": 27972,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/73.woff2",
+      "bytes": 31000,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/74.woff2",
+      "bytes": 28428,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/75.woff2",
+      "bytes": 17372,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/76.woff2",
+      "bytes": 7880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/77.woff2",
+      "bytes": 6944,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/78.woff2",
+      "bytes": 1988,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/79.woff2",
+      "bytes": 868,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/8.woff2",
+      "bytes": 936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/80.woff2",
+      "bytes": 4376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/81.woff2",
+      "bytes": 3312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/82.woff2",
+      "bytes": 2400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/83.woff2",
+      "bytes": 2304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/84.woff2",
+      "bytes": 5524,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/85.woff2",
+      "bytes": 5476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/86.woff2",
+      "bytes": 2692,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/87.woff2",
+      "bytes": 4744,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/88.woff2",
+      "bytes": 8100,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/89.woff2",
+      "bytes": 16276,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/9.woff2",
+      "bytes": 1120,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/90.woff2",
+      "bytes": 22320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/91.woff2",
+      "bytes": 21252,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/92.woff2",
+      "bytes": 18480,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/93.woff2",
+      "bytes": 23980,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/94.woff2",
+      "bytes": 25228,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/95.woff2",
+      "bytes": 30624,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/96.woff2",
+      "bytes": 25400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/97.woff2",
+      "bytes": 23260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/98.woff2",
+      "bytes": 25280,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/99.woff2",
+      "bytes": 26272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/light/upstream.css.txt",
+      "bytes": 147586,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/0.woff2",
+      "bytes": 36932,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/1.woff2",
+      "bytes": 1636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/10.woff2",
+      "bytes": 1880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/100.woff2",
+      "bytes": 32272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/101.woff2",
+      "bytes": 31208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/102.woff2",
+      "bytes": 30584,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/103.woff2",
+      "bytes": 26924,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/104.woff2",
+      "bytes": 33732,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/105.woff2",
+      "bytes": 35260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/106.woff2",
+      "bytes": 31424,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/107.woff2",
+      "bytes": 38220,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/108.woff2",
+      "bytes": 34936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/109.woff2",
+      "bytes": 34672,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/11.woff2",
+      "bytes": 10552,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/110.woff2",
+      "bytes": 34576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/111.woff2",
+      "bytes": 32708,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/112.woff2",
+      "bytes": 34180,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/113.woff2",
+      "bytes": 36992,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/114.woff2",
+      "bytes": 36864,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/115.woff2",
+      "bytes": 44092,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/116.woff2",
+      "bytes": 43880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/117.woff2",
+      "bytes": 35492,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/118.woff2",
+      "bytes": 33444,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/119.woff2",
+      "bytes": 38736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/12.woff2",
+      "bytes": 13464,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/120.woff2",
+      "bytes": 41656,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/121.woff2",
+      "bytes": 39348,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/122.woff2",
+      "bytes": 42200,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/123.woff2",
+      "bytes": 38172,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/124.woff2",
+      "bytes": 36356,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/125.woff2",
+      "bytes": 44276,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/126.woff2",
+      "bytes": 38600,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/127.woff2",
+      "bytes": 47064,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/128.woff2",
+      "bytes": 48828,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/129.woff2",
+      "bytes": 55648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/13.woff2",
+      "bytes": 15724,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/130.woff2",
+      "bytes": 56596,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/131.woff2",
+      "bytes": 40256,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/132.woff2",
+      "bytes": 30460,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/133.woff2",
+      "bytes": 39880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/134.woff2",
+      "bytes": 36476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/135.woff2",
+      "bytes": 27176,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/136.woff2",
+      "bytes": 34792,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/137.woff2",
+      "bytes": 34688,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/138.woff2",
+      "bytes": 39080,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/139.woff2",
+      "bytes": 40940,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/14.woff2",
+      "bytes": 18468,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/140.woff2",
+      "bytes": 52288,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/141.woff2",
+      "bytes": 31988,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/142.woff2",
+      "bytes": 39084,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/143.woff2",
+      "bytes": 38432,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/144.woff2",
+      "bytes": 38864,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/145.woff2",
+      "bytes": 47720,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/146.woff2",
+      "bytes": 41948,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/147.woff2",
+      "bytes": 52624,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/148.woff2",
+      "bytes": 37772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/149.woff2",
+      "bytes": 34112,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/15.woff2",
+      "bytes": 20368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/150.woff2",
+      "bytes": 40848,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/151.woff2",
+      "bytes": 50652,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/152.woff2",
+      "bytes": 50216,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/153.woff2",
+      "bytes": 38440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/154.woff2",
+      "bytes": 47840,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/155.woff2",
+      "bytes": 54516,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/156.woff2",
+      "bytes": 49088,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/157.woff2",
+      "bytes": 53092,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/158.woff2",
+      "bytes": 41228,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/159.woff2",
+      "bytes": 45888,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/16.woff2",
+      "bytes": 21424,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/160.woff2",
+      "bytes": 42392,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/161.woff2",
+      "bytes": 43964,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/162.woff2",
+      "bytes": 48320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/163.woff2",
+      "bytes": 49008,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/164.woff2",
+      "bytes": 57480,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/165.woff2",
+      "bytes": 66488,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/166.woff2",
+      "bytes": 47016,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/167.woff2",
+      "bytes": 50832,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/168.woff2",
+      "bytes": 36404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/169.woff2",
+      "bytes": 48620,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/17.woff2",
+      "bytes": 22660,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/170.woff2",
+      "bytes": 54284,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/171.woff2",
+      "bytes": 55352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/172.woff2",
+      "bytes": 56836,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/173.woff2",
+      "bytes": 47200,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/174.woff2",
+      "bytes": 54036,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/175.woff2",
+      "bytes": 48776,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/176.woff2",
+      "bytes": 44632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/177.woff2",
+      "bytes": 49124,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/178.woff2",
+      "bytes": 57348,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/179.woff2",
+      "bytes": 53432,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/18.woff2",
+      "bytes": 25028,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/180.woff2",
+      "bytes": 51336,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/181.woff2",
+      "bytes": 61084,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/182.woff2",
+      "bytes": 67116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/183.woff2",
+      "bytes": 69460,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/184.woff2",
+      "bytes": 72420,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/185.woff2",
+      "bytes": 69040,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/186.woff2",
+      "bytes": 45984,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/187.woff2",
+      "bytes": 17360,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/19.woff2",
+      "bytes": 24988,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/2.woff2",
+      "bytes": 3364,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/20.woff2",
+      "bytes": 26244,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/21.woff2",
+      "bytes": 25948,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/22.woff2",
+      "bytes": 29312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/23.woff2",
+      "bytes": 31684,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/24.woff2",
+      "bytes": 31788,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/25.woff2",
+      "bytes": 33552,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/26.woff2",
+      "bytes": 35564,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/27.woff2",
+      "bytes": 35152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/28.woff2",
+      "bytes": 36140,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/29.woff2",
+      "bytes": 37120,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/3.woff2",
+      "bytes": 1028,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/30.woff2",
+      "bytes": 38512,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/31.woff2",
+      "bytes": 39516,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/32.woff2",
+      "bytes": 38096,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/33.woff2",
+      "bytes": 41048,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/34.woff2",
+      "bytes": 41404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/35.woff2",
+      "bytes": 41152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/36.woff2",
+      "bytes": 42932,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/37.woff2",
+      "bytes": 42264,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/38.woff2",
+      "bytes": 42524,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/39.woff2",
+      "bytes": 44296,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/4.woff2",
+      "bytes": 880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/40.woff2",
+      "bytes": 43944,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/41.woff2",
+      "bytes": 46372,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/42.woff2",
+      "bytes": 46424,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/43.woff2",
+      "bytes": 48156,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/44.woff2",
+      "bytes": 48788,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/45.woff2",
+      "bytes": 50376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/46.woff2",
+      "bytes": 48628,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/47.woff2",
+      "bytes": 30448,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/48.woff2",
+      "bytes": 8112,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/49.woff2",
+      "bytes": 10404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/5.woff2",
+      "bytes": 956,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/50.woff2",
+      "bytes": 12460,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/51.woff2",
+      "bytes": 13696,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/52.woff2",
+      "bytes": 14428,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/53.woff2",
+      "bytes": 15692,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/54.woff2",
+      "bytes": 16360,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/55.woff2",
+      "bytes": 16764,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/56.woff2",
+      "bytes": 18280,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/57.woff2",
+      "bytes": 18668,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/58.woff2",
+      "bytes": 20048,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/59.woff2",
+      "bytes": 20632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/6.woff2",
+      "bytes": 1796,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/60.woff2",
+      "bytes": 21476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/61.woff2",
+      "bytes": 22024,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/62.woff2",
+      "bytes": 22656,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/63.woff2",
+      "bytes": 23340,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/64.woff2",
+      "bytes": 23316,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/65.woff2",
+      "bytes": 24004,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/66.woff2",
+      "bytes": 24936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/67.woff2",
+      "bytes": 25480,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/68.woff2",
+      "bytes": 25132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/69.woff2",
+      "bytes": 26492,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/7.woff2",
+      "bytes": 6316,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/70.woff2",
+      "bytes": 26444,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/71.woff2",
+      "bytes": 26372,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/72.woff2",
+      "bytes": 27892,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/73.woff2",
+      "bytes": 30956,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/74.woff2",
+      "bytes": 28596,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/75.woff2",
+      "bytes": 17516,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/76.woff2",
+      "bytes": 7876,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/77.woff2",
+      "bytes": 7636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/78.woff2",
+      "bytes": 2020,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/79.woff2",
+      "bytes": 880,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/8.woff2",
+      "bytes": 936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/80.woff2",
+      "bytes": 4344,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/81.woff2",
+      "bytes": 3264,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/82.woff2",
+      "bytes": 2392,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/83.woff2",
+      "bytes": 2276,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/84.woff2",
+      "bytes": 5144,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/85.woff2",
+      "bytes": 5436,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/86.woff2",
+      "bytes": 2692,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/87.woff2",
+      "bytes": 4744,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/88.woff2",
+      "bytes": 8016,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/89.woff2",
+      "bytes": 16296,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/9.woff2",
+      "bytes": 1100,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/90.woff2",
+      "bytes": 22264,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/91.woff2",
+      "bytes": 21264,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/92.woff2",
+      "bytes": 18452,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/93.woff2",
+      "bytes": 23932,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/94.woff2",
+      "bytes": 25024,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/95.woff2",
+      "bytes": 30200,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/96.woff2",
+      "bytes": 25256,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/97.woff2",
+      "bytes": 23172,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/98.woff2",
+      "bytes": 25268,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/99.woff2",
+      "bytes": 26200,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/regular/upstream.css.txt",
+      "bytes": 145146,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/fonts/misans-webfont-4.3.1/source.json",
+      "bytes": 114457,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/icons/app-icon.svg",
+      "bytes": 507,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/icons/apple-touch-icon.png",
+      "bytes": 3667,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/icons/icon-192.png",
+      "bytes": 3939,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/icons/icon-512.png",
+      "bytes": 14610,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/icons/icon-maskable-512.png",
+      "bytes": 14610,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/index.html",
+      "bytes": 1593,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/licenses/rolling-number.txt",
+      "bytes": 1068,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/manifest.webmanifest",
+      "bytes": 625,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/update.html",
+      "bytes": 1792,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/film/app/update.js",
+      "bytes": 2057,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/film/config.js",
+      "bytes": 48,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/film/script.js",
+      "bytes": 5825,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/film/style.css",
+      "bytes": 210,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/index.html",
+      "bytes": 636,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/LICENSE",
+      "bytes": 1063,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/PR15-ATTRIBUTION.md",
+      "bytes": 1948,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/README.md",
+      "bytes": 19788,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/UPSTREAM.md",
+      "bytes": 6432,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/art/README.md",
+      "bytes": 1358,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/art/archive-assembly.blend",
+      "bytes": 4857544,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/art/build_archive.py",
+      "bytes": 11306,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/art/build_assembly.py",
+      "bytes": 3264,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/art/clear_reference_details.py",
+      "bytes": 2879,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/art/internal_architecture.py",
+      "bytes": 6340,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/art/rhine-archive.blend",
+      "bytes": 5624941,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/art/setup_studio.py",
+      "bytes": 1399,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/art/shell_reference_details.py",
+      "bytes": 4079,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/build.mjs",
+      "bytes": 2728,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/content/README.md",
+      "bytes": 2554,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/content/archives.json",
+      "bytes": 35817,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/film/app.ts",
+      "bytes": 1846,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/film/clock-shim.js",
+      "bytes": 4543,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/film/render-audio.mjs",
+      "bytes": 6340,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/film/sequence.js",
+      "bytes": 5281,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/index.html",
+      "bytes": 1248,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/licenses/audio/README.md",
+      "bytes": 949,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/licenses/fonts/MiSans-license.pdf",
+      "bytes": 79535,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/licenses/fonts/NOTICE.txt",
+      "bytes": 929,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/licenses/licenses/rolling-number.txt",
+      "bytes": 1068,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/package-lock.json",
+      "bytes": 40579,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/package.json",
+      "bytes": 1262,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/scripts/extract-typing-audio.mjs",
+      "bytes": 4385,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/scripts/patch-rolling-number.mjs",
+      "bytes": 806,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/scripts/render-audio.mjs",
+      "bytes": 7176,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/appearance.ts",
+      "bytes": 8043,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/archive-drag.ts",
+      "bytes": 5541,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/archive-draw-coverage.ts",
+      "bytes": 2596,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/archive-lighting.ts",
+      "bytes": 1273,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/archive-loop.ts",
+      "bytes": 2454,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/archive-play-motion.ts",
+      "bytes": 5651,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/archive-playground.css",
+      "bytes": 2203,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/archive-playground.ts",
+      "bytes": 10919,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/archive-visibility.ts",
+      "bytes": 3410,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/asset-url.ts",
+      "bytes": 354,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/audio-settings.ts",
+      "bytes": 1005,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/audio.ts",
+      "bytes": 26070,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/boot-lettering-art.json",
+      "bytes": 29697,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/boot-lettering.css",
+      "bytes": 1871,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/boot-lettering.ts",
+      "bytes": 4331,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/boot-logo-tracks.ts",
+      "bytes": 3724,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/boot-motion.ts",
+      "bytes": 4192,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/boot-orbit-tracks.ts",
+      "bytes": 4835,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/boot-tracks.ts",
+      "bytes": 7402,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/boot.ts",
+      "bytes": 11417,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/brand.ts",
+      "bytes": 1620,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/data.ts",
+      "bytes": 1077,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/decryption.css",
+      "bytes": 647,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/decryption.ts",
+      "bytes": 5709,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/document-decryption.css",
+      "bytes": 390,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/document-decryption.ts",
+      "bytes": 4184,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/fonts.css",
+      "bytes": 587429,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/gamepad.ts",
+      "bytes": 5847,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/glass-reveal.ts",
+      "bytes": 2248,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/html.ts",
+      "bytes": 405,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/hud-projection.ts",
+      "bytes": 7492,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/inspection-overlay.ts",
+      "bytes": 2303,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/instance-updates.ts",
+      "bytes": 1274,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/internal-optics.ts",
+      "bytes": 2054,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/main.ts",
+      "bytes": 70858,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/model-viewer.ts",
+      "bytes": 25740,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/motion-preferences.ts",
+      "bytes": 6698,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/motion.ts",
+      "bytes": 4413,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/pwa.ts",
+      "bytes": 5199,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/quality-renderer.ts",
+      "bytes": 2566,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/quality-settings.css",
+      "bytes": 2332,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/quality-settings.ts",
+      "bytes": 6468,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/render-quality.ts",
+      "bytes": 3985,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/render-state.ts",
+      "bytes": 950,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/responsive.css",
+      "bytes": 22220,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/rolling-clock.ts",
+      "bytes": 1061,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/scene.ts",
+      "bytes": 81294,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/screen-finish.ts",
+      "bytes": 5430,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/shared-depth.ts",
+      "bytes": 5617,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/startup.css",
+      "bytes": 1008,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/startup.ts",
+      "bytes": 4230,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/style.css",
+      "bytes": 40818,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/theme-material.ts",
+      "bytes": 4276,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/theme-motion.ts",
+      "bytes": 1713,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/theme-ui.ts",
+      "bytes": 1366,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/theme.css",
+      "bytes": 9968,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/three-resources.ts",
+      "bytes": 1159,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/typing-rhythm.ts",
+      "bytes": 919,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/typing-samples.ts",
+      "bytes": 14792,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/ui-transitions.ts",
+      "bytes": 2934,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/viewer-camera.ts",
+      "bytes": 2890,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/viewport-layout.ts",
+      "bytes": 1857,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/vite-env.d.ts",
+      "bytes": 38,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/wallpaper-background.ts",
+      "bytes": 3121,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/wallpaper-effects.css",
+      "bytes": 4768,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/wallpaper-effects.ts",
+      "bytes": 5547,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/wallpaper-image-url.ts",
+      "bytes": 1179,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/wallpaper-insets.css",
+      "bytes": 3893,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/wallpaper-opening.ts",
+      "bytes": 261,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/wallpaper-quality.ts",
+      "bytes": 1037,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/wallpaper.css",
+      "bytes": 567,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/wallpaper.ts",
+      "bytes": 1221,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/workbench-rolling.ts",
+      "bytes": 3655,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/workbench-state.ts",
+      "bytes": 1747,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/workbench-visibility.ts",
+      "bytes": 930,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/workbench.css",
+      "bytes": 6884,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/src/workbench.ts",
+      "bytes": 17704,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/tsconfig.json",
+      "bytes": 355,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/archive-os/source/rhinelabui/vite.config.ts",
+      "bytes": 661,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/LICENSES.md",
+      "bytes": 593,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/audio/CREDITS",
+      "bytes": 2285,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/audio/film.m4a",
+      "bytes": 1537256,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fidelity.md",
+      "bytes": 3310,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/film.js",
+      "bytes": 39070,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/gl.js",
+      "bytes": 8734,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/index.html",
+      "bytes": 567,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/net.js",
+      "bytes": 14857,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/timeline.js",
+      "bytes": 42492,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/NotoSansSC-sub.ttf",
+      "bytes": 118788,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/OFL-Inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/OFL-NotoSansSC.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/fonts.css",
+      "bytes": 186,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/index.html",
+      "bytes": 2394,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/CREDITS",
+      "bytes": 2285,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/FACTS.md",
+      "bytes": 7872,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/README.md",
+      "bytes": 1636,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/audio.py",
+      "bytes": 17471,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/build.sh",
+      "bytes": 2555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/events.json",
+      "bytes": 44929,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/tools/chars.txt",
+      "bytes": 695,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/tools/sheet.sh",
+      "bytes": 442,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/tools/subset.py",
+      "bytes": 832,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/index.html",
+      "bytes": 1215,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/archives.json",
+      "bytes": 35817,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/config.js",
+      "bytes": 370,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/fonts.css",
+      "bytes": 110176,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/frame.html",
+      "bytes": 2254,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/frame.js",
+      "bytes": 3045,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/host.css",
+      "bytes": 111,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/rolling.css",
+      "bytes": 2488,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/rolling.js",
+      "bytes": 25158,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/script.js",
+      "bytes": 2112,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/mechanism/style.css",
+      "bytes": 4770,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/rolling-digits/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/archive-os.md",
+      "bytes": 2503,
+      "role": "doc"
+    },
+    {
+      "path": "entries/cases/archive-os.json",
+      "bytes": 9784,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/lemo-transit-map.json",
+      "bytes": 9619,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/rolling-digits.json",
+      "bytes": 5770,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/rolling-digits.jpg",
+      "bytes": 14376,
+      "role": "preview"
+    }
+  ]
+}

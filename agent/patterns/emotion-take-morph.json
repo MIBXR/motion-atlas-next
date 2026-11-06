@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "emotion-take-morph",
+  "pattern": {
+    "id": "emotion-take-morph",
+    "order": 175,
+    "title": "表情过渡：闭眼、挤压、冒符号再睁眼",
+    "types": [
+      "feedback"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "renderer": "gpu",
+    "summary": "换情绪前先挤闭眼，在闭眼时换眼型，随后拉伸、挤压回弹并弹出汗滴或星光等反应符号。",
+    "mechanism": "mood(t,keys) 根据当前表情键和距下一次切换的时间返回 eyes、squint、take、emote、emoteK；提前 .08 秒挤眼，在新眼型的前 .16 秒睁开并做负 take 拉伸，随后 .24 秒做衰减正 take 挤压。eyes 用 squint 压缩眼型，clawd 把 take 加到 sq；emote 用 backOut 弹出符号。",
+    "trigger": "mood 的时间线接近或越过下一个表情键。",
+    "effect": "眼型变化藏在闭眼动作里，身体先拉伸再挤压恢复，反应符号在头边弹出并收回，情绪切换成为一次可见表演。",
+    "timing": [
+      {
+        "name": "闭眼与睁眼",
+        "value": "film/src/clawd.js:211–216：切换前 .08 秒 squint→1；age<.16 时 squint=1-age/.16，take=-.14*sin(age/.16*PI)。"
+      },
+      {
+        "name": "挤压回弹",
+        "value": "film/src/clawd.js:217：.16≤age<.4 时 take=.1*sin((age-.16)/.24*PI)*(1-(age-.16)/.24)。"
+      },
+      {
+        "name": "符号包络",
+        "value": "film/src/clawd.js:218：emoteK=seg(age,.05,.3)*(1-seg(age,1.4,1.7))；.05–.3秒进入，1.4–1.7秒退出。"
+      },
+      {
+        "name": "重放区间",
+        "value": "原片3.6–5.9秒、6–8.95秒，巧思总时长5.25秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "身体变形",
+        "value": "film/src/clawd.js:11/22：sq=(o.sq||0)+(o.take||0)，横向 1+sq*.6，纵向 1-sq。"
+      },
+      {
+        "name": "眼型遮换",
+        "value": "film/src/clawd.js:90–93：squint>.8 时画闭眼线；否则横向 1+squint*.15、纵向 1-squint。"
+      },
+      {
+        "name": "符号",
+        "value": "film/src/clawd.js:75/180–204：头边 (x±5.4u,y+dy-8.6u)，s=.9u；sweat/spark/heart 等以 backOut(k) 缩放，!/? 由 letter 的 pop 绘制。"
+      },
+      {
+        "name": "片段情绪键",
+        "value": "film/src/ch/c01_lab.js:164/206/240：3.92秒 normal→spark 并冒星，6秒 Researcher star→wide 并冒汗；8秒段含 normal→wink→look。"
+      }
+    ],
+    "useCases": [
+      "手绘角色的惊讶、紧张与喜爱反应",
+      "用一次 take 连接两种差异明显的眼型"
+    ],
+    "avoid": [
+      "没有眼型和身体变形余量的图标",
+      "需要原片区间无缝循环的演出"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "cel-line-boil"
+      ],
+      "conflicts": []
+    },
+    "prompt": "复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“表情过渡：闭眼、挤压、冒符号再睁眼”，总时长5.25秒。mood(t,keys) 根据当前表情键和下一次切换的距离返回 eyes、squint、take、emote、emoteK；提前 .08 秒挤眼，在新眼型的前 .16 秒睁开并做负 take 拉伸，随后 .24 秒做衰减正 take 挤压。eyes 用 squint 压缩眼型，clawd 把 take 加到 sq；emote 用 backOut 弹出符号。 film/src/clawd.js:11/22：sq=(o.sq||0)+(o.take||0)，横向 1+sq*.6，纵向 1-sq。 film/src/clawd.js:90–93：squint>.8 时画闭眼线；否则横向 1+squint*.15、纵向 1-squint。 film/src/clawd.js:75/180–204：头边 (x±5.4u,y+dy-8.6u)，s=.9u；sweat/spark/heart 等以 backOut(k) 缩放，!/? 由 letter 的 pop 绘制。 film/src/ch/c01_lab.js:164/206/240：3.92秒 normal→spark 并冒星，6秒 Researcher star→wide 并冒汗；8秒段含 normal→wink→look。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。",
+    "demo": "demos/patterns/emotion-take-morph/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "pdoom-video"
+      }
+    ],
+    "previewAt": 0.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "P(doom) 手绘 MV · 3.6–5.9秒"
+      },
+      {
+        "t": 2.3,
+        "label": "P(doom) 手绘 MV · 6–8.95秒"
+      }
+    ],
+    "sound": {
+      "description": "原始 MP3 按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#F3EBDC",
+        "#2B2233",
+        "#D97757",
+        "#A84D33",
+        "#F2A283",
+        "#1F2550",
+        "#2F3C7A",
+        "#E27A92",
+        "#E8AA38",
+        "#6E9F58",
+        "#3A9C98",
+        "#7B5CA8",
+        "#FFF5E2",
+        "#8EC3E6"
+      ],
+      "type": "Permanent Marker 400；Shantell Sans 800。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置原片起止时刻，画面与音轨使用相同映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴节点与减少动态的停留时刻。"
+      }
+    ],
+    "preview": "previews/patterns/emotion-take-morph.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "pdoom-video",
+      "bundle": "agent/cases/pdoom-video.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 表情过渡：闭眼、挤压、冒符号再睁眼\n\n## 实现 Prompt\n\n复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“表情过渡：闭眼、挤压、冒符号再睁眼”，总时长5.25秒。mood(t,keys) 根据当前表情键和下一次切换的距离返回 eyes、squint、take、emote、emoteK；提前 .08 秒挤眼，在新眼型的前 .16 秒睁开并做负 take 拉伸，随后 .24 秒做衰减正 take 挤压。eyes 用 squint 压缩眼型，clawd 把 take 加到 sq；emote 用 backOut 弹出符号。 film/src/clawd.js:11/22：sq=(o.sq||0)+(o.take||0)，横向 1+sq*.6，纵向 1-sq。 film/src/clawd.js:90–93：squint>.8 时画闭眼线；否则横向 1+squint*.15、纵向 1-squint。 film/src/clawd.js:75/180–204：头边 (x±5.4u,y+dy-8.6u)，s=.9u；sweat/spark/heart 等以 backOut(k) 缩放，!/? 由 letter 的 pop 绘制。 film/src/ch/c01_lab.js:164/206/240：3.92秒 normal→spark 并冒星，6秒 Researcher star→wide 并冒汗；8秒段含 normal→wink→look。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。\n\n## 参数\n\n- **闭眼与睁眼**：film/src/clawd.js:211–216：切换前 .08 秒 squint→1；age<.16 时 squint=1-age/.16，take=-.14*sin(age/.16*PI)。\n- **挤压回弹**：film/src/clawd.js:217：.16≤age<.4 时 take=.1*sin((age-.16)/.24*PI)*(1-(age-.16)/.24)。\n- **符号包络**：film/src/clawd.js:218：emoteK=seg(age,.05,.3)*(1-seg(age,1.4,1.7))；.05–.3秒进入，1.4–1.7秒退出。\n- **重放区间**：原片3.6–5.9秒、6–8.95秒，巧思总时长5.25秒。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置原片起止时刻，画面与音轨使用相同映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴节点与减少动态的停留时刻。\n\n[打开 Demo](../../demos/patterns/emotion-take-morph/index.html) · [在库中查看](../../patterns.html#pattern/emotion-take-morph)\n"
+  },
+  "entrypoint": "demos/patterns/emotion-take-morph/index.html",
+  "files": [
+    {
+      "path": "demos/cases/pdoom-video/LICENSES.md",
+      "bytes": 1827,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/audio/pdoom.mp3",
+      "bytes": 3437188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fidelity.md",
+      "bytes": 5347,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/index.html",
+      "bytes": 1565,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/cast.js",
+      "bytes": 9723,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c01_lab.js",
+      "bytes": 40369,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c02_chorus1.js",
+      "bytes": 55643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c03_takeoff.js",
+      "bytes": 65878,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c04_chorus2.js",
+      "bytes": 68165,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c05_obsolete.js",
+      "bytes": 71664,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c06_chorus3.js",
+      "bytes": 56889,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c07_scale.js",
+      "bytes": 54754,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c08_chorus4.js",
+      "bytes": 64423,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c09_finale.js",
+      "bytes": 28289,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/clawd.js",
+      "bytes": 18959,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/core.js",
+      "bytes": 14844,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/lyrics.js",
+      "bytes": 2274,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/props.js",
+      "bytes": 7599,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/timeline.js",
+      "bytes": 6749,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/PermanentMarker-LICENSE.txt",
+      "bytes": 11358,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/PermanentMarker-Regular.ttf",
+      "bytes": 74632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/ShantellSans-OFL.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/ShantellSans[BNCE,INFM,SPAC,wght].ttf",
+      "bytes": 1284736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/fonts.css",
+      "bytes": 361,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/index.html",
+      "bytes": 3247,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/ANIMATION_GUIDE.md",
+      "bytes": 11677,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/README.md",
+      "bytes": 2836,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/STORYBOARD.md",
+      "bytes": 16064,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/package-lock.json",
+      "bytes": 20492,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/package.json",
+      "bytes": 345,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/render.mjs",
+      "bytes": 7555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/studio.html",
+      "bytes": 1810,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5.brush@2.2.3/LICENSE.md",
+      "bytes": 1084,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5.brush@2.2.3/p5.brush.js",
+      "bytes": 71792,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5@2.3.3/license.txt",
+      "bytes": 24480,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5@2.3.3/p5.min.js",
+      "bytes": 990372,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/emotion-take-morph/index.html",
+      "bytes": 1200,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/emotion-take-morph/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/pdoom-video.md",
+      "bytes": 3611,
+      "role": "doc"
+    },
+    {
+      "path": "entries/cases/pdoom-video.json",
+      "bytes": 13469,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/emotion-take-morph.json",
+      "bytes": 4980,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/emotion-take-morph.jpg",
+      "bytes": 96804,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "striped-sun-rise",
+  "order": 57,
+  "title": "条纹落日升起",
+  "types": [
+    "composition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15",
+    "合成波"
+  ],
+  "summary": "带有横向镂空条纹的渐变落日从地平线后升起，下半圆的条纹按相位卷动并向下加宽。",
+  "mechanism": "带有横向镂空条纹的渐变落日从地平线后升起，下半圆的条纹按相位卷动并向下加宽。",
+  "trigger": "升日时间窗口推进时",
+  "effect": "落日从地平线后完整显露，条纹与光晕继续运动。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-synthwave 原片 0.9–9.8 秒；1 倍速，总时长 8.9 秒。"
+    },
+    {
+      "name": "条纹落日升起参数",
+      "value": "const SUN_D = 1150, SUN_RPX = 250, SUN_R = SUN_RPX / FPX * SUN_D;\n    float ph = w * 8.5 - uSunTime * .55;\n    float gapF = clamp(w * .42, 0., .62) * step(0., w);\n  const sunPx = lerp(-150, 110, rise) + 16 * eInOutSine((ts - 7.2) / 2.8);"
+    }
+  ],
+  "useCases": [
+    "合成波落日",
+    "地平线后升起的条纹图形"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-synthwave 原片 0.9–9.8 秒；总时长 8.9 秒。横向镂空条纹的渐变落日从地平线后升起，下半圆条纹按相位卷动且向下加宽。参数保持原作数值：const SUN_D = 1150, SUN_RPX = 250, SUN_R = SUN_RPX / FPX * SUN_D;\n    float ph = w * 8.5 - uSunTime * .55;\n    float gapF = clamp(w * .42, 0., .62) * step(0., w);\n  const sunPx = lerp(-150, 110, rise) + 16 * eInOutSine((ts - 7.2) / 2.8);\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/striped-sun-rise/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "mg-synthwave"
+    }
+  ],
+  "previewAt": 2.9,
+  "markers": [
+    {
+      "t": 0,
+      "label": "合成波"
+    },
+    {
+      "t": 0.3,
+      "label": "机制画面 1"
+    },
+    {
+      "t": 1.6,
+      "label": "机制画面 2"
+    },
+    {
+      "t": 2.9,
+      "label": "机制画面 3"
+    }
+  ]
+}

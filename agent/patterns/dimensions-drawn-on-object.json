@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "dimensions-drawn-on-object",
+  "pattern": {
+    "id": "dimensions-drawn-on-object",
+    "order": 166,
+    "title": "实物上画尺寸",
+    "types": [
+      "hud"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "合拢后的键盘直接承载尺寸线：三维端点每帧投影，延伸线、端帽与按尺寸线角度排版的数字逐步画出，数值取自真实工程文件。",
+    "mechanism": "合拢后的键盘直接承载尺寸线：三维端点每帧投影，延伸线、端帽与按尺寸线角度排版的数字逐步画出，数值取自真实工程文件。",
+    "trigger": "原作时间轴进入所列动作区间。",
+    "effect": "合拢后的键盘直接承载尺寸线：三维端点每帧投影，延伸线、端帽与按尺寸线角度排版的数字逐步画出，数值取自真实工程文件。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "27.500—33.650秒，1倍速。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "真实尺寸",
+        "value": "键距19.05mm、宽138.4mm、深97.6mm、高11.1mm；dimP从27.5秒、dimW从28.125秒、dimD从28.75秒、dimH从29.375秒起。",
+        "source": "demos/cases/lemo-teardown/film/src/timeline.js:LBL"
+      },
+      {
+        "name": "透视尺寸线",
+        "value": "dimension逐帧投影a/b与偏置向量，按p先画延伸线再画主线，数字放于暗底片上并修正角度以保持正向。",
+        "source": "demos/cases/lemo-teardown/film/src/overlay.js:dimension"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-teardown/film/src/timeline.js",
+      "demos/cases/lemo-teardown/film/src/overlay.js"
+    ],
+    "locator": "film/src/timeline.js:LBL；film/src/overlay.js:dimension",
+    "useCases": [
+      "实物上画尺寸"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "以来源案例lemo-teardown的原作render(t)重放“实物上画尺寸”。合拢后的键盘直接承载尺寸线：三维端点每帧投影，延伸线、端帽与沿线角度排版的数字逐步画出，数值取真实工程文件。 参数：键距19.05mm、宽138.4mm、深97.6mm、高11.1mm；dimP从27.5秒、dimW从28.125秒、dimD从28.75秒、dimH从29.375秒起。；dimension逐帧投影a/b与偏置向量，按p先画延伸线再画主线，数字放于暗底片上并修正角度以保持正向。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+    "demo": "demos/patterns/dimensions-drawn-on-object/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-teardown"
+      }
+    ],
+    "previewAt": 4.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "实物上画尺寸"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/dimensions-drawn-on-object.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-teardown",
+      "bundle": "agent/cases/lemo-teardown.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 实物上画尺寸\n\n## 实现 Prompt\n\n以来源案例lemo-teardown的原作render(t)重放“实物上画尺寸”。合拢后的键盘直接承载尺寸线：三维端点每帧投影，延伸线、端帽与沿线角度排版的数字逐步画出，数值取真实工程文件。 参数：键距19.05mm、宽138.4mm、深97.6mm、高11.1mm；dimP从27.5秒、dimW从28.125秒、dimD从28.75秒、dimH从29.375秒起。；dimension逐帧投影a/b与偏置向量，按p先画延伸线再画主线，数字放于暗底片上并修正角度以保持正向。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：27.500—33.650秒，1倍速。\n\n[打开 Demo](../../demos/patterns/dimensions-drawn-on-object/index.html) · [在库中查看](../../patterns.html#pattern/dimensions-drawn-on-object)\n"
+  },
+  "entrypoint": "demos/patterns/dimensions-drawn-on-object/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-teardown/LICENSES.md",
+      "bytes": 1165,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/assets/photo_studio_loft_hall_2k.hdr",
+      "bytes": 6432146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/CREDITS",
+      "bytes": 2427,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/film.m4a",
+      "bytes": 1255763,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fidelity.md",
+      "bytes": 3739,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/core/three/post.js",
+      "bytes": 6482,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/cues.json",
+      "bytes": 1199,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/data/case.bin",
+      "bytes": 1483928,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/data/pcb.json",
+      "bytes": 660897,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/index.html",
+      "bytes": 1331,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/comps.js",
+      "bytes": 5445,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/main.js",
+      "bytes": 17565,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/overlay.js",
+      "bytes": 11151,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/parts.js",
+      "bytes": 8321,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/pcbtex.js",
+      "bytes": 4427,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/timeline.js",
+      "bytes": 5319,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/voice/out/dur.json",
+      "bytes": 127,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/voice/out/words.json",
+      "bytes": 1227,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/JetBrainsMono.ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/NotoSansSC-400.woff2",
+      "bytes": 14424,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/NotoSansSC-500.woff2",
+      "bytes": 14628,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/OFL-inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/OFL-jetbrainsmono.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/fonts.css",
+      "bytes": 379,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/index.html",
+      "bytes": 4088,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/CREDITS",
+      "bytes": 2427,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/FACTS.md",
+      "bytes": 6175,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/README.md",
+      "bytes": 2521,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/build.sh",
+      "bytes": 3002,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/LICENSE_CC",
+      "bytes": 18657,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/LICENSE_MIT",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/corne-cherry.kicad_pcb",
+      "bytes": 4634342,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/left.step",
+      "bytes": 563447,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/plate-top-cherrymx.kicad_pcb",
+      "bytes": 127156,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/events.json",
+      "bytes": 3543,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/mix.py",
+      "bytes": 12380,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/timeline.json",
+      "bytes": 671,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/export.mjs",
+      "bytes": 1963,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/extract_pcb.py",
+      "bytes": 6334,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/fetch_cad.sh",
+      "bytes": 952,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/fetch_fonts.py",
+      "bytes": 1753,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/kicad_geom.py",
+      "bytes": 4692,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/motioncheck.py",
+      "bytes": 1670,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/sexp.py",
+      "bytes": 519,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/step2mesh.mjs",
+      "bytes": 1530,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/subcheck.mjs",
+      "bytes": 1090,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/voice/lines.json",
+      "bytes": 1228,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "bytes": 4625,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+      "bytes": 314097,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+      "bytes": 516,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+      "bytes": 110273,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+      "bytes": 11377,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/dimensions-drawn-on-object/index.html",
+      "bytes": 800,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/dimensions-drawn-on-object/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-teardown.json",
+      "bytes": 9675,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/dimensions-drawn-on-object.json",
+      "bytes": 2758,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/dimensions-drawn-on-object.jpg",
+      "bytes": 50184,
+      "role": "preview"
+    }
+  ]
+}

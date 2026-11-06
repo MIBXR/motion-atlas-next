@@ -1,0 +1,72 @@
+{
+  "id": "many-into-one-countdown",
+  "order": 159,
+  "title": "多格倒数合一",
+  "types": [
+    "composition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "3×3布局中的摄影机格随倒数原声逐个打开；零点时，每个旧格移到同一全屏镜头中对应的拼块位置，边框和标签消退，所有拼块交叉淡入同一个镜头，时钟与转写回到底部。",
+  "mechanism": "3×3布局中的摄影机格随倒数原声逐个打开；零点时，每个旧格移到同一全屏镜头中对应的拼块位置，边框和标签消退，所有拼块交叉淡入同一个镜头，时钟与转写回到底部。",
+  "trigger": "在23.10、24.22、25.24秒随倒数接入机位，32.5秒点火。",
+  "effect": "信息密度随倒数上升，点火主拍把多路观察统一为一幅实时画面。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "19.6–36.36秒；1倍速，总时长16.76秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "布局节点",
+      "value": "film/index.html:LAY；22.42秒进入3×3骨架，23.10/24.22/25.24秒接入Orion、无人机、控制室。"
+    },
+    {
+      "name": "合并时间",
+      "value": "film/index.html:TR=.34、POP=.30、MERGE=.42、T0=32.5；render在零点将旧格lerpR到全屏拼块，mergeK>.45隐藏格内包装。"
+    },
+    {
+      "name": "同图交接",
+      "value": "film/index.html:render；每格绘制同一ims.osb，alpha=eio(seg(t,T0,T0+MERGE*.8))，时钟和转写返回HUD_CLOCK / HUD_TX。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-countdown/film/index.html"
+  ],
+  "locator": "LAY / layoutAt / render / MERGE",
+  "useCases": [
+    "发射直播剪辑",
+    "赛事或裁决倒数",
+    "有明确零点的实时事件"
+  ],
+  "avoid": [
+    "在同一时刻叠加多组信息，与主动作争夺注意"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-countdown的原作render(t)重放“多格倒数合一”。倒数原声逐个打开3×3布局的摄影机格，零点时每个旧格移动到同一全屏镜头对应的拼块位置；边框和标签消退，所有拼块交叉淡入同一个镜头，时钟与转写回到底部。保留参数：film/index.html:LAY；22.42秒进入3×3骨架，23.10/24.22/25.24秒接入Orion、无人机、控制室。；film/index.html:TR=.34、POP=.30、MERGE=.42、T0=32.5；render在零点将旧格lerpR到全屏拼块，mergeK>.45隐藏格内包装。；film/index.html:render；每格绘制同一ims.osb，alpha=eio(seg(t,T0,T0+MERGE*.8))，时钟和转写返回HUD_CLOCK / HUD_TX。。重放区间由入口segments配置，来源素材与音轨直接复用。",
+  "demo": "demos/patterns/many-into-one-countdown/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-countdown"
+    }
+  ],
+  "previewAt": 13.1,
+  "markers": [
+    {
+      "t": 0,
+      "label": "多格倒数合一"
+    }
+  ]
+}

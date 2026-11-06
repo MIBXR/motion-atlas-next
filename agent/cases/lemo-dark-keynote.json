@@ -1,0 +1,518 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-dark-keynote",
+  "entry": {
+    "id": "lemo-dark-keynote",
+    "order": 47,
+    "title": "思考的空间 · 暗色科技发布",
+    "subtitle": "Room to Think",
+    "carriers": [
+      "video"
+    ],
+    "style": "interface",
+    "purpose": "brand",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "暗色科技发布",
+      "信息与发布",
+      "代码影片"
+    ],
+    "summary": "被窗口、文件和通知埋住的光标按下一次，264个界面元素沿三股光流归格；光带显出Tidy产品窗口和0.8秒指标，最后一切收回到开场的光标。",
+    "focus": "生成界面与错相配乐共用音符表，拥挤、冻结和归格形成节奏，用扫光与一个品牌色让暗色产品显现。",
+    "accent": "#B7F34A",
+    "background": "#0A0B0F",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 8.4,
+    "rhythm": {
+      "duration": 42,
+      "bpm": 120,
+      "beats": [
+        {
+          "t": 0,
+          "label": "光标与标题",
+          "note": "原片0.000000–4.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 4,
+          "label": "连续拉远与累积",
+          "note": "原片4.000000–12.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 12,
+          "label": "过载插镜",
+          "note": "原片12.000000–15.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 15,
+          "label": "定格静音",
+          "note": "原片15.000000–16.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 16,
+          "label": "按下与归格",
+          "note": "原片16.000000–19.500000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 19.5,
+          "label": "光带显出产品",
+          "note": "原片19.500000–25.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 25,
+          "label": "一个巨型数字",
+          "note": "原片25.000000–29.500000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 29.5,
+          "label": "逐拍收起",
+          "note": "原片29.500000–34.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 34,
+          "label": "回到光标",
+          "note": "原片34.000000–42.000000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 4,
+        "to": 0.35,
+        "label": "光标与标题",
+        "from": 0.15
+      },
+      {
+        "t0": 4,
+        "t1": 12,
+        "to": 0.5,
+        "label": "连续拉远与累积",
+        "from": 0.35
+      },
+      {
+        "t0": 12,
+        "t1": 15,
+        "to": 0.3,
+        "label": "过载插镜",
+        "from": 0.5
+      },
+      {
+        "t0": 15,
+        "t1": 16,
+        "to": 0.8,
+        "label": "定格静音",
+        "from": 0.3
+      },
+      {
+        "t0": 16,
+        "t1": 19.5,
+        "to": 0.65,
+        "label": "按下与归格",
+        "from": 0.8
+      },
+      {
+        "t0": 19.5,
+        "t1": 25,
+        "to": 0.45,
+        "label": "光带显出产品",
+        "from": 0.65
+      },
+      {
+        "t0": 25,
+        "t1": 29.5,
+        "to": 0.6,
+        "label": "一个巨型数字",
+        "from": 0.45
+      },
+      {
+        "t0": 29.5,
+        "t1": 34,
+        "to": 0.5,
+        "label": "逐拍收起",
+        "from": 0.6
+      },
+      {
+        "t0": 34,
+        "t1": 42,
+        "to": 0.25,
+        "label": "回到光标",
+        "from": 0.5
+      }
+    ],
+    "energyNote": "段落取自DEMO.md Shots与film内时间表；0–1为画面密度、动作和声音强度的相对编辑标注。",
+    "observations": [
+      "264个元素由三条声部的音符时间生成，第二声部逐渐加速错相。",
+      "15–16秒所有混音轨道被清零；物件姿态被冻结，相机继续推向光标。",
+      "按下后半径以2600px/s扩散，同类元素沿同向弧线归入独立行，前段形变为统一方块。",
+      "产品窗口先维持7%亮度，1.3秒光带同时揭示表面和边缘。"
+    ],
+    "composition": {
+      "color": "近黑#0A0B0F，三档抬升表面，荧光绿#B7F34A作品牌强调；过载段使用红色。",
+      "typography": "Inter界面、Inter Tight大字、JetBrains Mono标签。",
+      "layout": "1920×1080；48px网格，窗口、通知和文件构成2.5D空间。",
+      "imagery": "全部UI、图标与照片缩略图由Canvas2D代码绘制。",
+      "motion": "对数拉远、定格推近、一拍拉回、分组弧线归格、窗口扫光和巨型数字特写。",
+      "sound": "原片木琴错相配乐、VCSL采样、UI拟音与Kokoro旁白。",
+      "rhythm": "120BPM；15–16秒数字静音，16秒按下，33–34秒近静音。",
+      "coherence": "同一光标贯穿标题、承压、整理和片尾，画音共享timeline.js。"
+    },
+    "layers": [
+      {
+        "name": "暗色舞台",
+        "role": "近黑渐变、冷色光池和细网格。"
+      },
+      {
+        "name": "混乱世界",
+        "role": "音符表生成窗口、文件、照片和通知。"
+      },
+      {
+        "name": "归格与产品",
+        "role": "三股弧线流汇入网格后组成Tidy窗口。"
+      },
+      {
+        "name": "指标与字幕",
+        "role": "0.8秒数字、单行胶囊字幕和光标。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#0A0B0F",
+        "#12151C",
+        "#1A1E28",
+        "#222734",
+        "#E8EAF0",
+        "#B7F34A",
+        "#FF5A5F"
+      ],
+      "type": "Inter 100–900、Inter Tight 100–900、JetBrains Mono 100–800。",
+      "motion": [
+        {
+          "name": "归格",
+          "value": "film/world.js:snap：t0=16+.03+d/2600；dur=.26+.14×min(1,trip/1200)；film/film.js:drawWorldItems保留三股弧线和9段拖尾。"
+        },
+        {
+          "name": "静音",
+          "value": "film/timeline.js:K.freeze=15、press=16；source/mix.py:193/198将15–16秒清零。"
+        },
+        {
+          "name": "光揭示",
+          "value": "film/film.js:sceneProduct；film/engine.js:lightReveal：base=.07、soft=700、band=360、glint=.2。"
+        }
+      ]
+    },
+    "useCases": [
+      "软件发布片",
+      "SaaS演示",
+      "发布会指标段"
+    ],
+    "avoid": [
+      "需要真实应用操作流程的教程"
+    ],
+    "constraints": [
+      "新增界面元素时，同步修改timeline.js声部和world.js槽位数。",
+      "扫光与产品窗口投影保持同一坐标。",
+      "冻结段保留数字静音和相机运动。"
+    ],
+    "migration": [
+      {
+        "field": "film/world.js:snap",
+        "how": "修改该处的归格参数。"
+      },
+      {
+        "field": "film/timeline.js:K.freeze=15、press=16；source/mix.py:193/198将15–16秒清零。",
+        "how": "修改该处的静音参数。"
+      },
+      {
+        "field": "film/film.js:sceneProduct；film/engine.js:lightReveal",
+        "how": "修改该处的光揭示参数。"
+      }
+    ],
+    "prompt": "制作一支暗色科技发布时间线影片。被窗口、文件和通知埋住的光标按下一次，264个界面元素沿三股光流归格；光带显出Tidy产品窗口和0.8秒指标，最后一切收回到开场的光标。生成界面与错相配乐共用音符表，拥挤、冻结和归格形成节奏，暗色产品靠扫光与一个品牌色被看见。画面构成：近黑#0A0B0F，三档抬升表面，荧光绿#B7F34A作品牌强调；过载段使用红色。；Inter界面、Inter Tight大字、JetBrains Mono标签。；1920×1080；48px网格，窗口、通知和文件构成2.5D空间。；全部UI、图标与照片缩略图由Canvas2D代码绘制。；对数拉远、定格推近、一拍拉回、分组弧线归格、窗口扫光和巨数字特写。；原片木琴错相配乐、VCSL采样、UI拟音与Kokoro旁白。；120BPM；15–16秒数字静音，16秒按下，33–34秒近静音。；同一光标完成标题、承压、整理和片尾，画音共享timeline.js。。实现入口为demos/cases/lemo-dark-keynote/film/，MotionKit适配层仅调用并等待原作render(t)，使用原片音轨同步播放。",
+    "demo": "demos/cases/lemo-dark-keynote/index.html",
+    "patternIds": [
+      "clutter-snap-grid",
+      "freeze-digital-silence",
+      "specular-sweep-glint"
+    ],
+    "fidelity": "demos/cases/lemo-dark-keynote/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dark-keynote",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/dark-keynote/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；成片及静帧CC BY 4.0，署名LemoLab；第三方资源按CREDITS许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与示范制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dark-keynote"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/dark-keynote.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dark-keynote/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dark-keynote)；代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "原片木琴错相配乐、VCSL采样、UI拟音与Kokoro旁白。 原始署名见[audio/CREDITS](audio/CREDITS)，完整许可见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Inter 100–900、Inter Tight 100–900、JetBrains Mono 100–800。 OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-dark-keynote/LICENSES.md",
+    "preview": "previews/cases/lemo-dark-keynote.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 思考的空间 · 暗色科技发布 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-dark-keynote.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| index.html | 预载运行代码、字体与音轨，同源iframe等待load和READY，按原fps调用并等待render(t)。 | 接入MotionKit舞台、时间线、声音与定位。 |\n| audio/film.m4a | 从Release以-c:a copy流复制AAC音轨。 | 同步正式混音。 |\n| source/ | 保存Demo内非运行制作文件与中文重建说明。 | 保留制作工具和输入。 |\n| stills/ | 风格帧留在来源，本站预览由capture生成。 | 成片绘制不读取上游静帧。 |\n| film/index.html | 字体路径指向../fonts/。 | 接入字体资源位置。 |\n| film/index.html、film/core/lib.js | import map将/core/lib.js与../../../core/lib.js映射至本体film/core/lib.js；共享文件取固定提交。 | 仅接入共享模块路径。 |\n| film/main.js、source/frames.js | 移除scene风格帧分支及其静态导入，frames.js保存于source。 | 成片入口只绘制renderFilm。 |\n\n绘制、时间轴、数据和着色器沿用固定提交；文本换行为LF。许可索引见[LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html`使用`MotionKit.load.prepare`预载；同源iframe等待load和`READY === true`后，以`MotionKit.mountFilm`接入1920×1080横屏、24fps、42.000000秒舞台。`renderAt(t)`执行并等待`upstream.render(Math.round(t*24)/24)`。声音读取`audio/film.m4a`，默认关闭。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时暂停在条目previewAt。镜头标记取DEMO.md Shots与源码时间表。\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，1920×1080、DPR1；等待`__motion.ready`并以原fps对齐后截图。WebGL使用Intel Iris Xe／ANGLE D3D11。参考PNG从Release按相同视频帧号提取。\n\n原始列比较参考PNG与本库PNG；编码链列将本库PNG在独立测量页捕获为JPEG95，再按原作链编解码。测量编码只在过程目录进行，页面直接调用原作render(t)。两幅PNG转yuv444p，读取ffmpeg SSIM All。单帧测量形成I帧，原片为连续GOP；时间颗粒也从测量帧起算。左右拼图为`compare-N.png`与`compare-encoded-N.png`。\n\n`source/build.sh:13–14`与共享渲染工具：24fps，JPEG95→libx264 medium CRF14 yuv420p→slow CRF19，无额外grain。\n\n| Shots段 | 起止（秒） | 中点（秒） | 视频帧号 |\n| --- | --- | --- | --- |\n| 光标与标题 | 0.000000–4.000000 | 2.000000 | 48 |\n| 连续拉远与累积 | 4.000000–12.000000 | 8.000000 | 192 |\n| 过载插镜 | 12.000000–15.000000 | 13.500000 | 324 |\n| 定格静音 | 15.000000–16.000000 | 15.500000 | 372 |\n| 按下与归格 | 16.000000–19.500000 | 17.750000 | 426 |\n| 光带显出产品 | 19.500000–25.000000 | 22.250000 | 534 |\n| 一个巨型数字 | 25.000000–29.500000 | 27.250000 | 654 |\n| 逐拍收起 | 29.500000–34.000000 | 31.750000 | 762 |\n| 回到光标 | 34.000000–42.000000 | 38.000000 | 912 |\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.998935 | 0.999110 | 开头 |\n| 2 | 202 | 8.400000 | 8.416667 | 0.992009 | 0.993156 | frame_sec |\n| 3 | 48 | 2.000000 | 2.000000 | 0.998244 | 0.998416 | Shots · 光标与标题中点 |\n| 4 | 192 | 8.000000 | 8.000000 | 0.993025 | 0.993756 | Shots · 连续拉远与累积中点 |\n| 5 | 324 | 13.500000 | 13.500000 | 0.985346 | 0.986730 | Shots · 过载插镜中点 |\n| 6 | 372 | 15.500000 | 15.500000 | 0.987683 | 0.991242 | Shots · 定格静音中点 |\n| 7 | 426 | 17.750000 | 17.750000 | 0.988390 | 0.987780 | Shots · 按下与归格中点 |\n| 8 | 534 | 22.250000 | 22.250000 | 0.990276 | 0.990821 | Shots · 光带显出产品中点 |\n| 9 | 654 | 27.250000 | 27.250000 | 0.994566 | 0.994097 | Shots · 一个巨型数字中点 |\n| 10 | 762 | 31.750000 | 31.750000 | 0.989940 | 0.991149 | Shots · 逐拍收起中点 |\n| 11 | 912 | 38.000000 | 38.000000 | 0.994438 | 0.994877 | Shots · 回到光标中点 |\n| 12 | 984 | 41.000000 | 41.000000 | 0.996092 | 0.996393 | 片尾前1秒 |\n\n12帧：原始最低**0.985346**、最高**0.998935**，12/12达到0.95；编码链最低**0.986730**、最高**0.999110**，12/12达到0.95。\n\n本次取样的原始与编码链SSIM均达到0.95。\n\n声音：成片与本库音轨解码为48kHz单声道，每10ms取RMS包络，在±500ms内互相关；最佳偏移**0ms**，相关系数**1.000000**。\n",
+    "licenses": "# 思考的空间 · 暗色科技发布 · 许可索引\n\n| 范围 | 许可与署名 | 原文 |\n| --- | --- | --- |\n| 原作代码与文档 | LemoLab × Claude Opus 5.5；MIT | [film/LICENSE](film/LICENSE) |\n| 原片音轨 | LemoLab；CC BY 4.0，资源署名见[audio/CREDITS](audio/CREDITS) | [audio/CC-BY-4.0.txt](audio/CC-BY-4.0.txt) |\n| 字体 · OFL-inter | SIL OFL 1.1 | [fonts/OFL-inter.txt](fonts/OFL-inter.txt) |\n| 字体 · OFL-intertight | SIL OFL 1.1 | [fonts/OFL-intertight.txt](fonts/OFL-intertight.txt) |\n| 字体 · OFL-jetbrainsmono | SIL OFL 1.1 | [fonts/OFL-jetbrainsmono.txt](fonts/OFL-jetbrainsmono.txt) |\n| Kokoro旁白 | hexgrad/Kokoro-82M；Apache-2.0 | [audio/Apache-2.0.txt](audio/Apache-2.0.txt) |\n| 采样 | Versilian Studios VCSL / VSCO CE；CC0 1.0，乐器见CREDITS | [audio/CC0-1.0.txt](audio/CC0-1.0.txt) |\n",
+    "prompt": "# 思考的空间 · 暗色科技发布\n\n## 实现 Prompt\n\n制作一支暗色科技发布时间线影片。被窗口、文件和通知埋住的光标按下一次，264个界面元素沿三股光流归格；光带显出Tidy产品窗口和0.8秒指标，最后一切收回到开场的光标。生成界面与错相配乐共用音符表，拥挤、冻结和归格形成节奏，暗色产品靠扫光与一个品牌色被看见。画面构成：近黑#0A0B0F，三档抬升表面，荧光绿#B7F34A作品牌强调；过载段使用红色。；Inter界面、Inter Tight大字、JetBrains Mono标签。；1920×1080；48px网格，窗口、通知和文件构成2.5D空间。；全部UI、图标与照片缩略图由Canvas2D代码绘制。；对数拉远、定格推近、一拍拉回、分组弧线归格、窗口扫光和巨数字特写。；原片木琴错相配乐、VCSL采样、UI拟音与Kokoro旁白。；120BPM；15–16秒数字静音，16秒按下，33–34秒近静音。；同一光标完成标题、承压、整理和片尾，画音共享timeline.js。。实现入口为demos/cases/lemo-dark-keynote/film/，MotionKit适配层仅调用并等待原作render(t)，使用原片音轨同步播放。\n\n## 动效 Token\n\n- **归格**：film/world.js:snap：t0=16+.03+d/2600；dur=.26+.14×min(1,trip/1200)；film/film.js:drawWorldItems保留三股弧线和9段拖尾。\n- **静音**：film/timeline.js:K.freeze=15、press=16；source/mix.py:193/198将15–16秒清零。\n- **光揭示**：film/film.js:sceneProduct；film/engine.js:lightReveal：base=.07、soft=700、band=360、glint=.2。\n\n## 制作约束\n\n- 新增界面元素时，同步修改timeline.js声部和world.js槽位数。\n- 扫光与产品窗口投影保持同一坐标。\n- 冻结段保留数字静音和相机运动。\n\n## 迁移\n\n- `film/world.js:snap`：修改该处的归格参数。\n- `film/timeline.js:K.freeze=15、press=16；source/mix.py:193/198将15–16秒清零。`：修改该处的静音参数。\n- `film/film.js:sceneProduct；film/engine.js:lightReveal`：修改该处的光揭示参数。\n\n[打开 Demo](../../demos/cases/lemo-dark-keynote/index.html) · [在库中查看](../../cases.html#case/lemo-dark-keynote)\n"
+  },
+  "entrypoint": "demos/cases/lemo-dark-keynote/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-dark-keynote/LICENSES.md",
+      "bytes": 841,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/CREDITS",
+      "bytes": 922,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/film.m4a",
+      "bytes": 1343311,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fidelity.md",
+      "bytes": 4765,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/engine.js",
+      "bytes": 32318,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/film.js",
+      "bytes": 40052,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/index.html",
+      "bytes": 491,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/lines.json",
+      "bytes": 501,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/main.js",
+      "bytes": 782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/timeline.js",
+      "bytes": 3446,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/voices/dur.json",
+      "bytes": 85,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/world.js",
+      "bytes": 12839,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/InterTight-var.woff2",
+      "bytes": 234224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/JetBrainsMono-var.ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/OFL-inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/OFL-intertight.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/OFL-jetbrainsmono.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/fonts.css",
+      "bytes": 347,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/index.html",
+      "bytes": 2228,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/CREDITS",
+      "bytes": 922,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/README.md",
+      "bytes": 3930,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/build.sh",
+      "bytes": 1763,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/events.json",
+      "bytes": 44748,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/frames.js",
+      "bytes": 2313,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/mix.py",
+      "bytes": 12116,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/CREDITS_music.txt",
+      "bytes": 537,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/check.py",
+      "bytes": 4767,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/score.json",
+      "bytes": 12796,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/score.py",
+      "bytes": 17837,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/timeline.json",
+      "bytes": 17240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/cuecheck.py",
+      "bytes": 1923,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/dump_timeline.mjs",
+      "bytes": 646,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/export.mjs",
+      "bytes": 837,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/final_asr.py",
+      "bytes": 1848,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/voices/words.json",
+      "bytes": 511,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-dark-keynote.json",
+      "bytes": 10158,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-dark-keynote.jpg",
+      "bytes": 75152,
+      "role": "preview"
+    }
+  ]
+}

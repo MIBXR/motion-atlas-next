@@ -1,0 +1,352 @@
+{
+  "id": "lemo-swiss-motion",
+  "order": 21,
+  "title": "海报五则 · 瑞士动态排版",
+  "subtitle": "Five Rules for a Poster",
+  "carriers": [
+    "video"
+  ],
+  "style": "graphic-type",
+  "purpose": "explainer",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "瑞士动态排版",
+    "图形与排版",
+    "代码影片"
+  ],
+  "summary": "五条规则把音乐会海报排进网格，唯一的红圆脱离格点，带动版面重排；海报旋转后揭示为正在播放的乐谱，再拉远成一墙变体。",
+  "focus": "同一网格同时组织版面、动作与配乐，所有落点准确卡拍；唯一离网的红圆用线性运动产生叙事转折。",
+  "accent": "#E30613",
+  "background": "#EAE9E5",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 31.68,
+  "rhythm": {
+    "duration": 44,
+    "beats": [
+      {
+        "t": 0,
+        "label": "红线开场",
+        "note": "一条红线切开页面，画幅网格逐拍伸展。"
+      },
+      {
+        "t": 4,
+        "label": "规则一：网格",
+        "note": "海报的七列十六行开始画出。"
+      },
+      {
+        "t": 8,
+        "label": "规则二：字体",
+        "note": "多字体收束为 Archivo。"
+      },
+      {
+        "t": 12,
+        "label": "规则三：留白",
+        "note": "多余文字被刀线切去。"
+      },
+      {
+        "t": 16,
+        "label": "规则四：对齐",
+        "note": "版面按网格统一左对齐。"
+      },
+      {
+        "t": 18,
+        "label": "音符落格",
+        "note": "十六个黑块按十六分音符落位。"
+      },
+      {
+        "t": 24,
+        "label": "鼓组退出",
+        "note": "红圆离网前出现一小节抽空。"
+      },
+      {
+        "t": 24.5,
+        "label": "例外飞出",
+        "note": "红圆线性离开格点，中途停八分音符。"
+      },
+      {
+        "t": 26,
+        "label": "落地重排",
+        "note": "全乐队回归，邻近元素先重排。"
+      },
+      {
+        "t": 29.25,
+        "label": "转为乐谱",
+        "note": "海报用 1.5 拍旋转九十度。"
+      },
+      {
+        "t": 30,
+        "label": "揭示前呼吸",
+        "note": "低音踏板与四分音符轻点留出空间。"
+      },
+      {
+        "t": 32,
+        "label": "乐谱播放",
+        "note": "播放线扫过两小节，条块按音符发红。"
+      },
+      {
+        "t": 37,
+        "label": "变体墙",
+        "note": "旋转回正，同时拉远露出多张海报。"
+      },
+      {
+        "t": 39,
+        "label": "红线裁切",
+        "note": "其他海报随红线被切去。"
+      },
+      {
+        "t": 40,
+        "label": "回到主海报",
+        "note": "推回开场跨页构图，署名和风格标题收束。"
+      }
+    ],
+    "bpm": 120
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "from": 0.2,
+      "to": 0.35,
+      "label": "开场与帽镲"
+    },
+    {
+      "t0": 4,
+      "t1": 8,
+      "from": 0.35,
+      "to": 0.45,
+      "label": "网格与鼓组"
+    },
+    {
+      "t0": 8,
+      "t1": 12,
+      "from": 0.45,
+      "to": 0.55,
+      "label": "字体与贝斯"
+    },
+    {
+      "t0": 12,
+      "t1": 16,
+      "from": 0.55,
+      "to": 0.65,
+      "label": "留白与琶音"
+    },
+    {
+      "t0": 16,
+      "t1": 24,
+      "from": 0.65,
+      "to": 0.8,
+      "label": "对齐与完整乐队"
+    },
+    {
+      "t0": 24,
+      "t1": 26,
+      "from": 0.2,
+      "to": 0.35,
+      "label": "离网断鼓"
+    },
+    {
+      "t0": 26,
+      "t1": 30,
+      "from": 0.85,
+      "to": 0.75,
+      "label": "落地重排"
+    },
+    {
+      "t0": 30,
+      "t1": 32,
+      "from": 0.15,
+      "to": 0.2,
+      "label": "低音呼吸"
+    },
+    {
+      "t0": 32,
+      "t1": 36,
+      "from": 0.55,
+      "to": 0.65,
+      "label": "乐谱两小节"
+    },
+    {
+      "t0": 36,
+      "t1": 40,
+      "from": 0.75,
+      "to": 0.85,
+      "label": "变体墙"
+    },
+    {
+      "t0": 40,
+      "t1": 44,
+      "from": 0.6,
+      "to": 0.2,
+      "label": "主海报收束"
+    }
+  ],
+  "energyNote": "分段依据 DEMO.md 的 Score structure（每条规则加一层、24–26 秒断鼓、30–32 秒呼吸、32–36 秒揭谱），时刻按 film/score.json:timeline 与 film/film.js:T 对齐；0–1 是编排密度的相对标注。",
+  "observations": [
+    "黑白灰与唯一信号红建立系统，红圆是唯一能够离网的元素。",
+    "七列代表 A 多利亚调七个音，十六行代表十六个八分音符，条长就是音长。",
+    "旋转先停稳，再出现音名与小节标签，最后播放线扫过，信息按顺序揭示。",
+    "黑条在合并处多画 1px，避免海报旋转后暴露抗锯齿细缝。"
+  ],
+  "composition": {
+    "color": "页底 #EAE9E5、纸白 #FFFFFF、墨黑 #111111、唯一信号红 #E30613 与三档浅灰。",
+    "typography": "Archivo 可变字重 300–900；早期错误字体桥段使用 Fraktur 与 DM Serif Display。",
+    "layout": "1920×1080、24fps；12 列画幅、96px 边距、24px 沟槽；左页说明，右页 706×1008 海报。",
+    "imagery": "纯 Canvas2D 平涂条块、文字、纸面与网格；海报七列 91px、十六行 40px。",
+    "motion": "曲线有两种：精准缓动 cubic-bezier(.7,0,.2,1) 与线性；动作包括擦入、刀切、基线裁切与按距离重排。",
+    "sound": "120BPM、A 多利亚调 motorik，帽镲、鼓组、贝斯、琶音与钟琴逐层加入；Kokoro af_sarah 旁白与干燥印刷拟音。",
+    "rhythm": "每条规则增加一层乐器，红圆离网时抽走鼓组，揭谱前近静音，两小节扫奏后拉远。",
+    "coherence": "score.json 同时规定条块格点、音高、音长与音乐结构，buildEvents 的绝对时刻定位拟音。"
+  },
+  "layers": [
+    {
+      "name": "跨页与网格",
+      "role": "浅灰页底划分左侧规则与右侧海报。"
+    },
+    {
+      "name": "海报与红圆",
+      "role": "条块、字体、红圆共同组成可播放乐谱。"
+    },
+    {
+      "name": "二维相机",
+      "role": "旋转、缩放和平移揭示乐谱与变体墙。"
+    },
+    {
+      "name": "文字与说明",
+      "role": "逐词字幕跟随 Whisper 时刻从基线下裁切进入。"
+    },
+    {
+      "name": "音乐与印刷拟音",
+      "role": "共享 score.json 与导出的 events.json。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#EAE9E5",
+      "#FFFFFF",
+      "#111111",
+      "#E30613",
+      "#CFCEC9",
+      "#C9C8C2",
+      "#E2E1DC"
+    ],
+    "type": "Archivo 可变字体 300–900；Fraktur 400、DM Serif Display 400 用于错误字体桥段；≥90px 时字距为字号的 −2.2%。",
+    "motion": [
+      {
+        "name": "两条曲线",
+        "value": "film/ease.js:E=cubicBezier(.7,0,.2,1)；snap 默认提前 E8=.25 秒启动并准时落拍；E16=.125 秒。"
+      },
+      {
+        "name": "网格绘制",
+        "value": "film/film.js:gridState：列自 4+c*.25 秒起，行自 5.625+r*.125 秒起，各用 .25 秒画成。"
+      },
+      {
+        "name": "旋转与揭谱",
+        "value": "film/film.js:T / drawScoreLabels：29.25–30 秒旋转 90°，30.5 秒起标签擦入，32–36 秒扫过 16 行。"
+      },
+      {
+        "name": "离网例外",
+        "value": "film/film.js:flight / circleState：24.5–25 秒走 40%，25–25.25 停顿，25.25–26 秒走余下 60%。"
+      }
+    ]
+  },
+  "useCases": [
+    "品牌视觉识别短片",
+    "活动影像",
+    "设计教育"
+  ],
+  "avoid": [
+    "弹跳、粒子、渐变或发光主导的影片",
+    "需要多种信号色并行表达的构图"
+  ],
+  "constraints": [
+    "海报列宽保持图形分量，过窄会变成数据图表。",
+    "旋转、停顿、标签、播放线按顺序出现。",
+    "合并条块多画 1px，旋转后保持无缝。",
+    "修改字幕后重新对齐 Whisper 词时刻；先设置 Canvas 字距，再测宽。"
+  ],
+  "migration": [
+    {
+      "field": "film/film.js → TX / RULES / LAYOUT",
+      "how": "修改海报文案、规则章节与字幕布局。"
+    },
+    {
+      "field": "film/lines.json；film/voices/words_rel.json",
+      "how": "修改旁白文本及逐词时刻。"
+    },
+    {
+      "field": "film/score.json → stiff / final / timeline",
+      "how": "修改音符格点、红圆位置、乐句与绝对时间。"
+    },
+    {
+      "field": "film/film.js → C；film/ease.js → BPM",
+      "how": "修改色板与节拍，制作配乐时同步 source/music/score.py。"
+    }
+  ],
+  "prompt": "以瑞士国际主义排版制作一支纯二维动态海报片：暖灰页、白纸、黑字、浅灰格线与唯一饱和信号色，十二列画幅内左页规则右页海报，严格左齐和强烈字号反差。所有元素落在网格，所有动作在拍点到达；只用 cubic-bezier(.7,0,.2,1) 与线性，擦入与刀线删除构成转场。令一个信号色元素以线性运动离网并短暂停顿，其他单元按距离重排；海报旋转停稳后才揭示其网格是乐谱，列映射音高、行映射起音、长度映射音长。配乐逐规则加层，离网处断鼓、揭示前呼吸，保留干燥印刷拟音与原片旁白。引擎位于 demos/cases/lemo-swiss-motion/film/film.js、ease.js 与 score.json。",
+  "demo": "demos/cases/lemo-swiss-motion/index.html",
+  "patternIds": [
+    "grid-reveals-score",
+    "grid-beat-construction",
+    "shared-cue-sheet"
+  ],
+  "fidelity": "demos/cases/lemo-swiss-motion/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/swiss-motion",
+    "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+    "path": "styles/swiss-motion/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+    "notes": "代码与文档 MIT；原成片及静帧 CC BY 4.0，署名 LemoLab；第三方资源沿用 CREDITS 的许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/swiss-motion"
+    },
+    {
+      "label": "Release 公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/swiss-motion.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/swiss-motion/demo/CREDITS"
+    },
+    {
+      "label": "FreePats",
+      "url": "https://freepats.zenvoid.org/"
+    },
+    {
+      "label": "MuldjordKit",
+      "url": "https://drumgizmo.org/"
+    },
+    {
+      "label": "Versilian Community Sample Library",
+      "url": "https://github.com/sgossner/VCSL"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者 Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/swiss-motion)，代码 MIT、成片 CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "MuldjordKit（Lars Muldjord / FreePats，CC BY 4.0）、FreePats电贝斯与Versilian Community Sample Library钟琴（CC0），Kokoro af_sarah（Apache-2.0）；原始署名见 [audio/CREDITS](audio/CREDITS)，许可入口见 [LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "字体家族与字重见 tokens.type；SIL OFL 1.1原文在 fonts/，取得方法和字符范围见 [source/README.md](source/README.md)。"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "crack-and-relead",
+  "order": 123,
+  "title": "裂纹与重铅",
+  "types": [
+    "transition",
+    "texture"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "锯齿裂纹从受击点向外延伸，音乐硬停；剑、腿、躯干、手臂逐拍滑到新姿态，焊接后裂痕成为铅线留在玻璃中。",
+  "mechanism": "锯齿裂纹从受击点向外延伸，音乐硬停；剑、腿、躯干、手臂逐拍滑到新姿态，焊接后裂痕成为铅线留在玻璃中。",
+  "trigger": "31.8秒击碎与41.3秒开始修补。",
+  "effect": "材质破裂承担转折，修补后的跪姿和疤痕成为新画面。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "30.800000–45.200000秒；1倍速，共14.400000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "裂纹",
+      "value": "film/story.js:77–107：mulberry(31)固定9条主裂纹及分支，.28秒延伸，.45秒闪光，31.8–33.8秒配乐静默。"
+    },
+    {
+      "name": "重铅",
+      "value": "film/story.js:88、109–143：WELDS=[41.75,42.5,43.25,44,44.6]；每组前.5秒滑动，sin(uπ)*7外凸，修补裂纹以3.2单位铅条覆盖。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-stained-glass/film/story.js",
+    "demos/cases/lemo-stained-glass/film/knight.js"
+  ],
+  "locator": "story.js / knight.js",
+  "useCases": [
+    "材质破裂承担转折，修补后的跪姿和疤痕成为新画面。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-stained-glass的原作render(t)，重放“裂纹与重铅”。受击点向外延伸锯齿裂纹，音乐硬停；剑、腿、躯干、手臂逐拍滑到新姿态，焊接后裂痕成为铅线留在玻璃中。参数与源码：film/story.js:77–107：mulberry(31)固定9条主裂纹及分支，.28秒延伸，.45秒闪光，31.8–33.8秒配乐静默。；film/story.js:88、109–143：WELDS=[41.75,42.5,43.25,44,44.6]；每组前.5秒滑动，sin(uπ)*7外凸，修补裂纹以3.2单位铅条覆盖。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/crack-and-relead/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-stained-glass"
+    }
+  ],
+  "previewAt": 11.8,
+  "markers": [
+    {
+      "t": 0,
+      "label": "裂纹与重铅"
+    }
+  ],
+  "renderer": "gpu"
+}

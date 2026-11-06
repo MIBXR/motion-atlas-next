@@ -1,0 +1,82 @@
+{
+  "id": "hyperframes-registry",
+  "order": 9,
+  "title": "HyperFrames Registry · 视频模块与模板精选",
+  "type": "component-library",
+  "category": "视频制作",
+  "tags": [
+    "HyperFrames",
+    "HTML 视频",
+    "模块",
+    "模板",
+    "转场",
+    "字幕",
+    "3D",
+    "逐帧渲染"
+  ],
+  "summary": "HyperFrames Registry 的 55 个精选模块与 8 个模板，提供可编辑的标题、字幕、转场、数据图表、三维场景、相机与质感源码。本地播放器预览精选项，完整索引覆盖 22 个官方分类的 448 个模块及 8 个模板。",
+  "workflow": [
+    "用 /hyperframes-registry 或 catalog 搜索所需的视觉模块。",
+    "用 npx hyperframes add <名字> 安装 block 或 component；模板用 npx hyperframes init <项目> --example <模板>。",
+    "block 以 data-composition-src 挂入时间线；component 的标记、样式和脚本合并进场景。",
+    "保留模块的 id 前缀，调整变量、文案、颜色与字体，再运行 lint、预览和渲染。"
+  ],
+  "useCases": [
+    "在视频项目中复用标题、动态字幕、转场、社交卡片与图表",
+    "以可编辑源码组合三维画面、镜头运动、纹理和效果",
+    "从完整模板开始搭建视频，再替换文案、变量与媒体"
+  ],
+  "avoid": [
+    "把 component 当作自带完整时间线的独立 block 安装",
+    "用 hyperframes add 安装完整项目模板",
+    "用实时网络或不可定位动画驱动逐帧视频"
+  ],
+  "upstream": {
+    "repository": "heygen-com/hyperframes",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3",
+    "commit": "f0b2dd0cdbd926e32cb11435c53819933fcc1ef3",
+    "version": "0.8.231",
+    "verifiedAt": "2026-11-02"
+  },
+  "license": {
+    "name": "Apache-2.0",
+    "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/LICENSE"
+  },
+  "install": "npx hyperframes add <名字>\nnpx hyperframes init <项目> --example <模板>",
+  "demo": "demos/materials/hyperframes-registry/index.html",
+  "research": "docs/materials/hyperframes-registry.md",
+  "fidelity": "demos/materials/hyperframes-registry/fidelity.md",
+  "relatedEntries": [
+    {
+      "kind": "material",
+      "id": "hyperframes-skills",
+      "note": "同一上游的 Agent Skill，/hyperframes-registry 负责安装这些模块与模板"
+    }
+  ],
+  "sources": [
+    {
+      "title": "上游 README：视频制作与可复用模块",
+      "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/README.md"
+    },
+    {
+      "title": "Registry 技能：查找、安装与接入",
+      "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/skills/hyperframes-registry/SKILL.md"
+    },
+    {
+      "title": "固定版本 registry 清单",
+      "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/registry.json"
+    },
+    {
+      "title": "官方分类与页面顺序",
+      "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/docs/docs.json"
+    },
+    {
+      "title": "素材卡封面 · 上游原图",
+      "url": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/canopy-part-title.png"
+    }
+  ],
+  "sourceFiles": [
+    "site/runtime/demo-scrollbars.css"
+  ],
+  "preview": "previews/materials/hyperframes-registry.png"
+}

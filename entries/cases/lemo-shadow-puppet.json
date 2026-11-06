@@ -1,0 +1,313 @@
+{
+  "id": "lemo-shadow-puppet",
+  "order": 29,
+  "title": "后羿射日 · 皮影戏",
+  "subtitle": "Hou Yi Shoots the Suns",
+  "carriers": [
+    "video"
+  ],
+  "style": "print-craft",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "webgl"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "皮影戏",
+    "东方传统",
+    "代码影片"
+  ],
+  "summary": "十盏幕后油灯化作十个太阳，后羿每射落一日便熄灭一灯；留下最后一日后，镜头绕到幕后，显出独灯、操偶手与皮影幕布。",
+  "focus": "灯数决定世界亮度，射日动作让过曝白热逐级回到暖金，结尾把神话与皮影照明收在同一盏灯上。",
+  "accent": "#b8211a",
+  "background": "#1a100a",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 21.76,
+  "rhythm": {
+    "duration": 54.375,
+    "beats": [
+      {
+        "t": 0,
+        "label": "观众席开场",
+        "note": "0–7.2秒，观众席开场。"
+      },
+      {
+        "t": 7.2,
+        "label": "推入十日",
+        "note": "7.2–12秒，推入十日。"
+      },
+      {
+        "t": 12,
+        "label": "灾地横移",
+        "note": "12–18秒，灾地横移。"
+      },
+      {
+        "t": 18,
+        "label": "英雄跟拍",
+        "note": "18–21.6秒，英雄跟拍。"
+      },
+      {
+        "t": 21.6,
+        "label": "亮相急推",
+        "note": "21.6–25.2秒，亮相急推。"
+      },
+      {
+        "t": 25.2,
+        "label": "张弓甩镜",
+        "note": "25.2–28.3秒，张弓甩镜。"
+      },
+      {
+        "t": 28.3,
+        "label": "第二箭",
+        "note": "28.3–30秒，第二箭。"
+      },
+      {
+        "t": 30,
+        "label": "锁镜连射",
+        "note": "30–34.8秒，锁镜连射。"
+      },
+      {
+        "t": 34.8,
+        "label": "静默抉择",
+        "note": "34.8–37.2秒，静默抉择。"
+      },
+      {
+        "t": 37.2,
+        "label": "复苏拉回",
+        "note": "37.2–43.2秒，复苏拉回。"
+      },
+      {
+        "t": 43.2,
+        "label": "柱后绕幕",
+        "note": "43.2–44.5秒，柱后绕幕。"
+      },
+      {
+        "t": 44.5,
+        "label": "幕后一灯",
+        "note": "44.5–50.8秒，幕后一灯。"
+      },
+      {
+        "t": 50.8,
+        "label": "幕上片尾",
+        "note": "50.8–54.375秒，幕上片尾。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 7.2,
+      "to": 0.65,
+      "label": "观众席开场",
+      "from": 0.1
+    },
+    {
+      "t0": 7.2,
+      "t1": 12,
+      "to": 0.8,
+      "label": "推入十日",
+      "from": 0.65
+    },
+    {
+      "t0": 12,
+      "t1": 18,
+      "to": 0.85,
+      "label": "灾地横移",
+      "from": 0.8
+    },
+    {
+      "t0": 18,
+      "t1": 21.6,
+      "to": 0.95,
+      "label": "英雄跟拍",
+      "from": 0.85
+    },
+    {
+      "t0": 21.6,
+      "t1": 25.2,
+      "to": 0.8,
+      "label": "亮相急推",
+      "from": 0.95
+    },
+    {
+      "t0": 25.2,
+      "t1": 28.3,
+      "to": 0.8,
+      "label": "张弓甩镜",
+      "from": 0.8
+    },
+    {
+      "t0": 28.3,
+      "t1": 30,
+      "to": 0.95,
+      "label": "第二箭",
+      "from": 0.8
+    },
+    {
+      "t0": 30,
+      "t1": 34.8,
+      "to": 0.1,
+      "label": "锁镜连射",
+      "from": 0.95
+    },
+    {
+      "t0": 34.8,
+      "t1": 37.2,
+      "to": 0.35,
+      "label": "静默抉择",
+      "from": 0.1
+    },
+    {
+      "t0": 37.2,
+      "t1": 43.2,
+      "to": 0.45,
+      "label": "复苏拉回",
+      "from": 0.35
+    },
+    {
+      "t0": 43.2,
+      "t1": 44.5,
+      "to": 0.25,
+      "label": "柱后绕幕",
+      "from": 0.45
+    },
+    {
+      "t0": 44.5,
+      "t1": 50.8,
+      "to": 0.15,
+      "label": "幕后一灯",
+      "from": 0.25
+    },
+    {
+      "t0": 50.8,
+      "t1": 54.375,
+      "to": 0.05,
+      "label": "幕上片尾",
+      "from": 0.15
+    }
+  ],
+  "energyNote": "时段取自DEMO.md的Shots与源码镜头表；0–1数值是根据画面动作、音乐密度和静默作出的相对编辑标注。",
+  "observations": [
+    "染色皮革以multiply叠加透光，镂空处露出最亮的幕布。",
+    "后羿由11块铰接皮片和双骨IK手臂组成，冠翎与腿在120Hz预模拟。",
+    "九次命中逐盏灭灯，曝光随有效灯数平方根调整。",
+    "34.8秒音乐急停，43.2秒开始横移，绕到幕后。"
+  ],
+  "composition": {
+    "color": "朱红 #b8211a、火橙 #d9541c、赭黄 #dc9d1e、石绿 #236e3a、靛蓝 #22647e，暖灯透过生皮色 #e2bd80。",
+    "typography": "Cormorant Garamond 500/600/700、斜体600，Ma Shan Zheng 400；刻字牌匾与讲述者字幕板。",
+    "layout": "1920×1080横屏、24fps；构图与字幕沿用原作。",
+    "imagery": "Canvas2D镂刻皮片、布纹与杆件，WebGL2灯场乘透射并进行暖色辉光合成。",
+    "motion": "手颤、压幕与离幕虚化、定式急推、箭头甩镜、锁定广角的九级暗化与幕柱遮挡。",
+    "sound": "原作锣鼓、二胡与管乐采样配乐，Kokoro am_michael旁白，醒木、弓弦、灭灯与皮革拟音。",
+    "rhythm": "灯数决定世界亮度，射日动作让过曝白热逐级回到暖金，结尾把神话与皮影照明收在同一盏灯上。",
+    "coherence": "材质、动作和声音共用原作时间表。"
+  },
+  "layers": [
+    {
+      "name": "材料与场景",
+      "role": "Canvas2D镂刻皮片、布纹与杆件，WebGL2灯场乘透射并进行暖色辉光合成。"
+    },
+    {
+      "name": "角色与动作",
+      "role": "手颤、压幕与离幕虚化、定式急推、箭头甩镜、锁定广角的九级暗化与幕柱遮挡。"
+    },
+    {
+      "name": "文字与声音",
+      "role": "Cormorant Garamond 500/600/700、斜体600，Ma Shan Zheng 400；刻字牌匾与讲述者字幕板。 原作锣鼓、二胡与管乐采样配乐，Kokoro am_michael旁白，醒木、弓弦、灭灯与皮革拟音。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#b8211a",
+      "#d9541c",
+      "#dc9d1e",
+      "#236e3a",
+      "#22647e",
+      "#e2bd80"
+    ],
+    "type": "Cormorant Garamond 500/600/700、斜体600，Ma Shan Zheng 400；刻字牌匾与讲述者字幕板。",
+    "motion": [
+      {
+        "name": "镜头与节拍",
+        "value": "手颤、压幕与离幕虚化、定式急推、箭头甩镜、锁定广角的九级暗化与幕柱遮挡。"
+      }
+    ]
+  },
+  "useCases": [
+    "神话民俗短片",
+    "文化遗产解说",
+    "节庆故事"
+  ],
+  "avoid": [
+    "需要写实摄影或自由三维转面的画面"
+  ],
+  "constraints": [
+    "皮片叠色保留multiply与透明镂空。",
+    "弓弦、箭尾和瞄准方向读取同一骨骼解。",
+    "灯数驱动曝光与幕布亮度，暖色灯光保持一致。"
+  ],
+  "migration": [
+    {
+      "field": "film/story.js → T / KILL / SHOTS",
+      "how": "修改灯的点亮、命中、静默与镜头时刻。"
+    },
+    {
+      "field": "film/main.js → lampI / renderBack；film/houyi.js",
+      "how": "修改灯场、幕后构图与角色骨骼。"
+    }
+  ],
+  "prompt": "制作“后羿射日 · 皮影戏”对应的时间线影片。十盏幕后油灯化作十个太阳，后羿每射落一日便熄灭一灯；留下最后一日后，镜头绕到幕后，显出独灯、操偶手与皮影幕布。灯数决定世界亮度，射日动作让过曝白热逐级回到暖金，结尾把神话与皮影照明收在同一盏灯上。视觉与动作：Canvas2D镂刻皮片、布纹与杆件，WebGL2灯场乘透射并进行暖色辉光合成。手颤、压幕与离幕虚化、定式急推、箭头甩镜、锁定广角的九级暗化与幕柱遮挡。配色：朱红 #b8211a、火橙 #d9541c、赭黄 #dc9d1e、石绿 #236e3a、靛蓝 #22647e，暖灯透过生皮色 #e2bd80。文字：Cormorant Garamond 500/600/700、斜体600，Ma Shan Zheng 400；刻字牌匾与讲述者字幕板。声音：原作锣鼓、二胡与管乐采样配乐，Kokoro am_michael旁白，醒木、弓弦、灭灯与皮革拟音。直接使用demos/cases/lemo-shadow-puppet/film/中的原作绘制与时间表，按源码迁移字段修改，支持MotionKit播放、暂停和逐帧定位，声音默认关闭。",
+  "demo": "demos/cases/lemo-shadow-puppet/index.html",
+  "patternIds": [
+    "lamp-count-light-state",
+    "anchor-pullback-phone"
+  ],
+  "fidelity": "demos/cases/lemo-shadow-puppet/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/shadow-puppet",
+    "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+    "path": "styles/shadow-puppet/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+    "notes": "代码与文档MIT；成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/shadow-puppet"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/shadow-puppet.mp4"
+    },
+    {
+      "label": "素材与声音署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/shadow-puppet/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/shadow-puppet)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原作配乐、采样、拟音与旁白来源见[audio/CREDITS](audio/CREDITS)，许可原文见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "家族与字重见tokens.type，字体与OFL原文在fonts/，取得方法见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

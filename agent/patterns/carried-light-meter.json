@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "carried-light-meter",
+  "pattern": {
+    "id": "carried-light-meter",
+    "order": 141,
+    "title": "随身灯即情绪",
+    "types": [
+      "composition",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "主角提灯的 lit 参数同时改变精灵火焰、点光源和辉光，灯的亮灭表现护火情节；初次点灯让两人的影子一起落在木板上。",
+    "mechanism": "主角提灯的 lit 参数同时改变精灵火焰、点光源和辉光，灯的亮灭表现护火情节；初次点灯让两人的影子一起落在木板上。",
+    "trigger": "来源案例的时间轴进入所列动作区间。",
+    "effect": "主角提灯的 lit 参数同时改变精灵火焰、点光源和辉光，灯的亮灭表现护火情节；初次点灯让两人的影子一起落在木板上。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-hd-2d 15.200000–17.400000秒；lemo-hd-2d 40.600000–47.600000秒；1倍速，总时长9.200000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "灯与情节",
+        "value": "film/story.js:T.light=16.2、dim=41.3、dark=42、relight=45.6；film/harbor.js / forest.js / cliff.js的lit、lanternPos与PointLight。"
+      },
+      {
+        "name": "光与角色",
+        "value": "film/px.js:billboard定义剪影阴影；film/chars.js:makeChar与灯焰姿态，点光源向相机移.42–.45m。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-hd-2d/film/story.js",
+      "demos/cases/lemo-hd-2d/film/harbor.js",
+      "demos/cases/lemo-hd-2d/film/forest.js",
+      "demos/cases/lemo-hd-2d/film/cliff.js",
+      "demos/cases/lemo-hd-2d/film/chars.js",
+      "demos/cases/lemo-hd-2d/film/px.js"
+    ],
+    "locator": "film/story.js:T.light=16.2、dim=41.3、dark=42、relight=45.6；film/harbor.js / forest.js / cliff.js的lit、lanternPos与PointLight。；film/px.js:billboard定义剪影阴影；film/chars.js:makeChar与灯焰姿态，点光源向相机移.42–.45m。",
+    "useCases": [
+      "主角提灯的 lit 参数同时改变精灵火焰、点光源和辉光，灯的亮灭表现护火情节；初次点灯让两人的影子一起落在木板上。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "调用来源案例原作render(t)重放“随身灯即情绪”。主角提灯的lit参数同时改变精灵火焰、点光源和辉光，亮灭承载护火情节；初次点灯让两人的影子一起落在木板上。 参数：film/story.js:T.light=16.2、dim=41.3、dark=42、relight=45.6；film/harbor.js / forest.js / cliff.js的lit、lanternPos与PointLight。 film/px.js:billboard定义剪影阴影；film/chars.js:makeChar与灯焰姿态，点光源向相机移.42–.45m。 使用index.html的segments映射原片时刻，复用来源素材、字体与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/carried-light-meter/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-hd-2d"
+      }
+    ],
+    "previewAt": 6,
+    "markers": [
+      {
+        "t": 0,
+        "label": "随身灯即情绪"
+      },
+      {
+        "t": 2.1999999999999993,
+        "label": "随身灯即情绪"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/carried-light-meter.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-hd-2d",
+      "bundle": "agent/cases/lemo-hd-2d.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 随身灯即情绪\n\n## 实现 Prompt\n\n调用来源案例原作render(t)重放“随身灯即情绪”。主角提灯的lit参数同时改变精灵火焰、点光源和辉光，亮灭承载护火情节；初次点灯让两人的影子一起落在木板上。 参数：film/story.js:T.light=16.2、dim=41.3、dark=42、relight=45.6；film/harbor.js / forest.js / cliff.js的lit、lanternPos与PointLight。 film/px.js:billboard定义剪影阴影；film/chars.js:makeChar与灯焰姿态，点光源向相机移.42–.45m。 使用index.html的segments映射原片时刻，复用来源素材、字体与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-hd-2d 15.200000–17.400000秒；lemo-hd-2d 40.600000–47.600000秒；1倍速，总时长9.200000秒。\n\n[打开 Demo](../../demos/patterns/carried-light-meter/index.html) · [在库中查看](../../patterns.html#pattern/carried-light-meter)\n"
+  },
+  "entrypoint": "demos/patterns/carried-light-meter/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-hd-2d/LICENSES.md",
+      "bytes": 979,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/CREDITS",
+      "bytes": 2037,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/CREDITS-music.txt",
+      "bytes": 245,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/audio/film.m4a",
+      "bytes": 2501609,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fidelity.md",
+      "bytes": 3637,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/chars.js",
+      "bytes": 13883,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/cliff.js",
+      "bytes": 29856,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/forest.js",
+      "bytes": 12071,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/forest_art.js",
+      "bytes": 5926,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/fx.js",
+      "bytes": 13318,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/harbor.js",
+      "bytes": 22104,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/index.html",
+      "bytes": 599,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/kit.js",
+      "bytes": 10045,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/main.js",
+      "bytes": 3398,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/post_ts.js",
+      "bytes": 7263,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/px.js",
+      "bytes": 12560,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/story.js",
+      "bytes": 1690,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/ui.js",
+      "bytes": 8659,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/film/voices/dur.json",
+      "bytes": 114,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/OFL-Cinzel.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/OFL-CormorantGaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/fonts.css",
+      "bytes": 1695,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h0.woff2",
+      "bytes": 15056,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h1.woff2",
+      "bytes": 15224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h2.woff2",
+      "bytes": 23900,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h3.woff2",
+      "bytes": 23260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/fonts/h4.woff2",
+      "bytes": 23384,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/index.html",
+      "bytes": 2397,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/CREDITS",
+      "bytes": 2037,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/README.md",
+      "bytes": 3344,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/lines.json",
+      "bytes": 1347,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/mix.py",
+      "bytes": 9289,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/music/CREDITS.txt",
+      "bytes": 245,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/music/CUES.md",
+      "bytes": 7944,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/music/edit.py",
+      "bytes": 24524,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/music/measure.json",
+      "bytes": 4704,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/sfx_events.json",
+      "bytes": 682,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/tools/render_range.mjs",
+      "bytes": 2736,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/tools/sheet/index.html",
+      "bytes": 1285,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/tools/srt.py",
+      "bytes": 957,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/vo_times.json",
+      "bytes": 199,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/source/voices/words.json",
+      "bytes": 2092,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-hd-2d/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/carried-light-meter/index.html",
+      "bytes": 1104,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/carried-light-meter/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-hd-2d.json",
+      "bytes": 8951,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/carried-light-meter.json",
+      "bytes": 3225,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/carried-light-meter.jpg",
+      "bytes": 17723,
+      "role": "preview"
+    }
+  ]
+}

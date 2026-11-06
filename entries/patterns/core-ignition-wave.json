@@ -1,0 +1,121 @@
+{
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "kit": true,
+  "timeline": true,
+  "avoid": [],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#DAD3F7",
+      "#B7ECD6",
+      "#FFC4AC",
+      "#A8D2FF",
+      "#FBFAFF",
+      "#62F0F2",
+      "#2C2960"
+    ],
+    "type": "HarmonyOS Sans SC 500、700；JetBrains Mono 500；Unbounded 800。"
+  },
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments",
+      "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+    },
+    {
+      "field": "index.html 内联配置 → markers / reduced",
+      "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+    }
+  ],
+  "id": "core-ignition-wave",
+  "order": 36,
+  "title": "核心激活全城",
+  "types": [
+    "rhythm",
+    "composition",
+    "camera"
+  ],
+  "summary": "核心下蹲蓄力后在主拍放光，方形激活波联动地块翻面、载物跳起和建筑由灰模扫描着色。",
+  "mechanism": "核心下蹲蓄力，镜头拉回、画面压暗；主拍时核心放光，镜头冲近。按切比雪夫距离传播的激活波让空地翻面、载物跳起、建筑由灰模向上扫描着色。",
+  "trigger": "5.9秒预备段与6秒城市激活主拍到达。",
+  "effect": "核心、镜头、曝光、地块和建筑随同一方形波前联动，灰模城市进入彩色运行状态。",
+  "timing": [
+    {
+      "name": "预备",
+      "value": "A.smooth(A.inv(5.90,5.967,T))；核心Y-6%、XZ+3%；镜头缩小2%；曝光-0.15EV。"
+    },
+    {
+      "name": "波前",
+      "value": "PULSE_T=cues.drop-.015；drop=6；PULSE_V=15；PULSE_R0=1；r=max(abs(x),abs(z))。"
+    },
+    {
+      "name": "地块翻面",
+      "value": "FLIP_D=5/30；Math.PI*A.easeOutBack(u,1.4)；中段抬升.15*sin(πu)。"
+    },
+    {
+      "name": "核心冲量",
+      "value": "exp(-(T-PULSE_T)*6)*cos((T-PULSE_T)*26)*.07；载物顶点波抬升.25*y。"
+    },
+    {
+      "name": "镜头与曝光",
+      "value": "镜头2帧冲近6%，.4秒easeOutExpo回定；曝光主击+.3EV，exp(-max(0,t-drop)*30)衰减。"
+    },
+    {
+      "name": "时长",
+      "value": "1.65s；原片5.7–7.35s。"
+    }
+  ],
+  "useCases": [
+    "城市或设备启动主拍",
+    "由中心波前联动的模型着色与跳动"
+  ],
+  "prompt": "复用等距 2.5D 来源案例的原作 window.renderAt(t)，重放原片5.7–7.35秒，时长1.65秒。核心在5.90–5.967秒下蹲蓄力，Y缩6%、XZ扩3%，镜头缩小2%、曝光压低.15EV。PULSE_T=cues.drop-.015，drop=6，PULSE_V=15，PULSE_R0=1；按r=max(abs(x),abs(z))的切比雪夫距离传播方形波。空地以FLIP_D=5/30和Math.PI*A.easeOutBack(u,1.4)翻到彩色面，载物地块由顶点着色器携模型跳起.25*y，建筑沿立面扫描着色。核心冲量exp(-(T-PULSE_T)*6)*cos((T-PULSE_T)*26)*.07，镜头两帧冲近6%后.4秒回定，主拍曝光+.3EV衰减；保留光柱、光环、冲击和扫过音。1920×1080、30fps，画面和原片同区间音轨使用同一时间映射，声音默认关闭。",
+  "markers": [
+    {
+      "t": 0,
+      "label": "光环预热"
+    },
+    {
+      "t": 0.2,
+      "label": "下蹲预备"
+    },
+    {
+      "t": 0.285,
+      "label": "波前启动"
+    },
+    {
+      "t": 0.3,
+      "label": "主拍激活"
+    },
+    {
+      "t": 0.4,
+      "label": "地块翻面"
+    },
+    {
+      "t": 0.6,
+      "label": "着色展开"
+    },
+    {
+      "t": 1.45,
+      "label": "余波落定"
+    }
+  ],
+  "previewAt": 0.6,
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "demo": "demos/patterns/core-ignition-wave/index.html",
+  "sources": [
+    {
+      "caseId": "mg-isometric"
+    }
+  ]
+}

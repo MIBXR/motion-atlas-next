@@ -1,0 +1,70 @@
+{
+  "id": "plan-elevation-projection",
+  "order": 145,
+  "title": "平面图与立面图投影对位",
+  "types": [
+    "composition",
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "上方平面河道的两岸沿蓝色虚线投影到下方桥梁立面，判断各种桥型时采用同一跨距；同一条船先在平面受阻，再在立面穿过答案。",
+  "mechanism": "上方平面河道的两岸沿蓝色虚线投影到下方桥梁立面，判断各种桥型时采用同一跨距；同一条船先在平面受阻，再在立面穿过答案。",
+  "trigger": "来源时间线进入平面图与立面图投影对位段。",
+  "effect": "上方平面河道的两岸沿蓝色虚线投影到下方桥梁立面，判断各种桥型时采用同一跨距；同一条船先在平面受阻，再在立面穿过答案。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-briefing-board：14.100000–18.450000秒，1倍速，总时长4.350000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "投影线",
+      "value": "source/scenes/_gen_film.py:PROJ_T=14.4；proj0/proj1从BANK_L/BANK_R、RIV_B+40投到BH−70，lw7、dash[26,22]，间隔.05秒。"
+    },
+    {
+      "name": "共享基准",
+      "value": "film/scenes/film.json的ship/ship_side、proj0/proj1与四桥立面；source/scenes/_gen_film.py:rows使用L/R锚点、SPANS和KPM计算等比例跨距。"
+    }
+  ],
+  "sourceFiles": [
+    "demos\\cases\\lemo-briefing-board\\film\\scenes\\film.json",
+    "demos\\cases\\lemo-briefing-board\\film\\kit\\board.js",
+    "demos\\cases\\lemo-briefing-board\\source\\scenes\\_gen_film.py"
+  ],
+  "locator": "film/scenes/film.json / film/kit/board.js / source/scenes/_gen_film.py",
+  "useCases": [
+    "工程方案比较",
+    "实物简报",
+    "条件驱动的科普"
+  ],
+  "avoid": [
+    "在关键动作和证据上叠加争夺注意力的运动"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“平面图与立面图投影对位”。上方平面河道的两岸沿蓝色虚线投影到下方桥梁立面，各种桥型用同一跨距作判断；同一条船先在平面受阻，再在立面穿过答案。参数：source/scenes/_gen_film.py:PROJ_T=14.4；proj0/proj1从BANK_L/BANK_R、RIV_B+40投到BH−70，lw7、dash[26,22]，间隔.05秒。；film/scenes/film.json的ship/ship_side、proj0/proj1与四桥立面；source/scenes/_gen_film.py:rows使用L/R锚点、SPANS和KPM计算等比例跨距。。复用来源字体、素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/plan-elevation-projection/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-briefing-board"
+    }
+  ],
+  "previewAt": 2.4,
+  "markers": [
+    {
+      "t": 0,
+      "label": "平面图与立面图投影对位"
+    }
+  ]
+}

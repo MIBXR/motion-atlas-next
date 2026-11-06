@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "collect-counter",
+  "pattern": {
+    "id": "collect-counter",
+    "order": 8,
+    "title": "收集计数徽章与收集物托盘",
+    "types": [
+      "feedback",
+      "hud"
+    ],
+    "carriers": [
+      "video",
+      "console"
+    ],
+    "summary": "每完成一个节点，计数滚动加一，收集物落进托盘，进度步进器同步前进。 手机科普片中，周期表格子级联点亮，计数直接统计已亮元素，整十和终值触发回弹。 综艺片将三格快乐电池依次充满，满电时弹出闪电、放射标记并轻推照片。",
+    "mechanism": "计数变化时，数字上滚、徽章回弹；托盘里的收集物逐格点亮，随进度累积。来源案例（地图巡礼）中的收集物是车站印章，可替换为任意徽章、卡片或图标。 手机科普片按斜向种子次序点亮余下格子，数字统计当前已亮格数，并在整十及终值处回弹。 综艺片将三格快乐电池依次充满，满电时弹出闪电、放射标记并轻推照片。",
+    "trigger": "到站、盖章或发现角色时",
+    "effect": "每次抵达都有积累感，进度看得见。",
+    "timing": [
+      {
+        "name": "时长",
+        "value": "9.533s"
+      },
+      {
+        "name": "声音 voice",
+        "value": "confirm、stamp、sparkle"
+      },
+      {
+        "name": "点亮级联同步计数",
+        "value": "L222: const R1=rng(19);const rest=[...USED.keys()].filter(Z=>!FIRST.includes(Z)).map(Z=>{const[r,c]=rc(Z);return{Z,k:c+.45*r+R1()*2.2};}).sort((a,b)=>a.k-b.k).map(o=>o.Z);；L224: rest.forEach((Z,i)=>litT.set(Z,lerp(EV.cascade[0],EV.cascade[1],1-Math.cbrt(1-(i+1)/rest.length))));；L260: if(o.lt!=null&&t>=o.lt){lit++;const q=P(t,o.lt,.16);const w=wob(t-o.lt,5,12);s*=1+.16*(1-q)*(o.lt===EV.first_lit?.94:1)+.02*w*(o.lt===EV.first_lit?2:1);"
+      },
+      {
+        "name": "追加原片区间",
+        "value": "mg-hanazi 原片 1.367–2.7 秒；const k = spring(ub, .5, 28); X(b, -54 + j * 52, 29 - 29 * k, 0, 1, k);\nconst h = addK(hand(t, 1, .8), kick(t, C.charge[2], 7, 12, 14))"
+      }
+    ],
+    "useCases": [
+      "打卡与签到",
+      "任务或关卡进度",
+      "收藏与图鉴陈列",
+      "旅行或展会集章",
+      "周期表点亮进度与元素数量同步，整十和终值用回弹强调。",
+      "综艺片将三格快乐电池依次充满，满电时弹出闪电、放射标记并轻推照片。"
+    ],
+    "avoid": [
+      "计数与叙事无关时（会显得廉价）"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "corner-hud",
+        "outro-stat-stack"
+      ],
+      "conflicts": []
+    },
+    "prompt": "每到一站计数滚动加一，印章落进托盘，步进器同步前进。复用地图巡礼的 drawHud、stepAtX、ruleX、stampXY 与对应 CSS。MIKAN 徽章、收集计数、印章托盘与 drawHud 的步进器。片段：caseT 8.1→8.9；caseT 12.6→14；caseT 19.2→20.4；caseT 41.8→43；caseT 51.2→52.6；时长 9.533s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。 通过 index.html 内联 segments 在前 6.6 秒之后依次重放mg-paperclip 原片 3.1–4.7 秒，总时长 9.533 秒。手机科普片按斜向种子次序点亮余下格子，数字统计当前已亮格数，并在整十及终值处回弹。沿用同区间原片音轨，声音默认关闭。 按 index.html 内联 segments 在原有 8.2 秒之后重放mg-hanazi 原片 1.367–2.7 秒，总时长 9.533 秒。综艺片将三格快乐电池依次充满，满电时弹出闪电、放射标记并轻推照片。画面与音轨沿用同一映射，声音默认关闭。",
+    "demo": "demos/patterns/collect-counter/index.html",
+    "kit": true,
+    "sources": [
+      {
+        "caseId": "map-pilgrimage"
+      },
+      {
+        "caseId": "mg-paperclip"
+      },
+      {
+        "caseId": "mg-hanazi"
+      }
+    ],
+    "previewAt": 6.2,
+    "markers": [
+      {
+        "t": 0,
+        "label": "徽章出现"
+      },
+      {
+        "t": 0.8,
+        "label": "×1 + 关空"
+      },
+      {
+        "t": 2.2,
+        "label": "×2 + 京都"
+      },
+      {
+        "t": 3.4,
+        "label": "×3 + 奈良"
+      },
+      {
+        "t": 4.6,
+        "label": "×4 + 大阪"
+      },
+      {
+        "t": 6.6,
+        "label": "贴纸科普"
+      },
+      {
+        "t": 8.2,
+        "label": "综艺花字"
+      },
+      {
+        "t": 8.4,
+        "label": "快乐电池"
+      },
+      {
+        "t": 9.333,
+        "label": "凝视切镜"
+      },
+      {
+        "t": 9.4,
+        "label": "问号弹入"
+      }
+    ],
+    "sound": {
+      "voices": [
+        "confirm",
+        "stamp",
+        "sparkle"
+      ],
+      "score": "demos/patterns/collect-counter/mechanism/score.json",
+      "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+    },
+    "tokens": {
+      "palette": [
+        "#f1eee7",
+        "#16171a",
+        "#d9562c",
+        "#e23b3b"
+      ],
+      "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+      "css": {
+        "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+        "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+        "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+        "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+        "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+        "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+        "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+        "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+        "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+        "--paper": "#f1eee7",
+        "--ink": "#16171a",
+        "--ink-map": "#16171a",
+        "--muted": "rgba(22, 23, 26, .62)",
+        "--line": "rgba(22, 23, 26, .26)",
+        "--accent": "#d9562c",
+        "--accent-soft": "rgba(217, 86, 44, .22)",
+        "--surface": "rgba(250, 249, 245, .94)",
+        "--alert": "#e23b3b"
+      },
+      "motion": [
+        {
+          "name": "徽章出现",
+          "value": "0s"
+        },
+        {
+          "name": "×1 + 关空",
+          "value": "0.8s"
+        },
+        {
+          "name": "×2 + 京都",
+          "value": "2.2s"
+        },
+        {
+          "name": "×3 + 奈良",
+          "value": "3.4s"
+        },
+        {
+          "name": "×4 + 大阪",
+          "value": "4.6s"
+        },
+        {
+          "name": "时长",
+          "value": "8.2s"
+        }
+      ]
+    },
+    "migration": [
+      {
+        "field": "../../cases/map-pilgrimage/film/script.js → drawHud",
+        "how": "修改计数、徽章、收集物托盘（来源为车站印章）与回弹的实现。"
+      },
+      {
+        "field": "mechanism/scene.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+        "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+      },
+      {
+        "field": "../../cases/map-pilgrimage/film/config.js → tracks.counter、tracks.stamps；mascot、stepper、layout",
+        "how": "修改计数事件、徽章、收集印章与横竖布局。"
+      },
+      {
+        "field": "mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers",
+        "how": "mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 地图片段。地图来源时刻：8.1→8.9/12.6→14/19.2→20.4/41.8→43/51.2→52.6。"
+      },
+      {
+        "field": "mechanism/score.json",
+        "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+      }
+    ],
+    "orients": [
+      "landscape",
+      "portrait"
+    ],
+    "previewAtPortrait": 8.8665,
+    "parameters": [],
+    "preview": "previews/patterns/collect-counter.jpg",
+    "previewPortrait": "previews/patterns/collect-counter-portrait.jpg"
+  },
+  "sourceCases": [
+    {
+      "caseId": "map-pilgrimage",
+      "bundle": "agent/cases/map-pilgrimage.json"
+    },
+    {
+      "caseId": "mg-paperclip",
+      "bundle": "agent/cases/mg-paperclip.json"
+    },
+    {
+      "caseId": "mg-hanazi",
+      "bundle": "agent/cases/mg-hanazi.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 收集计数徽章与收集物托盘\n\n## 实现 Prompt\n\n每到一站计数滚动加一，印章落进托盘，步进器同步前进。复用地图巡礼的 drawHud、stepAtX、ruleX、stampXY 与对应 CSS。MIKAN 徽章、收集计数、印章托盘与 drawHud 的步进器。片段：caseT 8.1→8.9；caseT 12.6→14；caseT 19.2→20.4；caseT 41.8→43；caseT 51.2→52.6；时长 9.533s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。 通过 index.html 内联 segments 在前 6.6 秒之后依次重放mg-paperclip 原片 3.1–4.7 秒，总时长 9.533 秒。手机科普片按斜向种子次序点亮余下格子，数字统计当前已亮格数，并在整十及终值处回弹。沿用同区间原片音轨，声音默认关闭。 按 index.html 内联 segments 在原有 8.2 秒之后重放mg-hanazi 原片 1.367–2.7 秒，总时长 9.533 秒。综艺片将三格快乐电池依次充满，满电时弹出闪电、放射标记并轻推照片。画面与音轨沿用同一映射，声音默认关闭。\n\n## 参数\n\n- **时长**：9.533s\n- **声音 voice**：confirm、stamp、sparkle\n- **点亮级联同步计数**：L222: const R1=rng(19);const rest=[...USED.keys()].filter(Z=>!FIRST.includes(Z)).map(Z=>{const[r,c]=rc(Z);return{Z,k:c+.45*r+R1()*2.2};}).sort((a,b)=>a.k-b.k).map(o=>o.Z);；L224: rest.forEach((Z,i)=>litT.set(Z,lerp(EV.cascade[0],EV.cascade[1],1-Math.cbrt(1-(i+1)/rest.length))));；L260: if(o.lt!=null&&t>=o.lt){lit++;const q=P(t,o.lt,.16);const w=wob(t-o.lt,5,12);s*=1+.16*(1-q)*(o.lt===EV.first_lit?.94:1)+.02*w*(o.lt===EV.first_lit?2:1);\n- **追加原片区间**：mg-hanazi 原片 1.367–2.7 秒；const k = spring(ub, .5, 28); X(b, -54 + j * 52, 29 - 29 * k, 0, 1, k);\nconst h = addK(hand(t, 1, .8), kick(t, C.charge[2], 7, 12, 14))\n\n## 动效 Token\n\n- **徽章出现**：0s\n- **×1 + 关空**：0.8s\n- **×2 + 京都**：2.2s\n- **×3 + 奈良**：3.4s\n- **×4 + 大阪**：4.6s\n- **时长**：8.2s\n\n## 迁移\n\n- `../../cases/map-pilgrimage/film/script.js → drawHud`：修改计数、徽章、收集物托盘（来源为车站印章）与回弹的实现。\n- `mechanism/scene.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern`：入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。\n- `../../cases/map-pilgrimage/film/config.js → tracks.counter、tracks.stamps；mascot、stepper、layout`：修改计数事件、徽章、收集印章与横竖布局。\n- `mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers`：mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 地图片段。地图来源时刻：8.1→8.9/12.6→14/19.2→20.4/41.8→43/51.2→52.6。\n- `mechanism/score.json`：调整声音事件，按巧思时间对齐，保留音色参数。\n\n[打开 Demo](../../demos/patterns/collect-counter/index.html) · [在库中查看](../../patterns.html#pattern/collect-counter)\n"
+  },
+  "entrypoint": "demos/patterns/collect-counter/index.html",
+  "files": [
+    {
+      "path": "demos/cases/map-pilgrimage/LICENSES.md",
+      "bytes": 1021,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/fidelity.md",
+      "bytes": 2550,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/config.js",
+      "bytes": 17491,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/paths.js",
+      "bytes": 8047,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/scenes.js",
+      "bytes": 35275,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/script.js",
+      "bytes": 156283,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/style.css",
+      "bytes": 40692,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/index.html",
+      "bytes": 7729,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/LICENSES.md",
+      "bytes": 1047,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/grey_r2.jpg",
+      "bytes": 1358977,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B0.png",
+      "bytes": 1482239,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B1.png",
+      "bytes": 1488365,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B2.png",
+      "bytes": 1479775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L06.png",
+      "bytes": 1403484,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L12.png",
+      "bytes": 1523388,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L135.png",
+      "bytes": 1555269,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/tux_r1.jpg",
+      "bytes": 1380121,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_dof.jpg",
+      "bytes": 525250,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear11.png",
+      "bytes": 2491551,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear16.png",
+      "bytes": 2492949,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear6.png",
+      "bytes": 2489969,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/audio/film.m4a",
+      "bytes": 423783,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fidelity.md",
+      "bytes": 4658,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/cues.json",
+      "bytes": 1116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/scene.js",
+      "bytes": 48529,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/setup.js",
+      "bytes": 1511,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/style.css",
+      "bytes": 1332,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/AlimamaShuHeiTi-Bold.ttf",
+      "bytes": 1375772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/AlimamaShuHeiTi-LICENSE.txt",
+      "bytes": 2016,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/DouyinSans-OFL.txt",
+      "bytes": 4425,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/DouyinSansBold.ttf",
+      "bytes": 1919404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LuckiestGuy-LICENSE.txt",
+      "bytes": 11358,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LuckiestGuy-Regular.ttf",
+      "bytes": 73320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ResourceHanRounded-OFL.txt",
+      "bytes": 4504,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ResourceHanRoundedCN-Heavy.ttf",
+      "bytes": 13688972,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ZCOOLKuaiLe-OFL.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ZCOOLKuaiLe-Regular.ttf",
+      "bytes": 1514968,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/fonts.css",
+      "bytes": 1066,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/index.html",
+      "bytes": 2291,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep.py",
+      "bytes": 8811,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep_r2.py",
+      "bytes": 8193,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep_r2b.py",
+      "bytes": 4162,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/audio.py",
+      "bytes": 12031,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/cues.json",
+      "bytes": 1116,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/LICENSES.md",
+      "bytes": 911,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/countries-110m.json",
+      "bytes": 107761,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/battery.png",
+      "bytes": 233146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/cobalt.png",
+      "bytes": 377499,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/lithium.png",
+      "bytes": 291448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/meta.json",
+      "bytes": 351,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/pcb.png",
+      "bytes": 1296815,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/phone.png",
+      "bytes": 2104894,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/rareearth.png",
+      "bytes": 644720,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/tin.png",
+      "bytes": 538156,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/audio/film.m4a",
+      "bytes": 415520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fidelity.md",
+      "bytes": 4716,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/cues.json",
+      "bytes": 3076,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/scene.js",
+      "bytes": 50443,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/setup.js",
+      "bytes": 2263,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/style.css",
+      "bytes": 2129,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-105-Heavy.ttf",
+      "bytes": 2536300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-65-Medium.ttf",
+      "bytes": 8429388,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-85-Bold.ttf",
+      "bytes": 8371268,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-LICENSE.md",
+      "bytes": 5216,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/Inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/fonts.css",
+      "bytes": 698,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/index.html",
+      "bytes": 2456,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/audio.py",
+      "bytes": 10067,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/cues.json",
+      "bytes": 3076,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/tools/stickers.py",
+      "bytes": 4468,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/d3@7.9.0/LICENSE",
+      "bytes": 731,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/d3@7.9.0/dist/d3.min.js",
+      "bytes": 279706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/topojson-client@3.1.0/LICENSE",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/topojson-client@3.1.0/dist/topojson-client.min.js",
+      "bytes": 7169,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/collect-counter/assets/plates/landscape-10.4-map.webp",
+      "bytes": 141718,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/collect-counter/assets/plates/landscape-20.4-map.webp",
+      "bytes": 422340,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/collect-counter/assets/plates/landscape-41-map.webp",
+      "bytes": 256236,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/collect-counter/assets/plates/landscape-51.6-map.webp",
+      "bytes": 240404,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/collect-counter/assets/plates/portrait-10.4-map.webp",
+      "bytes": 178700,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/collect-counter/assets/plates/portrait-20.4-map.webp",
+      "bytes": 314310,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/collect-counter/assets/plates/portrait-41-map.webp",
+      "bytes": 263766,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/collect-counter/assets/plates/portrait-51.6-map.webp",
+      "bytes": 269560,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/collect-counter/index.html",
+      "bytes": 509,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/collect-counter/mechanism/config.js",
+      "bytes": 1421,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/collect-counter/mechanism/replay.css",
+      "bytes": 305,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/collect-counter/mechanism/replay.js",
+      "bytes": 1607,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/collect-counter/mechanism/scene.html",
+      "bytes": 7885,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/collect-counter/mechanism/score.json",
+      "bytes": 1115,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/collect-counter/mechanism/style.css",
+      "bytes": 41282,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/collect-counter/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/map-pilgrimage.md",
+      "bytes": 6404,
+      "role": "doc"
+    },
+    {
+      "path": "entries/cases/map-pilgrimage.json",
+      "bytes": 20565,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-hanazi.json",
+      "bytes": 19096,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-paperclip.json",
+      "bytes": 17924,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/collect-counter.json",
+      "bytes": 8348,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/collect-counter-portrait.jpg",
+      "bytes": 139244,
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/collect-counter.jpg",
+      "bytes": 175109,
+      "role": "preview"
+    }
+  ]
+}

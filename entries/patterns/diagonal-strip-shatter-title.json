@@ -1,0 +1,86 @@
+{
+  "id": "diagonal-strip-shatter-title",
+  "order": 101,
+  "title": "斜切条带退场与字形入场",
+  "types": [
+    "transition",
+    "type-motion"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "film.js把旧屋顶画面截成260px斜向条带，条带沿DIR交替滑出画外；新片名的字形按letterLand从1500px外沿同一方向入场。",
+  "mechanism": "film.js把旧屋顶画面截成260px斜向条带，条带沿DIR交替滑出画外；新片名的字形按letterLand从1500px外沿同一方向入场。",
+  "trigger": "时间轴到达T.shatter，旧屋顶开始分条滑走，片名字形按各自落点时刻进入。",
+  "effect": "旧景拆开退场与新字形斜向入场交叠，沿统一切线完成从追逐场景到片名的交接。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "31.0–34.2秒；1倍速，总时长3.2秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "旧景条带",
+      "value": "film/film.js:319–334：snapRoof截取旧屋顶，n=11、k=−11…11、wS=260；每条以NRM定位并沿DIR滑动，d=ei(clamp((t−T.shatter−abs(k)*.02)/.75))*2600*(k%2?1:−1)，abs(d)>=2599后跳过。"
+    },
+    {
+      "name": "新字形入场",
+      "value": "film/film.js:304–317：letterLand(i)=T.shatter+BEAT*.75+i*(BAR−BEAT*.9)/14；每字从落点前.42秒开始，按tw(t)的12fps取姿，沿DIR从±1500px外ease-out入场，旋转余量为±1.2rad，片名切缝split=40。"
+    },
+    {
+      "name": "斜线与节拍",
+      "value": "film/title.js:CUT_ANG=30°，film/scenes.js:DIR=[sin(CUT_ANG),−cos(CUT_ANG)]、NRM=[cos(CUT_ANG),sin(CUT_ANG)]；film/story.js：BPM=132，T.shatter=B(18)=31.363636秒，T.title=B(19)=33.181818秒。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-spy-titles/film/film.js",
+    "demos/cases/lemo-spy-titles/film/title.js",
+    "demos/cases/lemo-spy-titles/film/scenes.js",
+    "demos/cases/lemo-spy-titles/film/story.js"
+  ],
+  "locator": "snapRoof / sShatter / letterLand / drawTitle / CUT_ANG / DIR",
+  "useCases": [
+    "片头旧景拆解与片名字形入场",
+    "统一斜线连接两个图形构成"
+  ],
+  "avoid": [
+    "要求旧景碎片逐片变成片名笔画的效果"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "type-as-architecture",
+      "shape-rhyme-match-cut"
+    ],
+    "conflicts": [],
+    "notes": "旧景条带与新片名字形分别绘制，使用相同斜线和节拍。"
+  },
+  "prompt": "用来源案例lemo-spy-titles的原作render(t)重放“斜切条带退场与字形入场”。film.js把旧屋顶画面截成260px斜向条带，沿DIR交替滑出画外；新片名字形从1500px外按letterLand沿同一方向入场。保留23条、260px宽条带、.02秒空间延迟、.75秒退场、2600px距离，以及字形1500px入场距离、.42秒落字时长、40px片名切缝。沿30°切线组织132BPM的拆景与逐字落点，按index.html的segments重放31.0–34.2秒，画面与原片音轨共用同一时间映射，声音默认关闭。",
+  "demo": "demos/patterns/diagonal-strip-shatter-title/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-spy-titles"
+    }
+  ],
+  "previewAt": 1.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "屋顶旧景"
+    },
+    {
+      "t": 0.36363636363635976,
+      "label": "斜切退场与字形入场"
+    },
+    {
+      "t": 2.18181818181818,
+      "label": "片名落定"
+    }
+  ]
+}

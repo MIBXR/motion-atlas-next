@@ -1,0 +1,69 @@
+{
+  "id": "mascot-on-ui-edges",
+  "order": 133,
+  "title": "小人只站界面上沿",
+  "types": [
+    "composition",
+    "feedback"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "每帧测量真实DOM元素上边缘的位置并换算回世界坐标，像素吉祥物在这些点站立，并以它们为行走和跳跃的端点；同一时间表触发文件高亮、计划生成和界面状态变化。",
+  "mechanism": "每帧测量真实DOM元素上边缘的位置并换算回世界坐标，像素吉祥物在这些点站立，并以它们为行走和跳跃的端点；同一时间表触发文件高亮、计划生成和界面状态变化。",
+  "trigger": "来源案例时间轴进入所列动作区间。",
+  "effect": "每帧测量真实DOM元素上边缘的位置并换算回世界坐标，像素吉祥物在这些点站立，并以它们为行走和跳跃的端点；同一时间表触发文件高亮、计划生成和界面状态变化。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "10.500000–18.500000秒；22.200000–27.800000秒；1倍速，总时长13.600000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "上沿测量",
+      "value": "film/main.js:A：r=getBoundingClientRect()；x=(r.left+r.width×fx−960)/z+cx；y=(r.top+r.height×fy−540)/z+cy；fy默认0。"
+    },
+    {
+      "name": "动作与UI",
+      "value": "film/film.js:at / Actor.eval / appState：输入框、文件行、plan条目、按钮等data-a锚点；起跳前.14秒蹲压.28，落地.22秒衰减。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-living-screencast/film/main.js",
+    "demos/cases/lemo-living-screencast/film/film.js",
+    "demos/cases/lemo-living-screencast/film/ui.js",
+    "demos/cases/lemo-living-screencast/film/clawd.js"
+  ],
+  "locator": "A / at / Actor.eval / appState",
+  "useCases": [
+    "让吉祥物沿真实界面操作路径演示产品功能。"
+  ],
+  "avoid": [
+    "在主动作发生时叠加争夺注意的另一主动作"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-living-screencast的原作render(t)重放“小人只站界面上沿”。每帧测量真实DOM元素上边缘并换回世界坐标，像素吉祥物以这些点为站立、行走和跳跃端点；同一时间表触发文件高亮、计划生成和界面状态变化。保留参数：film/main.js:A：r=getBoundingClientRect()；x=(r.left+r.width×fx−960)/z+cx；y=(r.top+r.height×fy−540)/z+cy；fy默认0。；film/film.js:at / Actor.eval / appState：输入框、文件行、plan条目、按钮等data-a锚点；起跳前.14秒蹲压.28，落地.22秒衰减。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/mascot-on-ui-edges/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-living-screencast"
+    }
+  ],
+  "previewAt": 3.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "小人只站界面上沿"
+    }
+  ]
+}

@@ -1,0 +1,501 @@
+{
+  "id": "mg-pixel",
+  "order": 16,
+  "title": "像素艺术 · PIXEL QUEST",
+  "subtitle": "像素冒险",
+  "carriers": [
+    "video"
+  ],
+  "style": "dimensional",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "webgl"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "像素艺术",
+    "复古游戏",
+    "视差卷轴",
+    "色板轮换",
+    "芯片音乐",
+    "mg-styles-15"
+  ],
+  "summary": "画面在 320×180 的画布上逐点绘制后再放大：主角跑跳、收集金币、踩踏史莱姆、打开宝箱并举起水晶，昼夜光线由调色板轮换呈现，最后落下「PIXEL QUEST」片名。",
+  "focus": "低分辨率大颗粒像素、有限色板与低帧率精灵动画。远山、树林、近景与地面按不同速度整像素移动，像素文字、抖动渐变与显像管扫描线共同构成复古游戏画面。",
+  "accent": "#4FB0FF",
+  "background": "#0d0b1a",
+  "timeline": true,
+  "kit": true,
+  "renderer": "gpu",
+  "rhythm": {
+    "duration": 10,
+    "bpm": 150,
+    "beats": [
+      {
+        "t": 0,
+        "label": "显像管开机",
+        "note": "显像管从中央亮点、扫描线展开到完整画面。"
+      },
+      {
+        "t": 0,
+        "label": "白昼",
+        "note": "以白昼色板开始。"
+      },
+      {
+        "t": 0.3,
+        "label": "跳跃",
+        "note": "主角以整像素位置完成跳跃。"
+      },
+      {
+        "t": 0.4,
+        "label": "收集金币",
+        "note": "主角收集金币，金币变为像素火花。"
+      },
+      {
+        "t": 0.5,
+        "label": "收集金币",
+        "note": "主角收集金币，金币变为像素火花。"
+      },
+      {
+        "t": 0.6,
+        "label": "收集金币",
+        "note": "主角收集金币，金币变为像素火花。"
+      },
+      {
+        "t": 0.9,
+        "label": "落地",
+        "note": "主角落地并短暂压低身体。"
+      },
+      {
+        "t": 1.6,
+        "label": "午后",
+        "note": "调色板切换为午后光线。"
+      },
+      {
+        "t": 2,
+        "label": "跳跃",
+        "note": "主角以整像素位置完成跳跃。"
+      },
+      {
+        "t": 2.4,
+        "label": "踩踏史莱姆",
+        "note": "主角踩扁史莱姆，分数增加。"
+      },
+      {
+        "t": 2.8,
+        "label": "落地",
+        "note": "主角落地并短暂压低身体。"
+      },
+      {
+        "t": 3.2,
+        "label": "收集金币",
+        "note": "主角收集金币，金币变为像素火花。"
+      },
+      {
+        "t": 3.2,
+        "label": "金色时刻",
+        "note": "调色板切换为金色光线。"
+      },
+      {
+        "t": 3.4,
+        "label": "收集金币",
+        "note": "主角收集金币，金币变为像素火花。"
+      },
+      {
+        "t": 3.6,
+        "label": "收集金币",
+        "note": "主角收集金币，金币变为像素火花。"
+      },
+      {
+        "t": 4,
+        "label": "滑步",
+        "note": "奔跑转为滑步减速。"
+      },
+      {
+        "t": 4.4,
+        "label": "停步",
+        "note": "主角停在宝箱前。"
+      },
+      {
+        "t": 4.4,
+        "label": "发现宝箱",
+        "note": "出现感叹号气泡。"
+      },
+      {
+        "t": 4.4,
+        "label": "日落",
+        "note": "调色板切换为日落光线。"
+      },
+      {
+        "t": 4.6,
+        "label": "对话框展开",
+        "note": "神秘宝箱的像素对话框展开。"
+      },
+      {
+        "t": 4.8,
+        "label": "逐字显示",
+        "note": "对话框逐字显示「欢迎来到像素世界！」。"
+      },
+      {
+        "t": 4.9,
+        "label": "逐字显示",
+        "note": "对话框逐字显示「欢迎来到像素世界！」。"
+      },
+      {
+        "t": 5,
+        "label": "逐字显示",
+        "note": "对话框逐字显示「欢迎来到像素世界！」。"
+      },
+      {
+        "t": 5.1,
+        "label": "逐字显示",
+        "note": "对话框逐字显示「欢迎来到像素世界！」。"
+      },
+      {
+        "t": 5.2,
+        "label": "逐字显示",
+        "note": "对话框逐字显示「欢迎来到像素世界！」。"
+      },
+      {
+        "t": 5.3,
+        "label": "逐字显示",
+        "note": "对话框逐字显示「欢迎来到像素世界！」。"
+      },
+      {
+        "t": 5.4,
+        "label": "逐字显示",
+        "note": "对话框逐字显示「欢迎来到像素世界！」。"
+      },
+      {
+        "t": 5.5,
+        "label": "逐字显示",
+        "note": "对话框逐字显示「欢迎来到像素世界！」。"
+      },
+      {
+        "t": 5.6,
+        "label": "逐字显示",
+        "note": "对话框逐字显示「欢迎来到像素世界！」。"
+      },
+      {
+        "t": 5.8,
+        "label": "对话框收起",
+        "note": "对话框按阶梯高度收起。"
+      },
+      {
+        "t": 5.9,
+        "label": "阶梯推近",
+        "note": "镜头依照原时刻表分级放大宝箱区域。"
+      },
+      {
+        "t": 6,
+        "label": "阶梯推近",
+        "note": "镜头依照原时刻表分级放大宝箱区域。"
+      },
+      {
+        "t": 6,
+        "label": "宝箱抖动",
+        "note": "宝箱抖动，箱内水晶即将出现。"
+      },
+      {
+        "t": 6.067,
+        "label": "疑问气泡",
+        "note": "主角出现疑问气泡。"
+      },
+      {
+        "t": 6.1,
+        "label": "阶梯推近",
+        "note": "镜头依照原时刻表分级放大宝箱区域。"
+      },
+      {
+        "t": 6.2,
+        "label": "箱盖跳动",
+        "note": "宝箱盖短促跳动。"
+      },
+      {
+        "t": 6.3,
+        "label": "箱盖跳动",
+        "note": "宝箱盖短促跳动。"
+      },
+      {
+        "t": 6.3,
+        "label": "后缩蓄势",
+        "note": "主角后缩，抬手挡在身前。"
+      },
+      {
+        "t": 6.4,
+        "label": "宝箱抖动",
+        "note": "宝箱抖动，箱内水晶即将出现。"
+      },
+      {
+        "t": 6.4,
+        "label": "宝箱打开",
+        "note": "宝箱打开，光芒、金币与水晶出现。"
+      },
+      {
+        "t": 6.4,
+        "label": "开箱闪光",
+        "note": "开箱触发短促闪光。"
+      },
+      {
+        "t": 6.47,
+        "label": "暮色",
+        "note": "闪光过后进入暮色色板。"
+      },
+      {
+        "t": 6.667,
+        "label": "欢呼",
+        "note": "主角举手欢呼。"
+      },
+      {
+        "t": 6.8,
+        "label": "获得水晶",
+        "note": "主角举起水晶，水晶照亮周围。"
+      },
+      {
+        "t": 7.2,
+        "label": "片名落下",
+        "note": "像素片名「PIXEL QUEST」落下。"
+      },
+      {
+        "t": 7.6,
+        "label": "高光扫过",
+        "note": "片名字面出现高光扫过。"
+      },
+      {
+        "t": 7.6,
+        "label": "光芒收束",
+        "note": "开箱放射光分级收束。"
+      },
+      {
+        "t": 8,
+        "label": "副标题出现",
+        "note": "中文副标题出现。"
+      },
+      {
+        "t": 8,
+        "label": "夜色推进",
+        "note": "夜色从画面四周向水晶光池推进。"
+      },
+      {
+        "t": 8,
+        "label": "夜色",
+        "note": "进入夜色色板。"
+      },
+      {
+        "t": 8.1,
+        "label": "副标题出现",
+        "note": "中文副标题出现。"
+      },
+      {
+        "t": 8.1,
+        "label": "夜色推进",
+        "note": "夜色从画面四周向水晶光池推进。"
+      },
+      {
+        "t": 8.2,
+        "label": "副标题出现",
+        "note": "中文副标题出现。"
+      },
+      {
+        "t": 8.2,
+        "label": "夜色推进",
+        "note": "夜色从画面四周向水晶光池推进。"
+      },
+      {
+        "t": 8.3,
+        "label": "副标题出现",
+        "note": "中文副标题出现。"
+      },
+      {
+        "t": 8.3,
+        "label": "夜色推进",
+        "note": "夜色从画面四周向水晶光池推进。"
+      },
+      {
+        "t": 8.4,
+        "label": "开始提示",
+        "note": "出现「PRESS START」开始提示。"
+      },
+      {
+        "t": 10,
+        "label": "结束",
+        "note": "保留像素冒险标题画面。"
+      }
+    ]
+  },
+  "layers": [
+    {
+      "name": "天空与远山",
+      "role": "抖动渐变天空、云、太阳、星光与远山形成远景；色板由白昼切换至夜色。"
+    },
+    {
+      "name": "中近景",
+      "role": "树林、悬崖、瀑布、丘陵、桥和地面按不同速度整像素平移。"
+    },
+    {
+      "name": "角色与道具",
+      "role": "用像素数组绘制主角、金币、史莱姆、宝箱、水晶与粒子，动作按帧数推导。"
+    },
+    {
+      "name": "文字",
+      "role": "对话框逐字呈现中文，高光扫过像素片名，结尾保留中文副标题与开始提示。"
+    },
+    {
+      "name": "显像管",
+      "role": "WebGL2 着色器叠加开机过程、扫描线、桶形变形、磷光辉光与暗角。"
+    },
+    {
+      "name": "声音",
+      "role": "原作芯片音色配乐与跳跃、金币、开箱等音效共用 film/cues.json 的时刻表。"
+    }
+  ],
+  "composition": {
+    "color": "32 色主色板与语义色槽配合查找表，依次呈现白昼、午后、金色时刻、日落、暮色和夜色；水晶以蓝白色光照亮周围。",
+    "typography": "用 Fusion Pixel 12 绘制中文像素字形，用 Press Start 2P 绘制英文和分数；字形绘制到低分辨率画布并转为单色像素遮罩。",
+    "layout": "原作 1920×1080 横屏，内部像素画布为 320×180；地面位于逻辑坐标 y=150，主角横向移动，镜头跟随并在宝箱前停下。",
+    "imagery": "主角六帧奔跑循环、跳跃与落地姿态，金币旋转、史莱姆、宝箱、水晶、山林、瀑布和桥均由代码绘制。",
+    "motion": "画面按 round(t×30) 计算帧数；奔跑时每三帧切换一次姿态，视差背景使用整像素位移，宝箱前按 8、10、12 倍分级推近，开箱后回到 6 倍。",
+    "sound": "150 BPM 的芯片音色配乐，含脉冲波主旋律、三角波低音、噪声鼓组及 8-bit 音效；Demo 默认关闭声音，开启后播放原片无损抽取的 AAC 音轨。",
+    "rhythm": "跳跃、金币、落地、对话、推近、开箱、片名与夜色节点从 film/cues.json 读取，画面与原作音效使用同一组时刻。",
+    "coherence": "同一套主色板、像素字形与整像素画面贯穿横向冒险、开箱与标题落版。"
+  },
+  "tokens": {
+    "palette": [
+      "#0d0b1a",
+      "#3d4a8a",
+      "#4f6fc0",
+      "#8cc8f5",
+      "#ffffff",
+      "#ffd166",
+      "#d23c3c",
+      "#4fae4a"
+    ],
+    "type": "Fusion Pixel 12，12px；Press Start 2P，8px；均先绘制为逻辑像素再放大。",
+    "motion": [
+      {
+        "name": "像素画布",
+        "value": "320×180，常规放大 6 倍至 1920×1080。"
+      },
+      {
+        "name": "精灵时序",
+        "value": "30fps 输出，奔跑每 3 帧切换姿态，循环包含 6 帧。"
+      },
+      {
+        "name": "阶梯推近",
+        "value": "5.9、6.0、6.1 秒依次放大至 8、10、12 倍；6.4 秒回到 6 倍。"
+      },
+      {
+        "name": "结尾节点",
+        "value": "7.2 秒片名、7.6 秒高光、8.0 秒起副标题和夜色、8.4 秒开始提示。"
+      }
+    ]
+  },
+  "useCases": [
+    "复古游戏标题片",
+    "8-bit 音乐影像",
+    "品牌怀旧营销"
+  ],
+  "constraints": [
+    "10 秒，1920×1080，30fps，横屏。",
+    "原作作者 Vincentwei1021，仓库 https://github.com/Vincentwei1021/mg-styles-15 ，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可；字体与配乐出处见 Demo 内 LICENSES.md。"
+  ],
+  "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n像素风 Pixel Art / 8-bit\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML Canvas at 320×180 internal resolution, integer-scaled ×6 with nearest-neighbour; sprites authored as pixel arrays in code; limited palette\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「像素冒险 PIXEL QUEST」A retro side-scroller title/attract sequence.\n- Internal 320×180, ×6 nearest-neighbour; limited palette (PICO-8-like 16–32 colours) with dithered sky gradient; 3–4 parallax layers (sky, far mountains, mid forest/city, near ground tiles) moving by whole pixels.\n- Hero sprite (hand-authored 16×16–24×24, 6–8 frame run cycle at ~10–12 fps) runs, jumps, collects coins (sparkle), bops a slime; the palette shifts day → sunset; a treasure chest opens with a light burst.\n- Dialogue box with pixel CJK font typing 「欢迎来到像素世界！」; chunky pixel logo \"PIXEL QUEST\" drops in with shine sweep; optional CRT pass (scanlines, slight barrel, phosphor glow) that doesn't blur pixels into mush.\n- Strictly: nearest-neighbour, integer pixel positions, stepped timing (no smooth easing on sprites).\nSound: chiptune (pulse lead, triangle bass, noise drums) + jump/coin/chest SFX.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n低分辨率大颗粒像素 + 有限色板 + 低帧率精灵动画的复古游戏美学，在 B 站游戏区（MC、泰拉瑞亚、独立游戏）、8-bit 音乐 MV 和品牌怀旧营销中常见；Aseprite 教程在 B 站有 10 万+ 播放的稳定学习生态。\n视觉特征 大颗粒像素与硬边缘, 有限色板(8~32色), 8~12fps 精灵帧动画, 抖动渐变 dithering, CRT 扫描线滤镜\n关键技法 Aseprite 绘制精灵表（sprite sheet）+ 序列帧循环（走路 6~8 帧、呼吸 2~4 帧）\n缩放必须最近邻插值（CSS image-rendering: pixelated），杜绝抗锯齿糊边\n动画用 steps() 阶梯时序而非平滑缓动，保持逐帧感\n视差卷轴背景：远中近三层不同速度整像素平移\n可选 CRT 后处理：扫描线+桶形畸变+磷光辉光\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+  "migration": [
+    {
+      "field": "film/film.js 的像素数组与色板",
+      "how": "替换角色、道具、片名与配色，保持整像素绘制、阶梯动作和有限色板。"
+    },
+    {
+      "field": "film/cues.json",
+      "how": "调整跳跃、金币、对话、开箱和标题的时刻，画面与配乐同步使用该时刻表。"
+    },
+    {
+      "field": "source/audio.py 与 audio/film.m4a",
+      "how": "为新作品合成芯片配乐与音效；本案例播放从原片抽取的音轨。"
+    },
+    {
+      "field": "index.html → MotionKit.mountFilm",
+      "how": "连接 Motion Atlas 时间轴、横屏缩放、中文控制条与音轨同步。"
+    }
+  ],
+  "demo": "demos/cases/mg-pixel/index.html",
+  "patternIds": [
+    "integer-pixel-parallax",
+    "stepped-palette-daynight",
+    "rpg-dialog-box",
+    "crt-boot-shell",
+    "shared-cue-sheet"
+  ],
+  "previewAt": 9.5,
+  "attribution": [
+    {
+      "scope": "原作",
+      "notes": "- 作品：PIXEL QUEST 像素冒险。\n- 作者：Vincentwei1021。\n- 仓库：https://github.com/Vincentwei1021/mg-styles-15 。\n- 固定提交：`49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`。\n- 源码目录：`demos/20-pixel/`。\n- 许可：MIT，原文副本见本目录 `film/LICENSE`。\n- 在线作品：https://vincentwei1021.github.io/mg-styles-15/?lang=zh#20-pixel 。"
+    },
+    {
+      "scope": "字体",
+      "notes": "| 名称 | 完整字体文件 | 官方来源 | 许可原文 |\n| --- | --- | --- | --- |\n| Fusion Pixel 12 | `fonts/fusion-pixel-12px-proportional-zh_hans.ttf` | [TakWolf/fusion-pixel-font，2026.10.25 发布](https://github.com/TakWolf/fusion-pixel-font/releases/download/2026.10.25/fusion-pixel-font-12px-proportional-ttf-v2026.10.25.zip) | SIL OFL 1.1，`fonts/FusionPixel-OFL.txt`；继承字形许可保存在 `fonts/LICENSES/` |\n| Press Start 2P | `fonts/PressStart2P-Regular.ttf` | [google/fonts，提交 e06fe11c39051bddaef73ec338a9d1c8175723f1](https://raw.githubusercontent.com/google/fonts/e06fe11c39051bddaef73ec338a9d1c8175723f1/ofl/pressstart2p/PressStart2P-Regular.ttf) | SIL OFL 1.1，`fonts/PressStart2P-OFL.txt` |\n\n字体为官方完整 TTF 文件，保持原文件名。"
+    },
+    {
+      "scope": "配乐",
+      "notes": "`audio/film.m4a` 从原片 `videos/20-pixel.mp4` 无损抽取 AAC 音轨，未重新合成或转码。原作配乐脚本 `source/audio.py` 使用其 `mgaudio` 工具包合成芯片音色配乐与 8-bit 音效，按原作 MIT 许可保留。参考项目的 VCSL 乐器采样库按 CC0 许可；本片的源码资料列出采样数量为零。"
+    },
+    {
+      "scope": "素材与依赖",
+      "notes": "本片的角色、宝箱、金币、背景和像素片名均由 `film/film.js` 绘制；本片没有 vendor 包或共享贴图。"
+    }
+  ],
+  "relatedEntries": [
+    {
+      "kind": "material",
+      "id": "mg-styles-15",
+      "note": "提示词与配乐合成库所在素材"
+    }
+  ],
+  "energy": [
+    0.883,
+    0.777,
+    0.632,
+    0.561,
+    0.548,
+    0.548,
+    0.524,
+    0.526,
+    0.53,
+    0.557,
+    0.557,
+    0.623,
+    0.643,
+    0.626,
+    0.479,
+    0.4,
+    0.546,
+    0.602,
+    0.566,
+    0.364,
+    0.302,
+    0.318,
+    0.515,
+    0.691,
+    0.901,
+    0.858,
+    0.819,
+    0.755,
+    0.713,
+    0.603,
+    0.491,
+    0.454,
+    0.45,
+    0.416,
+    0.368,
+    0.365,
+    0.381,
+    0.362,
+    0.309,
+    0.269
+  ],
+  "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。"
+}

@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "axis-door-transition",
+  "pattern": {
+    "id": "axis-door-transition",
+    "order": 128,
+    "title": "中轴开门转场",
+    "types": [
+      "transition",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "旧镜头画面从中缝分开，成为左右两片门扇，以左右外缘为铰链。门扇在水平方向缩短，并加上阴影，露出新镜头；结尾两片电梯门反向合拢。",
+    "mechanism": "旧镜头画面从中缝分开，成为左右两片门扇，以左右外缘为铰链。门扇在水平方向缩短，并加上阴影，露出新镜头；结尾两片电梯门反向合拢。",
+    "trigger": "拱门、楼梯门、厨房门与电梯门节点。",
+    "effect": "转场保持中轴连续，门扇既是场景内部结构，也是转场载体。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "4.900000–6.550000秒；1倍速，共1.650000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "分门",
+        "value": "film/film.js:44–65：e=eio(seg(p,.12,1))，每扇w=960*(1−e)，旧画面左右半幅被缩放到外侧，门边阴影强度.55*e。"
+      },
+      {
+        "name": "门表",
+        "value": "film/film.js:32–40：archOpen→street、snare→stair、doors→ROOF0采用split；DOORS0→DOORS1用close，关闭后显示片尾。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-art-deco/film/film.js",
+      "demos/cases/lemo-art-deco/film/scenes/lobby.js"
+    ],
+    "locator": "film.js / scenes/lobby.js",
+    "useCases": [
+      "转场保持中轴连续，门扇既是场景内部结构，也是转场载体。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-art-deco的原作render(t)，重放“中轴开门转场”。旧镜头成为从中缝分开的左右门扇，左右外缘为铰链，门扇在水平方向缩短并加阴影露出新镜；结尾两片电梯门反向合拢。参数与源码：film/film.js:44–65：e=eio(seg(p,.12,1))，每扇w=960*(1−e)，旧画面左右半幅被缩放到外侧，门边阴影强度.55*e。；film/film.js:32–40：archOpen→street、snare→stair、doors→ROOF0采用split；DOORS0→DOORS1用close，关闭后显示片尾。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/axis-door-transition/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-art-deco"
+      }
+    ],
+    "previewAt": 0.85,
+    "markers": [
+      {
+        "t": 0,
+        "label": "中轴开门转场"
+      }
+    ],
+    "preview": "previews/patterns/axis-door-transition.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-art-deco",
+      "bundle": "agent/cases/lemo-art-deco.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 中轴开门转场\n\n## 实现 Prompt\n\n复用来源案例lemo-art-deco的原作render(t)，重放“中轴开门转场”。旧镜头成为从中缝分开的左右门扇，左右外缘为铰链，门扇在水平方向缩短并加阴影露出新镜；结尾两片电梯门反向合拢。参数与源码：film/film.js:44–65：e=eio(seg(p,.12,1))，每扇w=960*(1−e)，旧画面左右半幅被缩放到外侧，门边阴影强度.55*e。；film/film.js:32–40：archOpen→street、snare→stair、doors→ROOF0采用split；DOORS0→DOORS1用close，关闭后显示片尾。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：4.900000–6.550000秒；1倍速，共1.650000秒。\n\n[打开 Demo](../../demos/patterns/axis-door-transition/index.html) · [在库中查看](../../patterns.html#pattern/axis-door-transition)\n"
+  },
+  "entrypoint": "demos/patterns/axis-door-transition/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-art-deco/LICENSES.md",
+      "bytes": 1009,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/CREDITS",
+      "bytes": 1098,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/film.m4a",
+      "bytes": 1931499,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fidelity.md",
+      "bytes": 4707,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/chars.js",
+      "bytes": 44498,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/engine/bulbs.js",
+      "bytes": 10790,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/engine/cam.js",
+      "bytes": 1706,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/engine/deco.js",
+      "bytes": 21500,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/engine/type.js",
+      "bytes": 16867,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/film.js",
+      "bytes": 6642,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/index.html",
+      "bytes": 391,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/lines.json",
+      "bytes": 1039,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/main.js",
+      "bytes": 657,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/scenes/lobby.js",
+      "bytes": 21512,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/scenes/roof.js",
+      "bytes": 7301,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/scenes/stairs.js",
+      "bytes": 8287,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/scenes/tower.js",
+      "bytes": 9084,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_kitchen.js",
+      "bytes": 11826,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_lobby.js",
+      "bytes": 5677,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_misc.js",
+      "bytes": 12789,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_out.js",
+      "bytes": 3214,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_roof.js",
+      "bytes": 14889,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_stairs.js",
+      "bytes": 3687,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/timeline.js",
+      "bytes": 3430,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/voices/dur.json",
+      "bytes": 100,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/Italiana-Regular.ttf",
+      "bytes": 31828,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/JosefinSans[wght].ttf",
+      "bytes": 118588,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/Limelight-Regular.ttf",
+      "bytes": 132292,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/OFL-italiana.txt",
+      "bytes": 4393,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/OFL-josefinsans.txt",
+      "bytes": 4449,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/OFL-limelight.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/OFL-poiretone.txt",
+      "bytes": 4389,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/PoiretOne-Regular.ttf",
+      "bytes": 130176,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/fonts.css",
+      "bytes": 289,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/index.html",
+      "bytes": 3043,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/CREDITS",
+      "bytes": 1098,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/DEMO.md",
+      "bytes": 14371,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/README.md",
+      "bytes": 4289,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/STYLE.md",
+      "bytes": 12196,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/build.sh",
+      "bytes": 2093,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/frames.js",
+      "bytes": 13939,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/mix.py",
+      "bytes": 17241,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/music/CREDITS_music.txt",
+      "bytes": 384,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/music/score.json",
+      "bytes": 1775,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/music/score.py",
+      "bytes": 24611,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/style.json",
+      "bytes": 497,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/timeline.json",
+      "bytes": 3773,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/tools/cuecheck.py",
+      "bytes": 1808,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/tools/dump_timeline.mjs",
+      "bytes": 635,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/tools/pitch.py",
+      "bytes": 742,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/tools/subs.py",
+      "bytes": 810,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/voices/words.json",
+      "bytes": 1366,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/axis-door-transition/index.html",
+      "bytes": 799,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/axis-door-transition/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-art-deco.json",
+      "bytes": 10902,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/axis-door-transition.json",
+      "bytes": 2631,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/axis-door-transition.jpg",
+      "bytes": 86581,
+      "role": "preview"
+    }
+  ]
+}

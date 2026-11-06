@@ -1,0 +1,61 @@
+{
+  "id": "idle-breathing",
+  "order": 17,
+  "title": "空闲呼吸",
+  "types": [
+    "rhythm"
+  ],
+  "carriers": [
+    "console"
+  ],
+  "summary": "停止操作2.5秒后，8s与13s周期叠加起伏，相邻元素错相。操作时渐退，画面保持轻微呼吸。",
+  "mechanism": "阵列已展示且不处于详情、归位或电影模式时，停止操作2.5秒后，强度以指数方式趋近1，进入速率0.8、退出速率4。位移为强度×[0.075·sin(2πt/8+0.3row−0.45lane)+0.027·sin(2πt/13−0.17row+0.3lane)]，单位为模型世界单位。 选档与模式切换会打断空闲，模拟操作按钮支持键盘激活；减少动态时完全关闭呼吸。",
+  "trigger": "阵列已展示且可浏览，模式切换、选档、拖拽及惯性结束后空闲超过2.5秒",
+  "effect": "静止画面里保有生命感，暗示“系统在等待你”。",
+  "timing": [
+    {
+      "name": "阈值与包络",
+      "value": "2.5s 后开始；指数进入速率0.8、退出速率4，无固定完成时刻"
+    },
+    {
+      "name": "周期与幅度",
+      "value": "8s / 13s，幅度0.075 / 0.027世界单位，归一化权重约0.735 / 0.265"
+    },
+    {
+      "name": "二维相位",
+      "value": "0.3row−0.45lane / −0.17row+0.3lane；总幅度上限0.102世界单位"
+    },
+    {
+      "name": "退出",
+      "value": "模式切换、选档、阵列拖拽及惯性更新最后操作时间，按速率4指数退出"
+    }
+  ],
+  "useCases": [
+    "待机画面",
+    "待机陈列/壁纸",
+    "游戏菜单",
+    "操作台空闲态"
+  ],
+  "avoid": [
+    "用户正在阅读或比较数值时",
+    "可能引起眩晕的大幅运动"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "wave-array",
+      "rolling-digits"
+    ],
+    "conflicts": [],
+    "notes": "呼吸与选择余波叠加；发生操作后呼吸按速率4指数渐退。"
+  },
+  "prompt": "实现空闲呼吸：仅在非电影模式、阵列已展示、非详情且无归位中的卡片时启用。模式切换、选档、拖拽及惯性更新 lastInteraction，空闲超过2.5s 后目标强度为1，否则为0；每帧强度以1−exp(−dt×rate)靠近目标，进入rate=0.8、退出rate=4。第row行lane列位移=强度×[0.075·sin(2πt/8+0.3row−0.45lane)+0.027·sin(2πt/13−0.17row+0.3lane)]世界单位，总幅度不超过0.102。prefers-reduced-motion 完全关闭。Demo 保留九张卡片和计量图，按每世界单位50px示意位移；按钮模拟一次实际操作，外部seek/play回到预设事件。参数出处：demos/cases/archive-os/source/rhinelabui/src/motion.ts:74–80、scene.ts:1302–1317。",
+  "demo": "demos/patterns/idle-breathing/index.html",
+  "kit": true,
+  "previewAt": 6.5,
+  "sources": [
+    {
+      "caseId": "archive-os"
+    }
+  ]
+}

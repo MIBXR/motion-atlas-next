@@ -1,0 +1,72 @@
+{
+  "id": "multi-source-timeline",
+  "order": 157,
+  "title": "多源同一时间轴",
+  "types": [
+    "hud",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "电报卡与气象记录指向同一分钟游标；五来源板把新闻片、照片、证词、原声和报告连向同一舱段，随后报告、照片与新闻片按各自覆盖时刻在同一T+秒表下依次亮起。",
+  "mechanism": "电报卡与气象记录指向同一分钟游标；五来源板把新闻片、照片、证词、原声和报告连向同一舱段，随后报告、照片与新闻片按各自覆盖时刻在同一T+秒表下依次亮起。",
+  "trigger": "事件时钟从等待的分钟尺度切到燃烧的秒尺度。",
+  "effect": "多种独立材料在同一时刻与位置交叉对照，来源的起始差异直接可见。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "6.3–12.3秒；23.8–38.6秒；1倍速，总时长20.8秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "分钟时钟",
+      "value": "film/index.html:PKF / playhead / sWait；15:40–18:14，TG电报引线连接风图的同一时间轴。"
+    },
+    {
+      "name": "来源汇聚",
+      "value": "film/index.html:sOrigin；23.8–31.8秒，29秒起五路红线指向4–5号气囊。"
+    },
+    {
+      "name": "同步覆盖",
+      "value": "film/index.html:sRun；31.8–38.6秒，报告T+0、照片约T+2、新闻片约T+7开始，T+32共同停住。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-visual-investigation/film/index.html"
+  ],
+  "locator": "playhead / sWait / sOrigin / sRun",
+  "useCases": [
+    "事件重建",
+    "事实核对",
+    "事故报告"
+  ],
+  "avoid": [
+    "同一时刻叠加争夺主动作的多组信息"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-visual-investigation的原作render(t)重放“多源同一时间轴”。电报卡与气象记录指向同一分钟游标；五来源板把新闻片、照片、证词、原声和报告连向同一舱段，随后报告、照片与新闻片按各自覆盖时刻在同一T+秒表下依次亮起。保留参数：film/index.html:PKF / playhead / sWait；15:40–18:14，TG电报引线连接风图的同一时间轴。；film/index.html:sOrigin；23.8–31.8秒，29秒起五路红线指向4–5号气囊。；film/index.html:sRun；31.8–38.6秒，报告T+0、照片约T+2、新闻片约T+7开始，T+32共同停住。。重放区间由入口segments配置，来源素材与音轨直接复用。",
+  "demo": "demos/patterns/multi-source-timeline/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-visual-investigation"
+    }
+  ],
+  "previewAt": 18.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "多源同一时间轴"
+    }
+  ]
+}

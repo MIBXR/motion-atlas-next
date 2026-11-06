@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "integer-pixel-parallax",
+  "pattern": {
+    "id": "integer-pixel-parallax",
+    "order": 25,
+    "title": "整像素多速视差",
+    "types": [
+      "camera",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "320×180 像素地景分层卷动，相机追随角色后停下，远山继续按整像素步进。",
+    "mechanism": "320×180 画布整像素绘制后沿用原作 GLSL sharp 锐化采样放大，各层以不同倍率取整卷动；相机追拍后定机，远山继续整像素平移。",
+    "trigger": "角色横向前进、相机抵达固定终点时",
+    "effect": "远山、中景、近丘和前景以不同速度经过画面，定机后远山仍保持步进位移。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "0–10 秒，1 倍速"
+      },
+      {
+        "name": "画布与输出",
+        "value": "320×180 → 1920×1080，30fps，通常放大 6 倍"
+      },
+      {
+        "name": "像素采样",
+        "value": "原作 LINEAR 纹理采样配合 GLSL sharp；reg=0.5-0.5/sc，f=(cd-clamp(cd,-reg,reg))*sc+0.5"
+      },
+      {
+        "name": "分层位移",
+        "value": "远山 floor(cx×0.125)，中景 floor(cx×0.3)，近丘 floor(cx×0.55)，前景 floor(cx×1.4)"
+      },
+      {
+        "name": "追拍与定机",
+        "value": "r=hx-96；相机末段从 254 到 260，f100–106 每帧一步，f106/30=3.5333 秒定机"
+      },
+      {
+        "name": "远山续移",
+        "value": "floor(max(0,f-F_CAMSTOP)/16)，定机后每 16 帧增加一逻辑像素"
+      }
+    ],
+    "useCases": [
+      "横向像素冒险片头",
+      "多景深像素地景",
+      "追拍转定机的像素镜头"
+    ],
+    "avoid": [
+      "把逻辑位置改为连续亚像素位移",
+      "改写原作锐化采样函数"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": [],
+      "notes": "分层位移、追拍、定机和远山续移均读取同一原片帧号。"
+    },
+    "prompt": "以原作 PIXEL QUEST 的 renderAt(t) 重放整像素多速视差，保留来源目录内的代码、字体与音轨。按 index.html 内联配置 的 segments 以 1 倍速重放原片 0–10 秒，画面仍由原函数绘制。逻辑画布 320×180，输出 1920×1080，30fps，通常放大 6 倍；沿用原作 LINEAR 纹理过滤与 GLSL sharp：reg=0.5-0.5/sc，f=(cd-clamp(cd,-reg,reg))*sc+0.5。远山、中景、近丘、前景分别使用 floor(cx×0.125)、floor(cx×0.3)、floor(cx×0.55)、floor(cx×1.4)。相机按 hx-96 追随角色，末段由 254 到 260，f106 定机；远山叠加 floor(max(0,f-F_CAMSTOP)/16) 继续移动。声音重放原片同一区间，默认关闭；提供横屏、时间定位、播放暂停与减少动态偏好。",
+    "demo": "demos/patterns/integer-pixel-parallax/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-pixel"
+      }
+    ],
+    "previewAt": 3,
+    "markers": [
+      {
+        "t": 0,
+        "label": "像素艺术"
+      },
+      {
+        "t": 3.5333333333,
+        "label": "相机定机"
+      },
+      {
+        "t": 4.0666666667,
+        "label": "远山续移"
+      }
+    ],
+    "parameters": [],
+    "preview": "previews/patterns/integer-pixel-parallax.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-pixel",
+      "bundle": "agent/cases/mg-pixel.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 整像素多速视差\n\n## 实现 Prompt\n\n以原作 PIXEL QUEST 的 renderAt(t) 重放整像素多速视差，保留来源目录内的代码、字体与音轨。按 index.html 内联配置 的 segments 以 1 倍速重放原片 0–10 秒，画面仍由原函数绘制。逻辑画布 320×180，输出 1920×1080，30fps，通常放大 6 倍；沿用原作 LINEAR 纹理过滤与 GLSL sharp：reg=0.5-0.5/sc，f=(cd-clamp(cd,-reg,reg))*sc+0.5。远山、中景、近丘、前景分别使用 floor(cx×0.125)、floor(cx×0.3)、floor(cx×0.55)、floor(cx×1.4)。相机按 hx-96 追随角色，末段由 254 到 260，f106 定机；远山叠加 floor(max(0,f-F_CAMSTOP)/16) 继续移动。声音重放原片同一区间，默认关闭；提供横屏、时间定位、播放暂停与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：0–10 秒，1 倍速\n- **画布与输出**：320×180 → 1920×1080，30fps，通常放大 6 倍\n- **像素采样**：原作 LINEAR 纹理采样配合 GLSL sharp；reg=0.5-0.5/sc，f=(cd-clamp(cd,-reg,reg))*sc+0.5\n- **分层位移**：远山 floor(cx×0.125)，中景 floor(cx×0.3)，近丘 floor(cx×0.55)，前景 floor(cx×1.4)\n- **追拍与定机**：r=hx-96；相机末段从 254 到 260，f100–106 每帧一步，f106/30=3.5333 秒定机\n- **远山续移**：floor(max(0,f-F_CAMSTOP)/16)，定机后每 16 帧增加一逻辑像素\n\n[打开 Demo](../../demos/patterns/integer-pixel-parallax/index.html) · [在库中查看](../../patterns.html#pattern/integer-pixel-parallax)\n"
+  },
+  "entrypoint": "demos/patterns/integer-pixel-parallax/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-pixel/LICENSES.md",
+      "bytes": 815,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/audio/film.m4a",
+      "bytes": 345394,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fidelity.md",
+      "bytes": 4108,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/cues.json",
+      "bytes": 888,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/film.js",
+      "bytes": 58413,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/setup.js",
+      "bytes": 385,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/style.css",
+      "bytes": 100,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/FusionPixel-OFL.txt",
+      "bytes": 4418,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/LICENSES/ark-pixel/OFL.txt",
+      "bytes": 4412,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/LICENSES/cubic-11/OFL.txt",
+      "bytes": 5364,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/LICENSES/galmuri/LICENSE.txt",
+      "bytes": 4360,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/PressStart2P-OFL.txt",
+      "bytes": 4413,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/PressStart2P-Regular.ttf",
+      "bytes": 118204,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/fonts.css",
+      "bytes": 369,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/fusion-pixel-12px-proportional-zh_hans.ttf",
+      "bytes": 7295572,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-pixel/index.html",
+      "bytes": 2128,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/source/audio.py",
+      "bytes": 11101,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-pixel/source/cues.json",
+      "bytes": 888,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/integer-pixel-parallax/index.html",
+      "bytes": 1261,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/integer-pixel-parallax/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-pixel.json",
+      "bytes": 22301,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/integer-pixel-parallax.json",
+      "bytes": 3127,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/integer-pixel-parallax.jpg",
+      "bytes": 200318,
+      "role": "preview"
+    }
+  ]
+}

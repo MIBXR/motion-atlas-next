@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "mascot-on-ui-edges",
+  "pattern": {
+    "id": "mascot-on-ui-edges",
+    "order": 133,
+    "title": "小人只站界面上沿",
+    "types": [
+      "composition",
+      "feedback"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "每帧测量真实DOM元素上边缘的位置并换算回世界坐标，像素吉祥物在这些点站立，并以它们为行走和跳跃的端点；同一时间表触发文件高亮、计划生成和界面状态变化。",
+    "mechanism": "每帧测量真实DOM元素上边缘的位置并换算回世界坐标，像素吉祥物在这些点站立，并以它们为行走和跳跃的端点；同一时间表触发文件高亮、计划生成和界面状态变化。",
+    "trigger": "来源案例时间轴进入所列动作区间。",
+    "effect": "每帧测量真实DOM元素上边缘的位置并换算回世界坐标，像素吉祥物在这些点站立，并以它们为行走和跳跃的端点；同一时间表触发文件高亮、计划生成和界面状态变化。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "10.500000–18.500000秒；22.200000–27.800000秒；1倍速，总时长13.600000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "上沿测量",
+        "value": "film/main.js:A：r=getBoundingClientRect()；x=(r.left+r.width×fx−960)/z+cx；y=(r.top+r.height×fy−540)/z+cy；fy默认0。"
+      },
+      {
+        "name": "动作与UI",
+        "value": "film/film.js:at / Actor.eval / appState：输入框、文件行、plan条目、按钮等data-a锚点；起跳前.14秒蹲压.28，落地.22秒衰减。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-living-screencast/film/main.js",
+      "demos/cases/lemo-living-screencast/film/film.js",
+      "demos/cases/lemo-living-screencast/film/ui.js",
+      "demos/cases/lemo-living-screencast/film/clawd.js"
+    ],
+    "locator": "A / at / Actor.eval / appState",
+    "useCases": [
+      "让吉祥物沿真实界面操作路径演示产品功能。"
+    ],
+    "avoid": [
+      "在主动作发生时叠加争夺注意的另一主动作"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-living-screencast的原作render(t)重放“小人只站界面上沿”。每帧测量真实DOM元素上边缘并换回世界坐标，像素吉祥物以这些点为站立、行走和跳跃端点；同一时间表触发文件高亮、计划生成和界面状态变化。保留参数：film/main.js:A：r=getBoundingClientRect()；x=(r.left+r.width×fx−960)/z+cx；y=(r.top+r.height×fy−540)/z+cy；fy默认0。；film/film.js:at / Actor.eval / appState：输入框、文件行、plan条目、按钮等data-a锚点；起跳前.14秒蹲压.28，落地.22秒衰减。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/mascot-on-ui-edges/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-living-screencast"
+      }
+    ],
+    "previewAt": 3.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "小人只站界面上沿"
+      }
+    ],
+    "preview": "previews/patterns/mascot-on-ui-edges.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-living-screencast",
+      "bundle": "agent/cases/lemo-living-screencast.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 小人只站界面上沿\n\n## 实现 Prompt\n\n用来源案例lemo-living-screencast的原作render(t)重放“小人只站界面上沿”。每帧测量真实DOM元素上边缘并换回世界坐标，像素吉祥物以这些点为站立、行走和跳跃端点；同一时间表触发文件高亮、计划生成和界面状态变化。保留参数：film/main.js:A：r=getBoundingClientRect()；x=(r.left+r.width×fx−960)/z+cx；y=(r.top+r.height×fy−540)/z+cy；fy默认0。；film/film.js:at / Actor.eval / appState：输入框、文件行、plan条目、按钮等data-a锚点；起跳前.14秒蹲压.28，落地.22秒衰减。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：10.500000–18.500000秒；22.200000–27.800000秒；1倍速，总时长13.600000秒。\n\n[打开 Demo](../../demos/patterns/mascot-on-ui-edges/index.html) · [在库中查看](../../patterns.html#pattern/mascot-on-ui-edges)\n"
+  },
+  "entrypoint": "demos/patterns/mascot-on-ui-edges/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-living-screencast/LICENSES.md",
+      "bytes": 1212,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/CREDITS",
+      "bytes": 1050,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/audio/film.m4a",
+      "bytes": 1974348,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fidelity.md",
+      "bytes": 5095,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/clawd.js",
+      "bytes": 5974,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/film.js",
+      "bytes": 36375,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/index.html",
+      "bytes": 18318,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/main.js",
+      "bytes": 10259,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/ui.js",
+      "bytes": 17112,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/voices/dur.json",
+      "bytes": 256,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/film/voices/words.json",
+      "bytes": 3078,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/JetBrainsMono-var.ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/Newsreader-Italic-VF.ttf",
+      "bytes": 495684,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/Newsreader-VF.ttf",
+      "bytes": 451664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/OFL-inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/OFL-jetbrainsmono.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/fonts.css",
+      "bytes": 326,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/fonts/newsreader_OFL.txt",
+      "bytes": 4394,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/index.html",
+      "bytes": 2365,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/CREDITS",
+      "bytes": 1050,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/README.md",
+      "bytes": 4134,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/build.sh",
+      "bytes": 1390,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/events.json",
+      "bytes": 11957,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/lines.json",
+      "bytes": 2242,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/sound.py",
+      "bytes": 15812,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/tools/asr_check.py",
+      "bytes": 1505,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/tools/mixcheck.py",
+      "bytes": 1057,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-living-screencast/source/tools/subs.mjs",
+      "bytes": 667,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/mascot-on-ui-edges/index.html",
+      "bytes": 1118,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/mascot-on-ui-edges/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-living-screencast.json",
+      "bytes": 11224,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/mascot-on-ui-edges.json",
+      "bytes": 3133,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/mascot-on-ui-edges.jpg",
+      "bytes": 31509,
+      "role": "preview"
+    }
+  ]
+}

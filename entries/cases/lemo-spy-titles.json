@@ -1,0 +1,344 @@
+{
+  "title": "天鹅绒密码 · 60s 间谍片头",
+  "summary": "虚构1964年间谍片的开场：特工追逐带着钥匙的信使，穿过字母柱廊、单词车厢和轮盘，钥匙最终打开片名中的锁孔。",
+  "focus": "四种不透明纸墨、剪影表演与字形布景共用节拍；同位圆形硬切和30°斜线把追逐、拆景与片名连在一起。",
+  "accent": "#d23a22",
+  "background": "#efe4c9",
+  "observations": [
+    "字母成为机场柱廊、单词成为车厢；先呈现完整可读的字幕，再进入追逐。",
+    "剪纸边在物件局部空间缓存，移动时边缘保持稳定。",
+    "人物先在离屏层合成整体剪影，只在关节挖细缝，再统一加底色轮廓。",
+    "轮子、轮盘、瞳孔和月亮在时间分支之间硬切，圆心和切口构成视觉押韵。",
+    "高潮时，旧屋顶切成条带退场，另行生成的标题字形沿同一斜线飞入。"
+  ],
+  "composition": {
+    "color": "墨黑#1b1714、纸奶油#efe4c9、信号红#d23a22与芥末#e2a52a；暗色纸仅作层次。",
+    "typography": "League Gothic经opentype.js提取轮廓后重新剪边；League Spartan用于字幕，片名使用自绘几何字形。",
+    "layout": "强30°斜线、大色地，小人物在大字之间穿行；字幕纸条位于左下。",
+    "imagery": "Canvas2D剪纸、缓存毛边、2.4px切缝、整体剪影与纸影。",
+    "motion": "人物12fps，镜头和网格24fps；停时静默、追逐横移、形状硬切与斜线标题入场。",
+    "sound": "原片132BPM间谍大乐队、低弦冲浪吉他、铜管短击，带通磁带质感Kokoro bm_george旁白。",
+    "rhythm": "铜管短击决定剪辑点，追逐段缩短；两拍停时、片名大和弦和一拍静默形成节奏落差。",
+    "coherence": "钥匙既是被追逐的物件，也是片名I的锁；开头与片尾锁孔共用屏幕坐标。"
+  },
+  "avoid": [
+    "枪管式开场或真实片头的字标和角色复用",
+    "渐变、半调网点或平滑连续变形作为匹配剪辑"
+  ],
+  "constraints": [
+    "字形整体先可读，推进后仍露出帽檐、鼻子和领带。",
+    "剪纸边按物件局部空间生成和缓存，背景道具使用更暗底色。",
+    "匹配剪辑保持圆心与半径衔接。",
+    "铜管音头提前8ms，停时连混响尾音一起归零。"
+  ],
+  "prompt": "制作虚构60年代间谍片的剪纸片头：四种不透明纸墨，无渐变；局部缓存的剪边、切缝和薄纸阴影形成材质。每个地点由一行完整可读的字幕搭成，人物是帽型和一条强调色领带可辨的侧面剪影。人物12fps、相机24fps，按铜管短击硬切；用同位圆形押韵加速追逐，以两拍停时与全总线静默制造悬念。30°斜线拆开旧景，标题自绘字形沿该方向入场，钥匙进入片名中的锁孔。字幕为左下窄纸条，League Gothic剪边字与League Spartan分工；沿用原片磁带旁白与间谍大乐队混音。引擎位于 demos/cases/lemo-spy-titles/film/paper.js、glyph.js、scenes.js、film.js 与 title.js。",
+  "patternIds": [
+    "type-as-architecture",
+    "shape-rhyme-match-cut",
+    "diagonal-strip-shatter-title"
+  ],
+  "id": "lemo-spy-titles",
+  "order": 26,
+  "subtitle": "The Velvet Cipher",
+  "carriers": [
+    "video"
+  ],
+  "style": "graphic-type",
+  "purpose": "title-art",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "60s 间谍片头",
+    "图形与排版",
+    "代码影片"
+  ],
+  "timeline": true,
+  "kit": true,
+  "previewAt": 26.46,
+  "rhythm": {
+    "duration": 44.1,
+    "beats": [
+      {
+        "t": 0,
+        "label": "锁孔冷开场",
+        "note": "一声磁带点击，红锁孔位于黑底。"
+      },
+      {
+        "t": 2.2727272727272725,
+        "label": "斜线裂开",
+        "note": "30°切线露出红色网格。"
+      },
+      {
+        "t": 5,
+        "label": "天鹅绒上的钥匙",
+        "note": "网格百叶翻走。"
+      },
+      {
+        "t": 6.8181818181818175,
+        "label": "信使擦过",
+        "note": "外套掩护换景。"
+      },
+      {
+        "t": 7.727272727272727,
+        "label": "特工入场",
+        "note": "奔跑、急停与回望。"
+      },
+      {
+        "t": 9.545454545454545,
+        "label": "字母机场",
+        "note": "先读完整字幕，再横移追逐。"
+      },
+      {
+        "t": 16.818181818181817,
+        "label": "单词列车",
+        "note": "字形组成车厢，特工跳跃。"
+      },
+      {
+        "t": 20.454545454545453,
+        "label": "停时两拍",
+        "note": "背景滚动与声音一起冻结。"
+      },
+      {
+        "t": 21.818181818181817,
+        "label": "轮子特写",
+        "note": "准备同位圆形匹配。"
+      },
+      {
+        "t": 22.27272727272727,
+        "label": "轮盘",
+        "note": "铜管短击硬切。"
+      },
+      {
+        "t": 25,
+        "label": "瞳孔",
+        "note": "匹配间隔缩到两拍。"
+      },
+      {
+        "t": 25.909090909090907,
+        "label": "月亮屋顶",
+        "note": "剪影在巨大奶油月亮前追逐。"
+      },
+      {
+        "t": 31.36363636363636,
+        "label": "斜切拆景",
+        "note": "屋顶条带退场，标题字形沿斜线入场。"
+      },
+      {
+        "t": 33.18181818181818,
+        "label": "片名落定",
+        "note": "标题保留40px切缝。"
+      },
+      {
+        "t": 36.81818181818181,
+        "label": "钥匙合缝",
+        "note": "钥匙开锁，.08秒合上切口。"
+      },
+      {
+        "t": 37.72727272727272,
+        "label": "干邦鼓收束",
+        "note": "静默后硬切回全片名。"
+      },
+      {
+        "t": 40.90909090909091,
+        "label": "片尾",
+        "note": "小片名与署名。"
+      }
+    ],
+    "bpm": 132
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2.2727272727272725,
+      "from": 0.05,
+      "to": 0.15,
+      "label": "冷开场"
+    },
+    {
+      "t0": 2.2727272727272725,
+      "t1": 9.545454545454545,
+      "from": 0.45,
+      "to": 0.65,
+      "label": "裂景与夺钥"
+    },
+    {
+      "t0": 9.545454545454545,
+      "t1": 16.818181818181817,
+      "from": 0.55,
+      "to": 0.7,
+      "label": "机场"
+    },
+    {
+      "t0": 16.818181818181817,
+      "t1": 20.454545454545453,
+      "from": 0.75,
+      "to": 0.85,
+      "label": "列车"
+    },
+    {
+      "t0": 20.454545454545453,
+      "t1": 21.363636363636363,
+      "from": 0,
+      "to": 0,
+      "label": "停时"
+    },
+    {
+      "t0": 21.363636363636363,
+      "t1": 31.36363636363636,
+      "from": 0.8,
+      "to": 0.95,
+      "label": "硬切与追逐"
+    },
+    {
+      "t0": 31.36363636363636,
+      "t1": 36.81818181818181,
+      "from": 1,
+      "to": 0.65,
+      "label": "片名与钥匙"
+    },
+    {
+      "t0": 36.81818181818181,
+      "t1": 37.272727272727266,
+      "from": 0.5,
+      "to": 0.15,
+      "label": "合缝"
+    },
+    {
+      "t0": 37.272727272727266,
+      "t1": 37.72727272727272,
+      "from": 0,
+      "to": 0,
+      "label": "一拍静默"
+    },
+    {
+      "t0": 37.72727272727272,
+      "t1": 44.1,
+      "from": 0.4,
+      "to": 0.1,
+      "label": "收束"
+    }
+  ],
+  "energyNote": "段落划分依据DEMO.md的Shots、Score structure与源码时间表；0–1数值按画面动作、声音密度和静默作相对编辑标注。",
+  "layers": [
+    {
+      "name": "纸墨底色",
+      "role": "各场一主色，纸纹乘色、墨隙与刮印线叠于画面。"
+    },
+    {
+      "name": "字形布景",
+      "role": "剪边字母组成完整可读字幕，再成为柱廊与车厢。"
+    },
+    {
+      "name": "剪影演员",
+      "role": "帽型、外套、尖鞋及一条飘动的红领带用于识别角色。"
+    },
+    {
+      "name": "钥匙与匹配圆",
+      "role": "带黑衬底的钥匙保持可见，圆形硬切用于跨场。"
+    },
+    {
+      "name": "字幕与片名",
+      "role": "左下纸条字幕、自绘片名、锁孔与片尾署名。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#1b1714",
+      "#efe4c9",
+      "#d23a22",
+      "#e2a52a",
+      "#9a2a18",
+      "#b07e1c",
+      "#3a322b"
+    ],
+    "type": "League Gothic 400（变量宽度字体）；League Spartan 100–900，字幕600；片名为title.js:GLYPH自绘字形。",
+    "motion": [
+      {
+        "name": "节拍网格",
+        "value": "film/story.js：BPM=132，BEAT=60/132，OFF=BEAT，B(n,beat)计算所有提示点。"
+      },
+      {
+        "name": "剪边与纸影",
+        "value": "film/paper.js:rough / piece：9–10px采样，1.2–2.2px扰动；切缝2.4px，阴影偏移2.5/3.5px、blur5。"
+      },
+      {
+        "name": "角色步频",
+        "value": "film/chars.js:runPose；film/film.js:tw：人物按12fps，跑步循环2拍、8幅姿势。"
+      },
+      {
+        "name": "标题与斜线",
+        "value": "film/title.js:CUT_ANG=30°；film/film.js:sShatter：旧景260px条带沿DIR退场，新字以1500px位移飞入，sTitle在click后.08秒合缝。"
+      }
+    ]
+  },
+  "useCases": [
+    "电影片头",
+    "活动开场",
+    "预告片"
+  ],
+  "migration": [
+    {
+      "field": "film/story.js → B / HIT / T",
+      "how": "修改速度网格、停时、追逐及标题节点。"
+    },
+    {
+      "field": "film/scenes.js / glyph.js",
+      "how": "修改字幕行、字母布景、机场与火车布局。"
+    },
+    {
+      "field": "film/chars.js / title.js → GLYPH",
+      "how": "修改角色剪影、钥匙与自绘片名。"
+    },
+    {
+      "field": "film/paper.js → C / rough / paperFinish",
+      "how": "修改四墨、剪边和纸纹。"
+    }
+  ],
+  "demo": "demos/cases/lemo-spy-titles/index.html",
+  "fidelity": "demos/cases/lemo-spy-titles/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/spy-titles",
+    "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+    "path": "styles/spy-titles/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+    "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方素材按CREDITS各自许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/spy-titles"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/spy-titles.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/spy-titles/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/spy-titles)。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "沿用公开成片混音，原始资源与署名见[audio/CREDITS](audio/CREDITS)，许可原文入口见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "字体家族与字重见tokens.type；OFL原文在fonts/，取得和重建方式见[source/README.md](source/README.md)。"
+    }
+  ]
+}

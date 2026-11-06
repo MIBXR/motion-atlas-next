@@ -1,0 +1,75 @@
+{
+  "id": "sun-clock-shadow-trace",
+  "order": 150,
+  "title": "日晷与投影阴影轨迹",
+  "types": [
+    "hud",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "按真实冬至太阳位置推进时钟到正午，太阳阴影落在模型上，投影描出阴影边缘，量程线从塔楼伸到777米并依次标记16个屋顶。",
+  "mechanism": "按真实冬至太阳位置推进时钟到正午，太阳阴影落在模型上，投影描出阴影边缘，量程线从塔楼伸到777米并依次标记16个屋顶。",
+  "trigger": "来源时间线进入对应镜头与动作节点。",
+  "effect": "按真实冬至太阳位置推进时钟到正午，太阳阴影落在模型上，投影描出阴影边缘，量程线从塔楼伸到777米并依次标记16个屋顶。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-white-model：22.8–35.4秒；1倍速，总时长12.600000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "太阳时钟",
+      "value": "film/main.js:sunAt / clockMin / sunVec，读取stats.json的太阳表，10:55→12:40；T.sun=22.8、T.noon=25.8。"
+    },
+    {
+      "name": "投影阴影",
+      "value": "film/studio.js:projLight，uZS采样2米高度场阴影，uZSProg沿距离从塔楼向外展开；main.js:shPts为79点。"
+    },
+    {
+      "name": "量程与屋顶",
+      "value": "film/main.js:rangeLine / SH.forEach，27–28.8秒展开777米量程，29.4–31.2秒点亮16屋顶，9个战前屋顶用琥珀色。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-white-model/film/main.js",
+    "demos/cases/lemo-white-model/film/studio.js",
+    "demos/cases/lemo-white-model/film/overlay.js"
+  ],
+  "locator": "film/main.js:sunAt / clockMin / sunVec；film/studio.js:projLight；film/main.js:rangeLine / SH.forEach",
+  "useCases": [
+    "证据影像",
+    "数据解说",
+    "档案与科学短片"
+  ],
+  "avoid": [
+    "在主要读数和证据上叠加争夺注意的运动"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“日晷与投影阴影轨迹”。按真实冬至太阳位置推进时钟到正午，太阳阴影落在模型上，投影描出阴影边缘，量程线从塔楼伸到777米并依次标记16个屋顶。保留参数：film/main.js:sunAt / clockMin / sunVec，读取stats.json的太阳表，10:55→12:40；T.sun=22.8、T.noon=25.8。；film/studio.js:projLight，uZS采样2米高度场阴影，uZSProg沿距离从塔楼向外展开；main.js:shPts为79点。；film/main.js:rangeLine / SH.forEach，27–28.8秒展开777米量程，29.4–31.2秒点亮16屋顶，9个战前屋顶用琥珀色。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/sun-clock-shadow-trace/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-white-model"
+    }
+  ],
+  "previewAt": 7.6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "太阳、阴影与量程"
+    }
+  ],
+  "renderer": "gpu"
+}

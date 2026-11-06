@@ -1,0 +1,572 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "mg-flat-vector",
+  "entry": {
+    "id": "mg-flat-vector",
+    "order": 6,
+    "title": "扁平矢量 · popwise — One Dot",
+    "subtitle": "一个点的一镜到底",
+    "carriers": [
+      "video"
+    ],
+    "style": "graphic-type",
+    "purpose": "brand",
+    "tech": [
+      "dom"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "扁平矢量",
+      "几何角色",
+      "弹性缓动",
+      "形状擦除",
+      "品牌短片"
+    ],
+    "summary": "珊瑚色圆点成为太阳，带出扁平城市；镜头向窗口推进，人物与手机提示接连出现，随后通过气泡擦除转入图标落点，最后汇成 popwise 与中英文标语。",
+    "focus": "纯色几何化的人物与场景、无描边或极简描边、大色块撞色，一切元素都是矢量形状。在一个 HTML 页面中，用 SVG 图形与手写缓动按时间逐帧绘制。",
+    "accent": "#FF5A4E",
+    "background": "#2B2BFF",
+    "timeline": true,
+    "kit": true,
+    "rhythm": {
+      "duration": 10,
+      "bpm": 120,
+      "beats": [
+        {
+          "t": 0.5,
+          "label": "首次落地",
+          "note": "原作时间表第 15 帧。"
+        },
+        {
+          "t": 0.8,
+          "label": "再次碰撞",
+          "note": "原作时间表第 24 帧。"
+        },
+        {
+          "t": 0.9,
+          "label": "弹射预备",
+          "note": "原作时间表第 27 帧。"
+        },
+        {
+          "t": 1.0333333333333334,
+          "label": "圆点弹射",
+          "note": "原作时间表第 31 帧。"
+        },
+        {
+          "t": 1.2666666666666666,
+          "label": "远景升起",
+          "note": "原作时间表第 38 帧。"
+        },
+        {
+          "t": 1.3333333333333333,
+          "label": "太阳落定",
+          "note": "原作时间表第 40 帧。"
+        },
+        {
+          "t": 1.3666666666666667,
+          "label": "光芒展开",
+          "note": "原作时间表第 41 帧。"
+        },
+        {
+          "t": 1.4666666666666666,
+          "label": "建筑入场",
+          "note": "原作时间表第 44 帧。"
+        },
+        {
+          "t": 1.6666666666666667,
+          "label": "云朵入场",
+          "note": "原作时间表第 50 帧。"
+        },
+        {
+          "t": 1.8666666666666667,
+          "label": "飞鸟入场",
+          "note": "原作时间表第 56 帧。"
+        },
+        {
+          "t": 2.066666666666667,
+          "label": "树木入场",
+          "note": "原作时间表第 62 帧。"
+        },
+        {
+          "t": 2.1333333333333333,
+          "label": "窗户点亮",
+          "note": "原作时间表第 64 帧。"
+        },
+        {
+          "t": 2.7333333333333334,
+          "label": "窗户齐备",
+          "note": "原作时间表第 82 帧。"
+        },
+        {
+          "t": 2.8,
+          "label": "主角窗口",
+          "note": "原作时间表第 84 帧。"
+        },
+        {
+          "t": 2.8666666666666667,
+          "label": "推进预备",
+          "note": "原作时间表第 86 帧。"
+        },
+        {
+          "t": 3,
+          "label": "镜头推进",
+          "note": "原作时间表第 90 帧。"
+        },
+        {
+          "t": 3.5,
+          "label": "穿过玻璃",
+          "note": "原作时间表第 105 帧。"
+        },
+        {
+          "t": 3.7333333333333334,
+          "label": "镜头到达",
+          "note": "原作时间表第 112 帧。"
+        },
+        {
+          "t": 3.8,
+          "label": "人物眨眼",
+          "note": "原作时间表第 114 帧。"
+        },
+        {
+          "t": 4,
+          "label": "手机提示",
+          "note": "原作时间表第 120 帧。"
+        },
+        {
+          "t": 4,
+          "label": "音乐构建",
+          "note": "配乐构建阶段。"
+        },
+        {
+          "t": 4.2,
+          "label": "反应预备",
+          "note": "原作时间表第 126 帧。"
+        },
+        {
+          "t": 4.3,
+          "label": "人物转头",
+          "note": "原作时间表第 129 帧。"
+        },
+        {
+          "t": 4.5,
+          "label": "惊叹出现",
+          "note": "原作时间表第 135 帧。"
+        },
+        {
+          "t": 4.8,
+          "label": "气泡预备",
+          "note": "原作时间表第 144 帧。"
+        },
+        {
+          "t": 5,
+          "label": "圆形擦除",
+          "note": "原作时间表第 150 帧。"
+        },
+        {
+          "t": 5.133333333333334,
+          "label": "胶囊擦除",
+          "note": "原作时间表第 154 帧。"
+        },
+        {
+          "t": 5.266666666666667,
+          "label": "半圆擦除",
+          "note": "原作时间表第 158 帧。"
+        },
+        {
+          "t": 5.466666666666667,
+          "label": "图形落定",
+          "note": "原作时间表第 164 帧。"
+        },
+        {
+          "t": 5.5,
+          "label": "圆点回归",
+          "note": "原作时间表第 165 帧。"
+        },
+        {
+          "t": 5.7,
+          "label": "圆点撞击",
+          "note": "原作时间表第 171 帧。"
+        },
+        {
+          "t": 6,
+          "label": "柱图落点",
+          "note": "原作时间表第 180 帧。"
+        },
+        {
+          "t": 6,
+          "label": "音乐落点",
+          "note": "配乐落点阶段。"
+        },
+        {
+          "t": 6.5,
+          "label": "对勾落点",
+          "note": "原作时间表第 195 帧。"
+        },
+        {
+          "t": 7,
+          "label": "爱心落点",
+          "note": "原作时间表第 210 帧。"
+        },
+        {
+          "t": 7.5,
+          "label": "金币落点",
+          "note": "原作时间表第 225 帧。"
+        },
+        {
+          "t": 7.766666666666667,
+          "label": "汇合预备",
+          "note": "原作时间表第 233 帧。"
+        },
+        {
+          "t": 7.9,
+          "label": "匹配开始",
+          "note": "原作时间表第 237 帧。"
+        },
+        {
+          "t": 8,
+          "label": "图形汇合",
+          "note": "原作时间表第 240 帧。"
+        },
+        {
+          "t": 8,
+          "label": "标志擦入",
+          "note": "原作时间表第 240 帧。"
+        },
+        {
+          "t": 8,
+          "label": "音乐尾声",
+          "note": "配乐尾声阶段。"
+        },
+        {
+          "t": 8.1,
+          "label": "字母入场",
+          "note": "原作时间表第 243 帧。"
+        },
+        {
+          "t": 8.166666666666666,
+          "label": "匹配结束",
+          "note": "原作时间表第 245 帧。"
+        },
+        {
+          "t": 8.233333333333333,
+          "label": "圆点上升",
+          "note": "原作时间表第 247 帧。"
+        },
+        {
+          "t": 8.333333333333334,
+          "label": "圆点顶点",
+          "note": "原作时间表第 250 帧。"
+        },
+        {
+          "t": 8.366666666666667,
+          "label": "圆点下落",
+          "note": "原作时间表第 251 帧。"
+        },
+        {
+          "t": 8.5,
+          "label": "圆点落字",
+          "note": "原作时间表第 255 帧。"
+        },
+        {
+          "t": 8.633333333333333,
+          "label": "中文标语",
+          "note": "原作时间表第 259 帧。"
+        },
+        {
+          "t": 8.866666666666667,
+          "label": "英文标语",
+          "note": "原作时间表第 266 帧。"
+        },
+        {
+          "t": 9,
+          "label": "首次律动",
+          "note": "原作时间表第 270 帧。"
+        },
+        {
+          "t": 9.2,
+          "label": "标语翻动",
+          "note": "原作时间表第 276 帧。"
+        },
+        {
+          "t": 9.5,
+          "label": "再次律动",
+          "note": "原作时间表第 285 帧。"
+        }
+      ]
+    },
+    "layers": [
+      {
+        "name": "城市场景",
+        "role": "圆点、太阳光芒、远景建筑、近景建筑、云、鸟、树与地面按同一镜头变换组织。"
+      },
+      {
+        "name": "窗口人物",
+        "role": "镜头向一扇窗口推进，几何人物在桌前眨眼、转头，并对手机提示作出反应。"
+      },
+      {
+        "name": "图标构成",
+        "role": "气泡与色块擦除后，柱图、对勾、爱心、金币随圆点按节拍出现。"
+      },
+      {
+        "name": "文字落版",
+        "role": "图形汇成 popwise，圆点落在字母上，中英文标语依次入场并保留律动。"
+      },
+      {
+        "name": "配乐音效",
+        "role": "120 BPM、F 大调的流行电子配乐；手机提示与四个图标落点共用 F5、A5、C6、A5 四音动机。"
+      }
+    ],
+    "composition": {
+      "color": "群青 #2B2BFF、珊瑚 #FF5A4E、向日葵黄 #FFC62B、薄荷 #2EE6A8、奶油 #FFF6E9、墨色 #151433；图形使用纯色。",
+      "typography": "Fredoka 600、700 与 Resource Han Rounded CN Bold 700；片名 popwise、中英文标语保留原文。",
+      "layout": "1920×1080 横屏 SVG；从扁平城市连续推进到窗口，再转入四象限图标，最终居中落版。",
+      "imagery": "SVG 几何图形构成圆点、城市、人物与图标；随机变化使用固定种子。",
+      "motion": "圆点经过预备、弹射、压扁拉伸、回弹与落定；建筑错峰升起，镜头推进，气泡与色块擦除，图形汇合成标志。",
+      "sound": "复用原片的 120 BPM、F 大调配乐与音效，由 source/audio.py 使用 VCSL 乐器采样合成；播放时使用无损抽取的原片音轨。",
+      "rhythm": "film/cues.json 给出 30fps 的画面节点；4 秒构建、6 秒落点、8 秒尾声，四个图标落点在 6、6.5、7、7.5 秒。",
+      "coherence": "同一个珊瑚色圆点贯穿太阳、手机气泡、四个图标与文字落版，由元素带动转场。"
+    },
+    "tokens": {
+      "palette": [
+        "#2B2BFF",
+        "#FF5A4E",
+        "#FFC62B",
+        "#2EE6A8",
+        "#FFF6E9",
+        "#151433"
+      ],
+      "type": "Fredoka 600、700；Resource Han Rounded CN Bold 700。",
+      "motion": [
+        {
+          "name": "弹性曲线",
+          "value": "cubic-bezier(0.34,1.56,0.64,1)；闭式阻尼弹簧与速度驱动的压扁拉伸。"
+        },
+        {
+          "name": "建筑错峰",
+          "value": "bldStart=44 帧，bldStagger=3 帧，bldCount=9。"
+        },
+        {
+          "name": "图标落点",
+          "value": "180、195、210、225 帧。"
+        },
+        {
+          "name": "标语入场",
+          "value": "中文 259 帧，英文 266 帧；圆点 255 帧落字。"
+        }
+      ]
+    },
+    "useCases": [
+      "SaaS 产品宣传",
+      "科普解说",
+      "企业年报视频",
+      "品牌解释短片"
+    ],
+    "constraints": [
+      "原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。",
+      "10 秒，1920×1080，30fps；只提供横屏原作画幅。"
+    ],
+    "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n扁平矢量动画 Flat / Vector 2D Motion Graphics\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: SVG + GSAP (CustomEase/CustomBounce/MorphSVG); motion blur mb=4 for fast moves\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「一镜到底的扁平世界」One-continuous-shot brand explainer, the canonical Motion-Ocean/Google-explainer form, pushed to showreel polish.\n- 0.0–1.2s HOOK: empty bold color field; a single saturated circle drops in with the three-phase anticipation → stretch → squash → overshoot → settle. Immediately readable craft.\n- 1.2–3.0s: the circle becomes the sun; a flat city pops up building-by-building with 2–4 frame stagger (each with its own mini overshoot), clouds slide, birds flap.\n- 3.0–5.5s: camera pushes into one window → a geometric character at a desk (limb rig with anchor rotations, head bob, blink) reacts; phone pings.\n- 5.5–8.0s: the notification bubble expands to fill the frame as a SHAPE WIPE transition; inside, icons burst in a choreographed rhythm (bar chart grows, check mark draws, heart pops, coin flips).\n- 8.0–10.0s: element-driven transition — everything collapses/flies into a logo lockup for an invented brand (e.g. \"Popwise\") + tagline, elastic settle, 1s hold with micro-motion.\nRules: one hero moves at a time; squash&stretch ~10%; secondary action & follow-through; element-driven transitions (an object flies out and carries the cut); strictly flat (no gradients), bold 5–6 color palette (e.g. ultramarine #2B2BFF, coral #FF5A4E, sunflower #FFC62B, mint #2EE6A8, cream #FFF6E9, ink #151433).\nSound: upbeat future-bass/pop ~120 BPM; pop/boing/whoosh on each entry, synced to the frame.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\nMG 动画最主流的基本盘风格，源自 Google Material/企业解释视频（explainer）传统。纯色几何化的人物与场景、无描边或极简描边、大色块撞色，一切元素都是矢量形状。常见于 SaaS 产品宣传、科普解说、企业年报视频。\n视觉特征 纯色大色块, 几何化角色, 无渐变或极少渐变, 干净留白, 高饱和品牌色板, 元素弹性入退场\n关键技法 AE Shape Layer + 父子级 null 控制层级，人物四肢用锚点旋转做 rig\n弹性缓动是灵魂：overshoot 用 cubic-bezier(0.34,1.56,0.64,1) 或 AE 里 70~85% influence 的贝塞尔手柄；入场'预备-冲出-回弹'三段式\n元素错峰入场（stagger 2~4 帧），同一时刻只让一个主体动\n30fps 居多；位移动画带 10% 左右 squash&stretch 增加弹性\n转场常用色块擦除（shape wipe）或元素飞出带动整场切换\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+    "migration": [
+      {
+        "field": "film/scene.js → C",
+        "how": "调整原作色板。"
+      },
+      {
+        "field": "film/scene.js → WORD、CN 与英文标语",
+        "how": "替换品牌与标语，并配套相应字体文件。"
+      },
+      {
+        "field": "film/cues.json → frames、build、drop、outro",
+        "how": "调整画面节点与配乐阶段，保持同一时间表。"
+      },
+      {
+        "field": "index.html → MotionKit.mountFilm",
+        "how": "接入 Motion Kit 时间轴、原片音轨与窗口缩放。"
+      }
+    ],
+    "demo": "demos/cases/mg-flat-vector/index.html",
+    "patternIds": [
+      "squash-stretch-bounce",
+      "push-through-window",
+      "shape-wipe-transition",
+      "dot-drop-wordmark",
+      "shared-cue-sheet"
+    ],
+    "previewAt": 9.5,
+    "attribution": [
+      {
+        "scope": "原作",
+        "notes": "- 作品：popwise — One Dot。\n- 作者：Vincentwei1021。\n- 仓库：https://github.com/Vincentwei1021/mg-styles-15 。\n- 固定提交：`49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`。\n- 原目录：`demos/01-flat-vector/`。\n- 在线作品：https://vincentwei1021.github.io/mg-styles-15/#01-flat-vector 。\n- 代码、提示词与成片采用 MIT 许可，原文副本见 [LICENSE](film/LICENSE)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "| 字体 | 完整文件 | 官方下载来源 | 许可原文 |\n| --- | --- | --- | --- |\n| Fredoka，600、700 字重 | `fonts/Fredoka[wdth,wght].ttf` | [Google Fonts](https://raw.githubusercontent.com/google/fonts/main/ofl/fredoka/Fredoka%5Bwdth%2Cwght%5D.ttf) | SIL OFL 1.1，[本地原文](fonts/Fredoka-OFL.txt)，[官方原文](https://raw.githubusercontent.com/google/fonts/main/ofl/fredoka/OFL.txt) |\n| Resource Han Rounded CN Bold，700 字重 | `fonts/ResourceHanRoundedCN-Bold.ttf` | [字体作者官方 v0.990 发布归档](https://github.com/CyanoHao/Resource-Han-Rounded/releases/download/v0.990/RHR-CN-0.990.7z)，取归档内同名文件 | SIL OFL 1.1，[本地原文](fonts/ResourceHanRounded-OFL.txt)，[官方原文](https://raw.githubusercontent.com/CyanoHao/Resource-Han-Rounded/v0.990/LICENSE.txt) |\n\n字体保留完整原文件及官方文件名；字体声明取自原作 `assets/fonts/fonts.css`。"
+      },
+      {
+        "scope": "配乐",
+        "notes": "配乐由原作 `source/audio.py` 使用 [VCSL 乐器采样](https://github.com/sgossner/VCSL)（CC0）合成。`audio/film.m4a` 从固定提交的 `videos/01-flat-vector.mp4` 无损抽取 AAC 音轨，保留原片混音。\n\n```bash\nffmpeg -i ../../sources/mg-styles-15/videos/01-flat-vector.mp4 -vn -c:a copy demos/cases/mg-flat-vector/audio/film.m4a\n```"
+      }
+    ],
+    "relatedEntries": [
+      {
+        "kind": "material",
+        "id": "mg-styles-15",
+        "note": "提示词与配乐合成库所在素材"
+      }
+    ],
+    "energy": [
+      0.356,
+      0.295,
+      0.213,
+      0.194,
+      0.21,
+      0.236,
+      0.255,
+      0.283,
+      0.283,
+      0.242,
+      0.232,
+      0.281,
+      0.459,
+      0.599,
+      0.53,
+      0.381,
+      0.23,
+      0.217,
+      0.204,
+      0.282,
+      0.483,
+      0.491,
+      0.403,
+      0.343,
+      0.347,
+      0.424,
+      0.304,
+      0.359,
+      0.299,
+      0.398,
+      0.465,
+      0.509,
+      0.44,
+      0.386,
+      0.38,
+      0.359,
+      0.255,
+      0.151,
+      0.076,
+      0.048
+    ],
+    "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。",
+    "fidelity": "demos/cases/mg-flat-vector/fidelity.md",
+    "licenses": "demos/cases/mg-flat-vector/LICENSES.md",
+    "preview": "previews/cases/mg-flat-vector.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 扁平矢量接入与保真说明\n\n复刻以公开默认成片为准，作品来源与固定版本见[条目 JSON](../../../entries/cases/mg-flat-vector.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `film/scene.js` | 移除 `V5`、`NOLINK`、另一剪辑的中文标题、预载与字幕分支；混合表达式保留默认值，保留 popwise 字标、中文标语和全部默认画面数值。 | 另一版剪辑分支 |\n| `film/scene.js` | 移除 `window.linkAt`、元素位置导出、`hideLinks` 及其独占辅助函数和数据。 | 开发工具 |\n| `index.html`、`film/scene.js` | `/assets/fonts/fonts.css` 改为 `fonts/fonts.css`；`/demos/01-flat-vector/cues.json` 改为 `./film/cues.json`；入口调用 `MotionKit.mountFilm`。 | 路径改写 |\n| `fonts/fonts.css` | 只声明默认片使用的 Resource Han Rounded 700 与 Fredoka；字体 URL 指向 `ResourceHanRoundedCN-Bold.ttf` 和官方完整文件 `Fredoka[wdth,wght].ttf`。 | 路径改写 |\n| `audio.py` → `source/audio.py` | 保存生成原作配乐的脚本，内容字节和内部路径保持不变。 | 移至 source |\n\n原作、字体、纹理与音轨的来源和许可见 [LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html` 中的 `MotionKit.mountFilm` 等待原作就绪后，以 `MotionKit.timeline` 调用原作 `window.renderAt(t)`，并用 `MotionKit.expose`、`MotionKit.controls`、`MotionKit.start` 接入本库。尺寸为 1920×1080、30fps、10 秒；原 SVG 保持内部像素，通过 `MotionKit.stage` 等比居中，四周黑边，仅提供横屏。\n\n节点读取 `film/cues.json` 的画面帧与音乐阶段，控制条使用中文，支持播放、暂停、重播、拖动和倍速。声音默认关闭，开启后播放 `audio/film.m4a`，与跳转、暂停和倍速同步；音轨以 Audio Blob 加载。\n\n`?embed`、`?render` 隐藏控制条；`?render` 关闭自动播放和声音；`?t=秒` 定位。减少动态时显示 9.5 秒并暂停；`previewAt: 9.5` 时字标、中英文标语与汇合图形完整。\n\n## 已接受差异\n\n原片中圆点高速飞行与穿窗推镜处有沿速度方向的半透明拖尾：原作 `index.html` 声明 `motionBlur: { samples: 1, shutter: 0.5 }`，`harness/render.mjs` 支持用命令行 `--mb`、`--shutter` 覆盖并按子帧平均出片，拖尾来自这一渲染层。页面实时播放与 `?render` 单帧直接调用原 `renderAt(t)`，没有这层拖尾。\n\n## 与原片对照结果\n\n参考 MP4 用 ffmpeg 取帧，本页用 `scripts/shot.mjs` 在 1920×1080 定位截图，左右对照图保存在第一批工作区 `compare/`。\n\n| 时刻 | 逐张结论 |\n| --- | --- |\n| 1.0 秒 | 圆点、冲击环、地平线、背景图形与配色一致，边缘差异来自视频压缩。 |\n| 3.0 秒 | 太阳、九栋建筑、云树与主角窗口的构图和位置一致。 |\n| 5.0 秒 | 人物、手机、气泡、窗框与挂画的位置和形状一致。 |\n| 7.5 秒 | 四象限图形、配色与标签字形、字重和位置一致。 |\n| 9.5 秒 | 字标、中英文标语的字形、间距、基线及四色点一致。 |\n\n浏览器验收使用 Edge，服务端口 4328。案例页和独立 Demo 自动播放；拖动可定位，`?t=5&autoplay=0` 停在 5 秒；声音默认关闭，开关与 1.5 倍速播放有效，播放中音轨与画面时刻差约 5ms，暂停和结束同步停止。\n\n## 制作依赖与复现\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/01-flat-vector && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "licenses": "# 第三方许可索引\n\n[来源、版本和许可事实](../../../entries/cases/mg-flat-vector.json)\n\n- [film/LICENSE](film/LICENSE)\n- [fonts/Fredoka-OFL.txt](fonts/Fredoka-OFL.txt)\n- [fonts/ResourceHanRounded-OFL.txt](fonts/ResourceHanRounded-OFL.txt)\n\n## 制作依赖\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/01-flat-vector && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "prompt": "# 扁平矢量 · popwise — One Dot\n\n## 实现 Prompt\n\nYou are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n扁平矢量动画 Flat / Vector 2D Motion Graphics\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: SVG + GSAP (CustomEase/CustomBounce/MorphSVG); motion blur mb=4 for fast moves\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「一镜到底的扁平世界」One-continuous-shot brand explainer, the canonical Motion-Ocean/Google-explainer form, pushed to showreel polish.\n- 0.0–1.2s HOOK: empty bold color field; a single saturated circle drops in with the three-phase anticipation → stretch → squash → overshoot → settle. Immediately readable craft.\n- 1.2–3.0s: the circle becomes the sun; a flat city pops up building-by-building with 2–4 frame stagger (each with its own mini overshoot), clouds slide, birds flap.\n- 3.0–5.5s: camera pushes into one window → a geometric character at a desk (limb rig with anchor rotations, head bob, blink) reacts; phone pings.\n- 5.5–8.0s: the notification bubble expands to fill the frame as a SHAPE WIPE transition; inside, icons burst in a choreographed rhythm (bar chart grows, check mark draws, heart pops, coin flips).\n- 8.0–10.0s: element-driven transition — everything collapses/flies into a logo lockup for an invented brand (e.g. \"Popwise\") + tagline, elastic settle, 1s hold with micro-motion.\nRules: one hero moves at a time; squash&stretch ~10%; secondary action & follow-through; element-driven transitions (an object flies out and carries the cut); strictly flat (no gradients), bold 5–6 color palette (e.g. ultramarine #2B2BFF, coral #FF5A4E, sunflower #FFC62B, mint #2EE6A8, cream #FFF6E9, ink #151433).\nSound: upbeat future-bass/pop ~120 BPM; pop/boing/whoosh on each entry, synced to the frame.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\nMG 动画最主流的基本盘风格，源自 Google Material/企业解释视频（explainer）传统。纯色几何化的人物与场景、无描边或极简描边、大色块撞色，一切元素都是矢量形状。常见于 SaaS 产品宣传、科普解说、企业年报视频。\n视觉特征 纯色大色块, 几何化角色, 无渐变或极少渐变, 干净留白, 高饱和品牌色板, 元素弹性入退场\n关键技法 AE Shape Layer + 父子级 null 控制层级，人物四肢用锚点旋转做 rig\n弹性缓动是灵魂：overshoot 用 cubic-bezier(0.34,1.56,0.64,1) 或 AE 里 70~85% influence 的贝塞尔手柄；入场'预备-冲出-回弹'三段式\n元素错峰入场（stagger 2~4 帧），同一时刻只让一个主体动\n30fps 居多；位移动画带 10% 左右 squash&stretch 增加弹性\n转场常用色块擦除（shape wipe）或元素飞出带动整场切换\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.\n\n## 动效 Token\n\n- **弹性曲线**：cubic-bezier(0.34,1.56,0.64,1)；闭式阻尼弹簧与速度驱动的压扁拉伸。\n- **建筑错峰**：bldStart=44 帧，bldStagger=3 帧，bldCount=9。\n- **图标落点**：180、195、210、225 帧。\n- **标语入场**：中文 259 帧，英文 266 帧；圆点 255 帧落字。\n\n## 制作约束\n\n- 原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。\n- 10 秒，1920×1080，30fps；只提供横屏原作画幅。\n\n## 迁移\n\n- `film/scene.js → C`：调整原作色板。\n- `film/scene.js → WORD、CN 与英文标语`：替换品牌与标语，并配套相应字体文件。\n- `film/cues.json → frames、build、drop、outro`：调整画面节点与配乐阶段，保持同一时间表。\n- `index.html → MotionKit.mountFilm`：接入 Motion Kit 时间轴、原片音轨与窗口缩放。\n\n[打开 Demo](../../demos/cases/mg-flat-vector/index.html) · [在库中查看](../../cases.html#case/mg-flat-vector)\n"
+  },
+  "entrypoint": "demos/cases/mg-flat-vector/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-flat-vector/LICENSES.md",
+      "bytes": 789,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/audio/film.m4a",
+      "bytes": 346596,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fidelity.md",
+      "bytes": 3942,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/cues.json",
+      "bytes": 906,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/scene.js",
+      "bytes": 63477,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/setup.js",
+      "bytes": 206,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/style.css",
+      "bytes": 111,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka[wdth,wght].ttf",
+      "bytes": 159184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRounded-OFL.txt",
+      "bytes": 4504,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRoundedCN-Bold.ttf",
+      "bytes": 13978508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/fonts.css",
+      "bytes": 376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/index.html",
+      "bytes": 2596,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/audio.py",
+      "bytes": 7610,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/cues.json",
+      "bytes": 906,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/mg-flat-vector.json",
+      "bytes": 21215,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/mg-flat-vector.jpg",
+      "bytes": 35472,
+      "role": "preview"
+    }
+  ]
+}

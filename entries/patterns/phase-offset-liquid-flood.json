@@ -1,0 +1,78 @@
+{
+  "id": "phase-offset-liquid-flood",
+  "order": 64,
+  "title": "三层液浪漫屏",
+  "types": [
+    "transition",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15",
+    "液态流动"
+  ],
+  "summary": "三层不同方向和相位的波前依次漫屏，后沿退去时从液面边缘拉出四组字标种子。",
+  "mechanism": "三层不同方向和相位的波前依次漫屏，后沿退去时从液面边缘拉出四组字标种子。",
+  "trigger": "液团落地并到达各液浪前沿与后沿节点时",
+  "effect": "错相液浪覆盖画面，再从退去的液面释放字标种子。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-liquid 原片 3.8–5.95 秒；1 倍速，总时长 2.15 秒。"
+    },
+    {
+      "name": "三层液浪释滴参数",
+      "value": "  function sheet(delay, rdelay, u, amp, freq, ph0, lean, dx, dur = 0.46) {\n  const sheetV = sheet(0.0, 0.14, 0.9, 80, 0.0115, 0.3, 0.02, 0.42, 0.62);  // s4: slower front (peak diff /1.3)    // main field (violet) L->R, fuses with blobs\n  const sheetO = sheet(0.07, 0.07, 0.06, 85, 0.0102, 2.1, -0.03, -0.55); // tangerine R->L\n  const sheetP = sheet(0.14, 0.0, 0.46, 90, 0.0125, 4.4, 0.04, 0.3);     // hot pink L->R, top sheet (crisp)\n  \"sheets_in\": [\n    4.035,\n    4.105,\n    4.175\n  ],"
+    }
+  ],
+  "useCases": [
+    "三层液体漫屏换景",
+    "液浪退场后生成字标种子"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-liquid 原片 3.8–5.95 秒；总时长 2.15 秒。三层不同方向和相位的波前依次漫屏，后沿退去时从液面边缘拉出四组字标种子。参数保持原作数值：  function sheet(delay, rdelay, u, amp, freq, ph0, lean, dx, dur = 0.46) {\n  const sheetV = sheet(0.0, 0.14, 0.9, 80, 0.0115, 0.3, 0.02, 0.42, 0.62);  // s4: slower front (peak diff /1.3)    // main field (violet) L->R, fuses with blobs\n  const sheetO = sheet(0.07, 0.07, 0.06, 85, 0.0102, 2.1, -0.03, -0.55); // tangerine R->L\n  const sheetP = sheet(0.14, 0.0, 0.46, 90, 0.0125, 4.4, 0.04, 0.3);     // hot pink L->R, top sheet (crisp)\n  \"sheets_in\": [\n    4.035,\n    4.105,\n    4.175\n  ],\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/phase-offset-liquid-flood/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "mg-liquid"
+    }
+  ],
+  "previewAt": 0.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "液态流动"
+    },
+    {
+      "t": 0.3,
+      "label": "机制画面 1"
+    },
+    {
+      "t": 0.7,
+      "label": "机制画面 2"
+    },
+    {
+      "t": 1.4,
+      "label": "机制画面 3"
+    }
+  ]
+}

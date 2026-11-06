@@ -1,0 +1,341 @@
+{
+  "id": "ink-press",
+  "order": 19,
+  "title": "Ink Press 纸墨宣传片",
+  "subtitle": "纸墨琥珀、真实页面与 2.5D 产品镜头",
+  "carriers": [
+    "video"
+  ],
+  "style": "interface",
+  "purpose": "brand",
+  "tech": [
+    "remotion",
+    "dom"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "video-shotcraft",
+    "产品宣传片",
+    "纸墨琥珀",
+    "2.5D 运镜",
+    "页面截图",
+    "Remotion",
+    "音画同步"
+  ],
+  "summary": "36 秒纸墨琥珀风产品宣传片，以墨线描画与字标压印开场。真实页面截图在 2.5D 相机下呈现聚光、发牌、嵌入、压入与自写，四张衬线字卡穿插其间，缓和节奏。结尾元素组装成合影，铅印字标砸落。",
+  "focus": "单主角完整动作弧、物理隐喻驱动的加速度、真实页面截图上的 2.5D 运镜，以及 riser→impact→sparkle 的声音句式。",
+  "accent": "#955905",
+  "background": "#f2eee6",
+  "timeline": true,
+  "kit": true,
+  "renderer": "gpu",
+  "previewAt": 35.5,
+  "rhythm": {
+    "duration": 36.1667,
+    "beats": [
+      {
+        "t": 0,
+        "label": "品牌开场",
+        "note": "墨线描画与字标压印开场，随后交接研究管理面板全景。"
+      },
+      {
+        "t": 2.7333,
+        "label": "聚光主角卡",
+        "note": "聚光锁定主角卡，卡片悬浮、光束扫过轮廓，再归位。"
+      },
+      {
+        "t": 7.3333,
+        "label": "字卡一",
+        "note": "衬线字卡写出“团队的所有研究，一个共同去处”。"
+      },
+      {
+        "t": 9.1667,
+        "label": "发牌飞入",
+        "note": "镜头环绕牌堆特写，加速发牌飞入网格，再滚动、搜索打字、筛选与点击推近。"
+      },
+      {
+        "t": 15.5,
+        "label": "详情嵌入",
+        "note": "详情页宏观特写中，行元素逐条嵌入页面。"
+      },
+      {
+        "t": 18.8333,
+        "label": "字卡二",
+        "note": "“论文雷达”字卡配合数字滚动副标，交接每日阅读场景。"
+      },
+      {
+        "t": 20.6667,
+        "label": "列表压入",
+        "note": "论文雷达列表逐条堆叠压入，计数器随落位更新。"
+      },
+      {
+        "t": 24.1667,
+        "label": "字卡三",
+        "note": "衬线字卡写出“每个项目，都关联到你的周报”。"
+      },
+      {
+        "t": 25.8333,
+        "label": "周报自写",
+        "note": "周报页以打字机方式揭示正文，历史周报逐条弹入侧栏。"
+      },
+      {
+        "t": 29.5,
+        "label": "字卡四",
+        "note": "衬线字卡写出“整个团队，步调一致”。"
+      },
+      {
+        "t": 31.3333,
+        "label": "合影与字标",
+        "note": "虚焦后元素合影组装，铅印字标砸落，riser、impact、sparkle 依次落点并停留一秒。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2.7333,
+      "from": 0.2,
+      "to": 0.35,
+      "label": "品牌开场"
+    },
+    {
+      "t0": 2.7333,
+      "t1": 7.3333,
+      "from": 0.35,
+      "to": 0.6,
+      "label": "聚光主角卡"
+    },
+    {
+      "t0": 7.3333,
+      "t1": 9.1667,
+      "from": 0.25,
+      "to": 0.25,
+      "label": "字卡一"
+    },
+    {
+      "t0": 9.1667,
+      "t1": 15.5,
+      "from": 0.6,
+      "to": 0.8,
+      "label": "发牌飞入"
+    },
+    {
+      "t0": 15.5,
+      "t1": 18.8333,
+      "from": 0.6,
+      "to": 0.65,
+      "label": "详情嵌入"
+    },
+    {
+      "t0": 18.8333,
+      "t1": 20.6667,
+      "from": 0.25,
+      "to": 0.25,
+      "label": "字卡二"
+    },
+    {
+      "t0": 20.6667,
+      "t1": 24.1667,
+      "from": 0.65,
+      "to": 0.75,
+      "label": "列表压入"
+    },
+    {
+      "t0": 24.1667,
+      "t1": 25.8333,
+      "from": 0.25,
+      "to": 0.25,
+      "label": "字卡三"
+    },
+    {
+      "t0": 25.8333,
+      "t1": 29.5,
+      "from": 0.6,
+      "to": 0.7,
+      "label": "周报自写"
+    },
+    {
+      "t0": 29.5,
+      "t1": 31.3333,
+      "from": 0.25,
+      "to": 0.25,
+      "label": "字卡四"
+    },
+    {
+      "t0": 31.3333,
+      "t1": 32.6667,
+      "from": 0.7,
+      "to": 1,
+      "label": "合影组装与字标峰值"
+    },
+    {
+      "t0": 32.6667,
+      "t1": 36.1667,
+      "from": 0.9,
+      "to": 0.9,
+      "label": "字标停留"
+    }
+  ],
+  "energyNote": "按 TEMPLATE.md 的能量安排：品牌开场能量低，功能段与字卡交替，字卡缓和节奏；结尾组装达到全片峰值。",
+  "observations": [
+    {
+      "at": "开场与收尾",
+      "what": "两处字标均在落定后停留满 1 秒。"
+    },
+    {
+      "at": "四处硬切",
+      "what": "4 处暖白闪转场按 from = 切点 − 5 设置起点，覆盖切点两侧各 5 帧。"
+    },
+    {
+      "at": "功能镜头",
+      "what": "底部 6 条等宽解说字幕只在功能段出现，字卡与结尾不加字幕。"
+    },
+    {
+      "at": "2.5D 运镜",
+      "what": "PageCam 在 3D 模式下用 CSS zoom 做布局级放大，避免 transform 缩放让文字发糊。"
+    },
+    {
+      "at": "发牌飞入",
+      "what": "发牌间隔从 4 帧按 gap_k = 4 − 0.1584k 缩到 0.2 帧。"
+    },
+    {
+      "at": "全片",
+      "what": "所有伪随机由 index 派生，逐帧确定。"
+    }
+  ],
+  "composition": {
+    "color": "纸底 #f2eee6、墨字 #13110f、琥珀 #955905，灰墨 #65635f 与深琥珀 #ae6700 补充信息层级。",
+    "typography": "衬线大标题与琥珀斜体强调词形成纸墨风格，等宽字幕用于功能解说，页面内容保留无衬线界面字。",
+    "layout": "1920×1080 横屏、30fps、1085 帧，十个镜头以真实页面为主体，穿插四张字卡以缓和节奏。",
+    "imagery": "27 张原始 PNG 包括整页 2x 截图、透明底元素切片、空板与 4x 主角卡特写，坐标由 live-layout.json 提供。",
+    "motion": "页面相机插值 cx、cy、zoom 与 3D 旋转；聚光主角卡完成弹起、悬浮、扫光和归位，发牌、嵌入、压入与自写各占一个功能段。",
+    "sound": "公开成片的配乐与钉帧音效混音，音轨抽自作者发布的成片；钉帧表在 film/src/aifl/Main.tsx 的 SFX。",
+    "rhythm": "品牌开场能量低，功能段与四张衬线字卡交替；结尾合影组装达到峰值，并留出字标停留时间。",
+    "coherence": "纸墨琥珀色板、物理隐喻与同一套真实页面素材贯穿全片，动作和音效通过绝对帧号对应。"
+  },
+  "layers": [
+    {
+      "name": "纸底",
+      "role": "暖纸色与渐变构成舞台底色。"
+    },
+    {
+      "name": "页面截图平面",
+      "role": "PageCam 在 2.5D 相机中放置整页截图并按关键帧运镜。"
+    },
+    {
+      "name": "元素切片",
+      "role": "卡片、论文、导航与浮层沿真实坐标弹起、飞入、嵌入或组装。"
+    },
+    {
+      "name": "文字与转场叠加",
+      "role": "衬线字卡、等宽字幕与暖白闪覆盖页面镜头。"
+    },
+    {
+      "name": "音效",
+      "role": "32 条钉帧音效通过原工程混合为 MotionKit 音轨。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#f2eee6",
+      "#13110f",
+      "#955905",
+      "#65635f",
+      "#ae6700"
+    ],
+    "type": "衬线标题（ui-serif → Georgia）、等宽字幕（ui-monospace）、无衬线界面字（ui-sans-serif / system-ui）",
+    "motion": [
+      {
+        "name": "POP_EASE",
+        "value": "Easing.bezier(0.2, 1.25, 0.3, 1)，主角卡在 130–140 帧弹起并超调。"
+      },
+      {
+        "name": "RESEAT_EASE",
+        "value": "Easing.bezier(0.4, 0, 0.3, 1.05)，主角卡在 194–212 帧归位。"
+      },
+      {
+        "name": "FlashCut",
+        "value": "10 帧（0.3333 秒），从切点前 5 帧开始，第 4 帧达到 0.85 不透明度。"
+      },
+      {
+        "name": "字卡逐词入场",
+        "value": "第 4 帧起，每词间隔 4 帧（0.1333 秒），各用 9 帧完成，bezier(0.2, 0.75, 0.3, 1)。"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "截图与坐标",
+      "how": "替换 assets/textures/live/ 的整页截图与切片，并更新 film/src/aifl/live-layout.json 的元素坐标；在 source/ 运行 npm run build 重新打包。"
+    },
+    {
+      "field": "字卡文案",
+      "how": "修改 film/src/aifl/Main.tsx 的 TITLE_CARDS，*词* 为琥珀斜体强调；在 source/ 运行 npm run build。"
+    },
+    {
+      "field": "字幕",
+      "how": "修改 film/src/aifl/Main.tsx 的 CAPTIONS 文案与绝对帧号；在 source/ 运行 npm run build。"
+    },
+    {
+      "field": "运镜",
+      "how": "修改各 film/src/aifl/live/Scene*.tsx 中 PageCam 的 keys；在 source/ 运行 npm run build。"
+    }
+  ],
+  "useCases": [
+    "Web / 桌面产品宣传片",
+    "以真实页面截图讲功能的发布短片"
+  ],
+  "avoid": [
+    "没有真实界面可截的产品"
+  ],
+  "constraints": [
+    "画面依赖整页 2x 截图与 layout.json 坐标表",
+    "字体为系统字体，跨平台字形会变"
+  ],
+  "patternIds": [
+    "page-cam-25d",
+    "spotlight-hero-card",
+    "deck-deal-flyin",
+    "list-stack-press",
+    "document-typewriter-reveal",
+    "paper-title-card",
+    "outro-group-photo-slam"
+  ],
+  "prompt": "用 Remotion 制作 1920×1080、30fps、36 秒的纸墨琥珀风产品宣传片。以整页 2x 截图、元素透明底切片和 layout.json 坐标表为素材，所有页面镜头放在 2.5D 页面相机里：关键帧插值 cx、cy、zoom、rotX/Y/Z 与透视，3D 模式用 CSS zoom 做布局级放大。十个镜头依次为墨线描画与字标压印开场、聚光主角卡（聚光游走→锁定→推近侧斜→悬浮光束扫→归位）、字卡、牌堆特写后加速发牌飞入网格并搜索筛选、详情页逐行嵌入、字卡、列表堆叠压入与计数落定、字卡、周报打字机自写与历史条目逐条弹入、字卡、虚焦后元素合影组装与铅印字标砸落。字卡为衬线大字逐词入场，强调词琥珀斜体。硬切两侧各 5 帧暖白闪。音效按动作钉帧，结尾 riser→impact→sparkle，字标落定后 hold 1 秒。禁用 Date.now 与 Math.random，伪随机由 index 派生。",
+  "demo": "demos/cases/ink-press/index.html",
+  "fidelity": "demos/cases/ink-press/fidelity.md",
+  "upstream": {
+    "repository": "Vincentwei1021/video-shotcraft",
+    "url": "https://github.com/Vincentwei1021/video-shotcraft",
+    "commit": "5ddbf521038b0a7accfb6dc1e0a9eb29c67277ab",
+    "path": "template/"
+  },
+  "license": {
+    "name": "Apache-2.0",
+    "url": "https://github.com/Vincentwei1021/video-shotcraft/blob/5ddbf521038b0a7accfb6dc1e0a9eb29c67277ab/LICENSE"
+  },
+  "attribution": [
+    {
+      "scope": "作品代码",
+      "notes": "Ink Press 来自 [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft)，固定提交 `5ddbf521038b0a7accfb6dc1e0a9eb29c67277ab` 的 `template/`，Apache-2.0；许可原文见 [film/LICENSE](film/LICENSE)。"
+    },
+    {
+      "scope": "截图",
+      "notes": "27 张 PNG 原样取自同提交的 `template/public/textures/live/`，为包含虚构演示数据的研究管理工具界面；坐标表来自 `template/src/aifl/live-layout.json`。"
+    },
+    {
+      "scope": "音效素材",
+      "notes": "11 个 MP3 原样取自 `template/public/audio/`，钉帧表保留在 film/src/aifl/Main.tsx 的 SFX。Mixkit 来源记录原文见 [assets/audio/ATTRIBUTION.md](assets/audio/ATTRIBUTION.md)；keyboard、pop、riser-cine、sparkle、whoosh-big 的来源无法反查。该记录说明 `impact-cine.mp3` 与 `sfx/impact/impact-deep-whoosh.mp3` 字节相同，原名 Cinematic whoosh deep impact，来源 https://assets.mixkit.co/active_storage/sfx/1143/1143-preview.mp3。"
+    },
+    {
+      "scope": "公开成片音轨",
+      "notes": "audio/film.m4a 流复制自作者发布的 [showcase-ink-press-template.mp4](https://github.com/Vincentwei1021/video-shotcraft/releases/download/showcase-media/showcase-ink-press-template.mp4)，含配乐与钉帧音效混音。配乐曲目未能识别；配乐许可为 [Mixkit Stock Music Free License](https://mixkit.co/license/#musicFree)，依据 [assets/audio/ATTRIBUTION.md](assets/audio/ATTRIBUTION.md) 的 bgm 一节，音效来源见同文件。"
+    },
+    {
+      "scope": "运行库",
+      "notes": "Remotion 与 @remotion/player 固定 4.0.484，采用 Remotion License，许可原文分别见 [Remotion](vendor/remotion@4.0.484/LICENSE.md) 与 [Player](vendor/remotion-player@4.0.484/LICENSE.md)，均取自 [v4.0.484/LICENSE.md](https://raw.githubusercontent.com/remotion-dev/remotion/v4.0.484/LICENSE.md)。React 与 React DOM 固定 19.2.7，scheduler 固定 0.27.0，采用 MIT。打包只包含上述五个运行包，包许可索引见 [LICENSES.md](LICENSES.md)。"
+    }
+  ]
+}

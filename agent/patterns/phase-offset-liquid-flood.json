@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "phase-offset-liquid-flood",
+  "pattern": {
+    "id": "phase-offset-liquid-flood",
+    "order": 64,
+    "title": "三层液浪漫屏",
+    "types": [
+      "transition",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "液态流动"
+    ],
+    "summary": "三层不同方向和相位的波前依次漫屏，后沿退去时从液面边缘拉出四组字标种子。",
+    "mechanism": "三层不同方向和相位的波前依次漫屏，后沿退去时从液面边缘拉出四组字标种子。",
+    "trigger": "液团落地并到达各液浪前沿与后沿节点时",
+    "effect": "错相液浪覆盖画面，再从退去的液面释放字标种子。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-liquid 原片 3.8–5.95 秒；1 倍速，总时长 2.15 秒。"
+      },
+      {
+        "name": "三层液浪释滴参数",
+        "value": "  function sheet(delay, rdelay, u, amp, freq, ph0, lean, dx, dur = 0.46) {\n  const sheetV = sheet(0.0, 0.14, 0.9, 80, 0.0115, 0.3, 0.02, 0.42, 0.62);  // s4: slower front (peak diff /1.3)    // main field (violet) L->R, fuses with blobs\n  const sheetO = sheet(0.07, 0.07, 0.06, 85, 0.0102, 2.1, -0.03, -0.55); // tangerine R->L\n  const sheetP = sheet(0.14, 0.0, 0.46, 90, 0.0125, 4.4, 0.04, 0.3);     // hot pink L->R, top sheet (crisp)\n  \"sheets_in\": [\n    4.035,\n    4.105,\n    4.175\n  ],"
+      }
+    ],
+    "useCases": [
+      "三层液体漫屏换景",
+      "液浪退场后生成字标种子"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-liquid 原片 3.8–5.95 秒；总时长 2.15 秒。三层不同方向和相位的波前依次漫屏，后沿退去时从液面边缘拉出四组字标种子。参数保持原作数值：  function sheet(delay, rdelay, u, amp, freq, ph0, lean, dx, dur = 0.46) {\n  const sheetV = sheet(0.0, 0.14, 0.9, 80, 0.0115, 0.3, 0.02, 0.42, 0.62);  // s4: slower front (peak diff /1.3)    // main field (violet) L->R, fuses with blobs\n  const sheetO = sheet(0.07, 0.07, 0.06, 85, 0.0102, 2.1, -0.03, -0.55); // tangerine R->L\n  const sheetP = sheet(0.14, 0.0, 0.46, 90, 0.0125, 4.4, 0.04, 0.3);     // hot pink L->R, top sheet (crisp)\n  \"sheets_in\": [\n    4.035,\n    4.105,\n    4.175\n  ],\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/phase-offset-liquid-flood/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-liquid"
+      }
+    ],
+    "previewAt": 0.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "液态流动"
+      },
+      {
+        "t": 0.3,
+        "label": "机制画面 1"
+      },
+      {
+        "t": 0.7,
+        "label": "机制画面 2"
+      },
+      {
+        "t": 1.4,
+        "label": "机制画面 3"
+      }
+    ],
+    "preview": "previews/patterns/phase-offset-liquid-flood.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-liquid",
+      "bundle": "agent/cases/mg-liquid.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 三层液浪漫屏\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速依次重放mg-liquid 原片 3.8–5.95 秒；总时长 2.15 秒。三层不同方向和相位的波前依次漫屏，后沿退去时从液面边缘拉出四组字标种子。参数保持原作数值：  function sheet(delay, rdelay, u, amp, freq, ph0, lean, dx, dur = 0.46) {\n  const sheetV = sheet(0.0, 0.14, 0.9, 80, 0.0115, 0.3, 0.02, 0.42, 0.62);  // s4: slower front (peak diff /1.3)    // main field (violet) L->R, fuses with blobs\n  const sheetO = sheet(0.07, 0.07, 0.06, 85, 0.0102, 2.1, -0.03, -0.55); // tangerine R->L\n  const sheetP = sheet(0.14, 0.0, 0.46, 90, 0.0125, 4.4, 0.04, 0.3);     // hot pink L->R, top sheet (crisp)\n  \"sheets_in\": [\n    4.035,\n    4.105,\n    4.175\n  ],\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-liquid 原片 3.8–5.95 秒；1 倍速，总时长 2.15 秒。\n- **三层液浪释滴参数**：  function sheet(delay, rdelay, u, amp, freq, ph0, lean, dx, dur = 0.46) {\n  const sheetV = sheet(0.0, 0.14, 0.9, 80, 0.0115, 0.3, 0.02, 0.42, 0.62);  // s4: slower front (peak diff /1.3)    // main field (violet) L->R, fuses with blobs\n  const sheetO = sheet(0.07, 0.07, 0.06, 85, 0.0102, 2.1, -0.03, -0.55); // tangerine R->L\n  const sheetP = sheet(0.14, 0.0, 0.46, 90, 0.0125, 4.4, 0.04, 0.3);     // hot pink L->R, top sheet (crisp)\n  \"sheets_in\": [\n    4.035,\n    4.105,\n    4.175\n  ],\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段与中文节点，画面和声音使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/phase-offset-liquid-flood/index.html) · [在库中查看](../../patterns.html#pattern/phase-offset-liquid-flood)\n"
+  },
+  "entrypoint": "demos/patterns/phase-offset-liquid-flood/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-liquid/LICENSES.md",
+      "bytes": 812,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/audio/film.m4a",
+      "bytes": 418545,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fidelity.md",
+      "bytes": 5964,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/cues.json",
+      "bytes": 1702,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/engine.js",
+      "bytes": 9243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/scene.js",
+      "bytes": 46421,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/shaders.js",
+      "bytes": 28643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/state.js",
+      "bytes": 669,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/textsdf.js",
+      "bytes": 5558,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/type.js",
+      "bytes": 2073,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/main.js",
+      "bytes": 3456,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/setup.js",
+      "bytes": 152,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/style.css",
+      "bytes": 143,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces-Liquid-72-900-Soft.ttf",
+      "bytes": 72996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces[SOFT,WONK,opsz,wght].ttf",
+      "bytes": 360440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/NotoSerifSC[wght].ttf",
+      "bytes": 25125512,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fonts.css",
+      "bytes": 494,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fraunces-OFL.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/notoserifsc-OFL.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/index.html",
+      "bytes": 1759,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/audio.py",
+      "bytes": 11884,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/cues.json",
+      "bytes": 1702,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/lookdev.js",
+      "bytes": 2622,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/scene.js",
+      "bytes": 56751,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/textsdf.js",
+      "bytes": 5558,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/out/cues_derived.json",
+      "bytes": 5548,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/phase-offset-liquid-flood/index.html",
+      "bytes": 1392,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/phase-offset-liquid-flood/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-liquid.json",
+      "bytes": 16286,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/phase-offset-liquid-flood.json",
+      "bytes": 3214,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/phase-offset-liquid-flood.jpg",
+      "bytes": 52529,
+      "role": "preview"
+    }
+  ]
+}

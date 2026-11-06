@@ -1,0 +1,85 @@
+{
+  "id": "meter-needle-overrange",
+  "order": 79,
+  "title": "量表扫针爆表",
+  "types": [
+    "hud",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "portrait"
+  ],
+  "tags": [
+    "mg-styles-15"
+  ],
+  "summary": "量表主拍到达后，表盘砸入，指针用四帧从左端扫过终点并抵住抖动，爆表字和炸毛再击在同一拍发生。",
+  "mechanism": "量表主拍到达后，表盘砸入，指针用四帧从左端扫过终点并抵住抖动，爆表字和炸毛再击在同一拍发生。",
+  "trigger": "量表主拍到达时",
+  "effect": "表盘砸入，指针用四帧从左端扫过终点并抵住抖动，爆表字和炸毛再击在同一拍发生。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-hanazi 原片 6.7–7.833 秒；1 倍速，总时长 1.133 秒。"
+    },
+    {
+      "name": "量表扫针爆表",
+      "value": "lerp(-88, 96, E.outBack(wn))\n3.5 * Math.sin(2 * Math.PI * 17 * t)\n[[10, -5], [-10, 6], [6, -3]][fm]"
+    }
+  ],
+  "useCases": [
+    "指针扫过终点并爆表的夸张量表。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-hanazi 原片 6.7–7.833 秒；总时长 1.133 秒。量表主拍到达 → 表盘砸入，指针四帧从左端扫过终点并抵住抖动，爆表字和炸毛再击同拍发生。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：lerp(-88, 96, E.outBack(wn))\n3.5 * Math.sin(2 * Math.PI * 17 * t)\n[[10, -5], [-10, 6], [6, -3]][fm]。使用 1080×1920 竖屏。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/meter-needle-overrange/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-hanazi"
+    }
+  ],
+  "previewAt": 0.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "综艺花字"
+    },
+    {
+      "t": 0.3,
+      "label": "发量爆表"
+    },
+    {
+      "t": 0.8,
+      "label": "定格收框"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#FF3D7F",
+      "#FFE14D",
+      "#16B9F0",
+      "#FFFFFF",
+      "#1E2A78"
+    ],
+    "type": "Resource Han Rounded 900；Alimama ShuHeiTi 700；Douyin Sans 700；LXGW Marker Gothic 400；ZCOOL KuaiLe 400；Luckiest Guy 400。"
+  },
+  "renderer": "gpu"
+}

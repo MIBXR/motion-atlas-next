@@ -1,0 +1,74 @@
+{
+  "id": "wax-resist-wash-reveal",
+  "order": 109,
+  "title": "蜡笔防染显形",
+  "types": [
+    "transition",
+    "texture"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "白蜡笔星星先画入蜡覆盖场，水彩密度经过时按蜡覆盖量降低染色；三道宽刷交错扫过纸面，星星因为防染而从夜色中显出。",
+  "mechanism": "白蜡笔星星先画入蜡覆盖场，水彩密度经过时按蜡覆盖量降低染色；三道宽刷交错扫过纸面，星星因为防染而从夜色中显出。",
+  "trigger": "女孩坐下唱歌，27.9秒开始刷入群青水彩。",
+  "effect": "画页上已存在的白蜡图形在刷色后变亮，绘画材料完成故事高潮。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "26.8–35.3秒；1倍速，总时长8.500000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "白蜡星星",
+      "value": "film/world.js:STARS以mulberry(4242)固定生成250颗，drawStars绘入K.white；film/film.js在p.hf>=1时画入蜡层。"
+    },
+    {
+      "name": "三道宽刷",
+      "value": "film/world.js:BANDS：27.9–29.9秒向右，30–32.1秒向左，32.5–34.7秒向右；覆盖y=-120到1655，重叠100/110px。"
+    },
+    {
+      "name": "防染着色",
+      "value": "film/gl.js:wash：resist=.93，edge=1.6，gran=.6；水彩密度乘(1-.93*smoothstep(.12,.55,waxCoverage))。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-crayon-book/film/world.js",
+    "demos/cases/lemo-crayon-book/film/film.js",
+    "demos/cases/lemo-crayon-book/film/gl.js",
+    "demos/cases/lemo-crayon-book/film/crayon.js"
+  ],
+  "locator": "STARS / drawStars / BANDS / wash",
+  "useCases": [
+    "画页上已存在的白蜡图形在刷色后变亮，绘画材料完成故事高潮。"
+  ],
+  "avoid": [
+    "同时叠加遮住主要动作的画面层"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-crayon-book的原作render(t)，实现“蜡笔防染显形”：白蜡笔星星先画入蜡覆盖场，水彩密度经过时按蜡覆盖量降低染色；三道宽刷交错扫过纸面，星星因为防染而从夜色中显出。参数与源码：film/world.js:STARS以mulberry(4242)固定生成250颗，drawStars绘入K.white；film/film.js在p.hf>=1时画入蜡层。；film/world.js:BANDS：27.9–29.9秒向右，30–32.1秒向左，32.5–34.7秒向右；覆盖y=-120到1655，重叠100/110px。；film/gl.js:wash：resist=.93，edge=1.6，gran=.6；水彩密度乘(1-.93*smoothstep(.12,.55,waxCoverage))。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。",
+  "demo": "demos/patterns/wax-resist-wash-reveal/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-crayon-book"
+    }
+  ],
+  "previewAt": 5.1,
+  "markers": [
+    {
+      "t": 0,
+      "label": "蜡笔防染显形"
+    }
+  ],
+  "renderer": "gpu"
+}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>作品自接模板 · Motion Atlas</title>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({ styles: ['film/style.css'], modules: ['film/script.js'] });
+    await MotionKit.load.module('film/script.js');
+  </script>
+</body>
+</html>

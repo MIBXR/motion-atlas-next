@@ -1,0 +1,78 @@
+{
+  "id": "drip-ripple-glyph-reveal",
+  "order": 66,
+  "title": "末滴涟漪显字",
+  "types": [
+    "type-motion",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15",
+    "液态流动"
+  ],
+  "summary": "末滴落地后，涟漪从落点传播，标语字形按各自到落点的距离延迟显现、抬入并去模糊。",
+  "mechanism": "末滴落地后，涟漪从落点传播，标语字形按各自到落点的距离延迟显现、抬入并去模糊。",
+  "trigger": "字标末滴断颈落地并触发涟漪时",
+  "effect": "落点驱动两行标语按空间距离逐字显现。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-liquid 原片 6.9–9.7 秒；1 倍速，总时长 2.8 秒。"
+    },
+    {
+      "name": "末滴涟漪显字参数",
+      "value": "  const hero = { x: (x0r + x1r) / 2, y: pyBest - 6, rMax: 25, tLand: cues.drip_land };\n        S.rip = { x: hero.x, y: FY, age: tl, amp: 1 };\n          const tPass = 0.02 + Math.abs(cx - rip.x) / 2000 + li * 0.06;   // r2: wave spreads outward from the splash, done in ~0.5 s\n          a = smooth(k); dy = 8 * (1 - flung(k)); blur = 4 * (1 - smooth(inv(0, 0.7, k)));"
+    }
+  ],
+  "useCases": [
+    "末滴落点揭示标语",
+    "按涟漪传播时间错峰显字"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-liquid 原片 6.9–9.7 秒；总时长 2.8 秒。末滴落地后涟漪从落点传播，标语字形按距落点的距离延迟显现、抬入并去模糊。参数保持原作数值：  const hero = { x: (x0r + x1r) / 2, y: pyBest - 6, rMax: 25, tLand: cues.drip_land };\n        S.rip = { x: hero.x, y: FY, age: tl, amp: 1 };\n          const tPass = 0.02 + Math.abs(cx - rip.x) / 2000 + li * 0.06;   // r2: wave spreads outward from the splash, done in ~0.5 s\n          a = smooth(k); dy = 8 * (1 - flung(k)); blur = 4 * (1 - smooth(inv(0, 0.7, k)));\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/drip-ripple-glyph-reveal/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "mg-liquid"
+    }
+  ],
+  "previewAt": 2.3,
+  "markers": [
+    {
+      "t": 0,
+      "label": "液态流动"
+    },
+    {
+      "t": 0.9,
+      "label": "机制画面 1"
+    },
+    {
+      "t": 1.5,
+      "label": "机制画面 2"
+    },
+    {
+      "t": 2.2,
+      "label": "机制画面 3"
+    }
+  ]
+}

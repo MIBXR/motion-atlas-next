@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "crt-line-dot-shutdown",
+  "pattern": {
+    "id": "crt-line-dot-shutdown",
+    "order": 62,
+    "title": "显像管线点收屏",
+    "types": [
+      "transition",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "合成波"
+    ],
+    "summary": "整幅画面先沿纵向压成水平亮线，再沿横向缩成磷光点并熄灭。",
+    "mechanism": "整幅画面先沿纵向压成水平亮线，再沿横向缩成磷光点并熄灭。",
+    "trigger": "各来源的显像管关机节点到达时",
+    "effect": "整幅栅格画面压成亮线，再收为亮点并进入黑场。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-synthwave原片9.467—9.966666667秒，1倍速，时长0.499666667秒。"
+      },
+      {
+        "name": "显像管线点收屏参数",
+        "value": "  if (fr >= st) return CUES.stop + (Math.floor(fr / 2) * 2 - st) / FPS * .5;           // STOP: tape winds down\nconst CRT = { 295: [1, .30, .25, 0], 296: [1, .0019, 1, .030], 297: [.26, .0019, 1.1, .022], 298: [.0073, .013, 1.3, .036], 299: [.0055, .010, .35, .012] };\n    col += vec3(1., .92, .98) * uCrtG * exp(-ly*ly / 1.1) * exp(-lx*lx / 5.);                 // the hot line / dot"
+      }
+    ],
+    "useCases": [
+      "显像管关机",
+      "线点收屏式片尾"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "调用mg-synthwave原作renderAt(t)，重放9.467—9.966666667秒的显像管线点收屏，沿用原作CRT帧表、画面与同段音轨，声音默认关闭。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/crt-line-dot-shutdown/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-synthwave"
+      },
+      {
+        "caseId": "lemo-ascii-crt"
+      }
+    ],
+    "previewAt": 0.399666667,
+    "markers": [
+      {
+        "t": 0,
+        "label": "合成波"
+      },
+      {
+        "t": 0.399666667,
+        "label": "机制画面 1"
+      },
+      {
+        "t": 0.466333333,
+        "label": "机制画面 2"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "lemo-ascii-crt · 墨量决定字符的图像位置，字格大小承担镜头",
+        "value": "film/main.js:T.off0=58.6、off1=59.2；film/crt.js:COMP先使sy在off=0–.45缩为.004，再使sx在.45–.85缩为.002，59.2秒后expo以.18秒指数熄灭。"
+      }
+    ],
+    "preview": "previews/patterns/crt-line-dot-shutdown.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-synthwave",
+      "bundle": "agent/cases/mg-synthwave.json"
+    },
+    {
+      "caseId": "lemo-ascii-crt",
+      "bundle": "agent/cases/lemo-ascii-crt.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 显像管线点收屏\n\n## 实现 Prompt\n\n调用mg-synthwave原作renderAt(t)，重放9.467—9.966666667秒的显像管线点收屏，沿用原作CRT帧表、画面与同段音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：mg-synthwave原片9.467—9.966666667秒，1倍速，时长0.499666667秒。\n- **显像管线点收屏参数**：  if (fr >= st) return CUES.stop + (Math.floor(fr / 2) * 2 - st) / FPS * .5;           // STOP: tape winds down\nconst CRT = { 295: [1, .30, .25, 0], 296: [1, .0019, 1, .030], 297: [.26, .0019, 1.1, .022], 298: [.0073, .013, 1.3, .036], 299: [.0055, .010, .35, .012] };\n    col += vec3(1., .92, .98) * uCrtG * exp(-ly*ly / 1.1) * exp(-lx*lx / 5.);                 // the hot line / dot\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段与中文节点，画面和声音使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/crt-line-dot-shutdown/index.html) · [在库中查看](../../patterns.html#pattern/crt-line-dot-shutdown)\n"
+  },
+  "entrypoint": "demos/patterns/crt-line-dot-shutdown/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-ascii-crt/LICENSES.md",
+      "bytes": 517,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/audio/CREDITS",
+      "bytes": 630,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/audio/film.m4a",
+      "bytes": 1922911,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/fidelity.md",
+      "bytes": 5594,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/art.js",
+      "bytes": 13453,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/crt.js",
+      "bytes": 9310,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/index.html",
+      "bytes": 344,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/lines.json",
+      "bytes": 756,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/main.js",
+      "bytes": 36385,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/term.js",
+      "bytes": 6988,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/voices/words.json",
+      "bytes": 998,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/fonts/OFL-VT323.txt",
+      "bytes": 4367,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/fonts/VT323-Regular.ttf",
+      "bytes": 153116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/fonts/fonts.css",
+      "bytes": 182,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/index.html",
+      "bytes": 2125,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/CREDITS",
+      "bytes": 630,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/README.md",
+      "bytes": 2652,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/build.sh",
+      "bytes": 1945,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/events.json",
+      "bytes": 12841,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/mix.py",
+      "bytes": 8976,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/music/score.json",
+      "bytes": 3134,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/music/score.py",
+      "bytes": 15868,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/tools/subs.mjs",
+      "bytes": 554,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/voice_fx.py",
+      "bytes": 1165,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/voices_raw/dur.json",
+      "bytes": 72,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/LICENSES.md",
+      "bytes": 1068,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/audio/film.m4a",
+      "bytes": 403976,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fidelity.md",
+      "bytes": 4597,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/cues.json",
+      "bytes": 1312,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/scene.js",
+      "bytes": 70681,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/setup.js",
+      "bytes": 243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/style.css",
+      "bytes": 166,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Archivo-Italic[wdth,wght].ttf",
+      "bytes": 741368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Michroma-Regular.ttf",
+      "bytes": 64344,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/MrDafoe-Regular.ttf",
+      "bytes": 47976,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/VT323-Regular.ttf",
+      "bytes": 153116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/archivo-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/fonts.css",
+      "bytes": 636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/michroma-OFL.txt",
+      "bytes": 4395,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/mrdafoe-OFL.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/vt323-OFL.txt",
+      "bytes": 4367,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/index.html",
+      "bytes": 1976,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/audio.py",
+      "bytes": 11743,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/cues.json",
+      "bytes": 1312,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.core.js",
+      "bytes": 1458113,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.module.js",
+      "bytes": 662772,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 8501,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 4694,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/Pass.js",
+      "bytes": 4218,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/RenderPass.js",
+      "bytes": 4280,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 3228,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 15397,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/CopyShader.js",
+      "bytes": 729,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/crt-line-dot-shutdown/index.html",
+      "bytes": 1237,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/crt-line-dot-shutdown/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-ascii-crt.json",
+      "bytes": 9699,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-synthwave.json",
+      "bytes": 16835,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/crt-line-dot-shutdown.json",
+      "bytes": 2551,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/crt-line-dot-shutdown.jpg",
+      "bytes": 12585,
+      "role": "preview"
+    }
+  ]
+}

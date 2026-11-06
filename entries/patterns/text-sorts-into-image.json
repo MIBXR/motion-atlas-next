@@ -1,0 +1,68 @@
+{
+  "id": "text-sorts-into-image",
+  "order": 130,
+  "title": "字按墨度排成图",
+  "types": [
+    "type-motion",
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "一句回复拆成同字母粒子；根据目标格的亮度，通过实测墨量坡选择字母和亮度档。字粒子从原字位置落位，地球部分先落到地平线后再升起。",
+  "mechanism": "一句回复拆成同字母粒子；根据目标格的亮度，通过实测墨量坡选择字母和亮度档。字粒子从原字位置落位，地球部分先落到地平线后再升起。",
+  "trigger": "来源案例时间轴进入所列动作区间。",
+  "effect": "一句回复拆成同字母粒子；根据目标格的亮度，通过实测墨量坡选择字母和亮度档。字粒子从原字位置落位，地球部分先落到地平线后再升起。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "33.200000–40.200000秒；1倍速，总时长7.000000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "字母与墨量",
+      "value": "film/main.js:MSG / RAMP_MSG / cellGlyph；film/term.js:makeRamp：只取I AM STILL HERE.中的非空格字符，以图集alpha测墨量，dim/normal/bold=.42/.7/1。"
+    },
+    {
+      "name": "落位",
+      "value": "film/main.js:buildFall / partPos / sFall：T.fall0=33.6；18px缩到8px；淡入.2秒；落位1+.9exp(−dt/.12)。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-ascii-crt/film/main.js",
+    "demos/cases/lemo-ascii-crt/film/term.js"
+  ],
+  "locator": "makeRamp / buildFall / partPos / sFall",
+  "useCases": [
+    "把回复、宣言或文字数据变成主题图像的片头。"
+  ],
+  "avoid": [
+    "在主动作发生时叠加争夺注意的另一主动作"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-ascii-crt的原作render(t)重放“字按墨度排成图”。一句回复拆成同字母粒子；目标格的亮度经实测墨量坡选择字母和亮度档，字粒子由原字位置落位，地球部分先落到地平线后再升起。保留参数：film/main.js:MSG / RAMP_MSG / cellGlyph；film/term.js:makeRamp：只取I AM STILL HERE.中的非空格字符，以图集alpha测墨量，dim/normal/bold=.42/.7/1。；film/main.js:buildFall / partPos / sFall：T.fall0=33.6；18px缩到8px；淡入.2秒；落位1+.9exp(−dt/.12)。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/text-sorts-into-image/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-ascii-crt"
+    }
+  ],
+  "previewAt": 4.6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "字按墨度排成图"
+    }
+  ],
+  "renderer": "gpu"
+}

@@ -1,0 +1,552 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "list-stack-press",
+  "pattern": {
+    "id": "list-stack-press",
+    "order": 84,
+    "title": "列表堆叠压入",
+    "types": [
+      "composition",
+      "feedback"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "论文列表逐条堆叠压入页面，计数器随之滚动落定。",
+    "mechanism": "五张论文卡按 CUES=[18,30,42,54,66] 的顺序从下方 600px 飞入，各用 22 帧压实，过程中带有超调。后续卡片进入时，已落位列表在 cue、cue+4、cue+8 帧分别下压 0、6、0px。计数器按 frame>=cue+22 更新，并由 DigitRoll 落定。",
+    "trigger": "字卡二结束后切入列表页。",
+    "effect": "列表一条条压实，数字在最后一条之后落定。",
+    "timing": [
+      {
+        "name": "片段",
+        "value": "AIFL_SHOTS.chart：620–725 帧，105/30 秒。"
+      },
+      {
+        "name": "堆叠",
+        "value": "CUES=[18,30,42,54,66]；DUR=22；最后一条在 88 帧落位。"
+      },
+      {
+        "name": "压入与收束",
+        "value": "stackPress：[cue,cue+4,cue+8]→[0,6,0]；glazeVis 在 81,86,92,95 帧取 0,1,1,0。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "入场姿态",
+        "value": "dy=600*(1-t)+stackPress(i)；scale=1.06-0.06*t；TILTS=[2,-2,2,-2,2]。"
+      },
+      {
+        "name": "缓动",
+        "value": "FLY_EASE=Easing.bezier(0.45,0.05,0.25,1.12)。"
+      },
+      {
+        "name": "计数",
+        "value": "landedCount=CUES.filter(c=>frame>=c+DUR).length；DigitRoll(value=String(landedCount))。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/ink-press/film/src/aifl/live/ScenePapers.tsx"
+    ],
+    "locator": "ScenePapers / CUES / stackPress / landedCount",
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [
+        "page-cam-25d",
+        "paper-title-card"
+      ],
+      "conflicts": [],
+      "notes": ""
+    },
+    "prompt": "用来源案例 ink-press 的原作 renderAt(t) 重放列表堆叠压入。保留五条列表、CUES=[18,30,42,54,66]、22 帧入场与 bezier(0.45,0.05,0.25,1.12)。保留 600px 起始下移、1.06→1 缩放、交替 ±2° 旋转，以及后续入场造成 0→6→0px 的 8 帧压入脉冲；计数按 frame>=cue+22 更新。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/list-stack-press/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "ink-press"
+      }
+    ],
+    "previewAt": 3.2,
+    "markers": [
+      {
+        "t": 0,
+        "label": "列表页显现"
+      },
+      {
+        "t": 0.6,
+        "label": "首条压入"
+      },
+      {
+        "t": 1,
+        "label": "第二条压入"
+      },
+      {
+        "t": 1.3333333333333333,
+        "label": "计数开始落定"
+      },
+      {
+        "t": 1.4,
+        "label": "第三条压入"
+      },
+      {
+        "t": 1.8,
+        "label": "第四条压入"
+      },
+      {
+        "t": 2.2,
+        "label": "第五条压入"
+      },
+      {
+        "t": 2.7333333333333334,
+        "label": "光泽扫过"
+      },
+      {
+        "t": 2.933333333333333,
+        "label": "末条与计数落定"
+      },
+      {
+        "t": 3.3333333333333335,
+        "label": "相机落定"
+      }
+    ],
+    "preview": "previews/patterns/list-stack-press.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "ink-press",
+      "bundle": "agent/cases/ink-press.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 列表堆叠压入\n\n## 实现 Prompt\n\n用来源案例 ink-press 的原作 renderAt(t) 重放列表堆叠压入。保留五条列表、CUES=[18,30,42,54,66]、22 帧入场与 bezier(0.45,0.05,0.25,1.12)。保留 600px 起始下移、1.06→1 缩放、交替 ±2° 旋转，以及后续入场造成 0→6→0px 的 8 帧压入脉冲；计数按 frame>=cue+22 更新。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **片段**：AIFL_SHOTS.chart：620–725 帧，105/30 秒。\n- **堆叠**：CUES=[18,30,42,54,66]；DUR=22；最后一条在 88 帧落位。\n- **压入与收束**：stackPress：[cue,cue+4,cue+8]→[0,6,0]；glazeVis 在 81,86,92,95 帧取 0,1,1,0。\n\n[打开 Demo](../../demos/patterns/list-stack-press/index.html) · [在库中查看](../../patterns.html#pattern/list-stack-press)\n"
+  },
+  "entrypoint": "demos/patterns/list-stack-press/index.html",
+  "files": [
+    {
+      "path": "demos/cases/ink-press/LICENSES.md",
+      "bytes": 1285,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/ATTRIBUTION.md",
+      "bytes": 22401,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/click-camera.mp3",
+      "bytes": 14406,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/impact-cine.mp3",
+      "bytes": 115904,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/keyboard.mp3",
+      "bytes": 513831,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/pop.mp3",
+      "bytes": 15239,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/riser-cine.mp3",
+      "bytes": 145112,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/sparkle.mp3",
+      "bytes": 143743,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/swoosh-quick.mp3",
+      "bytes": 27247,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/transition-snap.mp3",
+      "bytes": 19051,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/transition-soft.mp3",
+      "bytes": 41082,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/whoosh-big.mp3",
+      "bytes": 71724,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/whoosh-fast.mp3",
+      "bytes": 57624,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card1.png",
+      "bytes": 49799,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card10.png",
+      "bytes": 51587,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card2.png",
+      "bytes": 52017,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card3.png",
+      "bytes": 58681,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card4-hires.png",
+      "bytes": 123105,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card4.png",
+      "bytes": 59011,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card5.png",
+      "bytes": 59166,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card6.png",
+      "bytes": 55703,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card7.png",
+      "bytes": 62485,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card8.png",
+      "bytes": 54202,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card9.png",
+      "bytes": 59637,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/detail-experiments.png",
+      "bytes": 3257847,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/detail-full.png",
+      "bytes": 380073,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-filter.png",
+      "bytes": 2754,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-search.png",
+      "bytes": 11667,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-section.png",
+      "bytes": 4485,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-stats.png",
+      "bytes": 11497,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/nav.png",
+      "bytes": 12776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper1.png",
+      "bytes": 98212,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper2.png",
+      "bytes": 95517,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper3.png",
+      "bytes": 95131,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper4.png",
+      "bytes": 87621,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper5.png",
+      "bytes": 90661,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/papers-full.png",
+      "bytes": 594891,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/projects-empty.png",
+      "bytes": 104520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/projects-full.png",
+      "bytes": 617560,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/wbr-full.png",
+      "bytes": 487943,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/audio/film.m4a",
+      "bytes": 582866,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/fidelity.md",
+      "bytes": 4968,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/ink-press/film/LICENSE",
+      "bytes": 11340,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/film/entry.tsx",
+      "bytes": 2343,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/film.js",
+      "bytes": 1357605,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/Root.tsx",
+      "bytes": 396,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/Caption.tsx",
+      "bytes": 2299,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/DigitRoll.tsx",
+      "bytes": 1826,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/FlashCut.tsx",
+      "bytes": 892,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/Main.tsx",
+      "bytes": 9730,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/PaperTitleCard.tsx",
+      "bytes": 4194,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live-layout.json",
+      "bytes": 5601,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/PageCam.tsx",
+      "bytes": 6754,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneDetail.tsx",
+      "bytes": 6000,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneFlyIn.tsx",
+      "bytes": 20787,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneOpen.tsx",
+      "bytes": 25822,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneOutroLive.tsx",
+      "bytes": 17712,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/ScenePapers.tsx",
+      "bytes": 8247,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneWbr.tsx",
+      "bytes": 12767,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/index.ts",
+      "bytes": 93,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/ThemedFilm.tsx",
+      "bytes": 364,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/palette-assets.json",
+      "bytes": 105914,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/palette-assets.ts",
+      "bytes": 2209,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/palettes.json",
+      "bytes": 1547,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/visual-theme.tsx",
+      "bytes": 5346,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/style.css",
+      "bytes": 32,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/index.html",
+      "bytes": 2430,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/source/TEMPLATE.md",
+      "bytes": 8172,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/build.mjs",
+      "bytes": 358,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/package-lock.json",
+      "bytes": 120627,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/package.json",
+      "bytes": 529,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/remotion.config.ts",
+      "bytes": 220,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/tsconfig.json",
+      "bytes": 315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/react-dom@19.2.7/LICENSE",
+      "bytes": 1088,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/react@19.2.7/LICENSE",
+      "bytes": 1088,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/remotion-player@4.0.484/LICENSE.md",
+      "bytes": 2823,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/remotion@4.0.484/LICENSE.md",
+      "bytes": 2823,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/scheduler@0.27.0/LICENSE",
+      "bytes": 1088,
+      "role": "license"
+    },
+    {
+      "path": "demos/patterns/list-stack-press/index.html",
+      "bytes": 1445,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/list-stack-press/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/ink-press.json",
+      "bytes": 12883,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/list-stack-press.json",
+      "bytes": 3153,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/list-stack-press.jpg",
+      "bytes": 70247,
+      "role": "preview"
+    }
+  ]
+}

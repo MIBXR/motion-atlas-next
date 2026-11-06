@@ -1,0 +1,124 @@
+{
+  "id": "stepped-hand-placement",
+  "order": 72,
+  "title": "抽帧手摆抖动",
+  "types": [
+    "rhythm",
+    "texture"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15"
+  ],
+  "summary": "运动或停留状态变化后，位置与旋转按 12fps 或 6fps 取样，并用种子抖动保持手摆纸片感。",
+  "mechanism": "运动或停留状态变化后，位置与旋转按 12fps 或 6fps 取样，并用种子抖动保持手摆纸片感。",
+  "trigger": "运动或停留状态变化时",
+  "effect": "位置与旋转按 12fps 或 6fps 取样，并用种子抖动保持手摆纸片感。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-collage 原片 0–10 秒；1 倍速，总时长 10 秒。"
+    },
+    {
+      "name": "抽帧手摆抖动",
+      "value": "const K = t => Math.floor(t * 12 + 1e-4);\nconst Q6 = t => Math.floor(t * 6 + 1e-4) / 6;\nconst boil = (moving) => moving ? { amp: 2, fps: 12 } : { amp: 1.1, fps: 6 };"
+    }
+  ],
+  "useCases": [
+    "照片与纸片的定格拼贴叙事。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-collage 原片 0–10 秒；总时长 10 秒。运动或停留状态变化 → 位置与旋转按 12fps 或 6fps 取样，并用种子抖动保持手摆纸片感。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：const K = t => Math.floor(t * 12 + 1e-4);\nconst Q6 = t => Math.floor(t * 6 + 1e-4) / 6;\nconst boil = (moving) => moving ? { amp: 2, fps: 12 } : { amp: 1.1, fps: 6 };。使用 1920×1080 横屏。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/stepped-hand-placement/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-collage"
+    }
+  ],
+  "previewAt": 7.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "脑洞拼贴"
+    },
+    {
+      "t": 0.3333333,
+      "label": "人像拍落"
+    },
+    {
+      "t": 1.3333333,
+      "label": "纸偶开口"
+    },
+    {
+      "t": 2.3333333,
+      "label": "剪线盖印"
+    },
+    {
+      "t": 2.5,
+      "label": "剪开头盖"
+    },
+    {
+      "t": 3.6666667,
+      "label": "动作悬停"
+    },
+    {
+      "t": 4,
+      "label": "脑洞弹开"
+    },
+    {
+      "t": 4.3333333,
+      "label": "火箭飞出"
+    },
+    {
+      "t": 6.3333333,
+      "label": "黑带拍入"
+    },
+    {
+      "t": 6.6666667,
+      "label": "脑洞大开"
+    },
+    {
+      "t": 7.5,
+      "label": "撕开纸页"
+    },
+    {
+      "t": 8.3333333,
+      "label": "刊名拍入"
+    },
+    {
+      "t": 9.5,
+      "label": "头盖合拢"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#16130F",
+      "#F2ECDF",
+      "#D2261C",
+      "#E0A355"
+    ],
+    "type": "Anton 400；Bebas Neue 400；Alimama ShuHeiTi 700；Noto Serif SC 900；Noto Sans SC 700；IBM Plex Mono 500。"
+  },
+  "parameters": []
+}

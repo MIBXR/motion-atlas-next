@@ -1,0 +1,96 @@
+{
+  "id": "page-cam-25d",
+  "order": 81,
+  "title": "2.5D 页面相机",
+  "types": [
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "整页 2x 截图作为平面，通过关键帧插值计算相机位姿，完成 2.5D 运镜；CSS zoom 从布局层面放大，保持小字清晰。",
+  "mechanism": "页面截图是相机下的一个平面，对关键帧 {frame, cx, cy, zoom, rotX, rotY, rotZ, persp} 插值，得到每帧位姿；子元素按页面 CSS 像素定位，与 layout.json 使用同一坐标系；3D 模式用 CSS zoom 放大布局，不用 transform scale。",
+  "trigger": "镜头内的关键帧依次到达。",
+  "effect": "详情页从全景推到宏观特写，行元素在同一相机下逐条嵌入，文字在大倍率下仍清晰。",
+  "timing": [
+    {
+      "name": "片段",
+      "value": "AIFL_SHOTS.macro：465–565 帧，100/30 秒。"
+    },
+    {
+      "name": "相机键",
+      "value": "DETAIL_CAM：[0,cx=960,cy=300,zoom=1.1] → [75,cx=960,cy=760,zoom=1.0]。"
+    },
+    {
+      "name": "行嵌入",
+      "value": "cue=12+i*9，land=cue+12，patch 在 land+2 消失，seam 在 land+8 消失。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "页面坐标",
+      "value": "整页宽 1920 CSS px，pageH=layout.detail.pageH，children 与 live-layout.json 同坐标系。"
+    },
+    {
+      "name": "布局放大",
+      "value": "zoom；translate(960/zoom-cx,540/zoom-cy)，perspective=persp*zoom，默认 persp=1400。"
+    },
+    {
+      "name": "缓动",
+      "value": "PageCam：Easing.bezier(0.33,0,0.15,1)；FLY_EASE=Easing.bezier(0.3,0,0.25,1)。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/ink-press/film/src/aifl/live/PageCam.tsx",
+    "demos/cases/ink-press/film/src/aifl/live/SceneDetail.tsx"
+  ],
+  "locator": "PageCam / CamKey / DETAIL_CAM / SceneDetail",
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [
+      "spotlight-hero-card",
+      "deck-deal-flyin",
+      "list-stack-press",
+      "document-typewriter-reveal",
+      "outro-group-photo-slam"
+    ],
+    "conflicts": [],
+    "notes": ""
+  },
+  "prompt": "用来源案例 ink-press 的原作 renderAt(t) 重放2.5D 页面相机。保留 PageCam 的 CamKey、cx/cy/zoom 插值、默认 persp=1400 与 Easing.bezier(0.33,0,0.15,1)；3D 模式使用 CSS zoom 与 translate(960/zoom-cx,540/zoom-cy)。保留 DETAIL_CAM 的 0→75 帧、cy=300→760、zoom=1.1→1.0，以及行嵌入 cue=12+i*9、飞行 12 帧。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/page-cam-25d/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "ink-press"
+    }
+  ],
+  "previewAt": 1.6666666666666667,
+  "markers": [
+    {
+      "t": 0,
+      "label": "相机推移"
+    },
+    {
+      "t": 0.4,
+      "label": "逐行嵌入"
+    },
+    {
+      "t": 2,
+      "label": "末行落位"
+    },
+    {
+      "t": 2.2666666666666666,
+      "label": "嵌入光缝消退"
+    },
+    {
+      "t": 2.5,
+      "label": "相机落定"
+    }
+  ]
+}

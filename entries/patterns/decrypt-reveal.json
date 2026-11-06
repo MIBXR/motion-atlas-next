@@ -1,0 +1,88 @@
+{
+  "id": "decrypt-reveal",
+  "order": 15,
+  "title": "对角解密与磨砂转清",
+  "types": [
+    "transition",
+    "texture"
+  ],
+  "carriers": [
+    "console",
+    "video"
+  ],
+  "summary": "GLB 档案的一条模型空间对角线从两端接通再收束，约3.6267秒完成物理解密；玻璃转清后，正文按实际折行逐行移走遮罩。",
+  "mechanism": "直接复用当前 archive-os 的 archive-cassette.glb、CardAppearance 材质与测量曲线。在模型平面中从(-1.6,0.5)到(1.98,3.24)仅有一条对角线，两端向中心接通，再收向中心；四角标与中心点同源投影。Frosted_Polymer 的高度相关着色器将粗糙度0.42转为0.025，形成自上而下的清晰前沿。正文用 Range.getClientRects() 测量实际折行，每行设置独立遮罩；待 clarity>0 后，遮罩按阅读顺序 translateX 至101%。移动遮罩是 aria-hidden 装饰节点，正文始终保留在 DOM 中且不阻挡焦点；减少动态时直接显示清晰模型与完整正文，不绘制移动遮罩。",
+  "trigger": "交互时进入档案详情，detail>0.78且模型lift>3.3后开始物理解密；Demo 从通过该门槛的时刻抽取单个机制",
+  "effect": "先接通信号并收束，再让真实玻璃材质与折行正文接续转清，读取顺序与物理模型共用同一解密提示。",
+  "parameters": [
+    {
+      "name": "物理解密参考区间与速率",
+      "value": "34.12→39.56秒，互动速率1.5，总长(39.56−34.12)/1.5≈3.6267秒",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/decryption.ts:3–5,148–175"
+    },
+    {
+      "name": "启动门槛",
+      "value": "detail>0.78 且 lift>3.3",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/scene.ts:1434–1437"
+    },
+    {
+      "name": "详情姿态接续",
+      "value": "lift目标4.05、临界阻尼速率4.2；detail指数跟随速率2.8，相机速率5；Demo从阵列待机10秒后模拟打开详情",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/motion.ts:100,112–118；scene.ts:1225–1232,1404–1433,1660–1677"
+    },
+    {
+      "name": "单条模型空间对角线",
+      "value": "起点[-1.6,0.5]，终点[1.98,3.24]；投影平面z=0.255",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/decryption.ts:75–84；scene.ts:1827–1832"
+    },
+    {
+      "name": "玻璃粗糙度",
+      "value": "磨砂0.42→清晰0.025，前沿羽化0.12",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/glass-reveal.ts:3–6,33–44；appearance.ts:39–75"
+    },
+    {
+      "name": "正文遮罩",
+      "value": "只在玻璃clarity>0后开始，按DOM实际折行分配延迟；总长0.95秒，最大顺序延迟为进度的0.22，每行占进度0.78，translateX 0→101%",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/document-decryption.ts:25–66,72–95"
+    }
+  ],
+  "timing": [
+    {
+      "name": "对角线",
+      "value": "参考34.24→36.04秒接通，36.04→37.72秒保持，37.72→38.84秒收束；互动时间分别约1.2秒、1.12秒、0.7467秒，使用测量结点的单调三次Hermite插值"
+    },
+    {
+      "name": "转清",
+      "value": "参考38.84→39.56秒，互动时间约0.48秒"
+    }
+  ],
+  "useCases": [
+    "档案/资料详情",
+    "解锁奖励",
+    "产品规格揭示",
+    "保密信息展示"
+  ],
+  "avoid": [
+    "频繁打开的列表详情（每次都揭示会降低效率，可只在首次揭示）"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "boot-typing",
+      "rolling-digits"
+    ],
+    "conflicts": [],
+    "notes": "交互时接在选档升起与详情就位之后，正文遮罩由同一物理解密帧触发；可与逐字符滚轮及阵列余波衔接。"
+  },
+  "prompt": "从当前archive-os裁出单档案解密。引用../../cases/archive-os/film/app/中的archive-cassette.glb与MiSans字体，保留CardAppearance/glass-reveal/internal-optics和decryption/document-decryption/inspection-overlay源模块，保持案例GLB各层材质、照明和长焦详情投影。进入detail后等待detail>0.78且lift>3.3，再以速率1.5播放参考时间34.12→39.56秒，物理解密总长3.6267秒。一条模型空间对角线从[-1.6,0.5]到[1.98,3.24]，34.24→36.04秒两端接通、37.72→38.84秒收束，按源文件测量结点做单调Hermite插值，保留四角标与中心点。38.84→39.56秒高度相关着色器把Frosted_Polymer粗糙度0.42转0.025。正文读取X-001当前莱茵生命/RHINE LAB、Kristen Wright/Saria及摘要；用Range.getClientRects测量实际折行，每行覆盖装饰黑条，clarity>0才启动0.95秒揭示：delay=order/(count−1)×0.22，行进度=(progress−delay)/0.78，自定义加减速后translateX至101%。Demo以当前阵列待机10秒的状态为起点，按源lift临界阻尼速率4.2、detail指数速率2.8及相机速率5在60Hz推导到解密门槛，保留当时的位置与速度，再从正式解密起点展示，保留5.2秒时间轴容纳正文尾部；该物理解密段本身不另触发声音，开档声发生在此前输入阶段，声音默认关闭。可调项集中index.html顶部CONFIG，异步加载资源后render(t)按t直接求帧，减少动态直接显示完成态。出处：demos/cases/archive-os/source/rhinelabui/src/scene.ts:341–405,1434–1439；decryption.ts:3–103,148–175；document-decryption.ts:25–95。",
+  "videoPrompt": "暖灰底的长焦档案特写，使用当前archive-os的GLB档案真实玻璃、内构件与RHINE LAB标签。只保留一条模型平面对角线与四角标：从两端接通、保持、向中心收束。整个物理解密3.6267秒，最后0.48秒磨砂玻璃自上而下转清。右侧X-001档案正文依实际折行覆盖黑条，玻璃开始转清才以0.95秒顺序向右移开。保持材质、测量曲线与文案，声音默认关闭。",
+  "negativePrompt": "不要双交叉X线、SVG假玻璃、CSS模糊盖层、整块scaleX黑条、均匀80毫秒错峰、旧LUMEN文案、提前露字、回弹或自造解密音效；不要引用cases目录或把整个案例嵌入巧思。",
+  "demo": "demos/patterns/decrypt-reveal/index.html",
+  "kit": true,
+  "previewAt": 3.4,
+  "sources": [
+    {
+      "caseId": "archive-os"
+    }
+  ]
+}

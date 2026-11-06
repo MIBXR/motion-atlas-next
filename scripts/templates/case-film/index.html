@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>时间纯函数作品模板 · Motion Atlas</title>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({ styles: ['film/style.css'], modules: ['film/scene.js'] });
+    const { renderAt, duration, width, height, fps } = await MotionKit.load.module('./film/scene.js');
+    MotionKit.mountFilm({
+      film: { renderAt, duration, width, height, fps },
+      title: '时间纯函数作品', root: '#stage', orients: ['landscape'],
+      markers: [{ t: 0, label: '开场' }, { t: 2, label: '落点' }],
+      accent: '#ffcf4a', start: { t: 0, reduced: 2 },
+    });
+  </script>
+</body>
+</html>

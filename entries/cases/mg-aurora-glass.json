@@ -1,0 +1,277 @@
+{
+  "id": "mg-aurora-glass",
+  "order": 13,
+  "title": "极光与玻璃拟态 · Aurora — Think in Light",
+  "subtitle": "Aurora「思考，自有光」",
+  "carriers": [
+    "video"
+  ],
+  "style": "interface",
+  "purpose": "brand",
+  "tech": [
+    "canvas2d",
+    "webgl"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15",
+    "极光渐变",
+    "玻璃拟态",
+    "折射透镜",
+    "产品发布",
+    "呼吸节奏"
+  ],
+  "summary": "极光色斑缓慢漂移，磨砂玻璃卡片展示对话、声波和控件；Focus 控钮拉出玻璃珠，成为滑过回复的折射透镜，再收成 Aurora 字标中的 o。",
+  "focus": "WebGL2 绘制极光与玻璃折射，Canvas 绘制微界面；开关控钮、玻璃珠、胶囊透镜和字母 o 由同一条时间线衔接，声波读取配乐生成的 100Hz 包络。",
+  "accent": "#86A6FF",
+  "background": "#05041A",
+  "timeline": true,
+  "kit": true,
+  "rhythm": {
+    "duration": 10,
+    "bpm": 80,
+    "beats": [
+      {
+        "t": 0,
+        "label": "玻璃近景",
+        "note": "近景玻璃卡片与用户气泡已在画面中。"
+      },
+      {
+        "t": 0.7,
+        "label": "输入提示",
+        "note": "打字提示出现。"
+      },
+      {
+        "t": 1.5,
+        "label": "回复开始",
+        "note": "回复按行、按词流入。"
+      },
+      {
+        "t": 3,
+        "label": "操作标签",
+        "note": "日历与提醒标签入场。"
+      },
+      {
+        "t": 3.75,
+        "label": "专注开启",
+        "note": "Focus 开关滑动并伸缩。"
+      },
+      {
+        "t": 3.95,
+        "label": "亮度调整",
+        "note": "Glow 滑杆推进并提高光场亮度。"
+      },
+      {
+        "t": 4.62,
+        "label": "控钮玻璃化",
+        "note": "白色控钮转为玻璃。"
+      },
+      {
+        "t": 4.8,
+        "label": "玻璃珠升起",
+        "note": "控钮拉出带黏连颈部的玻璃珠。"
+      },
+      {
+        "t": 5.45,
+        "label": "玻璃珠脱离",
+        "note": "玻璃珠脱离开关轨道。"
+      },
+      {
+        "t": 6,
+        "label": "金光主拍",
+        "note": "光场变亮，透镜内转为金色并出现涟漪。"
+      },
+      {
+        "t": 6.9,
+        "label": "字标入场",
+        "note": "透镜离开回复，各字母依次显现，玻璃卡片向外让开。"
+      },
+      {
+        "t": 8.25,
+        "label": "透镜落字",
+        "note": "透镜收成字标中的 o。"
+      },
+      {
+        "t": 8.5,
+        "label": "标语入场",
+        "note": "Think in light. 与“思考，自有光”抬入。"
+      },
+      {
+        "t": 9,
+        "label": "折射光波",
+        "note": "光波扩散，经过的字母逐一泛光。"
+      }
+    ]
+  },
+  "layers": [
+    {
+      "name": "极光光场",
+      "role": "七个相邻色光斑沿 24–40 秒闭合贝塞尔路径漂移，加入视差、光场涟漪和微粒。"
+    },
+    {
+      "name": "玻璃卡片",
+      "role": "三个倾斜玻璃平面承载对话、声波与控件，逐层模糊其背后的光场。"
+    },
+    {
+      "name": "流体透镜",
+      "role": "SDF 胶囊与玻璃珠平滑并合，渲染真实折射、边缘色散、焦散、高光和放大。"
+    },
+    {
+      "name": "字标与后期",
+      "role": "Sora 轻字重字标由玻璃 o 连接；颗粒、抖动与暗角完成后期，波形读取 film/out/env.json。"
+    }
+  ],
+  "composition": {
+    "color": "深靛黑 #040312 打底，紫 #7050FF、蓝 #2F46F2、青 #34CFF0、品红 #B653F0 等邻近色光斑混合；主拍在透镜内转为金色。",
+    "typography": "Inter 400、500、600 绘制英文微界面；Sora 200 绘制 Aurora，Sora 300 排英文标语，HarmonyOS Sans SC 300 排中文标语。",
+    "layout": "1920×1080 横屏；三张有景深差异的玻璃卡片在中部叠放，镜头从近景拉回再靠近 Focus 开关，结尾字标居中。",
+    "imagery": "WebGL2 着色器绘制极光、磨砂玻璃与折射，Canvas 绘制对话、声波、开关、滑杆和字标。",
+    "motion": "正弦缓动与闭合曲线驱动漂移；微界面淡入并抬升，控钮拉出玻璃珠，透镜沿回复移动，卡片分离后透镜成为 o。",
+    "sound": "开启后播放原片 AAC 音轨；原作 audio.py 以 80BPM、E 调环境音乐和细微 UI 音效制作配乐，并导出 100Hz 音量包络驱动声波。",
+    "rhythm": "0–3 秒卡片和回复逐层显现，3.75–5.45 秒开关、滑杆和玻璃珠衔接，6 秒金光主拍，6.9 秒字标显现，8.5 秒标语，9 秒折射光波。",
+    "coherence": "光场、卡片、控钮与字标共享同一束光；Focus 控钮连续转变为玻璃珠、透镜和 o，声波跟随同一音轨。"
+  },
+  "tokens": {
+    "palette": [
+      "#040312",
+      "#7050FF",
+      "#2F46F2",
+      "#34CFF0",
+      "#B653F0",
+      "#3320A8",
+      "#8C8CFF"
+    ],
+    "type": "Inter 400、500、600；Sora 200、300；HarmonyOS Sans SC 300。",
+    "motion": [
+      {
+        "name": "相机焦距",
+        "value": "const F = 2000;"
+      },
+      {
+        "name": "磨砂模糊",
+        "value": "const TAPS_FROST = gaussTaps(30 * DPR / 4);"
+      },
+      {
+        "name": "极光漂移",
+        "value": "30、34、26、36、40、24、32 秒闭合路径。"
+      },
+      {
+        "name": "控钮尺寸",
+        "value": "const TOG = { x: 440 - 32 - 80, y: 92 - 22.5, w: 80, h: 45 }; const KNOB_R = 18.75;"
+      },
+      {
+        "name": "结尾字标",
+        "value": "const WORD_SIZE = 178, WORD_BASE = 596, WORD_TRACK = 4;"
+      }
+    ]
+  },
+  "useCases": [
+    "科技品牌片",
+    "AI 产品发布片",
+    "玻璃拟态产品演示"
+  ],
+  "constraints": [
+    "原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。",
+    "10 秒，1920×1080，30fps；只提供横屏原作画幅，复刻公开成片的默认版本。"
+  ],
+  "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n弥散渐变 / 玻璃拟态 Gradient Blur (Aurora) & Glassmorphism\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML WebGL: aurora mesh-gradient shader + glass refraction (SDF lens, chromatic dispersion) + DOM/CSS backdrop-filter glass cards\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「Liquid Glass」2025–26 AI-product-launch aesthetic: slow, translucent, expensive.\n- Deep indigo-black base; 4–5 aurora blobs (violet/blue/cyan/magenta, adjacent hues only) drifting on bezier paths, blending into a mesh gradient, 3–5% noise dithering (no banding).\n- Frosted glass cards (backdrop blur ~30px, 5–10% white fill, 1px 30% white inner highlight, large radius) float in with parallax depth and slight 3D tilt; micro-UI inside (chat bubble, voice waveform, toggles) animates with opacity + 8px rise.\n- WOW: a Liquid-Glass lens (true refraction, chromatic dispersion on the rim, specular edge) glides across and magnifies the aurora and the cards.\n- Title (invented product, e.g. \"Aurora — think in light\") in a light elegant sans; sine/breathing easing everywhere; nothing fast.\nSound: ambient cinematic pad, soft shimmer, very subtle UI ticks.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n大面积高斯模糊的彩色光斑（aurora/mesh gradient）缓慢漂移作底，磨砂半透明玻璃卡片浮在其上。苹果 iOS 26 Liquid Glass 与各家 AI 产品发布把这一风格推成 2024-2026 科技品牌片的默认视觉，气质是'慢、透、高级'。\n视觉特征 大色斑高斯模糊漂移, 磨砂玻璃卡片, 1px高光描边, 邻近色低对比配色, 缓慢呼吸感节奏\n关键技法 底层 aurora：3~5 个纯色大圆 blur 80~150px，各自沿贝塞尔路径 20~40 秒漂移循环，彼此 blend 出 mesh gradient 感\n玻璃卡片配方：backdrop-filter blur(20~40px) + 白色 5~10% 填充 + 1px 白色 30% 内描边 + 大半径圆角\n配色用邻近色 2~3 色（紫蓝青/橙粉红），撞色会脏；暗底亮斑比亮底更出效果\n全局叠 3~5% 噪点防 banding（与颗粒质感技法交叉）\n缓动接近 linear 或 sine 呼吸曲线，一切都慢——快动作会立刻破坏气质；文字入场也只用 opacity+8px 位移\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+  "migration": [
+    {
+      "field": "film/main.js → PAL、BLOBS、CARDS",
+      "how": "调整光场配色、漂移轨道、卡片布局与界面内容。"
+    },
+    {
+      "field": "film/main.js → WORD、lensState",
+      "how": "调整字标、透镜轨迹和字母接合位置。"
+    },
+    {
+      "field": "film/cues.json、film/out/env.json",
+      "how": "调整画音节点和配乐音量包络；source/audio.py 保存原作生成过程。"
+    },
+    {
+      "field": "index.html → MotionKit.mountFilm",
+      "how": "接入时间轴、原片音轨与窗口等比缩放。"
+    }
+  ],
+  "demo": "demos/cases/mg-aurora-glass/index.html",
+  "patternIds": [
+    "shape-docks-wordmark",
+    "bezier-aurora-drift",
+    "layered-frosted-glass",
+    "metaball-lens-glide",
+    "envelope-radiating-waveform",
+    "card-depth-arrival-parting",
+    "film-grain"
+  ],
+  "previewAt": 9.8,
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "原作《极光与玻璃拟态 · Aurora — Think in Light》来自 [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)，作者 Vincentwei1021，固定提交 `49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`；原目录为 `demos/12-aurora-glass/`。代码、提示词、文档与成片采用 MIT 许可，许可原文见 [LICENSE](film/LICENSE)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "| 完整文件与版本 | 官方来源 | 许可原文 |\n| --- | --- | --- |\n| `HarmonyOS_Sans_SC_Light.ttf`，Version 1.0 | [华为官方完整归档](https://developer.huawei.com/images/download/general/HarmonyOS-Sans.zip) | [HarmonyOS Sans Fonts License Agreement 原文](fonts/HarmonyOS-Sans-LICENSE.txt) |\n| `Inter[opsz,wght].ttf`，Version 4.001;git-66647c0bb | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/0b58fb370093f9a9f4ff785d94405710b79de67c/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf) | [SIL OFL 1.1 原文](fonts/Inter-OFL.txt) |\n| `Sora[wght].ttf`，Version 2.000 | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/a926665019d3f7f25c8b1212cecbfa871e70de82/ofl/sora/Sora%5Bwght%5D.ttf) | [SIL OFL 1.1 原文](fonts/Sora-OFL.txt) |"
+    },
+    {
+      "scope": "共享贴图与运行数据",
+      "notes": "`assets/textures/grain/grain_fine_2048.png` 原样取自上述固定提交的共享贴图，是原作程序化颗粒，按 MIT 许可提供。`film/out/env.json` 是原作 `source/audio.py` 生成的音量包络，按原作 MIT 许可提供。\n\n本案例没有 vendor 包。"
+    },
+    {
+      "scope": "配乐",
+      "notes": "`audio/film.m4a` 从固定提交的 `videos/12-aurora-glass.mp4` 以 `ffmpeg -vn -c:a copy` 无损抽取 AAC 音轨，保留原片混音；成片与自制音频采用原作 MIT 许可。配乐生成过程原样保存在 `source/audio.py`，使用 [VCSL 乐器采样](https://github.com/sgossner/VCSL)（CC0）与原作合成器。"
+    }
+  ],
+  "relatedEntries": [
+    {
+      "kind": "material",
+      "id": "mg-styles-15",
+      "note": "提示词与配乐合成库所在素材"
+    }
+  ],
+  "energy": [
+    0.482,
+    0.46,
+    0.437,
+    0.436,
+    0.458,
+    0.511,
+    0.563,
+    0.581,
+    0.553,
+    0.48,
+    0.415,
+    0.379,
+    0.388,
+    0.444,
+    0.501,
+    0.558,
+    0.579,
+    0.587,
+    0.545,
+    0.541,
+    0.631,
+    0.733,
+    0.773,
+    0.811,
+    0.815,
+    0.83,
+    0.772,
+    0.808,
+    0.798,
+    0.756,
+    0.668,
+    0.626,
+    0.548,
+    0.476,
+    0.439,
+    0.441,
+    0.427,
+    0.372,
+    0.294,
+    0.256
+  ],
+  "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。"
+}

@@ -1,0 +1,151 @@
+{
+  "id": "alert-reroute",
+  "order": 9,
+  "title": "警示横幅与改道",
+  "types": [
+    "feedback",
+    "hud"
+  ],
+  "carriers": [
+    "video",
+    "console"
+  ],
+  "summary": "坐错车时红色警示横幅压下，错误路线打叉，改道路线重新描画。",
+  "mechanism": "误乘横幅擦入，错误路线变红并画叉。改道胶囊单次淡入，省略号循环，与警报和提示音同步。",
+  "trigger": "行程出错、需要改道时",
+  "effect": "先看出哪里出了错，再跟上新的方向。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "6.2s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "blip、whoosh、error、glitch、clack、alarm、beep、stamp"
+    }
+  ],
+  "useCases": [
+    "旅行意外",
+    "物流异常",
+    "操作台告警",
+    "游戏任务失败/重试"
+  ],
+  "avoid": [
+    "频繁告警（会削弱紧张感）"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "route-draw-marker",
+      "corner-hud"
+    ],
+    "conflicts": []
+  },
+  "prompt": "坐错车时红色警示横幅压下，错误路线打叉，改道路线重新描画。复用地图巡礼的 drawAlert、addRouteLayers、updateRoutesGL、drawRoutesSVG、drawMarkers、measureMarkerLabels、cameraAt、project 与对应 CSS。警示横幅、改道胶囊、错误路线与 X、改道路线、该时段标记标签，以及已完成的持续路线。片段：caseT 44.8→50.3；时长 6.2s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定镜头的实时地图，声音由 mechanism/score.json 挂接。",
+  "demo": "demos/patterns/alert-reroute/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    }
+  ],
+  "previewAt": 2.6,
+  "markers": [
+    {
+      "t": 0.2,
+      "label": "警示"
+    },
+    {
+      "t": 1.5,
+      "label": "错误终点"
+    },
+    {
+      "t": 2.2,
+      "label": "改道"
+    }
+  ],
+  "sound": {
+    "voices": [
+      "blip",
+      "whoosh",
+      "error",
+      "glitch",
+      "clack",
+      "alarm",
+      "beep",
+      "stamp"
+    ],
+    "score": "demos/patterns/alert-reroute/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "警示",
+        "value": "0.2s"
+      },
+      {
+        "name": "错误终点",
+        "value": "1.5s"
+      },
+      {
+        "name": "改道",
+        "value": "2.2s"
+      },
+      {
+        "name": "时长",
+        "value": "6.2s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js → renderLive、drawAlert、drawRoutesSVG、drawPatternMarkers",
+      "how": "修改警示、改道提示、路线与标签的实现。"
+    },
+    {
+      "field": "index.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → tracks.alert、tracks.routes、tracks.markers；stops、map、layout",
+      "how": "修改警示文字、错误路线、地点与横竖布局。"
+    },
+    {
+      "field": "mechanism/config.js → segments / markers",
+      "how": "设置本巧思片段映射与标记；地图来源时刻：44.8→50.3。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ],
+  "renderer": "gpu"
+}

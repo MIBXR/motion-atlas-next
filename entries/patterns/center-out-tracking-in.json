@@ -1,0 +1,112 @@
+{
+  "id": "center-out-tracking-in",
+  "order": 42,
+  "title": "中轴散字收拢",
+  "types": [
+    "type-motion"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "衬线字标按离中轴的距离错峰从宽字距收拢，中文标语抬入，两侧细线随亮点向外描出。",
+  "mechanism": "字标入场节点到达后，字母按离中轴的距离错峰，从宽字距向最终位置收拢显现；标语随后抬入，两侧细线由亮点领绘向外展开。",
+  "trigger": "字标、中文标语与细线签章节点依次到达时。",
+  "effect": "中心字母先出现，两侧字母依次收拢为完整品牌字标，中文标语与两侧细线完成居中落版。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "8.133–9.85秒，1倍速；巧思时长1.717秒。"
+    },
+    {
+      "name": "字标尺寸字距",
+      "value": "const word = 'ATELIER LINEA', size = 50, track = 0.46;"
+    },
+    {
+      "name": "由中轴错峰",
+      "value": "start: 8.333；stagger: 0.045；dur: 0.95；const d = Math.abs(i - mid);"
+    },
+    {
+      "name": "字母收拢",
+      "value": "const spread = (1 - e) * 0.22 * size * (i - mid);"
+    },
+    {
+      "name": "标语与签章",
+      "value": "tagline: 8.75；rules: [9.25, 9.6]；hl = 24 * ru；gap = 1.2 * ts。"
+    }
+  ],
+  "useCases": [
+    "居中衬线品牌字标",
+    "宽字距字母错峰收拢",
+    "中文标语与细线签章"
+  ],
+  "avoid": [
+    "竖屏重排",
+    "片段边界无缝循环"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 以1倍速重放原片8.133–9.85秒，巧思时长1.717秒。字标入场节点到达后，字母按离中轴的距离错峰，从宽字距向最终位置收拢显现；标语随后抬入，两侧细线由亮点领绘向外展开。const word = 'ATELIER LINEA', size = 50, track = 0.46;start: 8.333；stagger: 0.045；dur: 0.95；const d = Math.abs(i - mid);const spread = (1 - e) * 0.22 * size * (i - mid);tagline: 8.75；rules: [9.25, 9.6]；hl = 24 * ru；gap = 1.2 * ts。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。",
+  "demo": "demos/patterns/center-out-tracking-in/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-line-art"
+    }
+  ],
+  "previewAt": 1.6170000000000009,
+  "markers": [
+    {
+      "t": 0,
+      "label": "字标入场前"
+    },
+    {
+      "t": 0.20000000000000107,
+      "label": "中轴起字"
+    },
+    {
+      "t": 0.6170000000000009,
+      "label": "标语抬入"
+    },
+    {
+      "t": 1.1170000000000009,
+      "label": "细线签章"
+    },
+    {
+      "t": 1.4670000000000005,
+      "label": "细线落定"
+    },
+    {
+      "t": 1.5170000000000012,
+      "label": "标语齐备"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#0B1320",
+      "#E9D7A5",
+      "#967D50",
+      "#FFF6DC"
+    ],
+    "type": "Cormorant Garamond 500；Noto Serif SC 300。"
+  },
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments",
+      "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+    },
+    {
+      "field": "index.html 内联配置 → markers / reduced",
+      "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+    }
+  ]
+}

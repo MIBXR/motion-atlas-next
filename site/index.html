@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN" data-accent="orange">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Motion Atlas 工作台</title>
+    <script>
+      // 首帧前按偏好设置主题，避免闪烁。
+      (function () { var p = localStorage.getItem("atlas-workbench-theme") || "system"; var d = p === "dark" || (p === "system" && matchMedia("(prefers-color-scheme: dark)").matches); document.documentElement.dataset.theme = d ? "dark" : "light"; })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/motion/main.tsx"></script>
+  </body>
+</html>

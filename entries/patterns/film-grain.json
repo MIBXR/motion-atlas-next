@@ -1,0 +1,293 @@
+{
+  "id": "film-grain",
+  "order": 12,
+  "title": "可复现的胶片颗粒与暗角",
+  "types": [
+    "texture"
+  ],
+  "carriers": [
+    "video",
+    "console"
+  ],
+  "summary": "动态胶片颗粒与暗角覆盖地图、照片和插画，统一整片的质感。包豪斯片在几何海报上使用逐帧换位的纸面印刷颗粒与径向暗角。线条片在午夜蓝与金线画面上叠加逐帧换位的颗粒和径向暗角。形变片用纸纹与逐帧软颗粒覆盖整片；极光片用颗粒和暗角覆盖整片，还叠加三角分布抖动。三维片按帧号平移种子颗粒并叠加暗角；拼贴片逐格移动颗粒并交替使用两块尘点板。",
+  "mechanism": "地图、机窗照片与回忆插画依次铺满画面。颗粒与暗角叠在各段上，让不同画面的质感保持一致。包豪斯片的纸面印刷颗粒随帧号换位，并与径向暗角叠在几何构成上。线条片用帧号驱动固定种子的颗粒贴图偏移，以叠加模式覆盖金线画面，并用径向暗角压暗边缘。形变片按帧号平移固定种子的软颗粒，并以纸纹亮度调制画面。极光片在移动颗粒和暗角上加入三角分布抖动。三维片按帧号平移种子颗粒并叠加暗角；拼贴片逐格移动颗粒并交替使用两块尘点板。",
+  "trigger": "地图、照片与插画交替出现时",
+  "effect": "不同媒介保持连贯，回忆段更有时间感。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "67.5s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "vinyl"
+    },
+    {
+      "name": "线条片颗粒",
+      "value": "原片0–10秒，巧思17.5–27.5秒；const f = Math.floor(t * FPS + 1e-4), r = mulberry(f * 7919 + 13); const ox = Math.floor(r() * 2048), oy = Math.floor(r() * 2048); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.1；径向暗角H * 0.35、W * 0.66。"
+    },
+    {
+      "name": "逐帧纸面颗粒",
+      "value": "L800: const GT = 512, GN = new Int8Array(GT * GT);；L805: const k = 2.0 / Math.sqrt(ss / b.length); for (let i = 0; i < b.length; i++) GN[i] = Math.max(-6, Math.min(6, Math.round(b[i] * k))); }；L812: const img = ctx.getImageData(0, 0, W, H), d = img.data, ox = (f * 197) % GT, oy = (f * 331) % GT;"
+    },
+    {
+      "name": "颗粒抖动防色阶",
+      "value": "L800: const frame = Math.round(t * FPS * 4);；L876: gl.uniform1f(L.uBloomAmt, 0.22); gl.uniform1f(L.uGrainAmt, +(Q.get('grain') || 0.14)); gl.uniform1f(L.uFrame, frame); gl.uniform1f(L.uVig, 0.18);"
+    },
+    {
+      "name": "追加原片区间",
+      "value": "mg-3d-render 原片 0–10 秒；mg-collage 原片 0–10 秒；opacity: .09; mix-blend-mode: overlay;\ngrain.style.transform = `translate(${Math.round(hash(i) * 64 - 32)}px, ${Math.round(hash(i + 999) * 64 - 32)}px)`;；c.globalCompositeOperation = 'overlay'; c.globalAlpha = 0.26;\nc.globalCompositeOperation = 'multiply'; c.globalAlpha = 0.35;\ndustC[Math.floor(k / 2) % 2]"
+    }
+  ],
+  "useCases": [
+    "影像统一质感",
+    "回忆/档案段",
+    "复古操作台",
+    "包豪斯几何海报的纸面印刷颗粒逐帧换位与径向暗角。",
+    "线条品牌片的逐帧颗粒与径向暗角。",
+    "以逐帧软颗粒和纸纹统一图形画面，以三角分布抖动处理连续极光光场。",
+    "三维片按帧号平移种子颗粒并叠加暗角；拼贴片逐格移动颗粒并交替使用两块尘点板。"
+  ],
+  "avoid": [
+    "需要高清细节的产品图",
+    "大量小字区域（降低可读性）"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "seekable-timeline",
+      "split-compare-stamp"
+    ],
+    "conflicts": []
+  },
+  "prompt": "动态胶片颗粒与暗角覆盖地图、照片和插画，统一整片的质感。复用地图巡礼的 render、sceneCanvas、paintScene、grainPass、vignette 与对应 CSS。地图、kix 照片画布与回忆插画三段全屏底，以及案例颗粒和暗角。片段：地图固定 caseT 10.4；kix 照片画布固定 caseT 13.5；回忆插画画布固定 caseT 27.56；时长 67.5s：原有三段 7.5s，之后接几何包豪斯全片 10s，再接线条艺术全片 10s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定地图底图与给定 caseT 的程序画布，声音由 mechanism/score.json 挂接。线条艺术段沿用原作固定种子 mulberry(f * 7919 + 13)，2048像素颗粒贴图逐帧偏移，overlay透明度0.1，与H * 0.35至W * 0.66的径向暗角共同覆盖金线画面；同区间原片音轨随时间轴播放，声音默认关闭。 通过 index.html 内联 segments 在前 27.5 秒之后依次重放mg-morph 原片 0–10 秒；mg-aurora-glass 原片 0–10 秒，总时长 67.5 秒。形变片按帧号平移固定种子的软颗粒，并以纸纹亮度调制画面。极光片在移动颗粒和暗角上加入三角分布抖动。沿用同区间原片音轨，声音默认关闭。 按 index.html 内联 segments 在原有 47.5 秒之后重放mg-3d-render 原片 0–10 秒；mg-collage 原片 0–10 秒，总时长 67.5 秒。三维片按帧号平移种子颗粒并叠加暗角；拼贴片逐格移动颗粒并交替两块尘点板。画面与音轨沿用同一映射，声音默认关闭。",
+  "demo": "demos/patterns/film-grain/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    },
+    {
+      "caseId": "mg-bauhaus"
+    },
+    {
+      "caseId": "mg-line-art"
+    },
+    {
+      "caseId": "mg-morph"
+    },
+    {
+      "caseId": "mg-aurora-glass"
+    },
+    {
+      "caseId": "mg-3d-render"
+    },
+    {
+      "caseId": "mg-collage"
+    }
+  ],
+  "previewAt": 1.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "地图上的颗粒"
+    },
+    {
+      "t": 2.5,
+      "label": "照片颗粒"
+    },
+    {
+      "t": 5,
+      "label": "插画颗粒"
+    },
+    {
+      "t": 7.5,
+      "label": "几何包豪斯"
+    },
+    {
+      "t": 17.5,
+      "label": "线条艺术"
+    },
+    {
+      "t": 27.5,
+      "label": "形状变形"
+    },
+    {
+      "t": 37.5,
+      "label": "极光玻璃"
+    },
+    {
+      "t": 47.5,
+      "label": "三维软床"
+    },
+    {
+      "t": 48,
+      "label": "首字落地"
+    },
+    {
+      "t": 49,
+      "label": "第二字落地"
+    },
+    {
+      "t": 49.5,
+      "label": "第三字落地"
+    },
+    {
+      "t": 50,
+      "label": "第四字落地"
+    },
+    {
+      "t": 50.875,
+      "label": "字母再起"
+    },
+    {
+      "t": 52.8,
+      "label": "金属球入场"
+    },
+    {
+      "t": 53.3,
+      "label": "金属球悬停"
+    },
+    {
+      "t": 53.5,
+      "label": "砸落主拍"
+    },
+    {
+      "t": 53.92,
+      "label": "冠状波悬停"
+    },
+    {
+      "t": 55.5,
+      "label": "标语入场"
+    },
+    {
+      "t": 57.5,
+      "label": "脑洞拼贴"
+    },
+    {
+      "t": 57.8333333,
+      "label": "人像拍落"
+    },
+    {
+      "t": 58.8333333,
+      "label": "纸偶开口"
+    },
+    {
+      "t": 59.8333333,
+      "label": "剪线盖印"
+    },
+    {
+      "t": 60,
+      "label": "剪开头盖"
+    },
+    {
+      "t": 61.1666667,
+      "label": "动作悬停"
+    },
+    {
+      "t": 61.5,
+      "label": "脑洞弹开"
+    },
+    {
+      "t": 61.8333333,
+      "label": "火箭飞出"
+    },
+    {
+      "t": 63.8333333,
+      "label": "黑带拍入"
+    },
+    {
+      "t": 64.1666667,
+      "label": "脑洞大开"
+    },
+    {
+      "t": 65,
+      "label": "撕开纸页"
+    },
+    {
+      "t": 65.8333333,
+      "label": "刊名拍入"
+    },
+    {
+      "t": 67,
+      "label": "头盖合拢"
+    }
+  ],
+  "sound": {
+    "voices": [
+      "vinyl"
+    ],
+    "score": "demos/patterns/film-grain/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "地图上的颗粒",
+        "value": "0s"
+      },
+      {
+        "name": "照片颗粒",
+        "value": "2.5s"
+      },
+      {
+        "name": "插画颗粒",
+        "value": "5s"
+      },
+      {
+        "name": "时长",
+        "value": "47.5s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js ? drawGrain?renderPattern?mechanism/film.js ? createFilm",
+      "how": "修改场景绘制、颗粒与暗角的实现。"
+    },
+    {
+      "field": "mechanism/scene.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → palette；tracks.flashback、tracks.compare；layout",
+      "how": "修改底色、回忆与分屏状态；颗粒刷新频率在 ../../cases/map-pilgrimage/film/script.js → drawGrain，固定场景时刻在 render。"
+    },
+    {
+      "field": "mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers",
+      "how": "mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 地图片段。地图来源时刻：地图固定 10.4/kix 照片画布固定 13.5/回忆插画画布固定 27.56。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ],
+  "parameters": []
+}

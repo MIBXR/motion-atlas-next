@@ -1,0 +1,90 @@
+{
+  "id": "shape-docks-wordmark",
+  "order": 45,
+  "title": "形体落位成字标",
+  "types": [
+    "type-motion",
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15",
+    "形状变形",
+    "极光玻璃"
+  ],
+  "summary": "主体形状飞到字位，通过开合变成字标中的一个字母，其余字母随后显现；先重放圆环伸展为 morphe，再重放透镜开成 Aurora 的 o。",
+  "mechanism": "主体形状飞到字位，通过开合变成字标中的一个字母，其余字母随后显现；先重放圆环伸展为 morphe，再重放透镜开成 Aurora 的 o。",
+  "trigger": "主体形状进入字标的落位阶段时",
+  "effect": "叙事中的同一个形体成为字母，字标通过形体落位与其余字母显现完成。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-morph 原片 8.1–9.3 秒；mg-aurora-glass 原片 6.7–10 秒；1 倍速，巧思时长 4.5 秒。"
+    },
+    {
+      "name": "圆环伸展成字标",
+      "value": "L614: const MB = { t0: 8.30, t1: 8.6, arches: [[571.5, 497], [650, 497]], Ro: 55.5, Ri: 22.5,；L683: const LANE = [352, 352, 346, 340, 296, 290], _lp = {};"
+    },
+    {
+      "name": "透镜落入字母",
+      "value": "L533: const WORD_SIZE = 178, WORD_BASE = 596, WORD_TRACK = 4;；L565: const LETTER_T = [0.3, 0.15, 0.0, null, 0.02, 0.17].map((d) => d === null ? null : cues.word + d);；L595: { t: SETTLE, v: [O_CX, O_CY], m: [0, 0] },；L598: const lensHY = keysS([[5.95, 110], [6.45, 122], [T_FREE, 106], [7.7, 88], [SETTLE, O_R]], eSine);；L672: const wave = [700 * eOutSine(kw), 0.11 * Math.pow(1 - kw, 0.8) * wk, 6.5 * Math.pow(1 - kw, 0.45) * wk];"
+    }
+  ],
+  "useCases": [
+    "圆环与字干展开成字标",
+    "玻璃透镜落位成为字母"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-morph 原片 8.1–9.3 秒；mg-aurora-glass 原片 6.7–10 秒；总时长 4.5 秒。主体形状飞到字位、开合成字标中的一个字母，其余字母随后显现；先重放圆环伸展为 morphe，再重放透镜开成 Aurora 的 o。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/shape-docks-wordmark/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "mg-morph"
+    },
+    {
+      "caseId": "mg-aurora-glass"
+    }
+  ],
+  "previewAt": 4,
+  "markers": [
+    {
+      "t": 0,
+      "label": "形状变形"
+    },
+    {
+      "t": 0.3,
+      "label": "机制画面"
+    },
+    {
+      "t": 0.7,
+      "label": "机制画面"
+    },
+    {
+      "t": 1.2,
+      "label": "极光玻璃"
+    },
+    {
+      "t": 2.8,
+      "label": "机制画面"
+    }
+  ]
+}

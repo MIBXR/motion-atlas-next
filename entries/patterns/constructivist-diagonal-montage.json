@@ -1,0 +1,72 @@
+{
+  "id": "constructivist-diagonal-montage",
+  "order": 156,
+  "title": "构成主义斜线蒙太奇",
+  "types": [
+    "composition",
+    "type-motion"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "以−18°斜梁承载大字，沿轴砸入；工地影像分成三条双窗条带逐拍换镜，剪下的工人和影像楼层再交替叠成塔。",
+  "mechanism": "以−18°斜梁承载大字，沿轴砸入；工地影像分成三条双窗条带逐拍换镜，剪下的工人和影像楼层再交替叠成塔。",
+  "trigger": "片名主拍、条带段和叠塔段到达。",
+  "effect": "文字、照片碎片与几何沿同一斜线形成撞击节奏，并逐层构筑。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "0–5秒；14.5–16秒；43.25–48.25秒；1倍速，总时长11.5秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "共同轴线",
+      "value": "film/index.html:TH=−18°；S1斜梁与片名字块沿同轴砸入。"
+    },
+    {
+      "name": "斜向条带",
+      "value": "film/index.html:S3；3条290px高、22px间隔的条带，每条2个1160px窗；BEAT=.5，交替漂移90px/s。"
+    },
+    {
+      "name": "人物叠塔",
+      "value": "film/index.html:FLOORS / S9；43.25–48.25秒影像楼层与工人剪影逐层组装，计数在86处停后再升到102。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-kino-montage/film/index.html"
+  ],
+  "locator": "TH / S1 / S3 / FLOORS / S9",
+  "useCases": [
+    "工业历史影片",
+    "建设里程碑",
+    "集体劳动叙事"
+  ],
+  "avoid": [
+    "同一时刻叠加多组与主动作争夺注意的信息"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-kino-montage的原作render(t)重放“构成主义斜线蒙太奇”。以−18°斜梁承载大字，沿轴砸入；工地影像分成三条双窗条带逐拍换镜，剪下的工人和影像楼层再交替叠成塔。保留参数：film/index.html:TH=−18°；S1斜梁与片名字块沿同轴砸入。；film/index.html:S3；3条290px高、22px间隔的条带，每条2个1160px窗；BEAT=.5，交替漂移90px/s。；film/index.html:FLOORS / S9；43.25–48.25秒影像楼层与工人剪影逐层组装，计数在86处停后再升到102。。重放区间由入口segments配置，来源素材与音轨直接复用。",
+  "demo": "demos/patterns/constructivist-diagonal-montage/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-kino-montage"
+    }
+  ],
+  "previewAt": 2.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "构成主义斜线蒙太奇"
+    }
+  ]
+}

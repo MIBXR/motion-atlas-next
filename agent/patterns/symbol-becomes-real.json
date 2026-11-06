@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "symbol-becomes-real",
+  "pattern": {
+    "id": "symbol-becomes-real",
+    "order": 121,
+    "title": "图符成真",
+    "types": [
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "纸上的修订云线保留同一云轮廓，转成有统一体积渐变、光晕与投影的实体云，原位置留下未曝光痕迹。",
+    "mechanism": "纸上的修订云线保留同一云轮廓，转成有统一体积渐变、光晕与投影的实体云，原位置留下未曝光痕迹。",
+    "trigger": "修订完成后B(14)的两次puff。",
+    "effect": "制图约定成为能被机器接住并下雨的物体，线稿世界的规则在一个节点改变。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "27.500000–31.700000秒；1倍速，共4.200000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "云形体积",
+        "value": "film/sheet.js:143–211的revCloud：15个轮廓波瓣与4个内瓣，以union统一填渐变；高光、union减位移蒙版与阴影由pf/lift驱动。"
+      },
+      {
+        "name": "叙事时刻",
+        "value": "film/film.js:171–184、241–286：revision/cloud参数驱动；B(14)=28.888889秒，B(15)=31.111111秒接住云。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-blueprint/film/sheet.js",
+      "demos/cases/lemo-blueprint/film/film.js"
+    ],
+    "locator": "sheet.js / film.js",
+    "useCases": [
+      "制图约定成为能被机器接住并下雨的物体，线稿世界的规则在一个节点改变。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-blueprint的原作render(t)，重放“图符成真”。纸上的修订云线保留同一云轮廓，转成有统一体积渐变、光晕与投影的实体云，原位置留下未曝光痕迹。参数与源码：film/sheet.js:143–211的revCloud：15个轮廓波瓣与4个内瓣，以union统一填渐变；高光、union减位移蒙版与阴影由pf/lift驱动。；film/film.js:171–184、241–286：revision/cloud参数驱动；B(14)=28.888889秒，B(15)=31.111111秒接住云。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/symbol-becomes-real/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-blueprint"
+      }
+    ],
+    "previewAt": 2,
+    "markers": [
+      {
+        "t": 0,
+        "label": "图符成真"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/symbol-becomes-real.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-blueprint",
+      "bundle": "agent/cases/lemo-blueprint.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 图符成真\n\n## 实现 Prompt\n\n复用来源案例lemo-blueprint的原作render(t)，重放“图符成真”。纸上的修订云线保留同一云轮廓，转成有统一体积渐变、光晕与投影的实体云，原位置留下未曝光痕迹。参数与源码：film/sheet.js:143–211的revCloud：15个轮廓波瓣与4个内瓣，以union统一填渐变；高光、union减位移蒙版与阴影由pf/lift驱动。；film/film.js:171–184、241–286：revision/cloud参数驱动；B(14)=28.888889秒，B(15)=31.111111秒接住云。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：27.500000–31.700000秒；1倍速，共4.200000秒。\n\n[打开 Demo](../../demos/patterns/symbol-becomes-real/index.html) · [在库中查看](../../patterns.html#pattern/symbol-becomes-real)\n"
+  },
+  "entrypoint": "demos/patterns/symbol-becomes-real/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-blueprint/LICENSES.md",
+      "bytes": 907,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/CREDITS",
+      "bytes": 1071,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/film.m4a",
+      "bytes": 1534289,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fidelity.md",
+      "bytes": 4221,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/draw.js",
+      "bytes": 14459,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/film.js",
+      "bytes": 26942,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/index.html",
+      "bytes": 346,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/lines.json",
+      "bytes": 981,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/machine.js",
+      "bytes": 24965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/main.js",
+      "bytes": 6532,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/paper.js",
+      "bytes": 8655,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/sheet.js",
+      "bytes": 20986,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/voices/dur.json",
+      "bytes": 86,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/Allura-Regular.ttf",
+      "bytes": 246632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/ArchitectsDaughter-Regular.ttf",
+      "bytes": 43352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/B612-Bold.ttf",
+      "bytes": 100932,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/B612-Regular.ttf",
+      "bytes": 153192,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/B612Mono-Regular.ttf",
+      "bytes": 140292,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-allura.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-architectsdaughter.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-b612.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-b612mono.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/fonts.css",
+      "bytes": 489,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/index.html",
+      "bytes": 2402,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/CREDITS",
+      "bytes": 1071,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/DEMO.md",
+      "bytes": 15849,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/README.md",
+      "bytes": 3784,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/STYLE.md",
+      "bytes": 12323,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/build.sh",
+      "bytes": 1489,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/events.json",
+      "bytes": 21654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/mix.py",
+      "bytes": 8076,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/music/score.json",
+      "bytes": 1598,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/music/score.py",
+      "bytes": 13539,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/style.json",
+      "bytes": 550,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/subs.json",
+      "bytes": 762,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/tools/check_mix.py",
+      "bytes": 1182,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/tools/subs.mjs",
+      "bytes": 1022,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/voices/words.json",
+      "bytes": 1259,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/symbol-becomes-real/index.html",
+      "bytes": 778,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/symbol-becomes-real/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-blueprint.json",
+      "bytes": 10249,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/symbol-becomes-real.json",
+      "bytes": 2512,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/symbol-becomes-real.jpg",
+      "bytes": 77301,
+      "role": "preview"
+    }
+  ]
+}

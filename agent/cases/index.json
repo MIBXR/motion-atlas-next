@@ -1,0 +1,2498 @@
+{
+  "schemaVersion": 1,
+  "kind": "cases",
+  "count": 70,
+  "cases": [
+    {
+      "id": "map-pilgrimage",
+      "title": "地图巡礼 · 游戏过场式旅行影像",
+      "summary": "地图串起上海至关西的三日旅程。四角HUD持续报时，照片、回忆与分屏随120 BPM乐谱切换。",
+      "carriers": [
+        "video"
+      ],
+      "style": "documentary",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "maplibre",
+        "dom"
+      ],
+      "tags": [
+        "地图叙事",
+        "游戏过场",
+        "HUD 四角",
+        "昼夜切换",
+        "分屏对比",
+        "竖排汉字",
+        "日本 · 关西",
+        "渐进缓冲"
+      ],
+      "useCases": [
+        "旅行 / 巡礼 Vlog",
+        "城市与文旅宣传",
+        "物流与路线回顾",
+        "活动巡回纪录",
+        "年度回顾影像",
+        "交互式行程展示"
+      ],
+      "avoid": [
+        "没有空间移动的内容",
+        "需要逐字阅读的长文",
+        "镜头要停在单一画面的访谈"
+      ],
+      "patternIds": [
+        "corner-hud",
+        "vertical-title-blur",
+        "route-draw-marker",
+        "day-night-flip",
+        "card-expand-fullscreen",
+        "chapter-frame",
+        "split-compare-stamp",
+        "collect-counter",
+        "alert-reroute",
+        "outro-stat-stack",
+        "seekable-timeline",
+        "film-grain"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/map-pilgrimage.json"
+    },
+    {
+      "id": "archive-os",
+      "title": "莱茵生命档案终端",
+      "summary": "白底开场后，五列档案循环展开。读取时对角解密，还能360°查看模型、拆解与重组结构。",
+      "carriers": [
+        "console"
+      ],
+      "style": "interface",
+      "purpose": "title-art",
+      "tech": [
+        "canvas2d",
+        "threejs",
+        "dom"
+      ],
+      "tags": [
+        "RhineLabUI",
+        "白底开场",
+        "五列循环档案",
+        "对角解密",
+        "360° 查看器",
+        "结构拆解",
+        "三轨配乐"
+      ],
+      "useCases": [
+        "数据档案与研究记录",
+        "产品与展品陈列台",
+        "数字资料馆与图形化目录",
+        "品牌发布会交互屏",
+        "可渲染的终端风格影像"
+      ],
+      "avoid": [
+        "需要高信息密度表格的后台",
+        "需要同时阅读多份长文档的资料工作台"
+      ],
+      "patternIds": [
+        "boot-typing",
+        "rolling-digits",
+        "decrypt-reveal",
+        "wave-array",
+        "idle-breathing",
+        "seekable-timeline"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/archive-os.json"
+    },
+    {
+      "id": "keeling-curve",
+      "title": "基林曲线 · 莫纳罗亚 CO₂ 数据短片",
+      "summary": "20 秒短片先展开莫纳罗亚 CO₂ 真实月均曲线，再推近 2025 年的季节锯齿，拉远后并列呈现两端年均值：长期趋势，持续上升；起伏，是季节。",
+      "carriers": [
+        "video"
+      ],
+      "style": "evidence",
+      "purpose": "data",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "真实数据",
+        "基林曲线",
+        "季节起伏",
+        "长期趋势",
+        "尺度转换",
+        "中文数据短片",
+        "公开音频素材",
+        "motion-showreel"
+      ],
+      "useCases": [
+        "公开时间序列的数据短片",
+        "长期趋势与周期变化的双尺度解释",
+        "中文科学传播影像",
+        "需要来源、单位与数据口径并列呈现的动态图表"
+      ],
+      "avoid": [
+        "无法追溯来源的数字叙事",
+        "把莫纳罗亚观测序列当作全球平均",
+        "需要逐字阅读长篇解释的内容",
+        "需要竖屏重新排版的交付"
+      ],
+      "patternIds": [],
+      "seekable": true,
+      "bundle": "agent/cases/keeling-curve.json"
+    },
+    {
+      "id": "mg-cel-boil",
+      "title": "逐帧线条抖动 · HAND MADE",
+      "summary": "火柴在纸面划燃并翻转落定，火苗精灵醒来、跳跃与舞蹈；旋转蓄力后爆成烟火，火花逐笔写出「手作」与 HAND MADE，镜头拉回灯箱纸页。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "title-art",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "逐帧手绘",
+        "线条沸腾",
+        "曝光表",
+        "拖影帧",
+        "纸张质感"
+      ],
+      "useCases": [
+        "手绘品牌短片",
+        "逐帧动画片头",
+        "矢量主体的手绘特效层"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "cel-line-boil",
+        "smear-frame-strike",
+        "spark-stroke-handletter",
+        "flipbook-pullback",
+        "squash-stretch-bounce",
+        "shared-cue-sheet"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-cel-boil.json"
+    },
+    {
+      "id": "mg-isometric",
+      "title": "等距 2.5D · ISOPOLIS — Let the City Grow",
+      "summary": "蓝图先描出网格，地块逐圈落位，住宅、楼房、风机与轨道相继生长；核心塔伸展后发出激活波，让灰模城市转为彩色，数据弧线、无人机与信息卡接续出现，镜头拉远显出 ISOPOLIS 和「让城市自己生长」。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "title-art",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "等距投影",
+        "微缩城市",
+        "楼房生长",
+        "数据流",
+        "平行运镜"
+      ],
+      "useCases": [
+        "科技架构动画",
+        "应用功能演示",
+        "微缩智慧城短片"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "blueprint-tile-drop-wave",
+        "staged-extrusion-build",
+        "core-ignition-wave",
+        "isometric-leader-card",
+        "route-draw-marker"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-isometric.json"
+    },
+    {
+      "id": "mg-flat-vector",
+      "title": "扁平矢量 · popwise — One Dot",
+      "summary": "珊瑚色圆点成为太阳，带出扁平城市；镜头向窗口推进，人物与手机提示接连出现，随后通过气泡擦除转入图标落点，最后汇成 popwise 与中英文标语。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "brand",
+      "tech": [
+        "dom"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "扁平矢量",
+        "几何角色",
+        "弹性缓动",
+        "形状擦除",
+        "品牌短片"
+      ],
+      "useCases": [
+        "SaaS 产品宣传",
+        "科普解说",
+        "企业年报视频",
+        "品牌解释短片"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "squash-stretch-bounce",
+        "push-through-window",
+        "shape-wipe-transition",
+        "dot-drop-wordmark",
+        "shared-cue-sheet"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-flat-vector.json"
+    },
+    {
+      "id": "mg-line-art",
+      "title": "线条艺术 · ATELIER LINEA — One Line",
+      "summary": "香槟金线在午夜蓝底上从种子长成幼苗，卷须展开为屋梁，延伸出建筑、天际与海浪；线条抬升成圆环拱门并填成金色徽章，镜头拉远，呈现 ATELIER LINEA 与“始于一线”的海报落版。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "brand",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "线条动画",
+        "一笔画",
+        "线面转换",
+        "笔尖跟镜",
+        "品牌短片"
+      ],
+      "useCases": [
+        "奢侈品品牌片",
+        "金融品牌片",
+        "建筑品牌片",
+        "标志动画"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "continuous-line-narrative",
+        "pen-led-camera",
+        "fresh-ink-aging",
+        "line-ring-to-medallion",
+        "center-out-tracking-in",
+        "film-grain",
+        "shared-cue-sheet"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-line-art.json"
+    },
+    {
+      "id": "mg-3d-render",
+      "title": "3D 渲染 · soft. — Soft Landing",
+      "summary": "充气字母依次落在胶囊阵列上，金属球悬停后砸落，掀起环形冠状波；镜头拉回 soft. 字标与“柔软，自有分量”标语。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "brand",
+      "tech": [
+        "prerendered",
+        "dom"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "3D 渲染",
+        "柔软材质",
+        "克隆阵列",
+        "物理模拟",
+        "产品片"
+      ],
+      "useCases": [
+        "高端产品片",
+        "品牌 ident"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "soft-bed-letter-bounce",
+        "capsule-sweep-lift",
+        "hang-slam-capsule-crown",
+        "macro-hero-focus-relay",
+        "vertical-title-blur",
+        "film-grain"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-3d-render.json"
+    },
+    {
+      "id": "mg-morph",
+      "title": "形状变形 · morphe. — One Shape, Every Story",
+      "summary": "墨滴成为咖啡杯后，连续变形成太阳、海上落日、海鸥、纸飞机、定位钉和爱心，最后组成 morphe. 字标。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "brand",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "形状变形",
+        "中介形状",
+        "图形叙事",
+        "色域擦除",
+        "字标"
+      ],
+      "useCases": [
+        "图形叙事",
+        "形变品牌片",
+        "产品发布会动效"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "morph-primitive-bridge",
+        "sea-mask-sunset",
+        "shape-docks-wordmark",
+        "analytic-motion-blur",
+        "shape-wipe-transition",
+        "film-grain"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-morph.json"
+    },
+    {
+      "id": "mg-paperclip",
+      "title": "贴纸科普 · How Many Elements Hide in a Phone?",
+      "summary": "照片贴纸与扁平部件铺在大画布上，镜头串起手机拆解、70/118 元素周期表、分类柱图和产地地图，最后拉远显露整张手机屏幕，数字 70 的贴纸飞出落版。",
+      "carriers": [
+        "video"
+      ],
+      "style": "evidence",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d",
+        "dom"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "贴纸科普",
+        "大画布",
+        "连续运镜",
+        "元素周期表",
+        "数据图表"
+      ],
+      "useCases": [
+        "硬核科普视频",
+        "财经知识视频",
+        "企业宣传片"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "analytic-motion-blur",
+        "sticker-slap-shadow",
+        "explode-parts-leaders",
+        "element-flight-regroup",
+        "anchor-pullback-phone",
+        "collect-counter",
+        "route-draw-marker"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-paperclip.json"
+    },
+    {
+      "id": "mg-collage",
+      "title": "拼贴剪贴 · NOGGIN Quarterly",
+      "summary": "巨手拍下老照片，人物下颌开合，剪刀沿虚线剪开头盖；火箭、地球、花鸟和蝴蝶从脑中飞出，手指撕开纸页，露出 NOGGIN 脑洞季刊落版。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "brand",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "拼贴剪贴",
+        "定格",
+        "半调网点",
+        "纸张",
+        "超现实"
+      ],
+      "useCases": [
+        "音乐短视频",
+        "街头潮流短视频"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "stepped-hand-placement",
+        "snip-rattle-pop-lid",
+        "cutout-arc-flight-flutter",
+        "pinch-rip-cylinder-peel",
+        "punch-in-camera-shake",
+        "film-grain",
+        "sticker-slap-shadow"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-collage.json"
+    },
+    {
+      "id": "mg-aurora-glass",
+      "title": "极光与玻璃拟态 · Aurora — Think in Light",
+      "summary": "极光色斑缓慢漂移，磨砂玻璃卡片展示对话、声波和控件；Focus 控钮拉出玻璃珠，成为滑过回复的折射透镜，再收成 Aurora 字标中的 o。",
+      "carriers": [
+        "video"
+      ],
+      "style": "interface",
+      "purpose": "brand",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "极光渐变",
+        "玻璃拟态",
+        "折射透镜",
+        "产品发布",
+        "呼吸节奏"
+      ],
+      "useCases": [
+        "科技品牌片",
+        "AI 产品发布片",
+        "玻璃拟态产品演示"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "shape-docks-wordmark",
+        "bezier-aurora-drift",
+        "layered-frosted-glass",
+        "metaball-lens-glide",
+        "envelope-radiating-waveform",
+        "card-depth-arrival-parting",
+        "film-grain"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-aurora-glass.json"
+    },
+    {
+      "id": "mg-bauhaus",
+      "title": "几何包豪斯 · KONSTRUKTION · 20 Beats",
+      "summary": "圆、三角、矩形在 120px 网格上逐拍搭建，经过旋转、翻牌与列对滑动的级联波，定格为二十拍包豪斯海报。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "title-art",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "几何构成",
+        "包豪斯",
+        "动态海报",
+        "三原色",
+        "网格",
+        "节拍驱动"
+      ],
+      "useCases": [],
+      "avoid": [],
+      "patternIds": [
+        "grid-beat-construction",
+        "flip-tile-cascade",
+        "misregistration-lock",
+        "shared-cue-sheet",
+        "film-grain"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-bauhaus.json"
+    },
+    {
+      "id": "mg-synthwave",
+      "title": "80 年代合成波 · NEON DRIVE — Midnight 1986",
+      "summary": "镜头沿霓虹网格公路追随跑车，条纹落日从地平线升起；磁带倒带与停顿后，NEON DRIVE 镀铬字落版，Midnight 霓虹手写字描出并点亮，最后显像管关机。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "title-art",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "合成波",
+        "霓虹网格",
+        "镀铬字",
+        "VHS",
+        "霓虹手写"
+      ],
+      "useCases": [
+        "音乐视频",
+        "潮流品牌片",
+        "合成波片头"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "velocity-neon-grid-smear",
+        "striped-sun-rise",
+        "neon-write-on-ignition",
+        "tape-rewind-chrome-slam",
+        "vhs-event-row-tear",
+        "specular-sweep-glint",
+        "crt-line-dot-shutdown"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-synthwave.json"
+    },
+    {
+      "id": "mg-pixel",
+      "title": "像素艺术 · PIXEL QUEST",
+      "summary": "画面在 320×180 的画布上逐点绘制后再放大：主角跑跳、收集金币、踩踏史莱姆、打开宝箱并举起水晶，昼夜光线由调色板轮换呈现，最后落下「PIXEL QUEST」片名。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "像素艺术",
+        "复古游戏",
+        "视差卷轴",
+        "色板轮换",
+        "芯片音乐",
+        "mg-styles-15"
+      ],
+      "useCases": [
+        "复古游戏标题片",
+        "8-bit 音乐影像",
+        "品牌怀旧营销"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "integer-pixel-parallax",
+        "stepped-palette-daynight",
+        "rpg-dialog-box",
+        "crt-boot-shell",
+        "shared-cue-sheet"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-pixel.json"
+    },
+    {
+      "id": "mg-liquid",
+      "title": "液态动效 · drop. — It All Starts with a Drop",
+      "summary": "液滴落下并压扁飞溅，液团跳跃融合后掀起三层液浪；液浪退去，四团液体挤成横条并分裂为 drop 字标，最后一滴落地，以涟漪揭示双语标语。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "brand",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "液态流动",
+        "SDF",
+        "融球",
+        "波浪转场",
+        "液体字标"
+      ],
+      "useCases": [
+        "音乐视频",
+        "食品饮料广告",
+        "转场包装"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "specular-sweep-glint",
+        "liquid-neck-leap",
+        "phase-offset-liquid-flood",
+        "liquid-bar-split-wordmark",
+        "drip-ripple-glyph-reveal",
+        "squash-stretch-bounce",
+        "wave-array"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-liquid.json"
+    },
+    {
+      "id": "mg-hanazi",
+      "title": "综艺花字 · 喵呜日记 EP.07",
+      "summary": "喵呜日记通过白猫晒太阳、灰猫凝视和长毛猫这三段照片推进，以逐字花字、问号、汗滴、三连推和炸毛主拍衔接，最后将画面收为“猫主子认证”相框落版。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "footage",
+        "dom"
+      ],
+      "tags": [
+        "mg-styles-15",
+        "综艺花字",
+        "萌宠",
+        "多层描边",
+        "弹簧",
+        "情绪字幕"
+      ],
+      "useCases": [
+        "萌宠短片",
+        "vlog 包装",
+        "搞笑二创"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "punch-in-camera-shake",
+        "layered-hanazi-spring-pop",
+        "focus-burst-caption-hit",
+        "meter-needle-overrange",
+        "freeze-to-framed-card",
+        "shape-wipe-transition",
+        "collect-counter",
+        "cel-line-boil",
+        "split-compare-stamp"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/mg-hanazi.json"
+    },
+    {
+      "id": "ink-press",
+      "title": "Ink Press 纸墨宣传片",
+      "summary": "36 秒纸墨琥珀风产品宣传片，以墨线描画与字标压印开场。真实页面截图在 2.5D 相机下呈现聚光、发牌、嵌入、压入与自写，四张衬线字卡穿插其间，缓和节奏。结尾元素组装成合影，铅印字标砸落。",
+      "carriers": [
+        "video"
+      ],
+      "style": "interface",
+      "purpose": "brand",
+      "tech": [
+        "remotion",
+        "dom"
+      ],
+      "tags": [
+        "video-shotcraft",
+        "产品宣传片",
+        "纸墨琥珀",
+        "2.5D 运镜",
+        "页面截图",
+        "Remotion",
+        "音画同步"
+      ],
+      "useCases": [
+        "Web / 桌面产品宣传片",
+        "以真实页面截图讲功能的发布短片"
+      ],
+      "avoid": [
+        "没有真实界面可截的产品"
+      ],
+      "patternIds": [
+        "page-cam-25d",
+        "spotlight-hero-card",
+        "deck-deal-flyin",
+        "list-stack-press",
+        "document-typewriter-reveal",
+        "paper-title-card",
+        "outro-group-photo-slam"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/ink-press.json"
+    },
+    {
+      "id": "lemo-watercolor",
+      "title": "跟着雨走 · 水彩笔刷",
+      "summary": "从澳大利亚红色腹地沿降雨梯度横移到绿色海岸，植物逐笔画入，纸雾洗去风景后展开大陆地图，回溯五千万年的干湿变化。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "水彩笔刷",
+        "手绘与绘画",
+        "代码影片"
+      ],
+      "useCases": [
+        "自然纪录短片",
+        "旅行影像",
+        "科学解说"
+      ],
+      "avoid": [
+        "需要厚涂、矢量描边或硬切的画面",
+        "需要精确古气候重建的内容，原片地图使用示意雨量场"
+      ],
+      "patternIds": [
+        "brush-ribbon-bristle-paint-in",
+        "gradient-walk-dolly",
+        "mist-wash-to-map"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-watercolor.json"
+    },
+    {
+      "id": "lemo-swiss-motion",
+      "title": "海报五则 · 瑞士动态排版",
+      "summary": "五条规则把音乐会海报排进网格，唯一的红圆脱离格点，带动版面重排；海报旋转后揭示为正在播放的乐谱，再拉远成一墙变体。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "瑞士动态排版",
+        "图形与排版",
+        "代码影片"
+      ],
+      "useCases": [
+        "品牌视觉识别短片",
+        "活动影像",
+        "设计教育"
+      ],
+      "avoid": [
+        "弹跳、粒子、渐变或发光主导的影片",
+        "需要多种信号色并行表达的构图"
+      ],
+      "patternIds": [
+        "grid-reveals-score",
+        "grid-beat-construction",
+        "shared-cue-sheet"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-swiss-motion.json"
+    },
+    {
+      "id": "lemo-lidar-survey",
+      "title": "林下的田 · 点云测绘",
+      "summary": "康涅狄格州阿什福德的一片森林，从夏季航拍转为春季激光点云；切割面剥去树冠，地面凝成受光表面，显出 22 段、合计 3.4 公里的旧农田石墙。",
+      "carriers": [
+        "video"
+      ],
+      "style": "evidence",
+      "purpose": "data",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "点云测绘",
+        "实证影像",
+        "代码影片"
+      ],
+      "useCases": [
+        "文化遗产影像",
+        "环境主题短片",
+        "场地测绘解说"
+      ],
+      "avoid": [
+        "用虚构点云代替真实测量的证据片",
+        "密集点云始终只以远景俯视呈现"
+      ],
+      "patternIds": [
+        "point-cloud-cutting-plane"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-lidar-survey.json"
+    },
+    {
+      "id": "lemo-memphis-diorama",
+      "title": "柚子城的四季 · 孟菲斯微缩景",
+      "summary": "一个虚构河湾在连续高视角镜头中经历四季：广场主树每次下蹲回弹，换季波从树扩散，地面、树冠、屋顶与水面依次改色，冬日窗灯逐盏亮起。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "title-art",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "孟菲斯微缩景观",
+        "材质与 3D",
+        "代码影片"
+      ],
+      "useCases": [
+        "网页首屏的场景影片",
+        "环境循环影像",
+        "四季与节气系列"
+      ],
+      "avoid": [
+        "近景人物表演",
+        "依赖景深、真实反射或体积光的场景"
+      ],
+      "patternIds": [
+        "season-ripple-wave"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-memphis-diorama.json"
+    },
+    {
+      "id": "lemo-ink-wash",
+      "title": "剑客渡江 · 中国水墨",
+      "summary": "侠客踏水过江，在静默后以书写“水”的末笔斩开巨浪；镜头拉远，整段旅程成为落有朱印的一卷山水。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "中国水墨",
+        "手绘与绘画",
+        "代码影片"
+      ],
+      "useCases": [
+        "武侠短片",
+        "文化品牌影像",
+        "诗歌影像"
+      ],
+      "avoid": [
+        "多色水彩、矢量硬轮廓或密集填满画面的构图",
+        "用持续配乐覆盖决断前的静默"
+      ],
+      "patternIds": [
+        "decisive-stroke-glyph",
+        "scale-reveal-ink-figure"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-ink-wash.json"
+    },
+    {
+      "id": "lemo-woodcut",
+      "title": "铸钟人 · 木刻版画",
+      "summary": "冬雪封路的村庄为钟楼铸钟，第一口钟开裂后，学徒献出指南针；铜色随第二次浇铸扩散，钟声响起时雪停在空中。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "木刻版画",
+        "印刷与版画",
+        "代码影片"
+      ],
+      "useCases": [
+        "民间故事",
+        "工艺品牌影像",
+        "图书预告片"
+      ],
+      "avoid": [
+        "多色平涂海报或铜版画式白底细线",
+        "在钟出现前使用钟类音色"
+      ],
+      "patternIds": [
+        "carve-cut-by-cut-reveal",
+        "mirrored-block-pull-print"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-woodcut.json"
+    },
+    {
+      "id": "lemo-spy-titles",
+      "title": "天鹅绒密码 · 60s 间谍片头",
+      "summary": "虚构1964年间谍片的开场：特工追逐带着钥匙的信使，穿过字母柱廊、单词车厢和轮盘，钥匙最终打开片名中的锁孔。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "title-art",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "60s 间谍片头",
+        "图形与排版",
+        "代码影片"
+      ],
+      "useCases": [
+        "电影片头",
+        "活动开场",
+        "预告片"
+      ],
+      "avoid": [
+        "枪管式开场或真实片头的字标和角色复用",
+        "渐变、半调网点或平滑连续变形作为匹配剪辑"
+      ],
+      "patternIds": [
+        "type-as-architecture",
+        "shape-rhyme-match-cut",
+        "diagonal-strip-shatter-title"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-spy-titles.json"
+    },
+    {
+      "id": "lemo-paper-popup",
+      "title": "小精灵冒险记 · 纸片立体书",
+      "summary": "一本立体书在核桃木桌上打开，皮普穿越纸片谷、森林和大海，帮助皱纸变成纸飞机，最后越过书页来到台灯下的真实房间。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "纸片立体书",
+        "材质与 3D",
+        "代码影片"
+      ],
+      "useCases": [
+        "儿童绘本影像",
+        "游戏预告片",
+        "故事短片"
+      ],
+      "avoid": [
+        "圆润3D卡通、橡皮泥形变或单色背光剪纸",
+        "在书内用视频淡化替代纸机关"
+      ],
+      "patternIds": [
+        "page-turn-popup-swap",
+        "flip-tile-cascade"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-paper-popup.json"
+    },
+    {
+      "id": "lemo-ukiyoe",
+      "title": "走向远山 · 浮世绘",
+      "summary": "戴笠旅人走过稻田、雨桥与茶屋，巨浪冲出画框，将画面洗回空纸；四次套印重新显出山景，镜头拉远，露出五景画轴。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "story",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "浮世绘",
+        "东方传统",
+        "代码影片"
+      ],
+      "useCases": [
+        "文化旅行短片",
+        "系列景观叙事",
+        "诗意品牌影像"
+      ],
+      "avoid": [
+        "需要写实摄影或自由三维转面的画面"
+      ],
+      "patternIds": [
+        "block-by-block-print-reveal",
+        "handscroll-pan-transition",
+        "anchor-pullback-phone"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-ukiyoe.json"
+    },
+    {
+      "id": "lemo-shadow-puppet",
+      "title": "后羿射日 · 皮影戏",
+      "summary": "十盏幕后油灯化作十个太阳，后羿每射落一日便熄灭一灯；留下最后一日后，镜头绕到幕后，显出独灯、操偶手与皮影幕布。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "皮影戏",
+        "东方传统",
+        "代码影片"
+      ],
+      "useCases": [
+        "神话民俗短片",
+        "文化遗产解说",
+        "节庆故事"
+      ],
+      "avoid": [
+        "需要写实摄影或自由三维转面的画面"
+      ],
+      "patternIds": [
+        "lamp-count-light-state",
+        "anchor-pullback-phone"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-shadow-puppet.json"
+    },
+    {
+      "id": "lemo-papercut-red",
+      "title": "年兽进城 · 红色窗花剪纸",
+      "summary": "年兽进村，灯火逐盏熄灭；女孩把红纸折三次、剪出楔形图案，展开后八盏灯笼飞向八扇窗，窗花镂空的光落在雪地与年兽脸上。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "story",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "红色窗花剪纸",
+        "东方传统",
+        "代码影片"
+      ],
+      "useCases": [
+        "新年节庆影像",
+        "传统手工叙事",
+        "民俗品牌短片"
+      ],
+      "avoid": [
+        "需要写实摄影或自由三维转面的画面"
+      ],
+      "patternIds": [
+        "fold-cut-unfold-replicate",
+        "holes-are-light"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-papercut-red.json"
+    },
+    {
+      "id": "lemo-impasto",
+      "title": "雨的颜色 · 油画厚涂",
+      "summary": "灰色雨中，无人聆听大提琴手的演奏，女孩撑开第一把红伞；圆舞曲让雨伞逐拍染色，俯拍镜头中的群伞轨迹在地面累积成曼陀罗，终和弦把广场重涂成彩色。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "油画厚涂",
+        "手绘与绘画",
+        "代码影片"
+      ],
+      "useCases": [
+        "音乐短片",
+        "美术文化影像",
+        "情感品牌广告"
+      ],
+      "avoid": [
+        "需要写实摄影或自由三维转面的画面"
+      ],
+      "patternIds": [
+        "palette-knife-recolor",
+        "motion-trails-paint-mandala"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-impasto.json"
+    },
+    {
+      "id": "lemo-crayon-book",
+      "title": "月亮睡不着 · 蜡笔儿童绘本",
+      "summary": "月亮失眠，数羊失败；女孩爬上逐级画出的梯子，刷水彩显出纸上的白蜡笔星星，再给月亮盖上拼布被。随后镜头拉远到桌上的绘本，绘本再翻到终页。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "蜡笔儿童绘本",
+        "手绘与绘画",
+        "代码影片"
+      ],
+      "useCases": [
+        "睡前绘本",
+        "儿童学习故事",
+        "温柔告别短片"
+      ],
+      "avoid": [
+        "需要写实摄影或自由三维转面的画面"
+      ],
+      "patternIds": [
+        "wax-resist-wash-reveal",
+        "cel-line-boil",
+        "anchor-pullback-phone"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-crayon-book.json"
+    },
+    {
+      "id": "lemo-paper-lantern",
+      "title": "末班夜车 · 纸雕灯影",
+      "summary": "老夜车从雪山小站驶出，驶过高架桥、松林、隧道与河谷，开到海边；车窗开场逐节亮起，到站逐节熄灭，最后留下站灯与沿吊线落下的纸车票。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "纸雕灯影",
+        "东方传统",
+        "代码影片"
+      ],
+      "useCases": [
+        "旅程与旅行短片",
+        "告别与周年影像",
+        "地方故事与纸雕场景"
+      ],
+      "avoid": [
+        "依赖真实铁路数据的纪实重建"
+      ],
+      "patternIds": [
+        "windows-light-car-by-car",
+        "tunnel-blink-black"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-paper-lantern.json"
+    },
+    {
+      "id": "lemo-whiteboard",
+      "title": "口袋里的爱因斯坦 · 白板讲解",
+      "summary": "从手机地图上的定位磁铁讲到GPS卫星、原子钟与相对论；每日38微秒的差别把定位推入海里，板擦倒抹轨迹，校准后拉远看见整堂课在同一块白板上。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "白板讲解",
+        "手绘与绘画",
+        "代码影片"
+      ],
+      "useCases": [
+        "科学解说",
+        "在线课程",
+        "概念推导"
+      ],
+      "avoid": [
+        "以观众滚动阅读为主的页面"
+      ],
+      "patternIds": [
+        "stroke-order-equation-sync",
+        "eraser-rewind",
+        "pen-led-camera",
+        "magnet-pieces-on-board"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-whiteboard.json"
+    },
+    {
+      "id": "lemo-urban-sketch",
+      "title": "风去了哪里 · 钢笔淡彩",
+      "summary": "公园从一张无彩钢笔速写开始，一阵风把女孩的草帽吹过行人、树冠和天际线，所经之处晕开淡彩；男孩追帽、跃起又扑倒，接住草帽后，镜头拉远，露出整页写生。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "钢笔淡彩",
+        "手绘与绘画",
+        "代码影片"
+      ],
+      "useCases": [
+        "城市旅行短片",
+        "建筑写生",
+        "生活方式品牌"
+      ],
+      "avoid": [
+        "以观众滚动阅读为主的页面"
+      ],
+      "patternIds": [
+        "color-follows-wind"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-urban-sketch.json"
+    },
+    {
+      "id": "lemo-chalkboard",
+      "title": "汉字的故事 · 黑板粉笔",
+      "summary": "孩子在教室黑板上问“射和矮是不是弄反了”；老师把射从甲骨、金文、小篆写回楷书，用橙色追踪弓和箭，擦掉错误释义后在原位写回答案。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "黑板粉笔",
+        "手绘与绘画",
+        "代码影片"
+      ],
+      "useCases": [
+        "文字溯源",
+        "知识辟谣",
+        "课堂讲解"
+      ],
+      "avoid": [
+        "以观众滚动阅读为主的页面"
+      ],
+      "patternIds": [
+        "write-wipe-rewrite",
+        "tracked-component-highlight"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-chalkboard.json"
+    },
+    {
+      "id": "lemo-risograph",
+      "title": "周日骑行 · Risograph 孔版印刷",
+      "summary": "骑车人带着篮子穿过沉睡的蓝色街道，经过面包店时画面加入黄色，驶进公园时加入粉色，鸽子搭上法棍。套印圆盘转为河边太阳，静默时色版错位漂开，下拍锁回后转入分享面包的场景。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "Risograph 孔版印刷",
+        "印刷与版画",
+        "代码影片"
+      ],
+      "useCases": [
+        "品牌短片",
+        "城市日常",
+        "专色插画叙事"
+      ],
+      "avoid": [
+        "以观众滚动阅读为主的页面"
+      ],
+      "patternIds": [
+        "block-by-block-print-reveal",
+        "overprint-disc-transition",
+        "misregistration-lock"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-risograph.json"
+    },
+    {
+      "id": "lemo-halftone-dossier",
+      "title": "胖橘案卷 · 复古半调案卷",
+      "summary": "胖橘被立案调查：推杯测试重力、凌晨四点跑酷、把周报踩成乱码；三项证据汇总后却盖下“无罪释放”，理由只有“太可爱了”，最后趴在案卷上睡着。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "dom"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "复古半调案卷",
+        "印刷与版画",
+        "代码影片"
+      ],
+      "useCases": [
+        "宠物短片",
+        "幽默内容",
+        "社交短视频"
+      ],
+      "avoid": [
+        "以观众滚动阅读为主的页面"
+      ],
+      "patternIds": [
+        "split-compare-stamp"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-halftone-dossier.json"
+    },
+    {
+      "id": "lemo-engraving",
+      "title": "蜜蜂，第七号图版 · 铜版画",
+      "summary": "雕刀在铜版上推开第一条蜜蜂腹部曲线，揭印后轮廓、排线和交叉暗线逐层成形；复眼、翅钩与花粉篮的放大镜飞到图版位置，静默后手工淡彩晕开，最后覆上薄护纸。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "铜版画",
+        "印刷与版画",
+        "代码影片"
+      ],
+      "useCases": [
+        "博物馆展签",
+        "科学知识短片",
+        "品牌工艺传承"
+      ],
+      "avoid": [
+        "以观众滚动阅读为主的页面"
+      ],
+      "patternIds": [
+        "carve-cut-by-cut-reveal",
+        "hand-tint-wash"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-engraving.json"
+    },
+    {
+      "id": "lemo-silkscreen-poster",
+      "title": "绕远路回家 · 丝印旅行海报",
+      "summary": "一位旅人从北京出发，途经伊斯坦布尔、巴黎与布宜诺斯艾利斯；票根数着离家距离，越过世界的另一侧后沿夜海回到北京。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "story",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "丝印旅行海报",
+        "印刷与版画",
+        "代码影片"
+      ],
+      "useCases": [
+        "旅行影像",
+        "城市目的地系列",
+        "印刷主题片头"
+      ],
+      "avoid": [
+        "需要真人实拍或摄影素材作为主画面的作品"
+      ],
+      "patternIds": [
+        "blade-sweep-print-next",
+        "misregistration-lock"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-silkscreen-poster.json"
+    },
+    {
+      "id": "lemo-printed-long-take",
+      "title": "三十三只 · 印刷长镜头",
+      "summary": "北海道雪地河谷一镜到底，丹顶鹤在河中苏醒，起飞后到达投喂田；同一地点四次再印，让1952年的33只与2025年的1927只在告示板旁对照。",
+      "carriers": [
+        "video"
+      ],
+      "style": "print-craft",
+      "purpose": "data",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "印刷长镜头",
+        "印刷与版画",
+        "代码影片"
+      ],
+      "useCases": [
+        "野生动物纪录短片",
+        "地景长镜",
+        "生态年代对比"
+      ],
+      "avoid": [
+        "需要真人实拍或摄影素材作为主画面的作品"
+      ],
+      "patternIds": [
+        "reprint-same-place"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-printed-long-take.json"
+    },
+    {
+      "id": "lemo-art-deco",
+      "title": "星光饭店的午夜 · 装饰艺术",
+      "summary": "1930年除夕，门童赶在午夜前把一封信送上星光饭店顶楼；电梯故障后他爬楼、穿过厨房，把乐谱交给指挥，十二声钟响逐字点亮灯牌。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "story",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "装饰艺术",
+        "图形与排版",
+        "代码影片"
+      ],
+      "useCases": [
+        "饭店与庆典宣传",
+        "倒计时片头",
+        "典礼邀请影片"
+      ],
+      "avoid": [
+        "需要真人实拍或摄影素材作为主画面的作品"
+      ],
+      "patternIds": [
+        "fan-sunburst-clockface",
+        "axis-door-transition",
+        "windows-light-car-by-car"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-art-deco.json"
+    },
+    {
+      "id": "lemo-blueprint",
+      "title": "专利申请中：接云机器 · 蓝图 / 工程制图",
+      "summary": "发明家的蓝图自行画出接云机器，机器展开、装回并运转；发现纸上没有云后，手影补上修订云线。云线变成雨云，落雨让画中的花盛开。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "蓝图 / 工程制图",
+        "图形与排版",
+        "代码影片"
+      ],
+      "useCases": [
+        "工程与硬件发布",
+        "发明故事",
+        "技术解释短片"
+      ],
+      "avoid": [
+        "需要真人实拍或摄影素材作为主画面的作品"
+      ],
+      "patternIds": [
+        "oblique-projection-camera",
+        "symbol-becomes-real",
+        "drafting-order-build",
+        "write-wipe-rewrite"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-blueprint.json"
+    },
+    {
+      "id": "lemo-stained-glass",
+      "title": "东窗之龙 · 彩色玻璃窗",
+      "summary": "阳光沿四格东窗从清晨走向黄昏，依次唤醒骑士寻龙的故事；一剑击裂玻璃后，他发现龙在守护太阳余烬，按拍修补铅条、放下长剑，夜里最后一格仍然发光。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "彩色玻璃窗",
+        "图形与排版",
+        "代码影片"
+      ],
+      "useCases": [
+        "传说故事",
+        "文化遗产影像",
+        "节日短片"
+      ],
+      "avoid": [
+        "需要真人实拍或摄影素材作为主画面的作品"
+      ],
+      "patternIds": [
+        "light-is-time-panels",
+        "crack-and-relead"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-stained-glass.json"
+    },
+    {
+      "id": "lemo-pictogram-motion",
+      "title": "被落下的伞 · 象形运动图形",
+      "summary": "一把黄伞被落在公交车上，晴天里随车到终点，加入失物招领的312把伞；暴雨回来，313把伞同时撑开、变黄，伞墙成为网格纹样，再把干燥脚印送回雨中。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "story",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "象形运动图形",
+        "图形与排版",
+        "代码影片"
+      ],
+      "useCases": [
+        "公共服务短片",
+        "城市物件故事",
+        "品牌活动识别"
+      ],
+      "avoid": [
+        "需要真人实拍或摄影素材作为主画面的作品"
+      ],
+      "patternIds": [
+        "icon-wall-pattern",
+        "count-up-slam"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-pictogram-motion.json"
+    },
+    {
+      "id": "lemo-ascii-crt",
+      "title": "静海日志 · ASCII / CRT 终端",
+      "summary": "月球中继机沉默四十年后收到地球来信，把“I AM STILL HERE.”拆成字符并排成地出图，镜头推入一个由日志构成的字母，最后拉远到空无一人的月球房间并关机。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "ASCII / CRT 终端",
+        "图形与排版",
+        "代码影片"
+      ],
+      "useCases": [
+        "开发工具短片",
+        "科幻叙事",
+        "技术品牌片头"
+      ],
+      "avoid": [
+        "依靠自由像素或矢量面板叙事的画面"
+      ],
+      "patternIds": [
+        "text-sorts-into-image",
+        "font-size-zoom",
+        "crt-line-dot-shutdown",
+        "crt-boot-shell",
+        "boot-typing"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-ascii-crt.json"
+    },
+    {
+      "id": "lemo-dark-keynote",
+      "title": "思考的空间 · 暗色科技发布",
+      "summary": "被窗口、文件和通知埋住的光标按下一次，264个界面元素沿三股光流归格；光带显出Tidy产品窗口和0.8秒指标，最后一切收回到开场的光标。",
+      "carriers": [
+        "video"
+      ],
+      "style": "interface",
+      "purpose": "brand",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "暗色科技发布",
+        "信息与发布",
+        "代码影片"
+      ],
+      "useCases": [
+        "软件发布片",
+        "SaaS演示",
+        "发布会指标段"
+      ],
+      "avoid": [
+        "需要真实应用操作流程的教程"
+      ],
+      "patternIds": [
+        "clutter-snap-grid",
+        "freeze-digital-silence",
+        "specular-sweep-glint"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-dark-keynote.json"
+    },
+    {
+      "id": "lemo-living-screencast",
+      "title": "Clawd 搬进来 · 活体实机录屏",
+      "summary": "Clawd从终端字符标志中爬出并搬入Claude应用，沿真实DOM元素上边缘跑跳，演示输入、Plan、diff审阅、预览和并行会话，最后逐词跳出标语。",
+      "carriers": [
+        "video"
+      ],
+      "style": "interface",
+      "purpose": "brand",
+      "tech": [
+        "dom"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "活体实机录屏",
+        "信息与发布",
+        "代码影片"
+      ],
+      "useCases": [
+        "产品功能教程",
+        "软件上手引导",
+        "吉祥物产品片"
+      ],
+      "avoid": [
+        "只用截图替代可变UI状态的画面"
+      ],
+      "patternIds": [
+        "mascot-on-ui-edges",
+        "screencast-camera"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-living-screencast.json"
+    },
+    {
+      "id": "lemo-circuit-board",
+      "title": "七毫秒 · 电路板",
+      "summary": "电流从四川水坝沿铜走线奔向江苏，在换流站由交流变成直流，经过降压与插座进入手机充电器，再一口气拉远到包含各级模块的整张电路板。",
+      "carriers": [
+        "video"
+      ],
+      "style": "interface",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "电路板",
+        "信息与发布",
+        "代码影片"
+      ],
+      "useCases": [
+        "能源科普",
+        "供应链解释",
+        "电子设备原理短片"
+      ],
+      "avoid": [
+        "需要透视三维器件城市的画面"
+      ],
+      "patternIds": [
+        "pulse-path-current",
+        "push-through-window",
+        "nested-boards-pullout"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-circuit-board.json"
+    },
+    {
+      "id": "lemo-midcentury-toon",
+      "title": "认识皮普 · 50s 扁平卡通",
+      "summary": "以1950年代教育片口吻介绍扫地机皮普：底座靠墙、手机配对、按下启动，最后把清扫路线拉成一张印刷平面图。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "50s 扁平卡通",
+        "卡通与动画",
+        "代码影片"
+      ],
+      "useCases": [
+        "产品安装指南",
+        "帮助中心影片",
+        "操作教学"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "medallion-iris-step",
+        "counter-rotate-pullback"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-midcentury-toon.json"
+    },
+    {
+      "id": "lemo-hd-2d",
+      "title": "提灯人 · HD-2D",
+      "summary": "灯塔熄灭，提灯人薇伦接过最后的火，穿越夜林与风暴石阶，重新点亮灯塔，海上的船灯随后逐盏亮起。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "HD-2D",
+        "游戏",
+        "代码影片"
+      ],
+      "useCases": [
+        "游戏预告",
+        "奇幻故事",
+        "像素三维叙事"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "carried-light-meter",
+        "tilt-shift-focus-band",
+        "rpg-dialog-box"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-hd-2d.json"
+    },
+    {
+      "id": "lemo-brick-toy",
+      "title": "用零件造火箭 · 积木玩具",
+      "summary": "积木宇航员把高塔一块块搭起，火箭崩塌后把散落零件拼成更宽的新火箭，飞到积木月亮；镜头拉回真实书桌。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "积木玩具",
+        "材质与 3D",
+        "代码影片"
+      ],
+      "useCases": [
+        "玩具影片",
+        "产品拼装",
+        "太空故事"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "snap-build-collapse-rebuild",
+        "anchor-pullback-phone"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-brick-toy.json"
+    },
+    {
+      "id": "lemo-lowpoly-island",
+      "title": "长出来的小岛 · 低多边形等距",
+      "summary": "空海中逐格长出岛屿、树木和村庄，每次生长都奏出一个音符；天黑后灯塔扫过房屋重奏旋律，为出海的小船指路。",
+      "carriers": [
+        "video"
+      ],
+      "style": "dimensional",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "低多边形等距",
+        "材质与 3D",
+        "代码影片"
+      ],
+      "useCases": [
+        "游戏世界预告",
+        "场景生成短片",
+        "安静的微缩叙事"
+      ],
+      "avoid": [
+        "需要脱离来源时间线实时操控全部场景的应用"
+      ],
+      "patternIds": [
+        "tile-by-tile-island-growth",
+        "day-night-flip"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-lowpoly-island.json"
+    },
+    {
+      "id": "lemo-backrooms",
+      "title": "夜班入职指引 · 后室 / 新怪谈",
+      "summary": "一名新夜班员工用摄像机记录入职路线；重复出现的告示、失灵的自动对焦和磁带断裂逐步让守则失去可信度，时钟与电量留下跳时的证据。",
+      "carriers": [
+        "video"
+      ],
+      "style": "documentary",
+      "purpose": "story",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "后室 / 新怪谈",
+        "电影与时代",
+        "代码影片"
+      ],
+      "useCases": [
+        "新怪谈短片",
+        "悬疑预告",
+        "游戏氛围片"
+      ],
+      "avoid": [
+        "需要脱离来源时间线实时操控全部场景的应用"
+      ],
+      "patternIds": [
+        "autofocus-hunting-reveal",
+        "tracking-tear-cut",
+        "corner-hud"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-backrooms.json"
+    },
+    {
+      "id": "lemo-satellite-briefing",
+      "title": "地图上还写着海 · 卫星简报",
+      "summary": "卫星按地图俯冲到咸海，却看到沙漠；同一地理画面中逐年留下海岸线，量出旧港口到海边的距离，再转向科卡拉尔大坝，显出北咸海的回水。",
+      "carriers": [
+        "video"
+      ],
+      "style": "evidence",
+      "purpose": "data",
+      "tech": [
+        "canvas2d",
+        "webgl",
+        "footage"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "卫星简报",
+        "实证影像",
+        "代码影片"
+      ],
+      "useCases": [
+        "环境实证影像",
+        "地理短片",
+        "新闻解说"
+      ],
+      "avoid": [
+        "需要脱离来源时间线实时操控全部场景的应用"
+      ],
+      "patternIds": [
+        "time-rings-locked-frame"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-satellite-briefing.json"
+    },
+    {
+      "id": "lemo-briefing-board",
+      "title": "船说了算 · 工程简报板",
+      "summary": "一条千米河道要架桥，船撞上桥墩后确立航道不立墩的条件；简报墙逐个比较梁桥、拱桥、斜拉桥和悬索桥。船从最终方案下通过后，镜头拉远，展示整墙结论。",
+      "carriers": [
+        "video"
+      ],
+      "style": "evidence",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "工程简报板",
+        "实证影像",
+        "代码影片"
+      ],
+      "useCases": [
+        "工程方案比较",
+        "实物简报",
+        "条件驱动的科普"
+      ],
+      "avoid": [
+        "需要脱离来源时间线实时操控全部场景的应用"
+      ],
+      "patternIds": [
+        "plan-elevation-projection",
+        "magnet-pieces-on-board"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-briefing-board.json"
+    },
+    {
+      "id": "lemo-white-model",
+      "title": "被炸平的城市怎样长回来 · 白模投影",
+      "summary": "投影把鹿特丹白模按建成年代逐层点亮，高度光层升到203米，冬至阴影越过16个屋顶后展厅重新亮起。",
+      "carriers": [
+        "video"
+      ],
+      "style": "evidence",
+      "purpose": "data",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "白模投影",
+        "实证影像",
+        "代码影片"
+      ],
+      "useCases": [
+        "城市规划展陈",
+        "建筑数据短片",
+        "日照解说"
+      ],
+      "avoid": [
+        "需要观看者自行决定节奏的网页交互"
+      ],
+      "patternIds": [
+        "projection-layers-by-time",
+        "sun-clock-shadow-trace"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-white-model.json"
+    },
+    {
+      "id": "lemo-microscope",
+      "title": "量出来的蓝 · 显微叙事",
+      "summary": "从一张真实肝组织玻片连续推到细胞核，逐像素计数，得出两个1毫米圆内的蓝色占比分别为13.5%与32.6%，再拉回玻片。",
+      "carriers": [
+        "video"
+      ],
+      "style": "evidence",
+      "purpose": "data",
+      "tech": [
+        "canvas2d",
+        "footage"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "显微叙事",
+        "实证影像",
+        "代码影片"
+      ],
+      "useCases": [
+        "显微影像解说",
+        "材料观察",
+        "尺度叙事"
+      ],
+      "avoid": [
+        "需要观看者自行决定节奏的网页交互"
+      ],
+      "patternIds": [
+        "microscope-dive",
+        "pixel-count-colour"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-microscope.json"
+    },
+    {
+      "id": "lemo-archive-lighttable",
+      "title": "差两秒 · 档案灯台",
+      "summary": "电报与报纸写着57秒，放大镜把莱特兄弟的负片转为正像，并带观众进入照片，档案记录的59秒让两份记录形成对照。",
+      "carriers": [
+        "video"
+      ],
+      "style": "evidence",
+      "purpose": "data",
+      "tech": [
+        "canvas2d",
+        "webgl",
+        "footage"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "档案灯台",
+        "实证影像",
+        "代码影片"
+      ],
+      "useCases": [
+        "博物馆档案故事",
+        "品牌历史影片",
+        "文献证据叙事"
+      ],
+      "avoid": [
+        "需要观看者自行决定节奏的网页交互"
+      ],
+      "patternIds": [
+        "negative-to-positive-loupe",
+        "line-lights-up",
+        "element-flight-regroup"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-archive-lighttable.json"
+    },
+    {
+      "id": "lemo-caption-news",
+      "title": "蜜蜂账本 · 字幕新闻",
+      "summary": "美国一年损失130万箱蜜蜂，总数却上涨6%；大字字幕、原报告高亮、双栏账本、图表与地图逐项解释养蜂人如何补建。",
+      "carriers": [
+        "video"
+      ],
+      "style": "documentary",
+      "purpose": "news",
+      "tech": [
+        "canvas2d",
+        "footage"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "字幕新闻",
+        "剪辑与纪实",
+        "代码影片"
+      ],
+      "useCases": [
+        "社交新闻短片",
+        "报告解说",
+        "静音信息流"
+      ],
+      "avoid": [
+        "需要观看者自行决定节奏的网页交互"
+      ],
+      "patternIds": [
+        "silent-caption-news",
+        "line-lights-up"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-caption-news.json"
+    },
+    {
+      "id": "lemo-visual-investigation",
+      "title": "兴登堡号：四分钟与三十二秒 · 视觉调查",
+      "summary": "以兴登堡号最后的四分钟与燃烧的三十二秒为线索，将新闻片、海军照片、证词、调查报告和气象记录按事件时刻交叉对照，最后合为证据地图。",
+      "carriers": [
+        "video"
+      ],
+      "style": "documentary",
+      "purpose": "news",
+      "tech": [
+        "canvas2d",
+        "footage"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "视觉调查",
+        "剪辑与纪实",
+        "代码影片"
+      ],
+      "useCases": [
+        "事件重建",
+        "事实核对",
+        "事故报告"
+      ],
+      "avoid": [
+        "把灾难画面作为慢动作奇观的剪辑",
+        "来源时间和机位无法定位的同步叙事"
+      ],
+      "patternIds": [
+        "multi-source-timeline"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-visual-investigation.json"
+    },
+    {
+      "id": "lemo-news-package",
+      "title": "本周 AI 四件事 · 电视新闻包装",
+      "summary": "LEMO AI NEWS的一周四则AI新闻从串联单开始，随后介绍模型开放、市场下跌、欧盟问询与开放权重，用翻牌价格表、阈值折线、地图信函和规格卡承载信息，再回到已勾选的串联单。",
+      "carriers": [
+        "video"
+      ],
+      "style": "documentary",
+      "purpose": "news",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "电视新闻包装",
+        "剪辑与纪实",
+        "代码影片"
+      ],
+      "useCases": [
+        "每周新闻汇总",
+        "市场简报",
+        "产品规格报道"
+      ],
+      "avoid": [
+        "大字幕主导的社交短视频",
+        "虚拟演播厅、走马字幕与多页幻灯片"
+      ],
+      "patternIds": [
+        "flap-board-price-table",
+        "lower-third-rundown"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-news-package.json"
+    },
+    {
+      "id": "lemo-telestrator",
+      "title": "定格 · 体育战术板",
+      "summary": "2019年贝西克塔斯对费内巴切的3–3比赛分析：先播放连续进球，再定格圈人、画线，用双机位对齐头球时刻，倒带拆解扳平远射，最后把射门帧压成俯视战术板。",
+      "carriers": [
+        "video"
+      ],
+      "style": "documentary",
+      "purpose": "news",
+      "tech": [
+        "canvas2d",
+        "footage"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "体育战术板",
+        "剪辑与纪实",
+        "代码影片"
+      ],
+      "useCases": [
+        "比赛战术分析",
+        "教练复盘",
+        "多个机位的动作讲解"
+      ],
+      "avoid": [
+        "只把精彩片段按音乐拼接的集锦",
+        "脱离真实球场位置的抽象战术图"
+      ],
+      "patternIds": [
+        "freeze-and-draw",
+        "split-compare-stamp"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-telestrator.json"
+    },
+    {
+      "id": "lemo-countdown",
+      "title": "自己倒数 · 实时倒计时分屏",
+      "summary": "阿尔忒弥斯二号发射从T−32.5到T+27秒连续播放，多机位、控制室、乘组照片与任务文件逐格展开，点火瞬间九格合一，控制权由地面交给火箭再交给休斯敦。",
+      "carriers": [
+        "video"
+      ],
+      "style": "documentary",
+      "purpose": "news",
+      "tech": [
+        "canvas2d",
+        "footage"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "实时倒计时分屏",
+        "剪辑与纪实",
+        "代码影片"
+      ],
+      "useCases": [
+        "发射直播剪辑",
+        "赛事或裁决倒数",
+        "有明确零点的实时事件"
+      ],
+      "avoid": [
+        "跳时、倒序或变速的蒙太奇",
+        "无法将多个机位对到同一事件时刻的素材组合"
+      ],
+      "patternIds": [
+        "many-into-one-countdown",
+        "sync-badge-grid",
+        "corner-hud"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-countdown.json"
+    },
+    {
+      "id": "lemo-kino-montage",
+      "title": "410 天 · 构成主义蒙太奇",
+      "summary": "从1931年帝国大厦宣传册的“完成这项工作的人”出发，用工地实拍、刘易斯·海因照片和原始文档作答，呈现每天2500名工人的集体建造，再把剪下的人物叠成一座塔。",
+      "carriers": [
+        "video"
+      ],
+      "style": "documentary",
+      "purpose": "news",
+      "tech": [
+        "canvas2d",
+        "footage"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "构成主义蒙太奇",
+        "剪辑与纪实",
+        "代码影片"
+      ],
+      "useCases": [
+        "工业历史影片",
+        "建设里程碑",
+        "集体劳动叙事"
+      ],
+      "avoid": [
+        "以单个人物的慢镜特写为主角的影片",
+        "中性幻灯片式的档案展示"
+      ],
+      "patternIds": [
+        "constructivist-diagonal-montage"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-kino-montage.json"
+    },
+    {
+      "id": "lemo-hologram-hud",
+      "title": "伏特·规格扫描 · 科幻全息界面",
+      "summary": "电助力车从扫描线中长成发光线框，依次锁定电池、电机和刹车，通过局部爆炸、引线与乱数读数展示规格；归拢后点亮实体全息，并以转台旋转展示一圈。",
+      "carriers": [
+        "video"
+      ],
+      "style": "interface",
+      "purpose": "brand",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "科幻全息界面",
+        "信息与发布",
+        "代码影片"
+      ],
+      "useCases": [
+        "硬件规格讲解",
+        "产品发布短片",
+        "展会循环画面"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "scan-in-wireframe-to-solid",
+        "spec-dock-rail",
+        "seeded-digit-scramble-settle",
+        "explode-parts-leaders"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-hologram-hud.json"
+    },
+    {
+      "id": "lemo-teardown",
+      "title": "二十一键 · 产品拆解",
+      "summary": "开源分体键盘的一半在一个连续镜头中按真实层次升起。镜头进入板下查看主控、灯珠与热插拔，随后各层从底到顶依次合拢，尺寸画在实物上。",
+      "carriers": [
+        "video"
+      ],
+      "style": "evidence",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d",
+        "threejs"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "产品拆解",
+        "实证影像",
+        "代码影片"
+      ],
+      "useCases": [
+        "硬件结构讲解",
+        "产品拆解影片",
+        "真实尺寸与装配说明"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "orbit-explode-3d",
+        "dimensions-drawn-on-object",
+        "explode-parts-leaders"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-teardown.json"
+    },
+    {
+      "id": "lemo-dataviz",
+      "title": "一百个夏天 · 数据叙事",
+      "summary": "铅笔把1926—2026年的夏季温度逐点画成一位女性的一生：蓝色人生批注进入后，红色记录批注随升温变得密集，数据破框、铅笔翻到红头，点线最后化为温度条纹。",
+      "carriers": [
+        "video"
+      ],
+      "style": "interface",
+      "purpose": "data",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "数据叙事",
+        "信息与发布",
+        "代码影片"
+      ],
+      "useCases": [
+        "数据新闻",
+        "气候科学短片",
+        "带人生批注的时间序列"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "data-points-to-pitch",
+        "pencil-plot-with-notes",
+        "dots-morph-to-stripes"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-dataviz.json"
+    },
+    {
+      "id": "lemo-transit-map",
+      "title": "6 公里 · 地铁线路图",
+      "summary": "上海地铁从1993年的五站六公里扩展到21条线、906公里；笔尖逐段描线，换乘点落地，镜头拉远时切换站名层级，机械里程表与双城时间线呈现规模。",
+      "carriers": [
+        "video"
+      ],
+      "style": "interface",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d",
+        "webgl"
+      ],
+      "tags": [
+        "lemo-opuscar",
+        "地铁线路图",
+        "信息与发布",
+        "代码影片"
+      ],
+      "useCases": [
+        "交通网络演变",
+        "城市历史短片",
+        "随年份扩张的网络图"
+      ],
+      "avoid": [],
+      "patternIds": [
+        "network-growth-odometer",
+        "levels-of-detail-pullback",
+        "route-draw-marker",
+        "rolling-digits"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/lemo-transit-map.json"
+    },
+    {
+      "id": "pdoom-video",
+      "title": "I'm Upping My P(doom) · 手绘卡通音乐录像",
+      "summary": "JohnHeibel 用 Claude Opus 5.5 生成的 156.6 秒音乐录像。用 p5.brush 水彩笔触与 12fps 线条沸腾画出一场舞台剧：Clawd 在九章里从显示器里的涂鸦长到行星大小，四段副歌回到同一舞台逐次升级，每段都由打气筒推高 P(doom) 计量表，最后镜头拉远，揭示整场末日只是演出。",
+      "carriers": [
+        "video"
+      ],
+      "style": "hand-drawn",
+      "purpose": "story",
+      "tech": [
+        "webgl",
+        "canvas2d"
+      ],
+      "tags": [
+        "p5.js",
+        "p5.brush",
+        "Clawd",
+        "歌词驱动",
+        "手绘卡通",
+        "舞台剧",
+        "Claude Opus 5.5"
+      ],
+      "useCases": [
+        "歌词驱动的手绘音乐录像",
+        "以重复场景逐次升级的叙事短片",
+        "角色表演、表情 take 与漫画转场参考"
+      ],
+      "avoid": [
+        "需要观众自行掌握阅读节奏的网页应用",
+        "要求实时 24fps 水彩绘制的低性能设备",
+        "以无字幕的安静画面为主的片段"
+      ],
+      "patternIds": [
+        "brush-wipe-chapter-break",
+        "karaoke-word-fill",
+        "escalating-chorus-meter",
+        "emotion-take-morph",
+        "cel-line-boil"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/pdoom-video.json"
+    },
+    {
+      "id": "butterfly-garden-score",
+      "title": "蝶の舞う庭 · 曲式赏析滚动总谱",
+      "summary": "把剧场版《少女歌剧》配乐《蝶の舞う庭》前 57 小节画成一张向左滚动的总谱：每件乐器一行，动机 7135 九次入场逐个点亮，调性转换时全画面红白反色，场次与调名采用类似戏单的排版。",
+      "carriers": [
+        "video"
+      ],
+      "style": "graphic-type",
+      "purpose": "explainer",
+      "tech": [
+        "canvas2d"
+      ],
+      "tags": [
+        "少女歌剧",
+        "Revue Starlight",
+        "配乐可视化",
+        "曲式分析",
+        "滚动总谱",
+        "红白反色",
+        "动机",
+        "7135"
+      ],
+      "useCases": [
+        "配乐、曲式或编曲的讲解视频",
+        "需要“声音看得见”的片头或音乐专题",
+        "用强品牌色和戏单版式做的知识短片"
+      ],
+      "avoid": [
+        "没有分轨或总谱信息的音乐",
+        "主要靠解说词推进的视频"
+      ],
+      "patternIds": [
+        "scrolling-score-timeline",
+        "motif-entry-focus",
+        "key-change-color-flip",
+        "perspective-scene-title"
+      ],
+      "seekable": true,
+      "bundle": "agent/cases/butterfly-garden-score.json"
+    }
+  ]
+}

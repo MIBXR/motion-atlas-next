@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "oblique-projection-camera",
+  "pattern": {
+    "id": "oblique-projection-camera",
+    "order": 120,
+    "title": "斜投影作镜头",
+    "types": [
+      "camera"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "沿固定45度深度轴偏移二维图纸坐标，投影系数从0升到.5；立面转出厚度，部件沿同一轴展开。",
+    "mechanism": "沿固定45度深度轴偏移二维图纸坐标，投影系数从0升到.5；立面转出厚度，部件沿同一轴展开。",
+    "trigger": "B(6)启动爆炸图。",
+    "effect": "不经过三维场景，平面机器逐步显出背面、厚度和部件纵深。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "10.700000–13.000000秒；1倍速，共2.300000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "投影",
+        "value": "film/draw.js:10–24：proj={k:0,a:π/4}，x+=d*k*cos(a)，y−=d*k*sin(a)。"
+      },
+      {
+        "name": "时序",
+        "value": "film/film.js:125：k=lerp(0,.5,eio(seg(t,B(6),B(6)+1.1)))−.08*ss(seg(t,16.6,17.8))；B(6)=11.111111秒。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-blueprint/film/draw.js",
+      "demos/cases/lemo-blueprint/film/film.js",
+      "demos/cases/lemo-blueprint/film/machine.js"
+    ],
+    "locator": "draw.js / film.js / machine.js",
+    "useCases": [
+      "不经过三维场景，平面机器逐步显出背面、厚度和部件纵深。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-blueprint的原作render(t)，重放“斜投影作镜头”。沿固定45度深度轴把二维图纸坐标偏移，投影系数从0升到.5；立面转出厚度并沿同一轴展开部件。参数与源码：film/draw.js:10–24：proj={k:0,a:π/4}，x+=d*k*cos(a)，y−=d*k*sin(a)。；film/film.js:125：k=lerp(0,.5,eio(seg(t,B(6),B(6)+1.1)))−.08*ss(seg(t,16.6,17.8))；B(6)=11.111111秒。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/oblique-projection-camera/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-blueprint"
+      }
+    ],
+    "previewAt": 1.15,
+    "markers": [
+      {
+        "t": 0,
+        "label": "斜投影作镜头"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/oblique-projection-camera.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-blueprint",
+      "bundle": "agent/cases/lemo-blueprint.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 斜投影作镜头\n\n## 实现 Prompt\n\n复用来源案例lemo-blueprint的原作render(t)，重放“斜投影作镜头”。沿固定45度深度轴把二维图纸坐标偏移，投影系数从0升到.5；立面转出厚度并沿同一轴展开部件。参数与源码：film/draw.js:10–24：proj={k:0,a:π/4}，x+=d*k*cos(a)，y−=d*k*sin(a)。；film/film.js:125：k=lerp(0,.5,eio(seg(t,B(6),B(6)+1.1)))−.08*ss(seg(t,16.6,17.8))；B(6)=11.111111秒。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：10.700000–13.000000秒；1倍速，共2.300000秒。\n\n[打开 Demo](../../demos/patterns/oblique-projection-camera/index.html) · [在库中查看](../../patterns.html#pattern/oblique-projection-camera)\n"
+  },
+  "entrypoint": "demos/patterns/oblique-projection-camera/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-blueprint/LICENSES.md",
+      "bytes": 907,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/CREDITS",
+      "bytes": 1071,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/film.m4a",
+      "bytes": 1534289,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fidelity.md",
+      "bytes": 4221,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/draw.js",
+      "bytes": 14459,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/film.js",
+      "bytes": 26942,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/index.html",
+      "bytes": 346,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/lines.json",
+      "bytes": 981,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/machine.js",
+      "bytes": 24965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/main.js",
+      "bytes": 6532,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/paper.js",
+      "bytes": 8655,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/sheet.js",
+      "bytes": 20986,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/voices/dur.json",
+      "bytes": 86,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/Allura-Regular.ttf",
+      "bytes": 246632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/ArchitectsDaughter-Regular.ttf",
+      "bytes": 43352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/B612-Bold.ttf",
+      "bytes": 100932,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/B612-Regular.ttf",
+      "bytes": 153192,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/B612Mono-Regular.ttf",
+      "bytes": 140292,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-allura.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-architectsdaughter.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-b612.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-b612mono.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/fonts.css",
+      "bytes": 489,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/index.html",
+      "bytes": 2402,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/CREDITS",
+      "bytes": 1071,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/DEMO.md",
+      "bytes": 15849,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/README.md",
+      "bytes": 3784,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/STYLE.md",
+      "bytes": 12323,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/build.sh",
+      "bytes": 1489,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/events.json",
+      "bytes": 21654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/mix.py",
+      "bytes": 8076,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/music/score.json",
+      "bytes": 1598,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/music/score.py",
+      "bytes": 13539,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/style.json",
+      "bytes": 550,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/subs.json",
+      "bytes": 762,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/tools/check_mix.py",
+      "bytes": 1182,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/tools/subs.mjs",
+      "bytes": 1022,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/voices/words.json",
+      "bytes": 1259,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/oblique-projection-camera/index.html",
+      "bytes": 803,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/oblique-projection-camera/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-blueprint.json",
+      "bytes": 10249,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/oblique-projection-camera.json",
+      "bytes": 2327,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/oblique-projection-camera.jpg",
+      "bytes": 63720,
+      "role": "preview"
+    }
+  ]
+}

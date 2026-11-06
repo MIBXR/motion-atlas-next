@@ -1,0 +1,1715 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "vertical-title-blur",
+  "pattern": {
+    "id": "vertical-title-blur",
+    "order": 2,
+    "title": "竖排汉字模糊入场 + 英文打字",
+    "types": [
+      "type-motion"
+    ],
+    "carriers": [
+      "video",
+      "console"
+    ],
+    "summary": "竖排大字从模糊中显影，配以副标题和逐字打字效果；片名、地点、回忆字幕与收尾共用一套入场效果。三维片的英文标语逐词上移、去除模糊并收紧字距，横线和中文随后显现。",
+    "mechanism": "片名与地点标题从模糊中逐字显影。回忆插画配竖排字幕，最后以 fin. 收尾。各段共用模糊与打字的入场节奏。三维片的英文标语逐词上移、去除模糊并收紧字距，横线和中文随后显现。",
+    "trigger": "片名、地名或回忆字幕出现时",
+    "effect": "地名有登场感，章节更容易记住。",
+    "timing": [
+      {
+        "name": "时长",
+        "value": "16s"
+      },
+      {
+        "name": "声音 voice",
+        "value": "key、tick、bell、shimmer、sub"
+      },
+      {
+        "name": "追加原片区间",
+        "value": "mg-3d-render 原片 7.8–9.7 秒；const u = prog(t, T0 + 0.07 * k, 0.9);\nw.style.filter = `blur(${(1 - e) * 7}px)`;\nw.style.letterSpacing = `${0.26 + (1 - e) * 0.2}em`;\nconst uz = prog(t, T0 + 0.30, 0.9), ez = expoOut(uz);"
+      }
+    ],
+    "useCases": [
+      "片名与章节标题",
+      "地名卡",
+      "回忆字幕",
+      "陈列界面展品名",
+      "三维片的英文标语逐词上移、去除模糊并收紧字距，横线和中文随后显现。"
+    ],
+    "avoid": [
+      "长段落",
+      "需要即时读取的操作提示"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "corner-hud",
+        "chapter-frame",
+        "card-expand-fullscreen"
+      ],
+      "conflicts": []
+    },
+    "prompt": "竖排大字从模糊中显影，配副标题与逐字打字；片名、地点、回忆字幕与收尾共用一套入场。复用地图巡礼的 drawIntro、drawLocTitle、drawFlashback、drawOutro、blurIn、typeIn、mountScene、paintScene 与对应 CSS。片名、地点标题、全屏回忆插画与竖排字幕，以及 drawOutro 的 fin.。片段：caseT 3.8→8；caseT 17.9→21.6；caseT 25.5→29.6；caseT 57.9→60；时长 16s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。 按 index.html 内联 segments 在原有 14.1 秒之后重放mg-3d-render 原片 7.8–9.7 秒，总时长 16 秒。三维片的英文标语逐词上移、去模糊并收字距，横线和中文随后显现。画面与音轨沿用同一映射，声音默认关闭。",
+    "demo": "demos/patterns/vertical-title-blur/index.html",
+    "kit": true,
+    "sources": [
+      {
+        "caseId": "map-pilgrimage"
+      },
+      {
+        "caseId": "mg-3d-render"
+      }
+    ],
+    "previewAt": 2.6,
+    "markers": [
+      {
+        "t": 0,
+        "label": "片名"
+      },
+      {
+        "t": 4.2,
+        "label": "地点标题"
+      },
+      {
+        "t": 7.9,
+        "label": "回忆竖排字幕"
+      },
+      {
+        "t": 12,
+        "label": "fin."
+      },
+      {
+        "t": 14.1,
+        "label": "三维软床"
+      },
+      {
+        "t": 14.3,
+        "label": "标语入场"
+      }
+    ],
+    "sound": {
+      "voices": [
+        "key",
+        "tick",
+        "bell",
+        "shimmer",
+        "sub"
+      ],
+      "score": "demos/patterns/vertical-title-blur/mechanism/score.json",
+      "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+    },
+    "tokens": {
+      "palette": [
+        "#f1eee7",
+        "#16171a",
+        "#d9562c",
+        "#e23b3b"
+      ],
+      "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+      "css": {
+        "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+        "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+        "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+        "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+        "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+        "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+        "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+        "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+        "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+        "--paper": "#f1eee7",
+        "--ink": "#16171a",
+        "--ink-map": "#16171a",
+        "--muted": "rgba(22, 23, 26, .62)",
+        "--line": "rgba(22, 23, 26, .26)",
+        "--accent": "#d9562c",
+        "--accent-soft": "rgba(217, 86, 44, .22)",
+        "--surface": "rgba(250, 249, 245, .94)",
+        "--alert": "#e23b3b"
+      },
+      "motion": [
+        {
+          "name": "片名",
+          "value": "0s"
+        },
+        {
+          "name": "地点标题",
+          "value": "4.2s"
+        },
+        {
+          "name": "回忆竖排字幕",
+          "value": "7.9s"
+        },
+        {
+          "name": "fin.",
+          "value": "12s"
+        },
+        {
+          "name": "时长",
+          "value": "14.1s"
+        }
+      ]
+    },
+    "migration": [
+      {
+        "field": "../../cases/map-pilgrimage/film/script.js → blurIn、typeIn、drawIntro、drawLocTitle、drawFlashback、drawOutro",
+        "how": "修改片名、地名、回忆与收尾部分的模糊和打字入场实现。"
+      },
+      {
+        "field": "mechanism/scene.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+        "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+      },
+      {
+        "field": "../../cases/map-pilgrimage/film/config.js → meta；tracks.locTitle、tracks.flashback、tracks.outro；layout",
+        "how": "修改片名、地名、回忆字幕、收尾与横竖布局。"
+      },
+      {
+        "field": "mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers",
+        "how": "mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 的地图片段。地图来源时刻：3.8→8/17.9→21.6/25.5→29.6/57.9→60。"
+      },
+      {
+        "field": "mechanism/score.json",
+        "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+      }
+    ],
+    "preview": "previews/patterns/vertical-title-blur.jpg",
+    "previewPortrait": "previews/patterns/vertical-title-blur-portrait.jpg"
+  },
+  "sourceCases": [
+    {
+      "caseId": "map-pilgrimage",
+      "bundle": "agent/cases/map-pilgrimage.json"
+    },
+    {
+      "caseId": "mg-3d-render",
+      "bundle": "agent/cases/mg-3d-render.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 竖排汉字模糊入场 + 英文打字\n\n## 实现 Prompt\n\n竖排大字从模糊中显影，配副标题与逐字打字；片名、地点、回忆字幕与收尾共用一套入场。复用地图巡礼的 drawIntro、drawLocTitle、drawFlashback、drawOutro、blurIn、typeIn、mountScene、paintScene 与对应 CSS。片名、地点标题、全屏回忆插画与竖排字幕，以及 drawOutro 的 fin.。片段：caseT 3.8→8；caseT 17.9→21.6；caseT 25.5→29.6；caseT 57.9→60；时长 16s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。 按 index.html 内联 segments 在原有 14.1 秒之后重放mg-3d-render 原片 7.8–9.7 秒，总时长 16 秒。三维片的英文标语逐词上移、去模糊并收字距，横线和中文随后显现。画面与音轨沿用同一映射，声音默认关闭。\n\n## 参数\n\n- **时长**：16s\n- **声音 voice**：key、tick、bell、shimmer、sub\n- **追加原片区间**：mg-3d-render 原片 7.8–9.7 秒；const u = prog(t, T0 + 0.07 * k, 0.9);\nw.style.filter = `blur(${(1 - e) * 7}px)`;\nw.style.letterSpacing = `${0.26 + (1 - e) * 0.2}em`;\nconst uz = prog(t, T0 + 0.30, 0.9), ez = expoOut(uz);\n\n## 动效 Token\n\n- **片名**：0s\n- **地点标题**：4.2s\n- **回忆竖排字幕**：7.9s\n- **fin.**：12s\n- **时长**：14.1s\n\n## 迁移\n\n- `../../cases/map-pilgrimage/film/script.js → blurIn、typeIn、drawIntro、drawLocTitle、drawFlashback、drawOutro`：修改片名、地名、回忆与收尾部分的模糊和打字入场实现。\n- `mechanism/scene.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern`：入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。\n- `../../cases/map-pilgrimage/film/config.js → meta；tracks.locTitle、tracks.flashback、tracks.outro；layout`：修改片名、地名、回忆字幕、收尾与横竖布局。\n- `mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers`：mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 的地图片段。地图来源时刻：3.8→8/17.9→21.6/25.5→29.6/57.9→60。\n- `mechanism/score.json`：调整声音事件，按巧思时间对齐，保留音色参数。\n\n[打开 Demo](../../demos/patterns/vertical-title-blur/index.html) · [在库中查看](../../patterns.html#pattern/vertical-title-blur)\n"
+  },
+  "entrypoint": "demos/patterns/vertical-title-blur/index.html",
+  "files": [
+    {
+      "path": "demos/cases/map-pilgrimage/LICENSES.md",
+      "bytes": 1021,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/fidelity.md",
+      "bytes": 2550,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/config.js",
+      "bytes": 17491,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/paths.js",
+      "bytes": 8047,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/scenes.js",
+      "bytes": 35275,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/script.js",
+      "bytes": 156283,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/style.css",
+      "bytes": 40692,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/index.html",
+      "bytes": 7729,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/LICENSES.md",
+      "bytes": 816,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/.gitignore",
+      "bytes": 24,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0000.webp",
+      "bytes": 125356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0001.webp",
+      "bytes": 124082,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0002.webp",
+      "bytes": 122330,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0003.webp",
+      "bytes": 120454,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0004.webp",
+      "bytes": 119216,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0005.webp",
+      "bytes": 116506,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0006.webp",
+      "bytes": 114212,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0007.webp",
+      "bytes": 111724,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0008.webp",
+      "bytes": 111566,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0009.webp",
+      "bytes": 114870,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0010.webp",
+      "bytes": 117052,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0011.webp",
+      "bytes": 114924,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0012.webp",
+      "bytes": 109620,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0013.webp",
+      "bytes": 105706,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0014.webp",
+      "bytes": 99230,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0015.webp",
+      "bytes": 98048,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0016.webp",
+      "bytes": 99588,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0017.webp",
+      "bytes": 99062,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0018.webp",
+      "bytes": 102924,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0019.webp",
+      "bytes": 105164,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0020.webp",
+      "bytes": 118364,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0021.webp",
+      "bytes": 127038,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0022.webp",
+      "bytes": 136008,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0023.webp",
+      "bytes": 144370,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0024.webp",
+      "bytes": 152528,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0025.webp",
+      "bytes": 161582,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0026.webp",
+      "bytes": 168616,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0027.webp",
+      "bytes": 176064,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0028.webp",
+      "bytes": 184734,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0029.webp",
+      "bytes": 193588,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0030.webp",
+      "bytes": 200054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0031.webp",
+      "bytes": 206838,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0032.webp",
+      "bytes": 212616,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0033.webp",
+      "bytes": 216134,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0034.webp",
+      "bytes": 218714,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0035.webp",
+      "bytes": 220942,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0036.webp",
+      "bytes": 223424,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0037.webp",
+      "bytes": 228294,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0038.webp",
+      "bytes": 229694,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0039.webp",
+      "bytes": 231248,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0040.webp",
+      "bytes": 232936,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0041.webp",
+      "bytes": 236566,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0042.webp",
+      "bytes": 239694,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0043.webp",
+      "bytes": 239654,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0044.webp",
+      "bytes": 244806,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0045.webp",
+      "bytes": 245188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0046.webp",
+      "bytes": 243354,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0047.webp",
+      "bytes": 242670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0048.webp",
+      "bytes": 240466,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0049.webp",
+      "bytes": 241518,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0050.webp",
+      "bytes": 241654,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0051.webp",
+      "bytes": 246064,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0052.webp",
+      "bytes": 241686,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0053.webp",
+      "bytes": 243772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0054.webp",
+      "bytes": 244080,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0055.webp",
+      "bytes": 245636,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0056.webp",
+      "bytes": 247254,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0057.webp",
+      "bytes": 246620,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0058.webp",
+      "bytes": 247260,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0059.webp",
+      "bytes": 243054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0060.webp",
+      "bytes": 239778,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0061.webp",
+      "bytes": 243072,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0062.webp",
+      "bytes": 243562,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0063.webp",
+      "bytes": 236850,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0064.webp",
+      "bytes": 243766,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0065.webp",
+      "bytes": 243646,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0066.webp",
+      "bytes": 246792,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0067.webp",
+      "bytes": 241348,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0068.webp",
+      "bytes": 242284,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0069.webp",
+      "bytes": 246406,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0070.webp",
+      "bytes": 241958,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0071.webp",
+      "bytes": 241328,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0072.webp",
+      "bytes": 241486,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0073.webp",
+      "bytes": 246108,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0074.webp",
+      "bytes": 241932,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0075.webp",
+      "bytes": 244698,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0076.webp",
+      "bytes": 244302,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0077.webp",
+      "bytes": 242688,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0078.webp",
+      "bytes": 242864,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0079.webp",
+      "bytes": 243716,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0080.webp",
+      "bytes": 228264,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0081.webp",
+      "bytes": 240646,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0082.webp",
+      "bytes": 240264,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0083.webp",
+      "bytes": 242916,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0084.webp",
+      "bytes": 241778,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0085.webp",
+      "bytes": 242334,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0086.webp",
+      "bytes": 234844,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0087.webp",
+      "bytes": 235920,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0088.webp",
+      "bytes": 239760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0089.webp",
+      "bytes": 239954,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0090.webp",
+      "bytes": 243144,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0091.webp",
+      "bytes": 244700,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0092.webp",
+      "bytes": 241564,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0093.webp",
+      "bytes": 251472,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0094.webp",
+      "bytes": 254910,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0095.webp",
+      "bytes": 250724,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0096.webp",
+      "bytes": 245228,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0097.webp",
+      "bytes": 239308,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0098.webp",
+      "bytes": 235308,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0099.webp",
+      "bytes": 225728,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0100.webp",
+      "bytes": 224826,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0101.webp",
+      "bytes": 215942,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0102.webp",
+      "bytes": 211316,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0103.webp",
+      "bytes": 206500,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0104.webp",
+      "bytes": 203524,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0105.webp",
+      "bytes": 199694,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0106.webp",
+      "bytes": 198438,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0107.webp",
+      "bytes": 196520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0108.webp",
+      "bytes": 193622,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0109.webp",
+      "bytes": 191548,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0110.webp",
+      "bytes": 193572,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0111.webp",
+      "bytes": 196174,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0112.webp",
+      "bytes": 197772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0113.webp",
+      "bytes": 203790,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0114.webp",
+      "bytes": 204344,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0115.webp",
+      "bytes": 206368,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0116.webp",
+      "bytes": 207990,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0117.webp",
+      "bytes": 208046,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0118.webp",
+      "bytes": 211020,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0119.webp",
+      "bytes": 211958,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0120.webp",
+      "bytes": 213394,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0121.webp",
+      "bytes": 215702,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0122.webp",
+      "bytes": 215676,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0123.webp",
+      "bytes": 218960,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0124.webp",
+      "bytes": 219130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0125.webp",
+      "bytes": 220802,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0126.webp",
+      "bytes": 223096,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0127.webp",
+      "bytes": 224296,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0128.webp",
+      "bytes": 226994,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0129.webp",
+      "bytes": 228176,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0130.webp",
+      "bytes": 230870,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0131.webp",
+      "bytes": 233124,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0132.webp",
+      "bytes": 234702,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0133.webp",
+      "bytes": 237594,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0134.webp",
+      "bytes": 238566,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0135.webp",
+      "bytes": 240310,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0136.webp",
+      "bytes": 240318,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0137.webp",
+      "bytes": 240656,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0138.webp",
+      "bytes": 240534,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0139.webp",
+      "bytes": 241560,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0140.webp",
+      "bytes": 241832,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0141.webp",
+      "bytes": 244546,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0142.webp",
+      "bytes": 240788,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0143.webp",
+      "bytes": 234042,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0144.webp",
+      "bytes": 233008,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0145.webp",
+      "bytes": 229240,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0146.webp",
+      "bytes": 226420,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0147.webp",
+      "bytes": 224930,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0148.webp",
+      "bytes": 227400,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0149.webp",
+      "bytes": 228474,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0150.webp",
+      "bytes": 226860,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0151.webp",
+      "bytes": 223326,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0152.webp",
+      "bytes": 215908,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0153.webp",
+      "bytes": 216940,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0154.webp",
+      "bytes": 213748,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0155.webp",
+      "bytes": 212080,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0156.webp",
+      "bytes": 206850,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0157.webp",
+      "bytes": 208472,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0158.webp",
+      "bytes": 208948,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0159.webp",
+      "bytes": 212624,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0160.webp",
+      "bytes": 210552,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0161.webp",
+      "bytes": 213838,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0162.webp",
+      "bytes": 214402,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0163.webp",
+      "bytes": 215590,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0164.webp",
+      "bytes": 217228,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0165.webp",
+      "bytes": 220022,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0166.webp",
+      "bytes": 225338,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0167.webp",
+      "bytes": 227564,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0168.webp",
+      "bytes": 232804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0169.webp",
+      "bytes": 234740,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0170.webp",
+      "bytes": 237726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0171.webp",
+      "bytes": 241392,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0172.webp",
+      "bytes": 245242,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0173.webp",
+      "bytes": 246242,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0174.webp",
+      "bytes": 254988,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0175.webp",
+      "bytes": 254518,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0176.webp",
+      "bytes": 252570,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0177.webp",
+      "bytes": 253162,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0178.webp",
+      "bytes": 259486,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0179.webp",
+      "bytes": 257180,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0180.webp",
+      "bytes": 260458,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0181.webp",
+      "bytes": 256952,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0182.webp",
+      "bytes": 253258,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0183.webp",
+      "bytes": 253844,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0184.webp",
+      "bytes": 251960,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0185.webp",
+      "bytes": 259794,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0186.webp",
+      "bytes": 261412,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0187.webp",
+      "bytes": 262608,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0188.webp",
+      "bytes": 257440,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0189.webp",
+      "bytes": 265876,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0190.webp",
+      "bytes": 264688,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0191.webp",
+      "bytes": 266822,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0192.webp",
+      "bytes": 263740,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0193.webp",
+      "bytes": 262882,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0194.webp",
+      "bytes": 264762,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0195.webp",
+      "bytes": 265538,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0196.webp",
+      "bytes": 259894,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0197.webp",
+      "bytes": 263678,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0198.webp",
+      "bytes": 262468,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0199.webp",
+      "bytes": 261734,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0200.webp",
+      "bytes": 263166,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0201.webp",
+      "bytes": 259066,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0202.webp",
+      "bytes": 260560,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0203.webp",
+      "bytes": 263712,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0204.webp",
+      "bytes": 265670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0205.webp",
+      "bytes": 266228,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0206.webp",
+      "bytes": 259366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0207.webp",
+      "bytes": 260434,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0208.webp",
+      "bytes": 261024,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0209.webp",
+      "bytes": 260908,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0210.webp",
+      "bytes": 258714,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0211.webp",
+      "bytes": 260060,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0212.webp",
+      "bytes": 260356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0213.webp",
+      "bytes": 257680,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0214.webp",
+      "bytes": 262080,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0215.webp",
+      "bytes": 260794,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0216.webp",
+      "bytes": 258402,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0217.webp",
+      "bytes": 258424,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0218.webp",
+      "bytes": 259732,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0219.webp",
+      "bytes": 258182,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0220.webp",
+      "bytes": 259046,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0221.webp",
+      "bytes": 260366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0222.webp",
+      "bytes": 259532,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0223.webp",
+      "bytes": 261516,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0224.webp",
+      "bytes": 259290,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0225.webp",
+      "bytes": 260966,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0226.webp",
+      "bytes": 258368,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0227.webp",
+      "bytes": 259672,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0228.webp",
+      "bytes": 259148,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0229.webp",
+      "bytes": 259204,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0230.webp",
+      "bytes": 258942,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0231.webp",
+      "bytes": 259466,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0232.webp",
+      "bytes": 257576,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0233.webp",
+      "bytes": 257496,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0234.webp",
+      "bytes": 257664,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0235.webp",
+      "bytes": 258020,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0236.webp",
+      "bytes": 259668,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0237.webp",
+      "bytes": 259528,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0238.webp",
+      "bytes": 259236,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/frames/0239.webp",
+      "bytes": 259740,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/audio/film.m4a",
+      "bytes": 416742,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/fidelity.md",
+      "bytes": 5281,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/film/cues.json",
+      "bytes": 1125,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/film/scene.js",
+      "bytes": 3928,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/film/setup.js",
+      "bytes": 3681,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/film/style.css",
+      "bytes": 2885,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/fonts/DMSans-OFL.txt",
+      "bytes": 4389,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/fonts/DMSans[opsz,wght].ttf",
+      "bytes": 240164,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/fonts/Fredoka-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/fonts/Fredoka[wdth,wght].ttf",
+      "bytes": 159184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/fonts/NotoSansSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/fonts/NotoSansSC-VF.ttf",
+      "bytes": 17773132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/fonts/fonts.css",
+      "bytes": 338,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/index.html",
+      "bytes": 1855,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/README.md",
+      "bytes": 899,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/assets/hdri/studio_small_09_2k.hdr",
+      "bytes": 6312947,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/assets/mesh/glyph_f.ply",
+      "bytes": 3839495,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/assets/mesh/glyph_o.ply",
+      "bytes": 4381047,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/assets/mesh/glyph_s.ply",
+      "bytes": 4036183,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/assets/mesh/glyph_t.ply",
+      "bytes": 3604654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/assets/mesh/glyphs.json",
+      "bytes": 1187,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/audio.py",
+      "bytes": 10817,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/blender/common.py",
+      "bytes": 2378,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/blender/make_letters.py",
+      "bytes": 6310,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/blender/render.py",
+      "bytes": 2997,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/blender/scene.py",
+      "bytes": 34690,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/blender/sim.py",
+      "bytes": 28728,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/cues.json",
+      "bytes": 1125,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-3d-render/source/out/events.json",
+      "bytes": 419481,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/assets/plates/landscape-19.7-map.webp",
+      "bytes": 384100,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/assets/plates/landscape-5.95-map.webp",
+      "bytes": 13944,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/assets/plates/landscape-58-map-routes-markers.webp",
+      "bytes": 234960,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/assets/plates/portrait-19.7-map.webp",
+      "bytes": 309360,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/assets/plates/portrait-5.95-map.webp",
+      "bytes": 12608,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/assets/plates/portrait-58-map-routes-markers.webp",
+      "bytes": 149778,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/index.html",
+      "bytes": 509,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/mechanism/config.js",
+      "bytes": 1195,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/mechanism/replay.css",
+      "bytes": 305,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/mechanism/replay.js",
+      "bytes": 1171,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/mechanism/scene.html",
+      "bytes": 7889,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/mechanism/score.json",
+      "bytes": 5638,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/mechanism/style.css",
+      "bytes": 41282,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/vertical-title-blur/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/map-pilgrimage.md",
+      "bytes": 6404,
+      "role": "doc"
+    },
+    {
+      "path": "docs/cases/mg-3d-render.md",
+      "bytes": 3268,
+      "role": "doc"
+    },
+    {
+      "path": "entries/cases/map-pilgrimage.json",
+      "bytes": 20565,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-3d-render.json",
+      "bytes": 17026,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/vertical-title-blur.json",
+      "bytes": 6976,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/vertical-title-blur-portrait.jpg",
+      "bytes": 106402,
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/vertical-title-blur.jpg",
+      "bytes": 101980,
+      "role": "preview"
+    }
+  ]
+}

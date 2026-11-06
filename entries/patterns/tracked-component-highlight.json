@@ -1,0 +1,73 @@
+{
+  "id": "tracked-component-highlight",
+  "order": 116,
+  "title": "部件追色",
+  "types": [
+    "type-motion",
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "将同一部件的笔画固定为橙色，甲骨、金文、小篆和楷书按时间线依次书写；字形和镜头变化时，橙色仍标记对应部件并保持相对高度，随后追到“短”字中的“矢”。",
+  "mechanism": "将同一部件的笔画固定为橙色，甲骨、金文、小篆和楷书按时间线依次书写；字形和镜头变化时，橙色仍标记对应部件并保持相对高度，随后追到“短”字中的“矢”。",
+  "trigger": "后板揭开，四种射字形依次写入；箭尺段继续追踪矢部。",
+  "effect": "观众用颜色认出跨字形演变的同一部件，橙色把字形与释义连起来。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "18.5–28.7秒；28.7–33.5秒；1倍速，总时长15.000000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "历史字形色标",
+      "value": "film/js/ancient.js:9–46：FORMS每条线的o标记选orange，坐标以100×100字格变换；楷书0–6笔沿用orange。"
+    },
+    {
+      "name": "横排与箭部",
+      "value": "film/js/film.js:130–144按FX/FY书写四形；151的writeChar(短)把0–4笔着橙，164–169把箭放到尺线上。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-chalkboard/film/js/ancient.js",
+    "demos/cases/lemo-chalkboard/film/js/film.js",
+    "demos/cases/lemo-chalkboard/film/js/hand.js"
+  ],
+  "locator": "历史字形色标 / 横排与箭部",
+  "useCases": [
+    "观众用颜色认出跨字形演变的同一部件，橙色把字形与释义连起来。"
+  ],
+  "avoid": [
+    "同时安排遮挡书写或湿边的主动作"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-chalkboard的原作render(t)，重放“部件追色”。将同一部件的笔画固定为橙色，甲骨、金文、小篆和楷书按时间线依次书写；字形和镜头变化时，橙色保持对应部件与相对高度，随后追到短字中的矢。参数与源码：film/js/ancient.js:9–46：FORMS每条线的o标记选orange，坐标以100×100字格变换；楷书0–6笔沿用orange。；film/js/film.js:130–144按FX/FY书写四形；151的writeChar(短)把0–4笔着橙，164–169把箭放到尺线上。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/tracked-component-highlight/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-chalkboard"
+    }
+  ],
+  "previewAt": 8.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "部件追色"
+    },
+    {
+      "t": 10.2,
+      "label": "继续追踪"
+    }
+  ],
+  "renderer": "gpu"
+}

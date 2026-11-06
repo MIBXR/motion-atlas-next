@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "levels-of-detail-pullback",
+  "pattern": {
+    "id": "levels-of-detail-pullback",
+    "order": 171,
+    "title": "拉远换细节层级",
+    "types": [
+      "camera"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "在同一张纸上持续拉远时，站点小标、普通站名与换乘站名按缩放层级退去，枢纽站名保留并相对放大；信息密度随取景范围改变，网络增长仍连续可见。",
+    "mechanism": "在同一张纸上持续拉远时，站点小标、普通站名与换乘站名按缩放层级退去，枢纽站名保留并相对放大；信息密度随取景范围改变，网络增长仍连续可见。",
+    "trigger": "原作时间轴进入所列动作区间。",
+    "effect": "在同一张纸上持续拉远时，站点小标、普通站名与换乘站名按缩放层级退去，枢纽站名保留并相对放大；信息密度随取景范围改变，网络增长仍连续可见。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "13.000—21.700秒，1倍速。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "镜头",
+        "value": "2000—2010段镜头由约78拉至52px/G，倾角12°到0°。",
+        "source": "demos/cases/lemo-transit-map/film/timeline.js:camera"
+      },
+      {
+        "name": "细节层级",
+        "value": "小站点ss(seg(z,55,85))；换乘站名ss(seg(z,62,90))；普通站名ss(seg(z,100,130))；枢纽放大min(1.75,(85/z)^.6)，labelOnly再按镜头筛选。",
+        "source": "demos/cases/lemo-transit-map/film/film.js:drawMap；film/timeline.js:labelOnly"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-transit-map/film/timeline.js",
+      "demos/cases/lemo-transit-map/film/film.js"
+    ],
+    "locator": "film/timeline.js:camera；film/film.js:drawMap；film/timeline.js:labelOnly",
+    "useCases": [
+      "拉远换细节层级"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": [],
+      "notes": "已有scale-reveal-ink-figure与counter-rotate-pullback揭示更大构图；本条同时改变同一地图的信息细节层级，保留枢纽可读性。"
+    },
+    "prompt": "以来源案例lemo-transit-map的原作render(t)重放“拉远换细节层级”。在同一张纸上持续拉远时，站点小标、普通站名与换乘站名按缩放层级退去，枢纽站名保留并相对放大；信息密度随取景范围改变，网络增长仍连续可见。 参数：2000—2010段镜头由约78拉至52px/G，倾角12°到0°。；小站点ss(seg(z,55,85))；换乘站名ss(seg(z,62,90))；普通站名ss(seg(z,100,130))；枢纽放大min(1.75,(85/z)^.6)，labelOnly再按镜头筛选。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+    "demo": "demos/patterns/levels-of-detail-pullback/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-transit-map"
+      }
+    ],
+    "previewAt": 5.6,
+    "markers": [
+      {
+        "t": 0,
+        "label": "拉远换细节层级"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/levels-of-detail-pullback.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-transit-map",
+      "bundle": "agent/cases/lemo-transit-map.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 拉远换细节层级\n\n## 实现 Prompt\n\n以来源案例lemo-transit-map的原作render(t)重放“拉远换细节层级”。在同一张纸上持续拉远时，站点小标、普通站名与换乘站名按缩放层级退去，枢纽站名保留并相对放大；信息密度随取景范围改变，网络增长仍连续可见。 参数：2000—2010段镜头由约78拉至52px/G，倾角12°到0°。；小站点ss(seg(z,55,85))；换乘站名ss(seg(z,62,90))；普通站名ss(seg(z,100,130))；枢纽放大min(1.75,(85/z)^.6)，labelOnly再按镜头筛选。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：13.000—21.700秒，1倍速。\n\n[打开 Demo](../../demos/patterns/levels-of-detail-pullback/index.html) · [在库中查看](../../patterns.html#pattern/levels-of-detail-pullback)\n"
+  },
+  "entrypoint": "demos/patterns/levels-of-detail-pullback/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-transit-map/LICENSES.md",
+      "bytes": 593,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/audio/CREDITS",
+      "bytes": 2285,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/audio/film.m4a",
+      "bytes": 1537256,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fidelity.md",
+      "bytes": 3310,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/film.js",
+      "bytes": 39070,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/gl.js",
+      "bytes": 8734,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/index.html",
+      "bytes": 567,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/net.js",
+      "bytes": 14857,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/film/timeline.js",
+      "bytes": 42492,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/NotoSansSC-sub.ttf",
+      "bytes": 118788,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/OFL-Inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/OFL-NotoSansSC.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/fonts/fonts.css",
+      "bytes": 186,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/index.html",
+      "bytes": 2394,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/CREDITS",
+      "bytes": 2285,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/FACTS.md",
+      "bytes": 7872,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/README.md",
+      "bytes": 1636,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/audio.py",
+      "bytes": 17471,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/build.sh",
+      "bytes": 2555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/events.json",
+      "bytes": 44929,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/tools/chars.txt",
+      "bytes": 695,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/tools/sheet.sh",
+      "bytes": 442,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-transit-map/source/tools/subset.py",
+      "bytes": 832,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/levels-of-detail-pullback/index.html",
+      "bytes": 820,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/levels-of-detail-pullback/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-transit-map.json",
+      "bytes": 9619,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/levels-of-detail-pullback.json",
+      "bytes": 3031,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/levels-of-detail-pullback.jpg",
+      "bytes": 68470,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "deck-deal-flyin",
+  "order": 83,
+  "title": "加速发牌飞入",
+  "types": [
+    "composition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "26 张卡先在右上角堆成一叠，镜头对牌堆做 3D 特写。拉远后，按阅读顺序加速发牌，让卡片飞入各自的网格槽位。",
+  "mechanism": "牌堆姿态包含由 index 派生的微小错位与堆高；镜头先以旋转特写展示牌堆，再拉远露出页面；发牌按阅读顺序，第 k 张出发时刻 cue = DEAL_START + 4k − 0.0792k(k−1)，间隔从 4 帧缩到 0.2 帧。",
+  "trigger": "字卡一结束，切入牌堆特写。",
+  "effect": "发牌起初从容，随后连成一片，以加速发牌的物理隐喻铺满一页卡片。",
+  "timing": [
+    {
+      "name": "片段",
+      "value": "AIFL_SHOTS.table 的 275–375 帧，100/30 秒。"
+    },
+    {
+      "name": "镜头阶段",
+      "value": "CAM_KEYS：0→34 旋转特写，34→62 拉远，62→82→98 加速滚动。"
+    },
+    {
+      "name": "发牌节奏",
+      "value": "DEAL_START=36；cue=36+4*k-0.0792*k*(k-1)；飞行 cue→cue+8，归位 cue+8→cue+12。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "牌堆",
+      "value": "N_CARDS=26；PILE={x:1430,y:240}；STACK_STEP=3；pz=(26-k)*3。"
+    },
+    {
+      "name": "确定性微偏",
+      "value": "px=1430+(((k*7)%9)-4)*2；py=240+(((k*5)%7)-3)*2；protZ=((k*11)%7)-3。"
+    },
+    {
+      "name": "飞行",
+      "value": "HOVER_H=40；arc=sin(diveT*π)*90；DIVE_EASE=bezier(0.3,0,0.2,1)；SETTLE_EASE=bezier(0.3,0,0.25,1.15)。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/ink-press/film/src/aifl/live/SceneFlyIn.tsx"
+  ],
+  "locator": "SceneFlyIn / grid / DEAL_START / CAM_KEYS",
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "page-cam-25d",
+      "paper-title-card"
+    ],
+    "conflicts": [],
+    "notes": ""
+  },
+  "prompt": "用来源案例 ink-press 的原作 renderAt(t) 重放加速发牌飞入。保留 26 张牌、PILE=(1430,240)、每张 3px 堆高和 index 派生错位；出发时刻 cue=36+4k-0.0792k(k-1)，飞行 8 帧后用 4 帧压回槽位。保留 40px 悬浮、90px 弧高、DIVE_EASE 与 SETTLE_EASE，以及 0/34/62/82/98 帧相机键。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/deck-deal-flyin/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "ink-press"
+    }
+  ],
+  "previewAt": 2.6666666666666665,
+  "markers": [
+    {
+      "t": 0,
+      "label": "牌堆旋转特写"
+    },
+    {
+      "t": 1.1333333333333333,
+      "label": "相机拉远"
+    },
+    {
+      "t": 1.2,
+      "label": "加速发牌"
+    },
+    {
+      "t": 2.066666666666667,
+      "label": "网格显露"
+    },
+    {
+      "t": 2.7333333333333334,
+      "label": "追随滚动"
+    },
+    {
+      "t": 3.2666666666666666,
+      "label": "底部落定"
+    }
+  ]
+}

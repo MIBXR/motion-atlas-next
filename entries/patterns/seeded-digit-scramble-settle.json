@@ -1,0 +1,66 @@
+{
+  "id": "seeded-digit-scramble-settle",
+  "order": 67,
+  "title": "乱数跳变落定",
+  "types": [
+    "hud",
+    "type-motion"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "等宽数字按字符位置、帧号与种子确定性跳变，按从右到左的锁定门限逐字落定；空格、小数点、逗号与中点保持不变，完整锁定时读数转为琥珀色。",
+  "mechanism": "等宽数字按字符位置、帧号与种子确定性跳变，按从右到左的锁定门限逐字落定；空格、小数点、逗号与中点保持不变，完整锁定时读数转为琥珀色。",
+  "trigger": "原作时间轴进入所列动作区间。",
+  "effect": "等宽数字按字符位置、帧号与种子确定性跳变，按从右到左的锁定门限逐字落定；空格、小数点、逗号与中点保持不变，完整锁定时读数转为琥珀色。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "9.800—11.300秒；15.300—16.300秒；19.300—20.300秒，1倍速。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "字符门限",
+      "value": "order=(n−1−i)/max(1,n)，lockAt=.25+order×.7；hash(frame×13.7+i×7.1+seed)选字，frame=round(t×24)。",
+      "source": "demos/cases/lemo-hologram-hud/film/engine/hud.js:rollText"
+    },
+    {
+      "name": "规格读数",
+      "value": "数字使用0123456789，文字使用GLY_A；monoText以最宽数字固定adv；specCard在st.roll>=1时变琥珀色。",
+      "source": "demos/cases/lemo-hologram-hud/film/engine/hud.js:monoText / specCard"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-hologram-hud/film/engine/hud.js"
+  ],
+  "locator": "film/engine/hud.js:rollText；film/engine/hud.js:monoText / specCard",
+  "useCases": [
+    "乱数跳变落定"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "以来源案例lemo-hologram-hud的原作render(t)重放“乱数跳变落定”。等宽数字按字符位置、帧号与种子确定性跳变，按从右到左的锁定门限逐字落定；空格、小数点、逗号与中点保持，完整锁定时读数转为琥珀色。 参数：order=(n−1−i)/max(1,n)，lockAt=.25+order×.7；hash(frame×13.7+i×7.1+seed)选字，frame=round(t×24)。；数字使用0123456789，文字使用GLY_A；monoText以最宽数字固定adv；specCard在st.roll>=1时变琥珀色。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+  "demo": "demos/patterns/seeded-digit-scramble-settle/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-hologram-hud"
+    }
+  ],
+  "previewAt": 0.7,
+  "markers": [
+    {
+      "t": 0,
+      "label": "乱数跳变落定"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# 统一 LF：Agent 资料包里的 SHA256 按 LF 内容计算
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.webp binary
+
+# 原样归档的脚本与第三方许可保留原始换行。
+demos/cases/keeling-curve/film/motion.js -text
+demos/cases/keeling-curve/source/preview.js -text
+demos/cases/keeling-curve/fonts/IBMPlexMono-OFL.txt -text
+demos/cases/keeling-curve/audio/*/License.txt -text
+
+# 固定提交原文快照保留原始字节。
+demos/materials/hyperframes-registry/vendor/** -text
+demos/materials/claude-animation-base/** -text
+demos/materials/remotion-skills/** -text
+demos/cases/pdoom-video/film/index.html -text
+demos/cases/pdoom-video/film/src/** -text
+demos/cases/pdoom-video/source/** -text
+demos/cases/pdoom-video/vendor/** -text
+demos/cases/pdoom-video/fonts/*LICENSE* -text
+demos/cases/pdoom-video/fonts/*OFL* -text

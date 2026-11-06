@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "morph-primitive-bridge",
+  "pattern": {
+    "id": "morph-primitive-bridge",
+    "order": 43,
+    "title": "简形桥接连续变形",
+    "types": [
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "形状变形"
+    ],
+    "summary": "主体、孔洞与子件以圆或胶囊为中间形状连续变形，同时位移、旋转并挤压回弹。",
+    "mechanism": "主体、孔洞与子件以圆或胶囊为中间形状连续变形，同时位移、旋转并挤压回弹。",
+    "trigger": "形变链中的转接节点到达时",
+    "effect": "主体轮廓与子件保持对应点序，完成从一个图形到下一个图形的连续叙事。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-morph 原片 0.8–8.8 秒；1 倍速，巧思时长 8 秒。"
+      },
+      {
+        "name": "简形桥接连续变形",
+        "value": "L40: const EM = bez(0.7, 0, 0.3, 1);；L58: const NB = 240, NH = 72, NM = 24, NS = 60;；L276: 'sun>sunset':   { rot: 0, ctrl: [0, 0], sq: 0.05 },"
+      }
+    ],
+    "useCases": [
+      "主体与孔洞同步变形",
+      "以圆或胶囊连接图形的叙事链"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-morph 原片 0.8–8.8 秒；总时长 8 秒。主体、孔洞与子件经圆或胶囊中介连续变形，同时位移、旋转并挤压回弹。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/morph-primitive-bridge/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-morph"
+      }
+    ],
+    "previewAt": 6.7,
+    "markers": [
+      {
+        "t": 0,
+        "label": "形状变形"
+      },
+      {
+        "t": 0.9,
+        "label": "机制画面"
+      },
+      {
+        "t": 3.2,
+        "label": "机制画面"
+      },
+      {
+        "t": 6.5,
+        "label": "机制画面"
+      }
+    ],
+    "preview": "previews/patterns/morph-primitive-bridge.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-morph",
+      "bundle": "agent/cases/mg-morph.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 简形桥接连续变形\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速重放以下片段：mg-morph 原片 0.8–8.8 秒；总时长 8 秒。主体、孔洞与子件经圆或胶囊中介连续变形，同时位移、旋转并挤压回弹。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-morph 原片 0.8–8.8 秒；1 倍速，巧思时长 8 秒。\n- **简形桥接连续变形**：L40: const EM = bez(0.7, 0, 0.3, 1);；L58: const NB = 240, NH = 72, NM = 24, NS = 60;；L276: 'sun>sunset':   { rot: 0, ctrl: [0, 0], sq: 0.05 },\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/morph-primitive-bridge/index.html) · [在库中查看](../../patterns.html#pattern/morph-primitive-bridge)\n"
+  },
+  "entrypoint": "demos/patterns/morph-primitive-bridge/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-morph/LICENSES.md",
+      "bytes": 832,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/assets/textures/paper/Paper001_4K_color.jpg",
+      "bytes": 3684106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/audio/film.m4a",
+      "bytes": 342366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/fidelity.md",
+      "bytes": 4869,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/cues.json",
+      "bytes": 1541,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/glyphs.json",
+      "bytes": 24462,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/scene.js",
+      "bytes": 60329,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/setup.js",
+      "bytes": 257,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/film/style.css",
+      "bytes": 74,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/HarmonyOS-Sans-LICENSE.txt",
+      "bytes": 32768,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/HarmonyOS_Sans_SC_Medium.ttf",
+      "bytes": 8227312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/IBMPlexMono-OFL.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/Outfit-OFL.txt",
+      "bytes": 4389,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/Outfit-SemiBold.ttf",
+      "bytes": 55384,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/Outfit[wght].ttf",
+      "bytes": 110884,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/fonts/fonts.css",
+      "bytes": 475,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-morph/index.html",
+      "bytes": 2250,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-morph/source/audio.py",
+      "bytes": 8665,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-morph/source/cues.json",
+      "bytes": 1541,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-morph/source/tools/glyphs.py",
+      "bytes": 2387,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/morph-primitive-bridge/index.html",
+      "bytes": 1396,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/morph-primitive-bridge/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-morph.json",
+      "bytes": 16052,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/morph-primitive-bridge.json",
+      "bytes": 2322,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/morph-primitive-bridge.jpg",
+      "bytes": 63416,
+      "role": "preview"
+    }
+  ]
+}

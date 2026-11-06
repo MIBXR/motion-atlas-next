@@ -1,0 +1,456 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "mg-paperclip",
+  "entry": {
+    "id": "mg-paperclip",
+    "order": 10,
+    "title": "贴纸科普 · How Many Elements Hide in a Phone?",
+    "subtitle": "一部手机里，藏着多少种元素？",
+    "carriers": [
+      "video"
+    ],
+    "style": "evidence",
+    "purpose": "explainer",
+    "tech": [
+      "canvas2d",
+      "dom"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "贴纸科普",
+      "大画布",
+      "连续运镜",
+      "元素周期表",
+      "数据图表"
+    ],
+    "summary": "照片贴纸与扁平部件铺在大画布上，镜头串起手机拆解、70/118 元素周期表、分类柱图和产地地图，最后拉远显露整张手机屏幕，数字 70 的贴纸飞出落版。",
+    "focus": "照片以 10px 白描边统一为贴纸，与扁平图标、引线和数据图表一起铺在 2400×5900 画布上；镜头平移、缩放并跟随元素从周期表飞往分类柱图。",
+    "accent": "#FF8A1F",
+    "background": "#E9EEF2",
+    "timeline": true,
+    "kit": true,
+    "rhythm": {
+      "duration": 10,
+      "bpm": 120,
+      "beats": [
+        {
+          "t": 0.16,
+          "label": "手机落定",
+          "note": "手机贴纸拍落，标题依次揭示。"
+        },
+        {
+          "t": 1.25,
+          "label": "拆解推进",
+          "note": "镜头向下飞行，手机部件和引线错峰展开。"
+        },
+        {
+          "t": 2.86,
+          "label": "周期表入场",
+          "note": "周期表展开，徽章沿弧线进入表格。"
+        },
+        {
+          "t": 3.5,
+          "label": "元素级联",
+          "note": "元素依次点亮，数字计数至 70。"
+        },
+        {
+          "t": 4.48,
+          "label": "分类飞行",
+          "note": "元素块按行错峰离开周期表，飞往分类柱图。"
+        },
+        {
+          "t": 5.66,
+          "label": "地图入场",
+          "note": "产地地图进入画面。"
+        },
+        {
+          "t": 6.45,
+          "label": "路线汇聚",
+          "note": "产地贴纸和供应路线落定，定位点回弹扩圈。"
+        },
+        {
+          "t": 7,
+          "label": "拉远揭示",
+          "note": "镜头分两段拉远，显露整张大画布是手机屏幕。"
+        },
+        {
+          "t": 7.9,
+          "label": "数字揭起",
+          "note": "屏内 70 数字成为白描边贴纸并揭起。"
+        },
+        {
+          "t": 8.14,
+          "label": "数字落版",
+          "note": "70 沿点线弧飞出，落到结尾主标题位置。"
+        },
+        {
+          "t": 8.32,
+          "label": "结论入场",
+          "note": "中文结论与说明抬入，关键词下划线展开。"
+        }
+      ]
+    },
+    "layers": [
+      {
+        "name": "手机与部件",
+        "role": "手机、PCB、电池和矿石照片作白边贴纸，磁体、芯片和显示面板用 SVG 绘制；部件与引线沿时间表展开。"
+      },
+      {
+        "name": "周期表与分类",
+        "role": "118 格周期表中点亮 70 格，元素块飞入分类柱图，保留原作分类与数量。"
+      },
+      {
+        "name": "地图与路线",
+        "role": "D3 读取 TopoJSON 世界边界，产地贴纸通过绘制中的线路连接定位点。"
+      },
+      {
+        "name": "镜头与落版",
+        "role": "大画布经连续平移缩放后露出手机外壳，屏内数字贴纸飞出成为结尾 70/118。"
+      }
+    ],
+    "composition": {
+      "color": "冷静蓝灰底 #E9EEF2、石板色 #25313D、卡片白 #F7F9FB 与橙色 #FF5A36 组织贴纸、数据和强调。",
+      "typography": "Alibaba PuHuiTi 500、700、900 排中文；Inter 可变字重排英文、元素符号和数字。",
+      "layout": "1920×1080 横屏观察 2400×5900 大画布；手机标题、拆解、周期表、分类、产地自上而下排布，结尾拉远显露手机屏幕。",
+      "imagery": "实拍照片加 10px 白描边与软阴影；扁平 SVG 部件、周期表、分类柱图与世界地图按同一画布坐标排列。",
+      "motion": "贴纸抬高后旋转拍落；部件拆出、引线生长、元素级联点亮、元素块飞入柱图、路线生长与两段拉远依次衔接。",
+      "sound": "开启后播放原片 AAC 音轨；原作 audio.py 中，117.9BPM 的科技科普配乐与落点点击、计数音和镜头过渡音共用 cues。",
+      "rhythm": "0–1.25 秒标题，1.25–2.8 秒拆解，2.86–4.25 秒周期表，4.48–5.62 秒分类，5.66–7 秒地图，7–7.9 秒拉远，8.14 秒数字落版。",
+      "coherence": "贴纸描边、画布坐标和连续镜头串联信息；周期表中的同一组元素成为分类柱图，屏内 70 成为结尾主数字。"
+    },
+    "tokens": {
+      "palette": [
+        "#E9EEF2",
+        "#25313D",
+        "#8C9AA8",
+        "#F7F9FB",
+        "#FF5A36"
+      ],
+      "type": "Alibaba PuHuiTi 500、700、900；Inter 100–900。",
+      "motion": [
+        {
+          "name": "大画布",
+          "value": "\"world\": { \"w\": 2400, \"h\": 5900 }"
+        },
+        {
+          "name": "飞行缓动",
+          "value": "const eFly=bez(.62,0,.22,1), ePull=bez(.5,0,.08,1);"
+        },
+        {
+          "name": "白色描边",
+          "value": "S=2; OUT=10*S"
+        },
+        {
+          "name": "元素飞行",
+          "value": "\"chip_flight\": 0.65; \"chip_stagger\": [0.0025, 0.025]; \"chip_rows\": [1, 0, 2, 3, 4]"
+        },
+        {
+          "name": "数字落点",
+          "value": "\"peel\": 7.9; \"endline\": [7.96, 8.14]; \"slam\": 8.14"
+        }
+      ]
+    },
+    "useCases": [
+      "硬核科普视频",
+      "财经知识视频",
+      "企业宣传片"
+    ],
+    "constraints": [
+      "原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。",
+      "10 秒，1920×1080，30fps；只提供横屏原作画幅，复刻公开成片的默认版本。"
+    ],
+    "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n粗描边贴纸人科普 MG（回形针/林超风格） Bold-outline Sticker Explainer MG (PaperClip / Lin Chao style)\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: one huge canvas (e.g. 6000×3000 px) with a camera transform (long eases), SVG charts, photo stickers with 10px white outline\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「回形针式硬核科普」The PaperClip-style knowledge-video look: sticker-ized photos + flat icons + precise charts on a giant canvas with continuous camera moves.\n- Topic (write your own tight copy), e.g. 「一部手机里，藏着多少种元素？」.\n- Calm blue-grey/off-white canvas (#E9EEF2 + slate), 2–3 colours + one accent (e.g. #FF5A36); equal-weight sans typography, strict alignment.\n- One continuous camera path: sticker phone photo (white 10px outline, soft shadow) → exploded-parts stickers with leader-line labels → periodic-table grid where element tiles light up → bar chart grows with count-up \"70+\" → world map with supply routes drawing → pull out to a bold typographic title card in the 回形针 manner (heavy sans, huge number, small caption).\n- Every beat introduces a new visual element; charts are exact (bars to scale, numbers consistent).\nSound: clean tech-explainer bed, UI clicks, ticking during count-up, soft whoosh on camera moves.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n回形针 PaperClip 带火的知识区标准包装：实拍图片抠图后加粗白描边变成『贴纸』，与扁平图标、数据图表一起铺在大画布上，镜头平移缩放串联信息点；林超等财经/跨学科 UP 主将其与手写板书、公式卡片结合。至今仍是硬核科普、财经知识区、企业宣传片的主流范式。\n视觉特征 照片贴纸化（粗白描边）, 蓝灰/米白冷静底色, 扁平图标+精确数据图表, 大画布镜头平移缩放, 信息密度极高的节拍化叙事\n关键技法 素材照片抠图 + 8~12px 白描边统一质感，消除图片来源差异\n超宽大画布布局，摄像机层做平移/缩放（ease 长曲线），一镜串多个信息点\n图表动效：柱状图生长、数字滚动计数、路径描边生长\n解说词逐句驱动画面元素入场，语速快、每句必有新视觉元素\n克制配色（2~3 色）+ 等线字体，保持『严肃感』\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+    "migration": [
+      {
+        "field": "film/scene.js → PARTS、CATS、数据定义",
+        "how": "调整部件、周期表元素和分类图表的内容与布局。"
+      },
+      {
+        "field": "film/cues.json → cam、ev",
+        "how": "调整大画布镜头轨迹与拆解、元素、地图和落版节点。"
+      },
+      {
+        "field": "assets/stickers/",
+        "how": "替换照片贴纸与尺寸数据；source/tools/stickers.py 保存原作抠图和描边过程。"
+      },
+      {
+        "field": "index.html → MotionKit.mountFilm",
+        "how": "接入时间轴、原片音轨与窗口等比缩放。"
+      }
+    ],
+    "demo": "demos/cases/mg-paperclip/index.html",
+    "patternIds": [
+      "analytic-motion-blur",
+      "sticker-slap-shadow",
+      "explode-parts-leaders",
+      "element-flight-regroup",
+      "anchor-pullback-phone",
+      "collect-counter",
+      "route-draw-marker"
+    ],
+    "previewAt": 9.5,
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "原作《贴纸科普 · How Many Elements Hide in a Phone?》来自 [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)，作者 Vincentwei1021，固定提交 `49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`；原目录为 `demos/19-paperclip/`。代码、提示词、文档与成片采用 MIT 许可，许可原文见 [LICENSE](film/LICENSE)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "| 完整文件与版本 | 官方来源 | 许可原文 |\n| --- | --- | --- |\n| `AlibabaPuHuiTi-3-105-Heavy.ttf`，Version 3.01 | [阿里官方完整归档](https://fonts.alibabadesign.com/AlibabaPuHuiTi-3.zip) | [阿里巴巴普惠体 3.0 法律声明原文](fonts/AlibabaPuHuiTi-LICENSE.md) |\n| `AlibabaPuHuiTi-3-65-Medium.ttf`，Version 3.01 | [阿里官方完整归档](https://fonts.alibabadesign.com/AlibabaPuHuiTi-3.zip) | [阿里巴巴普惠体 3.0 法律声明原文](fonts/AlibabaPuHuiTi-LICENSE.md) |\n| `AlibabaPuHuiTi-3-85-Bold.ttf`，Version 3.01 | [阿里官方完整归档](https://fonts.alibabadesign.com/AlibabaPuHuiTi-3.zip) | [阿里巴巴普惠体 3.0 法律声明原文](fonts/AlibabaPuHuiTi-LICENSE.md) |\n| `Inter[opsz,wght].ttf`，Version 4.001;git-66647c0bb | [Google Fonts 官方完整文件](https://raw.githubusercontent.com/google/fonts/0b58fb370093f9a9f4ff785d94405710b79de67c/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf) | [SIL OFL 1.1 原文](fonts/Inter-OFL.txt) |\n\n阿里官方字体入口为 [fonts.alibabagroup.com](https://fonts.alibabagroup.com/)，完整归档取其中的 Medium 500、Bold 700、Heavy 900；法律声明取官网链接的[官方原文](https://www.yuque.com/yiguang-wkqc2/hgpff0/nus9wiinq4aeiegy/markdown?attachment=true)。"
+      },
+      {
+        "scope": "固定版本库",
+        "notes": "| 包与版本 | npm registry 原始 tarball | 实际文件与许可 |\n| --- | --- | --- |\n| d3 7.9.0 | [d3-7.9.0.tgz](https://registry.npmjs.org/d3/-/d3-7.9.0.tgz) | `vendor/d3@7.9.0/dist/d3.min.js`；ISC，[原文](vendor/d3@7.9.0/LICENSE) |\n| topojson-client 3.1.0 | [topojson-client-3.1.0.tgz](https://registry.npmjs.org/topojson-client/-/topojson-client-3.1.0.tgz) | `vendor/topojson-client@3.1.0/dist/topojson-client.min.js`；ISC，[原文](vendor/topojson-client@3.1.0/LICENSE) |"
+      },
+      {
+        "scope": "照片贴纸与地图",
+        "notes": "`assets/stickers/` 的七张照片贴纸和尺寸数据、`assets/countries-110m.json` 原样取自固定提交的 `demos/19-paperclip/assets/`。根据原仓库 [README.zh-CN.md 的许可一节](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/README.zh-CN.md#许可)，片中照片采用 CC0 或公有领域许可；贴纸加工脚本与自制图形按原作 MIT 许可发布。世界边界为 [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/) 的公有领域数据，按 [world-atlas](https://github.com/topojson/world-atlas) TopoJSON 格式提供。"
+      },
+      {
+        "scope": "配乐",
+        "notes": "`audio/film.m4a` 从固定提交的 `videos/19-paperclip.mp4` 以 `ffmpeg -vn -c:a copy` 无损抽取 AAC 音轨，保留原片混音；成片与自制音频采用原作 MIT 许可。配乐生成过程原样保存在 `source/audio.py`，使用 [VCSL 乐器采样](https://github.com/sgossner/VCSL)（CC0）与原作合成器。"
+      }
+    ],
+    "relatedEntries": [
+      {
+        "kind": "material",
+        "id": "mg-styles-15",
+        "note": "提示词与配乐合成库所在素材"
+      }
+    ],
+    "energy": [
+      0.449,
+      0.403,
+      0.343,
+      0.331,
+      0.412,
+      0.522,
+      0.549,
+      0.467,
+      0.344,
+      0.316,
+      0.416,
+      0.517,
+      0.54,
+      0.511,
+      0.507,
+      0.516,
+      0.495,
+      0.577,
+      0.634,
+      0.677,
+      0.543,
+      0.538,
+      0.52,
+      0.507,
+      0.422,
+      0.376,
+      0.403,
+      0.592,
+      0.697,
+      0.852,
+      0.825,
+      0.745,
+      0.544,
+      0.334,
+      0.237,
+      0.188,
+      0.173,
+      0.159,
+      0.142,
+      0.13
+    ],
+    "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。",
+    "fidelity": "demos/cases/mg-paperclip/fidelity.md",
+    "licenses": "demos/cases/mg-paperclip/LICENSES.md",
+    "preview": "previews/cases/mg-paperclip.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 接入与保真说明\n\n复刻以公开默认成片为准，作品来源与固定版本见[条目 JSON](../../../entries/cases/mg-paperclip.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| 原 `index.html` → `film/scene.js`、`film/style.css`、`film/setup.js`、`index.html` | 拆分作品、样式与 DOM；入口使用固定版本 D3、TopoJSON 和 `MotionKit.mountFilm`。 | 路径改写 |\n| `film/scene.js` | 删除 `V5`、`NOLINK`、10.4 秒时间变换、另一版“贴纸人科普”标题、贴纸人、手机圆点与专用布局；保留默认 10 秒作品和原数值。 | 另一版剪辑分支 |\n| `film/scene.js` | 删除 `v5Links`、`window.linkAt`、另一版源时刻状态和 `window.__camSigma` 导出；保留成片读取的相机仿射快门、局部模糊与纯时间绘制。 | 开发工具 |\n| `film/scene.js`、`index.html`、`fonts/fonts.css`、`assets/`、`vendor/` | `/node_modules/` 改为 `vendor/<包>@<版本>/`；贴纸、尺寸数据和地图移到案例 `assets/`；`cues.json` 留在 `film/`；只声明实际使用的字体与字重，删去另一版独占的字体预载。 | 路径改写 |\n| `audio.py` → `source/audio.py`；`tools/stickers.py` → `source/tools/stickers.py` | 原样保存配乐与贴纸素材生成脚本，保持脚本字节与相对位置。 | 移至 source |\n\n声音以 `ffmpeg -i videos/19-paperclip.mp4 -vn -c:a copy audio/film.m4a` 从公开成片抽取，未转码；来源与许可见 [LICENSES.md](LICENSES.md)。\n\n## 接入\n\n`MotionKit.mountFilm` 以原作 `renderAt(t)` 接入 1920×1080、30fps、10 秒横屏舞台；中文 markers 从 `film/cues.json` 换算。声音默认关闭，开启后音轨与播放、暂停、拖动和倍速同步；`?embed`、`?render` 与 `?t=秒` 由共享运行时处理。\n\n`previewAt: 9.5`：9.5 秒拉远后的手机、飞出的 70/118 主数字、中文结论、下划线与底部说明均已完整入场。减少动态时在同一时刻暂停。\n\n## 已接受差异\n\n原片由 `harness/render.mjs` 按快门区间对子帧采样平均，实时页面与 `shot.mjs` 直接绘制指定时刻，快速运动边缘保留该渲染层造成的运动模糊差异；原作代码内的解析拖影与模糊保留。\n\n## 与原片对照结果\n\n对照图位于工作区 `compare/mg-paperclip/`，左侧为原片 ffmpeg 取帧，右侧为 `shot.mjs` 在 1920×1080 的同刻截图。\n\n| 时刻 | 逐张结论 | 拼图 |\n| --- | --- | --- |\n| 1.0 秒 | 手机贴纸、两行中文标题、橙色划线、英文副标题、虚线占位框与章节轨道的位置、字号和字形对应一致。 | `compare-1.0.png` |\n| 3.0 秒 | 拆解部件、徽章飞行、引线与进入画面的周期表对应一致；原片快速下移时的纵向拖影更强，来自 harness 子帧平均。 | `compare-3.0.png` |\n| 5.0 秒 | 周期表空位、飞往分类柱图的元素顺序、轨迹和重心运镜对应一致；高速格子与背景的清晰度差异来自原片子帧平均。 | `compare-5.0.png` |\n| 7.5 秒 | 第一次拉远后的手机边框、分类柱图、地图、矿石贴纸和供应路线的位置、比例与色彩对应一致。 | `compare-7.5.png` |\n| 9.5 秒 | 完整手机、70/118、结论、橙色下划线与说明的构图、字体、字号和基线对应一致。 | `compare-9.5.png` |\n\n浏览器中，独立页和站点案例页自动播放、拖动与声音开关正常；独立页 `?t=5&autoplay=0` 停在 5 秒，案例页 `#case/mg-paperclip?t=5` 将定位传给 Demo。独立页正常播放的一次声画采样差约 41ms；站点从 5 秒开启声音时两者起点对齐，结束时同时暂停，AAC 尾端与 10 秒画面相差约 16ms。\n\n## 制作依赖与复现\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/19-paperclip && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n\n贴纸准备脚本为 `source/tools/stickers.py`，读取复现案例 `assets/src/` 中 phone、battery、wafer、cobalt、lithium、tin、pcb、rareearth 的 `.img` 原图，输出 `assets/stickers/`；现有成品位于案例 `assets/stickers/`。\n\n原作仓库未提供这八份贴纸原图与 rembg 模型。生成脚本和原作已生成的成品贴纸均已保留，案例直接使用这些成品素材；重新生成需自行准备原始输入与模型。\n",
+    "licenses": "# 第三方许可索引\n\n[来源、版本和许可事实](../../../entries/cases/mg-paperclip.json)\n\n- [film/LICENSE](film/LICENSE)\n- [fonts/AlibabaPuHuiTi-LICENSE.md](fonts/AlibabaPuHuiTi-LICENSE.md)\n- [fonts/Inter-OFL.txt](fonts/Inter-OFL.txt)\n- [vendor/d3@7.9.0/LICENSE](vendor/d3@7.9.0/LICENSE)\n- [vendor/topojson-client@3.1.0/LICENSE](vendor/topojson-client@3.1.0/LICENSE)\n\n## 制作依赖\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/19-paperclip && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "prompt": "# 贴纸科普 · How Many Elements Hide in a Phone?\n\n## 实现 Prompt\n\nYou are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n粗描边贴纸人科普 MG（回形针/林超风格） Bold-outline Sticker Explainer MG (PaperClip / Lin Chao style)\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: one huge canvas (e.g. 6000×3000 px) with a camera transform (long eases), SVG charts, photo stickers with 10px white outline\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「回形针式硬核科普」The PaperClip-style knowledge-video look: sticker-ized photos + flat icons + precise charts on a giant canvas with continuous camera moves.\n- Topic (write your own tight copy), e.g. 「一部手机里，藏着多少种元素？」.\n- Calm blue-grey/off-white canvas (#E9EEF2 + slate), 2–3 colours + one accent (e.g. #FF5A36); equal-weight sans typography, strict alignment.\n- One continuous camera path: sticker phone photo (white 10px outline, soft shadow) → exploded-parts stickers with leader-line labels → periodic-table grid where element tiles light up → bar chart grows with count-up \"70+\" → world map with supply routes drawing → pull out to a bold typographic title card in the 回形针 manner (heavy sans, huge number, small caption).\n- Every beat introduces a new visual element; charts are exact (bars to scale, numbers consistent).\nSound: clean tech-explainer bed, UI clicks, ticking during count-up, soft whoosh on camera moves.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n回形针 PaperClip 带火的知识区标准包装：实拍图片抠图后加粗白描边变成『贴纸』，与扁平图标、数据图表一起铺在大画布上，镜头平移缩放串联信息点；林超等财经/跨学科 UP 主将其与手写板书、公式卡片结合。至今仍是硬核科普、财经知识区、企业宣传片的主流范式。\n视觉特征 照片贴纸化（粗白描边）, 蓝灰/米白冷静底色, 扁平图标+精确数据图表, 大画布镜头平移缩放, 信息密度极高的节拍化叙事\n关键技法 素材照片抠图 + 8~12px 白描边统一质感，消除图片来源差异\n超宽大画布布局，摄像机层做平移/缩放（ease 长曲线），一镜串多个信息点\n图表动效：柱状图生长、数字滚动计数、路径描边生长\n解说词逐句驱动画面元素入场，语速快、每句必有新视觉元素\n克制配色（2~3 色）+ 等线字体，保持『严肃感』\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.\n\n## 动效 Token\n\n- **大画布**：\"world\": { \"w\": 2400, \"h\": 5900 }\n- **飞行缓动**：const eFly=bez(.62,0,.22,1), ePull=bez(.5,0,.08,1);\n- **白色描边**：S=2; OUT=10*S\n- **元素飞行**：\"chip_flight\": 0.65; \"chip_stagger\": [0.0025, 0.025]; \"chip_rows\": [1, 0, 2, 3, 4]\n- **数字落点**：\"peel\": 7.9; \"endline\": [7.96, 8.14]; \"slam\": 8.14\n\n## 制作约束\n\n- 原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。\n- 10 秒，1920×1080，30fps；只提供横屏原作画幅，复刻公开成片的默认版本。\n\n## 迁移\n\n- `film/scene.js → PARTS、CATS、数据定义`：调整部件、周期表元素和分类图表的内容与布局。\n- `film/cues.json → cam、ev`：调整大画布镜头轨迹与拆解、元素、地图和落版节点。\n- `assets/stickers/`：替换照片贴纸与尺寸数据；source/tools/stickers.py 保存原作抠图和描边过程。\n- `index.html → MotionKit.mountFilm`：接入时间轴、原片音轨与窗口等比缩放。\n\n[打开 Demo](../../demos/cases/mg-paperclip/index.html) · [在库中查看](../../cases.html#case/mg-paperclip)\n"
+  },
+  "entrypoint": "demos/cases/mg-paperclip/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-paperclip/LICENSES.md",
+      "bytes": 911,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/countries-110m.json",
+      "bytes": 107761,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/battery.png",
+      "bytes": 233146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/cobalt.png",
+      "bytes": 377499,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/lithium.png",
+      "bytes": 291448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/meta.json",
+      "bytes": 351,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/pcb.png",
+      "bytes": 1296815,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/phone.png",
+      "bytes": 2104894,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/rareearth.png",
+      "bytes": 644720,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/tin.png",
+      "bytes": 538156,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/audio/film.m4a",
+      "bytes": 415520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fidelity.md",
+      "bytes": 4716,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/cues.json",
+      "bytes": 3076,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/scene.js",
+      "bytes": 50443,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/setup.js",
+      "bytes": 2263,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/style.css",
+      "bytes": 2129,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-105-Heavy.ttf",
+      "bytes": 2536300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-65-Medium.ttf",
+      "bytes": 8429388,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-85-Bold.ttf",
+      "bytes": 8371268,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-LICENSE.md",
+      "bytes": 5216,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/Inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/fonts.css",
+      "bytes": 698,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/index.html",
+      "bytes": 2456,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/audio.py",
+      "bytes": 10067,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/cues.json",
+      "bytes": 3076,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/tools/stickers.py",
+      "bytes": 4468,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/d3@7.9.0/LICENSE",
+      "bytes": 731,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/d3@7.9.0/dist/d3.min.js",
+      "bytes": 279706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/topojson-client@3.1.0/LICENSE",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/topojson-client@3.1.0/dist/topojson-client.min.js",
+      "bytes": 7169,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/mg-paperclip.json",
+      "bytes": 17924,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/mg-paperclip.jpg",
+      "bytes": 77589,
+      "role": "preview"
+    }
+  ]
+}

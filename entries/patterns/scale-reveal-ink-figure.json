@@ -1,0 +1,71 @@
+{
+  "id": "scale-reveal-ink-figure",
+  "order": 95,
+  "title": "拉远显微小人物",
+  "types": [
+    "camera",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "从人物所在的局部连续拉远，按对数插值缩小世界，直到整卷山水、装裱与轴头进入画幅，人物成为画中小点，朱印落下。",
+  "mechanism": "从人物所在的局部连续拉远，按对数插值缩小世界，直到整卷山水、装裱与轴头进入画幅，人物成为画中小点，朱印落下。",
+  "trigger": "彼岸拱手结束，42.6秒进入renderScroll。",
+  "effect": "刚完成的动作被放回整幅画，微小人物、大片纸白和印章形成尺度收束。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "40.400000–48.000000秒；1倍速，总时长7.600000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "镜头尺度",
+      "value": "film/passage.js:renderScroll：42.6–45秒eio，z=exp(lerp(log(1.25),log(.315),u))，cam.x=1150→2800、y=720→700。"
+    },
+    {
+      "name": "人物与落印",
+      "value": "同函数：hero s=1.7；43.7秒起题跋，44.48秒起印章150*(1.25−.25*eo(k))压下，44.6秒落印，45.6秒起片尾。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-ink-wash/film/passage.js",
+    "demos/cases/lemo-ink-wash/film/story.js",
+    "demos/cases/lemo-ink-wash/film/world.js"
+  ],
+  "locator": "renderScroll / camXf / T.scrollA / T.scrollB / T.seal",
+  "useCases": [
+    "刚完成的动作被放回整幅画，微小人物、大片纸白和印章形成尺度收束。"
+  ],
+  "avoid": [
+    "在关键动作或留白上叠加争夺注意的主动作"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "decisive-stroke-glyph"
+    ],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-ink-wash的原作render(t)重放“拉远显微小人物”。从人物所在的局部连续拉远，按对数插值缩小世界，直到整卷山水、装裱与轴头进入画幅，人物成为画中小点，朱印落下。保留参数：film/passage.js:renderScroll：42.6–45秒eio，z=exp(lerp(log(1.25),log(.315),u))，cam.x=1150→2800、y=720→700。；同函数：hero s=1.7；43.7秒起题跋，44.48秒起印章150*(1.25−.25*eo(k))压下，44.6秒落印，45.6秒起片尾。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/scale-reveal-ink-figure/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-ink-wash"
+    }
+  ],
+  "previewAt": 4.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "拉远显微小人物"
+    }
+  ],
+  "renderer": "gpu"
+}

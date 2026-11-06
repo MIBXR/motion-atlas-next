@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-memphis-diorama",
+  "entry": {
+    "id": "lemo-memphis-diorama",
+    "order": 23,
+    "title": "柚子城的四季 · 孟菲斯微缩景",
+    "subtitle": "Four Seasons in Pomelo Town",
+    "carriers": [
+      "video"
+    ],
+    "style": "dimensional",
+    "purpose": "title-art",
+    "tech": [
+      "canvas2d",
+      "threejs"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "孟菲斯微缩景观",
+      "材质与 3D",
+      "代码影片"
+    ],
+    "summary": "一个虚构河湾在连续高视角镜头中经历四季：广场主树每次下蹲回弹，换季波从树扩散，地面、树冠、屋顶与水面依次改色，冬日窗灯逐盏亮起。",
+    "focus": "孟菲斯平色、靛蓝描边、硬紫影与世界空间纹样构成桌面模型，半秒预备动作让换季波的因果关系清楚可辨。",
+    "accent": "#FF7EB3",
+    "background": "#FFFCF6",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 25,
+    "rhythm": {
+      "duration": 45,
+      "beats": [
+        {
+          "t": 0,
+          "label": "春景开框",
+          "note": "有机颗粒边框从中心长开。"
+        },
+        {
+          "t": 1.2,
+          "label": "春日河湾",
+          "note": "花瓣、风筝、燕子与鸭子形成微动。"
+        },
+        {
+          "t": 8.8,
+          "label": "主树下蹲",
+          "note": "半秒预备动作启动夏季波。"
+        },
+        {
+          "t": 9.3,
+          "label": "入夏波",
+          "note": "地面与树冠在环内换色。"
+        },
+        {
+          "t": 11.2,
+          "label": "夏雨与荷花",
+          "note": "云横穿，12.2–17.8 秒降雨，16.6 秒起荷花开放。"
+        },
+        {
+          "t": 18.8,
+          "label": "再次下蹲",
+          "note": "相机速度开始缓降。"
+        },
+        {
+          "t": 19.3,
+          "label": "入秋波",
+          "note": "水稻变金黄，干草堆逐块出现。"
+        },
+        {
+          "t": 21.2,
+          "label": "秋日微动",
+          "note": "大雁向西南飞过，落叶飘下。"
+        },
+        {
+          "t": 28.8,
+          "label": "第三次下蹲",
+          "note": "主树为入冬作预备。"
+        },
+        {
+          "t": 29.3,
+          "label": "入冬波",
+          "note": "浅彩树冠与白屋顶随波改变，雪在环后落下。"
+        },
+        {
+          "t": 32.6,
+          "label": "雪人弹入",
+          "note": "广场雪人用回弹动作出现。"
+        },
+        {
+          "t": 33.8,
+          "label": "暮色与窗灯",
+          "note": "粉紫暮色展开，窗与门灯逐盏亮起。"
+        },
+        {
+          "t": 39.3,
+          "label": "模型上的片尾",
+          "note": "底部两行换为 Eian 与 LemoLab 署名。"
+        },
+        {
+          "t": 44,
+          "label": "边框收回",
+          "note": "村庄保持微动，有机框向中心收束。"
+        }
+      ],
+      "bpm": 96
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 1.8,
+        "from": 0.1,
+        "to": 0.25,
+        "label": "开框与钢琴"
+      },
+      {
+        "t0": 1.8,
+        "t1": 9.3,
+        "from": 0.3,
+        "to": 0.4,
+        "label": "春日钢琴与钢片琴"
+      },
+      {
+        "t0": 9.3,
+        "t1": 19.3,
+        "from": 0.6,
+        "to": 0.65,
+        "label": "入夏与鼓刷"
+      },
+      {
+        "t0": 19.3,
+        "t1": 29.3,
+        "from": 0.6,
+        "to": 0.45,
+        "label": "入秋与马林巴"
+      },
+      {
+        "t0": 29.3,
+        "t1": 36.8,
+        "from": 0.5,
+        "to": 0.3,
+        "label": "入冬去鼓"
+      },
+      {
+        "t0": 36.8,
+        "t1": 39.3,
+        "from": 0.3,
+        "to": 0.25,
+        "label": "Fmaj7 延音"
+      },
+      {
+        "t0": 39.3,
+        "t1": 44,
+        "from": 0.3,
+        "to": 0.2,
+        "label": "片尾钢琴与八音盒"
+      },
+      {
+        "t0": 44,
+        "t1": 45,
+        "from": 0.2,
+        "to": 0,
+        "label": "随边框淡出"
+      }
+    ],
+    "energyNote": "段落依据 DEMO.md 的 Score structure 与四季表，9.3/19.3/29.3 秒为第 3/7/11 小节重拍，36.8 秒解决到 Fmaj7，39.3 秒片尾；0–1 是伴奏厚度和画面事件密度的相对标注。",
+    "observations": [
+      "季节只改变地面、树冠、屋顶与水面的大色块，房屋主体保留色彩。",
+      "换季材质同时保存当前色和下一季色，像素在环内选择后一色，物件动作按环到达的距离延迟。",
+      "主树垂直缩至 .8，横向按 1/√sy 扩张，随后 backOut 回弹；每次都配同一组声音。",
+      "有机框和底部文字固定，镜头在 18 秒后降至 0.3 倍速度，留住池塘与村庄。"
+    ],
+    "composition": {
+      "color": "暖白纸 #FFFCF6、靛蓝 #25214A 轮廓、冷紫硬影、饱和孟菲斯色与季节浅彩；窗灯统一 #FFD36E。",
+      "typography": "Inter Tight 400/600、Noto Sans SC 400/600、IBM Plex Mono 400，三行居中排在边框下。",
+      "layout": "1920×1080、60fps；约 1520×744 的有机边框容纳高三分之四视角模型，文字不覆盖场景。",
+      "imagery": "Three.js 几何搭建十栋房屋、桥、河、水田、主树、荷塘与远处人物，平面纹样与法线深度描边由着色器完成。",
+      "motion": "一镜缓慢环绕，树木、水、鸟、舟和行人各有相位；主树下蹲回弹后发出半径变化的季节波。",
+      "sound": "一首 96BPM、F 大调连续钢琴曲，四季仅改变伴奏厚度；同一下蹲对应低击、回弹音与十音竖琴上行，无旁白。",
+      "rhythm": "每十秒换一季，夏雨、秋雁、冬雪和暮色灯光构成小事件，Fmaj7 延音承托片尾。",
+      "coherence": "同一场地、固定日照方向、同一和声速度与重复换季手势贯穿四季。"
+    },
+    "layers": [
+      {
+        "name": "暖纸与有机框",
+        "role": "颗粒边缘以 12fps 沸动，开闭决定全片包络。"
+      },
+      {
+        "name": "微缩模型",
+        "role": "几何房屋、桥、水田与五种树冠轮廓。"
+      },
+      {
+        "name": "平色与纹样",
+        "role": "世界空间点、条纹、锯齿与半调阴影，法线深度描边约 2px。"
+      },
+      {
+        "name": "季节与微动",
+        "role": "距离波更换大色块，同时触发作物、伞、草堆和雪。"
+      },
+      {
+        "name": "底部三行与音乐",
+        "role": "固定文字位置承载季节与署名，连续配乐和轻拟音随画面变化。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#FFFCF6",
+        "#25214A",
+        "#FFD36E",
+        "#9DE8A6",
+        "#6FD889",
+        "#D6E68E",
+        "#FBFCFF",
+        "#A6E3FB",
+        "#A4E35F",
+        "#F2C14E",
+        "#FFD234",
+        "#8ED8F7",
+        "#72C9F3",
+        "#7BBFE8",
+        "#9FD0F4",
+        "#DCD0F2",
+        "#FFB8D9",
+        "#3CBE7E",
+        "#FF6F61",
+        "#E6DCFF"
+      ],
+      "type": "Inter Tight 400/600（IT）、Noto Sans SC 400/600（SC）、IBM Plex Mono 400（PM）；按 main.js 的 TEXT 至 TITLE 字符范围与可打印 ASCII 子集化。",
+      "motion": [
+        {
+          "name": "主树预备与回弹",
+          "value": "film/main.js:WAVES / place：8.8–9.3、18.8–19.3、28.8–29.3 秒，sy=1−.2*io；随后 .6 秒 backOut，scale.xz=1/√sy。"
+        },
+        {
+          "name": "季节波",
+          "value": "film/main.js:seasonState / passed：9.3–11.9、19.3–21.9、29.3–31.9 秒，WAVE_MAX=240；passed=clamp((r−distance)/(16*len))；film/memphis.js:FLAT_FS 在环内用 uCol2。"
+        },
+        {
+          "name": "相机",
+          "value": "film/main.js:camAt：fov=30，18–22 秒把速度缓降到 .3 倍，R=92−.4te、H=70−.3te。"
+        },
+        {
+          "name": "纹样与描边",
+          "value": "film/memphis.js:Diorama：2× 渲染，法线深度描边，框边颗粒以 floor(t*12) 更新。"
+        }
+      ]
+    },
+    "useCases": [
+      "网页首屏的场景影片",
+      "环境循环影像",
+      "四季与节气系列"
+    ],
+    "avoid": [
+      "近景人物表演",
+      "依赖景深、真实反射或体积光的场景"
+    ],
+    "constraints": [
+      "人物保持远处装饰尺度，物件先预备再变化。",
+      "季节只改变各材质的状态色，避免全局滤色让白昼发灰。",
+      "远处纹样降低密度，薄茎加粗或关闭描边。",
+      "长镜头速度适时放缓，保持主场地在框内。",
+      "中文改写后使用 tools/fonts.py 重建 TEXT 至 TITLE 范围内的子集。"
+    ],
+    "migration": [
+      {
+        "field": "film/main.js → TEXT / TITLE / SWAPS",
+        "how": "修改底部文字与淡换时刻。"
+      },
+      {
+        "field": "film/main.js → WAVES / camAt / place",
+        "how": "修改季节、镜头与微动时刻。"
+      },
+      {
+        "field": "film/main.js → S / SEASONAL；film/memphis.js → flat",
+        "how": "修改四季材质色、纹样和描边。"
+      },
+      {
+        "field": "film/main.js → 场景几何与 PLAZA / POND",
+        "how": "修改村庄、田地与换季中心，并在 source/music.py 中同步音符和拟音。"
+      }
+    ],
+    "prompt": "用暖白纸上的有机颗粒边框容纳一处孟菲斯微缩场景，饱和色搭配浅彩，靛蓝约 2px 轮廓、硬紫影与世界空间纹样，三档明暗而不做平滑塑料质感。高三分之四视角一镜缓慢环绕，水、树、鸟、舟与远处行人保持各自相位的连续微动。主地标先用半秒下蹲，再回弹发出环形波；波内逐像素切换地面、树冠、屋顶和水面的下一状态色，环经过的物件生长、展开或下落。框和底部三行字体位置固定，字体用 Inter Tight、Noto Sans SC 和 IBM Plex Mono；四季沿用一首同速度同和声的温暖钢琴曲，仅改变伴奏厚度，下蹲每次触发同一低击、回弹和竖琴上行，轻拟音压在音乐下。引擎位于 demos/cases/lemo-memphis-diorama/film/memphis.js、main.js 与 people.js。",
+    "demo": "demos/cases/lemo-memphis-diorama/index.html",
+    "patternIds": [
+      "season-ripple-wave"
+    ],
+    "fidelity": "demos/cases/lemo-memphis-diorama/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/memphis-diorama",
+      "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+      "path": "styles/memphis-diorama/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+      "notes": "代码与文档 MIT；原成片及静帧 CC BY 4.0，署名 LemoLab；第三方资源沿用 CREDITS 的许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与示范制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/memphis-diorama"
+      },
+      {
+        "label": "Release 公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/memphis-diorama.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/memphis-diorama/demo/CREDITS"
+      },
+      {
+        "label": "Eian · 原作者",
+        "url": "https://github.com/YIAN6557"
+      },
+      {
+        "label": "Three.js 0.170.0",
+        "url": "https://github.com/mrdoob/three.js/tree/r170"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "Eian（[YIAN6557](https://github.com/YIAN6557)，[@EianLu](https://x.com/EianLu)）创作并贡献；LemoLab × Claude Opus 5.5，作者 Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/memphis-diorama)，代码 MIT、成片 CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Eian的原创配乐与拟音由 source/music.py 合成，成片音轨随作品按CC BY 4.0发布；制作声明见 [audio/CREDITS](audio/CREDITS)，Three.js与字体许可入口见 [LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "字体家族与字重见 tokens.type；SIL OFL 1.1原文在 fonts/，取得方法和字符范围见 [source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-memphis-diorama/LICENSES.md",
+    "preview": "previews/cases/lemo-memphis-diorama.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 柚子城的四季 · 孟菲斯微缩景 · 接入与保真说明\n\n复刻范围为公开成片对应的完整代码影片，来源与固定版本见[条目 JSON](../../../entries/cases/lemo-memphis-diorama.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `film/index.html` | 字体 URL 指向案例根目录的 `fonts/`。 | 接入本库的素材目录。 |\n| `film/index.html` | import map 的 `/node_modules/three/` 改为 `../vendor/three@0.170.0/`。 | 将固定版本运行依赖随案例保存。 |\n| `audio/film.m4a` | 从 Release 成片流复制音轨。 | 以正式混音同步播放。 |\n| `source/` | 制作脚本、字幕/语音输入、音乐制作文件与 CREDITS 从运行目录移至此处，原字节保留。 | 保存制作依赖。 |\n| `stills/` | 不收录上游调试与风格帧。 | 运行画面不读取；预览由本库 capture 生成。 |\n| `index.html` | 增加MotionKit预载、同源iframe的load／READY等待、按原fps取整的异步renderAt及音轨接入。 | 接入本库时间线。 |\n| `index.html` | 增加MotionKit预载、同源iframe的load／READY等待、按原fps取整的异步renderAt及音轨接入。 | 接入本库时间线。 |\n\n运行引擎、时间轴和数据表保留原代码结构与字节，许可索引见 [LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html` 使用 `MotionKit.load.prepare` 预载运行资源，等待同源iframe的load事件及 `window.READY === true`，由 `MotionKit.mountFilm` 接入1920×1080横屏舞台。`renderAt(t)` 按60fps取最近帧，执行并等待 `upstream.render(Math.round(t*fps)/fps)`；舞台直接显示上游页面的绘制结果。\n\n`?embed` 隐藏控制条，`?render` 暂停自动播放与声音，`?t=秒` 定位；减少动态时暂停在25秒。镜头标记与原Release的AAC流复制音轨由mountFilm同步。\n\n`film/memphis.js:Diorama.render` 自行执行2倍场景RT、4倍MSAA、法线／深度描边、画框颗粒及文字；场景、画框、颗粒和雨丝均使用上游实现。\n\n## 已接受差异\n\n- 画框边缘在本机呈现规则点状颗粒，参考中更接近随机喷点：`film/memphis.js:215/245–252` 用输出像素坐标计算 `fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453)`，大参数sin及乘加的舍入经fract放大，颗粒相位依赖GPU／ANGLE后端。`311` 行仍按 `floor(frame/5)%4` 选种子；画框由这段上游着色器直接产生。\n- 夏雨段的雨丝蓝边在本库较硬，参考帧的细边更软：`film/main.js:344/507–514` 以300个 `0.14×2.6×0.14` 盒体及 `u=(t*1.6+ph)%1` 计算雨丝，JPEG和x264改变这些窄边的色度与细节。\n\n## 与原片对照结果\n\n参考按 `round(t×fps)` 的视频帧号精确取PNG。本库在1920×1080、DPR1、Intel Iris Xe／ANGLE D3D11下打开 `?embed=1&render=1&t=秒`，等待MotionKit就绪与定位完成后截取PNG。\n\n**未经编码链**一列直接比较参考PNG与本库原始PNG。**编码链测量**一列先在过程目录用独立CDP页面载入这张原始PNG，按上游捕获质量生成JPEG，再由ffmpeg执行下列x264编码链并解码为PNG。每张采样图独立作为一帧视频执行，因此测量帧是I帧；原成片连续GOP的预测历史与码率分配未进入这项单帧测量。JPEG与视频编解码均发生在过程目录的测量脚本中。\n\n`source/build.sh:21–23` 使用60fps；素材快照的 `core/render/video.mjs:49–57` 捕获JPEG95，编码 `libx264 -preset medium -crf 14 -pix_fmt yuv420p`；`core/render/mux.sh:79–89` 使用 `fps=60,format=yuv420p`、`libx264 -preset slow -crf 19 -r 60`，grain=0。\n\nMJPEG输入及后续编码沿用默认色彩处理；共享mux采用grain=0的分支。两幅待比PNG统一转为yuv444p，取ffmpeg `ssim` 的All值。`compare-<序号>.png` 为**左：Release参考帧；右：本库原始PNG**；`compare-encoded-<序号>.png` 为**左：Release参考帧；右：编码链测量PNG**。\n\n原8帧加DEMO.md各Shots段中点，同一实际视频帧去重。\n\n| Shots段 | 起止（秒） | 中点（秒） | 对照视频帧号 |\n| --- | --- | --- | --- |\n| 开框 | 0–1.2 | 0.600000 | 36 |\n| 春 | 1.2–9.3 | 5.250000 | 315 |\n| 入夏波 | 8.8–11.9 | 10.350000 | 621 |\n| 夏雨荷花 | 11.2–19.2 | 15.200000 | 912 |\n| 入秋波 | 18.8–21.9 | 20.350000 | 1221 |\n| 秋雁干草 | 21.2–30.6 | 25.900000 | 1554 |\n| 入冬波 | 28.8–31.9 | 30.350000 | 1821 |\n| 雪人 | 32.6–32.6 | 32.600000 | 1956 |\n| 暮色灯光 | 33.8–38.3 | 36.050000 | 2163 |\n| 片尾 | 39.3–44 | 41.650000 | 2499 |\n| 收框 | 44–45 | 44.500000 | 2670 |\n\n| 序号 | 视频帧号 | 请求时刻（秒） | 实际视频时刻（秒） | 未经编码链 SSIM All | 编码链测量 SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.996094 | 0.997645 | 原8帧 |\n| 2 | 36 | 0.600000 | 0.600000 | 0.869062 | 0.912492 | 原8帧；Shots · 开框中点 |\n| 3 | 315 | 5.250000 | 5.250000 | 0.879759 | 0.919233 | 原8帧；Shots · 春中点 |\n| 4 | 912 | 15.200000 | 15.200000 | 0.865243 | 0.900803 | 原8帧；Shots · 夏雨荷花中点 |\n| 5 | 1221 | 20.350000 | 20.350000 | 0.880143 | 0.908090 | 原8帧；Shots · 入秋波中点 |\n| 6 | 1500 | 25.000000 | 25.000000 | 0.880660 | 0.902876 | 原8帧 |\n| 7 | 2163 | 36.050000 | 36.050000 | 0.925026 | 0.941775 | 原8帧；Shots · 暮色灯光中点 |\n| 8 | 2640 | 44.000000 | 44.000000 | 0.916140 | 0.935519 | 原8帧 |\n| 9 | 621 | 10.350000 | 10.350000 | 0.873446 | 0.907930 | Shots · 入夏波中点 |\n| 10 | 1554 | 25.900000 | 25.900000 | 0.879446 | 0.907962 | Shots · 秋雁干草中点 |\n| 11 | 1821 | 30.350000 | 30.350000 | 0.918317 | 0.937287 | Shots · 入冬波中点 |\n| 12 | 1956 | 32.600000 | 32.600000 | 0.944914 | 0.957780 | Shots · 雪人中点 |\n| 13 | 2499 | 41.650000 | 41.650000 | 0.916576 | 0.934749 | Shots · 片尾中点 |\n| 14 | 2670 | 44.500000 | 44.500000 | 0.925691 | 0.943999 | Shots · 收框中点 |\n\n14帧：未经编码链最低 **0.865243**、最高 **0.996094**，1/14达到0.95；编码链测量最低 **0.900803**、最高 **0.997645**，2/14达到0.95。\n\n未达标帧（视频帧号，实际时刻，SSIM）：\n\n- 未经编码链：36（0.600000s，0.869062）、315（5.250000s，0.879759）、912（15.200000s，0.865243）、1221（20.350000s，0.880143）、1500（25.000000s，0.880660）、2163（36.050000s，0.925026）、2640（44.000000s，0.916140）、621（10.350000s，0.873446）、1554（25.900000s，0.879446）、1821（30.350000s，0.918317）、1956（32.600000s，0.944914）、2499（41.650000s，0.916576）、2670（44.500000s，0.925691）。\n- 编码链测量：36（0.600000s，0.912492）、315（5.250000s，0.919233）、912（15.200000s，0.900803）、1221（20.350000s，0.908090）、1500（25.000000s，0.902876）、2163（36.050000s，0.941775）、2640（44.000000s，0.935519）、621（10.350000s，0.907930）、1554（25.900000s，0.907962）、1821（30.350000s，0.937287）、2499（41.650000s，0.934749）、2670（44.500000s，0.943999）。\n\n上述未达标帧均包含上游 `film/memphis.js:215/245–252` 的画框噪声；其中 `h21` 的输入以1920×1080像素坐标进入dot与sin，参数达到数十万，微小舍入经过乘43758.5453和fract变为明显的相位差。第912帧顶部画框区域的原始／编码后SSIM为0.508408／0.647121，内部区域为0.907196／0.926727；随机边缘是明确的差异集中区。内部还有 `COMP_FS.edge:221–239` 的法线／深度阈值描边及 `main.js:344/507–514` 的窄雨丝，编码后仍有细边差异。第1956帧原始低于0.95、编码后达到0.957780；其余列出的12帧编码后仍未达标。\n\n声音：两条音轨解码为48kHz单声道，每10ms计算RMS包络，在±500ms内互相关；最佳偏移 **0ms**，相关系数 **1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-memphis-diorama.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；Eian（[YIAN6557](https://github.com/YIAN6557)，[@EianLu](https://x.com/EianLu)）的风格与示范片，贡献至 LemoLab。\n- [audio/film.m4a](audio/film.m4a) 流复制自[Release 成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/memphis-diorama.mp4)，成片按 [CC BY 4.0](audio/CC-BY-4.0.txt) 发布，署名 LemoLab 并链接来源；本库接入时未修改混音。\n- 音乐、声音、字体和数据的来源及许可原文记录：[audio/CREDITS](audio/CREDITS)；制作文件保留 [source/CREDITS](source/CREDITS)。\n- 配乐与拟音由 Eian 的 [source/music.py](source/music.py) 合成，原始制作声明见 CREDITS。\n- 字体均为 SIL OFL 1.1：[OFL-ibmplexmono.txt](fonts/OFL-ibmplexmono.txt)、[OFL-intertight.txt](fonts/OFL-intertight.txt)、[OFL-notosanssc.txt](fonts/OFL-notosanssc.txt)。\n- Three.js 0.170.0：[vendor/three@0.170.0/LICENSE](vendor/three@0.170.0/LICENSE)，MIT；仅保存入口加载链。\n\n声音声明保留上游 CREDITS 原文；CC 许可全文取自 [SPDX license-list-data](https://github.com/spdx/license-list-data/tree/main/text)。\n",
+    "prompt": "# 柚子城的四季 · 孟菲斯微缩景\n\n## 实现 Prompt\n\n用暖白纸上的有机颗粒边框容纳一处孟菲斯微缩场景，饱和色搭配浅彩，靛蓝约 2px 轮廓、硬紫影与世界空间纹样，三档明暗而不做平滑塑料质感。高三分之四视角一镜缓慢环绕，水、树、鸟、舟与远处行人保持各自相位的连续微动。主地标先用半秒下蹲，再回弹发出环形波；波内逐像素切换地面、树冠、屋顶和水面的下一状态色，环经过的物件生长、展开或下落。框和底部三行字体位置固定，字体用 Inter Tight、Noto Sans SC 和 IBM Plex Mono；四季沿用一首同速度同和声的温暖钢琴曲，仅改变伴奏厚度，下蹲每次触发同一低击、回弹和竖琴上行，轻拟音压在音乐下。引擎位于 demos/cases/lemo-memphis-diorama/film/memphis.js、main.js 与 people.js。\n\n## 动效 Token\n\n- **主树预备与回弹**：film/main.js:WAVES / place：8.8–9.3、18.8–19.3、28.8–29.3 秒，sy=1−.2*io；随后 .6 秒 backOut，scale.xz=1/√sy。\n- **季节波**：film/main.js:seasonState / passed：9.3–11.9、19.3–21.9、29.3–31.9 秒，WAVE_MAX=240；passed=clamp((r−distance)/(16*len))；film/memphis.js:FLAT_FS 在环内用 uCol2。\n- **相机**：film/main.js:camAt：fov=30，18–22 秒把速度缓降到 .3 倍，R=92−.4te、H=70−.3te。\n- **纹样与描边**：film/memphis.js:Diorama：2× 渲染，法线深度描边，框边颗粒以 floor(t*12) 更新。\n\n## 制作约束\n\n- 人物保持远处装饰尺度，物件先预备再变化。\n- 季节只改变各材质的状态色，避免全局滤色让白昼发灰。\n- 远处纹样降低密度，薄茎加粗或关闭描边。\n- 长镜头速度适时放缓，保持主场地在框内。\n- 中文改写后使用 tools/fonts.py 重建 TEXT 至 TITLE 范围内的子集。\n\n## 迁移\n\n- `film/main.js → TEXT / TITLE / SWAPS`：修改底部文字与淡换时刻。\n- `film/main.js → WAVES / camAt / place`：修改季节、镜头与微动时刻。\n- `film/main.js → S / SEASONAL；film/memphis.js → flat`：修改四季材质色、纹样和描边。\n- `film/main.js → 场景几何与 PLAZA / POND`：修改村庄、田地与换季中心，并在 source/music.py 中同步音符和拟音。\n\n[打开 Demo](../../demos/cases/lemo-memphis-diorama/index.html) · [在库中查看](../../cases.html#case/lemo-memphis-diorama)\n"
+  },
+  "entrypoint": "demos/cases/lemo-memphis-diorama/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-memphis-diorama/LICENSES.md",
+      "bytes": 1265,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/audio/CREDITS",
+      "bytes": 1178,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/audio/film.m4a",
+      "bytes": 1474180,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fidelity.md",
+      "bytes": 7870,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/film/index.html",
+      "bytes": 569,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/film/main.js",
+      "bytes": 47310,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/film/memphis.js",
+      "bytes": 18439,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/film/people.js",
+      "bytes": 2206,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fonts/IBMPlexMono-400.woff2",
+      "bytes": 5896,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fonts/InterTight-400.woff2",
+      "bytes": 11884,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fonts/InterTight-600.woff2",
+      "bytes": 12228,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fonts/NotoSansSC-400.woff2",
+      "bytes": 16220,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fonts/NotoSansSC-600.woff2",
+      "bytes": 16308,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fonts/OFL-intertight.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/fonts/fonts.css",
+      "bytes": 456,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/index.html",
+      "bytes": 2558,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/source/CREDITS",
+      "bytes": 1178,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/source/README.md",
+      "bytes": 1980,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/source/build.sh",
+      "bytes": 1846,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/source/music.py",
+      "bytes": 13603,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/source/tools/fonts.py",
+      "bytes": 2310,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-memphis-diorama/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/lemo-memphis-diorama.json",
+      "bytes": 12108,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-memphis-diorama.jpg",
+      "bytes": 181123,
+      "role": "preview"
+    }
+  ]
+}

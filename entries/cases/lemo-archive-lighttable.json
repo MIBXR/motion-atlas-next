@@ -1,0 +1,350 @@
+{
+  "id": "lemo-archive-lighttable",
+  "order": 67,
+  "title": "差两秒 · 档案灯台",
+  "subtitle": "Two Seconds Short",
+  "carriers": [
+    "video"
+  ],
+  "style": "evidence",
+  "purpose": "data",
+  "tech": [
+    "canvas2d",
+    "webgl",
+    "footage"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "档案灯台",
+    "实证影像",
+    "代码影片"
+  ],
+  "summary": "电报与报纸写着57秒，放大镜把莱特兄弟的负片转为正像，并带观众进入照片，档案记录的59秒让两份记录形成对照。",
+  "focus": "真实档案在同一灯台上保持物理位置，镜内负片转正与照片分层引导观众阅读证据，最后镜头拉远，将档案组织为索引。",
+  "accent": "#FF5A1F",
+  "background": "#0E0F11",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 22.3,
+  "rhythm": {
+    "duration": 40,
+    "beats": [
+      {
+        "t": 0,
+        "label": "灯台亮起",
+        "note": "0–1.3秒，灯台亮起。"
+      },
+      {
+        "t": 1.3,
+        "label": "放大镜落下",
+        "note": "1.3–2秒，放大镜落下。"
+      },
+      {
+        "t": 2,
+        "label": "进入电报",
+        "note": "2–3.3秒，进入电报。"
+      },
+      {
+        "t": 3.3,
+        "label": "电报原文亮起",
+        "note": "3.3–9.3秒，电报原文亮起。"
+      },
+      {
+        "t": 9.3,
+        "label": "抬镜转向剪报",
+        "note": "9.3–11.3秒，抬镜转向剪报。"
+      },
+      {
+        "t": 11.3,
+        "label": "剪报的57秒",
+        "note": "11.3–13.3秒，剪报的57秒。"
+      },
+      {
+        "t": 13.3,
+        "label": "移向第一次飞行",
+        "note": "13.3–14.7秒，移向第一次飞行。"
+      },
+      {
+        "t": 14.7,
+        "label": "镜内负片转正",
+        "note": "14.7–16秒，镜内负片转正。"
+      },
+      {
+        "t": 16,
+        "label": "穿入照片",
+        "note": "16–18秒，穿入照片。"
+      },
+      {
+        "t": 18,
+        "label": "飞行照片分层",
+        "note": "18–22.7秒，飞行照片分层。"
+      },
+      {
+        "t": 22.7,
+        "label": "转向第四次飞行",
+        "note": "22.7–24.7秒，转向第四次飞行。"
+      },
+      {
+        "t": 24.7,
+        "label": "放大镜与第四次飞行",
+        "note": "24.7–26.3秒，放大镜与第四次飞行。"
+      },
+      {
+        "t": 26.3,
+        "label": "透视量程",
+        "note": "26.3–30秒，透视量程。"
+      },
+      {
+        "t": 30,
+        "label": "两份记录并排",
+        "note": "30–33.3秒，两份记录并排。"
+      },
+      {
+        "t": 33.3,
+        "label": "划去57秒",
+        "note": "33.3–35.9秒，划去57秒。"
+      },
+      {
+        "t": 35.9,
+        "label": "灯台与索引",
+        "note": "35.9–40秒，灯台与索引。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 1.3,
+      "from": 0.2,
+      "to": 0.25,
+      "label": "灯台亮起"
+    },
+    {
+      "t0": 1.3,
+      "t1": 2,
+      "from": 0.25,
+      "to": 0.35,
+      "label": "放大镜落下"
+    },
+    {
+      "t0": 2,
+      "t1": 3.3,
+      "from": 0.35,
+      "to": 0.4,
+      "label": "进入电报"
+    },
+    {
+      "t0": 3.3,
+      "t1": 9.3,
+      "from": 0.4,
+      "to": 0.45,
+      "label": "电报原文亮起"
+    },
+    {
+      "t0": 9.3,
+      "t1": 11.3,
+      "from": 0.45,
+      "to": 0.6,
+      "label": "抬镜转向剪报"
+    },
+    {
+      "t0": 11.3,
+      "t1": 13.3,
+      "from": 0.6,
+      "to": 0.5,
+      "label": "剪报的57秒"
+    },
+    {
+      "t0": 13.3,
+      "t1": 14.7,
+      "from": 0.5,
+      "to": 0.7,
+      "label": "移向第一次飞行"
+    },
+    {
+      "t0": 14.7,
+      "t1": 16,
+      "from": 0.7,
+      "to": 0.75,
+      "label": "镜内负片转正"
+    },
+    {
+      "t0": 16,
+      "t1": 18,
+      "from": 0.75,
+      "to": 0.55,
+      "label": "穿入照片"
+    },
+    {
+      "t0": 18,
+      "t1": 22.7,
+      "from": 0.55,
+      "to": 0.5,
+      "label": "飞行照片分层"
+    },
+    {
+      "t0": 22.7,
+      "t1": 24.7,
+      "from": 0.5,
+      "to": 0.6,
+      "label": "转向第四次飞行"
+    },
+    {
+      "t0": 24.7,
+      "t1": 26.3,
+      "from": 0.6,
+      "to": 0.65,
+      "label": "放大镜与第四次飞行"
+    },
+    {
+      "t0": 26.3,
+      "t1": 30,
+      "from": 0.65,
+      "to": 0.5,
+      "label": "透视量程"
+    },
+    {
+      "t0": 30,
+      "t1": 33.3,
+      "from": 0.5,
+      "to": 0.75,
+      "label": "两份记录并排"
+    },
+    {
+      "t0": 33.3,
+      "t1": 35.9,
+      "from": 0.75,
+      "to": 0.55,
+      "label": "划去57秒"
+    },
+    {
+      "t0": 35.9,
+      "t1": 40,
+      "from": 0.55,
+      "to": 0.55,
+      "label": "灯台与索引"
+    }
+  ],
+  "energyNote": "时段取自上游DEMO.md的Shots；0–1为依据画面密度、配乐与旁白作出的相对编辑标注。",
+  "observations": [
+    "真实档案在同一灯台上保持物理位置，镜内负片转正与照片分层引导观众阅读证据，最后镜头拉远，将档案组织为索引。",
+    "灯台、放大镜和照片共享世界坐标；镜片穿过画幅，中心显影前沿把负像转正；镜内地面与抠图产生深度位移。",
+    "美国国会图书馆1903年玻璃负片、电报和代顿先驱报扫描；照片的飞行器、人物和背景按原脚本分层。"
+  ],
+  "composition": {
+    "color": "#F7F9FB、#0E0F11、#15171A、#FF5A1F",
+    "typography": "IBM Plex Mono 400/500；IBM Plex Sans 400/500；Noto Sans SC 400/500/600；Noto Serif SC 600，OFL子集。",
+    "layout": "1920×1080、24fps；主画面、读数和字幕按原作时间线组织。",
+    "imagery": "美国国会图书馆1903年玻璃负片、电报和代顿先驱报扫描；照片的飞行器、人物和背景按原脚本分层。",
+    "motion": "灯台、放大镜和照片共享世界坐标；镜片穿过画幅，中心显影前沿把负像转正；镜内地面与抠图产生深度位移。",
+    "sound": "90 BPM钢琴与弦乐、玻璃拟音、风与海浪、两次静默、Kokoro bm_george旁白。",
+    "rhythm": "连续时间线按Shots的段落与声音节点推进。",
+    "coherence": "真实档案在同一灯台上保持物理位置，镜内负片转正与照片分层引导观众阅读证据，最后镜头拉远，将档案组织为索引。"
+  },
+  "layers": [
+    {
+      "name": "原作画面",
+      "role": "美国国会图书馆1903年玻璃负片、电报和代顿先驱报扫描；照片的飞行器、人物和背景按原脚本分层。"
+    },
+    {
+      "name": "测量与文字",
+      "role": "真实档案在同一灯台上保持物理位置，镜内负片转正与照片分层引导观众阅读证据，最后镜头拉远，将档案组织为索引。"
+    },
+    {
+      "name": "声音",
+      "role": "90 BPM钢琴与弦乐、玻璃拟音、风与海浪、两次静默、Kokoro bm_george旁白。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#F7F9FB",
+      "#0E0F11",
+      "#15171A",
+      "#FF5A1F"
+    ],
+    "type": "IBM Plex Mono 400/500；IBM Plex Sans 400/500；Noto Sans SC 400/500/600；Noto Serif SC 600，OFL子集。",
+    "motion": [
+      {
+        "name": "源码时间线",
+        "value": "film/timeline.js的T/HIT/BUILD；段落见rhythm.beats。"
+      }
+    ]
+  },
+  "useCases": [
+    "博物馆档案故事",
+    "品牌历史影片",
+    "文献证据叙事"
+  ],
+  "avoid": [
+    "需要观看者自行决定节奏的网页交互"
+  ],
+  "constraints": [
+    "素材、数据、字体与时间线由原作文件直接驱动。"
+  ],
+  "migration": [
+    {
+      "field": "film/film.js",
+      "how": "修改画面、时间线或对应数据；参数位置见该文件。"
+    },
+    {
+      "field": "film/timeline.js",
+      "how": "修改画面、时间线或对应数据；参数位置见该文件。"
+    }
+  ],
+  "prompt": "制作“差两秒 · 档案灯台”：电报与报纸写着57秒，放大镜把莱特兄弟的负片转正并带入照片，档案记录的59秒让两份记录形成对照。真实档案在同一灯台上维持物理位置，镜内转正与分层照片把阅读带入证据，最后拉远并组织为档案索引。画面：美国国会图书馆1903年玻璃负片、电报和代顿先驱报扫描；照片的飞行器、人物和背景按原脚本分层。运动：灯台、放大镜和照片共享世界坐标；镜片穿过画幅，中心显影前沿把负像转正；镜内地面与抠图产生深度位移。声音：90 BPM钢琴与弦乐、玻璃拟音、风与海浪、两次静默、Kokoro bm_george旁白。实现文件为film/film.js、film/timeline.js，保留真实数据、素材署名和原片音轨，按1920×1080舞台的原作render(t)逐帧定位。",
+  "demo": "demos/cases/lemo-archive-lighttable/index.html",
+  "patternIds": [
+    "negative-to-positive-loupe",
+    "line-lights-up",
+    "element-flight-regroup"
+  ],
+  "fidelity": "demos/cases/lemo-archive-lighttable/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/archive-lighttable",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/archive-lighttable/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原成片与静帧CC BY 4.0，署名LemoLab；第三方素材沿用CREDITS的许可。"
+  },
+  "sources": [
+    {
+      "label": "风格、示范与固定源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/archive-lighttable"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/archive-lighttable.mp4"
+    },
+    {
+      "label": "原始署名与素材许可",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/archive-lighttable/demo/CREDITS"
+    },
+    {
+      "label": "事实与测量依据",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/archive-lighttable/demo/FACTS.md"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/archive-lighttable)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "第三方素材与声音",
+      "notes": "美国国会图书馆1903年玻璃负片、电报和代顿先驱报扫描；照片的飞行器、人物和背景按原脚本分层。 90 BPM钢琴与弦乐、玻璃拟音、风与海浪、两次静默、Kokoro bm_george旁白。 原始记录见[source/CREDITS](source/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "IBM Plex Mono 400/500；IBM Plex Sans 400/500；Noto Sans SC 400/500/600；Noto Serif SC 600，OFL子集。 许可原文在fonts/。"
+    }
+  ],
+  "renderer": "gpu"
+}

@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "tile-by-tile-island-growth",
+  "pattern": {
+    "id": "tile-by-tile-island-growth",
+    "order": 139,
+    "title": "逐块长岛配音符",
+    "types": [
+      "composition",
+      "rhythm",
+      "sound"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "海中地块按节拍从水下升起并带起水花，随后树和房屋按部件生长；每个落定事件都连同音高导出给配乐，转台镜头在同一世界里展示建造过程。",
+    "mechanism": "海中地块按节拍从水下升起并带起水花，随后树和房屋按部件生长；每个落定事件都连同音高导出给配乐，转台镜头在同一世界里展示建造过程。",
+    "trigger": "来源时间线进入逐块长岛配音符段。",
+    "effect": "海中地块按节拍从水下升起并带起水花，随后树和房屋按部件生长；每个落定事件都连同音高导出给配乐，转台镜头在同一世界里展示建造过程。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-lowpoly-island：6.000000–21.250000秒，1倍速，总时长15.250000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "建造与音符",
+        "value": "film/world.js:213–229的ev(t,rise,{note})、253的floor/roof、270的pop；source/music/score.py读取events.json合成旋律。"
+      },
+      {
+        "name": "水中生长",
+        "value": "film/world.js:415–430：地块水下上升、弹性回落、六边形浪圈和14滴水花；film/main.js:cam的grow/grow2使用单调正交转台。"
+      }
+    ],
+    "sourceFiles": [
+      "demos\\cases\\lemo-lowpoly-island\\film\\story.js",
+      "demos\\cases\\lemo-lowpoly-island\\film\\world.js",
+      "demos\\cases\\lemo-lowpoly-island\\film\\main.js",
+      "demos\\cases\\lemo-lowpoly-island\\source\\music\\score.py"
+    ],
+    "locator": "film/story.js / film/world.js / film/main.js / source/music/score.py",
+    "useCases": [
+      "游戏世界预告",
+      "场景生成短片",
+      "安静的微缩叙事"
+    ],
+    "avoid": [
+      "在关键动作和证据上叠加争夺注意的运动"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例的原作render(t)实现“逐块长岛配音符”。海中地块按节拍由水下升起并带水花，随后树和房屋按部件生长；每个落定事件携带音高导出给配乐，转台镜头在同一世界里展示建造。参数：film/world.js:213–229的ev(t,rise,{note})、253的floor/roof、270的pop；source/music/score.py读取events.json合成旋律。；film/world.js:415–430：地块水下上升、弹性回落、六边形浪圈和14滴水花；film/main.js:cam的grow/grow2使用单调正交转台。。复用来源字体、素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/tile-by-tile-island-growth/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-lowpoly-island"
+      }
+    ],
+    "previewAt": 7,
+    "markers": [
+      {
+        "t": 0,
+        "label": "逐块长岛配音符"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/tile-by-tile-island-growth.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-lowpoly-island",
+      "bundle": "agent/cases/lemo-lowpoly-island.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 逐块长岛配音符\n\n## 实现 Prompt\n\n用来源案例的原作render(t)实现“逐块长岛配音符”。海中地块按节拍由水下升起并带水花，随后树和房屋按部件生长；每个落定事件携带音高导出给配乐，转台镜头在同一世界里展示建造。参数：film/world.js:213–229的ev(t,rise,{note})、253的floor/roof、270的pop；source/music/score.py读取events.json合成旋律。；film/world.js:415–430：地块水下上升、弹性回落、六边形浪圈和14滴水花；film/main.js:cam的grow/grow2使用单调正交转台。。复用来源字体、素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-lowpoly-island：6.000000–21.250000秒，1倍速，总时长15.250000秒。\n\n[打开 Demo](../../demos/patterns/tile-by-tile-island-growth/index.html) · [在库中查看](../../patterns.html#pattern/tile-by-tile-island-growth)\n"
+  },
+  "entrypoint": "demos/patterns/tile-by-tile-island-growth/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-lowpoly-island/LICENSES.md",
+      "bytes": 836,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/CREDITS",
+      "bytes": 773,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/film.m4a",
+      "bytes": 1749067,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fidelity.md",
+      "bytes": 4327,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/index.html",
+      "bytes": 605,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/main.js",
+      "bytes": 15223,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/post.js",
+      "bytes": 7067,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/sea.js",
+      "bytes": 5409,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/story.js",
+      "bytes": 5162,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/voices/dur.json",
+      "bytes": 71,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/world.js",
+      "bytes": 39012,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2",
+      "bytes": 15904,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/OFL-josefinsans.txt",
+      "bytes": 4449,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/OFL-quicksand.txt",
+      "bytes": 4445,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2",
+      "bytes": 12304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/fonts.css",
+      "bytes": 2271,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/index.html",
+      "bytes": 3101,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/CREDITS",
+      "bytes": 773,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/README.md",
+      "bytes": 2375,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/build.sh",
+      "bytes": 1318,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/events.json",
+      "bytes": 5887,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/lines.json",
+      "bytes": 488,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/mix.py",
+      "bytes": 8393,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/music/CREDITS_music.txt",
+      "bytes": 1321,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/music/check.py",
+      "bytes": 7878,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/music/score.json",
+      "bytes": 41586,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/music/score.py",
+      "bytes": 28230,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/subs.py",
+      "bytes": 935,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/voices/words.json",
+      "bytes": 869,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/tile-by-tile-island-growth/index.html",
+      "bytes": 827,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/tile-by-tile-island-growth/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-lowpoly-island\\film\\main.js",
+      "bytes": 15223,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-lowpoly-island\\film\\story.js",
+      "bytes": 5162,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-lowpoly-island\\film\\world.js",
+      "bytes": 39012,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-lowpoly-island\\source\\music\\score.py",
+      "bytes": 28230,
+      "role": "asset"
+    },
+    {
+      "path": "entries/cases/lemo-lowpoly-island.json",
+      "bytes": 10104,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/tile-by-tile-island-growth.json",
+      "bytes": 3055,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/tile-by-tile-island-growth.jpg",
+      "bytes": 40526,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "drafting-order-build",
+  "pattern": {
+    "id": "drafting-order-build",
+    "order": 127,
+    "title": "按制图顺序自绘",
+    "types": [
+      "composition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "工程图以中心线、轮廓、齿轮细节、剖面排线、尺寸、球标、标签的约定顺序自绘，沿真实线段长度推进并在每层内错峰。",
+    "mechanism": "工程图以中心线、轮廓、齿轮细节、剖面排线、尺寸、球标、标签的约定顺序自绘，沿真实线段长度推进并在每层内错峰。",
+    "trigger": "B(3)开始绘制中心线。",
+    "effect": "复杂机器按可读的工程信息层次出现。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "4.300000–11.100000秒；1倍速，共6.800000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "层进度",
+        "value": "film/film.js:154–156的drawn：c从B(3)，o从B(3,2)，g从B(4)，d从B(4,1)，h从B(4,2)，b在9.3–10.7秒；dims从B(5)开始。"
+      },
+      {
+        "name": "实际绘制",
+        "value": "film/machine.js的pr.c/o/g/d/h/b分别驱动中心线、solid轮廓、齿轮、细节、hatch和BAL球标；film/draw.js的trunc按累计线长截取。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-blueprint/film/film.js",
+      "demos/cases/lemo-blueprint/film/draw.js",
+      "demos/cases/lemo-blueprint/film/machine.js"
+    ],
+    "locator": "film.js / draw.js / machine.js",
+    "useCases": [
+      "复杂机器按可读的工程信息层次出现。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-blueprint的原作render(t)，重放“按制图顺序自绘”。工程图以中心线、轮廓、齿轮细节、剖面排线、尺寸、球标、标签的约定顺序自绘，沿真实线段长度推进并在每层内错峰。参数与源码：film/film.js:154–156的drawn：c从B(3)，o从B(3,2)，g从B(4)，d从B(4,1)，h从B(4,2)，b在9.3–10.7秒；dims从B(5)开始。；film/machine.js的pr.c/o/g/d/h/b分别驱动中心线、solid轮廓、齿轮、细节、hatch和BAL球标；film/draw.js的trunc按累计线长截取。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/drafting-order-build/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-blueprint"
+      }
+    ],
+    "previewAt": 4.4,
+    "markers": [
+      {
+        "t": 0,
+        "label": "按制图顺序自绘"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/drafting-order-build.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-blueprint",
+      "bundle": "agent/cases/lemo-blueprint.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 按制图顺序自绘\n\n## 实现 Prompt\n\n复用来源案例lemo-blueprint的原作render(t)，重放“按制图顺序自绘”。工程图以中心线、轮廓、齿轮细节、剖面排线、尺寸、球标、标签的约定顺序自绘，沿真实线段长度推进并在每层内错峰。参数与源码：film/film.js:154–156的drawn：c从B(3)，o从B(3,2)，g从B(4)，d从B(4,1)，h从B(4,2)，b在9.3–10.7秒；dims从B(5)开始。；film/machine.js的pr.c/o/g/d/h/b分别驱动中心线、solid轮廓、齿轮、细节、hatch和BAL球标；film/draw.js的trunc按累计线长截取。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：4.300000–11.100000秒；1倍速，共6.800000秒。\n\n[打开 Demo](../../demos/patterns/drafting-order-build/index.html) · [在库中查看](../../patterns.html#pattern/drafting-order-build)\n"
+  },
+  "entrypoint": "demos/patterns/drafting-order-build/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-blueprint/LICENSES.md",
+      "bytes": 907,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/CREDITS",
+      "bytes": 1071,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/audio/film.m4a",
+      "bytes": 1534289,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fidelity.md",
+      "bytes": 4221,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/draw.js",
+      "bytes": 14459,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/film.js",
+      "bytes": 26942,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/index.html",
+      "bytes": 346,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/lines.json",
+      "bytes": 981,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/machine.js",
+      "bytes": 24965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/main.js",
+      "bytes": 6532,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/paper.js",
+      "bytes": 8655,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/sheet.js",
+      "bytes": 20986,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/film/voices/dur.json",
+      "bytes": 86,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/Allura-Regular.ttf",
+      "bytes": 246632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/ArchitectsDaughter-Regular.ttf",
+      "bytes": 43352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/B612-Bold.ttf",
+      "bytes": 100932,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/B612-Regular.ttf",
+      "bytes": 153192,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/B612Mono-Regular.ttf",
+      "bytes": 140292,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-allura.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-architectsdaughter.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-b612.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL-b612mono.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/OFL.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/fonts/fonts.css",
+      "bytes": 489,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/index.html",
+      "bytes": 2402,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/CREDITS",
+      "bytes": 1071,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/DEMO.md",
+      "bytes": 15849,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/README.md",
+      "bytes": 3784,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/STYLE.md",
+      "bytes": 12323,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/build.sh",
+      "bytes": 1489,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/events.json",
+      "bytes": 21654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/mix.py",
+      "bytes": 8076,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/music/score.json",
+      "bytes": 1598,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/music/score.py",
+      "bytes": 13539,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/style.json",
+      "bytes": 550,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/subs.json",
+      "bytes": 762,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/tools/check_mix.py",
+      "bytes": 1182,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/tools/subs.mjs",
+      "bytes": 1022,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-blueprint/source/voices/words.json",
+      "bytes": 1259,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/drafting-order-build/index.html",
+      "bytes": 813,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/drafting-order-build/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-blueprint.json",
+      "bytes": 10249,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/drafting-order-build.json",
+      "bytes": 2613,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/drafting-order-build.jpg",
+      "bytes": 60417,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "holes-are-light",
+  "order": 106,
+  "title": "镂空即光",
+  "types": [
+    "texture",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "在圆形范围内反取团花的alpha，得到孔洞蒙版；背光使孔洞透出暖光，同一蒙版压扁投到雪地，再与年兽alpha相交落到脸部，纸上剪掉的形状成为照明。",
+  "mechanism": "在圆形范围内反取团花的alpha，得到孔洞蒙版；背光使孔洞透出暖光，同一蒙版压扁投到雪地，再与年兽alpha相交落到脸部，纸上剪掉的形状成为照明。",
+  "trigger": "窗花贴好并点亮蜡烛。",
+  "effect": "纸花的镂空从细节变成场景中的光形，直接照到年兽。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "31.25–35.3秒；1倍速，总时长4.050000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "孔洞蒙版",
+      "value": "film/tuanhua.js:tuanhuaHoles：圆内孔洞为白、红纸与圆外透明；film/world.js读取同一蒙版投地。"
+    },
+    {
+      "name": "脸部投光",
+      "value": "film/main.js:shotNianClose调用addMasked，PM=[k,.05*k,-.04*k,.97*k,fc.x,fc.y]，k=C[0]*.5；暖白alpha=.85 blur=.5，橙色alpha=.4 blur=6。"
+    },
+    {
+      "name": "叠光",
+      "value": "film/light.js:addMasked把蒙版限制在NLc人物alpha中，以lighter叠加。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-papercut-red/film/tuanhua.js",
+    "demos/cases/lemo-papercut-red/film/world.js",
+    "demos/cases/lemo-papercut-red/film/main.js",
+    "demos/cases/lemo-papercut-red/film/light.js"
+  ],
+  "locator": "tuanhuaHoles / shotNianClose / addMasked",
+  "useCases": [
+    "纸花的镂空从细节变成场景中的光形，直接照到年兽。"
+  ],
+  "avoid": [
+    "同时叠加遮住主要动作的画面层"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-papercut-red的原作render(t)，实现“镂空即光”：团花在圆形范围内反取alpha得到孔洞蒙版；背光使孔洞透出暖光，同一蒙版压扁投到雪地，再与年兽alpha相交落到脸部，纸上剪掉的形状成为照明。参数与源码：film/tuanhua.js:tuanhuaHoles：圆内孔洞为白、红纸与圆外透明；film/world.js读取同一蒙版投地。；film/main.js:shotNianClose调用addMasked，PM=[k,.05*k,-.04*k,.97*k,fc.x,fc.y]，k=C[0]*.5；暖白alpha=.85 blur=.5，橙色alpha=.4 blur=6。；film/light.js:addMasked把蒙版限制在NLc人物alpha中，以lighter叠加。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。",
+  "demo": "demos/patterns/holes-are-light/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-papercut-red"
+    }
+  ],
+  "previewAt": 3.25,
+  "markers": [
+    {
+      "t": 0,
+      "label": "镂空即光"
+    }
+  ]
+}

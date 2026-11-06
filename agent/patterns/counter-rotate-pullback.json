@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "counter-rotate-pullback",
+  "pattern": {
+    "id": "counter-rotate-pullback",
+    "order": 146,
+    "title": "反旋拉远",
+    "types": [
+      "camera"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。",
+    "mechanism": "镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。",
+    "trigger": "来源案例的时间轴进入所列动作区间。",
+    "effect": "镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-midcentury-toon 21.800000–24.500000秒；1倍速，总时长2.700000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "同步反旋",
+        "value": "film/film.js:615–619，zk=ss(seg(t,b(.4),b(5.2)))；z=exp(lerp(log(2.6),log(1),zk))，r=lerp(−.1,0,zk)，中心移至[960,590]。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-midcentury-toon/film/film.js"
+    ],
+    "locator": "film/film.js:615–619，zk=ss(seg(t,b(.4),b(5.2)))；z=exp(lerp(log(2.6),log(1),zk))，r=lerp(−.1,0,zk)，中心移至[960,590]。",
+    "useCases": [
+      "镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "调用来源案例原作render(t)重放“反旋拉远”。镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。 参数：film/film.js:615–619，zk=ss(seg(t,b(.4),b(5.2)))；z=exp(lerp(log(2.6),log(1),zk))，r=lerp(−.1,0,zk)，中心移至[960,590]。 使用index.html的segments映射原片时刻，复用来源素材、字体与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/counter-rotate-pullback/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-midcentury-toon"
+      }
+    ],
+    "previewAt": 1.8,
+    "markers": [
+      {
+        "t": 0,
+        "label": "反旋拉远"
+      }
+    ],
+    "preview": "previews/patterns/counter-rotate-pullback.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-midcentury-toon",
+      "bundle": "agent/cases/lemo-midcentury-toon.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 反旋拉远\n\n## 实现 Prompt\n\n调用来源案例原作render(t)重放“反旋拉远”。镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。 参数：film/film.js:615–619，zk=ss(seg(t,b(.4),b(5.2)))；z=exp(lerp(log(2.6),log(1),zk))，r=lerp(−.1,0,zk)，中心移至[960,590]。 使用index.html的segments映射原片时刻，复用来源素材、字体与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-midcentury-toon 21.800000–24.500000秒；1倍速，总时长2.700000秒。\n\n[打开 Demo](../../demos/patterns/counter-rotate-pullback/index.html) · [在库中查看](../../patterns.html#pattern/counter-rotate-pullback)\n"
+  },
+  "entrypoint": "demos/patterns/counter-rotate-pullback/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-midcentury-toon/LICENSES.md",
+      "bytes": 920,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/CREDITS",
+      "bytes": 1268,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/CREDITS-music.txt",
+      "bytes": 391,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/film.m4a",
+      "bytes": 1282461,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fidelity.md",
+      "bytes": 4283,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/content.json",
+      "bytes": 3105,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/engine/chars.js",
+      "bytes": 18546,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/engine/icons.js",
+      "bytes": 7542,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/engine/toon.js",
+      "bytes": 20249,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/film.js",
+      "bytes": 61963,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/index.html",
+      "bytes": 447,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/main.js",
+      "bytes": 904,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/voices/dur.json",
+      "bytes": 99,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/AlfaSlabOne-Regular.ttf",
+      "bytes": 97376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/Jost.ttf",
+      "bytes": 134996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OFL-alfaslabone.txt",
+      "bytes": 4430,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OFL-jost.txt",
+      "bytes": 4384,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OFL-oleoscript.txt",
+      "bytes": 4419,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OleoScript-Bold.ttf",
+      "bytes": 34628,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OleoScript-Regular.ttf",
+      "bytes": 34980,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/fonts.css",
+      "bytes": 482,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/index.html",
+      "bytes": 2261,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/CREDITS",
+      "bytes": 1268,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/README.md",
+      "bytes": 3552,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/build.sh",
+      "bytes": 2170,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/content_alt.json",
+      "bytes": 3073,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/events.json",
+      "bytes": 2432,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/lines.json",
+      "bytes": 911,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/mix.py",
+      "bytes": 9717,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/music/CREDITS_music.txt",
+      "bytes": 391,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/music/hits.json",
+      "bytes": 1809,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/music/score.py",
+      "bytes": 21185,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/sheet.js",
+      "bytes": 4661,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/tools/cuecheck.py",
+      "bytes": 1150,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/tools/cues.mjs",
+      "bytes": 596,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/tools/lines.py",
+      "bytes": 689,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/voices/words.json",
+      "bytes": 928,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/counter-rotate-pullback/index.html",
+      "bytes": 826,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/counter-rotate-pullback/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-midcentury-toon.json",
+      "bytes": 8576,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/counter-rotate-pullback.json",
+      "bytes": 2411,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/counter-rotate-pullback.jpg",
+      "bytes": 77778,
+      "role": "preview"
+    }
+  ]
+}

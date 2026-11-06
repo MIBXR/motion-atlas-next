@@ -1,0 +1,266 @@
+{
+  "id": "lemo-crayon-book",
+  "order": 32,
+  "title": "月亮睡不着 · 蜡笔儿童绘本",
+  "subtitle": "The Moon Can't Sleep",
+  "carriers": [
+    "video"
+  ],
+  "style": "hand-drawn",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "webgl"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "蜡笔儿童绘本",
+    "手绘与绘画",
+    "代码影片"
+  ],
+  "summary": "月亮失眠，数羊失败；女孩爬上逐级画出的梯子，刷水彩显出纸上的白蜡笔星星，再给月亮盖上拼布被。随后镜头拉远到桌上的绘本，绘本再翻到终页。",
+  "focus": "蜡笔防染成为高潮动作；绘画材料本身通过线条抖动、纸齿、梯子与被子推动故事。",
+  "accent": "#d4483c",
+  "background": "#f4efe3",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 43.68,
+  "rhythm": {
+    "duration": 52,
+    "beats": [
+      {
+        "t": 0,
+        "label": "空纸画入",
+        "note": "0–5.6秒，空纸画入。"
+      },
+      {
+        "t": 5.6,
+        "label": "推近月亮",
+        "note": "5.6–8.2秒，推近月亮。"
+      },
+      {
+        "t": 8.2,
+        "label": "数羊失眠",
+        "note": "8.2–14.9秒，数羊失眠。"
+      },
+      {
+        "t": 14.9,
+        "label": "沿视线发现",
+        "note": "14.9–17.6秒，沿视线发现。"
+      },
+      {
+        "t": 17.6,
+        "label": "月亮与女孩",
+        "note": "17.6–19.8秒，月亮与女孩。"
+      },
+      {
+        "t": 19.8,
+        "label": "画梯攀爬",
+        "note": "19.8–27.1秒，画梯攀爬。"
+      },
+      {
+        "t": 27.1,
+        "label": "水彩显星",
+        "note": "27.1–37.4秒，水彩显星。"
+      },
+      {
+        "t": 37.4,
+        "label": "入睡收束",
+        "note": "37.4–44.8秒，入睡收束。"
+      },
+      {
+        "t": 44.8,
+        "label": "绘本拉远翻页",
+        "note": "44.8–52秒，绘本拉远翻页。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 5.6,
+      "to": 0.3,
+      "label": "空纸画入",
+      "from": 0.25
+    },
+    {
+      "t0": 5.6,
+      "t1": 8.2,
+      "to": 0.5,
+      "label": "推近月亮",
+      "from": 0.3
+    },
+    {
+      "t0": 8.2,
+      "t1": 14.9,
+      "to": 0.25,
+      "label": "数羊失眠",
+      "from": 0.5
+    },
+    {
+      "t0": 14.9,
+      "t1": 17.6,
+      "to": 0.3,
+      "label": "沿视线发现",
+      "from": 0.25
+    },
+    {
+      "t0": 17.6,
+      "t1": 19.8,
+      "to": 0.55,
+      "label": "月亮与女孩",
+      "from": 0.3
+    },
+    {
+      "t0": 19.8,
+      "t1": 27.1,
+      "to": 0.8,
+      "label": "画梯攀爬",
+      "from": 0.55
+    },
+    {
+      "t0": 27.1,
+      "t1": 37.4,
+      "to": 0.2,
+      "label": "水彩显星",
+      "from": 0.8
+    },
+    {
+      "t0": 37.4,
+      "t1": 44.8,
+      "to": 0.1,
+      "label": "入睡收束",
+      "from": 0.2
+    },
+    {
+      "t0": 44.8,
+      "t1": 52,
+      "to": 0.03,
+      "label": "绘本拉远翻页",
+      "from": 0.1
+    }
+  ],
+  "energyNote": "时段取自DEMO.md的Shots与源码镜头表；0–1为按画面动作、音乐密度和静默作出的相对编辑标注。",
+  "observations": [
+    "白蜡笔星星与画页同时存在，水彩经过时因防染露出亮形。",
+    "三道水彩带交错左右刷过，重叠覆盖到草地线。",
+    "线条每两帧重画，纸齿固定在画页坐标，背景填色保持静止。",
+    "44.4秒后BOIL.amp降为0.55，46秒起回到桌上绘本，47.6秒翻页。"
+  ],
+  "composition": {
+    "color": "暖纸 #f4efe3、靛蓝轮廓 #2d3263、黄 #f5c63c、红 #d4483c、天蓝 #79acd9与白蜡 #fbfaf4，夜色只用群青水彩。",
+    "typography": "Patrick Hand 400作字幕和书页文字，Gaegu 400/700作手写标题和终页。",
+    "layout": "1920×1080横屏、24fps；构图与字幕沿用原作。",
+    "imagery": "Canvas2D蜡笔丝带、锯齿填色和替换姿势，经WebGL2纸齿附着、防染、凹凸与灯光合成。",
+    "motion": "12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书，再用条带仿射翻页。",
+    "sound": "原作音乐盒、玩具钢琴、长笛、单簧管与钟琴摇篮曲，Kokoro af_heart旁白，蜡笔、水彩、毛毡与翻页拟音。",
+    "rhythm": "蜡笔防染成为高潮动作；绘画材料本身通过线条抖动、纸齿、梯子与被子推动故事。",
+    "coherence": "材质、动作和声音共用原作时间表。"
+  },
+  "layers": [
+    {
+      "name": "材料与场景",
+      "role": "Canvas2D蜡笔丝带、锯齿填色和替换姿势，经WebGL2纸齿附着、防染、凹凸与灯光合成。"
+    },
+    {
+      "name": "角色与动作",
+      "role": "12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书，再用条带仿射翻页。"
+    },
+    {
+      "name": "文字与声音",
+      "role": "Patrick Hand 400作字幕和书页文字，Gaegu 400/700作手写标题和终页。 原作音乐盒、玩具钢琴、长笛、单簧管与钟琴摇篮曲，Kokoro af_heart旁白，蜡笔、水彩、毛毡与翻页拟音。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#f4efe3",
+      "#2d3263",
+      "#f5c63c",
+      "#d4483c",
+      "#79acd9",
+      "#fbfaf4"
+    ],
+    "type": "Patrick Hand 400作字幕和书页文字，Gaegu 400/700作手写标题和终页。",
+    "motion": [
+      {
+        "name": "镜头与节拍",
+        "value": "12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书与条带仿射翻页。"
+      }
+    ]
+  },
+  "useCases": [
+    "睡前绘本",
+    "儿童学习故事",
+    "温柔告别短片"
+  ],
+  "avoid": [
+    "需要写实摄影或自由三维转面的画面"
+  ],
+  "constraints": [
+    "水彩只覆盖画页与背景，角色在水彩后合成。",
+    "纸齿固定在画页，缩放时交叉淡化噪声倍频。",
+    "白蜡笔图案与水彩使用同一覆盖场。"
+  ],
+  "migration": [
+    {
+      "field": "film/film.js → LINES / camT / RUNG_T",
+      "how": "修改故事文案、相机与画梯动作。"
+    },
+    {
+      "field": "film/world.js → STARS / BANDS；film/gl.js → wash",
+      "how": "修改隐藏图形、刷色时段与蜡笔防染强度。"
+    }
+  ],
+  "prompt": "制作“月亮睡不着 · 蜡笔儿童绘本”对应的时间线影片。月亮失眠，数羊失败；女孩爬上逐级画出的梯子，用水彩刷显纸上白蜡笔星星，再给月亮盖上拼布被，镜头拉远成桌上的绘本并翻到终页。蜡笔防染成为高潮动作，线条抖动、纸齿、梯子与被子都由绘画材料本身推动故事。视觉与动作：Canvas2D蜡笔丝带、锯齿填色和替换姿势，经WebGL2纸齿附着、防染、凹凸与灯光合成。12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书与条带仿射翻页。配色：暖纸 #f4efe3、靛蓝轮廓 #2d3263、黄 #f5c63c、红 #d4483c、天蓝 #79acd9与白蜡 #fbfaf4，夜色只用群青水彩。文字：Patrick Hand 400作字幕和书页文字，Gaegu 400/700作手写标题和终页。声音：原作音乐盒、玩具钢琴、长笛、单簧管与钟琴摇篮曲，Kokoro af_heart旁白，蜡笔、水彩、毛毡与翻页拟音。直接使用demos/cases/lemo-crayon-book/film/中的原作绘制与时间表，按源码迁移字段修改，支持MotionKit播放、暂停和逐帧定位，声音默认关闭。",
+  "demo": "demos/cases/lemo-crayon-book/index.html",
+  "patternIds": [
+    "wax-resist-wash-reveal",
+    "cel-line-boil",
+    "anchor-pullback-phone"
+  ],
+  "fidelity": "demos/cases/lemo-crayon-book/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/crayon-book",
+    "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+    "path": "styles/crayon-book/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+    "notes": "代码与文档MIT；成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/crayon-book"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/crayon-book.mp4"
+    },
+    {
+      "label": "素材与声音署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/crayon-book/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/crayon-book)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原作配乐、采样、拟音与旁白来源见[audio/CREDITS](audio/CREDITS)，许可原文见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "家族与字重见tokens.type，字体与OFL原文在fonts/，取得方法见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

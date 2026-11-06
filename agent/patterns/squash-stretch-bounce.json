@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "squash-stretch-bounce",
+  "pattern": {
+    "id": "squash-stretch-bounce",
+    "order": 18,
+    "title": "预备、拉伸与压扁回弹",
+    "types": [
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "重放圆点落地、蓄力弹射与图标接力中的拉伸、压扁和回弹。逐帧火苗段包含醒来后的蹲压、拉长起跳、落地压扁与连续舞步。液态片的液滴触地压扁回弹，冠状液臂长出后断裂，形成延迟飞出的次级液滴。",
+    "mechanism": "圆点起跳前压缩，飞行中沿速度方向拉伸，落地时压扁再回弹，组成从预备到落定的一整套弹跳形变。逐帧火苗按24fps曝光表进行蹲压、拉长起跳与落地压扁回弹，再接连续小跳与转身。液态片中，沿速度拉伸的液滴在触地时压扁回弹，冠状液臂变细断裂，次级液滴延迟飞出。",
+    "trigger": "圆点开始下落、进入起跳预备或到达落地节点时。",
+    "effect": "圆点的横纵尺寸、旋转和接触位置随起跳、速度与碰撞阶段联动。",
+    "timing": [
+      {
+        "name": "下落拉伸",
+        "value": "g=2040；a=-0.12；R0=74；k=min(g*(t-a)/1500,1)*.16；sy=1+k，sx=1/(1+k)。"
+      },
+      {
+        "name": "首次触地",
+        "value": "15/30=.500秒；3帧压缩sy=1-.4*sin(πu)、sx=1+.36*sin(πu)；回跳高78。"
+      },
+      {
+        "name": "再次触地",
+        "value": "24/30=.800秒；2.5帧压缩幅.2/.18。"
+      },
+      {
+        "name": "起跳预备",
+        "value": "27/30–31/30=.900–1.033秒；sy*=1-.3*a，sx*=1+.24*a；y=GY-R0*sy。"
+      },
+      {
+        "name": "弧线弹射",
+        "value": "31/30–40/30=1.033–1.333秒；E.outQt；dt=1/240；st=clamp(speed/5200)*.42；sx=1+st，sy=1/(1+st)。"
+      },
+      {
+        "name": "连续接力预备",
+        "value": "a/o=171/173、185/188、200/203帧；an=E.outQ(inv(a,o,t))；sy乘1-.3*an，sx乘1+.2*an。"
+      },
+      {
+        "name": "连续接力落地",
+        "value": "180/30=6.000、195/30=6.500秒；land=kick(t,上一落地,3.5,.4)；sy乘1-.22*land，sx乘1+.2*land；y补偿R_D*(1-sy)。"
+      },
+      {
+        "name": "火苗跳跃形变",
+        "value": "24fps；s.sy=[2.6,1.3,1.18,1.06,1.0,0.95,1.0,1.06,1.12,1.18,1.24,1.26][fi]；s.sx=1/pow(s.sy,0.8)；落地K(t,[[2.5,-0.44],[2.583,0.14,out2],[2.667,-0.05],[2.75,0]])。"
+      },
+      {
+        "name": "火苗连续舞步",
+        "value": "HOPS=[{t0:2.833,t1:3.0,h:120},{t0:3.333,t1:3.5,h:115},{t0:3.75,t1:4.0,h:175,spin:true}]。"
+      },
+      {
+        "name": "重放总时长",
+        "value": "10.033333333 秒"
+      },
+      {
+        "name": "落滴压扁飞溅参数",
+        "value": "const G = 5000;                              // gravity px/s^2 (droplets, leaps, drips)\n  const svLand = (d, tl) => { const s = 1.3 + (SV_PUD - 1.3) * spring(tl + 1.3 / 30, 6, d.z); return s < SV_PUD ? SV_PUD - (SV_PUD - s) * 0.45 : s; };\n  const TEN_T = 0.27;\n        r: rr(3.5, big ? 8 : 6), u: d.u + rr(-0.05, 0.05), tEmit: d.tLand + 2 / 30 + rr(0, 1 / 30), tGrow: 0.03, owner: di, melt, fy: rr(-36, 30),"
+      }
+    ],
+    "useCases": [
+      "开场圆点弹跳",
+      "圆点弹射成太阳",
+      "图标接力落点",
+      "逐帧火苗的弹跳舞步与落地回弹。",
+      "液滴落地的压扁回弹、冠状液臂与次级飞溅。"
+    ],
+    "avoid": [
+      "竖屏重排",
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 依次重放圆点下落弹射与图标接力片段。保留原片的起跳前压缩、飞行速度导向拉伸、触地压扁与回弹：g=2040，R0=74；首次压缩3帧，回跳高78；弹射用 E.outQt；速度拉伸 st=clamp(speed/5200)*.42；接力落地用 kick(t,上一落地,3.5,.4)。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。追加mg-cel-boil原片1.05–5.7秒，保留24fps火苗的蹲压、起跳纵向拉伸、落地压扁回弹和HOPS舞步；起跳sy数组为[2.6,1.3,1.18,1.06,1.0,0.95,1.0,1.06,1.12,1.18,1.24,1.26]，落地压缩幅度-0.44，后接0.14、-0.05衰减。四个重放段总时长10.033333333秒。 在原有 7.883333333 秒之后依次重放mg-liquid 原片 0–2.15 秒；全部重放总时长 10.033333333 秒。液态片沿速度拉伸的液滴在触地时压扁回弹，冠状液臂变细断裂，次级液滴延迟飞出。参数沿用：const G = 5000;                              // gravity px/s^2 (droplets, leaps, drips)\n  const svLand = (d, tl) => { const s = 1.3 + (SV_PUD - 1.3) * spring(tl + 1.3 / 30, 6, d.z); return s < SV_PUD ? SV_PUD - (SV_PUD - s) * 0.45 : s; };\n  const TEN_T = 0.27;\n        r: rr(3.5, big ? 8 : 6), u: d.u + rr(-0.05, 0.05), tEmit: d.tLand + 2 / 30 + rr(0, 1 / 30), tGrow: 0.03, owner: di, melt, fy: rr(-36, 30),\n原有段的画面和时序保持原样，新增段沿用同区间原片音轨，声音默认关闭。",
+    "demo": "demos/patterns/squash-stretch-bounce/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-flat-vector"
+      },
+      {
+        "caseId": "mg-cel-boil"
+      },
+      {
+        "caseId": "mg-liquid"
+      }
+    ],
+    "previewAt": 0.5333333333333333,
+    "markers": [
+      {
+        "t": 0,
+        "label": "落球拉伸"
+      },
+      {
+        "t": 0.5,
+        "label": "触地压扁"
+      },
+      {
+        "t": 0.9,
+        "label": "起跳预备"
+      },
+      {
+        "t": 1.0333333333333334,
+        "label": "弧线弹射"
+      },
+      {
+        "t": 1.5333333333333334,
+        "label": "接力片段"
+      },
+      {
+        "t": 1.7333333333333334,
+        "label": "接力蓄力"
+      },
+      {
+        "t": 2.033333333333333,
+        "label": "落地回弹"
+      },
+      {
+        "t": 2.533333333333333,
+        "label": "再次回弹"
+      },
+      {
+        "t": 2.700000000000001,
+        "label": "下一跳蓄力"
+      },
+      {
+        "t": 3.2333333333333334,
+        "label": "火苗舞步"
+      },
+      {
+        "t": 3.9333333333333336,
+        "label": "下蹲预备"
+      },
+      {
+        "t": 4.183333333333334,
+        "label": "火苗拉伸"
+      },
+      {
+        "t": 4.683333333333334,
+        "label": "触地压扁"
+      },
+      {
+        "t": 5.183333333333334,
+        "label": "连续小跳"
+      },
+      {
+        "t": 5.933333333333334,
+        "label": "转身跳跃"
+      },
+      {
+        "t": 6.683333333333334,
+        "label": "亮相落定"
+      },
+      {
+        "t": 7.883333333,
+        "label": "液态流动"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#2B2BFF",
+        "#FF5A4E",
+        "#FFC62B",
+        "#2EE6A8",
+        "#FFF6E9",
+        "#151433"
+      ],
+      "type": "Fredoka 600、700；Resource Han Rounded CN Bold 700。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "parameters": [],
+    "preview": "previews/patterns/squash-stretch-bounce.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-flat-vector",
+      "bundle": "agent/cases/mg-flat-vector.json"
+    },
+    {
+      "caseId": "mg-cel-boil",
+      "bundle": "agent/cases/mg-cel-boil.json"
+    },
+    {
+      "caseId": "mg-liquid",
+      "bundle": "agent/cases/mg-liquid.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 预备、拉伸与压扁回弹\n\n## 实现 Prompt\n\n复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 依次重放圆点下落弹射与图标接力片段。保留原片的起跳前压缩、飞行速度导向拉伸、触地压扁与回弹：g=2040，R0=74；首次压缩3帧，回跳高78；弹射用 E.outQt；速度拉伸 st=clamp(speed/5200)*.42；接力落地用 kick(t,上一落地,3.5,.4)。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。追加mg-cel-boil原片1.05–5.7秒，保留24fps火苗的蹲压、起跳纵向拉伸、落地压扁回弹和HOPS舞步；起跳sy数组为[2.6,1.3,1.18,1.06,1.0,0.95,1.0,1.06,1.12,1.18,1.24,1.26]，落地压缩幅度-0.44，后接0.14、-0.05衰减。四个重放段总时长10.033333333秒。 在原有 7.883333333 秒之后依次重放mg-liquid 原片 0–2.15 秒；全部重放总时长 10.033333333 秒。液态片沿速度拉伸的液滴在触地时压扁回弹，冠状液臂变细断裂，次级液滴延迟飞出。参数沿用：const G = 5000;                              // gravity px/s^2 (droplets, leaps, drips)\n  const svLand = (d, tl) => { const s = 1.3 + (SV_PUD - 1.3) * spring(tl + 1.3 / 30, 6, d.z); return s < SV_PUD ? SV_PUD - (SV_PUD - s) * 0.45 : s; };\n  const TEN_T = 0.27;\n        r: rr(3.5, big ? 8 : 6), u: d.u + rr(-0.05, 0.05), tEmit: d.tLand + 2 / 30 + rr(0, 1 / 30), tGrow: 0.03, owner: di, melt, fy: rr(-36, 30),\n原有段的画面和时序保持原样，新增段沿用同区间原片音轨，声音默认关闭。\n\n## 参数\n\n- **下落拉伸**：g=2040；a=-0.12；R0=74；k=min(g*(t-a)/1500,1)*.16；sy=1+k，sx=1/(1+k)。\n- **首次触地**：15/30=.500秒；3帧压缩sy=1-.4*sin(πu)、sx=1+.36*sin(πu)；回跳高78。\n- **再次触地**：24/30=.800秒；2.5帧压缩幅.2/.18。\n- **起跳预备**：27/30–31/30=.900–1.033秒；sy*=1-.3*a，sx*=1+.24*a；y=GY-R0*sy。\n- **弧线弹射**：31/30–40/30=1.033–1.333秒；E.outQt；dt=1/240；st=clamp(speed/5200)*.42；sx=1+st，sy=1/(1+st)。\n- **连续接力预备**：a/o=171/173、185/188、200/203帧；an=E.outQ(inv(a,o,t))；sy乘1-.3*an，sx乘1+.2*an。\n- **连续接力落地**：180/30=6.000、195/30=6.500秒；land=kick(t,上一落地,3.5,.4)；sy乘1-.22*land，sx乘1+.2*land；y补偿R_D*(1-sy)。\n- **火苗跳跃形变**：24fps；s.sy=[2.6,1.3,1.18,1.06,1.0,0.95,1.0,1.06,1.12,1.18,1.24,1.26][fi]；s.sx=1/pow(s.sy,0.8)；落地K(t,[[2.5,-0.44],[2.583,0.14,out2],[2.667,-0.05],[2.75,0]])。\n- **火苗连续舞步**：HOPS=[{t0:2.833,t1:3.0,h:120},{t0:3.333,t1:3.5,h:115},{t0:3.75,t1:4.0,h:175,spin:true}]。\n- **重放总时长**：10.033333333 秒\n- **落滴压扁飞溅参数**：const G = 5000;                              // gravity px/s^2 (droplets, leaps, drips)\n  const svLand = (d, tl) => { const s = 1.3 + (SV_PUD - 1.3) * spring(tl + 1.3 / 30, 6, d.z); return s < SV_PUD ? SV_PUD - (SV_PUD - s) * 0.45 : s; };\n  const TEN_T = 0.27;\n        r: rr(3.5, big ? 8 : 6), u: d.u + rr(-0.05, 0.05), tEmit: d.tLand + 2 / 30 + rr(0, 1 / 30), tGrow: 0.03, owner: di, melt, fy: rr(-36, 30),\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/squash-stretch-bounce/index.html) · [在库中查看](../../patterns.html#pattern/squash-stretch-bounce)\n"
+  },
+  "entrypoint": "demos/patterns/squash-stretch-bounce/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-cel-boil/LICENSES.md",
+      "bytes": 1181,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_01.png",
+      "bytes": 28357,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_02.png",
+      "bytes": 28707,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_03.png",
+      "bytes": 25600,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_04.png",
+      "bytes": 27879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_base.jpg",
+      "bytes": 483747,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_tooth.png",
+      "bytes": 1791819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/audio/film.m4a",
+      "bytes": 415190,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fidelity.md",
+      "bytes": 5403,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/cues.json",
+      "bytes": 2188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/engine.js",
+      "bytes": 13778,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/scene.js",
+      "bytes": 103043,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/setup.js",
+      "bytes": 764,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/style.css",
+      "bytes": 137,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat[wght].ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LongCang-Regular.ttf",
+      "bytes": 5162508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Longcang-OFL.txt",
+      "bytes": 4390,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/fonts.css",
+      "bytes": 509,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/index.html",
+      "bytes": 2718,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_01_3840x2160.png",
+      "bytes": 81508,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_02_3840x2160.png",
+      "bytes": 82662,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_03_3840x2160.png",
+      "bytes": 73739,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_04_3840x2160.png",
+      "bytes": 79891,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/audio.py",
+      "bytes": 24290,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/cues.json",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_dust.py",
+      "bytes": 707,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_paper.py",
+      "bytes": 2360,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/hitmax.py",
+      "bytes": 4168,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/LICENSES.md",
+      "bytes": 789,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/audio/film.m4a",
+      "bytes": 346596,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fidelity.md",
+      "bytes": 3942,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/cues.json",
+      "bytes": 906,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/scene.js",
+      "bytes": 63477,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/setup.js",
+      "bytes": 206,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/style.css",
+      "bytes": 111,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka[wdth,wght].ttf",
+      "bytes": 159184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRounded-OFL.txt",
+      "bytes": 4504,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRoundedCN-Bold.ttf",
+      "bytes": 13978508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/fonts.css",
+      "bytes": 376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/index.html",
+      "bytes": 2596,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/audio.py",
+      "bytes": 7610,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/cues.json",
+      "bytes": 906,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/LICENSES.md",
+      "bytes": 812,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/audio/film.m4a",
+      "bytes": 418545,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fidelity.md",
+      "bytes": 5964,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/cues.json",
+      "bytes": 1702,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/engine.js",
+      "bytes": 9243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/scene.js",
+      "bytes": 46421,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/shaders.js",
+      "bytes": 28643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/state.js",
+      "bytes": 669,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/textsdf.js",
+      "bytes": 5558,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/type.js",
+      "bytes": 2073,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/main.js",
+      "bytes": 3456,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/setup.js",
+      "bytes": 152,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/style.css",
+      "bytes": 143,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces-Liquid-72-900-Soft.ttf",
+      "bytes": 72996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces[SOFT,WONK,opsz,wght].ttf",
+      "bytes": 360440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/NotoSerifSC[wght].ttf",
+      "bytes": 25125512,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fonts.css",
+      "bytes": 494,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fraunces-OFL.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/notoserifsc-OFL.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/index.html",
+      "bytes": 1759,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/audio.py",
+      "bytes": 11884,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/cues.json",
+      "bytes": 1702,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/lookdev.js",
+      "bytes": 2622,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/scene.js",
+      "bytes": 56751,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/textsdf.js",
+      "bytes": 5558,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/out/cues_derived.json",
+      "bytes": 5548,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/squash-stretch-bounce/index.html",
+      "bytes": 2976,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/squash-stretch-bounce/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-cel-boil.json",
+      "bytes": 24679,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-flat-vector.json",
+      "bytes": 21215,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-liquid.json",
+      "bytes": 16286,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/squash-stretch-bounce.json",
+      "bytes": 7232,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/squash-stretch-bounce.jpg",
+      "bytes": 20916,
+      "role": "preview"
+    }
+  ]
+}

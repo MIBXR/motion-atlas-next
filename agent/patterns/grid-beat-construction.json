@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "grid-beat-construction",
+  "pattern": {
+    "id": "grid-beat-construction",
+    "order": 22,
+    "title": "网格逐拍构成",
+    "types": [
+      "composition",
+      "rhythm",
+      "hud"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "几何图形在网格上逐拍落下，反拍准星预示落点，拍数随节拍跳变。",
+    "mechanism": "几何图形在120px网格上按120BPM逐拍落下，反拍预示落点，拍数逐拍跳变。",
+    "trigger": "原片网格线对、几何落点、反拍准星与拍点节点依次到达。",
+    "effect": "网格从中心轴向外画开，红圆加速落位再滑入接触点，准星被落印覆盖，拍数逐拍累积。",
+    "timing": [
+      {
+        "name": "网格",
+        "value": "M=120；Y0=60；15条竖线、9条横线；L=land0+d*step；land0=0.125，step=0.125，draw=0.25；io2。"
+      },
+      {
+        "name": "拍数",
+        "value": "每拍0.5秒；n=clamp(floor(snap(t)/cues.beat+1e-6)+1,1,20)；padStart(2,\"0\")。"
+      },
+      {
+        "name": "圆形落位",
+        "value": "u=prog(t,-0.2,0.5)^2；dx=(1-u)*6*M；圆心(840+dx,300-M*(1-sl))，r=240。"
+      },
+      {
+        "name": "反拍准星",
+        "value": "target1：1.25–1.5秒；target2：1.75–2秒；target3：2.25–2.5秒；target4：2.75–3秒；环半径21–25，中心点半径4，十字短线32×4。"
+      },
+      {
+        "name": "一格接触",
+        "value": "sl=io2(prog(t,2.75,3))；圆心局部y=300-120*(1-sl)。"
+      }
+    ],
+    "useCases": [
+      "按节拍逐项搭建的几何构成",
+      "网格动态海报"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": [],
+      "notes": ""
+    },
+    "prompt": "用来源案例的原作renderAt(t)重放网格逐拍构成。保留120px模数、120BPM与每拍0.5秒；网格线对按L=0.125+d*0.125落笔，draw=0.25，使用io2。红圆用u=prog(t,-0.2,0.5)^2和dx=(1-u)*6*M加速落位；target1至target4分别在1.25–1.5、1.75–2、2.25–2.5、2.75–3秒预示落点，再由几何覆盖。红圆在2.75–3秒以sl=io2(prog(t,2.75,3))滑入接触位置。拍数按n=clamp(floor(snap(t)/cues.beat+1e-6)+1,1,20)跳变。按index.html 内联配置的segments映射巧思时间与原片时间，保留原作字体、素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/grid-beat-construction/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-bauhaus"
+      },
+      {
+        "caseId": "lemo-swiss-motion"
+      }
+    ],
+    "previewAt": 3,
+    "markers": [
+      {
+        "t": 0,
+        "label": "几何包豪斯"
+      },
+      {
+        "t": 0.125,
+        "label": "网格落笔"
+      },
+      {
+        "t": 0.5,
+        "label": "圆形落位"
+      },
+      {
+        "t": 1.25,
+        "label": "定位一"
+      },
+      {
+        "t": 1.75,
+        "label": "定位二"
+      },
+      {
+        "t": 2.25,
+        "label": "定位三"
+      },
+      {
+        "t": 2.75,
+        "label": "定位四"
+      },
+      {
+        "t": 3,
+        "label": "圆形接触"
+      },
+      {
+        "t": 9.5,
+        "label": "二十拍"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "瑞士动态排版",
+        "value": "lemo-swiss-motion：film/film.js:gridState / buildEvents 的海报列从4+c*.25秒、行从5.625+r*.125秒起各画.25秒；film/ease.js 的 E16=.125秒，黑块在18+k*.125+.125秒落格并发出 snap。"
+      }
+    ],
+    "preview": "previews/patterns/grid-beat-construction.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-bauhaus",
+      "bundle": "agent/cases/mg-bauhaus.json"
+    },
+    {
+      "caseId": "lemo-swiss-motion",
+      "bundle": "agent/cases/lemo-swiss-motion.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 网格逐拍构成\n\n## 实现 Prompt\n\n用来源案例的原作renderAt(t)重放网格逐拍构成。保留120px模数、120BPM与每拍0.5秒；网格线对按L=0.125+d*0.125落笔，draw=0.25，使用io2。红圆用u=prog(t,-0.2,0.5)^2和dx=(1-u)*6*M加速落位；target1至target4分别在1.25–1.5、1.75–2、2.25–2.5、2.75–3秒预示落点，再由几何覆盖。红圆在2.75–3秒以sl=io2(prog(t,2.75,3))滑入接触位置。拍数按n=clamp(floor(snap(t)/cues.beat+1e-6)+1,1,20)跳变。按index.html 内联配置的segments映射巧思时间与原片时间，保留原作字体、素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **网格**：M=120；Y0=60；15条竖线、9条横线；L=land0+d*step；land0=0.125，step=0.125，draw=0.25；io2。\n- **拍数**：每拍0.5秒；n=clamp(floor(snap(t)/cues.beat+1e-6)+1,1,20)；padStart(2,\"0\")。\n- **圆形落位**：u=prog(t,-0.2,0.5)^2；dx=(1-u)*6*M；圆心(840+dx,300-M*(1-sl))，r=240。\n- **反拍准星**：target1：1.25–1.5秒；target2：1.75–2秒；target3：2.25–2.5秒；target4：2.75–3秒；环半径21–25，中心点半径4，十字短线32×4。\n- **一格接触**：sl=io2(prog(t,2.75,3))；圆心局部y=300-120*(1-sl)。\n\n[打开 Demo](../../demos/patterns/grid-beat-construction/index.html) · [在库中查看](../../patterns.html#pattern/grid-beat-construction)\n"
+  },
+  "entrypoint": "demos/patterns/grid-beat-construction/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-swiss-motion/LICENSES.md",
+      "bytes": 1382,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/CREDITS",
+      "bytes": 1092,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/film.m4a",
+      "bytes": 1438198,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fidelity.md",
+      "bytes": 5264,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/ease.js",
+      "bytes": 1851,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/film.js",
+      "bytes": 30232,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/index.html",
+      "bytes": 355,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/lines.json",
+      "bytes": 967,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/main.js",
+      "bytes": 878,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/score.json",
+      "bytes": 2138,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/voices/dur.json",
+      "bytes": 116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/voices/words_rel.json",
+      "bytes": 301,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/Archivo-VF.ttf",
+      "bytes": 658596,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/DMSerifDisplay-Regular.ttf",
+      "bytes": 76580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/OFL-Archivo.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/OFL-DMSerifDisplay.txt",
+      "bytes": 4512,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/OFL-UnifrakturMaguntia.txt",
+      "bytes": 4417,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/UnifrakturMaguntia-Regular.ttf",
+      "bytes": 88508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/fonts.css",
+      "bytes": 357,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/index.html",
+      "bytes": 2658,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/CREDITS",
+      "bytes": 1092,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/README.md",
+      "bytes": 3100,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/build.sh",
+      "bytes": 1591,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/events.json",
+      "bytes": 5043,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/mix.py",
+      "bytes": 6334,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/music/score.py",
+      "bytes": 9315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/music/score_meta.json",
+      "bytes": 778,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/tools/subs.py",
+      "bytes": 724,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/tools/words.py",
+      "bytes": 1150,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/voices/words.json",
+      "bytes": 1021,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/LICENSES.md",
+      "bytes": 765,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/paper/Paper001_4K_color.jpg",
+      "bytes": 3684106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/audio/film.m4a",
+      "bytes": 426687,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fidelity.md",
+      "bytes": 4011,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/cues.json",
+      "bytes": 3719,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/film.js",
+      "bytes": 35151,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/setup.js",
+      "bytes": 148,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/style.css",
+      "bytes": 172,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-VF.ttf",
+      "bytes": 17773132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-Black.ttf",
+      "bytes": 153440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-SemiBold.ttf",
+      "bytes": 157312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/fonts.css",
+      "bytes": 486,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/index.html",
+      "bytes": 2020,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/audio.py",
+      "bytes": 9344,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/cues.json",
+      "bytes": 3719,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/grid-beat-construction/index.html",
+      "bytes": 1687,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/grid-beat-construction/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-swiss-motion.json",
+      "bytes": 11857,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-bauhaus.json",
+      "bytes": 19633,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/grid-beat-construction.json",
+      "bytes": 3374,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/grid-beat-construction.jpg",
+      "bytes": 67012,
+      "role": "preview"
+    }
+  ]
+}

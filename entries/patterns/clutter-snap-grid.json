@@ -1,0 +1,68 @@
+{
+  "id": "clutter-snap-grid",
+  "order": 132,
+  "title": "杂物一拍归格",
+  "types": [
+    "composition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "数百个按音符生成的UI堆叠后被冻结；光标按下后，径向波触发它们飞行。同类UI沿同向弧线移动并化为统一方块，按类型和空间顺序填满隐藏网格。",
+  "mechanism": "数百个按音符生成的UI堆叠后被冻结；光标按下后，径向波触发它们飞行。同类UI沿同向弧线移动并化为统一方块，按类型和空间顺序填满隐藏网格。",
+  "trigger": "来源案例时间轴进入所列动作区间。",
+  "effect": "数百个按音符生成的UI堆叠后被冻结；光标按下后，径向波触发它们飞行。同类UI沿同向弧线移动并化为统一方块，按类型和空间顺序填满隐藏网格。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "15.700000–19.300000秒；1倍速，总时长3.600000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "触发与归格",
+      "value": "film/world.js:snap：264个元素，RING=2600；t0=16+.03+d/2600；dur=.26+.14×min(1,trip/1200)，行内按x排序。"
+    },
+    {
+      "name": "三股流",
+      "value": "film/film.js:drawWorldItems：弧控点偏移.2L×[1,−1,1]；back(...,1.3)切线过冲；9段加色拖尾，前4%–32%形变为方块。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-dark-keynote/film/world.js",
+    "demos/cases/lemo-dark-keynote/film/film.js",
+    "demos/cases/lemo-dark-keynote/film/timeline.js"
+  ],
+  "locator": "snap / drawWorldItems",
+  "useCases": [
+    "软件整理、收件箱清理与批量归档的发布片主拍。"
+  ],
+  "avoid": [
+    "在主动作发生时叠加争夺注意的另一主动作"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-dark-keynote的原作render(t)重放“杂物一拍归格”。数百个按音符生成的UI堆叠被冻结；光标按下后以径向波触发飞行，同类沿同向弧线化为统一方块，按类型和空间顺序填满隐藏网格。保留参数：film/world.js:snap：264个元素，RING=2600；t0=16+.03+d/2600；dur=.26+.14×min(1,trip/1200)，行内按x排序。；film/film.js:drawWorldItems：弧控点偏移.2L×[1,−1,1]；back(...,1.3)切线过冲；9段加色拖尾，前4%–32%形变为方块。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/clutter-snap-grid/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-dark-keynote"
+    }
+  ],
+  "previewAt": 1.7,
+  "markers": [
+    {
+      "t": 0,
+      "label": "杂物一拍归格"
+    }
+  ]
+}

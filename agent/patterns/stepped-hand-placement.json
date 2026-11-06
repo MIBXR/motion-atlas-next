@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "stepped-hand-placement",
+  "pattern": {
+    "id": "stepped-hand-placement",
+    "order": 72,
+    "title": "抽帧手摆抖动",
+    "types": [
+      "rhythm",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15"
+    ],
+    "summary": "运动或停留状态变化后，位置与旋转按 12fps 或 6fps 取样，并用种子抖动保持手摆纸片感。",
+    "mechanism": "运动或停留状态变化后，位置与旋转按 12fps 或 6fps 取样，并用种子抖动保持手摆纸片感。",
+    "trigger": "运动或停留状态变化时",
+    "effect": "位置与旋转按 12fps 或 6fps 取样，并用种子抖动保持手摆纸片感。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-collage 原片 0–10 秒；1 倍速，总时长 10 秒。"
+      },
+      {
+        "name": "抽帧手摆抖动",
+        "value": "const K = t => Math.floor(t * 12 + 1e-4);\nconst Q6 = t => Math.floor(t * 6 + 1e-4) / 6;\nconst boil = (moving) => moving ? { amp: 2, fps: 12 } : { amp: 1.1, fps: 6 };"
+      }
+    ],
+    "useCases": [
+      "照片与纸片的定格拼贴叙事。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-collage 原片 0–10 秒；总时长 10 秒。运动或停留状态变化 → 位置与旋转按 12fps 或 6fps 取样，并用种子抖动保持手摆纸片感。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：const K = t => Math.floor(t * 12 + 1e-4);\nconst Q6 = t => Math.floor(t * 6 + 1e-4) / 6;\nconst boil = (moving) => moving ? { amp: 2, fps: 12 } : { amp: 1.1, fps: 6 };。使用 1920×1080 横屏。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/stepped-hand-placement/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-collage"
+      }
+    ],
+    "previewAt": 7.2,
+    "markers": [
+      {
+        "t": 0,
+        "label": "脑洞拼贴"
+      },
+      {
+        "t": 0.3333333,
+        "label": "人像拍落"
+      },
+      {
+        "t": 1.3333333,
+        "label": "纸偶开口"
+      },
+      {
+        "t": 2.3333333,
+        "label": "剪线盖印"
+      },
+      {
+        "t": 2.5,
+        "label": "剪开头盖"
+      },
+      {
+        "t": 3.6666667,
+        "label": "动作悬停"
+      },
+      {
+        "t": 4,
+        "label": "脑洞弹开"
+      },
+      {
+        "t": 4.3333333,
+        "label": "火箭飞出"
+      },
+      {
+        "t": 6.3333333,
+        "label": "黑带拍入"
+      },
+      {
+        "t": 6.6666667,
+        "label": "脑洞大开"
+      },
+      {
+        "t": 7.5,
+        "label": "撕开纸页"
+      },
+      {
+        "t": 8.3333333,
+        "label": "刊名拍入"
+      },
+      {
+        "t": 9.5,
+        "label": "头盖合拢"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#16130F",
+        "#F2ECDF",
+        "#D2261C",
+        "#E0A355"
+      ],
+      "type": "Anton 400；Bebas Neue 400；Alimama ShuHeiTi 700；Noto Serif SC 900；Noto Sans SC 700；IBM Plex Mono 500。"
+    },
+    "parameters": [],
+    "preview": "previews/patterns/stepped-hand-placement.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-collage",
+      "bundle": "agent/cases/mg-collage.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 抽帧手摆抖动\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速重放以下片段：mg-collage 原片 0–10 秒；总时长 10 秒。运动或停留状态变化 → 位置与旋转按 12fps 或 6fps 取样，并用种子抖动保持手摆纸片感。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：const K = t => Math.floor(t * 12 + 1e-4);\nconst Q6 = t => Math.floor(t * 6 + 1e-4) / 6;\nconst boil = (moving) => moving ? { amp: 2, fps: 12 } : { amp: 1.1, fps: 6 };。使用 1920×1080 横屏。\n\n## 参数\n\n- **原片重放区间**：mg-collage 原片 0–10 秒；1 倍速，总时长 10 秒。\n- **抽帧手摆抖动**：const K = t => Math.floor(t * 12 + 1e-4);\nconst Q6 = t => Math.floor(t * 6 + 1e-4) / 6;\nconst boil = (moving) => moving ? { amp: 2, fps: 12 } : { amp: 1.1, fps: 6 };\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/stepped-hand-placement/index.html) · [在库中查看](../../patterns.html#pattern/stepped-hand-placement)\n"
+  },
+  "entrypoint": "demos/patterns/stepped-hand-placement/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-collage/LICENSES.md",
+      "bytes": 1208,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/bfly_a.png",
+      "bytes": 50435,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/bfly_b.png",
+      "bytes": 27175,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/bird_hawk.png",
+      "bytes": 85054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/earth.png",
+      "bytes": 129389,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/flame0.png",
+      "bytes": 22356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/flame1.png",
+      "bytes": 24003,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/layout.json",
+      "bytes": 1621,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/manicule.png",
+      "bytes": 104212,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/news_a.png",
+      "bytes": 639281,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/news_b.png",
+      "bytes": 513923,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/p_face.png",
+      "bytes": 622680,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/p_jaw.png",
+      "bytes": 615929,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/p_lid.png",
+      "bytes": 617436,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/page_kraft.jpg",
+      "bytes": 505859,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/page_red.jpg",
+      "bytes": 262771,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/rocket.png",
+      "bytes": 60289,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/rose_centi.png",
+      "bytes": 76740,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/rose_purple.png",
+      "bytes": 94054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/space_wedge.png",
+      "bytes": 1454805,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/dust/dust_01_3840x2160.png",
+      "bytes": 81508,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/dust/dust_03_3840x2160.png",
+      "bytes": 73739,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/grain/grain_film35_2048.png",
+      "bytes": 3168295,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/washi/washi_solid_12.png",
+      "bytes": 645227,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/washi/washi_solid_14.png",
+      "bytes": 458715,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/audio/film.m4a",
+      "bytes": 420363,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/fidelity.md",
+      "bytes": 4792,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/cues.json",
+      "bytes": 1310,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/scene.js",
+      "bytes": 54419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/setup.js",
+      "bytes": 161,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/style.css",
+      "bytes": 145,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/AlimamaShuHeiTi-Bold.ttf",
+      "bytes": 1375772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/AlimamaShuHeiTi-LICENSE.txt",
+      "bytes": 2016,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/Anton-OFL.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/Anton-Regular.ttf",
+      "bytes": 170812,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/BebasNeue-OFL.txt",
+      "bytes": 4337,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/BebasNeue-Regular.ttf",
+      "bytes": 61400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/IBMPlexMono-OFL.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/NotoSansSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/NotoSansSC-VF.ttf",
+      "bytes": 17773132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/NotoSerifSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/NotoSerifSC-VF.ttf",
+      "bytes": 25125232,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/fonts.css",
+      "bytes": 1021,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/index.html",
+      "bytes": 2700,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/clear.wav",
+      "bytes": 842684,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/cough.wav",
+      "bytes": 459780,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/crumple.wav",
+      "bytes": 2257058,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/pages.wav",
+      "bytes": 7483220,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/scissors.wav",
+      "bytes": 2096562,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/tape.wav",
+      "bytes": 1186248,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/audio.py",
+      "bytes": 10279,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/cues.json",
+      "bytes": 1310,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/work/prep.py",
+      "bytes": 16663,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/work/prep_birds.py",
+      "bytes": 819,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/work/prep_hand.py",
+      "bytes": 1788,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/stepped-hand-placement/index.html",
+      "bytes": 2167,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/stepped-hand-placement/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-collage.json",
+      "bytes": 19427,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/stepped-hand-placement.json",
+      "bytes": 3354,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/stepped-hand-placement.jpg",
+      "bytes": 279173,
+      "role": "preview"
+    }
+  ]
+}

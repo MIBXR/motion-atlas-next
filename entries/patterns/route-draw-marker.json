@@ -1,0 +1,198 @@
+{
+  "id": "route-draw-marker",
+  "order": 3,
+  "title": "路线描画与标记脉冲",
+  "types": [
+    "camera",
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "summary": "路线按进度描画，车头沿线前进，站点标记弹入并打出双语站名。等距城市中，数据弧线从核心向屋顶生长，到达后屋顶标记循环扩圈。手机科普片中，路线从矿石产地画向深圳组装点，箭头落定后数据包循环前进，汇点回弹扩圈。",
+  "mechanism": "三个固定镜头显示路线、车头、标记与双语标签。jrNara 从 minZoom=13 起显示。镜头之间以纸色转场，路线与标记始终对齐。等距城市的弧线错峰从核心连向屋顶，亮头携带光脉沿线行进，到达后，屋顶的扩散环循环标记连接点。手机科普片的弧线从产地锚点画向组装点，箭头按路线切线落位；数据包随后沿线循环，汇点回弹并周期性扩圈。",
+  "trigger": "启程、抵达或切换交通方式时",
+  "effect": "下一站与行进方向一眼可见。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "13.175s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "sonar、whoosh、clack、blip、chime、tick"
+    },
+    {
+      "name": "供应路线流向汇点",
+      "value": "L328: const dx=DEST[0]-p[0],dy=DEST[1]-p[1],L=Math.hypot(dx,dy);const bend=Math.min(260,L*.35)*(i===0?-1:1);；L353: const ru=P(t,o.rt,EV.route_dur);o.route.setAttribute('stroke-dashoffset',1-ioC(ru));const ar=oB(P(t,o.rt+EV.route_dur-.08,.24),2);o.arw.style.opacity=ar>0?1:0;o.arw.setAttribute('transform',`translate(${o.ap.x} ${o.ap.y}) rotate(${o.aa}) scale(${ar*Math.min(pk,1.8)})`);；L356: const f=((t-o.rt-EV.route_dur)*0.55+k/3)%1;const q=o.route.getPointAtLength(o.len*f);c.style.opacity=clamp(f*8)*clamp((1-f)*8);c.setAttribute('cx',q.x);c.setAttribute('cy',q.y);});});；L358: const rp=((t-EV.pin)%1.1)/1.1;pinRing.style.opacity=t>EV.pin?(1-rp)*.8:0;pinRing.style.transform=`scale(${1+rp*1.6})`;"
+    }
+  ],
+  "useCases": [
+    "旅行/物流路线",
+    "赛事路线",
+    "陈列界面导览地图",
+    "微缩城市中从核心向屋顶描画数据弧线，并以扩散环标记连接点。",
+    "用产地弧线、循环数据包和扩圈汇点展示手机供应路线。"
+  ],
+  "avoid": [
+    "没有空间意义的流程图"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "corner-hud",
+      "alert-reroute",
+      "card-expand-fullscreen"
+    ],
+    "conflicts": []
+  },
+  "prompt": "路线按进度描画，车头沿线前进，站点标记弹入并打出双语站名。复用地图巡礼的 cameraAt、addRouteLayers、updateRoutesGL、drawRoutesSVG、drawMarkers、measureMarkerLabels、project、routeP、pointAt 与对应 CSS。三个固定镜头中的路线、车头、标记圆点与双语标签；jrNara minZoom=13；镜头间使用案例纸色转场。片段：kix: caseT 1.5→2.35；haruka: caseT 14.6→17.05；kyoto: caseT 16.6→17.45；naraLine: caseT 37.4→39.85；jrNara: caseT 39.4→40.25；walk1: caseT 39.4→41.25；naraPark: caseT 40.8→41.65；时长 13.175s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定镜头的实时地图，声音由 mechanism/score.json 挂接。前10.6秒保留原有地图巡礼段，之后追加等距城市原片5.835–7.07秒的数据弧线段，追加1.235秒。数据弧线采用QuadraticBezierCurve3和TubeGeometry(curve,72,.021,8,false)，uT0=PULSE_T+.05+k*.035，uDur=.45，uSpeed=1.3+A.hash(k*7)*.6；到达后的屋顶环按ph=(u*.9)%1放大1+ph*2.2并淡出，沿用同区间原片音轨，声音默认关闭。 通过 index.html 内联 segments 在前 11.835 秒之后依次重放mg-paperclip 原片 5.86–7.2 秒，总时长 13.175 秒。手机科普片的弧线从产地锚点画向组装点，箭头按路线切线落位；数据包随后沿线循环，汇点回弹并周期扩圈。沿用同区间原片音轨，声音默认关闭。",
+  "demo": "demos/patterns/route-draw-marker/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    },
+    {
+      "caseId": "mg-isometric"
+    },
+    {
+      "caseId": "mg-paperclip"
+    },
+    {
+      "caseId": "lemo-transit-map"
+    }
+  ],
+  "previewAt": 8.6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "机场"
+    },
+    {
+      "t": 0.6,
+      "label": "描画"
+    },
+    {
+      "t": 4,
+      "label": "第二段"
+    },
+    {
+      "t": 7.2,
+      "label": "步行"
+    },
+    {
+      "t": 10.6,
+      "label": "等距数据弧"
+    },
+    {
+      "t": 10.8,
+      "label": "弧线接通"
+    },
+    {
+      "t": 11.25,
+      "label": "到达标记"
+    },
+    {
+      "t": 11.635,
+      "label": "弧线齐备"
+    },
+    {
+      "t": 11.835,
+      "label": "贴纸科普"
+    }
+  ],
+  "sound": {
+    "voices": [
+      "sonar",
+      "whoosh",
+      "clack",
+      "blip",
+      "chime",
+      "tick"
+    ],
+    "score": "demos/patterns/route-draw-marker/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。等距城市追加段沿用原片同区间音轨。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "机场",
+        "value": "0s"
+      },
+      {
+        "name": "描画",
+        "value": "0.6s"
+      },
+      {
+        "name": "第二段",
+        "value": "4s"
+      },
+      {
+        "name": "步行",
+        "value": "7.2s"
+      },
+      {
+        "name": "时长",
+        "value": "13.175s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js → renderLive、drawRouteActions、drawRoutesSVG、drawMarkers",
+      "how": "修改镜头、路线、标记、引线、投影与标签避让的实现。"
+    },
+    {
+      "field": "mechanism/scene.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → stops；tracks.routes、tracks.markers；layout",
+      "how": "修改地点与路线事件；路线几何在 ../../cases/map-pilgrimage/film/paths.js，巧思动作映射在 mechanism/config.js → actions。"
+    },
+    {
+      "field": "mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers",
+      "how": "mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 地图片段。地图来源时刻：kix: 1.5→2.35/haruka: 14.6→17.05/kyoto: 16.6→17.45/naraLine: 37.4→39.85/jrNara: 39.4→40.25/walk1: 39.4→41.25/naraPark: 40.8→41.65。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ],
+  "renderer": "gpu",
+  "parameters": [
+    {
+      "name": "地铁笔尖",
+      "value": "线宽.15G；白芯半径.11G，彩环.05G，光晕.8G；phase推进path截取，stopDots读取通过状态；相机跟随1999年2号线笔尖。",
+      "source": "demos/cases/lemo-transit-map/film/film.js:drawMap；film/timeline.js:camera"
+    }
+  ]
+}

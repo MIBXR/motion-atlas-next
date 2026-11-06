@@ -1,0 +1,321 @@
+{
+  "id": "lemo-circuit-board",
+  "order": 49,
+  "title": "七毫秒 · 电路板",
+  "subtitle": "Seven Milliseconds",
+  "carriers": [
+    "video"
+  ],
+  "style": "interface",
+  "purpose": "explainer",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "电路板",
+    "信息与发布",
+    "代码影片"
+  ],
+  "summary": "电流从四川水坝沿铜走线奔向江苏，在换流站由交流变成直流，经过降压与插座进入手机充电器，再一口气拉远到包含各级模块的整张电路板。",
+  "focus": "水流、交流和直流通过光的不同运动方式呈现；同一套电路语汇贯穿地图、街区、插座和毫米级充电头。",
+  "accent": "#D9B25B",
+  "background": "#05190F",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 58,
+  "rhythm": {
+    "duration": 59.96666666666667,
+    "bpm": 100,
+    "beats": [
+      {
+        "t": 0,
+        "label": "水坝发电",
+        "note": "原片0.000000–4.700000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 4.7,
+        "label": "交流来回摆",
+        "note": "原片4.700000–10.100000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 10.1,
+        "label": "远送损耗",
+        "note": "原片10.100000–14.400000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 14.4,
+        "label": "进入换流站",
+        "note": "原片14.400000–19.100000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 19.1,
+        "label": "沿直流奔跑",
+        "note": "原片19.100000–23.500000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 23.5,
+        "label": "七毫秒到达",
+        "note": "原片23.500000–29.600000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 29.6,
+        "label": "逐级降压",
+        "note": "原片29.600000–32.400000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 32.4,
+        "label": "插座穿孔",
+        "note": "原片32.400000–34.600000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 34.6,
+        "label": "充电器整流",
+        "note": "原片34.600000–42.100000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 42.1,
+        "label": "同一电路原理",
+        "note": "原片42.100000–52.900000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 52.9,
+        "label": "嵌套电路板拉远",
+        "note": "原片52.900000–54.500000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      },
+      {
+        "t": 54.5,
+        "label": "桌上整板落版",
+        "note": "原片54.500000–59.966667秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 4.7,
+      "to": 0.35,
+      "label": "水坝发电",
+      "from": 0.15
+    },
+    {
+      "t0": 4.7,
+      "t1": 10.1,
+      "to": 0.5,
+      "label": "交流来回摆",
+      "from": 0.35
+    },
+    {
+      "t0": 10.1,
+      "t1": 14.4,
+      "to": 0.3,
+      "label": "远送损耗",
+      "from": 0.5
+    },
+    {
+      "t0": 14.4,
+      "t1": 19.1,
+      "to": 0.8,
+      "label": "进入换流站",
+      "from": 0.3
+    },
+    {
+      "t0": 19.1,
+      "t1": 23.5,
+      "to": 0.65,
+      "label": "沿直流奔跑",
+      "from": 0.8
+    },
+    {
+      "t0": 23.5,
+      "t1": 29.6,
+      "to": 0.45,
+      "label": "七毫秒到达",
+      "from": 0.65
+    },
+    {
+      "t0": 29.6,
+      "t1": 32.4,
+      "to": 0.6,
+      "label": "逐级降压",
+      "from": 0.45
+    },
+    {
+      "t0": 32.4,
+      "t1": 34.6,
+      "to": 0.5,
+      "label": "插座穿孔",
+      "from": 0.6
+    },
+    {
+      "t0": 34.6,
+      "t1": 42.1,
+      "to": 0.25,
+      "label": "充电器整流",
+      "from": 0.5
+    },
+    {
+      "t0": 42.1,
+      "t1": 52.9,
+      "to": 0.1,
+      "label": "同一电路原理",
+      "from": 0.25
+    },
+    {
+      "t0": 52.9,
+      "t1": 54.5,
+      "to": 0.08,
+      "label": "嵌套电路板拉远",
+      "from": 0.1
+    },
+    {
+      "t0": 54.5,
+      "t1": 59.96666666666667,
+      "to": 0.08,
+      "label": "桌上整板落版",
+      "from": 0.08
+    }
+  ],
+  "energyNote": "段落取自DEMO.md Shots与film内时间表；0–1为按画面密度、动作和声音强度作出的相对编辑标注。",
+  "observations": [
+    "地图中的河流、湖泊、海岸与城市，以0/45/90度的手工走线组成电路板。",
+    "交流为沿走线来回摇摆的短划线，直流为单向光头、连续光流和后方余辉。",
+    "34–34.6秒推入插座火线孔，34.6–35.35秒从充电器引脚孔反向退出。",
+    "corridor→city→house→charger分别拥有局部坐标，递归合成允许跨多个数量级拉远。"
+  ],
+  "composition": {
+    "color": "绿阻焊#05190F/#1C6A44/#4AA977，金焊盘#D9B25B，白丝印#F2EEE1，琥珀电流与银青水流。",
+    "typography": "板内字为代码布线的单线中英字；字幕使用Noto Sans SC 500子集。",
+    "layout": "1920×1080俯视；地理走廊与三个子模块相互嵌套，字幕位于底部安全区。",
+    "imagery": "Canvas2D绘制覆铜、间隙、焊盘、丝印、光流、景深和窗光。",
+    "motion": "沿光头追拍、抬升显全程、穿孔换尺度、嵌套整板拉远。",
+    "sound": "原片Microsoft晓晓中文配音、合成电流长音、继电器、水声和环境声。",
+    "rhythm": "100BPM；16.3秒平滑交流门控，23秒到达，47.6秒等号揭示。",
+    "coherence": "光的形态同时说明电流种类、路径、变换和到达。"
+  },
+  "layers": [
+    {
+      "name": "板材与覆铜",
+      "role": "FR-4交织纹、阻焊色斑、覆铜间隙与倒角。"
+    },
+    {
+      "name": "金属与丝印",
+      "role": "走线、焊盘、器件符号、手工布线中英字。"
+    },
+    {
+      "name": "光流",
+      "role": "交流、直流、水流与节点闪光。"
+    },
+    {
+      "name": "嵌套模块",
+      "role": "地图、城市、街道和充电器递归合成。"
+    },
+    {
+      "name": "镜头后期",
+      "role": "运动子采样、景深、窗光、尘点与双语字幕。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#05190F",
+      "#1C6A44",
+      "#4AA977",
+      "#D9B25B",
+      "#F2EEE1",
+      "#C9784A"
+    ],
+    "type": "Routed单线字（film/src/font.js与hanzi.js）；字幕Noto Sans SC 500，210字符子集。",
+    "motion": [
+      {
+        "name": "电流",
+        "value": "film/src/main.js:acPhase / sceneCorridor：交流说明段.55Hz，16.3秒换流，headS在16.5–23秒沿dcp推进。"
+      },
+      {
+        "name": "嵌套",
+        "value": "film/src/levels.js:toChild / toParent / baseOf / drawLevel；四级局部坐标与递归裁切。"
+      },
+      {
+        "name": "拉远",
+        "value": "film/src/main.js:camPull：52.9–54.5秒，logLerp(START.z,.8,e)，e=1−(1−p)^2.6。"
+      }
+    ]
+  },
+  "useCases": [
+    "能源科普",
+    "供应链解释",
+    "电子设备原理短片"
+  ],
+  "avoid": [
+    "需要透视三维器件城市的画面"
+  ],
+  "constraints": [
+    "所有板块维持俯视与局部坐标。",
+    "字幕字体按原subset.py使用相同字重和字符集合。",
+    "地图和电流路径使用bebbbe1中的数据。"
+  ],
+  "migration": [
+    {
+      "field": "film/src/main.js:acPhase / sceneCorridor",
+      "how": "修改该处的电流参数。"
+    },
+    {
+      "field": "film/src/levels.js:toChild / toParent / baseOf / drawLevel；四级局部坐标与递归裁切。",
+      "how": "修改该处的嵌套参数。"
+    },
+    {
+      "field": "film/src/main.js:camPull",
+      "how": "修改该处的拉远参数。"
+    }
+  ],
+  "prompt": "制作一支电路板时间线影片。电流从四川水坝沿铜走线奔向江苏，在换流站由交流变成直流，经过降压与插座进入手机充电器，再一口气拉远到包含各级模块的整张电路板。水流、交流和直流各有光的运动方式；同一电路语汇跨越地图、街区、插座和毫米级充电头。画面构成：绿阻焊#05190F/#1C6A44/#4AA977，金焊盘#D9B25B，白丝印#F2EEE1，琥珀电流与银青水流。；板内字为代码布线的单线中英字；字幕使用Noto Sans SC 500子集。；1920×1080俯视；地理走廊与三个子模块相互嵌套，字幕位于底部安全区。；Canvas2D绘制覆铜、间隙、焊盘、丝印、光流、景深和窗光。；沿光头追拍、抬升显全程、穿孔换尺度、嵌套整板拉远。；原片Microsoft晓晓中文配音、合成电流长音、继电器、水声和环境声。；100BPM；16.3秒平滑交流门控，23秒到达，47.6秒等号揭示。；光的形态同时说明电流种类、路径、变换和到达。。实现入口为demos/cases/lemo-circuit-board/film/，MotionKit适配层仅调用并等待原作render(t)，使用原片音轨同步播放。",
+  "demo": "demos/cases/lemo-circuit-board/index.html",
+  "patternIds": [
+    "pulse-path-current",
+    "push-through-window",
+    "nested-boards-pullout"
+  ],
+  "fidelity": "demos/cases/lemo-circuit-board/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/circuit-board/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；成片及静帧CC BY 4.0，署名LemoLab；第三方资源按CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/circuit-board.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board)；代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原片Microsoft晓晓中文配音、合成电流长音、继电器、水声和环境声。 原始署名见[audio/CREDITS](audio/CREDITS)，完整许可见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Routed单线字（film/src/font.js与hanzi.js）；字幕Noto Sans SC 500，210字符子集。 OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+    }
+  ]
+}

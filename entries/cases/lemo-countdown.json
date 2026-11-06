@@ -1,0 +1,342 @@
+{
+  "id": "lemo-countdown",
+  "order": 73,
+  "title": "自己倒数 · 实时倒计时分屏",
+  "subtitle": "Counting Itself Down",
+  "carriers": [
+    "video"
+  ],
+  "style": "documentary",
+  "purpose": "news",
+  "tech": [
+    "canvas2d",
+    "footage"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "实时倒计时分屏",
+    "剪辑与纪实",
+    "代码影片"
+  ],
+  "summary": "阿尔忒弥斯二号发射从T−32.5到T+27秒连续播放，多机位、控制室、乘组照片与任务文件逐格展开，点火瞬间九格合一，控制权由地面交给火箭再交给休斯敦。",
+  "focus": "事件原声决定布局变化的时刻，画面与任务时钟共用连续时间；机位徽章区分实时同步、同一时段和慢动作还原。",
+  "accent": "#FF5B1F",
+  "background": "#06080A",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 28.5,
+  "rhythm": {
+    "duration": 59.5,
+    "beats": [
+      {
+        "t": 0,
+        "label": "任务倒数",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 0.4,
+        "label": "交给火箭",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 2.5,
+        "label": "控制室展开",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 5.26,
+        "label": "乘组照片",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 7.4,
+        "label": "推力对比",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 13.1,
+        "label": "节点与任务文件",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 16.47,
+        "label": "消声水",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 19.6,
+        "label": "箭载机位",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 22.42,
+        "label": "倒数网格",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 23.1,
+        "label": "猎户座接入",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 24.22,
+        "label": "无人机接入",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 25.24,
+        "label": "控制室接入",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 26.46,
+        "label": "发动机点火",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 32.5,
+        "label": "九格合一",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 36.36,
+        "label": "无人机全屏",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 39.5,
+        "label": "香蕉河远景",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 42,
+        "label": "飞行节点",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 46.4,
+        "label": "姿态确认",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 51.3,
+        "label": "望远镜跟踪",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 53.78,
+        "label": "休斯敦接管",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 54,
+        "label": "片尾",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 7.4,
+      "to": 0.6,
+      "label": "控制移交",
+      "from": 0.5
+    },
+    {
+      "t0": 7.4,
+      "t1": 16.47,
+      "to": 0.6,
+      "label": "任务信息",
+      "from": 0.55
+    },
+    {
+      "t0": 16.47,
+      "t1": 22.42,
+      "to": 0.7,
+      "label": "临近倒数",
+      "from": 0.65
+    },
+    {
+      "t0": 22.42,
+      "t1": 32.25,
+      "to": 0.95,
+      "label": "逐格倒数",
+      "from": 0.75
+    },
+    {
+      "t0": 32.25,
+      "t1": 32.5,
+      "to": 0.15,
+      "label": "原声与时钟",
+      "from": 0.15
+    },
+    {
+      "t0": 32.5,
+      "t1": 41.7,
+      "to": 0.85,
+      "label": "点火升空",
+      "from": 1
+    },
+    {
+      "t0": 41.7,
+      "t1": 42,
+      "to": 0.2,
+      "label": "呼吸",
+      "from": 0.2
+    },
+    {
+      "t0": 42,
+      "t1": 54,
+      "to": 0.7,
+      "label": "飞行与接管",
+      "from": 0.5
+    },
+    {
+      "t0": 54,
+      "t1": 59.5,
+      "to": 0.05,
+      "label": "片尾",
+      "from": 0.6
+    }
+  ],
+  "energyNote": "段落与时刻取自上游DEMO.md镜头表及原作绘制函数；0–1为按配乐、原声和画面密度作出的相对编辑标注。",
+  "observations": [
+    "任务时间M=t−32.5，所有机位按原作同步表预先提为影片帧号，页面直接取同一帧号。",
+    "倒数原声依次打开3×3格内的待接入机位，时钟与转写本身也占格。",
+    "点火后的.42秒内各格移动到全屏拼块的位置并交叉淡入同一个OSB机位，时钟与转写回到底部。",
+    "时钟在零点反转为橙底深字、T−转T+；控制段分别在.4和53.78秒移交。",
+    "无时钟的发射控制室以灰色斜线徽章标为同一时段；其他徽章对应同步或恢复实时的慢动作。"
+  ],
+  "composition": {
+    "color": "#06080A、#0B0E11、#F2F5F7、#7C878D、#FF5B1F、#FF3B30",
+    "typography": "Barlow / Barlow Condensed 500/600、IBM Plex Mono 500/600、Noto Sans SC 500/700子集；SIL OFL 1.1。",
+    "layout": "1920×1080横屏；沿用原作各镜的画面分区与文字位置。",
+    "imagery": "NASA同日直播、箭载和猎户座摄像机、无人机、两路地面机位、发射控制室、乘组照片与NASA任务简介。",
+    "motion": "布局按.34秒三次缓动插值，新格由左展开；.30秒逐格接入，零点.42秒多格合一。",
+    "sound": "Release原混音：NASA直播解说与回路通话、Kokoro bf_emma两句旁白、60 BPM采样配乐、任务秒针与节点拟音。",
+    "rhythm": "真实时间持续推进，原声的移交、倒数、点火和休斯敦接管决定剪辑；点火前四分之一秒配乐静默。",
+    "coherence": "事件原声决定布局变化的时刻，画面与任务时钟共用连续时间；机位徽章区分实时同步、同一时段和慢动作还原。"
+  },
+  "layers": [
+    {
+      "name": "同步摄影机",
+      "role": "按影片帧号读取的NASA机位。"
+    },
+    {
+      "name": "辅助材料",
+      "role": "乘组照片、任务文件、推力表和节点清单。"
+    },
+    {
+      "name": "任务时钟与控制条",
+      "role": "T−/T+、十分之一秒条与控制权状态。"
+    },
+    {
+      "name": "原声转写",
+      "role": "英语按词进入，中文随句显示。"
+    },
+    {
+      "name": "来源徽章",
+      "role": "逐格标明同步关系，随格子移动。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#06080A",
+      "#0B0E11",
+      "#F2F5F7",
+      "#7C878D",
+      "#FF5B1F",
+      "#FF3B30"
+    ],
+    "type": "Barlow / Barlow Condensed 500/600、IBM Plex Mono 500/600、Noto Sans SC 500/700子集；SIL OFL 1.1。",
+    "motion": [
+      {
+        "name": "多格合一",
+        "value": "film/index.html:render / LAY / MERGE；T0=32.5，MERGE=.42，TR=.34，POP=.30。"
+      },
+      {
+        "name": "时钟与控制",
+        "value": "film/index.html:drawClock / HANDS；每秒数字上方14px落入，.12秒，零点配色反转，.4/53.78秒移交。"
+      }
+    ]
+  },
+  "useCases": [
+    "发射直播剪辑",
+    "赛事或裁决倒数",
+    "有明确零点的实时事件"
+  ],
+  "avoid": [
+    "跳时、倒序或变速的蒙太奇",
+    "无法将多个机位对到同一事件时刻的素材组合"
+  ],
+  "constraints": [
+    "影像、字体和数据替换后同步调整原作取帧与文字时间表。",
+    "声音与画面沿用同一来源时间，音轨默认关闭。"
+  ],
+  "migration": [
+    {
+      "field": "film/index.html → T0 / LAY / HANDS",
+      "how": "修改事件零点、格子布局和控制权节点。"
+    },
+    {
+      "field": "source/tools/prep.sh",
+      "how": "修改各机位源时刻到影片帧号的同步表。"
+    },
+    {
+      "field": "film/index.html → CUES / CHECK / SYNC",
+      "how": "修改原声转写、计划节点与机位同步徽章。"
+    }
+  ],
+  "prompt": "制作一支实时倒计时分屏影片。事件原声决定布局时刻，画面与任务时钟共用连续时间；机位徽章区分实时同步、同一时段和慢动作还原。布局按.34秒三次缓动插值，新格由左展开；.30秒逐格接入，零点.42秒多格合一。沿用以下制作方法：NASA同日直播、箭载和猎户座摄像机、无人机、两路地面机位、发射控制室、乘组照片与NASA任务简介。声音采用Release原混音：NASA直播解说与回路通话、Kokoro bf_emma两句旁白、60 BPM采样配乐、任务秒针与节点拟音。可编辑入口：film/index.html → T0 / LAY / HANDS；source/tools/prep.sh；film/index.html → CUES / CHECK / SYNC。",
+  "demo": "demos/cases/lemo-countdown/index.html",
+  "patternIds": [
+    "many-into-one-countdown",
+    "sync-badge-grid",
+    "corner-hud"
+  ],
+  "fidelity": "demos/cases/lemo-countdown/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/countdown",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/countdown/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原作影片及静帧CC BY 4.0，署名LemoLab；第三方素材和旁白按CREDITS各自许可。"
+  },
+  "sources": [
+    {
+      "label": "固定版本风格与制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/countdown"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/countdown.mp4"
+    },
+    {
+      "label": "原始素材与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/countdown/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）。固定源码接入MotionKit，原作画面按时间绘制；音轨从Release流复制。"
+    },
+    {
+      "scope": "影像与声音",
+      "notes": "原始作者、素材链接和许可见[LICENSES.md](LICENSES.md)及[audio/CREDITS](audio/CREDITS)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "字体、字重与子集见tokens.type；OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+    }
+  ]
+}

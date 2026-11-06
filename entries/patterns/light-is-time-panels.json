@@ -1,0 +1,67 @@
+{
+  "id": "light-is-time-panels",
+  "order": 122,
+  "title": "光照到哪格哪格动",
+  "types": [
+    "composition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "太阳带从左到右经过四个窗格，人物在离光时刻停格；玫瑰窗亮度与日色同步，作为整日时钟。",
+  "mechanism": "太阳带从左到右经过四个窗格，人物在离光时刻停格；玫瑰窗亮度与日色同步，作为整日时钟。",
+  "trigger": "太阳带跨过窗格边界。",
+  "effect": "光的位置同时标记当前章节、日间时刻与可活动的角色。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "14.800000–23.800000秒；1倍速，共9.000000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "光与日色",
+      "value": "film/story.js:28–52的light：sunU由LX[0]到LX[3]，15.6–17.2秒移到第二格、22.6–23.4秒移到第三格；roseI从.45升1.3后降到0。"
+    },
+    {
+      "name": "停格",
+      "value": "film/story.js:56–76：lancetI的lt=min(t,15.9)，lancetII的lt=clamp(t,16.9,22.95)，lancetIII锁定离光时刻；人物8fps，光24fps。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-stained-glass/film/story.js",
+    "demos/cases/lemo-stained-glass/film/scene.js",
+    "demos/cases/lemo-stained-glass/film/comp.js"
+  ],
+  "locator": "story.js / scene.js / comp.js",
+  "useCases": [
+    "光的位置同时标记当前章节、日间时刻与可活动的角色。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-stained-glass的原作render(t)，重放“光照到哪格哪格动”。太阳带从左到右访问四个窗格，人物在离光时刻停格；玫瑰窗亮度与日色同步，作为整日时钟。参数与源码：film/story.js:28–52的light：sunU由LX[0]到LX[3]，15.6–17.2秒移到第二格、22.6–23.4秒移到第三格；roseI从.45升1.3后降到0。；film/story.js:56–76：lancetI的lt=min(t,15.9)，lancetII的lt=clamp(t,16.9,22.95)，lancetIII锁定离光时刻；人物8fps，光24fps。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/light-is-time-panels/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-stained-glass"
+    }
+  ],
+  "previewAt": 3,
+  "markers": [
+    {
+      "t": 0,
+      "label": "光照到哪格哪格动"
+    }
+  ],
+  "renderer": "gpu"
+}

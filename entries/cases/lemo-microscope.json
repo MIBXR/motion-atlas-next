@@ -1,0 +1,301 @@
+{
+  "id": "lemo-microscope",
+  "order": 66,
+  "title": "量出来的蓝 · 显微叙事",
+  "subtitle": "Measured Blue",
+  "carriers": [
+    "video"
+  ],
+  "style": "evidence",
+  "purpose": "data",
+  "tech": [
+    "canvas2d",
+    "footage"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "显微叙事",
+    "实证影像",
+    "代码影片"
+  ],
+  "summary": "从一张真实肝组织玻片连续推到细胞核，逐像素计数，得出两个1毫米圆内的蓝色占比分别为13.5%与32.6%，再拉回玻片。",
+  "focus": "相似变换的对数螺旋镜头衔接影像金字塔，计数遮罩、读数、比例尺与核膜圆环都取自同一玻片。",
+  "accent": "#78F0CD",
+  "background": "#0B0D0F",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 24.6,
+  "rhythm": {
+    "duration": 39.5,
+    "beats": [
+      {
+        "t": 0,
+        "label": "玻片与标本",
+        "note": "0–2.67秒，玻片与标本。"
+      },
+      {
+        "t": 2.67,
+        "label": "俯冲组织",
+        "note": "2.67–5.33秒，俯冲组织。"
+      },
+      {
+        "t": 5.33,
+        "label": "组织尺寸",
+        "note": "5.33–9.33秒，组织尺寸。"
+      },
+      {
+        "t": 9.33,
+        "label": "推到结节A",
+        "note": "9.33–10.67秒，推到结节A。"
+      },
+      {
+        "t": 10.67,
+        "label": "圆A逐像素计数",
+        "note": "10.67–15.33秒，圆A逐像素计数。"
+      },
+      {
+        "t": 15.33,
+        "label": "横移到圆B",
+        "note": "15.33–16.67秒，横移到圆B。"
+      },
+      {
+        "t": 16.67,
+        "label": "圆B逐像素计数",
+        "note": "16.67–20.67秒，圆B逐像素计数。"
+      },
+      {
+        "t": 20.67,
+        "label": "并排读数与倍数",
+        "note": "20.67–26.67秒，并排读数与倍数。"
+      },
+      {
+        "t": 26.67,
+        "label": "俯冲细胞核",
+        "note": "26.67–29.33秒，俯冲细胞核。"
+      },
+      {
+        "t": 29.33,
+        "label": "焦面与核膜圆环",
+        "note": "29.33–32.67秒，焦面与核膜圆环。"
+      },
+      {
+        "t": 32.67,
+        "label": "拉回玻片",
+        "note": "32.67–35.33秒，拉回玻片。"
+      },
+      {
+        "t": 35.33,
+        "label": "玻片题字",
+        "note": "35.33–39.5秒，玻片题字。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2.67,
+      "from": 0.2,
+      "to": 0.25,
+      "label": "玻片与标本"
+    },
+    {
+      "t0": 2.67,
+      "t1": 5.33,
+      "from": 0.25,
+      "to": 0.35,
+      "label": "俯冲组织"
+    },
+    {
+      "t0": 5.33,
+      "t1": 9.33,
+      "from": 0.35,
+      "to": 0.4,
+      "label": "组织尺寸"
+    },
+    {
+      "t0": 9.33,
+      "t1": 10.67,
+      "from": 0.4,
+      "to": 0.45,
+      "label": "推到结节A"
+    },
+    {
+      "t0": 10.67,
+      "t1": 15.33,
+      "from": 0.45,
+      "to": 0.6,
+      "label": "圆A逐像素计数"
+    },
+    {
+      "t0": 15.33,
+      "t1": 16.67,
+      "from": 0.6,
+      "to": 0.5,
+      "label": "横移到圆B"
+    },
+    {
+      "t0": 16.67,
+      "t1": 20.67,
+      "from": 0.5,
+      "to": 0.7,
+      "label": "圆B逐像素计数"
+    },
+    {
+      "t0": 20.67,
+      "t1": 26.67,
+      "from": 0.7,
+      "to": 0.75,
+      "label": "并排读数与倍数"
+    },
+    {
+      "t0": 26.67,
+      "t1": 29.33,
+      "from": 0.75,
+      "to": 0.55,
+      "label": "俯冲细胞核"
+    },
+    {
+      "t0": 29.33,
+      "t1": 32.67,
+      "from": 0.55,
+      "to": 0.5,
+      "label": "焦面与核膜圆环"
+    },
+    {
+      "t0": 32.67,
+      "t1": 35.33,
+      "from": 0.5,
+      "to": 0.6,
+      "label": "拉回玻片"
+    },
+    {
+      "t0": 35.33,
+      "t1": 39.5,
+      "from": 0.6,
+      "to": 0.6,
+      "label": "玻片题字"
+    }
+  ],
+  "energyNote": "时段取上游DEMO.md的Shots；0–1为依据画面密度、配乐与旁白作的相对编辑标注。",
+  "observations": [
+    "相似变换的对数螺旋镜头衔接影像金字塔，计数遮罩、读数、比例尺与核膜圆环都取自同一玻片。",
+    "玻片、组织、结节、细胞核连续变焦与转动，细节按影像金字塔切换；扫描前沿点亮计入的蓝色像素。",
+    "PathAI Ventana-1.bif三色染色人肝全玻片扫描和扫描仪自带玻片照片，OpenSlide托管，CC0。"
+  ],
+  "composition": {
+    "color": "#F4F1EC、#0B0D0F、#2A3036、#181B1F、#78F0CD、#007A63",
+    "typography": "Barlow Condensed 300/400；IBM Plex Mono 400/500；Noto Sans SC 400/500；Noto Serif SC 600，OFL。",
+    "layout": "1920×1080、24fps；主画面、读数和字幕按原作时间线组织。",
+    "imagery": "PathAI Ventana-1.bif三色染色人肝全玻片扫描和扫描仪自带玻片照片，OpenSlide托管，CC0。",
+    "motion": "玻片、组织、结节、细胞核连续变焦与转动，细节按影像金字塔切换；扫描前沿点亮计入的蓝色像素。",
+    "sound": "90 BPM原配乐、玻璃主题、物镜转盘与伺服声、计数滴答和焦面扫声、Kokoro af_heart旁白。",
+    "rhythm": "连续时间线按Shots的段落与声音节点推进。",
+    "coherence": "相似变换的对数螺旋镜头衔接影像金字塔，计数遮罩、读数、比例尺与核膜圆环都取自同一玻片。"
+  },
+  "layers": [
+    {
+      "name": "原作画面",
+      "role": "PathAI Ventana-1.bif三色染色人肝全玻片扫描和扫描仪自带玻片照片，OpenSlide托管，CC0。"
+    },
+    {
+      "name": "测量与文字",
+      "role": "相似变换的对数螺旋镜头衔接影像金字塔，计数遮罩、读数、比例尺与核膜圆环都取自同一玻片。"
+    },
+    {
+      "name": "声音",
+      "role": "90 BPM原配乐、玻璃主题、物镜转盘与伺服声、计数滴答和焦面扫声、Kokoro af_heart旁白。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#F4F1EC",
+      "#0B0D0F",
+      "#2A3036",
+      "#181B1F",
+      "#78F0CD",
+      "#007A63"
+    ],
+    "type": "Barlow Condensed 300/400；IBM Plex Mono 400/500；Noto Sans SC 400/500；Noto Serif SC 600，OFL。",
+    "motion": [
+      {
+        "name": "源码时间线",
+        "value": "film/timeline.js的T/HIT/BUILD；段落见rhythm.beats。"
+      }
+    ]
+  },
+  "useCases": [
+    "显微影像解说",
+    "材料观察",
+    "尺度叙事"
+  ],
+  "avoid": [
+    "需要观看者自行决定节奏的网页交互"
+  ],
+  "constraints": [
+    "素材、数据、字体与时间线由原作文件直接驱动。"
+  ],
+  "migration": [
+    {
+      "field": "film/film.js",
+      "how": "修改画面、时间线或对应数据；参数位置见该文件。"
+    },
+    {
+      "field": "film/timeline.js",
+      "how": "修改画面、时间线或对应数据；参数位置见该文件。"
+    }
+  ],
+  "prompt": "制作“量出来的蓝 · 显微叙事”：从一张真实肝组织玻片连续推到细胞核，逐像素数出两个1毫米圆内13.5%与32.6%的蓝色，再拉回玻片。相似变换的对数螺旋镜头衔接影像金字塔，计数遮罩、读数、比例尺与核膜圆环都取自同一玻片。画面：PathAI Ventana-1.bif三色染色人肝全玻片扫描和扫描仪自带玻片照片，OpenSlide托管，CC0。运动：玻片、组织、结节、细胞核连续变焦与转动，细节按影像金字塔切换；扫描前沿点亮计入的蓝色像素。声音：90 BPM原配乐、玻璃主题、物镜转盘与伺服声、计数滴答和焦面扫声、Kokoro af_heart旁白。实现文件为film/film.js、film/timeline.js，保留真实数据、素材署名和原片音轨，按1920×1080舞台的原作render(t)逐帧定位。",
+  "demo": "demos/cases/lemo-microscope/index.html",
+  "patternIds": [
+    "microscope-dive",
+    "pixel-count-colour"
+  ],
+  "fidelity": "demos/cases/lemo-microscope/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/microscope",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/microscope/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原成片与静帧CC BY 4.0，署名LemoLab；第三方素材沿用CREDITS的许可。"
+  },
+  "sources": [
+    {
+      "label": "风格、示范与固定源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/microscope"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/microscope.mp4"
+    },
+    {
+      "label": "原始署名与素材许可",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/microscope/demo/CREDITS"
+    },
+    {
+      "label": "事实与测量依据",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/microscope/demo/FACTS.md"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/microscope)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "第三方素材与声音",
+      "notes": "PathAI Ventana-1.bif三色染色人肝全玻片扫描和扫描仪自带玻片照片，OpenSlide托管，CC0。 90 BPM原配乐、玻璃主题、物镜转盘与伺服声、计数滴答和焦面扫声、Kokoro af_heart旁白。 原始记录见[source/CREDITS](source/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Barlow Condensed 300/400；IBM Plex Mono 400/500；Noto Sans SC 400/500；Noto Serif SC 600，OFL。 许可原文在fonts/。"
+    }
+  ]
+}

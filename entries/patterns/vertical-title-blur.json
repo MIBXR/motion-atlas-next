@@ -1,0 +1,172 @@
+{
+  "id": "vertical-title-blur",
+  "order": 2,
+  "title": "竖排汉字模糊入场 + 英文打字",
+  "types": [
+    "type-motion"
+  ],
+  "carriers": [
+    "video",
+    "console"
+  ],
+  "summary": "竖排大字从模糊中显影，配以副标题和逐字打字效果；片名、地点、回忆字幕与收尾共用一套入场效果。三维片的英文标语逐词上移、去除模糊并收紧字距，横线和中文随后显现。",
+  "mechanism": "片名与地点标题从模糊中逐字显影。回忆插画配竖排字幕，最后以 fin. 收尾。各段共用模糊与打字的入场节奏。三维片的英文标语逐词上移、去除模糊并收紧字距，横线和中文随后显现。",
+  "trigger": "片名、地名或回忆字幕出现时",
+  "effect": "地名有登场感，章节更容易记住。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "16s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "key、tick、bell、shimmer、sub"
+    },
+    {
+      "name": "追加原片区间",
+      "value": "mg-3d-render 原片 7.8–9.7 秒；const u = prog(t, T0 + 0.07 * k, 0.9);\nw.style.filter = `blur(${(1 - e) * 7}px)`;\nw.style.letterSpacing = `${0.26 + (1 - e) * 0.2}em`;\nconst uz = prog(t, T0 + 0.30, 0.9), ez = expoOut(uz);"
+    }
+  ],
+  "useCases": [
+    "片名与章节标题",
+    "地名卡",
+    "回忆字幕",
+    "陈列界面展品名",
+    "三维片的英文标语逐词上移、去除模糊并收紧字距，横线和中文随后显现。"
+  ],
+  "avoid": [
+    "长段落",
+    "需要即时读取的操作提示"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "corner-hud",
+      "chapter-frame",
+      "card-expand-fullscreen"
+    ],
+    "conflicts": []
+  },
+  "prompt": "竖排大字从模糊中显影，配副标题与逐字打字；片名、地点、回忆字幕与收尾共用一套入场。复用地图巡礼的 drawIntro、drawLocTitle、drawFlashback、drawOutro、blurIn、typeIn、mountScene、paintScene 与对应 CSS。片名、地点标题、全屏回忆插画与竖排字幕，以及 drawOutro 的 fin.。片段：caseT 3.8→8；caseT 17.9→21.6；caseT 25.5→29.6；caseT 57.9→60；时长 16s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。 按 index.html 内联 segments 在原有 14.1 秒之后重放mg-3d-render 原片 7.8–9.7 秒，总时长 16 秒。三维片的英文标语逐词上移、去模糊并收字距，横线和中文随后显现。画面与音轨沿用同一映射，声音默认关闭。",
+  "demo": "demos/patterns/vertical-title-blur/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    },
+    {
+      "caseId": "mg-3d-render"
+    }
+  ],
+  "previewAt": 2.6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "片名"
+    },
+    {
+      "t": 4.2,
+      "label": "地点标题"
+    },
+    {
+      "t": 7.9,
+      "label": "回忆竖排字幕"
+    },
+    {
+      "t": 12,
+      "label": "fin."
+    },
+    {
+      "t": 14.1,
+      "label": "三维软床"
+    },
+    {
+      "t": 14.3,
+      "label": "标语入场"
+    }
+  ],
+  "sound": {
+    "voices": [
+      "key",
+      "tick",
+      "bell",
+      "shimmer",
+      "sub"
+    ],
+    "score": "demos/patterns/vertical-title-blur/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "片名",
+        "value": "0s"
+      },
+      {
+        "name": "地点标题",
+        "value": "4.2s"
+      },
+      {
+        "name": "回忆竖排字幕",
+        "value": "7.9s"
+      },
+      {
+        "name": "fin.",
+        "value": "12s"
+      },
+      {
+        "name": "时长",
+        "value": "14.1s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js → blurIn、typeIn、drawIntro、drawLocTitle、drawFlashback、drawOutro",
+      "how": "修改片名、地名、回忆与收尾部分的模糊和打字入场实现。"
+    },
+    {
+      "field": "mechanism/scene.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → meta；tracks.locTitle、tracks.flashback、tracks.outro；layout",
+      "how": "修改片名、地名、回忆字幕、收尾与横竖布局。"
+    },
+    {
+      "field": "mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers",
+      "how": "mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 的地图片段。地图来源时刻：3.8→8/17.9→21.6/25.5→29.6/57.9→60。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ]
+}

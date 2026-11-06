@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "negative-to-positive-loupe",
+  "pattern": {
+    "id": "negative-to-positive-loupe",
+    "order": 153,
+    "title": "放大镜下负片转正",
+    "types": [
+      "transition",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "显影前沿在放大镜内由中心向外推进，将同一负片转为正片；镜缘随后越过画幅，镜内照片分层产生纵深与轻微位移。",
+    "mechanism": "显影前沿在放大镜内由中心向外推进，将同一负片转为正片；镜缘随后越过画幅，镜内照片分层产生纵深与轻微位移。",
+    "trigger": "来源时间线进入对应镜头与动作节点。",
+    "effect": "显影前沿在放大镜内由中心向外推进，将同一负片转为正片；镜缘随后越过画幅，镜内照片分层产生纵深与轻微位移。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-archive-lighttable：13.3–22.7秒；1倍速，总时长9.400000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "显影波",
+        "value": "film/film.js:shot / FS，HIT.develop=15秒，uDev以.8秒ease-in-out推进，rho与smoothstep(uDev−.14,uDev,rho)决定镜内正负像。"
+      },
+      {
+        "name": "镜内空间",
+        "value": "film/film.js:D2 / int2s / shot，镜头zoom .335→1.45，镜内S=.84→.56；MAG=2.5、LENS_RW=1000。"
+      },
+      {
+        "name": "照片纵深",
+        "value": "film/film.js:shot，enter时地面偏移[260,−140]、dz=.55；Flyer位移[125,−26]、Wilbur[10,0]，读取原照片分层与背景。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-archive-lighttable/film/film.js",
+      "demos/cases/lemo-archive-lighttable/film/timeline.js",
+      "demos/cases/lemo-archive-lighttable/source/tools/prep.py"
+    ],
+    "locator": "film/film.js:shot / FS；film/film.js:D2 / int2s / shot；film/film.js:shot",
+    "useCases": [
+      "证据影像",
+      "数据解说",
+      "档案与科学短片"
+    ],
+    "avoid": [
+      "在主要读数和证据上叠加争夺注意的运动"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例的原作render(t)实现“放大镜下负片转正”。放大镜内由中心向外的显影前沿把同一负片转为正片，镜缘随后越过画幅，镜内照片分层产生纵深与轻微位移。保留参数：film/film.js:shot / FS，HIT.develop=15秒，uDev以.8秒ease-in-out推进，rho与smoothstep(uDev−.14,uDev,rho)决定镜内正负像。；film/film.js:D2 / int2s / shot，镜头zoom .335→1.45，镜内S=.84→.56；MAG=2.5、LENS_RW=1000。；film/film.js:shot，enter时地面偏移[260,−140]、dz=.55；Flyer位移[125,−26]、Wilbur[10,0]，读取原照片分层与背景。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/negative-to-positive-loupe/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-archive-lighttable"
+      }
+    ],
+    "previewAt": 6,
+    "markers": [
+      {
+        "t": 0,
+        "label": "负片转正并穿入照片"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/negative-to-positive-loupe.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-archive-lighttable",
+      "bundle": "agent/cases/lemo-archive-lighttable.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 放大镜下负片转正\n\n## 实现 Prompt\n\n用来源案例的原作render(t)实现“放大镜下负片转正”。放大镜内由中心向外的显影前沿把同一负片转为正片，镜缘随后越过画幅，镜内照片分层产生纵深与轻微位移。保留参数：film/film.js:shot / FS，HIT.develop=15秒，uDev以.8秒ease-in-out推进，rho与smoothstep(uDev−.14,uDev,rho)决定镜内正负像。；film/film.js:D2 / int2s / shot，镜头zoom .335→1.45，镜内S=.84→.56；MAG=2.5、LENS_RW=1000。；film/film.js:shot，enter时地面偏移[260,−140]、dz=.55；Flyer位移[125,−26]、Wilbur[10,0]，读取原照片分层与背景。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-archive-lighttable：13.3–22.7秒；1倍速，总时长9.400000秒。\n\n[打开 Demo](../../demos/patterns/negative-to-positive-loupe/index.html) · [在库中查看](../../patterns.html#pattern/negative-to-positive-loupe)\n"
+  },
+  "entrypoint": "demos/patterns/negative-to-positive-loupe/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-archive-lighttable/LICENSES.md",
+      "bytes": 3234,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/layers.json",
+      "bytes": 83,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/news.jpg",
+      "bytes": 410911,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1.jpg",
+      "bytes": 5300115,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1_bg.jpg",
+      "bytes": 4963290,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1_fly.png",
+      "bytes": 1689356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1_mask.png",
+      "bytes": 7315,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p1_wil.png",
+      "bytes": 52311,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p2.jpg",
+      "bytes": 6313025,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p2_mask.png",
+      "bytes": 4775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p3.jpg",
+      "bytes": 777897,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/p3_mask.png",
+      "bytes": 15188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/assets/tex/tg.jpg",
+      "bytes": 991576,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/CREDITS",
+      "bytes": 3717,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/audio/film.m4a",
+      "bytes": 1293288,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fidelity.md",
+      "bytes": 4533,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/film.js",
+      "bytes": 45107,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/index.html",
+      "bytes": 1102,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/out/cues.json",
+      "bytes": 1356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/film/timeline.js",
+      "bytes": 4361,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/IBMPlexMono-400.woff2",
+      "bytes": 5992,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/IBMPlexMono-500.woff2",
+      "bytes": 5908,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/IBMPlexSans-400.woff2",
+      "bytes": 11260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/IBMPlexSans-500.woff2",
+      "bytes": 12488,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/NotoSansSC-400.woff2",
+      "bytes": 21212,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/NotoSansSC-500.woff2",
+      "bytes": 21400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/NotoSansSC-600.woff2",
+      "bytes": 21464,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/NotoSerifSC-600.woff2",
+      "bytes": 28508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/OFL-ibmplexsans.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/fonts/fonts.css",
+      "bytes": 605,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/index.html",
+      "bytes": 2856,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/CREDITS",
+      "bytes": 3717,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/FACTS.md",
+      "bytes": 6318,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/README.md",
+      "bytes": 2516,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/build.sh",
+      "bytes": 3403,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/licenses/CC-BY-3.0.html",
+      "bytes": 51105,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/mix.py",
+      "bytes": 12221,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_cph.3b12982.xml",
+      "bytes": 5394,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_cph.3b18080.xml",
+      "bytes": 4529,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_ppprs.00610.xml",
+      "bytes": 15244,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_ppprs.00626.xml",
+      "bytes": 11731,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/sources/sru_ppprs.00629.xml",
+      "bytes": 7804,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/cuecheck.mjs",
+      "bytes": 989,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/export.mjs",
+      "bytes": 2298,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/fonts.py",
+      "bytes": 2316,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/prep.py",
+      "bytes": 8423,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/sru.py",
+      "bytes": 1003,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/tools/subcheck.mjs",
+      "bytes": 1807,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/voice/lines.json",
+      "bytes": 948,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/voice/out/dur.json",
+      "bytes": 100,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-archive-lighttable/source/voice/out/words.json",
+      "bytes": 1131,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/negative-to-positive-loupe/index.html",
+      "bytes": 851,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/negative-to-positive-loupe/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-archive-lighttable.json",
+      "bytes": 11384,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/negative-to-positive-loupe.json",
+      "bytes": 3151,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/negative-to-positive-loupe.jpg",
+      "bytes": 115334,
+      "role": "preview"
+    }
+  ]
+}

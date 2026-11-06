@@ -1,0 +1,75 @@
+{
+  "id": "type-as-architecture",
+  "order": 98,
+  "title": "字即布景",
+  "types": [
+    "composition",
+    "type-motion"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "先排出一行可读字幕，再把字母和单词作为柱廊、列车与赌场道具的支撑；剪影人物在字的前后穿行。",
+  "mechanism": "先排出一行可读字幕，再把字母和单词作为柱廊、列车与赌场道具的支撑；剪影人物在字的前后穿行。",
+  "trigger": "每个字幕地点先开全景，再推进追逐。",
+  "effect": "文字同时提供演职员信息与行动空间，完整字幕的阅读节拍转为场景节拍。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "9.545455–25.000000秒；1倍速，总时长15.454545秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "字形与剪边",
+      "value": "film/glyph.js:loadFonts / layout / drawLine：League Gothic经opentype.js轮廓采样与rough缓存，每字重剪边；纸缝和阴影由paper.js:piece统一绘制。"
+    },
+    {
+      "name": "地点与节拍",
+      "value": "film/story.js:T.airport=B(6)、train=B(10)、roulette=B(13)、HIT.pupil=B(14,3)；scenes.js:airport / train / casino以layout组织场景。"
+    },
+    {
+      "name": "阅读与穿行",
+      "value": "film/film.js:sAirport先全行再推近；sTrain把单词作为车厢，sCasino将字幕留出2.2倍轮盘半径的空隙；角色按tw(t)的12fps定位。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-spy-titles/film/glyph.js",
+    "demos/cases/lemo-spy-titles/film/scenes.js",
+    "demos/cases/lemo-spy-titles/film/film.js",
+    "demos/cases/lemo-spy-titles/film/story.js"
+  ],
+  "locator": "layout / drawLine / sAirport / sTrain / sCasino",
+  "useCases": [
+    "文字同时提供演职员信息与行动空间，完整字幕的阅读节拍转为场景节拍。"
+  ],
+  "avoid": [
+    "在关键动作或留白上叠加争夺注意的主动作"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [
+      "shape-rhyme-match-cut"
+    ],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-spy-titles的原作render(t)重放“字即布景”。先排出一行可读字幕，再把字母和单词作为柱廊、列车与赌场道具的支撑；剪影人物在字的前后穿行。保留参数：film/glyph.js:loadFonts / layout / drawLine：League Gothic经opentype.js轮廓采样与rough缓存，每字重剪边；纸缝和阴影由paper.js:piece统一绘制。；film/story.js:T.airport=B(6)、train=B(10)、roulette=B(13)、HIT.pupil=B(14,3)；scenes.js:airport / train / casino以layout组织场景。；film/film.js:sAirport先全行再推近；sTrain把单词作为车厢，sCasino将字幕留出2.2倍轮盘半径的空隙；角色按tw(t)的12fps定位。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/type-as-architecture/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-spy-titles"
+    }
+  ],
+  "previewAt": 2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "字即布景"
+    }
+  ]
+}

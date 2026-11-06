@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-watercolor",
+  "entry": {
+    "id": "lemo-watercolor",
+    "order": 20,
+    "title": "跟着雨走 · 水彩笔刷",
+    "subtitle": "Follow the Rain",
+    "carriers": [
+      "video"
+    ],
+    "style": "hand-drawn",
+    "purpose": "explainer",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "水彩笔刷",
+      "手绘与绘画",
+      "代码影片"
+    ],
+    "summary": "从澳大利亚红色腹地沿降雨梯度横移到绿色海岸，植物逐笔画入，纸雾洗去风景后展开大陆地图，回溯五千万年的干湿变化。",
+    "focus": "以降雨量组织横向空间和区域色板，半透明色带与断续毛刷叠出飞白；一张纸上的长镜头把标本、测量和地图串在一起。",
+    "accent": "#cf4f2c",
+    "background": "#f1e9da",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 68.16,
+    "rhythm": {
+      "duration": 113.6,
+      "beats": [
+        {
+          "t": 0,
+          "label": "纸上开场",
+          "note": "地平线画出，1.6 秒盖下朱红太阳。"
+        },
+        {
+          "t": 10.3,
+          "label": "沿雨量出发",
+          "note": "四层视差开始横移，五个植被区逐笔进入。"
+        },
+        {
+          "t": 23,
+          "label": "穆加引雨",
+          "note": "雨滴沿枝条流向根部。"
+        },
+        {
+          "t": 41.6,
+          "label": "火与新芽",
+          "note": "火线扫过桉林，47.4 秒起重新抽芽。"
+        },
+        {
+          "t": 54.2,
+          "label": "仰看王桉",
+          "note": "镜头向上移动 980px，标出约 100m 高度。"
+        },
+        {
+          "t": 61.2,
+          "label": "雨林齐绘",
+          "note": "可见植物在 0.9 秒内同时画入。"
+        },
+        {
+          "t": 70.3,
+          "label": "纸雾洗白",
+          "note": "两层波状纸色雾自下升起。"
+        },
+        {
+          "t": 73.2,
+          "label": "大陆地图",
+          "note": "在纸上画出澳大利亚海岸与雨量色带。"
+        },
+        {
+          "t": 80.8,
+          "label": "回到深时",
+          "note": "地图回溯五千万年前，随后连续变干。"
+        },
+        {
+          "t": 101.6,
+          "label": "片尾题字",
+          "note": "地图淡至三成，标题与音乐署名回到纸上。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 10.3,
+        "from": 0.15,
+        "to": 0.3,
+        "label": "纸面与题字"
+      },
+      {
+        "t0": 10.3,
+        "t1": 41.6,
+        "from": 0.3,
+        "to": 0.5,
+        "label": "沿梯度行走"
+      },
+      {
+        "t0": 41.6,
+        "t1": 51.8,
+        "from": 0.65,
+        "to": 0.5,
+        "label": "火与重生"
+      },
+      {
+        "t0": 51.8,
+        "t1": 61.2,
+        "from": 0.35,
+        "to": 0.5,
+        "label": "王桉量高"
+      },
+      {
+        "t0": 61.2,
+        "t1": 70.3,
+        "from": 0.7,
+        "to": 0.65,
+        "label": "雨林齐绘"
+      },
+      {
+        "t0": 70.3,
+        "t1": 80.8,
+        "from": 0.35,
+        "to": 0.25,
+        "label": "洗白与地图"
+      },
+      {
+        "t0": 80.8,
+        "t1": 101.6,
+        "from": 0.4,
+        "to": 0.3,
+        "label": "深时干燥"
+      },
+      {
+        "t0": 101.6,
+        "t1": 113.6,
+        "from": 0.25,
+        "to": 0.05,
+        "label": "题字与收束"
+      }
+    ],
+    "energyNote": "段落取自 DEMO.md 的 Shots、Score structure 与 scene.js 的 VO / FIRE、main.js 的地图和片尾时刻；0–1 数值是依据旁白、配乐、音效与画面密度作出的相对编辑标注。",
+    "observations": [
+      "色带交叠处变深，毛刷间的空隙露出纸白，物体按树干、枝条、叶群的顺序生成。",
+      "far / mid / main / fg 的视差系数为 0.25 / 0.55 / 1 / 1.55，远景更小、更淡。",
+      "雨量经 rainAt 对数插值，同时驱动量表和天空、山丘、地面配色。",
+      "火后枝干变为焦黑精灵，新芽再逐笔画出；地图与长镜之间用同一纸纹擦除。"
+    ],
+    "composition": {
+      "color": "暖纸 #f1e9da、墨色 #2b2520 / #3d3129，天空与地面从赭红经鼠尾草绿、稻草黄变为雨林深绿，朱红太阳与雨蓝用于点睛。",
+      "typography": "Cormorant Garamond 的衬线标题和斜体字幕、Caveat 手写批注、IBM Plex Mono 测量标签、Noto Serif SC 中文字幕。",
+      "layout": "1920×1080、60fps；纸面四周留白，每区保留一个标本与批注，底部放双语字幕。",
+      "imagery": "Canvas2D 逐笔画植物与动物，完成的笔画缓存为精灵；纸纹由 paper.py 生成，海岸线来自 Natural Earth。",
+      "motion": "Fritsch–Carlson 单调横移，王桉段纵向抬升，柔和 sway；纸雾洗白后地图逐段画出。",
+      "sound": "成片原混音：Scott Buckley《Wildflowers》、Kokoro af_heart 旁白、纸刷、鸟鸣、雨滴、火声与雾涌。",
+      "rhythm": "开场题字后穿行五区，事件处减速；雨林齐绘形成峰值，地图段重新组织空间与时间。",
+      "coherence": "同一纸纹既是底材也是擦除层，降雨量同时连接空间、颜色、量表与旁白。"
+    },
+    "layers": [
+      {
+        "name": "纸纹",
+        "role": "每帧首先绘制，也被波状裁切用作洗白层。"
+      },
+      {
+        "name": "水彩世界",
+        "role": "四层山丘、地面、植物和远近雾带形成空间。"
+      },
+      {
+        "name": "事件与动物",
+        "role": "袋鼠落地与配乐对齐，雨、火、抽芽和雨林齐绘发生在各区。"
+      },
+      {
+        "name": "批注与量表",
+        "role": "手写引线连接标本，雨量 HUD 读取相机位置。"
+      },
+      {
+        "name": "地图与双语字幕",
+        "role": "地图回溯深时，英语斜体与中文衬线字幕覆在纸上。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#f1e9da",
+        "#2b2520",
+        "#3d3129",
+        "#cf4f2c",
+        "#3f7fa8",
+        "#f0d6b8",
+        "#dcae8e",
+        "#dba47e",
+        "#dda27a",
+        "#efdcc6",
+        "#c89b8c",
+        "#d0ae80",
+        "#dbb584",
+        "#ece2cd",
+        "#bdb99c",
+        "#cbc28f",
+        "#dccb92",
+        "#dfe3dc",
+        "#9fb1b8",
+        "#98aa8a",
+        "#a7b48e",
+        "#dbe3d8",
+        "#9ab19f",
+        "#6f8d6d",
+        "#6e8b69"
+      ],
+      "type": "Cormorant Garamond 500、Italic 400/500；Caveat 500/600；IBM Plex Mono 400；Noto Serif SC 400（scene.js + main.js 的字符子集）。",
+      "motion": [
+        {
+          "name": "毛刷色带",
+          "value": "film/engine.js:mk / drawS：rough=.22，w≥6 时 nb=clamp(round(w/3.2),3,9)，bristle alpha=.3–.85；drawList 每笔占 clamp(4/N,.12,.5) 的进度。"
+        },
+        {
+          "name": "视差与横移",
+          "value": "film/scene.js:LAY / camXf：0.25/0.55/1/1.55；10.3–73 秒由 700px 单调移到 9800px，54.2–57.8 秒 camYf 上移 980px。"
+        },
+        {
+          "name": "纸雾",
+          "value": "film/main.js:drawMist：70.3–73.6 秒 eio；两层 lift=120/0、alpha=.55/1，边缘噪声 160px、正弦 12px。"
+        },
+        {
+          "name": "摇曳",
+          "value": "film/scene.js:drawPlants：树约 .006、草 .01–.03，sin(1.15t+φ)+.4sin(2.7t+2φ)。"
+        }
+      ]
+    },
+    "useCases": [
+      "自然纪录短片",
+      "旅行影像",
+      "科学解说"
+    ],
+    "avoid": [
+      "需要厚涂、矢量描边或硬切的画面",
+      "需要精确古气候重建的内容，原片地图使用示意雨量场"
+    ],
+    "constraints": [
+      "改文案后，按 fetch_fonts.mjs 中的 scene.js + main.js 字符范围重建 CJK 子集。",
+      "在 render 内新建笔画时使用 withSeed，避免不同渲染进程出现随机差异。",
+      "洗色条带应超过画幅，纸雾与纵向抬升时不露出硬边。",
+      "成千笔画先缓存为精灵；配乐剪辑改变时，同步推导袋鼠落地的节拍常数。"
+    ],
+    "migration": [
+      {
+        "field": "film/scene.js → VO / ZONES / RAINK",
+        "how": "修改旁白、字幕、区域范围与降雨量。"
+      },
+      {
+        "field": "film/scene.js → camXf / camYf / FIRE",
+        "how": "修改长镜路线、量高与火后重生时刻。"
+      },
+      {
+        "field": "film/scene.js → ZCOL；film/plants.js → COL",
+        "how": "修改环境与植物色板。"
+      },
+      {
+        "field": "film/main.js → STN / MSTOP / drawMap",
+        "how": "修改地图雨量站、色带与深时插值。"
+      }
+    ],
+    "prompt": "制作一支在暖色纤维纸上自画而成的水彩纪录片：所有形体用变宽半透明色带与 3–9 条断续毛刷叠色，露出飞白，不加矢量轮廓；树干、枝、叶逐笔进入，完成后缓存精灵并轻微摇曳。纸白承担光线，场景维持三至五个色相，保留一个强调色；衬线标题、手写批注、等宽测量与中文衬线字幕相互分工。用四层视差和沿可测量梯度的连续横移组织空间，在事件处减速，用纸色雾洗回空白后画出地图。声音保留温和连续配乐、从场景材料生成的刷纸与自然声、舒缓旁白及短暂停顿，原片音轨同步播放。引擎位于 demos/cases/lemo-watercolor/film/engine.js、plants.js、scene.js 与 main.js。",
+    "demo": "demos/cases/lemo-watercolor/index.html",
+    "patternIds": [
+      "brush-ribbon-bristle-paint-in",
+      "gradient-walk-dolly",
+      "mist-wash-to-map"
+    ],
+    "fidelity": "demos/cases/lemo-watercolor/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/watercolor",
+      "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+      "path": "styles/watercolor/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+      "notes": "代码与文档 MIT；原成片及静帧 CC BY 4.0，署名 LemoLab；第三方资源沿用 CREDITS 的许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与示范制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/watercolor"
+      },
+      {
+        "label": "Release 公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/watercolor.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/watercolor/demo/CREDITS"
+      },
+      {
+        "label": "Wildflowers · Scott Buckley",
+        "url": "https://www.scottbuckley.com.au/library/"
+      },
+      {
+        "label": "Natural Earth",
+        "url": "https://www.naturalearthdata.com/"
+      },
+      {
+        "label": "world-atlas 2.0.2",
+        "url": "https://github.com/topojson/world-atlas/tree/v2.0.2"
+      },
+      {
+        "label": "topojson-client 3.1.0",
+        "url": "https://github.com/topojson/topojson-client/tree/v3.1.0"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者 Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/watercolor)，代码 MIT、成片 CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Scott Buckley《Wildflowers》（CC BY 4.0，https://www.scottbuckley.com.au/library/），Kokoro af_heart（Apache-2.0）；原始署名与制作参数见 [audio/CREDITS](audio/CREDITS)，许可原文索引见 [LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "字体家族与字重见 tokens.type；SIL OFL 1.1原文在 fonts/，取得方法和字符范围见 [source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-watercolor/LICENSES.md",
+    "preview": "previews/cases/lemo-watercolor.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 跟着雨走 · 水彩笔刷 · 接入与保真说明\n\n复刻范围为公开成片对应的完整代码影片，来源与固定版本见[条目 JSON](../../../entries/cases/lemo-watercolor.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `film/index.html` | 字体 URL 指向案例根目录的 `fonts/`。 | 接入本库的素材目录。 |\n| `fonts/fonts.css` | 按原 `fetch_fonts.mjs` 取得字体声明，URL 从 `fonts/f*.woff2` 改为同目录 `f*.woff2`。 | 字体目录接入；原声明保存在 `source/fonts.css`。 |\n| `film/paper.jpg` | 运行原 `paper.py`，固定随机种子 3。 | 固定提交不含生成后的纸纹。 |\n| `audio/film.m4a` | 从 Release 成片流复制音轨。 | 以正式混音同步播放。 |\n| `source/` | 制作脚本、字幕/语音输入、音乐制作文件与 CREDITS 从运行目录移至此处，原字节保留。 | 保存制作依赖。 |\n| `stills/` | 不收录上游调试与风格帧。 | 运行画面不读取；预览由本库 capture 生成。 |\n| `index.html` | 增加MotionKit预载、同源iframe的load／READY等待、按原fps取整的异步renderAt及音轨接入。 | 接入本库时间线。 |\n| `index.html` | 增加MotionKit预载、同源iframe的load／READY等待、按原fps取整的异步renderAt及音轨接入。 | 接入本库时间线。 |\n\n运行引擎、时间轴和数据表保留原代码结构与字节，许可索引见 [LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html` 使用 `MotionKit.load.prepare` 预载运行资源，等待同源iframe的load事件及 `window.READY === true`，由 `MotionKit.mountFilm` 接入1920×1080横屏舞台。`renderAt(t)` 按60fps取最近帧，执行并等待 `upstream.render(Math.round(t*fps)/fps)`；舞台直接显示上游页面的绘制结果。\n\n`?embed` 隐藏控制条，`?render` 暂停自动播放与声音，`?t=秒` 定位；减少动态时暂停在68.16秒。镜头标记与原Release的AAC流复制音轨由mountFilm同步。\n\n## 已接受差异\n\n- 王桉、雨林的细毛刷与浅色叠笔在本库更清楚，参考帧的细边更软：`film/engine.js:87–105` 的半透明色带和细笔画包含高频边缘，成片生成链会量化这些细节。\n- 地图色带和双语字边的细小阶纹与参考帧有差别：`film/main.js:57–68/175–188` 绘制地图与字幕，`drawMapFill` 原有的2.5px模糊仍由该函数执行；余差集中在色带和字边的压缩采样。\n\n## 与原片对照结果\n\n参考按 `round(t×fps)` 的视频帧号精确取PNG。本库在1920×1080、DPR1、Intel Iris Xe／ANGLE D3D11下打开 `?embed=1&render=1&t=秒`，等待MotionKit就绪与定位完成后截取PNG。\n\n**未经编码链**一列直接比较参考PNG与本库原始PNG。**编码链测量**一列先在过程目录用独立CDP页面载入这张原始PNG，按上游捕获质量生成JPEG，再由ffmpeg执行下列x264编码链并解码为PNG。每张采样图独立作为一帧视频执行，因此测量帧是I帧；原成片连续GOP的预测历史与码率分配未进入这项单帧测量。JPEG与视频编解码均发生在过程目录的测量脚本中。\n\n`source/render.mjs:54–58` 使用60fps、JPEG100、`libx264 -preset medium -crf 12 -pix_fmt yuv420p`；`source/mux.sh:9–11` 再用 `libx264 -preset slow -crf 16 -g 120`。\n\nMJPEG输入及后续编码沿用默认色彩处理；共享mux采用grain=0的分支。两幅待比PNG统一转为yuv444p，取ffmpeg `ssim` 的All值。`compare-<序号>.png` 为**左：Release参考帧；右：本库原始PNG**；`compare-encoded-<序号>.png` 为**左：Release参考帧；右：编码链测量PNG**。\n\n原8帧加DEMO.md各Shots段中点，同一实际视频帧去重。地图／片尾起止取 `film/main.js:render/drawEnd`，王桉升降取上升与回落的完整区间。\n\n| Shots段 | 起止（秒） | 中点（秒） | 对照视频帧号 |\n| --- | --- | --- | --- |\n| 片头 | 0–10.9 | 5.450000 | 327 |\n| 横移 | 10.3–73 | 41.650000 | 2499 |\n| 王桉升降 | 54.2–60.9 | 57.550000 | 3453 |\n| 纸雾 | 70.3–73.6 | 71.950000 | 4317 |\n| 地图 | 73.2–101.6 | 87.400000 | 5244 |\n| 片尾 | 101.6–113.6 | 107.600000 | 6456 |\n\n| 序号 | 视频帧号 | 请求时刻（秒） | 实际视频时刻（秒） | 未经编码链 SSIM All | 编码链测量 SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.997498 | 0.992785 | 原8帧 |\n| 2 | 327 | 5.450000 | 5.450000 | 0.994844 | 0.990075 | 原8帧；Shots · 片头中点 |\n| 3 | 2499 | 41.650000 | 41.650000 | 0.986600 | 0.987967 | 原8帧；Shots · 横移中点 |\n| 4 | 3360 | 56.000000 | 56.000000 | 0.984542 | 0.987669 | 原8帧 |\n| 5 | 4090 | 68.160000 | 68.166667 | 0.982558 | 0.983534 | 原8帧 |\n| 6 | 4317 | 71.950000 | 71.950000 | 0.991002 | 0.989088 | 原8帧；Shots · 纸雾中点 |\n| 7 | 5220 | 87.000000 | 87.000000 | 0.995010 | 0.990973 | 原8帧 |\n| 8 | 6756 | 112.600000 | 112.600000 | 0.994885 | 0.990223 | 原8帧 |\n| 9 | 3453 | 57.550000 | 57.550000 | 0.986861 | 0.987238 | Shots · 王桉升降中点 |\n| 10 | 5244 | 87.400000 | 87.400000 | 0.994804 | 0.991096 | Shots · 地图中点 |\n| 11 | 6456 | 107.600000 | 107.600000 | 0.995212 | 0.990342 | Shots · 片尾中点 |\n\n11帧：未经编码链最低 **0.982558**、最高 **0.997498**，11/11达到0.95；编码链测量最低 **0.983534**、最高 **0.992785**，11/11达到0.95。\n\n声音：两条音轨解码为48kHz单声道，每10ms计算RMS包络，在±500ms内互相关；最佳偏移 **0ms**，相关系数 **1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-watercolor.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者 Lemomo（@lemomo-ai）。\n- [audio/film.m4a](audio/film.m4a) 流复制自[Release 成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/watercolor.mp4)，成片按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 发布，署名 LemoLab 并链接来源；本库接入时未修改混音。\n- 音乐、声音、字体和数据的来源及许可原文记录：[audio/CREDITS](audio/CREDITS)；制作文件保留 [source/CREDITS](source/CREDITS)。\n- 配乐：“Wildflowers” by Scott Buckley，CC BY 4.0，<https://www.scottbuckley.com.au/library/>；剪辑为 61.23→265.61 秒的一次跳接和 .18 秒交叉淡化。许可：[audio/CC-BY-4.0.txt](audio/CC-BY-4.0.txt)。\n- Kokoro-82M（hexgrad）旁白 af_heart、speed .93：[Apache-2.0 原文](audio/Apache-2.0.txt)；kokoro-onnx 为 MIT。\n- 字体均为 SIL OFL 1.1：[OFL-caveat.txt](fonts/OFL-caveat.txt)、[OFL-cormorantgaramond.txt](fonts/OFL-cormorantgaramond.txt)、[OFL-ibmplexmono.txt](fonts/OFL-ibmplexmono.txt)、[OFL-notoserifsc.txt](fonts/OFL-notoserifsc.txt)。\n- 海岸输入来自 Natural Earth 公有领域数据；world-atlas 2.0.2 和 topojson-client 3.1.0 的 ISC 原文在 [source/vendor/LICENSE-world-atlas](source/vendor/LICENSE-world-atlas) 与 [source/vendor/LICENSE-topojson-client](source/vendor/LICENSE-topojson-client)。\n\n声音声明保留上游 CREDITS 原文；CC 和 Apache 许可全文取自 [SPDX license-list-data](https://github.com/spdx/license-list-data/tree/main/text)。\n",
+    "prompt": "# 跟着雨走 · 水彩笔刷\n\n## 实现 Prompt\n\n制作一支在暖色纤维纸上自画而成的水彩纪录片：所有形体用变宽半透明色带与 3–9 条断续毛刷叠色，露出飞白，不加矢量轮廓；树干、枝、叶逐笔进入，完成后缓存精灵并轻微摇曳。纸白承担光线，场景维持三至五个色相，保留一个强调色；衬线标题、手写批注、等宽测量与中文衬线字幕相互分工。用四层视差和沿可测量梯度的连续横移组织空间，在事件处减速，用纸色雾洗回空白后画出地图。声音保留温和连续配乐、从场景材料生成的刷纸与自然声、舒缓旁白及短暂停顿，原片音轨同步播放。引擎位于 demos/cases/lemo-watercolor/film/engine.js、plants.js、scene.js 与 main.js。\n\n## 动效 Token\n\n- **毛刷色带**：film/engine.js:mk / drawS：rough=.22，w≥6 时 nb=clamp(round(w/3.2),3,9)，bristle alpha=.3–.85；drawList 每笔占 clamp(4/N,.12,.5) 的进度。\n- **视差与横移**：film/scene.js:LAY / camXf：0.25/0.55/1/1.55；10.3–73 秒由 700px 单调移到 9800px，54.2–57.8 秒 camYf 上移 980px。\n- **纸雾**：film/main.js:drawMist：70.3–73.6 秒 eio；两层 lift=120/0、alpha=.55/1，边缘噪声 160px、正弦 12px。\n- **摇曳**：film/scene.js:drawPlants：树约 .006、草 .01–.03，sin(1.15t+φ)+.4sin(2.7t+2φ)。\n\n## 制作约束\n\n- 改文案后，按 fetch_fonts.mjs 中的 scene.js + main.js 字符范围重建 CJK 子集。\n- 在 render 内新建笔画时使用 withSeed，避免不同渲染进程出现随机差异。\n- 洗色条带应超过画幅，纸雾与纵向抬升时不露出硬边。\n- 成千笔画先缓存为精灵；配乐剪辑改变时，同步推导袋鼠落地的节拍常数。\n\n## 迁移\n\n- `film/scene.js → VO / ZONES / RAINK`：修改旁白、字幕、区域范围与降雨量。\n- `film/scene.js → camXf / camYf / FIRE`：修改长镜路线、量高与火后重生时刻。\n- `film/scene.js → ZCOL；film/plants.js → COL`：修改环境与植物色板。\n- `film/main.js → STN / MSTOP / drawMap`：修改地图雨量站、色带与深时插值。\n\n[打开 Demo](../../demos/cases/lemo-watercolor/index.html) · [在库中查看](../../cases.html#case/lemo-watercolor)\n"
+  },
+  "entrypoint": "demos/cases/lemo-watercolor/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-watercolor/LICENSES.md",
+      "bytes": 1683,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/CREDITS",
+      "bytes": 2421,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/film.m4a",
+      "bytes": 3761654,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fidelity.md",
+      "bytes": 5582,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/aus.js",
+      "bytes": 23419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/engine.js",
+      "bytes": 8486,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/index.html",
+      "bytes": 430,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/main.js",
+      "bytes": 19065,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/paper.jpg",
+      "bytes": 338137,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/plants.js",
+      "bytes": 14039,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/scene.js",
+      "bytes": 35322,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-caveat.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-cormorantgaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f0.woff2",
+      "bytes": 32356,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f1.woff2",
+      "bytes": 25196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f10.woff2",
+      "bytes": 23260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f11.woff2",
+      "bytes": 42888,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f12.woff2",
+      "bytes": 77224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f13.woff2",
+      "bytes": 29528,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f14.woff2",
+      "bytes": 74572,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f15.woff2",
+      "bytes": 4348,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f16.woff2",
+      "bytes": 5476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f17.woff2",
+      "bytes": 4000,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f18.woff2",
+      "bytes": 8860,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f19.woff2",
+      "bytes": 10052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f2.woff2",
+      "bytes": 21264,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f3.woff2",
+      "bytes": 11556,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f4.woff2",
+      "bytes": 34444,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f5.woff2",
+      "bytes": 39304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f6.woff2",
+      "bytes": 14076,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f7.woff2",
+      "bytes": 12896,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f8.woff2",
+      "bytes": 6760,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f9.woff2",
+      "bytes": 20188,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/fonts.css",
+      "bytes": 10250,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/index.html",
+      "bytes": 2285,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/CREDITS",
+      "bytes": 2421,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/README.md",
+      "bytes": 3974,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/asr.py",
+      "bytes": 499,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/extract_aus.mjs",
+      "bytes": 1359,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/fetch_fonts.mjs",
+      "bytes": 1135,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/fonts.css",
+      "bytes": 11293,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/mix.py",
+      "bytes": 8743,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/analyze.py",
+      "bytes": 1861,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/edit.py",
+      "bytes": 1816,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/jump.py",
+      "bytes": 1515,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/lag.py",
+      "bytes": 1308,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/prep.sh",
+      "bytes": 846,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/score_beats.json",
+      "bytes": 2927,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/wf_beats.json",
+      "bytes": 30235,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/mux.sh",
+      "bytes": 1039,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/paper.py",
+      "bytes": 1299,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/render.mjs",
+      "bytes": 4995,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/sheet.py",
+      "bytes": 537,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/tts/gen.py",
+      "bytes": 1090,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/tts/lines.json",
+      "bytes": 1268,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/LICENSE-topojson-client",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/LICENSE-world-atlas",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/countries-50m.json",
+      "bytes": 756420,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/topojson-client.min.cjs",
+      "bytes": 7169,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/voices/dur.json",
+      "bytes": 165,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-watercolor.json",
+      "bytes": 11657,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-watercolor.jpg",
+      "bytes": 133795,
+      "role": "preview"
+    }
+  ]
+}

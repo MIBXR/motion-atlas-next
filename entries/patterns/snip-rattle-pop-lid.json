@@ -1,0 +1,95 @@
+{
+  "id": "snip-rattle-pop-lid",
+  "order": 73,
+  "title": "剪盖蓄势爆开",
+  "types": [
+    "rhythm",
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15"
+  ],
+  "summary": "剪线印章到达后，剪刀逐段打开剪口，头盖三次抖动后悬停，再弹起并回落到纸钉铰链，同时迸出碎纸和 BANG。",
+  "mechanism": "剪线印章到达 → 剪刀逐段打开剪口，头盖三次抖动后悬停，再弹起并回落到纸钉铰链，同时迸出碎纸和 BANG。",
+  "trigger": "剪线印章到达时",
+  "effect": "剪刀逐段打开剪口，头盖三次抖动后悬停，再弹起并回落到纸钉铰链，同时迸出碎纸和 BANG。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-collage 原片 1.96–5.04 秒；1 倍速，总时长 3.08 秒。"
+    },
+    {
+      "name": "剪盖蓄势爆开",
+      "value": "const BANGP = [[1000, 430, 0.8, 0.9], [1262, 292, 1.25, 0.7], [1500, 172, 1.0, 0.1], [1528, 156, 1.0, 0.05], [1716, 40, 1.06, 0.8], [2010, -110, 1.1, 1.2]];\nconst LIDF = [[-70, 10, -230, 1.3], [-200, -30, -660, 1.8], [-300, -70, -700, 1.8], [-385, -40, -300, 1.4]];"
+    }
+  ],
+  "useCases": [
+    "剪开纸偶后蓄势爆开的脑洞段落。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-collage 原片 1.96–5.04 秒；总时长 3.08 秒。剪线印章到达 → 剪刀逐段打开剪口，头盖三次抖动后悬停，再弹起并回落到纸钉铰链，同时迸出碎纸和 BANG。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：const BANGP = [[1000, 430, 0.8, 0.9], [1262, 292, 1.25, 0.7], [1500, 172, 1.0, 0.1], [1528, 156, 1.0, 0.05], [1716, 40, 1.06, 0.8], [2010, -110, 1.1, 1.2]];\nconst LIDF = [[-70, 10, -230, 1.3], [-200, -30, -660, 1.8], [-300, -70, -700, 1.8], [-385, -40, -300, 1.4]];。使用 1920×1080 横屏。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/snip-rattle-pop-lid/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-collage"
+    }
+  ],
+  "previewAt": 2.29,
+  "markers": [
+    {
+      "t": 0,
+      "label": "脑洞拼贴"
+    },
+    {
+      "t": 0.3733333,
+      "label": "剪线盖印"
+    },
+    {
+      "t": 0.54,
+      "label": "剪开头盖"
+    },
+    {
+      "t": 1.7066667,
+      "label": "动作悬停"
+    },
+    {
+      "t": 2.04,
+      "label": "脑洞弹开"
+    },
+    {
+      "t": 2.3733333,
+      "label": "火箭飞出"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#16130F",
+      "#F2ECDF",
+      "#D2261C",
+      "#E0A355"
+    ],
+    "type": "Anton 400；Bebas Neue 400；Alimama ShuHeiTi 700；Noto Serif SC 900；Noto Sans SC 700；IBM Plex Mono 500。"
+  }
+}

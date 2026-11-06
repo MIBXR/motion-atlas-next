@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "crt-boot-shell",
+  "pattern": {
+    "id": "crt-boot-shell",
+    "order": 28,
+    "title": "显像管开机与屏幕外壳",
+    "types": [
+      "transition",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "中心亮点拉成扫描线并展开，经过短促滚屏与交错行摆后，弧屏、边缘遮罩、扫描线和磷光辉光持续覆盖画面。",
+    "mechanism": "亮点展屏、纵向滚屏和交错行摆完成开机；弧屏桶形变形、边缘遮罩、亮度自适应扫描线与磷光辉光持续覆盖整片画面。",
+    "trigger": "开机帧表推进及每帧显像管输出采样时",
+    "effect": "画面从中心亮点展开，短暂出现纵向滚动、奇偶行横摆和偏色，之后保留弧屏与磷光外壳。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "0–10 秒，1 倍速；输出 1920×1080、30fps"
+      },
+      {
+        "name": "亮点展屏",
+        "value": "前 6 帧纵比例 [0.012,0.007,0.006,0.034,0.334,1]；横比例首帧 0.018，之后为 1"
+      },
+      {
+        "name": "纵向滚屏",
+        "value": "f6，即 0.2 秒，uRoll=8/180；边缘压暗 smoothstep 宽度 0.012"
+      },
+      {
+        "name": "交错行摆",
+        "value": "f7–10 的 wob 为 [1,-0.75,0.5,-0.25]；奇偶行反向位移 wob/uSrc.x；RGB 增益 (1+0.05*wob,1,1-0.05*wob)"
+      },
+      {
+        "name": "桶形与边缘",
+        "value": "k=0.03，cc=c*(1+k*dot(c,c))/(1+k)；横纵边缘阈值 0.0022、0.004"
+      },
+      {
+        "name": "扫描线",
+        "value": "亮度权重 (0.3,0.59,0.11)，宽度 mix(0.30,0.47,lum)，强度 0.64–1，输出色乘 1.10"
+      },
+      {
+        "name": "磷光辉光",
+        "value": "两圈各 8 方向，角步 0.785398，半径 1.6、3.4 源像素，第二圈权重 0.6，归一化除 12.8，再用 max(g-0.30,0)*0.55"
+      }
+    ],
+    "useCases": [
+      "像素冒险片头开机",
+      "显像管屏幕重放",
+      "扫描线与磷光质感"
+    ],
+    "avoid": [
+      "需要保持直线无形变的画面",
+      "需要取消开机闪光的重放"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": [],
+      "notes": "开机帧表与持续显像管着色器共同作用于来源原片的同一输出画面。"
+    },
+    "prompt": "调用来源 PIXEL QUEST 的 renderAt(t) 重放显像管开机与屏幕外壳，按 index.html 内联配置 的 segments 以 1 倍速播放原片 0–10 秒，画面和同一区间音轨保持原作，声音默认关闭。输出 1920×1080、30fps。开机前 6 帧纵比例依次为 [0.012,0.007,0.006,0.034,0.334,1]，横比例首帧 0.018、之后为 1；f6 用 8/180 纵向循环偏移；f7–10 用 [1,-0.75,0.5,-0.25] 的 wob 控制奇偶行反向横摆和 RGB 增益 (1+0.05*wob,1,1-0.05*wob)。保留 k=0.03 的桶形采样、0.0022/0.004 边缘遮罩、以 mix(0.30,0.47,lum) 调宽的扫描线，以及两圈八方向、半径 1.6/3.4 的磷光邻域采样。继续使用原作 LINEAR 纹理过滤与 GLSL sharp 函数，使用横屏、时间定位、播放暂停与减少动态偏好。",
+    "demo": "demos/patterns/crt-boot-shell/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-pixel"
+      },
+      {
+        "caseId": "lemo-ascii-crt"
+      }
+    ],
+    "previewAt": 1,
+    "markers": [
+      {
+        "t": 0,
+        "label": "亮点开机"
+      },
+      {
+        "t": 0.1666666667,
+        "label": "画幅展开"
+      },
+      {
+        "t": 0.2,
+        "label": "纵向滚屏"
+      },
+      {
+        "t": 0.2333333333,
+        "label": "交错行摆"
+      },
+      {
+        "t": 0.3666666667,
+        "label": "开机完成"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "lemo-ascii-crt · 墨量决定字符的图像位置，字格大小承担镜头",
+        "value": "film/main.js:T.on0=.35、on1=1.05；film/crt.js:COMP令sx=smoothstep(0,.35,power)、sy=max(.004,smoothstep(.35,1,power))；dot→line→满屏。curv=.045、scan=.3、glow=.55、halo=.22；开机前expo=0。"
+      }
+    ],
+    "preview": "previews/patterns/crt-boot-shell.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-pixel",
+      "bundle": "agent/cases/mg-pixel.json"
+    },
+    {
+      "caseId": "lemo-ascii-crt",
+      "bundle": "agent/cases/lemo-ascii-crt.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 显像管开机与屏幕外壳\n\n## 实现 Prompt\n\n调用来源 PIXEL QUEST 的 renderAt(t) 重放显像管开机与屏幕外壳，按 index.html 内联配置 的 segments 以 1 倍速播放原片 0–10 秒，画面和同一区间音轨保持原作，声音默认关闭。输出 1920×1080、30fps。开机前 6 帧纵比例依次为 [0.012,0.007,0.006,0.034,0.334,1]，横比例首帧 0.018、之后为 1；f6 用 8/180 纵向循环偏移；f7–10 用 [1,-0.75,0.5,-0.25] 的 wob 控制奇偶行反向横摆和 RGB 增益 (1+0.05*wob,1,1-0.05*wob)。保留 k=0.03 的桶形采样、0.0022/0.004 边缘遮罩、以 mix(0.30,0.47,lum) 调宽的扫描线，以及两圈八方向、半径 1.6/3.4 的磷光邻域采样。继续使用原作 LINEAR 纹理过滤与 GLSL sharp 函数，使用横屏、时间定位、播放暂停与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：0–10 秒，1 倍速；输出 1920×1080、30fps\n- **亮点展屏**：前 6 帧纵比例 [0.012,0.007,0.006,0.034,0.334,1]；横比例首帧 0.018，之后为 1\n- **纵向滚屏**：f6，即 0.2 秒，uRoll=8/180；边缘压暗 smoothstep 宽度 0.012\n- **交错行摆**：f7–10 的 wob 为 [1,-0.75,0.5,-0.25]；奇偶行反向位移 wob/uSrc.x；RGB 增益 (1+0.05*wob,1,1-0.05*wob)\n- **桶形与边缘**：k=0.03，cc=c*(1+k*dot(c,c))/(1+k)；横纵边缘阈值 0.0022、0.004\n- **扫描线**：亮度权重 (0.3,0.59,0.11)，宽度 mix(0.30,0.47,lum)，强度 0.64–1，输出色乘 1.10\n- **磷光辉光**：两圈各 8 方向，角步 0.785398，半径 1.6、3.4 源像素，第二圈权重 0.6，归一化除 12.8，再用 max(g-0.30,0)*0.55\n\n[打开 Demo](../../demos/patterns/crt-boot-shell/index.html) · [在库中查看](../../patterns.html#pattern/crt-boot-shell)\n"
+  },
+  "entrypoint": "demos/patterns/crt-boot-shell/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-ascii-crt/LICENSES.md",
+      "bytes": 517,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/audio/CREDITS",
+      "bytes": 630,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/audio/film.m4a",
+      "bytes": 1922911,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/fidelity.md",
+      "bytes": 5594,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/art.js",
+      "bytes": 13453,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/crt.js",
+      "bytes": 9310,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/index.html",
+      "bytes": 344,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/lines.json",
+      "bytes": 756,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/main.js",
+      "bytes": 36385,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/term.js",
+      "bytes": 6988,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/film/voices/words.json",
+      "bytes": 998,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/fonts/OFL-VT323.txt",
+      "bytes": 4367,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/fonts/VT323-Regular.ttf",
+      "bytes": 153116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/fonts/fonts.css",
+      "bytes": 182,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/index.html",
+      "bytes": 2125,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/CREDITS",
+      "bytes": 630,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/README.md",
+      "bytes": 2652,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/build.sh",
+      "bytes": 1945,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/events.json",
+      "bytes": 12841,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/mix.py",
+      "bytes": 8976,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/music/score.json",
+      "bytes": 3134,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/music/score.py",
+      "bytes": 15868,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/tools/subs.mjs",
+      "bytes": 554,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/voice_fx.py",
+      "bytes": 1165,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ascii-crt/source/voices_raw/dur.json",
+      "bytes": 72,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-pixel/LICENSES.md",
+      "bytes": 815,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/audio/film.m4a",
+      "bytes": 345394,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fidelity.md",
+      "bytes": 4108,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/cues.json",
+      "bytes": 888,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/film.js",
+      "bytes": 58413,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/setup.js",
+      "bytes": 385,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/style.css",
+      "bytes": 100,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/FusionPixel-OFL.txt",
+      "bytes": 4418,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/LICENSES/ark-pixel/OFL.txt",
+      "bytes": 4412,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/LICENSES/cubic-11/OFL.txt",
+      "bytes": 5364,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/LICENSES/galmuri/LICENSE.txt",
+      "bytes": 4360,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/PressStart2P-OFL.txt",
+      "bytes": 4413,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/PressStart2P-Regular.ttf",
+      "bytes": 118204,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/fonts.css",
+      "bytes": 369,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/fusion-pixel-12px-proportional-zh_hans.ttf",
+      "bytes": 7295572,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-pixel/index.html",
+      "bytes": 2128,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/source/audio.py",
+      "bytes": 11101,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-pixel/source/cues.json",
+      "bytes": 888,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/crt-boot-shell/index.html",
+      "bytes": 1429,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/crt-boot-shell/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-ascii-crt.json",
+      "bytes": 9699,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-pixel.json",
+      "bytes": 22301,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/crt-boot-shell.json",
+      "bytes": 3980,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/crt-boot-shell.jpg",
+      "bytes": 191933,
+      "role": "preview"
+    }
+  ]
+}

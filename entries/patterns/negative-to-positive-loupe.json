@@ -1,0 +1,75 @@
+{
+  "id": "negative-to-positive-loupe",
+  "order": 153,
+  "title": "放大镜下负片转正",
+  "types": [
+    "transition",
+    "texture"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "显影前沿在放大镜内由中心向外推进，将同一负片转为正片；镜缘随后越过画幅，镜内照片分层产生纵深与轻微位移。",
+  "mechanism": "显影前沿在放大镜内由中心向外推进，将同一负片转为正片；镜缘随后越过画幅，镜内照片分层产生纵深与轻微位移。",
+  "trigger": "来源时间线进入对应镜头与动作节点。",
+  "effect": "显影前沿在放大镜内由中心向外推进，将同一负片转为正片；镜缘随后越过画幅，镜内照片分层产生纵深与轻微位移。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-archive-lighttable：13.3–22.7秒；1倍速，总时长9.400000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "显影波",
+      "value": "film/film.js:shot / FS，HIT.develop=15秒，uDev以.8秒ease-in-out推进，rho与smoothstep(uDev−.14,uDev,rho)决定镜内正负像。"
+    },
+    {
+      "name": "镜内空间",
+      "value": "film/film.js:D2 / int2s / shot，镜头zoom .335→1.45，镜内S=.84→.56；MAG=2.5、LENS_RW=1000。"
+    },
+    {
+      "name": "照片纵深",
+      "value": "film/film.js:shot，enter时地面偏移[260,−140]、dz=.55；Flyer位移[125,−26]、Wilbur[10,0]，读取原照片分层与背景。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-archive-lighttable/film/film.js",
+    "demos/cases/lemo-archive-lighttable/film/timeline.js",
+    "demos/cases/lemo-archive-lighttable/source/tools/prep.py"
+  ],
+  "locator": "film/film.js:shot / FS；film/film.js:D2 / int2s / shot；film/film.js:shot",
+  "useCases": [
+    "证据影像",
+    "数据解说",
+    "档案与科学短片"
+  ],
+  "avoid": [
+    "在主要读数和证据上叠加争夺注意的运动"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“放大镜下负片转正”。放大镜内由中心向外的显影前沿把同一负片转为正片，镜缘随后越过画幅，镜内照片分层产生纵深与轻微位移。保留参数：film/film.js:shot / FS，HIT.develop=15秒，uDev以.8秒ease-in-out推进，rho与smoothstep(uDev−.14,uDev,rho)决定镜内正负像。；film/film.js:D2 / int2s / shot，镜头zoom .335→1.45，镜内S=.84→.56；MAG=2.5、LENS_RW=1000。；film/film.js:shot，enter时地面偏移[260,−140]、dz=.55；Flyer位移[125,−26]、Wilbur[10,0]，读取原照片分层与背景。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/negative-to-positive-loupe/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-archive-lighttable"
+    }
+  ],
+  "previewAt": 6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "负片转正并穿入照片"
+    }
+  ],
+  "renderer": "gpu"
+}

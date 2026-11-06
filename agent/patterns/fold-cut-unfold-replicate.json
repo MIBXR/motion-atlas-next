@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "fold-cut-unfold-replicate",
+  "pattern": {
+    "id": "fold-cut-unfold-replicate",
+    "order": 105,
+    "title": "折剪展开复制",
+    "types": [
+      "transition",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "红纸折叠三次，形成45°楔形，剪刀沿路径显露孔洞；三次展开把同一楔形按D4变换复制为八瓣团花，其中的灯笼图案沿飞行轨迹到达八扇窗。",
+    "mechanism": "红纸折叠三次，形成45°楔形，剪刀沿路径显露孔洞；三次展开把同一楔形按D4变换复制为八瓣团花，其中的灯笼图案沿飞行轨迹到达八扇窗。",
+    "trigger": "女孩决定用红色、灯光与声音驱赶年兽。",
+    "effect": "一次折剪的图案通过展开复制成为八盏灯与村落复明的原因。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "23.8–34秒；1倍速，总时长10.200000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "折剪展开",
+        "value": "film/story.js:T.folds=[24,25,26]，cut0=26.5、cut1=29.4，unfolds=[30,30.25,30.5]；film/fold.js:drawFold / drawUnfold，折页16条带、每折.55秒、每展.2秒。"
+      },
+      {
+        "name": "八重复制",
+        "value": "film/tuanhua.js:D4为R(kπ/2)及R(kπ/2)·mirror(π/4)，wedgeCuts在楔形放一盏灯笼，tuanhua复用八次。"
+      },
+      {
+        "name": "八窗飞行",
+        "value": "film/main.js:flightPos / shotGlow读取HOUSES；story.js:T.lanterns=[32,32.25,32.5,32.75,33,33.25,33.5,33.75]。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-papercut-red/film/fold.js",
+      "demos/cases/lemo-papercut-red/film/tuanhua.js",
+      "demos/cases/lemo-papercut-red/film/main.js",
+      "demos/cases/lemo-papercut-red/film/story.js"
+    ],
+    "locator": "drawFold / drawUnfold / D4 / flightPos",
+    "useCases": [
+      "一次折剪的图案通过展开复制成为八盏灯与村落复明的原因。"
+    ],
+    "avoid": [
+      "同时叠加遮住主要动作的画面层"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-papercut-red的原作render(t)，实现“折剪展开复制”：红纸三次折成45°楔形，剪刀沿路径显露孔洞；三次展开把同一楔形按D4变换复制为八瓣团花，其中灯笼图案沿飞行轨迹去到八扇窗。参数与源码：film/story.js:T.folds=[24,25,26]，cut0=26.5、cut1=29.4，unfolds=[30,30.25,30.5]；film/fold.js:drawFold / drawUnfold，折页16条带、每折.55秒、每展.2秒。；film/tuanhua.js:D4为R(kπ/2)及R(kπ/2)·mirror(π/4)，wedgeCuts在楔形放一盏灯笼，tuanhua复用八次。；film/main.js:flightPos / shotGlow读取HOUSES；story.js:T.lanterns=[32,32.25,32.5,32.75,33,33.25,33.5,33.75]。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。",
+    "demo": "demos/patterns/fold-cut-unfold-replicate/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-papercut-red"
+      }
+    ],
+    "previewAt": 7,
+    "markers": [
+      {
+        "t": 0,
+        "label": "折剪展开复制"
+      }
+    ],
+    "preview": "previews/patterns/fold-cut-unfold-replicate.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-papercut-red",
+      "bundle": "agent/cases/lemo-papercut-red.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 折剪展开复制\n\n## 实现 Prompt\n\n复用来源案例lemo-papercut-red的原作render(t)，实现“折剪展开复制”：红纸三次折成45°楔形，剪刀沿路径显露孔洞；三次展开把同一楔形按D4变换复制为八瓣团花，其中灯笼图案沿飞行轨迹去到八扇窗。参数与源码：film/story.js:T.folds=[24,25,26]，cut0=26.5、cut1=29.4，unfolds=[30,30.25,30.5]；film/fold.js:drawFold / drawUnfold，折页16条带、每折.55秒、每展.2秒。；film/tuanhua.js:D4为R(kπ/2)及R(kπ/2)·mirror(π/4)，wedgeCuts在楔形放一盏灯笼，tuanhua复用八次。；film/main.js:flightPos / shotGlow读取HOUSES；story.js:T.lanterns=[32,32.25,32.5,32.75,33,33.25,33.5,33.75]。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：23.8–34秒；1倍速，总时长10.200000秒。\n\n[打开 Demo](../../demos/patterns/fold-cut-unfold-replicate/index.html) · [在库中查看](../../patterns.html#pattern/fold-cut-unfold-replicate)\n"
+  },
+  "entrypoint": "demos/patterns/fold-cut-unfold-replicate/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-papercut-red/LICENSES.md",
+      "bytes": 934,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/audio/CREDITS",
+      "bytes": 1021,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/audio/film.m4a",
+      "bytes": 1622559,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/fidelity.md",
+      "bytes": 4621,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/fold.js",
+      "bytes": 13782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/girl.js",
+      "bytes": 17730,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/hud.js",
+      "bytes": 3094,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/index.html",
+      "bytes": 458,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/light.js",
+      "bytes": 7658,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/main.js",
+      "bytes": 42298,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/motifs.js",
+      "bytes": 6620,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/nian.js",
+      "bytes": 14823,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/paper.js",
+      "bytes": 13971,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/rig.js",
+      "bytes": 1817,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/story.js",
+      "bytes": 1839,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/tuanhua.js",
+      "bytes": 9720,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/village.js",
+      "bytes": 9151,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/voices/dur.json",
+      "bytes": 71,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/film/world.js",
+      "bytes": 9180,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/fonts/Fraunces.ttf",
+      "bytes": 360440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/fonts/MaShanZheng-Regular.ttf",
+      "bytes": 5857936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/fonts/OFL-Fraunces.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/fonts/OFL-MaShanZheng.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/fonts/fonts.css",
+      "bytes": 278,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/index.html",
+      "bytes": 2510,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/CREDITS",
+      "bytes": 1021,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/README.md",
+      "bytes": 3113,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/build.sh",
+      "bytes": 1773,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/check_final.py",
+      "bytes": 1551,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/climax.js",
+      "bytes": 4613,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/events.json",
+      "bytes": 2340,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/lines.json",
+      "bytes": 764,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/mix.py",
+      "bytes": 11357,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/music/CREDITS.txt",
+      "bytes": 246,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/music/score.json",
+      "bytes": 428,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/music/score.py",
+      "bytes": 13786,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/sheet.js",
+      "bytes": 11311,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/subs.py",
+      "bytes": 1138,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/test.js",
+      "bytes": 2282,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-papercut-red/source/voices/words.json",
+      "bytes": 1348,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/fold-cut-unfold-replicate/index.html",
+      "bytes": 807,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/fold-cut-unfold-replicate/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-papercut-red.json",
+      "bytes": 9901,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/fold-cut-unfold-replicate.json",
+      "bytes": 3148,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/fold-cut-unfold-replicate.jpg",
+      "bytes": 112286,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "dimensions-drawn-on-object",
+  "order": 166,
+  "title": "实物上画尺寸",
+  "types": [
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "合拢后的键盘直接承载尺寸线：三维端点每帧投影，延伸线、端帽与按尺寸线角度排版的数字逐步画出，数值取自真实工程文件。",
+  "mechanism": "合拢后的键盘直接承载尺寸线：三维端点每帧投影，延伸线、端帽与按尺寸线角度排版的数字逐步画出，数值取自真实工程文件。",
+  "trigger": "原作时间轴进入所列动作区间。",
+  "effect": "合拢后的键盘直接承载尺寸线：三维端点每帧投影，延伸线、端帽与按尺寸线角度排版的数字逐步画出，数值取自真实工程文件。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "27.500—33.650秒，1倍速。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "真实尺寸",
+      "value": "键距19.05mm、宽138.4mm、深97.6mm、高11.1mm；dimP从27.5秒、dimW从28.125秒、dimD从28.75秒、dimH从29.375秒起。",
+      "source": "demos/cases/lemo-teardown/film/src/timeline.js:LBL"
+    },
+    {
+      "name": "透视尺寸线",
+      "value": "dimension逐帧投影a/b与偏置向量，按p先画延伸线再画主线，数字放于暗底片上并修正角度以保持正向。",
+      "source": "demos/cases/lemo-teardown/film/src/overlay.js:dimension"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-teardown/film/src/timeline.js",
+    "demos/cases/lemo-teardown/film/src/overlay.js"
+  ],
+  "locator": "film/src/timeline.js:LBL；film/src/overlay.js:dimension",
+  "useCases": [
+    "实物上画尺寸"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "以来源案例lemo-teardown的原作render(t)重放“实物上画尺寸”。合拢后的键盘直接承载尺寸线：三维端点每帧投影，延伸线、端帽与沿线角度排版的数字逐步画出，数值取真实工程文件。 参数：键距19.05mm、宽138.4mm、深97.6mm、高11.1mm；dimP从27.5秒、dimW从28.125秒、dimD从28.75秒、dimH从29.375秒起。；dimension逐帧投影a/b与偏置向量，按p先画延伸线再画主线，数字放于暗底片上并修正角度以保持正向。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+  "demo": "demos/patterns/dimensions-drawn-on-object/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-teardown"
+    }
+  ],
+  "previewAt": 4.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "实物上画尺寸"
+    }
+  ],
+  "renderer": "gpu"
+}

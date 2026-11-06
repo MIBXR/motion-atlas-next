@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "scan-in-wireframe-to-solid",
+  "pattern": {
+    "id": "scan-in-wireframe-to-solid",
+    "order": 163,
+    "title": "扫描成线框再实体化",
+    "types": [
+      "texture",
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "扫描前沿按高度显露青色三维线框；归拢后，面片按Fresnel与交错扫描线点亮为实体全息，边线保留，产品完成一圈转台旋转。",
+    "mechanism": "扫描前沿按高度显露青色三维线框；归拢后，面片按Fresnel与交错扫描线点亮为实体全息，边线保留，产品完成一圈转台旋转。",
+    "trigger": "原作时间轴进入所列动作区间。",
+    "effect": "扫描前沿按高度显露青色三维线框；归拢后，面片按Fresnel与交错扫描线点亮为实体全息，边线保留，产品完成一圈转台旋转。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "0.000—2.700秒；22.000—28.000秒，1倍速。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "扫描与点亮",
+        "value": "扫描−0.35—2.6秒，y=.2→1.16；24—24.35秒solid以三次ease-out到1；24—28秒spin=eio(u)×2π。",
+        "source": "demos/cases/lemo-hologram-hud/film/film.js:renderFrame"
+      },
+      {
+        "name": "实体面",
+        "value": "Fresnel=.3+.7×(1−facing)^1.6；2px明／2px38%交错线，双层低分辨率辉光。",
+        "source": "demos/cases/lemo-hologram-hud/film/engine/holo.js:Holo.draw"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-hologram-hud/film/film.js",
+      "demos/cases/lemo-hologram-hud/film/engine/holo.js"
+    ],
+    "locator": "film/film.js:renderFrame；film/engine/holo.js:Holo.draw",
+    "useCases": [
+      "扫描成线框再实体化"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "以来源案例lemo-hologram-hud的原作render(t)重放“扫描成线框再实体化”。扫描前沿按高度显露青色三维线框；归拢后面片按Fresnel与交错扫描线点亮为实体全息，边线保留，产品完成一圈转台。 参数：扫描−0.35—2.6秒，y=.2→1.16；24—24.35秒solid以三次ease-out到1；24—28秒spin=eio(u)×2π。；Fresnel=.3+.7×(1−facing)^1.6；2px明／2px38%交错线，双层低分辨率辉光。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+    "demo": "demos/patterns/scan-in-wireframe-to-solid/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-hologram-hud"
+      }
+    ],
+    "previewAt": 6.7,
+    "markers": [
+      {
+        "t": 0,
+        "label": "扫描成线框再实体化"
+      }
+    ],
+    "preview": "previews/patterns/scan-in-wireframe-to-solid.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-hologram-hud",
+      "bundle": "agent/cases/lemo-hologram-hud.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 扫描成线框再实体化\n\n## 实现 Prompt\n\n以来源案例lemo-hologram-hud的原作render(t)重放“扫描成线框再实体化”。扫描前沿按高度显露青色三维线框；归拢后面片按Fresnel与交错扫描线点亮为实体全息，边线保留，产品完成一圈转台。 参数：扫描−0.35—2.6秒，y=.2→1.16；24—24.35秒solid以三次ease-out到1；24—28秒spin=eio(u)×2π。；Fresnel=.3+.7×(1−facing)^1.6；2px明／2px38%交错线，双层低分辨率辉光。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：0.000—2.700秒；22.000—28.000秒，1倍速。\n\n[打开 Demo](../../demos/patterns/scan-in-wireframe-to-solid/index.html) · [在库中查看](../../patterns.html#pattern/scan-in-wireframe-to-solid)\n"
+  },
+  "entrypoint": "demos/patterns/scan-in-wireframe-to-solid/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-hologram-hud/LICENSES.md",
+      "bytes": 573,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/CREDITS",
+      "bytes": 872,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/film.m4a",
+      "bytes": 1265555,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fidelity.md",
+      "bytes": 3031,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/content.json",
+      "bytes": 1745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/engine/holo.js",
+      "bytes": 19803,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/engine/hud.js",
+      "bytes": 21142,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/film.js",
+      "bytes": 25710,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/index.html",
+      "bytes": 377,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/main.js",
+      "bytes": 999,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/models/volt.json",
+      "bytes": 217665,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/voices/dur.json",
+      "bytes": 77,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/OFL-rajdhani.txt",
+      "bytes": 4373,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/OFL-sharetechmono.txt",
+      "bytes": 4429,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-Light.ttf",
+      "bytes": 383928,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-Medium.ttf",
+      "bytes": 384348,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-Regular.ttf",
+      "bytes": 377860,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-SemiBold.ttf",
+      "bytes": 390340,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/ShareTechMono-Regular.ttf",
+      "bytes": 43272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/fonts.css",
+      "bytes": 413,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/index.html",
+      "bytes": 2251,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/CREDITS",
+      "bytes": 872,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/README.md",
+      "bytes": 2063,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/build.sh",
+      "bytes": 3433,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/content_alt.json",
+      "bytes": 1920,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/events.json",
+      "bytes": 2643,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/frames.js",
+      "bytes": 1594,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/lines.json",
+      "bytes": 825,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/mix.py",
+      "bytes": 13494,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/gen_kite.mjs",
+      "bytes": 5547,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/gen_volt.mjs",
+      "bytes": 7544,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/kite.json",
+      "bytes": 102526,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/mkmodel.mjs",
+      "bytes": 15226,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/CREDITS_music.txt",
+      "bytes": 213,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/check.py",
+      "bytes": 1653,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/score.json",
+      "bytes": 18813,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/score.py",
+      "bytes": 14503,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/timeline.json",
+      "bytes": 1070,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/cuecheck.py",
+      "bytes": 1352,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/export.mjs",
+      "bytes": 1298,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/final_asr.py",
+      "bytes": 1925,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/make_lines.mjs",
+      "bytes": 1033,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/voices/words.json",
+      "bytes": 1172,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/scan-in-wireframe-to-solid/index.html",
+      "bytes": 1101,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/scan-in-wireframe-to-solid/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-hologram-hud.json",
+      "bytes": 8375,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/scan-in-wireframe-to-solid.json",
+      "bytes": 2678,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/scan-in-wireframe-to-solid.jpg",
+      "bytes": 104929,
+      "role": "preview"
+    }
+  ]
+}

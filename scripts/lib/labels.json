@@ -1,0 +1,131 @@
+{
+  "cases": {
+    "carriers": {
+      "video": "影像视频",
+      "console": "交互操作台"
+    },
+    "style": {
+      "hand-drawn": "手绘与绘画",
+      "print-craft": "版画、剪纸与传统工艺",
+      "graphic-type": "图形与排版",
+      "interface": "界面与发布",
+      "evidence": "实证与数据",
+      "documentary": "剪辑与纪实",
+      "dimensional": "3D、卡通与游戏"
+    },
+    "purpose": {
+      "brand": "品牌与产品",
+      "explainer": "知识讲解",
+      "data": "数据与实证",
+      "news": "新闻纪实",
+      "story": "叙事短片",
+      "title-art": "片头与视觉"
+    },
+    "tech": {
+      "canvas2d": "Canvas 2D",
+      "webgl": "原生 WebGL 着色",
+      "threejs": "three.js 3D",
+      "footage": "实拍素材",
+      "prerendered": "离线渲染帧",
+      "remotion": "React + Remotion",
+      "maplibre": "MapLibre 地图",
+      "dom": "DOM / SVG"
+    },
+    "composition": {
+      "color": "色彩",
+      "typography": "字体",
+      "layout": "版式",
+      "imagery": "图像",
+      "motion": "动效",
+      "interaction": "交互",
+      "sound": "声音",
+      "rhythm": "节奏",
+      "coherence": "协调"
+    }
+  },
+  "patterns": {
+    "carriers": {
+      "video": "影像视频",
+      "console": "交互操作台"
+    },
+    "types": {
+      "composition": "画面构成",
+      "type-motion": "文字动效",
+      "transition": "转场",
+      "camera": "镜头与空间",
+      "feedback": "交互反馈",
+      "rhythm": "节奏与时序",
+      "hud": "信息层 HUD",
+      "texture": "质感与后期",
+      "sound": "声音"
+    },
+    "composition.role": {
+      "foundation": "骨架：决定主视觉与信息层级",
+      "support": "支撑：承担一个区域的交互或信息",
+      "accent": "点睛：短时、局部的强调"
+    }
+  },
+  "materials": {
+    "type": {
+      "component-library": "组件库",
+      "image": "图像",
+      "sound": "声音",
+      "font": "字体",
+      "poster": "海报",
+      "agent-skill": "Agent Skill",
+      "prompt-kit": "提示词套件"
+    },
+    "gallery[].kind": {
+      "style": "风格样张",
+      "work": "作品节选",
+      "theme": "主题预览"
+    }
+  },
+  "DOC_GROUPS": {
+    "path": {
+      "docs/": "指南",
+      "docs/cases/": "案例研究",
+      "docs/patterns/": "巧思研究",
+      "docs/materials/": "素材说明",
+      "prompts/cases/": "案例 Prompt",
+      "prompts/patterns/": "巧思 Prompt",
+      "README.md": "项目说明",
+      "CONTRIBUTING.md": "项目说明",
+      "AGENTS.md": "项目说明",
+      "demos/": "条目文档",
+      "demos/materials/": "素材原文"
+    }
+  },
+  "ROLE_NAME": {
+    "role": {
+      "foundation": "骨架",
+      "support": "支撑",
+      "accent": "点睛",
+      "case": "案例"
+    }
+  },
+  "KIND": {
+    "itemName": {
+      "cases": "案例",
+      "patterns": "巧思",
+      "materials": "素材"
+    }
+  },
+  "references": {
+    "path": {
+      "README.zh-CN.md": "中文说明",
+      "README.md": "原版说明",
+      "template.md": "提示词模板",
+      "rubric.md": "评审量表",
+      "lib/audio/README.md": "mgaudio 配乐说明",
+      "prompts/": "风格提示词"
+    }
+  },
+  "documentLinks": {
+    "field": {
+      "research": "阅读说明与研究",
+      "fidelity": "复刻对照",
+      "licenses": "许可原文索引"
+    }
+  }
+}

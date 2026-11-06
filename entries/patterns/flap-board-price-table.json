@@ -1,0 +1,68 @@
+{
+  "id": "flap-board-price-table",
+  "order": 158,
+  "title": "翻牌价格表",
+  "types": [
+    "type-motion",
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "将价格牌的上半和下半分别裁切，先画新值上半与旧值下半；旧上半压缩至零后，新下半从零展开，最后显示完整价格并停留。",
+  "mechanism": "将价格牌的上半和下半分别裁切，先画新值上半与旧值下半；旧上半压缩至零后，新下半从零展开，最后显示完整价格并停留。",
+  "trigger": "入门价与12月新价格按列到达。",
+  "effect": "在同一表格内读取价格前后变化，并在右侧显示翻倍结论。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "9–13秒；1倍速，总时长4秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "半牌翻转",
+      "value": "film/main.js:flipTile；p=seg(t,t0,t0+.26)，p<.5时旧上半scaleY=1−2p，其后新下半scaleY=2p−1。"
+    },
+    {
+      "name": "价格布局",
+      "value": "film/main.js:shotPrice；220×130牌，输入与输出两列，上排$2/$10，下排翻到$4/$20，×2在10.3秒出现。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-news-package/film/main.js"
+  ],
+  "locator": "flipTile / shotPrice",
+  "useCases": [
+    "每周新闻汇总",
+    "市场简报",
+    "产品规格报道"
+  ],
+  "avoid": [
+    "同一时刻叠加争夺主动作的多组信息"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-news-package的原作render(t)重放“翻牌价格表”。价格牌把上半和下半分别裁切，先画新值上半与旧值下半；旧上半压缩至零后，新下半从零展开，再停在完整价格。保留参数：film/main.js:flipTile；p=seg(t,t0,t0+.26)，p<.5时旧上半scaleY=1−2p，其后新下半scaleY=2p−1。；film/main.js:shotPrice；220×130牌，输入与输出两列，上排$2/$10，下排翻到$4/$20，×2在10.3秒出现。。重放区间由入口segments配置，来源素材与音轨直接复用。",
+  "demo": "demos/patterns/flap-board-price-table/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-news-package"
+    }
+  ],
+  "previewAt": 1.3,
+  "markers": [
+    {
+      "t": 0,
+      "label": "翻牌价格表"
+    }
+  ]
+}

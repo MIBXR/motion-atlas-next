@@ -1,0 +1,736 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "magnet-pieces-on-board",
+  "pattern": {
+    "id": "magnet-pieces-on-board",
+    "order": 147,
+    "title": "磁贴在板上移动",
+    "types": [
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "有厚度和贴板阴影的磁贴作为可计数的故事物件：磁铁代表桥墩，受撞后被逐个拔除；白板地图中的磁铁沿道路漂移并倒带归位。",
+    "mechanism": "有厚度和贴板阴影的磁贴作为可计数的故事物件：磁铁代表桥墩，受撞后被逐个拔除；白板地图中的磁铁沿道路漂移并倒带归位。",
+    "trigger": "来源时间线进入磁贴在板上移动的片段。",
+    "effect": "有厚度和贴板阴影的磁贴作为可计数的故事物件：磁铁代表桥墩，受撞后被逐个拔除；白板地图中的磁铁沿道路漂移并倒带归位。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-briefing-board：3.800000–13.800000秒；lemo-whiteboard：77.500000–89.300000秒，1倍速，总时长21.800000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "工程简报板",
+        "value": "film/scenes/film.json:pier0–pier6；source/scenes/_gen_film.py:119，r27/z16，4.25秒起每.25秒落位，12.75秒起每.125秒拔除，中心桥墩受撞dy12/dr6。"
+      },
+      {
+        "name": "白板讲解",
+        "value": "lemo-whiteboard/film/film.js:258–278的pinPath；78–85秒沿trailSegs移动，87–89秒沿trailBack回到PIN；engine/wb.js:drawPinMagnet保留升离、旋转和物理高光。"
+      }
+    ],
+    "sourceFiles": [
+      "demos\\cases\\lemo-briefing-board\\film\\scenes\\film.json",
+      "demos\\cases\\lemo-briefing-board\\film\\kit\\board.js",
+      "demos\\cases\\lemo-briefing-board\\source\\scenes\\_gen_film.py",
+      "demos/cases/lemo-whiteboard/film/film.js",
+      "demos/cases/lemo-whiteboard/film/engine/wb.js"
+    ],
+    "locator": "film/scenes/film.json / film/kit/board.js / source/scenes/_gen_film.py",
+    "useCases": [
+      "工程方案比较",
+      "实物简报",
+      "条件驱动的科普"
+    ],
+    "avoid": [
+      "在关键动作和证据上叠加争夺注意的运动"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例的原作render(t)实现“磁贴在板上移动”。有厚度和贴板阴影的磁贴作为可计数的故事物件：磁铁代表桥墩，受撞后被逐个拔除；白板地图中的磁铁沿道路漂移并倒带归位。参数：film/scenes/film.json:pier0–pier6；source/scenes/_gen_film.py:119，r27/z16，4.25秒起每.25秒落位，12.75秒起每.125秒拔除，中心桥墩受撞dy12/dr6。；lemo-whiteboard/film/film.js:258–278的pinPath；78–85秒沿trailSegs移动，87–89秒沿trailBack回到PIN；engine/wb.js:drawPinMagnet保留升离、旋转和物理高光。。复用来源字体、素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/magnet-pieces-on-board/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-briefing-board"
+      },
+      {
+        "caseId": "lemo-whiteboard"
+      }
+    ],
+    "previewAt": 1.7,
+    "markers": [
+      {
+        "t": 0,
+        "label": "磁贴在板上移动"
+      },
+      {
+        "t": 10,
+        "label": "磁铁沿地图漂移"
+      }
+    ],
+    "preview": "previews/patterns/magnet-pieces-on-board.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-briefing-board",
+      "bundle": "agent/cases/lemo-briefing-board.json"
+    },
+    {
+      "caseId": "lemo-whiteboard",
+      "bundle": "agent/cases/lemo-whiteboard.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 磁贴在板上移动\n\n## 实现 Prompt\n\n用来源案例的原作render(t)实现“磁贴在板上移动”。有厚度和贴板阴影的磁贴作为可计数的故事物件：磁铁代表桥墩，受撞后被逐个拔除；白板地图中的磁铁沿道路漂移并倒带归位。参数：film/scenes/film.json:pier0–pier6；source/scenes/_gen_film.py:119，r27/z16，4.25秒起每.25秒落位，12.75秒起每.125秒拔除，中心桥墩受撞dy12/dr6。；lemo-whiteboard/film/film.js:258–278的pinPath；78–85秒沿trailSegs移动，87–89秒沿trailBack回到PIN；engine/wb.js:drawPinMagnet保留升离、旋转和物理高光。。复用来源字体、素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-briefing-board：3.800000–13.800000秒；lemo-whiteboard：77.500000–89.300000秒，1倍速，总时长21.800000秒。\n\n[打开 Demo](../../demos/patterns/magnet-pieces-on-board/index.html) · [在库中查看](../../patterns.html#pattern/magnet-pieces-on-board)\n"
+  },
+  "entrypoint": "demos/patterns/magnet-pieces-on-board/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-briefing-board/LICENSES.md",
+      "bytes": 1362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/CREDITS",
+      "bytes": 4769,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/film.m4a",
+      "bytes": 1316981,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fidelity.md",
+      "bytes": 5641,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/index.html",
+      "bytes": 2401,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/board.js",
+      "bytes": 48158,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/CC-BY-2.0.html",
+      "bytes": 34724,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/arch.json",
+      "bytes": 802,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/arch.png",
+      "bytes": 20684157,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/beam.json",
+      "bytes": 701,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/beam.png",
+      "bytes": 893543,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/cable.json",
+      "bytes": 878,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/cable.png",
+      "bytes": 6454921,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_arch.json",
+      "bytes": 257,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_arch.png",
+      "bytes": 924570,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_cable.json",
+      "bytes": 260,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_cable.png",
+      "bytes": 880382,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_ship.json",
+      "bytes": 259,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_ship.png",
+      "bytes": 532431,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_susp.json",
+      "bytes": 269,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_susp.png",
+      "bytes": 783339,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/ship.json",
+      "bytes": 774,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/ship.png",
+      "bytes": 2604044,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/ship_side.json",
+      "bytes": 718,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/ship_side.png",
+      "bytes": 2748717,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/suspension.json",
+      "bytes": 965,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/suspension.png",
+      "bytes": 5438280,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/scenes/film.json",
+      "bytes": 54692,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/Archivo-VF.ttf",
+      "bytes": 658596,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/IBMPlexMono-SemiBold.ttf",
+      "bytes": 140216,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/LXGWMarkerGothic-sub.woff2",
+      "bytes": 13052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/NotoSansSC-500-sub.woff2",
+      "bytes": 22536,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/NotoSansSC-700-sub.woff2",
+      "bytes": 22708,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/NotoSansSC-900-sub.woff2",
+      "bytes": 22744,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/OFL-Archivo.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/OFL-IBMPlexMono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/OFL-LXGWMarkerGothic.txt",
+      "bytes": 4401,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/OFL-NotoSansSC.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/chars.txt",
+      "bytes": 378,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/fonts.css",
+      "bytes": 834,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/index.html",
+      "bytes": 3290,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/CREDITS",
+      "bytes": 4769,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/FACTS.md",
+      "bytes": 9064,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/README.md",
+      "bytes": 4677,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/cues.json",
+      "bytes": 1127,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/lines.json",
+      "bytes": 1261,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/mix.py",
+      "bytes": 20544,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/vo/dur.json",
+      "bytes": 127,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/vo/words.json",
+      "bytes": 1573,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/build.sh",
+      "bytes": 3009,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/events.json",
+      "bytes": 4061,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/README.md",
+      "bytes": 6894,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/batch.mjs",
+      "bytes": 2073,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/objects/cable_half.json",
+      "bytes": 794,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/objects/susp_raw.json",
+      "bytes": 742,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/clean_lettering.py",
+      "bytes": 892,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/fetch_fonts.py",
+      "bytes": 3477,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/fetch_sources.py",
+      "bytes": 2362,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/kit_env.sh",
+      "bytes": 1972,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/make_print.py",
+      "bytes": 1464,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/mirror_span.py",
+      "bytes": 1590,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/prep_object.py",
+      "bytes": 11588,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/rebuild_objects.sh",
+      "bytes": 5194,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/redraw_stays.py",
+      "bytes": 5986,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/redraw_suspension.py",
+      "bytes": 6228,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/repair_hangers.py",
+      "bytes": 3646,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/ship_anchors.py",
+      "bytes": 979,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/sky_key.py",
+      "bytes": 2598,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/stretch_span.py",
+      "bytes": 2174,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/scenes/_gen_film.py",
+      "bytes": 29816,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/sources/candidates/candidates.json",
+      "bytes": 45898,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/camcheck.mjs",
+      "bytes": 8139,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/camplot.py",
+      "bytes": 1725,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/cuecheck.py",
+      "bytes": 1359,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/final_asr.py",
+      "bytes": 1804,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/rescheck.mjs",
+      "bytes": 1730,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/rhythm_report.py",
+      "bytes": 4894,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/subcheck.mjs",
+      "bytes": 2358,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/LICENSES.md",
+      "bytes": 1190,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/CREDITS",
+      "bytes": 1394,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/audio/film.m4a",
+      "bytes": 3730104,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fidelity.md",
+      "bytes": 4438,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/engine/wb.js",
+      "bytes": 32649,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/film.js",
+      "bytes": 30965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/index.html",
+      "bytes": 419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/lines.json",
+      "bytes": 3405,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/main.js",
+      "bytes": 421,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/film/voices/words.json",
+      "bytes": 4364,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/ArchitectsDaughter-Regular.ttf",
+      "bytes": 43352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/EMSTech.json",
+      "bytes": 35406,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/OFL-ArchitectsDaughter.txt",
+      "bytes": 4362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/OFL-EMSTech.txt",
+      "bytes": 442,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/fonts/fonts.css",
+      "bytes": 69,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/index.html",
+      "bytes": 2466,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/CREDITS",
+      "bytes": 1394,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/README.md",
+      "bytes": 3040,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/build.sh",
+      "bytes": 1588,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/events.json",
+      "bytes": 101156,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/mix.py",
+      "bytes": 12101,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/music.py",
+      "bytes": 13249,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/test.js",
+      "bytes": 1354,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/asr_check.py",
+      "bytes": 1502,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/cuecheck.py",
+      "bytes": 1716,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/subs.mjs",
+      "bytes": 669,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/tools/svgfont2json.py",
+      "bytes": 997,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-whiteboard/source/voices/dur.json",
+      "bytes": 316,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/magnet-pieces-on-board/index.html",
+      "bytes": 1141,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/magnet-pieces-on-board/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-briefing-board\\film\\kit\\board.js",
+      "bytes": 48158,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-briefing-board\\film\\scenes\\film.json",
+      "bytes": 54692,
+      "role": "asset"
+    },
+    {
+      "path": "demos\\cases\\lemo-briefing-board\\source\\scenes\\_gen_film.py",
+      "bytes": 29816,
+      "role": "asset"
+    },
+    {
+      "path": "entries/cases/lemo-briefing-board.json",
+      "bytes": 13466,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/lemo-whiteboard.json",
+      "bytes": 11372,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/magnet-pieces-on-board.json",
+      "bytes": 3292,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/magnet-pieces-on-board.jpg",
+      "bytes": 57185,
+      "role": "preview"
+    }
+  ]
+}

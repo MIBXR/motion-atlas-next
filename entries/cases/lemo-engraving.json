@@ -1,0 +1,279 @@
+{
+  "id": "lemo-engraving",
+  "order": 39,
+  "title": "蜜蜂，第七号图版 · 铜版画",
+  "subtitle": "The Honeybee, Plate VII",
+  "carriers": [
+    "video"
+  ],
+  "style": "print-craft",
+  "purpose": "explainer",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "铜版画",
+    "印刷与版画",
+    "代码影片"
+  ],
+  "summary": "雕刀在铜版上推开第一条蜜蜂腹部曲线，揭印后轮廓、排线和交叉暗线逐层成形；复眼、翅钩与花粉篮的放大镜飞到图版位置，静默后手工淡彩晕开，最后覆上薄护纸。",
+  "focus": "用刻线呈现明暗，用放大镜展示知识，让后加的淡彩成为奖赏；整支影片以一张博物志图版为世界。",
+  "accent": "#bb8539",
+  "background": "#f1e8d2",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 34,
+  "rhythm": {
+    "duration": 40,
+    "beats": [
+      {
+        "t": 0,
+        "label": "铜版跟刀",
+        "note": "0–2.5秒，铜版跟刀。"
+      },
+      {
+        "t": 2.5,
+        "label": "揭印",
+        "note": "2.5–3.2秒，揭印。"
+      },
+      {
+        "t": 3.2,
+        "label": "拉远刻线成形",
+        "note": "3.2–6.2秒，拉远刻线成形。"
+      },
+      {
+        "t": 9.4,
+        "label": "复眼放大圈",
+        "note": "9.4–15秒，复眼放大圈。"
+      },
+      {
+        "t": 15,
+        "label": "翅钩放大圈",
+        "note": "15–19.4秒，翅钩放大圈。"
+      },
+      {
+        "t": 19.4,
+        "label": "花粉篮放大圈",
+        "note": "19.4–23.75秒，花粉篮放大圈。"
+      },
+      {
+        "t": 23.75,
+        "label": "汇拢静默与上色",
+        "note": "23.75–31.25秒，汇拢静默与上色。"
+      },
+      {
+        "t": 31.25,
+        "label": "整版落定",
+        "note": "31.25–35.625秒，整版落定。"
+      },
+      {
+        "t": 35.625,
+        "label": "薄护纸片尾",
+        "note": "35.625–40秒，薄护纸片尾。"
+      }
+    ],
+    "bpm": 96
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2.5,
+      "to": 0.35,
+      "label": "铜版跟刀",
+      "from": 0.35
+    },
+    {
+      "t0": 2.5,
+      "t1": 3.2,
+      "to": 0.55,
+      "label": "揭印",
+      "from": 0.55
+    },
+    {
+      "t0": 3.2,
+      "t1": 6.2,
+      "to": 0.6,
+      "label": "拉远刻线成形",
+      "from": 0.6
+    },
+    {
+      "t0": 9.4,
+      "t1": 15,
+      "to": 0.45,
+      "label": "复眼放大圈",
+      "from": 0.45
+    },
+    {
+      "t0": 15,
+      "t1": 19.4,
+      "to": 0.5,
+      "label": "翅钩放大圈",
+      "from": 0.5
+    },
+    {
+      "t0": 19.4,
+      "t1": 23.75,
+      "to": 0.55,
+      "label": "花粉篮放大圈",
+      "from": 0.55
+    },
+    {
+      "t0": 23.75,
+      "t1": 31.25,
+      "to": 0.65,
+      "label": "汇拢静默与上色",
+      "from": 0.65
+    },
+    {
+      "t0": 31.25,
+      "t1": 35.625,
+      "to": 0.25,
+      "label": "整版落定",
+      "from": 0.25
+    },
+    {
+      "t0": 35.625,
+      "t1": 40,
+      "to": 0.1,
+      "label": "薄护纸片尾",
+      "from": 0.1
+    }
+  ],
+  "energyNote": "段落取自DEMO.md的Shots与源码场景时间表，0–1能量数值是根据画面与声音密度所作的相对编辑标注。",
+  "observations": [
+    "线条两端细、中部鼓起，明暗由一至三组排线构成；纸白是亮部，深色来自交叉线密度。",
+    "放大圈先在身体部位刻出并擦亮，再重刻细节，沿避障引线飞到固定槽位，随后刻写罗马体与手写注释。",
+    "色区按0.42秒错峰从落笔点扩散，淡彩在纸和黑墨之间以multiply叠加，保留溢色、错位、湿边、回花与纸齿。"
+  ],
+  "composition": {
+    "color": "纸#f1e8d2、黑墨#1c1510、铜褐；腹部琥珀#d9962a、胸部赭#a8743e、翅灰蓝#a9c3cf、花粉#eaa21a。",
+    "typography": "Bodoni Moda罗马大写与斜体，Pinyon Script手写注释和字幕，全部属于图版排版。",
+    "layout": "1920×1080、24fps，图版压痕与双线边框，蜜蜂居中，四角分配放大圈和自然尺寸标本。",
+    "imagery": "Canvas2D生成雕刻、铜版、雕刀、卷屑、纸纹、蜜蜂解剖细节与独立水彩层。",
+    "motion": "开场4.2倍跟刀，揭纸后由4倍拉到整版；放大镜随相机飞排，手工上色时只保留2%呼吸推进。",
+    "sound": "96BPM大调羽管键琴与弦乐，CC0 VSCO/VCSL采样；Kokoro bm_fable旁白、刻刀刮擦、铜屑、压版、揭纸、落水与湿刷。",
+    "rhythm": "刻刀钩子—揭印—逐层排线—三处细节加速—25至26.25秒静默—弓弦首次进入伴随上色—整版落定—薄纸片尾。",
+    "coherence": "刻版的制作顺序就是影片结构，画面排线与配乐拨奏叠层，上色时才出现弓奏。"
+  },
+  "layers": [
+    {
+      "name": "底材与空间",
+      "role": "纸#f1e8d2、黑墨#1c1510、铜褐；腹部琥珀#d9962a、胸部赭#a8743e、翅灰蓝#a9c3cf、花粉#eaa21a。"
+    },
+    {
+      "name": "主体与绘制",
+      "role": "Canvas2D生成雕刻、铜版、雕刀、卷屑、纸纹、蜜蜂解剖细节与独立水彩层。"
+    },
+    {
+      "name": "镜头与时间",
+      "role": "开场4.2倍跟刀，揭纸后由4倍拉到整版；放大镜随相机飞排，手工上色时只保留2%呼吸推进。"
+    },
+    {
+      "name": "文字与声音",
+      "role": "Bodoni Moda罗马大写与斜体，Pinyon Script手写注释和字幕，全部属于图版排版。 96BPM大调羽管键琴与弦乐，CC0 VSCO/VCSL采样；Kokoro bm_fable旁白、刻刀刮擦、铜屑、压版、揭纸、落水与湿刷。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#f1e8d2",
+      "#1c1510",
+      "#94502c",
+      "#d9962a",
+      "#a8743e",
+      "#a9c3cf",
+      "#eaa21a"
+    ],
+    "type": "Bodoni Moda可变字体400–900、正斜体；Pinyon Script 400。",
+    "motion": [
+      {
+        "name": "刻线调度",
+        "value": "film/film.js:42–47：ol0从−2.6到4.2，轮廓/一层/二层/暗部conc=16/70/70/90；burin.js的Ink.schedule分配每线时间。"
+      },
+      {
+        "name": "分区上色",
+        "value": "film/film.js:94–104：26.35秒起每区错峰.42秒，翅1.6秒、其余1.25秒；Wash.draw噪声环裁切湿前沿。"
+      },
+      {
+        "name": "放大圈",
+        "value": "film/film.js:52–91：半径120，飞行弧高30，引线绕主体保留34px间距。"
+      }
+    ]
+  },
+  "useCases": [
+    "博物馆展签",
+    "科学知识短片",
+    "品牌工艺传承"
+  ],
+  "avoid": [
+    "以观众滚动阅读为主的页面"
+  ],
+  "constraints": [
+    "预载字体和全部绘制输入后，用原作render(t)按原帧率定位画面。",
+    "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+  ],
+  "migration": [
+    {
+      "field": "film/content.json",
+      "how": "更改标题、拉丁名、三个知识点、字幕、色区、展厅引导与片尾。"
+    },
+    {
+      "field": "film/film.js / subjects/bee.js / subjects/details.js",
+      "how": "修改图版时间表、雕刻对象与放大细节。"
+    },
+    {
+      "field": "film/engine/burin.js / wash.js / plate.js",
+      "how": "修改刻线宽度、排线、分区淡彩和图版边框排版。"
+    }
+  ],
+  "prompt": "制作一支铜版画时间线影片。让刻线承载明暗、放大镜承载知识、后加淡彩承载奖赏；整支影片以一张博物志图版为世界。纸#f1e8d2、黑墨#1c1510、铜褐；腹部琥珀#d9962a、胸部赭#a8743e、翅灰蓝#a9c3cf、花粉#eaa21a。Bodoni Moda罗马大写与斜体，Pinyon Script手写注释和字幕，全部属于图版排版。1920×1080、24fps，图版压痕与双线边框，蜜蜂居中，四角分配放大圈和自然尺寸标本。开场4.2倍跟刀，揭纸后由4倍拉到整版；放大镜随相机飞排，手工上色时只保留2%呼吸推进。刻刀钩子—揭印—逐层排线—三处细节加速—25至26.25秒静默—弓弦首次进入伴随上色—整版落定—薄纸片尾。96BPM大调羽管键琴与弦乐，CC0 VSCO/VCSL采样；Kokoro bm_fable旁白、刻刀刮擦、铜屑、压版、揭纸、落水与湿刷。实现入口位于demos/cases/lemo-engraving/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+  "demo": "demos/cases/lemo-engraving/index.html",
+  "patternIds": [
+    "carve-cut-by-cut-reveal",
+    "hand-tint-wash"
+  ],
+  "fidelity": "demos/cases/lemo-engraving/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/engraving",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/engraving/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；成片和静帧CC BY 4.0，署名LemoLab；各字体、采样与语音来源见CREDITS及LICENSES.md。"
+  },
+  "sources": [
+    {
+      "label": "固定风格与制作源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/engraving"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/engraving.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/engraving/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/engraving)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "96BPM大调羽管键琴与弦乐，CC0 VSCO/VCSL采样；Kokoro bm_fable旁白、刻刀刮擦、铜屑、压版、揭纸、落水与湿刷。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Bodoni Moda可变字体400–900、正斜体；Pinyon Script 400。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "brush-ribbon-bristle-paint-in",
+  "pattern": {
+    "id": "brush-ribbon-bristle-paint-in",
+    "order": 88,
+    "title": "色带飞白逐笔画入",
+    "types": [
+      "texture",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "变宽的半透明色带与断续毛刷叠成飞白，植物按结构顺序画入，画完后以缓存精灵呈现并摇曳。",
+    "mechanism": "mk 为中心线生成宽度轮廓与噪声边缘，drawS 先填色带，再画断续毛刷；drawList 按顺序分配笔画进度，sprite 缓存画完的物体，scene.js 的 plantP 由物体进入屏幕的距离驱动。",
+    "trigger": "初始刷边揭景，或植物从右侧进入可视范围。",
+    "effect": "树干、枝条、叶群连续长成，交叠加深且纸白透出，完成后只保留轻微摇曳。",
+    "timing": [
+      {
+        "name": "来源片段",
+        "value": "10.2–22.8 秒，覆盖刷边揭景与沙漠标本入场。"
+      },
+      {
+        "name": "逐笔份额",
+        "value": "film/engine.js:drawList：dur=clamp(4/N,.12,.5)，第 j 笔从 j/N*(1−dur) 起。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "色带与毛刷",
+        "value": "film/engine.js:mk / drawS：rough=.22；w≥6 时 nb=clamp(round(w/3.2),3,9)，body 默认 a*.62，毛刷 alpha .3–.85、end .72–1，实线段 18–90px。"
+      },
+      {
+        "name": "入画与缓存",
+        "value": "film/scene.js:add / plantP / drawPlants：span 默认 380px；REV 在 10.2–13.4 秒从 −300 到 1650；完成时画 spr，未完成时画 drawList。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-watercolor/film/engine.js",
+      "demos/cases/lemo-watercolor/film/scene.js"
+    ],
+    "locator": "mk / drawS / drawList / sprite / plantP / drawPlants",
+    "useCases": [
+      "树干、枝条、叶群连续长成，交叠加深且纸白透出，完成后只保留轻微摇曳。"
+    ],
+    "avoid": [
+      "在该片段内叠加第二条争夺注意的主动作"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [
+        "gradient-walk-dolly"
+      ],
+      "conflicts": [],
+      "notes": "适合纸材质下的标本揭示，与沿梯度横移配合。"
+    },
+    "prompt": "用来源案例 lemo-watercolor 的原作 render(t) 重放“色带飞白逐笔画入”。mk 为中心线生成宽度轮廓与噪声边缘，drawS 先填色带，再画断续毛刷；drawList 顺序分配笔画进度，sprite 缓存完成物体，scene.js 的 plantP 由屏幕入场距离推动。保留参数：film/engine.js:mk / drawS：rough=.22；w≥6 时 nb=clamp(round(w/3.2),3,9)，body 默认 a*.62，毛刷 alpha .3–.85、end .72–1，实线段 18–90px。；film/scene.js:add / plantP / drawPlants：span 默认 380px；REV 在 10.2–13.4 秒从 −300 到 1650；完成时画 spr，未完成时画 drawList。。按 index.html 的 segments 把巧思时间映射到原片 10.2–22.8 秒，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/brush-ribbon-bristle-paint-in/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-watercolor"
+      }
+    ],
+    "previewAt": 6,
+    "markers": [
+      {
+        "t": 0,
+        "label": "色带飞白逐笔画入"
+      },
+      {
+        "t": 6,
+        "label": "机制展开"
+      }
+    ],
+    "preview": "previews/patterns/brush-ribbon-bristle-paint-in.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-watercolor",
+      "bundle": "agent/cases/lemo-watercolor.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 色带飞白逐笔画入\n\n## 实现 Prompt\n\n用来源案例 lemo-watercolor 的原作 render(t) 重放“色带飞白逐笔画入”。mk 为中心线生成宽度轮廓与噪声边缘，drawS 先填色带，再画断续毛刷；drawList 顺序分配笔画进度，sprite 缓存完成物体，scene.js 的 plantP 由屏幕入场距离推动。保留参数：film/engine.js:mk / drawS：rough=.22；w≥6 时 nb=clamp(round(w/3.2),3,9)，body 默认 a*.62，毛刷 alpha .3–.85、end .72–1，实线段 18–90px。；film/scene.js:add / plantP / drawPlants：span 默认 380px；REV 在 10.2–13.4 秒从 −300 到 1650；完成时画 spr，未完成时画 drawList。。按 index.html 的 segments 把巧思时间映射到原片 10.2–22.8 秒，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **来源片段**：10.2–22.8 秒，覆盖刷边揭景与沙漠标本入场。\n- **逐笔份额**：film/engine.js:drawList：dur=clamp(4/N,.12,.5)，第 j 笔从 j/N*(1−dur) 起。\n\n[打开 Demo](../../demos/patterns/brush-ribbon-bristle-paint-in/index.html) · [在库中查看](../../patterns.html#pattern/brush-ribbon-bristle-paint-in)\n"
+  },
+  "entrypoint": "demos/patterns/brush-ribbon-bristle-paint-in/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-watercolor/LICENSES.md",
+      "bytes": 1683,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/CREDITS",
+      "bytes": 2421,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/audio/film.m4a",
+      "bytes": 3761654,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fidelity.md",
+      "bytes": 5582,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/aus.js",
+      "bytes": 23419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/engine.js",
+      "bytes": 8486,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/index.html",
+      "bytes": 430,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/main.js",
+      "bytes": 19065,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/paper.jpg",
+      "bytes": 338137,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/plants.js",
+      "bytes": 14039,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/film/scene.js",
+      "bytes": 35322,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-caveat.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-cormorantgaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f0.woff2",
+      "bytes": 32356,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f1.woff2",
+      "bytes": 25196,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f10.woff2",
+      "bytes": 23260,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f11.woff2",
+      "bytes": 42888,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f12.woff2",
+      "bytes": 77224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f13.woff2",
+      "bytes": 29528,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f14.woff2",
+      "bytes": 74572,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f15.woff2",
+      "bytes": 4348,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f16.woff2",
+      "bytes": 5476,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f17.woff2",
+      "bytes": 4000,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f18.woff2",
+      "bytes": 8860,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f19.woff2",
+      "bytes": 10052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f2.woff2",
+      "bytes": 21264,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f3.woff2",
+      "bytes": 11556,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f4.woff2",
+      "bytes": 34444,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f5.woff2",
+      "bytes": 39304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f6.woff2",
+      "bytes": 14076,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f7.woff2",
+      "bytes": 12896,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f8.woff2",
+      "bytes": 6760,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/f9.woff2",
+      "bytes": 20188,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/fonts/fonts.css",
+      "bytes": 10250,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/index.html",
+      "bytes": 2285,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/CREDITS",
+      "bytes": 2421,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/README.md",
+      "bytes": 3974,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/asr.py",
+      "bytes": 499,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/extract_aus.mjs",
+      "bytes": 1359,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/fetch_fonts.mjs",
+      "bytes": 1135,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/fonts.css",
+      "bytes": 11293,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/mix.py",
+      "bytes": 8743,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/analyze.py",
+      "bytes": 1861,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/edit.py",
+      "bytes": 1816,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/jump.py",
+      "bytes": 1515,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/lag.py",
+      "bytes": 1308,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/prep.sh",
+      "bytes": 846,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/score_beats.json",
+      "bytes": 2927,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/music/wf_beats.json",
+      "bytes": 30235,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/mux.sh",
+      "bytes": 1039,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/paper.py",
+      "bytes": 1299,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/render.mjs",
+      "bytes": 4995,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/sheet.py",
+      "bytes": 537,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/tts/gen.py",
+      "bytes": 1090,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/tts/lines.json",
+      "bytes": 1268,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/LICENSE-topojson-client",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/LICENSE-world-atlas",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/countries-50m.json",
+      "bytes": 756420,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/vendor/topojson-client.min.cjs",
+      "bytes": 7169,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-watercolor/source/voices/dur.json",
+      "bytes": 165,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/brush-ribbon-bristle-paint-in/index.html",
+      "bytes": 884,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/brush-ribbon-bristle-paint-in/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-watercolor.json",
+      "bytes": 11657,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/brush-ribbon-bristle-paint-in.json",
+      "bytes": 3273,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/brush-ribbon-bristle-paint-in.jpg",
+      "bytes": 53499,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "reprint-same-place",
+  "pattern": {
+    "id": "reprint-same-place",
+    "order": 126,
+    "title": "同地再印换时",
+    "types": [
+      "transition",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "机位固定，同一片田地印四次，纸角揭开后露出下一年的鹤群；每次新印先没有红冠，.45秒后单独压上稍有偏位的红版。",
+    "mechanism": "机位固定，同一片田地印四次，纸角揭开后露出下一年的鹤群；每次新印先没有红冠，.45秒后单独压上稍有偏位的红版。",
+    "trigger": "三次peel事件切换年代数量。",
+    "effect": "保持地点和构图，用新纸、新数量和迟到的红版表达时间累积。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "37.900000–42.000000秒；1倍速，共4.100000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "同地与揭纸",
+        "value": "film/timeline.js:17–20的peels=[38.9,39.7,40.4]为慢镜前时刻；film/scene.js:546–569双路rtA/rtB在.3秒内从右上角揭纸，成片映射后为39.3/40.1/40.8秒。"
+      },
+      {
+        "name": "红色第二版",
+        "value": "film/scene.js:551–565：每版t>=lastPeel+.45时亮红，uShift=(1.6*SS,−1.1*SS)，freshInk在.3–1秒间干燥。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-printed-long-take/film/scene.js",
+      "demos/cases/lemo-printed-long-take/film/timeline.js"
+    ],
+    "locator": "scene.js / timeline.js",
+    "useCases": [
+      "保持地点和构图，用新纸、新数量和迟到的红版表达时间累积。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-printed-long-take的原作render(t)，重放“同地再印换时”。固定机位把同一片田地印四次，纸角揭开下一年的鹤群；每次新印先没有红冠，.45秒后单独压上稍有偏位的红版。参数与源码：film/timeline.js:17–20的peels=[38.9,39.7,40.4]为慢镜前时刻；film/scene.js:546–569双路rtA/rtB在.3秒内从右上角揭纸，成片映射后为39.3/40.1/40.8秒。；film/scene.js:551–565：每版t>=lastPeel+.45时亮红，uShift=(1.6*SS,−1.1*SS)，freshInk在.3–1秒间干燥。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/reprint-same-place/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-printed-long-take"
+      }
+    ],
+    "previewAt": 2.8,
+    "markers": [
+      {
+        "t": 0,
+        "label": "同地再印换时"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/reprint-same-place.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-printed-long-take",
+      "bundle": "agent/cases/lemo-printed-long-take.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 同地再印换时\n\n## 实现 Prompt\n\n复用来源案例lemo-printed-long-take的原作render(t)，重放“同地再印换时”。固定机位把同一片田地印四次，纸角揭开下一年的鹤群；每次新印先没有红冠，.45秒后单独压上稍有偏位的红版。参数与源码：film/timeline.js:17–20的peels=[38.9,39.7,40.4]为慢镜前时刻；film/scene.js:546–569双路rtA/rtB在.3秒内从右上角揭纸，成片映射后为39.3/40.1/40.8秒。；film/scene.js:551–565：每版t>=lastPeel+.45时亮红，uShift=(1.6*SS,−1.1*SS)，freshInk在.3–1秒间干燥。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：37.900000–42.000000秒；1倍速，共4.100000秒。\n\n[打开 Demo](../../demos/patterns/reprint-same-place/index.html) · [在库中查看](../../patterns.html#pattern/reprint-same-place)\n"
+  },
+  "entrypoint": "demos/patterns/reprint-same-place/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-printed-long-take/LICENSES.md",
+      "bytes": 886,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/audio/CREDITS",
+      "bytes": 1922,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/audio/NARRATION.txt",
+      "bytes": 406,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/audio/film.m4a",
+      "bytes": 1924403,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/fidelity.md",
+      "bytes": 10425,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/index.html",
+      "bytes": 523,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/look.js",
+      "bytes": 23684,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/props.js",
+      "bytes": 10841,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/scene.js",
+      "bytes": 36272,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/textures.js",
+      "bytes": 23050,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/timeline.js",
+      "bytes": 3733,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/voice/zh/dur.json",
+      "bytes": 164,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/film/world.js",
+      "bytes": 29457,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/fonts/NotoSerifSC-700.woff2",
+      "bytes": 36924,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/fonts/fonts.css",
+      "bytes": 85,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/index.html",
+      "bytes": 2591,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/CREDITS",
+      "bytes": 1922,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/DEMO.md",
+      "bytes": 9976,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/FACTS.md",
+      "bytes": 6774,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/README.md",
+      "bytes": 3358,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/STYLE.md",
+      "bytes": 21023,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/audio.py",
+      "bytes": 15889,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/build.sh",
+      "bytes": 3415,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/events.json",
+      "bytes": 5898,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/lines_en.json",
+      "bytes": 1857,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/lines_zh.json",
+      "bytes": 1149,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/style.json",
+      "bytes": 505,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/tools/chars.txt",
+      "bytes": 563,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/tools/srt.py",
+      "bytes": 1876,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/tools/subset.py",
+      "bytes": 1338,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/voice/en/dur.json",
+      "bytes": 167,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/source/voice/en/words.json",
+      "bytes": 3268,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-printed-long-take/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/reprint-same-place/index.html",
+      "bytes": 826,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/reprint-same-place/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-printed-long-take.json",
+      "bytes": 10942,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/reprint-same-place.json",
+      "bytes": 2661,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/reprint-same-place.jpg",
+      "bytes": 297355,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+{
+  "title": "小精灵冒险记 · 纸片立体书",
+  "summary": "一本立体书在核桃木桌上打开，皮普穿越纸片谷、森林和大海，帮助皱纸变成纸飞机，最后越过书页来到台灯下的真实房间。",
+  "focus": "平面彩色纸偶与真实桌面、光线和微距景深产生尺度反差；翻页、翻板和弹起结构承担叙事换景。",
+  "accent": "#ffcf3f",
+  "background": "#1f5566",
+  "observations": [
+    "立体件围绕底边刚性抬起，纸卡白边、灰纸芯和轮廓阴影保留纸的厚度。",
+    "弯曲页的正面承载旧地面，背面承载新天空；旧立体件折倒，新立体件按深度延迟弹起。",
+    "海上天空的四块翻板以.28秒的间隔由昼翻夜，月亮与星星从纸绳上降下。",
+    "角色前后图通过scale.x翻面，行走相位取自行走距离。",
+    "虚拟相机低至纸偶视线，反打露出模糊房间，出书后在桌面低机位落定。"
+  ],
+  "composition": {
+    "color": "每个跨页使用一组主色：绿谷、深绿森林、蓝海与纸白末页；暗棕墨线、米白边、金黄与红色贯穿。",
+    "typography": "Fredoka字幕与气泡、Lilita One封面与章节、IM Fell English题辞、ZCOOL KuaiLe中文。",
+    "layout": "1920×1080、60fps；书页0.44×0.30m，皮普高0.036m，房间作为真实大尺度背景。",
+    "imagery": "Canvas2D纸绘转为带轮廓阴影的平面卡片，Three.js r170物理场景、Poly Haven木纹/HDRI/道具与手写微距后期。",
+    "motion": "底铰链弹起、曲面翻页、刚性纸偶跳跃、翻板昼夜和单调三次微距相机轨迹。",
+    "sound": "原片Kevin MacLeod三曲、Kokoro af_bella旁白、角色打字音与纸张拟音。",
+    "rhythm": "真实桌面开场，三次翻页展开章节；皱纸变飞机、天空翻夜、越过书页依次推进。",
+    "coherence": "纸的铰链、翻面、折叠和纸声既是材料限制也是故事动作；同一台灯连接书内外。"
+  },
+  "avoid": [
+    "圆润3D卡通、橡皮泥形变或单色背光剪纸",
+    "在书内用视频淡化替代纸机关"
+  ],
+  "constraints": [
+    "纸偶翻身用scale.x切换前后图，避免rotation.y露出无图背面。",
+    "纸卡使用alpha贴图的customDepthMaterial，使投影跟随轮廓。",
+    "使用NeutralToneMapping，翻页发光贴图沿用色图，使背光纸页保持颜色。",
+    "改中文文案后运行fetch_fonts.mjs重建子集，中文字体栈保留Latin字体。",
+    "近镜立体件避开镜头路径，角色画布仅在量化姿态改变时重画。"
+  ],
+  "prompt": "制作在真实木桌上展开的纸片立体书影片：书页与纸偶用米为单位，纸绘保持平面饱和色、暗棕轮廓、白边和灰纸芯，真实灯光投出剪纸轮廓阴影。每跨页一个主色族；旧立体件围绕底边折倒，40段弯曲页以旧地面和新天空为正反面翻过，新景用back过冲弹起。纸偶刚性移动，以行走距离驱动步态，用scale.x切换前后图。微距相机在低机位、全跨页和房间反打之间移动，64点景深与Neutral色调保持纸的颜色。使用圆润字幕、纸世界气泡和物件化标题，沿用原片Kevin MacLeod配乐、温暖旁白和纸机关拟音。引擎位于 demos/cases/lemo-paper-popup/film/book.js、sets.js、art.js、main.js 与 post.js。",
+  "patternIds": [
+    "page-turn-popup-swap",
+    "flip-tile-cascade"
+  ],
+  "id": "lemo-paper-popup",
+  "order": 27,
+  "subtitle": "Pip's Paper Adventure",
+  "carriers": [
+    "video"
+  ],
+  "style": "dimensional",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "threejs"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "纸片立体书",
+    "材质与 3D",
+    "代码影片"
+  ],
+  "timeline": true,
+  "kit": true,
+  "previewAt": 26.6,
+  "rhythm": {
+    "duration": 133,
+    "beats": [
+      {
+        "t": 0,
+        "label": "真实书桌",
+        "note": "慢降镜头靠近闭合的书。"
+      },
+      {
+        "t": 10,
+        "label": "打开书",
+        "note": "封皮抬到90°，纸世界逐层弹起。"
+      },
+      {
+        "t": 15.2,
+        "label": "纸片谷",
+        "note": "第一章纸卡、纸太阳与小河。"
+      },
+      {
+        "t": 39.2,
+        "label": "另一束光",
+        "note": "真实台灯在书内暮色中亮起。"
+      },
+      {
+        "t": 48.6,
+        "label": "翻向森林",
+        "note": "旧件折倒，弯曲页翻到绿色森林。"
+      },
+      {
+        "t": 61.55,
+        "label": "抚平坏脾气",
+        "note": "两次踩踏后皱纸抚平，66.55秒开始折飞机。"
+      },
+      {
+        "t": 71.6,
+        "label": "翻向大海",
+        "note": "第三章浪条、船与鲸鱼。"
+      },
+      {
+        "t": 81.8,
+        "label": "天空翻夜",
+        "note": "四块翻板级联，月亮与星星降下。"
+      },
+      {
+        "t": 86.8,
+        "label": "最后一页",
+        "note": "翻到纸白与铅笔线。"
+      },
+      {
+        "t": 96.4,
+        "label": "书内反打",
+        "note": "从皮普身后望向真实房间。"
+      },
+      {
+        "t": 104.8,
+        "label": "飞出书外",
+        "note": "切桌面全景，配乐转Heartwarming。"
+      },
+      {
+        "t": 111,
+        "label": "落上桌面",
+        "note": "纸飞机和皮普滑停。"
+      },
+      {
+        "t": 123.4,
+        "label": "新的开始",
+        "note": "桌面上的片尾，127.6秒署名与素材来源出现。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 10,
+      "from": 0.1,
+      "to": 0.15,
+      "label": "桌面"
+    },
+    {
+      "t0": 10,
+      "t1": 20.6,
+      "from": 0.3,
+      "to": 0.6,
+      "label": "开书"
+    },
+    {
+      "t0": 20.6,
+      "t1": 48.6,
+      "from": 0.45,
+      "to": 0.5,
+      "label": "纸谷与愿望"
+    },
+    {
+      "t0": 48.6,
+      "t1": 55.2,
+      "from": 0.55,
+      "to": 0.65,
+      "label": "翻页"
+    },
+    {
+      "t0": 55.2,
+      "t1": 71.6,
+      "from": 0.6,
+      "to": 0.85,
+      "label": "皱纸与朋友"
+    },
+    {
+      "t0": 71.6,
+      "t1": 81.8,
+      "from": 0.65,
+      "to": 0.8,
+      "label": "航行与鲸鱼"
+    },
+    {
+      "t0": 81.8,
+      "t1": 89.6,
+      "from": 0.65,
+      "to": 0.5,
+      "label": "夜与末页"
+    },
+    {
+      "t0": 89.6,
+      "t1": 104.8,
+      "from": 0.25,
+      "to": 0.45,
+      "label": "迟疑与跃出"
+    },
+    {
+      "t0": 104.8,
+      "t1": 111,
+      "from": 0.9,
+      "to": 0.6,
+      "label": "飞行"
+    },
+    {
+      "t0": 111,
+      "t1": 123.4,
+      "from": 0.4,
+      "to": 0.5,
+      "label": "真实世界"
+    },
+    {
+      "t0": 123.4,
+      "t1": 133,
+      "from": 0.4,
+      "to": 0.02,
+      "label": "片尾"
+    }
+  ],
+  "energyNote": "段落划分依据DEMO.md的Shots、Score structure与源码时间表；0–1数值是按画面动作、声音密度和静默作出的相对编辑标注。",
+  "layers": [
+    {
+      "name": "房间与桌面",
+      "role": "2K HDRI、核桃木、台灯、茶具、闹钟和盆栽。"
+    },
+    {
+      "name": "书本与纸页",
+      "role": "布面金箔封皮、书脊、纸边与40段弯曲页。"
+    },
+    {
+      "name": "跨页立体件",
+      "role": "彩色纸卡绕底边抬起，使用透明轮廓深度材质投影。"
+    },
+    {
+      "name": "纸偶与纸机关",
+      "role": "皮普、皱纸、纸飞机、鲸鱼、船与四块昼夜翻板。"
+    },
+    {
+      "name": "镜头与HUD",
+      "role": "64点景深、辉光、暖色暗角；双语字幕、气泡、章节和片尾。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#3a2a24",
+      "#fffdf7",
+      "#b9ad9c",
+      "#86c763",
+      "#9fd57a",
+      "#4f8f46",
+      "#62a653",
+      "#9ad8f5",
+      "#2f7fc4",
+      "#131d44",
+      "#4a5a94",
+      "#f5eedc",
+      "#e8413a",
+      "#ffd766",
+      "#ffcf3f",
+      "#1f5566",
+      "#e0b456"
+    ],
+    "type": "Fredoka 500/600/700；Lilita One 400；IM Fell English 400及Italic 400；ZCOOL KuaiLe 400按story.js/hud.js/main.js/art.js字符子集。",
+    "motion": [
+      {
+        "name": "弹起",
+        "value": "film/sets.js:riseOf / updatePops：back(seg(t,t0,t0+.55),1.7)，深度延迟(.3-z)*1.2，底铰链转角dir*π/2*(1-k)。"
+      },
+      {
+        "name": "翻页",
+        "value": "film/story.js:TURNS=[[48.6,51.4],[71.6,74.4],[86.8,89.6]]；main.js在[a+.45,b-.3]用eio，book.js:setLeaf以40段积分，bend=.55*sin(πu)。"
+      },
+      {
+        "name": "昼夜翻板",
+        "value": "film/main.js:EX.slats：81.8+i*.28至82.5+i*.28，rotation.y=π*eio；sets.js:buildSlats建立4块双面纸。"
+      },
+      {
+        "name": "微距景深",
+        "value": "film/post.js:CoC最大14px、64点金角螺旋采样；main.js:SH独立键表控制pos/target/fov/aperture/focus。"
+      }
+    ]
+  },
+  "useCases": [
+    "儿童绘本影像",
+    "游戏预告片",
+    "故事短片"
+  ],
+  "migration": [
+    {
+      "field": "film/story.js → VO / BUB / CHAPTERS / OPEN / TURNS",
+      "how": "修改旁白、气泡、章节和开合翻页时刻。"
+    },
+    {
+      "field": "film/sets.js → pages / buildSets / RISE / FOLD",
+      "how": "修改各跨页图案、立体件和机关。"
+    },
+    {
+      "field": "film/art.js / actors.js",
+      "how": "修改角色、道具图和可折叠纸飞机。"
+    },
+    {
+      "field": "film/main.js → pipState / SH / lightsAt",
+      "how": "修改表演、行走距离、相机与灯光。"
+    }
+  ],
+  "demo": "demos/cases/lemo-paper-popup/index.html",
+  "fidelity": "demos/cases/lemo-paper-popup/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/paper-popup",
+    "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+    "path": "styles/paper-popup/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+    "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方素材按CREDITS各自许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/paper-popup"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/paper-popup.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/paper-popup/demo/CREDITS"
+    },
+    {
+      "label": "Dreamy Flashback · Kevin MacLeod",
+      "url": "https://incompetech.com/music/royalty-free/"
+    },
+    {
+      "label": "Jaunty Gumption · Kevin MacLeod",
+      "url": "https://incompetech.com/music/royalty-free/"
+    },
+    {
+      "label": "Heartwarming · Kevin MacLeod",
+      "url": "https://incompetech.com/music/royalty-free/"
+    },
+    {
+      "label": "Poly Haven · lythwood_lounge",
+      "url": "https://polyhaven.com/a/lythwood_lounge"
+    },
+    {
+      "label": "Poly Haven · american_walnut_veneer",
+      "url": "https://polyhaven.com/a/american_walnut_veneer"
+    },
+    {
+      "label": "Poly Haven · desk_lamp_arm_01",
+      "url": "https://polyhaven.com/a/desk_lamp_arm_01"
+    },
+    {
+      "label": "Poly Haven · tea_set_01",
+      "url": "https://polyhaven.com/a/tea_set_01"
+    },
+    {
+      "label": "Poly Haven · alarm_clock_01",
+      "url": "https://polyhaven.com/a/alarm_clock_01"
+    },
+    {
+      "label": "Poly Haven · potted_plant_04",
+      "url": "https://polyhaven.com/a/potted_plant_04"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/paper-popup)。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "沿用公开成片混音，原始资源与署名见[audio/CREDITS](audio/CREDITS)，许可原文入口见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "字体家族与字重见tokens.type；OFL原文在fonts/，取得和重建方式见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

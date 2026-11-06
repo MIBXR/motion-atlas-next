@@ -1,0 +1,72 @@
+{
+  "id": "tracking-tear-cut",
+  "order": 142,
+  "title": "磁迹撕裂即剪辑",
+  "types": [
+    "transition",
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "跟踪撕裂遮住时间切口，画面恢复后保留相同走廊构图；OSD时钟跳过三小时，电量从三格降到一格，这些变化与灯光变化共同证明时间被切走。",
+  "mechanism": "跟踪撕裂遮住时间切口，画面恢复后保留相同走廊构图；OSD时钟跳过三小时，电量从三格降到一格，这些变化与灯光变化共同证明时间被切走。",
+  "trigger": "来源时间线进入磁迹撕裂即剪辑段。",
+  "effect": "跟踪撕裂遮住时间切口，画面恢复后保留相同走廊构图；OSD时钟跳过三小时，电量从三格降到一格，这些变化与灯光变化共同证明时间被切走。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-backrooms：35.600000–38.400000秒，1倍速，总时长2.800000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "撕裂时段",
+      "value": "film/story.js:T.tear经W映射为36.05–36.7秒；film/main.js:render将track与roll送入film/vhs.js。"
+    },
+    {
+      "name": "叙事状态",
+      "value": "film/story.js:clock/battery在36.35秒切为AM2:59和1格；film/main.js:gLight在撕裂后熄灭头顶灯。"
+    }
+  ],
+  "sourceFiles": [
+    "demos\\cases\\lemo-backrooms\\film\\story.js",
+    "demos\\cases\\lemo-backrooms\\film\\main.js",
+    "demos\\cases\\lemo-backrooms\\film\\vhs.js",
+    "demos\\cases\\lemo-backrooms\\film\\osd.js"
+  ],
+  "locator": "film/story.js / film/main.js / film/vhs.js / film/osd.js",
+  "useCases": [
+    "新怪谈短片",
+    "悬疑预告",
+    "游戏氛围片"
+  ],
+  "avoid": [
+    "在关键动作和证据上叠加争夺注意的运动"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“磁迹撕裂即剪辑”。跟踪撕裂遮住时间切口，恢复后保留相同走廊构图；OSD时钟跳过三小时，电量从三格降到一格，灯光变化共同证明时间被切走。参数：film/story.js:T.tear经W映射为36.05–36.7秒；film/main.js:render将track与roll送入film/vhs.js。；film/story.js:clock/battery在36.35秒切为AM2:59和1格；film/main.js:gLight在撕裂后熄灭头顶灯。。复用来源字体、素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/tracking-tear-cut/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-backrooms"
+    }
+  ],
+  "previewAt": 1.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "磁迹撕裂即剪辑"
+    }
+  ],
+  "renderer": "gpu"
+}

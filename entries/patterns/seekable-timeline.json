@@ -1,0 +1,157 @@
+{
+  "id": "seekable-timeline",
+  "order": 11,
+  "title": "可逐帧定位的时间轴",
+  "types": [
+    "rhythm"
+  ],
+  "carriers": [
+    "video",
+    "console"
+  ],
+  "summary": "所有画面都是时间 t 的函数，拖动、倒退、跳转都能得到同一帧。",
+  "mechanism": "日序、日期、坐标与时钟随定位持续更新。卡片、引线与MIKAN徽章跟随时间变化。拖动舞台内控制条，可前后查看同一段画面。",
+  "trigger": "需要回看或比较某段画面时",
+  "effect": "观众可按自己的节奏反复看清动作。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "7s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "shutter、paper、confirm、stamp、sparkle、tick"
+    }
+  ],
+  "useCases": [
+    "程序化视频生成",
+    "可回放的陈列界面",
+    "需要精确节奏调试的任何动效"
+  ],
+  "avoid": [
+    "依赖真实用户输入、不可预测的物理模拟（需另行录制）"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [
+      "film-grain",
+      "corner-hud"
+    ],
+    "conflicts": []
+  },
+  "prompt": "所有画面都是时间 t 的函数，拖动、倒退、跳转都能得到同一帧。复用地图巡礼的 render、drawHud、drawCards、drawLeader、cameraAt、clockAt、controls 与对应 CSS。顶部 HUD（日序、日期、进度线、指南针、坐标、海拔、缩放与时钟）、kix 卡片与引线、MIKAN 徽章、控制条上方右对齐的署名，以及舞台内随 caseT 更新的复制控制条。片段：caseT 12→14；caseT 14→12.6；caseT 12.6→13.4；caseT 13.4→15.5；caseT 15.5→16.6；caseT 16.6→13；caseT 13→14.4；时长 7s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。",
+  "demo": "demos/patterns/seekable-timeline/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    },
+    {
+      "caseId": "archive-os"
+    }
+  ],
+  "previewAt": 2.8,
+  "markers": [
+    {
+      "t": 0,
+      "label": "播放"
+    },
+    {
+      "t": 2,
+      "label": "倒拖"
+    },
+    {
+      "t": 3.4,
+      "label": "前跳"
+    },
+    {
+      "t": 5,
+      "label": "再倒拖"
+    }
+  ],
+  "sound": {
+    "voices": [
+      "shutter",
+      "paper",
+      "confirm",
+      "stamp",
+      "sparkle",
+      "tick"
+    ],
+    "score": "demos/patterns/seekable-timeline/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "播放",
+        "value": "0s"
+      },
+      {
+        "name": "倒拖",
+        "value": "2s"
+      },
+      {
+        "name": "前跳",
+        "value": "3.4s"
+      },
+      {
+        "name": "再倒拖",
+        "value": "5s"
+      },
+      {
+        "name": "时长",
+        "value": "7s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js ? renderPattern?caseTime?drawHud?drawCards?mechanism/controls.js ? createControls",
+      "how": "修改HUD、卡片、引线、镜头、时钟与控制条的实现。"
+    },
+    {
+      "field": "index.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → tracks.cards、tracks.camera、tracks.clock；music、layout",
+      "how": "修改卡片、镜头、HUD 与横竖布局；七段拖动时间映射在 mechanism/config.js → segments。"
+    },
+    {
+      "field": "mechanism/config.js → segments / markers",
+      "how": "设置本巧思片段映射与标记；地图来源时刻：12→14/14→12.6/12.6→13.4/13.4→15.5/15.5→16.6/16.6→13/13→14.4。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ]
+}

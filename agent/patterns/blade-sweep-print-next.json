@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "blade-sweep-print-next",
+  "pattern": {
+    "id": "blade-sweep-print-next",
+    "order": 119,
+    "title": "刮板斜扫印出下一城",
+    "types": [
+      "transition",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "斜向刮板沿边缘带噪声的裁切区扫过旧海报，在后方直接印出下一座城市；新海报的色组以并列墨珠的形式装载在刮板上。",
+    "mechanism": "斜向刮板沿边缘带噪声的裁切区扫过旧海报，在后方直接印出下一座城市；新海报的色组以并列墨珠的形式装载在刮板上。",
+    "trigger": "到达巴黎换景时刻 PAR.swap 时。",
+    "effect": "地标与色板从同一斜向前沿一起替换，刮板是可见的转场工具。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "13.700000–15.100000秒；1倍速，共1.400000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "斜向裁切",
+        "value": "film/film.js:183–204的swRegion / swFront / sweep：SW_BOX=[−500,−500,2920,2080]，噪边50/7；裁切drawB，前沿绘squeegee。"
+      },
+      {
+        "name": "换城时刻",
+        "value": "film/film.js:43–45、303–312：巴黎14.1667起.5秒、角−.32rad，布宜诺斯艾利斯17.7778起.6秒、角−.28rad；墨珠分别为巴黎四色和BOCA_INKS。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-silkscreen-poster/film/film.js",
+      "demos/cases/lemo-silkscreen-poster/film/engine/silk.js"
+    ],
+    "locator": "film.js / engine/silk.js",
+    "useCases": [
+      "地标与色板从同一斜向前沿一起替换，刮板是可见的转场工具。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-silkscreen-poster的原作render(t)，重放“刮板斜扫印出下一城”。斜向刮板沿带噪声边缘的裁切区扫过旧海报，后方直接印出下一座城市；刮板墨珠并列装载新海报的色组。参数与源码：film/film.js:183–204的swRegion / swFront / sweep：SW_BOX=[−500,−500,2920,2080]，噪边50/7；裁切drawB，前沿绘squeegee。；film/film.js:43–45、303–312：巴黎14.1667起.5秒、角−.32rad，布宜诺斯艾利斯17.7778起.6秒、角−.28rad；墨珠分别为巴黎四色和BOCA_INKS。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/blade-sweep-print-next/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-silkscreen-poster"
+      }
+    ],
+    "previewAt": 0.85,
+    "markers": [
+      {
+        "t": 0,
+        "label": "刮板斜扫印出下一城"
+      }
+    ],
+    "preview": "previews/patterns/blade-sweep-print-next.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-silkscreen-poster",
+      "bundle": "agent/cases/lemo-silkscreen-poster.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 刮板斜扫印出下一城\n\n## 实现 Prompt\n\n复用来源案例lemo-silkscreen-poster的原作render(t)，重放“刮板斜扫印出下一城”。斜向刮板沿带噪声边缘的裁切区扫过旧海报，后方直接印出下一座城市；刮板墨珠并列装载新海报的色组。参数与源码：film/film.js:183–204的swRegion / swFront / sweep：SW_BOX=[−500,−500,2920,2080]，噪边50/7；裁切drawB，前沿绘squeegee。；film/film.js:43–45、303–312：巴黎14.1667起.5秒、角−.32rad，布宜诺斯艾利斯17.7778起.6秒、角−.28rad；墨珠分别为巴黎四色和BOCA_INKS。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：13.700000–15.100000秒；1倍速，共1.400000秒。\n\n[打开 Demo](../../demos/patterns/blade-sweep-print-next/index.html) · [在库中查看](../../patterns.html#pattern/blade-sweep-print-next)\n"
+  },
+  "entrypoint": "demos/patterns/blade-sweep-print-next/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/LICENSES.md",
+      "bytes": 905,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/CREDITS",
+      "bytes": 1463,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/film.m4a",
+      "bytes": 1657589,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fidelity.md",
+      "bytes": 4312,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/engine/poster.js",
+      "bytes": 15794,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/engine/scenes.js",
+      "bytes": 22904,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/engine/silk.js",
+      "bytes": 21326,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/film.js",
+      "bytes": 29088,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/index.html",
+      "bytes": 346,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/main.js",
+      "bytes": 963,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/voice/cues.json",
+      "bytes": 1821,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/BigShouldersDisplaywght.ttf",
+      "bytes": 219532,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/NotoSansSCwght.ttf",
+      "bytes": 17772300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/OFL-bigshouldersdisplay.txt",
+      "bytes": 4396,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/OFL-outfit.txt",
+      "bytes": 4389,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/Outfitwght.ttf",
+      "bytes": 110884,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/fonts.css",
+      "bytes": 401,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/index.html",
+      "bytes": 2359,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/CREDITS",
+      "bytes": 1463,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/DEMO.md",
+      "bytes": 13650,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/FACTS.md",
+      "bytes": 2578,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/README.md",
+      "bytes": 3952,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/STYLE.md",
+      "bytes": 13426,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/build.sh",
+      "bytes": 3405,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/events.json",
+      "bytes": 4207,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/mix.py",
+      "bytes": 12188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/music/compose.py",
+      "bytes": 8509,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/style.json",
+      "bytes": 633,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/tools/cues.py",
+      "bytes": 1870,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/tools/fetch_fonts.sh",
+      "bytes": 505,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/voice/lines.json",
+      "bytes": 1603,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/voice/subs.json",
+      "bytes": 1327,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/blade-sweep-print-next/index.html",
+      "bytes": 863,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/blade-sweep-print-next/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-silkscreen-poster.json",
+      "bytes": 10020,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/blade-sweep-print-next.json",
+      "bytes": 2695,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/blade-sweep-print-next.jpg",
+      "bytes": 95609,
+      "role": "preview"
+    }
+  ]
+}

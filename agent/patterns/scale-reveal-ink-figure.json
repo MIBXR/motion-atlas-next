@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "scale-reveal-ink-figure",
+  "pattern": {
+    "id": "scale-reveal-ink-figure",
+    "order": 95,
+    "title": "拉远显微小人物",
+    "types": [
+      "camera",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "从人物所在的局部连续拉远，按对数插值缩小世界，直到整卷山水、装裱与轴头进入画幅，人物成为画中小点，朱印落下。",
+    "mechanism": "从人物所在的局部连续拉远，按对数插值缩小世界，直到整卷山水、装裱与轴头进入画幅，人物成为画中小点，朱印落下。",
+    "trigger": "彼岸拱手结束，42.6秒进入renderScroll。",
+    "effect": "刚完成的动作被放回整幅画，微小人物、大片纸白和印章形成尺度收束。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "40.400000–48.000000秒；1倍速，总时长7.600000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "镜头尺度",
+        "value": "film/passage.js:renderScroll：42.6–45秒eio，z=exp(lerp(log(1.25),log(.315),u))，cam.x=1150→2800、y=720→700。"
+      },
+      {
+        "name": "人物与落印",
+        "value": "同函数：hero s=1.7；43.7秒起题跋，44.48秒起印章150*(1.25−.25*eo(k))压下，44.6秒落印，45.6秒起片尾。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-ink-wash/film/passage.js",
+      "demos/cases/lemo-ink-wash/film/story.js",
+      "demos/cases/lemo-ink-wash/film/world.js"
+    ],
+    "locator": "renderScroll / camXf / T.scrollA / T.scrollB / T.seal",
+    "useCases": [
+      "刚完成的动作被放回整幅画，微小人物、大片纸白和印章形成尺度收束。"
+    ],
+    "avoid": [
+      "在关键动作或留白上叠加争夺注意的主动作"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [
+        "decisive-stroke-glyph"
+      ],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-ink-wash的原作render(t)重放“拉远显微小人物”。从人物所在的局部连续拉远，按对数插值缩小世界，直到整卷山水、装裱与轴头进入画幅，人物成为画中小点，朱印落下。保留参数：film/passage.js:renderScroll：42.6–45秒eio，z=exp(lerp(log(1.25),log(.315),u))，cam.x=1150→2800、y=720→700。；同函数：hero s=1.7；43.7秒起题跋，44.48秒起印章150*(1.25−.25*eo(k))压下，44.6秒落印，45.6秒起片尾。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/scale-reveal-ink-figure/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-ink-wash"
+      }
+    ],
+    "previewAt": 4.2,
+    "markers": [
+      {
+        "t": 0,
+        "label": "拉远显微小人物"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/scale-reveal-ink-figure.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-ink-wash",
+      "bundle": "agent/cases/lemo-ink-wash.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 拉远显微小人物\n\n## 实现 Prompt\n\n用来源案例lemo-ink-wash的原作render(t)重放“拉远显微小人物”。从人物所在的局部连续拉远，按对数插值缩小世界，直到整卷山水、装裱与轴头进入画幅，人物成为画中小点，朱印落下。保留参数：film/passage.js:renderScroll：42.6–45秒eio，z=exp(lerp(log(1.25),log(.315),u))，cam.x=1150→2800、y=720→700。；同函数：hero s=1.7；43.7秒起题跋，44.48秒起印章150*(1.25−.25*eo(k))压下，44.6秒落印，45.6秒起片尾。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：40.400000–48.000000秒；1倍速，总时长7.600000秒。\n\n[打开 Demo](../../demos/patterns/scale-reveal-ink-figure/index.html) · [在库中查看](../../patterns.html#pattern/scale-reveal-ink-figure)\n"
+  },
+  "entrypoint": "demos/patterns/scale-reveal-ink-figure/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-ink-wash/LICENSES.md",
+      "bytes": 1155,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/CREDITS",
+      "bytes": 1399,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/film.m4a",
+      "bytes": 1461338,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fidelity.md",
+      "bytes": 4609,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/climax.js",
+      "bytes": 8351,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/comp.js",
+      "bytes": 9418,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/cross.js",
+      "bytes": 6828,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/face.js",
+      "bytes": 7228,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/glyph.js",
+      "bytes": 5305,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/hero.js",
+      "bytes": 20979,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/index.html",
+      "bytes": 435,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/ink.js",
+      "bytes": 11400,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/land.js",
+      "bytes": 10900,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/main.js",
+      "bytes": 2071,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/passage.js",
+      "bytes": 9686,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/seal.js",
+      "bytes": 2338,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/shots.js",
+      "bytes": 3249,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/story.js",
+      "bytes": 1527,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/subs.js",
+      "bytes": 1288,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/wave.js",
+      "bytes": 4537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/world.js",
+      "bytes": 10351,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/CormorantGaramond-Italic-VF.ttf",
+      "bytes": 715644,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/CormorantGaramond-VF.ttf",
+      "bytes": 1195560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/CormorantSC-Medium.ttf",
+      "bytes": 762320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/CormorantSC-SemiBold.ttf",
+      "bytes": 762872,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/MaShanZheng-Regular.ttf",
+      "bytes": 5857936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/OFL-Cormorant.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/OFL-MaShanZheng.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/OFL-ZhiMangXing.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/ZhiMangXing-Regular.ttf",
+      "bytes": 4063532,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/fonts.css",
+      "bytes": 539,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/index.html",
+      "bytes": 2653,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/CREDITS",
+      "bytes": 1399,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/README.md",
+      "bytes": 3092,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/build.sh",
+      "bytes": 1140,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/cues.json",
+      "bytes": 362,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/cues.mjs",
+      "bytes": 261,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/events.json",
+      "bytes": 2119,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/frames.js",
+      "bytes": 5148,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/lines.json",
+      "bytes": 555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/mix.py",
+      "bytes": 7967,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/music/score.json",
+      "bytes": 3243,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/music/score.py",
+      "bytes": 11546,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/sheet.js",
+      "bytes": 5089,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/test.js",
+      "bytes": 3028,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/voices/words.json",
+      "bytes": 988,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/scale-reveal-ink-figure/index.html",
+      "bytes": 809,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/scale-reveal-ink-figure/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-ink-wash.json",
+      "bytes": 10111,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/scale-reveal-ink-figure.json",
+      "bytes": 2787,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/scale-reveal-ink-figure.jpg",
+      "bytes": 174774,
+      "role": "preview"
+    }
+  ]
+}

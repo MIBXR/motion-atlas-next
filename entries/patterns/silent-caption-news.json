@@ -1,0 +1,81 @@
+{
+  "id": "silent-caption-news",
+  "order": 154,
+  "title": "静音可读字幕新闻",
+  "types": [
+    "type-motion",
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "大字逐句字幕与每镜的数据标签承担完整信息，损失数字、报告反转、双栏账本、图表和两句结论按同一时间线展开。",
+  "mechanism": "大字逐句字幕与每镜的数据标签承担完整信息，损失数字、报告反转、双栏账本、图表和两句结论按同一时间线展开。",
+  "trigger": "来源时间线进入对应镜头与动作节点。",
+  "effect": "大字逐句字幕与每镜的数据标签承担完整信息，损失数字、报告反转、双栏账本、图表和两句结论按同一时间线展开。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-caption-news：0–5秒；lemo-caption-news：13–23.5秒；lemo-caption-news：50–54.5秒；1倍速，总时长20.000000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "字幕版式",
+      "value": "film/main.js:CAP / captions，中文88px、英文33px，左对齐，一种语言一行；timeline.json提供同一组中英内容与时刻。"
+    },
+    {
+      "name": "读数与证据",
+      "value": "film/main.js:shotDoc6 / shotStock / shotSplit / shotStress / shotLoss，+6%报告原文、1305540与1453600计数及图形标签独立可读。"
+    },
+    {
+      "name": "结论",
+      "value": "film/main.js:CAPS来自timeline.json，50.4与52.2秒两句字幕使用1.25倍字号；声音沿用同区间成片音轨。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-caption-news/film/main.js",
+    "demos/cases/lemo-caption-news/film/timeline.json"
+  ],
+  "locator": "film/main.js:CAP / captions；film/main.js:shotDoc6 / shotStock / shotSplit / shotStress / shotLoss；film/main.js:CAPS来自timeline.json",
+  "useCases": [
+    "证据影像",
+    "数据解说",
+    "档案与科学短片"
+  ],
+  "avoid": [
+    "在主要读数和证据上叠加争夺注意的运动"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“静音可读字幕新闻”。大字逐句字幕与每镜的数据标签承担完整信息，损失数字、报告反转、双栏账本、图表和两句结论按同一时间线展开。保留参数：film/main.js:CAP / captions，中文88px、英文33px，左对齐，一种语言一行；timeline.json提供同一组中英内容与时刻。；film/main.js:shotDoc6 / shotStock / shotSplit / shotStress / shotLoss，+6%报告原文、1305540与1453600计数及图形标签独立可读。；film/main.js:CAPS来自timeline.json，50.4与52.2秒两句字幕使用1.25倍字号；声音沿用同区间成片音轨。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/silent-caption-news/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-caption-news"
+    }
+  ],
+  "previewAt": 13,
+  "markers": [
+    {
+      "t": 0,
+      "label": "大字损失数字"
+    },
+    {
+      "t": 5,
+      "label": "报告反转与账本"
+    },
+    {
+      "t": 15.5,
+      "label": "两句结论"
+    }
+  ]
+}

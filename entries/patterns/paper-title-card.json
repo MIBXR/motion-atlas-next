@@ -1,0 +1,107 @@
+{
+  "id": "paper-title-card",
+  "order": 86,
+  "title": "纸墨逐词字卡",
+  "types": [
+    "type-motion",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "衬线大字逐词入场，星号标出的强调词用琥珀色斜体，可搭配里程表式数字副标，在功能段之间留出停顿。",
+  "mechanism": "TITLE_CARDS 文案用 *词* 标记强调词，经 parseWords 解析后逐词入场；强调词使用琥珀色斜体；card2 带副标，数字由 DigitRoll 逐位滚动。",
+  "trigger": "功能段之间的硬切处，进入时配 swoosh。",
+  "effect": "高能镜头后，节奏回落，为下一段留出停顿。",
+  "timing": [
+    {
+      "name": "片段",
+      "value": "AIFL_SHOTS.card2：565–620 帧，55/30 秒。"
+    },
+    {
+      "name": "逐词",
+      "value": "delay=4+i*4；每词 delay→delay+9；本张 7 词，最后一词 37 帧落定。"
+    },
+    {
+      "name": "副标与退出",
+      "value": "subT=10→22；DigitRoll delay=12、滚动 22 帧；underline=16→34；fadeOut=duration-8→duration，即 47→55。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "字形",
+      "value": "fontSize=116；ink=#13110f，accent=#955905；强调词 italic；字体 ui-serif,Georgia。"
+    },
+    {
+      "name": "入场",
+      "value": "bezier(0.2,0.75,0.3,1)；scale=1.28-0.28*t；blur=(1-t)*7px。"
+    },
+    {
+      "name": "数字",
+      "value": "offset=(10+target)*t*lineH；lineH=fontSize*1.15；bezier(0.25,0.8,0.25,1)。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/ink-press/film/src/aifl/PaperTitleCard.tsx",
+    "demos/cases/ink-press/film/src/aifl/DigitRoll.tsx",
+    "demos/cases/ink-press/film/src/aifl/Main.tsx"
+  ],
+  "locator": "PaperTitleCard / DigitRoll / TITLE_CARDS.card2 / parseWords",
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "deck-deal-flyin",
+      "list-stack-press"
+    ],
+    "conflicts": [],
+    "notes": ""
+  },
+  "prompt": "用来源案例 ink-press 的原作 renderAt(t) 重放纸墨逐词字卡。保留 TITLE_CARDS.card2 的原文与 *Radar,* 强调、116px 衬线标题和 #955905 琥珀斜体；按 delay=4+i*4 逐词入场，每词 9 帧，用 bezier(0.2,0.75,0.3,1) 从 scale=1.28 与 blur=7px 落定。数字从第 12 帧起滚动 22 帧，下划线 16→34 帧伸展，47→55 帧退出。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/paper-title-card/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "ink-press"
+    }
+  ],
+  "previewAt": 1.4666666666666666,
+  "markers": [
+    {
+      "t": 0,
+      "label": "字卡与 swoosh"
+    },
+    {
+      "t": 0.13333333333333333,
+      "label": "逐词入场"
+    },
+    {
+      "t": 0.3333333333333333,
+      "label": "副标显现"
+    },
+    {
+      "t": 0.4,
+      "label": "数字滚动"
+    },
+    {
+      "t": 0.5333333333333333,
+      "label": "下划线伸展"
+    },
+    {
+      "t": 1.1333333333333333,
+      "label": "数字与下划线落定"
+    },
+    {
+      "t": 1.2333333333333334,
+      "label": "全部词落定"
+    },
+    {
+      "t": 1.5666666666666667,
+      "label": "字卡淡出"
+    }
+  ]
+}

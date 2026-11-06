@@ -1,0 +1,91 @@
+{
+  "id": "scrolling-score-timeline",
+  "order": 176,
+  "title": "滚动总谱",
+  "types": [
+    "composition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "每件乐器一行、播放线固定，乐谱按每秒 190px 匀速向左滚动，音符按未来、发声、已过三态变化，画面节奏全部来自音符本身。",
+  "mechanism": "总谱画在一张 Canvas 里：16 个乐器行按 ROWS 的 y 坐标固定（Fl. 242 到 Cb. 758），播放线固定在 x=880。音符的屏幕位置是 880+(x−190·t)，即世界坐标匀速左移；没有镜头时 sx=1，卷轴速度不变。每个音符用 t 与 x0/190、(x1+6)/190 比较判定状态：未来是较淡的粗线，发声窗口内按 attack 过渡到高亮色与 currentThickness，过去后按 release 回落到较细的中间色。行线、行名与播放线不参与运动，只有音符与注释随 t 左移，所以拍点、音型疏密和乐器进出都由音符数据直接读出，不需要额外的节奏动画。",
+  "trigger": "序幕结束后总谱淡入，此后 t 每前进 1 秒，世界坐标左移 190px。",
+  "effect": "音符匀速穿过固定的播放线，经过时亮起、加粗，过去后退成中间色；稀疏的首段与满编制全奏的织体差别一眼可见。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "butterfly-garden-score：3.8–8.3秒；butterfly-garden-score：61–65秒；1倍速，总时长8.5秒。"
+    },
+    {
+      "name": "卷轴",
+      "value": "190px/s 匀速，播放线 x=880；音符发声窗为 [x0/190, (x1+6)/190] 秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "卷轴与播放线",
+      "value": "butterfly-garden-score film/scene.js:positionX / focusAt，x=head+(x−190·t)·sx，默认 head=880、sx=1；scoreRows 末尾以 x=focus.head 画播放线。"
+    },
+    {
+      "name": "音符三态",
+      "value": "butterfly-garden-score film/scene.js:stateAt，attack=smooth((t−x0/190)/attack)，release=smooth((t−(x1+6)/190−delay)/release)；Ob. 首音 futureThickness 5、currentThickness 3.98、thickness 3.841，stateAlpha[0]=[0.298,0.993,0.558]。"
+    },
+    {
+      "name": "行布局与裁切",
+      "value": "butterfly-garden-score film/scene.js:ROWS / scoreRows，16 行 y 为 242、274、306、338、382、414、446、490、522、554、586、630、662、694、726、758；乐谱区 clip 为 rect(0,185,1620,661)。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/butterfly-garden-score/film/scene.js",
+    "demos/cases/butterfly-garden-score/film/data/notes.json",
+    "demos/cases/butterfly-garden-score/film/data/rowStates.json"
+  ],
+  "locator": "butterfly-garden-score film/scene.js:ROWS / positionX / stateAt / scoreRows",
+  "useCases": [
+    "配乐、曲式或编曲的逐件乐器对照讲解",
+    "需要让观众看见节奏而不靠解说词的音乐专题"
+  ],
+  "avoid": [
+    "没有分轨或逐音符数据的音乐",
+    "行数很多而画幅过小、音符细到读不清的竖屏画幅"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [
+      "motif-entry-focus",
+      "key-change-color-flip",
+      "perspective-scene-title"
+    ],
+    "conflicts": [],
+    "notes": "动机聚焦、转调反色和场次标题都按这条卷轴的世界坐标定位，需要与它共用同一个 t。"
+  },
+  "prompt": "用来源案例 butterfly-garden-score 的原作 renderAt(t) 重放“滚动总谱”。保留 16 行乐器、播放线 x=880、卷轴 190px/s 匀速左移，以及音符按 attack/release 区分未来、发声、已过的三态与各态粗细。按 index.html 内联配置的 segments 定位 3.8–8.3 秒与 61–65 秒，复用原作数据、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/scrolling-score-timeline/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "butterfly-garden-score"
+    }
+  ],
+  "previewAt": 2.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "序幕弦乐长音"
+    },
+    {
+      "t": 2.2,
+      "label": "音符三态"
+    },
+    {
+      "t": 4.5,
+      "label": "全奏织体对照"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "id": "lemo-backrooms",
+  "order": 60,
+  "title": "夜班入职指引 · 后室 / 新怪谈",
+  "subtitle": "Night Shift Orientation",
+  "carriers": [
+    "video"
+  ],
+  "style": "documentary",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "threejs"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "后室 / 新怪谈",
+    "电影与时代",
+    "代码影片"
+  ],
+  "summary": "一名新夜班员工用摄像机记录入职路线；重复出现的告示、失灵的自动对焦和磁带断裂逐步让守则失去可信度，时钟与电量留下跳时的证据。",
+  "focus": "故事通过拍摄介质展开：身影只在一次正确对焦时出现，磁迹撕裂后，同一走廊中的时间已跳过三小时，画面边角的OSD成为事件证据。",
+  "accent": "#d5bd66",
+  "background": "#000000",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 35.82,
+  "rhythm": {
+    "duration": 59.666666666666664,
+    "beats": [
+      {
+        "t": 0,
+        "label": "录像与告示",
+        "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      },
+      {
+        "t": 6,
+        "label": "显出走廊",
+        "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      },
+      {
+        "t": 7.6,
+        "label": "例行巡视",
+        "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      },
+      {
+        "t": 15.9,
+        "label": "重复告示",
+        "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      },
+      {
+        "t": 20.9,
+        "label": "遵守守则",
+        "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      },
+      {
+        "t": 31.9,
+        "label": "对焦显影",
+        "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      },
+      {
+        "t": 36.05,
+        "label": "磁带跳时",
+        "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      },
+      {
+        "t": 39.3,
+        "label": "走向出口",
+        "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      },
+      {
+        "t": 52.83,
+        "label": "最后守则与停录",
+        "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 6,
+      "from": 0.2,
+      "to": 0.65,
+      "label": "录像与告示"
+    },
+    {
+      "t0": 6,
+      "t1": 7.6,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "显出走廊"
+    },
+    {
+      "t0": 7.6,
+      "t1": 15.9,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "例行巡视"
+    },
+    {
+      "t0": 15.9,
+      "t1": 20.9,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "重复告示"
+    },
+    {
+      "t0": 20.9,
+      "t1": 31.9,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "遵守守则"
+    },
+    {
+      "t0": 31.9,
+      "t1": 36.05,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "对焦显影"
+    },
+    {
+      "t0": 36.05,
+      "t1": 39.3,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "磁带跳时"
+    },
+    {
+      "t0": 39.3,
+      "t1": 52.83,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "走向出口"
+    },
+    {
+      "t0": 52.83,
+      "t1": 59.666666666666664,
+      "from": 0.5,
+      "to": 0.15,
+      "label": "最后守则与停录"
+    }
+  ],
+  "energyNote": "段落取自DEMO.md Shots与原作时间表；0–1数值为画面运动、事件和声音密度的相对编辑标注。",
+  "observations": [
+    "对焦在32.85–33.35秒短暂锁定约33m外身影，第二次锁定时身影已消失。",
+    "36.05–36.7秒跟踪撕裂前后构图连贯，时钟从PM11:59变为AM2:59，电量从3格降为1格。",
+    "EXIT使用画面中唯一的饱和红色；门前静默时手持呼吸也冻结。"
+  ],
+  "composition": {
+    "color": "#d5bd66、#8c763c、#d9d3b8、#4d3d26、#ff2a1a、#000000",
+    "typography": "IBM Plex Sans 400/600/700、Plex Sans Condensed 600/700与Plex Mono 500/600；摄像机OSD为原作5×7位图字。",
+    "layout": "1920×1080横屏，保留原作构图、字幕、片头与片尾。",
+    "imagery": "原作Three.js 720×540后室、程序纹理与灯阵；VHS着色器升采样至1920×1080并保留4:3侧边黑条。",
+    "motion": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。",
+    "sound": "原片荧光灯、湿地毯脚步、摄像机电机与远处等候音乐；Kokoro af_bella广播和am_michael员工低声对白。",
+    "rhythm": "录像与告示；显出走廊；例行巡视；重复告示；遵守守则；对焦显影；磁带跳时；走向出口；最后守则与停录",
+    "coherence": "故事通过拍摄介质展开：身影只在一次正确对焦时出现，磁迹撕裂后，同一走廊中的时间已跳过三小时，画面边角的OSD成为事件证据。"
+  },
+  "layers": [
+    {
+      "name": "原作场景",
+      "role": "原作Three.js 720×540后室、程序纹理与灯阵；VHS着色器升采样至1920×1080并保留4:3侧边黑条。"
+    },
+    {
+      "name": "镜头与质感",
+      "role": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+    },
+    {
+      "name": "字幕、标记与声音",
+      "role": "原片荧光灯、湿地毯脚步、摄像机电机与远处等候音乐；Kokoro af_bella广播和am_michael员工低声对白。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#d5bd66",
+      "#8c763c",
+      "#d9d3b8",
+      "#4d3d26",
+      "#ff2a1a",
+      "#000000"
+    ],
+    "type": "IBM Plex Sans 400/600/700、Plex Sans Condensed 600/700与Plex Mono 500/600；摄像机OSD为原作5×7位图字。",
+    "motion": [
+      {
+        "name": "自动对焦",
+        "value": "film/story.js:FOCUS/APER/T；film/main.js:render 使用 FOCUS(tv)、APER(tv)，thing.visible由T.figOn区间控制。"
+      },
+      {
+        "name": "跳时与介质",
+        "value": "film/story.js:W、clock、battery；film/main.js:track/roll；film/vhs.js:tracking tear，OSD独立绘制。"
+      }
+    ]
+  },
+  "useCases": [
+    "新怪谈短片",
+    "悬疑预告",
+    "游戏氛围片"
+  ],
+  "avoid": [
+    "需要脱离来源时间线实时操控全部场景的应用"
+  ],
+  "constraints": [
+    "画面由上游render(t)直接绘制，按原作帧率定位。",
+    "修改字幕或场景文案后按source中的字体流程重建相同字重和字符子集。",
+    "声音使用原片混音，修改事件时同步更新声音制作文件。"
+  ],
+  "migration": [
+    {
+      "field": "film/story.js",
+      "how": "按原作数据与函数修改故事内容、画面和物件。"
+    },
+    {
+      "field": "film/main.js",
+      "how": "按原作数据与函数修改时间表、镜头和节拍。"
+    }
+  ],
+  "prompt": "制作《夜班入职指引 · 后室 / 新怪谈》这样的代码影片：一名新夜班员工用摄像机记录入职路线；重复的告示、自动对焦的失灵和磁带断裂逐步让守则失去可信度，时钟与电量留下跳时的证据。拍摄介质承担叙事：身影只在一次正确对焦时出现，磁迹撕裂后同一走廊已跳过三小时，边角OSD成为事件证据。原作Three.js 720×540后室、程序纹理与灯阵；VHS着色器升采样至1920×1080并保留4:3侧边黑条。IBM Plex Sans 400/600/700、Plex Sans Condensed 600/700与Plex Mono 500/600；摄像机OSD为原作5×7位图字。0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。原片荧光灯、湿地毯脚步、摄像机电机与远处等候音乐；Kokoro af_bella广播和am_michael员工低声对白。实现使用demos\\cases\\lemo-backrooms\\film\\story.js, demos\\cases\\lemo-backrooms\\film\\main.js, demos\\cases\\lemo-backrooms\\film\\vhs.js, demos\\cases\\lemo-backrooms\\film\\osd.js。",
+  "demo": "demos/cases/lemo-backrooms/index.html",
+  "patternIds": [
+    "autofocus-hunting-reveal",
+    "tracking-tear-cut",
+    "corner-hud"
+  ],
+  "fidelity": "demos/cases/lemo-backrooms/fidelity.md",
+  "renderer": "gpu",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/backrooms",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/backrooms/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS。"
+  },
+  "sources": [
+    {
+      "label": "固定风格与示范源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/backrooms"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/backrooms.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/backrooms/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）；固定版本与许可见upstream/license。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原片完整署名见[audio/CREDITS](audio/CREDITS)，逐项许可见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "家族与字重见tokens.type；fonts保存二进制与OFL原文，制作入口见[source/README.md](source/README.md)。"
+    }
+  ]
+}

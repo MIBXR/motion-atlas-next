@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "day-night-flip",
+  "pattern": {
+    "id": "day-night-flip",
+    "order": 4,
+    "title": "昼夜翻转：逐层插值",
+    "types": [
+      "transition",
+      "composition"
+    ],
+    "carriers": [
+      "video",
+      "console"
+    ],
+    "summary": "地图配色与 HUD 强调色一起在昼夜之间过渡，交代时间的流逝。",
+    "mechanism": "对地图与3D建筑的昼夜配色逐层插值，并叠加暖色光；HUD 在昼夜中点淡隐后切换配色。",
+    "trigger": "一天结束、进入夜晚时",
+    "effect": "不用字幕也能看出一天过去了。",
+    "timing": [
+      {
+        "name": "时长",
+        "value": "7s"
+      },
+      {
+        "name": "声音 voice",
+        "value": "whoosh、sub、reverse、chime"
+      }
+    ],
+    "useCases": [
+      "旅行影像跨天",
+      "指挥台日夜模式",
+      "陈列界面主题切换"
+    ],
+    "avoid": [
+      "频繁来回切换造成闪烁"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [
+        "corner-hud",
+        "route-draw-marker"
+      ],
+      "conflicts": []
+    },
+    "prompt": "地图配色与 HUD 强调色一起在昼夜之间过渡，交代时间的流逝。复用地图巡礼的 dayNight、valueAt、cameraAt、drawHud、clockAt、classify、setPaint 与对应 CSS。地图、3D 建筑、HUD 与案例暖色 wash；镜头固定为案例 34.5s，HUD 与昼夜值按 caseT 31.3→35.8、36.6→39.1 求值。片段：caseT 31.3→35.8；caseT 36.6→39.1；固定镜头 caseT 34.5，全部 HUD 按片段求值；时长 7s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定镜头的实时地图，声音由 mechanism/score.json 挂接。",
+    "demo": "demos/patterns/day-night-flip/index.html",
+    "kit": true,
+    "sources": [
+      {
+        "caseId": "map-pilgrimage"
+      },
+      {
+        "caseId": "lemo-lowpoly-island"
+      }
+    ],
+    "previewAt": 4,
+    "markers": [
+      {
+        "t": 0,
+        "label": "白天"
+      },
+      {
+        "t": 1.5,
+        "label": "入夜"
+      },
+      {
+        "t": 4.5,
+        "label": "天亮"
+      }
+    ],
+    "sound": {
+      "voices": [
+        "whoosh",
+        "sub",
+        "reverse",
+        "chime"
+      ],
+      "score": "demos/patterns/day-night-flip/mechanism/score.json",
+      "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+    },
+    "tokens": {
+      "palette": [
+        "#f1eee7",
+        "#16171a",
+        "#d9562c",
+        "#e23b3b"
+      ],
+      "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+      "css": {
+        "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+        "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+        "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+        "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+        "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+        "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+        "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+        "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+        "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+        "--paper": "#f1eee7",
+        "--ink": "#16171a",
+        "--ink-map": "#16171a",
+        "--muted": "rgba(22, 23, 26, .62)",
+        "--line": "rgba(22, 23, 26, .26)",
+        "--accent": "#d9562c",
+        "--accent-soft": "rgba(217, 86, 44, .22)",
+        "--surface": "rgba(250, 249, 245, .94)",
+        "--alert": "#e23b3b"
+      },
+      "motion": [
+        {
+          "name": "白天",
+          "value": "0s"
+        },
+        {
+          "name": "入夜",
+          "value": "1.5s"
+        },
+        {
+          "name": "天亮",
+          "value": "4.5s"
+        },
+        {
+          "name": "时长",
+          "value": "7s"
+        }
+      ]
+    },
+    "migration": [
+      {
+        "field": "../../cases/map-pilgrimage/film/script.js → renderLive、drawPattern、drawHud、paintLiveMap",
+        "how": "修改昼夜配色、镜头、时钟与HUD的实现。"
+      },
+      {
+        "field": "index.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+        "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+      },
+      {
+        "field": "../../cases/map-pilgrimage/film/config.js → tracks.night、tracks.camera、tracks.clock；palette、mapPalette、layout",
+        "how": "修改昼夜轨道、地图配色、HUD 与横竖布局；固定镜头位置见 ../../cases/map-pilgrimage/film/script.js → configureLiveCameras。"
+      },
+      {
+        "field": "mechanism/config.js → segments / markers",
+        "how": "设置本巧思片段映射与标记；地图来源时刻：31.3→35.8/36.6→39.1/镜头34.5，全部 HUD 按片段求值。"
+      },
+      {
+        "field": "mechanism/score.json",
+        "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+      }
+    ],
+    "renderer": "gpu",
+    "parameters": [
+      {
+        "name": "lemo-lowpoly-island",
+        "value": "film/story.js:SKY、film/main.js:skyAt连续ss插值天空/海水/太阳/环境光；world.js:448的窗灯自发光随night增强，26.25秒起每半拍点亮一窗。"
+      }
+    ],
+    "preview": "previews/patterns/day-night-flip.jpg",
+    "previewPortrait": "previews/patterns/day-night-flip-portrait.jpg"
+  },
+  "sourceCases": [
+    {
+      "caseId": "map-pilgrimage",
+      "bundle": "agent/cases/map-pilgrimage.json"
+    },
+    {
+      "caseId": "lemo-lowpoly-island",
+      "bundle": "agent/cases/lemo-lowpoly-island.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 昼夜翻转：逐层插值\n\n## 实现 Prompt\n\n地图配色与 HUD 强调色一起在昼夜之间过渡，交代时间的流逝。复用地图巡礼的 dayNight、valueAt、cameraAt、drawHud、clockAt、classify、setPaint 与对应 CSS。地图、3D 建筑、HUD 与案例暖色 wash；镜头固定为案例 34.5s，HUD 与昼夜值按 caseT 31.3→35.8、36.6→39.1 求值。片段：caseT 31.3→35.8；caseT 36.6→39.1；固定镜头 caseT 34.5，全部 HUD 按片段求值；时长 7s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定镜头的实时地图，声音由 mechanism/score.json 挂接。\n\n## 参数\n\n- **时长**：7s\n- **声音 voice**：whoosh、sub、reverse、chime\n\n## 动效 Token\n\n- **白天**：0s\n- **入夜**：1.5s\n- **天亮**：4.5s\n- **时长**：7s\n\n## 迁移\n\n- `../../cases/map-pilgrimage/film/script.js → renderLive、drawPattern、drawHud、paintLiveMap`：修改昼夜配色、镜头、时钟与HUD的实现。\n- `index.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern`：入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。\n- `../../cases/map-pilgrimage/film/config.js → tracks.night、tracks.camera、tracks.clock；palette、mapPalette、layout`：修改昼夜轨道、地图配色、HUD 与横竖布局；固定镜头位置见 ../../cases/map-pilgrimage/film/script.js → configureLiveCameras。\n- `mechanism/config.js → segments / markers`：设置本巧思片段映射与标记；地图来源时刻：31.3→35.8/36.6→39.1/镜头34.5，全部 HUD 按片段求值。\n- `mechanism/score.json`：调整声音事件，按巧思时间对齐，保留音色参数。\n\n[打开 Demo](../../demos/patterns/day-night-flip/index.html) · [在库中查看](../../patterns.html#pattern/day-night-flip)\n"
+  },
+  "entrypoint": "demos/patterns/day-night-flip/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-lowpoly-island/LICENSES.md",
+      "bytes": 836,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/CREDITS",
+      "bytes": 773,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/audio/film.m4a",
+      "bytes": 1749067,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fidelity.md",
+      "bytes": 4327,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/index.html",
+      "bytes": 605,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/main.js",
+      "bytes": 15223,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/post.js",
+      "bytes": 7067,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/sea.js",
+      "bytes": 5409,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/story.js",
+      "bytes": 5162,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/voices/dur.json",
+      "bytes": 71,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/film/world.js",
+      "bytes": 39012,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2",
+      "bytes": 15904,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/OFL-josefinsans.txt",
+      "bytes": 4449,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/OFL-quicksand.txt",
+      "bytes": 4445,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2",
+      "bytes": 12304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/fonts/fonts.css",
+      "bytes": 2271,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/index.html",
+      "bytes": 3101,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/CREDITS",
+      "bytes": 773,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/README.md",
+      "bytes": 2375,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/build.sh",
+      "bytes": 1318,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/events.json",
+      "bytes": 5887,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/lines.json",
+      "bytes": 488,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/mix.py",
+      "bytes": 8393,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/music/CREDITS_music.txt",
+      "bytes": 1321,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/music/check.py",
+      "bytes": 7878,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/music/score.json",
+      "bytes": 41586,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/music/score.py",
+      "bytes": 28230,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/subs.py",
+      "bytes": 935,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/source/voices/words.json",
+      "bytes": 869,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lowpoly-island/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/LICENSES.md",
+      "bytes": 1021,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/fidelity.md",
+      "bytes": 2550,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/config.js",
+      "bytes": 17491,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/paths.js",
+      "bytes": 8047,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/scenes.js",
+      "bytes": 35275,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/script.js",
+      "bytes": 156283,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/film/style.css",
+      "bytes": 40692,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/index.html",
+      "bytes": 7729,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/map-pilgrimage/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/day-night-flip/index.html",
+      "bytes": 7828,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/day-night-flip/mechanism/config.js",
+      "bytes": 813,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/day-night-flip/mechanism/score.json",
+      "bytes": 392,
+      "role": "asset"
+    },
+    {
+      "path": "demos/patterns/day-night-flip/mechanism/style.css",
+      "bytes": 41282,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/day-night-flip/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/map-pilgrimage.md",
+      "bytes": 6404,
+      "role": "doc"
+    },
+    {
+      "path": "entries/cases/lemo-lowpoly-island.json",
+      "bytes": 10104,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/map-pilgrimage.json",
+      "bytes": 20565,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/day-night-flip.json",
+      "bytes": 5849,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/day-night-flip-portrait.jpg",
+      "bytes": 187869,
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/day-night-flip.jpg",
+      "bytes": 166983,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "hand-tint-wash",
+  "order": 117,
+  "title": "版画手工上色",
+  "types": [
+    "texture",
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "在已经完成的黑色刻线下按色区错峰铺透明水彩，各区从落笔点以带噪声的湿边扩张；淡彩独立缓存，保留溢色、偏位、边缘积色、回花与纸齿，黑墨始终盖在颜色上。",
+  "mechanism": "在已经完成的黑色刻线下按色区错峰铺透明水彩，各区从落笔点以带噪声的湿边扩张；淡彩独立缓存，保留溢色、偏位、边缘积色、回花与纸齿，黑墨始终盖在颜色上。",
+  "trigger": "25–26.25秒静默结束，26.35秒第一色区落水。",
+  "effect": "原本单色的博物志图版各区染上颜色，上色成为信息讲完后的视觉落点。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "25–31.25秒；1倍速，总时长6.250000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "区域时间与参数",
+      "value": "film/film.js:94–104：c0=T.colour[0]+.1，每区间隔.42秒，翅dur=1.6、其余1.25；alpha=.5/.95/.72，spill=2.5或3.5。"
+    },
+    {
+      "name": "独立洗色层",
+      "value": "film/engine/wash.js:37–74缓存各区的密度、回花、积色和纸齿；76–91以R=far×[1−(1−p)^2.2]×1.08的噪声环裁切，multiply合成，湿边宽5。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-engraving/film/film.js",
+    "demos/cases/lemo-engraving/film/engine/wash.js",
+    "demos/cases/lemo-engraving/film/engine/plate.js"
+  ],
+  "locator": "区域时间与参数 / 独立洗色层",
+  "useCases": [
+    "原本单色的博物志图版各区染上颜色，上色成为信息讲完后的视觉落点。"
+  ],
+  "avoid": [
+    "同时安排遮挡书写或湿边的主动作"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-engraving的原作render(t)，重放“版画手工上色”。在已经完成的黑色刻线下按色区错峰铺透明水彩，各区从落笔点以带噪声的湿边扩张；淡彩独立缓存，保留溢色、偏位、边缘积色、回花与纸齿，黑墨始终盖在颜色上。参数与源码：film/film.js:94–104：c0=T.colour[0]+.1，每区间隔.42秒，翅dur=1.6、其余1.25；alpha=.5/.95/.72，spill=2.5或3.5。；film/engine/wash.js:37–74缓存各区的密度、回花、积色和纸齿；76–91以R=far×[1−(1−p)^2.2]×1.08的噪声环裁切，multiply合成，湿边宽5。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/hand-tint-wash/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-engraving"
+    }
+  ],
+  "previewAt": 4.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "版画手工上色"
+    }
+  ]
+}

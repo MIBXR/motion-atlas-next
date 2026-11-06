@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "spark-stroke-handletter",
+  "pattern": {
+    "id": "spark-stroke-handletter",
+    "order": 32,
+    "title": "火星逐笔写字",
+    "types": [
+      "type-motion",
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "重放火团迁移为花边徽章、黄色核心接续笔尖、火星逐笔写字与标题回弹落定。",
+    "mechanism": "火团在四张阶梯画格中重排成徽章，黄色核心缩小并到达第一笔起点；飞散火星沿中心线逐笔写出变宽中文笔画，完成后字面与徽章回弹落定。",
+    "trigger": "爆炸后的火团开始聚合，火星依次到达笔画起点时。",
+    "effect": "同一火团、核心和火星接续构成标题底形与笔画，中文标题完成后字面、徽章与副标题落定。",
+    "timing": [
+      {
+        "name": "徽章构成",
+        "value": "C0=[862,614]；BADGE={x:960,y:464,rx:520,ry:262}；N=22；sk=0.14*hs(k,7)。"
+      },
+      {
+        "name": "四张聚合",
+        "value": "morphP(t)=t<6.99?0:t<7.07?0.32:t<7.15?0.6:t<7.24?0.82:1。"
+      },
+      {
+        "name": "核心点笔",
+        "value": "e=[0,0.55,1][stp]；R=min(q.r*0.8,240)*[1,0.45,0.2][stp]。"
+      },
+      {
+        "name": "逐笔书写",
+        "value": "TITLE={cx:960,cy:440,S:352,gap:18}；prefix(full,E.out2(p)*0.999+0.001*p)；strokes=[7.25,7.375,7.5,7.625,7.75,7.875,8,8.125,8.25,8.375,8.5]。"
+      },
+      {
+        "name": "回弹落定",
+        "value": "settle=K(t1,[[8.5,0],[8.583,1.25,out2],[8.667,0.9],[8.75,1.0]])；标题缩放1+K(t1,[[8.5,0],[8.54,0.05,out2],[8.625,-0.02],[8.75,0.008],[8.875,0]])。"
+      },
+      {
+        "name": "重放时长",
+        "value": "原片158/24−0.2至9.075秒，巧思总时长2.6916666666666664秒。"
+      }
+    ],
+    "useCases": [
+      "粒子携带笔尖的逐笔标题",
+      "手绘火团接续标题底形"
+    ],
+    "avoid": [
+      "竖屏重排",
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放原片158/24−0.2至9.075秒，全长2.6916666666666664秒。保留22个火团圆形在0、0.32、0.6、0.82、1的阶梯进度下迁移到rx=520、ry=262的花边徽章；黄色核心以[0,0.55,1]进度和[1,0.45,0.2]尺寸接到第一笔。沿用S=352、gap=18的手绘字形，火星沿E.out2(p)控制的中心线前缀逐笔书写；笔画节点为7.25至8.5秒、间隔0.125秒。保留标题影块、徽章和字面的回弹落定、HAND MADE与中文标语入场。沿用原作字体、纹理和同区间成品音轨，保持1920×1080、24fps，声音默认关闭。",
+    "demo": "demos/patterns/spark-stroke-handletter/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-cel-boil"
+      }
+    ],
+    "previewAt": 2.45,
+    "markers": [
+      {
+        "t": 0.20000000000000018,
+        "label": "火团散开"
+      },
+      {
+        "t": 0.6166666666666671,
+        "label": "徽章聚合"
+      },
+      {
+        "t": 0.8666666666666671,
+        "label": "核心点笔"
+      },
+      {
+        "t": 0.8666666666666671,
+        "label": "逐笔书写"
+      },
+      {
+        "t": 2.116666666666667,
+        "label": "标题回弹"
+      },
+      {
+        "t": 2.450000000000001,
+        "label": "落版完成"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#1c1613",
+        "#e5402b",
+        "#ffc425",
+        "#f4e9d0",
+        "#fff6e2",
+        "#d9573f"
+      ],
+      "type": "LXGW Marker Gothic 400；Caveat 500、600、700；Long Cang 400；手绘中文与英文标题。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "preview": "previews/patterns/spark-stroke-handletter.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-cel-boil",
+      "bundle": "agent/cases/mg-cel-boil.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 火星逐笔写字\n\n## 实现 Prompt\n\n复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放原片158/24−0.2至9.075秒，全长2.6916666666666664秒。保留22个火团圆形在0、0.32、0.6、0.82、1的阶梯进度下迁移到rx=520、ry=262的花边徽章；黄色核心以[0,0.55,1]进度和[1,0.45,0.2]尺寸接到第一笔。沿用S=352、gap=18的手绘字形，火星沿E.out2(p)控制的中心线前缀逐笔书写；笔画节点为7.25至8.5秒、间隔0.125秒。保留标题影块、徽章和字面的回弹落定、HAND MADE与中文标语入场。沿用原作字体、纹理和同区间成品音轨，保持1920×1080、24fps，声音默认关闭。\n\n## 参数\n\n- **徽章构成**：C0=[862,614]；BADGE={x:960,y:464,rx:520,ry:262}；N=22；sk=0.14*hs(k,7)。\n- **四张聚合**：morphP(t)=t<6.99?0:t<7.07?0.32:t<7.15?0.6:t<7.24?0.82:1。\n- **核心点笔**：e=[0,0.55,1][stp]；R=min(q.r*0.8,240)*[1,0.45,0.2][stp]。\n- **逐笔书写**：TITLE={cx:960,cy:440,S:352,gap:18}；prefix(full,E.out2(p)*0.999+0.001*p)；strokes=[7.25,7.375,7.5,7.625,7.75,7.875,8,8.125,8.25,8.375,8.5]。\n- **回弹落定**：settle=K(t1,[[8.5,0],[8.583,1.25,out2],[8.667,0.9],[8.75,1.0]])；标题缩放1+K(t1,[[8.5,0],[8.54,0.05,out2],[8.625,-0.02],[8.75,0.008],[8.875,0]])。\n- **重放时长**：原片158/24−0.2至9.075秒，巧思总时长2.6916666666666664秒。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/spark-stroke-handletter/index.html) · [在库中查看](../../patterns.html#pattern/spark-stroke-handletter)\n"
+  },
+  "entrypoint": "demos/patterns/spark-stroke-handletter/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-cel-boil/LICENSES.md",
+      "bytes": 1181,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_01.png",
+      "bytes": 28357,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_02.png",
+      "bytes": 28707,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_03.png",
+      "bytes": 25600,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_04.png",
+      "bytes": 27879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_base.jpg",
+      "bytes": 483747,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_tooth.png",
+      "bytes": 1791819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/audio/film.m4a",
+      "bytes": 415190,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fidelity.md",
+      "bytes": 5403,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/cues.json",
+      "bytes": 2188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/engine.js",
+      "bytes": 13778,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/scene.js",
+      "bytes": 103043,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/setup.js",
+      "bytes": 764,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/style.css",
+      "bytes": 137,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat[wght].ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LongCang-Regular.ttf",
+      "bytes": 5162508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Longcang-OFL.txt",
+      "bytes": 4390,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/fonts.css",
+      "bytes": 509,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/index.html",
+      "bytes": 2718,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_01_3840x2160.png",
+      "bytes": 81508,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_02_3840x2160.png",
+      "bytes": 82662,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_03_3840x2160.png",
+      "bytes": 73739,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_04_3840x2160.png",
+      "bytes": 79891,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/audio.py",
+      "bytes": 24290,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/cues.json",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_dust.py",
+      "bytes": 707,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_paper.py",
+      "bytes": 2360,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/hitmax.py",
+      "bytes": 4168,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/spark-stroke-handletter/index.html",
+      "bytes": 1587,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/spark-stroke-handletter/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-cel-boil.json",
+      "bytes": 24679,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/spark-stroke-handletter.json",
+      "bytes": 4006,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/spark-stroke-handletter.jpg",
+      "bytes": 161447,
+      "role": "preview"
+    }
+  ]
+}

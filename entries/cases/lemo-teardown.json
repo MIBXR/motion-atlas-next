@@ -1,0 +1,284 @@
+{
+  "id": "lemo-teardown",
+  "order": 80,
+  "title": "二十一键 · 产品拆解",
+  "subtitle": "21 Keys, Opened",
+  "carriers": [
+    "video"
+  ],
+  "style": "evidence",
+  "purpose": "explainer",
+  "tech": [
+    "canvas2d",
+    "threejs"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "产品拆解",
+    "实证影像",
+    "代码影片"
+  ],
+  "summary": "开源分体键盘的一半在一个连续镜头中按真实层次升起。镜头进入板下查看主控、灯珠与热插拔，随后各层从底到顶依次合拢，尺寸画在实物上。",
+  "focus": "以固定版本 KiCad 与 STEP 为几何来源，将层间爆炸、微距穿行、零件引线和透视量测放在同一三维空间。",
+  "accent": "#ff6b3d",
+  "background": "#0d0e10",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 9.75,
+  "rhythm": {
+    "duration": 38.75,
+    "bpm": 96,
+    "beats": [
+      {
+        "t": 0,
+        "label": "键帽微距",
+        "note": "原作 Shots：0.000—2.500秒。"
+      },
+      {
+        "t": 2.5,
+        "label": "真实按键",
+        "note": "原作 Shots：2.500—4.400秒。"
+      },
+      {
+        "t": 4.4,
+        "label": "留白",
+        "note": "原作 Shots：4.400—5.000秒。"
+      },
+      {
+        "t": 5,
+        "label": "逐层升起",
+        "note": "原作 Shots：5.000—7.500秒。"
+      },
+      {
+        "t": 6.9,
+        "label": "六层引线",
+        "note": "原作 Shots：6.900—11.900秒。"
+      },
+      {
+        "t": 12.5,
+        "label": "进入缝隙",
+        "note": "原作 Shots：12.500—15.000秒。"
+      },
+      {
+        "t": 15,
+        "label": "主控",
+        "note": "原作 Shots：15.000—18.100秒。"
+      },
+      {
+        "t": 18.1,
+        "label": "灯珠",
+        "note": "原作 Shots：18.100—21.300秒。"
+      },
+      {
+        "t": 21.3,
+        "label": "穿过定位板",
+        "note": "原作 Shots：21.300—22.300秒。"
+      },
+      {
+        "t": 22.3,
+        "label": "热插拔",
+        "note": "原作 Shots：22.300—25.000秒。"
+      },
+      {
+        "t": 25,
+        "label": "合拢",
+        "note": "原作 Shots：25.000—27.600秒。"
+      },
+      {
+        "t": 27.5,
+        "label": "实物尺寸",
+        "note": "原作 Shots：27.500—33.700秒。"
+      },
+      {
+        "t": 33.75,
+        "label": "片尾",
+        "note": "原作 Shots：33.750—38.750秒。"
+      }
+    ]
+  },
+  "energy": [
+    0.3,
+    0.45,
+    0.55,
+    0.65,
+    0.8,
+    0.65,
+    0.5,
+    0.2
+  ],
+  "energyNote": "依据原作镜头密度、信息量和配乐段落作出的相对编辑标注。",
+  "observations": [
+    "three.js r170 物理材质；原作 pcb.json、crkbd 固定版本 STEP 三角网格和 Poly Haven 棚拍 HDRI。",
+    "键帽按距离错峰，六层沿组装轴升起；相机通过单调插值穿入板下，底层先合拢，尺寸线按端点投影生长。",
+    "原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。"
+  ],
+  "composition": {
+    "color": "石墨渐变背景、暖白标注、橙色键帽与尺寸线。",
+    "typography": "Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。",
+    "layout": "1920×1080横屏；构图、字幕与边距由原作render(t)直接绘制。",
+    "imagery": "three.js r170 物理材质；原作 pcb.json、crkbd 固定版本 STEP 三角网格和 Poly Haven 棚拍 HDRI。",
+    "motion": "键帽按距离错峰，六层沿组装轴升起；相机通过单调插值穿入板下，底层先合拢，尺寸线按端点投影生长。",
+    "sound": "原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。",
+    "rhythm": "96 BPM，38.75秒；镜头节点取原作Shots与时间表。",
+    "coherence": "以固定版本 KiCad 与 STEP 为几何来源，将层间爆炸、微距穿行、零件引线和透视量测放在同一三维空间。"
+  },
+  "layers": [
+    {
+      "name": "场景",
+      "role": "three.js r170 物理材质；原作 pcb.json、crkbd 固定版本 STEP 三角网格和 Poly Haven 棚拍 HDRI。"
+    },
+    {
+      "name": "信息层",
+      "role": "Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。"
+    },
+    {
+      "name": "声音",
+      "role": "原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#0d0e10",
+      "#f1efe9",
+      "#ff6b3d"
+    ],
+    "type": "Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。",
+    "motion": [
+      {
+        "name": "键帽微距",
+        "value": "0.000—2.500秒"
+      },
+      {
+        "name": "真实按键",
+        "value": "2.500—4.400秒"
+      },
+      {
+        "name": "留白",
+        "value": "4.400—5.000秒"
+      },
+      {
+        "name": "逐层升起",
+        "value": "5.000—7.500秒"
+      },
+      {
+        "name": "六层引线",
+        "value": "6.900—11.900秒"
+      },
+      {
+        "name": "进入缝隙",
+        "value": "12.500—15.000秒"
+      },
+      {
+        "name": "主控",
+        "value": "15.000—18.100秒"
+      },
+      {
+        "name": "灯珠",
+        "value": "18.100—21.300秒"
+      },
+      {
+        "name": "穿过定位板",
+        "value": "21.300—22.300秒"
+      },
+      {
+        "name": "热插拔",
+        "value": "22.300—25.000秒"
+      },
+      {
+        "name": "合拢",
+        "value": "25.000—27.600秒"
+      },
+      {
+        "name": "实物尺寸",
+        "value": "27.500—33.700秒"
+      },
+      {
+        "name": "片尾",
+        "value": "33.750—38.750秒"
+      }
+    ]
+  },
+  "useCases": [
+    "硬件结构讲解",
+    "产品拆解影片",
+    "真实尺寸与装配说明"
+  ],
+  "avoid": [],
+  "constraints": [
+    "几何与标注沿用 foostan/crkbd 固定提交，尺寸事实见 source/FACTS.md。",
+    "保留2倍渲染与原作景深、AO、灯光和后期参数。"
+  ],
+  "migration": [
+    {
+      "field": "film/src/main.js",
+      "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+    },
+    {
+      "field": "film/src/timeline.js",
+      "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+    },
+    {
+      "field": "film/src/overlay.js",
+      "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+    }
+  ],
+  "prompt": "以二十一键 · 产品拆解的原作源码实现完整时间线影片。开源分体键盘的一半在一次连续镜头中按真实层次升起，镜头进入板下查看主控、灯珠与热插拔，再按从底到顶的顺序合拢，在实物上画出尺寸。three.js r170 物理材质；原作 pcb.json、crkbd 固定版本 STEP 三角网格和 Poly Haven 棚拍 HDRI。键帽按距离错峰，六层沿组装轴升起；单调相机插值穿入板下，底层先合拢，尺寸线按端点投影生长。石墨渐变背景、暖白标注、橙色键帽与尺寸线。Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。画面直接执行film/中的原作render(t)，按24fps定位，声音默认关闭。",
+  "demo": "demos/cases/lemo-teardown/index.html",
+  "patternIds": [
+    "orbit-explode-3d",
+    "dimensions-drawn-on-object",
+    "explode-parts-leaders"
+  ],
+  "fidelity": "demos/cases/lemo-teardown/fidelity.md",
+  "sourceFiles": [
+    "demos/cases/lemo-teardown/film/src/main.js",
+    "demos/cases/lemo-teardown/film/src/timeline.js",
+    "demos/cases/lemo-teardown/film/src/overlay.js",
+    "demos/cases/lemo-teardown/film/data/pcb.json",
+    "demos/cases/lemo-teardown/film/data/case.bin"
+  ],
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/teardown",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/teardown/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档 MIT，原成片 CC BY 4.0、署名 LemoLab；第三方素材沿用原作 CREDITS 的许可。"
+  },
+  "sources": [
+    {
+      "label": "固定源码与制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/teardown"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/teardown.mp4"
+    },
+    {
+      "label": "原作署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/teardown/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者 Lemomo（lemomo-ai）。代码 MIT、成片 CC BY 4.0。来源固定于 bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00。"
+    },
+    {
+      "scope": "资源与声音",
+      "notes": "原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。原始资源和署名见 [audio/CREDITS](audio/CREDITS)，许可原文见 [LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。字体及SIL OFL 1.1原文在fonts/。"
+    }
+  ],
+  "renderer": "gpu"
+}

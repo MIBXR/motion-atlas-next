@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "clutter-snap-grid",
+  "pattern": {
+    "id": "clutter-snap-grid",
+    "order": 132,
+    "title": "杂物一拍归格",
+    "types": [
+      "composition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "数百个按音符生成的UI堆叠后被冻结；光标按下后，径向波触发它们飞行。同类UI沿同向弧线移动并化为统一方块，按类型和空间顺序填满隐藏网格。",
+    "mechanism": "数百个按音符生成的UI堆叠后被冻结；光标按下后，径向波触发它们飞行。同类UI沿同向弧线移动并化为统一方块，按类型和空间顺序填满隐藏网格。",
+    "trigger": "来源案例时间轴进入所列动作区间。",
+    "effect": "数百个按音符生成的UI堆叠后被冻结；光标按下后，径向波触发它们飞行。同类UI沿同向弧线移动并化为统一方块，按类型和空间顺序填满隐藏网格。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "15.700000–19.300000秒；1倍速，总时长3.600000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "触发与归格",
+        "value": "film/world.js:snap：264个元素，RING=2600；t0=16+.03+d/2600；dur=.26+.14×min(1,trip/1200)，行内按x排序。"
+      },
+      {
+        "name": "三股流",
+        "value": "film/film.js:drawWorldItems：弧控点偏移.2L×[1,−1,1]；back(...,1.3)切线过冲；9段加色拖尾，前4%–32%形变为方块。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-dark-keynote/film/world.js",
+      "demos/cases/lemo-dark-keynote/film/film.js",
+      "demos/cases/lemo-dark-keynote/film/timeline.js"
+    ],
+    "locator": "snap / drawWorldItems",
+    "useCases": [
+      "软件整理、收件箱清理与批量归档的发布片主拍。"
+    ],
+    "avoid": [
+      "在主动作发生时叠加争夺注意的另一主动作"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-dark-keynote的原作render(t)重放“杂物一拍归格”。数百个按音符生成的UI堆叠被冻结；光标按下后以径向波触发飞行，同类沿同向弧线化为统一方块，按类型和空间顺序填满隐藏网格。保留参数：film/world.js:snap：264个元素，RING=2600；t0=16+.03+d/2600；dur=.26+.14×min(1,trip/1200)，行内按x排序。；film/film.js:drawWorldItems：弧控点偏移.2L×[1,−1,1]；back(...,1.3)切线过冲；9段加色拖尾，前4%–32%形变为方块。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/clutter-snap-grid/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-dark-keynote"
+      }
+    ],
+    "previewAt": 1.7,
+    "markers": [
+      {
+        "t": 0,
+        "label": "杂物一拍归格"
+      }
+    ],
+    "preview": "previews/patterns/clutter-snap-grid.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-dark-keynote",
+      "bundle": "agent/cases/lemo-dark-keynote.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 杂物一拍归格\n\n## 实现 Prompt\n\n用来源案例lemo-dark-keynote的原作render(t)重放“杂物一拍归格”。数百个按音符生成的UI堆叠被冻结；光标按下后以径向波触发飞行，同类沿同向弧线化为统一方块，按类型和空间顺序填满隐藏网格。保留参数：film/world.js:snap：264个元素，RING=2600；t0=16+.03+d/2600；dur=.26+.14×min(1,trip/1200)，行内按x排序。；film/film.js:drawWorldItems：弧控点偏移.2L×[1,−1,1]；back(...,1.3)切线过冲；9段加色拖尾，前4%–32%形变为方块。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：15.700000–19.300000秒；1倍速，总时长3.600000秒。\n\n[打开 Demo](../../demos/patterns/clutter-snap-grid/index.html) · [在库中查看](../../patterns.html#pattern/clutter-snap-grid)\n"
+  },
+  "entrypoint": "demos/patterns/clutter-snap-grid/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-dark-keynote/LICENSES.md",
+      "bytes": 841,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/CREDITS",
+      "bytes": 922,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/film.m4a",
+      "bytes": 1343311,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fidelity.md",
+      "bytes": 4765,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/engine.js",
+      "bytes": 32318,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/film.js",
+      "bytes": 40052,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/index.html",
+      "bytes": 491,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/lines.json",
+      "bytes": 501,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/main.js",
+      "bytes": 782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/timeline.js",
+      "bytes": 3446,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/voices/dur.json",
+      "bytes": 85,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/world.js",
+      "bytes": 12839,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/InterTight-var.woff2",
+      "bytes": 234224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/JetBrainsMono-var.ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/OFL-inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/OFL-intertight.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/OFL-jetbrainsmono.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/fonts.css",
+      "bytes": 347,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/index.html",
+      "bytes": 2228,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/CREDITS",
+      "bytes": 922,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/README.md",
+      "bytes": 3930,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/build.sh",
+      "bytes": 1763,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/events.json",
+      "bytes": 44748,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/frames.js",
+      "bytes": 2313,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/mix.py",
+      "bytes": 12116,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/CREDITS_music.txt",
+      "bytes": 537,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/check.py",
+      "bytes": 4767,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/score.json",
+      "bytes": 12796,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/score.py",
+      "bytes": 17837,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/timeline.json",
+      "bytes": 17240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/cuecheck.py",
+      "bytes": 1923,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/dump_timeline.mjs",
+      "bytes": 646,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/export.mjs",
+      "bytes": 837,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/final_asr.py",
+      "bytes": 1848,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/voices/words.json",
+      "bytes": 511,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/clutter-snap-grid/index.html",
+      "bytes": 811,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/clutter-snap-grid/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-dark-keynote.json",
+      "bytes": 10158,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/clutter-snap-grid.json",
+      "bytes": 2860,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/clutter-snap-grid.jpg",
+      "bytes": 100243,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "scan-in-wireframe-to-solid",
+  "order": 163,
+  "title": "扫描成线框再实体化",
+  "types": [
+    "texture",
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "扫描前沿按高度显露青色三维线框；归拢后，面片按Fresnel与交错扫描线点亮为实体全息，边线保留，产品完成一圈转台旋转。",
+  "mechanism": "扫描前沿按高度显露青色三维线框；归拢后，面片按Fresnel与交错扫描线点亮为实体全息，边线保留，产品完成一圈转台旋转。",
+  "trigger": "原作时间轴进入所列动作区间。",
+  "effect": "扫描前沿按高度显露青色三维线框；归拢后，面片按Fresnel与交错扫描线点亮为实体全息，边线保留，产品完成一圈转台旋转。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "0.000—2.700秒；22.000—28.000秒，1倍速。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "扫描与点亮",
+      "value": "扫描−0.35—2.6秒，y=.2→1.16；24—24.35秒solid以三次ease-out到1；24—28秒spin=eio(u)×2π。",
+      "source": "demos/cases/lemo-hologram-hud/film/film.js:renderFrame"
+    },
+    {
+      "name": "实体面",
+      "value": "Fresnel=.3+.7×(1−facing)^1.6；2px明／2px38%交错线，双层低分辨率辉光。",
+      "source": "demos/cases/lemo-hologram-hud/film/engine/holo.js:Holo.draw"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-hologram-hud/film/film.js",
+    "demos/cases/lemo-hologram-hud/film/engine/holo.js"
+  ],
+  "locator": "film/film.js:renderFrame；film/engine/holo.js:Holo.draw",
+  "useCases": [
+    "扫描成线框再实体化"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "以来源案例lemo-hologram-hud的原作render(t)重放“扫描成线框再实体化”。扫描前沿按高度显露青色三维线框；归拢后面片按Fresnel与交错扫描线点亮为实体全息，边线保留，产品完成一圈转台。 参数：扫描−0.35—2.6秒，y=.2→1.16；24—24.35秒solid以三次ease-out到1；24—28秒spin=eio(u)×2π。；Fresnel=.3+.7×(1−facing)^1.6；2px明／2px38%交错线，双层低分辨率辉光。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+  "demo": "demos/patterns/scan-in-wireframe-to-solid/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-hologram-hud"
+    }
+  ],
+  "previewAt": 6.7,
+  "markers": [
+    {
+      "t": 0,
+      "label": "扫描成线框再实体化"
+    }
+  ]
+}

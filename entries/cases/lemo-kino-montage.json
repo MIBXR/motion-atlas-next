@@ -1,0 +1,309 @@
+{
+  "id": "lemo-kino-montage",
+  "order": 78,
+  "title": "410 天 · 构成主义蒙太奇",
+  "subtitle": "410 Days",
+  "carriers": [
+    "video"
+  ],
+  "style": "documentary",
+  "purpose": "news",
+  "tech": [
+    "canvas2d",
+    "footage"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "构成主义蒙太奇",
+    "剪辑与纪实",
+    "代码影片"
+  ],
+  "summary": "从1931年帝国大厦宣传册的“完成这项工作的人”出发，用工地实拍、刘易斯·海因照片和原始文档作答，呈现每天2500名工人的集体建造，再把剪下的人物叠成一座塔。",
+  "focus": "红色斜梁承载大字，档案影像在同一纸墨双色中按拍撞击；文档提问、实拍回答，工人剪影逐层成为建筑。",
+  "accent": "#D52B1E",
+  "background": "#141210",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 2.5,
+  "rhythm": {
+    "duration": 60,
+    "beats": [
+      {
+        "t": 0,
+        "label": "斜梁片名",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 5,
+        "label": "地图圈地",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 8.25,
+        "label": "圆圈开工地",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 8.75,
+        "label": "第一根钢",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 11.5,
+        "label": "九台吊车",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 14.5,
+        "label": "斜向条带",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 16,
+        "label": "定格44吨",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 18.5,
+        "label": "原文圈注",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 23.25,
+        "label": "八十小时",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 28,
+        "label": "谁完成工作",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 29.5,
+        "label": "工人加速剪辑",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 31.5,
+        "label": "人数回答",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 35.5,
+        "label": "图纸站起比较",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 43.25,
+        "label": "人物叠塔",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 48.25,
+        "label": "静默铆钉",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 48.75,
+        "label": "建成结果",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 56,
+        "label": "片尾",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 11.5,
+      "to": 0.45,
+      "label": "斜梁与开工",
+      "from": 0.7
+    },
+    {
+      "t0": 11.5,
+      "t1": 28,
+      "to": 0.85,
+      "label": "机器节奏",
+      "from": 0.6
+    },
+    {
+      "t0": 28,
+      "t1": 35.5,
+      "to": 0.65,
+      "label": "问题与人数",
+      "from": 0.2
+    },
+    {
+      "t0": 35.5,
+      "t1": 43.25,
+      "to": 0.8,
+      "label": "文档比较",
+      "from": 0.45
+    },
+    {
+      "t0": 43.25,
+      "t1": 48.25,
+      "to": 0.95,
+      "label": "叠塔",
+      "from": 0.65
+    },
+    {
+      "t0": 48.25,
+      "t1": 48.75,
+      "to": 0.02,
+      "label": "静默",
+      "from": 0.02
+    },
+    {
+      "t0": 48.75,
+      "t1": 56,
+      "to": 0.6,
+      "label": "结果主拍",
+      "from": 0.95
+    },
+    {
+      "t0": 56,
+      "t1": 60,
+      "to": 0.1,
+      "label": "片尾",
+      "from": 0.4
+    }
+  ],
+  "energyNote": "段落与时刻取上游DEMO.md镜头表及原作绘制函数；0–1为按配乐、原声和画面密度作的相对编辑标注。",
+  "observations": [
+    "所有影像经同一百分位拉伸和S曲线映射为墨黑与暖纸，红色仅用于梁、标记和关键数字。",
+    "3×3工地窗格每0.25秒亮一格，−18°三条带中的双画窗按0.5秒节拍换镜。",
+    "宣传册中的高度轮廓从纸页转正站起，比较停留后帝国大厦轮廓变红。",
+    "工人剪影与影像楼层交替入场，计数在86层的历史锚点暂停后再升到102。"
+  ],
+  "composition": {
+    "color": "#D52B1E、#141210、#EDE4D0",
+    "typography": "Noto Sans SC 可变字重子集、Oswald 500–700、Space Mono Bold；SIL OFL 1.1。",
+    "layout": "1920×1080横屏；沿用原作各镜的画面分区与文字位置。",
+    "imagery": "American Bridge Company《Empires of Steel》、Lewis Hine照片及1931年宣传册；上游prep.py生成印刷双色、文档裁片和u2net人物剪影。",
+    "motion": "−18°轴线、沿轴砸入、72°红带擦除、文档圆圈开光圈、照片楼层逐拍向上叠。",
+    "sound": "Release原混音：120 BPM原作采样配乐、Kokoro am_michael旁白、铆钉机实录与工地环境声。",
+    "rhythm": "文件提出问题，机器节奏加速，停乐只留铆钉声，再用叠影回答人数；比较后建塔，半小节静默接最重主拍。",
+    "coherence": "红色斜梁承载大字，档案影像在同一纸墨双色中按拍撞击；文档提问、实拍回答，工人剪影逐层成为建筑。"
+  },
+  "layers": [
+    {
+      "name": "暖纸与纤维",
+      "role": "固定种子纤维以multiply统一画面。"
+    },
+    {
+      "name": "影像窗与文档",
+      "role": "裁片、斜窗、双色影像和被圈注的原扫描件。"
+    },
+    {
+      "name": "红梁与大字",
+      "role": "沿构成轴承载日期、计数与问题。"
+    },
+    {
+      "name": "人物与楼层",
+      "role": "剪影和影像条带逐层构筑塔体。"
+    },
+    {
+      "name": "字幕与来源签",
+      "role": "双语字幕和原始资料署名。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#D52B1E",
+      "#141210",
+      "#EDE4D0"
+    ],
+    "type": "Noto Sans SC 可变字重子集、Oswald 500–700、Space Mono Bold；SIL OFL 1.1。",
+    "motion": [
+      {
+        "name": "斜线条带",
+        "value": "film/index.html:S3；TH=−18°，3条290px高的条带、22px间隔、每条2个1160px窗；BEAT=.5。"
+      },
+      {
+        "name": "人物叠塔",
+        "value": "film/index.html:FLOORS / S9；43.25–48.25秒逐层组装，86层锚点停留后升到102。"
+      }
+    ]
+  },
+  "useCases": [
+    "工业历史影片",
+    "建设里程碑",
+    "集体劳动叙事"
+  ],
+  "avoid": [
+    "以单个人物的慢镜特写为主角的影片",
+    "中性幻灯片式的档案展示"
+  ],
+  "constraints": [
+    "影像、字体和数据替换后同步调整原作取帧与文字时间表。",
+    "声音与画面沿用同一来源时间，音轨默认关闭。"
+  ],
+  "migration": [
+    {
+      "field": "film/index.html → T / VO / SHOTS",
+      "how": "修改场次、字幕与旁白起点。"
+    },
+    {
+      "field": "source/tools/prep.py → CLIPS / CUTS",
+      "how": "更换档案片段、双色处理及人物裁片。"
+    },
+    {
+      "field": "film/index.html → TH / FLOORS / S9",
+      "how": "修改斜线角度与人物叠塔顺序。"
+    }
+  ],
+  "prompt": "制作一支构成主义蒙太奇影片。红色斜梁承载大字，档案影像在同一纸墨双色中按拍撞击；文档提问、实拍回答，工人剪影逐层成为建筑。−18°轴线、沿轴砸入、72°红带擦除、文档圆圈开光圈、照片楼层逐拍向上叠。沿用以下制作方法：American Bridge Company《Empires of Steel》、Lewis Hine照片及1931年宣传册；上游prep.py生成印刷双色、文档裁片和u2net人物剪影。声音采用Release原混音：120 BPM原作采样配乐、Kokoro am_michael旁白、铆钉机实录与工地环境声。可编辑入口：film/index.html → T / VO / SHOTS；source/tools/prep.py → CLIPS / CUTS；film/index.html → TH / FLOORS / S9。",
+  "demo": "demos/cases/lemo-kino-montage/index.html",
+  "patternIds": [
+    "constructivist-diagonal-montage"
+  ],
+  "fidelity": "demos/cases/lemo-kino-montage/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/kino-montage",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/kino-montage/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原作影片及静帧CC BY 4.0，署名LemoLab；第三方素材和旁白按CREDITS各自许可。"
+  },
+  "sources": [
+    {
+      "label": "固定版本风格与制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/kino-montage"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/kino-montage.mp4"
+    },
+    {
+      "label": "原始素材与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/kino-montage/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）。固定源码接入MotionKit，原作画面按时间绘制；音轨从Release流复制。"
+    },
+    {
+      "scope": "影像与声音",
+      "notes": "原始作者、素材链接和许可见[LICENSES.md](LICENSES.md)及[audio/CREDITS](audio/CREDITS)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "字体、字重与子集见tokens.type；OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+    }
+  ]
+}

@@ -1,0 +1,2866 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "freeze-and-draw",
+  "pattern": {
+    "id": "freeze-and-draw",
+    "order": 160,
+    "title": "定格画线",
+    "types": [
+      "hud",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "先播放真实比赛，到指定源帧冻结并短闪、急推和压暗；脚底圈、球路或跑位线、空间区域和发现标签按进度画入，图层与画面共用变换，随后从同一帧恢复播放。",
+    "mechanism": "先播放真实比赛，到指定源帧冻结并短闪、急推和压暗；脚底圈、球路或跑位线、空间区域和发现标签按进度画入，图层与画面共用变换，随后从同一帧恢复播放。",
+    "trigger": "传中F106、解围F001、接球F035与击球F056等关键源帧。",
+    "effect": "把运动过程拆成可指认的一次发现，画完后继续观察动作结果。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "5.2–10.6秒；22.4–33.2秒；1倍速，总时长16.2秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "播放与冻结",
+        "value": "film/timeline.json:g1live 5.2–6.8，g1fz 6.8–9，g1go 9–10.6；源片b的106帧前后接续。"
+      },
+      {
+        "name": "图层顺序",
+        "value": "film/index.html:overlayG1 / overlayAnalysis；环→路径或空间→标签错开.3–.6秒，追踪坐标由TRK插值。"
+      },
+      {
+        "name": "定格入场",
+        "value": "film/index.html:render；.1秒闪白、1.035倍急推在.35秒回定；分析叠层与画面使用同一punch变换。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-telestrator/film/index.html"
+    ],
+    "locator": "render / overlayG1 / overlayAnalysis / TRK",
+    "useCases": [
+      "比赛战术分析",
+      "教练复盘",
+      "多个机位的动作讲解"
+    ],
+    "avoid": [
+      "同一时刻叠加争夺主动作的多组信息"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-telestrator的原作render(t)重放“定格画线”。先播放真实比赛，到指定源帧冻结并短闪、急推和压暗；脚底圈、球路或跑位线、空间区域和发现标签按进度画入，图层与画面共用变换，随后从同一帧恢复播放。保留参数：film/timeline.json:g1live 5.2–6.8，g1fz 6.8–9，g1go 9–10.6；源片b的106帧前后接续。；film/index.html:overlayG1 / overlayAnalysis；环→路径或空间→标签错开.3–.6秒，追踪坐标由TRK插值。；film/index.html:render；.1秒闪白、1.035倍急推在.35秒回定；分析叠层与画面使用同一punch变换。。重放区间由入口segments配置，来源素材与音轨直接复用。",
+    "demo": "demos/patterns/freeze-and-draw/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-telestrator"
+      }
+    ],
+    "previewAt": 3,
+    "markers": [
+      {
+        "t": 0,
+        "label": "定格画线"
+      }
+    ],
+    "preview": "previews/patterns/freeze-and-draw.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-telestrator",
+      "bundle": "agent/cases/lemo-telestrator.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 定格画线\n\n## 实现 Prompt\n\n用来源案例lemo-telestrator的原作render(t)重放“定格画线”。先播放真实比赛，到指定源帧冻结并短闪、急推和压暗；脚底圈、球路或跑位线、空间区域和发现标签按进度画入，图层与画面共用变换，随后从同一帧恢复播放。保留参数：film/timeline.json:g1live 5.2–6.8，g1fz 6.8–9，g1go 9–10.6；源片b的106帧前后接续。；film/index.html:overlayG1 / overlayAnalysis；环→路径或空间→标签错开.3–.6秒，追踪坐标由TRK插值。；film/index.html:render；.1秒闪白、1.035倍急推在.35秒回定；分析叠层与画面使用同一punch变换。。重放区间由入口segments配置，来源素材与音轨直接复用。\n\n## 参数\n\n- **原片重放区间**：5.2–10.6秒；22.4–33.2秒；1倍速，总时长16.2秒。\n\n[打开 Demo](../../demos/patterns/freeze-and-draw/index.html) · [在库中查看](../../patterns.html#pattern/freeze-and-draw)\n"
+  },
+  "entrypoint": "demos/patterns/freeze-and-draw/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-telestrator/LICENSES.md",
+      "bytes": 2259,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/001.jpg",
+      "bytes": 217274,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/002.jpg",
+      "bytes": 216810,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/003.jpg",
+      "bytes": 210819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/004.jpg",
+      "bytes": 209446,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/005.jpg",
+      "bytes": 212566,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/006.jpg",
+      "bytes": 209526,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/007.jpg",
+      "bytes": 209375,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/008.jpg",
+      "bytes": 212760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/009.jpg",
+      "bytes": 207670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/010.jpg",
+      "bytes": 211250,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/011.jpg",
+      "bytes": 208493,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/012.jpg",
+      "bytes": 213165,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/013.jpg",
+      "bytes": 211592,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/014.jpg",
+      "bytes": 211287,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/015.jpg",
+      "bytes": 213887,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/016.jpg",
+      "bytes": 210483,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/017.jpg",
+      "bytes": 214780,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/018.jpg",
+      "bytes": 213214,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/019.jpg",
+      "bytes": 211703,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/020.jpg",
+      "bytes": 215211,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/021.jpg",
+      "bytes": 210132,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/022.jpg",
+      "bytes": 209042,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/023.jpg",
+      "bytes": 211939,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/024.jpg",
+      "bytes": 208743,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/025.jpg",
+      "bytes": 213493,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/026.jpg",
+      "bytes": 211192,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/027.jpg",
+      "bytes": 210673,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/028.jpg",
+      "bytes": 212128,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/029.jpg",
+      "bytes": 210879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/030.jpg",
+      "bytes": 210996,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/031.jpg",
+      "bytes": 213556,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/032.jpg",
+      "bytes": 212824,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/033.jpg",
+      "bytes": 214803,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/034.jpg",
+      "bytes": 217814,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/035.jpg",
+      "bytes": 218366,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/036.jpg",
+      "bytes": 219550,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/037.jpg",
+      "bytes": 222188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/038.jpg",
+      "bytes": 220288,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/039.jpg",
+      "bytes": 220188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/040.jpg",
+      "bytes": 221780,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/041.jpg",
+      "bytes": 223405,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/042.jpg",
+      "bytes": 224816,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/043.jpg",
+      "bytes": 227760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/044.jpg",
+      "bytes": 227417,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/045.jpg",
+      "bytes": 228429,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/046.jpg",
+      "bytes": 230935,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/047.jpg",
+      "bytes": 230636,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/048.jpg",
+      "bytes": 234266,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/049.jpg",
+      "bytes": 230704,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/050.jpg",
+      "bytes": 234149,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/051.jpg",
+      "bytes": 233866,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/052.jpg",
+      "bytes": 236692,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/053.jpg",
+      "bytes": 243268,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/054.jpg",
+      "bytes": 239751,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/055.jpg",
+      "bytes": 239442,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/056.jpg",
+      "bytes": 242510,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/057.jpg",
+      "bytes": 240205,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/058.jpg",
+      "bytes": 242756,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/059.jpg",
+      "bytes": 240550,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/060.jpg",
+      "bytes": 242670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/061.jpg",
+      "bytes": 239738,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/062.jpg",
+      "bytes": 242341,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/063.jpg",
+      "bytes": 238120,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/064.jpg",
+      "bytes": 241099,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/065.jpg",
+      "bytes": 236106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/066.jpg",
+      "bytes": 237114,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/067.jpg",
+      "bytes": 239845,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/068.jpg",
+      "bytes": 237402,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/069.jpg",
+      "bytes": 238239,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/070.jpg",
+      "bytes": 236050,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/071.jpg",
+      "bytes": 194859,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/072.jpg",
+      "bytes": 192467,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/073.jpg",
+      "bytes": 192648,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/074.jpg",
+      "bytes": 188275,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/075.jpg",
+      "bytes": 191884,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/076.jpg",
+      "bytes": 189461,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/077.jpg",
+      "bytes": 187457,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/078.jpg",
+      "bytes": 191895,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/079.jpg",
+      "bytes": 188322,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/080.jpg",
+      "bytes": 192534,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/081.jpg",
+      "bytes": 190093,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/082.jpg",
+      "bytes": 193358,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/083.jpg",
+      "bytes": 196643,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/084.jpg",
+      "bytes": 200853,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/085.jpg",
+      "bytes": 204433,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/086.jpg",
+      "bytes": 206380,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/087.jpg",
+      "bytes": 211723,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/088.jpg",
+      "bytes": 219876,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/089.jpg",
+      "bytes": 216772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/090.jpg",
+      "bytes": 219148,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/091.jpg",
+      "bytes": 218066,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/092.jpg",
+      "bytes": 221720,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/093.jpg",
+      "bytes": 224453,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/094.jpg",
+      "bytes": 230195,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/095.jpg",
+      "bytes": 232393,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/096.jpg",
+      "bytes": 237448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/097.jpg",
+      "bytes": 235028,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/098.jpg",
+      "bytes": 239413,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/099.jpg",
+      "bytes": 246547,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/100.jpg",
+      "bytes": 241840,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/101.jpg",
+      "bytes": 237334,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/102.jpg",
+      "bytes": 237739,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/103.jpg",
+      "bytes": 234100,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/104.jpg",
+      "bytes": 239436,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/105.jpg",
+      "bytes": 235463,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/106.jpg",
+      "bytes": 239689,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/107.jpg",
+      "bytes": 236245,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/108.jpg",
+      "bytes": 240371,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/109.jpg",
+      "bytes": 237146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/110.jpg",
+      "bytes": 241726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/111.jpg",
+      "bytes": 238520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/112.jpg",
+      "bytes": 242479,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/113.jpg",
+      "bytes": 239215,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/114.jpg",
+      "bytes": 242876,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/115.jpg",
+      "bytes": 239368,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/116.jpg",
+      "bytes": 243036,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/125.jpg",
+      "bytes": 103670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/126.jpg",
+      "bytes": 99326,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/127.jpg",
+      "bytes": 103847,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/128.jpg",
+      "bytes": 103540,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/129.jpg",
+      "bytes": 103767,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/130.jpg",
+      "bytes": 100794,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/131.jpg",
+      "bytes": 107368,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/132.jpg",
+      "bytes": 105222,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/133.jpg",
+      "bytes": 112151,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/134.jpg",
+      "bytes": 110681,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/135.jpg",
+      "bytes": 113258,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/136.jpg",
+      "bytes": 111710,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/137.jpg",
+      "bytes": 114637,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/138.jpg",
+      "bytes": 114837,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/139.jpg",
+      "bytes": 119651,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/140.jpg",
+      "bytes": 112155,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/141.jpg",
+      "bytes": 101660,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/142.jpg",
+      "bytes": 100916,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/143.jpg",
+      "bytes": 106588,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/144.jpg",
+      "bytes": 107821,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/145.jpg",
+      "bytes": 112208,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/146.jpg",
+      "bytes": 106419,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/147.jpg",
+      "bytes": 98632,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/148.jpg",
+      "bytes": 91191,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/149.jpg",
+      "bytes": 93380,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/150.jpg",
+      "bytes": 90255,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/151.jpg",
+      "bytes": 96932,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/152.jpg",
+      "bytes": 95282,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/153.jpg",
+      "bytes": 97220,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/154.jpg",
+      "bytes": 97605,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/155.jpg",
+      "bytes": 101483,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/156.jpg",
+      "bytes": 102811,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/157.jpg",
+      "bytes": 112789,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/158.jpg",
+      "bytes": 112970,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/159.jpg",
+      "bytes": 118418,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/160.jpg",
+      "bytes": 111250,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/161.jpg",
+      "bytes": 116161,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/162.jpg",
+      "bytes": 113225,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/163.jpg",
+      "bytes": 113149,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/164.jpg",
+      "bytes": 111843,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/165.jpg",
+      "bytes": 116188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/166.jpg",
+      "bytes": 121954,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/167.jpg",
+      "bytes": 127471,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/168.jpg",
+      "bytes": 124424,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/169.jpg",
+      "bytes": 131158,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/170.jpg",
+      "bytes": 133019,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/171.jpg",
+      "bytes": 138909,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/172.jpg",
+      "bytes": 134033,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/173.jpg",
+      "bytes": 137597,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/174.jpg",
+      "bytes": 143972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/175.jpg",
+      "bytes": 149647,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/176.jpg",
+      "bytes": 148245,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/177.jpg",
+      "bytes": 154984,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/178.jpg",
+      "bytes": 150005,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/179.jpg",
+      "bytes": 152882,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/180.jpg",
+      "bytes": 153665,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/181.jpg",
+      "bytes": 153702,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/182.jpg",
+      "bytes": 160046,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/183.jpg",
+      "bytes": 160928,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/184.jpg",
+      "bytes": 158989,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/185.jpg",
+      "bytes": 160344,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/186.jpg",
+      "bytes": 156894,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/187.jpg",
+      "bytes": 153337,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/188.jpg",
+      "bytes": 150088,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/189.jpg",
+      "bytes": 159267,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/190.jpg",
+      "bytes": 153603,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/191.jpg",
+      "bytes": 166200,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/192.jpg",
+      "bytes": 176318,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/193.jpg",
+      "bytes": 177941,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/194.jpg",
+      "bytes": 174976,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/195.jpg",
+      "bytes": 166267,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/196.jpg",
+      "bytes": 159440,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/197.jpg",
+      "bytes": 159391,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/198.jpg",
+      "bytes": 155334,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/199.jpg",
+      "bytes": 147267,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/200.jpg",
+      "bytes": 134240,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/201.jpg",
+      "bytes": 131716,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/202.jpg",
+      "bytes": 127686,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/203.jpg",
+      "bytes": 132787,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/204.jpg",
+      "bytes": 135784,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/205.jpg",
+      "bytes": 144066,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/206.jpg",
+      "bytes": 141409,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/207.jpg",
+      "bytes": 142624,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/208.jpg",
+      "bytes": 135892,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/209.jpg",
+      "bytes": 136200,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/210.jpg",
+      "bytes": 131717,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/211.jpg",
+      "bytes": 126641,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/212.jpg",
+      "bytes": 124928,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/213.jpg",
+      "bytes": 122820,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/214.jpg",
+      "bytes": 123360,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/215.jpg",
+      "bytes": 117823,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/216.jpg",
+      "bytes": 103229,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/217.jpg",
+      "bytes": 108507,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/218.jpg",
+      "bytes": 114095,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/219.jpg",
+      "bytes": 124434,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/220.jpg",
+      "bytes": 116669,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/221.jpg",
+      "bytes": 112542,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/222.jpg",
+      "bytes": 103244,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/223.jpg",
+      "bytes": 96847,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/224.jpg",
+      "bytes": 94426,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/262.jpg",
+      "bytes": 183077,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/263.jpg",
+      "bytes": 181473,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/264.jpg",
+      "bytes": 180490,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/265.jpg",
+      "bytes": 175129,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/266.jpg",
+      "bytes": 163874,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/267.jpg",
+      "bytes": 153551,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/268.jpg",
+      "bytes": 153110,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/269.jpg",
+      "bytes": 151973,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/270.jpg",
+      "bytes": 155235,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/271.jpg",
+      "bytes": 161960,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/272.jpg",
+      "bytes": 166107,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/273.jpg",
+      "bytes": 162096,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/274.jpg",
+      "bytes": 164956,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/275.jpg",
+      "bytes": 170775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/276.jpg",
+      "bytes": 170347,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/277.jpg",
+      "bytes": 174325,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/278.jpg",
+      "bytes": 173844,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/279.jpg",
+      "bytes": 178050,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/280.jpg",
+      "bytes": 170991,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/281.jpg",
+      "bytes": 168975,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/282.jpg",
+      "bytes": 174171,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/283.jpg",
+      "bytes": 169538,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/284.jpg",
+      "bytes": 171016,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/285.jpg",
+      "bytes": 171055,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/286.jpg",
+      "bytes": 177398,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/287.jpg",
+      "bytes": 175218,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/288.jpg",
+      "bytes": 173054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/289.jpg",
+      "bytes": 181521,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/290.jpg",
+      "bytes": 186734,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/291.jpg",
+      "bytes": 188760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/292.jpg",
+      "bytes": 192379,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/293.jpg",
+      "bytes": 202731,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/294.jpg",
+      "bytes": 197992,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/295.jpg",
+      "bytes": 190768,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/296.jpg",
+      "bytes": 195164,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/297.jpg",
+      "bytes": 188936,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/298.jpg",
+      "bytes": 194612,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/299.jpg",
+      "bytes": 195609,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/300.jpg",
+      "bytes": 197641,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/301.jpg",
+      "bytes": 198097,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/302.jpg",
+      "bytes": 197344,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/303.jpg",
+      "bytes": 198279,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/304.jpg",
+      "bytes": 198741,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/305.jpg",
+      "bytes": 198412,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/306.jpg",
+      "bytes": 196335,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/307.jpg",
+      "bytes": 197199,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/308.jpg",
+      "bytes": 191578,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/309.jpg",
+      "bytes": 177759,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/310.jpg",
+      "bytes": 176647,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/311.jpg",
+      "bytes": 174920,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/312.jpg",
+      "bytes": 167611,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/313.jpg",
+      "bytes": 167877,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/314.jpg",
+      "bytes": 164758,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/315.jpg",
+      "bytes": 159780,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/316.jpg",
+      "bytes": 156234,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/317.jpg",
+      "bytes": 161001,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/318.jpg",
+      "bytes": 157010,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/319.jpg",
+      "bytes": 155440,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/320.jpg",
+      "bytes": 155337,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/321.jpg",
+      "bytes": 157424,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/322.jpg",
+      "bytes": 151699,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/323.jpg",
+      "bytes": 149812,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/324.jpg",
+      "bytes": 154130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/325.jpg",
+      "bytes": 150691,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/326.jpg",
+      "bytes": 155281,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/327.jpg",
+      "bytes": 155081,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/328.jpg",
+      "bytes": 153737,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/329.jpg",
+      "bytes": 155623,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/330.jpg",
+      "bytes": 162804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/331.jpg",
+      "bytes": 166581,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/332.jpg",
+      "bytes": 189076,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/333.jpg",
+      "bytes": 196779,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/334.jpg",
+      "bytes": 195000,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/335.jpg",
+      "bytes": 205595,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/a/336.jpg",
+      "bytes": 210098,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/066.jpg",
+      "bytes": 208732,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/067.jpg",
+      "bytes": 201745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/068.jpg",
+      "bytes": 208006,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/069.jpg",
+      "bytes": 201401,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/070.jpg",
+      "bytes": 208913,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/071.jpg",
+      "bytes": 201670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/072.jpg",
+      "bytes": 204205,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/073.jpg",
+      "bytes": 209737,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/074.jpg",
+      "bytes": 206949,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/075.jpg",
+      "bytes": 212439,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/076.jpg",
+      "bytes": 215054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/077.jpg",
+      "bytes": 214170,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/078.jpg",
+      "bytes": 217760,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/079.jpg",
+      "bytes": 216474,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/080.jpg",
+      "bytes": 219003,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/081.jpg",
+      "bytes": 223716,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/082.jpg",
+      "bytes": 219989,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/083.jpg",
+      "bytes": 220416,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/084.jpg",
+      "bytes": 223269,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/085.jpg",
+      "bytes": 216161,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/086.jpg",
+      "bytes": 220680,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/087.jpg",
+      "bytes": 212256,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/088.jpg",
+      "bytes": 213153,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/089.jpg",
+      "bytes": 211594,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/090.jpg",
+      "bytes": 216530,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/091.jpg",
+      "bytes": 216396,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/092.jpg",
+      "bytes": 219015,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/093.jpg",
+      "bytes": 216389,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/094.jpg",
+      "bytes": 223503,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/095.jpg",
+      "bytes": 218705,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/096.jpg",
+      "bytes": 227763,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/097.jpg",
+      "bytes": 233065,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/098.jpg",
+      "bytes": 246275,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/099.jpg",
+      "bytes": 243077,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/100.jpg",
+      "bytes": 265975,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/101.jpg",
+      "bytes": 259468,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/102.jpg",
+      "bytes": 259016,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/103.jpg",
+      "bytes": 264152,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/104.jpg",
+      "bytes": 260516,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/105.jpg",
+      "bytes": 263933,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/106.jpg",
+      "bytes": 271331,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/107.jpg",
+      "bytes": 265896,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/108.jpg",
+      "bytes": 272156,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/109.jpg",
+      "bytes": 266544,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/110.jpg",
+      "bytes": 266626,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/111.jpg",
+      "bytes": 270306,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/112.jpg",
+      "bytes": 264208,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/113.jpg",
+      "bytes": 263485,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/114.jpg",
+      "bytes": 266666,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/115.jpg",
+      "bytes": 258632,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/116.jpg",
+      "bytes": 259964,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/117.jpg",
+      "bytes": 263910,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/118.jpg",
+      "bytes": 261882,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/119.jpg",
+      "bytes": 261627,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/120.jpg",
+      "bytes": 265549,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/121.jpg",
+      "bytes": 260745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/122.jpg",
+      "bytes": 261832,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/123.jpg",
+      "bytes": 265134,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/124.jpg",
+      "bytes": 259395,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/125.jpg",
+      "bytes": 262079,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/126.jpg",
+      "bytes": 266019,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/127.jpg",
+      "bytes": 259726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/128.jpg",
+      "bytes": 261211,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/129.jpg",
+      "bytes": 263974,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/130.jpg",
+      "bytes": 256691,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/131.jpg",
+      "bytes": 261199,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/132.jpg",
+      "bytes": 256691,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/133.jpg",
+      "bytes": 257696,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/134.jpg",
+      "bytes": 261093,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/135.jpg",
+      "bytes": 256469,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/136.jpg",
+      "bytes": 257745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/137.jpg",
+      "bytes": 261043,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/138.jpg",
+      "bytes": 258274,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/139.jpg",
+      "bytes": 261388,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/140.jpg",
+      "bytes": 255340,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/141.jpg",
+      "bytes": 256646,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/142.jpg",
+      "bytes": 264280,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/143.jpg",
+      "bytes": 262133,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/144.jpg",
+      "bytes": 264221,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/145.jpg",
+      "bytes": 261281,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/b/146.jpg",
+      "bytes": 264253,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/010.jpg",
+      "bytes": 247762,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/011.jpg",
+      "bytes": 241685,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/012.jpg",
+      "bytes": 245382,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/013.jpg",
+      "bytes": 240273,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/014.jpg",
+      "bytes": 246505,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/015.jpg",
+      "bytes": 239838,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/016.jpg",
+      "bytes": 241431,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/017.jpg",
+      "bytes": 245785,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/018.jpg",
+      "bytes": 243392,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/019.jpg",
+      "bytes": 242143,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/020.jpg",
+      "bytes": 249435,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/021.jpg",
+      "bytes": 245396,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/022.jpg",
+      "bytes": 250581,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/023.jpg",
+      "bytes": 244302,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/024.jpg",
+      "bytes": 247041,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/025.jpg",
+      "bytes": 257804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/026.jpg",
+      "bytes": 257143,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/027.jpg",
+      "bytes": 257009,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/028.jpg",
+      "bytes": 262727,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/029.jpg",
+      "bytes": 257581,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/030.jpg",
+      "bytes": 258354,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/031.jpg",
+      "bytes": 262303,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/032.jpg",
+      "bytes": 259886,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/033.jpg",
+      "bytes": 259448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/034.jpg",
+      "bytes": 264857,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/035.jpg",
+      "bytes": 258687,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/036.jpg",
+      "bytes": 258940,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/037.jpg",
+      "bytes": 264444,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/038.jpg",
+      "bytes": 260307,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/039.jpg",
+      "bytes": 261103,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/040.jpg",
+      "bytes": 265978,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/041.jpg",
+      "bytes": 260180,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/042.jpg",
+      "bytes": 273078,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/043.jpg",
+      "bytes": 266003,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/044.jpg",
+      "bytes": 267819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/045.jpg",
+      "bytes": 263473,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/046.jpg",
+      "bytes": 267763,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/047.jpg",
+      "bytes": 263448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/048.jpg",
+      "bytes": 264226,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/049.jpg",
+      "bytes": 270252,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/050.jpg",
+      "bytes": 266171,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/051.jpg",
+      "bytes": 265476,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/052.jpg",
+      "bytes": 269341,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/053.jpg",
+      "bytes": 263603,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/054.jpg",
+      "bytes": 265659,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/055.jpg",
+      "bytes": 270660,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/056.jpg",
+      "bytes": 262955,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/057.jpg",
+      "bytes": 265437,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/058.jpg",
+      "bytes": 272163,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/059.jpg",
+      "bytes": 264603,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/060.jpg",
+      "bytes": 272020,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/061.jpg",
+      "bytes": 265228,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/062.jpg",
+      "bytes": 273048,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/063.jpg",
+      "bytes": 265942,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/064.jpg",
+      "bytes": 271568,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/065.jpg",
+      "bytes": 268848,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/066.jpg",
+      "bytes": 277875,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/067.jpg",
+      "bytes": 270712,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/068.jpg",
+      "bytes": 265624,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/069.jpg",
+      "bytes": 272161,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/070.jpg",
+      "bytes": 266461,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/071.jpg",
+      "bytes": 262725,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/072.jpg",
+      "bytes": 277084,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/073.jpg",
+      "bytes": 268773,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/074.jpg",
+      "bytes": 274786,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/075.jpg",
+      "bytes": 267926,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/076.jpg",
+      "bytes": 274645,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/077.jpg",
+      "bytes": 268703,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/078.jpg",
+      "bytes": 268990,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/079.jpg",
+      "bytes": 273623,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/080.jpg",
+      "bytes": 268163,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/081.jpg",
+      "bytes": 268552,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/082.jpg",
+      "bytes": 274758,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/083.jpg",
+      "bytes": 267903,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/084.jpg",
+      "bytes": 274122,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/085.jpg",
+      "bytes": 266157,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/086.jpg",
+      "bytes": 272520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/087.jpg",
+      "bytes": 265750,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/088.jpg",
+      "bytes": 270603,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/089.jpg",
+      "bytes": 262394,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/090.jpg",
+      "bytes": 267473,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/108.jpg",
+      "bytes": 151142,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/109.jpg",
+      "bytes": 153290,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/110.jpg",
+      "bytes": 151887,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/111.jpg",
+      "bytes": 151421,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/112.jpg",
+      "bytes": 153808,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/113.jpg",
+      "bytes": 150729,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/114.jpg",
+      "bytes": 150654,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/115.jpg",
+      "bytes": 152126,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/116.jpg",
+      "bytes": 149317,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/117.jpg",
+      "bytes": 149470,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/118.jpg",
+      "bytes": 152847,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/119.jpg",
+      "bytes": 151336,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/120.jpg",
+      "bytes": 151461,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/121.jpg",
+      "bytes": 154259,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/122.jpg",
+      "bytes": 152545,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/123.jpg",
+      "bytes": 153772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/124.jpg",
+      "bytes": 158158,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/125.jpg",
+      "bytes": 156066,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/126.jpg",
+      "bytes": 156378,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/127.jpg",
+      "bytes": 162389,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/128.jpg",
+      "bytes": 160118,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/129.jpg",
+      "bytes": 162941,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/130.jpg",
+      "bytes": 169151,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/131.jpg",
+      "bytes": 166843,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/132.jpg",
+      "bytes": 164719,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/133.jpg",
+      "bytes": 169271,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/134.jpg",
+      "bytes": 171222,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/135.jpg",
+      "bytes": 173347,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/136.jpg",
+      "bytes": 179156,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/137.jpg",
+      "bytes": 176460,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/138.jpg",
+      "bytes": 183170,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/139.jpg",
+      "bytes": 180228,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/140.jpg",
+      "bytes": 189259,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/141.jpg",
+      "bytes": 187996,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/142.jpg",
+      "bytes": 192222,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/143.jpg",
+      "bytes": 187787,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/144.jpg",
+      "bytes": 188265,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/145.jpg",
+      "bytes": 198531,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/146.jpg",
+      "bytes": 192277,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/147.jpg",
+      "bytes": 192397,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/148.jpg",
+      "bytes": 199156,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/149.jpg",
+      "bytes": 201124,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/150.jpg",
+      "bytes": 202442,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/151.jpg",
+      "bytes": 198263,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/152.jpg",
+      "bytes": 204907,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/153.jpg",
+      "bytes": 205044,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/154.jpg",
+      "bytes": 198108,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/155.jpg",
+      "bytes": 207559,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/c/156.jpg",
+      "bytes": 199919,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/hak.jpg",
+      "bytes": 67859,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/pitch.json",
+      "bytes": 1309,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/assets/stadium.jpg",
+      "bytes": 612136,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/audio/CC-BY-2.0.html",
+      "bytes": 34724,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/audio/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/audio/CREDITS",
+      "bytes": 4148,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/audio/film.m4a",
+      "bytes": 1803431,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fidelity.md",
+      "bytes": 2256,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/film/index.html",
+      "bytes": 64303,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/film/timeline.json",
+      "bytes": 3163,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/film/vdur.json",
+      "bytes": 116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/OFL-barlowcondensed.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/cond600.woff2",
+      "bytes": 11464,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/cond800i.woff2",
+      "bytes": 12640,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/fonts.css",
+      "bytes": 529,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/mono500.woff2",
+      "bytes": 7304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/sans500.woff2",
+      "bytes": 35716,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/sans700.woff2",
+      "bytes": 36016,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/fonts/sans900.woff2",
+      "bytes": 36144,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/index.html",
+      "bytes": 14944,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/CREDITS",
+      "bytes": 4148,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/FACTS.md",
+      "bytes": 8891,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/README.md",
+      "bytes": 2457,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/SOURCES.jsonl",
+      "bytes": 5311,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/SOURCES.md",
+      "bytes": 6756,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/audio/cues.json",
+      "bytes": 1074,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/audio/lines.json",
+      "bytes": 1239,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/audio/vo/dur.json",
+      "bytes": 116,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/audio/vo/words.json",
+      "bytes": 1499,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/build.sh",
+      "bytes": 2269,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/cues.py",
+      "bytes": 1003,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/fetch_sources.sh",
+      "bytes": 1585,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/final_check.sh",
+      "bytes": 912,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/fonts.py",
+      "bytes": 1625,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/footage.py",
+      "bytes": 12622,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/homography.py",
+      "bytes": 1702,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/license-evidence.json",
+      "bytes": 619,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/mix.py",
+      "bytes": 14727,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/pitch.json",
+      "bytes": 2688,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-telestrator/source/tools/prep.sh",
+      "bytes": 2145,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/freeze-and-draw/index.html",
+      "bytes": 1021,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/freeze-and-draw/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-telestrator.json",
+      "bytes": 11498,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/freeze-and-draw.json",
+      "bytes": 2928,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/freeze-and-draw.jpg",
+      "bytes": 126442,
+      "role": "preview"
+    }
+  ]
+}

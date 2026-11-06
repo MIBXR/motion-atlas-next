@@ -1,0 +1,3599 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-visual-investigation",
+  "entry": {
+    "id": "lemo-visual-investigation",
+    "order": 70,
+    "title": "兴登堡号：四分钟与三十二秒 · 视觉调查",
+    "subtitle": "The Hindenburg: Four Minutes, 32 Seconds",
+    "carriers": [
+      "video"
+    ],
+    "style": "documentary",
+    "purpose": "news",
+    "tech": [
+      "canvas2d",
+      "footage"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "视觉调查",
+      "剪辑与纪实",
+      "代码影片"
+    ],
+    "summary": "以兴登堡号最后的四分钟与燃烧的三十二秒为线索，将新闻片、海军照片、证词、调查报告和气象记录按事件时刻交叉对照，最后合为证据地图。",
+    "focus": "时间读数属于证据本身：电报与风图按分钟运行，三列材料按同一秒表亮起，五路来源的红线汇向同一舱段。",
+    "accent": "#FF4A2E",
+    "background": "#0B0C0E",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 30.9,
+    "rhythm": {
+      "duration": 60,
+      "beats": [
+        {
+          "t": 0,
+          "label": "火点冷开场",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 2.4,
+          "label": "片名",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 6.3,
+          "label": "分钟里的等待",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 12.3,
+          "label": "地图定位",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 14.8,
+          "label": "平面与机位",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 18.6,
+          "label": "四分钟",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 23.8,
+          "label": "五路来源汇聚",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 31.8,
+          "label": "三十二秒同步",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 38.6,
+          "label": "调查结论",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 45.6,
+          "label": "人数核对",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 52.4,
+          "label": "证据地图",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        },
+        {
+          "t": 55.6,
+          "label": "片尾",
+          "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 2.4,
+        "to": 0.7,
+        "label": "定格与倒放",
+        "from": 0.85
+      },
+      {
+        "t0": 2.4,
+        "t1": 12.3,
+        "to": 0.5,
+        "label": "等待",
+        "from": 0.3
+      },
+      {
+        "t0": 12.3,
+        "t1": 23.8,
+        "to": 0.6,
+        "label": "定位与四分钟",
+        "from": 0.4
+      },
+      {
+        "t0": 23.8,
+        "t1": 31.8,
+        "to": 0.65,
+        "label": "来源汇聚",
+        "from": 0.7
+      },
+      {
+        "t0": 31.8,
+        "t1": 38.6,
+        "to": 0.9,
+        "label": "三十二秒",
+        "from": 0.6
+      },
+      {
+        "t0": 38.6,
+        "t1": 45.6,
+        "to": 0.3,
+        "label": "调查",
+        "from": 0.15
+      },
+      {
+        "t0": 45.6,
+        "t1": 52.4,
+        "to": 0.35,
+        "label": "人数核对",
+        "from": 0.25
+      },
+      {
+        "t0": 52.4,
+        "t1": 60,
+        "to": 0.05,
+        "label": "证据地图与片尾",
+        "from": 0.4
+      }
+    ],
+    "energyNote": "段落与时刻取自上游DEMO.md镜头表及原作绘制函数；0–1为按配乐、原声和画面密度作出的相对编辑标注。",
+    "observations": [
+      "冷开场先定格、圈出火点，证词和照片补入后，火灾影像倒放回到调查起点。",
+      "分钟尺度的电报卡通过引线连接风图时间轴；秒尺度的报告、照片、新闻片各自在实际覆盖时刻出现。",
+      "展示板上，扫描证词、火点特写、海军照片、原声波形和报告这五路来源共同指向4–5号气囊。",
+      "地图切成独立平面示意，测距圈、方位角和摄影机视锥说明位置关系；片尾地图再汇合各来源。"
+    ],
+    "composition": {
+      "color": "#0B0C0E、#141619、#2E3238、#ECEAE4、#8B9097、#FF4A2E、#E4E0D4",
+      "typography": "Noto Sans SC 400/500/700、Noto Serif SC 500、IBM Plex Mono 400/600、Source Serif 4 Italic 400；SIL OFL 1.1子集。",
+      "layout": "1920×1080横屏；沿用原作各镜的画面分区与文字位置。",
+      "imagery": "Universal Newsreel 1937年原片、美国海军与NARA照片、FBI案卷页、USGS 1947年地形图及商务部调查报告文字。",
+      "motion": "硬切、短闪、顺时针圈注、逐行高亮、波形游标和按同一事件时钟依次亮起的证据列。",
+      "sound": "Release原混音：Kokoro am_michael旁白、两段1937年原声、低音弦乐与拨奏、事件秒针、纸张和电报声。",
+      "rhythm": "冷开场后从分钟缩到秒，再切到调查日期；冲击后近乎静默，人数核对后证据汇总。",
+      "coherence": "时间读数属于证据本身：电报与风图按分钟运行，三列材料按同一秒表亮起，五路来源的红线汇向同一舱段。"
+    },
+    "layers": [
+      {
+        "name": "深色调查台",
+        "role": "硬边框与少量红色指向标记。"
+      },
+      {
+        "name": "档案证据",
+        "role": "新闻片、扫描页、照片和地图。"
+      },
+      {
+        "name": "事件时钟",
+        "role": "电报时间、风图游标与T+秒表。"
+      },
+      {
+        "name": "示意与链接",
+        "role": "16气囊侧视图、平面位置与汇聚引线。"
+      },
+      {
+        "name": "原声波形与字幕",
+        "role": "逐词原声、平静旁白与双语字幕。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#0B0C0E",
+        "#141619",
+        "#2E3238",
+        "#ECEAE4",
+        "#8B9097",
+        "#FF4A2E",
+        "#E4E0D4"
+      ],
+      "type": "Noto Sans SC 400/500/700、Noto Serif SC 500、IBM Plex Mono 400/600、Source Serif 4 Italic 400；SIL OFL 1.1子集。",
+      "motion": [
+        {
+          "name": "事件时钟",
+          "value": "film/index.html:playhead / sWait / sRun；分钟尺度15:40–18:14；秒尺度T+0–32，新闻片约T+7才进入。"
+        },
+        {
+          "name": "五路汇聚",
+          "value": "film/index.html:sOrigin；29秒起红线汇向16舱侧视图中的4–5号区域。"
+        }
+      ]
+    },
+    "useCases": [
+      "事件重建",
+      "事实核对",
+      "事故报告"
+    ],
+    "avoid": [
+      "把灾难画面作为慢动作奇观的剪辑",
+      "来源时间和机位无法定位的同步叙事"
+    ],
+    "constraints": [
+      "替换影像、字体和数据后，同步调整原作取帧与文字时间表。",
+      "声音与画面沿用同一来源时间，音轨默认关闭。"
+    ],
+    "migration": [
+      {
+        "field": "film/film.json → sections / subs / vo",
+        "how": "修改段落、字幕和旁白时刻。"
+      },
+      {
+        "field": "film/index.html → TG / playhead / sRun",
+        "how": "修改事件时钟、来源起点和同步区间。"
+      },
+      {
+        "field": "source/tools/prep.sh",
+        "how": "替换档案片段、文件页和地图裁片。"
+      }
+    ],
+    "prompt": "制作一支视觉调查影片。时间读数属于证据本身：电报与风图按分钟运行，三列材料按同一秒表亮起，五路来源的红线汇向同一舱段。硬切、短闪、顺时针圈注、逐行高亮、波形游标和按同一事件时钟依次亮起的证据列。沿用以下制作方法：Universal Newsreel 1937年原片、美国海军与NARA照片、FBI案卷页、USGS 1947年地形图及商务部调查报告文字。声音采用Release原混音：Kokoro am_michael旁白、两段1937年原声、低音弦乐与拨奏、事件秒针、纸张和电报声。可编辑入口：film/film.json → sections / subs / vo；film/index.html → TG / playhead / sRun；source/tools/prep.sh。",
+    "demo": "demos/cases/lemo-visual-investigation/index.html",
+    "patternIds": [
+      "multi-source-timeline"
+    ],
+    "fidelity": "demos/cases/lemo-visual-investigation/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/visual-investigation",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/visual-investigation/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；原作影片及静帧CC BY 4.0，署名LemoLab；第三方素材和旁白按CREDITS各自许可。"
+    },
+    "sources": [
+      {
+        "label": "固定版本风格与制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/visual-investigation"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/visual-investigation.mp4"
+      },
+      {
+        "label": "原始素材与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/visual-investigation/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）。固定源码接入MotionKit，原作画面按时间绘制；音轨从Release流复制。"
+      },
+      {
+        "scope": "影像与声音",
+        "notes": "原始作者、素材链接和许可见[LICENSES.md](LICENSES.md)及[audio/CREDITS](audio/CREDITS)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "字体、字重与子集见tokens.type；OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-visual-investigation/LICENSES.md",
+    "preview": "previews/cases/lemo-visual-investigation.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 兴登堡号：四分钟与三十二秒 · 视觉调查 · 接入与保真说明\n\n复刻范围为完整60秒代码影片；来源与固定版本见[条目JSON](../../../entries/cases/lemo-visual-investigation.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载字体、素材、绘制代码和音轨；等待iframe的READY，按原fps执行并等待render(t)。 | 接入MotionKit舞台、时间线、定位与声音。 |\n| `film/index.html` | 字体与assets相对路径指向本体对应目录。 | 本库目录接入。 |\n| `audio/film.m4a` | 从Release成片以`-c:a copy`流复制。 | 保留正式混音。 |\n| `source/` | 上游制作脚本、素材证据与非运行数据按原相对结构保存；文本转LF。 | 保留重建依赖。 |\n| `stills/` | 预览由本库capture生成。 | 成片绘制不读取上游静帧。 |\n\n## 适配层\n\n`MotionKit.load.prepare`预载后，同源iframe等待`READY === true`。`MotionKit.mountFilm`接入1920×1080、30fps舞台，`renderAt(t)`调用并等待原作`render(Math.round(t*30)/30)`。画面由上游Canvas2D代码直接绘制。`?embed`隐藏控制条，`?render`暂停播放，`?t=`定位；减少动态时停在30.9秒，声音默认关闭。\n\n许可索引见[LICENSES.md](LICENSES.md)。\n\n## 对照结果\n\n在1920×1080、DPR 1的无头Edge中，以30fps精确帧号对照Release成片。取开头、代表帧、DEMO镜头段中点与片尾前1秒，去重后15帧。\n\n| 项目 | 结果 |\n| --- | --- |\n| 原始PNG SSIM | 0.987380–0.999708 |\n| 按原作编码链编解码后的SSIM | 0.984349–0.999952 |\n| 音轨RMS包络最佳偏移 | 0ms |\n| 音轨包络相关系数 | 1.000000000 |\n\n测量编码链为原作`core/render/video.mjs`的JPEG95 → H.264 CRF14 / medium / yuv420p，再按`source/build.sh`指定的`core/render/mux.sh`执行fps=30、noise=0、H.264 CRF19 / slow / yuv420p；只在过程目录进行。原始画面和编解码后画面的全部采样SSIM均高于0.95。声音采用48kHz单声道、10ms窗口的RMS包络互相关。\n",
+    "licenses": "# 兴登堡号：四分钟与三十二秒 · 视觉调查 · 许可索引\n\n| 范围 | 作者与许可 | 原文 |\n| --- | --- | --- |\n| 原作代码与文档 | Lemomo / LemoLab，MIT | [film/LICENSE](film/LICENSE) |\n| 原作成片与静帧 | LemoLab，CC BY 4.0 | [CC BY 4.0](audio/CC-BY-4.0.txt) |\n| 原作配乐采样 | Versilian Studios / Sam Gossner，VSCO 2 CE与VCSL，CC0 1.0 | [CC0](audio/CC0-1.0.txt)、[CREDITS](audio/CREDITS) |\n| 旁白 | hexgrad Kokoro-82M，Apache-2.0；kokoro-onnx，MIT | [Apache-2.0](audio/Apache-2.0.txt)、[CREDITS](audio/CREDITS) |\n\n## 第三方画面与原声\n\n| 素材 | 作者 | 许可 | 原地址 |\n| --- | --- | --- | --- |\n| Special Release - Zeppelin Explodes Scores Dead, 1937/05/10 | Universal Newsreel | http://creativecommons.org/licenses/publicdomain/ | https://archive.org/details/1937-05-10_Special_Release_Zeppelin_Explodes |\n| Hindenburg | Federal Bureau of Investigation | http://creativecommons.org/publicdomain/mark/1.0/ | https://archive.org/details/HindenburgFBI |\n| nh57973 | U.S. Navy / Naval History and Heritage Command NH 57973 | Public domain (U.S. Navy, NHHC NH 57973) | https://commons.wikimedia.org/wiki/File:NH_57973_Airship_HINDENBURG_Disaster,_6_May_1937.png |\n| pasq | Gus Pasquarella, U.S. Navy, NAS Lakehurst, 1937-05-06 | Public domain (U.S. Navy photo) | https://commons.wikimedia.org/wiki/File:Hindenburg_burning,_1937.jpg |\n| nara518856 | U.S. Navy, Naval Air Station Lakehurst; National Archives (NAID 518856) | Public domain (U.S. Navy / NARA 518856, U.S. federal government work) | https://commons.wikimedia.org/wiki/File:German_airship_%22Hindenburg%22_at_Lakehurst,_New_Jersey._-_NARA_-_518856.jpg |\n| usgs1947 | U.S. Geological Survey, Lakehurst NJ 1:24,000 quadrangle, 1947 | Public domain (USGS, U.S. federal government work) | https://ngmdb.usgs.gov/topoview/ |\n\n## 字体\n\n| 字体 | 作者 | 许可与来源 |\n| --- | --- | --- |\n| Noto Sans SC | Google / Adobe | [SIL OFL 1.1](fonts/OFL-notosanssc.txt)，https://github.com/google/fonts/tree/main/ofl/notosanssc |\n| Noto Serif SC | Google / Adobe | [SIL OFL 1.1](fonts/OFL-notoserifsc.txt)，https://github.com/google/fonts/tree/main/ofl/notoserifsc |\n| IBM Plex Mono | IBM | [SIL OFL 1.1](fonts/OFL-ibmplexmono.txt)，https://github.com/google/fonts/tree/main/ofl/ibmplexmono |\n| Source Serif 4 | Adobe | [SIL OFL 1.1](fonts/OFL-sourceserif4.txt)，https://github.com/google/fonts/tree/main/ofl/sourceserif4 |\n\n完整资源、处理方式与声音署名见[audio/CREDITS](audio/CREDITS)。\n",
+    "prompt": "# 兴登堡号：四分钟与三十二秒 · 视觉调查\n\n## 实现 Prompt\n\n制作一支视觉调查影片。时间读数属于证据本身：电报与风图按分钟运行，三列材料按同一秒表亮起，五路来源的红线汇向同一舱段。硬切、短闪、顺时针圈注、逐行高亮、波形游标和按同一事件时钟依次亮起的证据列。沿用以下制作方法：Universal Newsreel 1937年原片、美国海军与NARA照片、FBI案卷页、USGS 1947年地形图及商务部调查报告文字。声音采用Release原混音：Kokoro am_michael旁白、两段1937年原声、低音弦乐与拨奏、事件秒针、纸张和电报声。可编辑入口：film/film.json → sections / subs / vo；film/index.html → TG / playhead / sRun；source/tools/prep.sh。\n\n## 动效 Token\n\n- **事件时钟**：film/index.html:playhead / sWait / sRun；分钟尺度15:40–18:14；秒尺度T+0–32，新闻片约T+7才进入。\n- **五路汇聚**：film/index.html:sOrigin；29秒起红线汇向16舱侧视图中的4–5号区域。\n\n## 制作约束\n\n- 替换影像、字体和数据后，同步调整原作取帧与文字时间表。\n- 声音与画面沿用同一来源时间，音轨默认关闭。\n\n## 迁移\n\n- `film/film.json → sections / subs / vo`：修改段落、字幕和旁白时刻。\n- `film/index.html → TG / playhead / sRun`：修改事件时钟、来源起点和同步区间。\n- `source/tools/prep.sh`：替换档案片段、文件页和地图裁片。\n\n[打开 Demo](../../demos/cases/lemo-visual-investigation/index.html) · [在库中查看](../../cases.html#case/lemo-visual-investigation)\n"
+  },
+  "entrypoint": "demos/cases/lemo-visual-investigation/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-visual-investigation/LICENSES.md",
+      "bytes": 2528,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/001.jpg",
+      "bytes": 20804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/002.jpg",
+      "bytes": 20804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/003.jpg",
+      "bytes": 20804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/004.jpg",
+      "bytes": 20804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/005.jpg",
+      "bytes": 20804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/006.jpg",
+      "bytes": 20804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/007.jpg",
+      "bytes": 20230,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/008.jpg",
+      "bytes": 19649,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/009.jpg",
+      "bytes": 19677,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/010.jpg",
+      "bytes": 20263,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/011.jpg",
+      "bytes": 20358,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/012.jpg",
+      "bytes": 21487,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/013.jpg",
+      "bytes": 20973,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/014.jpg",
+      "bytes": 20441,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/015.jpg",
+      "bytes": 21828,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/016.jpg",
+      "bytes": 20608,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/017.jpg",
+      "bytes": 21270,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/018.jpg",
+      "bytes": 21023,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/019.jpg",
+      "bytes": 20413,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/020.jpg",
+      "bytes": 21449,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/021.jpg",
+      "bytes": 18225,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/022.jpg",
+      "bytes": 19168,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/023.jpg",
+      "bytes": 19611,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/024.jpg",
+      "bytes": 18939,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/025.jpg",
+      "bytes": 19516,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/026.jpg",
+      "bytes": 19303,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/027.jpg",
+      "bytes": 19911,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/028.jpg",
+      "bytes": 20049,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/029.jpg",
+      "bytes": 19475,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/030.jpg",
+      "bytes": 20078,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/031.jpg",
+      "bytes": 19423,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/032.jpg",
+      "bytes": 19952,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/033.jpg",
+      "bytes": 20489,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/034.jpg",
+      "bytes": 19526,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/035.jpg",
+      "bytes": 20766,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/036.jpg",
+      "bytes": 17894,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/037.jpg",
+      "bytes": 18881,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/038.jpg",
+      "bytes": 19550,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/039.jpg",
+      "bytes": 18619,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/040.jpg",
+      "bytes": 19416,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/041.jpg",
+      "bytes": 18922,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/042.jpg",
+      "bytes": 19100,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/043.jpg",
+      "bytes": 19408,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/044.jpg",
+      "bytes": 19046,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/045.jpg",
+      "bytes": 20103,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/046.jpg",
+      "bytes": 19137,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/047.jpg",
+      "bytes": 19559,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/048.jpg",
+      "bytes": 19674,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/049.jpg",
+      "bytes": 19230,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/050.jpg",
+      "bytes": 20448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/051.jpg",
+      "bytes": 17535,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/052.jpg",
+      "bytes": 18298,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/053.jpg",
+      "bytes": 18778,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/054.jpg",
+      "bytes": 18178,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/055.jpg",
+      "bytes": 18831,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/056.jpg",
+      "bytes": 18353,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/057.jpg",
+      "bytes": 18845,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/058.jpg",
+      "bytes": 19043,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/059.jpg",
+      "bytes": 19247,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/060.jpg",
+      "bytes": 19336,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/061.jpg",
+      "bytes": 19183,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/062.jpg",
+      "bytes": 19856,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/063.jpg",
+      "bytes": 19612,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/064.jpg",
+      "bytes": 19755,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/065.jpg",
+      "bytes": 18985,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/066.jpg",
+      "bytes": 17308,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/067.jpg",
+      "bytes": 17568,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/068.jpg",
+      "bytes": 18346,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/069.jpg",
+      "bytes": 18327,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/070.jpg",
+      "bytes": 17634,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/071.jpg",
+      "bytes": 17608,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/072.jpg",
+      "bytes": 17993,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/073.jpg",
+      "bytes": 18221,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/074.jpg",
+      "bytes": 18056,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/075.jpg",
+      "bytes": 18907,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/076.jpg",
+      "bytes": 17908,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/077.jpg",
+      "bytes": 17777,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/078.jpg",
+      "bytes": 18340,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/079.jpg",
+      "bytes": 19039,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/080.jpg",
+      "bytes": 19693,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/081.jpg",
+      "bytes": 17206,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/082.jpg",
+      "bytes": 17675,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/083.jpg",
+      "bytes": 18423,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/084.jpg",
+      "bytes": 18256,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/085.jpg",
+      "bytes": 18540,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/086.jpg",
+      "bytes": 17902,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/087.jpg",
+      "bytes": 18320,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/088.jpg",
+      "bytes": 18353,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/089.jpg",
+      "bytes": 18376,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/090.jpg",
+      "bytes": 19137,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/091.jpg",
+      "bytes": 18045,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/092.jpg",
+      "bytes": 18257,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/093.jpg",
+      "bytes": 18723,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/094.jpg",
+      "bytes": 18314,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/095.jpg",
+      "bytes": 19801,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/096.jpg",
+      "bytes": 16956,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/097.jpg",
+      "bytes": 17129,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/098.jpg",
+      "bytes": 17942,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/099.jpg",
+      "bytes": 17670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/100.jpg",
+      "bytes": 17758,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/101.jpg",
+      "bytes": 17456,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/102.jpg",
+      "bytes": 17938,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/103.jpg",
+      "bytes": 17926,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/104.jpg",
+      "bytes": 18290,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/105.jpg",
+      "bytes": 19189,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/106.jpg",
+      "bytes": 18606,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/107.jpg",
+      "bytes": 18625,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/108.jpg",
+      "bytes": 18861,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/109.jpg",
+      "bytes": 18958,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/110.jpg",
+      "bytes": 19718,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/111.jpg",
+      "bytes": 17294,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/112.jpg",
+      "bytes": 17758,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/113.jpg",
+      "bytes": 18541,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/114.jpg",
+      "bytes": 18531,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/115.jpg",
+      "bytes": 19471,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/116.jpg",
+      "bytes": 20023,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/117.jpg",
+      "bytes": 20936,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/118.jpg",
+      "bytes": 20800,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/119.jpg",
+      "bytes": 20429,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/120.jpg",
+      "bytes": 20562,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/121.jpg",
+      "bytes": 20377,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/122.jpg",
+      "bytes": 20291,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/123.jpg",
+      "bytes": 21762,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/124.jpg",
+      "bytes": 20783,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/125.jpg",
+      "bytes": 21078,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/126.jpg",
+      "bytes": 20382,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/127.jpg",
+      "bytes": 20258,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/128.jpg",
+      "bytes": 21408,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/129.jpg",
+      "bytes": 21805,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/130.jpg",
+      "bytes": 20886,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/131.jpg",
+      "bytes": 20914,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/132.jpg",
+      "bytes": 21002,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/133.jpg",
+      "bytes": 21442,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/134.jpg",
+      "bytes": 20903,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/135.jpg",
+      "bytes": 21282,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/136.jpg",
+      "bytes": 20748,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/137.jpg",
+      "bytes": 21258,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/138.jpg",
+      "bytes": 22039,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/139.jpg",
+      "bytes": 21334,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/140.jpg",
+      "bytes": 22242,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/141.jpg",
+      "bytes": 20701,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/142.jpg",
+      "bytes": 20369,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/143.jpg",
+      "bytes": 21390,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/144.jpg",
+      "bytes": 21650,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/145.jpg",
+      "bytes": 21152,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/146.jpg",
+      "bytes": 20899,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/147.jpg",
+      "bytes": 21595,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/148.jpg",
+      "bytes": 22244,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/149.jpg",
+      "bytes": 21804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/150.jpg",
+      "bytes": 22168,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/151.jpg",
+      "bytes": 21698,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/152.jpg",
+      "bytes": 21946,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/153.jpg",
+      "bytes": 22934,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/154.jpg",
+      "bytes": 21879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/155.jpg",
+      "bytes": 22957,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/156.jpg",
+      "bytes": 21098,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/157.jpg",
+      "bytes": 21145,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/158.jpg",
+      "bytes": 22109,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/159.jpg",
+      "bytes": 22423,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/160.jpg",
+      "bytes": 21329,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/161.jpg",
+      "bytes": 21640,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/162.jpg",
+      "bytes": 22391,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/163.jpg",
+      "bytes": 22037,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/164.jpg",
+      "bytes": 21740,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/165.jpg",
+      "bytes": 22183,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/166.jpg",
+      "bytes": 21027,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/167.jpg",
+      "bytes": 21704,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/168.jpg",
+      "bytes": 22682,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/169.jpg",
+      "bytes": 21502,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/170.jpg",
+      "bytes": 22434,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/171.jpg",
+      "bytes": 20818,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/172.jpg",
+      "bytes": 20469,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/173.jpg",
+      "bytes": 21178,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/174.jpg",
+      "bytes": 21979,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/175.jpg",
+      "bytes": 20673,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/176.jpg",
+      "bytes": 20415,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/177.jpg",
+      "bytes": 21929,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/178.jpg",
+      "bytes": 21322,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/179.jpg",
+      "bytes": 21351,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/180.jpg",
+      "bytes": 21938,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/181.jpg",
+      "bytes": 20655,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/182.jpg",
+      "bytes": 21153,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/183.jpg",
+      "bytes": 23112,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/184.jpg",
+      "bytes": 21689,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/185.jpg",
+      "bytes": 22712,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/186.jpg",
+      "bytes": 21375,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/187.jpg",
+      "bytes": 20749,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/188.jpg",
+      "bytes": 21145,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/189.jpg",
+      "bytes": 22151,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/190.jpg",
+      "bytes": 21025,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/191.jpg",
+      "bytes": 20686,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/192.jpg",
+      "bytes": 21642,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/193.jpg",
+      "bytes": 21097,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/194.jpg",
+      "bytes": 21487,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/195.jpg",
+      "bytes": 22124,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/196.jpg",
+      "bytes": 20795,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/197.jpg",
+      "bytes": 20962,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/198.jpg",
+      "bytes": 22078,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/199.jpg",
+      "bytes": 21318,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/200.jpg",
+      "bytes": 21590,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/201.jpg",
+      "bytes": 20738,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/202.jpg",
+      "bytes": 20503,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/203.jpg",
+      "bytes": 20837,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/204.jpg",
+      "bytes": 21846,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/205.jpg",
+      "bytes": 20993,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/206.jpg",
+      "bytes": 20695,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/207.jpg",
+      "bytes": 22197,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/208.jpg",
+      "bytes": 21489,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/209.jpg",
+      "bytes": 21918,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/210.jpg",
+      "bytes": 22435,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/211.jpg",
+      "bytes": 21407,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/212.jpg",
+      "bytes": 21766,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/213.jpg",
+      "bytes": 22897,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/214.jpg",
+      "bytes": 22281,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/215.jpg",
+      "bytes": 22898,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/216.jpg",
+      "bytes": 21321,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/217.jpg",
+      "bytes": 21150,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/218.jpg",
+      "bytes": 21982,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/219.jpg",
+      "bytes": 23048,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/220.jpg",
+      "bytes": 21071,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/221.jpg",
+      "bytes": 21252,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/222.jpg",
+      "bytes": 22128,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/223.jpg",
+      "bytes": 21731,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/224.jpg",
+      "bytes": 21872,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/225.jpg",
+      "bytes": 22984,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/226.jpg",
+      "bytes": 21278,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/227.jpg",
+      "bytes": 21538,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/228.jpg",
+      "bytes": 22684,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/229.jpg",
+      "bytes": 22134,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/230.jpg",
+      "bytes": 22813,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/231.jpg",
+      "bytes": 21561,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/232.jpg",
+      "bytes": 21226,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/233.jpg",
+      "bytes": 21717,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/234.jpg",
+      "bytes": 22177,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/235.jpg",
+      "bytes": 21518,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/app/236.jpg",
+      "bytes": 24677,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fbi_p13.png",
+      "bytes": 321207,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fbi_p20.png",
+      "bytes": 295433,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fbi_p39.png",
+      "bytes": 172334,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/001.jpg",
+      "bytes": 28847,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/002.jpg",
+      "bytes": 29085,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/003.jpg",
+      "bytes": 9755,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/004.jpg",
+      "bytes": 12978,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/005.jpg",
+      "bytes": 14764,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/006.jpg",
+      "bytes": 16499,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/007.jpg",
+      "bytes": 13675,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/008.jpg",
+      "bytes": 13847,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/009.jpg",
+      "bytes": 15601,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/010.jpg",
+      "bytes": 17885,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/011.jpg",
+      "bytes": 18709,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/012.jpg",
+      "bytes": 19389,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/013.jpg",
+      "bytes": 19959,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/014.jpg",
+      "bytes": 22108,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/015.jpg",
+      "bytes": 22762,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/016.jpg",
+      "bytes": 24948,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/017.jpg",
+      "bytes": 25934,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/018.jpg",
+      "bytes": 25430,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/019.jpg",
+      "bytes": 25395,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/020.jpg",
+      "bytes": 25872,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/021.jpg",
+      "bytes": 23915,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/022.jpg",
+      "bytes": 23132,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/023.jpg",
+      "bytes": 23639,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/024.jpg",
+      "bytes": 23956,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/025.jpg",
+      "bytes": 24814,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/026.jpg",
+      "bytes": 22296,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/027.jpg",
+      "bytes": 22298,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/028.jpg",
+      "bytes": 22614,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/029.jpg",
+      "bytes": 22971,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/030.jpg",
+      "bytes": 24380,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/031.jpg",
+      "bytes": 21667,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/032.jpg",
+      "bytes": 22941,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/033.jpg",
+      "bytes": 22388,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/034.jpg",
+      "bytes": 23190,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/035.jpg",
+      "bytes": 24799,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/036.jpg",
+      "bytes": 22022,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/037.jpg",
+      "bytes": 23163,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/038.jpg",
+      "bytes": 23987,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/039.jpg",
+      "bytes": 24053,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/040.jpg",
+      "bytes": 25844,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/041.jpg",
+      "bytes": 23749,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/042.jpg",
+      "bytes": 24360,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/043.jpg",
+      "bytes": 23942,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/044.jpg",
+      "bytes": 23701,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/045.jpg",
+      "bytes": 25161,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/046.jpg",
+      "bytes": 22846,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/047.jpg",
+      "bytes": 23342,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/048.jpg",
+      "bytes": 23434,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/049.jpg",
+      "bytes": 23982,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/050.jpg",
+      "bytes": 22626,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/051.jpg",
+      "bytes": 22185,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/052.jpg",
+      "bytes": 21964,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/053.jpg",
+      "bytes": 21892,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/054.jpg",
+      "bytes": 23840,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/055.jpg",
+      "bytes": 22726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/056.jpg",
+      "bytes": 23691,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/057.jpg",
+      "bytes": 25726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/058.jpg",
+      "bytes": 26109,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/059.jpg",
+      "bytes": 27343,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/060.jpg",
+      "bytes": 26813,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/061.jpg",
+      "bytes": 26551,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/062.jpg",
+      "bytes": 26103,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/063.jpg",
+      "bytes": 26102,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/064.jpg",
+      "bytes": 25181,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/065.jpg",
+      "bytes": 24747,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/066.jpg",
+      "bytes": 24702,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/067.jpg",
+      "bytes": 24776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/068.jpg",
+      "bytes": 25056,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/069.jpg",
+      "bytes": 25874,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/070.jpg",
+      "bytes": 25007,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/071.jpg",
+      "bytes": 25523,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/072.jpg",
+      "bytes": 25030,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/073.jpg",
+      "bytes": 25005,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/074.jpg",
+      "bytes": 24246,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/075.jpg",
+      "bytes": 22798,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/076.jpg",
+      "bytes": 22605,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/077.jpg",
+      "bytes": 22367,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/078.jpg",
+      "bytes": 21001,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/079.jpg",
+      "bytes": 21302,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/080.jpg",
+      "bytes": 20564,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/081.jpg",
+      "bytes": 21004,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/082.jpg",
+      "bytes": 20449,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/083.jpg",
+      "bytes": 19962,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/084.jpg",
+      "bytes": 20628,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/085.jpg",
+      "bytes": 20272,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/086.jpg",
+      "bytes": 20108,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/087.jpg",
+      "bytes": 19606,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/088.jpg",
+      "bytes": 20439,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/089.jpg",
+      "bytes": 21411,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/090.jpg",
+      "bytes": 21522,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/091.jpg",
+      "bytes": 22040,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/092.jpg",
+      "bytes": 22396,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/093.jpg",
+      "bytes": 22223,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/094.jpg",
+      "bytes": 23572,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/095.jpg",
+      "bytes": 23067,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/096.jpg",
+      "bytes": 23133,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/097.jpg",
+      "bytes": 23319,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/098.jpg",
+      "bytes": 24039,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/099.jpg",
+      "bytes": 23313,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/100.jpg",
+      "bytes": 23032,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/101.jpg",
+      "bytes": 22831,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/102.jpg",
+      "bytes": 21988,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/103.jpg",
+      "bytes": 23071,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/104.jpg",
+      "bytes": 23298,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/105.jpg",
+      "bytes": 22142,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/106.jpg",
+      "bytes": 21623,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/107.jpg",
+      "bytes": 21151,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/108.jpg",
+      "bytes": 21893,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/109.jpg",
+      "bytes": 21996,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/110.jpg",
+      "bytes": 21467,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/111.jpg",
+      "bytes": 21333,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/112.jpg",
+      "bytes": 21470,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/113.jpg",
+      "bytes": 22111,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/114.jpg",
+      "bytes": 22269,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/115.jpg",
+      "bytes": 21910,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/116.jpg",
+      "bytes": 21440,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/117.jpg",
+      "bytes": 21798,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/118.jpg",
+      "bytes": 22112,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/119.jpg",
+      "bytes": 22818,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/120.jpg",
+      "bytes": 21594,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/121.jpg",
+      "bytes": 21719,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/122.jpg",
+      "bytes": 22121,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/123.jpg",
+      "bytes": 23016,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/124.jpg",
+      "bytes": 22792,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/125.jpg",
+      "bytes": 23120,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/126.jpg",
+      "bytes": 22628,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/127.jpg",
+      "bytes": 22890,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/128.jpg",
+      "bytes": 23287,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/129.jpg",
+      "bytes": 23084,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/130.jpg",
+      "bytes": 23402,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/131.jpg",
+      "bytes": 22984,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/132.jpg",
+      "bytes": 23244,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/133.jpg",
+      "bytes": 23158,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/134.jpg",
+      "bytes": 22764,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/135.jpg",
+      "bytes": 22921,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/136.jpg",
+      "bytes": 22361,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/137.jpg",
+      "bytes": 22534,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/138.jpg",
+      "bytes": 22783,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/139.jpg",
+      "bytes": 22909,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/140.jpg",
+      "bytes": 22336,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/141.jpg",
+      "bytes": 22268,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/142.jpg",
+      "bytes": 22163,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/143.jpg",
+      "bytes": 23287,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/144.jpg",
+      "bytes": 22613,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/145.jpg",
+      "bytes": 22915,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/146.jpg",
+      "bytes": 23216,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/147.jpg",
+      "bytes": 23168,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/148.jpg",
+      "bytes": 23726,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/149.jpg",
+      "bytes": 23354,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/150.jpg",
+      "bytes": 24059,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/151.jpg",
+      "bytes": 23953,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/152.jpg",
+      "bytes": 23810,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/153.jpg",
+      "bytes": 24698,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/154.jpg",
+      "bytes": 24273,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/155.jpg",
+      "bytes": 24824,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/156.jpg",
+      "bytes": 23790,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/157.jpg",
+      "bytes": 24017,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/158.jpg",
+      "bytes": 24841,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/159.jpg",
+      "bytes": 24465,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/160.jpg",
+      "bytes": 24580,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/161.jpg",
+      "bytes": 23481,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/162.jpg",
+      "bytes": 23166,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/163.jpg",
+      "bytes": 23606,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/164.jpg",
+      "bytes": 23342,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/165.jpg",
+      "bytes": 23484,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/166.jpg",
+      "bytes": 23170,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/167.jpg",
+      "bytes": 23057,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/168.jpg",
+      "bytes": 24160,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/169.jpg",
+      "bytes": 23617,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/170.jpg",
+      "bytes": 23914,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/171.jpg",
+      "bytes": 23705,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/172.jpg",
+      "bytes": 23507,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/173.jpg",
+      "bytes": 24566,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/174.jpg",
+      "bytes": 24550,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/175.jpg",
+      "bytes": 24345,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/176.jpg",
+      "bytes": 25285,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/177.jpg",
+      "bytes": 24922,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/178.jpg",
+      "bytes": 26249,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/179.jpg",
+      "bytes": 26951,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/180.jpg",
+      "bytes": 26457,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/181.jpg",
+      "bytes": 27181,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/182.jpg",
+      "bytes": 26852,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/183.jpg",
+      "bytes": 27117,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/184.jpg",
+      "bytes": 27266,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/185.jpg",
+      "bytes": 28385,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/186.jpg",
+      "bytes": 28539,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/187.jpg",
+      "bytes": 29266,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/188.jpg",
+      "bytes": 30157,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/189.jpg",
+      "bytes": 30274,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/190.jpg",
+      "bytes": 30165,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/191.jpg",
+      "bytes": 30167,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/192.jpg",
+      "bytes": 30006,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/193.jpg",
+      "bytes": 30250,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/194.jpg",
+      "bytes": 30339,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/195.jpg",
+      "bytes": 30116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/196.jpg",
+      "bytes": 29892,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/197.jpg",
+      "bytes": 29404,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/198.jpg",
+      "bytes": 30107,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/199.jpg",
+      "bytes": 29456,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/200.jpg",
+      "bytes": 29216,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/201.jpg",
+      "bytes": 28650,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/202.jpg",
+      "bytes": 28042,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/203.jpg",
+      "bytes": 28794,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/204.jpg",
+      "bytes": 28602,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/205.jpg",
+      "bytes": 28656,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/206.jpg",
+      "bytes": 28116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/207.jpg",
+      "bytes": 27118,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/208.jpg",
+      "bytes": 27685,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/209.jpg",
+      "bytes": 27362,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/210.jpg",
+      "bytes": 27022,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/211.jpg",
+      "bytes": 27085,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/212.jpg",
+      "bytes": 26401,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/213.jpg",
+      "bytes": 27655,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/214.jpg",
+      "bytes": 26525,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/215.jpg",
+      "bytes": 27397,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/216.jpg",
+      "bytes": 27690,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/217.jpg",
+      "bytes": 27801,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/218.jpg",
+      "bytes": 29276,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/219.jpg",
+      "bytes": 28869,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/220.jpg",
+      "bytes": 29001,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/221.jpg",
+      "bytes": 28939,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/222.jpg",
+      "bytes": 28660,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/223.jpg",
+      "bytes": 29525,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/224.jpg",
+      "bytes": 28982,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/225.jpg",
+      "bytes": 28772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/226.jpg",
+      "bytes": 28673,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/227.jpg",
+      "bytes": 28841,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/228.jpg",
+      "bytes": 28976,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/229.jpg",
+      "bytes": 28876,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/230.jpg",
+      "bytes": 28434,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/231.jpg",
+      "bytes": 27824,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/232.jpg",
+      "bytes": 28303,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/233.jpg",
+      "bytes": 29138,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/234.jpg",
+      "bytes": 28670,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/235.jpg",
+      "bytes": 29855,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/236.jpg",
+      "bytes": 28781,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/237.jpg",
+      "bytes": 28935,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/238.jpg",
+      "bytes": 30426,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/239.jpg",
+      "bytes": 29286,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/240.jpg",
+      "bytes": 30990,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/241.jpg",
+      "bytes": 29899,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/242.jpg",
+      "bytes": 30082,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/243.jpg",
+      "bytes": 30470,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/244.jpg",
+      "bytes": 30024,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/245.jpg",
+      "bytes": 30589,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/246.jpg",
+      "bytes": 30840,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/247.jpg",
+      "bytes": 32003,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/248.jpg",
+      "bytes": 33339,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/249.jpg",
+      "bytes": 34319,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/250.jpg",
+      "bytes": 37055,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/251.jpg",
+      "bytes": 38048,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/252.jpg",
+      "bytes": 36731,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/253.jpg",
+      "bytes": 36296,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/254.jpg",
+      "bytes": 35118,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/255.jpg",
+      "bytes": 33212,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/256.jpg",
+      "bytes": 30874,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/257.jpg",
+      "bytes": 30848,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/fire/258.jpg",
+      "bytes": 29572,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/freeze_fire.jpg",
+      "bytes": 35797,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/freeze_impact.jpg",
+      "bytes": 47094,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nara.jpg",
+      "bytes": 700513,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nh.jpg",
+      "bytes": 446778,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/001.jpg",
+      "bytes": 30727,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/002.jpg",
+      "bytes": 30727,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/003.jpg",
+      "bytes": 29748,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/004.jpg",
+      "bytes": 30846,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/005.jpg",
+      "bytes": 31252,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/006.jpg",
+      "bytes": 33551,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/007.jpg",
+      "bytes": 32001,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/008.jpg",
+      "bytes": 31911,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/009.jpg",
+      "bytes": 31212,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/010.jpg",
+      "bytes": 32523,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/011.jpg",
+      "bytes": 33794,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/012.jpg",
+      "bytes": 30480,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/013.jpg",
+      "bytes": 30395,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/014.jpg",
+      "bytes": 32566,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/015.jpg",
+      "bytes": 31433,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/016.jpg",
+      "bytes": 33536,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/017.jpg",
+      "bytes": 30140,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/018.jpg",
+      "bytes": 29160,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/019.jpg",
+      "bytes": 30125,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/020.jpg",
+      "bytes": 32860,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/021.jpg",
+      "bytes": 31212,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/022.jpg",
+      "bytes": 29054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/023.jpg",
+      "bytes": 32045,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/024.jpg",
+      "bytes": 30930,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/025.jpg",
+      "bytes": 31603,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/026.jpg",
+      "bytes": 32512,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/027.jpg",
+      "bytes": 31582,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/028.jpg",
+      "bytes": 30022,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/029.jpg",
+      "bytes": 31594,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/030.jpg",
+      "bytes": 30863,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/031.jpg",
+      "bytes": 32320,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/032.jpg",
+      "bytes": 29920,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/033.jpg",
+      "bytes": 29184,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/034.jpg",
+      "bytes": 29100,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/035.jpg",
+      "bytes": 30853,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/036.jpg",
+      "bytes": 30285,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/037.jpg",
+      "bytes": 29086,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/038.jpg",
+      "bytes": 30421,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/039.jpg",
+      "bytes": 29589,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/040.jpg",
+      "bytes": 30787,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/041.jpg",
+      "bytes": 31562,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/042.jpg",
+      "bytes": 30497,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/043.jpg",
+      "bytes": 29208,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/044.jpg",
+      "bytes": 30889,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/045.jpg",
+      "bytes": 30414,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/046.jpg",
+      "bytes": 31916,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/047.jpg",
+      "bytes": 29021,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/048.jpg",
+      "bytes": 29117,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/049.jpg",
+      "bytes": 28580,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/050.jpg",
+      "bytes": 30133,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/051.jpg",
+      "bytes": 29153,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/052.jpg",
+      "bytes": 29091,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/053.jpg",
+      "bytes": 29945,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/054.jpg",
+      "bytes": 28785,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/055.jpg",
+      "bytes": 29836,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/056.jpg",
+      "bytes": 30772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/057.jpg",
+      "bytes": 30133,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/058.jpg",
+      "bytes": 28753,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/059.jpg",
+      "bytes": 29951,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/060.jpg",
+      "bytes": 29877,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/061.jpg",
+      "bytes": 30684,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/062.jpg",
+      "bytes": 27818,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/063.jpg",
+      "bytes": 27334,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/064.jpg",
+      "bytes": 27526,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/065.jpg",
+      "bytes": 28795,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/066.jpg",
+      "bytes": 27331,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/067.jpg",
+      "bytes": 28121,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/068.jpg",
+      "bytes": 29089,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/069.jpg",
+      "bytes": 27752,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/070.jpg",
+      "bytes": 28778,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/071.jpg",
+      "bytes": 29957,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/072.jpg",
+      "bytes": 28482,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/073.jpg",
+      "bytes": 27745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/074.jpg",
+      "bytes": 29094,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/075.jpg",
+      "bytes": 28635,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/076.jpg",
+      "bytes": 30391,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/077.jpg",
+      "bytes": 28301,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/078.jpg",
+      "bytes": 26971,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/079.jpg",
+      "bytes": 26131,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/080.jpg",
+      "bytes": 29106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/081.jpg",
+      "bytes": 27934,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/082.jpg",
+      "bytes": 28031,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/083.jpg",
+      "bytes": 28549,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/084.jpg",
+      "bytes": 26933,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/085.jpg",
+      "bytes": 28173,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/086.jpg",
+      "bytes": 29595,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/087.jpg",
+      "bytes": 27974,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/088.jpg",
+      "bytes": 28334,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/089.jpg",
+      "bytes": 28318,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/090.jpg",
+      "bytes": 29041,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/091.jpg",
+      "bytes": 29260,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/092.jpg",
+      "bytes": 37968,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/093.jpg",
+      "bytes": 39005,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/094.jpg",
+      "bytes": 36932,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/095.jpg",
+      "bytes": 40007,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/096.jpg",
+      "bytes": 38924,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/097.jpg",
+      "bytes": 39026,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/098.jpg",
+      "bytes": 42461,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/099.jpg",
+      "bytes": 39158,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/100.jpg",
+      "bytes": 39833,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/101.jpg",
+      "bytes": 43429,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/102.jpg",
+      "bytes": 39988,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/103.jpg",
+      "bytes": 40161,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/104.jpg",
+      "bytes": 41415,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/105.jpg",
+      "bytes": 38915,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/106.jpg",
+      "bytes": 43148,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/107.jpg",
+      "bytes": 40116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/108.jpg",
+      "bytes": 40097,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/nyc/109.jpg",
+      "bytes": 39449,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/pasq.jpg",
+      "bytes": 927073,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/snd/c1.json",
+      "bytes": 1442,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/snd/c1.wav",
+      "bytes": 332238,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/snd/c2.json",
+      "bytes": 1823,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/snd/c2.wav",
+      "bytes": 416718,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/usgs.jpg",
+      "bytes": 841034,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/assets/wreck.jpg",
+      "bytes": 59402,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/audio/CREDITS",
+      "bytes": 3361,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/audio/film.m4a",
+      "bytes": 1957173,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fidelity.md",
+      "bytes": 2077,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/film/film.json",
+      "bytes": 2481,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/film/index.html",
+      "bytes": 47989,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/OFL-sourceserif4.txt",
+      "bytes": 4400,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/fonts.css",
+      "bytes": 617,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/mono400.woff2",
+      "bytes": 6200,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/mono600.woff2",
+      "bytes": 6128,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/sans400.woff2",
+      "bytes": 44964,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/sans500.woff2",
+      "bytes": 45380,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/sans700.woff2",
+      "bytes": 45712,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/serif500.woff2",
+      "bytes": 59836,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/fonts/serifi.woff2",
+      "bytes": 14132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/index.html",
+      "bytes": 18523,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/CREDITS",
+      "bytes": 3361,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/FACTS.md",
+      "bytes": 12432,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/README.md",
+      "bytes": 2201,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/SOURCES.jsonl",
+      "bytes": 4972,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/SOURCES.md",
+      "bytes": 4759,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/audio/cues.json",
+      "bytes": 1971,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/audio/lines.json",
+      "bytes": 1495,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/audio/mix.py",
+      "bytes": 11073,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/build.sh",
+      "bytes": 4438,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/tools/cues.py",
+      "bytes": 515,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/tools/final_asr.py",
+      "bytes": 1979,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/tools/fonts.py",
+      "bytes": 1638,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/tools/footage.py",
+      "bytes": 12615,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/tools/prep.sh",
+      "bytes": 2940,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/tools/subcheck.mjs",
+      "bytes": 1906,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-visual-investigation/source/tools/wave.py",
+      "bytes": 632,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-visual-investigation.json",
+      "bytes": 10077,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-visual-investigation.jpg",
+      "bytes": 106782,
+      "role": "preview"
+    }
+  ]
+}

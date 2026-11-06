@@ -1,0 +1,90 @@
+{
+  "id": "soft-bed-letter-bounce",
+  "order": 68,
+  "title": "软床触地回弹",
+  "types": [
+    "rhythm",
+    "type-motion"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15"
+  ],
+  "summary": "字母到达软床后，接触力驱动下陷、反弹与延迟挤压，落点声音读取同一碰撞事件。",
+  "mechanism": "字母到达软床 → 接触力驱动下陷、反弹与延迟挤压，落点声音读取同一碰撞事件。",
+  "trigger": "字母到达软床时",
+  "effect": "接触力驱动下陷、反弹与延迟挤压，落点声音读取同一碰撞事件。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-3d-render 原片 0.05–3.2 秒；1 倍速，总时长 3.15 秒。"
+    },
+    {
+      "name": "软字触地回弹",
+      "value": "dt = 1 / 2400.0\nws, zs, beta = 2 * np.pi * 3.3, 0.14, 0.56\nFALL_Z = {'s': 1.8, 'o': 2.9, 'f': 2.9, 't': 2.9}"
+    }
+  ],
+  "useCases": [
+    "软胶产品字标的落地与回弹。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-3d-render 原片 0.05–3.2 秒；总时长 3.15 秒。字母到达软床 → 接触力驱动下陷、反弹与延迟挤压，落点声音读取同一碰撞事件。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：dt = 1 / 2400.0\nws, zs, beta = 2 * np.pi * 3.3, 0.14, 0.56\nFALL_Z = {'s': 1.8, 'o': 2.9, 'f': 2.9, 't': 2.9}。使用 1920×1080 横屏。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/soft-bed-letter-bounce/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-3d-render"
+    }
+  ],
+  "previewAt": 2.85,
+  "markers": [
+    {
+      "t": 0,
+      "label": "三维软床"
+    },
+    {
+      "t": 0.45,
+      "label": "首字落地"
+    },
+    {
+      "t": 1.45,
+      "label": "第二字落地"
+    },
+    {
+      "t": 1.95,
+      "label": "第三字落地"
+    },
+    {
+      "t": 2.45,
+      "label": "第四字落地"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#EFE2EA",
+      "#4A2E4E",
+      "#FF8FC0"
+    ],
+    "type": "Fredoka 700；DM Sans 600；Noto Sans SC 500。"
+  }
+}

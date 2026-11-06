@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "line-ring-to-medallion",
+  "pattern": {
+    "id": "line-ring-to-medallion",
+    "order": 41,
+    "title": "线环熔成金章",
+    "types": [
+      "transition",
+      "rhythm",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "细线圆环收细蓄势后熔成镂空金章，过冲、镜头冲击与回声圈完成落章，光脉沿原线往返。",
+    "mechanism": "圆环和拱门轮廓闭合后，线环收细蓄势并向内填成保留镂空拱门的金章。外缘过冲、镜头冲击、回声圈与扫光随落章出现；光脉沿原线回溯至种子后，在末段正向流回金章。",
+    "trigger": "圆环拱门闭合、填面节点和末段呼吸节点依次到达时。",
+    "effect": "细线轮廓转成具有镂空拱门和方向性倒角的金色徽章，主击后保留沿线光脉与金属扫光。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "7.2–10秒，1倍速；巧思时长2.8秒。"
+      },
+      {
+        "name": "收细预备与填面",
+        "value": "预备7.4–7.5秒；start: 7.5；swell: 0.367；const easeSwell = cubicBezier(0.24, 0.3, 0.2, 1);"
+      },
+      {
+        "name": "径向填充",
+        "value": "const ri = Math.max(0, MR * (1 - Math.min(1, e))); const ro = MR + 1.5 / c.z + MR * 0.04 * ov;"
+      },
+      {
+        "name": "过冲与回声",
+        "value": "overshoot: [7.6, 7.8, 7.93]；echo: [7.533, 7.933]；const EC = cues.echo, eq = clamp((t - EC[0]) / (EC[1] - EC[0]));"
+      },
+      {
+        "name": "回溯光脉",
+        "value": "7.55–8.45秒；const easePulse = cubicBezier(0.45, 0, 0.2, 1); const sp = TOTAL * (1 - easePulse(pu)); Math.exp(-(((S[im] - sp) / 300) ** 2))。"
+      },
+      {
+        "name": "正向回流",
+        "value": "8.95–9.5秒；bp = TOTAL * easeIO(bu) * 1.04 - 60；Math.exp(-(((S[im] - bp) / 240) ** 2))。"
+      },
+      {
+        "name": "金属扫光",
+        "value": "const sh = clamp((t - 9.2) / 0.76);"
+      }
+    ],
+    "useCases": [
+      "线条标志转实心徽章",
+      "品牌标志的主击落版",
+      "镂空徽章与沿线光脉"
+    ],
+    "avoid": [
+      "竖屏重排",
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 以1倍速重放原片7.2–10秒，巧思时长2.8秒。圆环和拱门轮廓闭合后，线环收细蓄势并向内填成保留镂空拱门的金章，外缘过冲、镜头冲击、回声圈与扫光随落章出现，光脉沿原线回溯至种子后在末段正向流回金章。预备7.4–7.5秒；start: 7.5；swell: 0.367；const easeSwell = cubicBezier(0.24, 0.3, 0.2, 1);const ri = Math.max(0, MR * (1 - Math.min(1, e))); const ro = MR + 1.5 / c.z + MR * 0.04 * ov;overshoot: [7.6, 7.8, 7.93]；echo: [7.533, 7.933]；const EC = cues.echo, eq = clamp((t - EC[0]) / (EC[1] - EC[0]));7.55–8.45秒；const easePulse = cubicBezier(0.45, 0, 0.2, 1); const sp = TOTAL * (1 - easePulse(pu)); Math.exp(-(((S[im] - sp) / 300) ** 2))。8.95–9.5秒；bp = TOTAL * easeIO(bu) * 1.04 - 60；Math.exp(-(((S[im] - bp) / 240) ** 2))。const sh = clamp((t - 9.2) / 0.76);沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。",
+    "demo": "demos/patterns/line-ring-to-medallion/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-line-art"
+      }
+    ],
+    "previewAt": 2.55,
+    "markers": [
+      {
+        "t": 0,
+        "label": "圆环闭合前"
+      },
+      {
+        "t": 0.20000000000000018,
+        "label": "线环蓄势"
+      },
+      {
+        "t": 0.2999999999999998,
+        "label": "金章填面"
+      },
+      {
+        "t": 0.34999999999999964,
+        "label": "光脉回溯"
+      },
+      {
+        "t": 0.5999999999999996,
+        "label": "外缘过冲"
+      },
+      {
+        "t": 0.7329999999999997,
+        "label": "回声消散"
+      },
+      {
+        "t": 1.2499999999999991,
+        "label": "回溯落定"
+      },
+      {
+        "t": 1.7499999999999991,
+        "label": "光脉回流"
+      },
+      {
+        "t": 1.9999999999999991,
+        "label": "金属扫光"
+      },
+      {
+        "t": 2.3,
+        "label": "光脉到达"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#0B1320",
+        "#E9D7A5",
+        "#967D50",
+        "#FFF6DC"
+      ],
+      "type": "Cormorant Garamond 500；Noto Serif SC 300。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "preview": "previews/patterns/line-ring-to-medallion.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-line-art",
+      "bundle": "agent/cases/mg-line-art.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 线环熔成金章\n\n## 实现 Prompt\n\n复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 以1倍速重放原片7.2–10秒，巧思时长2.8秒。圆环和拱门轮廓闭合后，线环收细蓄势并向内填成保留镂空拱门的金章，外缘过冲、镜头冲击、回声圈与扫光随落章出现，光脉沿原线回溯至种子后在末段正向流回金章。预备7.4–7.5秒；start: 7.5；swell: 0.367；const easeSwell = cubicBezier(0.24, 0.3, 0.2, 1);const ri = Math.max(0, MR * (1 - Math.min(1, e))); const ro = MR + 1.5 / c.z + MR * 0.04 * ov;overshoot: [7.6, 7.8, 7.93]；echo: [7.533, 7.933]；const EC = cues.echo, eq = clamp((t - EC[0]) / (EC[1] - EC[0]));7.55–8.45秒；const easePulse = cubicBezier(0.45, 0, 0.2, 1); const sp = TOTAL * (1 - easePulse(pu)); Math.exp(-(((S[im] - sp) / 300) ** 2))。8.95–9.5秒；bp = TOTAL * easeIO(bu) * 1.04 - 60；Math.exp(-(((S[im] - bp) / 240) ** 2))。const sh = clamp((t - 9.2) / 0.76);沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：7.2–10秒，1倍速；巧思时长2.8秒。\n- **收细预备与填面**：预备7.4–7.5秒；start: 7.5；swell: 0.367；const easeSwell = cubicBezier(0.24, 0.3, 0.2, 1);\n- **径向填充**：const ri = Math.max(0, MR * (1 - Math.min(1, e))); const ro = MR + 1.5 / c.z + MR * 0.04 * ov;\n- **过冲与回声**：overshoot: [7.6, 7.8, 7.93]；echo: [7.533, 7.933]；const EC = cues.echo, eq = clamp((t - EC[0]) / (EC[1] - EC[0]));\n- **回溯光脉**：7.55–8.45秒；const easePulse = cubicBezier(0.45, 0, 0.2, 1); const sp = TOTAL * (1 - easePulse(pu)); Math.exp(-(((S[im] - sp) / 300) ** 2))。\n- **正向回流**：8.95–9.5秒；bp = TOTAL * easeIO(bu) * 1.04 - 60；Math.exp(-(((S[im] - bp) / 240) ** 2))。\n- **金属扫光**：const sh = clamp((t - 9.2) / 0.76);\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/line-ring-to-medallion/index.html) · [在库中查看](../../patterns.html#pattern/line-ring-to-medallion)\n"
+  },
+  "entrypoint": "demos/patterns/line-ring-to-medallion/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-line-art/LICENSES.md",
+      "bytes": 789,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/audio/film.m4a",
+      "bytes": 401088,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fidelity.md",
+      "bytes": 5828,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/cues.json",
+      "bytes": 3214,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/film.js",
+      "bytes": 33052,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/setup.js",
+      "bytes": 207,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/style.css",
+      "bytes": 193,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/CormorantGaramond-OFL.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/CormorantGaramond[wght].ttf",
+      "bytes": 1195560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/NotoSerifSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/NotoSerifSC-VF.ttf",
+      "bytes": 25125232,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/fonts.css",
+      "bytes": 352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/index.html",
+      "bytes": 2256,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/assets/fonts/fonts.css",
+      "bytes": 9135,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/audio.py",
+      "bytes": 9978,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/cues.json",
+      "bytes": 3214,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/film.js",
+      "bytes": 46982,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/index.html",
+      "bytes": 566,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/out/timing.json",
+      "bytes": 8840,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/tools/dump_timing.mjs",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/tools/retime.py",
+      "bytes": 4430,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/line-ring-to-medallion/index.html",
+      "bytes": 1898,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/line-ring-to-medallion/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-line-art.json",
+      "bytes": 19614,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/line-ring-to-medallion.json",
+      "bytes": 4843,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/line-ring-to-medallion.jpg",
+      "bytes": 36348,
+      "role": "preview"
+    }
+  ]
+}

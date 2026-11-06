@@ -1,0 +1,690 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-teardown",
+  "entry": {
+    "id": "lemo-teardown",
+    "order": 80,
+    "title": "二十一键 · 产品拆解",
+    "subtitle": "21 Keys, Opened",
+    "carriers": [
+      "video"
+    ],
+    "style": "evidence",
+    "purpose": "explainer",
+    "tech": [
+      "canvas2d",
+      "threejs"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "产品拆解",
+      "实证影像",
+      "代码影片"
+    ],
+    "summary": "开源分体键盘的一半在一个连续镜头中按真实层次升起。镜头进入板下查看主控、灯珠与热插拔，随后各层从底到顶依次合拢，尺寸画在实物上。",
+    "focus": "以固定版本 KiCad 与 STEP 为几何来源，将层间爆炸、微距穿行、零件引线和透视量测放在同一三维空间。",
+    "accent": "#ff6b3d",
+    "background": "#0d0e10",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 9.75,
+    "rhythm": {
+      "duration": 38.75,
+      "bpm": 96,
+      "beats": [
+        {
+          "t": 0,
+          "label": "键帽微距",
+          "note": "原作 Shots：0.000—2.500秒。"
+        },
+        {
+          "t": 2.5,
+          "label": "真实按键",
+          "note": "原作 Shots：2.500—4.400秒。"
+        },
+        {
+          "t": 4.4,
+          "label": "留白",
+          "note": "原作 Shots：4.400—5.000秒。"
+        },
+        {
+          "t": 5,
+          "label": "逐层升起",
+          "note": "原作 Shots：5.000—7.500秒。"
+        },
+        {
+          "t": 6.9,
+          "label": "六层引线",
+          "note": "原作 Shots：6.900—11.900秒。"
+        },
+        {
+          "t": 12.5,
+          "label": "进入缝隙",
+          "note": "原作 Shots：12.500—15.000秒。"
+        },
+        {
+          "t": 15,
+          "label": "主控",
+          "note": "原作 Shots：15.000—18.100秒。"
+        },
+        {
+          "t": 18.1,
+          "label": "灯珠",
+          "note": "原作 Shots：18.100—21.300秒。"
+        },
+        {
+          "t": 21.3,
+          "label": "穿过定位板",
+          "note": "原作 Shots：21.300—22.300秒。"
+        },
+        {
+          "t": 22.3,
+          "label": "热插拔",
+          "note": "原作 Shots：22.300—25.000秒。"
+        },
+        {
+          "t": 25,
+          "label": "合拢",
+          "note": "原作 Shots：25.000—27.600秒。"
+        },
+        {
+          "t": 27.5,
+          "label": "实物尺寸",
+          "note": "原作 Shots：27.500—33.700秒。"
+        },
+        {
+          "t": 33.75,
+          "label": "片尾",
+          "note": "原作 Shots：33.750—38.750秒。"
+        }
+      ]
+    },
+    "energy": [
+      0.3,
+      0.45,
+      0.55,
+      0.65,
+      0.8,
+      0.65,
+      0.5,
+      0.2
+    ],
+    "energyNote": "依据原作镜头密度、信息量和配乐段落作出的相对编辑标注。",
+    "observations": [
+      "three.js r170 物理材质；原作 pcb.json、crkbd 固定版本 STEP 三角网格和 Poly Haven 棚拍 HDRI。",
+      "键帽按距离错峰，六层沿组装轴升起；相机通过单调插值穿入板下，底层先合拢，尺寸线按端点投影生长。",
+      "原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。"
+    ],
+    "composition": {
+      "color": "石墨渐变背景、暖白标注、橙色键帽与尺寸线。",
+      "typography": "Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。",
+      "layout": "1920×1080横屏；构图、字幕与边距由原作render(t)直接绘制。",
+      "imagery": "three.js r170 物理材质；原作 pcb.json、crkbd 固定版本 STEP 三角网格和 Poly Haven 棚拍 HDRI。",
+      "motion": "键帽按距离错峰，六层沿组装轴升起；相机通过单调插值穿入板下，底层先合拢，尺寸线按端点投影生长。",
+      "sound": "原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。",
+      "rhythm": "96 BPM，38.75秒；镜头节点取原作Shots与时间表。",
+      "coherence": "以固定版本 KiCad 与 STEP 为几何来源，将层间爆炸、微距穿行、零件引线和透视量测放在同一三维空间。"
+    },
+    "layers": [
+      {
+        "name": "场景",
+        "role": "three.js r170 物理材质；原作 pcb.json、crkbd 固定版本 STEP 三角网格和 Poly Haven 棚拍 HDRI。"
+      },
+      {
+        "name": "信息层",
+        "role": "Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。"
+      },
+      {
+        "name": "声音",
+        "role": "原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#0d0e10",
+        "#f1efe9",
+        "#ff6b3d"
+      ],
+      "type": "Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。",
+      "motion": [
+        {
+          "name": "键帽微距",
+          "value": "0.000—2.500秒"
+        },
+        {
+          "name": "真实按键",
+          "value": "2.500—4.400秒"
+        },
+        {
+          "name": "留白",
+          "value": "4.400—5.000秒"
+        },
+        {
+          "name": "逐层升起",
+          "value": "5.000—7.500秒"
+        },
+        {
+          "name": "六层引线",
+          "value": "6.900—11.900秒"
+        },
+        {
+          "name": "进入缝隙",
+          "value": "12.500—15.000秒"
+        },
+        {
+          "name": "主控",
+          "value": "15.000—18.100秒"
+        },
+        {
+          "name": "灯珠",
+          "value": "18.100—21.300秒"
+        },
+        {
+          "name": "穿过定位板",
+          "value": "21.300—22.300秒"
+        },
+        {
+          "name": "热插拔",
+          "value": "22.300—25.000秒"
+        },
+        {
+          "name": "合拢",
+          "value": "25.000—27.600秒"
+        },
+        {
+          "name": "实物尺寸",
+          "value": "27.500—33.700秒"
+        },
+        {
+          "name": "片尾",
+          "value": "33.750—38.750秒"
+        }
+      ]
+    },
+    "useCases": [
+      "硬件结构讲解",
+      "产品拆解影片",
+      "真实尺寸与装配说明"
+    ],
+    "avoid": [],
+    "constraints": [
+      "几何与标注沿用 foostan/crkbd 固定提交，尺寸事实见 source/FACTS.md。",
+      "保留2倍渲染与原作景深、AO、灯光和后期参数。"
+    ],
+    "migration": [
+      {
+        "field": "film/src/main.js",
+        "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+      },
+      {
+        "field": "film/src/timeline.js",
+        "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+      },
+      {
+        "field": "film/src/overlay.js",
+        "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+      }
+    ],
+    "prompt": "以二十一键 · 产品拆解的原作源码实现完整时间线影片。开源分体键盘的一半在一次连续镜头中按真实层次升起，镜头进入板下查看主控、灯珠与热插拔，再按从底到顶的顺序合拢，在实物上画出尺寸。three.js r170 物理材质；原作 pcb.json、crkbd 固定版本 STEP 三角网格和 Poly Haven 棚拍 HDRI。键帽按距离错峰，六层沿组装轴升起；单调相机插值穿入板下，底层先合拢，尺寸线按端点投影生长。石墨渐变背景、暖白标注、橙色键帽与尺寸线。Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。画面直接执行film/中的原作render(t)，按24fps定位，声音默认关闭。",
+    "demo": "demos/cases/lemo-teardown/index.html",
+    "patternIds": [
+      "orbit-explode-3d",
+      "dimensions-drawn-on-object",
+      "explode-parts-leaders"
+    ],
+    "fidelity": "demos/cases/lemo-teardown/fidelity.md",
+    "sourceFiles": [
+      "demos/cases/lemo-teardown/film/src/main.js",
+      "demos/cases/lemo-teardown/film/src/timeline.js",
+      "demos/cases/lemo-teardown/film/src/overlay.js",
+      "demos/cases/lemo-teardown/film/data/pcb.json",
+      "demos/cases/lemo-teardown/film/data/case.bin"
+    ],
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/teardown",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/teardown/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档 MIT，原成片 CC BY 4.0、署名 LemoLab；第三方素材沿用原作 CREDITS 的许可。"
+    },
+    "sources": [
+      {
+        "label": "固定源码与制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/teardown"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/teardown.mp4"
+      },
+      {
+        "label": "原作署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/teardown/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者 Lemomo（lemomo-ai）。代码 MIT、成片 CC BY 4.0。来源固定于 bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00。"
+      },
+      {
+        "scope": "资源与声音",
+        "notes": "原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。原始资源和署名见 [audio/CREDITS](audio/CREDITS)，许可原文见 [LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。字体及SIL OFL 1.1原文在fonts/。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-teardown/LICENSES.md",
+    "preview": "previews/cases/lemo-teardown.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 二十一键 · 产品拆解 · 接入与保真说明\n\n完整代码影片，固定来源见[条目JSON](../../../entries/cases/lemo-teardown.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | MotionKit.load.prepare预载，iframe等待READY，以24fps执行并等待原作render(t)。 | 接入舞台、定位、播放与默认静音。 |\n| `film/index.html` | 字体改为../fonts/；依赖指向本条目的固定路径。 | 本库目录接入。 |\n| `audio/film.m4a` | 从Release成片以-c:a copy流复制。 | 原作声音同步。 |\n| `source/` | 保存原作制作文件、原始数据与依赖说明。 | 可编辑制作资料。 |\n| `stills/` | 静帧留在上游，本库预览由capture生成。 | 成品运行不读取原静帧。 |\n| `film/内core引用` | /core/lib.js改为条目film/core/lib.js；文件按固定提交保留。 | 本库相对路径接入。 |\n| `film/src/main.js` | /core/three/post.js指向../core/three/post.js，HDRI指向../assets/；原作灯光、材质与后期原样执行。 | 固定运行依赖路径。 |\n| `film/index.html` | three与three/addons指向vendor/three@0.170.0。 | 自包含的固定版本运行库。 |\n| `film/data/case.bin` | 以原作step2mesh.mjs、固定CAD、occt-import-js 0.0.23生成。 | 原作运行必需网格。 |\n\n## 适配层\n\n1920×1080、24fps、38.75秒；原作画面由render(t)直接绘制。`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时停在9.75秒。镜头标记取Shots与原作时间表。\n\n许可入口见[LICENSES.md](LICENSES.md)。\n\n## 与原片对照结果\n\n无头Edge：1920×1080、DPR1，启用GPU、忽略GPU黑名单、font-render-hinting=none、sRGB。等待`__motion.ready`后定位到同一视频帧。参考PNG从Release按帧号精确提取。\n\n原始列直接比较参考与本库PNG；编码链列在过程目录把本库PNG捕获为JPEG95，再依原作`core/render/video.mjs`以libx264 medium CRF14 yuv420p编码，依`source/build.sh`与`core/render/mux.sh`以slow CRF19再编码。teardown与transit-map的mux步骤加入noise=c0s=1:allf=t。全部测量为yuv444p的ffmpeg SSIM All；编码与左右拼图保留在过程目录。\n\n| 取样 | 视频帧 | 原片秒 | 原始SSIM | 编码链SSIM |\n| --- | --- | --- | --- | --- |\n| 开头 | 0 | 0.000000 | 0.996407 | 0.996927 |\n| frame_sec | 234 | 9.750000 | 0.992027 | 0.993886 |\n| 键帽微距中点 | 30 | 1.250000 | 0.996304 | 0.996198 |\n| 真实按键中点 | 83 | 3.458333 | 0.994821 | 0.995153 |\n| 留白中点 | 113 | 4.708333 | 0.996642 | 0.996992 |\n| 逐层升起中点 | 150 | 6.250000 | 0.992951 | 0.993772 |\n| 六层引线中点 | 226 | 9.416667 | 0.992275 | 0.993839 |\n| 进入缝隙中点 | 330 | 13.750000 | 0.990377 | 0.992116 |\n| 主控中点 | 397 | 16.541667 | 0.990756 | 0.988566 |\n| 灯珠中点 | 473 | 19.708333 | 0.992652 | 0.991848 |\n| 穿过定位板中点 | 523 | 21.791667 | 0.993702 | 0.994242 |\n| 热插拔中点 | 568 | 23.666667 | 0.995581 | 0.995598 |\n| 合拢中点 | 631 | 26.291667 | 0.991343 | 0.993002 |\n| 实物尺寸中点 | 734 | 30.583333 | 0.994149 | 0.995583 |\n| 片尾中点 | 870 | 36.250000 | 0.995974 | 0.996271 |\n| 片尾前1秒 | 906 | 37.750000 | 0.995942 | 0.996282 |\n\n16帧：原始最低0.990377、最高0.996642；编码链最低0.988566、最高0.996992；两列全部达到0.95。\n\n音轨解码为48kHz单声道，以每10ms的RMS包络在±500ms内互相关，最佳偏移0ms，相关系数1.000000。\n\n画面直接运行原作的绘制、字形布局与时间表；成片的JPEG95及两次H.264编码改变高频细节。WebGL对照使用Intel Iris Xe／ANGLE Direct3D11，Canvas和字体按本机Edge栅格化。\n",
+    "licenses": "# 许可与署名\n\n- 作品：LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）；代码与文档MIT、成片CC BY 4.0，[作品许可原文](film/LICENSE)、[CC BY 4.0原文](audio/CC-BY-4.0.txt)。\n- 原作资源、音乐、拟音与语音逐项署名：[audio/CREDITS](audio/CREDITS)。\n- 合成音乐与拟音：原作代码；Kokoro语音与模型采用Apache-2.0，原文见[audio/Apache-2.0.txt](audio/Apache-2.0.txt)。\n- VCSL、FreePats与VSCO2 CE乐器采样采用CC0，原文见[audio/CC0-1.0.txt](audio/CC0-1.0.txt)。\n\n- 硬件工程：foostan/crkbd固定提交63366fb7f51cf2a796462fdd90527e99dd126055，CC BY 4.0／MIT原文在[source/cad/](source/cad/)。\n- three.js 0.170.0：MIT原文在[vendor/three@0.170.0/LICENSE](vendor/three@0.170.0/LICENSE)。\n- 棚拍HDRI：Poly Haven photo_studio_loft_hall，CC0，文件为assets/photo_studio_loft_hall_2k.hdr。\n- STEP离线转换器occt-import-js 0.0.23采用LGPL-2.1，获取与运行方法见source/README.md。\n\n字体采用SIL OFL 1.1，原文：\n\n- [OFL-inter.txt](fonts/OFL-inter.txt)\n- [OFL-jetbrainsmono.txt](fonts/OFL-jetbrainsmono.txt)\n- [OFL-notosanssc.txt](fonts/OFL-notosanssc.txt)\n",
+    "prompt": "# 二十一键 · 产品拆解\n\n## 实现 Prompt\n\n以二十一键 · 产品拆解的原作源码实现完整时间线影片。开源分体键盘的一半在一次连续镜头中按真实层次升起，镜头进入板下查看主控、灯珠与热插拔，再按从底到顶的顺序合拢，在实物上画出尺寸。three.js r170 物理材质；原作 pcb.json、crkbd 固定版本 STEP 三角网格和 Poly Haven 棚拍 HDRI。键帽按距离错峰，六层沿组装轴升起；单调相机插值穿入板下，底层先合拢，尺寸线按端点投影生长。石墨渐变背景、暖白标注、橙色键帽与尺寸线。Noto Sans SC 400／500，JetBrains Mono 可变字重，Inter 可变字重。原作96BPM配乐与 CC0 乐器采样、塑料与金属拟音、Kokoro am_michael 旁白。画面直接执行film/中的原作render(t)，按24fps定位，声音默认关闭。\n\n## 动效 Token\n\n- **键帽微距**：0.000—2.500秒\n- **真实按键**：2.500—4.400秒\n- **留白**：4.400—5.000秒\n- **逐层升起**：5.000—7.500秒\n- **六层引线**：6.900—11.900秒\n- **进入缝隙**：12.500—15.000秒\n- **主控**：15.000—18.100秒\n- **灯珠**：18.100—21.300秒\n- **穿过定位板**：21.300—22.300秒\n- **热插拔**：22.300—25.000秒\n- **合拢**：25.000—27.600秒\n- **实物尺寸**：27.500—33.700秒\n- **片尾**：33.750—38.750秒\n\n## 制作约束\n\n- 几何与标注沿用 foostan/crkbd 固定提交，尺寸事实见 source/FACTS.md。\n- 保留2倍渲染与原作景深、AO、灯光和后期参数。\n\n## 迁移\n\n- `film/src/main.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。\n- `film/src/timeline.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。\n- `film/src/overlay.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。\n\n[打开 Demo](../../demos/cases/lemo-teardown/index.html) · [在库中查看](../../cases.html#case/lemo-teardown)\n"
+  },
+  "entrypoint": "demos/cases/lemo-teardown/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-teardown/LICENSES.md",
+      "bytes": 1165,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/assets/photo_studio_loft_hall_2k.hdr",
+      "bytes": 6432146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/CREDITS",
+      "bytes": 2427,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/film.m4a",
+      "bytes": 1255763,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fidelity.md",
+      "bytes": 3739,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/core/three/post.js",
+      "bytes": 6482,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/cues.json",
+      "bytes": 1199,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/data/case.bin",
+      "bytes": 1483928,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/data/pcb.json",
+      "bytes": 660897,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/index.html",
+      "bytes": 1331,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/comps.js",
+      "bytes": 5445,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/main.js",
+      "bytes": 17565,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/overlay.js",
+      "bytes": 11151,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/parts.js",
+      "bytes": 8321,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/pcbtex.js",
+      "bytes": 4427,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/timeline.js",
+      "bytes": 5319,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/voice/out/dur.json",
+      "bytes": 127,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/voice/out/words.json",
+      "bytes": 1227,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/JetBrainsMono.ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/NotoSansSC-400.woff2",
+      "bytes": 14424,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/NotoSansSC-500.woff2",
+      "bytes": 14628,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/OFL-inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/OFL-jetbrainsmono.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/fonts.css",
+      "bytes": 379,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/index.html",
+      "bytes": 4088,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/CREDITS",
+      "bytes": 2427,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/FACTS.md",
+      "bytes": 6175,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/README.md",
+      "bytes": 2521,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/build.sh",
+      "bytes": 3002,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/LICENSE_CC",
+      "bytes": 18657,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/LICENSE_MIT",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/corne-cherry.kicad_pcb",
+      "bytes": 4634342,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/left.step",
+      "bytes": 563447,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/plate-top-cherrymx.kicad_pcb",
+      "bytes": 127156,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/events.json",
+      "bytes": 3543,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/mix.py",
+      "bytes": 12380,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/timeline.json",
+      "bytes": 671,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/export.mjs",
+      "bytes": 1963,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/extract_pcb.py",
+      "bytes": 6334,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/fetch_cad.sh",
+      "bytes": 952,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/fetch_fonts.py",
+      "bytes": 1753,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/kicad_geom.py",
+      "bytes": 4692,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/motioncheck.py",
+      "bytes": 1670,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/sexp.py",
+      "bytes": 519,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/step2mesh.mjs",
+      "bytes": 1530,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/subcheck.mjs",
+      "bytes": 1090,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/voice/lines.json",
+      "bytes": 1228,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "bytes": 4625,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+      "bytes": 314097,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+      "bytes": 516,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+      "bytes": 110273,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+      "bytes": 11377,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/lemo-teardown.json",
+      "bytes": 9675,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-teardown.jpg",
+      "bytes": 71808,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "oblique-projection-camera",
+  "order": 120,
+  "title": "斜投影作镜头",
+  "types": [
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "沿固定45度深度轴偏移二维图纸坐标，投影系数从0升到.5；立面转出厚度，部件沿同一轴展开。",
+  "mechanism": "沿固定45度深度轴偏移二维图纸坐标，投影系数从0升到.5；立面转出厚度，部件沿同一轴展开。",
+  "trigger": "B(6)启动爆炸图。",
+  "effect": "不经过三维场景，平面机器逐步显出背面、厚度和部件纵深。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "10.700000–13.000000秒；1倍速，共2.300000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "投影",
+      "value": "film/draw.js:10–24：proj={k:0,a:π/4}，x+=d*k*cos(a)，y−=d*k*sin(a)。"
+    },
+    {
+      "name": "时序",
+      "value": "film/film.js:125：k=lerp(0,.5,eio(seg(t,B(6),B(6)+1.1)))−.08*ss(seg(t,16.6,17.8))；B(6)=11.111111秒。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-blueprint/film/draw.js",
+    "demos/cases/lemo-blueprint/film/film.js",
+    "demos/cases/lemo-blueprint/film/machine.js"
+  ],
+  "locator": "draw.js / film.js / machine.js",
+  "useCases": [
+    "不经过三维场景，平面机器逐步显出背面、厚度和部件纵深。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-blueprint的原作render(t)，重放“斜投影作镜头”。沿固定45度深度轴把二维图纸坐标偏移，投影系数从0升到.5；立面转出厚度并沿同一轴展开部件。参数与源码：film/draw.js:10–24：proj={k:0,a:π/4}，x+=d*k*cos(a)，y−=d*k*sin(a)。；film/film.js:125：k=lerp(0,.5,eio(seg(t,B(6),B(6)+1.1)))−.08*ss(seg(t,16.6,17.8))；B(6)=11.111111秒。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/oblique-projection-camera/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-blueprint"
+    }
+  ],
+  "previewAt": 1.15,
+  "markers": [
+    {
+      "t": 0,
+      "label": "斜投影作镜头"
+    }
+  ],
+  "renderer": "gpu"
+}

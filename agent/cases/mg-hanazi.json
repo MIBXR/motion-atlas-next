@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "mg-hanazi",
+  "entry": {
+    "id": "mg-hanazi",
+    "order": 18,
+    "title": "综艺花字 · 喵呜日记 EP.07",
+    "subtitle": "喵呜日记 EP.07",
+    "carriers": [
+      "video"
+    ],
+    "style": "dimensional",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "footage",
+      "dom"
+    ],
+    "orients": [
+      "portrait"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "综艺花字",
+      "萌宠",
+      "多层描边",
+      "弹簧",
+      "情绪字幕"
+    ],
+    "summary": "喵呜日记通过白猫晒太阳、灰猫凝视和长毛猫这三段照片推进，以逐字花字、问号、汗滴、三连推和炸毛主拍衔接，最后将画面收为“猫主子认证”相框落版。",
+    "focus": "DOM/SVG 花字通过叠加挤出、彩边、白边、渐变和高光形成字面；逐字错峰的弹簧动画、轻摆、照片推近与六张炸毛贴图由同一时刻推导。",
+    "accent": "#FF6FB5",
+    "background": "#1B1B22",
+    "timeline": true,
+    "kit": true,
+    "renderer": "gpu",
+    "rhythm": {
+      "duration": 10,
+      "bpm": 120,
+      "beats": [
+        {
+          "t": 0.2,
+          "label": "快乐花字",
+          "note": "今日份快乐按两帧错峰弹入。"
+        },
+        {
+          "t": 1.317,
+          "label": "小声旁白",
+          "note": "手写旁白逐步显示。"
+        },
+        {
+          "t": 1.567,
+          "label": "快乐电池",
+          "note": "电池出现，随后三次充电。"
+        },
+        {
+          "t": 2.5,
+          "label": "凝视切镜",
+          "note": "画面切到灰猫，伴随唱片刮擦。"
+        },
+        {
+          "t": 2.567,
+          "label": "问号弹入",
+          "note": "三个问号依次弹入。"
+        },
+        {
+          "t": 3.067,
+          "label": "空气安静",
+          "note": "手写吐槽出现，汗滴下滑。"
+        },
+        {
+          "t": 4,
+          "label": "糖果擦除",
+          "note": "斜向糖果纹色带擦到长毛猫。"
+        },
+        {
+          "t": 4.2,
+          "label": "嘉宾名牌",
+          "note": "嘉宾名牌与发量担当标签进入。"
+        },
+        {
+          "t": 4.9,
+          "label": "高能预警",
+          "note": "前方高能横幅砸入并闪动。"
+        },
+        {
+          "t": 5.25,
+          "label": "三连推近",
+          "note": "三次快速推到猫眼并加强抖动。"
+        },
+        {
+          "t": 6,
+          "label": "炸毛主拍",
+          "note": "猫咪炸毛，集中线与震惊花字同时爆开。"
+        },
+        {
+          "t": 7,
+          "label": "发量爆表",
+          "note": "指针四帧扫过量表并抵住终点抖动。"
+        },
+        {
+          "t": 7.5,
+          "label": "定格收框",
+          "note": "画面定格后收成白边相框。"
+        },
+        {
+          "t": 8.5,
+          "label": "猫主认证",
+          "note": "认证印章砸入。"
+        },
+        {
+          "t": 8.9,
+          "label": "下期见",
+          "note": "结尾花字弹入并轻摆。"
+        }
+      ]
+    },
+    "layers": [
+      {
+        "name": "萌宠照片",
+        "role": "三段猫咪照片使用慢移、手持抖动与快速推近，白猫耳朵和长毛猫炸毛通过替换贴图呈现。"
+      },
+      {
+        "name": "情绪花字",
+        "role": "圆体标题、手写吐槽和震惊花字叠加挤出、描边、渐变、高光与投影。"
+      },
+      {
+        "name": "装饰与节目包装",
+        "role": "问号、汗滴、集中线、量表、徽章、名牌、糖果擦除和认证印章按拍点出现。"
+      },
+      {
+        "name": "落版与后期",
+        "role": "主拍画面定格后缩成白边相框，保留轻微摆动，叠加暗角和逐帧颗粒。"
+      }
+    ],
+    "composition": {
+      "color": "高饱和粉 #FF3D7F、黄 #FFE14D、青 #16B9F0 与白描边，搭配深蓝 #1E2A78 和深紫挤出，构成字层。",
+      "typography": "Resource Han Rounded 900 排圆体标题和问号；Alimama ShuHeiTi 700 排高能与震惊；Douyin Sans 排副标题；LXGW Marker Gothic 排手写吐槽；ZCOOL KuaiLe 与 Luckiest Guy 排节目徽章。",
+      "layout": "1080×1920 竖屏；照片铺满画幅，花字围绕猫咪表情放置，左上节目徽章持续存在，结尾照片收为白边相框。",
+      "imagery": "猫咪照片、耳朵替换帧和六张炸毛剪影叠合 SVG 装饰与 DOM 后期。",
+      "motion": "逐字弹簧入场错峰约两帧，驻留轻摆；照片慢移、手持抖动与三连推后，炸毛、集中线和爆炸框在主拍爆开。",
+      "sound": "开启后播放原片 AAC 音轨；原作 audio.py 使用 120BPM 拨弦、低音、钟琴和拍手配乐，叠加 boing、pop、ding、滑哨、唱片刮擦与合成人声反应。",
+      "rhythm": "0–2.5 秒白猫与快乐标题，2.5–4 秒灰猫与问号，4–6 秒嘉宾与预警三连推，6 秒炸毛主拍，7 秒量表爆表，7.5 秒收框，8.5 秒认证。",
+      "coherence": "花字、装饰、推镜和声音跟随猫咪情绪，从快乐、疑惑、紧张递进到震惊，再由认证印章结束节目。"
+    },
+    "tokens": {
+      "palette": [
+        "#FF3D7F",
+        "#FFE14D",
+        "#16B9F0",
+        "#FFFFFF",
+        "#1E2A78"
+      ],
+      "type": "Resource Han Rounded 900；Alimama ShuHeiTi 700；Douyin Sans 700；LXGW Marker Gothic 400；ZCOOL KuaiLe 400；Luckiest Guy 400。",
+      "motion": [
+        {
+          "name": "弹簧参数",
+          "value": "function spring(t, z = 0.517, w = 22)"
+        },
+        {
+          "name": "逐字错峰",
+          "value": "\"title\": [0.2, 0.267, 0.333, 0.4, 0.467]"
+        },
+        {
+          "name": "推镜倍率",
+          "value": "\"pushZ\": [1.4, 2.0, 2.9]"
+        },
+        {
+          "name": "指针时间",
+          "value": "\"needle\": [7.0, 7.133]"
+        }
+      ]
+    },
+    "useCases": [
+      "萌宠短片",
+      "vlog 包装",
+      "搞笑二创"
+    ],
+    "constraints": [
+      "原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。",
+      "10 秒，1080×1920，30fps；只提供竖屏原作画幅，复刻公开成片的默认版本。"
+    ],
+    "prompt": "# 综艺花字 Variety Show Kinetic Captions (Hanazi)\n\n**原片**：喵呜日记 EP.07「今日份快乐」 · 1080×1920 · 30 fps · 10 秒 · AI 评审终评 7.64 / 10\n\n**源码**：[demos/18-hanazi/](../demos/18-hanazi/)\n\n## 怎么用\n\n1. 新建一个空文件夹，在里面打开一个能写代码、能执行命令的 AI 助手（例如 Claude Code）。本机需要能跑网页渲染（Node + Chrome）和 ffmpeg。\n2. 把下面「提示词」整段复制进去发送。\n3. 想换成自己的内容：改 `Creative seed` 里的故事、品牌名、文案和配色，或者改 `Output` 里的尺寸（比如竖屏 1080×1920）。不要删 `Signature features` 那一段，它是这种风格被一眼认出来的依据。\n4. 想再提高：成片出来后，另开一个 AI 用 [rubric.md](../rubric.md) 评审，把评审意见贴回给制作的 AI 再改一轮。原片就是这样改了两轮。\n\n## 提示词\n\n```text\nYou are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n综艺花字 Variety Show Kinetic Captions (Hanazi)\n\n# Output (fixed)\n- 1080×1920, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML DOM/SVG: multi-layer text-stroke 花字 components + spring pops + SVG burst/sweat/sparkle decorations over a pet-vlog footage layer (CC0 photos with Ken Burns + handheld shake + punch-ins)\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「萌宠综艺感 vlog」综艺花字 in its native habitat — reactive captions over a pet vlog.\n- Base layer that feels like footage: CC0/PD cat or dog photos from /assets/images with slow Ken Burns, subtle handheld shake, snap punch-in zooms on 'moments' (you may also build a stylised scene if photos look weak).\n- 花字 moments synced to beats: title \"今日份快乐\" (fill gradient + thick white stroke + coloured outer stroke + drop shadow, rounded heavy font), \"？？？\" bouncing question marks, \"震惊!!\" inside a radial 爆炸框 with speed lines + 放射线 flash, \"（小声）\" small aside, \"绝绝子\" with sparkles, sweat drops, a \"猫主子认证\" stamp.\n- Motion: pop 0 → 1.15 → 1.0 in ~8 frames, per-character bounce with 2-frame stagger, slight rotation, gentle wiggle while holding; appear 2–3 frames after the audio/visual moment. High-saturation pink/yellow/cyan with white strokes.\nSound: bouncy variety-show bed (pizzicato/bass/claps) + boing, pop, ding, slide whistle, record scratch on '？？？'.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n源自电视综艺后期的情绪化装饰字幕：多层描边圆体字带弹性入场，跟随人物情绪变色变形，配打击音效。现已下沉为 vlog、萌宠、访谈、搞笑二创的通用包装语言，剪映内置大量花字模板，B 站也有免费花字样式包流通。\n视觉特征 多层描边圆体/胖体字, 高饱和撞色+白边+投影, 弹性 pop 入场, 配合音效出现, 手绘装饰符号（爆炸框/汗滴/闪光）\n关键技法 字体三层结构：填充色+粗白描边+彩色外描边/投影（CSS 可用多层 text-shadow 或 SVG stroke 模拟）\n入场 overshoot：scale 0→1.15→1.0（约 8 帧），或逐字弹跳错帧 2 帧\n情绪匹配：吐槽用歪斜手写体、惊讶用放射线爆炸框、尴尬用汗滴符号\n出现时机对齐笑点/音效，比语音晚 2~3 帧更自然\n长时间驻留花字加轻微 wiggle 保持活性\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.\n```\n",
+    "migration": [
+      {
+        "field": "film/scene.js → HZ、charXf、PL",
+        "how": "调整花字层次、弹簧与照片构图。"
+      },
+      {
+        "field": "assets/、source/assets/",
+        "how": "替换照片与炸毛贴图，保留原作制作脚本。"
+      },
+      {
+        "field": "film/cues.json",
+        "how": "调整逐字时刻、推镜与主拍节点。"
+      },
+      {
+        "field": "index.html → MotionKit.mountFilm",
+        "how": "接入时间轴、原片音轨与窗口等比缩放。"
+      }
+    ],
+    "demo": "demos/cases/mg-hanazi/index.html",
+    "patternIds": [
+      "punch-in-camera-shake",
+      "layered-hanazi-spring-pop",
+      "focus-burst-caption-hit",
+      "meter-needle-overrange",
+      "freeze-to-framed-card",
+      "shape-wipe-transition",
+      "collect-counter",
+      "cel-line-boil",
+      "split-compare-stamp"
+    ],
+    "previewAt": 7.25,
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "原作《综艺花字 · 喵呜日记 EP.07》来自 [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)，作者 Vincentwei1021，固定提交 `49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`；原目录为 `demos/18-hanazi/`。代码、提示词、文档与成片采用 MIT 许可，原文见 [LICENSE](film/LICENSE)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "| 完整文件与版本 | 官方来源 | 许可原文 |\n| --- | --- | --- |\n| `AlimamaShuHeiTi-Bold.ttf`，Version 1.005;beta | [官方完整文件或归档](https://fonts.alibabadesign.com/AlimamaShuHeiTi/AlimamaShuHeiTi-Bold.zip) | [阿里妈妈数黑体法律声明 原文](fonts/AlimamaShuHeiTi-LICENSE.txt) |\n| `DouyinSansBold.ttf`，Version 1.01 | [官方完整文件或归档](https://raw.githubusercontent.com/bytedance/fonts/327565b61501d7a6d4902ed6ce417a7bd2ae54e6/DouyinSans/DouyinSansBold.ttf) | [SIL OFL 1.1 原文](fonts/DouyinSans-OFL.txt) |\n| `LXGWMarkerGothic-Regular.ttf`，Version 1.004 | [官方完整文件或归档](https://github.com/lxgw/LxgwMarkerGothic/releases/download/v1.004/LxgwMarkerGothic-v1.004.zip) | [SIL OFL 1.1 原文](fonts/LXGWMarkerGothic-OFL.txt) |\n| `LuckiestGuy-Regular.ttf`，Version 1.001 | [官方完整文件或归档](https://raw.githubusercontent.com/google/fonts/9862abc066c9b83bf84c3e8ed1fc2d8d48f9bbf0/apache/luckiestguy/LuckiestGuy-Regular.ttf) | [Apache 2.0 原文](fonts/LuckiestGuy-LICENSE.txt) |\n| `ResourceHanRoundedCN-Heavy.ttf`，0.990 | [官方完整文件或归档](https://github.com/CyanoHao/Resource-Han-Rounded/releases/download/v0.990/RHR-CN-0.990.7z) | [SIL OFL 1.1 原文](fonts/ResourceHanRounded-OFL.txt) |\n| `ZCOOLKuaiLe-Regular.ttf`，Version 2.001 | [官方完整文件或归档](https://raw.githubusercontent.com/google/fonts/9862abc066c9b83bf84c3e8ed1fc2d8d48f9bbf0/ofl/zcoolkuaile/ZCOOLKuaiLe-Regular.ttf) | [SIL OFL 1.1 原文](fonts/ZCOOLKuaiLe-OFL.txt) |\n\n字体声明取自原作 `assets/fonts/fonts.css`，仅保留实际使用的家族与字重并改写 URL。"
+      },
+      {
+        "scope": "共享素材",
+        "notes": "- `assets/white_dof.jpg`、`grey_r2.jpg`、`tux_r1.jpg`、`white_ear*.png` 与 `hero_*.png` 原样取自[固定提交的猫咪画面](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/18-hanazi/assets/)，制作脚本保存在 `source/assets/`。原照片按[原作 README 的素材许可说明](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/README.zh-CN.md#许可)为 CC0 或公有领域，景深、耳朵替换帧、抠图与炸毛加工采用原作 MIT 许可。\n- `assets/textures/grain/grain_fine_2048.png`：[固定提交中的程序化颗粒](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/assets/textures/grain/grain_fine_2048.png)，原作 MIT 许可。\n\n本案例没有 vendor 包。"
+      },
+      {
+        "scope": "配乐",
+        "notes": "`audio/film.m4a` 从固定提交的 `videos/18-hanazi.mp4` 以 `ffmpeg -vn -c:a copy` 无损抽取 AAC 音轨，保留原片混音；成片与原作自制音频采用 MIT 许可。配乐生成脚本原样保存在 `source/audio.py`，使用 [VCSL 乐器采样](https://github.com/sgossner/VCSL)（CC0）与原作合成器。"
+      }
+    ],
+    "relatedEntries": [
+      {
+        "kind": "material",
+        "id": "mg-styles-15",
+        "note": "提示词与配乐合成库所在素材"
+      }
+    ],
+    "energy": [
+      0.371,
+      0.324,
+      0.262,
+      0.243,
+      0.257,
+      0.269,
+      0.262,
+      0.251,
+      0.309,
+      0.402,
+      0.403,
+      0.392,
+      0.28,
+      0.246,
+      0.349,
+      0.557,
+      0.58,
+      0.397,
+      0.262,
+      0.392,
+      0.452,
+      0.497,
+      0.612,
+      0.811,
+      0.804,
+      0.649,
+      0.525,
+      0.576,
+      0.685,
+      0.708,
+      0.669,
+      0.566,
+      0.477,
+      0.408,
+      0.345,
+      0.322,
+      0.303,
+      0.272,
+      0.209,
+      0.162
+    ],
+    "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。",
+    "fidelity": "demos/cases/mg-hanazi/fidelity.md",
+    "licenses": "demos/cases/mg-hanazi/LICENSES.md",
+    "preview": "previews/cases/mg-hanazi.jpg",
+    "previewPortrait": "previews/cases/mg-hanazi-portrait.jpg"
+  },
+  "documents": {
+    "fidelity": "# 接入与保真说明\n\n复刻以公开默认成片为准，作品来源与固定版本见[条目 JSON](../../../entries/cases/mg-hanazi.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| 原 `index.html` → `film/scene.js`、`film/style.css`、`film/setup.js`、`index.html` | 拆出作品、样式和 DOM；等待 build() 完成后，以 `MotionKit.mountFilm` 接入 1080×1920、30fps、10 秒竖屏。 | 路径改写 |\n| `film/style.css`、`film/setup.js`、`film/scene.js`、`assets/` | 照片、耳朵与炸毛贴图、共享颗粒、cues 和字体全部改为案例内相对路径；SVG 定位样式限定于 #stage 内。 | 路径改写 |\n| `film/scene.js` | 删除原作 harness 的 `window.__ready` 导出，资源就绪由模块导入和 Motion Kit 的 ready 负责。 | 开发工具 |\n| `audio.py`、`assets/prep.py`、`prep_r2.py`、`prep_r2b.py`、`cues.json` → `source/` | 原样保存配乐、抠图、景深和炸毛贴图生成脚本，保持相对位置。 | 移至 source |\n| `fonts/`、`fonts/fonts.css` | 从官方来源保存完整字体和许可，只保留使用的原 @font-face 并替换 URL。 | 路径改写 |\n\n## 接入\n\n`MotionKit.mountFilm` 使用原作 `renderAt(t)`，画面由指定时刻直接推导；原有带种子的随机算法与逐格取样保留。中文 markers 从 `film/cues.json` 换算，声音默认关闭，`audio/film.m4a` 与播放、暂停、拖动和倍速同步。\n\n`previewAt: 7.25`：炸毛主拍、震惊、副标题、发量检测和爆表均已入场，7.5 秒定格闪白尚未发生。减少动态偏好下在同一时刻暂停。\n\n条目使用 `orients: [\"portrait\"]` 和 `renderer: \"gpu\"`；舞台尺寸为 1080×1920。无头浏览器使用 ANGLE D3D11 GPU 合成 SVG 滤镜和圆角裁切，预览脚本按 renderer 选择 GPU；同刻截图通过工作区的进程级 GPU 包装运行原 `shot.mjs`。\n\n## 已接受差异\n\n原片的 `harness/render.mjs` 可按快门区间对子帧采样平均；实时页面与 `shot.mjs` 直接绘制指定时刻，高速边缘保留由成片子帧平均造成的运动模糊差异。原作页面内的解析拖影、帧量化与局部模糊保留。\n\n## 与原片对照结果\n\n对照图位于工作区 `compare/mg-hanazi/`，左侧为原片 ffmpeg 取帧，右侧为同刻 `shot.mjs` 截图；视口为 1080×1920。\n\n| 时刻 | 逐张结论 | 拼图 |\n| --- | --- | --- |\n| 1.0 秒 | 白猫构图、节目徽章、今日份快乐的字形、分层描边、位置和星光对应一致。 | `compare-1.0.png` |\n| 3.0 秒 | 灰猫推近构图与三个问号的颜色、位置和字形对应一致；原片运动中的边缘更柔。 | `compare-3.0.png` |\n| 5.0 秒 | 长毛猫构图、嘉宾名牌和高能横幅对应一致；原片横幅快速回摆的子帧拖影更强。 | `compare-5.0.png` |\n| 7.5 秒 | 定格闪白、炸毛剪影、震惊花字、爆表量表、集中线和副标题对应一致。 | `compare-7.5.png` |\n| 9.5 秒 | 青色条纹底、旋转圆角白框、猫咪、认证印章与两组落版花字对应一致；GPU 合成恢复完整背景与裁切。 | `compare-9.5.png` |\n\n无头浏览器中，独立 Demo 与站点案例页均自动播放，实际鼠标拖动可定位，声音默认关闭并能切换，播放时音轨跟随时间轴；独立页 `?t=5&autoplay=0` 停在 5 秒，案例页 `#case/mg-hanazi?t=5` 在 iframe ready 后从 5 秒定位继续。一次开启声音后的声画采样差为demo 50.0ms、site 20.3ms；三片的两种入口均无浏览器脚本异常。\n\n## 制作依赖与复现\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/18-hanazi && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n\n图像准备脚本位于 `source/assets/prep.py`、`prep_r2.py`、`prep_r2b.py`；组装时将案例 `assets/` 中的现有图片合入复现案例的 `assets/`，并在该目录运行准备脚本。准备链读取根目录 `assets/images/originals/cats/`、案例内 `cat_grey_face.jpg`、`tux_cut.png`、`tux_cut_r1.png` 和 `grey_r1.jpg`。\n\n原作仓库未提供猫原图、部分中间图与 rembg 模型。生成脚本和原作已生成的成品素材均已保留，案例直接使用这些成品素材；重新生成需自行准备原始输入与模型。\n",
+    "licenses": "# 第三方许可索引\n\n[来源、版本和许可事实](../../../entries/cases/mg-hanazi.json)\n\n- [film/LICENSE](film/LICENSE)\n- [fonts/AlimamaShuHeiTi-LICENSE.txt](fonts/AlimamaShuHeiTi-LICENSE.txt)\n- [fonts/DouyinSans-OFL.txt](fonts/DouyinSans-OFL.txt)\n- [fonts/LXGWMarkerGothic-OFL.txt](fonts/LXGWMarkerGothic-OFL.txt)\n- [fonts/LuckiestGuy-LICENSE.txt](fonts/LuckiestGuy-LICENSE.txt)\n- [fonts/ResourceHanRounded-OFL.txt](fonts/ResourceHanRounded-OFL.txt)\n- [fonts/ZCOOLKuaiLe-OFL.txt](fonts/ZCOOLKuaiLe-OFL.txt)\n\n## 制作依赖\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/18-hanazi && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "prompt": "# 综艺花字 · 喵呜日记 EP.07\n\n## 实现 Prompt\n\n# 综艺花字 Variety Show Kinetic Captions (Hanazi)\n\n**原片**：喵呜日记 EP.07「今日份快乐」 · 1080×1920 · 30 fps · 10 秒 · AI 评审终评 7.64 / 10\n\n**源码**：[demos/18-hanazi/](../demos/18-hanazi/)\n\n## 怎么用\n\n1. 新建一个空文件夹，在里面打开一个能写代码、能执行命令的 AI 助手（例如 Claude Code）。本机需要能跑网页渲染（Node + Chrome）和 ffmpeg。\n2. 把下面「提示词」整段复制进去发送。\n3. 想换成自己的内容：改 `Creative seed` 里的故事、品牌名、文案和配色，或者改 `Output` 里的尺寸（比如竖屏 1080×1920）。不要删 `Signature features` 那一段，它是这种风格被一眼认出来的依据。\n4. 想再提高：成片出来后，另开一个 AI 用 [rubric.md](../rubric.md) 评审，把评审意见贴回给制作的 AI 再改一轮。原片就是这样改了两轮。\n\n## 提示词\n\n```text\nYou are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n综艺花字 Variety Show Kinetic Captions (Hanazi)\n\n# Output (fixed)\n- 1080×1920, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML DOM/SVG: multi-layer text-stroke 花字 components + spring pops + SVG burst/sweat/sparkle decorations over a pet-vlog footage layer (CC0 photos with Ken Burns + handheld shake + punch-ins)\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「萌宠综艺感 vlog」综艺花字 in its native habitat — reactive captions over a pet vlog.\n- Base layer that feels like footage: CC0/PD cat or dog photos from /assets/images with slow Ken Burns, subtle handheld shake, snap punch-in zooms on 'moments' (you may also build a stylised scene if photos look weak).\n- 花字 moments synced to beats: title \"今日份快乐\" (fill gradient + thick white stroke + coloured outer stroke + drop shadow, rounded heavy font), \"？？？\" bouncing question marks, \"震惊!!\" inside a radial 爆炸框 with speed lines + 放射线 flash, \"（小声）\" small aside, \"绝绝子\" with sparkles, sweat drops, a \"猫主子认证\" stamp.\n- Motion: pop 0 → 1.15 → 1.0 in ~8 frames, per-character bounce with 2-frame stagger, slight rotation, gentle wiggle while holding; appear 2–3 frames after the audio/visual moment. High-saturation pink/yellow/cyan with white strokes.\nSound: bouncy variety-show bed (pizzicato/bass/claps) + boing, pop, ding, slide whistle, record scratch on '？？？'.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n源自电视综艺后期的情绪化装饰字幕：多层描边圆体字带弹性入场，跟随人物情绪变色变形，配打击音效。现已下沉为 vlog、萌宠、访谈、搞笑二创的通用包装语言，剪映内置大量花字模板，B 站也有免费花字样式包流通。\n视觉特征 多层描边圆体/胖体字, 高饱和撞色+白边+投影, 弹性 pop 入场, 配合音效出现, 手绘装饰符号（爆炸框/汗滴/闪光）\n关键技法 字体三层结构：填充色+粗白描边+彩色外描边/投影（CSS 可用多层 text-shadow 或 SVG stroke 模拟）\n入场 overshoot：scale 0→1.15→1.0（约 8 帧），或逐字弹跳错帧 2 帧\n情绪匹配：吐槽用歪斜手写体、惊讶用放射线爆炸框、尴尬用汗滴符号\n出现时机对齐笑点/音效，比语音晚 2~3 帧更自然\n长时间驻留花字加轻微 wiggle 保持活性\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.\n```\n\n\n## 动效 Token\n\n- **弹簧参数**：function spring(t, z = 0.517, w = 22)\n- **逐字错峰**：\"title\": [0.2, 0.267, 0.333, 0.4, 0.467]\n- **推镜倍率**：\"pushZ\": [1.4, 2.0, 2.9]\n- **指针时间**：\"needle\": [7.0, 7.133]\n\n## 制作约束\n\n- 原作：Vincentwei1021，https://github.com/Vincentwei1021/mg-styles-15，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可。\n- 10 秒，1080×1920，30fps；只提供竖屏原作画幅，复刻公开成片的默认版本。\n\n## 迁移\n\n- `film/scene.js → HZ、charXf、PL`：调整花字层次、弹簧与照片构图。\n- `assets/、source/assets/`：替换照片与炸毛贴图，保留原作制作脚本。\n- `film/cues.json`：调整逐字时刻、推镜与主拍节点。\n- `index.html → MotionKit.mountFilm`：接入时间轴、原片音轨与窗口等比缩放。\n\n[打开 Demo](../../demos/cases/mg-hanazi/index.html) · [在库中查看](../../cases.html#case/mg-hanazi)\n"
+  },
+  "entrypoint": "demos/cases/mg-hanazi/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-hanazi/LICENSES.md",
+      "bytes": 1047,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/grey_r2.jpg",
+      "bytes": 1358977,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B0.png",
+      "bytes": 1482239,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B1.png",
+      "bytes": 1488365,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B2.png",
+      "bytes": 1479775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L06.png",
+      "bytes": 1403484,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L12.png",
+      "bytes": 1523388,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L135.png",
+      "bytes": 1555269,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/tux_r1.jpg",
+      "bytes": 1380121,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_dof.jpg",
+      "bytes": 525250,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear11.png",
+      "bytes": 2491551,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear16.png",
+      "bytes": 2492949,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear6.png",
+      "bytes": 2489969,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/audio/film.m4a",
+      "bytes": 423783,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fidelity.md",
+      "bytes": 4658,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/cues.json",
+      "bytes": 1116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/scene.js",
+      "bytes": 48529,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/setup.js",
+      "bytes": 1511,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/style.css",
+      "bytes": 1332,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/AlimamaShuHeiTi-Bold.ttf",
+      "bytes": 1375772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/AlimamaShuHeiTi-LICENSE.txt",
+      "bytes": 2016,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/DouyinSans-OFL.txt",
+      "bytes": 4425,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/DouyinSansBold.ttf",
+      "bytes": 1919404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LuckiestGuy-LICENSE.txt",
+      "bytes": 11358,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LuckiestGuy-Regular.ttf",
+      "bytes": 73320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ResourceHanRounded-OFL.txt",
+      "bytes": 4504,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ResourceHanRoundedCN-Heavy.ttf",
+      "bytes": 13688972,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ZCOOLKuaiLe-OFL.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ZCOOLKuaiLe-Regular.ttf",
+      "bytes": 1514968,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/fonts.css",
+      "bytes": 1066,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/index.html",
+      "bytes": 2291,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep.py",
+      "bytes": 8811,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep_r2.py",
+      "bytes": 8193,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep_r2b.py",
+      "bytes": 4162,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/audio.py",
+      "bytes": 12031,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/cues.json",
+      "bytes": 1116,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/mg-hanazi.json",
+      "bytes": 19096,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/mg-hanazi-portrait.jpg",
+      "bytes": 209244,
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/mg-hanazi.jpg",
+      "bytes": 96711,
+      "role": "preview"
+    }
+  ]
+}

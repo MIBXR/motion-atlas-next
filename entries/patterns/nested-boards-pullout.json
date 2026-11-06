@@ -1,0 +1,66 @@
+{
+  "id": "nested-boards-pullout",
+  "order": 137,
+  "title": "嵌套电路板拉远",
+  "types": [
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "充电器、街道、城市和走廊各用局部坐标与独立画布，子板嵌入父板内的固定区域；对数拉远时递归选择外层，并裁切、合成每级子板，连续露出整张大板。",
+  "mechanism": "充电器、街道、城市和走廊各用局部坐标与独立画布，子板嵌入父板内的固定区域；对数拉远时递归选择外层，并裁切、合成每级子板，连续露出整张大板。",
+  "trigger": "来源案例时间轴进入所列动作区间。",
+  "effect": "充电器、街道、城市和走廊各用局部坐标与独立画布，子板嵌入父板内的固定区域；对数拉远时递归选择外层，并裁切、合成每级子板，连续露出整张大板。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "52.500000–55.500000秒；1倍速，总时长3.000000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "四级坐标",
+      "value": "film/src/levels.js:toChild将(x−at)/s、z×s；toParent将x×s+at、z/s；baseOf按视口覆盖逐层提升，drawLevel递归合成可见子板。"
+    },
+    {
+      "name": "拉远曲线",
+      "value": "film/src/main.js:PULL0=52.9、PULL1=54.5；camUp / camDown保持充电器锚点；e=1−(1−p)^2.6，z对数插值到.8，末段旋转−.03。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-circuit-board/film/src/levels.js",
+    "demos/cases/lemo-circuit-board/film/src/main.js"
+  ],
+  "locator": "baseOf / drawLevel / camPull / camUp / camDown",
+  "useCases": [
+    "从局部设备连续揭示街区、城市与全局系统。"
+  ],
+  "avoid": [
+    "在主动作发生时叠加争夺注意的另一主动作"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-circuit-board的原作render(t)重放“嵌套电路板拉远”。充电器、街道、城市和走廊各用局部坐标与独立画布，子板嵌入父板的固定足印；对数拉远时递归选择外层并把每级子板裁切合成，连续露出整张大板。保留参数：film/src/levels.js:toChild将(x−at)/s、z×s；toParent将x×s+at、z/s；baseOf按视口覆盖逐层提升，drawLevel递归合成可见子板。；film/src/main.js:PULL0=52.9、PULL1=54.5；camUp / camDown保持充电器锚点；e=1−(1−p)^2.6，z对数插值到.8，末段旋转−.03。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/nested-boards-pullout/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-circuit-board"
+    }
+  ],
+  "previewAt": 1.4,
+  "markers": [
+    {
+      "t": 0,
+      "label": "嵌套电路板拉远"
+    }
+  ]
+}

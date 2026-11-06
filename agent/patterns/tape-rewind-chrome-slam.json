@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "tape-rewind-chrome-slam",
+  "pattern": {
+    "id": "tape-rewind-chrome-slam",
+    "order": 59,
+    "title": "倒带冲入落版",
+    "types": [
+      "transition",
+      "type-motion",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "合成波"
+    ],
+    "summary": "磁带画面先倒退两帧并拖慢压暗，主拍时镀铬字标从放大态冲入，闪光、镜震和跑车加速同步释放。",
+    "mechanism": "磁带画面先倒退两帧并拖慢压暗，主拍时镀铬字标从放大态冲入，闪光、镜震和跑车加速同步释放。",
+    "trigger": "磁带倒带、拖慢与镀铬落版节点依次到达时",
+    "effect": "倒带预备后由两帧冲入和衰减回摆完成标题落版。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-synthwave 原片 3.667–5.1 秒；1 倍速，总时长 1.433 秒。"
+      },
+      {
+        "name": "倒带冲入落版参数",
+        "value": "  if (fr >= r0 && fr < r1) return (r0 - 1 - (fr - r0)) / FPS;                          // 2 frames backwards\n  if (fr >= FS - 2 && fr < FS) { const k = clamp((t - (S0 - 3 / 30)) / (3 / 30)); sc = lerp(2.2, 1.0, eInQuart(k)); al = fr === FS - 2 ? .6 : 1; }\n  else if (fr >= FS) { sc = 1 - .045 * Math.sin(uS * 24) * Math.exp(-uS * 7.5); al = 1; }\n  const sh = fr >= FS ? 11 * Math.exp(-uS * 8.5) : 0;\n  \"music_gap\": [4.02, 4.2],"
+      }
+    ],
+    "useCases": [
+      "镀铬标题主拍",
+      "倒带预备接字标冲击"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-synthwave 原片 3.667–5.1 秒；总时长 1.433 秒。磁带画面先倒退两帧并拖慢压暗，主拍时镀铬字标从放大态冲入，闪光、镜震和跑车加速同步释放。参数保持原作数值：  if (fr >= r0 && fr < r1) return (r0 - 1 - (fr - r0)) / FPS;                          // 2 frames backwards\n  if (fr >= FS - 2 && fr < FS) { const k = clamp((t - (S0 - 3 / 30)) / (3 / 30)); sc = lerp(2.2, 1.0, eInQuart(k)); al = fr === FS - 2 ? .6 : 1; }\n  else if (fr >= FS) { sc = 1 - .045 * Math.sin(uS * 24) * Math.exp(-uS * 7.5); al = 1; }\n  const sh = fr >= FS ? 11 * Math.exp(-uS * 8.5) : 0;\n  \"music_gap\": [4.02, 4.2],\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/tape-rewind-chrome-slam/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-synthwave"
+      }
+    ],
+    "previewAt": 0.733,
+    "markers": [
+      {
+        "t": 0,
+        "label": "合成波"
+      },
+      {
+        "t": 0.233,
+        "label": "机制画面 1"
+      },
+      {
+        "t": 0.533,
+        "label": "机制画面 2"
+      },
+      {
+        "t": 0.883,
+        "label": "机制画面 3"
+      }
+    ],
+    "preview": "previews/patterns/tape-rewind-chrome-slam.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-synthwave",
+      "bundle": "agent/cases/mg-synthwave.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 倒带冲入落版\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速依次重放mg-synthwave 原片 3.667–5.1 秒；总时长 1.433 秒。磁带画面先倒退两帧并拖慢压暗，主拍时镀铬字标从放大态冲入，闪光、镜震和跑车加速同步释放。参数保持原作数值：  if (fr >= r0 && fr < r1) return (r0 - 1 - (fr - r0)) / FPS;                          // 2 frames backwards\n  if (fr >= FS - 2 && fr < FS) { const k = clamp((t - (S0 - 3 / 30)) / (3 / 30)); sc = lerp(2.2, 1.0, eInQuart(k)); al = fr === FS - 2 ? .6 : 1; }\n  else if (fr >= FS) { sc = 1 - .045 * Math.sin(uS * 24) * Math.exp(-uS * 7.5); al = 1; }\n  const sh = fr >= FS ? 11 * Math.exp(-uS * 8.5) : 0;\n  \"music_gap\": [4.02, 4.2],\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-synthwave 原片 3.667–5.1 秒；1 倍速，总时长 1.433 秒。\n- **倒带冲入落版参数**：  if (fr >= r0 && fr < r1) return (r0 - 1 - (fr - r0)) / FPS;                          // 2 frames backwards\n  if (fr >= FS - 2 && fr < FS) { const k = clamp((t - (S0 - 3 / 30)) / (3 / 30)); sc = lerp(2.2, 1.0, eInQuart(k)); al = fr === FS - 2 ? .6 : 1; }\n  else if (fr >= FS) { sc = 1 - .045 * Math.sin(uS * 24) * Math.exp(-uS * 7.5); al = 1; }\n  const sh = fr >= FS ? 11 * Math.exp(-uS * 8.5) : 0;\n  \"music_gap\": [4.02, 4.2],\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段与中文节点，画面和声音使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/tape-rewind-chrome-slam/index.html) · [在库中查看](../../patterns.html#pattern/tape-rewind-chrome-slam)\n"
+  },
+  "entrypoint": "demos/patterns/tape-rewind-chrome-slam/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-synthwave/LICENSES.md",
+      "bytes": 1068,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/audio/film.m4a",
+      "bytes": 403976,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fidelity.md",
+      "bytes": 4597,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/cues.json",
+      "bytes": 1312,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/scene.js",
+      "bytes": 70681,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/setup.js",
+      "bytes": 243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/style.css",
+      "bytes": 166,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Archivo-Italic[wdth,wght].ttf",
+      "bytes": 741368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Michroma-Regular.ttf",
+      "bytes": 64344,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/MrDafoe-Regular.ttf",
+      "bytes": 47976,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/VT323-Regular.ttf",
+      "bytes": 153116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/archivo-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/fonts.css",
+      "bytes": 636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/michroma-OFL.txt",
+      "bytes": 4395,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/mrdafoe-OFL.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/vt323-OFL.txt",
+      "bytes": 4367,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/index.html",
+      "bytes": 1976,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/audio.py",
+      "bytes": 11743,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/cues.json",
+      "bytes": 1312,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.core.js",
+      "bytes": 1458113,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.module.js",
+      "bytes": 662772,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 8501,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 4694,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/Pass.js",
+      "bytes": 4218,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/RenderPass.js",
+      "bytes": 4280,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 3228,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 15397,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/CopyShader.js",
+      "bytes": 729,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/tape-rewind-chrome-slam/index.html",
+      "bytes": 1398,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/tape-rewind-chrome-slam/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-synthwave.json",
+      "bytes": 16835,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/tape-rewind-chrome-slam.json",
+      "bytes": 3161,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/tape-rewind-chrome-slam.jpg",
+      "bytes": 145322,
+      "role": "preview"
+    }
+  ]
+}

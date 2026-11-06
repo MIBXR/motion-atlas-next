@@ -1,0 +1,89 @@
+{
+  "id": "claude-animation-base",
+  "order": 6,
+  "title": "Claude Animation Base · 手绘卡通动画套件",
+  "type": "prompt-kit",
+  "category": "手绘卡通动画",
+  "summary": "JohnHeibel 从 P(doom) 音乐录像整理出的入门套件：p5.js + p5.brush 绘制、Clawd 角色（视角、31 种表情、帽子、符号与舞步）、镜头与笔刷擦除时间轴、逐帧渲染脚本，以及给模型读的 ANIMATION_GUIDE.md。让 Agent 先读指南、出分镜，再逐镜头写只取决于时刻 t 的场景函数。",
+  "snapshotPath": "demos/materials/claude-animation-base/",
+  "snapshotEntry": "README.md",
+  "upstream": {
+    "url": "https://github.com/JohnHeibel/ClaudeAnimationBase/tree/0ac8bf2b31942376cb6b8c4074715595d512acd2",
+    "repository": "JohnHeibel/ClaudeAnimationBase",
+    "commit": "0ac8bf2b31942376cb6b8c4074715595d512acd2",
+    "verifiedAt": "2026-11-01",
+    "author": "JohnHeibel"
+  },
+  "license": {
+    "name": "MIT",
+    "url": "demos/materials/claude-animation-base/LICENSE",
+    "notes": "上游许可原文保存在快照 LICENSE；Clawd 角色设计的权利归 Anthropic。"
+  },
+  "workflow": [
+    "克隆套件，在 Claude Code 等 Agent 中先让模型阅读 ANIMATION_GUIDE.md。",
+    "用一句话说明要做的短片（如“15 秒，Clawd 追蝴蝶”），模型先给分镜，再逐镜头实现。",
+    "场景写在 src/scenes/，每个镜头是只取决于时刻 t 的纯函数；时长与节拍在 src/config.js。",
+    "在 Chrome 打开 studio.html 拖动时间检查；?loop=emotions、?loop=views 查看表情与视角设定图。",
+    "npm install 后运行 node render.mjs --clip --out=out/video.mp4 输出成片；没有独立显卡时让模型换掉水彩填充，或加 --soft-gl。"
+  ],
+  "install": "git clone https://github.com/JohnHeibel/ClaudeAnimationBase && npm install\n需要 Node.js、Google Chrome 与 ffmpeg；npm install 在克隆所得 ClaudeAnimationBase 目录内运行。",
+  "relatedEntries": [
+    {
+      "kind": "case",
+      "id": "pdoom-video",
+      "note": "套件整理自这支 MV 的代码，并加入作者对模型表现的分析"
+    }
+  ],
+  "gallery": [
+    {
+      "path": "previews/materials/claude-animation-base/emotions.webp",
+      "caption": "Clawd 31 种表情动画设定图",
+      "kind": "style",
+      "sourceUrl": "https://github.com/JohnHeibel/ClaudeAnimationBase/blob/0ac8bf2b31942376cb6b8c4074715595d512acd2/docs/emotions.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/claude-animation-base/views.jpg",
+      "caption": "Clawd 视角、动作与帽子设定图",
+      "kind": "style",
+      "sourceUrl": "https://github.com/JohnHeibel/ClaudeAnimationBase/blob/0ac8bf2b31942376cb6b8c4074715595d512acd2/docs/views.jpg",
+      "license": "MIT"
+    }
+  ],
+  "useCases": [
+    "让会写代码的 Agent 从分镜开始制作手绘卡通短片",
+    "替换角色、表情、服装与参考图后制作新的角色演出",
+    "参考表情过渡、关键视角转身、镜头衔接与逐帧渲染"
+  ],
+  "avoid": [
+    "需要观众自由阅读的普通网页与网页应用",
+    "直接复制示例故事而不安排新事件的短片",
+    "没有命令执行环境的纯文字对话"
+  ],
+  "constraints": [
+    "先读 ANIMATION_GUIDE.md，写出每个镜头的事件、反应、转场和观众读懂画面所需的时段。",
+    "场景函数只依赖时刻 t；每个独立元素使用 boilSeed(key)，固定对象用 hash。",
+    "角色转身使用绘制的 front/q/side/qback/back 关键视角，镜头间保持动作与方向连续。",
+    "p5.brush 水彩填充在集显上每帧需数秒；渲染脚本支持 --soft-gl 与 --gpu-angle。"
+  ],
+  "sources": [
+    {
+      "title": "上游 README：用途、运行与 GPU 环境",
+      "url": "https://github.com/JohnHeibel/ClaudeAnimationBase/blob/0ac8bf2b31942376cb6b8c4074715595d512acd2/README.md"
+    },
+    {
+      "title": "ANIMATION_GUIDE.md：规则、流程与完整 API",
+      "url": "https://github.com/JohnHeibel/ClaudeAnimationBase/blob/0ac8bf2b31942376cb6b8c4074715595d512acd2/ANIMATION_GUIDE.md"
+    }
+  ],
+  "tags": [
+    "p5.js",
+    "p5.brush",
+    "Clawd",
+    "31种表情",
+    "手绘动画",
+    "逐帧渲染",
+    "提示词套件"
+  ],
+  "research": "docs/materials/claude-animation-base.md"
+}

@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "dots-morph-to-stripes",
+  "pattern": {
+    "id": "dots-morph-to-stripes",
+    "order": 170,
+    "title": "点线化为条纹",
+    "types": [
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "同一组与年份对应的数据点先落向条纹带中心，再由小圆伸展为满高温度条；旧折线随左端数据点启动形变而消退，温度颜色与年份次序保持不变。",
+    "mechanism": "同一组与年份对应的数据点先落向条纹带中心，再由小圆伸展为满高温度条；旧折线随左端数据点启动形变而消退，温度颜色与年份次序保持不变。",
+    "trigger": "原作时间轴进入所列动作区间。",
+    "effect": "同一组与年份对应的数据点先落向条纹带中心，再由小圆伸展为满高温度条；旧折线随左端数据点启动形变而消退，温度颜色与年份次序保持不变。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "36.600—39.400秒，1倍速。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "逐点扫过",
+        "value": "mStart(y)=T(56)+(y−1926)/101×B×.85；各点前45%落到带中心，后55%ease-out伸高至−170—170，原折线alpha=1−clamp(mU(left)×3)。",
+        "source": "demos/cases/lemo-dataviz/film/film.js:mStart / mU；film/engine.js:morphMark"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-dataviz/film/film.js"
+    ],
+    "locator": "film/film.js:mStart / mU；film/engine.js:morphMark",
+    "useCases": [
+      "点线化为条纹"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": [],
+      "notes": "morph-primitive-bridge使用圆／胶囊中介连接任意形状；本条把同一份数据从点线编码转为逐年条纹，保留逐项身份和数值颜色。"
+    },
+    "prompt": "以来源案例lemo-dataviz的原作render(t)重放“点线化为条纹”。同一组有年份对应关系的数据点先落向条纹带中心，再由小圆伸展为满高温度条；旧折线随左端数据点启动形变而消退，温度颜色与年份次序保持。 参数：mStart(y)=T(56)+(y−1926)/101×B×.85；各点前45%落到带中心，后55%ease-out伸高至−170—170，原折线alpha=1−clamp(mU(left)×3)。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+    "demo": "demos/patterns/dots-morph-to-stripes/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-dataviz"
+      }
+    ],
+    "previewAt": 1.2,
+    "markers": [
+      {
+        "t": 0,
+        "label": "点线化为条纹"
+      }
+    ],
+    "preview": "previews/patterns/dots-morph-to-stripes.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-dataviz",
+      "bundle": "agent/cases/lemo-dataviz.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 点线化为条纹\n\n## 实现 Prompt\n\n以来源案例lemo-dataviz的原作render(t)重放“点线化为条纹”。同一组有年份对应关系的数据点先落向条纹带中心，再由小圆伸展为满高温度条；旧折线随左端数据点启动形变而消退，温度颜色与年份次序保持。 参数：mStart(y)=T(56)+(y−1926)/101×B×.85；各点前45%落到带中心，后55%ease-out伸高至−170—170，原折线alpha=1−clamp(mU(left)×3)。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：36.600—39.400秒，1倍速。\n\n[打开 Demo](../../demos/patterns/dots-morph-to-stripes/index.html) · [在库中查看](../../patterns.html#pattern/dots-morph-to-stripes)\n"
+  },
+  "entrypoint": "demos/patterns/dots-morph-to-stripes/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-dataviz/LICENSES.md",
+      "bytes": 796,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/CREDITS",
+      "bytes": 1338,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/film.m4a",
+      "bytes": 1616589,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fidelity.md",
+      "bytes": 3291,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/data/jja.json",
+      "bytes": 1966,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/engine.js",
+      "bytes": 25179,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/film.js",
+      "bytes": 31998,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/index.html",
+      "bytes": 349,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/lines.json",
+      "bytes": 852,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/main.js",
+      "bytes": 2391,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/timeline.js",
+      "bytes": 2288,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/voices/words_rel.json",
+      "bytes": 1448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/Caveat-VF.ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/Newsreader-Italic-VF.ttf",
+      "bytes": 495684,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/Newsreader-VF.ttf",
+      "bytes": 451664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/caveat_OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/fonts.css",
+      "bytes": 569,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/ibmplexmono_OFL.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/newsreader_OFL.txt",
+      "bytes": 4394,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/index.html",
+      "bytes": 2641,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/CREDITS",
+      "bytes": 1338,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/README.md",
+      "bytes": 1633,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/build.sh",
+      "bytes": 1932,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/data/GLB.Ts+dSST.csv",
+      "bytes": 12887,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/events.json",
+      "bytes": 18365,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/mix.py",
+      "bytes": 10036,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/music/score.json",
+      "bytes": 8433,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/music/score.py",
+      "bytes": 11863,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/cuecheck.py",
+      "bytes": 1608,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/extract_data.py",
+      "bytes": 1769,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/final_asr.py",
+      "bytes": 1192,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/subs.py",
+      "bytes": 839,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/words.py",
+      "bytes": 1174,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/voices/words.json",
+      "bytes": 1195,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/dots-morph-to-stripes/index.html",
+      "bytes": 796,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/dots-morph-to-stripes/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-dataviz.json",
+      "bytes": 9775,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/dots-morph-to-stripes.json",
+      "bytes": 2607,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/dots-morph-to-stripes.jpg",
+      "bytes": 83785,
+      "role": "preview"
+    }
+  ]
+}

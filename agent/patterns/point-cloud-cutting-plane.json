@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "point-cloud-cutting-plane",
+  "pattern": {
+    "id": "point-cloud-cutting-plane",
+    "order": 92,
+    "title": "切割面逐层剥除点云",
+    "types": [
+      "composition",
+      "camera",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "航拍画面以扫描方式转为真实点云，水平切割面逐拍下降，树冠回波抬离；地面点凝成表面后，石墙显露。",
+    "mechanism": "共享 uCut 以离地高度判定植被回波的抬离、淡出与发亮，cutAt 按节拍下移；第二个世界空间扫描面 F2 同时控制点与地面着色器，把残余回波凝成受光表面，uW 再沿描墙顺序亮起。",
+    "trigger": "航拍变为点云后，在 10 秒启动树冠切割。",
+    "effect": "按真实分类和高度分层去除空间遮挡，显出林下地面保存的结构。",
+    "timing": [
+      {
+        "name": "来源片段",
+        "value": "3.75–20 秒；10–13.125 秒剥层，13.125–14.375 秒留白，14.375–15.625 秒凝面，15.625–20 秒亮墙。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "切割高度",
+        "value": "film/timeline.js:PEEL_STEPS / BEAT；film/film.js:cutAt：96BPM，每拍 .625 秒，30→24→18→12→6→0m，最后达到 −6m 以去掉低植被。"
+      },
+      {
+        "name": "真实数据与相机",
+        "value": "film/film.js:pointVS / camAt；film/timeline.js:CAM：点 XY 量化 .02m、Z .01m；剥层时距92–105m、俯角14–15°，相机连续绕行。"
+      },
+      {
+        "name": "表面与墙线",
+        "value": "film/film.js:surfaceFS / F2 / uW：地面0.5m、局部起伏×2、315°/26°掠射光；描线由墙距离场与 reveal 顺序控制。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-lidar-survey/film/film.js",
+      "demos/cases/lemo-lidar-survey/film/timeline.js",
+      "demos/cases/lemo-lidar-survey/film/data/facts.json"
+    ],
+    "locator": "pointVS / cutAt / F2 / surfaceFS / camAt / T / PEEL_STEPS",
+    "useCases": [
+      "按真实分类和高度分层去除空间遮挡，显出林下地面保存的结构。"
+    ],
+    "avoid": [
+      "在该片段内叠加第二条争夺注意力的主动作"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": [],
+      "notes": "使用真实回波及其分类与离地高度，测量数值从原始数据读取。"
+    },
+    "prompt": "用来源案例 lemo-lidar-survey 的原作 render(t) 重放“切割面逐层剥除点云”。共享 uCut 以离地高度判定植被回波的抬离、淡出与发亮，cutAt 按节拍下移；第二个世界空间扫描面 F2 同时控制点与地面着色器，把残余回波凝成受光表面，uW 再沿描墙顺序亮起。保留参数：film/timeline.js:PEEL_STEPS / BEAT；film/film.js:cutAt：96BPM，每拍 .625 秒，30→24→18→12→6→0m，最后达到 −6m 以去掉低植被。；film/film.js:pointVS / camAt；film/timeline.js:CAM：点 XY 量化 .02m、Z .01m；剥层时距92–105m、俯角14–15°，相机连续绕行。；film/film.js:surfaceFS / F2 / uW：地面0.5m、局部起伏×2、315°/26°掠射光；描线由墙距离场与 reveal 顺序控制。。按 index.html 的 segments 把巧思时间映射到原片 3.75–20 秒，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/point-cloud-cutting-plane/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-lidar-survey"
+      }
+    ],
+    "previewAt": 8,
+    "markers": [
+      {
+        "t": 0,
+        "label": "切割面逐层剥除点云"
+      },
+      {
+        "t": 8,
+        "label": "机制展开"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/point-cloud-cutting-plane.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-lidar-survey",
+      "bundle": "agent/cases/lemo-lidar-survey.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 切割面逐层剥除点云\n\n## 实现 Prompt\n\n用来源案例 lemo-lidar-survey 的原作 render(t) 重放“切割面逐层剥除点云”。共享 uCut 以离地高度判定植被回波的抬离、淡出与发亮，cutAt 按节拍下移；第二个世界空间扫描面 F2 同时控制点与地面着色器，把残余回波凝成受光表面，uW 再沿描墙顺序亮起。保留参数：film/timeline.js:PEEL_STEPS / BEAT；film/film.js:cutAt：96BPM，每拍 .625 秒，30→24→18→12→6→0m，最后达到 −6m 以去掉低植被。；film/film.js:pointVS / camAt；film/timeline.js:CAM：点 XY 量化 .02m、Z .01m；剥层时距92–105m、俯角14–15°，相机连续绕行。；film/film.js:surfaceFS / F2 / uW：地面0.5m、局部起伏×2、315°/26°掠射光；描线由墙距离场与 reveal 顺序控制。。按 index.html 的 segments 把巧思时间映射到原片 3.75–20 秒，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **来源片段**：3.75–20 秒；10–13.125 秒剥层，13.125–14.375 秒留白，14.375–15.625 秒凝面，15.625–20 秒亮墙。\n\n[打开 Demo](../../demos/patterns/point-cloud-cutting-plane/index.html) · [在库中查看](../../patterns.html#pattern/point-cloud-cutting-plane)\n"
+  },
+  "entrypoint": "demos/patterns/point-cloud-cutting-plane/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-lidar-survey/LICENSES.md",
+      "bytes": 1672,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/CREDITS",
+      "bytes": 3673,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/film.m4a",
+      "bytes": 1306144,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fidelity.md",
+      "bytes": 7468,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/assets/raw/build/canopy.bin",
+      "bytes": 1491518,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/assets/raw/build/ground.bin",
+      "bytes": 26815429,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/assets/raw/build/naip.jpg",
+      "bytes": 967345,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/assets/raw/build/points.bin",
+      "bytes": 47897974,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/cues.json",
+      "bytes": 1552,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/data/facts.json",
+      "bytes": 2113,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/data/profile_C.json",
+      "bytes": 14705,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/film.js",
+      "bytes": 31233,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/index.html",
+      "bytes": 1197,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/timeline.js",
+      "bytes": 4328,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/BarlowCondensed-Light.ttf",
+      "bytes": 101996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/BarlowCondensed-Medium.ttf",
+      "bytes": 103360,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/BarlowCondensed-Regular.ttf",
+      "bytes": 102480,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/NotoSansSC-sub.woff2",
+      "bytes": 81956,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/OFL-barlow.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/index.html",
+      "bytes": 3604,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/CREDITS",
+      "bytes": 3673,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/FACTS.md",
+      "bytes": 5730,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/README.md",
+      "bytes": 5344,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/build.sh",
+      "bytes": 3940,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/data/walls.json",
+      "bytes": 32093,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/data/walls_traced.json",
+      "bytes": 2069,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/events.json",
+      "bytes": 952,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/mix.py",
+      "bytes": 15019,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/timeline.json",
+      "bytes": 953,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/audiocheck.py",
+      "bytes": 1536,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/build_data.py",
+      "bytes": 7026,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/cuecheck.py",
+      "bytes": 694,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/export.mjs",
+      "bytes": 2155,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/fetch_ept.py",
+      "bytes": 2496,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/fetch_naip.py",
+      "bytes": 895,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/fonts.py",
+      "bytes": 1956,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/load.py",
+      "bytes": 812,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/motioncheck.py",
+      "bytes": 1627,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/profile.py",
+      "bytes": 2654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/scout_dem.py",
+      "bytes": 1387,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/subcheck.mjs",
+      "bytes": 1154,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/terrain.py",
+      "bytes": 1423,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/trace.py",
+      "bytes": 2609,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/walls.py",
+      "bytes": 2837,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/voice/lines.json",
+      "bytes": 1555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/voice/out/dur.json",
+      "bytes": 157,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/voice/out/words.json",
+      "bytes": 1790,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/RenderPass.js",
+      "bytes": 1941,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/point-cloud-cutting-plane/index.html",
+      "bytes": 900,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/point-cloud-cutting-plane/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-lidar-survey.json",
+      "bytes": 11964,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/point-cloud-cutting-plane.json",
+      "bytes": 3626,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/point-cloud-cutting-plane.jpg",
+      "bytes": 387407,
+      "role": "preview"
+    }
+  ]
+}

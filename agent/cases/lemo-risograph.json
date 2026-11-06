@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-risograph",
+  "entry": {
+    "id": "lemo-risograph",
+    "order": 37,
+    "title": "周日骑行 · Risograph 孔版印刷",
+    "subtitle": "Sunday Ride",
+    "carriers": [
+      "video"
+    ],
+    "style": "print-craft",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "webgl"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "Risograph 孔版印刷",
+      "印刷与版画",
+      "代码影片"
+    ],
+    "summary": "骑车人带着篮子穿过沉睡的蓝色街道，经过面包店时画面加入黄色，驶进公园时加入粉色，鸽子搭上法棍。套印圆盘转为河边太阳，静默时色版错位漂开，下拍锁回后转入分享面包的场景。",
+    "focus": "每块新增色版推进一个故事段落，透明专色叠印、固定网点和套版节拍构成完整画面。",
+    "accent": "#e64b83",
+    "background": "#f5eedb",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 28.8,
+    "rhythm": {
+      "duration": 40,
+      "beats": [
+        {
+          "t": 0,
+          "label": "车铃特写",
+          "note": "0–2秒，车铃特写。"
+        },
+        {
+          "t": 2,
+          "label": "蓝色街道",
+          "note": "2–8秒，蓝色街道。"
+        },
+        {
+          "t": 8,
+          "label": "黄色面包店",
+          "note": "8–16秒，黄色面包店。"
+        },
+        {
+          "t": 16,
+          "label": "粉色公园",
+          "note": "16–19秒，粉色公园。"
+        },
+        {
+          "t": 19,
+          "label": "鸽群爆发",
+          "note": "19–21.5秒，鸽群爆发。"
+        },
+        {
+          "t": 21.5,
+          "label": "法棍乘客",
+          "note": "21.5–24秒，法棍乘客。"
+        },
+        {
+          "t": 24,
+          "label": "圆盘吞景",
+          "note": "24–26秒，圆盘吞景。"
+        },
+        {
+          "t": 26,
+          "label": "河边静默与锁版",
+          "note": "26–29秒，河边静默与锁版。"
+        },
+        {
+          "t": 29,
+          "label": "分享面包",
+          "note": "29–32秒，分享面包。"
+        },
+        {
+          "t": 32,
+          "label": "俯拍拉远到印纸",
+          "note": "32–36秒，俯拍拉远到印纸。"
+        },
+        {
+          "t": 36,
+          "label": "片尾",
+          "note": "36–40秒，片尾。"
+        }
+      ],
+      "bpm": 120
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 2,
+        "to": 0.2,
+        "label": "车铃特写",
+        "from": 0.2
+      },
+      {
+        "t0": 2,
+        "t1": 8,
+        "to": 0.3,
+        "label": "蓝色街道",
+        "from": 0.3
+      },
+      {
+        "t0": 8,
+        "t1": 16,
+        "to": 0.5,
+        "label": "黄色面包店",
+        "from": 0.5
+      },
+      {
+        "t0": 16,
+        "t1": 19,
+        "to": 0.6,
+        "label": "粉色公园",
+        "from": 0.6
+      },
+      {
+        "t0": 19,
+        "t1": 21.5,
+        "to": 0.85,
+        "label": "鸽群爆发",
+        "from": 0.85
+      },
+      {
+        "t0": 21.5,
+        "t1": 24,
+        "to": 0.45,
+        "label": "法棍乘客",
+        "from": 0.45
+      },
+      {
+        "t0": 24,
+        "t1": 26,
+        "to": 0.6,
+        "label": "圆盘吞景",
+        "from": 0.6
+      },
+      {
+        "t0": 26,
+        "t1": 29,
+        "to": 0.2,
+        "label": "河边静默与锁版",
+        "from": 0.2
+      },
+      {
+        "t0": 29,
+        "t1": 32,
+        "to": 0.5,
+        "label": "分享面包",
+        "from": 0.5
+      },
+      {
+        "t0": 32,
+        "t1": 36,
+        "to": 0.35,
+        "label": "俯拍拉远到印纸",
+        "from": 0.35
+      },
+      {
+        "t0": 36,
+        "t1": 40,
+        "to": 0.1,
+        "label": "片尾",
+        "from": 0.1
+      }
+    ],
+    "energyNote": "段落划分取自DEMO.md的Shots与源码场景时间表；0–1能量数值是根据画面与声音密度作出的相对编辑标注。",
+    "observations": [
+      "画布RGB三个通道分别记录蓝、黄、粉版的墨量，lighter增加色版，WebGL2按独立网角与位移印到纸上。",
+      "0.02、8、16秒依次扫入三版，围巾在黄版加入前保持纸白。",
+      "24–25.5秒粉色圆盘先覆盖旧景再收成河上太阳；26–28秒色版漂移，28秒随合奏锁版。"
+    ],
+    "composition": {
+      "color": "纸#F6F1E6，蓝#0078BF、黄#FFE800、荧光粉#FF48B0，叠版产生绿、紫与橙。",
+      "typography": "Bricolage Grotesque 800粗标题与Jost 500–700字幕，片尾片名粉蓝两次落印相差10px。",
+      "layout": "1920×1080、24fps，宽景保留大块天空和小人物；面包交换、鸽子和分享使用中近景。",
+      "imagery": "代码绘制骑车人、自行车、法棍、鸽子与城市景观；专色密度画布经孔版印刷着色器输出。",
+      "motion": "人物动作12fps保持帧，车轮由路程驱动，双骨IK踩踏，围巾行波；色版在节拍上踢动并回弹。",
+      "sound": "120BPM原创巴萨诺瓦随版数加乐器，Kokoro am_adam旁白，单车铃、纸鼓、鸽翼、刹车与面包脆响。",
+      "rhythm": "蓝街—黄面包店—粉公园逐层充实，鸽群爆发后圆盘转场；一小节静默漂版，再在28秒下拍锁回。",
+      "coherence": "画面逐版加色对应配乐逐层加器乐，错版成为可听可见的停顿和落拍。"
+    },
+    "layers": [
+      {
+        "name": "底材与空间",
+        "role": "纸#F6F1E6，蓝#0078BF、黄#FFE800、荧光粉#FF48B0，叠版产生绿、紫与橙。"
+      },
+      {
+        "name": "主体与绘制",
+        "role": "代码绘制骑车人、自行车、法棍、鸽子与城市景观；专色密度画布经孔版印刷着色器输出。"
+      },
+      {
+        "name": "镜头与时间",
+        "role": "人物动作12fps保持帧，车轮由路程驱动，双骨IK踩踏，围巾行波；色版在节拍上踢动并回弹。"
+      },
+      {
+        "name": "文字与声音",
+        "role": "Bricolage Grotesque 800粗标题与Jost 500–700字幕，片尾片名粉蓝两次落印相差10px。 120BPM原创巴萨诺瓦随版数加乐器，Kokoro am_adam旁白，单车铃、纸鼓、鸽翼、刹车与面包脆响。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#F6F1E6",
+        "#0078BF",
+        "#FFE800",
+        "#FF48B0"
+      ],
+      "type": "Jost可变字体100–900；Bricolage Grotesque可变字体200–800、宽75%–100%。",
+      "motion": [
+        {
+          "name": "色版叠出",
+          "value": "film/film.js:53–59：gate=[1,t>=8,t>=16]，每版.55秒自−60扫到W+200。"
+        },
+        {
+          "name": "套版漂移",
+          "value": "film/film.js:36–50：26.05–27.9秒漂开，dv=[[-6,5],[24,-13],[-22,15]]；28秒以exp(−16a)cos(40a)锁回。"
+        },
+        {
+          "name": "孔版网点",
+          "value": "film/riso.js：周期7px，网角15°/0°/75°，独立旋转0/.0005/−.0004，grain=.55。"
+        }
+      ]
+    },
+    "useCases": [
+      "品牌短片",
+      "城市日常",
+      "专色插画叙事"
+    ],
+    "avoid": [
+      "以观众滚动阅读为主的页面"
+    ],
+    "constraints": [
+      "画面通过原作render(t)按原帧率定位，字体和全部绘制输入预载后再开始播放。",
+      "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+    ],
+    "migration": [
+      {
+        "field": "film/film.js → SHOTS / plates / regist",
+        "how": "更改镜头、加版时刻、套版节拍与圆盘交接。"
+      },
+      {
+        "field": "film/riso.js / draw.js / rider.js",
+        "how": "更改专色、网点、纸面与骑车人造型。"
+      }
+    ],
+    "prompt": "制作一支Risograph 孔版印刷时间线影片。每块新增色版推进一个故事段落，透明专色叠印、固定网点和套版节拍构成完整画面。纸#F6F1E6，蓝#0078BF、黄#FFE800、荧光粉#FF48B0，叠版产生绿、紫与橙。Bricolage Grotesque 800粗标题与Jost 500–700字幕，片尾片名粉蓝两次落印相差10px。1920×1080、24fps，宽景保留大块天空和小人物；面包交换、鸽子和分享使用中近景。人物动作12fps保持帧，车轮由路程驱动，双骨IK踩踏，围巾行波；色版在节拍上踢动并回弹。蓝街—黄面包店—粉公园逐层充实，鸽群爆发后圆盘转场；一小节静默漂版，再在28秒下拍锁回。120BPM原创巴萨诺瓦随版数加乐器，Kokoro am_adam旁白，单车铃、纸鼓、鸽翼、刹车与面包脆响。实现入口位于demos/cases/lemo-risograph/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+    "demo": "demos/cases/lemo-risograph/index.html",
+    "patternIds": [
+      "block-by-block-print-reveal",
+      "overprint-disc-transition",
+      "misregistration-lock"
+    ],
+    "fidelity": "demos/cases/lemo-risograph/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/risograph",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/risograph/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；成片和静帧CC BY 4.0，署名LemoLab；各字体、采样与语音来源见CREDITS及LICENSES.md。"
+    },
+    "sources": [
+      {
+        "label": "固定风格与制作源码",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/risograph"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/risograph.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/risograph/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/risograph)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "120BPM原创巴萨诺瓦随版数加乐器，Kokoro am_adam旁白，单车铃、纸鼓、鸽翼、刹车与面包脆响。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Jost可变字体100–900；Bricolage Grotesque可变字体200–800、宽75%–100%。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-risograph/LICENSES.md",
+    "preview": "previews/cases/lemo-risograph.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 周日骑行 · Risograph 孔版印刷 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-risograph.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载运行源码、字体、音轨，等待iframe的load与READY，以原帧率调用上游render(t)。 | 接入MotionKit舞台、时间线、声音与减少动态暂停。 |\n| `audio/film.m4a` | 从Release成片以-c:a copy流复制。 | 播放原作正式混音。 |\n| `source/` | 保存运行目录之外的上游制作脚本、事件、语音时长与替换示例。 | 保留制作资料。 |\n| `stills/` | 上游风格图与调试静帧留在来源。 | 成品绘制不读取这些静帧。 |\n| `film/index.html、film/core/lib.js` | 字体路径改为../fonts/；import map将/core/lib.js映射到./core/lib.js，lib.js取固定提交原文。 | 接入原字体与共享运行代码。 |\n\n## 适配层\n\n`MotionKit.load.prepare`预载，同源iframe等待`load`与`window.READY === true`，`MotionKit.mountFilm`以1920×1080、24fps、40.000000秒接入。`renderAt(t)`等待`upstream.render(Math.round(t×24)/24)`；画面直接来自上游绘制函数。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时停在条目的`previewAt`，声音默认关闭。镜头标记取DEMO.md的Shots与源码场景时间表。\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，视口1920×1080、DPR1。等待`__motion.ready`，以`floor(t×fps+.5)`定位；参考PNG按Release成片相同帧号提取。WebGL使用本机Intel Iris Xe / ANGLE Direct3D11。\n\n**原始**列比较参考PNG与本库PNG；**编码链**列把本库PNG在过程目录按原作编码链编解码后比较。两图转yuv444p，取ffmpeg SSIM All。\n\nPNG → libx264 medium qp=0 yuv444p → slow CRF16、tune grain、fps=24、yuv420p、无附加噪声。来源source/build.sh、source/tools/video_png.mjs:15–20及source/tools/mux.sh。\n\n测量采用单张I帧，颗粒从该测量帧起计算；连续成片的帧间参考和噪声历史由其原编码保留。运行页面直接执行原作render(t)，编码仅用于离线测量。\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.997769 | 0.997567 | 开头 |\n| 2 | 691 | 28.800000 | 28.791667 | 0.879412 | 0.989963 | frame_sec |\n| 3 | 24 | 1.000000 | 1.000000 | 0.867864 | 0.993096 | Shots · 车铃特写中点 |\n| 4 | 120 | 5.000000 | 5.000000 | 0.902095 | 0.991177 | Shots · 蓝色街道中点 |\n| 5 | 288 | 12.000000 | 12.000000 | 0.855731 | 0.988795 | Shots · 黄色面包店中点 |\n| 6 | 420 | 17.500000 | 17.500000 | 0.862177 | 0.992145 | Shots · 粉色公园中点 |\n| 7 | 486 | 20.250000 | 20.250000 | 0.865362 | 0.994381 | Shots · 鸽群爆发中点 |\n| 8 | 546 | 22.750000 | 22.750000 | 0.865596 | 0.993009 | Shots · 法棍乘客中点 |\n| 9 | 600 | 25.000000 | 25.000000 | 0.870940 | 0.990304 | Shots · 圆盘吞景中点 |\n| 10 | 660 | 27.500000 | 27.500000 | 0.879581 | 0.990744 | Shots · 河边静默与锁版中点 |\n| 11 | 732 | 30.500000 | 30.500000 | 0.873649 | 0.989658 | Shots · 分享面包中点 |\n| 12 | 816 | 34.000000 | 34.000000 | 0.868528 | 0.994791 | Shots · 俯拍拉远到印纸中点 |\n| 13 | 912 | 38.000000 | 38.000000 | 0.985131 | 0.994303 | Shots · 片尾中点 |\n| 14 | 936 | 39.000000 | 39.000000 | 0.985240 | 0.994386 | 片尾前1秒 |\n\n14帧：原始最低**0.855731**、最高**0.997769**，3/14达到0.95；编码链最低**0.988795**、最高**0.997567**，14/14达到0.95。\n\n### 0.95以下帧与代码位置\n\nfilm/riso.js:72–107以7px网点、专色相乘和墨粒输出高频彩色图案；原片PNG→yuv444p无损→CRF16 grain的yuv420p编码改变细密色点，采用相同编码链后本帧超过0.95。\n\n| 帧号 / 秒 | 原始 | 编码链 |\n| --- | --- | --- |\n| 691 / 28.791667 | 0.879412 | 0.989963 |\n| 24 / 1.000000 | 0.867864 | 0.993096 |\n| 120 / 5.000000 | 0.902095 | 0.991177 |\n| 288 / 12.000000 | 0.855731 | 0.988795 |\n| 420 / 17.500000 | 0.862177 | 0.992145 |\n| 486 / 20.250000 | 0.865362 | 0.994381 |\n| 546 / 22.750000 | 0.865596 | 0.993009 |\n| 600 / 25.000000 | 0.870940 | 0.990304 |\n| 660 / 27.500000 | 0.879581 | 0.990744 |\n| 732 / 30.500000 | 0.873649 | 0.989658 |\n| 816 / 34.000000 | 0.868528 | 0.994791 |\n\n声音：Release与本库音轨解码为48kHz单声道，每10ms取RMS包络，在±500ms内互相关；最佳偏移**0ms**，相关系数**1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-risograph.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）。\n- [audio/film.m4a](audio/film.m4a)流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/risograph.mp4)，成片按[audio/CC-BY-4.0.txt](audio/CC-BY-4.0.txt)发布，署名LemoLab并链接来源。\n- 音乐、声音与字体的原始署名：[audio/CREDITS](audio/CREDITS)；制作文件中的记录保留于[source/CREDITS](source/CREDITS)。\n- 配乐与音效由案例Python脚本原创合成；Kokoro am_adam旁白许可：[audio/Apache-2.0.txt](audio/Apache-2.0.txt)。\n- 字体SIL OFL 1.1原文：[Bricolage-OFL.txt](fonts/Bricolage-OFL.txt)、[Jost-OFL.txt](fonts/Jost-OFL.txt)。\n",
+    "prompt": "# 周日骑行 · Risograph 孔版印刷\n\n## 实现 Prompt\n\n制作一支Risograph 孔版印刷时间线影片。每块新增色版推进一个故事段落，透明专色叠印、固定网点和套版节拍构成完整画面。纸#F6F1E6，蓝#0078BF、黄#FFE800、荧光粉#FF48B0，叠版产生绿、紫与橙。Bricolage Grotesque 800粗标题与Jost 500–700字幕，片尾片名粉蓝两次落印相差10px。1920×1080、24fps，宽景保留大块天空和小人物；面包交换、鸽子和分享使用中近景。人物动作12fps保持帧，车轮由路程驱动，双骨IK踩踏，围巾行波；色版在节拍上踢动并回弹。蓝街—黄面包店—粉公园逐层充实，鸽群爆发后圆盘转场；一小节静默漂版，再在28秒下拍锁回。120BPM原创巴萨诺瓦随版数加乐器，Kokoro am_adam旁白，单车铃、纸鼓、鸽翼、刹车与面包脆响。实现入口位于demos/cases/lemo-risograph/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。\n\n## 动效 Token\n\n- **色版叠出**：film/film.js:53–59：gate=[1,t>=8,t>=16]，每版.55秒自−60扫到W+200。\n- **套版漂移**：film/film.js:36–50：26.05–27.9秒漂开，dv=[[-6,5],[24,-13],[-22,15]]；28秒以exp(−16a)cos(40a)锁回。\n- **孔版网点**：film/riso.js：周期7px，网角15°/0°/75°，独立旋转0/.0005/−.0004，grain=.55。\n\n## 制作约束\n\n- 画面通过原作render(t)按原帧率定位，字体和全部绘制输入预载后再开始播放。\n- 声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。\n\n## 迁移\n\n- `film/film.js → SHOTS / plates / regist`：更改镜头、加版时刻、套版节拍与圆盘交接。\n- `film/riso.js / draw.js / rider.js`：更改专色、网点、纸面与骑车人造型。\n\n[打开 Demo](../../demos/cases/lemo-risograph/index.html) · [在库中查看](../../cases.html#case/lemo-risograph)\n"
+  },
+  "entrypoint": "demos/cases/lemo-risograph/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-risograph/LICENSES.md",
+      "bytes": 835,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/CREDITS",
+      "bytes": 1115,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/film.m4a",
+      "bytes": 1310009,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fidelity.md",
+      "bytes": 4713,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/draw.js",
+      "bytes": 6136,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/film.js",
+      "bytes": 19331,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/index.html",
+      "bytes": 419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/lines.json",
+      "bytes": 604,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/main.js",
+      "bytes": 2965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/rider.js",
+      "bytes": 23831,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/riso.js",
+      "bytes": 9145,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/scenes.js",
+      "bytes": 12235,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/scenes2.js",
+      "bytes": 12834,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/sheet.js",
+      "bytes": 5563,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Bricolage-OFL.txt",
+      "bytes": 4403,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Bricolage.ttf",
+      "bytes": 408496,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Jost-OFL.txt",
+      "bytes": 4384,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Jost.ttf",
+      "bytes": 134996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/fonts.css",
+      "bytes": 270,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/index.html",
+      "bytes": 2374,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/CREDITS",
+      "bytes": 1115,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/README.md",
+      "bytes": 2249,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/build.sh",
+      "bytes": 1619,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/events.json",
+      "bytes": 1224,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/mix.py",
+      "bytes": 8965,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/music/bell.py",
+      "bytes": 2315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/music/score.json",
+      "bytes": 8534,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/music/score.py",
+      "bytes": 21937,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/tools/mux.sh",
+      "bytes": 1340,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/tools/subs.py",
+      "bytes": 699,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/tools/video_png.mjs",
+      "bytes": 2412,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/voices/words.json",
+      "bytes": 1073,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-risograph.json",
+      "bytes": 10576,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-risograph.jpg",
+      "bytes": 366457,
+      "role": "preview"
+    }
+  ]
+}

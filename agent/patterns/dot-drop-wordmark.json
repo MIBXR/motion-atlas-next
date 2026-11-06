@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "dot-drop-wordmark",
+  "pattern": {
+    "id": "dot-drop-wordmark",
+    "order": 21,
+    "title": "圆点落字成标",
+    "types": [
+      "type-motion",
+      "camera",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "重放柱条接成字干、圆点升空悬停和落字，随后以逐字受震、镜头推震与扩散强调完成字标。",
+    "mechanism": "圆点升空悬停后落在字标上，冲量逐字传播，配镜头推震、扩散环与放射线；柱条先形变接成字干，字点与字干在起跳和落字时挤压回弹。",
+    "trigger": "柱条进入字干形变段，圆点依次到达蓄力、顶点、下降与落字节点时。",
+    "effect": "柱图的圆帽与高柱接成字标的字点和字干，落点冲量向其余字母传播并带动镜头与强调图形。",
+    "timing": [
+      {
+        "name": "柱条接字干",
+        "value": "237/30–245/30=7.900–8.167秒；源框x558…642、y170…460、rx24；p=E.ioC(inv(237/30,245/30,t))。"
+      },
+      {
+        "name": "字点升空与落字",
+        "value": "245/30–247/30=8.167–8.233秒蓄力；247→250帧上升，250→251帧悬停，251→255帧下降；AP.y=TIT.y-210；升段E.outQ，降段E.inQ。"
+      },
+      {
+        "name": "字干压缩",
+        "value": "stem=.12*kick(t,dl,3.5,.4)+.07*an-.05*kick(t,lau,4,.4)；sx=1+.5*stem，sy=1-stem；基线548。"
+      },
+      {
+        "name": "逐字冲量",
+        "value": "dip=10*kick(t,dl+F(abs(L.i-4)),3.2,.4)；字母基线WBASE+dip；每字延迟abs(i-4)/30秒。"
+      },
+      {
+        "name": "镜头推震",
+        "value": "下落push=.22*E.inC(inv(dotDrop,dotLand2,t))；落地后.22*(1-spring(t-dl,4.5,.48))；慢推1+.045*E.ioQ(inv(dl,10.4,t))。"
+      },
+      {
+        "name": "落字扩散环",
+        "value": "255/30=8.500秒起；r60→1100、线宽24、10帧。"
+      },
+      {
+        "name": "落字放射线",
+        "value": "角度-168/-128/-100/-80/-52/-12度；长度76/104/88/110/92/72；线宽14；持续5帧。"
+      },
+      {
+        "name": "按拍回跳",
+        "value": "270/30=9.000秒、285/30=9.500秒起；hop+=16*hump(E.outQ(inv(tb,tb+F(9),t)))。"
+      },
+      {
+        "name": "末次扩散环",
+        "value": "285/30=9.500秒起；r=DOT_R+14→DOT_R+170、线宽18、12帧。"
+      }
+    ],
+    "useCases": [
+      "圆点落成字点",
+      "柱条衔接字标",
+      "落字冲量带动整行文字"
+    ],
+    "avoid": [
+      "竖屏重排",
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放柱条接字干、圆点升空悬停与落字。保留237/30–245/30秒的矩形形变，247→250帧的上升、250→251帧的悬停、251→255帧的下降；上升用 E.outQ，下降用 E.inQ。落字后按 abs(L.i-4) 帧延迟把10像素冲量传到各字母，保留1.22倍镜头推近、r60→1100的扩散环、持续5帧的六条放射线，以及9.000秒和9.500秒的回跳。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。",
+    "demo": "demos/patterns/dot-drop-wordmark/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-flat-vector"
+      }
+    ],
+    "previewAt": 1.7999999999999998,
+    "markers": [
+      {
+        "t": 0,
+        "label": "柱帽接标"
+      },
+      {
+        "t": 0.20000000000000018,
+        "label": "柱条形变"
+      },
+      {
+        "t": 0.4666666666666659,
+        "label": "字干接替"
+      },
+      {
+        "t": 0.5333333333333323,
+        "label": "圆点升空"
+      },
+      {
+        "t": 0.6333333333333337,
+        "label": "顶点悬停"
+      },
+      {
+        "t": 0.666666666666667,
+        "label": "加速落字"
+      },
+      {
+        "t": 0.7999999999999998,
+        "label": "落字冲量"
+      },
+      {
+        "t": 1.2999999999999998,
+        "label": "首次回跳"
+      },
+      {
+        "t": 1.7999999999999998,
+        "label": "再次回跳"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#2B2BFF",
+        "#FF5A4E",
+        "#FFC62B",
+        "#2EE6A8",
+        "#FFF6E9",
+        "#151433"
+      ],
+      "type": "Fredoka 600、700；Resource Han Rounded CN Bold 700。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "preview": "previews/patterns/dot-drop-wordmark.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-flat-vector",
+      "bundle": "agent/cases/mg-flat-vector.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 圆点落字成标\n\n## 实现 Prompt\n\n复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放柱条接字干、圆点升空悬停与落字。保留237/30–245/30秒的矩形形变，247→250帧的上升、250→251帧的悬停、251→255帧的下降；上升用 E.outQ，下降用 E.inQ。落字后按 abs(L.i-4) 帧延迟把10像素冲量传到各字母，保留1.22倍镜头推近、r60→1100的扩散环、持续5帧的六条放射线，以及9.000秒和9.500秒的回跳。沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。\n\n## 参数\n\n- **柱条接字干**：237/30–245/30=7.900–8.167秒；源框x558…642、y170…460、rx24；p=E.ioC(inv(237/30,245/30,t))。\n- **字点升空与落字**：245/30–247/30=8.167–8.233秒蓄力；247→250帧上升，250→251帧悬停，251→255帧下降；AP.y=TIT.y-210；升段E.outQ，降段E.inQ。\n- **字干压缩**：stem=.12*kick(t,dl,3.5,.4)+.07*an-.05*kick(t,lau,4,.4)；sx=1+.5*stem，sy=1-stem；基线548。\n- **逐字冲量**：dip=10*kick(t,dl+F(abs(L.i-4)),3.2,.4)；字母基线WBASE+dip；每字延迟abs(i-4)/30秒。\n- **镜头推震**：下落push=.22*E.inC(inv(dotDrop,dotLand2,t))；落地后.22*(1-spring(t-dl,4.5,.48))；慢推1+.045*E.ioQ(inv(dl,10.4,t))。\n- **落字扩散环**：255/30=8.500秒起；r60→1100、线宽24、10帧。\n- **落字放射线**：角度-168/-128/-100/-80/-52/-12度；长度76/104/88/110/92/72；线宽14；持续5帧。\n- **按拍回跳**：270/30=9.000秒、285/30=9.500秒起；hop+=16*hump(E.outQ(inv(tb,tb+F(9),t)))。\n- **末次扩散环**：285/30=9.500秒起；r=DOT_R+14→DOT_R+170、线宽18、12帧。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/dot-drop-wordmark/index.html) · [在库中查看](../../patterns.html#pattern/dot-drop-wordmark)\n"
+  },
+  "entrypoint": "demos/patterns/dot-drop-wordmark/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-flat-vector/LICENSES.md",
+      "bytes": 789,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/audio/film.m4a",
+      "bytes": 346596,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fidelity.md",
+      "bytes": 3942,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/cues.json",
+      "bytes": 906,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/scene.js",
+      "bytes": 63477,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/setup.js",
+      "bytes": 206,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/style.css",
+      "bytes": 111,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka[wdth,wght].ttf",
+      "bytes": 159184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRounded-OFL.txt",
+      "bytes": 4504,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRoundedCN-Bold.ttf",
+      "bytes": 13978508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/fonts.css",
+      "bytes": 376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/index.html",
+      "bytes": 2596,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/audio.py",
+      "bytes": 7610,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/cues.json",
+      "bytes": 906,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/dot-drop-wordmark/index.html",
+      "bytes": 1835,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/dot-drop-wordmark/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-flat-vector.json",
+      "bytes": 21215,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/dot-drop-wordmark.json",
+      "bytes": 4682,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/dot-drop-wordmark.jpg",
+      "bytes": 35298,
+      "role": "preview"
+    }
+  ]
+}

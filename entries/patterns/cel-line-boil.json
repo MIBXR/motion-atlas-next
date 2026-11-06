@@ -1,0 +1,195 @@
+{
+  "id": "cel-line-boil",
+  "order": 30,
+  "title": "逐张重画：线条沸腾与换纸",
+  "types": [
+    "texture",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape",
+    "portrait"
+  ],
+  "summary": "重放由曝光表驱动的微差线稿循环、纸齿换位与尘点轮换，使停留的形体与纸面持续重画。 综艺片按帧号替换照片贴图边缘，以耳朵四帧扭动和三张炸毛轮换形成动作。 PDoom 以 randomSeed(1000+floor(T*BOIL))（BOIL=12，film/src/core.js:3/195）每 1/12 秒更换一次笔触随机种子，使 p5.brush 线条以 12fps 沸腾。",
+  "mechanism": "依据曝光表，按一拍一、二、三对绘制时间取整，循环使用噪声线稿变体，让静止形体持续轻抖；同一绘制编号同时切换纸齿采样区与尘点板。 综艺片按帧号替换照片贴图边缘，以耳朵四帧扭动和三张炸毛轮换形成动作。 PDoom 以 randomSeed(1000+floor(T*BOIL))（BOIL=12，film/src/core.js:3/195）每 1/12 秒更换一次笔触随机种子，使 p5.brush 线条以 12fps 沸腾。",
+  "trigger": "时间进入下一张曝光画格时。",
+  "effect": "线稿几何、纸齿位置与尘点板随绘制编号一起切换。",
+  "timing": [
+    {
+      "name": "曝光表",
+      "value": "SCHED=[[0,8,2],[8,24,1],[24,48,2],[48,60,1],[60,108,2],[108,120,3],[120,132,2],[132,168,1],[168,224,2],[224,230,1],[230,240,3]]；24fps。"
+    },
+    {
+      "name": "线稿变体",
+      "value": "bv=(D)=>(D.step===3?D.id%3:D.id%4)；boil(pts,seed,amp=2.4,scale=70)；z=seed*2.371+0.5。"
+    },
+    {
+      "name": "纸齿换位",
+      "value": "ox=floor(hs(v,51)*470)；oy=floor(hs(v,52)*310)；globalCompositeOperation=multiply；globalAlpha=0.5。"
+    },
+    {
+      "name": "尘点轮换",
+      "value": "IMG.dust[v%4]；globalAlpha=0.22；按v%2、v%3翻转。"
+    },
+    {
+      "name": "重放时长",
+      "value": "首段原片0–10秒，巧思总时长15.001秒。"
+    },
+    {
+      "name": "追加原片区间",
+      "value": "mg-hanazi 原片 1.3–1.834 秒；mg-hanazi 原片 5.8–7.967 秒；['e11', 'e16', 'e11', 'e6'][ef]\nconst pick = fm >= 0 && fm < 2 ? 'hL135' : (fm >= 2 && fm < 4) || (fd >= 2 && fd < 4) ? 'hL12' : fd < 2 ? 'hL06' : 'hB' + (Math.floor(tt * 12) % 3);"
+    },
+    {
+      "name": "线条沸腾种子",
+      "value": "pdoom-video · film/src/core.js:3/195：BOIL=12；randomSeed(1000+Math.floor(T*BOIL))；noiseSeed(77)。"
+    },
+    {
+      "name": "追加原片区间",
+      "value": "pdoom-video 原片3.6–5.9秒，追加2.3秒；总时长15.001秒。"
+    }
+  ],
+  "useCases": [
+    "逐帧手绘线稿的停留质感",
+    "纸纹与线稿共用曝光节奏",
+    "综艺片按帧号替换照片贴图边缘，以耳朵四帧扭动和三张炸毛轮换形成动作。",
+    "PDoom 以 randomSeed(1000+floor(T*BOIL))（BOIL=12，film/src/core.js:3/195）每 1/12 秒更换一次笔触随机种子，使 p5.brush 线条以 12fps 沸腾。"
+  ],
+  "avoid": [
+    "竖屏重排",
+    "片段边界无缝循环"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "emotion-take-morph"
+    ],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例的原作渲染入口，按 index.html 内联 segments 顺序重放 mg-cel-boil 原片0–10秒、mg-hanazi 原片1.3–1.834秒与5.8–7.967秒、pdoom-video 原片3.6–5.9秒，全长15.001秒。保留24fps的SCHED曝光表，在一拍一、一拍二和一拍三之间切换；静态形体以D.id%4循环线稿，三帧曝光以D.id%3循环。沿用boil的amp=2.4、scale=70与z=seed*2.371+0.5；纸齿按同一绘制编号从470×310范围取偏移，以multiply、alpha=0.5合成；尘点以v%4轮换、alpha=0.22叠加并翻转。综艺片按帧号替换照片贴图边缘，以耳朵四帧扭动和三张炸毛轮换形成动作。PDoom以BOIL=12与randomSeed(1000+Math.floor(T*BOIL))每1/12秒更新笔触种子，调用并等待异步renderAt；源码位于film/src/core.js:3/195/209。沿用原画面、字体、纸纹和同区间成品音轨，保持1920×1080、24fps，画面与音轨使用同一映射，声音默认关闭。",
+  "demo": "demos/patterns/cel-line-boil/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-cel-boil"
+    },
+    {
+      "caseId": "mg-hanazi"
+    },
+    {
+      "caseId": "lemo-crayon-book"
+    },
+    {
+      "caseId": "pdoom-video"
+    }
+  ],
+  "previewAt": 9.75,
+  "markers": [
+    {
+      "t": 0,
+      "label": "一拍二"
+    },
+    {
+      "t": 0.3333333333333333,
+      "label": "一拍一"
+    },
+    {
+      "t": 1,
+      "label": "一拍二"
+    },
+    {
+      "t": 2,
+      "label": "快动作"
+    },
+    {
+      "t": 2.5,
+      "label": "舞段重画"
+    },
+    {
+      "t": 4.5,
+      "label": "一拍三"
+    },
+    {
+      "t": 5,
+      "label": "一拍二"
+    },
+    {
+      "t": 5.5,
+      "label": "旋转加密"
+    },
+    {
+      "t": 7,
+      "label": "烟火重画"
+    },
+    {
+      "t": 9.333333333333334,
+      "label": "翻页加密"
+    },
+    {
+      "t": 9.583333333333334,
+      "label": "结尾重画"
+    },
+    {
+      "t": 10,
+      "label": "综艺花字"
+    },
+    {
+      "t": 10.017,
+      "label": "小声旁白"
+    },
+    {
+      "t": 10.267,
+      "label": "快乐电池"
+    },
+    {
+      "t": 10.534,
+      "label": "综艺花字"
+    },
+    {
+      "t": 10.734,
+      "label": "炸毛主拍"
+    },
+    {
+      "t": 11.734,
+      "label": "发量爆表"
+    },
+    {
+      "t": 12.234,
+      "label": "定格收框"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#1c1613",
+      "#e5402b",
+      "#ffc425",
+      "#f4e9d0",
+      "#fff6e2",
+      "#d9573f"
+    ],
+    "type": "LXGW Marker Gothic 400；Caveat 500、600、700；Long Cang 400；手绘中文与英文标题。"
+  },
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments",
+      "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+    },
+    {
+      "field": "index.html 内联配置 → markers / reduced",
+      "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+    }
+  ],
+  "previewAtPortrait": 10.267,
+  "parameters": [
+    {
+      "name": "lemo-crayon-book · 蜡笔线条与入睡减幅",
+      "value": "film/main.js:BOIL.step=floor(t*12+1e-6)；film/crayon.js:BOIL控制线条偏移与波动；film/film.js:157在t>44.4后令BOIL.amp=.55，其余时刻为1。"
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "flipbook-pullback",
+  "pattern": {
+    "id": "flipbook-pullback",
+    "order": 33,
+    "title": "拉远翻纸溯帧",
+    "types": [
+      "camera",
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "重放落版后三步拉远显露灯箱、拇指翻阅旧画格，以及红铅笔圈注总张数并画出箭头的过程。",
+    "mechanism": "落版后三步拉远显露灯箱与叠纸，拇指连续掀角翻页，重放早先六张画格，再返回顶层标题；红铅笔分两格圈注总张数并画出箭头。",
+    "trigger": "标题完成后，时间进入拉回、圈注与翻页节点时。",
+    "effect": "平面落版显露为灯箱上的动画纸页，旧画格在翻阅中重现，张数圈注连接到手作标语。",
+    "timing": [
+      {
+        "name": "三步拉远",
+        "value": "pullScale(fq)=fq<218?1:fq<220?0.9:fq<222?0.86:0.84。"
+      },
+      {
+        "name": "溯帧序列",
+        "value": "RIFFLE=[150,121,108,61,30,13]；rif=f>=224&&f<=229?f-224:-1。"
+      },
+      {
+        "name": "灯箱透光",
+        "value": "[[124,0.14],[80,0.24],[44,0.38]]；洋葱皮偏移[8,-4]与[-5,7]，alpha=0.12与0.16。"
+      },
+      {
+        "name": "掀角形状",
+        "value": "a=[350,530,475,560,495,300][rif]*s；b=[250,380,340,405,358,214][rif]*s。"
+      },
+      {
+        "name": "总张数圈注",
+        "value": "TOTAL=drawing(239).id+1-RIFFLE.length；p=D.fq>=220?1:0.5；n=44；m=round(n*1.16*p)。"
+      },
+      {
+        "name": "重放时长",
+        "value": "原片218/24−0.2至232/24+0.2秒，巧思总时长0.9833333333333343秒。"
+      }
+    ],
+    "useCases": [
+      "动画纸页的幕后揭示",
+      "翻页溯帧与手写张数落版"
+    ],
+    "avoid": [
+      "竖屏重排",
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放原片218/24−0.2至232/24+0.2秒，全长0.9833333333333343秒。保留218、220、222帧依次缩至0.9、0.86、0.84的三步拉远，显露灯箱、定位尺与叠纸。224至229帧由拇指掀角翻页，按RIFFLE=[150,121,108,61,30,13]重放旧画格，再回到顶层标题；保留蓝色洋葱皮、透纸灯光和翻页音。张数由drawing(239).id+1-RIFFLE.length给出，圈注在218与220帧分两步完成，并接箭头。沿用原画面、字体与同区间成品音轨，保持1920×1080、24fps，声音默认关闭。",
+    "demo": "demos/patterns/flipbook-pullback/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-cel-boil"
+      }
+    ],
+    "previewAt": 0.8666666666666671,
+    "markers": [
+      {
+        "t": 0.20000000000000107,
+        "label": "拉回圈注"
+      },
+      {
+        "t": 0.2833333333333332,
+        "label": "圈注闭合"
+      },
+      {
+        "t": 0.36666666666666714,
+        "label": "箭头落笔"
+      },
+      {
+        "t": 0.45000000000000107,
+        "label": "翻页溯帧"
+      },
+      {
+        "t": 0.7000000000000011,
+        "label": "返回顶页"
+      },
+      {
+        "t": 0.7833333333333332,
+        "label": "拇指退场"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#1c1613",
+        "#e5402b",
+        "#ffc425",
+        "#f4e9d0",
+        "#fff6e2",
+        "#d9573f"
+      ],
+      "type": "LXGW Marker Gothic 400；Caveat 500、600、700；Long Cang 400；手绘中文与英文标题。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "preview": "previews/patterns/flipbook-pullback.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-cel-boil",
+      "bundle": "agent/cases/mg-cel-boil.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 拉远翻纸溯帧\n\n## 实现 Prompt\n\n复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放原片218/24−0.2至232/24+0.2秒，全长0.9833333333333343秒。保留218、220、222帧依次缩至0.9、0.86、0.84的三步拉远，显露灯箱、定位尺与叠纸。224至229帧由拇指掀角翻页，按RIFFLE=[150,121,108,61,30,13]重放旧画格，再回到顶层标题；保留蓝色洋葱皮、透纸灯光和翻页音。张数由drawing(239).id+1-RIFFLE.length给出，圈注在218与220帧分两步完成，并接箭头。沿用原画面、字体与同区间成品音轨，保持1920×1080、24fps，声音默认关闭。\n\n## 参数\n\n- **三步拉远**：pullScale(fq)=fq<218?1:fq<220?0.9:fq<222?0.86:0.84。\n- **溯帧序列**：RIFFLE=[150,121,108,61,30,13]；rif=f>=224&&f<=229?f-224:-1。\n- **灯箱透光**：[[124,0.14],[80,0.24],[44,0.38]]；洋葱皮偏移[8,-4]与[-5,7]，alpha=0.12与0.16。\n- **掀角形状**：a=[350,530,475,560,495,300][rif]*s；b=[250,380,340,405,358,214][rif]*s。\n- **总张数圈注**：TOTAL=drawing(239).id+1-RIFFLE.length；p=D.fq>=220?1:0.5；n=44；m=round(n*1.16*p)。\n- **重放时长**：原片218/24−0.2至232/24+0.2秒，巧思总时长0.9833333333333343秒。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/flipbook-pullback/index.html) · [在库中查看](../../patterns.html#pattern/flipbook-pullback)\n"
+  },
+  "entrypoint": "demos/patterns/flipbook-pullback/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-cel-boil/LICENSES.md",
+      "bytes": 1181,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_01.png",
+      "bytes": 28357,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_02.png",
+      "bytes": 28707,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_03.png",
+      "bytes": 25600,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_04.png",
+      "bytes": 27879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_base.jpg",
+      "bytes": 483747,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_tooth.png",
+      "bytes": 1791819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/audio/film.m4a",
+      "bytes": 415190,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fidelity.md",
+      "bytes": 5403,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/cues.json",
+      "bytes": 2188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/engine.js",
+      "bytes": 13778,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/scene.js",
+      "bytes": 103043,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/setup.js",
+      "bytes": 764,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/style.css",
+      "bytes": 137,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat[wght].ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LongCang-Regular.ttf",
+      "bytes": 5162508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Longcang-OFL.txt",
+      "bytes": 4390,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/fonts.css",
+      "bytes": 509,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/index.html",
+      "bytes": 2718,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_01_3840x2160.png",
+      "bytes": 81508,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_02_3840x2160.png",
+      "bytes": 82662,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_03_3840x2160.png",
+      "bytes": 73739,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_04_3840x2160.png",
+      "bytes": 79891,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/audio.py",
+      "bytes": 24290,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/cues.json",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_dust.py",
+      "bytes": 707,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_paper.py",
+      "bytes": 2360,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/hitmax.py",
+      "bytes": 4168,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/flipbook-pullback/index.html",
+      "bytes": 1617,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/flipbook-pullback/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-cel-boil.json",
+      "bytes": 24679,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/flipbook-pullback.json",
+      "bytes": 3840,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/flipbook-pullback.jpg",
+      "bytes": 139961,
+      "role": "preview"
+    }
+  ]
+}

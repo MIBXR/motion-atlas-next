@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "fresh-ink-aging",
+  "pattern": {
+    "id": "fresh-ink-aging",
+    "order": 40,
+    "title": "新墨笔锋渐暗",
+    "types": [
+      "texture",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "新画金线与发光笔尖保持明亮，旧线按绘制年龄退成暗金，标志线保留高亮。",
+    "mechanism": "笔尖经过路径点后，新画线段和笔锋先保持明亮，旧线按绘制年龄降低亮度；抬升段逐渐增亮，标志保持高亮。",
+    "trigger": "笔尖绘制路径点并使已绘线段的年龄增加时。",
+    "effect": "亮笔尖引导观看方向，旧植物和建筑退成暗金，正在生长的线段和标志继续突出。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "0–8.02秒，1倍速；巧思时长8.02秒。"
+      },
+      {
+        "name": "旧线退亮",
+        "value": "FLOOR[i] = 0.4; (1 - smooth(0.2, 1.5, age))。"
+      },
+      {
+        "name": "标志亮度",
+        "value": "FLOOR[i] = 0.96;"
+      },
+      {
+        "name": "笔锋光晕",
+        "value": "glowAt(sx, sy, 56 * fl, 0.09 * vis, '214,178,112');"
+      },
+      {
+        "name": "笔尖淡出",
+        "value": "7.5–7.82秒；const vis = 1 - smooth(cues.tip_fade[0], cues.tip_fade[1], t);"
+      }
+    ],
+    "useCases": [
+      "连续线描的视觉焦点",
+      "旧路径退亮与新路径强调",
+      "发光笔尖引导阅读"
+    ],
+    "avoid": [
+      "竖屏重排",
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 以1倍速重放原片0–8.02秒，巧思时长8.02秒。笔尖经过路径点后，新画线段和笔锋先保持明亮，旧线按绘制年龄降低亮度；抬升段逐渐增亮，标志保持高亮。FLOOR[i] = 0.4; (1 - smooth(0.2, 1.5, age))。FLOOR[i] = 0.96;glowAt(sx, sy, 56 * fl, 0.09 * vis, '214,178,112');7.5–7.82秒；const vis = 1 - smooth(cues.tip_fade[0], cues.tip_fade[1], t);沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。",
+    "demo": "demos/patterns/fresh-ink-aging/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-line-art"
+      }
+    ],
+    "previewAt": 6.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "亮墨起笔"
+      },
+      {
+        "t": 0.2,
+        "label": "种子成形"
+      },
+      {
+        "t": 1.5,
+        "label": "旧线渐暗"
+      },
+      {
+        "t": 5.135,
+        "label": "地平延伸"
+      },
+      {
+        "t": 6.458,
+        "label": "亮环起笔"
+      },
+      {
+        "t": 7.5,
+        "label": "笔尖淡出"
+      },
+      {
+        "t": 7.82,
+        "label": "笔尖隐去"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#0B1320",
+        "#E9D7A5",
+        "#967D50",
+        "#FFF6DC"
+      ],
+      "type": "Cormorant Garamond 500；Noto Serif SC 300。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "preview": "previews/patterns/fresh-ink-aging.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-line-art",
+      "bundle": "agent/cases/mg-line-art.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 新墨笔锋渐暗\n\n## 实现 Prompt\n\n复用来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 以1倍速重放原片0–8.02秒，巧思时长8.02秒。笔尖经过路径点后，新画线段和笔锋先保持明亮，旧线按绘制年龄降低亮度；抬升段逐渐增亮，标志保持高亮。FLOOR[i] = 0.4; (1 - smooth(0.2, 1.5, age))。FLOOR[i] = 0.96;glowAt(sx, sy, 56 * fl, 0.09 * vis, '214,178,112');7.5–7.82秒；const vis = 1 - smooth(cues.tip_fade[0], cues.tip_fade[1], t);沿用原画面、字体与成品音轨，保持1920×1080、30fps；画面和音轨共用同一时刻映射，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：0–8.02秒，1倍速；巧思时长8.02秒。\n- **旧线退亮**：FLOOR[i] = 0.4; (1 - smooth(0.2, 1.5, age))。\n- **标志亮度**：FLOOR[i] = 0.96;\n- **笔锋光晕**：glowAt(sx, sy, 56 * fl, 0.09 * vis, '214,178,112');\n- **笔尖淡出**：7.5–7.82秒；const vis = 1 - smooth(cues.tip_fade[0], cues.tip_fade[1], t);\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/fresh-ink-aging/index.html) · [在库中查看](../../patterns.html#pattern/fresh-ink-aging)\n"
+  },
+  "entrypoint": "demos/patterns/fresh-ink-aging/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-line-art/LICENSES.md",
+      "bytes": 789,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/audio/film.m4a",
+      "bytes": 401088,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fidelity.md",
+      "bytes": 5828,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/cues.json",
+      "bytes": 3214,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/film.js",
+      "bytes": 33052,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/setup.js",
+      "bytes": 207,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/style.css",
+      "bytes": 193,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/CormorantGaramond-OFL.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/CormorantGaramond[wght].ttf",
+      "bytes": 1195560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/NotoSerifSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/NotoSerifSC-VF.ttf",
+      "bytes": 25125232,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/fonts.css",
+      "bytes": 352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/index.html",
+      "bytes": 2256,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/assets/fonts/fonts.css",
+      "bytes": 9135,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/audio.py",
+      "bytes": 9978,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/cues.json",
+      "bytes": 3214,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/film.js",
+      "bytes": 46982,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/index.html",
+      "bytes": 566,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/out/timing.json",
+      "bytes": 8840,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/tools/dump_timing.mjs",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/tools/retime.py",
+      "bytes": 4430,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/fresh-ink-aging/index.html",
+      "bytes": 1552,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/fresh-ink-aging/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-line-art.json",
+      "bytes": 19614,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/fresh-ink-aging.json",
+      "bytes": 3404,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/fresh-ink-aging.jpg",
+      "bytes": 26824,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# 副歌计量表逐拍递增
+
+## 实现 Prompt
+
+复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“副歌计量表逐拍递增”，总时长12.5秒。METER 为四个窗口保存起止时刻和数值，pdoomAt 将窗口长度除以 BEAT 后取 round 得步数，每一步用 easeOut(clamp(frac(p)*4)) 在前四分之一步迅速抬升，之后保持；窗口外保持上一终值，首段前返回5。meterProp 标记 METER_SHOWN，避免角落表重复出现。 film/src/timeline.js:21：lerp(v0,v1,(floor(p)+easeOut(clamp(frac(p)*4)))/n)。 film/src/core.js:193、timeline.js:39、props.js:75–76：每帧重置 METER_SHOWN，meterProp 设置 true，drawWorld 仅在 false 时画角落表。 film/src/timeline.js:56–66：x=1760、y=110，scale=k*.85；props.js:74：v<40 为 sap，v<75 为 ochre，其余 #D8394E。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。
+
+## 参数
+
+- **四段窗口**：film/src/timeline.js:14：METER=[[23,35.5,8,34],[59,69.9,34,61],[95.4,105.4,61,86],[123.5,132,86,99.9]]。
+- **步进**：film/src/core.js:3 与 timeline.js:20–21：BEAT=60/88；n=max(1,round((b-a)/BEAT))，四段为18/16/15/12步；p=clamp((t-a)/(b-a))*n。
+- **角落入出场**：film/src/timeline.js:52–56：k=backOut((t-a)/.4)*(1-ease((t-b)/.3))；入场 .4 秒、退出 .3 秒。
+- **重放区间**：原片23–27秒、123.5–132秒，巧思总时长12.5秒。
+
+## 迁移
+
+- `index.html 内联配置 → segments`：设置原片起止时刻，画面与音轨使用相同映射。
+- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴节点与减少动态的停留时刻。
+
+[打开 Demo](../../demos/patterns/escalating-chorus-meter/index.html) · [在库中查看](../../patterns.html#pattern/escalating-chorus-meter)

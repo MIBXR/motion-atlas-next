@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "shape-rhyme-match-cut",
+  "pattern": {
+    "id": "shape-rhyme-match-cut",
+    "order": 100,
+    "title": "形状押韵硬切",
+    "types": [
+      "transition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "保持圆形的屏幕位置与交接尺度，在时间阈值直接切换轮子、轮盘、瞳孔和月亮；场内推进衔接下一次硬切，匹配段间隔逐步缩短。",
+    "mechanism": "保持圆形的屏幕位置与交接尺度，在时间阈值直接切换轮子、轮盘、瞳孔和月亮；场内推进衔接下一次硬切，匹配段间隔逐步缩短。",
+    "trigger": "renderFilm依次越过T.roulette、HIT.pupil与HIT.moon的时间阈值。",
+    "effect": "同位圆形跨场押韵，地点改变而视觉焦点延续，剪辑加速追逐。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "21.590909–26.609091秒；1倍速，总时长5.018182秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "硬切定位",
+        "value": "film/film.js:renderFilm的互斥else-if：t<T.roulette画wheelShot，t<HIT.pupil画sCasino，t<HIT.moon画sPupil，随后画sRoof；阈值处无轮廓插值或遮罩。"
+      },
+      {
+        "name": "时间与尺度",
+        "value": "film/story.js：roulette=B(13)，pupil=B(14,3)，moon=B(15)；轮盘段6拍=2.727273秒，瞳孔段2拍=.909091秒。scenes.js:RW共用圆形位置，film.js:sRoof在切点从RW.r / RW.y过渡到r=330、y=430。"
+      },
+      {
+        "name": "锁孔回环",
+        "value": "film/scenes.js:KH_SCREEN={x:960,y:430,h:560}；sTitle把片名锁孔推到该位置，最终bongoEnd硬切全片名。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-spy-titles/film/film.js",
+      "demos/cases/lemo-spy-titles/film/scenes.js",
+      "demos/cases/lemo-spy-titles/film/story.js"
+    ],
+    "locator": "renderFilm / wheelShot / sCasino / sPupil / sRoof / KH_SCREEN",
+    "useCases": [
+      "同位圆形跨场押韵，地点改变而视觉焦点延续，剪辑加速追逐。"
+    ],
+    "avoid": [
+      "在关键动作或留白上叠加争夺注意的主动作"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "type-as-architecture"
+      ],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-spy-titles的原作render(t)重放“形状押韵硬切”。保持圆形的屏幕位置与交接尺度，在时间阈值直接切换轮子、轮盘、瞳孔和月亮；场内推进衔接下一次硬切，匹配段间隔逐步缩短。保留参数：film/film.js:renderFilm的互斥else-if：t<T.roulette画wheelShot，t<HIT.pupil画sCasino，t<HIT.moon画sPupil，随后画sRoof；阈值处无轮廓插值或遮罩。；film/story.js：roulette=B(13)，pupil=B(14,3)，moon=B(15)；轮盘段6拍=2.727273秒，瞳孔段2拍=.909091秒。scenes.js:RW共用圆形位置，film.js:sRoof在切点从RW.r / RW.y过渡到r=330、y=430。；film/scenes.js:KH_SCREEN={x:960,y:430,h:560}；sTitle把片名锁孔推到该位置，最终bongoEnd硬切全片名。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/shape-rhyme-match-cut/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-spy-titles"
+      }
+    ],
+    "previewAt": 3.05,
+    "markers": [
+      {
+        "t": 0,
+        "label": "形状押韵硬切"
+      }
+    ],
+    "preview": "previews/patterns/shape-rhyme-match-cut.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-spy-titles",
+      "bundle": "agent/cases/lemo-spy-titles.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 形状押韵硬切\n\n## 实现 Prompt\n\n用来源案例lemo-spy-titles的原作render(t)重放“形状押韵硬切”。保持圆形的屏幕位置与交接尺度，在时间阈值直接切换轮子、轮盘、瞳孔和月亮；场内推进衔接下一次硬切，匹配段间隔逐步缩短。保留参数：film/film.js:renderFilm的互斥else-if：t<T.roulette画wheelShot，t<HIT.pupil画sCasino，t<HIT.moon画sPupil，随后画sRoof；阈值处无轮廓插值或遮罩。；film/story.js：roulette=B(13)，pupil=B(14,3)，moon=B(15)；轮盘段6拍=2.727273秒，瞳孔段2拍=.909091秒。scenes.js:RW共用圆形位置，film.js:sRoof在切点从RW.r / RW.y过渡到r=330、y=430。；film/scenes.js:KH_SCREEN={x:960,y:430,h:560}；sTitle把片名锁孔推到该位置，最终bongoEnd硬切全片名。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：21.590909–26.609091秒；1倍速，总时长5.018182秒。\n\n[打开 Demo](../../demos/patterns/shape-rhyme-match-cut/index.html) · [在库中查看](../../patterns.html#pattern/shape-rhyme-match-cut)\n"
+  },
+  "entrypoint": "demos/patterns/shape-rhyme-match-cut/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-spy-titles/LICENSES.md",
+      "bytes": 1462,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/audio/CREDITS",
+      "bytes": 1278,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/audio/film.m4a",
+      "bytes": 1396377,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/fidelity.md",
+      "bytes": 6172,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/chars.js",
+      "bytes": 21523,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/film.js",
+      "bytes": 24045,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/frames.js",
+      "bytes": 10788,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/glyph.js",
+      "bytes": 3624,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/index.html",
+      "bytes": 737,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/lines.json",
+      "bytes": 678,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/main.js",
+      "bytes": 2185,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/paper.js",
+      "bytes": 10437,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/scenes.js",
+      "bytes": 21117,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/sheet.js",
+      "bytes": 7336,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/story.js",
+      "bytes": 1502,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/title.js",
+      "bytes": 5446,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/film/voices/dur.json",
+      "bytes": 86,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/fonts/LeagueGothic-OFL.txt",
+      "bytes": 4400,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/fonts/LeagueGothic.ttf",
+      "bytes": 65972,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/fonts/LeagueSpartan-OFL.txt",
+      "bytes": 4402,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/fonts/LeagueSpartan.ttf",
+      "bytes": 95116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/fonts/fonts.css",
+      "bytes": 256,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/index.html",
+      "bytes": 3121,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/CREDITS",
+      "bytes": 1278,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/README.md",
+      "bytes": 3136,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/build.sh",
+      "bytes": 1539,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/events.json",
+      "bytes": 3303,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/mix.py",
+      "bytes": 9811,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/music/CREDITS_music.txt",
+      "bytes": 297,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/music/score.json",
+      "bytes": 2550,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/music/score.py",
+      "bytes": 21437,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/tools/mux.sh",
+      "bytes": 1235,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/tools/subs.py",
+      "bytes": 564,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/source/voices/words.json",
+      "bytes": 754,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/vendor/opentype.js@1.3.4/opentype-LICENSE.txt",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-spy-titles/vendor/opentype.js@1.3.4/opentype.min.js",
+      "bytes": 171001,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/shape-rhyme-match-cut/index.html",
+      "bytes": 833,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/shape-rhyme-match-cut/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-spy-titles.json",
+      "bytes": 11658,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/shape-rhyme-match-cut.json",
+      "bytes": 3368,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/shape-rhyme-match-cut.jpg",
+      "bytes": 106311,
+      "role": "preview"
+    }
+  ]
+}

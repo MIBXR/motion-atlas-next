@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "layered-hanazi-spring-pop",
+  "pattern": {
+    "id": "layered-hanazi-spring-pop",
+    "order": 77,
+    "title": "厚边花字弹入",
+    "types": [
+      "type-motion"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "portrait"
+    ],
+    "tags": [
+      "mg-styles-15"
+    ],
+    "summary": "逐字 cue 到达后，挤出、彩边、白边、渐变与高光一起弹入，停留时轻摆，并按标题拍点依次跳动。",
+    "mechanism": "逐字 cue 到达后，挤出、彩边、白边、渐变与高光一起弹入，停留时轻摆，并按标题拍点依次跳动。",
+    "trigger": "逐字 cue 到达时",
+    "effect": "挤出、彩边、白边、渐变与高光一起弹入，停留时轻摆，并按标题拍点依次跳动。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-hanazi 原片 0–2.7 秒；mg-hanazi 原片 5.73–7.83 秒；mg-hanazi 原片 7.9–10 秒；1 倍速，总时长 6.9 秒。"
+      },
+      {
+        "name": "厚边花字弹入",
+        "value": "function spring(t, z = 0.517, w = 22)\nconst hold = clamp((u - .22) / .35), wf = o.wf ?? 1.15;\nwhite: 13, outer: 12\ngloss: .55"
+      }
+    ],
+    "useCases": [
+      "萌宠与综艺短片的情绪花字。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-hanazi 原片 0–2.7 秒；mg-hanazi 原片 5.73–7.83 秒；mg-hanazi 原片 7.9–10 秒；总时长 6.9 秒。逐字 cue 到达 → 挤出、彩边、白边、渐变与高光一起弹入，驻留轻摆并按标题拍点依次跳动。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：function spring(t, z = 0.517, w = 22)\nconst hold = clamp((u - .22) / .35), wf = o.wf ?? 1.15;\nwhite: 13, outer: 12\ngloss: .55。使用 1080×1920 竖屏。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/layered-hanazi-spring-pop/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "mg-hanazi"
+      }
+    ],
+    "previewAt": 3.77,
+    "markers": [
+      {
+        "t": 0,
+        "label": "综艺花字"
+      },
+      {
+        "t": 0.2,
+        "label": "快乐花字"
+      },
+      {
+        "t": 1.317,
+        "label": "小声旁白"
+      },
+      {
+        "t": 1.567,
+        "label": "快乐电池"
+      },
+      {
+        "t": 2.5,
+        "label": "凝视切镜"
+      },
+      {
+        "t": 2.567,
+        "label": "问号弹入"
+      },
+      {
+        "t": 2.7,
+        "label": "综艺花字"
+      },
+      {
+        "t": 2.97,
+        "label": "炸毛主拍"
+      },
+      {
+        "t": 3.97,
+        "label": "发量爆表"
+      },
+      {
+        "t": 4.47,
+        "label": "定格收框"
+      },
+      {
+        "t": 4.8,
+        "label": "综艺花字"
+      },
+      {
+        "t": 5.4,
+        "label": "猫主认证"
+      },
+      {
+        "t": 5.8,
+        "label": "下期见"
+      }
+    ],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#FF3D7F",
+        "#FFE14D",
+        "#16B9F0",
+        "#FFFFFF",
+        "#1E2A78"
+      ],
+      "type": "Resource Han Rounded 900；Alimama ShuHeiTi 700；Douyin Sans 700；LXGW Marker Gothic 400；ZCOOL KuaiLe 400；Luckiest Guy 400。"
+    },
+    "renderer": "gpu",
+    "preview": "previews/patterns/layered-hanazi-spring-pop.jpg",
+    "previewPortrait": "previews/patterns/layered-hanazi-spring-pop-portrait.jpg"
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-hanazi",
+      "bundle": "agent/cases/mg-hanazi.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 厚边花字弹入\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速重放以下片段：mg-hanazi 原片 0–2.7 秒；mg-hanazi 原片 5.73–7.83 秒；mg-hanazi 原片 7.9–10 秒；总时长 6.9 秒。逐字 cue 到达 → 挤出、彩边、白边、渐变与高光一起弹入，驻留轻摆并按标题拍点依次跳动。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：function spring(t, z = 0.517, w = 22)\nconst hold = clamp((u - .22) / .35), wf = o.wf ?? 1.15;\nwhite: 13, outer: 12\ngloss: .55。使用 1080×1920 竖屏。\n\n## 参数\n\n- **原片重放区间**：mg-hanazi 原片 0–2.7 秒；mg-hanazi 原片 5.73–7.83 秒；mg-hanazi 原片 7.9–10 秒；1 倍速，总时长 6.9 秒。\n- **厚边花字弹入**：function spring(t, z = 0.517, w = 22)\nconst hold = clamp((u - .22) / .35), wf = o.wf ?? 1.15;\nwhite: 13, outer: 12\ngloss: .55\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/layered-hanazi-spring-pop/index.html) · [在库中查看](../../patterns.html#pattern/layered-hanazi-spring-pop)\n"
+  },
+  "entrypoint": "demos/patterns/layered-hanazi-spring-pop/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-hanazi/LICENSES.md",
+      "bytes": 1047,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/grey_r2.jpg",
+      "bytes": 1358977,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B0.png",
+      "bytes": 1482239,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B1.png",
+      "bytes": 1488365,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_B2.png",
+      "bytes": 1479775,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L06.png",
+      "bytes": 1403484,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L12.png",
+      "bytes": 1523388,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/hero_L135.png",
+      "bytes": 1555269,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/tux_r1.jpg",
+      "bytes": 1380121,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_dof.jpg",
+      "bytes": 525250,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear11.png",
+      "bytes": 2491551,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear16.png",
+      "bytes": 2492949,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/assets/white_ear6.png",
+      "bytes": 2489969,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/audio/film.m4a",
+      "bytes": 423783,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fidelity.md",
+      "bytes": 4658,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/cues.json",
+      "bytes": 1116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/scene.js",
+      "bytes": 48529,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/setup.js",
+      "bytes": 1511,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/film/style.css",
+      "bytes": 1332,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/AlimamaShuHeiTi-Bold.ttf",
+      "bytes": 1375772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/AlimamaShuHeiTi-LICENSE.txt",
+      "bytes": 2016,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/DouyinSans-OFL.txt",
+      "bytes": 4425,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/DouyinSansBold.ttf",
+      "bytes": 1919404,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LuckiestGuy-LICENSE.txt",
+      "bytes": 11358,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/LuckiestGuy-Regular.ttf",
+      "bytes": 73320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ResourceHanRounded-OFL.txt",
+      "bytes": 4504,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ResourceHanRoundedCN-Heavy.ttf",
+      "bytes": 13688972,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ZCOOLKuaiLe-OFL.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/ZCOOLKuaiLe-Regular.ttf",
+      "bytes": 1514968,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/fonts/fonts.css",
+      "bytes": 1066,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/index.html",
+      "bytes": 2291,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep.py",
+      "bytes": 8811,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep_r2.py",
+      "bytes": 8193,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/assets/prep_r2b.py",
+      "bytes": 4162,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/audio.py",
+      "bytes": 12031,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-hanazi/source/cues.json",
+      "bytes": 1116,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/layered-hanazi-spring-pop/index.html",
+      "bytes": 2547,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/layered-hanazi-spring-pop/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-hanazi.json",
+      "bytes": 19096,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/layered-hanazi-spring-pop.json",
+      "bytes": 3450,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/layered-hanazi-spring-pop-portrait.jpg",
+      "bytes": 204573,
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/layered-hanazi-spring-pop.jpg",
+      "bytes": 94896,
+      "role": "preview"
+    }
+  ]
+}

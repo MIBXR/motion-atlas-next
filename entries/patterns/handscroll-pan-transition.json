@@ -1,0 +1,75 @@
+{
+  "id": "handscroll-pan-transition",
+  "order": 103,
+  "title": "画卷横移转场",
+  "types": [
+    "transition",
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "五幅画按SLOT从右向左铺在同一装裱长卷上，相机在两幅画的中心之间横移。穿过260px装裱留缝后，下一景到位；三次横移逐渐加快。",
+  "mechanism": "五幅画按SLOT从右向左铺在同一装裱长卷上，相机在两幅画的中心之间横移。穿过260px装裱留缝后，下一景到位；三次横移逐渐加快。",
+  "trigger": "稻田、雨桥和茶屋的景名落印之后。",
+  "effect": "场景换位保持实物画卷的连续关系，并逐步加快叙事。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "10.1–11.9秒；16–17.7秒；21.95–23.3秒；1倍速，总时长4.850000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "卷面位置",
+      "value": "film/story.js:GAP=260，SW=1920+GAP，SLOT(i)=(4-i)*SW。"
+    },
+    {
+      "name": "横移镜头",
+      "value": "film/story.js:T.pan12=[10.5,11.5]、pan23=[16.4,17.3]、pan34=[22.3,22.9]；film/main.js:camera用eio插值中心；第三次zoom由1.065回到1。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-ukiyoe/film/main.js",
+    "demos/cases/lemo-ukiyoe/film/story.js"
+  ],
+  "locator": "camera / SLOT / T.pan12 / T.pan23 / T.pan34",
+  "useCases": [
+    "场景换位保持实物画卷的连续关系，并逐步加快叙事。"
+  ],
+  "avoid": [
+    "同时叠加遮住主要动作的画面层"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-ukiyoe的原作render(t)，实现“画卷横移转场”：五幅画按SLOT从右向左铺在同一装裱长卷，相机在两幅画中心间横移，穿过260px装裱留缝后下一景到位，三次横移逐渐加快。参数与源码：film/story.js:GAP=260，SW=1920+GAP，SLOT(i)=(4-i)*SW。；film/story.js:T.pan12=[10.5,11.5]、pan23=[16.4,17.3]、pan34=[22.3,22.9]；film/main.js:camera用eio插值中心；第三次zoom由1.065回到1。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。",
+  "demo": "demos/patterns/handscroll-pan-transition/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-ukiyoe"
+    }
+  ],
+  "previewAt": 1,
+  "markers": [
+    {
+      "t": 0,
+      "label": "画卷横移转场"
+    },
+    {
+      "t": 1.8,
+      "label": "画卷横移转场"
+    },
+    {
+      "t": 3.5,
+      "label": "画卷横移转场"
+    }
+  ]
+}

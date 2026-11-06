@@ -1,0 +1,119 @@
+{
+  "id": "wave-array",
+  "order": 16,
+  "title": "阵列选择波浪",
+  "types": [
+    "feedback",
+    "rhythm"
+  ],
+  "carriers": [
+    "console"
+  ],
+  "summary": "选择 GLB 档案时，循环阵列叠加带正负位移的行进波；欧氏距离决定波峰位置，选中模型同步抬起。液态字标在节拍和末滴落点触发后，按字母次序传播果冻挤压波。",
+  "mechanism": "直接复用当前 archive-os 的 GLB、材质、光照、长焦相机与循环阵列。选择时即时记录脉冲，距离 d = hypot(Δrow, 2.2Δlane)，波形为0.8 · smooth(age/0.2) · exp(−1.15age) · cos((d−8age)·0.58) · exp(−0.5((d−8age)/3.4)²)。保留正负波形，最多叠加六次脉冲，并限制到±0.6世界单位，3.2秒后移除。选中模型以速率4.2的含速度临界阻尼升高0.4世界单位，离开时原模型以独立副本归位；回选可接续其当前升降状态。液态字标的衰减挤压波按字母间0.04秒延迟传播，末滴一拍从右向左返回。切换列时记住各列选择；减少动态时关闭选择波、呼吸及指针视差，选中升降和轨道以速率35快速到位。",
+  "trigger": "用方向键上下选档、左右切列，或点击GLB模型选择；选档变化时即时发波",
+  "effect": "同一波包在整片模型阵列中向外传播，既有抬升也有下陷；焦点模型与轨道平移同步变化，首尾浏览持续循环。",
+  "parameters": [
+    {
+      "name": "模型与循环池",
+      "value": "archive-cassette.glb；9列×32行对象池，5类各8档；列距5.2、行距0.62世界单位",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/scene.ts:341–355；archive-loop.ts:7–11,56–62；content/archives.json:2–3"
+    },
+    {
+      "name": "空间距离",
+      "value": "Math.hypot(row−pulse.row,(lane−pulse.lane)×2.2)",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/scene.ts:1365–1375"
+    },
+    {
+      "name": "行进波包",
+      "value": "幅度0.8；smooth进入0.2s；指数衰减1.15；传播速度8；cos频率0.58；Gaussian宽度3.4；有效期3.2s",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/motion.ts:45–53"
+    },
+    {
+      "name": "叠加与触发",
+      "value": "选择即时emit；最多6次；合成位移clamp(−0.6,0.6)世界单位；不裁掉负波",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/scene.ts:253–256,780–788,1300,1365–1375"
+    },
+    {
+      "name": "选中升降",
+      "value": "抬起0.4世界单位，临界阻尼速率4.2；状态含位置与速度；离开模型独立归位",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/scene.ts:729–778,1404–1421；motion.ts:112–118"
+    },
+    {
+      "name": "自动输入",
+      "value": "Demo 0–15s对应案例62.6–77.6s；使用四向浏览原输入表，9s/9.35s连续切列",
+      "source": "demos/cases/archive-os/film/config.js:1；demos/cases/archive-os/film/app/film/sequence.js:13,21–23"
+    },
+    {
+      "name": "选择声音",
+      "value": "选档tick：glass(1680,0.064,0.24)；切列column：glass(1280,0.065,0.32)+延迟45ms的glass(2050,0.016,0.18)；切列声像±0.45，默认关闭",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/audio.ts:244–250；main.ts:572–577"
+    }
+  ],
+  "timing": [
+    {
+      "name": "抬起",
+      "value": "与选择脉冲同时开始，临界阻尼速率4.2，目标0.4世界单位"
+    },
+    {
+      "name": "波前",
+      "value": "d−8age推动波包向外传播，0.2秒平滑起振，正负波均保留"
+    },
+    {
+      "name": "叠加",
+      "value": "最多最近6次，3.2秒后清除；合成幅度限制为±0.6世界单位"
+    },
+    {
+      "name": "示例片段",
+      "value": "15秒，案例62.6秒为Demo零点；输入时刻与案例四向浏览帧对齐"
+    },
+    {
+      "name": "总时长",
+      "value": "17.966666667 秒"
+    },
+    {
+      "name": "字标果冻拍波参数",
+      "value": "  const JELLY_HITS = [[7.2, 0.07, 1], [7.6, 0.035, 1], [8.0, 0.05, 1], [8.4, 0.045, -1], [8.8, 0.03, 1], [9.2, 0.018, 1]];                       // half-time snare 7.2, kicks 7.4 / 8.0 in the drop\n        for (const [tk, ak, dk] of JELLY_HITS) jelly += ak * wob(t - tk - (dk > 0 ? i : 3 - i) * 0.04, 3.4, 0.22);\n        const sxJ = 1 + 0.12 * sq + jelly + breathe, syJ = 1 - 0.08 * sq + breathe - jelly * 0.6;"
+    }
+  ],
+  "useCases": [
+    "档案/卡片阵列",
+    "音乐可视化选择",
+    "商品墙",
+    "游戏关卡选择",
+    "按节拍从左向右传播字标挤压波，末滴落地后反向回传。"
+  ],
+  "avoid": [
+    "元素少于 9 个（余波不明显）",
+    "需要精确对齐阅读的表格"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [
+      "rolling-digits",
+      "idle-breathing"
+    ],
+    "conflicts": [],
+    "notes": "选择波与选中升降即时并行；与空闲呼吸相加，详情与归位过程中选择波增益渐退。GLB阵列使用循环边缘，不能用有限CSS块或曼哈顿距离替代。"
+  },
+  "prompt": "从当前archive-os裁出GLB阵列选择机制，保留ArchiveScene及所需模块与选档/切列声音函数，模型和MiSans字形引用../../cases/archive-os/film/app/。保持9×32循环对象池、列距5.2与行距0.62，以及当前材质、光照、相机和含速度归位。每次选择即时emit，最多6次；d = hypot(Δrow, 2.2Δlane)，位移=0.8 · smooth(age/0.2) · exp(−1.15age) · cos((d−8age)·0.58) · exp(−0.5((d−8age)/3.4)²)，保留负值，3.2s后清除，叠加clamp到±0.6世界单位。选中档案以速率4.2临界阻尼升高0.4世界单位。使用案例62.6–77.6s四向输入表；按60Hz事件回放推导render(t)，后退时重建状态，外部seek/play恢复自动驾驶。可调波参数与输入表集中在index.html顶部CONFIG；声音默认关闭，减少动态使用案例reducedMotion预设。 在原有 15 秒之后依次重放mg-liquid 原片 7–9.966666667 秒；全部重放总时长 17.966666667 秒。液态字标的衰减挤压波按字母间0.04秒延迟传播，末滴一拍从右向左返回。参数沿用：  const JELLY_HITS = [[7.2, 0.07, 1], [7.6, 0.035, 1], [8.0, 0.05, 1], [8.4, 0.045, -1], [8.8, 0.03, 1], [9.2, 0.018, 1]];                       // half-time snare 7.2, kicks 7.4 / 8.0 in the drop\n        for (const [tk, ak, dk] of JELLY_HITS) jelly += ak * wob(t - tk - (dk > 0 ? i : 3 - i) * 0.04, 3.4, 0.22);\n        const sxJ = 1 + 0.12 * sq + jelly + breathe, syJ = 1 - 0.08 * sq + breathe - jelly * 0.6;\n原有段的画面和时序保持原样，新增段沿用同区间原片音轨，声音默认关闭。",
+  "videoPrompt": "制作15秒的RHINE LAB GLB档案阵列选择片段，时间对应archive-os的62.6–77.6秒。保留米灰色磨砂档案、真实模型层次、原材质与长焦相机。四向浏览时每次选档即时发出带正负位移的Gaussian/cos波包，波前以每秒8距离单位向外行进，2.2倍列距参与欧氏距离；选中模型升高0.4世界单位，旧模型独立回落。9秒与9.35秒连续切列时叠加余波，最多6次，幅度限制±0.6，3.2秒清除。需要声音时使用案例tick与column原函数。",
+  "negativePrompt": "不要CSS三面方块，不要7×9有限网格，不要曼哈顿距离，不要按每格70ms延迟的指数sin波，不要只保留最近三次，不要裁掉负波，不要等模型抬起后才发波，不要把世界单位写成px，不要替换模型、材质、字体或声音，不要跨目录引用案例。",
+  "demo": "demos/patterns/wave-array/index.html",
+  "kit": true,
+  "previewAt": 2.4,
+  "sources": [
+    {
+      "caseId": "archive-os"
+    },
+    {
+      "caseId": "mg-liquid"
+    }
+  ],
+  "markers": [
+    {
+      "t": 15,
+      "label": "液态流动"
+    }
+  ]
+}

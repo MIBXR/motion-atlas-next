@@ -1,0 +1,67 @@
+{
+  "id": "spec-dock-rail",
+  "order": 164,
+  "title": "读数停驻再入侧栏",
+  "types": [
+    "hud",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "规格大卡依次给出电池、电机与刹车读数。各段结束前，大卡淡出，读数芯片从x140滑到x110，在左侧栏逐个累积并保留至扫描片尾。",
+  "mechanism": "规格大卡依次给出电池、电机与刹车读数。各段结束前，大卡淡出，读数芯片从x140滑到x110，在左侧栏逐个累积并保留至扫描片尾。",
+  "trigger": "原作时间轴进入所列动作区间。",
+  "effect": "规格大卡依次给出电池、电机与刹车读数。各段结束前，大卡淡出，读数芯片从x140滑到x110，在左侧栏逐个累积并保留至扫描片尾。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "10.000—22.200秒；28.000—34.000秒，1倍速。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "读数与归栏",
+      "value": "大卡读数roll区间10—11、15.5—16、19.5—20秒；开始淡出13.6、17.6、21.6秒；芯片13.75—14.1、17.75—18.1、21.75—22.1秒入栏。",
+      "source": "demos/cases/lemo-hologram-hud/film/film.js:callBeats / renderFrame"
+    },
+    {
+      "name": "侧栏",
+      "value": "railY=470+i×min(112,410/(n−1))；n=3时步长112px；x=lerp(140,110,eo(inA))；34秒后HUD随片尾扫描淡出。",
+      "source": "demos/cases/lemo-hologram-hud/film/film.js:makeFilm"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-hologram-hud/film/film.js"
+  ],
+  "locator": "film/film.js:callBeats / renderFrame；film/film.js:makeFilm",
+  "useCases": [
+    "读数停驻再入侧栏"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": [],
+    "notes": "原作代码中，完全落定至大卡开始淡出的保持时间为2.6／1.6／1.6秒，参数按实现记录。"
+  },
+  "prompt": "以来源案例lemo-hologram-hud的原作render(t)重放“读数停驻再入侧栏”。规格大卡依次给出电池、电机与刹车读数；各段结束前大卡淡出，读数芯片从x140滑到x110并在左侧栏累计保留至扫描片尾。 参数：大卡读数roll区间10—11、15.5—16、19.5—20秒；开始淡出13.6、17.6、21.6秒；芯片13.75—14.1、17.75—18.1、21.75—22.1秒入栏。；railY=470+i×min(112,410/(n−1))；n=3时步长112px；x=lerp(140,110,eo(inA))；34秒后HUD随片尾扫描淡出。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+  "demo": "demos/patterns/spec-dock-rail/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-hologram-hud"
+    }
+  ],
+  "previewAt": 11.9,
+  "markers": [
+    {
+      "t": 0,
+      "label": "读数停驻再入侧栏"
+    }
+  ]
+}

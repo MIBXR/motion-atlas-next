@@ -1,0 +1,67 @@
+{
+  "id": "data-points-to-pitch",
+  "order": 167,
+  "title": "数据点映射音高",
+  "types": [
+    "sound",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "每个数据点在落笔时发出一个音：温度决定音高，时间轴上的点密度从四分音符加密到三十二分音符；低于中心的值吸附到 D 大调五声，极端值逐渐失谐。",
+  "mechanism": "每个数据点在落笔时发出一个音：温度决定音高，时间轴上的点密度从四分音符加密到三十二分音符；低于中心的值吸附到 D 大调五声，极端值逐渐失谐。",
+  "trigger": "原作时间轴进入所列动作区间。",
+  "effect": "每个数据点在落笔时发出一个音：温度决定音高，时间轴上的点密度从四分音符加密到三十二分音符；低于中心的值吸附到 D 大调五声，极端值逐渐失谐。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "5.200—31.000秒；32.000—34.000秒，1倍速。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "音高",
+      "value": "midi=62+(v+.4)×17；v<.25吸附D大调五声[2,4,6,9,11]；.25≤v<.7取整半音；v≥.7连续音高。2011—2025年从5增至45 cents，2025设为48 cents并叠加小二度影子。",
+      "source": "demos/cases/lemo-dataviz/source/music/score.py:31–38,70–71"
+    },
+    {
+      "name": "密度",
+      "value": "yearK依次以1、.5、.25、.125拍推进；90BPM、24fps使三十二分音符等于2帧。",
+      "source": "demos/cases/lemo-dataviz/film/timeline.js:yearK"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-dataviz/source/music/score.py",
+    "demos/cases/lemo-dataviz/film/timeline.js"
+  ],
+  "locator": "source/music/score.py:sonification；film/timeline.js:yearK",
+  "useCases": [
+    "数据点映射音高"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "以来源案例lemo-dataviz的原作render(t)重放“数据点映射音高”。每个数据点在落笔时发出一个音：温度决定音高，时间轴的点密度从四分音符加密到三十二分音符；低于中心的值吸附D大调五声，极端值逐渐失谐。 参数：midi=62+(v+.4)×17；低于中值吸附D大调五声；最后约15点偏移5—45 cents。；yearK依次以1、.5、.25、.125拍推进；90BPM、24fps使三十二分音符等于2帧。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+  "demo": "demos/patterns/data-points-to-pitch/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-dataviz"
+    }
+  ],
+  "previewAt": 23.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "数据点映射音高"
+    }
+  ]
+}

@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-backrooms",
+  "entry": {
+    "id": "lemo-backrooms",
+    "order": 60,
+    "title": "夜班入职指引 · 后室 / 新怪谈",
+    "subtitle": "Night Shift Orientation",
+    "carriers": [
+      "video"
+    ],
+    "style": "documentary",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "threejs"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "后室 / 新怪谈",
+      "电影与时代",
+      "代码影片"
+    ],
+    "summary": "一名新夜班员工用摄像机记录入职路线；重复出现的告示、失灵的自动对焦和磁带断裂逐步让守则失去可信度，时钟与电量留下跳时的证据。",
+    "focus": "故事通过拍摄介质展开：身影只在一次正确对焦时出现，磁迹撕裂后，同一走廊中的时间已跳过三小时，画面边角的OSD成为事件证据。",
+    "accent": "#d5bd66",
+    "background": "#000000",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 35.82,
+    "rhythm": {
+      "duration": 59.666666666666664,
+      "beats": [
+        {
+          "t": 0,
+          "label": "录像与告示",
+          "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+        },
+        {
+          "t": 6,
+          "label": "显出走廊",
+          "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+        },
+        {
+          "t": 7.6,
+          "label": "例行巡视",
+          "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+        },
+        {
+          "t": 15.9,
+          "label": "重复告示",
+          "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+        },
+        {
+          "t": 20.9,
+          "label": "遵守守则",
+          "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+        },
+        {
+          "t": 31.9,
+          "label": "对焦显影",
+          "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+        },
+        {
+          "t": 36.05,
+          "label": "磁带跳时",
+          "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+        },
+        {
+          "t": 39.3,
+          "label": "走向出口",
+          "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+        },
+        {
+          "t": 52.83,
+          "label": "最后守则与停录",
+          "note": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 6,
+        "from": 0.2,
+        "to": 0.65,
+        "label": "录像与告示"
+      },
+      {
+        "t0": 6,
+        "t1": 7.6,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "显出走廊"
+      },
+      {
+        "t0": 7.6,
+        "t1": 15.9,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "例行巡视"
+      },
+      {
+        "t0": 15.9,
+        "t1": 20.9,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "重复告示"
+      },
+      {
+        "t0": 20.9,
+        "t1": 31.9,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "遵守守则"
+      },
+      {
+        "t0": 31.9,
+        "t1": 36.05,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "对焦显影"
+      },
+      {
+        "t0": 36.05,
+        "t1": 39.3,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "磁带跳时"
+      },
+      {
+        "t0": 39.3,
+        "t1": 52.83,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "走向出口"
+      },
+      {
+        "t0": 52.83,
+        "t1": 59.666666666666664,
+        "from": 0.5,
+        "to": 0.15,
+        "label": "最后守则与停录"
+      }
+    ],
+    "energyNote": "段落取自DEMO.md Shots与原作时间表；0–1数值为画面运动、事件和声音密度的相对编辑标注。",
+    "observations": [
+      "对焦在32.85–33.35秒短暂锁定约33m外身影，第二次锁定时身影已消失。",
+      "36.05–36.7秒跟踪撕裂前后构图连贯，时钟从PM11:59变为AM2:59，电量从3格降为1格。",
+      "EXIT使用画面中唯一的饱和红色；门前静默时手持呼吸也冻结。"
+    ],
+    "composition": {
+      "color": "#d5bd66、#8c763c、#d9d3b8、#4d3d26、#ff2a1a、#000000",
+      "typography": "IBM Plex Sans 400/600/700、Plex Sans Condensed 600/700与Plex Mono 500/600；摄像机OSD为原作5×7位图字。",
+      "layout": "1920×1080横屏，保留原作构图、字幕、片头与片尾。",
+      "imagery": "原作Three.js 720×540后室、程序纹理与灯阵；VHS着色器升采样至1920×1080并保留4:3侧边黑条。",
+      "motion": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。",
+      "sound": "原片荧光灯、湿地毯脚步、摄像机电机与远处等候音乐；Kokoro af_bella广播和am_michael员工低声对白。",
+      "rhythm": "录像与告示；显出走廊；例行巡视；重复告示；遵守守则；对焦显影；磁带跳时；走向出口；最后守则与停录",
+      "coherence": "故事通过拍摄介质展开：身影只在一次正确对焦时出现，磁迹撕裂后，同一走廊中的时间已跳过三小时，画面边角的OSD成为事件证据。"
+    },
+    "layers": [
+      {
+        "name": "原作场景",
+        "role": "原作Three.js 720×540后室、程序纹理与灯阵；VHS着色器升采样至1920×1080并保留4:3侧边黑条。"
+      },
+      {
+        "name": "镜头与质感",
+        "role": "0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。"
+      },
+      {
+        "name": "字幕、标记与声音",
+        "role": "原片荧光灯、湿地毯脚步、摄像机电机与远处等候音乐；Kokoro af_bella广播和am_michael员工低声对白。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#d5bd66",
+        "#8c763c",
+        "#d9d3b8",
+        "#4d3d26",
+        "#ff2a1a",
+        "#000000"
+      ],
+      "type": "IBM Plex Sans 400/600/700、Plex Sans Condensed 600/700与Plex Mono 500/600；摄像机OSD为原作5×7位图字。",
+      "motion": [
+        {
+          "name": "自动对焦",
+          "value": "film/story.js:FOCUS/APER/T；film/main.js:render 使用 FOCUS(tv)、APER(tv)，thing.visible由T.figOn区间控制。"
+        },
+        {
+          "name": "跳时与介质",
+          "value": "film/story.js:W、clock、battery；film/main.js:track/roll；film/vhs.js:tracking tear，OSD独立绘制。"
+        }
+      ]
+    },
+    "useCases": [
+      "新怪谈短片",
+      "悬疑预告",
+      "游戏氛围片"
+    ],
+    "avoid": [
+      "需要脱离来源时间线实时操控全部场景的应用"
+    ],
+    "constraints": [
+      "画面由上游render(t)直接绘制，按原作帧率定位。",
+      "修改字幕或场景文案后按source中的字体流程重建相同字重和字符子集。",
+      "声音使用原片混音，修改事件时同步更新声音制作文件。"
+    ],
+    "migration": [
+      {
+        "field": "film/story.js",
+        "how": "按原作数据与函数修改故事内容、画面和物件。"
+      },
+      {
+        "field": "film/main.js",
+        "how": "按原作数据与函数修改时间表、镜头和节拍。"
+      }
+    ],
+    "prompt": "制作《夜班入职指引 · 后室 / 新怪谈》这样的代码影片：一名新夜班员工用摄像机记录入职路线；重复的告示、自动对焦的失灵和磁带断裂逐步让守则失去可信度，时钟与电量留下跳时的证据。拍摄介质承担叙事：身影只在一次正确对焦时出现，磁迹撕裂后同一走廊已跳过三小时，边角OSD成为事件证据。原作Three.js 720×540后室、程序纹理与灯阵；VHS着色器升采样至1920×1080并保留4:3侧边黑条。IBM Plex Sans 400/600/700、Plex Sans Condensed 600/700与Plex Mono 500/600；摄像机OSD为原作5×7位图字。0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。原片荧光灯、湿地毯脚步、摄像机电机与远处等候音乐；Kokoro af_bella广播和am_michael员工低声对白。实现使用demos\\cases\\lemo-backrooms\\film\\story.js, demos\\cases\\lemo-backrooms\\film\\main.js, demos\\cases\\lemo-backrooms\\film\\vhs.js, demos\\cases\\lemo-backrooms\\film\\osd.js。",
+    "demo": "demos/cases/lemo-backrooms/index.html",
+    "patternIds": [
+      "autofocus-hunting-reveal",
+      "tracking-tear-cut",
+      "corner-hud"
+    ],
+    "fidelity": "demos/cases/lemo-backrooms/fidelity.md",
+    "renderer": "gpu",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/backrooms",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/backrooms/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；原成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS。"
+    },
+    "sources": [
+      {
+        "label": "固定风格与示范源码",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/backrooms"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/backrooms.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/backrooms/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）；固定版本与许可见upstream/license。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "原片完整署名见[audio/CREDITS](audio/CREDITS)，逐项许可见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "家族与字重见tokens.type；fonts保存二进制与OFL原文，制作入口见[source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-backrooms/LICENSES.md",
+    "preview": "previews/cases/lemo-backrooms.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 夜班入职指引 · 后室 / 新怪谈 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-backrooms.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载资源，同源iframe等待load与READY后按原fps调用render(t)。 | 接入MotionKit舞台、时间线与声音。 |\n| `film/index.html` | 字体URL指向本体fonts；Three.js以固定0.170.0本地import map加载。 | 本地目录接入。 |\n| `film/core/`、`film/index.html` | 共享运行代码原样复制，import map将/core路径映射到film/core。 | 保留原模块实现与本地路径。 |\n| `audio/film.m4a` | 从Release以-c:a copy流复制。 | 保留正式混音和时刻。 |\n| `source/` | 保留成片运行之外的上游制作文件和输入，文本统一LF。 | 保存重建依赖。 |\n| `stills/` | 原作风格帧与调试图留在来源，预览由本库capture生成。 | 截图与过程文件留在工作区。 |\n\n## 接入方式\n\nMotionKit.load.prepare预载运行文件、字体、素材与音轨；iframe使用1920×1080舞台，时长59.666667秒。renderAt执行并等待 `upstream.render(Math.round(t*24)/24)`；画面由上游直接绘制。声音默认关闭。`?embed`隐藏控制条，`?render`暂停，`?t=秒`定位；减少动态时停在35.82秒。\n\n## 与原片对照结果\n\n无头Edge使用 `--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，1920×1080、DPR1；Windows ANGLE Direct3D11，Intel Iris Xe。等待 `__motion.ready` 后按 `floor(t×fps+.5)` 对齐，调用seek并等待两次requestAnimationFrame；参考PNG按相同视频帧号从Release提取。\n\n原始列比较参考PNG与本库PNG；编码链列把本库PNG放在独立测量页捕获为JPEG95，再按上游链编解码。页面只运行原作render(t)，编码仅在过程目录进行。两图转为yuv444p，取ffmpeg SSIM All；单张I帧测量的颗粒从该测量帧开始。\n\n24fps，JPEG95 → libx264 medium CRF14 yuv420p → tools/mux.sh的slow CRF24；grain0，VHS噪声在原作着色器内。编码参数来自原作build.sh、mux脚本与共享core/render/video.mjs。`compare-N.png`为左参考、右本库，`compare-encoded-N.png`为左参考、右编码链结果。\n\n| Shots段 | 起止秒 | 中点秒 | 视频帧 |\n| --- | --- | --- | --- |\n| 录像与告示 | 0.000000–6.000000 | 3.000000 | 72 |\n| 显出走廊 | 6.000000–7.600000 | 6.800000 | 163 |\n| 例行巡视 | 7.600000–15.900000 | 11.750000 | 282 |\n| 重复告示 | 15.900000–20.900000 | 18.400000 | 442 |\n| 遵守守则 | 20.900000–31.900000 | 26.400000 | 634 |\n| 对焦显影 | 31.900000–36.050000 | 33.975000 | 815 |\n| 磁带跳时 | 36.050000–39.300000 | 37.675000 | 904 |\n| 走向出口 | 39.300000–52.830000 | 46.065000 | 1106 |\n| 最后守则与停录 | 52.830000–59.666667 | 56.248333 | 1350 |\n\nShots无数字的段按原作时间表分段，开头、frame_sec、每段中点和片尾前1秒按视频帧号去重。\n\n| 序号 | 视频帧 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 1.000000 | 1.000000 | 开头 |\n| 2 | 860 | 35.820000 | 35.833333 | 0.943450 | 0.960786 | frame_sec |\n| 3 | 72 | 3.000000 | 3.000000 | 0.974025 | 0.982589 | Shots · 录像与告示中点 |\n| 4 | 163 | 6.800000 | 6.791667 | 0.972285 | 0.982592 | Shots · 显出走廊中点 |\n| 5 | 282 | 11.750000 | 11.750000 | 0.971008 | 0.981505 | Shots · 例行巡视中点 |\n| 6 | 442 | 18.400000 | 18.416667 | 0.972034 | 0.981604 | Shots · 重复告示中点 |\n| 7 | 634 | 26.400000 | 26.416667 | 0.969620 | 0.980436 | Shots · 遵守守则中点 |\n| 8 | 815 | 33.975000 | 33.958333 | 0.944112 | 0.962027 | Shots · 对焦显影中点 |\n| 9 | 904 | 37.675000 | 37.666667 | 0.946539 | 0.963806 | Shots · 磁带跳时中点 |\n| 10 | 1106 | 46.065000 | 46.083333 | 0.961043 | 0.974702 | Shots · 走向出口中点 |\n| 11 | 1350 | 56.248333 | 56.250000 | 0.962770 | 0.976605 | Shots · 最后守则与停录中点 |\n| 12 | 1408 | 58.666667 | 58.666667 | 0.999390 | 0.999259 | 片尾前1秒 |\n\n12帧：原始最低 **0.943450**、最高 **1.000000**；编码链最低 **0.960786**、最高 **1.000000**。\n\n### 0.95以下样本\n\n| 视频帧／实际秒 | 原始 | 编码链 | 代码位置与差异 |\n| --- | --- | --- | --- |\n| 860／35.833333 | 0.943450 | 0.960786 | film/vhs.js的frame种子噪声、色度带宽与行追踪包含高频细节；原片经历JPEG95、CRF14→24，原始PNG保留着色器直接绘制的细节，相同编码链测量达到0.95。 |\n| 815／33.958333 | 0.944112 | 0.962027 | film/vhs.js的frame种子噪声、色度带宽与行追踪包含高频细节；原片经历JPEG95、CRF14→24，原始PNG保留着色器直接绘制的细节，相同编码链测量达到0.95。 |\n| 904／37.666667 | 0.946539 | 0.963806 | film/vhs.js的frame种子噪声、色度带宽与行追踪包含高频细节；原片经历JPEG95、CRF14→24，原始PNG保留着色器直接绘制的细节，相同编码链测量达到0.95。 |\n\n取帧按视频帧号精确选择；页面时间与表内帧/fps一致，原片和本库的构图、OSD、字幕内容一致。全部运行资源与字体在READY前就绪，取样期间脚本和网络错误为0；编码参数和高频噪声的测量结果见上表。\n\n声音：两条音轨解码为48kHz单声道，以10ms RMS包络在±500ms内互相关；最佳偏移 **0ms**，相关系数 **1.000000**。\n",
+    "licenses": "# 夜班入职指引 · 后室 / 新怪谈 · 许可索引\n\n- `film/LICENSE`：Lemo-Opuscar代码与文档，MIT，LemoLab。\n- 成片与静帧：CC BY 4.0，LemoLab × Claude Opus 5.5，来源为条目记录的Release成片。\n- [audio/CREDITS](audio/CREDITS)：原作声音、字体与素材的逐项署名。\n- [audio/CC-BY-4.0.txt](audio/CC-BY-4.0.txt)：作品影像的CC BY 4.0原文。\n- [audio/CC0-1.0.txt](audio/CC0-1.0.txt)：Versilian与FreePats采样的CC0原文。\n- [audio/Apache-2.0.txt](audio/Apache-2.0.txt)：Kokoro语音模型许可原文。\n- [vendor/three@0.170.0/LICENSE](vendor/three@0.170.0/LICENSE)：Three.js 0.170.0，MIT。\n- [fonts/OFL-ibmplexmono.txt](fonts/OFL-ibmplexmono.txt)：SIL Open Font License 1.1原文。\n- [fonts/OFL-ibmplexsans.txt](fonts/OFL-ibmplexsans.txt)：SIL Open Font License 1.1原文。\n- [fonts/OFL-ibmplexsanscondensed.txt](fonts/OFL-ibmplexsanscondensed.txt)：SIL Open Font License 1.1原文。\n",
+    "prompt": "# 夜班入职指引 · 后室 / 新怪谈\n\n## 实现 Prompt\n\n制作《夜班入职指引 · 后室 / 新怪谈》这样的代码影片：一名新夜班员工用摄像机记录入职路线；重复的告示、自动对焦的失灵和磁带断裂逐步让守则失去可信度，时钟与电量留下跳时的证据。拍摄介质承担叙事：身影只在一次正确对焦时出现，磁迹撕裂后同一走廊已跳过三小时，边角OSD成为事件证据。原作Three.js 720×540后室、程序纹理与灯阵；VHS着色器升采样至1920×1080并保留4:3侧边黑条。IBM Plex Sans 400/600/700、Plex Sans Condensed 600/700与Plex Mono 500/600；摄像机OSD为原作5×7位图字。0.72m步幅、呼吸和恐惧驱动手持颤动；自动对焦、曝光滞后与磁迹损坏共用story时间。原片荧光灯、湿地毯脚步、摄像机电机与远处等候音乐；Kokoro af_bella广播和am_michael员工低声对白。实现使用demos\\cases\\lemo-backrooms\\film\\story.js, demos\\cases\\lemo-backrooms\\film\\main.js, demos\\cases\\lemo-backrooms\\film\\vhs.js, demos\\cases\\lemo-backrooms\\film\\osd.js。\n\n## 动效 Token\n\n- **自动对焦**：film/story.js:FOCUS/APER/T；film/main.js:render 使用 FOCUS(tv)、APER(tv)，thing.visible由T.figOn区间控制。\n- **跳时与介质**：film/story.js:W、clock、battery；film/main.js:track/roll；film/vhs.js:tracking tear，OSD独立绘制。\n\n## 制作约束\n\n- 画面由上游render(t)直接绘制，按原作帧率定位。\n- 修改字幕或场景文案后按source中的字体流程重建相同字重和字符子集。\n- 声音使用原片混音，修改事件时同步更新声音制作文件。\n\n## 迁移\n\n- `film/story.js`：按原作数据与函数修改故事内容、画面和物件。\n- `film/main.js`：按原作数据与函数修改时间表、镜头和节拍。\n\n[打开 Demo](../../demos/cases/lemo-backrooms/index.html) · [在库中查看](../../cases.html#case/lemo-backrooms)\n"
+  },
+  "entrypoint": "demos/cases/lemo-backrooms/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-backrooms/LICENSES.md",
+      "bytes": 952,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/audio/CREDITS",
+      "bytes": 802,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/audio/film.m4a",
+      "bytes": 1907236,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fidelity.md",
+      "bytes": 5589,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/core/three/post.js",
+      "bytes": 6482,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/figures.js",
+      "bytes": 5200,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/index.html",
+      "bytes": 726,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/main.js",
+      "bytes": 11732,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/osd.js",
+      "bytes": 5046,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/story.js",
+      "bytes": 5998,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/subs.js",
+      "bytes": 3423,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/tex.js",
+      "bytes": 10774,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/thing2d.js",
+      "bytes": 4966,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/vhs.js",
+      "bytes": 6601,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/voices/dur.json",
+      "bytes": 142,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/voices/words.json",
+      "bytes": 1880,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/film/world.js",
+      "bytes": 24627,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/IBMPlexMono-500.woff2",
+      "bytes": 10060,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/IBMPlexMono-600.woff2",
+      "bytes": 10120,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/IBMPlexSans-400.woff2",
+      "bytes": 17604,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/IBMPlexSans-600.woff2",
+      "bytes": 19192,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/IBMPlexSans-700.woff2",
+      "bytes": 17816,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/IBMPlexSansCondensed-600.woff2",
+      "bytes": 14776,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/IBMPlexSansCondensed-700.woff2",
+      "bytes": 14004,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/OFL-ibmplexsans.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/OFL-ibmplexsanscondensed.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/fonts/fonts.css",
+      "bytes": 759,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/index.html",
+      "bytes": 3314,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/CREDITS",
+      "bytes": 802,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/README.md",
+      "bytes": 2213,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/build.sh",
+      "bytes": 1778,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/events.json",
+      "bytes": 5492,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/lines.json",
+      "bytes": 1445,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/mix.py",
+      "bytes": 14348,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/music/muzak.py",
+      "bytes": 2489,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/sheet.js",
+      "bytes": 4572,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/tools/mux.sh",
+      "bytes": 1248,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/source/voices_fx/words.json",
+      "bytes": 1872,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-backrooms/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/lemo-backrooms.json",
+      "bytes": 10335,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-backrooms.jpg",
+      "bytes": 94375,
+      "role": "preview"
+    }
+  ]
+}

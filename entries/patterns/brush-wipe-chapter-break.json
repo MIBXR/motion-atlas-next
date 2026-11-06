@@ -1,0 +1,114 @@
+{
+  "id": "brush-wipe-chapter-break",
+  "order": 172,
+  "title": "笔刷横扫换章",
+  "types": [
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "renderer": "gpu",
+  "summary": "五道水彩笔刷在大章边界错峰横扫，边界前 0.3 秒盖住画面，边界后 0.3 秒揭开新章；章内由角色动作接镜。",
+  "mechanism": "WIPES 只列 1.5、38.5、73.0、109.4 秒。drawWorld 在边界前后各 WIPE_TR=.3 秒调用 wipe；五道笔刷带略微倾斜，带有毛边与木炭排线，先以 easeOut 从左盖满，再以 ease 向右拖出。两章在画面完全被盖住的中点切换。",
+  "trigger": "歌曲播放到任一 WIPES 边界前后 0.3 秒内。",
+  "effect": "新旧章节被同一笔刷横扫连接，色对随章界轮换；章内的咬合黑场、穿眼推进等动作继续各自接镜。",
+  "timing": [
+    {
+      "name": "章界",
+      "value": "film/src/timeline.js:11–12：WIPES=[1.5,38.5,73.0,109.4]；WIPE_TR=.3，单次共 .6 秒。"
+    },
+    {
+      "name": "进出缓动",
+      "value": "film/src/timeline.js:40/73–79：p=(t-(b-.3))/.6；p<.5 用 easeOut 盖住，p≥.5 用 ease 揭开。"
+    },
+    {
+      "name": "重放区间",
+      "value": "原片37.9–39.2秒、72.4–73.7秒，巧思总时长2.6秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "笔刷带",
+      "value": "film/src/timeline.js:74–78：n=5，bh=(H+420)/5+40；rotate(-.1)；错峰 d=[0,.14,.06,.18,.1]。"
+    },
+    {
+      "name": "覆盖与质感",
+      "value": "film/src/timeline.js:79–87：横向 -300→W+400；washOp=255，fillOp=70，bleed=.05，tex=.8，border=.6；charcoal hatch d=44、w=.8。"
+    },
+    {
+      "name": "配色",
+      "value": "film/src/timeline.js:72：clayDk/clay、indigo/violet、teal/sap、violet/rose，依次对应四个章界。"
+    }
+  ],
+  "useCases": [
+    "有明确大章分隔的手绘影片",
+    "用颜料覆盖连接不同主色场景"
+  ],
+  "avoid": [
+    "需要无缝循环的片段",
+    "给每次章内接镜都加擦除"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "karaoke-word-fill"
+    ],
+    "conflicts": []
+  },
+  "prompt": "复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“笔刷横扫换章”，总时长2.6秒。WIPES 只列 1.5、38.5、73.0、109.4 秒。drawWorld 在边界两侧各 WIPE_TR=.3 秒调用 wipe；五道有毛边与木炭排线的笔刷带略倾斜，先以 easeOut 从左盖满，再以 ease 向右拖出。两章在全盖住的中点切换。 film/src/timeline.js:74–78：n=5，bh=(H+420)/5+40；rotate(-.1)；错峰 d=[0,.14,.06,.18,.1]。 film/src/timeline.js:79–87：横向 -300→W+400；washOp=255，fillOp=70，bleed=.05，tex=.8，border=.6；charcoal hatch d=44、w=.8。 film/src/timeline.js:72：clayDk/clay、indigo/violet、teal/sap、violet/rose，依次对应四个章界。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。",
+  "demo": "demos/patterns/brush-wipe-chapter-break/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "pdoom-video"
+    }
+  ],
+  "previewAt": 0.75,
+  "markers": [
+    {
+      "t": 0,
+      "label": "P(doom) 手绘 MV · 37.9–39.2秒"
+    },
+    {
+      "t": 1.3,
+      "label": "P(doom) 手绘 MV · 72.4–73.7秒"
+    }
+  ],
+  "sound": {
+    "description": "原始 MP3 按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#F3EBDC",
+      "#2B2233",
+      "#D97757",
+      "#A84D33",
+      "#F2A283",
+      "#1F2550",
+      "#2F3C7A",
+      "#E27A92",
+      "#E8AA38",
+      "#6E9F58",
+      "#3A9C98",
+      "#7B5CA8",
+      "#FFF5E2",
+      "#8EC3E6"
+    ],
+    "type": "Permanent Marker 400；Shantell Sans 800。"
+  },
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments",
+      "how": "设置原片起止时刻，画面与音轨使用相同映射。"
+    },
+    {
+      "field": "index.html 内联配置 → markers / reduced",
+      "how": "设置巧思相对时间轴节点与减少动态的停留时刻。"
+    }
+  ]
+}

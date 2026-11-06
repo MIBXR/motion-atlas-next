@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-urban-sketch",
+  "entry": {
+    "id": "lemo-urban-sketch",
+    "order": 35,
+    "title": "风去了哪里 · 钢笔淡彩",
+    "subtitle": "Where the Wind Went",
+    "carriers": [
+      "video"
+    ],
+    "style": "hand-drawn",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "webgl"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "钢笔淡彩",
+      "手绘与绘画",
+      "代码影片"
+    ],
+    "summary": "公园从一张无彩钢笔速写开始，一阵风把女孩的草帽吹过行人、树冠和天际线，所经之处晕开淡彩；男孩追帽、跃起又扑倒，接住草帽后，镜头拉远，露出整页写生。",
+    "focus": "以草帽轨迹生成每个像素的颜色到达时间，让淡彩成为事件的痕迹；钢笔线与偏位透明水彩始终分层可见。",
+    "accent": "#d6a65a",
+    "background": "#f5eede",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 16.2,
+    "rhythm": {
+      "duration": 32.375,
+      "beats": [
+        {
+          "t": 0,
+          "label": "钢笔与唯一彩帽",
+          "note": "0–2.4秒，钢笔与唯一彩帽。"
+        },
+        {
+          "t": 2.4,
+          "label": "公园与风来",
+          "note": "2.4–6秒，公园与风来。"
+        },
+        {
+          "t": 6,
+          "label": "追帽与失手",
+          "note": "6–10.8秒，追帽与失手。"
+        },
+        {
+          "t": 10.8,
+          "label": "路灯上跃起",
+          "note": "10.8–12秒，路灯上跃起。"
+        },
+        {
+          "t": 12,
+          "label": "树冠着色",
+          "note": "12–15.6秒，树冠着色。"
+        },
+        {
+          "t": 15.6,
+          "label": "抬升天际线",
+          "note": "15.6–19.2秒，抬升天际线。"
+        },
+        {
+          "t": 19.2,
+          "label": "帽子最高点与静默",
+          "note": "19.2–21.6秒，帽子最高点与静默。"
+        },
+        {
+          "t": 21.6,
+          "label": "急落与扑接",
+          "note": "21.6–24秒，急落与扑接。"
+        },
+        {
+          "t": 24,
+          "label": "接住草帽",
+          "note": "24–25.2秒，接住草帽。"
+        },
+        {
+          "t": 25.2,
+          "label": "拉远整页",
+          "note": "25.2–29.8秒，拉远整页。"
+        },
+        {
+          "t": 29.8,
+          "label": "页边题字",
+          "note": "29.8–32.375秒，页边题字。"
+        }
+      ],
+      "bpm": 150
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 2.4,
+        "to": 0.15,
+        "label": "钢笔与唯一彩帽",
+        "from": 0.15
+      },
+      {
+        "t0": 2.4,
+        "t1": 6,
+        "to": 0.25,
+        "label": "公园与风来",
+        "from": 0.25
+      },
+      {
+        "t0": 6,
+        "t1": 10.8,
+        "to": 0.55,
+        "label": "追帽与失手",
+        "from": 0.55
+      },
+      {
+        "t0": 10.8,
+        "t1": 12,
+        "to": 0.65,
+        "label": "路灯上跃起",
+        "from": 0.65
+      },
+      {
+        "t0": 12,
+        "t1": 15.6,
+        "to": 0.6,
+        "label": "树冠着色",
+        "from": 0.6
+      },
+      {
+        "t0": 15.6,
+        "t1": 19.2,
+        "to": 0.55,
+        "label": "抬升天际线",
+        "from": 0.55
+      },
+      {
+        "t0": 19.2,
+        "t1": 21.6,
+        "to": 0.2,
+        "label": "帽子最高点与静默",
+        "from": 0.2
+      },
+      {
+        "t0": 21.6,
+        "t1": 24,
+        "to": 0.8,
+        "label": "急落与扑接",
+        "from": 0.8
+      },
+      {
+        "t0": 24,
+        "t1": 25.2,
+        "to": 0.9,
+        "label": "接住草帽",
+        "from": 0.9
+      },
+      {
+        "t0": 25.2,
+        "t1": 29.8,
+        "to": 0.4,
+        "label": "拉远整页",
+        "from": 0.4
+      },
+      {
+        "t0": 29.8,
+        "t1": 32.375,
+        "to": 0.15,
+        "label": "页边题字",
+        "from": 0.15
+      }
+    ],
+    "energyNote": "段落取自DEMO.md的Shots与源码场景时间表，0–1能量数值是按画面与声音密度作出的相对编辑标注。",
+    "observations": [
+      "细棕线略抖、超出转角并断开，彩色洗染偏离轮廓，纸白承担高光与人物留白。",
+      "草帽每0.04秒沿路径留下扩散源，树冠拍点、路灯、天空与接帽点补充到达场。",
+      "行人从起点读取一次上色时刻，着色后开始行动；纸页边缘以白孔和叶形色点溶回留白。"
+    ],
+    "composition": {
+      "color": "纸#f5eede、墨#2b2520；树叶由黄绿到深绿，天空蓝灰，建筑赭黄与砖红。",
+      "typography": "角落观察使用Reenie Beanie，片名与页脚使用Caveat 500–600；文字在世界坐标内随镜头移动。",
+      "layout": "1920×1080、24fps，5120×2880纸页；草帽与人物占据主拍，页边留空承载题字。",
+      "imagery": "Canvas2D生成线稿、透明洗色、叶群与骨骼人物，WebGL2合成纸面、墨层与颜色到达场。",
+      "motion": "弹簧追随草帽，横移、抬升、急落、接帽时短震，再长距离拉远成一页。",
+      "sound": "无旁白；150BPM爵士圆舞曲，CC0乐器采样与程序化钢笔、风、草帽、脚步、铃声和水声。",
+      "rhythm": "草帽独自上色，风来后逐渐加快；帽子最高处静默一小节，急落与扑接落在合奏下拍，最后题字。",
+      "coherence": "同一草帽轨迹驱动相机、颜色扩散与声音方位；纸纹固定在纸页而非屏幕。"
+    },
+    "layers": [
+      {
+        "name": "底材与空间",
+        "role": "纸#f5eede、墨#2b2520；树叶由黄绿到深绿，天空蓝灰，建筑赭黄与砖红。"
+      },
+      {
+        "name": "主体与绘制",
+        "role": "Canvas2D生成线稿、透明洗色、叶群与骨骼人物，WebGL2合成纸面、墨层与颜色到达场。"
+      },
+      {
+        "name": "镜头与时间",
+        "role": "弹簧追随草帽，横移、抬升、急落、接帽时短震，再长距离拉远成一页。"
+      },
+      {
+        "name": "文字与声音",
+        "role": "角落观察使用Reenie Beanie，片名与页脚使用Caveat 500–600；文字在世界坐标内随镜头移动。 无旁白；150BPM爵士圆舞曲，CC0乐器采样与程序化钢笔、风、草帽、脚步、铃声和水声。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#f5eede",
+        "#2b2520",
+        "#d6d56f",
+        "#aabf57",
+        "#56793c",
+        "#9fbcd6",
+        "#d8c6a0",
+        "#c49a7a"
+      ],
+      "type": "Caveat可变字体400–700（画面500 / 600）；Reenie Beanie 400。",
+      "motion": [
+        {
+          "name": "颜色到达场",
+          "value": "film/film.js:143–160：GW=640、GH=360；帽子6–24秒每.04秒采样，v=900、R=360/520/760/400，噪声amp=240。"
+        },
+        {
+          "name": "追随弹簧",
+          "value": "film/film.js:165–167：dt=1/240，刚度28、急落70，阻尼2sqrt(k)。"
+        },
+        {
+          "name": "纸面晕染",
+          "value": "film/engine.js:arrivalField / compositor：到达时刻控制湿前沿与水彩覆盖。"
+        }
+      ]
+    },
+    "useCases": [
+      "城市旅行短片",
+      "建筑写生",
+      "生活方式品牌"
+    ],
+    "avoid": [
+      "以观众滚动阅读为主的页面"
+    ],
+    "constraints": [
+      "画面以原作render(t)按原帧率定位，字体和全部绘制输入预载后开始。",
+      "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+    ],
+    "migration": [
+      {
+        "field": "film/film.js → hatPath / src / extras / camera",
+        "how": "更改帽子轨迹、着色源、人物调度与镜头。"
+      },
+      {
+        "field": "film/world.js → buildWorld",
+        "how": "更改公园、建筑、树冠与纸页边界。"
+      }
+    ],
+    "prompt": "制作一支钢笔淡彩时间线影片。以草帽轨迹生成每个像素的颜色到达时间，让淡彩成为事件的痕迹；钢笔线与偏位透明水彩始终分层可见。纸#f5eede、墨#2b2520；树叶由黄绿到深绿，天空蓝灰，建筑赭黄与砖红。Reenie Beanie写角落观察，Caveat 500–600写片名与页脚；文字在世界坐标内随镜头移动。1920×1080、24fps，5120×2880纸页；草帽与人物占据主拍，页边留空承载题字。弹簧追随草帽，横移、抬升、急落、接帽时短震，再长距离拉远成一页。草帽独自上色，风来后逐渐加快；帽子最高处静默一小节，急落与扑接落在合奏下拍，最后题字。无旁白；150BPM爵士圆舞曲，CC0乐器采样与程序化钢笔、风、草帽、脚步、铃声和水声。实现入口位于demos/cases/lemo-urban-sketch/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+    "demo": "demos/cases/lemo-urban-sketch/index.html",
+    "patternIds": [
+      "color-follows-wind"
+    ],
+    "fidelity": "demos/cases/lemo-urban-sketch/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/urban-sketch",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/urban-sketch/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；成片和静帧CC BY 4.0，署名LemoLab；各字体、采样与语音来源见CREDITS及LICENSES.md。"
+    },
+    "sources": [
+      {
+        "label": "固定风格与制作源码",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/urban-sketch"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/urban-sketch.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/urban-sketch/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/urban-sketch)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "无旁白；150BPM爵士圆舞曲，CC0乐器采样与程序化钢笔、风、草帽、脚步、铃声和水声。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Caveat可变字体400–700（画面500 / 600）；Reenie Beanie 400。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-urban-sketch/LICENSES.md",
+    "preview": "previews/cases/lemo-urban-sketch.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 风去了哪里 · 钢笔淡彩 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-urban-sketch.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载运行源码、字体、音轨，等待iframe的load与READY，以原帧率调用上游render(t)。 | 接入MotionKit舞台、时间线、声音与减少动态暂停。 |\n| `audio/film.m4a` | 从Release成片以-c:a copy流复制。 | 播放原作正式混音。 |\n| `source/` | 保存运行目录之外的上游制作脚本、事件、语音时长与替换示例。 | 保留制作资料。 |\n| `stills/` | 上游风格图与调试静帧留在来源。 | 成品绘制不读取这些静帧。 |\n| `film/index.html` | 字体URL由fonts/改到../fonts/；外层fonts.css登记同样字体。 | 原字体路径接入。 |\n\n## 适配层\n\n`MotionKit.load.prepare`预载，同源iframe等待`load`与`window.READY === true`，`MotionKit.mountFilm`以1920×1080、24fps、32.375000秒接入。`renderAt(t)`等待`upstream.render(Math.round(t×24)/24)`；画面直接来自上游绘制函数。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时停在条目的`previewAt`，声音默认关闭。镜头标记取DEMO.md的Shots与源码场景时间表。\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，视口1920×1080、DPR1。等待`__motion.ready`，以`floor(t×fps+.5)`定位；参考PNG按Release成片相同帧号提取。WebGL使用本机Intel Iris Xe / ANGLE Direct3D11。\n\n**原始**列比较参考PNG与本库PNG；**编码链**列把本库PNG在过程目录按原作编码链编解码后比较。两图转yuv444p，取ffmpeg SSIM All。\n\nJPEG95 → libx264 medium CRF14 yuv420p → slow CRF19、fps=24、noise=c0s=2:allf=t、yuv420p。来源source/build.sh与共享core/render/video.mjs、mux.sh。\n\n测量采用单张I帧，颗粒从该测量帧起计算；连续成片的帧间参考和噪声历史由其原编码保留。运行页面直接执行原作render(t)，编码仅用于离线测量。\n\nDEMO.md的Shots为镜头语法说明；取样段落按同文故事结构和film时间表确定。其余按Shots表时段，片尾按公开成片实长。\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.988453 | 0.985928 | 开头 |\n| 2 | 389 | 16.200000 | 16.208333 | 0.965081 | 0.962444 | frame_sec |\n| 3 | 29 | 1.200000 | 1.208333 | 0.988169 | 0.984921 | Shots · 钢笔与唯一彩帽中点 |\n| 4 | 101 | 4.200000 | 4.208333 | 0.982170 | 0.977417 | Shots · 公园与风来中点 |\n| 5 | 202 | 8.400000 | 8.416667 | 0.964969 | 0.967561 | Shots · 追帽与失手中点 |\n| 6 | 274 | 11.400000 | 11.416667 | 0.960148 | 0.961419 | Shots · 路灯上跃起中点 |\n| 7 | 331 | 13.800000 | 13.791667 | 0.959675 | 0.959928 | Shots · 树冠着色中点 |\n| 8 | 418 | 17.400000 | 17.416667 | 0.960386 | 0.959018 | Shots · 抬升天际线中点 |\n| 9 | 490 | 20.400000 | 20.416667 | 0.967325 | 0.965661 | Shots · 帽子最高点与静默中点 |\n| 10 | 547 | 22.800000 | 22.791667 | 0.951954 | 0.954957 | Shots · 急落与扑接中点 |\n| 11 | 590 | 24.600000 | 24.583333 | 0.957240 | 0.956611 | Shots · 接住草帽中点 |\n| 12 | 660 | 27.500000 | 27.500000 | 0.944826 | 0.949516 | Shots · 拉远整页中点 |\n| 13 | 746 | 31.087500 | 31.083333 | 0.965166 | 0.961247 | Shots · 页边题字中点 |\n| 14 | 753 | 31.375000 | 31.375000 | 0.965185 | 0.961427 | 片尾前1秒 |\n\n14帧：原始最低**0.944826**、最高**0.988453**，13/14达到0.95；编码链最低**0.949516**、最高**0.985928**，13/14达到0.95。\n\n### 0.95以下帧与代码位置\n\nfilm/engine.js:225–247的sin哈希、fbm、纸纤维与颜料颗粒，以及film/film.js:338–341的叠乘纸齿构成高频纹理；Release连续视频的JPEG95、颗粒与CRF19量化和测量单张I帧产生细节差异。\n\n| 帧号 / 秒 | 原始 | 编码链 |\n| --- | --- | --- |\n| 660 / 27.500000 | 0.944826 | 0.949516 |\n\n| 已排除项 | 对照数字 |\n| --- | --- |\n| 快速提取的帧号偏差 | 从整片无预先seek提取第660帧，与参考PNG的SSIM为1.000000。 |\n| 时间映射 | 邻帧与参考比较：659帧=0.735357；660帧=0.944826；661帧=0.735807，同帧最高。 |\n| 重复定位、接入层与就绪等待 | 重复定位PNG互比1.000000，直接film入口与适配层PNG互比1.000000；__motion.ready已完成，1920×1080、DPR1。 |\n| 素材与字体 | 绘制输入为固定源码生成的Canvas/SVG；Caveat与Reenie Beanie均loaded。画面人物、构图与文字相同。 |\n| 高频差异定位 | 两图同作高斯低通后SSIM：σ=1为0.970045；σ=2为0.985720；σ=4为0.994515；σ=8为0.997261。 |\n\n该帧的两列原始测量值保留；未向运行页面添加压缩或替换原作绘制。\n\n声音：Release与本库音轨解码为48kHz单声道，每10ms取RMS包络，在±500ms内互相关；最佳偏移**0ms**，相关系数**1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-urban-sketch.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）。\n- [audio/film.m4a](audio/film.m4a)流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/urban-sketch.mp4)，成片按[audio/CC-BY-4.0.txt](audio/CC-BY-4.0.txt)发布，署名LemoLab并链接来源。\n- 音乐、声音与字体的原始署名：[audio/CREDITS](audio/CREDITS)；制作文件中的记录保留于[source/CREDITS](source/CREDITS)。\n- 原创配乐使用CC0乐器采样，原文：[audio/CC0-1.0.txt](audio/CC0-1.0.txt)；采样来自Versilian Studios / Sam Gossner的VSCO 2 CE与VCSL、Karoryfer Sneakybass。\n- 字体SIL OFL 1.1原文：[OFL-Caveat.txt](fonts/OFL-Caveat.txt)、[OFL-ReenieBeanie.txt](fonts/OFL-ReenieBeanie.txt)。\n",
+    "prompt": "# 风去了哪里 · 钢笔淡彩\n\n## 实现 Prompt\n\n制作一支钢笔淡彩时间线影片。以草帽轨迹生成每个像素的颜色到达时间，让淡彩成为事件的痕迹；钢笔线与偏位透明水彩始终分层可见。纸#f5eede、墨#2b2520；树叶由黄绿到深绿，天空蓝灰，建筑赭黄与砖红。Reenie Beanie写角落观察，Caveat 500–600写片名与页脚；文字在世界坐标内随镜头移动。1920×1080、24fps，5120×2880纸页；草帽与人物占据主拍，页边留空承载题字。弹簧追随草帽，横移、抬升、急落、接帽时短震，再长距离拉远成一页。草帽独自上色，风来后逐渐加快；帽子最高处静默一小节，急落与扑接落在合奏下拍，最后题字。无旁白；150BPM爵士圆舞曲，CC0乐器采样与程序化钢笔、风、草帽、脚步、铃声和水声。实现入口位于demos/cases/lemo-urban-sketch/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。\n\n## 动效 Token\n\n- **颜色到达场**：film/film.js:143–160：GW=640、GH=360；帽子6–24秒每.04秒采样，v=900、R=360/520/760/400，噪声amp=240。\n- **追随弹簧**：film/film.js:165–167：dt=1/240，刚度28、急落70，阻尼2sqrt(k)。\n- **纸面晕染**：film/engine.js:arrivalField / compositor：到达时刻控制湿前沿与水彩覆盖。\n\n## 制作约束\n\n- 画面以原作render(t)按原帧率定位，字体和全部绘制输入预载后开始。\n- 声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。\n\n## 迁移\n\n- `film/film.js → hatPath / src / extras / camera`：更改帽子轨迹、着色源、人物调度与镜头。\n- `film/world.js → buildWorld`：更改公园、建筑、树冠与纸页边界。\n\n[打开 Demo](../../demos/cases/lemo-urban-sketch/index.html) · [在库中查看](../../cases.html#case/lemo-urban-sketch)\n"
+  },
+  "entrypoint": "demos/cases/lemo-urban-sketch/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-urban-sketch/LICENSES.md",
+      "bytes": 898,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/audio/CREDITS",
+      "bytes": 819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/audio/film.m4a",
+      "bytes": 1070266,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fidelity.md",
+      "bytes": 5206,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/engine.js",
+      "bytes": 49735,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/film.js",
+      "bytes": 28063,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/index.html",
+      "bytes": 493,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/main.js",
+      "bytes": 228,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/poses.js",
+      "bytes": 4876,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/sheet.js",
+      "bytes": 1961,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/film/world.js",
+      "bytes": 35895,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/Caveat.ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/OFL-Caveat.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/OFL-ReenieBeanie.txt",
+      "bytes": 4359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/ReenieBeanie.ttf",
+      "bytes": 147036,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/fonts/fonts.css",
+      "bytes": 139,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/index.html",
+      "bytes": 2286,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/CREDITS",
+      "bytes": 819,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/README.md",
+      "bytes": 2587,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/api.js",
+      "bytes": 557,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/cues.json",
+      "bytes": 94380,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/foley.py",
+      "bytes": 10075,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/mix.py",
+      "bytes": 2687,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/score.py",
+      "bytes": 12654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/audio/strokes.json",
+      "bytes": 66796,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/build.sh",
+      "bytes": 619,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/events.json",
+      "bytes": 1191,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/look.js",
+      "bytes": 784,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/subs.json",
+      "bytes": 243,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-urban-sketch/source/tools/export_cues.mjs",
+      "bytes": 764,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-urban-sketch.json",
+      "bytes": 10617,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-urban-sketch.jpg",
+      "bytes": 143551,
+      "role": "preview"
+    }
+  ]
+}

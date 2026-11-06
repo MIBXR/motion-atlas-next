@@ -1,0 +1,705 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "specular-sweep-glint",
+  "pattern": {
+    "id": "specular-sweep-glint",
+    "order": 61,
+    "title": "斜向扫光与星芒",
+    "types": [
+      "texture",
+      "type-motion"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "合成波",
+      "液态流动"
+    ],
+    "summary": "窄高光带沿倾斜坐标扫过字标表面；镀铬字在指定字角同步绽出旋转星芒，厚液字保留液面上的窄高斯亮带。",
+    "mechanism": "窄高光带沿倾斜坐标扫过字标表面；镀铬字在指定字角同步绽出旋转星芒，厚液字保留液面上的窄高斯亮带。",
+    "trigger": "各来源的高光窗口到达时",
+    "effect": "斜向亮带扫过镀铬或厚液表面，镀铬字角出现同步星芒。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-synthwave 原片 4.75–5.85 秒；mg-synthwave 原片 7.925–9.8 秒；mg-liquid 原片 6.9–8 秒；1 倍速，总时长 4.075 秒。"
+      },
+      {
+        "name": "镀铬斜扫星芒参数",
+        "value": "    float b1 = (x - uGlint) / .09, b2 = (x - uGlint + .22) / .03;\n    float band = exp(-b1*b1) * .75 + exp(-b2*b2) * .45;\n  const gs = (tc, x, y, dur, r) => { const k = (t - (tc - dur / 2)) / dur; if (k > 0 && k < 1) glints.push({ x, y, r: r * Math.sin(Math.PI * k), a: Math.sin(Math.PI * k), rot: k * .8 }); };\n  gs(CUES.glint_star, TITLE_LEFT + TB.tw / TS * .085, TITLE_TOP + 6, .5, 150);"
+      },
+      {
+        "name": "厚液斜向扫光参数",
+        "value": "    S.key = { x: -0.78 + 0.06 * Math.sin(t * 0.6) + 0.30 * kd, y: -0.95 + 0.12 * kd,\n      glint: glint1 ? lerp(-900, 1700, inOut(inv(cues.glint - 0.1, cues.glint + 0.75, t))) : lerp(-300, 1900, inOut(g2)),\n  float gb = (p.x*0.8 - p.y*0.6) - uKey.z;\n  col += vec3(1.0,0.95,0.98)*uKey.w*exp(-gb*gb/(2.0*34.0*34.0))*ss(0.35,0.75,side)*(1.0-ss(0.9,1.0,side))*1.1;"
+      }
+    ],
+    "useCases": [
+      "字标表面斜向扫光",
+      "镀铬字角高光与旋转星芒"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-synthwave 原片 4.75–5.85 秒；mg-synthwave 原片 7.925–9.8 秒；mg-liquid 原片 6.9–8 秒；总时长 4.075 秒。窄高光带沿倾斜坐标扫过字标表面；镀铬字在指定字角同步绽出旋转星芒，厚液字保留液面上的窄高斯亮带。参数保持原作数值：    float b1 = (x - uGlint) / .09, b2 = (x - uGlint + .22) / .03;\n    float band = exp(-b1*b1) * .75 + exp(-b2*b2) * .45;\n  const gs = (tc, x, y, dur, r) => { const k = (t - (tc - dur / 2)) / dur; if (k > 0 && k < 1) glints.push({ x, y, r: r * Math.sin(Math.PI * k), a: Math.sin(Math.PI * k), rot: k * .8 }); };\n  gs(CUES.glint_star, TITLE_LEFT + TB.tw / TS * .085, TITLE_TOP + 6, .5, 150);\n    S.key = { x: -0.78 + 0.06 * Math.sin(t * 0.6) + 0.30 * kd, y: -0.95 + 0.12 * kd,\n      glint: glint1 ? lerp(-900, 1700, inOut(inv(cues.glint - 0.1, cues.glint + 0.75, t))) : lerp(-300, 1900, inOut(g2)),\n  float gb = (p.x*0.8 - p.y*0.6) - uKey.z;\n  col += vec3(1.0,0.95,0.98)*uKey.w*exp(-gb*gb/(2.0*34.0*34.0))*ss(0.35,0.75,side)*(1.0-ss(0.9,1.0,side))*1.1;\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/specular-sweep-glint/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-synthwave"
+      },
+      {
+        "caseId": "mg-liquid"
+      },
+      {
+        "caseId": "lemo-dark-keynote"
+      }
+    ],
+    "previewAt": 0.65,
+    "markers": [
+      {
+        "t": 0,
+        "label": "镀铬首轮扫光"
+      },
+      {
+        "t": 0.65,
+        "label": "机制画面 1"
+      },
+      {
+        "t": 1.1,
+        "label": "镀铬末段扫光"
+      },
+      {
+        "t": 2.475,
+        "label": "机制画面 2"
+      },
+      {
+        "t": 2.975,
+        "label": "厚液斜向扫光"
+      },
+      {
+        "t": 3.525,
+        "label": "机制画面 3"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "lemo-dark-keynote · 生成界面与错相配乐共用音符表，拥挤、冻结和归格形成节奏，暗色产品靠扫光与一个品牌色被看见。",
+        "value": "film/film.js:sceneProduct的sweepP在20–21.3秒推进；film/engine.js:lightReveal以斜向亮度遮罩和glint显出产品：base=.07、soft=700、band=360、glint=.2。"
+      }
+    ],
+    "preview": "previews/patterns/specular-sweep-glint.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-synthwave",
+      "bundle": "agent/cases/mg-synthwave.json"
+    },
+    {
+      "caseId": "mg-liquid",
+      "bundle": "agent/cases/mg-liquid.json"
+    },
+    {
+      "caseId": "lemo-dark-keynote",
+      "bundle": "agent/cases/lemo-dark-keynote.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 斜向扫光与星芒\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速依次重放mg-synthwave 原片 4.75–5.85 秒；mg-synthwave 原片 7.925–9.8 秒；mg-liquid 原片 6.9–8 秒；总时长 4.075 秒。窄高光带沿倾斜坐标扫过字标表面；镀铬字在指定字角同步绽出旋转星芒，厚液字保留液面上的窄高斯亮带。参数保持原作数值：    float b1 = (x - uGlint) / .09, b2 = (x - uGlint + .22) / .03;\n    float band = exp(-b1*b1) * .75 + exp(-b2*b2) * .45;\n  const gs = (tc, x, y, dur, r) => { const k = (t - (tc - dur / 2)) / dur; if (k > 0 && k < 1) glints.push({ x, y, r: r * Math.sin(Math.PI * k), a: Math.sin(Math.PI * k), rot: k * .8 }); };\n  gs(CUES.glint_star, TITLE_LEFT + TB.tw / TS * .085, TITLE_TOP + 6, .5, 150);\n    S.key = { x: -0.78 + 0.06 * Math.sin(t * 0.6) + 0.30 * kd, y: -0.95 + 0.12 * kd,\n      glint: glint1 ? lerp(-900, 1700, inOut(inv(cues.glint - 0.1, cues.glint + 0.75, t))) : lerp(-300, 1900, inOut(g2)),\n  float gb = (p.x*0.8 - p.y*0.6) - uKey.z;\n  col += vec3(1.0,0.95,0.98)*uKey.w*exp(-gb*gb/(2.0*34.0*34.0))*ss(0.35,0.75,side)*(1.0-ss(0.9,1.0,side))*1.1;\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-synthwave 原片 4.75–5.85 秒；mg-synthwave 原片 7.925–9.8 秒；mg-liquid 原片 6.9–8 秒；1 倍速，总时长 4.075 秒。\n- **镀铬斜扫星芒参数**：    float b1 = (x - uGlint) / .09, b2 = (x - uGlint + .22) / .03;\n    float band = exp(-b1*b1) * .75 + exp(-b2*b2) * .45;\n  const gs = (tc, x, y, dur, r) => { const k = (t - (tc - dur / 2)) / dur; if (k > 0 && k < 1) glints.push({ x, y, r: r * Math.sin(Math.PI * k), a: Math.sin(Math.PI * k), rot: k * .8 }); };\n  gs(CUES.glint_star, TITLE_LEFT + TB.tw / TS * .085, TITLE_TOP + 6, .5, 150);\n- **厚液斜向扫光参数**：    S.key = { x: -0.78 + 0.06 * Math.sin(t * 0.6) + 0.30 * kd, y: -0.95 + 0.12 * kd,\n      glint: glint1 ? lerp(-900, 1700, inOut(inv(cues.glint - 0.1, cues.glint + 0.75, t))) : lerp(-300, 1900, inOut(g2)),\n  float gb = (p.x*0.8 - p.y*0.6) - uKey.z;\n  col += vec3(1.0,0.95,0.98)*uKey.w*exp(-gb*gb/(2.0*34.0*34.0))*ss(0.35,0.75,side)*(1.0-ss(0.9,1.0,side))*1.1;\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段与中文节点，画面和声音使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/specular-sweep-glint/index.html) · [在库中查看](../../patterns.html#pattern/specular-sweep-glint)\n"
+  },
+  "entrypoint": "demos/patterns/specular-sweep-glint/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-dark-keynote/LICENSES.md",
+      "bytes": 841,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/CREDITS",
+      "bytes": 922,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/audio/film.m4a",
+      "bytes": 1343311,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fidelity.md",
+      "bytes": 4765,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/engine.js",
+      "bytes": 32318,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/film.js",
+      "bytes": 40052,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/index.html",
+      "bytes": 491,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/lines.json",
+      "bytes": 501,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/main.js",
+      "bytes": 782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/timeline.js",
+      "bytes": 3446,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/voices/dur.json",
+      "bytes": 85,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/film/world.js",
+      "bytes": 12839,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/InterTight-var.woff2",
+      "bytes": 234224,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/JetBrainsMono-var.ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/OFL-inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/OFL-intertight.txt",
+      "bytes": 4383,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/OFL-jetbrainsmono.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/fonts/fonts.css",
+      "bytes": 347,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/index.html",
+      "bytes": 2228,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/CREDITS",
+      "bytes": 922,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/README.md",
+      "bytes": 3930,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/build.sh",
+      "bytes": 1763,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/events.json",
+      "bytes": 44748,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/frames.js",
+      "bytes": 2313,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/mix.py",
+      "bytes": 12116,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/CREDITS_music.txt",
+      "bytes": 537,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/check.py",
+      "bytes": 4767,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/score.json",
+      "bytes": 12796,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/music/score.py",
+      "bytes": 17837,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/timeline.json",
+      "bytes": 17240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/cuecheck.py",
+      "bytes": 1923,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/dump_timeline.mjs",
+      "bytes": 646,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/export.mjs",
+      "bytes": 837,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/tools/final_asr.py",
+      "bytes": 1848,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dark-keynote/source/voices/words.json",
+      "bytes": 511,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/LICENSES.md",
+      "bytes": 812,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/audio/film.m4a",
+      "bytes": 418545,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fidelity.md",
+      "bytes": 5964,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/cues.json",
+      "bytes": 1702,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/engine.js",
+      "bytes": 9243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/scene.js",
+      "bytes": 46421,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/shaders.js",
+      "bytes": 28643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/state.js",
+      "bytes": 669,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/textsdf.js",
+      "bytes": 5558,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/js/type.js",
+      "bytes": 2073,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/main.js",
+      "bytes": 3456,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/setup.js",
+      "bytes": 152,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/film/style.css",
+      "bytes": 143,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces-Liquid-72-900-Soft.ttf",
+      "bytes": 72996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Fraunces[SOFT,WONK,opsz,wght].ttf",
+      "bytes": 360440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/NotoSerifSC[wght].ttf",
+      "bytes": 25125512,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fonts.css",
+      "bytes": 494,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/fraunces-OFL.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/fonts/notoserifsc-OFL.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-liquid/index.html",
+      "bytes": 1759,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/audio.py",
+      "bytes": 11884,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/cues.json",
+      "bytes": 1702,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/lookdev.js",
+      "bytes": 2622,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/scene.js",
+      "bytes": 56751,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/js/textsdf.js",
+      "bytes": 5558,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-liquid/source/out/cues_derived.json",
+      "bytes": 5548,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/LICENSES.md",
+      "bytes": 1068,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/audio/film.m4a",
+      "bytes": 403976,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fidelity.md",
+      "bytes": 4597,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/cues.json",
+      "bytes": 1312,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/scene.js",
+      "bytes": 70681,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/setup.js",
+      "bytes": 243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/style.css",
+      "bytes": 166,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Archivo-Italic[wdth,wght].ttf",
+      "bytes": 741368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Michroma-Regular.ttf",
+      "bytes": 64344,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/MrDafoe-Regular.ttf",
+      "bytes": 47976,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/VT323-Regular.ttf",
+      "bytes": 153116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/archivo-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/fonts.css",
+      "bytes": 636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/michroma-OFL.txt",
+      "bytes": 4395,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/mrdafoe-OFL.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/vt323-OFL.txt",
+      "bytes": 4367,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/index.html",
+      "bytes": 1976,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/audio.py",
+      "bytes": 11743,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/cues.json",
+      "bytes": 1312,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.core.js",
+      "bytes": 1458113,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.module.js",
+      "bytes": 662772,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 8501,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 4694,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/Pass.js",
+      "bytes": 4218,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/RenderPass.js",
+      "bytes": 4280,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 3228,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 15397,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/CopyShader.js",
+      "bytes": 729,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/specular-sweep-glint/index.html",
+      "bytes": 1865,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/specular-sweep-glint/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-dark-keynote.json",
+      "bytes": 10158,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-liquid.json",
+      "bytes": 16286,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-synthwave.json",
+      "bytes": 16835,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/specular-sweep-glint.json",
+      "bytes": 4681,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/specular-sweep-glint.jpg",
+      "bytes": 155688,
+      "role": "preview"
+    }
+  ]
+}

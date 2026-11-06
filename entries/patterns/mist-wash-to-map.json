@@ -1,0 +1,72 @@
+{
+  "id": "mist-wash-to-map",
+  "order": 90,
+  "title": "纸雾洗白转地图",
+  "types": [
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "两层波状纸色雾从下向上擦去长镜头中的世界，在同一纸面上重新画出大陆地图。",
+  "mechanism": "drawMist 用两条带噪声的上升边界裁切纸纹，先半透明再全不透明覆盖；drawMap 从 73.2 秒开始以海岸线笔画、径向填色和引线重新组织信息。",
+  "trigger": "长镜头抵达雨林末端，70.3 秒进入纸雾。",
+  "effect": "不剪切画面就把立体风景洗回空纸，再把空间行走转成地图与时间叙述。",
+  "timing": [
+    {
+      "name": "来源片段",
+      "value": "70.3–80.8 秒，洗白 70.3–73.6 秒，地图从 73.2 秒开始。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "两层雾",
+      "value": "film/main.js:drawMist：c=eio(seg(t,70.3,73.6))；top=1180−1400c−lift；[lift,alpha]=[120,.55]、[0,1]。"
+    },
+    {
+      "name": "波边与地图",
+      "value": "film/main.js:drawMist / drawMap：x 每 40px 取样；vnoise*.006 的边缘幅度 160px，sin(x*.01+t)*12；裁切后重画 PAPER_IMG，地图沿 AUS 逐段描画。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-watercolor/film/main.js"
+  ],
+  "locator": "drawMist / drawMap / AUS",
+  "useCases": [
+    "不剪切画面就把立体风景洗回空纸，再把空间行走转成地图与时间叙述。"
+  ],
+  "avoid": [
+    "在该片段内叠加第二条争夺注意的主动作"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "gradient-walk-dolly"
+    ],
+    "conflicts": [],
+    "notes": "转场的擦除介质应与底纸相同，适合从现场转入总图。"
+  },
+  "prompt": "用来源案例 lemo-watercolor 的原作 render(t) 重放“纸雾洗白转地图”。drawMist 用两条带噪声的上升边界裁切纸纹，先半透明再全不透明覆盖；drawMap 从 73.2 秒开始以海岸线笔画、径向填色和引线重新组织信息。保留参数：film/main.js:drawMist：c=eio(seg(t,70.3,73.6))；top=1180−1400c−lift；[lift,alpha]=[120,.55]、[0,1]。；film/main.js:drawMist / drawMap：x 每 40px 取样；vnoise*.006 的边缘幅度 160px，sin(x*.01+t)*12；裁切后重画 PAPER_IMG，地图沿 AUS 逐段描画。。按 index.html 的 segments 把巧思时间映射到原片 70.3–80.8 秒，复用原作字体、素材与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/mist-wash-to-map/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-watercolor"
+    }
+  ],
+  "previewAt": 5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "纸雾洗白转地图"
+    },
+    {
+      "t": 5,
+      "label": "机制展开"
+    }
+  ]
+}

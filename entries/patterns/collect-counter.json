@@ -1,0 +1,203 @@
+{
+  "id": "collect-counter",
+  "order": 8,
+  "title": "收集计数徽章与收集物托盘",
+  "types": [
+    "feedback",
+    "hud"
+  ],
+  "carriers": [
+    "video",
+    "console"
+  ],
+  "summary": "每完成一个节点，计数滚动加一，收集物落进托盘，进度步进器同步前进。 手机科普片中，周期表格子级联点亮，计数直接统计已亮元素，整十和终值触发回弹。 综艺片将三格快乐电池依次充满，满电时弹出闪电、放射标记并轻推照片。",
+  "mechanism": "计数变化时，数字上滚、徽章回弹；托盘里的收集物逐格点亮，随进度累积。来源案例（地图巡礼）中的收集物是车站印章，可替换为任意徽章、卡片或图标。 手机科普片按斜向种子次序点亮余下格子，数字统计当前已亮格数，并在整十及终值处回弹。 综艺片将三格快乐电池依次充满，满电时弹出闪电、放射标记并轻推照片。",
+  "trigger": "到站、盖章或发现角色时",
+  "effect": "每次抵达都有积累感，进度看得见。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "9.533s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "confirm、stamp、sparkle"
+    },
+    {
+      "name": "点亮级联同步计数",
+      "value": "L222: const R1=rng(19);const rest=[...USED.keys()].filter(Z=>!FIRST.includes(Z)).map(Z=>{const[r,c]=rc(Z);return{Z,k:c+.45*r+R1()*2.2};}).sort((a,b)=>a.k-b.k).map(o=>o.Z);；L224: rest.forEach((Z,i)=>litT.set(Z,lerp(EV.cascade[0],EV.cascade[1],1-Math.cbrt(1-(i+1)/rest.length))));；L260: if(o.lt!=null&&t>=o.lt){lit++;const q=P(t,o.lt,.16);const w=wob(t-o.lt,5,12);s*=1+.16*(1-q)*(o.lt===EV.first_lit?.94:1)+.02*w*(o.lt===EV.first_lit?2:1);"
+    },
+    {
+      "name": "追加原片区间",
+      "value": "mg-hanazi 原片 1.367–2.7 秒；const k = spring(ub, .5, 28); X(b, -54 + j * 52, 29 - 29 * k, 0, 1, k);\nconst h = addK(hand(t, 1, .8), kick(t, C.charge[2], 7, 12, 14))"
+    }
+  ],
+  "useCases": [
+    "打卡与签到",
+    "任务或关卡进度",
+    "收藏与图鉴陈列",
+    "旅行或展会集章",
+    "周期表点亮进度与元素数量同步，整十和终值用回弹强调。",
+    "综艺片将三格快乐电池依次充满，满电时弹出闪电、放射标记并轻推照片。"
+  ],
+  "avoid": [
+    "计数与叙事无关时（会显得廉价）"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "corner-hud",
+      "outro-stat-stack"
+    ],
+    "conflicts": []
+  },
+  "prompt": "每到一站计数滚动加一，印章落进托盘，步进器同步前进。复用地图巡礼的 drawHud、stepAtX、ruleX、stampXY 与对应 CSS。MIKAN 徽章、收集计数、印章托盘与 drawHud 的步进器。片段：caseT 8.1→8.9；caseT 12.6→14；caseT 19.2→20.4；caseT 41.8→43；caseT 51.2→52.6；时长 9.533s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。 通过 index.html 内联 segments 在前 6.6 秒之后依次重放mg-paperclip 原片 3.1–4.7 秒，总时长 9.533 秒。手机科普片按斜向种子次序点亮余下格子，数字统计当前已亮格数，并在整十及终值处回弹。沿用同区间原片音轨，声音默认关闭。 按 index.html 内联 segments 在原有 8.2 秒之后重放mg-hanazi 原片 1.367–2.7 秒，总时长 9.533 秒。综艺片将三格快乐电池依次充满，满电时弹出闪电、放射标记并轻推照片。画面与音轨沿用同一映射，声音默认关闭。",
+  "demo": "demos/patterns/collect-counter/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    },
+    {
+      "caseId": "mg-paperclip"
+    },
+    {
+      "caseId": "mg-hanazi"
+    }
+  ],
+  "previewAt": 6.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "徽章出现"
+    },
+    {
+      "t": 0.8,
+      "label": "×1 + 关空"
+    },
+    {
+      "t": 2.2,
+      "label": "×2 + 京都"
+    },
+    {
+      "t": 3.4,
+      "label": "×3 + 奈良"
+    },
+    {
+      "t": 4.6,
+      "label": "×4 + 大阪"
+    },
+    {
+      "t": 6.6,
+      "label": "贴纸科普"
+    },
+    {
+      "t": 8.2,
+      "label": "综艺花字"
+    },
+    {
+      "t": 8.4,
+      "label": "快乐电池"
+    },
+    {
+      "t": 9.333,
+      "label": "凝视切镜"
+    },
+    {
+      "t": 9.4,
+      "label": "问号弹入"
+    }
+  ],
+  "sound": {
+    "voices": [
+      "confirm",
+      "stamp",
+      "sparkle"
+    ],
+    "score": "demos/patterns/collect-counter/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "徽章出现",
+        "value": "0s"
+      },
+      {
+        "name": "×1 + 关空",
+        "value": "0.8s"
+      },
+      {
+        "name": "×2 + 京都",
+        "value": "2.2s"
+      },
+      {
+        "name": "×3 + 奈良",
+        "value": "3.4s"
+      },
+      {
+        "name": "×4 + 大阪",
+        "value": "4.6s"
+      },
+      {
+        "name": "时长",
+        "value": "8.2s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js → drawHud",
+      "how": "修改计数、徽章、收集物托盘（来源为车站印章）与回弹的实现。"
+    },
+    {
+      "field": "mechanism/scene.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → tracks.counter、tracks.stamps；mascot、stepper、layout",
+      "how": "修改计数事件、徽章、收集印章与横竖布局。"
+    },
+    {
+      "field": "mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers",
+      "how": "mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 地图片段。地图来源时刻：8.1→8.9/12.6→14/19.2→20.4/41.8→43/51.2→52.6。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ],
+  "orients": [
+    "landscape",
+    "portrait"
+  ],
+  "previewAtPortrait": 8.8665,
+  "parameters": []
+}

@@ -1,0 +1,662 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "misregistration-lock",
+  "pattern": {
+    "id": "misregistration-lock",
+    "order": 24,
+    "title": "套印漂移与锁版",
+    "types": [
+      "texture",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "四色版保持微偏套准，随翻牌漂开、主击对齐与定格松版变化，最后在末拍锁定并增墨。",
+    "mechanism": "四色版微偏套准，翻牌前色版漂开，主击时墨吻对齐，定格后松开、末拍锁版增墨。",
+    "trigger": "原片的四色合成持续执行，翻牌、主击、定格与锁版节点依次到达。",
+    "effect": "分色色版保留镂空与黑套印，色边越界补缝；微偏移在各节点漂开或收拢，并配合短促墨密度变化。",
+    "timing": [
+      {
+        "name": "分色套印",
+        "value": "plate A RGB分别编码Y/R/B，plate B R编码K；black不清除plate A；Y=(242,183,5)/255，R=(224,60,49)/255，B=(30,79,163)/255，K=17/255。"
+      },
+      {
+        "name": "色边补缝",
+        "value": "方块宽+4*s；半圆r=244、clip x=1436；红形左边1436；背面彩形描边lineWidth=5，外扩2.5px。"
+      },
+      {
+        "name": "微偏套准",
+        "value": "oY=rough+(spread,0)；oR=rough+(1.3,-0.9)*reg+(0,spread)；oB=rough+(-1,1.2)*reg-(0,spread)；oK=rough+(0.5,0.4)*reg；初值reg=1，dens=0.955。"
+      },
+      {
+        "name": "翻牌漂开",
+        "value": "6.5–6.9667秒；reg=1+1.3*in2(prog(q,R2.start,reveal-1/30))。"
+      },
+      {
+        "name": "主击墨吻",
+        "value": "7秒；reg=0.15+0.85*io2(prog(q,R4.start,FREEZE))；fr=0时dens+=0.12，fr=1时+=0.05。"
+      },
+      {
+        "name": "定格松版",
+        "value": "8.5–9.4667秒；u=io2(prog(q,FREEZE+0.5,lock-1/30))；reg=1+0.4*u；spread=4.5*u。"
+      },
+      {
+        "name": "末拍锁版",
+        "value": "9.5秒；reg=0.12，dens=0.985；fl=0加0.10，fl=1加0.04；spread回0。"
+      }
+    ],
+    "useCases": [
+      "分色色版印刷质感",
+      "以主击与末拍组织套印状态的动态海报"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例的原作renderAt(t)重放套印漂移与锁版。保留plate A的RGB分色和plate B的黑墨通道、彩色镂空与黑套印；色边使用原作4px补缝及lineWidth=5的彩形描边。保留oY、oR、oB、oK的原偏移表达式，初始reg=1、dens=0.955。6.5秒至reveal-1/30，按reg=1+1.3*in2(prog(q,R2.start,reveal-1/30))漂开色版。7秒主击时偏移收至reg=0.15，并在首帧、次帧分别增加墨密度0.12、0.05。8.5秒至lock-1/30，以io2推进reg=1+0.4*u和spread=4.5*u。9.5秒锁版时reg=0.12、dens=0.985，首帧、次帧再加0.10、0.04，spread归0。按index.html 内联配置的segments映射时间，保留原作字体、素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/misregistration-lock/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-bauhaus"
+      },
+      {
+        "caseId": "lemo-risograph"
+      },
+      {
+        "caseId": "lemo-silkscreen-poster"
+      }
+    ],
+    "previewAt": 9.466666666666667,
+    "markers": [
+      {
+        "t": 0,
+        "label": "几何包豪斯"
+      },
+      {
+        "t": 2.25,
+        "label": "方块补缝"
+      },
+      {
+        "t": 4.25,
+        "label": "半圆补缝"
+      },
+      {
+        "t": 5.5,
+        "label": "红块补缝"
+      },
+      {
+        "t": 6.5,
+        "label": "色版漂开"
+      },
+      {
+        "t": 7,
+        "label": "墨吻对齐"
+      },
+      {
+        "t": 8.5,
+        "label": "定格松版"
+      },
+      {
+        "t": 9.5,
+        "label": "锁版增墨"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "静默漂版与下拍锁版",
+        "value": "lemo-risograph：film/film.js:36–50的regist：26.05–27.9秒以ss漂开，dv=[[-6,5],[24,-13],[-22,15]]；28秒以exp(−16a)cos(40a)回到各镜头的基准套印偏差，EV在28秒触发snap。"
+      },
+      {
+        "name": "吊臂松层与归家锁版",
+        "value": "lemo-silkscreen-poster：film/film.js:261–296：巴黎14.4–17.7秒cy=1080→540，off按深度与松层系数展开；36.6667秒HOME.snap将sep和off压回0，保留reg=.35的原作微偏。"
+      }
+    ],
+    "preview": "previews/patterns/misregistration-lock.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-bauhaus",
+      "bundle": "agent/cases/mg-bauhaus.json"
+    },
+    {
+      "caseId": "lemo-risograph",
+      "bundle": "agent/cases/lemo-risograph.json"
+    },
+    {
+      "caseId": "lemo-silkscreen-poster",
+      "bundle": "agent/cases/lemo-silkscreen-poster.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 套印漂移与锁版\n\n## 实现 Prompt\n\n用来源案例的原作renderAt(t)重放套印漂移与锁版。保留plate A的RGB分色和plate B的黑墨通道、彩色镂空与黑套印；色边使用原作4px补缝及lineWidth=5的彩形描边。保留oY、oR、oB、oK的原偏移表达式，初始reg=1、dens=0.955。6.5秒至reveal-1/30，按reg=1+1.3*in2(prog(q,R2.start,reveal-1/30))漂开色版。7秒主击时偏移收至reg=0.15，并在首帧、次帧分别增加墨密度0.12、0.05。8.5秒至lock-1/30，以io2推进reg=1+0.4*u和spread=4.5*u。9.5秒锁版时reg=0.12、dens=0.985，首帧、次帧再加0.10、0.04，spread归0。按index.html 内联配置的segments映射时间，保留原作字体、素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **分色套印**：plate A RGB分别编码Y/R/B，plate B R编码K；black不清除plate A；Y=(242,183,5)/255，R=(224,60,49)/255，B=(30,79,163)/255，K=17/255。\n- **色边补缝**：方块宽+4*s；半圆r=244、clip x=1436；红形左边1436；背面彩形描边lineWidth=5，外扩2.5px。\n- **微偏套准**：oY=rough+(spread,0)；oR=rough+(1.3,-0.9)*reg+(0,spread)；oB=rough+(-1,1.2)*reg-(0,spread)；oK=rough+(0.5,0.4)*reg；初值reg=1，dens=0.955。\n- **翻牌漂开**：6.5–6.9667秒；reg=1+1.3*in2(prog(q,R2.start,reveal-1/30))。\n- **主击墨吻**：7秒；reg=0.15+0.85*io2(prog(q,R4.start,FREEZE))；fr=0时dens+=0.12，fr=1时+=0.05。\n- **定格松版**：8.5–9.4667秒；u=io2(prog(q,FREEZE+0.5,lock-1/30))；reg=1+0.4*u；spread=4.5*u。\n- **末拍锁版**：9.5秒；reg=0.12，dens=0.985；fl=0加0.10，fl=1加0.04；spread回0。\n\n[打开 Demo](../../demos/patterns/misregistration-lock/index.html) · [在库中查看](../../patterns.html#pattern/misregistration-lock)\n"
+  },
+  "entrypoint": "demos/patterns/misregistration-lock/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-risograph/LICENSES.md",
+      "bytes": 835,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/CREDITS",
+      "bytes": 1115,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/audio/film.m4a",
+      "bytes": 1310009,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fidelity.md",
+      "bytes": 4713,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/draw.js",
+      "bytes": 6136,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/film.js",
+      "bytes": 19331,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/index.html",
+      "bytes": 419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/lines.json",
+      "bytes": 604,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/main.js",
+      "bytes": 2965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/rider.js",
+      "bytes": 23831,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/riso.js",
+      "bytes": 9145,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/scenes.js",
+      "bytes": 12235,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/scenes2.js",
+      "bytes": 12834,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/sheet.js",
+      "bytes": 5563,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Bricolage-OFL.txt",
+      "bytes": 4403,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Bricolage.ttf",
+      "bytes": 408496,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Jost-OFL.txt",
+      "bytes": 4384,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/Jost.ttf",
+      "bytes": 134996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/fonts/fonts.css",
+      "bytes": 270,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/index.html",
+      "bytes": 2374,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/CREDITS",
+      "bytes": 1115,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/README.md",
+      "bytes": 2249,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/build.sh",
+      "bytes": 1619,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/events.json",
+      "bytes": 1224,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/mix.py",
+      "bytes": 8965,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/music/bell.py",
+      "bytes": 2315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/music/score.json",
+      "bytes": 8534,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/music/score.py",
+      "bytes": 21937,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/tools/mux.sh",
+      "bytes": 1340,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/tools/subs.py",
+      "bytes": 699,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/tools/video_png.mjs",
+      "bytes": 2412,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-risograph/source/voices/words.json",
+      "bytes": 1073,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/LICENSES.md",
+      "bytes": 905,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/CREDITS",
+      "bytes": 1463,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/audio/film.m4a",
+      "bytes": 1657589,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fidelity.md",
+      "bytes": 4312,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/engine/poster.js",
+      "bytes": 15794,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/engine/scenes.js",
+      "bytes": 22904,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/engine/silk.js",
+      "bytes": 21326,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/film.js",
+      "bytes": 29088,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/index.html",
+      "bytes": 346,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/main.js",
+      "bytes": 963,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/film/voice/cues.json",
+      "bytes": 1821,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/BigShouldersDisplaywght.ttf",
+      "bytes": 219532,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/NotoSansSCwght.ttf",
+      "bytes": 17772300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/OFL-bigshouldersdisplay.txt",
+      "bytes": 4396,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/OFL-outfit.txt",
+      "bytes": 4389,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/Outfitwght.ttf",
+      "bytes": 110884,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/fonts/fonts.css",
+      "bytes": 401,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/index.html",
+      "bytes": 2359,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/CREDITS",
+      "bytes": 1463,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/DEMO.md",
+      "bytes": 13650,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/FACTS.md",
+      "bytes": 2578,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/README.md",
+      "bytes": 3952,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/STYLE.md",
+      "bytes": 13426,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/build.sh",
+      "bytes": 3405,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/events.json",
+      "bytes": 4207,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/mix.py",
+      "bytes": 12188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/music/compose.py",
+      "bytes": 8509,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/style.json",
+      "bytes": 633,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/tools/cues.py",
+      "bytes": 1870,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/tools/fetch_fonts.sh",
+      "bytes": 505,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/voice/lines.json",
+      "bytes": 1603,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-silkscreen-poster/source/voice/subs.json",
+      "bytes": 1327,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/LICENSES.md",
+      "bytes": 765,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/paper/Paper001_4K_color.jpg",
+      "bytes": 3684106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/audio/film.m4a",
+      "bytes": 426687,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fidelity.md",
+      "bytes": 4011,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/cues.json",
+      "bytes": 3719,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/film.js",
+      "bytes": 35151,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/setup.js",
+      "bytes": 148,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/style.css",
+      "bytes": 172,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-VF.ttf",
+      "bytes": 17773132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-Black.ttf",
+      "bytes": 153440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-SemiBold.ttf",
+      "bytes": 157312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/fonts.css",
+      "bytes": 486,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/index.html",
+      "bytes": 2020,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/audio.py",
+      "bytes": 9344,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/cues.json",
+      "bytes": 3719,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/misregistration-lock/index.html",
+      "bytes": 1642,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/misregistration-lock/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-risograph.json",
+      "bytes": 10576,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/lemo-silkscreen-poster.json",
+      "bytes": 10020,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-bauhaus.json",
+      "bytes": 19633,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/misregistration-lock.json",
+      "bytes": 4204,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/misregistration-lock.jpg",
+      "bytes": 85938,
+      "role": "preview"
+    }
+  ]
+}

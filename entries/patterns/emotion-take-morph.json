@@ -1,0 +1,122 @@
+{
+  "id": "emotion-take-morph",
+  "order": 175,
+  "title": "表情过渡：闭眼、挤压、冒符号再睁眼",
+  "types": [
+    "feedback"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "renderer": "gpu",
+  "summary": "换情绪前先挤闭眼，在闭眼时换眼型，随后拉伸、挤压回弹并弹出汗滴或星光等反应符号。",
+  "mechanism": "mood(t,keys) 根据当前表情键和距下一次切换的时间返回 eyes、squint、take、emote、emoteK；提前 .08 秒挤眼，在新眼型的前 .16 秒睁开并做负 take 拉伸，随后 .24 秒做衰减正 take 挤压。eyes 用 squint 压缩眼型，clawd 把 take 加到 sq；emote 用 backOut 弹出符号。",
+  "trigger": "mood 的时间线接近或越过下一个表情键。",
+  "effect": "眼型变化藏在闭眼动作里，身体先拉伸再挤压恢复，反应符号在头边弹出并收回，情绪切换成为一次可见表演。",
+  "timing": [
+    {
+      "name": "闭眼与睁眼",
+      "value": "film/src/clawd.js:211–216：切换前 .08 秒 squint→1；age<.16 时 squint=1-age/.16，take=-.14*sin(age/.16*PI)。"
+    },
+    {
+      "name": "挤压回弹",
+      "value": "film/src/clawd.js:217：.16≤age<.4 时 take=.1*sin((age-.16)/.24*PI)*(1-(age-.16)/.24)。"
+    },
+    {
+      "name": "符号包络",
+      "value": "film/src/clawd.js:218：emoteK=seg(age,.05,.3)*(1-seg(age,1.4,1.7))；.05–.3秒进入，1.4–1.7秒退出。"
+    },
+    {
+      "name": "重放区间",
+      "value": "原片3.6–5.9秒、6–8.95秒，巧思总时长5.25秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "身体变形",
+      "value": "film/src/clawd.js:11/22：sq=(o.sq||0)+(o.take||0)，横向 1+sq*.6，纵向 1-sq。"
+    },
+    {
+      "name": "眼型遮换",
+      "value": "film/src/clawd.js:90–93：squint>.8 时画闭眼线；否则横向 1+squint*.15、纵向 1-squint。"
+    },
+    {
+      "name": "符号",
+      "value": "film/src/clawd.js:75/180–204：头边 (x±5.4u,y+dy-8.6u)，s=.9u；sweat/spark/heart 等以 backOut(k) 缩放，!/? 由 letter 的 pop 绘制。"
+    },
+    {
+      "name": "片段情绪键",
+      "value": "film/src/ch/c01_lab.js:164/206/240：3.92秒 normal→spark 并冒星，6秒 Researcher star→wide 并冒汗；8秒段含 normal→wink→look。"
+    }
+  ],
+  "useCases": [
+    "手绘角色的惊讶、紧张与喜爱反应",
+    "用一次 take 连接两种差异明显的眼型"
+  ],
+  "avoid": [
+    "没有眼型和身体变形余量的图标",
+    "需要原片区间无缝循环的演出"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "cel-line-boil"
+    ],
+    "conflicts": []
+  },
+  "prompt": "复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“表情过渡：闭眼、挤压、冒符号再睁眼”，总时长5.25秒。mood(t,keys) 根据当前表情键和下一次切换的距离返回 eyes、squint、take、emote、emoteK；提前 .08 秒挤眼，在新眼型的前 .16 秒睁开并做负 take 拉伸，随后 .24 秒做衰减正 take 挤压。eyes 用 squint 压缩眼型，clawd 把 take 加到 sq；emote 用 backOut 弹出符号。 film/src/clawd.js:11/22：sq=(o.sq||0)+(o.take||0)，横向 1+sq*.6，纵向 1-sq。 film/src/clawd.js:90–93：squint>.8 时画闭眼线；否则横向 1+squint*.15、纵向 1-squint。 film/src/clawd.js:75/180–204：头边 (x±5.4u,y+dy-8.6u)，s=.9u；sweat/spark/heart 等以 backOut(k) 缩放，!/? 由 letter 的 pop 绘制。 film/src/ch/c01_lab.js:164/206/240：3.92秒 normal→spark 并冒星，6秒 Researcher star→wide 并冒汗；8秒段含 normal→wink→look。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。",
+  "demo": "demos/patterns/emotion-take-morph/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "pdoom-video"
+    }
+  ],
+  "previewAt": 0.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "P(doom) 手绘 MV · 3.6–5.9秒"
+    },
+    {
+      "t": 2.3,
+      "label": "P(doom) 手绘 MV · 6–8.95秒"
+    }
+  ],
+  "sound": {
+    "description": "原始 MP3 按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#F3EBDC",
+      "#2B2233",
+      "#D97757",
+      "#A84D33",
+      "#F2A283",
+      "#1F2550",
+      "#2F3C7A",
+      "#E27A92",
+      "#E8AA38",
+      "#6E9F58",
+      "#3A9C98",
+      "#7B5CA8",
+      "#FFF5E2",
+      "#8EC3E6"
+    ],
+    "type": "Permanent Marker 400；Shantell Sans 800。"
+  },
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments",
+      "how": "设置原片起止时刻，画面与音轨使用相同映射。"
+    },
+    {
+      "field": "index.html 内联配置 → markers / reduced",
+      "how": "设置巧思相对时间轴节点与减少动态的停留时刻。"
+    }
+  ]
+}

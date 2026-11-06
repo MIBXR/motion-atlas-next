@@ -1,0 +1,72 @@
+{
+  "id": "time-rings-locked-frame",
+  "order": 144,
+  "title": "锁定画面里的时间环",
+  "types": [
+    "composition",
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "同一地理画面中，各年卫星图沿扫描条切换，旧岸线留在原地，形成逐年嵌套的时间环；年份加速落定后，画面停在今天的岸线。",
+  "mechanism": "同一地理画面中，各年卫星图沿扫描条切换，旧岸线留在原地，形成逐年嵌套的时间环；年份加速落定后，画面停在今天的岸线。",
+  "trigger": "来源时间线进入锁定画面里的时间环段。",
+  "effect": "同一地理画面中，各年卫星图沿扫描条切换，旧岸线留在原地，形成逐年嵌套的时间环；年份加速落定后，画面停在今天的岸线。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-satellite-briefing：7.800000–15.300000秒，1倍速，总时长7.500000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "年度节点",
+      "value": "film/timeline.js:RINGS在7.8/9.6/10.8/11.7/12.3/13.2秒依次落定1977/1989/2000/2009/2014/2025。"
+    },
+    {
+      "name": "地理锁定",
+      "value": "film/film.js:drawRings与ringScan按V.rings投影实际海岸线；并非数学同心圆；camKeys仍从980km推到600km并转−15°，岸线锁在同一地理坐标。"
+    }
+  ],
+  "sourceFiles": [
+    "demos\\cases\\lemo-satellite-briefing\\film\\film.js",
+    "demos\\cases\\lemo-satellite-briefing\\film\\timeline.js",
+    "demos\\cases\\lemo-satellite-briefing\\film\\engine.js",
+    "demos\\cases\\lemo-satellite-briefing\\film\\assets\\plates\\plates.json"
+  ],
+  "locator": "film/film.js / film/timeline.js / film/engine.js / film/assets/plates/plates.json",
+  "useCases": [
+    "环境实证影像",
+    "地理短片",
+    "新闻解说"
+  ],
+  "avoid": [
+    "在关键动作和证据上叠加争夺注意的运动"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“锁定画面里的时间环”。同一地理画面中各年卫星图沿扫描条切换，旧岸线留在原地形成逐年嵌套的时间环；年份加速落定后停在今天的岸线。参数：film/timeline.js:RINGS在7.8/9.6/10.8/11.7/12.3/13.2秒依次落定1977/1989/2000/2009/2014/2025。；film/film.js:drawRings与ringScan按V.rings投影实际海岸线；并非数学同心圆；camKeys仍从980km推到600km并转−15°，岸线锁在同一地理坐标。。复用来源字体、素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/time-rings-locked-frame/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-satellite-briefing"
+    }
+  ],
+  "previewAt": 5.8,
+  "markers": [
+    {
+      "t": 0,
+      "label": "锁定画面里的时间环"
+    }
+  ],
+  "renderer": "gpu"
+}

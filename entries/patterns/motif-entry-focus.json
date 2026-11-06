@@ -1,0 +1,114 @@
+{
+  "id": "motif-entry-focus",
+  "order": 177,
+  "title": "动机入场聚焦",
+  "types": [
+    "camera",
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "动机每次入场时镜头聚焦到该行，用括号、级数和空心框标出音符，再用虚线弧把上一次入场连到这一次。",
+  "mechanism": "动机入场时：括号（annotations.rulers）在音符上方展开，M¹…M⁹ 标在括号旁；级数 7 1 3 5 随音符发声逐个点亮；镜头（shots.focus）把入场行与呼应行放大到 maxX=1.5、maxY=6，其余行按 rowStates 压暗。空心框（annotations.outlines）先套住上一次入场的音符，再移到这一次的音符上，用来对照音型；M² 的级数是 7 1 3 2，M⁹ 的框对照倒影音程 1 7 5 3。虚线弧（annotations.arcs，虚线 [6,6]）在下一次入场前后淡入，把前一行连到后一行，随卷轴一起左移。",
+  "trigger": "动机 M¹ 到 M⁹ 各自在 motifs[].t 入场（M¹ 7.65 秒、M² 9.567 秒、M³ 15.317 秒、M⁹ 89.25 秒）。",
+  "effect": "观众的视线被镜头、括号和空心框引到当前入场的声部，并看到它与上一次入场的呼应关系；结束后镜头回到全谱。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "butterfly-garden-score：7–12.2秒；butterfly-garden-score：15–18.8秒；butterfly-garden-score：88.5–93.1秒；1倍速，总时长13.6秒。"
+    },
+    {
+      "name": "聚焦",
+      "value": "focus-ob-va 8.317–12.183 秒（Ob.、Va.）；focus-clarinet 88.017–93.283 秒（Cl.）。"
+    },
+    {
+      "name": "空心框与虚线弧",
+      "value": "M² 空心框 9.2–11.617 秒；M⁹ 空心框 88.9–92.617 秒；Va.→Hn. 虚线弧 15.4–18.6 秒可见。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "聚焦镜头",
+      "value": "butterfly-garden-score film/data/shots.json:focus，focus-ob-va 与 focus-clarinet 的 maxX=1.5、maxY=6；film/scene.js:focusAt / positionX / positionY 按 curve 插值缩放与行位置。"
+    },
+    {
+      "name": "括号与级数",
+      "value": "butterfly-garden-score film/data/annotations.json:rulers / words / motifs，M¹ worldX=1452、M² 1816、M³ 2910、M⁹ 16957；级数 M¹ 7 1 3 5、M² 7 1 3 2、M⁹ 1 7 5 3；film/scene.js:annotationsAt 绘制。"
+    },
+    {
+      "name": "空心框",
+      "value": "butterfly-garden-score film/data/annotations.json:outlines，M2-0…M2-3 描边 3、baseHeight 16，M9-0…M9-3 描边 3、baseHeight 19；annotationsAt 中以 geometryCurve 插值位置并 roundRect 描边。"
+    },
+    {
+      "name": "虚线弧",
+      "value": "butterfly-garden-score film/data/annotations.json:arcs，setLineDash([6,6])、lineWidth 1.4，Va.→Hn. 弧峰值透明度 0.558；film/scene.js:annotationsAt。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/butterfly-garden-score/film/scene.js",
+    "demos/cases/butterfly-garden-score/film/data/shots.json",
+    "demos/cases/butterfly-garden-score/film/data/annotations.json",
+    "demos/cases/butterfly-garden-score/film/data/rowStates.json"
+  ],
+  "locator": "butterfly-garden-score film/scene.js:focusAt / annotationsAt（rulers、outlines、arcs）",
+  "useCases": [
+    "同一主题在不同声部反复出现的曲式讲解",
+    "需要把“这一次”和“上一次”对照的音乐或数据短片"
+  ],
+  "avoid": [
+    "动机只出现一次、没有可对照对象的段落",
+    "镜头在聚焦期间还要承担其他大幅运动的画面"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "scrolling-score-timeline"
+    ],
+    "conflicts": [],
+    "notes": "依附于滚动总谱：括号、空心框和虚线弧都按卷轴坐标定位；聚焦期间应避免同时触发转调反色。"
+  },
+  "prompt": "用来源案例 butterfly-garden-score 的原作 renderAt(t) 重放“动机入场聚焦”。保留 focus-ob-va 与 focus-clarinet 的 1.5×/6× 聚焦、M¹…M⁹ 括号与 7 1 3 5 级数点亮、M² 与 M⁹ 的空心框、Va.→Hn. 的 [6,6] 虚线弧。按 index.html 内联配置的 segments 定位 7–12.2、15–18.8、88.5–93.1 秒，复用原作数据、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/motif-entry-focus/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "butterfly-garden-score"
+    }
+  ],
+  "previewAt": 4.2,
+  "markers": [
+    {
+      "t": 1.2,
+      "label": "M¹ 括号与级数"
+    },
+    {
+      "t": 2.2,
+      "label": "聚焦 Ob. 与 Va."
+    },
+    {
+      "t": 2.6,
+      "label": "空心框套住 M¹"
+    },
+    {
+      "t": 4.2,
+      "label": "空心框移到 M²"
+    },
+    {
+      "t": 6.6,
+      "label": "虚线弧连向 M³"
+    },
+    {
+      "t": 9.5,
+      "label": "聚焦 M⁹"
+    },
+    {
+      "t": 11.5,
+      "label": "空心框对照倒影"
+    }
+  ]
+}

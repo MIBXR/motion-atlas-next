@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "neon-write-on-ignition",
+  "pattern": {
+    "id": "neon-write-on-ignition",
+    "order": 58,
+    "title": "霓虹描写通电",
+    "types": [
+      "type-motion",
+      "rhythm",
+      "sound"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "合成波"
+    ],
+    "summary": "发亮笔头沿真实字形路径推进并留下暗玻璃管；到达通电节点时，霓虹字按逐帧电平闪烁，最后整字稳定发光。",
+    "mechanism": "发亮笔头沿真实字形路径推进并留下暗玻璃管；到达通电节点时，霓虹字按逐帧电平闪烁，最后整字稳定发光。",
+    "trigger": "描写窗口启动并到达通电节点时",
+    "effect": "Midnight 从暗玻璃轮廓与发亮笔头变成完整点亮的霓虹字。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-synthwave 原片 5.6–7.1 秒；1 倍速，总时长 1.5 秒。"
+      },
+      {
+        "name": "霓虹描写通电参数",
+        "value": "  const drawn = lvl > 0 ? TOTAL : p * TOTAL;\n    strokeRange(g, drawn - 60, drawn, LIT);\n  \"neon_trace\": [5.8, 6.6],\n  \"neon_strike\": [[6.6, 1], [6.633, 0.15], [6.667, 1], [6.7, 1], [6.733, 0.08], [6.767, 0.5], [6.8, 0.85], [6.833, 1]],"
+      }
+    ],
+    "useCases": [
+      "霓虹手写字入场",
+      "管体描写后通电的品牌字标"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-synthwave 原片 5.6–7.1 秒；总时长 1.5 秒。发亮笔头沿真实字形路径推进并留下暗玻璃管，通电节点按逐帧电平闪烁，最后整字稳定发光。参数保持原作数值：  const drawn = lvl > 0 ? TOTAL : p * TOTAL;\n    strokeRange(g, drawn - 60, drawn, LIT);\n  \"neon_trace\": [5.8, 6.6],\n  \"neon_strike\": [[6.6, 1], [6.633, 0.15], [6.667, 1], [6.7, 1], [6.733, 0.08], [6.767, 0.5], [6.8, 0.85], [6.833, 1]],\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/neon-write-on-ignition/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-synthwave"
+      }
+    ],
+    "previewAt": 1.233333333,
+    "markers": [
+      {
+        "t": 0,
+        "label": "合成波"
+      },
+      {
+        "t": 0.5,
+        "label": "机制画面 1"
+      },
+      {
+        "t": 1.033333333,
+        "label": "机制画面 2"
+      },
+      {
+        "t": 1.4,
+        "label": "机制画面 3"
+      }
+    ],
+    "preview": "previews/patterns/neon-write-on-ignition.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-synthwave",
+      "bundle": "agent/cases/mg-synthwave.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 霓虹描写通电\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速依次重放mg-synthwave 原片 5.6–7.1 秒；总时长 1.5 秒。发亮笔头沿真实字形路径推进并留下暗玻璃管，通电节点按逐帧电平闪烁，最后整字稳定发光。参数保持原作数值：  const drawn = lvl > 0 ? TOTAL : p * TOTAL;\n    strokeRange(g, drawn - 60, drawn, LIT);\n  \"neon_trace\": [5.8, 6.6],\n  \"neon_strike\": [[6.6, 1], [6.633, 0.15], [6.667, 1], [6.7, 1], [6.733, 0.08], [6.767, 0.5], [6.8, 0.85], [6.833, 1]],\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-synthwave 原片 5.6–7.1 秒；1 倍速，总时长 1.5 秒。\n- **霓虹描写通电参数**：  const drawn = lvl > 0 ? TOTAL : p * TOTAL;\n    strokeRange(g, drawn - 60, drawn, LIT);\n  \"neon_trace\": [5.8, 6.6],\n  \"neon_strike\": [[6.6, 1], [6.633, 0.15], [6.667, 1], [6.7, 1], [6.733, 0.08], [6.767, 0.5], [6.8, 0.85], [6.833, 1]],\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段与中文节点，画面和声音使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/neon-write-on-ignition/index.html) · [在库中查看](../../patterns.html#pattern/neon-write-on-ignition)\n"
+  },
+  "entrypoint": "demos/patterns/neon-write-on-ignition/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-synthwave/LICENSES.md",
+      "bytes": 1068,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/audio/film.m4a",
+      "bytes": 403976,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fidelity.md",
+      "bytes": 4597,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/cues.json",
+      "bytes": 1312,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/scene.js",
+      "bytes": 70681,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/setup.js",
+      "bytes": 243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/film/style.css",
+      "bytes": 166,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Archivo-Italic[wdth,wght].ttf",
+      "bytes": 741368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/Michroma-Regular.ttf",
+      "bytes": 64344,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/MrDafoe-Regular.ttf",
+      "bytes": 47976,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/VT323-Regular.ttf",
+      "bytes": 153116,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/archivo-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/fonts.css",
+      "bytes": 636,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/michroma-OFL.txt",
+      "bytes": 4395,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/mrdafoe-OFL.txt",
+      "bytes": 4398,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/fonts/vt323-OFL.txt",
+      "bytes": 4367,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/index.html",
+      "bytes": 1976,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/audio.py",
+      "bytes": 11743,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/source/cues.json",
+      "bytes": 1312,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.core.js",
+      "bytes": 1458113,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/build/three.module.js",
+      "bytes": 662772,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 8501,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 4694,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/Pass.js",
+      "bytes": 4218,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/RenderPass.js",
+      "bytes": 4280,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 3228,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 15397,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/CopyShader.js",
+      "bytes": 729,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-synthwave/vendor/three@0.186.1/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/neon-write-on-ignition/index.html",
+      "bytes": 1404,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/neon-write-on-ignition/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-synthwave.json",
+      "bytes": 16835,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/neon-write-on-ignition.json",
+      "bytes": 2804,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/neon-write-on-ignition.jpg",
+      "bytes": 159588,
+      "role": "preview"
+    }
+  ]
+}

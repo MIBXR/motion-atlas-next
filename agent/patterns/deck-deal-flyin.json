@@ -1,0 +1,536 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "deck-deal-flyin",
+  "pattern": {
+    "id": "deck-deal-flyin",
+    "order": 83,
+    "title": "加速发牌飞入",
+    "types": [
+      "composition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "26 张卡先在右上角堆成一叠，镜头对牌堆做 3D 特写。拉远后，按阅读顺序加速发牌，让卡片飞入各自的网格槽位。",
+    "mechanism": "牌堆姿态包含由 index 派生的微小错位与堆高；镜头先以旋转特写展示牌堆，再拉远露出页面；发牌按阅读顺序，第 k 张出发时刻 cue = DEAL_START + 4k − 0.0792k(k−1)，间隔从 4 帧缩到 0.2 帧。",
+    "trigger": "字卡一结束，切入牌堆特写。",
+    "effect": "发牌起初从容，随后连成一片，以加速发牌的物理隐喻铺满一页卡片。",
+    "timing": [
+      {
+        "name": "片段",
+        "value": "AIFL_SHOTS.table 的 275–375 帧，100/30 秒。"
+      },
+      {
+        "name": "镜头阶段",
+        "value": "CAM_KEYS：0→34 旋转特写，34→62 拉远，62→82→98 加速滚动。"
+      },
+      {
+        "name": "发牌节奏",
+        "value": "DEAL_START=36；cue=36+4*k-0.0792*k*(k-1)；飞行 cue→cue+8，归位 cue+8→cue+12。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "牌堆",
+        "value": "N_CARDS=26；PILE={x:1430,y:240}；STACK_STEP=3；pz=(26-k)*3。"
+      },
+      {
+        "name": "确定性微偏",
+        "value": "px=1430+(((k*7)%9)-4)*2；py=240+(((k*5)%7)-3)*2；protZ=((k*11)%7)-3。"
+      },
+      {
+        "name": "飞行",
+        "value": "HOVER_H=40；arc=sin(diveT*π)*90；DIVE_EASE=bezier(0.3,0,0.2,1)；SETTLE_EASE=bezier(0.3,0,0.25,1.15)。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/ink-press/film/src/aifl/live/SceneFlyIn.tsx"
+    ],
+    "locator": "SceneFlyIn / grid / DEAL_START / CAM_KEYS",
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "page-cam-25d",
+        "paper-title-card"
+      ],
+      "conflicts": [],
+      "notes": ""
+    },
+    "prompt": "用来源案例 ink-press 的原作 renderAt(t) 重放加速发牌飞入。保留 26 张牌、PILE=(1430,240)、每张 3px 堆高和 index 派生错位；出发时刻 cue=36+4k-0.0792k(k-1)，飞行 8 帧后用 4 帧压回槽位。保留 40px 悬浮、90px 弧高、DIVE_EASE 与 SETTLE_EASE，以及 0/34/62/82/98 帧相机键。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/deck-deal-flyin/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "ink-press"
+      }
+    ],
+    "previewAt": 2.6666666666666665,
+    "markers": [
+      {
+        "t": 0,
+        "label": "牌堆旋转特写"
+      },
+      {
+        "t": 1.1333333333333333,
+        "label": "相机拉远"
+      },
+      {
+        "t": 1.2,
+        "label": "加速发牌"
+      },
+      {
+        "t": 2.066666666666667,
+        "label": "网格显露"
+      },
+      {
+        "t": 2.7333333333333334,
+        "label": "追随滚动"
+      },
+      {
+        "t": 3.2666666666666666,
+        "label": "底部落定"
+      }
+    ],
+    "preview": "previews/patterns/deck-deal-flyin.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "ink-press",
+      "bundle": "agent/cases/ink-press.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 加速发牌飞入\n\n## 实现 Prompt\n\n用来源案例 ink-press 的原作 renderAt(t) 重放加速发牌飞入。保留 26 张牌、PILE=(1430,240)、每张 3px 堆高和 index 派生错位；出发时刻 cue=36+4k-0.0792k(k-1)，飞行 8 帧后用 4 帧压回槽位。保留 40px 悬浮、90px 弧高、DIVE_EASE 与 SETTLE_EASE，以及 0/34/62/82/98 帧相机键。按 index.html 内联配置的 segments 映射时间，保留原作素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **片段**：AIFL_SHOTS.table 的 275–375 帧，100/30 秒。\n- **镜头阶段**：CAM_KEYS：0→34 旋转特写，34→62 拉远，62→82→98 加速滚动。\n- **发牌节奏**：DEAL_START=36；cue=36+4*k-0.0792*k*(k-1)；飞行 cue→cue+8，归位 cue+8→cue+12。\n\n[打开 Demo](../../demos/patterns/deck-deal-flyin/index.html) · [在库中查看](../../patterns.html#pattern/deck-deal-flyin)\n"
+  },
+  "entrypoint": "demos/patterns/deck-deal-flyin/index.html",
+  "files": [
+    {
+      "path": "demos/cases/ink-press/LICENSES.md",
+      "bytes": 1285,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/ATTRIBUTION.md",
+      "bytes": 22401,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/click-camera.mp3",
+      "bytes": 14406,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/impact-cine.mp3",
+      "bytes": 115904,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/keyboard.mp3",
+      "bytes": 513831,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/pop.mp3",
+      "bytes": 15239,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/riser-cine.mp3",
+      "bytes": 145112,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/sparkle.mp3",
+      "bytes": 143743,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/swoosh-quick.mp3",
+      "bytes": 27247,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/transition-snap.mp3",
+      "bytes": 19051,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/transition-soft.mp3",
+      "bytes": 41082,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/whoosh-big.mp3",
+      "bytes": 71724,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/audio/whoosh-fast.mp3",
+      "bytes": 57624,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card1.png",
+      "bytes": 49799,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card10.png",
+      "bytes": 51587,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card2.png",
+      "bytes": 52017,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card3.png",
+      "bytes": 58681,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card4-hires.png",
+      "bytes": 123105,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card4.png",
+      "bytes": 59011,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card5.png",
+      "bytes": 59166,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card6.png",
+      "bytes": 55703,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card7.png",
+      "bytes": 62485,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card8.png",
+      "bytes": 54202,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/card9.png",
+      "bytes": 59637,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/detail-experiments.png",
+      "bytes": 3257847,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/detail-full.png",
+      "bytes": 380073,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-filter.png",
+      "bytes": 2754,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-search.png",
+      "bytes": 11667,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-section.png",
+      "bytes": 4485,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/float-stats.png",
+      "bytes": 11497,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/nav.png",
+      "bytes": 12776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper1.png",
+      "bytes": 98212,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper2.png",
+      "bytes": 95517,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper3.png",
+      "bytes": 95131,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper4.png",
+      "bytes": 87621,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/paper5.png",
+      "bytes": 90661,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/papers-full.png",
+      "bytes": 594891,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/projects-empty.png",
+      "bytes": 104520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/projects-full.png",
+      "bytes": 617560,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/assets/textures/live/wbr-full.png",
+      "bytes": 487943,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/audio/film.m4a",
+      "bytes": 582866,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/fidelity.md",
+      "bytes": 4968,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/ink-press/film/LICENSE",
+      "bytes": 11340,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/film/entry.tsx",
+      "bytes": 2343,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/film.js",
+      "bytes": 1357605,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/Root.tsx",
+      "bytes": 396,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/Caption.tsx",
+      "bytes": 2299,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/DigitRoll.tsx",
+      "bytes": 1826,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/FlashCut.tsx",
+      "bytes": 892,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/Main.tsx",
+      "bytes": 9730,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/PaperTitleCard.tsx",
+      "bytes": 4194,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live-layout.json",
+      "bytes": 5601,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/PageCam.tsx",
+      "bytes": 6754,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneDetail.tsx",
+      "bytes": 6000,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneFlyIn.tsx",
+      "bytes": 20787,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneOpen.tsx",
+      "bytes": 25822,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneOutroLive.tsx",
+      "bytes": 17712,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/ScenePapers.tsx",
+      "bytes": 8247,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/aifl/live/SceneWbr.tsx",
+      "bytes": 12767,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/index.ts",
+      "bytes": 93,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/ThemedFilm.tsx",
+      "bytes": 364,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/palette-assets.json",
+      "bytes": 105914,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/palette-assets.ts",
+      "bytes": 2209,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/palettes.json",
+      "bytes": 1547,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/ink-press/film/src/themes/visual-theme.tsx",
+      "bytes": 5346,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/film/style.css",
+      "bytes": 32,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/index.html",
+      "bytes": 2430,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/ink-press/source/TEMPLATE.md",
+      "bytes": 8172,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/build.mjs",
+      "bytes": 358,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/package-lock.json",
+      "bytes": 120627,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/package.json",
+      "bytes": 529,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/remotion.config.ts",
+      "bytes": 220,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/source/tsconfig.json",
+      "bytes": 315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/react-dom@19.2.7/LICENSE",
+      "bytes": 1088,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/react@19.2.7/LICENSE",
+      "bytes": 1088,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/remotion-player@4.0.484/LICENSE.md",
+      "bytes": 2823,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/remotion@4.0.484/LICENSE.md",
+      "bytes": 2823,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/ink-press/vendor/scheduler@0.27.0/LICENSE",
+      "bytes": 1088,
+      "role": "license"
+    },
+    {
+      "path": "demos/patterns/deck-deal-flyin/index.html",
+      "bytes": 1187,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/deck-deal-flyin/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/ink-press.json",
+      "bytes": 12883,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/deck-deal-flyin.json",
+      "bytes": 3051,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/deck-deal-flyin.jpg",
+      "bytes": 39176,
+      "role": "preview"
+    }
+  ]
+}

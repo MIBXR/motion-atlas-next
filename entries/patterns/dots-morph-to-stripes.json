@@ -1,0 +1,61 @@
+{
+  "id": "dots-morph-to-stripes",
+  "order": 170,
+  "title": "点线化为条纹",
+  "types": [
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "同一组与年份对应的数据点先落向条纹带中心，再由小圆伸展为满高温度条；旧折线随左端数据点启动形变而消退，温度颜色与年份次序保持不变。",
+  "mechanism": "同一组与年份对应的数据点先落向条纹带中心，再由小圆伸展为满高温度条；旧折线随左端数据点启动形变而消退，温度颜色与年份次序保持不变。",
+  "trigger": "原作时间轴进入所列动作区间。",
+  "effect": "同一组与年份对应的数据点先落向条纹带中心，再由小圆伸展为满高温度条；旧折线随左端数据点启动形变而消退，温度颜色与年份次序保持不变。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "36.600—39.400秒，1倍速。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "逐点扫过",
+      "value": "mStart(y)=T(56)+(y−1926)/101×B×.85；各点前45%落到带中心，后55%ease-out伸高至−170—170，原折线alpha=1−clamp(mU(left)×3)。",
+      "source": "demos/cases/lemo-dataviz/film/film.js:mStart / mU；film/engine.js:morphMark"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-dataviz/film/film.js"
+  ],
+  "locator": "film/film.js:mStart / mU；film/engine.js:morphMark",
+  "useCases": [
+    "点线化为条纹"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": [],
+    "notes": "morph-primitive-bridge使用圆／胶囊中介连接任意形状；本条把同一份数据从点线编码转为逐年条纹，保留逐项身份和数值颜色。"
+  },
+  "prompt": "以来源案例lemo-dataviz的原作render(t)重放“点线化为条纹”。同一组有年份对应关系的数据点先落向条纹带中心，再由小圆伸展为满高温度条；旧折线随左端数据点启动形变而消退，温度颜色与年份次序保持。 参数：mStart(y)=T(56)+(y−1926)/101×B×.85；各点前45%落到带中心，后55%ease-out伸高至−170—170，原折线alpha=1−clamp(mU(left)×3)。。按入口segments映射原片，复用原作素材、字体与同段音轨，声音默认关闭。",
+  "demo": "demos/patterns/dots-morph-to-stripes/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-dataviz"
+    }
+  ],
+  "previewAt": 1.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "点线化为条纹"
+    }
+  ]
+}

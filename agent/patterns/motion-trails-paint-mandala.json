@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "motion-trails-paint-mandala",
+  "pattern": {
+    "id": "motion-trails-paint-mandala",
+    "order": 108,
+    "title": "轨迹作画成纹",
+    "types": [
+      "composition",
+      "camera"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "19把伞按中心、内外两环的编舞轨迹运动，每把伞用自身颜色沿已走过的dancePos位置累积刮刀笔触；相机旋转并吊臂拉远，显出群体路径形成的曼陀罗。",
+    "mechanism": "19把伞按中心、内外两环的编舞轨迹运动，每把伞用自身颜色沿已走过的dancePos位置累积刮刀笔触；相机旋转并吊臂拉远，显出群体路径形成的曼陀罗。",
+    "trigger": "23.48秒进入俯拍群舞。",
+    "effect": "观众先看移动的伞，随后在更大尺度读出运动留下的彩色图案。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "23.48–31.66秒；1倍速，总时长8.180000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "人群结构",
+        "value": "film/film.js:DANCE=1个中心+6个内环+12个外环；dancePos半径340/640，内外环反向旋转并在强拍呼吸。"
+      },
+      {
+        "name": "累积笔触",
+        "value": "film/film.js:shotTop对每把伞从s=0到tt以.055秒步长重建轨迹；用s+.03取切线，笔长60–90、宽26–42、alpha=.9，run=.6。"
+      },
+      {
+        "name": "相机",
+        "value": "同函数：zoom由1.32到.6，rot从0到.62，时间冻结在T.gp；轨迹与伞共用dancePos。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-impasto/film/film.js",
+      "demos/cases/lemo-impasto/film/timeline.js",
+      "demos/cases/lemo-impasto/film/scenes/top.js"
+    ],
+    "locator": "DANCE / dancePos / shotTop",
+    "useCases": [
+      "观众先看移动的伞，随后在更大尺度读出运动留下的彩色图案。"
+    ],
+    "avoid": [
+      "同时叠加遮住主要动作的画面层"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-impasto的原作render(t)，实现“轨迹作画成纹”：19把伞按中心、内外两环的编舞轨迹运动，每把伞用自身颜色沿已走过的dancePos位置累积刮刀笔触；相机旋转并吊臂拉远，显出群体路径形成的曼陀罗。参数与源码：film/film.js:DANCE=1个中心+6个内环+12个外环；dancePos半径340/640，内外环反向旋转并在强拍呼吸。；film/film.js:shotTop对每把伞从s=0到tt以.055秒步长重建轨迹；用s+.03取切线，笔长60–90、宽26–42、alpha=.9，run=.6。；同函数：zoom由1.32到.6，rot从0到.62，时间冻结在T.gp；轨迹与伞共用dancePos。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。",
+    "demo": "demos/patterns/motion-trails-paint-mandala/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-impasto"
+      }
+    ],
+    "previewAt": 6.3,
+    "markers": [
+      {
+        "t": 0,
+        "label": "轨迹作画成纹"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/motion-trails-paint-mandala.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-impasto",
+      "bundle": "agent/cases/lemo-impasto.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 轨迹作画成纹\n\n## 实现 Prompt\n\n复用来源案例lemo-impasto的原作render(t)，实现“轨迹作画成纹”：19把伞按中心、内外两环的编舞轨迹运动，每把伞用自身颜色沿已走过的dancePos位置累积刮刀笔触；相机旋转并吊臂拉远，显出群体路径形成的曼陀罗。参数与源码：film/film.js:DANCE=1个中心+6个内环+12个外环；dancePos半径340/640，内外环反向旋转并在强拍呼吸。；film/film.js:shotTop对每把伞从s=0到tt以.055秒步长重建轨迹；用s+.03取切线，笔长60–90、宽26–42、alpha=.9，run=.6。；同函数：zoom由1.32到.6，rot从0到.62，时间冻结在T.gp；轨迹与伞共用dancePos。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：23.48–31.66秒；1倍速，总时长8.180000秒。\n\n[打开 Demo](../../demos/patterns/motion-trails-paint-mandala/index.html) · [在库中查看](../../patterns.html#pattern/motion-trails-paint-mandala)\n"
+  },
+  "entrypoint": "demos/patterns/motion-trails-paint-mandala/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-impasto/LICENSES.md",
+      "bytes": 739,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/audio/CREDITS",
+      "bytes": 544,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/audio/film.m4a",
+      "bytes": 1277229,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fidelity.md",
+      "bytes": 8072,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/engine/impasto.js",
+      "bytes": 21794,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/engine/plate.js",
+      "bytes": 11816,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/film.js",
+      "bytes": 25696,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/index.html",
+      "bytes": 284,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/main.js",
+      "bytes": 239,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/cards.js",
+      "bytes": 1246,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/cellist.js",
+      "bytes": 15074,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/common.js",
+      "bytes": 1731,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/ecu.js",
+      "bytes": 3910,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/figures.js",
+      "bytes": 12157,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/girl.js",
+      "bytes": 9478,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/medium.js",
+      "bytes": 3511,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/top.js",
+      "bytes": 1840,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/scenes/wide.js",
+      "bytes": 11243,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/film/timeline.js",
+      "bytes": 3923,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fonts/CormorantGaramond-Italic.woff2",
+      "bytes": 39304,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fonts/CormorantSC.woff2",
+      "bytes": 20912,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fonts/OFL.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/fonts/fonts.css",
+      "bytes": 257,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/index.html",
+      "bytes": 2437,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/CREDITS",
+      "bytes": 544,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/README.md",
+      "bytes": 2157,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/build.sh",
+      "bytes": 638,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/mix.py",
+      "bytes": 9090,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/music/score.py",
+      "bytes": 5396,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/test.js",
+      "bytes": 3309,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-impasto/source/tools/dump_timeline.mjs",
+      "bytes": 408,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/motion-trails-paint-mandala/index.html",
+      "bytes": 798,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/motion-trails-paint-mandala/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-impasto.json",
+      "bytes": 9748,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/motion-trails-paint-mandala.json",
+      "bytes": 3053,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/motion-trails-paint-mandala.jpg",
+      "bytes": 202891,
+      "role": "preview"
+    }
+  ]
+}

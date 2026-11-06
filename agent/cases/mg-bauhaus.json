@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "mg-bauhaus",
+  "entry": {
+    "id": "mg-bauhaus",
+    "order": 14,
+    "title": "几何包豪斯 · KONSTRUKTION · 20 Beats",
+    "subtitle": "二十拍构成：120px 网格上的动态海报",
+    "carriers": [
+      "video"
+    ],
+    "style": "graphic-type",
+    "purpose": "title-art",
+    "tech": [
+      "canvas2d",
+      "webgl"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "几何构成",
+      "包豪斯",
+      "动态海报",
+      "三原色",
+      "网格",
+      "节拍驱动"
+    ],
+    "summary": "圆、三角、矩形在 120px 网格上逐拍搭建，经过旋转、翻牌与列对滑动的级联波，定格为二十拍包豪斯海报。",
+    "focus": "120px 网格上的几何图形，按 120BPM 的节拍逐拍搭建；平移、旋转、缩放以网格为落点，红黄蓝黑与奶油纸底组织构图。",
+    "accent": "#E63B2E",
+    "background": "#F1E9DA",
+    "timeline": true,
+    "kit": true,
+    "rhythm": {
+      "duration": 10,
+      "bpm": 120,
+      "beats": [
+        {
+          "t": 0.125,
+          "label": "网格落笔",
+          "note": "网格线对从中心轴向外按十六分音符依次落笔，随后收细。"
+        },
+        {
+          "t": 0.25,
+          "label": "定位标记",
+          "note": "中心定位标记落下。"
+        },
+        {
+          "t": 0.5,
+          "label": "圆形落位",
+          "note": "圆形在第一个整拍落位。"
+        },
+        {
+          "t": 1,
+          "label": "黑条落位",
+          "note": "黑条伸展并落位。"
+        },
+        {
+          "t": 1.25,
+          "label": "定位一",
+          "note": "在网格交点预示下一次落位。"
+        },
+        {
+          "t": 1.5,
+          "label": "三角入场",
+          "note": "三角形进入构图。"
+        },
+        {
+          "t": 1.75,
+          "label": "定位二",
+          "note": "下一次翻转的定位标记出现。"
+        },
+        {
+          "t": 2,
+          "label": "三角翻转",
+          "note": "三角形沿节拍翻转。"
+        },
+        {
+          "t": 2.25,
+          "label": "定位三",
+          "note": "方形动作前的定位标记出现。"
+        },
+        {
+          "t": 2.5,
+          "label": "方形缩放",
+          "note": "方形沿网格缩放。"
+        },
+        {
+          "t": 2.75,
+          "label": "定位四",
+          "note": "圆形滑动前的定位标记出现。"
+        },
+        {
+          "t": 3,
+          "label": "圆形滑动",
+          "note": "圆形滑到网格落点。"
+        },
+        {
+          "t": 3,
+          "label": "轴心落点",
+          "note": "画面中央的黑色旋转轴心落下。"
+        },
+        {
+          "t": 4,
+          "label": "组合转向",
+          "note": "几何组合完成绕画面中心的转向。"
+        },
+        {
+          "t": 4.5,
+          "label": "半圆滑动",
+          "note": "半圆沿模块滑动。"
+        },
+        {
+          "t": 5,
+          "label": "扇形扫入",
+          "note": "四分之一圆沿角点扫入。"
+        },
+        {
+          "t": 5.25,
+          "label": "横线绘制",
+          "note": "水平线从左向右画出。"
+        },
+        {
+          "t": 5.25,
+          "label": "拍数入场",
+          "note": "拍数信息进入画面。"
+        },
+        {
+          "t": 5.5,
+          "label": "红块入场",
+          "note": "红色方块进入构图。"
+        },
+        {
+          "t": 5.75,
+          "label": "红块分割",
+          "note": "红色 2×2 模块方块的角部扫成四分之一圆。"
+        },
+        {
+          "t": 6,
+          "label": "重拍级联",
+          "note": "重拍开始，网格进入级联波。"
+        },
+        {
+          "t": 6,
+          "label": "旋转波",
+          "note": "120px 模块绕角点旋转 90°，波从网格内的原点展开。"
+        },
+        {
+          "t": 6.5,
+          "label": "横向翻牌",
+          "note": "240px 卡片横向翻到背面。"
+        },
+        {
+          "t": 7,
+          "label": "三原色显现",
+          "note": "翻牌展示黄色三角、红色方块、蓝色圆形，保持六帧。"
+        },
+        {
+          "t": 7.2,
+          "label": "列对滑动",
+          "note": "240px 列对纵向滑动 120px；标签条保持静止。"
+        },
+        {
+          "t": 7.5,
+          "label": "向心翻牌",
+          "note": "卡片沿竖向翻回正面，向画面中心收拢。"
+        },
+        {
+          "t": 8,
+          "label": "海报定格",
+          "note": "卡片回到正面，几何海报定格。"
+        },
+        {
+          "t": 9,
+          "label": "小字入场",
+          "note": "德文小字与中文形式、色彩、功能进入画面。"
+        },
+        {
+          "t": 9.5,
+          "label": "套印锁定",
+          "note": "色版锁定到套印位置。"
+        }
+      ]
+    },
+    "layers": [
+      {
+        "name": "纸张与网格",
+        "role": "纸张纹理与颗粒形成纸底，网格线对由中心轴向外依次画出。"
+      },
+      {
+        "name": "几何色版",
+        "role": "圆、三角、矩形、半圆和四分之一圆按 120px 模数移动，黄色、红色、蓝色与黑色色版经 WebGL 印刷处理。"
+      },
+      {
+        "name": "级联翻牌",
+        "role": "6–8 秒的四次波依次旋转模块、横向翻牌、滑动列对、向中心翻回正面。"
+      },
+      {
+        "name": "海报文字",
+        "role": "8 秒开始逐字出现竖排 BAUHAUS；9 秒出现 FORM · FARBE · FUNKTION 与中文形式、色彩、功能。"
+      },
+      {
+        "name": "配乐与音效",
+        "role": "120BPM 极简点击电子节拍，各视觉动作的落点与点击、短音和冲击音共用 film/cues.json。"
+      }
+    ],
+    "composition": {
+      "color": "奶油纸底 #F1E9DA，红、黄、蓝与黑的限定色板；纸张纹理、颗粒和轻微套印偏移呈现印刷质感。",
+      "typography": "Poppins Black 900 排出竖排 BAUHAUS，字面大写高度为 120px、完整字面延伸八个模块；Poppins SemiBold 600 排德文说明，Noto Sans SC 700 排中文。",
+      "layout": "横屏 1920×1080；模数 120px，纵向网格从 y=60 开始，裁切边界为 x=120–1800、y=60–1020。几何图形按网格构成海报。",
+      "imagery": "Canvas 2D 绘制分色色版，WebGL 合成纸张、颗粒、套印和级联翻牌；背面为黄色三角、红色方块与蓝色圆形。",
+      "motion": "以 120BPM、每拍 0.5 秒组织动作；几何组合绕画面中心转向，6 秒开始四次级联波，8 秒定格，9.5 秒套印锁定。使用二次对称缓动与匀速运动。",
+      "sound": "默认关闭，开启后播放原片 AAC 音轨；原作 source/audio.py 按同一 film/cues.json 合成 120BPM 极简点击电子配乐与落点音效。",
+      "rhythm": "网格按十六分音符落笔，几何动作按整拍与反拍搭建；6–8 秒级联后转入海报文字和套印锁定。",
+      "coherence": "网格模数、有限色版、字面尺寸与同一节拍表贯穿逐拍搭建、级联翻牌和最终海报。"
+    },
+    "tokens": {
+      "palette": [
+        "#F1E9DA",
+        "#E03C31",
+        "#F2B705",
+        "#1E4FA3",
+        "#111111"
+      ],
+      "type": "Poppins 900、600；Noto Sans SC 700。",
+      "motion": [
+        {
+          "name": "网格模数",
+          "value": "120px；每拍 0.5 秒。"
+        },
+        {
+          "name": "组合转向",
+          "value": "3.25–4.0 秒，12 个 7.5° 棘齿完成 90° 转向。"
+        },
+        {
+          "name": "级联波",
+          "value": "6.0 秒旋转、6.5 秒横向翻牌、7.2 秒列对滑动、7.5 秒向心翻牌。"
+        },
+        {
+          "name": "海报字序",
+          "value": "8.0 秒开始，每 0.125 秒出现一个 BAUHAUS 字母，共 7 个。"
+        },
+        {
+          "name": "套印锁定",
+          "value": "9.5 秒色版锁定，纸张位移在随后两帧归位。"
+        }
+      ]
+    },
+    "observations": [
+      {
+        "at": "0–3 秒",
+        "what": "网格与定位标记预示几何落点，圆、黑条、三角和方形按节拍进入构图。"
+      },
+      {
+        "at": "3.25–4 秒",
+        "what": "组合转向以 12 个棘齿逐步落位，转轴位于画面中心。"
+      },
+      {
+        "at": "6–8 秒",
+        "what": "几何海报分为卡片，背面三原色巨型图形在 7 秒短暂停留，再翻回正面。"
+      },
+      {
+        "at": "8–10 秒",
+        "what": "竖排 BAUHAUS 逐字出现，德文与中文小字补齐，9.5 秒完成套印锁定。"
+      }
+    ],
+    "constraints": [
+      "10 秒、1920×1080、30fps；原作 motionBlur 为 8 子帧、快门 0.5。",
+      "原作来自 Vincentwei1021/mg-styles-15，作者 Vincentwei1021，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可；完整出处与素材许可见 Demo 内 LICENSES.md。"
+    ],
+    "prompt": "You are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n几何构成 / 包豪斯 Geometric / Bauhaus Motion\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: SVG/Canvas + GSAP on a strict modular grid, beat grid at 120 BPM\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「包豪斯动态海报」Bauhaus 1919 kinetic poster — mechanical, rational, musical.\n- Cream paper (#F1E9DA), primaries red #E03C31, yellow #F2B705, blue #1E4FA3, black #111; strict modular grid (e.g. 240px modules); every move is an integer number of modules; every landing on a grid line.\n- 120 BPM (0.5 s/beat): each beat a module acts — quarter circles rotate 90° about a corner pivot, semicircles slide one module, triangles flip, squares split; rotation pivots alternate (own centre / corner / frame centre).\n- 0–2s grid lines draw & the first red circle lands; 2–6s the composition assembles into a Kandinsky/Bauhaus poster; 6–8s phase-shifted cascade wave across the grid on the drop; 8–10s freeze into a perfect poster with Swiss typography: \"BAUHAUS\" set vertically in heavy geometric sans + small caps \"FORM · FARBE · FUNKTION\".\n- Easing: power2.inOut or linear — NO overshoot; subtle paper tooth + slight print misregistration allowed.\nSound: minimal techno/click — each flip = a pitched click/blip, kick on quarters.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n圆、三角、矩形在严格网格上做精确的平移、旋转、缩放，三原色+黑白的限定色板，机械理性的秩序美。源自包豪斯与瑞士国际主义平面传统（Adobe 曾与 Bauhaus 档案馆合作 Hidden Treasures 项目），也是动态海报（kinetic poster）的主流语言，与音乐节拍天然合拍。\n视觉特征 基础几何形, 红黄蓝黑限定色, 严格网格对齐, 旋转以几何中心为轴, 节拍驱动的模块化运动\n关键技法 一切运动锚定网格：位移距离=网格模数整数倍，落点必在网格线上\n缓动克制：easeInOutQuad 或干脆匀速，禁用 overshoot——机械感是特征不是缺陷\n节拍驱动：每个几何元素在节拍点瞬时出现/翻转，一拍一个动作，类似我们已做的卡点逻辑\n旋转轴心玩法：绕自身中心、绕边缘顶点、绕画面中心三种交替制造韵律\n生成式变体：Processing/p5.js 用三角函数相位差批量驱动几何阵列（国内动态海报圈主流做法）\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.",
+    "migration": [
+      {
+        "field": "film/cues.json",
+        "how": "调整拍点、几何落位与四次级联波时，同步使用同一节点表组织画面与声音。"
+      },
+      {
+        "field": "film/film.js",
+        "how": "几何坐标、网格模数、色版、海报文字与印刷处理在此定义。"
+      },
+      {
+        "field": "source/audio.py",
+        "how": "读取同目录 source/cues.json 合成极简点击电子节拍与落点音效；调整节点时同步修改画面使用的 film/cues.json。"
+      },
+      {
+        "field": "index.html → MotionKit.mountFilm",
+        "how": "接入本库的时间轴、中文控制条、固定横屏缩放与原片音轨同步。"
+      }
+    ],
+    "demo": "demos/cases/mg-bauhaus/index.html",
+    "patternIds": [
+      "grid-beat-construction",
+      "flip-tile-cascade",
+      "misregistration-lock",
+      "shared-cue-sheet",
+      "film-grain"
+    ],
+    "previewAt": 9.75,
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "原作《KONSTRUKTION · 20 Beats（二十拍构成）》来自 [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)，作者 Vincentwei1021，固定提交 `49052d80bfaf9fa8412cc9710530e5e95a3b8d8c`。代码、提示词、文档和成片按 MIT 许可发布，许可原文见 [LICENSE](film/LICENSE)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "| 字体与字重 | 官方完整文件 | 许可原文 |\n| --- | --- | --- |\n| Poppins Black，900 | [Google Fonts：Poppins-Black.ttf](https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-Black.ttf) | SIL OFL 1.1，[Poppins-OFL.txt](fonts/Poppins-OFL.txt) |\n| Poppins SemiBold，600 | [Google Fonts：Poppins-SemiBold.ttf](https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-SemiBold.ttf) | SIL OFL 1.1，[Poppins-OFL.txt](fonts/Poppins-OFL.txt) |\n| Noto Sans SC，可变字重 100–900，画面使用 700 | [Noto CJK 官方仓库：NotoSansSC-VF.ttf](https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/Variable/TTF/Subset/NotoSansSC-VF.ttf) | SIL OFL 1.1，[NotoSansSC-OFL.txt](fonts/NotoSansSC-OFL.txt) |\n\n字体以官方完整原始文件保存，未转换格式。`fonts/fonts.css` 保留原作对应家族的 `@font-face` 声明，仅修改资源 URL。"
+      },
+      {
+        "scope": "共享纹理",
+        "notes": "`assets/textures/paper/Paper001_4K_color.jpg` 与 `assets/textures/grain/grain_fine_2048.png` 原样取自上述固定提交的 `assets/textures/`。根据原仓库 [README.zh-CN.md 的许可一节](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/README.zh-CN.md#许可)，第三方纸张纹理按 CC0 或公有领域提供，项目自制文件按 MIT 许可提供。"
+      },
+      {
+        "scope": "配乐",
+        "notes": "配乐由原作 `source/audio.py` 使用 VCSL 乐器采样（CC0）合成，`audio/film.m4a` 从原片 `videos/09-bauhaus.mp4` 无损抽取 AAC 音轨。原片及其自制音频采用上述 MIT 许可。VCSL 官方来源：[Versilian Community Sample Library](https://github.com/sgossner/VCSL)。\n\n本案例没有 vendor 包。"
+      }
+    ],
+    "relatedEntries": [
+      {
+        "kind": "material",
+        "id": "mg-styles-15",
+        "note": "提示词与配乐合成库所在素材"
+      }
+    ],
+    "energy": [
+      0.502,
+      0.482,
+      0.423,
+      0.342,
+      0.253,
+      0.217,
+      0.199,
+      0.171,
+      0.172,
+      0.175,
+      0.216,
+      0.229,
+      0.27,
+      0.394,
+      0.463,
+      0.482,
+      0.385,
+      0.273,
+      0.196,
+      0.163,
+      0.191,
+      0.203,
+      0.337,
+      0.555,
+      0.75,
+      0.853,
+      0.818,
+      0.738,
+      0.611,
+      0.633,
+      0.68,
+      0.632,
+      0.444,
+      0.278,
+      0.206,
+      0.181,
+      0.219,
+      0.252,
+      0.231,
+      0.191
+    ],
+    "energyNote": "能量值由 Motion Atlas 依据成片每 0.25 秒的相邻画面帧差（权重 0.6）与音轨 RMS（权重 0.4）计算，各自按本片 95 分位归一，取 40 个等距采样。",
+    "fidelity": "demos/cases/mg-bauhaus/fidelity.md",
+    "licenses": "demos/cases/mg-bauhaus/LICENSES.md",
+    "preview": "previews/cases/mg-bauhaus.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 几何包豪斯接入与保真说明\n\n复刻以公开默认成片为准，作品来源与固定版本见[条目 JSON](../../../entries/cases/mg-bauhaus.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `film/film.js` | 移除 `V5`、`NOLINK`、另一剪辑的中文标题、字体预载与测量；默认圆形、轴心、横线和背面蓝圆持续按原条件绘制，保留全部默认数值与 `mb` 参数。 | 另一版剪辑分支 |\n| `film/film.js` | 移除 `window.linkAt`、元素位置导出及其独占的卡片采样和投影辅助函数、数据。 | 开发工具 |\n| `index.html`、`film/film.js` | 字体样式改为 `fonts/fonts.css`，模块入口为 `./film/film.js`，`BASE` 为 `./`；入口调用 `MotionKit.mountFilm`。 | 路径改写 |\n| `film/film.js` | 原共享纸纹与颗粒改为 `assets/textures/paper/Paper001_4K_color.jpg`、`assets/textures/grain/grain_fine_2048.png`。 | 路径改写 |\n| `fonts/fonts.css` | 保留默认片的 Noto Sans SC、Poppins 900/600 声明，URL 指向本地完整字体文件。 | 路径改写 |\n| `audio.py` → `source/audio.py` | 保存生成原作配乐的脚本，内容字节和内部路径保持不变。 | 移至 source |\n\n原作、字体、纹理与音轨的来源和许可见 [LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html` 中的 `MotionKit.mountFilm` 等待原作模块初始化完成，再通过 `MotionKit.timeline` 调用原作 `window.renderAt(t)`，并用 `MotionKit.expose`、`MotionKit.controls`、`MotionKit.start` 接入本库。尺寸为 1920×1080、30fps、10 秒；Canvas 保持内部像素，通过 `MotionKit.stage` 等比居中，四周黑边，仅提供横屏。\n\n节点读取 `film/cues.json` 的网格起点、事件与四次级联波，控制条使用中文，支持播放、暂停、重播、拖动和倍速。声音默认关闭，开启后播放 `audio/film.m4a`，与跳转、暂停和倍速同步；音轨以 Audio Blob 加载。\n\n`?embed`、`?render` 隐藏控制条；`?render` 关闭自动播放和声音；`?t=秒` 定位。减少动态时显示 9.75 秒并暂停；`previewAt: 9.75` 时套印锁定与纸张位移已结束，字标、几何构成、小字和拍数完整。\n\n## 已接受差异\n\n原作 `film/film.js` 设置 30fps、`motionBlur.samples: 8`、`shutter: 0.5`，即半帧曝光约 16.67ms；`harness/render.mjs` 按每帧八个子帧平均产生运动模糊。页面实时播放与 `?render` 单帧均直接调用原 `renderAt(t)`，没有该外部运动模糊。\n\n## 与原片对照结果\n\n参考 MP4 用 ffmpeg 取帧，本页用 `scripts/shot.mjs` 在 1920×1080 定位截图，左右对照图保存在第一批工作区 `compare/`。\n\n| 时刻 | 逐张结论 |\n| --- | --- |\n| 1.0 秒 | 网格、圆形、文字与构图一致；原片黑色横条右缘有拖影，本页边缘清晰。 |\n| 3.0 秒 | 圆形、三角形、蓝块、横条、轴心与文字的位置、配色一致。 |\n| 5.0 秒 | 圆形、三角形、半圆、竖条与网格的构图和颜色一致。 |\n| 7.5 秒 | 三原色图形、黑底、双色标签与几何位置一致。 |\n| 9.5 秒 | 竖排字标、中德文字形、几何构成与网格落点一致。 |\n\n浏览器验收使用 Edge，服务端口 4328。案例页和独立 Demo 自动播放；拖动可定位，`?t=5&autoplay=0` 停在 5 秒；声音默认关闭，开关与 1.5 倍速播放有效，播放中音轨与画面时刻差约 5ms，暂停同步停止。\n\n\n## 制作依赖与复现\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/09-bauhaus && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "licenses": "# 第三方许可索引\n\n[来源、版本和许可事实](../../../entries/cases/mg-bauhaus.json)\n\n- [film/LICENSE](film/LICENSE)\n- [fonts/Poppins-OFL.txt](fonts/Poppins-OFL.txt)\n- [fonts/NotoSansSC-OFL.txt](fonts/NotoSansSC-OFL.txt)\n\n## 制作依赖\n\n配乐脚本 `source/audio.py` 依赖素材 `demos/materials/mg-styles-15/lib/audio` 的 [mgaudio 与采样](../../materials/mg-styles-15/lib/audio/README.md)，提示词与原作许可随[素材快照](../../materials/mg-styles-15/README.zh-CN.md)保存；脚本读取的时刻表位于 `source/cues.json`。\n\n在仓库外按[素材使用说明](../../../docs/materials/mg-styles-15.md)组装原目录后执行 `cd <复现根>/demos/09-bauhaus && PYTHONUTF8=1 <venv-python> audio.py`，输出 `out/audio.wav`。\n",
+    "prompt": "# 几何包豪斯 · KONSTRUKTION · 20 Beats\n\n## 实现 Prompt\n\nYou are the director, motion designer, engineer and sound designer of ONE 10-second motion-design film.\nThe goal is the most classic, yet most stunning form of this style — award-shortlist / high-end commercial quality. A clean,\ntemplate-looking result is a fail. Benchmarks: Buck, ManvsMachine, Ordinary Folk, Giant Ant, Territory Studio, Apple keynote\nmotion, Pentagram motion identities, top Behance/Motionographer features, top 抖音/B站 designer accounts.\n\n# Style\n几何构成 / 包豪斯 Geometric / Bauhaus Motion\n\n# Output (fixed)\n- 1920×1080, 30 fps, exactly 10.000 s (300 frames), H.264 MP4 with stereo AAC audio (48 kHz), mastered to −14 LUFS\n  integrated, true peak ≤ −1 dBTP. Final file: video.mp4.\n\n# Suggested technical route\nHTML: SVG/Canvas + GSAP on a strict modular grid, beat grid at 120 BPM\n(You may choose a better route if it clearly raises quality; say why.)\n\n# Creative seed\n「包豪斯动态海报」Bauhaus 1919 kinetic poster — mechanical, rational, musical.\n- Cream paper (#F1E9DA), primaries red #E03C31, yellow #F2B705, blue #1E4FA3, black #111; strict modular grid (e.g. 240px modules); every move is an integer number of modules; every landing on a grid line.\n- 120 BPM (0.5 s/beat): each beat a module acts — quarter circles rotate 90° about a corner pivot, semicircles slide one module, triangles flip, squares split; rotation pivots alternate (own centre / corner / frame centre).\n- 0–2s grid lines draw & the first red circle lands; 2–6s the composition assembles into a Kandinsky/Bauhaus poster; 6–8s phase-shifted cascade wave across the grid on the drop; 8–10s freeze into a perfect poster with Swiss typography: \"BAUHAUS\" set vertically in heavy geometric sans + small caps \"FORM · FARBE · FUNKTION\".\n- Easing: power2.inOut or linear — NO overshoot; subtle paper tooth + slight print misregistration allowed.\nSound: minimal techno/click — each flip = a pitched click/blip, kick on quarters.\n\nYou are the director: you may change the concept, copy, story beats and brand names if you find a stronger idea, but the result must remain the CANONICAL, instantly-recognisable form of this style and must hit its signature features below.\n\n# Signature features and key techniques (the result is judged against these)\n圆、三角、矩形在严格网格上做精确的平移、旋转、缩放，三原色+黑白的限定色板，机械理性的秩序美。源自包豪斯与瑞士国际主义平面传统（Adobe 曾与 Bauhaus 档案馆合作 Hidden Treasures 项目），也是动态海报（kinetic poster）的主流语言，与音乐节拍天然合拍。\n视觉特征 基础几何形, 红黄蓝黑限定色, 严格网格对齐, 旋转以几何中心为轴, 节拍驱动的模块化运动\n关键技法 一切运动锚定网格：位移距离=网格模数整数倍，落点必在网格线上\n缓动克制：easeInOutQuad 或干脆匀速，禁用 overshoot——机械感是特征不是缺陷\n节拍驱动：每个几何元素在节拍点瞬时出现/翻转，一拍一个动作，类似我们已做的卡点逻辑\n旋转轴心玩法：绕自身中心、绕边缘顶点、绕画面中心三种交替制造韵律\n生成式变体：Processing/p5.js 用三角函数相位差批量驱动几何阵列（国内动态海报圈主流做法）\n\n# How to work\n1. Treatment. Write down one clear idea: a hook in the first 0.5 s (never open on more than 0.3 s of empty or black), an\n   escalation, one unmistakable hero moment at ~60–75 % of the runtime, and a composed end frame held ~0.8–1.2 s with living\n   micro-motion. Map every signature feature above to a moment. Keep one cue sheet (beats and hit times) that both the\n   picture and the sound read from.\n2. Key frames before motion. Build the look, render stills at 6–10 key times and actually look at them. Each still should be\n   poster-worthy: composition, hierarchy, negative space, type set properly (kerning, line-height, weight contrast, CJK\n   punctuation, ~5 % safe margins). Iterate until nothing looks default, generic, cramped or \"AI-template\".\n3. Motion. Build the choreography and preview at low resolution. Step through the fastest moves frame by frame: spacing,\n   easing, arcs, overlap, anticipation and follow-through, motion blur. No unintended dead spans; the energy follows the music.\n4. Sound. Write genre-correct music and sound design locked to the cue sheet. Check that visual hits land on audio onsets.\n   Master to the output spec.\n5. Final. Render at full resolution (motion blur where apt), then check: exactly 10.00 s, resolution, fps, audio present and at\n   the right loudness, no black frames, no fallback fonts or tofu, no clipped elements at the frame edges, no shimmer on thin\n   lines, no gradient banding. Fix and repeat until you would submit it to a festival.\n6. Write an honest self-critique: what is strongest, what is weakest, what you would do with more time.\n\n# Rules\n- Rendering must be deterministic: every frame is a pure function of time t. Seeded randomness only; physics and particles\n  precomputed or closed-form; no real-time clocks; no state-triggered CSS transitions. A reliable route: a web page that can\n  draw any time t on request, captured frame by frame with a headless browser and encoded with ffmpeg (or a Blender script\n  that renders a PNG sequence).\n- Assets: only CC0 / public domain / OFL / Apache / free-for-commercial-use. Record each source and licence in CREDITS.md.\n  No real brand trademarks; invent brand names.\n- On-screen text must be correct and natural: idiomatic Chinese, proper CJK punctuation, no typos.\n\n# Craft checklist (what a jury looks for)\n- Style authenticity: an expert names the style in one second; every signature technique is present and executed correctly.\n- Motion craft: purposeful easing (no linear unless mechanical by design), overlap and stagger, anticipation and\n  follow-through, arcs, squash and stretch where the style allows, consistent physics, motion blur where apt; transitions\n  carried by elements, not crossfades.\n- Rhythm: hits locked to the music; contrast between busy and calm; no monotony.\n- Design: strong composition, grid, typographic hierarchy, controlled palette; texture and finishing (grain, glow, vignette)\n  only where the style wants it; nothing looks accidental.\n- Technical polish: no jitter (unless intended), no popping, no aliasing, no banding, no fallback fonts, no half-loaded images.\n- Sound: genre-correct, musical, synced, mastered.\n\n# Before you deliver, score yourself honestly\n1–10 on style fidelity, concept wow, motion craft, design & typography, finish & texture, sound & sync, technical\n(6 = template-level, 8 = high-end agency, 9 = award shortlist). Aim for 9; fix whatever scores lowest first.\n\n# Deliver\nvideo.mp4, plus a short report: the concept in two sentences; a beat sheet with timecodes; how each signature feature is\nrealised; the tech route; check numbers (duration, resolution, fps, loudness, true peak); your honest top-3 weaknesses.\n\n## 动效 Token\n\n- **网格模数**：120px；每拍 0.5 秒。\n- **组合转向**：3.25–4.0 秒，12 个 7.5° 棘齿完成 90° 转向。\n- **级联波**：6.0 秒旋转、6.5 秒横向翻牌、7.2 秒列对滑动、7.5 秒向心翻牌。\n- **海报字序**：8.0 秒开始，每 0.125 秒出现一个 BAUHAUS 字母，共 7 个。\n- **套印锁定**：9.5 秒色版锁定，纸张位移在随后两帧归位。\n\n## 制作约束\n\n- 10 秒、1920×1080、30fps；原作 motionBlur 为 8 子帧、快门 0.5。\n- 原作来自 Vincentwei1021/mg-styles-15，作者 Vincentwei1021，固定提交 49052d80bfaf9fa8412cc9710530e5e95a3b8d8c，MIT 许可；完整出处与素材许可见 Demo 内 LICENSES.md。\n\n## 迁移\n\n- `film/cues.json`：调整拍点、几何落位与四次级联波时，同步使用同一节点表组织画面与声音。\n- `film/film.js`：几何坐标、网格模数、色版、海报文字与印刷处理在此定义。\n- `source/audio.py`：读取同目录 source/cues.json 合成极简点击电子节拍与落点音效；调整节点时同步修改画面使用的 film/cues.json。\n- `index.html → MotionKit.mountFilm`：接入本库的时间轴、中文控制条、固定横屏缩放与原片音轨同步。\n\n[打开 Demo](../../demos/cases/mg-bauhaus/index.html) · [在库中查看](../../cases.html#case/mg-bauhaus)\n"
+  },
+  "entrypoint": "demos/cases/mg-bauhaus/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-bauhaus/LICENSES.md",
+      "bytes": 765,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/paper/Paper001_4K_color.jpg",
+      "bytes": 3684106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/audio/film.m4a",
+      "bytes": 426687,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fidelity.md",
+      "bytes": 4011,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/cues.json",
+      "bytes": 3719,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/film.js",
+      "bytes": 35151,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/setup.js",
+      "bytes": 148,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/style.css",
+      "bytes": 172,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-VF.ttf",
+      "bytes": 17773132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-Black.ttf",
+      "bytes": 153440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-SemiBold.ttf",
+      "bytes": 157312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/fonts.css",
+      "bytes": 486,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/index.html",
+      "bytes": 2020,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/audio.py",
+      "bytes": 9344,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/cues.json",
+      "bytes": 3719,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/mg-bauhaus.json",
+      "bytes": 19633,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/mg-bauhaus.jpg",
+      "bytes": 85858,
+      "role": "preview"
+    }
+  ]
+}

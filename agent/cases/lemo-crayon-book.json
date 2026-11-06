@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-crayon-book",
+  "entry": {
+    "id": "lemo-crayon-book",
+    "order": 32,
+    "title": "月亮睡不着 · 蜡笔儿童绘本",
+    "subtitle": "The Moon Can't Sleep",
+    "carriers": [
+      "video"
+    ],
+    "style": "hand-drawn",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "webgl"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "蜡笔儿童绘本",
+      "手绘与绘画",
+      "代码影片"
+    ],
+    "summary": "月亮失眠，数羊失败；女孩爬上逐级画出的梯子，刷水彩显出纸上的白蜡笔星星，再给月亮盖上拼布被。随后镜头拉远到桌上的绘本，绘本再翻到终页。",
+    "focus": "蜡笔防染成为高潮动作；绘画材料本身通过线条抖动、纸齿、梯子与被子推动故事。",
+    "accent": "#d4483c",
+    "background": "#f4efe3",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 43.68,
+    "rhythm": {
+      "duration": 52,
+      "beats": [
+        {
+          "t": 0,
+          "label": "空纸画入",
+          "note": "0–5.6秒，空纸画入。"
+        },
+        {
+          "t": 5.6,
+          "label": "推近月亮",
+          "note": "5.6–8.2秒，推近月亮。"
+        },
+        {
+          "t": 8.2,
+          "label": "数羊失眠",
+          "note": "8.2–14.9秒，数羊失眠。"
+        },
+        {
+          "t": 14.9,
+          "label": "沿视线发现",
+          "note": "14.9–17.6秒，沿视线发现。"
+        },
+        {
+          "t": 17.6,
+          "label": "月亮与女孩",
+          "note": "17.6–19.8秒，月亮与女孩。"
+        },
+        {
+          "t": 19.8,
+          "label": "画梯攀爬",
+          "note": "19.8–27.1秒，画梯攀爬。"
+        },
+        {
+          "t": 27.1,
+          "label": "水彩显星",
+          "note": "27.1–37.4秒，水彩显星。"
+        },
+        {
+          "t": 37.4,
+          "label": "入睡收束",
+          "note": "37.4–44.8秒，入睡收束。"
+        },
+        {
+          "t": 44.8,
+          "label": "绘本拉远翻页",
+          "note": "44.8–52秒，绘本拉远翻页。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 5.6,
+        "to": 0.3,
+        "label": "空纸画入",
+        "from": 0.25
+      },
+      {
+        "t0": 5.6,
+        "t1": 8.2,
+        "to": 0.5,
+        "label": "推近月亮",
+        "from": 0.3
+      },
+      {
+        "t0": 8.2,
+        "t1": 14.9,
+        "to": 0.25,
+        "label": "数羊失眠",
+        "from": 0.5
+      },
+      {
+        "t0": 14.9,
+        "t1": 17.6,
+        "to": 0.3,
+        "label": "沿视线发现",
+        "from": 0.25
+      },
+      {
+        "t0": 17.6,
+        "t1": 19.8,
+        "to": 0.55,
+        "label": "月亮与女孩",
+        "from": 0.3
+      },
+      {
+        "t0": 19.8,
+        "t1": 27.1,
+        "to": 0.8,
+        "label": "画梯攀爬",
+        "from": 0.55
+      },
+      {
+        "t0": 27.1,
+        "t1": 37.4,
+        "to": 0.2,
+        "label": "水彩显星",
+        "from": 0.8
+      },
+      {
+        "t0": 37.4,
+        "t1": 44.8,
+        "to": 0.1,
+        "label": "入睡收束",
+        "from": 0.2
+      },
+      {
+        "t0": 44.8,
+        "t1": 52,
+        "to": 0.03,
+        "label": "绘本拉远翻页",
+        "from": 0.1
+      }
+    ],
+    "energyNote": "时段取自DEMO.md的Shots与源码镜头表；0–1为按画面动作、音乐密度和静默作出的相对编辑标注。",
+    "observations": [
+      "白蜡笔星星与画页同时存在，水彩经过时因防染露出亮形。",
+      "三道水彩带交错左右刷过，重叠覆盖到草地线。",
+      "线条每两帧重画，纸齿固定在画页坐标，背景填色保持静止。",
+      "44.4秒后BOIL.amp降为0.55，46秒起回到桌上绘本，47.6秒翻页。"
+    ],
+    "composition": {
+      "color": "暖纸 #f4efe3、靛蓝轮廓 #2d3263、黄 #f5c63c、红 #d4483c、天蓝 #79acd9与白蜡 #fbfaf4，夜色只用群青水彩。",
+      "typography": "Patrick Hand 400作字幕和书页文字，Gaegu 400/700作手写标题和终页。",
+      "layout": "1920×1080横屏、24fps；构图与字幕沿用原作。",
+      "imagery": "Canvas2D蜡笔丝带、锯齿填色和替换姿势，经WebGL2纸齿附着、防染、凹凸与灯光合成。",
+      "motion": "12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书，再用条带仿射翻页。",
+      "sound": "原作音乐盒、玩具钢琴、长笛、单簧管与钟琴摇篮曲，Kokoro af_heart旁白，蜡笔、水彩、毛毡与翻页拟音。",
+      "rhythm": "蜡笔防染成为高潮动作；绘画材料本身通过线条抖动、纸齿、梯子与被子推动故事。",
+      "coherence": "材质、动作和声音共用原作时间表。"
+    },
+    "layers": [
+      {
+        "name": "材料与场景",
+        "role": "Canvas2D蜡笔丝带、锯齿填色和替换姿势，经WebGL2纸齿附着、防染、凹凸与灯光合成。"
+      },
+      {
+        "name": "角色与动作",
+        "role": "12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书，再用条带仿射翻页。"
+      },
+      {
+        "name": "文字与声音",
+        "role": "Patrick Hand 400作字幕和书页文字，Gaegu 400/700作手写标题和终页。 原作音乐盒、玩具钢琴、长笛、单簧管与钟琴摇篮曲，Kokoro af_heart旁白，蜡笔、水彩、毛毡与翻页拟音。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#f4efe3",
+        "#2d3263",
+        "#f5c63c",
+        "#d4483c",
+        "#79acd9",
+        "#fbfaf4"
+      ],
+      "type": "Patrick Hand 400作字幕和书页文字，Gaegu 400/700作手写标题和终页。",
+      "motion": [
+        {
+          "name": "镜头与节拍",
+          "value": "12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书与条带仿射翻页。"
+        }
+      ]
+    },
+    "useCases": [
+      "睡前绘本",
+      "儿童学习故事",
+      "温柔告别短片"
+    ],
+    "avoid": [
+      "需要写实摄影或自由三维转面的画面"
+    ],
+    "constraints": [
+      "水彩只覆盖画页与背景，角色在水彩后合成。",
+      "纸齿固定在画页，缩放时交叉淡化噪声倍频。",
+      "白蜡笔图案与水彩使用同一覆盖场。"
+    ],
+    "migration": [
+      {
+        "field": "film/film.js → LINES / camT / RUNG_T",
+        "how": "修改故事文案、相机与画梯动作。"
+      },
+      {
+        "field": "film/world.js → STARS / BANDS；film/gl.js → wash",
+        "how": "修改隐藏图形、刷色时段与蜡笔防染强度。"
+      }
+    ],
+    "prompt": "制作“月亮睡不着 · 蜡笔儿童绘本”对应的时间线影片。月亮失眠，数羊失败；女孩爬上逐级画出的梯子，用水彩刷显纸上白蜡笔星星，再给月亮盖上拼布被，镜头拉远成桌上的绘本并翻到终页。蜡笔防染成为高潮动作，线条抖动、纸齿、梯子与被子都由绘画材料本身推动故事。视觉与动作：Canvas2D蜡笔丝带、锯齿填色和替换姿势，经WebGL2纸齿附着、防染、凹凸与灯光合成。12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书与条带仿射翻页。配色：暖纸 #f4efe3、靛蓝轮廓 #2d3263、黄 #f5c63c、红 #d4483c、天蓝 #79acd9与白蜡 #fbfaf4，夜色只用群青水彩。文字：Patrick Hand 400作字幕和书页文字，Gaegu 400/700作手写标题和终页。声音：原作音乐盒、玩具钢琴、长笛、单簧管与钟琴摇篮曲，Kokoro af_heart旁白，蜡笔、水彩、毛毡与翻页拟音。直接使用demos/cases/lemo-crayon-book/film/中的原作绘制与时间表，按源码迁移字段修改，支持MotionKit播放、暂停和逐帧定位，声音默认关闭。",
+    "demo": "demos/cases/lemo-crayon-book/index.html",
+    "patternIds": [
+      "wax-resist-wash-reveal",
+      "cel-line-boil",
+      "anchor-pullback-phone"
+    ],
+    "fidelity": "demos/cases/lemo-crayon-book/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/crayon-book",
+      "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+      "path": "styles/crayon-book/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+      "notes": "代码与文档MIT；成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与示范制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/crayon-book"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/crayon-book.mp4"
+      },
+      {
+        "label": "素材与声音署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/crayon-book/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/crayon-book)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "原作配乐、采样、拟音与旁白来源见[audio/CREDITS](audio/CREDITS)，许可原文见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "家族与字重见tokens.type，字体与OFL原文在fonts/，取得方法见[source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-crayon-book/LICENSES.md",
+    "preview": "previews/cases/lemo-crayon-book.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 月亮睡不着 · 蜡笔儿童绘本 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-crayon-book.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 从case-native模板接入同源iframe，预载字体、运行数据与音轨，等待load及READY后按原fps执行render(t)。 | 接入MotionKit舞台、时间线和声音。 |\n| `film/index.html` | 字体样式指向`../fonts/fonts.css`。 | 本库字体路径接入。 |\n| `film/index.html`、`film/core/lib.js` | import map把`/core/lib.js`映射到本案例内的固定提交原文。 | 保留原模块导入与共享函数。 |\n| `audio/film.m4a` | 从Release成片以`-vn -c:a copy`流复制。 | 同步正式混音。 |\n| `fonts/` | 按原字体家族、字重与字符范围补齐上游未入Git的字体，附OFL原文。 | 取得运行依赖。 |\n| `source/` | 保存配乐、拟音、旁白与字幕工具、事件数据及模型页。 | 保留制作依赖与重建入口。 |\n| `stills/` | 原作风格帧留在来源，本库预览由capture生成。 | 成品绘制不读取静帧。 |\n\n`film/`的绘制、着色器、几何、数据表与时间表保持固定提交内容；复制的文本按任务要求统一为LF。许可索引见[LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n使用`MotionKit.load.prepare`预载，等待同源iframe的load事件与`window.READY === true`，再以`MotionKit.mountFilm`接入1920×1080横屏、24fps、52.000000秒舞台。`renderAt(t)`执行并等待`upstream.render(Math.round(t*24)/24)`。画面由上游直接绘制，音轨默认关闭。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时暂停在条目的`previewAt`。镜头标记取DEMO.md的Shots及源码时间表。\n\n## 已接受差异\n\n蜡笔与纸齿的高频覆盖在原始PNG和Release间不同。`film/gl.js:11–29`以浮点散列和画页坐标生成纸齿并在缩放时混合倍频，`:66–80`以压力阈值决定蜡覆盖，`:84–107`据覆盖场抑制水彩，`:112–135`用纸齿差分做凹凸与蜡光。`source/build.sh`、`source/tools/mux.sh`的CRF26编码进一步改变细粒。人物、构图与字幕保持相符。\n\n第563帧原始SSIM为0.890348；仅在测量中同作2px／6px低通后为0.985626／0.997286。1048帧6px低通为0.997264。D3D11与SwiftShader的563帧互比0.992932；0帧互比0.790339，纸齿噪声对后端的输出变化可见。低通结果用于定位差异，正式两列不使用低通。\n\n| 排除项 | 对照数字 |\n| --- | --- |\n| 参考取帧 | 563帧整片精确解码与快速定位后按帧号提取互比1.000000。 |\n| 时间映射 | 本库562／563／564帧对参考563帧为0.589054／0.890348／0.587278，563最高。 |\n| 适配与就绪 | 原作film入口与适配入口互比1.000000；重新开页和重复定位与首次截图均为1.000000。 |\n| 素材与字体 | 画面由代码生成，网络无缺失，字体均loaded；去掉底部字幕区后的6px低通为0.997453。 |\n| 后端 | 563帧D3D11为0.890348，SwiftShader为0.891716；1048帧分别为0.908367／0.896709。 |\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，视口1920×1080、DPR1；WebGL为Intel Iris Xe／ANGLE Direct3D11。等待`__motion.ready`并按视频帧号定位；参考PNG从Release相同帧号精确提取。\n\n**原始**列比较参考PNG与本库PNG；**编码链**列将本库PNG放入独立测量页，以Chrome截图JPEG95，再按上游链编解码：24fps → libx264 medium CRF14 yuv420p → libx264 slow CRF26、无额外颗粒。单张I帧测量，颗粒从该测量帧初始化；两图转yuv444p取ffmpeg SSIM All。编码只发生在过程目录。\n\n`compare-N.png`左参考、右本库原始PNG，`compare-encoded-N.png`左参考、右编码链PNG。采样覆盖开头、frame_sec、Shots每段中点与片尾前1秒，按帧号去重。\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.989111 | 0.950232 | 开头 |\n| 2 | 1048 | 43.680000 | 43.666667 | 0.908367 | 0.917247 | frame_sec |\n| 3 | 67 | 2.800000 | 2.791667 | 0.978432 | 0.944733 | Shots · 空纸画入中点 |\n| 4 | 166 | 6.900000 | 6.916667 | 0.912454 | 0.919897 | Shots · 推近月亮中点 |\n| 5 | 277 | 11.550000 | 11.541667 | 0.953532 | 0.933657 | Shots · 数羊失眠中点 |\n| 6 | 390 | 16.250000 | 16.250000 | 0.914362 | 0.923575 | Shots · 沿视线发现中点 |\n| 7 | 449 | 18.700000 | 18.708333 | 0.936997 | 0.914803 | Shots · 月亮与女孩中点 |\n| 8 | 563 | 23.450000 | 23.458333 | 0.890348 | 0.919043 | Shots · 画梯攀爬中点 |\n| 9 | 774 | 32.250000 | 32.250000 | 0.946494 | 0.937854 | Shots · 水彩显星中点 |\n| 10 | 986 | 41.100000 | 41.083333 | 0.920040 | 0.943891 | Shots · 入睡收束中点 |\n| 11 | 1162 | 48.400000 | 48.416667 | 0.907045 | 0.922800 | Shots · 绘本拉远翻页中点 |\n| 12 | 1224 | 51.000000 | 51.000000 | 0.947191 | 0.939569 | 片尾前1秒 |\n\n12帧：原始最低 **0.890348**、最高 **0.989111**，3/12达到0.95；编码链最低 **0.914803**、最高 **0.950232**，1/12达到0.95。\n\n0.95以下的帧：\n\n| 帧号／秒 | 原始 | 编码链 | 代码位置与原因 |\n| --- | --- | --- | --- |\n| 1048／43.666667 | 0.908367 | 0.917247 | film/gl.js:11–29的纸坐标噪声、66–80的蜡附着阈值、112–135的纸齿凹凸、gl.js:84–107的防染水彩；source/tools/mux.sh的CRF26改变细粒。 |\n| 67／2.791667 | 0.978432 | 0.944733 | 原始达到0.95；source/build.sh与source/tools/mux.sh的JPEG95、CRF14→26改变高频蜡粒与纸齿。 |\n| 166／6.916667 | 0.912454 | 0.919897 | film/gl.js:11–29的纸坐标噪声、66–80的蜡附着阈值、112–135的纸齿凹凸；source/tools/mux.sh的CRF26改变细粒。 |\n| 277／11.541667 | 0.953532 | 0.933657 | 原始达到0.95；source/build.sh与source/tools/mux.sh的JPEG95、CRF14→26改变高频蜡粒与纸齿。 |\n| 390／16.250000 | 0.914362 | 0.923575 | film/gl.js:11–29的纸坐标噪声、66–80的蜡附着阈值、112–135的纸齿凹凸；source/tools/mux.sh的CRF26改变细粒。 |\n| 449／18.708333 | 0.936997 | 0.914803 | film/gl.js:11–29的纸坐标噪声、66–80的蜡附着阈值、112–135的纸齿凹凸；source/tools/mux.sh的CRF26改变细粒。 |\n| 563／23.458333 | 0.890348 | 0.919043 | film/gl.js:11–29的纸坐标噪声、66–80的蜡附着阈值、112–135的纸齿凹凸；source/tools/mux.sh的CRF26改变细粒。 |\n| 774／32.250000 | 0.946494 | 0.937854 | film/gl.js:11–29的纸坐标噪声、66–80的蜡附着阈值、112–135的纸齿凹凸、gl.js:84–107的防染水彩；source/tools/mux.sh的CRF26改变细粒。 |\n| 986／41.083333 | 0.920040 | 0.943891 | film/gl.js:11–29的纸坐标噪声、66–80的蜡附着阈值、112–135的纸齿凹凸、gl.js:84–107的防染水彩；source/tools/mux.sh的CRF26改变细粒。 |\n| 1162／48.416667 | 0.907045 | 0.922800 | film/gl.js:11–29的纸坐标噪声、66–80的蜡附着阈值、112–135的纸齿凹凸；film/end.js:21起的绘本与桌面灯光合成；source/tools/mux.sh的CRF26改变细粒。 |\n| 1224／51.000000 | 0.947191 | 0.939569 | film/gl.js:11–29的纸坐标噪声、66–80的蜡附着阈值、112–135的纸齿凹凸；film/end.js:21起的绘本与桌面灯光合成；source/tools/mux.sh的CRF26改变细粒。 |\n\n声音：成片与本库音轨解码为48kHz单声道，每10ms的RMS包络在±500ms内互相关；最佳偏移 **0ms**，相关系数 **1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-crayon-book.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者Lemomo。\n- [audio/film.m4a](audio/film.m4a)从[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/crayon-book.mp4)以`-c:a copy`流复制，混音保持原样；[CC BY 4.0原文](audio/CC-BY-4.0.txt)，署名LemoLab。\n- 配乐为上游原创，采样沿用VSCO2CE、VCSL、Karoryfer或FreePats的[CC0 1.0](audio/CC0-1.0.txt)，逐项来源与所用乐器见[audio/CREDITS](audio/CREDITS)。拟音由上游代码生成。\n- Kokoro TTS语音模型：[Apache-2.0](audio/Apache-2.0.txt)，声音与版本见[audio/CREDITS](audio/CREDITS)。\n- 字体SIL OFL 1.1：[caveatbrush_OFL.txt](fonts/caveatbrush_OFL.txt)、[gaegu_OFL.txt](fonts/gaegu_OFL.txt)、[gochihand_OFL.txt](fonts/gochihand_OFL.txt)、[patrickhand_OFL.txt](fonts/patrickhand_OFL.txt)、[shortstack_OFL.txt](fonts/shortstack_OFL.txt)、[sniglet_OFL.txt](fonts/sniglet_OFL.txt)。\n- 原作完整署名：[source/CREDITS](source/CREDITS)。\n",
+    "prompt": "# 月亮睡不着 · 蜡笔儿童绘本\n\n## 实现 Prompt\n\n制作“月亮睡不着 · 蜡笔儿童绘本”对应的时间线影片。月亮失眠，数羊失败；女孩爬上逐级画出的梯子，用水彩刷显纸上白蜡笔星星，再给月亮盖上拼布被，镜头拉远成桌上的绘本并翻到终页。蜡笔防染成为高潮动作，线条抖动、纸齿、梯子与被子都由绘画材料本身推动故事。视觉与动作：Canvas2D蜡笔丝带、锯齿填色和替换姿势，经WebGL2纸齿附着、防染、凹凸与灯光合成。12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书与条带仿射翻页。配色：暖纸 #f4efe3、靛蓝轮廓 #2d3263、黄 #f5c63c、红 #d4483c、天蓝 #79acd9与白蜡 #fbfaf4，夜色只用群青水彩。文字：Patrick Hand 400作字幕和书页文字，Gaegu 400/700作手写标题和终页。声音：原作音乐盒、玩具钢琴、长笛、单簧管与钟琴摇篮曲，Kokoro af_heart旁白，蜡笔、水彩、毛毡与翻页拟音。直接使用demos/cases/lemo-crayon-book/film/中的原作绘制与时间表，按源码迁移字段修改，支持MotionKit播放、暂停和逐帧定位，声音默认关闭。\n\n## 动效 Token\n\n- **镜头与节拍**：12fps线条重画与替换动作，24fps相机和水彩前沿；画出梯子、涂上被子、拉远到书与条带仿射翻页。\n\n## 制作约束\n\n- 水彩只覆盖画页与背景，角色在水彩后合成。\n- 纸齿固定在画页，缩放时交叉淡化噪声倍频。\n- 白蜡笔图案与水彩使用同一覆盖场。\n\n## 迁移\n\n- `film/film.js → LINES / camT / RUNG_T`：修改故事文案、相机与画梯动作。\n- `film/world.js → STARS / BANDS；film/gl.js → wash`：修改隐藏图形、刷色时段与蜡笔防染强度。\n\n[打开 Demo](../../demos/cases/lemo-crayon-book/index.html) · [在库中查看](../../cases.html#case/lemo-crayon-book)\n"
+  },
+  "entrypoint": "demos/cases/lemo-crayon-book/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-crayon-book/LICENSES.md",
+      "bytes": 1116,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/CREDITS",
+      "bytes": 1034,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/film.m4a",
+      "bytes": 1685306,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fidelity.md",
+      "bytes": 7740,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/chars.js",
+      "bytes": 32010,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/crayon.js",
+      "bytes": 13323,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/end.js",
+      "bytes": 15113,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/film.js",
+      "bytes": 16611,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/gl.js",
+      "bytes": 12352,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/index.html",
+      "bytes": 460,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/main.js",
+      "bytes": 904,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/pal.js",
+      "bytes": 899,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/rig.js",
+      "bytes": 2840,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/world.js",
+      "bytes": 12758,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/caveatbrush_CaveatBrush-Regular.ttf",
+      "bytes": 295568,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/caveatbrush_OFL.txt",
+      "bytes": 4351,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/fonts.css",
+      "bytes": 757,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gaegu_Gaegu-Bold.ttf",
+      "bytes": 2962664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gaegu_Gaegu-Regular.ttf",
+      "bytes": 3165816,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gaegu_OFL.txt",
+      "bytes": 4344,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gochihand_GochiHand-Regular.ttf",
+      "bytes": 37352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gochihand_OFL.txt",
+      "bytes": 4423,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/patrickhand_OFL.txt",
+      "bytes": 4376,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/patrickhand_PatrickHand-Regular.ttf",
+      "bytes": 214772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/shortstack_OFL.txt",
+      "bytes": 4401,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/shortstack_ShortStack-Regular.ttf",
+      "bytes": 68152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/sniglet_OFL.txt",
+      "bytes": 4499,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/sniglet_Sniglet-Regular.ttf",
+      "bytes": 75212,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/index.html",
+      "bytes": 2270,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/CREDITS",
+      "bytes": 1034,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/README.md",
+      "bytes": 4028,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/build.sh",
+      "bytes": 1223,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/events.json",
+      "bytes": 8635,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/lines.json",
+      "bytes": 723,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/mix.py",
+      "bytes": 14959,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/music/score.json",
+      "bytes": 404,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/music/score.py",
+      "bytes": 13914,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/sheet.js",
+      "bytes": 7994,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/subs.json",
+      "bytes": 583,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/subs.mjs",
+      "bytes": 702,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/test.js",
+      "bytes": 2713,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/tools/mux.sh",
+      "bytes": 1240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/voices/dur.json",
+      "bytes": 98,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/voices/words.json",
+      "bytes": 1164,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-crayon-book.json",
+      "bytes": 9634,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-crayon-book.jpg",
+      "bytes": 202143,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "karaoke-word-fill",
+  "order": 173,
+  "title": "逐词卡拉 OK 歌词",
+  "types": [
+    "type-motion",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "renderer": "gpu",
+  "summary": "墨紫笔刷底在底部展开，奶油白歌词按字符进度逐词从左到右填为赭黄，句尾收回。",
+  "mechanism": "lyrics.js 的 LY 保存逐句起止与文字；karaoke 用整句实测宽度加 110px 生成居中的笔刷底。drawKaraokeText 把句子拆词，以非空格字符总数计算 sung，再按每个词已唱比例裁切填色；逐词高亮由句内字符长度推导。",
+  "trigger": "歌曲时刻处于 LY 中某句 [a,b) 区间，且底板 grow≥.85 时绘字。",
+  "effect": "字幕从奶油白变成赭黄；笔刷底先展开再收回，歌词居中固定在画面下沿，空隙处不显示。",
+  "timing": [
+    {
+      "name": "底板入出场",
+      "value": "film/src/timeline.js:93–102：grow=easeOut((t-a)/.18)*(1-ease((t-(b-.12))/.12))；进入 .18 秒，退出 .12 秒。"
+    },
+    {
+      "name": "句内填色",
+      "value": "film/src/timeline.js:104–118：singDur=min(b-a-.1,.45+txt.length*.075)；sung=clamp((t-a)/singDur)*非空格字符数；f=clamp((sung-done)/w.length)。"
+    },
+    {
+      "name": "重放区间",
+      "value": "原片23–30秒，巧思总时长7秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "字体与位置",
+      "value": "film/src/timeline.js:96/98/107/111：800 50px Shantell Sans；中心 x=960，底板 y0=978，高约92px；文字基线 y=1022。"
+    },
+    {
+      "name": "颜色与合成",
+      "value": "film/src/timeline.js:100/113–114：PAL.ink washOp=225、PAL.violet fillOp=60；字底 PAL.cream #FFF5E2，高亮 PAL.ochre #E8AA38；裁切宽 ws[i]*f+2。"
+    },
+    {
+      "name": "歌词数据",
+      "value": "film/src/lyrics.js:2–7：LY=[start,end,text]；23–24.4、24.5–26.4、26.5–27.9、28–29.4、29.5–33.4 秒。"
+    }
+  ],
+  "useCases": [
+    "音乐录像的歌词跟读",
+    "需要保持整句可读又提示演唱进度的字幕"
+  ],
+  "avoid": [
+    "需要逐音节实测对齐的字幕",
+    "将主角面孔放在歌词底带"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "brush-wipe-chapter-break",
+      "escalating-chorus-meter"
+    ],
+    "conflicts": []
+  },
+  "prompt": "复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“逐词卡拉 OK 歌词”，总时长7秒。lyrics.js 的 LY 保存逐句起止与文字；karaoke 用整句实测宽度加 110px 生成居中的笔刷底。drawKaraokeText 把句子拆词，以非空格字符总数计算 sung，再按每个词已唱比例裁切填色；逐词高亮由句内字符长度推导。 film/src/timeline.js:96/98/107/111：800 50px Shantell Sans；中心 x=960，底板 y0=978，高约92px；文字基线 y=1022。 film/src/timeline.js:100/113–114：PAL.ink washOp=225、PAL.violet fillOp=60；字底 PAL.cream #FFF5E2，高亮 PAL.ochre #E8AA38；裁切宽 ws[i]*f+2。 film/src/lyrics.js:2–7：LY=[start,end,text]；23–24.4、24.5–26.4、26.5–27.9、28–29.4、29.5–33.4 秒。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。",
+  "demo": "demos/patterns/karaoke-word-fill/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "pdoom-video"
+    }
+  ],
+  "previewAt": 1,
+  "markers": [
+    {
+      "t": 0,
+      "label": "P(doom) 手绘 MV · 23–30秒"
+    }
+  ],
+  "sound": {
+    "description": "原始 MP3 按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#F3EBDC",
+      "#2B2233",
+      "#D97757",
+      "#A84D33",
+      "#F2A283",
+      "#1F2550",
+      "#2F3C7A",
+      "#E27A92",
+      "#E8AA38",
+      "#6E9F58",
+      "#3A9C98",
+      "#7B5CA8",
+      "#FFF5E2",
+      "#8EC3E6"
+    ],
+    "type": "Permanent Marker 400；Shantell Sans 800。"
+  },
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments",
+      "how": "设置原片起止时刻，画面与音轨使用相同映射。"
+    },
+    {
+      "field": "index.html 内联配置 → markers / reduced",
+      "how": "设置巧思相对时间轴节点与减少动态的停留时刻。"
+    }
+  ]
+}

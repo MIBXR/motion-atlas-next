@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-art-deco",
+  "entry": {
+    "id": "lemo-art-deco",
+    "order": 42,
+    "title": "星光饭店的午夜 · 装饰艺术",
+    "subtitle": "Midnight at the Starlight Hotel",
+    "carriers": [
+      "video"
+    ],
+    "style": "graphic-type",
+    "purpose": "story",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "装饰艺术",
+      "图形与排版",
+      "代码影片"
+    ],
+    "summary": "1930年除夕，门童赶在午夜前把一封信送上星光饭店顶楼；电梯故障后他爬楼、穿过厨房，把乐谱交给指挥，十二声钟响逐字点亮灯牌。",
+    "focus": "中轴门扇开合完成转场，几何建筑、金属刻线与对称的机械动作统一画面风格；扇舞最终锁成十二点钟面。",
+    "accent": "#C9A24B",
+    "background": "#0d0b09",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 17.52,
+    "rhythm": {
+      "duration": 58.375,
+      "bpm": 116,
+      "beats": [
+        {
+          "t": 0,
+          "label": "金线开场",
+          "note": "金线开场"
+        },
+        {
+          "t": 5.172413793103448,
+          "label": "拱门中轴开门",
+          "note": "拱门中轴开门"
+        },
+        {
+          "t": 6.206896551724139,
+          "label": "仰看目标",
+          "note": "仰看目标"
+        },
+        {
+          "t": 12.413793103448278,
+          "label": "旋转门换景",
+          "note": "旋转门换景"
+        },
+        {
+          "t": 14.482758620689657,
+          "label": "电梯故障与决心",
+          "note": "电梯故障与决心"
+        },
+        {
+          "t": 18.10344827586207,
+          "label": "楼梯门换景",
+          "note": "楼梯门换景"
+        },
+        {
+          "t": 18.620689655172416,
+          "label": "剖楼爬阶",
+          "note": "剖楼爬阶"
+        },
+        {
+          "t": 30.981266771531892,
+          "label": "厨房门换景",
+          "note": "厨房门换景"
+        },
+        {
+          "t": 33.15517981501015,
+          "label": "午夜前静默",
+          "note": "午夜前静默"
+        },
+        {
+          "t": 35.86,
+          "label": "十二钟点亮灯牌",
+          "note": "十二钟点亮灯牌"
+        },
+        {
+          "t": 42.06689655172414,
+          "label": "扇舞锁成钟面",
+          "note": "扇舞锁成钟面"
+        },
+        {
+          "t": 48.273793103448284,
+          "label": "拉远全城",
+          "note": "拉远全城"
+        },
+        {
+          "t": 52.411724137931046,
+          "label": "电梯与片尾",
+          "note": "电梯与片尾"
+        },
+        {
+          "t": 53.446206896551736,
+          "label": "电梯门合拢",
+          "note": "电梯门合拢"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 6.206896551724139,
+        "from": 0.15,
+        "to": 0.65,
+        "label": "金线与拱门"
+      },
+      {
+        "t0": 6.206896551724139,
+        "t1": 12.413793103448278,
+        "from": 0.45,
+        "to": 0.55,
+        "label": "街面仰望"
+      },
+      {
+        "t0": 12.413793103448278,
+        "t1": 18.620689655172416,
+        "from": 0.55,
+        "to": 0.2,
+        "label": "大厅故障"
+      },
+      {
+        "t0": 18.620689655172416,
+        "t1": 26.198658075879717,
+        "from": 0.6,
+        "to": 0.9,
+        "label": "爬楼加速"
+      },
+      {
+        "t0": 26.198658075879717,
+        "t1": 31.41604938022754,
+        "from": 0.75,
+        "to": 0.85,
+        "label": "厨房穿行"
+      },
+      {
+        "t0": 31.41604938022754,
+        "t1": 33.15517981501015,
+        "from": 0.85,
+        "to": 0.8,
+        "label": "冲上屋顶"
+      },
+      {
+        "t0": 33.15517981501015,
+        "t1": 35.86,
+        "from": 0.25,
+        "to": 0.08,
+        "label": "午夜前静默"
+      },
+      {
+        "t0": 35.86,
+        "t1": 42.06689655172414,
+        "from": 0.4,
+        "to": 1,
+        "label": "十二钟点灯"
+      },
+      {
+        "t0": 42.06689655172414,
+        "t1": 48.273793103448284,
+        "from": 0.95,
+        "to": 0.8,
+        "label": "扇舞钟面"
+      },
+      {
+        "t0": 48.273793103448284,
+        "t1": 52.411724137931046,
+        "from": 0.8,
+        "to": 0.6,
+        "label": "全城回望"
+      },
+      {
+        "t0": 52.411724137931046,
+        "t1": 58.375,
+        "from": 0.4,
+        "to": 0.08,
+        "label": "电梯与片尾"
+      }
+    ],
+    "energyNote": "段落取自上游DEMO.md Shots与作品时间表；0–1数值按画面密度、配乐与静默作相对编辑标注。",
+    "observations": [
+      "中轴门扇开合完成转场，几何建筑、金属刻线与对称的机械动作统一画面风格；扇舞最终锁成十二点钟面。",
+      "人物12fps抽帧，镜头与金线24fps；门扇从中轴开合，八名扇舞者按八分音符展开，并在俯拍中组成钟面。",
+      "金线、漆面、对称机械动作与钟表共同承载倒计时；信中的歌曲在终段完整奏出。"
+    ],
+    "composition": {
+      "color": "暖黑#0d0b09、漆黑#060504，金#C9A24B与象牙#F2E8D5；勃艮第红#8E1B2E主角，祖母绿#1D6B57扇面。",
+      "layout": "1920×1080、24fps；固定中轴、阶梯拱门、建筑剖面、单点大厅与双点屋顶透视。",
+      "imagery": "Canvas2D绘制金属带状渐变、空气笔硬边体块、人物FK骨架和从字形骨架采样的灯泡。",
+      "motion": "人物12fps抽帧，镜头与金线24fps；门扇从中轴开合，八名扇舞者按八分音符展开，并在俯拍中组成钟面。",
+      "sound": "Kokoro bm_fable播音员和am_puck门童；Salamander钢琴、管弦与低音采样，钟、继电器、纸、托盘和门拟音。",
+      "rhythm": "116BPM狐步，经16拍加速到138BPM查尔斯顿；午夜静默后十二钟在116网格上点灯，随后全乐队奏主题。",
+      "coherence": "金线、漆面、对称机械动作与钟表共同承载倒计时；信中的歌曲在终段完整奏出。",
+      "typography": "Limelight标题、Poiret One灯牌与数字、Josefin Sans 400/600/700字幕标签、Italiana罗马数字。"
+    },
+    "layers": [
+      {
+        "name": "建筑",
+        "role": "塔楼、大厅、楼梯、厨房与屋顶。"
+      },
+      {
+        "name": "人物与道具",
+        "role": "红制服门童、信、乐队、扇舞者。"
+      },
+      {
+        "name": "金线与灯泡",
+        "role": "金属描线、灯牌、钟表、字幕与门扇转场。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#0d0b09",
+        "#060504",
+        "#C9A24B",
+        "#F2E8D5",
+        "#8E1B2E",
+        "#1D6B57"
+      ],
+      "type": "Limelight标题、Poiret One灯牌与数字、Josefin Sans 400/600/700字幕标签、Italiana罗马数字。",
+      "motion": [
+        {
+          "name": "中轴门扇",
+          "value": "film/film.js:44–65、87–109：splitOpen把旧镜分成左右960px门扇，以1−e水平缩短并加边缘阴影。"
+        },
+        {
+          "name": "扇面钟阵",
+          "value": "film/shots_misc.js:83–144：8人按B/2开扇；BALL2到clockForm插值站位、朝向与大小，前两人成为指针。"
+        }
+      ]
+    },
+    "useCases": [
+      "饭店与庆典宣传",
+      "倒计时片头",
+      "典礼邀请影片"
+    ],
+    "avoid": [
+      "需要真人实拍或摄影素材作为主画面的作品"
+    ],
+    "constraints": [
+      "修改字体与文案时，按原作的字体载入方式和子集范围同步取得资源。",
+      "图形、着色器与时间线通过film内原作render(t)绘制，音轨沿用成片混音。"
+    ],
+    "migration": [
+      {
+        "field": "film/timeline.js",
+        "how": "修改节奏、铃声、门扇与舞蹈节点。"
+      },
+      {
+        "field": "film/engine/deco.js / chars.js",
+        "how": "修改配色、金属质感和人物。"
+      },
+      {
+        "field": "film/engine/bulbs.js / scenes/roof.js",
+        "how": "修改灯牌文字、灯泡与点亮顺序。"
+      }
+    ],
+    "prompt": "制作一支装饰艺术代码影片。1930年除夕，门童赶在午夜前把一封信送上星光饭店顶楼；电梯故障后他爬楼、穿过厨房，把乐谱交给指挥，十二声钟响逐字点亮灯牌。中轴门扇开合承担转场，几何建筑、金属刻线与机械对称保持统一；扇舞最终锁成十二点钟面。暖黑#0d0b09、漆黑#060504，金#C9A24B与象牙#F2E8D5；勃艮第红#8E1B2E主角，祖母绿#1D6B57扇面。1920×1080、24fps；固定中轴、阶梯拱门、建筑剖面、单点大厅与双点屋顶透视。人物12fps抽帧，镜头与金线24fps；门扇从中轴开合，八名扇舞者按八分音符展开并在俯拍中归为钟面。字体：Limelight标题、Poiret One灯牌与数字、Josefin Sans 400/600/700字幕标签、Italiana罗马数字。声音：Kokoro bm_fable播音员和am_puck门童；Salamander钢琴、管弦与低音采样，钟、继电器、纸、托盘和门拟音。按film目录的原作render(t)组织镜头与动作，采用MotionKit时间线逐帧定位，声音默认关闭。",
+    "demo": "demos/cases/lemo-art-deco/index.html",
+    "patternIds": [
+      "fan-sunburst-clockface",
+      "axis-door-transition",
+      "windows-light-car-by-car"
+    ],
+    "fidelity": "demos/cases/lemo-art-deco/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/art-deco",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/art-deco/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方资源与配音按audio/CREDITS许可。"
+    },
+    "sources": [
+      {
+        "label": "固定源码与风格说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/art-deco"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/art-deco.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/art-deco/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/art-deco)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Kokoro bm_fable播音员和am_puck门童；Salamander钢琴、管弦与低音采样，钟、继电器、纸、托盘和门拟音。署名与许可见[audio/CREDITS](audio/CREDITS)及[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Limelight标题、Poiret One灯牌与数字、Josefin Sans 400/600/700字幕标签、Italiana罗马数字。SIL OFL 1.1原文在fonts/，获取与重建见[source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-art-deco/LICENSES.md",
+    "preview": "previews/cases/lemo-art-deco.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 星光饭店的午夜 · 装饰艺术 · 接入与保真说明\n\n完整代码影片的来源与固定版本见[条目JSON](../../../entries/cases/lemo-art-deco.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载字体、运行文件和成片音轨，等待iframe load与READY，按原fps调用render(t)。 | 接入MotionKit的1920×1080舞台、时间线、声音与就绪协议。 |\n| `audio/film.m4a` | 从Release成片流复制音轨。 | 保留成片原混音与时间映射。 |\n| `source/` | 保存制作脚本、输入、模型页和风格说明。 | 保留重建资料。 |\n| `stills/` | 原作参考静帧保留在来源，本库预览由capture生成。 | 成片运行不读取静帧。 |\n| `film/index.html` | 字体样式路径改为../fonts/fonts.css。 | 接入字体目录。 |\n| `film/main.js` | 移除?scene模型页分支与动态模块表；frames.js保存在source/。 | 独立模型页属于制作文件。 |\n\n作品绘制、着色器、数据表和时间轴沿用固定提交，文本复制为LF。许可索引见[LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html`使用`MotionKit.load.prepare`预载，在同源iframe的load及`window.READY === true`后，通过`MotionKit.mountFilm`接入1920×1080横屏、24fps、58.375000秒。`renderAt(t)`调用并等待`render(Math.round(t*24)/24)`，绘制直接来自原作。\n\n`?embed`隐藏独立控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时暂停在17.52秒，声音默认关闭。镜头标记取DEMO.md的Shots与代码时间表。\n\n## 与原片对照结果\n\n对照范围为开头、frame_sec、每个Shots段中点与片尾前1秒。参考PNG来自Release相同视频帧号，截图等待本库就绪和定位完成。\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，1920×1080、DPR 1；WebGL实际为Intel Iris Xe / ANGLE Direct3D11。等待`__motion.ready`，定位到`floor(t×24+.5)/24`，再等待两次requestAnimationFrame截图。\n\n**原始**比较参考PNG与本库PNG。**编码链**在独立测量页把同一PNG捕获为JPEG95，按上游`core/render/video.mjs`的libx264 medium CRF14、yuv420p编码，再按core/render/mux.sh以slow CRF19、24fps、grain 3、yuv420p编码并解码。两列均为ffmpeg yuv444p SSIM All；页面直接绘制原作render(t)。\n\n编码链测量使用单张I帧，grain从测量帧开始；正式成片的帧间压缩与颗粒历史保留在参考PNG中。左右拼图和测量文件位于过程目录`renders/lemo-art-deco/`，左参考、右本库。\n\n| 序号 | 视频帧 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.994673 | 0.994509 | 开头 |\n| 2 | 420 | 17.520000 | 17.500000 | 0.989345 | 0.989820 | frame_sec |\n| 3 | 36 | 1.500000 | 1.500000 | 0.978437 | 0.980378 | Shots · 金线开场中点 |\n| 4 | 137 | 5.689655 | 5.708333 | 0.975525 | 0.980967 | Shots · 拱门中轴开门中点 |\n| 5 | 305 | 12.712414 | 12.708333 | 0.979417 | 0.983611 | Shots · 旋转门换景中点 |\n| 6 | 441 | 18.362069 | 18.375000 | 0.987402 | 0.988138 | Shots · 楼梯门换景中点 |\n| 7 | 749 | 31.198658 | 31.208333 | 0.955764 | 0.960430 | Shots · 厨房门换景中点 |\n| 8 | 1289 | 53.704828 | 53.708333 | 0.984625 | 0.985653 | Shots · 电梯门合拢中点 |\n| 9 | 199 | 8.275862 | 8.291667 | 0.984939 | 0.987226 | Shots · 仰看目标中点 |\n| 10 | 397 | 16.551724 | 16.541667 | 0.982615 | 0.985163 | Shots · 电梯故障与决心中点 |\n| 11 | 538 | 22.409674 | 22.416667 | 0.984482 | 0.986578 | Shots · 剖楼爬阶中点 |\n| 12 | 828 | 34.507590 | 34.500000 | 0.984496 | 0.986624 | Shots · 午夜前静默中点 |\n| 13 | 935 | 38.963448 | 38.958333 | 0.952009 | 0.956397 | Shots · 十二钟点亮灯牌中点 |\n| 14 | 1084 | 45.170345 | 45.166667 | 0.971802 | 0.980609 | Shots · 扇舞锁成钟面中点 |\n| 15 | 1208 | 50.342759 | 50.333333 | 0.980349 | 0.985094 | Shots · 拉远全城中点 |\n| 16 | 1329 | 55.393362 | 55.375000 | 0.987206 | 0.987805 | Shots · 电梯与片尾中点 |\n| 17 | 1377 | 57.375000 | 57.375000 | 0.987383 | 0.987840 | 片尾前1秒 |\n\n17帧：原始最低**0.952009**、最高**0.994673**，17/17达到0.95；编码链最低**0.956397**、最高**0.994509**，17/17达到0.95。\n\n全部取样帧的两列数值达到0.95；人物、构图与文字对应。\n\n声音：成片与`audio/film.m4a`解码为48kHz单声道，每10ms求RMS包络，在±500ms范围互相关；最佳偏移**0ms**，相关系数**1.000000**，参考与本库各解码2799600 / 2799600个采样。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-art-deco.json)\n\n- 作品代码与制作文件：LemoLab，MIT原文[film/LICENSE](film/LICENSE)。\n- [audio/film.m4a](audio/film.m4a)以`-c:a copy`流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/art-deco.mp4)，署名LemoLab × Claude Opus 5.5；[CC BY 4.0原文](audio/CC-BY-4.0.txt)。\n- 原始第三方资源清单：[audio/CREDITS](audio/CREDITS)。\n- 采样乐器：Versilian Studios的VCSL / VSCO 2 CE、FreePats、Karoryfer / sfzinstruments，见[CC0 1.0原文](audio/CC0-1.0.txt)。\n- Kokoro-82M旁白：[Apache-2.0原文](audio/Apache-2.0.txt)，具体声音见CREDITS。\n- Salamander Grand Piano V3，Alexander Holm：[CC BY 3.0原文](audio/CC-BY-3.0.txt)。\n- 字体：SIL OFL 1.1，[OFL-italiana.txt](fonts/OFL-italiana.txt)、[OFL-josefinsans.txt](fonts/OFL-josefinsans.txt)、[OFL-limelight.txt](fonts/OFL-limelight.txt)、[OFL-poiretone.txt](fonts/OFL-poiretone.txt)。\n",
+    "prompt": "# 星光饭店的午夜 · 装饰艺术\n\n## 实现 Prompt\n\n制作一支装饰艺术代码影片。1930年除夕，门童赶在午夜前把一封信送上星光饭店顶楼；电梯故障后他爬楼、穿过厨房，把乐谱交给指挥，十二声钟响逐字点亮灯牌。中轴门扇开合承担转场，几何建筑、金属刻线与机械对称保持统一；扇舞最终锁成十二点钟面。暖黑#0d0b09、漆黑#060504，金#C9A24B与象牙#F2E8D5；勃艮第红#8E1B2E主角，祖母绿#1D6B57扇面。1920×1080、24fps；固定中轴、阶梯拱门、建筑剖面、单点大厅与双点屋顶透视。人物12fps抽帧，镜头与金线24fps；门扇从中轴开合，八名扇舞者按八分音符展开并在俯拍中归为钟面。字体：Limelight标题、Poiret One灯牌与数字、Josefin Sans 400/600/700字幕标签、Italiana罗马数字。声音：Kokoro bm_fable播音员和am_puck门童；Salamander钢琴、管弦与低音采样，钟、继电器、纸、托盘和门拟音。按film目录的原作render(t)组织镜头与动作，采用MotionKit时间线逐帧定位，声音默认关闭。\n\n## 动效 Token\n\n- **中轴门扇**：film/film.js:44–65、87–109：splitOpen把旧镜分成左右960px门扇，以1−e水平缩短并加边缘阴影。\n- **扇面钟阵**：film/shots_misc.js:83–144：8人按B/2开扇；BALL2到clockForm插值站位、朝向与大小，前两人成为指针。\n\n## 制作约束\n\n- 修改字体与文案时，按原作的字体载入方式和子集范围同步取得资源。\n- 图形、着色器与时间线通过film内原作render(t)绘制，音轨沿用成片混音。\n\n## 迁移\n\n- `film/timeline.js`：修改节奏、铃声、门扇与舞蹈节点。\n- `film/engine/deco.js / chars.js`：修改配色、金属质感和人物。\n- `film/engine/bulbs.js / scenes/roof.js`：修改灯牌文字、灯泡与点亮顺序。\n\n[打开 Demo](../../demos/cases/lemo-art-deco/index.html) · [在库中查看](../../cases.html#case/lemo-art-deco)\n"
+  },
+  "entrypoint": "demos/cases/lemo-art-deco/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-art-deco/LICENSES.md",
+      "bytes": 1009,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/CREDITS",
+      "bytes": 1098,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/audio/film.m4a",
+      "bytes": 1931499,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fidelity.md",
+      "bytes": 4707,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/chars.js",
+      "bytes": 44498,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/engine/bulbs.js",
+      "bytes": 10790,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/engine/cam.js",
+      "bytes": 1706,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/engine/deco.js",
+      "bytes": 21500,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/engine/type.js",
+      "bytes": 16867,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/film.js",
+      "bytes": 6642,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/index.html",
+      "bytes": 391,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/lines.json",
+      "bytes": 1039,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/main.js",
+      "bytes": 657,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/scenes/lobby.js",
+      "bytes": 21512,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/scenes/roof.js",
+      "bytes": 7301,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/scenes/stairs.js",
+      "bytes": 8287,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/scenes/tower.js",
+      "bytes": 9084,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_kitchen.js",
+      "bytes": 11826,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_lobby.js",
+      "bytes": 5677,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_misc.js",
+      "bytes": 12789,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_out.js",
+      "bytes": 3214,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_roof.js",
+      "bytes": 14889,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/shots_stairs.js",
+      "bytes": 3687,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/timeline.js",
+      "bytes": 3430,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/film/voices/dur.json",
+      "bytes": 100,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/Italiana-Regular.ttf",
+      "bytes": 31828,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/JosefinSans[wght].ttf",
+      "bytes": 118588,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/Limelight-Regular.ttf",
+      "bytes": 132292,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/OFL-italiana.txt",
+      "bytes": 4393,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/OFL-josefinsans.txt",
+      "bytes": 4449,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/OFL-limelight.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/OFL-poiretone.txt",
+      "bytes": 4389,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/PoiretOne-Regular.ttf",
+      "bytes": 130176,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/fonts/fonts.css",
+      "bytes": 289,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/index.html",
+      "bytes": 3043,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/CREDITS",
+      "bytes": 1098,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/DEMO.md",
+      "bytes": 14371,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/README.md",
+      "bytes": 4289,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/STYLE.md",
+      "bytes": 12196,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/build.sh",
+      "bytes": 2093,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/frames.js",
+      "bytes": 13939,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/mix.py",
+      "bytes": 17241,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/music/CREDITS_music.txt",
+      "bytes": 384,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/music/score.json",
+      "bytes": 1775,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/music/score.py",
+      "bytes": 24611,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/style.json",
+      "bytes": 497,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/timeline.json",
+      "bytes": 3773,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/tools/cuecheck.py",
+      "bytes": 1808,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/tools/dump_timeline.mjs",
+      "bytes": 635,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/tools/pitch.py",
+      "bytes": 742,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/tools/subs.py",
+      "bytes": 810,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-art-deco/source/voices/words.json",
+      "bytes": 1366,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-art-deco.json",
+      "bytes": 10902,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-art-deco.jpg",
+      "bytes": 60391,
+      "role": "preview"
+    }
+  ]
+}

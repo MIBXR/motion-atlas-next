@@ -1,0 +1,78 @@
+{
+  "id": "microscope-dive",
+  "order": 151,
+  "title": "显微俯冲",
+  "types": [
+    "camera",
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "镜头沿对数螺旋连续推入真实玻片的组织、结节和细胞核，影像金字塔按像素密度衔接，焦面扫过后在细胞核外缘画出量测圆环。",
+  "mechanism": "镜头沿对数螺旋连续推入真实玻片的组织、结节和细胞核，影像金字塔按像素密度衔接，焦面扫过后在细胞核外缘画出量测圆环。",
+  "trigger": "来源时间线进入对应镜头与动作节点。",
+  "effect": "镜头沿对数螺旋连续推入真实玻片的组织、结节和细胞核，影像金字塔按像素密度衔接，焦面扫过后在细胞核外缘画出量测圆环。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-microscope：2.67–10.67秒；lemo-microscope：26.67–32.67秒；1倍速，总时长14.000000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "镜头插值",
+      "value": "film/film.js:key / KEYS / camAt，以复数相似变换M^u围绕固定点插值，视野68000→9200→2700→345µm，roll与变焦同步。"
+    },
+    {
+      "name": "影像层级",
+      "value": "film/film.js:plateAlpha / activeLevel，ORDER=a8/a4/a2/c1/c05/c025，FULL=1.45、NONE=2.2像素密度阈值。"
+    },
+    {
+      "name": "焦面与圆环",
+      "value": "film/film.js:focus / nucleus，T.land=29.3333附近软焦前沿从−300移到2440px；nucleus.json的外缘拟合圆提供8.5µm直径。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-microscope/film/film.js",
+    "demos/cases/lemo-microscope/film/timeline.js",
+    "demos/cases/lemo-microscope/assets/plates/nucleus.json"
+  ],
+  "locator": "film/film.js:key / KEYS / camAt；film/film.js:plateAlpha / activeLevel；film/film.js:focus / nucleus",
+  "useCases": [
+    "证据影像",
+    "数据解说",
+    "档案与科学短片"
+  ],
+  "avoid": [
+    "在主要读数和证据上叠加争夺注意的运动"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“显微俯冲”。镜头沿对数螺旋连续推入真实玻片的组织、结节和细胞核，影像金字塔按像素密度衔接，焦面扫过后在细胞核外缘画出量测圆环。保留参数：film/film.js:key / KEYS / camAt，以复数相似变换M^u围绕固定点插值，视野68000→9200→2700→345µm，roll与变焦同步。；film/film.js:plateAlpha / activeLevel，ORDER=a8/a4/a2/c1/c05/c025，FULL=1.45、NONE=2.2像素密度阈值。；film/film.js:focus / nucleus，T.land=29.3333附近软焦前沿从−300移到2440px；nucleus.json的外缘拟合圆提供8.5µm直径。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/microscope-dive/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-microscope"
+    }
+  ],
+  "previewAt": 12,
+  "markers": [
+    {
+      "t": 0,
+      "label": "玻片到组织与结节"
+    },
+    {
+      "t": 8,
+      "label": "结节到细胞核"
+    }
+  ]
+}

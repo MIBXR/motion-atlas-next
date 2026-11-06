@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "lamp-count-light-state",
+  "pattern": {
+    "id": "lamp-count-light-state",
+    "order": 104,
+    "title": "灯数即光照",
+    "types": [
+      "composition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "每个太阳读取对应油灯的强度。九盏灯依次点亮，造成过曝与褪色；每次命中使对应油灯的强度衰减到零，总灯场和按有效灯数计算的曝光让幕布逐级变暗、回暖。",
+    "mechanism": "每个太阳读取对应油灯的强度。九盏灯依次点亮，造成过曝与褪色；每次命中使对应油灯的强度衰减到零，总灯场和按有效灯数计算的曝光让幕布逐级变暗、回暖。",
+    "trigger": "十日升起，以及每支箭命中后。",
+    "effect": "可数的灯数变化直接成为热度、亮度与故事状态。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "7.2–11.3秒；27.2–34.2秒；1倍速，总时长11.100000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "灯场与曝光",
+        "value": "film/main.js:lampI / lamps；nEff=sum(lamp intensity)，expoFront=1.75/sqrt(max(1,nEff))，sigB=700，sigC=120。"
+      },
+      {
+        "name": "命中与熄灭",
+        "value": "film/story.js:KILL=[6,1,3,7,2,8,4,9,5]；hitT(i)=T.rel[i]+T.fly[i]；main.js:lampI按命中时间在.35秒内熄灭。"
+      },
+      {
+        "name": "颜色合成",
+        "value": "film/gl.js:灯光场乘皮革透射与布纹，暖色调映射与bloom共同显出灯数差异。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-shadow-puppet/film/main.js",
+      "demos/cases/lemo-shadow-puppet/film/story.js",
+      "demos/cases/lemo-shadow-puppet/film/gl.js"
+    ],
+    "locator": "lampI / lamps / expoFront / KILL / hitT",
+    "useCases": [
+      "可数的灯数变化直接成为热度、亮度与故事状态。"
+    ],
+    "avoid": [
+      "同时叠加遮住主要动作的画面层"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-shadow-puppet的原作render(t)，实现“灯数即光照”：每个太阳读取对应油灯强度，九盏灯依次点亮造成过曝与褪色；每次命中使该灯衰减到零，总灯场和按有效灯数计算的曝光让幕布逐级变暗回暖。参数与源码：film/main.js:lampI / lamps；nEff=sum(lamp intensity)，expoFront=1.75/sqrt(max(1,nEff))，sigB=700，sigC=120。；film/story.js:KILL=[6,1,3,7,2,8,4,9,5]；hitT(i)=T.rel[i]+T.fly[i]；main.js:lampI按命中时间在.35秒内熄灭。；film/gl.js:灯光场乘皮革透射与布纹，暖色调映射与bloom共同显出灯数差异。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。",
+    "demo": "demos/patterns/lamp-count-light-state/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-shadow-puppet"
+      }
+    ],
+    "previewAt": 10.2,
+    "markers": [
+      {
+        "t": 0,
+        "label": "灯数即光照"
+      },
+      {
+        "t": 4.1,
+        "label": "灯数即光照"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/lamp-count-light-state.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-shadow-puppet",
+      "bundle": "agent/cases/lemo-shadow-puppet.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 灯数即光照\n\n## 实现 Prompt\n\n复用来源案例lemo-shadow-puppet的原作render(t)，实现“灯数即光照”：每个太阳读取对应油灯强度，九盏灯依次点亮造成过曝与褪色；每次命中使该灯衰减到零，总灯场和按有效灯数计算的曝光让幕布逐级变暗回暖。参数与源码：film/main.js:lampI / lamps；nEff=sum(lamp intensity)，expoFront=1.75/sqrt(max(1,nEff))，sigB=700，sigC=120。；film/story.js:KILL=[6,1,3,7,2,8,4,9,5]；hitT(i)=T.rel[i]+T.fly[i]；main.js:lampI按命中时间在.35秒内熄灭。；film/gl.js:灯光场乘皮革透射与布纹，暖色调映射与bloom共同显出灯数差异。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：7.2–11.3秒；27.2–34.2秒；1倍速，总时长11.100000秒。\n\n[打开 Demo](../../demos/patterns/lamp-count-light-state/index.html) · [在库中查看](../../patterns.html#pattern/lamp-count-light-state)\n"
+  },
+  "entrypoint": "demos/patterns/lamp-count-light-state/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-shadow-puppet/LICENSES.md",
+      "bytes": 954,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/audio/CREDITS",
+      "bytes": 1143,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/audio/film.m4a",
+      "bytes": 1811700,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/fidelity.md",
+      "bytes": 4836,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/backstage.js",
+      "bytes": 9257,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/carve.js",
+      "bytes": 11395,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/gl.js",
+      "bytes": 9047,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/houyi.js",
+      "bytes": 22919,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/hud.js",
+      "bytes": 1911,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/index.html",
+      "bytes": 462,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/main.js",
+      "bytes": 26449,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/poses.js",
+      "bytes": 903,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/scenery.js",
+      "bytes": 14436,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/stage.js",
+      "bytes": 7686,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/story.js",
+      "bytes": 2101,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/suns.js",
+      "bytes": 6469,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/film/voices/dur.json",
+      "bytes": 85,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/fonts/CormorantGaramond-Bold.ttf",
+      "bytes": 773164,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/fonts/CormorantGaramond-Medium.ttf",
+      "bytes": 774336,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/fonts/CormorantGaramond-SemiBold.ttf",
+      "bytes": 774032,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/fonts/CormorantGaramond-SemiBoldItalic.ttf",
+      "bytes": 454472,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/fonts/MaShanZheng-Regular.ttf",
+      "bytes": 5857936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/fonts/OFL-CormorantGaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/fonts/OFL-MaShanZheng.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/fonts/fonts.css",
+      "bytes": 773,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/index.html",
+      "bytes": 2520,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/CREDITS",
+      "bytes": 1143,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/README.md",
+      "bytes": 3123,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/build.sh",
+      "bytes": 1733,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/events.json",
+      "bytes": 3343,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/lines.json",
+      "bytes": 864,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/mix.py",
+      "bytes": 9394,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/music/credits.txt",
+      "bytes": 167,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/music/score.json",
+      "bytes": 1429,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/music/score.py",
+      "bytes": 16462,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/test.js",
+      "bytes": 12260,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/tools/cues.py",
+      "bytes": 829,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/tools/mux.sh",
+      "bytes": 1423,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/tools/probe.mjs",
+      "bytes": 1391,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-shadow-puppet/source/voices/words.json",
+      "bytes": 1490,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/lamp-count-light-state/index.html",
+      "bytes": 1111,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/lamp-count-light-state/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-shadow-puppet.json",
+      "bytes": 10296,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/lamp-count-light-state.json",
+      "bytes": 3092,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/lamp-count-light-state.jpg",
+      "bytes": 99230,
+      "role": "preview"
+    }
+  ]
+}

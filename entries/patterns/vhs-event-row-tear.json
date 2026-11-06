@@ -1,0 +1,78 @@
+{
+  "id": "vhs-event-row-tear",
+  "order": 60,
+  "title": "磁带行撕色偏",
+  "types": [
+    "texture",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15",
+    "合成波"
+  ],
+  "summary": "在故障节点，按固定帧种子选择行段，使其错位，并叠加色偏与一次垂直跳帧，随后恢复稳定画面。",
+  "mechanism": "在故障节点，按固定帧种子选择行段，使其错位，并叠加色偏与一次垂直跳帧，随后恢复稳定画面。",
+  "trigger": "磁带故障与垂直跳帧节点到达时",
+  "effect": "随机行段短暂撕裂、错位和分色，画面在故障窗口后恢复。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-synthwave 原片 0.17–9.867 秒；1 倍速，总时长 9.697 秒。"
+    },
+    {
+      "name": "磁带行撕色偏参数",
+      "value": "    float gOn = uGlitch * step(.82, h21(vec2(gRow, uGSeed)));\n  let glv = 0, gseed = 0; for (const gt of CUES.glitches) { const g0 = HIT(gt); if (fr >= g0 && fr < g0 + 2) { glv = 1; gseed = gt * 13.7 + fr; } }\n  V.uVSlip.value = fr === HIT(CUES.vslip) ? 12 : fr === FSTOP ? -12 : 0;\n  \"glitches\": [0.37, 0.63, 1.53, 2.47, 3.23, 6.07, 7.77, 9.37],"
+    }
+  ],
+  "useCases": [
+    "磁带故障节点",
+    "模拟媒介的短促行撕与色偏"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速依次重放mg-synthwave 原片 0.17–9.867 秒；总时长 9.697 秒。故障节点按固定帧种子选择行段错位，叠加色偏与一次垂直跳帧，随后恢复稳定画面。参数保持原作数值：    float gOn = uGlitch * step(.82, h21(vec2(gRow, uGSeed)));\n  let glv = 0, gseed = 0; for (const gt of CUES.glitches) { const g0 = HIT(gt); if (fr >= g0 && fr < g0 + 2) { glv = 1; gseed = gt * 13.7 + fr; } }\n  V.uVSlip.value = fr === HIT(CUES.vslip) ? 12 : fr === FSTOP ? -12 : 0;\n  \"glitches\": [0.37, 0.63, 1.53, 2.47, 3.23, 6.07, 7.77, 9.37],\n直接调用来源案例 renderAt(t)，沿用画面、字体和同区间成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段与中文节点，画面和声音使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/vhs-event-row-tear/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "mg-synthwave"
+    }
+  ],
+  "previewAt": 3.063333333,
+  "markers": [
+    {
+      "t": 0,
+      "label": "合成波"
+    },
+    {
+      "t": 0.463333333,
+      "label": "机制画面 1"
+    },
+    {
+      "t": 3.063333333,
+      "label": "机制画面 2"
+    },
+    {
+      "t": 7.596666667,
+      "label": "机制画面 3"
+    }
+  ]
+}

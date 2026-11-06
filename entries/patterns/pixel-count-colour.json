@@ -1,0 +1,74 @@
+{
+  "id": "pixel-count-colour",
+  "order": 152,
+  "title": "逐像素数颜色",
+  "types": [
+    "hud",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "圆内扫描前沿点亮实际计入的蓝色像素，累计曲线驱动百分比；第二个圆用同一方法计数，两份读数停留后给出2.4倍结论。",
+  "mechanism": "圆内扫描前沿点亮实际计入的蓝色像素，累计曲线驱动百分比；第二个圆用同一方法计数，两份读数停留后给出2.4倍结论。",
+  "trigger": "来源时间线进入对应镜头与动作节点。",
+  "effect": "圆内扫描前沿点亮实际计入的蓝色像素，累计曲线驱动百分比；第二个圆用同一方法计数，两份读数停留后给出2.4倍结论。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-microscope：10.67–26.67秒；1倍速，总时长16.000000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "像素分类",
+      "value": "source/tools/plates.py：1µm/px层上，tissue=(lum<200)|(max−min>40)，blue=tissue&(B>R+12)&(B>=G)；两个直径1mm的圆。"
+    },
+    {
+      "name": "扫描与读数",
+      "value": "film/film.js:roiState / shareAt / circle，读取plates.json的201点cum曲线；遮罩跟随measure_roll_deg=18.5°的屏幕扫描方向。"
+    },
+    {
+      "name": "结论停留",
+      "value": "film/film.js:verdict，圆A13.5%、圆B32.6%，21.667秒起两者同屏，22.667秒出2.4倍结论。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-microscope/film/film.js",
+    "demos/cases/lemo-microscope/source/tools/plates.py",
+    "demos/cases/lemo-microscope/assets/plates/plates.json"
+  ],
+  "locator": "source/tools/plates.py：1µm/px层上；film/film.js:roiState / shareAt / circle；film/film.js:verdict",
+  "useCases": [
+    "证据影像",
+    "数据解说",
+    "档案与科学短片"
+  ],
+  "avoid": [
+    "在主要读数和证据上叠加争夺注意力的运动"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“逐像素数颜色”。圆内扫描前沿点亮实际计入的蓝色像素，累计曲线驱动百分比；第二个圆用同一方法计数，两份读数停留后给出2.4倍结论。保留参数：source/tools/plates.py：1µm/px层上，tissue=(lum<200)|(max−min>40)，blue=tissue&(B>R+12)&(B>=G)；两个直径1mm的圆。；film/film.js:roiState / shareAt / circle，读取plates.json的201点cum曲线；遮罩跟随measure_roll_deg=18.5°的屏幕扫描方向。；film/film.js:verdict，圆A13.5%、圆B32.6%，21.667秒起两者同屏，22.667秒出2.4倍结论。。按index.html内联segments定位原片，复用原作素材、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/pixel-count-colour/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-microscope"
+    }
+  ],
+  "previewAt": 13.93,
+  "markers": [
+    {
+      "t": 0,
+      "label": "两个圆与倍数判断"
+    }
+  ]
+}

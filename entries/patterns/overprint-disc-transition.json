@@ -1,0 +1,75 @@
+{
+  "id": "overprint-disc-transition",
+  "order": 118,
+  "title": "套印圆盘吞景",
+  "types": [
+    "transition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "粉色专版圆从车篮扩张至全屏，与原景蓝版透印叠成紫色；全屏时切换底景，再把同一粉圆收成河上的太阳。",
+  "mechanism": "以lighter增加独立粉版密度，透明墨色与旧景相乘；圆扩张到全屏时切换底景，随后收缩并移动到新景太阳的位置。",
+  "trigger": "24秒从法棍乘客镜头转入河边。",
+  "effect": "旧景先经套印改色，同一粉色圆盘随后变成新景中的太阳。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "23.5–26秒，1倍速，总时长2.5秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "加墨扩张与场景交接",
+      "value": "film/film.js:188–199的SHOT.sun：24–24.6秒粉版圆半径20→2300，24.6秒底景由passenger硬切riverRide，24.6–25.5秒圆收至330、中心到(1000,500)。"
+    },
+    {
+      "name": "透明套印而非遮罩",
+      "value": "film/draw.js:over临时使用globalCompositeOperation=lighter；圆以inkA([0,0,1])仅加粉版密度，film/riso.js以各版透射色相乘，圆内保留蓝版并变紫。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-risograph/film/film.js",
+    "demos/cases/lemo-risograph/film/draw.js",
+    "demos/cases/lemo-risograph/film/riso.js"
+  ],
+  "locator": "SHOT.sun / over / makeRiso",
+  "useCases": [
+    "透明专色叠印转场",
+    "将转场形体接为新场景物件"
+  ],
+  "avoid": [
+    "要求完全不透明遮住换景的片段"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "misregistration-lock"
+    ],
+    "conflicts": []
+  },
+  "prompt": "复用lemo-risograph原作render(t)，重放23.5–26秒的套印圆盘吞景。粉圆以lighter只增加粉版密度，透印蓝版并变紫；24–24.6秒半径从20增到2300，24.6秒切换河景，25.5秒缩至330成为太阳。保留riso.js专色相乘、网点、纸纹和同区间原音轨，通过MotionKit.replay接入播放和定位，声音默认关闭。",
+  "demo": "demos/patterns/overprint-disc-transition/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "lemo-risograph"
+    }
+  ],
+  "previewAt": 1.6,
+  "markers": [
+    {
+      "t": 0,
+      "label": "粉圆吞景"
+    },
+    {
+      "t": 1.1,
+      "label": "底景交接"
+    }
+  ]
+}

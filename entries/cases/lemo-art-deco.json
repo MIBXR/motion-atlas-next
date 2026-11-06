@@ -1,0 +1,310 @@
+{
+  "id": "lemo-art-deco",
+  "order": 42,
+  "title": "星光饭店的午夜 · 装饰艺术",
+  "subtitle": "Midnight at the Starlight Hotel",
+  "carriers": [
+    "video"
+  ],
+  "style": "graphic-type",
+  "purpose": "story",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "装饰艺术",
+    "图形与排版",
+    "代码影片"
+  ],
+  "summary": "1930年除夕，门童赶在午夜前把一封信送上星光饭店顶楼；电梯故障后他爬楼、穿过厨房，把乐谱交给指挥，十二声钟响逐字点亮灯牌。",
+  "focus": "中轴门扇开合完成转场，几何建筑、金属刻线与对称的机械动作统一画面风格；扇舞最终锁成十二点钟面。",
+  "accent": "#C9A24B",
+  "background": "#0d0b09",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 17.52,
+  "rhythm": {
+    "duration": 58.375,
+    "bpm": 116,
+    "beats": [
+      {
+        "t": 0,
+        "label": "金线开场",
+        "note": "金线开场"
+      },
+      {
+        "t": 5.172413793103448,
+        "label": "拱门中轴开门",
+        "note": "拱门中轴开门"
+      },
+      {
+        "t": 6.206896551724139,
+        "label": "仰看目标",
+        "note": "仰看目标"
+      },
+      {
+        "t": 12.413793103448278,
+        "label": "旋转门换景",
+        "note": "旋转门换景"
+      },
+      {
+        "t": 14.482758620689657,
+        "label": "电梯故障与决心",
+        "note": "电梯故障与决心"
+      },
+      {
+        "t": 18.10344827586207,
+        "label": "楼梯门换景",
+        "note": "楼梯门换景"
+      },
+      {
+        "t": 18.620689655172416,
+        "label": "剖楼爬阶",
+        "note": "剖楼爬阶"
+      },
+      {
+        "t": 30.981266771531892,
+        "label": "厨房门换景",
+        "note": "厨房门换景"
+      },
+      {
+        "t": 33.15517981501015,
+        "label": "午夜前静默",
+        "note": "午夜前静默"
+      },
+      {
+        "t": 35.86,
+        "label": "十二钟点亮灯牌",
+        "note": "十二钟点亮灯牌"
+      },
+      {
+        "t": 42.06689655172414,
+        "label": "扇舞锁成钟面",
+        "note": "扇舞锁成钟面"
+      },
+      {
+        "t": 48.273793103448284,
+        "label": "拉远全城",
+        "note": "拉远全城"
+      },
+      {
+        "t": 52.411724137931046,
+        "label": "电梯与片尾",
+        "note": "电梯与片尾"
+      },
+      {
+        "t": 53.446206896551736,
+        "label": "电梯门合拢",
+        "note": "电梯门合拢"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 6.206896551724139,
+      "from": 0.15,
+      "to": 0.65,
+      "label": "金线与拱门"
+    },
+    {
+      "t0": 6.206896551724139,
+      "t1": 12.413793103448278,
+      "from": 0.45,
+      "to": 0.55,
+      "label": "街面仰望"
+    },
+    {
+      "t0": 12.413793103448278,
+      "t1": 18.620689655172416,
+      "from": 0.55,
+      "to": 0.2,
+      "label": "大厅故障"
+    },
+    {
+      "t0": 18.620689655172416,
+      "t1": 26.198658075879717,
+      "from": 0.6,
+      "to": 0.9,
+      "label": "爬楼加速"
+    },
+    {
+      "t0": 26.198658075879717,
+      "t1": 31.41604938022754,
+      "from": 0.75,
+      "to": 0.85,
+      "label": "厨房穿行"
+    },
+    {
+      "t0": 31.41604938022754,
+      "t1": 33.15517981501015,
+      "from": 0.85,
+      "to": 0.8,
+      "label": "冲上屋顶"
+    },
+    {
+      "t0": 33.15517981501015,
+      "t1": 35.86,
+      "from": 0.25,
+      "to": 0.08,
+      "label": "午夜前静默"
+    },
+    {
+      "t0": 35.86,
+      "t1": 42.06689655172414,
+      "from": 0.4,
+      "to": 1,
+      "label": "十二钟点灯"
+    },
+    {
+      "t0": 42.06689655172414,
+      "t1": 48.273793103448284,
+      "from": 0.95,
+      "to": 0.8,
+      "label": "扇舞钟面"
+    },
+    {
+      "t0": 48.273793103448284,
+      "t1": 52.411724137931046,
+      "from": 0.8,
+      "to": 0.6,
+      "label": "全城回望"
+    },
+    {
+      "t0": 52.411724137931046,
+      "t1": 58.375,
+      "from": 0.4,
+      "to": 0.08,
+      "label": "电梯与片尾"
+    }
+  ],
+  "energyNote": "段落取自上游DEMO.md Shots与作品时间表；0–1数值按画面密度、配乐与静默作相对编辑标注。",
+  "observations": [
+    "中轴门扇开合完成转场，几何建筑、金属刻线与对称的机械动作统一画面风格；扇舞最终锁成十二点钟面。",
+    "人物12fps抽帧，镜头与金线24fps；门扇从中轴开合，八名扇舞者按八分音符展开，并在俯拍中组成钟面。",
+    "金线、漆面、对称机械动作与钟表共同承载倒计时；信中的歌曲在终段完整奏出。"
+  ],
+  "composition": {
+    "color": "暖黑#0d0b09、漆黑#060504，金#C9A24B与象牙#F2E8D5；勃艮第红#8E1B2E主角，祖母绿#1D6B57扇面。",
+    "layout": "1920×1080、24fps；固定中轴、阶梯拱门、建筑剖面、单点大厅与双点屋顶透视。",
+    "imagery": "Canvas2D绘制金属带状渐变、空气笔硬边体块、人物FK骨架和从字形骨架采样的灯泡。",
+    "motion": "人物12fps抽帧，镜头与金线24fps；门扇从中轴开合，八名扇舞者按八分音符展开，并在俯拍中组成钟面。",
+    "sound": "Kokoro bm_fable播音员和am_puck门童；Salamander钢琴、管弦与低音采样，钟、继电器、纸、托盘和门拟音。",
+    "rhythm": "116BPM狐步，经16拍加速到138BPM查尔斯顿；午夜静默后十二钟在116网格上点灯，随后全乐队奏主题。",
+    "coherence": "金线、漆面、对称机械动作与钟表共同承载倒计时；信中的歌曲在终段完整奏出。",
+    "typography": "Limelight标题、Poiret One灯牌与数字、Josefin Sans 400/600/700字幕标签、Italiana罗马数字。"
+  },
+  "layers": [
+    {
+      "name": "建筑",
+      "role": "塔楼、大厅、楼梯、厨房与屋顶。"
+    },
+    {
+      "name": "人物与道具",
+      "role": "红制服门童、信、乐队、扇舞者。"
+    },
+    {
+      "name": "金线与灯泡",
+      "role": "金属描线、灯牌、钟表、字幕与门扇转场。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#0d0b09",
+      "#060504",
+      "#C9A24B",
+      "#F2E8D5",
+      "#8E1B2E",
+      "#1D6B57"
+    ],
+    "type": "Limelight标题、Poiret One灯牌与数字、Josefin Sans 400/600/700字幕标签、Italiana罗马数字。",
+    "motion": [
+      {
+        "name": "中轴门扇",
+        "value": "film/film.js:44–65、87–109：splitOpen把旧镜分成左右960px门扇，以1−e水平缩短并加边缘阴影。"
+      },
+      {
+        "name": "扇面钟阵",
+        "value": "film/shots_misc.js:83–144：8人按B/2开扇；BALL2到clockForm插值站位、朝向与大小，前两人成为指针。"
+      }
+    ]
+  },
+  "useCases": [
+    "饭店与庆典宣传",
+    "倒计时片头",
+    "典礼邀请影片"
+  ],
+  "avoid": [
+    "需要真人实拍或摄影素材作为主画面的作品"
+  ],
+  "constraints": [
+    "修改字体与文案时，按原作的字体载入方式和子集范围同步取得资源。",
+    "图形、着色器与时间线通过film内原作render(t)绘制，音轨沿用成片混音。"
+  ],
+  "migration": [
+    {
+      "field": "film/timeline.js",
+      "how": "修改节奏、铃声、门扇与舞蹈节点。"
+    },
+    {
+      "field": "film/engine/deco.js / chars.js",
+      "how": "修改配色、金属质感和人物。"
+    },
+    {
+      "field": "film/engine/bulbs.js / scenes/roof.js",
+      "how": "修改灯牌文字、灯泡与点亮顺序。"
+    }
+  ],
+  "prompt": "制作一支装饰艺术代码影片。1930年除夕，门童赶在午夜前把一封信送上星光饭店顶楼；电梯故障后他爬楼、穿过厨房，把乐谱交给指挥，十二声钟响逐字点亮灯牌。中轴门扇开合承担转场，几何建筑、金属刻线与机械对称保持统一；扇舞最终锁成十二点钟面。暖黑#0d0b09、漆黑#060504，金#C9A24B与象牙#F2E8D5；勃艮第红#8E1B2E主角，祖母绿#1D6B57扇面。1920×1080、24fps；固定中轴、阶梯拱门、建筑剖面、单点大厅与双点屋顶透视。人物12fps抽帧，镜头与金线24fps；门扇从中轴开合，八名扇舞者按八分音符展开并在俯拍中归为钟面。字体：Limelight标题、Poiret One灯牌与数字、Josefin Sans 400/600/700字幕标签、Italiana罗马数字。声音：Kokoro bm_fable播音员和am_puck门童；Salamander钢琴、管弦与低音采样，钟、继电器、纸、托盘和门拟音。按film目录的原作render(t)组织镜头与动作，采用MotionKit时间线逐帧定位，声音默认关闭。",
+  "demo": "demos/cases/lemo-art-deco/index.html",
+  "patternIds": [
+    "fan-sunburst-clockface",
+    "axis-door-transition",
+    "windows-light-car-by-car"
+  ],
+  "fidelity": "demos/cases/lemo-art-deco/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/art-deco",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/art-deco/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方资源与配音按audio/CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "固定源码与风格说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/art-deco"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/art-deco.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/art-deco/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/art-deco)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "Kokoro bm_fable播音员和am_puck门童；Salamander钢琴、管弦与低音采样，钟、继电器、纸、托盘和门拟音。署名与许可见[audio/CREDITS](audio/CREDITS)及[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Limelight标题、Poiret One灯牌与数字、Josefin Sans 400/600/700字幕标签、Italiana罗马数字。SIL OFL 1.1原文在fonts/，获取与重建见[source/README.md](source/README.md)。"
+    }
+  ]
+}

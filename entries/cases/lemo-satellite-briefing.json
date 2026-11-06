@@ -1,0 +1,304 @@
+{
+  "id": "lemo-satellite-briefing",
+  "order": 62,
+  "title": "地图上还写着海 · 卫星简报",
+  "subtitle": "The Map Still Says Sea",
+  "carriers": [
+    "video"
+  ],
+  "style": "evidence",
+  "purpose": "data",
+  "tech": [
+    "canvas2d",
+    "webgl",
+    "footage"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "卫星简报",
+    "实证影像",
+    "代码影片"
+  ],
+  "summary": "卫星按地图俯冲到咸海，却看到沙漠；同一地理画面中逐年留下海岸线，量出旧港口到海边的距离，再转向科卡拉尔大坝，显出北咸海的回水。",
+  "focus": "公开卫星影像与原位岸线组成证据链；地图与照片的对照、逐年时间环和测距线将尺度变化转为叙事节奏。",
+  "accent": "#dae4d5",
+  "background": "#030507",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 13.6,
+  "rhythm": {
+    "duration": 37.791666666666664,
+    "beats": [
+      {
+        "t": 0,
+        "label": "轨道锁定",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 1.8,
+        "label": "俯冲地图",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 5.36,
+        "label": "扫描揭开盐地",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 6.6,
+        "label": "回卷年份",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 7.8,
+        "label": "海岸时间环",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 13.2,
+        "label": "旧港口锁定",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 15.3,
+        "label": "推近莫伊纳克",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 17.4,
+        "label": "量出九十五公里",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 23.4,
+        "label": "甩向北方",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 24,
+        "label": "北咸海回水",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 28.8,
+        "label": "重贴海名与爬升",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      },
+      {
+        "t": 34.2,
+        "label": "轨道片尾",
+        "note": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+      }
+    ],
+    "bpm": 100
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 1.8,
+      "from": 0.2,
+      "to": 0.65,
+      "label": "轨道锁定"
+    },
+    {
+      "t0": 1.8,
+      "t1": 5.4,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "俯冲地图"
+    },
+    {
+      "t0": 5.36,
+      "t1": 6.6,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "扫描揭开盐地"
+    },
+    {
+      "t0": 6.6,
+      "t1": 7.8,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "回卷年份"
+    },
+    {
+      "t0": 7.8,
+      "t1": 13.2,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "海岸时间环"
+    },
+    {
+      "t0": 13.2,
+      "t1": 15.3,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "旧港口锁定"
+    },
+    {
+      "t0": 15.3,
+      "t1": 17.4,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "推近莫伊纳克"
+    },
+    {
+      "t0": 17.4,
+      "t1": 23.4,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "量出九十五公里"
+    },
+    {
+      "t0": 23.4,
+      "t1": 24,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "甩向北方"
+    },
+    {
+      "t0": 24,
+      "t1": 28.8,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "北咸海回水"
+    },
+    {
+      "t0": 28.8,
+      "t1": 34.2,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "重贴海名与爬升"
+    },
+    {
+      "t0": 34.2,
+      "t1": 37.791666666666664,
+      "from": 0.5,
+      "to": 0.15,
+      "label": "轨道片尾"
+    }
+  ],
+  "energyNote": "段落划分取自DEMO.md Shots与原作时间表；0–1数值是根据画面运动、事件和声音密度作出的相对编辑标注。",
+  "observations": [
+    "时间环是每年实际岸线的留痕，形状随海盆变化；图层通过扫描蒙版交替。",
+    "水声提前0.6秒出现后镜头转向北咸海，水面恢复真实颜色。",
+    "片尾准星括号向外开成标题框，地图上的咸海标签转移到北部水域。"
+  ],
+  "composition": {
+    "color": "#030507、#dae4d5、#ebdfc6、#8cb9b6、#b6c39a",
+    "typography": "Barlow Condensed 300/400/500/600、IBM Plex Mono 400/500、Noto Sans SC 400/500与Noto Serif SC 600原字符子集。",
+    "layout": "1920×1080横屏，保留原作构图、字幕、片头与片尾。",
+    "imagery": "USGS/NASA Landsat各年实景、NASA GIBS Blue Marble与Natural Earth岸线；投影、拼接、蒙版和标注均由原作代码完成。",
+    "motion": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。",
+    "sound": "100 BPM D小调转D大调；遥测、低铜管、金属环、船笛、风与水声，Kokoro bf_emma英语旁白与双语字幕。",
+    "rhythm": "轨道锁定；俯冲地图；扫描揭开盐地；回卷年份；海岸时间环；旧港口锁定；推近莫伊纳克；量出九十五公里；甩向北方；北咸海回水；重贴海名与爬升；轨道片尾",
+    "coherence": "公开卫星影像与原位岸线组成证据链；地图与照片的对照、逐年时间环和测距线将尺度变化转为叙事节奏。"
+  },
+  "layers": [
+    {
+      "name": "原作场景",
+      "role": "USGS/NASA Landsat各年实景、NASA GIBS Blue Marble与Natural Earth岸线；投影、拼接、蒙版和标注均由原作代码完成。"
+    },
+    {
+      "name": "镜头与质感",
+      "role": "同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。"
+    },
+    {
+      "name": "字幕、标记与声音",
+      "role": "100 BPM D小调转D大调；遥测、低铜管、金属环、船笛、风与水声，Kokoro bf_emma英语旁白与双语字幕。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#030507",
+      "#dae4d5",
+      "#ebdfc6",
+      "#8cb9b6",
+      "#b6c39a"
+    ],
+    "type": "Barlow Condensed 300/400/500/600、IBM Plex Mono 400/500、Noto Sans SC 400/500与Noto Serif SC 600原字符子集。",
+    "motion": [
+      {
+        "name": "年份扫描",
+        "value": "film/timeline.js:RINGS；film/film.js:drawRings；1977/1989/2000/2009/2014/2025分别在7.8/9.6/10.8/11.7/12.3/13.2秒落定。"
+      },
+      {
+        "name": "原位影像与测量",
+        "value": "film/film.js:init加载assets/plates、vectors.json；film/engine.js:Engine/makeCamera；source/tools/plates.py与vectors.py生成岸线和数据。"
+      }
+    ]
+  },
+  "useCases": [
+    "环境实证影像",
+    "地理短片",
+    "新闻解说"
+  ],
+  "avoid": [
+    "需要脱离来源时间线实时操控全部场景的应用"
+  ],
+  "constraints": [
+    "画面由上游render(t)直接绘制，按原作帧率定位。",
+    "修改字幕或场景文案后按source中的字体流程重建相同字重和字符子集。",
+    "声音使用原片混音，修改事件时同步更新声音制作文件。"
+  ],
+  "migration": [
+    {
+      "field": "film/film.js",
+      "how": "按原作数据与函数修改故事内容、画面和物件。"
+    },
+    {
+      "field": "film/timeline.js",
+      "how": "按原作数据与函数修改时间表、镜头和节拍。"
+    }
+  ],
+  "prompt": "制作《地图上还写着海 · 卫星简报》这样的代码影片：卫星按地图俯冲到咸海，却看到沙漠；同一地理画面逐年留出海岸线，量出旧港口到海边的距离，再转向科卡拉尔大坝，显出北咸海的回水。公开卫星影像与原位岸线组成证据链；地图和照片对照、逐年时间环与测距线把尺度变化变为叙事节奏。USGS/NASA Landsat各年实景、NASA GIBS Blue Marble与Natural Earth岸线；原作代码投影、拼接、蒙版和标注。Barlow Condensed 300/400/500/600、IBM Plex Mono 400/500、Noto Sans SC 400/500与Noto Serif SC 600原字符子集。同一连续镜头以高度与倾角改变取景；年度扫描留下地理岸线，测距镜头追随量线端点，北方水面沿旧岸线向外增长。100 BPM D小调转D大调；遥测、低铜管、金属环、船笛、风与水声，Kokoro bf_emma英语旁白与双语字幕。实现使用demos\\cases\\lemo-satellite-briefing\\film\\film.js, demos\\cases\\lemo-satellite-briefing\\film\\timeline.js, demos\\cases\\lemo-satellite-briefing\\film\\engine.js, demos\\cases\\lemo-satellite-briefing\\film\\assets\\plates\\plates.json。",
+  "demo": "demos/cases/lemo-satellite-briefing/index.html",
+  "patternIds": [
+    "time-rings-locked-frame"
+  ],
+  "fidelity": "demos/cases/lemo-satellite-briefing/fidelity.md",
+  "renderer": "gpu",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/satellite-briefing",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/satellite-briefing/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS。"
+  },
+  "sources": [
+    {
+      "label": "固定风格与示范源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/satellite-briefing"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/satellite-briefing.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/satellite-briefing/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）；固定版本与许可见upstream/license。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原片完整署名见[audio/CREDITS](audio/CREDITS)，逐项许可见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "家族与字重见tokens.type；fonts保存二进制与OFL原文，制作入口见[source/README.md](source/README.md)。"
+    }
+  ]
+}

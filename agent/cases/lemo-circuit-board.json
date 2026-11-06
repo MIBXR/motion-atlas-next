@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-circuit-board",
+  "entry": {
+    "id": "lemo-circuit-board",
+    "order": 49,
+    "title": "七毫秒 · 电路板",
+    "subtitle": "Seven Milliseconds",
+    "carriers": [
+      "video"
+    ],
+    "style": "interface",
+    "purpose": "explainer",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "电路板",
+      "信息与发布",
+      "代码影片"
+    ],
+    "summary": "电流从四川水坝沿铜走线奔向江苏，在换流站由交流变成直流，经过降压与插座进入手机充电器，再一口气拉远到包含各级模块的整张电路板。",
+    "focus": "水流、交流和直流通过光的不同运动方式呈现；同一套电路语汇贯穿地图、街区、插座和毫米级充电头。",
+    "accent": "#D9B25B",
+    "background": "#05190F",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 58,
+    "rhythm": {
+      "duration": 59.96666666666667,
+      "bpm": 100,
+      "beats": [
+        {
+          "t": 0,
+          "label": "水坝发电",
+          "note": "原片0.000000–4.700000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 4.7,
+          "label": "交流来回摆",
+          "note": "原片4.700000–10.100000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 10.1,
+          "label": "远送损耗",
+          "note": "原片10.100000–14.400000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 14.4,
+          "label": "进入换流站",
+          "note": "原片14.400000–19.100000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 19.1,
+          "label": "沿直流奔跑",
+          "note": "原片19.100000–23.500000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 23.5,
+          "label": "七毫秒到达",
+          "note": "原片23.500000–29.600000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 29.6,
+          "label": "逐级降压",
+          "note": "原片29.600000–32.400000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 32.4,
+          "label": "插座穿孔",
+          "note": "原片32.400000–34.600000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 34.6,
+          "label": "充电器整流",
+          "note": "原片34.600000–42.100000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 42.1,
+          "label": "同一电路原理",
+          "note": "原片42.100000–52.900000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 52.9,
+          "label": "嵌套电路板拉远",
+          "note": "原片52.900000–54.500000秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        },
+        {
+          "t": 54.5,
+          "label": "桌上整板落版",
+          "note": "原片54.500000–59.966667秒；时刻来自DEMO.md Shots及film内镜头时间表。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 4.7,
+        "to": 0.35,
+        "label": "水坝发电",
+        "from": 0.15
+      },
+      {
+        "t0": 4.7,
+        "t1": 10.1,
+        "to": 0.5,
+        "label": "交流来回摆",
+        "from": 0.35
+      },
+      {
+        "t0": 10.1,
+        "t1": 14.4,
+        "to": 0.3,
+        "label": "远送损耗",
+        "from": 0.5
+      },
+      {
+        "t0": 14.4,
+        "t1": 19.1,
+        "to": 0.8,
+        "label": "进入换流站",
+        "from": 0.3
+      },
+      {
+        "t0": 19.1,
+        "t1": 23.5,
+        "to": 0.65,
+        "label": "沿直流奔跑",
+        "from": 0.8
+      },
+      {
+        "t0": 23.5,
+        "t1": 29.6,
+        "to": 0.45,
+        "label": "七毫秒到达",
+        "from": 0.65
+      },
+      {
+        "t0": 29.6,
+        "t1": 32.4,
+        "to": 0.6,
+        "label": "逐级降压",
+        "from": 0.45
+      },
+      {
+        "t0": 32.4,
+        "t1": 34.6,
+        "to": 0.5,
+        "label": "插座穿孔",
+        "from": 0.6
+      },
+      {
+        "t0": 34.6,
+        "t1": 42.1,
+        "to": 0.25,
+        "label": "充电器整流",
+        "from": 0.5
+      },
+      {
+        "t0": 42.1,
+        "t1": 52.9,
+        "to": 0.1,
+        "label": "同一电路原理",
+        "from": 0.25
+      },
+      {
+        "t0": 52.9,
+        "t1": 54.5,
+        "to": 0.08,
+        "label": "嵌套电路板拉远",
+        "from": 0.1
+      },
+      {
+        "t0": 54.5,
+        "t1": 59.96666666666667,
+        "to": 0.08,
+        "label": "桌上整板落版",
+        "from": 0.08
+      }
+    ],
+    "energyNote": "段落取自DEMO.md Shots与film内时间表；0–1为按画面密度、动作和声音强度作出的相对编辑标注。",
+    "observations": [
+      "地图中的河流、湖泊、海岸与城市，以0/45/90度的手工走线组成电路板。",
+      "交流为沿走线来回摇摆的短划线，直流为单向光头、连续光流和后方余辉。",
+      "34–34.6秒推入插座火线孔，34.6–35.35秒从充电器引脚孔反向退出。",
+      "corridor→city→house→charger分别拥有局部坐标，递归合成允许跨多个数量级拉远。"
+    ],
+    "composition": {
+      "color": "绿阻焊#05190F/#1C6A44/#4AA977，金焊盘#D9B25B，白丝印#F2EEE1，琥珀电流与银青水流。",
+      "typography": "板内字为代码布线的单线中英字；字幕使用Noto Sans SC 500子集。",
+      "layout": "1920×1080俯视；地理走廊与三个子模块相互嵌套，字幕位于底部安全区。",
+      "imagery": "Canvas2D绘制覆铜、间隙、焊盘、丝印、光流、景深和窗光。",
+      "motion": "沿光头追拍、抬升显全程、穿孔换尺度、嵌套整板拉远。",
+      "sound": "原片Microsoft晓晓中文配音、合成电流长音、继电器、水声和环境声。",
+      "rhythm": "100BPM；16.3秒平滑交流门控，23秒到达，47.6秒等号揭示。",
+      "coherence": "光的形态同时说明电流种类、路径、变换和到达。"
+    },
+    "layers": [
+      {
+        "name": "板材与覆铜",
+        "role": "FR-4交织纹、阻焊色斑、覆铜间隙与倒角。"
+      },
+      {
+        "name": "金属与丝印",
+        "role": "走线、焊盘、器件符号、手工布线中英字。"
+      },
+      {
+        "name": "光流",
+        "role": "交流、直流、水流与节点闪光。"
+      },
+      {
+        "name": "嵌套模块",
+        "role": "地图、城市、街道和充电器递归合成。"
+      },
+      {
+        "name": "镜头后期",
+        "role": "运动子采样、景深、窗光、尘点与双语字幕。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#05190F",
+        "#1C6A44",
+        "#4AA977",
+        "#D9B25B",
+        "#F2EEE1",
+        "#C9784A"
+      ],
+      "type": "Routed单线字（film/src/font.js与hanzi.js）；字幕Noto Sans SC 500，210字符子集。",
+      "motion": [
+        {
+          "name": "电流",
+          "value": "film/src/main.js:acPhase / sceneCorridor：交流说明段.55Hz，16.3秒换流，headS在16.5–23秒沿dcp推进。"
+        },
+        {
+          "name": "嵌套",
+          "value": "film/src/levels.js:toChild / toParent / baseOf / drawLevel；四级局部坐标与递归裁切。"
+        },
+        {
+          "name": "拉远",
+          "value": "film/src/main.js:camPull：52.9–54.5秒，logLerp(START.z,.8,e)，e=1−(1−p)^2.6。"
+        }
+      ]
+    },
+    "useCases": [
+      "能源科普",
+      "供应链解释",
+      "电子设备原理短片"
+    ],
+    "avoid": [
+      "需要透视三维器件城市的画面"
+    ],
+    "constraints": [
+      "所有板块维持俯视与局部坐标。",
+      "字幕字体按原subset.py使用相同字重和字符集合。",
+      "地图和电流路径使用bebbbe1中的数据。"
+    ],
+    "migration": [
+      {
+        "field": "film/src/main.js:acPhase / sceneCorridor",
+        "how": "修改该处的电流参数。"
+      },
+      {
+        "field": "film/src/levels.js:toChild / toParent / baseOf / drawLevel；四级局部坐标与递归裁切。",
+        "how": "修改该处的嵌套参数。"
+      },
+      {
+        "field": "film/src/main.js:camPull",
+        "how": "修改该处的拉远参数。"
+      }
+    ],
+    "prompt": "制作一支电路板时间线影片。电流从四川水坝沿铜走线奔向江苏，在换流站由交流变成直流，经过降压与插座进入手机充电器，再一口气拉远到包含各级模块的整张电路板。水流、交流和直流各有光的运动方式；同一电路语汇跨越地图、街区、插座和毫米级充电头。画面构成：绿阻焊#05190F/#1C6A44/#4AA977，金焊盘#D9B25B，白丝印#F2EEE1，琥珀电流与银青水流。；板内字为代码布线的单线中英字；字幕使用Noto Sans SC 500子集。；1920×1080俯视；地理走廊与三个子模块相互嵌套，字幕位于底部安全区。；Canvas2D绘制覆铜、间隙、焊盘、丝印、光流、景深和窗光。；沿光头追拍、抬升显全程、穿孔换尺度、嵌套整板拉远。；原片Microsoft晓晓中文配音、合成电流长音、继电器、水声和环境声。；100BPM；16.3秒平滑交流门控，23秒到达，47.6秒等号揭示。；光的形态同时说明电流种类、路径、变换和到达。。实现入口为demos/cases/lemo-circuit-board/film/，MotionKit适配层仅调用并等待原作render(t)，使用原片音轨同步播放。",
+    "demo": "demos/cases/lemo-circuit-board/index.html",
+    "patternIds": [
+      "pulse-path-current",
+      "push-through-window",
+      "nested-boards-pullout"
+    ],
+    "fidelity": "demos/cases/lemo-circuit-board/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/circuit-board/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；成片及静帧CC BY 4.0，署名LemoLab；第三方资源按CREDITS许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与示范制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/circuit-board.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board)；代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "原片Microsoft晓晓中文配音、合成电流长音、继电器、水声和环境声。 原始署名见[audio/CREDITS](audio/CREDITS)，完整许可见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Routed单线字（film/src/font.js与hanzi.js）；字幕Noto Sans SC 500，210字符子集。 OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-circuit-board/LICENSES.md",
+    "preview": "previews/cases/lemo-circuit-board.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 七毫秒 · 电路板 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-circuit-board.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| index.html | 预载运行代码、字体与音轨，同源iframe等待load和READY，按原fps调用并等待render(t)。 | 接入MotionKit舞台、时间线、声音与定位。 |\n| audio/film.m4a | 从Release以-c:a copy流复制AAC音轨。 | 同步正式混音。 |\n| source/ | 保存Demo内非运行制作文件与中文重建说明。 | 保留制作工具和输入。 |\n| stills/ | 风格帧留在来源，本站预览由capture生成。 | 成片绘制不读取上游静帧。 |\n| film/index.html、film/core/lib.js | import map将/core/lib.js与../../../core/lib.js映射至本体film/core/lib.js；共享文件取固定提交。 | 仅接入共享模块路径。 |\n| film/src/main.js | 字幕FontFace URL指向../fonts/NotoSansSC-Medium-sub.ttf。 | 接入字体位置。 |\n\n绘制、时间轴、数据和着色器沿用固定提交；文本换行为LF。许可索引见[LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html`使用`MotionKit.load.prepare`预载；同源iframe等待load和`READY === true`后，以`MotionKit.mountFilm`接入1920×1080横屏、30fps、59.966667秒舞台。`renderAt(t)`执行并等待`upstream.render(Math.round(t*30)/30)`。声音读取`audio/film.m4a`，默认关闭。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时暂停在条目previewAt。镜头标记取DEMO.md Shots与源码时间表。\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，1920×1080、DPR1；等待`__motion.ready`并以原fps对齐后截图。WebGL使用Intel Iris Xe／ANGLE D3D11。参考PNG从Release按相同视频帧号提取。\n\n原始列比较参考PNG与本库PNG；编码链列将本库PNG在独立测量页捕获为JPEG95，再按原作链编解码。测量编码只在过程目录进行，页面直接调用原作render(t)。两幅PNG转yuv444p，读取ffmpeg SSIM All。单帧测量形成I帧，原片为连续GOP；时间颗粒也从测量帧起算。左右拼图为`compare-N.png`与`compare-encoded-N.png`。\n\n`source/build.sh:40–41`与共享渲染工具：30fps，JPEG95→libx264 medium CRF14 yuv420p→slow CRF19，noise=c0s=1:allf=t。\n\n| Shots段 | 起止（秒） | 中点（秒） | 视频帧号 |\n| --- | --- | --- | --- |\n| 水坝发电 | 0.000000–4.700000 | 2.350000 | 71 |\n| 交流来回摆 | 4.700000–10.100000 | 7.400000 | 222 |\n| 远送损耗 | 10.100000–14.400000 | 12.250000 | 368 |\n| 进入换流站 | 14.400000–19.100000 | 16.750000 | 503 |\n| 沿直流奔跑 | 19.100000–23.500000 | 21.300000 | 639 |\n| 七毫秒到达 | 23.500000–29.600000 | 26.550000 | 797 |\n| 逐级降压 | 29.600000–32.400000 | 31.000000 | 930 |\n| 插座穿孔 | 32.400000–34.600000 | 33.500000 | 1005 |\n| 充电器整流 | 34.600000–42.100000 | 38.350000 | 1151 |\n| 同一电路原理 | 42.100000–52.900000 | 47.500000 | 1425 |\n| 嵌套电路板拉远 | 52.900000–54.500000 | 53.700000 | 1611 |\n| 桌上整板落版 | 54.500000–59.966667 | 57.233333 | 1717 |\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.990985 | 0.992241 | 开头 |\n| 2 | 1740 | 58.000000 | 58.000000 | 0.980213 | 0.986062 | frame_sec |\n| 3 | 71 | 2.350000 | 2.366667 | 0.977584 | 0.981985 | Shots · 水坝发电中点 |\n| 4 | 222 | 7.400000 | 7.400000 | 0.986977 | 0.988432 | Shots · 交流来回摆中点 |\n| 5 | 368 | 12.250000 | 12.266667 | 0.983294 | 0.989315 | Shots · 远送损耗中点 |\n| 6 | 503 | 16.750000 | 16.766667 | 0.983660 | 0.986350 | Shots · 进入换流站中点 |\n| 7 | 639 | 21.300000 | 21.300000 | 0.979278 | 0.983725 | Shots · 沿直流奔跑中点 |\n| 8 | 797 | 26.550000 | 26.566667 | 0.981167 | 0.984336 | Shots · 七毫秒到达中点 |\n| 9 | 930 | 31.000000 | 31.000000 | 0.983106 | 0.986227 | Shots · 逐级降压中点 |\n| 10 | 1005 | 33.500000 | 33.500000 | 0.980243 | 0.983300 | Shots · 插座穿孔中点 |\n| 11 | 1151 | 38.350000 | 38.366667 | 0.982854 | 0.984997 | Shots · 充电器整流中点 |\n| 12 | 1425 | 47.500000 | 47.500000 | 0.981433 | 0.979604 | Shots · 同一电路原理中点 |\n| 13 | 1611 | 53.700000 | 53.700000 | 0.984294 | 0.989106 | Shots · 嵌套电路板拉远中点 |\n| 14 | 1717 | 57.233333 | 57.233333 | 0.980358 | 0.985859 | Shots · 桌上整板落版中点 |\n| 15 | 1769 | 58.966667 | 58.966667 | 0.980195 | 0.985519 | 片尾前1秒 |\n\n15帧：原始最低**0.977584**、最高**0.990985**，15/15达到0.95；编码链最低**0.979604**、最高**0.992241**，15/15达到0.95。\n\n本次取样的原始与编码链SSIM均达到0.95。\n\n声音：成片与本库音轨解码为48kHz单声道，每10ms取RMS包络，在±500ms内互相关；最佳偏移**0ms**，相关系数**1.000000**。\n",
+    "licenses": "# 七毫秒 · 电路板 · 许可索引\n\n| 范围 | 许可与署名 | 原文 |\n| --- | --- | --- |\n| 原作代码与文档 | LemoLab × Claude Opus 5.5；MIT | [film/LICENSE](film/LICENSE) |\n| 原片音轨 | LemoLab；CC BY 4.0，资源署名见[audio/CREDITS](audio/CREDITS) | [audio/CC-BY-4.0.txt](audio/CC-BY-4.0.txt) |\n| 字体 · OFL-NotoSansSC | SIL OFL 1.1 | [fonts/OFL-NotoSansSC.txt](fonts/OFL-NotoSansSC.txt) |\n| 中文旁白 | Microsoft edge-tts在线服务，zh-CN-XiaoxiaoNeural，+20% | [audio/VOICE.txt](audio/VOICE.txt)、[audio/CREDITS](audio/CREDITS) |\n",
+    "prompt": "# 七毫秒 · 电路板\n\n## 实现 Prompt\n\n制作一支电路板时间线影片。电流从四川水坝沿铜走线奔向江苏，在换流站由交流变成直流，经过降压与插座进入手机充电器，再一口气拉远到包含各级模块的整张电路板。水流、交流和直流各有光的运动方式；同一电路语汇跨越地图、街区、插座和毫米级充电头。画面构成：绿阻焊#05190F/#1C6A44/#4AA977，金焊盘#D9B25B，白丝印#F2EEE1，琥珀电流与银青水流。；板内字为代码布线的单线中英字；字幕使用Noto Sans SC 500子集。；1920×1080俯视；地理走廊与三个子模块相互嵌套，字幕位于底部安全区。；Canvas2D绘制覆铜、间隙、焊盘、丝印、光流、景深和窗光。；沿光头追拍、抬升显全程、穿孔换尺度、嵌套整板拉远。；原片Microsoft晓晓中文配音、合成电流长音、继电器、水声和环境声。；100BPM；16.3秒平滑交流门控，23秒到达，47.6秒等号揭示。；光的形态同时说明电流种类、路径、变换和到达。。实现入口为demos/cases/lemo-circuit-board/film/，MotionKit适配层仅调用并等待原作render(t)，使用原片音轨同步播放。\n\n## 动效 Token\n\n- **电流**：film/src/main.js:acPhase / sceneCorridor：交流说明段.55Hz，16.3秒换流，headS在16.5–23秒沿dcp推进。\n- **嵌套**：film/src/levels.js:toChild / toParent / baseOf / drawLevel；四级局部坐标与递归裁切。\n- **拉远**：film/src/main.js:camPull：52.9–54.5秒，logLerp(START.z,.8,e)，e=1−(1−p)^2.6。\n\n## 制作约束\n\n- 所有板块维持俯视与局部坐标。\n- 字幕字体按原subset.py使用相同字重和字符集合。\n- 地图和电流路径使用bebbbe1中的数据。\n\n## 迁移\n\n- `film/src/main.js:acPhase / sceneCorridor`：修改该处的电流参数。\n- `film/src/levels.js:toChild / toParent / baseOf / drawLevel；四级局部坐标与递归裁切。`：修改该处的嵌套参数。\n- `film/src/main.js:camPull`：修改该处的拉远参数。\n\n[打开 Demo](../../demos/cases/lemo-circuit-board/index.html) · [在库中查看](../../cases.html#case/lemo-circuit-board)\n"
+  },
+  "entrypoint": "demos/cases/lemo-circuit-board/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-circuit-board/LICENSES.md",
+      "bytes": 572,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/CREDITS",
+      "bytes": 1695,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/VOICE.txt",
+      "bytes": 267,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/audio/film.m4a",
+      "bytes": 1882472,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fidelity.md",
+      "bytes": 5107,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/data/subs_en.json",
+      "bytes": 1145,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/index.html",
+      "bytes": 445,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/charger.js",
+      "bytes": 7870,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/city.js",
+      "bytes": 4943,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/font.js",
+      "bytes": 9546,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/geo.js",
+      "bytes": 3640,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/hanzi.js",
+      "bytes": 9707,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/house.js",
+      "bytes": 6946,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/levels.js",
+      "bytes": 3041,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/loss.js",
+      "bytes": 2035,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/main.js",
+      "bytes": 24894,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/palette.js",
+      "bytes": 1046,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/parts.js",
+      "bytes": 10979,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/post.js",
+      "bytes": 3965,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/render.js",
+      "bytes": 28647,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/src/world.js",
+      "bytes": 28070,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/voice/dur.json",
+      "bytes": 167,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/film/voice/lines.json",
+      "bytes": 1645,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fonts/NotoSansSC-Medium-sub.ttf",
+      "bytes": 50388,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fonts/OFL-NotoSansSC.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/fonts/fonts.css",
+      "bytes": 81,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/index.html",
+      "bytes": 2671,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/CREDITS",
+      "bytes": 1695,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/FACTS.md",
+      "bytes": 5801,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/README.md",
+      "bytes": 2876,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/audio.py",
+      "bytes": 13179,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/build.sh",
+      "bytes": 3347,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/events.json",
+      "bytes": 3534,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/tools/sheet.sh",
+      "bytes": 510,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/tools/srt.py",
+      "bytes": 1062,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/tools/subset.py",
+      "bytes": 1362,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/voice/words.json",
+      "bytes": 6477,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/voice_en/dur.json",
+      "bytes": 165,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-circuit-board/source/voice_en/lines.json",
+      "bytes": 2946,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-circuit-board.json",
+      "bytes": 11419,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-circuit-board.jpg",
+      "bytes": 96815,
+      "role": "preview"
+    }
+  ]
+}

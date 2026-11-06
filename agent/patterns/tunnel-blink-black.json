@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "tunnel-blink-black",
+  "pattern": {
+    "id": "tunnel-blink-black",
+    "order": 111,
+    "title": "隧道黑场换景",
+    "types": [
+      "transition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "相机推向隧道口，列车被前层山崖逐节遮住，场景在25.3–25.5秒淡至黑；黑场停顿后，在25.75秒硬切河谷，全套场景与色阶由雪山冷蓝切到河谷青绿，声音同步留出短暂停顿。",
+    "mechanism": "相机推向隧道口，列车被前层山崖逐节遮住，场景在25.3–25.5秒淡至黑；黑场停顿后，在25.75秒硬切河谷，全套场景与色阶由雪山冷蓝切到河谷青绿，声音同步留出短暂停顿。",
+    "trigger": "列车最后的灯进入隧道，HIT.portal=25.3秒。",
+    "effect": "以一次短暂失光和静默断开两地，再用全新场景与色阶带出隧道另一侧。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "24.9–26.5秒；1倍速，共1.600000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "推向洞口与淡黑",
+        "value": "film/src/shots.js:s3.update相机z=.38→.24，目标x=.02→.12；s3.grade使用fade=1-ss(seg(t,H.portal,H.dark[0]))；portal=25.3，dark=[25.5,25.75]。"
+      },
+      {
+        "name": "黑场与换景",
+        "value": "film/timeline.json:SHOTS的S4=[S4,25.75,cut]；film/src/main.js以cut跳过溶解。HIT.dark跨度.25秒，在30fps帧格覆盖8帧约.266667秒；双语字幕L4按独立cues于25.63秒结束。"
+      },
+      {
+        "name": "声音停顿",
+        "value": "source/mix.py:music在portal+.1之后到dark[1]间置零；轮声避开dark区间，fx在dark[0]+.02到dark[1]-.02间置零；音轨沿用原作最终混音。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-paper-lantern/film/timeline.json",
+      "demos/cases/lemo-paper-lantern/film/src/main.js",
+      "demos/cases/lemo-paper-lantern/film/src/shots.js",
+      "demos/cases/lemo-paper-lantern/source/mix.py"
+    ],
+    "locator": "s3.grade / HIT.portal / HIT.dark / SHOTS.S4 / cut",
+    "useCases": [
+      "旅程跨地域换景",
+      "以短静默组织章节切换"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "windows-light-car-by-car"
+      ],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-paper-lantern的原作render(t)重放“隧道黑场换景”。相机推向隧道口，列车被前层山崖逐节遮住，场景在25.3–25.5秒淡至黑；黑场停顿后25.75秒硬切河谷，全套场景与色阶由雪山冷蓝切到河谷青绿，声音同步留出短暂停顿。参数与源码：film/src/shots.js:s3.update相机z=.38→.24，目标x=.02→.12；s3.grade使用fade=1-ss(seg(t,H.portal,H.dark[0]))；portal=25.3，dark=[25.5,25.75]。；film/timeline.json:SHOTS的S4=[S4,25.75,cut]；film/src/main.js以cut跳过溶解。HIT.dark跨度.25秒，在30fps帧格覆盖8帧约.266667秒；双语字幕L4按独立cues于25.63秒结束。；source/mix.py:music在portal+.1之后到dark[1]间置零；轮声避开dark区间，fx在dark[0]+.02到dark[1]-.02间置零；音轨沿用原作最终混音。。以入口segments映射原片时间，保留原作字体、纸层、灯光和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/tunnel-blink-black/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "lemo-paper-lantern"
+      }
+    ],
+    "previewAt": 1.35,
+    "markers": [
+      {
+        "t": 0,
+        "label": "驶入隧道"
+      },
+      {
+        "t": 0.4,
+        "label": "开始淡黑"
+      },
+      {
+        "t": 0.6,
+        "label": "黑场停顿"
+      },
+      {
+        "t": 0.85,
+        "label": "硬切河谷"
+      }
+    ],
+    "preview": "previews/patterns/tunnel-blink-black.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-paper-lantern",
+      "bundle": "agent/cases/lemo-paper-lantern.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 隧道黑场换景\n\n## 实现 Prompt\n\n复用来源案例lemo-paper-lantern的原作render(t)重放“隧道黑场换景”。相机推向隧道口，列车被前层山崖逐节遮住，场景在25.3–25.5秒淡至黑；黑场停顿后25.75秒硬切河谷，全套场景与色阶由雪山冷蓝切到河谷青绿，声音同步留出短暂停顿。参数与源码：film/src/shots.js:s3.update相机z=.38→.24，目标x=.02→.12；s3.grade使用fade=1-ss(seg(t,H.portal,H.dark[0]))；portal=25.3，dark=[25.5,25.75]。；film/timeline.json:SHOTS的S4=[S4,25.75,cut]；film/src/main.js以cut跳过溶解。HIT.dark跨度.25秒，在30fps帧格覆盖8帧约.266667秒；双语字幕L4按独立cues于25.63秒结束。；source/mix.py:music在portal+.1之后到dark[1]间置零；轮声避开dark区间，fx在dark[0]+.02到dark[1]-.02间置零；音轨沿用原作最终混音。。以入口segments映射原片时间，保留原作字体、纸层、灯光和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：24.9–26.5秒；1倍速，共1.600000秒。\n\n[打开 Demo](../../demos/patterns/tunnel-blink-black/index.html) · [在库中查看](../../patterns.html#pattern/tunnel-blink-black)\n"
+  },
+  "entrypoint": "demos/patterns/tunnel-blink-black/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-paper-lantern/LICENSES.md",
+      "bytes": 1445,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/audio/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/audio/CREDITS",
+      "bytes": 1776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/audio/film.m4a",
+      "bytes": 1647572,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/fidelity.md",
+      "bytes": 4432,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/index.html",
+      "bytes": 1578,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/src/lib.js",
+      "bytes": 2791,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/src/main.js",
+      "bytes": 3168,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/src/paper.js",
+      "bytes": 14398,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/src/post.js",
+      "bytes": 6647,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/src/shots.js",
+      "bytes": 33533,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/src/stage.js",
+      "bytes": 2694,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/src/world.js",
+      "bytes": 18833,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/film/timeline.json",
+      "bytes": 4046,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/fonts/CormorantGaramond-VF.ttf",
+      "bytes": 1195560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/fonts/NotoSerifSC-sub.ttf",
+      "bytes": 122608,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/fonts/OFL-CormorantGaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/fonts/OFL-NotoSerifSC.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/fonts/fonts.css",
+      "bytes": 173,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/index.html",
+      "bytes": 2448,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/CREDITS",
+      "bytes": 1776,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/FACTS.md",
+      "bytes": 517,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/README.md",
+      "bytes": 3240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/build.sh",
+      "bytes": 2492,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/mix.py",
+      "bytes": 10351,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/tools/fonts.py",
+      "bytes": 1494,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/tools/subcheck.py",
+      "bytes": 1217,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/tools/timeline.py",
+      "bytes": 3383,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/voices/dur.json",
+      "bytes": 161,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/voices/lines.json",
+      "bytes": 1227,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/source/voices/words.json",
+      "bytes": 2035,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-paper-lantern/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/tunnel-blink-black/index.html",
+      "bytes": 987,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/tunnel-blink-black/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-paper-lantern.json",
+      "bytes": 10128,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/tunnel-blink-black.json",
+      "bytes": 3704,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/tunnel-blink-black.jpg",
+      "bytes": 44717,
+      "role": "preview"
+    }
+  ]
+}

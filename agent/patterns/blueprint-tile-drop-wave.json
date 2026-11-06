@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "blueprint-tile-drop-wave",
+  "pattern": {
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "kit": true,
+    "timeline": true,
+    "avoid": [],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#DAD3F7",
+        "#B7ECD6",
+        "#FFC4AC",
+        "#A8D2FF",
+        "#FBFAFF",
+        "#62F0F2",
+        "#2C2960"
+      ],
+      "type": "HarmonyOS Sans SC 500、700；JetBrains Mono 500；Unbounded 800。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "id": "blueprint-tile-drop-wave",
+    "order": 34,
+    "title": "蓝图落块波",
+    "types": [
+      "composition",
+      "rhythm"
+    ],
+    "summary": "蓝图先从中心扩开，地块按方形同心环与角向错峰倾斜落位，触地压扁并微回弹。",
+    "mechanism": "地块按方形同心环与角向错峰倾斜落位，触地时压扁并微回弹两次，木质点击与环音符跟随落点。",
+    "trigger": "蓝图起绘后，cues.rings 的六个地块环节点依次到达。",
+    "effect": "12×12 蓝图被逐圈落定的地块覆盖，地块的倾角、位置与横纵尺寸随下落和接触阶段联动。",
+    "timing": [
+      {
+        "name": "地块环",
+        "value": "rings=[0.25,0.5,0.75,1.0,1.25,1.5]；ring=max(abs(dx),abs(dz))-.5。"
+      },
+      {
+        "name": "错峰",
+        "value": "tl=ringT[ring]+ang*.07+(R()-.5)*.02；R=A.rng(7)。"
+      },
+      {
+        "name": "落块",
+        "value": "rot0=-(1.25+R()*.3)；A.drop(T-t.tl,.3,2.2,t.rot0,.075)。"
+      },
+      {
+        "name": "触地",
+        "value": "b1=.16，b2=.1；第二次回跳幅度为第一次*.3；sy=1-.3*exp(-tau/.05)*cos(tau*40)。"
+      },
+      {
+        "name": "时长",
+        "value": "2.1s；原片0–2.1s。"
+      }
+    ],
+    "useCases": [
+      "等轴网格搭建开场",
+      "按同心环逐圈建立的地块场景"
+    ],
+    "prompt": "复用等距 2.5D 来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放原片0–2.1秒，时长2.1秒。蓝图先从中心扩开，六个地块环按0.25、0.5、0.75、1、1.25、1.5秒落位；ring=max(abs(dx),abs(dz))-.5，tl=ringT[ring]+ang*.07+(R()-.5)*.02，R=A.rng(7)。保留倾斜落块 A.drop(T-t.tl,.3,2.2,t.rot0,.075)、触地压扁与两次微回弹，木质点击和环音符与画面共用时间。保留原作模型、材质、字体和同区间音轨，1920×1080、30fps，声音默认关闭。",
+    "markers": [
+      {
+        "t": 0,
+        "label": "蓝图起绘"
+      },
+      {
+        "t": 0.25,
+        "label": "首环落位"
+      },
+      {
+        "t": 0.5,
+        "label": "第二环"
+      },
+      {
+        "t": 0.75,
+        "label": "第三环"
+      },
+      {
+        "t": 1,
+        "label": "第四环"
+      },
+      {
+        "t": 1.25,
+        "label": "第五环"
+      },
+      {
+        "t": 1.5,
+        "label": "末环落位"
+      },
+      {
+        "t": 1.9,
+        "label": "地块成形"
+      }
+    ],
+    "previewAt": 1,
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "demo": "demos/patterns/blueprint-tile-drop-wave/index.html",
+    "sources": [
+      {
+        "caseId": "mg-isometric"
+      }
+    ],
+    "preview": "previews/patterns/blueprint-tile-drop-wave.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-isometric",
+      "bundle": "agent/cases/mg-isometric.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 蓝图落块波\n\n## 实现 Prompt\n\n复用等距 2.5D 来源案例的原作 window.renderAt(t)，按 index.html 内联配置 的 segments 重放原片0–2.1秒，时长2.1秒。蓝图先从中心扩开，六个地块环按0.25、0.5、0.75、1、1.25、1.5秒落位；ring=max(abs(dx),abs(dz))-.5，tl=ringT[ring]+ang*.07+(R()-.5)*.02，R=A.rng(7)。保留倾斜落块 A.drop(T-t.tl,.3,2.2,t.rot0,.075)、触地压扁与两次微回弹，木质点击和环音符与画面共用时间。保留原作模型、材质、字体和同区间音轨，1920×1080、30fps，声音默认关闭。\n\n## 参数\n\n- **地块环**：rings=[0.25,0.5,0.75,1.0,1.25,1.5]；ring=max(abs(dx),abs(dz))-.5。\n- **错峰**：tl=ringT[ring]+ang*.07+(R()-.5)*.02；R=A.rng(7)。\n- **落块**：rot0=-(1.25+R()*.3)；A.drop(T-t.tl,.3,2.2,t.rot0,.075)。\n- **触地**：b1=.16，b2=.1；第二次回跳幅度为第一次*.3；sy=1-.3*exp(-tau/.05)*cos(tau*40)。\n- **时长**：2.1s；原片0–2.1s。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/blueprint-tile-drop-wave/index.html) · [在库中查看](../../patterns.html#pattern/blueprint-tile-drop-wave)\n"
+  },
+  "entrypoint": "demos/patterns/blueprint-tile-drop-wave/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-isometric/LICENSES.md",
+      "bytes": 984,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/audio/film.m4a",
+      "bytes": 423677,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fidelity.md",
+      "bytes": 6117,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/anim.js",
+      "bytes": 3953,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/cues.json",
+      "bytes": 1240,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/main.js",
+      "bytes": 9777,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/render.js",
+      "bytes": 9205,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/setup.js",
+      "bytes": 216,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/style.css",
+      "bytes": 423,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/title.js",
+      "bytes": 8519,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/ui.js",
+      "bytes": 9547,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/world.js",
+      "bytes": 80534,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS-Sans-LICENSE.txt",
+      "bytes": 32768,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS_Sans_SC_Bold.ttf",
+      "bytes": 8158996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS_Sans_SC_Medium.ttf",
+      "bytes": 8227312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/JetBrainsMono-OFL.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/JetBrainsMono[wght].ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded-800-static.ttf",
+      "bytes": 423680,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded-OFL.txt",
+      "bytes": 4392,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded[wght].ttf",
+      "bytes": 778272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/fonts.css",
+      "bytes": 700,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/index.html",
+      "bytes": 2932,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/source/audio.py",
+      "bytes": 14263,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-isometric/source/cues.json",
+      "bytes": 1240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/build/three.core.js",
+      "bytes": 1458113,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/build/three.module.js",
+      "bytes": 662772,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/environments/RoomEnvironment.js",
+      "bytes": 4960,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "bytes": 6470,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/postprocessing/Pass.js",
+      "bytes": 4218,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 15397,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/shaders/CopyShader.js",
+      "bytes": 729,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 37712,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/blueprint-tile-drop-wave/index.html",
+      "bytes": 1609,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/blueprint-tile-drop-wave/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-isometric.json",
+      "bytes": 24989,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/blueprint-tile-drop-wave.json",
+      "bytes": 3414,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/blueprint-tile-drop-wave.jpg",
+      "bytes": 82617,
+      "role": "preview"
+    }
+  ]
+}

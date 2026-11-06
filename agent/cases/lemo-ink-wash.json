@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-ink-wash",
+  "entry": {
+    "title": "剑客渡江 · 中国水墨",
+    "summary": "侠客踏水过江，在静默后以书写“水”的末笔斩开巨浪；镜头拉远，整段旅程成为落有朱印的一卷山水。",
+    "focus": "让笔触同时承担造型、动作与叙事，纸白成为水、雾和停顿；微小人物与浓墨巨浪建立尺度反差。",
+    "accent": "#B02E22",
+    "background": "#F2ECDE",
+    "observations": [
+      "湿墨与干墨分层，前者渗化并积墨，后者留下飞白与纸齿。",
+      "人物姿势每秒12次，镜头、墨晕、水纹按24fps推进。",
+      "“水”前三笔写完后静默，末笔延伸成飞白斩线，浪在斩线完成后才分开。",
+      "结尾从局部山水拉回丝绢装裱，剑穗与落印共用唯一朱红。"
+    ],
+    "composition": {
+      "color": "暖宣纸、冷灰至暖黑的五色墨，朱红只落在剑穗与印章。",
+      "typography": "Cormorant SC 竖排题字、Cormorant Garamond 斜体题跋；Ma Shan Zheng 提供“水”的骨架。",
+      "layout": "1920×1080横屏，纸白占主要空间；题跋随镜头安排在留白处。",
+      "imagery": "Canvas2D毛刷、写意人物与山水，WebGL2合成宣纸、渗墨、积墨和墨晕。",
+      "motion": "卷轴横移、轻功跟拍、巨浪缓推、帽檐特写、末笔斩浪与指数拉远。",
+      "sound": "原成片混音：古琴主导的五声音阶、箫与鼓、Kokoro bm_george旁白，静默中的水滴与剑鸣。",
+      "rhythm": "虚白与墨滴开场，轻快行进后压入巨浪；两段静默托起斩击，再回到平静全景。",
+      "coherence": "笔触既是形体也是动作；水面纸白与装裱中的整幅画连接局部和整体。"
+    },
+    "avoid": [
+      "多色水彩、矢量硬轮廓或密集填满画面的构图",
+      "用持续配乐覆盖决断前的静默"
+    ],
+    "constraints": [
+      "笔画按索引设种子，飞白断点沿固定参考长度，保持人物局部笔触稳定。",
+      "题跋绘制时重置相机，保留每镜留白。",
+      "分浪进度从cutEnd之后计算，使斩线先完成。",
+      "山体图层底部用透明渐变收边，翻转后按实际屏幕范围放置人物。"
+    ],
+    "prompt": "制作一卷在暖宣纸上生成的写意水墨影片：用焦、浓、重、淡、清五色墨与加载毛刷塑形，湿层渗化积墨，干层保留飞白。纸白承担天空、水面和沉默，画面只留一处朱红并与落印呼应；人物姿势12fps，镜头、墨晕与水纹24fps。题字写在画中，斜体衬线题跋放在每镜留白。决断前真正静默，末笔先完成，浪体再沿笔势分开；结尾拉远把局部放回整幅画。古琴、箫、鼓与纸墨拟音按事件编排，沿用原片音轨。引擎位于 demos/cases/lemo-ink-wash/film/ink.js、comp.js、shots.js 与各镜头模块。",
+    "patternIds": [
+      "decisive-stroke-glyph",
+      "scale-reveal-ink-figure"
+    ],
+    "id": "lemo-ink-wash",
+    "order": 24,
+    "subtitle": "The Swordsman and the River",
+    "carriers": [
+      "video"
+    ],
+    "style": "hand-drawn",
+    "purpose": "story",
+    "tech": [
+      "canvas2d",
+      "webgl"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "中国水墨",
+      "手绘与绘画",
+      "代码影片"
+    ],
+    "timeline": true,
+    "kit": true,
+    "previewAt": 34.56,
+    "rhythm": {
+      "duration": 48,
+      "beats": [
+        {
+          "t": 0,
+          "label": "虚白落墨",
+          "note": "墨滴在0.9秒落纸，墨晕造出世界。"
+        },
+        {
+          "t": 5.6,
+          "label": "展开手卷",
+          "note": "右至左横移，以高位全景显出微小人物。"
+        },
+        {
+          "t": 14.45,
+          "label": "轻功渡江",
+          "note": "墨晕接入横向跟拍，脚点按90BPM落水。"
+        },
+        {
+          "t": 21.3,
+          "label": "巨浪压境",
+          "note": "低地平线、缓推与震动建立浓墨体量。"
+        },
+        {
+          "t": 26.8,
+          "label": "帽檐静默",
+          "note": "硬切帽檐特写，只保留一滴水声。"
+        },
+        {
+          "t": 27.9,
+          "label": "以剑写水",
+          "note": "肩后构图对齐人物、字和浪。"
+        },
+        {
+          "t": 30.5,
+          "label": "蓄势",
+          "note": "总线静默，缓推5%。"
+        },
+        {
+          "t": 32.4,
+          "label": "一笔斩浪",
+          "note": "末笔扫出画幅，32.57秒之后浪才裂开。"
+        },
+        {
+          "t": 35,
+          "label": "渡向彼岸",
+          "note": "墨晕回到全景，水在身后合拢。"
+        },
+        {
+          "t": 40.4,
+          "label": "拱手",
+          "note": "近景行礼。"
+        },
+        {
+          "t": 42.6,
+          "label": "整卷拉远",
+          "note": "显出装裱，44.6秒落印。"
+        },
+        {
+          "t": 45.6,
+          "label": "画下片尾",
+          "note": "卷下出现片名与署名。"
+        }
+      ]
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 5.6,
+        "from": 0.05,
+        "to": 0.25,
+        "label": "落墨"
+      },
+      {
+        "t0": 5.6,
+        "t1": 14.45,
+        "from": 0.25,
+        "to": 0.35,
+        "label": "展开山水"
+      },
+      {
+        "t0": 14.45,
+        "t1": 21.3,
+        "from": 0.5,
+        "to": 0.65,
+        "label": "渡江"
+      },
+      {
+        "t0": 21.3,
+        "t1": 26.8,
+        "from": 0.65,
+        "to": 0.9,
+        "label": "巨浪"
+      },
+      {
+        "t0": 26.8,
+        "t1": 30.5,
+        "from": 0.08,
+        "to": 0.2,
+        "label": "写字与水滴"
+      },
+      {
+        "t0": 30.5,
+        "t1": 32.4,
+        "from": 0,
+        "to": 0.02,
+        "label": "静默"
+      },
+      {
+        "t0": 32.4,
+        "t1": 35,
+        "from": 0.95,
+        "to": 0.7,
+        "label": "斩浪"
+      },
+      {
+        "t0": 35,
+        "t1": 42.6,
+        "from": 0.45,
+        "to": 0.2,
+        "label": "彼岸"
+      },
+      {
+        "t0": 42.6,
+        "t1": 48,
+        "from": 0.2,
+        "to": 0.05,
+        "label": "整卷与落印"
+      }
+    ],
+    "energyNote": "段落取DEMO.md的Shots、Score structure与源码时间表；0–1数值按画面动作、声音密度和静默作相对编辑标注。",
+    "layers": [
+      {
+        "name": "宣纸合成",
+        "role": "世界锚定的云纹、三向纤维、纸屑与暗角。"
+      },
+      {
+        "name": "湿墨与干墨",
+        "role": "湿层渗化并积墨，干层保留毛刷和飞白。"
+      },
+      {
+        "name": "人物与浪",
+        "role": "写意骨骼人物、空心水纹、浓墨浪体与斩后喷点。"
+      },
+      {
+        "name": "朱红与装裱",
+        "role": "剑穗、印章、丝绢边框及轴头。"
+      },
+      {
+        "name": "题跋",
+        "role": "重置相机矩阵后绘制英文题跋与片尾。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#F2ECDE",
+        "#F3EBDD",
+        "#B02E22",
+        "#2f2b27",
+        "#cdc3aa",
+        "#5a4634"
+      ],
+      "type": "Cormorant Garamond 可变字重300–700及斜体；Cormorant SC 500/600；Ma Shan Zheng 400；Zhi Mang Xing 400保留为上游比较字体。",
+      "motion": [
+        {
+          "name": "墨色与渗化",
+          "value": "film/ink.js:TONE；film/comp.js:inkD：五色墨、12点Poisson湿墨模糊，R约5px，边缘积墨为小模糊减大模糊。"
+        },
+        {
+          "name": "决断末笔",
+          "value": "film/story.js:T：前三笔28.5–30.35秒，hush=30.5，cut=32.4，cutEnd=32.57；climax.js:renderWrite在cutEnd之后推进2.3秒的裂浪。"
+        },
+        {
+          "name": "尺度揭示",
+          "value": "film/passage.js:renderScroll：42.6–45秒eio，z按log插值从1.25到0.315；seal=44.6。"
+        }
+      ]
+    },
+    "useCases": [
+      "武侠短片",
+      "文化品牌影像",
+      "诗歌影像"
+    ],
+    "migration": [
+      {
+        "field": "film/story.js → T / VO",
+        "how": "修改时间表、旁白题跋与静默区间；配乐和拟音沿用同一时刻。"
+      },
+      {
+        "field": "film/hero.js / glyph.js → POSE / SHUI",
+        "how": "修改人物姿态、剑穗与书写骨架。"
+      },
+      {
+        "field": "film/world.js / cross.js / passage.js",
+        "how": "修改山水、相机与装裱收尾。"
+      },
+      {
+        "field": "film/comp.js → paper / inkD / inkCol",
+        "how": "修改宣纸、墨色和渗化参数。"
+      }
+    ],
+    "demo": "demos/cases/lemo-ink-wash/index.html",
+    "fidelity": "demos/cases/lemo-ink-wash/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/ink-wash",
+      "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+      "path": "styles/ink-wash/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+      "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方素材按CREDITS各自许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与示范制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/ink-wash"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/ink-wash.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/ink-wash/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/ink-wash)。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "沿用公开成片混音，原始资源与署名见[audio/CREDITS](audio/CREDITS)，许可原文入口见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "字体家族与字重见tokens.type；OFL原文在fonts/，取得和重建方式见[source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-ink-wash/LICENSES.md",
+    "preview": "previews/cases/lemo-ink-wash.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 剑客渡江 · 中国水墨 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-ink-wash.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载运行文件、字体、音轨与场景素材；同源iframe等待load及READY后按原fps调用render(t)。 | 接入MotionKit舞台、时间线与声音。 |\n| `audio/film.m4a` | 从Release成片以-c:a copy流复制。 | 同步正式混音。 |\n| `source/` | 保存成片运行目录之外的上游制作文件，原字节与相对目录结构保留。 | 保存重建依赖。 |\n| `stills/` | 上游风格帧与调试图留在来源；本库预览由capture生成。 | 成品绘制不读取这些静帧。 |\n| `film/index.html` | 字体样式指向../fonts/；import map把/core/lib.js映射到film/core/lib.js。 | 路径接入；共享lib.js为固定提交原字节。 |\n\n`film/` 的绘制、着色器、数据表与时间轴文件保留固定提交的原字节；入口负责路径接入。许可索引见 [LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html` 使用 `MotionKit.load.prepare` 预载，等待同源iframe的load事件与 `window.READY === true`，再以 `MotionKit.mountFilm` 接入1920×1080横屏、24fps、48.0秒的舞台。`renderAt(t)` 执行并等待 `upstream.render(Math.round(t*24)/24)`，画面由上游直接绘制。声音读取Release音轨流复制的 `audio/film.m4a`，默认关闭。\n\n`?embed` 隐藏控制条，`?render` 暂停自动播放与声音，`?t=秒` 定位；减少动态时暂停在条目的 `previewAt`。镜头标记取上游Shots与源码时间表。\n\n## 已接受差异\n\n本次所有采样帧的原始PNG与编码链测量均达到0.95。\n\n## 与原片对照结果\n\n无头Edge使用 `--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，ANGLE使用本机默认后端，实际为Intel Iris Xe／ANGLE Direct3D11；视口1920×1080、DPR1。等待 `__motion.ready` 后，按 `floor(t×24+.5)` 对齐视频帧并定位截图。参考PNG取自Release的相同帧号。\n\n**原始**列比较参考PNG与本库PNG。**编码链**列把本库PNG在独立测量页捕获为JPEG95，按上游链编码并解码；全部编码在过程目录进行，页面直接运行原作render(t)。两幅PNG转为yuv444p，取ffmpeg SSIM All。\n\n`source/build.sh:11–12`、共享`core/render/video.mjs:49–57`与`core/render/mux.sh:79–89`：24fps，JPEG95 → libx264 medium CRF14 yuv420p → libx264 slow CRF19 yuv420p，grain=0。\n\n测量使用单张I帧视频，颗粒从该测量帧起计算。`compare-N.png`为左参考、右本库原始PNG，`compare-encoded-N.png`为左参考、右编码链测量PNG。\n\nShots表的数字时段按原作时间表与镜头调度确定，开头、frame_sec、各段中点和片尾前1秒按视频帧去重。\n\n| Shots段 | 起止（秒） | 中点（秒） | 视频帧号 |\n| --- | --- | --- | --- |\n| Opening | 0.000000–5.600000 | 2.800000 | 67 |\n| Establishing | 5.600000–14.450000 | 10.025000 | 241 |\n| Travel | 14.450000–21.300000 | 17.875000 | 429 |\n| Threat | 21.300000–26.800000 | 24.050000 | 577 |\n| Silence | 26.800000–35.000000 | 30.900000 | 742 |\n| Release | 35.000000–42.600000 | 38.800000 | 931 |\n| Ending | 42.600000–48.000000 | 45.300000 | 1087 |\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.990727 | 0.990155 | 开头 |\n| 2 | 829 | 34.560000 | 34.541667 | 0.987240 | 0.986924 | frame_sec |\n| 3 | 67 | 2.800000 | 2.791667 | 0.990160 | 0.989363 | Shots · Opening中点 |\n| 4 | 241 | 10.025000 | 10.041667 | 0.988208 | 0.985827 | Shots · Establishing中点 |\n| 5 | 429 | 17.875000 | 17.875000 | 0.986205 | 0.986643 | Shots · Travel中点 |\n| 6 | 577 | 24.050000 | 24.041667 | 0.986556 | 0.986242 | Shots · Threat中点 |\n| 7 | 742 | 30.900000 | 30.916667 | 0.989022 | 0.988322 | Shots · Silence中点 |\n| 8 | 931 | 38.800000 | 38.791667 | 0.989838 | 0.990279 | Shots · Release中点 |\n| 9 | 1087 | 45.300000 | 45.291667 | 0.991569 | 0.989274 | Shots · Ending中点 |\n| 10 | 1128 | 47.000000 | 47.000000 | 0.991158 | 0.988222 | 片尾前1秒 |\n\n10帧：原始最低 **0.986205**、最高 **0.991569**，10/10达到0.95；编码链最低 **0.985827**、最高 **0.990279**，10/10达到0.95。\n\n声音：成片与本库音轨解码为48kHz单声道，每10ms的RMS包络在±500ms内互相关；最佳偏移 **0ms**，相关系数 **1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-ink-wash.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。\n- [audio/film.m4a](audio/film.m4a) 流复制自 [Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/ink-wash.mp4)，[CC BY 4.0原文](audio/CC-BY-4.0.txt)，署名LemoLab并链接来源，混音保持原样。\n- 上游完整署名：[audio/CREDITS](audio/CREDITS)；制作文件的原始声明：[source/CREDITS](source/CREDITS)。\n- Kokoro-82M语音模型（hexgrad）：[Apache-2.0](audio/Apache-2.0.txt)。\n- 字体均为SIL OFL 1.1：[OFL-Cormorant.txt](fonts/OFL-Cormorant.txt)、[OFL-MaShanZheng.txt](fonts/OFL-MaShanZheng.txt)、[OFL-ZhiMangXing.txt](fonts/OFL-ZhiMangXing.txt)。\n- 配乐与拟音为上游原创；采样来自Versilian的VSCO2 CE、VCSL等[CC0](audio/CC0-1.0.txt)音色库，原始声明与具体乐器见CREDITS及source/music/score.py。\n\nCC、Apache许可原文沿用本库第一批案例保存的SPDX文本；字体和运行库保留上游许可原文。\n",
+    "prompt": "# 剑客渡江 · 中国水墨\n\n## 实现 Prompt\n\n制作一卷在暖宣纸上生成的写意水墨影片：用焦、浓、重、淡、清五色墨与加载毛刷塑形，湿层渗化积墨，干层保留飞白。纸白承担天空、水面和沉默，画面只留一处朱红并与落印呼应；人物姿势12fps，镜头、墨晕与水纹24fps。题字写在画中，斜体衬线题跋放在每镜留白。决断前真正静默，末笔先完成，浪体再沿笔势分开；结尾拉远把局部放回整幅画。古琴、箫、鼓与纸墨拟音按事件编排，沿用原片音轨。引擎位于 demos/cases/lemo-ink-wash/film/ink.js、comp.js、shots.js 与各镜头模块。\n\n## 动效 Token\n\n- **墨色与渗化**：film/ink.js:TONE；film/comp.js:inkD：五色墨、12点Poisson湿墨模糊，R约5px，边缘积墨为小模糊减大模糊。\n- **决断末笔**：film/story.js:T：前三笔28.5–30.35秒，hush=30.5，cut=32.4，cutEnd=32.57；climax.js:renderWrite在cutEnd之后推进2.3秒的裂浪。\n- **尺度揭示**：film/passage.js:renderScroll：42.6–45秒eio，z按log插值从1.25到0.315；seal=44.6。\n\n## 制作约束\n\n- 笔画按索引设种子，飞白断点沿固定参考长度，保持人物局部笔触稳定。\n- 题跋绘制时重置相机，保留每镜留白。\n- 分浪进度从cutEnd之后计算，使斩线先完成。\n- 山体图层底部用透明渐变收边，翻转后按实际屏幕范围放置人物。\n\n## 迁移\n\n- `film/story.js → T / VO`：修改时间表、旁白题跋与静默区间；配乐和拟音沿用同一时刻。\n- `film/hero.js / glyph.js → POSE / SHUI`：修改人物姿态、剑穗与书写骨架。\n- `film/world.js / cross.js / passage.js`：修改山水、相机与装裱收尾。\n- `film/comp.js → paper / inkD / inkCol`：修改宣纸、墨色和渗化参数。\n\n[打开 Demo](../../demos/cases/lemo-ink-wash/index.html) · [在库中查看](../../cases.html#case/lemo-ink-wash)\n"
+  },
+  "entrypoint": "demos/cases/lemo-ink-wash/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-ink-wash/LICENSES.md",
+      "bytes": 1155,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/CREDITS",
+      "bytes": 1399,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/audio/film.m4a",
+      "bytes": 1461338,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fidelity.md",
+      "bytes": 4609,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/climax.js",
+      "bytes": 8351,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/comp.js",
+      "bytes": 9418,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/cross.js",
+      "bytes": 6828,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/face.js",
+      "bytes": 7228,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/glyph.js",
+      "bytes": 5305,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/hero.js",
+      "bytes": 20979,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/index.html",
+      "bytes": 435,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/ink.js",
+      "bytes": 11400,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/land.js",
+      "bytes": 10900,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/main.js",
+      "bytes": 2071,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/passage.js",
+      "bytes": 9686,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/seal.js",
+      "bytes": 2338,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/shots.js",
+      "bytes": 3249,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/story.js",
+      "bytes": 1527,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/subs.js",
+      "bytes": 1288,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/wave.js",
+      "bytes": 4537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/film/world.js",
+      "bytes": 10351,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/CormorantGaramond-Italic-VF.ttf",
+      "bytes": 715644,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/CormorantGaramond-VF.ttf",
+      "bytes": 1195560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/CormorantSC-Medium.ttf",
+      "bytes": 762320,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/CormorantSC-SemiBold.ttf",
+      "bytes": 762872,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/MaShanZheng-Regular.ttf",
+      "bytes": 5857936,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/OFL-Cormorant.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/OFL-MaShanZheng.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/OFL-ZhiMangXing.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/ZhiMangXing-Regular.ttf",
+      "bytes": 4063532,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/fonts/fonts.css",
+      "bytes": 539,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/index.html",
+      "bytes": 2653,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/CREDITS",
+      "bytes": 1399,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/README.md",
+      "bytes": 3092,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/build.sh",
+      "bytes": 1140,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/cues.json",
+      "bytes": 362,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/cues.mjs",
+      "bytes": 261,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/events.json",
+      "bytes": 2119,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/frames.js",
+      "bytes": 5148,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/lines.json",
+      "bytes": 555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/mix.py",
+      "bytes": 7967,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/music/score.json",
+      "bytes": 3243,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/music/score.py",
+      "bytes": 11546,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/sheet.js",
+      "bytes": 5089,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/test.js",
+      "bytes": 3028,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-ink-wash/source/voices/words.json",
+      "bytes": 988,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-ink-wash.json",
+      "bytes": 10111,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-ink-wash.jpg",
+      "bytes": 89846,
+      "role": "preview"
+    }
+  ]
+}

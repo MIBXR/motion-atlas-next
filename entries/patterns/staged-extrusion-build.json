@@ -1,0 +1,149 @@
+{
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "kit": true,
+  "timeline": true,
+  "avoid": [],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#DAD3F7",
+      "#B7ECD6",
+      "#FFC4AC",
+      "#A8D2FF",
+      "#FBFAFF",
+      "#62F0F2",
+      "#2C2960"
+    ],
+    "type": "HarmonyOS Sans SC 500、700；JetBrains Mono 500；Unbounded 800。"
+  },
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments",
+      "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+    },
+    {
+      "field": "index.html 内联配置 → markers / reduced",
+      "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+    }
+  ],
+  "id": "staged-extrusion-build",
+  "order": 35,
+  "title": "分层伸展组装",
+  "types": [
+    "composition",
+    "rhythm"
+  ],
+  "summary": "土层向下伸展、楼房错峰组装、核心塔套筒升出，后续层段的位置随前层当前伸展量联动。",
+  "mechanism": "土层向下露出、塔段从前段内部向上升出，后续层段的位置由前层当前伸展量计算；楼房依次组装基座、墙体、屋顶、细节和窗光。",
+  "trigger": "土层、住宅与楼房、核心塔各层的时间节点依次到达。",
+  "effect": "地块下方形成阶梯剖面，楼房墙体弹性长高后盖上屋顶，细塔段从粗塔段内部伸出并装上天线与光环。",
+  "timing": [
+    {
+      "name": "土层",
+      "value": "soil=1.62；三层延迟0/.15/.3秒；高度1.3/.9/.8；s2.y=-1.3*u，s3.y=-1.3*u-.9*u2。"
+    },
+    {
+      "name": "墙体",
+      "value": "A.spring(tau,14.8,.61,0)；延后1/30秒；roof_lag=.375；lit0=def.t0+.42。"
+    },
+    {
+      "name": "屋顶与细节",
+      "value": "A.drop(tau-rl,.1,.3,0,.025)；A.spring(TGv-b.t0-cues.roof_lag-.05,24,.5,10)。"
+    },
+    {
+      "name": "塔段",
+      "value": "SH1=2.3，SH2=2.0，SH3=1.6，SHA=1.2；A.spring(T-tw.seg1,17,.6,5)；seg2.y=top1-SH2+SH2*s2-.02。"
+    },
+    {
+      "name": "核心节点",
+      "value": "base=4.625，seg1=4.75，seg2=5，seg3=5.25，antenna=5.5，ring=5.75。"
+    },
+    {
+      "name": "时长",
+      "value": "6.51s；原片1.42–2.57、1.95–5.45、4.325–6.185s。"
+    }
+  ],
+  "useCases": [
+    "浮岛分层剖面",
+    "楼房分部件组装",
+    "套筒式核心塔生长"
+  ],
+  "prompt": "复用等距 2.5D 来源案例的原作 window.renderAt(t)，依次重放原片1.42–2.57秒土层、1.95–5.45秒楼房、4.325–6.185秒核心塔，时长6.51秒。土层三层分别延迟0/.15/.3秒向下伸展，后续层段的位置由前层当前伸展量计算。楼房基座先落，墙体延后1/30秒以A.spring(tau,14.8,.61,0)长高，roof_lag=.375秒后屋顶落下，细节再延后.05秒弹出，窗光在def.t0+.42秒启亮。核心塔的SH1/SH2/SH3/SHA为2.3/2/1.6/1.2，较细塔段从前段内部升出；按4.625/4.75/5/5.25/5.5/5.75秒组装基座、三段、天线与光环。保留原作模型、材质、字体、逐段上行音与同区间音轨，1920×1080、30fps，声音默认关闭。",
+  "markers": [
+    {
+      "t": 0,
+      "label": "土层片段"
+    },
+    {
+      "t": 0.2,
+      "label": "土层伸展"
+    },
+    {
+      "t": 0.35,
+      "label": "第二土层"
+    },
+    {
+      "t": 0.5,
+      "label": "第三土层"
+    },
+    {
+      "t": 1.15,
+      "label": "楼房片段"
+    },
+    {
+      "t": 1.45,
+      "label": "住宅生长"
+    },
+    {
+      "t": 2.075,
+      "label": "楼房生长"
+    },
+    {
+      "t": 4.65,
+      "label": "核心升塔"
+    },
+    {
+      "t": 4.95,
+      "label": "核心基座"
+    },
+    {
+      "t": 5.075,
+      "label": "核心一段"
+    },
+    {
+      "t": 5.325,
+      "label": "核心二段"
+    },
+    {
+      "t": 5.575,
+      "label": "核心三段"
+    },
+    {
+      "t": 5.825,
+      "label": "核心天线"
+    },
+    {
+      "t": 6.075,
+      "label": "核心光环"
+    }
+  ],
+  "previewAt": 6.191666666666666,
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "demo": "demos/patterns/staged-extrusion-build/index.html",
+  "sources": [
+    {
+      "caseId": "mg-isometric"
+    }
+  ]
+}

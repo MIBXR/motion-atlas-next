@@ -1,0 +1,939 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "explode-parts-leaders",
+  "pattern": {
+    "id": "explode-parts-leaders",
+    "order": 48,
+    "title": "拆件引线联动",
+    "types": [
+      "composition",
+      "hud"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "贴纸科普"
+    ],
+    "summary": "部件从手机位置沿弧线飞到分解位，引线从锚点生长，端点与双语标签依次展开。",
+    "mechanism": "部件从手机位置沿弧线飞到分解位，引线从锚点生长，端点与双语标签依次展开。",
+    "trigger": "拆解部件和对应引线的节点依次到达时",
+    "effect": "部件、锚点、引线与标签在同一画布坐标中形成拆解说明。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-paperclip 原片 0.98–2.6 秒；1 倍速，巧思时长 1.62 秒。"
+      },
+      {
+        "name": "拆件引线联动",
+        "value": "L169: p.land=EV.parts[i]; p.lt=EV.leaders[i];；L198: const x=lerp(src.x,p.x,e), y=lerp(src.y,p.y,e)-arc*60; const w=wob(t-p.land,4,9);；L202: const lu=P(t,p.lt,.28);p.line.setAttribute('stroke-dashoffset',1-oC(lu));"
+      }
+    ],
+    "useCases": [
+      "手机部件拆解",
+      "部件锚点与双语标签说明"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": [],
+      "notes": "三维零件引线同样按部件表面锚点、折线、索引与标签展开，层间拆解与3D镜头另见orbit-explode-3d。全息局部爆炸沿子件装配轴展开，外壳离开、内部件留在原位发热；从投影后的同一表面anchor拉出两段引线，连接到规格卡。"
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-paperclip 原片 0.98–2.6 秒；总时长 1.62 秒。部件从手机位置沿弧线飞到分解位，引线从锚点生长，端点与双语标签依次展开。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/explode-parts-leaders/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-paperclip"
+      },
+      {
+        "caseId": "lemo-teardown"
+      },
+      {
+        "caseId": "lemo-hologram-hud"
+      }
+    ],
+    "previewAt": 1.22,
+    "markers": [
+      {
+        "t": 0,
+        "label": "贴纸科普"
+      },
+      {
+        "t": 0.42,
+        "label": "机制画面"
+      },
+      {
+        "t": 0.92,
+        "label": "机制画面"
+      },
+      {
+        "t": 1.42,
+        "label": "机制画面"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "三维引线",
+        "value": "label每帧投影零件锚点，先画锚点与两段折线，再把名称平移10px显露；主控与灯珠标签分别覆盖15—18.125、18.125—21.875秒。",
+        "source": "demos/cases/lemo-teardown/film/src/overlay.js:label / drawOverlay"
+      },
+      {
+        "name": "全息局部拆解",
+        "value": "film.js以callBeats控制explode；leader按两段长度分配进度，anchor半径9px；电池9—10秒展开，电机14.5—15.25秒展开。",
+        "source": "demos/cases/lemo-hologram-hud/film/film.js:renderFrame；film/engine/hud.js:leader"
+      }
+    ],
+    "preview": "previews/patterns/explode-parts-leaders.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-paperclip",
+      "bundle": "agent/cases/mg-paperclip.json"
+    },
+    {
+      "caseId": "lemo-teardown",
+      "bundle": "agent/cases/lemo-teardown.json"
+    },
+    {
+      "caseId": "lemo-hologram-hud",
+      "bundle": "agent/cases/lemo-hologram-hud.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 拆件引线联动\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速重放以下片段：mg-paperclip 原片 0.98–2.6 秒；总时长 1.62 秒。部件从手机位置沿弧线飞到分解位，引线从锚点生长，端点与双语标签依次展开。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-paperclip 原片 0.98–2.6 秒；1 倍速，巧思时长 1.62 秒。\n- **拆件引线联动**：L169: p.land=EV.parts[i]; p.lt=EV.leaders[i];；L198: const x=lerp(src.x,p.x,e), y=lerp(src.y,p.y,e)-arc*60; const w=wob(t-p.land,4,9);；L202: const lu=P(t,p.lt,.28);p.line.setAttribute('stroke-dashoffset',1-oC(lu));\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/explode-parts-leaders/index.html) · [在库中查看](../../patterns.html#pattern/explode-parts-leaders)\n"
+  },
+  "entrypoint": "demos/patterns/explode-parts-leaders/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-hologram-hud/LICENSES.md",
+      "bytes": 573,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/CREDITS",
+      "bytes": 872,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/audio/film.m4a",
+      "bytes": 1265555,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fidelity.md",
+      "bytes": 3031,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/content.json",
+      "bytes": 1745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/engine/holo.js",
+      "bytes": 19803,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/engine/hud.js",
+      "bytes": 21142,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/film.js",
+      "bytes": 25710,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/index.html",
+      "bytes": 377,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/main.js",
+      "bytes": 999,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/models/volt.json",
+      "bytes": 217665,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/film/voices/dur.json",
+      "bytes": 77,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/OFL-rajdhani.txt",
+      "bytes": 4373,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/OFL-sharetechmono.txt",
+      "bytes": 4429,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-Light.ttf",
+      "bytes": 383928,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-Medium.ttf",
+      "bytes": 384348,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-Regular.ttf",
+      "bytes": 377860,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/Rajdhani-SemiBold.ttf",
+      "bytes": 390340,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/ShareTechMono-Regular.ttf",
+      "bytes": 43272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/fonts/fonts.css",
+      "bytes": 413,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/index.html",
+      "bytes": 2251,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/CREDITS",
+      "bytes": 872,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/README.md",
+      "bytes": 2063,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/build.sh",
+      "bytes": 3433,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/content_alt.json",
+      "bytes": 1920,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/events.json",
+      "bytes": 2643,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/frames.js",
+      "bytes": 1594,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/lines.json",
+      "bytes": 825,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/mix.py",
+      "bytes": 13494,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/gen_kite.mjs",
+      "bytes": 5547,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/gen_volt.mjs",
+      "bytes": 7544,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/kite.json",
+      "bytes": 102526,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/models/mkmodel.mjs",
+      "bytes": 15226,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/CREDITS_music.txt",
+      "bytes": 213,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/check.py",
+      "bytes": 1653,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/score.json",
+      "bytes": 18813,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/music/score.py",
+      "bytes": 14503,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/timeline.json",
+      "bytes": 1070,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/cuecheck.py",
+      "bytes": 1352,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/export.mjs",
+      "bytes": 1298,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/final_asr.py",
+      "bytes": 1925,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/tools/make_lines.mjs",
+      "bytes": 1033,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-hologram-hud/source/voices/words.json",
+      "bytes": 1172,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/LICENSES.md",
+      "bytes": 1165,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/assets/photo_studio_loft_hall_2k.hdr",
+      "bytes": 6432146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/CREDITS",
+      "bytes": 2427,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/audio/film.m4a",
+      "bytes": 1255763,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fidelity.md",
+      "bytes": 3739,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/core/three/post.js",
+      "bytes": 6482,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/cues.json",
+      "bytes": 1199,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/data/case.bin",
+      "bytes": 1483928,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/data/pcb.json",
+      "bytes": 660897,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/index.html",
+      "bytes": 1331,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/comps.js",
+      "bytes": 5445,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/main.js",
+      "bytes": 17565,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/overlay.js",
+      "bytes": 11151,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/parts.js",
+      "bytes": 8321,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/pcbtex.js",
+      "bytes": 4427,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/src/timeline.js",
+      "bytes": 5319,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/voice/out/dur.json",
+      "bytes": 127,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/film/voice/out/words.json",
+      "bytes": 1227,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/Inter.ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/JetBrainsMono.ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/NotoSansSC-400.woff2",
+      "bytes": 14424,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/NotoSansSC-500.woff2",
+      "bytes": 14628,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/OFL-inter.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/OFL-jetbrainsmono.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/fonts/fonts.css",
+      "bytes": 379,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/index.html",
+      "bytes": 4088,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/CREDITS",
+      "bytes": 2427,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/FACTS.md",
+      "bytes": 6175,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/README.md",
+      "bytes": 2521,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/build.sh",
+      "bytes": 3002,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/LICENSE_CC",
+      "bytes": 18657,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/LICENSE_MIT",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/corne-cherry.kicad_pcb",
+      "bytes": 4634342,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/left.step",
+      "bytes": 563447,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/cad/plate-top-cherrymx.kicad_pcb",
+      "bytes": 127156,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/events.json",
+      "bytes": 3543,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/mix.py",
+      "bytes": 12380,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/timeline.json",
+      "bytes": 671,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/export.mjs",
+      "bytes": 1963,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/extract_pcb.py",
+      "bytes": 6334,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/fetch_cad.sh",
+      "bytes": 952,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/fetch_fonts.py",
+      "bytes": 1753,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/kicad_geom.py",
+      "bytes": 4692,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/motioncheck.py",
+      "bytes": 1670,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/sexp.py",
+      "bytes": 519,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/step2mesh.mjs",
+      "bytes": 1530,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/tools/subcheck.mjs",
+      "bytes": 1090,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/source/voice/lines.json",
+      "bytes": 1228,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "bytes": 4625,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+      "bytes": 314097,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+      "bytes": 516,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+      "bytes": 110273,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+      "bytes": 11377,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-teardown/vendor/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/LICENSES.md",
+      "bytes": 911,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/countries-110m.json",
+      "bytes": 107761,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/battery.png",
+      "bytes": 233146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/cobalt.png",
+      "bytes": 377499,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/lithium.png",
+      "bytes": 291448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/meta.json",
+      "bytes": 351,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/pcb.png",
+      "bytes": 1296815,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/phone.png",
+      "bytes": 2104894,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/rareearth.png",
+      "bytes": 644720,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/tin.png",
+      "bytes": 538156,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/audio/film.m4a",
+      "bytes": 415520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fidelity.md",
+      "bytes": 4716,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/cues.json",
+      "bytes": 3076,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/scene.js",
+      "bytes": 50443,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/setup.js",
+      "bytes": 2263,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/style.css",
+      "bytes": 2129,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-105-Heavy.ttf",
+      "bytes": 2536300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-65-Medium.ttf",
+      "bytes": 8429388,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-85-Bold.ttf",
+      "bytes": 8371268,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-LICENSE.md",
+      "bytes": 5216,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/Inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/fonts.css",
+      "bytes": 698,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/index.html",
+      "bytes": 2456,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/audio.py",
+      "bytes": 10067,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/cues.json",
+      "bytes": 3076,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/tools/stickers.py",
+      "bytes": 4468,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/d3@7.9.0/LICENSE",
+      "bytes": 731,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/d3@7.9.0/dist/d3.min.js",
+      "bytes": 279706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/topojson-client@3.1.0/LICENSE",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/topojson-client@3.1.0/dist/topojson-client.min.js",
+      "bytes": 7169,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/explode-parts-leaders/index.html",
+      "bytes": 1393,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/explode-parts-leaders/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-hologram-hud.json",
+      "bytes": 8375,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/lemo-teardown.json",
+      "bytes": 9675,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-paperclip.json",
+      "bytes": 17924,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/explode-parts-leaders.json",
+      "bytes": 3446,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/explode-parts-leaders.jpg",
+      "bytes": 91241,
+      "role": "preview"
+    }
+  ]
+}

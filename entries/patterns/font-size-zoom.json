@@ -1,0 +1,67 @@
+{
+  "id": "font-size-zoom",
+  "order": 131,
+  "title": "字号即镜头",
+  "types": [
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "把字格宽度当作镜头尺度，从8px推到300px并停一秒，再推到450px；用40列小日志填充同一个字形，字内全亮、字外压暗，最后按对数尺度退回。",
+  "mechanism": "把字格宽度当作镜头尺度，从8px推到300px并停一秒，再推到450px；用40列小日志填充同一个字形，字内全亮、字外压暗，最后按对数尺度退回。",
+  "trigger": "来源案例时间轴进入所列动作区间。",
+  "effect": "把字格宽度当作镜头尺度，从8px推到300px并停一秒，再推到450px；用40列小日志填充同一个字形，字内全亮、字外压暗，最后按对数尺度退回。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "40.000000–47.800000秒；1倍速，总时长7.800000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "尺度",
+      "value": "film/main.js:T.fr0–fr5=40.2/41.6/42.6/43.6/46.8/47.6；fractalCW以对数插值8→300→450→8px。"
+    },
+    {
+      "name": "字内画面",
+      "value": "film/main.js:sFractal / logRow：K=40；thin字形掩模；目标字内1.15、字外.06，邻字内.2、字外.03。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-ascii-crt/film/main.js",
+    "demos/cases/lemo-ascii-crt/film/term.js"
+  ],
+  "locator": "fractalCW / sFractal / logRow",
+  "useCases": [
+    "用一枚字符揭示大量日志、名字或消息的层级关系。"
+  ],
+  "avoid": [
+    "在主动作发生时叠加争夺注意的另一主动作"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-ascii-crt的原作render(t)重放“字号即镜头”。把字格宽度当镜头尺度，8px字格推到300px并停一秒，再到450px；同一个字形以40列小日志填充，字内全亮、字外压暗，最后按对数尺度退回。保留参数：film/main.js:T.fr0–fr5=40.2/41.6/42.6/43.6/46.8/47.6；fractalCW以对数插值8→300→450→8px。；film/main.js:sFractal / logRow：K=40；thin字形掩模；目标字内1.15、字外.06，邻字内.2、字外.03。。按index.html中的segments映射时间，复用原作素材、字体和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/font-size-zoom/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-ascii-crt"
+    }
+  ],
+  "previewAt": 4.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "字号即镜头"
+    }
+  ],
+  "renderer": "gpu"
+}

@@ -1,0 +1,334 @@
+{
+  "id": "lemo-lidar-survey",
+  "order": 22,
+  "title": "林下的田 · 点云测绘",
+  "subtitle": "The Fields Under the Forest",
+  "carriers": [
+    "video"
+  ],
+  "style": "evidence",
+  "purpose": "data",
+  "tech": [
+    "canvas2d",
+    "threejs"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "点云测绘",
+    "实证影像",
+    "代码影片"
+  ],
+  "summary": "康涅狄格州阿什福德的一片森林，从夏季航拍转为春季激光点云；切割面剥去树冠，地面凝成受光表面，显出 22 段、合计 3.4 公里的旧农田石墙。",
+  "focus": "真实回波的高度与分类驱动剥层，点云和表面共用世界空间扫描面；一条连续相机路线把发现、测量与历史数字串在一起。",
+  "accent": "#FFB347",
+  "background": "#05080A",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 18.6,
+  "rhythm": {
+    "duration": 40,
+    "beats": [
+      {
+        "t": 0,
+        "label": "夏季航拍",
+        "note": "俯视 2016 年 7 月 NAIP 树冠照片。"
+      },
+      {
+        "t": 3.75,
+        "label": "照片变点云",
+        "note": "扫描线从左向右扫过，镜头下降并倾斜。"
+      },
+      {
+        "t": 6.875,
+        "label": "回波体积",
+        "note": "低斜角显出树冠与地面之间的层次。"
+      },
+      {
+        "t": 7.5,
+        "label": "地面回波读数",
+        "note": "27.6% 的数值落定。"
+      },
+      {
+        "t": 10,
+        "label": "切割树冠",
+        "note": "平面逐拍下降，回波向上抬离。"
+      },
+      {
+        "t": 13.125,
+        "label": "只留地面",
+        "note": "空气底声上的短暂留白。"
+      },
+      {
+        "t": 14.375,
+        "label": "点凝成面",
+        "note": "第二条扫描线生成受光地面，撞击落下。"
+      },
+      {
+        "t": 15.625,
+        "label": "石墙亮起",
+        "note": "22 条描线沿石墙依次展开。"
+      },
+      {
+        "t": 20,
+        "label": "测量总长",
+        "note": "3.4km 在 20.625 秒落定。"
+      },
+      {
+        "t": 24.375,
+        "label": "石墙剖面",
+        "note": "推近 C 墙，显示 1,451 个原始地面回波。"
+      },
+      {
+        "t": 28.75,
+        "label": "历史比较",
+        "note": "镜头升起，1870 与 2006 的土地面积逐条出现。"
+      },
+      {
+        "t": 33.75,
+        "label": "树冠返回",
+        "note": "树冠作为淡淡鬼影从地面重新长起。"
+      },
+      {
+        "t": 35.9375,
+        "label": "片尾",
+        "note": "标题叠在发光墙网与树冠上。"
+      }
+    ],
+    "bpm": 96
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 3.75,
+      "from": 0.15,
+      "to": 0.25,
+      "label": "树冠环境"
+    },
+    {
+      "t0": 3.75,
+      "t1": 10,
+      "from": 0.4,
+      "to": 0.6,
+      "label": "激光扫描"
+    },
+    {
+      "t0": 10,
+      "t1": 13.125,
+      "from": 0.65,
+      "to": 0.85,
+      "label": "剥层细分加速"
+    },
+    {
+      "t0": 13.125,
+      "t1": 14.375,
+      "from": 0.05,
+      "to": 0.12,
+      "label": "空气留白"
+    },
+    {
+      "t0": 14.375,
+      "t1": 15.625,
+      "from": 0.95,
+      "to": 0.6,
+      "label": "凝面撞击"
+    },
+    {
+      "t0": 15.625,
+      "t1": 20,
+      "from": 0.6,
+      "to": 0.75,
+      "label": "木质音色与石墙"
+    },
+    {
+      "t0": 20,
+      "t1": 28.75,
+      "from": 0.55,
+      "to": 0.7,
+      "label": "测量与剖面"
+    },
+    {
+      "t0": 28.75,
+      "t1": 33.75,
+      "from": 0.5,
+      "to": 0.6,
+      "label": "历史数字"
+    },
+    {
+      "t0": 33.75,
+      "t1": 40,
+      "from": 0.45,
+      "to": 0.2,
+      "label": "树冠回归与终止和弦"
+    }
+  ],
+  "energyNote": "起止时刻来自 film/timeline.js:T，声部与强弱依据 DEMO.md 的 Score structure 表（剥层细分、13.125–14.375 秒空气留白、凝面撞击与末段森林底声）；0–1 为相对编排标注。",
+  "observations": [
+    "点的位置保留真实回波关系，uint16 量化坐标和字节高度、分类、强度、种子控制 GPU 点云。",
+    "切割高度按离地高度计算，植被被抬升并淡出，标尺与直方图同步跟随。",
+    "地面表面使用 0.5m 模型、短半径 AO、315° 方位 26° 高度的低角度光，局部起伏显示为 ×2。",
+    "石墙描线与剖面以琥珀细线叠加，读数保持在右侧三分之一。"
+  ],
+  "composition": {
+    "color": "冷黑 #05080A，树冠由 #1F3F35 经 #5C9A7A 到 #E2F3DC；中性石色表面和琥珀 #FFB347 测量层。",
+    "typography": "Barlow Condensed 300 的大读数、IBM Plex Mono 400/500 仪器字、Noto Sans SC 500 中文标签。",
+    "layout": "1920×1080、24fps；WebGL 场景与 2D 仪器层叠合；测量区右置，双语字幕位于左下。",
+    "imagery": "USGS 3DEP 4,789,797 个真实回波、USDA NAIP 2016 航拍、0.5m 地面模型、人工描墙与 C 墙截面。",
+    "motion": "C1 相机样条连续飞越；扫描面、逐拍切割和按路径发亮替代切镜。",
+    "sound": "96BPM，前半 D 小调、凝面后 F 大调；电子扫描、细分滴答、撞击、马林巴与弓奏颤音琴，Kokoro bm_george 旁白。",
+    "rhythm": "航拍提出观察，扫描进入数据，剥层加速后近静音，再用凝面撞击转折，测量与历史各留读数时间。",
+    "coherence": "timeline.js 同时提供相机键、剥层、读数、声音事件和旁白；所有数值和来源保存在 FACTS.md。"
+  },
+  "layers": [
+    {
+      "name": "航拍与树冠面",
+      "role": "夏季航拍贴在 1m 树冠模型上。"
+    },
+    {
+      "name": "真实点云",
+      "role": "按离地高度着色，并受扫描前沿与切割面控制。"
+    },
+    {
+      "name": "受光地面",
+      "role": "0.5m 地面、法线、AO、等高线与石墙距离场。"
+    },
+    {
+      "name": "测量覆盖层",
+      "role": "标尺、直方图、琥珀描线、剖面与双语字幕。"
+    },
+    {
+      "name": "原成片混音",
+      "role": "扫描拟音与采样乐器对齐同一时间表。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#05080A",
+      "#1F3F35",
+      "#5C9A7A",
+      "#E2F3DC",
+      "#C8B38C",
+      "#BDB5A6",
+      "#D4FFF0",
+      "#FFB347",
+      "#83C495"
+    ],
+    "type": "Barlow Condensed 300/400/500；IBM Plex Mono 400/500（Plex Mono）；Noto Sans SC 可变字重，画面使用 500，按 film.js + timeline.js 字符子集化。",
+    "motion": [
+      {
+        "name": "逐层切割",
+        "value": "film/film.js:cutAt；film/timeline.js:PEEL_STEPS：10–13.125 秒按 .625 秒节拍下降，30→24→18→12→6→0，最终插值到 −6m 清除低植被。"
+      },
+      {
+        "name": "连续相机",
+        "value": "film/film.js:camAt / placeCamera；film/timeline.js:CAM：目标、距离、方位、俯角和 fov 的 C1 三次 Hermite 插值。"
+      },
+      {
+        "name": "凝面与墙网",
+        "value": "film/timeline.js:T.turn=14.375、turnEnd=15.625、wallsEnd=20；film/film.js:F2 / uW 控制扫描和描线。"
+      },
+      {
+        "name": "画面处理",
+        "value": "film/film.js:SS=2，ACES 曝光 .92；前沿高阈值 bloom，数据坐标 XY=.02m、Z=.01m。"
+      }
+    ]
+  },
+  "useCases": [
+    "文化遗产影像",
+    "环境主题短片",
+    "场地测绘解说"
+  ],
+  "avoid": [
+    "用虚构点云代替真实测量的证据片",
+    "密集点云始终只以远景俯视呈现"
+  ],
+  "constraints": [
+    "测量使用原始高度；显示夸张时把 ×2 标注保留在画面。",
+    "数据转为本地东、北、上坐标，改地点时重新确认垂直基准与分类。",
+    "切割应低于 0m 清掉低植被，原片最终为 −6m。",
+    "描墙保留 traced 标识、手工输入与原始回波来源；换场地时重新生成地面、墙线和剖面数据。"
+  ],
+  "migration": [
+    {
+      "field": "film/timeline.js → VO / T / CAM",
+      "how": "修改文案、绝对拍点、相机目标与路线。"
+    },
+    {
+      "field": "film/film.js → C / pointVS / surfaceFS",
+      "how": "修改高度色带、受光与切割前沿。"
+    },
+    {
+      "field": "source/data/walls_traced.json；source/tools/",
+      "how": "修改描线与原始区域，再生成 film/assets/raw/build 和 film/data。"
+    },
+    {
+      "field": "film/data/facts.json / profile_C.json；source/FACTS.md",
+      "how": "同步测量结果、剖面与来源事实。"
+    }
+  ],
+  "prompt": "从真实机载激光回波制作点云测绘短片，保持每点的测量位置，用冷黑背景、克制的高度绿阶、暖中性受光地面与唯一琥珀测量强调色。照片被世界空间扫描线变为点云，镜头从俯视下降到低斜角；按离地高度逐拍下降切割面，树冠回波抬离淡出，留下真实地面点，短暂留白后由第二扫描面凝成表面。连续 C1 相机飞过墙网、推到剖面再升起，细线测量与数字来自同一数据。大号窄体读数、等宽仪器、中文标签及左下双语字幕分层；声音使用电子扫描、加速细分、凝面撞击、木质采样乐器与冷静旁白，沿用原片混音。引擎位于 demos/cases/lemo-lidar-survey/film/film.js 与 timeline.js。",
+  "demo": "demos/cases/lemo-lidar-survey/index.html",
+  "patternIds": [
+    "point-cloud-cutting-plane"
+  ],
+  "fidelity": "demos/cases/lemo-lidar-survey/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/lidar-survey",
+    "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+    "path": "styles/lidar-survey/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+    "notes": "代码与文档 MIT；原成片及静帧 CC BY 4.0，署名 LemoLab；第三方资源沿用 CREDITS 的许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/lidar-survey"
+    },
+    {
+      "label": "Release 公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/lidar-survey.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/lidar-survey/demo/CREDITS"
+    },
+    {
+      "label": "USGS 3DEP EPT",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_CT_Statewide_B8_2016/ept.json"
+    },
+    {
+      "label": "USDA NAIP / Planetary Computer",
+      "url": "https://planetarycomputer.microsoft.com/"
+    },
+    {
+      "label": "VSCO 2 CE",
+      "url": "https://github.com/sgossner/VSCO-2-CE"
+    },
+    {
+      "label": "VCSL",
+      "url": "https://github.com/sgossner/VCSL"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者 Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/lidar-survey)，代码 MIT、成片 CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "Versilian Studios的VSCO 2 CE与VCSL采样（CC0），Kokoro bm_george（Apache-2.0）；USGS 3DEP回波与USDA FSA NAIP航拍为公有领域，授权措辞和署名见 [audio/CREDITS](audio/CREDITS)，测量来源见 [source/FACTS.md](source/FACTS.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "字体家族与字重见 tokens.type；SIL OFL 1.1原文在 fonts/，取得方法和字符范围见 [source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

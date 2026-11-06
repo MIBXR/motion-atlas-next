@@ -1,0 +1,128 @@
+{
+  "id": "hyperframes-skills",
+  "order": 8,
+  "title": "HyperFrames Agent Skills · HTML 视频技能包",
+  "type": "agent-skill",
+  "category": "视频制作",
+  "tags": [
+    "HyperFrames",
+    "HTML 视频",
+    "Agent Skill",
+    "逐帧渲染",
+    "GSAP",
+    "字幕",
+    "媒体"
+  ],
+  "summary": "HyperFrames 的 8 个技能目录快照：/hyperframes 作为总入口，核心四项负责 HTML 合成约定、CLI、模块安装与媒体；其余四项处理 Figma、演示文稿、既有视频代码迁移与视频重建。",
+  "workflow": [
+    "先读 /hyperframes，规划视频内容、镜头与时长；新项目用 npx hyperframes init <目录>。",
+    "以 HTML、CSS 和媒体编写合成，为定时元素声明起点与时长；为每个合成注册可定位的暂停时间线。",
+    "需要现成视觉时用 /hyperframes-registry 查找并安装模块；媒体与声音按 /media-use 处理。",
+    "编写过程中运行 lint，完成后运行 check --json，查看关键帧并在 preview 中预览。",
+    "确认 Studio 预览或需要成片时运行 render，逐帧导出 MP4。"
+  ],
+  "useCases": [
+    "让编码 Agent 从计划开始制作 HTML 视频、产品宣传片、讲解片和竖屏短片",
+    "编排可定位动画、字幕、数据图表、地图与三维画面",
+    "检索并安装可编辑模块，取得图片、音视频和字幕媒体",
+    "把 Figma 设计、既有视频代码或视频重建为 HyperFrames 项目"
+  ],
+  "avoid": [
+    "脱离视频制作的一般网页开发",
+    "以墙钟时间、无种子的随机数或实时网络驱动画面",
+    "把 /slideshow 的现场演示文稿直接视为 MP4 成片"
+  ],
+  "upstream": {
+    "repository": "heygen-com/hyperframes",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3",
+    "commit": "f0b2dd0cdbd926e32cb11435c53819933fcc1ef3",
+    "version": "0.8.231",
+    "verifiedAt": "2026-11-02"
+  },
+  "license": {
+    "name": "Apache-2.0",
+    "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/LICENSE"
+  },
+  "install": "npx skills add heygen-com/hyperframes\nnpx hyperframes skills update\nclaude plugin marketplace add heygen-com/hyperframes\nclaude plugin install hyperframes@hyperframes\n以上命令安装上游当前版本；本库快照固定在记录的提交。",
+  "snapshotPath": "demos/materials/hyperframes-skills/",
+  "snapshotEntry": "skills/hyperframes/SKILL.md",
+  "research": "docs/materials/hyperframes-skills.md",
+  "relatedEntries": [
+    {
+      "kind": "material",
+      "id": "hyperframes-registry",
+      "note": "同一上游的视频模块与模板精选，用 /hyperframes-registry 安装"
+    }
+  ],
+  "sources": [
+    {
+      "title": "上游 README：框架、安装与核心技能",
+      "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/README.md"
+    },
+    {
+      "title": "8 个技能目录与 SKILL.md 原文",
+      "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/skills"
+    },
+    {
+      "title": "HyperFrames 主技能：合成约定与制作流程",
+      "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/skills/hyperframes/SKILL.md"
+    },
+    {
+      "title": "素材卡封面 · 上游原图",
+      "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/assets/logo.png"
+    }
+  ],
+  "skillGuide": [
+    {
+      "title": "基础制作",
+      "skills": [
+        {
+          "id": "hyperframes",
+          "title": "从这里开始",
+          "description": "规定 HTML 合成、时间线和渲染方式，适合开始一个新视频。"
+        },
+        {
+          "id": "hyperframes-cli",
+          "title": "预览与渲染",
+          "description": "新建项目、检查合成，在 Studio 预览并导出成片。"
+        },
+        {
+          "id": "hyperframes-registry",
+          "title": "查找视频模块",
+          "description": "按效果挑选标题、字幕、转场或图表，安装到当前项目。"
+        },
+        {
+          "id": "media-use",
+          "title": "准备媒体素材",
+          "description": "为镜头选取图片、音视频与字幕，安排播放与混音。"
+        }
+      ]
+    },
+    {
+      "title": "按任务选用",
+      "skills": [
+        {
+          "id": "figma",
+          "title": "从设计稿取材",
+          "description": "把 Figma 组件、色彩和画板带入视频合成。"
+        },
+        {
+          "id": "remotion-to-hyperframes",
+          "title": "迁移现有视频",
+          "description": "把 Remotion 或浏览器动画转成可定位的 HTML 时间线。"
+        },
+        {
+          "id": "reverse-any-video",
+          "title": "参照视频重建",
+          "description": "测量镜头并对照参考画面。上游此工具需要登录付费方案。"
+        },
+        {
+          "id": "slideshow",
+          "title": "制作演示文稿",
+          "description": "编排逐步揭示、热点与演讲备注，用于现场演示。"
+        }
+      ]
+    }
+  ],
+  "preview": "previews/materials/hyperframes-skills.png"
+}

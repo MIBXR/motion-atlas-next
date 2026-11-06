@@ -1,0 +1,84 @@
+{
+  "id": "mirrored-block-pull-print",
+  "order": 97,
+  "title": "反刻版揭印转正",
+  "types": [
+    "transition",
+    "type-motion"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "木版以镜像变换显示反刻标题；滚墨覆纸后，以圆柱卷纸的正、背面条带绘制揭纸过程，露出可读的正印。唯一的铜色随浇铸扩大，片尾收于小钟高光。",
+  "mechanism": "木版以镜像变换显示反刻标题；滚墨覆纸后，以圆柱卷纸的正、背面条带绘制揭纸过程，露出可读的正印。唯一的铜色随浇铸扩大，片尾收于小钟高光。",
+  "trigger": "反字刻完后进入7秒的滚墨、覆纸与揭纸流程；后续印张以同样的卷纸方式换景。",
+  "effect": "文字的正反来自实体印刷关系，色版在叙事高潮时覆盖范围最大，再收为片尾的一点。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "5.800000–10.500000秒；39.000000–41.666700秒；54.400000–58.500000秒；1倍速，总时长11.466700秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "反刻与揭印",
+      "value": "film/shots.js:blockFrame镜像木版；7秒滚墨、7.6667覆纸、8秒擦压、8.5–9秒peelState(u,230)并curl(F=1900)。"
+    },
+    {
+      "name": "卷纸",
+      "value": "film/trans.js:curl以step=3条带绕圆柱，F默认2400；peelState前22%缓慢揭起，其后指数2.2加速，半径4+rmax*sin(π*min(1,1.05u))^.7。"
+    },
+    {
+      "name": "单一色版",
+      "value": "film/engine/print.js:plate与白色刻痕相乘；shots2.js:39–41.6667秒浇铸扩大光，endScene在黑色片名板上保留小钟的铜色。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-woodcut/film/shots.js",
+    "demos/cases/lemo-woodcut/film/shots2.js",
+    "demos/cases/lemo-woodcut/film/trans.js",
+    "demos/cases/lemo-woodcut/film/engine/print.js"
+  ],
+  "locator": "blockFrame / peelState / curl / endScene",
+  "useCases": [
+    "文字的正反来自实体印刷关系，色版在叙事高潮时覆盖范围最大，再收为片尾的一点。"
+  ],
+  "avoid": [
+    "在关键动作或留白上叠加争夺注意的主动作"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "carve-cut-by-cut-reveal"
+    ],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-woodcut的原作render(t)重放“反刻版揭印转正”。木版以镜像变换显示反刻标题，滚墨覆纸后通过圆柱卷纸的正背条带绘制揭出可读正印；唯一铜色随浇铸放大，片尾收于小钟高光。保留参数：film/shots.js:blockFrame镜像木版；7秒滚墨、7.6667覆纸、8秒擦压、8.5–9秒peelState(u,230)并curl(F=1900)。；film/trans.js:curl以step=3条带绕圆柱，F默认2400；peelState前22%缓慢揭起，其后指数2.2加速，半径4+rmax*sin(π*min(1,1.05u))^.7。；film/engine/print.js:plate与白色刻痕相乘；shots2.js:39–41.6667秒浇铸扩大光，endScene在黑色片名板上保留小钟的铜色。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/mirrored-block-pull-print/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-woodcut"
+    }
+  ],
+  "previewAt": 3.1,
+  "markers": [
+    {
+      "t": 0,
+      "label": "反刻版揭印转正"
+    },
+    {
+      "t": 4.7,
+      "label": "来源片段2"
+    },
+    {
+      "t": 7.366699999999999,
+      "label": "来源片段3"
+    }
+  ],
+  "renderer": "gpu"
+}

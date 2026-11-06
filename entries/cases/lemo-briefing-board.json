@@ -1,0 +1,362 @@
+{
+  "id": "lemo-briefing-board",
+  "order": 63,
+  "title": "船说了算 · 工程简报板",
+  "subtitle": "The Ship Decides",
+  "carriers": [
+    "video"
+  ],
+  "style": "evidence",
+  "purpose": "explainer",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "工程简报板",
+    "实证影像",
+    "代码影片"
+  ],
+  "summary": "一条千米河道要架桥，船撞上桥墩后确立航道不立墩的条件；简报墙逐个比较梁桥、拱桥、斜拉桥和悬索桥。船从最终方案下通过后，镜头拉远，展示整墙结论。",
+  "focus": "同一块板上平面图在上、立面图在下，用两岸投影线对位；磁贴、钢尺和桥梁照片成为可移动的论证物件。",
+  "accent": "#1f4fc8",
+  "background": "#8F8B83",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 39.9,
+  "rhythm": {
+    "duration": 40,
+    "beats": [
+      {
+        "t": 0,
+        "label": "河宽钩子",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 1.2,
+        "label": "写下一千米",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 2.9,
+        "label": "桥墩磁贴",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 5.5,
+        "label": "船接近桥墩",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 8,
+        "label": "碰撞与否决",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 10.75,
+        "label": "新规则与钢尺",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 14.4,
+        "label": "投影到立面",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 15.25,
+        "label": "梁桥判断",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 18.45,
+        "label": "拱桥落板",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 19.25,
+        "label": "拱桥判断",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 22.45,
+        "label": "斜拉桥落板",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 23.4,
+        "label": "斜拉桥判断",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 28.2,
+        "label": "悬索桥落板",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 29.1,
+        "label": "悬索桥判断",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 32.8,
+        "label": "船穿过答案",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 35.75,
+        "label": "显出整墙",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      },
+      {
+        "t": 38.15,
+        "label": "板上结语",
+        "note": "连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。"
+      }
+    ],
+    "bpm": 120
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 1.2,
+      "from": 0.2,
+      "to": 0.65,
+      "label": "河宽钩子"
+    },
+    {
+      "t0": 1.2,
+      "t1": 2.9,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "写下一千米"
+    },
+    {
+      "t0": 2.9,
+      "t1": 5.5,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "桥墩磁贴"
+    },
+    {
+      "t0": 5.5,
+      "t1": 8,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "船接近桥墩"
+    },
+    {
+      "t0": 8,
+      "t1": 10.7,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "碰撞与否决"
+    },
+    {
+      "t0": 10.75,
+      "t1": 14.4,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "新规则与钢尺"
+    },
+    {
+      "t0": 14.4,
+      "t1": 15.25,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "投影到立面"
+    },
+    {
+      "t0": 15.25,
+      "t1": 18.45,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "梁桥判断"
+    },
+    {
+      "t0": 18.45,
+      "t1": 19.25,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "拱桥落板"
+    },
+    {
+      "t0": 19.25,
+      "t1": 22.45,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "拱桥判断"
+    },
+    {
+      "t0": 22.45,
+      "t1": 23.4,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "斜拉桥落板"
+    },
+    {
+      "t0": 23.4,
+      "t1": 28.2,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "斜拉桥判断"
+    },
+    {
+      "t0": 28.2,
+      "t1": 29.1,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "悬索桥落板"
+    },
+    {
+      "t0": 29.1,
+      "t1": 32.8,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "悬索桥判断"
+    },
+    {
+      "t0": 32.8,
+      "t1": 35.75,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "船穿过答案"
+    },
+    {
+      "t0": 35.75,
+      "t1": 37.8,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "显出整墙"
+    },
+    {
+      "t0": 38.15,
+      "t1": 40,
+      "from": 0.5,
+      "to": 0.15,
+      "label": "板上结语"
+    }
+  ],
+  "energyNote": "段落取DEMO.md Shots与原作时间表；0–1数值为画面运动、事件和声音密度的相对编辑标注。",
+  "observations": [
+    "七枚磁贴代表桥墩，落板、受撞和拔除都在同一板坐标里发生。",
+    "两岸投影线把上方平面河道的跨距投到四行桥梁立面，船的俯视与侧视各回答一个问题。",
+    "每次桥梁落定后，留出2.6–4.1秒展示完整判决构图；悬索桥的量线冲过岸线后带动相机。"
+  ],
+  "composition": {
+    "color": "#F3F2EE、#8F8B83、#1f4fc8、#d33a21、#262c37",
+    "typography": "LXGW Marker Gothic 400、Archivo可变字重/字宽、IBM Plex Mono 500/600、Noto Sans SC 500/700/900原字符子集。",
+    "layout": "1920×1080横屏，保留原作构图、字幕、片头与片尾。",
+    "imagery": "Wikimedia Commons桥梁与船照片，经原作BiRefNet抠图、去字、调色、缆索重绘和锚点对齐；板面、墨迹、磁铁和钢尺由代码绘制。",
+    "motion": "连续镜头在板上跟随量线、照片与船移动，在四轮判决中逐级拉宽；最后从水线处的船体一次拉远到整墙。",
+    "sound": "120 BPM D小调转D大调，电贝斯、MuldjordKit鼓组、低铜管与钟琴；磁贴咔嗒、印章、钢尺和船笛，Kokoro af_heart旁白。",
+    "rhythm": "河宽钩子；写下一千米；桥墩磁贴；船接近桥墩；碰撞与否决；新规则与钢尺；投影到立面；梁桥判断；拱桥落板；拱桥判断；斜拉桥落板；斜拉桥判断；悬索桥落板；悬索桥判断；船穿过答案；显出整墙；板上结语",
+    "coherence": "同一块板上平面图在上、立面图在下，用两岸投影线对位；磁贴、钢尺和桥梁照片成为可移动的论证物件。"
+  },
+  "layers": [
+    {
+      "name": "原作场景",
+      "role": "Wikimedia Commons桥梁与船照片，经原作BiRefNet抠图、去字、调色、缆索重绘和锚点对齐；板面、墨迹、磁铁和钢尺由代码绘制。"
+    },
+    {
+      "name": "镜头与质感",
+      "role": "连续镜头在板上跟随量线、照片与船移动，在四轮判决中逐级拉宽；最后从水线处的船体一次拉远到整墙。"
+    },
+    {
+      "name": "字幕、标记与声音",
+      "role": "120 BPM D小调转D大调，电贝斯、MuldjordKit鼓组、低铜管与钟琴；磁贴咔嗒、印章、钢尺和船笛，Kokoro af_heart旁白。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#F3F2EE",
+      "#8F8B83",
+      "#1f4fc8",
+      "#d33a21",
+      "#262c37"
+    ],
+    "type": "LXGW Marker Gothic 400、Archivo可变字重/字宽、IBM Plex Mono 500/600、Noto Sans SC 500/700/900原字符子集。",
+    "motion": [
+      {
+        "name": "投影与尺度",
+        "value": "source/scenes/_gen_film.py:PROJ_T=14.4、BANK_L/BANK_R；film/scenes/film.json:proj0/proj1、ship/ship_side。"
+      },
+      {
+        "name": "物件与镜头",
+        "value": "film/kit/board.js:setScene/camAt/renderScene；film/scenes/film.json的elements/cam保存物件、判决和整墙拉远。"
+      }
+    ]
+  },
+  "useCases": [
+    "工程方案比较",
+    "实物简报",
+    "条件驱动的科普"
+  ],
+  "avoid": [
+    "需要脱离来源时间线实时操控全部场景的应用"
+  ],
+  "constraints": [
+    "画面由上游render(t)直接绘制，按原作帧率定位。",
+    "修改字幕或场景文案后按source中的字体流程重建相同字重和字符子集。",
+    "声音使用原片混音，修改事件时同步更新声音制作文件。"
+  ],
+  "migration": [
+    {
+      "field": "film/scenes/film.json",
+      "how": "按原作数据与函数修改故事内容、画面和物件。"
+    },
+    {
+      "field": "film/kit/board.js",
+      "how": "按原作数据与函数修改时间表、镜头和节拍。"
+    }
+  ],
+  "prompt": "制作《船说了算 · 工程简报板》这样的代码影片：一条千米河道要架桥，船撞上桥墩后确立航道不立墩的条件；简报墙逐个比较梁桥、拱桥、斜拉桥和悬索桥，船从最终方案下通过后拉远整墙结论。同一块板上平面图在上、立面图在下，用两岸投影线对位；磁贴、钢尺和桥梁照片成为可移动的论证物件。Wikimedia Commons桥梁与船照片，经原作BiRefNet抠图、去字、调色、缆索重绘和锚点对齐；板面、墨迹、磁铁和钢尺由代码绘制。LXGW Marker Gothic 400、Archivo可变字重/字宽、IBM Plex Mono 500/600、Noto Sans SC 500/700/900原字符子集。连续板上镜头跟着量线、照片与船移动，四轮判决逐级拉宽；最后从水线船体一次拉到整墙。120 BPM D小调转D大调，电贝斯、MuldjordKit鼓组、低铜管与钟琴；磁贴咔嗒、印章、钢尺和船笛，Kokoro af_heart旁白。实现使用demos\\cases\\lemo-briefing-board\\film\\scenes\\film.json, demos\\cases\\lemo-briefing-board\\film\\kit\\board.js, demos\\cases\\lemo-briefing-board\\source\\scenes\\_gen_film.py。",
+  "demo": "demos/cases/lemo-briefing-board/index.html",
+  "patternIds": [
+    "plan-elevation-projection",
+    "magnet-pieces-on-board"
+  ],
+  "fidelity": "demos/cases/lemo-briefing-board/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/briefing-board",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/briefing-board/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS。"
+  },
+  "sources": [
+    {
+      "label": "固定风格与示范源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/briefing-board"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/briefing-board.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/briefing-board/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）；固定版本与许可见upstream/license。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原片完整署名见[audio/CREDITS](audio/CREDITS)，逐项许可见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "家族与字重见tokens.type；fonts保存二进制与OFL原文，制作入口见[source/README.md](source/README.md)。"
+    }
+  ]
+}

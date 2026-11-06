@@ -1,0 +1,240 @@
+{
+  "id": "web-video-presentation",
+  "order": 2,
+  "title": "web-video-presentation · 网页演示录屏",
+  "type": "agent-skill",
+  "summary": "把文章或口播稿变成按步骤推进的横屏网页演示，再通过录屏产出视频。",
+  "workflow": [
+    "识别原始文章或已有口播稿，保留原文；一次产出口播稿 script.md 与开发计划 outline.md，规划章节、节拍、每步内容与章节信息池。",
+    "由用户一次确认口播稿、开发计划、主题、真实素材准备方式与开发模式；大纲用于规划内容与节奏，具体动画留给章节开发。",
+    "按选定主题运行脚手架，构建基于 Vite、React 与 TypeScript 的演示；主线程完成第 1 章的真实素材准备和完整视觉呈现，并等待用户验收。",
+    "按用户选择的方式逐章确认、顺序开发或并行开发后续章节；以统一主题和全局章节、步骤游标组织 1920×1080 舞台。",
+    "网页完成后询问是否合成口播音频；需要时从 narrations.ts 提取每步文案，确认后通过可替换的语音服务合成。",
+    "有音频时使用自动模式连续录屏；没有合成音频时，在录屏过程中手动点击推进，再进行配音与后期。"
+  ],
+  "useCases": [
+    "把文章或口播稿制作成视频平台的讲解内容",
+    "可录屏的产品演示、教程与视觉主题演讲",
+    "每屏聚焦一个观点、每次点击推进一个口播节拍的动态演示",
+    "需要统一主题并可选择合成口播音频的分章内容"
+  ],
+  "avoid": [
+    "把主题预览图当成完整页面源码或已复刻案例",
+    "需要直接交付 MP4、由确定性时间函数逐帧渲染的制作需求",
+    "没有原文、口播稿或素材大纲，却要求该 skill 代为构思全部内容",
+    "一般响应式网站或以自由浏览为主的网页应用"
+  ],
+  "upstream": {
+    "repository": "ConardLi/garden-skills",
+    "url": "https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation",
+    "commit": "2b9a89340b70f632d31c0f1c69fce94a7912423e",
+    "version": "1.2.2"
+  },
+  "license": {
+    "name": "MIT",
+    "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/LICENSE",
+    "notes": "skill 源码与文档采用 MIT，快照附原 LICENSE。23 张主题图与 1 张总览图来自 ConardLi/assets 的公开 CDN，作者为 ConardLi，图片许可未声明。"
+  },
+  "install": "按来源中文 README 的说明，把 skill 目录复制到 Agent 会扫描的目录，然后让 Agent 把文章或口播稿制作成网页视频演示。手动创建演示项目：\nbash skills/web-video-presentation/scripts/scaffold.sh ./presentation --theme=paper-press\n查看可用主题：\nbash skills/web-video-presentation/scripts/scaffold.sh --list-themes\n生成的 presentation/ 是基于 Vite、React 与 TypeScript 的项目；启动后使用录屏工具录制 16:9 舞台。来源集合 README 也提供单独安装命令：\nnpx skills add ConardLi/garden-skills -s web-video-presentation\n此命令安装上游 main 的当前版本；本库原文快照固定在记录的提交。",
+  "snapshotPath": "demos/materials/web-video-presentation/",
+  "snapshotEntry": "SKILL.md",
+  "relatedEntries": [],
+  "gallery": [
+    {
+      "path": "previews/materials/web-video-presentation/midnight-press.webp",
+      "caption": "暗色印刷（midnight-press）：电影感编辑暗底与暖橙色；适合开发者教程、人工智能或工具评测、技术深度解析。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/midnight-press.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/dark-botanical.webp",
+      "caption": "暗夜植物（dark-botanical）：暖陶、玫粉与鎏金叠层；适合品牌故事、时尚美妆、高端产品发布。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dark-botanical.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/chalk-garden.webp",
+      "caption": "粉笔花园（chalk-garden）：深石板黑板、手写字与粉笔黄；适合科普讲解、教学课堂、面向初学者的亲切讲解。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/chalk-garden.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/blueprint.webp",
+      "caption": "工程蓝图（blueprint）：深海军蓝、制图青与工程网格；适合技术架构、系统拆解、接口或开发工具介绍。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/blueprint.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/terminal-green.webp",
+      "caption": "终端绿（terminal-green）：复古磷光屏、等宽字与扫描线；适合命令行工具教程、黑客或安全话题、复古技术致敬。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/terminal-green.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/neon-cyber.webp",
+      "caption": "霓虹赛博（neon-cyber）：电光青与玫红双霓虹；适合人工智能或大模型评测、去中心化网络与安全、未来主义。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/neon-cyber.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/bold-signal.webp",
+      "caption": "焦点信号（bold-signal）：暗色渐变与大橙色焦点卡；适合路演、产品发布、大字宣言与品牌演讲。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bold-signal.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/creative-voltage.webp",
+      "caption": "电压创意（creative-voltage）：饱和电光蓝、霓虹黄与半色调网点；适合设计周、创意分享、工作室作品集、字体与视觉文化。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/creative-voltage.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/paper-press.webp",
+      "caption": "亮色印刷（paper-press）：暖奶油纸张与火热橙色；适合杂志型内容、生活方式、日常工具评测。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/paper-press.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/newsroom.webp",
+      "caption": "报社（newsroom）：新闻纸奶油底与旗红色；适合纪录片、报道、深度评测、时事热点解读。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/newsroom.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/monochrome-print.webp",
+      "caption": "黑白印刷（monochrome-print）：精炼克制的黑白编辑风格；适合深度阅读改编、学术思想内容、文化艺术评论。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/monochrome-print.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/vintage-editorial.webp",
+      "caption": "复古编辑（vintage-editorial）：俏皮衬线字与圆、线、点几何叠层；适合个人见解、评论、文化随笔、设计与字体话题。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/vintage-editorial.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/sunset-zine.webp",
+      "caption": "日落 Zine（sunset-zine）：孔版印刷拼贴、暖桃与玫红；适合生活视频日志、创意分享、小红书或抖音内容。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/sunset-zine.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/pastel-dream.webp",
+      "caption": "柔光梦（pastel-dream）：柔粉、鼠尾草绿与胶囊色条；适合产品入门、友好教学、心理健康与母婴内容。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/pastel-dream.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/warm-keynote.webp",
+      "caption": "暖色 Keynote（warm-keynote）：玻璃面板、青绿与暖色网格；适合软件服务主题演讲、企业产品发布、团队对外汇报。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/warm-keynote.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/electric-studio.webp",
+      "caption": "电光企业（electric-studio）：净白画布与贴底电光蓝色条；适合企业产品演讲、投资人路演、企业财报与季度更新。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/electric-studio.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/bauhaus-bold.webp",
+      "caption": "包豪斯（bauhaus-bold）：宣言式现代主义、直角与厚边；适合产品发布、观点宣言、品牌主张。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bauhaus-bold.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/swiss-ikb.webp",
+      "caption": "瑞士克莱因蓝（swiss-ikb）：极细无衬线字、克莱因蓝与发丝网格；适合人工智能或科技产品发布、年度数据汇报、信息图。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/swiss-ikb.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/dune.webp",
+      "caption": "沙丘（dune）：炭褐与沙色底、建筑画廊气质；适合建筑、室内空间、艺术展览、高端品牌画册。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dune.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/indigo-porcelain.webp",
+      "caption": "靛蓝瓷（indigo-porcelain）：以靛蓝为墨色、瓷白为底色；适合学术论文解读、人工智能或数据深度内容、严肃技术汇报。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/indigo-porcelain.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/forest-ink.webp",
+      "caption": "森林墨（forest-ink）：森林绿墨色与象牙白、旧版自然杂志气质；适合自然、可持续、纪录与非虚构、慢生活。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/forest-ink.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/kraft-paper.webp",
+      "caption": "牛皮纸（kraft-paper）：深棕墨色、牛皮米与紫铜点缀；适合书评、文学随笔、历史怀旧、手工艺与食物。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/kraft-paper.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/split-canvas.webp",
+      "caption": "双拼画布（split-canvas）：蜜桃与薰衣草各半的双底色；适合双主题对比、辩论、故事讲述、概念对照科普。静态主题预览。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/split-canvas.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/gallery.webp",
+      "caption": "23 套主题总览：便于为教程、产品演示与视觉讲解比较主题方向。静态总览图。",
+      "kind": "theme",
+      "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/gallery.webp",
+      "license": "作者 ConardLi 公开发布，许可未声明"
+    }
+  ],
+  "sources": [
+    {
+      "title": "中文 README：主题画廊与快速上手",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation/README.zh-CN.md"
+    },
+    {
+      "title": "英文 README",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation/README.md"
+    },
+    {
+      "title": "SKILL.md 原文与工作流",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation/SKILL.md"
+    },
+    {
+      "title": "集合 README：画廊总览与安装方式",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/README.zh-CN.md"
+    },
+    {
+      "title": "manifest.json：版本",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation/manifest.json"
+    },
+    {
+      "title": "ConardLi/assets",
+      "url": "https://github.com/ConardLi/assets",
+      "note": "画廊主题图的托管仓库。"
+    }
+  ],
+  "research": "docs/materials/web-video-presentation.md"
+}

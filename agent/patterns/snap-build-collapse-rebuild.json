@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "snap-build-collapse-rebuild",
+  "pattern": {
+    "id": "snap-build-collapse-rebuild",
+    "order": 143,
+    "title": "拼搭、崩塌、用零件重建",
+    "types": [
+      "composition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "积木逐块按拍点咔嗒落位，塔体失稳后每块都有落地位置；第二次组装复用这些散落部件，从废墟飞回组成更稳的火箭。",
+    "mechanism": "积木逐块按拍点咔嗒落位，塔体失稳后每块都有落地位置；第二次组装复用这些散落部件，从废墟飞回组成更稳的火箭。",
+    "trigger": "来源案例的时间轴进入所列动作区间。",
+    "effect": "积木逐块按拍点咔嗒落位，塔体失稳后每块都有落地位置；第二次组装复用这些散落部件，从废墟飞回组成更稳的火箭。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-brick-toy 12.000000–20.000000秒；lemo-brick-toy 29.800000–32.600000秒；1倍速，总时长10.800000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "积木事件",
+        "value": "film/story.js:T.layer、fall≈17.37、rebuild=29.9、rebuildStep=.19、coneLand=32.5。"
+      },
+      {
+        "name": "同一批部件",
+        "value": "film/rockets.js:restPose / toOrigin / update；slots2从v1按颜色分配同一批积木；重建从samples末帧姿态以.45秒弧线飞至slot2。首次落位.35stud过冲在.17秒内归零。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-brick-toy/film/story.js",
+      "demos/cases/lemo-brick-toy/film/rockets.js"
+    ],
+    "locator": "film/story.js:T.layer、fall≈17.37、rebuild=29.9、rebuildStep=.19、coneLand=32.5。；film/rockets.js:restPose / toOrigin / update；slots2从v1按颜色分配同一批积木；重建从samples末帧姿态以.45秒弧线飞至slot2。首次落位.35stud过冲在.17秒内归零。",
+    "useCases": [
+      "积木逐块按拍点咔嗒落位，塔体失稳后每块都有落地位置；第二次组装复用这些散落部件，从废墟飞回组成更稳的火箭。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "调用来源案例原作render(t)重放“拼搭、崩塌、用零件重建”。积木逐块按拍点咔嗒落位，塔体失稳后每块都有落地位置；第二次组装复用这些散落部件，从废墟飞回组成更稳的火箭。 参数：film/story.js:T.layer、fall≈17.37、rebuild=29.9、rebuildStep=.19、coneLand=32.5。 film/rockets.js:restPose / toOrigin / update；slots2从v1按颜色分配同一批积木；重建从samples末帧姿态以.45秒弧线飞至slot2。首次落位.35stud过冲在.17秒内归零。 使用index.html的segments映射原片时刻，复用来源素材、字体与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/snap-build-collapse-rebuild/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-brick-toy"
+      }
+    ],
+    "previewAt": 8.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "拼搭、崩塌、用零件重建"
+      },
+      {
+        "t": 8,
+        "label": "拼搭、崩塌、用零件重建"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/snap-build-collapse-rebuild.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-brick-toy",
+      "bundle": "agent/cases/lemo-brick-toy.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 拼搭、崩塌、用零件重建\n\n## 实现 Prompt\n\n调用来源案例原作render(t)重放“拼搭、崩塌、用零件重建”。积木逐块按拍点咔嗒落位，塔体失稳后每块都有落地位置；第二次组装复用这些散落部件，从废墟飞回组成更稳的火箭。 参数：film/story.js:T.layer、fall≈17.37、rebuild=29.9、rebuildStep=.19、coneLand=32.5。 film/rockets.js:restPose / toOrigin / update；slots2从v1按颜色分配同一批积木；重建从samples末帧姿态以.45秒弧线飞至slot2。首次落位.35stud过冲在.17秒内归零。 使用index.html的segments映射原片时刻，复用来源素材、字体与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-brick-toy 12.000000–20.000000秒；lemo-brick-toy 29.800000–32.600000秒；1倍速，总时长10.800000秒。\n\n[打开 Demo](../../demos/patterns/snap-build-collapse-rebuild/index.html) · [在库中查看](../../patterns.html#pattern/snap-build-collapse-rebuild)\n"
+  },
+  "entrypoint": "demos/patterns/snap-build-collapse-rebuild/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-brick-toy/LICENSES.md",
+      "bytes": 973,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/SOURCES.md",
+      "bytes": 512,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/desk_lamp_arm_01.bin",
+      "bytes": 736804,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/desk_lamp_arm_01.gltf",
+      "bytes": 4453,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_arm_1k.jpg",
+      "bytes": 780379,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_diff_1k.jpg",
+      "bytes": 702522,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_nor_gl_1k.jpg",
+      "bytes": 651826,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/photo_studio_loft_hall_2k.hdr",
+      "bytes": 6432146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/tea_set_01.bin",
+      "bytes": 941776,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/tea_set_01.gltf",
+      "bytes": 15836,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/textures/tea_set_01_arm_1k.jpg",
+      "bytes": 559750,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/textures/tea_set_01_diff_1k.jpg",
+      "bytes": 509631,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/tea_set_01/textures/tea_set_01_nor_gl_1k.jpg",
+      "bytes": 255598,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/walnut_diff.jpg",
+      "bytes": 2418767,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/walnut_nor.jpg",
+      "bytes": 1959270,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/assets/walnut_rough.jpg",
+      "bytes": 2865130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/CREDITS",
+      "bytes": 1027,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/LICENSE-music.txt",
+      "bytes": 405,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/audio/film.m4a",
+      "bytes": 1779538,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fidelity.md",
+      "bytes": 3887,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/actors.js",
+      "bytes": 4221,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/bricks.js",
+      "bytes": 4915,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/core/three/post.js",
+      "bytes": 6482,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/index.html",
+      "bytes": 653,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/main.js",
+      "bytes": 21361,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/rockets.js",
+      "bytes": 19840,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/set.js",
+      "bytes": 7807,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/story.js",
+      "bytes": 3077,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/film/voices/dur.json",
+      "bytes": 114,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/OFL-fredoka.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/f1.woff2",
+      "bytes": 8776,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/f2.woff2",
+      "bytes": 4564,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/f3.woff2",
+      "bytes": 29704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/fonts/fonts.css",
+      "bytes": 2955,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/index.html",
+      "bytes": 3136,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/CREDITS",
+      "bytes": 1027,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/README.md",
+      "bytes": 2644,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/events.json",
+      "bytes": 4402,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/lines.json",
+      "bytes": 774,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/mix.py",
+      "bytes": 2975,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/music/edit.py",
+      "bytes": 1992,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/source/music/score.json",
+      "bytes": 76,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "bytes": 4625,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+      "bytes": 314097,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+      "bytes": 516,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+      "bytes": 110273,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+      "bytes": 11377,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+      "bytes": 14351,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+      "bytes": 16582,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+      "bytes": 12990,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+      "bytes": 6614,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-brick-toy/vendor/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/snap-build-collapse-rebuild/index.html",
+      "bytes": 1201,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/snap-build-collapse-rebuild/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-brick-toy.json",
+      "bytes": 9486,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/snap-build-collapse-rebuild.json",
+      "bytes": 3224,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/snap-build-collapse-rebuild.jpg",
+      "bytes": 91721,
+      "role": "preview"
+    }
+  ]
+}

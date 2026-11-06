@@ -1,0 +1,59 @@
+{
+  "id": "counter-rotate-pullback",
+  "order": 146,
+  "title": "反旋拉远",
+  "types": [
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。",
+  "mechanism": "镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。",
+  "trigger": "来源案例的时间轴进入所列动作区间。",
+  "effect": "镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-midcentury-toon 21.800000–24.500000秒；1倍速，总时长2.700000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "同步反旋",
+      "value": "film/film.js:615–619，zk=ss(seg(t,b(.4),b(5.2)))；z=exp(lerp(log(2.6),log(1),zk))，r=lerp(−.1,0,zk)，中心移至[960,590]。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-midcentury-toon/film/film.js"
+  ],
+  "locator": "film/film.js:615–619，zk=ss(seg(t,b(.4),b(5.2)))；z=exp(lerp(log(2.6),log(1),zk))，r=lerp(−.1,0,zk)，中心移至[960,590]。",
+  "useCases": [
+    "镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "调用来源案例原作render(t)重放“反旋拉远”。镜头从正在描画的一条清扫路线连续拉远，同时消除倾角并把中心从路径点移到平面图中心，显出完整的路线纹样。 参数：film/film.js:615–619，zk=ss(seg(t,b(.4),b(5.2)))；z=exp(lerp(log(2.6),log(1),zk))，r=lerp(−.1,0,zk)，中心移至[960,590]。 使用index.html的segments映射原片时刻，复用来源素材、字体与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/counter-rotate-pullback/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-midcentury-toon"
+    }
+  ],
+  "previewAt": 1.8,
+  "markers": [
+    {
+      "t": 0,
+      "label": "反旋拉远"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "sync-badge-grid",
+  "order": 162,
+  "title": "同步徽章格",
+  "types": [
+    "hud"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "每个摄影机格都有自己的同步种类，徽章保持右对齐，随格子矩形移动；空间不足时从上角移到下角。实时同步用橙色实心点，同一时段用灰色空心点和斜线底纹，恢复实时的慢动作另标1×。",
+  "mechanism": "每个摄影机格都有自己的同步种类，徽章保持右对齐，随格子矩形移动；空间不足时从上角移到下角。实时同步用橙色实心点，同一时段用灰色空心点和斜线底纹，恢复实时的慢动作另标1×。",
+  "trigger": "摄影机格打开、改变大小或合入全屏。",
+  "effect": "多路画面在同一时钟下显示各自的同步关系，控制室等同一时段的素材保留不同的视觉编码。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "2.5–7.4秒；22.42–26.2秒；1倍速，总时长8.68秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "种类",
+      "value": "film/index.html:LABEL / SYNC；sync、window、restored分别对应实时同步、同一时段和慢动作还原1×。"
+    },
+    {
+      "name": "徽章形态",
+      "value": "film/index.html:syncBadge；28px高，window为9px间隔斜线、空心点与灰框，其他类型用橙色实心点。"
+    },
+    {
+      "name": "随格布局",
+      "value": "film/index.html:render；cw+bw+40<格宽时放右上，否则放右下；零点mergeK>.45时隐藏格内包装。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-countdown/film/index.html"
+  ],
+  "locator": "LABEL / SYNC / syncBadge / render",
+  "useCases": [
+    "发射直播剪辑",
+    "赛事或裁决倒数",
+    "有明确零点的实时事件"
+  ],
+  "avoid": [
+    "同一时刻叠加争夺主动作的多组信息"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-countdown的原作render(t)重放“同步徽章格”。每个摄影机格携带自己的同步种类，徽章右对齐跟随格子矩形移动；空间不足时从上角移到下角。实时同步用橙色实心点，同一时段用灰色空心点和斜线底纹，恢复实时的慢动作另标1×。保留参数：film/index.html:LABEL / SYNC；sync、window、restored分别对应实时同步、同一时段和慢动作还原1×。；film/index.html:syncBadge；28px高，window为9px间隔斜线、空心点与灰框，其他类型用橙色实心点。；film/index.html:render；cw+bw+40<格宽时放右上，否则放右下；零点mergeK>.45时隐藏格内包装。。重放区间由入口segments配置，来源素材与音轨直接复用。",
+  "demo": "demos/patterns/sync-badge-grid/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-countdown"
+    }
+  ],
+  "previewAt": 2.2,
+  "markers": [
+    {
+      "t": 0,
+      "label": "同步徽章格"
+    }
+  ]
+}

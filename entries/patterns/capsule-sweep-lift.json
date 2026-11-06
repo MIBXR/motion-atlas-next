@@ -1,0 +1,94 @@
+{
+  "id": "capsule-sweep-lift",
+  "order": 69,
+  "title": "扫浪托起字母",
+  "types": [
+    "rhythm",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15"
+  ],
+  "summary": "扫波到达胶囊阵列后，高斯波包同步驱动胶囊高度、倾斜与着色，反向扫波按阅读顺序托起字母。",
+  "mechanism": "扫波到达胶囊阵列 → 高斯波包同步驱动胶囊高度、倾斜与着色，反向扫波按阅读顺序托起字母。",
+  "trigger": "扫波到达胶囊阵列时",
+  "effect": "高斯波包同步驱动胶囊高度、倾斜与着色，反向扫波按阅读顺序托起字母。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-3d-render 原片 0–4.3 秒；1 倍速，总时长 4.3 秒。"
+    },
+    {
+      "name": "扫浪托起字母",
+      "value": "((0.34, -0.94), 0.12, 3.4, 0.80, 0.26, 1.0, (-1.8 + V5_DX, 0.2))\n(tuple(CS_D), CS_TM, CS_SP, 0.75, 0.10, 0.55, (0.0, 0.0))\nV_LIFT = 1.55"
+    }
+  ],
+  "useCases": [
+    "阵列波浪与字母依次抬升的产品片。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-3d-render 原片 0–4.3 秒；总时长 4.3 秒。扫波到达胶囊阵列 → 高斯波包同步驱动胶囊高度、倾斜与着色，反向扫波按阅读顺序托起字母。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：((0.34, -0.94), 0.12, 3.4, 0.80, 0.26, 1.0, (-1.8 + V5_DX, 0.2))\n(tuple(CS_D), CS_TM, CS_SP, 0.75, 0.10, 0.55, (0.0, 0.0))\nV_LIFT = 1.55。使用 1920×1080 横屏。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/capsule-sweep-lift/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-3d-render"
+    }
+  ],
+  "previewAt": 3.8,
+  "markers": [
+    {
+      "t": 0,
+      "label": "三维软床"
+    },
+    {
+      "t": 0.5,
+      "label": "首字落地"
+    },
+    {
+      "t": 1.5,
+      "label": "第二字落地"
+    },
+    {
+      "t": 2,
+      "label": "第三字落地"
+    },
+    {
+      "t": 2.5,
+      "label": "第四字落地"
+    },
+    {
+      "t": 3.375,
+      "label": "字母再起"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#EFE2EA",
+      "#4A2E4E",
+      "#FF8FC0"
+    ],
+    "type": "Fredoka 700；DM Sans 600；Noto Sans SC 500。"
+  }
+}

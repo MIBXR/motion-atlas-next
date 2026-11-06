@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "escalating-chorus-meter",
+  "pattern": {
+    "id": "escalating-chorus-meter",
+    "order": 174,
+    "title": "副歌计量表逐拍递增",
+    "types": [
+      "rhythm",
+      "hud"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "renderer": "gpu",
+    "summary": "四段副歌把同一个 P(doom) 计量表从 8 逐拍推到 99.9，副歌之间保持数值；舞台道具表与弹入的角落表互斥。",
+    "mechanism": "METER 为四个窗口保存起止时刻和数值，pdoomAt 将窗口长度除以 BEAT 后取 round 得步数，每一步用 easeOut(clamp(frac(p)*4)) 在前四分之一步迅速抬升，之后保持；窗口外保持上一终值，首段前返回5。meterProp 标记 METER_SHOWN，避免角落表重复出现。",
+    "trigger": "进入 METER 的四段副歌区间；当前镜头没有绘制舞台表时显示角落表。",
+    "effect": "同一道具在重复副歌中累计升级，填色从绿色经过赭黄变红；角落表用 backOut 弹入，结束后 0.3 秒收回。",
+    "timing": [
+      {
+        "name": "四段窗口",
+        "value": "film/src/timeline.js:14：METER=[[23,35.5,8,34],[59,69.9,34,61],[95.4,105.4,61,86],[123.5,132,86,99.9]]。"
+      },
+      {
+        "name": "步进",
+        "value": "film/src/core.js:3 与 timeline.js:20–21：BEAT=60/88；n=max(1,round((b-a)/BEAT))，四段为18/16/15/12步；p=clamp((t-a)/(b-a))*n。"
+      },
+      {
+        "name": "角落入出场",
+        "value": "film/src/timeline.js:52–56：k=backOut((t-a)/.4)*(1-ease((t-b)/.3))；入场 .4 秒、退出 .3 秒。"
+      },
+      {
+        "name": "重放区间",
+        "value": "原片23–27秒、123.5–132秒，巧思总时长12.5秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "单步变化",
+        "value": "film/src/timeline.js:21：lerp(v0,v1,(floor(p)+easeOut(clamp(frac(p)*4)))/n)。"
+      },
+      {
+        "name": "道具与角落表互斥",
+        "value": "film/src/core.js:193、timeline.js:39、props.js:75–76：每帧重置 METER_SHOWN，meterProp 设置 true，drawWorld 仅在 false 时画角落表。"
+      },
+      {
+        "name": "位置与颜色",
+        "value": "film/src/timeline.js:56–66：x=1760、y=110，scale=k*.85；props.js:74：v<40 为 sap，v<75 为 ochre，其余 #D8394E。"
+      }
+    ],
+    "useCases": [
+      "重复副歌逐次累积的视觉笑点",
+      "用舞台道具与 HUD 共同承载一项不断上升的数值"
+    ],
+    "avoid": [
+      "需要精密实时仪表读数的界面",
+      "同时显示两套相同计量表"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "karaoke-word-fill"
+      ],
+      "conflicts": []
+    },
+    "prompt": "复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“副歌计量表逐拍递增”，总时长12.5秒。METER 为四个窗口保存起止时刻和数值，pdoomAt 将窗口长度除以 BEAT 后取 round 得步数，每一步用 easeOut(clamp(frac(p)*4)) 在前四分之一步迅速抬升，之后保持；窗口外保持上一终值，首段前返回5。meterProp 标记 METER_SHOWN，避免角落表重复出现。 film/src/timeline.js:21：lerp(v0,v1,(floor(p)+easeOut(clamp(frac(p)*4)))/n)。 film/src/core.js:193、timeline.js:39、props.js:75–76：每帧重置 METER_SHOWN，meterProp 设置 true，drawWorld 仅在 false 时画角落表。 film/src/timeline.js:56–66：x=1760、y=110，scale=k*.85；props.js:74：v<40 为 sap，v<75 为 ochre，其余 #D8394E。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。",
+    "demo": "demos/patterns/escalating-chorus-meter/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "pdoom-video"
+      }
+    ],
+    "previewAt": 1.2,
+    "markers": [
+      {
+        "t": 0,
+        "label": "P(doom) 手绘 MV · 23–27秒"
+      },
+      {
+        "t": 4,
+        "label": "P(doom) 手绘 MV · 123.5–132秒"
+      }
+    ],
+    "sound": {
+      "description": "原始 MP3 按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#F3EBDC",
+        "#2B2233",
+        "#D97757",
+        "#A84D33",
+        "#F2A283",
+        "#1F2550",
+        "#2F3C7A",
+        "#E27A92",
+        "#E8AA38",
+        "#6E9F58",
+        "#3A9C98",
+        "#7B5CA8",
+        "#FFF5E2",
+        "#8EC3E6"
+      ],
+      "type": "Permanent Marker 400；Shantell Sans 800。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置原片起止时刻，画面与音轨使用相同映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴节点与减少动态的停留时刻。"
+      }
+    ],
+    "preview": "previews/patterns/escalating-chorus-meter.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "pdoom-video",
+      "bundle": "agent/cases/pdoom-video.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 副歌计量表逐拍递增\n\n## 实现 Prompt\n\n复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“副歌计量表逐拍递增”，总时长12.5秒。METER 为四个窗口保存起止时刻和数值，pdoomAt 将窗口长度除以 BEAT 后取 round 得步数，每一步用 easeOut(clamp(frac(p)*4)) 在前四分之一步迅速抬升，之后保持；窗口外保持上一终值，首段前返回5。meterProp 标记 METER_SHOWN，避免角落表重复出现。 film/src/timeline.js:21：lerp(v0,v1,(floor(p)+easeOut(clamp(frac(p)*4)))/n)。 film/src/core.js:193、timeline.js:39、props.js:75–76：每帧重置 METER_SHOWN，meterProp 设置 true，drawWorld 仅在 false 时画角落表。 film/src/timeline.js:56–66：x=1760、y=110，scale=k*.85；props.js:74：v<40 为 sap，v<75 为 ochre，其余 #D8394E。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。\n\n## 参数\n\n- **四段窗口**：film/src/timeline.js:14：METER=[[23,35.5,8,34],[59,69.9,34,61],[95.4,105.4,61,86],[123.5,132,86,99.9]]。\n- **步进**：film/src/core.js:3 与 timeline.js:20–21：BEAT=60/88；n=max(1,round((b-a)/BEAT))，四段为18/16/15/12步；p=clamp((t-a)/(b-a))*n。\n- **角落入出场**：film/src/timeline.js:52–56：k=backOut((t-a)/.4)*(1-ease((t-b)/.3))；入场 .4 秒、退出 .3 秒。\n- **重放区间**：原片23–27秒、123.5–132秒，巧思总时长12.5秒。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置原片起止时刻，画面与音轨使用相同映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴节点与减少动态的停留时刻。\n\n[打开 Demo](../../demos/patterns/escalating-chorus-meter/index.html) · [在库中查看](../../patterns.html#pattern/escalating-chorus-meter)\n"
+  },
+  "entrypoint": "demos/patterns/escalating-chorus-meter/index.html",
+  "files": [
+    {
+      "path": "demos/cases/pdoom-video/LICENSES.md",
+      "bytes": 1827,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/audio/pdoom.mp3",
+      "bytes": 3437188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fidelity.md",
+      "bytes": 5347,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/index.html",
+      "bytes": 1565,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/cast.js",
+      "bytes": 9723,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c01_lab.js",
+      "bytes": 40369,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c02_chorus1.js",
+      "bytes": 55643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c03_takeoff.js",
+      "bytes": 65878,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c04_chorus2.js",
+      "bytes": 68165,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c05_obsolete.js",
+      "bytes": 71664,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c06_chorus3.js",
+      "bytes": 56889,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c07_scale.js",
+      "bytes": 54754,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c08_chorus4.js",
+      "bytes": 64423,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c09_finale.js",
+      "bytes": 28289,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/clawd.js",
+      "bytes": 18959,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/core.js",
+      "bytes": 14844,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/lyrics.js",
+      "bytes": 2274,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/props.js",
+      "bytes": 7599,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/timeline.js",
+      "bytes": 6749,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/PermanentMarker-LICENSE.txt",
+      "bytes": 11358,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/PermanentMarker-Regular.ttf",
+      "bytes": 74632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/ShantellSans-OFL.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/ShantellSans[BNCE,INFM,SPAC,wght].ttf",
+      "bytes": 1284736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/fonts.css",
+      "bytes": 361,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/index.html",
+      "bytes": 3247,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/ANIMATION_GUIDE.md",
+      "bytes": 11677,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/README.md",
+      "bytes": 2836,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/STORYBOARD.md",
+      "bytes": 16064,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/package-lock.json",
+      "bytes": 20492,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/package.json",
+      "bytes": 345,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/render.mjs",
+      "bytes": 7555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/studio.html",
+      "bytes": 1810,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5.brush@2.2.3/LICENSE.md",
+      "bytes": 1084,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5.brush@2.2.3/p5.brush.js",
+      "bytes": 71792,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5@2.3.3/license.txt",
+      "bytes": 24480,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5@2.3.3/p5.min.js",
+      "bytes": 990372,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/escalating-chorus-meter/index.html",
+      "bytes": 1152,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/escalating-chorus-meter/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/pdoom-video.md",
+      "bytes": 3611,
+      "role": "doc"
+    },
+    {
+      "path": "entries/cases/pdoom-video.json",
+      "bytes": 13469,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/escalating-chorus-meter.json",
+      "bytes": 4711,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/escalating-chorus-meter.jpg",
+      "bytes": 141157,
+      "role": "preview"
+    }
+  ]
+}

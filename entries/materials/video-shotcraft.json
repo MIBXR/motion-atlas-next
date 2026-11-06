@@ -1,0 +1,1127 @@
+{
+  "id": "video-shotcraft",
+  "order": 4,
+  "title": "video-shotcraft · 镜头配方卡宣传片",
+  "type": "agent-skill",
+  "summary": "用 124 张镜头配方卡、150 个镜头样式与 Ink Press 模板，为 Web / 桌面产品制作电影感宣传片；音效按项目从 Freesound 选材，另有 5 首 BGM 备选。",
+  "workflow": [
+    "判断任务范围：为已有视频处理音效时，直接进入声音选材与对齐；制作完整宣传片时，选择 Ink Press 模板、Agent 自主创作或与用户逐阶段共同创作。",
+    "只读检查产品，启动本地 dev server，用无头浏览器采集整页 2x 截图、元素透明底切片与 layout.json 坐标表；敏感数据换成虚构内容。",
+    "从产品自身的设计系统提取字体、栅格与配色写入设计 spec，按能量曲线从镜头卡选镜头，依次做文字方向、styleframe、镜头映射与分镜。",
+    "使用镜头卡时，先用 gallery/api/library.json 校验卡名，再读取卡片指向的准确 Demo 源码，连同所用的共享组件与纹理一并适配。",
+    "有配乐时先做节奏分析，时间线按拍写；SFX 从 Freesound 按动作、材质、时长和许可选材，默认 CC0，可接受署名时选 CC BY，下载到当前工程并保留来源与署名。",
+    "每个镜头都用 remotion still 生成静帧自检；整片渲染后抽帧回看，按上游终检流程确认画面与声音。",
+    "有配乐时交付带配乐与无配乐两版；上游另提供剪映草稿导出和浏览器后期工作台。"
+  ],
+  "useCases": [
+    "Web / 桌面产品的宣传片、发布片与演示视频",
+    "从镜头卡取用单个动效镜头",
+    "把真实页面截图做成 2.5D 运镜镜头",
+    "为已有产品视频或镜头选择、替换和对齐音效"
+  ],
+  "avoid": [
+    "口播讲解视频（作者另有 video-talkcraft）",
+    "没有可截界面的产品",
+    "实拍剪辑"
+  ],
+  "upstream": {
+    "repository": "Vincentwei1021/video-shotcraft",
+    "url": "https://github.com/Vincentwei1021/video-shotcraft/tree/1266a3ec4831289c4d893d42dd5102723658039a",
+    "commit": "1266a3ec4831289c4d893d42dd5102723658039a",
+    "version": "1.0.0"
+  },
+  "license": {
+    "name": "Apache-2.0",
+    "url": "https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/LICENSE",
+    "notes": "代码与作者自制素材采用 Apache-2.0；镜头手法来源见 references/shots/ATTRIBUTION.md。新项目 SFX 从 Freesound 按条目许可取得，BGM 来源见 assets/audio/ATTRIBUTION.md；模板固定音频的来源与未确认项见 template/public/audio/ATTRIBUTION.md。Remotion 另有独立许可。"
+  },
+  "install": "npx skills add Vincentwei1021/video-shotcraft\n也可 git clone 上游仓库，把仓库目录链接到 ~/.claude/skills/video-shotcraft 或 ~/.codex/skills/video-shotcraft。\n此命令安装上游 main 的当前版本；本库原文快照固定在记录的提交。在 template/ 内执行 npm install 后，用 Remotion 预览和渲染模板；抽帧与音频处理需要 PATH 中的 ffmpeg。\n本库快照含镜头配方、组件、共享素材、模板、BGM 与 Freesound 选材方法；不含 workbench/、社交发布模块、音效自动下载脚本及测试工具，需要这些工具时从固定提交的上游仓库取得。",
+  "snapshotPath": "demos/materials/video-shotcraft/",
+  "snapshotEntry": "SKILL.md",
+  "research": "docs/materials/video-shotcraft.md",
+  "relatedEntries": [
+    {
+      "kind": "case",
+      "id": "ink-press",
+      "note": "skill 自带的 Ink Press 模板成片，按原工程复刻"
+    }
+  ],
+  "gallery": [
+    {
+      "path": "previews/materials/video-shotcraft/brand-ink-open.webp",
+      "caption": "开场与品牌 · brand-ink-open：墨线十字准星描画→字标逐字压印→打字机副标→满一秒静止再上浮消散。原片约 3.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/brand-ink-open.mp4?v=1790980736778",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/crane-rise-reveal.webp",
+      "caption": "开场与品牌 · crane-rise-reveal：升降臂拉升揭示——开场怼在一行数据特写，相机沿 Y 轴减速升起后拉，行行涌入直到整面 dashboard 铺满全幅。原片约 5.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/crane-rise-reveal.mp4?v=1790980736793",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/dataviz-landscape-open.webp",
+      "caption": "开场与品牌 · dataviz-landscape-open：暗场支流线束地景开场——多条流线汇入主干、虚构 ID 标签浮在线上、相机重景深低速飞越。原片约 6.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/dataviz-landscape-open.mp4?v=1790980736796",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/fracture.webp",
+      "caption": "开场与品牌 · fracture：5×5 瓦片从 3D 碎片态按中心波纹逐圈聚合成整面海报，停一拍亮字，随后全部碎片背离中心加速旋转飞出画面。原片约 5.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/fracture.mp4?v=1790980736804",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/icon-field-colorize.webp",
+      "caption": "开场与品牌 · icon-field-colorize：灰阶小图标点阵错峰浮现铺满全屏，停一拍后多道品牌色横带波纹极快向下扫翻全场——\"功能全景先摆满，品牌一瞬间点亮\"的开场/收束卡。原片约 5.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/icon-field-colorize.mp4?v=1790980736818",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/letterspace-materialize.webp",
+      "caption": "开场与品牌 · letterspace-materialize：大字距字标全字符并行连续描画结晶——所有字母同帧起笔、笔画像手写一样连续生长、同帧齐收成词；氛围底景上的品牌字标显影。原片约 3.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/letterspace-materialize.mp4?v=1790980736824",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/magician-card-flourish.webp",
+      "caption": "开场与品牌 · magician-card-flourish：午夜蓝暗场上蓝色星芒闪现 0.3s（X 形针状光束旋转 90°+中心辉光放射小光芒），卡片从闪光点弹射而出——极速自旋弧线飞向镜头、自旋随靠近衰减、瞬间硬定格（卡高 86% 画高）、光脉冲 + sheen 扫光，右侧文案随后逐行揭示。原片约 5.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/magician-card-flourish.mp4?v=1790980736831",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/orbit-ring-title-open.webp",
+      "caption": "开场与品牌 · orbit-ring-title-open：石墨暗场上八张 16:9 暗色内容卡按 45° 均布在 720×380 椭圆上匀速公转（卡身永不倾斜，纵深只由 sin θ 给出 ±12% 缩放、z 序与远处压暗失焦），环撑开期间卡内容冻结首帧、f24 之后八张一起开播；居中两级标题逐字解糊下沉落定，关键词到位那一刻荧光马克块自左横扫铺满、扫过处字反白为墨，mono 副行随后浮出；可选末段整行失焦淡出、环继续转着交棒下一镜。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/orbit-ring-title-open.mp4?v=1790980736837",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/spotlight-hero-card.webp",
+      "caption": "开场与品牌 · spotlight-hero-card：关灯的剧场里一束钨丝聚光（带体积光柱）扫过页面锁定一张卡，斜侧推进后卡片弹起悬浮、香槟色光束沿轮廓两圈、连同 3D 注记一起贴回原位。原片约 5.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/spotlight-hero-card.mp4?v=1790980736873",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/stroke-segment-build.webp",
+      "caption": "开场与品牌 · stroke-segment-build：断笔成字——标题拆成十几段互不相连的笔画乱序逐段点亮，前 70% 不可读，末段落位瞬间语义\"啪\"地成立。原片约 5.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/stroke-segment-build.mp4?v=1790980736878",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/text-as-mask.webp",
+      "caption": "开场与品牌 · text-as-mask：文字视频遮罩——瓷白舞台上切出超粗大标题字，字内部透出缓慢平移的暗色实时产品面板，结尾吸一口气后字形指数冲入放大 46 倍溢出、内部画面接管全屏。原片约 5.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/text-as-mask.mp4?v=1790980736883",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/blur-slide.webp",
+      "caption": "文字与字卡 · blur-slide：标题逐词入场，y 0.38em→0 + blur 18→0 + opacity 0→1 三通道走同一条 ease-out 同步收敛，词间隔约 4f；副标题在标题收完前就错峰跟进。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/blur-slide.mp4?v=1790980736774",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/brace-expand.webp",
+      "caption": "文字与字卡 · brace-expand：一对紧贴的小花括号先在正中出现，随即带一次过冲向左右弹开并放大到标题级，文字 clip 宽度严格绑括号内缘、像被拉开幕布般从中间揭示，落定后字距再细微松弛。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/brace-expand.mp4?v=1790980736776",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/countdown-arc-scatter.webp",
+      "caption": "文字与字卡 · countdown-arc-scatter：纸面表盘 9 个等大数字沿大弧切向排布，整盘扫过 96° 后减速急停，\"5\" 停在弧顶随即平移落位成标题首字符，其余数字带 blur 原地散去，标题逐词模糊淡入、末词转强调色。原片约 3.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/countdown-arc-scatter.mp4?v=1790980736792",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/document-typewriter-reveal.webp",
+      "caption": "文字与字卡 · document-typewriter-reveal：悬浮在暗场里的整页真排版文档窗口在光标后自己\"写\"出来、侧栏跟进、历史条目逐个落入轨道，相机从斜侧标题特写一路后撤到全窗。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/document-typewriter-reveal.mp4?v=1790980736800",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/flying-words.webp",
+      "caption": "文字与字卡 · flying-words：22 个关键词按黄金角铺在扁椭圆截面上，沿 z 轴从远处飞到相机前擦身而过，透明度走 [0,1,0.5,0.2,0] 生命曲线，跑满 2 整圈首尾无缝。原片约 6.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/flying-words.mp4?v=1790980736803",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/glitch-cycle.webp",
+      "caption": "文字与字卡 · glitch-cycle：同一行等宽槽位循环轮播 4 条状态短语，每条头尾按概率关键帧 [1,0,0,0.1,0,0,1] 全乱码、中段偶发单字抖动，切换瞬间叠 RGB 分离与整行位移；末条概率收 0 保证收尾干净。原片约 5.6 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/glitch-cycle.mp4?v=1790980736809",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/gradient-word-sweep.webp",
+      "caption": "文字与字卡 · gradient-word-sweep：黑底标语里关键词被渐变彩光从左到右快速扫过\"充能\"——波前字符辉光最强向后衰减，填满后字符间勾连细紫红闪电、整词稳态泛光呼吸。原片约 3.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/gradient-word-sweep.mp4?v=1790980736814",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/lead-word-zoom-assemble.webp",
+      "caption": "文字与字卡 · lead-word-zoom-assemble：首词以 2.3 倍字号占据画面中央、hold 期间继续推近 6%，随后一条曲线同时完成「缩回终字号」与「整行左滑归位」，后续词各自从槽位右侧 0.5em 被推进来；支点横向钉首词中心、纵向钉基线（挂载时实测），整行上移的同一时窗副行浮出，停一拍后整幕 crash-zoom 推近失焦交棒。原片约 2.8 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/lead-word-zoom-assemble.mp4?v=1790980736823",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/marker-underline-title.webp",
+      "caption": "文字与字卡 · marker-underline-title：大标题落定后，关键词下方马克笔下划线从左到右快速描画——变宽笔形、毛糙边缘、微上斜跟随斜体字势，贴着字底。原片约 2.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/marker-underline-title.mp4?v=1790980736832",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/outline-word-fill.webp",
+      "caption": "文字与字卡 · outline-word-fill：空心词（细暖灰描边、500 字重）从 3.2 倍急缓收缩落位，虚线大圆随后从 2.8 倍收到字周围并缓慢自转，左右水平虚线从画框边缘内伸；描边先微微增亮，实心白热字在一帧内硬切点亮，一闪辉光即定格。原片约 3.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/outline-word-fill.mp4?v=1790980736838",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/paper-title-card.webp",
+      "caption": "文字与字卡 · paper-title-card：一句话逐词压印上纸、一个词标强调色斜体、短划线收束。原片约 1.8 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/paper-title-card.mp4?v=1790980736845",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/pill-chip-slot-cycle-handled.webp",
+      "caption": "文字与字卡 · pill-chip-slot-cycle-handled：白底句式 \"Your `chip` Handled\" 里深色胶囊内词竖向滚轮轮换，胶囊宽度按预量文本宽插值平滑伸缩、两侧文字被自然挤开收拢，胶囊上下露出 13% 透明度的灰色幽灵项。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/pill-chip-slot-cycle-handled.mp4?v=1790980736847",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/pill-slot-cycle.webp",
+      "caption": "文字与字卡 · pill-slot-cycle：句中词槽轮换——固定句干钉死不动，句尾 pill 徽章每 ~0.7s 老虎机滚一格（旧的上飞加速淡出、新的从下带模糊滑入），连换 N 个功能词后落成完整句子收束。原片约 6.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/pill-slot-cycle.mp4?v=1790980736848",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/text-column-converge.webp",
+      "caption": "文字与字卡 · text-column-converge：双词对峙合拢——左\"NEW\"右特性词钉死在等屏边距两侧硬切轮换、全程零收缩，换到最后一词才唯一一次 ease-in-out 滑到居中咬合成短语，下方小字近乎硬切浮现；收尾揭晓型文字卡。原片约 6.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/text-column-converge.mp4?v=1790980736884",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/title-demote-to-label.webp",
+      "caption": "文字与字卡 · title-demote-to-label：大标题降格为节标签两式——A 大标题居中显影站稳一拍后连续缩小 0.3x 平移到左上角落成小节标签、内容区在其下生长；B 同套路但登场时带文本选中态高亮块扫入再撤掉。原片约 8.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/title-demote-to-label.mp4?v=1790980736888",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/split-text-stagger.webp",
+      "caption": "文字与字卡 · type-assembly-moves · split-text-stagger 裂升：每字 overflow 盒内 translateY(115%→0) 带 10% 过冲，delay i×2f，基线同步生长。原片约 4.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/split-text-stagger.mp4?v=1790980736895",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/drift-assembly.webp",
+      "caption": "文字与字卡 · type-assembly-moves · drift-assembly 漂移合拢：字符 seed 方向 ±300px + blur 8px 漂入错峰归位，锁定帧加深脉冲，合体后整词呼吸 1.04。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/drift-assembly.mp4?v=1790980736896",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/text-on-path.webp",
+      "caption": "文字与字卡 · type-assembly-moves · text-on-path 沿线流入：字符沿贝塞尔曲线鱼贯滑入（切线角旋转），到达后 12f 摆正水平。原片约 5.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/text-on-path.mp4?v=1790980736897",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/letter-drop-physics.webp",
+      "caption": "文字与字卡 · type-entrance-moves · letter-drop-physics 字符坠落：标题文字入场一式——letter-drop-physics 字符坠落（重力砸落、弹跳、歪斜站定，最后一拍集体立正归位）。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/letter-drop-physics.mp4?v=1790980736898",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/font-weight-pump.webp",
+      "caption": "文字与字卡 · type-rhythm-sync · font-weight-pump 字重脉冲：命中帧笔画瞬间变粗（stroke+字重跳变），~10f 衰减弹回；重音拍额外撑宽 8%。原片约 5.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/font-weight-pump.mp4?v=1790980736899",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/karaoke-fill-sync.webp",
+      "caption": "文字与字卡 · type-rhythm-sync · karaoke-fill-sync 填色随读：每词深色从左到右填亮，进度跟语速，读完保持；活跃词下带读指下划线。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/karaoke-fill-sync.mp4?v=1790980736900",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/error-retype.webp",
+      "caption": "文字与字卡 · typewriter-moves · error-retype：打字机 error-retype——误删重打的\"改口\"三幕剧：打出平庸词 → 犹豫 → 退格删掉 → 更快打出卖点词。原片约 5.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/error-retype.mp4?v=1790980736901",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/vertical-word-roll-blur-cycle.webp",
+      "caption": "文字与字卡 · vertical-word-roll-blur-cycle：句尾词换成竖向滚轮，3 次换词各 0.55s（outQuint 七成 + outBack 三成，前快后极慢带微过冲），相邻行按距离上垂直 blur 与灰度，中心词落定瞬间从灰染成强调色。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/vertical-word-roll-blur-cycle.mp4?v=1790980736906",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/word-relay-filmstrip.webp",
+      "caption": "文字与字卡 · word-relay-filmstrip：左列黑白相间等高页面卡步进滚动（焦点卡全亮、邻卡离焦压暗）、右侧衬线大词原位接力（名词恒定+动词轮换）——切词瞬间才滚动一格，词块垂直中心与当前页面卡中点精确对齐。原片约 6.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/word-relay-filmstrip.mp4?v=1790980736912",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/word-relay-geometry.webp",
+      "caption": "文字与字卡 · word-relay-geometry：三个利益词各带一套专属几何接力——虚线大圆减速自转 + 彗星弧飞跑 → 三实线圆 trim 依次生长后收拢咬紧 → 镀铬金属 sheen 扫过后一拍收成纯白；旧词缩到 0.86 淡出，新词描边→填充揭示。原片约 6.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/word-relay-geometry.mp4?v=1790980736913",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/avatar-bracket-carousel.webp",
+      "caption": "界面登场与陈列 · avatar-bracket-carousel：\"Your ___ agent\" 填空排版，四角对焦框钉在句中不动，头像队列在框内垂直 spring 轮换三次，入框放大清晰、出框按距离缩小淡化模糊，角色标签同步更换，切换瞬间对焦框呼吸 7%。原片约 5.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/avatar-bracket-carousel.mp4?v=1790980736768",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/bezier-source-converge-merge.webp",
+      "caption": "界面登场与陈列 · bezier-source-converge-merge：左侧四个来源节点各有一条细贝塞尔曲线连向右侧同一汇聚点，曲线先错峰由左向右 draw-on，节点沿自己的曲线滑向汇聚点并三段式加速缩小到消失，强调色数据包全程沿路径滑行，吞并完成后曲线从左端反向擦除只留品牌标志（demo：白瓷圆片托 video-shotcraft 镜刻标志）。原片约 5.6 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/bezier-source-converge-merge.mp4?v=1790980736773",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/card-stack.webp",
+      "caption": "界面登场与陈列 · card-stack：一组模板卡（demo 9 张）从屏幕下方逐张 spring 弹入、越落越快叠成一摞，全员落位后整摞一次性展成扇面——每张按序号偏转 6.5°、横移 138px，最后中心卡被抽出。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/card-stack.mp4?v=1790980736783",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/carousel-3d.webp",
+      "caption": "界面登场与陈列 · carousel-3d：8 张卡排成圆环整环自转一圈（匀速底 + 每 45° 一次停靠的分步），每卡只绕 Y 公转、自身 billboard 朝外，正反两层同向贴图配 backface-visibility:hidden 保证任何时刻都正立不倒置，正前方卡被点亮、环下字幕随之换字，相机全程钉在浅俯角。原片约 5.6 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/carousel-3d.mp4?v=1790980736784",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/cloner-depth-echo.webp",
+      "caption": "界面登场与陈列 · cloner-depth-echo：克隆纵队——主卡瞬间\"复印\"出 7 个半透明分身沿斜向纵深排开成队，停一拍后全体加速吸回本体合一+弹跳。原片约 4.6 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/cloner-depth-echo.mp4?v=1790980736790",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/deck-deal-flyin.webp",
+      "caption": "界面登场与陈列 · deck-deal-flyin：暗色石墨桌面上的实体牌堆特写环绕开局，灯从牌堆亮到旁边的页面板，一摞卡像发牌一样硬加速甩进网格，相机追着发牌升起后仰、落在整块满板的跑道式俯瞰上定格。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/deck-deal-flyin.mp4?v=1790980736797",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/doc-park-left-pill-deal.webp",
+      "caption": "界面登场与陈列 · doc-park-left-pill-deal：文档不淡出而是向左滑出只露约 35% 宽并微缩到 0.92，右侧按旁白节奏慢速发牌三张白底描边药丸（outBack 弹入），每张落定后其下方字幕逐词加深、下一张到来前整句淡出，左侧文档全程极缓慢自动滚动保持\"正在被读\"。原片约 5.8 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/doc-park-left-pill-deal.mp4?v=1790980736799",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/draw-svg-trace.webp",
+      "caption": "界面登场与陈列 · draw-svg-trace：描边生长圈注——一条带笔头的墨线沿元素轮廓跑一圈把它\"画\"出来，闭合瞬间闪黑交棒、内容淡入；同套路可给标题画下划线。原片约 4.4 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/draw-svg-trace.mp4?v=1790980736801",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/contact-shadow-lift.webp",
+      "caption": "界面登场与陈列 · element-body-moves · contact-shadow-lift：元素身体感——contact-shadow-lift 接触阴影离面抬升：卡抬起时桌上的阴影同步放大变淡，纸片离桌被阴影证明。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/contact-shadow-lift.mp4?v=1790980736802",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/integration-hub-map.webp",
+      "caption": "界面登场与陈列 · integration-hub-map：旧页面一次性快翻 180°（侧棱瞬间亮闪）落成新中枢页，五个集成 app 图标同帧弹现、随即五条彩虹光管同帧齐连，光管内输送脉冲持续流动——\"翻开新一页，生态一齐接入\"。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/integration-hub-map.mp4?v=1790980736822",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/list-reveal.webp",
+      "caption": "界面登场与陈列 · list-reveal：垂直菜单 6 项按 10f 的间隔依次 scale 找位、软 back 轻微过冲落定，同时整个列表容器全程匀速上移——逐项入场与整体漂移是两层不相干的运动。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/list-reveal.mp4?v=1790980736828",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/list-stack-press.webp",
+      "caption": "界面登场与陈列 · list-stack-press：列表卡从画面底部逐张飞上摞起，每张落地压弹整摞、计数器同步跳一格。原片约 2.9 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/list-stack-press.mp4?v=1790980736829",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/neon-frame-forerun.webp",
+      "caption": "界面登场与陈列 · neon-frame-forerun：强透视直角霓虹框自左缘两头奔画先行成型，页面在框内由暗转亮，同时框内组件/文字从 3D 上空带同形软影错峰贴落、随页面点亮同步完成贴合，背景霓虹群（demo 为同形框纵深回声隧道）终段熄灭让位。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/neon-frame-forerun.mp4?v=1790980736834",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/neon-frame-orbit-drop.webp",
+      "caption": "界面登场与陈列 · neon-frame-orbit-drop：霓虹框先行描框后，镜头绕页面左→右弧线旋转，页面全部组件/文字**同帧**从空中往下贴合（同形软影同步收敛）——整体登场式的框内安放。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/neon-frame-orbit-drop.mp4?v=1790980736835",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/page-waterfall-wall.webp",
+      "caption": "界面登场与陈列 · page-waterfall-wall：页面瀑布墙——真实页面截图切成 3–4 列在 3D 后仰墙面上差速反向无限滚动，视差 + 镜头缓推做\"内容多到流不完\"的一览。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/page-waterfall-wall.mp4?v=1790980736843",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/product-card-progressive-assemble.webp",
+      "caption": "界面登场与陈列 · product-card-progressive-assemble：详情卡像被逐字段抓取般自建——一枚\"填充光标\"领先跳格，图→标题→分类 pill 依次 pop→原价出现后被划线降级、强调色新价 spring 跳出→正文逐行揭示且高亮块由左向右刷过→色卡点亮→按钮填满，整卡全程极慢 scale 前推。原片约 5.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/product-card-progressive-assemble.mp4?v=1790980736850",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/radial-wave.webp",
+      "caption": "界面登场与陈列 · radial-wave：17×9 圆点阵列按到波源的欧氏距离错峰点亮，每点 scale 过冲到 1.5 再落回常亮，第一道波扫完后第二道亮蓝脉冲从外圈反向收拢回中心。原片约 3.8 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/radial-wave.mp4?v=1790980736853",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/research-card-stack-scroll.webp",
+      "caption": "界面登场与陈列 · research-card-stack-scroll：深色论文卡每 12 帧一张沿右下轴线飞入中心叠压，落位带 1 帧压缩，只有最上一张全清晰渲染标题+作者+摘要，下方卡按堆积深度递增模糊变暗只露标题条，背景横向 grid 同步下移做速度参照。原片约 4.8 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/research-card-stack-scroll.mp4?v=1790980736854",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/row-embed.webp",
+      "caption": "界面登场与陈列 · row-embed：内容行像卡片一样从空中降下、rotateX 收平、嵌入瞬间底边亮一道强调色的缝。原片约 2.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/row-embed.mp4?v=1790980736857",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/value-stagger-gradient.webp",
+      "caption": "界面登场与陈列 · value-stagger-gradient：16 根柱入场时 delay 是时间错峰，同时高度/色相/位移/模糊四个属性各自铺成从首到末的数值梯度；第二拍把错峰原点换成中心，脉冲幅度以中心为最大重新铺开。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/value-stagger-gradient.mp4?v=1790980736905",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/bento-light-up.webp",
+      "caption": "界面登场与陈列 · wall-reveal-moves · bento-light-up 逐格点亮：暗场 3×2 bento 墙压暗待命，琥珀流光逐格描边一圈、内容随即提亮上浮，全亮后镜头缓推收住。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/bento-light-up.mp4?v=1790980736908",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/wireframe-draw-on.webp",
+      "caption": "界面登场与陈列 · wall-reveal-moves · wireframe-draw-on 蓝图描线成形：界面先以 SVG 细线蓝图分组描画，再一条琥珀发光竖线左→右扫过，扫过处线框实体化成真实界面。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/wireframe-draw-on.mp4?v=1790980736909",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/basic-3d-scene.webp",
+      "caption": "运镜与空间 · basic-3d-scene：impress.js 式空间演示：卡片以不同位置/旋转/缩放散布 3D 空间，相机取各步姿态之逆依次飞行对齐，末步拉到 OVERVIEW 总览。原片约 7.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/basic-3d-scene.mp4?v=1790980736769",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/crash-zoom-punch.webp",
+      "caption": "运镜与空间 · crash-zoom-punch：全景一拍急推到目标特写（6f），落位二选一——过冲回弹（弹性）或撞停震屏（重量）。原片约 4.4 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/crash-zoom-punch.mp4?v=1790980736794",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/cursor-flyover.webp",
+      "caption": "运镜与空间 · cursor-flyover：整页俯瞰后，相机依次飞到四个功能区 zoom-in 特写，SVG 光标先一步到位指点、点击留下涟漪并触发界面响应，最后拉回俯瞰。原片约 8.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/cursor-flyover.mp4?v=1790980736795",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/multiplane.webp",
+      "caption": "运镜与空间 · depth-layer-moves · multiplane：分层深度运镜——多层视差滑轨：3 层速度梯度横移出纵深，滑轨落定时主角浮起。原片约 5.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/multiplane.mp4?v=1790980736798",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/graze-face-tour.webp",
+      "caption": "运镜与空间 · graze-face-tour：大倾角贴面游走特写——镜头贴着 UI 表面低飞掠过（侧栏树/顶栏/列表当地形），页面文字初始悬浮在界面上空带同形软影，随镜头行进先后加速贴落回界面。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/graze-face-tour.mp4?v=1790980736816",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/tilt-reveal.webp",
+      "caption": "运镜与空间 · overhead-camera-moves · tilt-reveal：perspective 容器内整页 rotateX -80° 平躺，~43f 抬正，rotateX/scale/translateY 共用 out-cubic，末端轻过冲。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/tilt-reveal.mp4?v=1790980736840",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/overhead-tabletop-drop.webp",
+      "caption": "运镜与空间 · overhead-camera-moves · overhead-tabletop-drop：卡阵平躺 rotateX 62°，pan 段只动 translateX 横滑掠过，drop 段角度/缩放/位移三通道同跑扎入落版。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/overhead-tabletop-drop.mp4?v=1790980736841",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/exploded-view.webp",
+      "caption": "运镜与空间 · space-camera-moves · exploded-view：整页 3D 倾斜后构件沿 Z 轴错峰炸开悬停，一拍后逆序合体震屏收口。原片约 5.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/exploded-view.mp4?v=1790980736870",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/drone-dive-landing.webp",
+      "caption": "运镜与空间 · space-camera-moves · drone-dive-landing：近垂直俯角悬停 → 猛扎俯冲 → 气垫减速停在 hero 卡特写。原片约 3.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/drone-dive-landing.mp4?v=1790980736871",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/steep-tilt-glide.webp",
+      "caption": "运镜与空间 · steep-tilt-glide：固定镜头下直立页面以 60° 强透视侧立（右近左远），页面自身沿其 3D 横面方向滑移掠过镜头（物动镜不动），滑移带速度重影、文字组件悬空贴落、由暗揭亮。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/steep-tilt-glide.mp4?v=1790980736877",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/bullet-time-freeze-orbit.webp",
+      "caption": "运镜与空间 · tension-camera-moves · bullet-time-freeze-orbit 冻结环绕：图表生长到一半全冻住，相机绕悬停的 UI 平面 rotateY 扫 55° 再回，时间恢复接着长完。原片约 5.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/bullet-time-freeze-orbit.mp4?v=1790980736880",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/pull-back-isolation.webp",
+      "caption": "运镜与空间 · tension-camera-moves · pull-back-isolation 拉远孤立：从发光主卡特写后拉，兄弟卡按距离错峰熄灭、背景沉黑，孤卡悬在暗场中央。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/pull-back-isolation.mp4?v=1790980736881",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/terminal-3d.webp",
+      "caption": "运镜与空间 · terminal-3d：三个终端窗散布 3D 空间，相机窗间飞行、途中正弦拉远，每到一窗打字机敲命令、结果逐行滑出——命令执行的空间叙事流。原片约 8.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/terminal-3d.mp4?v=1790980736882",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/before-after-slider-scrub.webp",
+      "caption": "数据与指标 · before-after-slider-scrub：前后对比拉杆——\"处理前/后\"两版叠放，分割杆先猛甩后慢扫，杆过处新版\"显影\"揭出。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/before-after-slider-scrub.mp4?v=1790980736772",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/oscilloscope-stream.webp",
+      "caption": "数据与指标 · chart-live-moves · oscilloscope-stream：采样窗平移 8px/f + 余弦包络尖峰 + 刹停真静止。原片约 5.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/oscilloscope-stream.mp4?v=1790980736785",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/unit-dot-swarm-regroup.webp",
+      "caption": "数据与指标 · chart-live-moves · unit-dot-swarm-regroup：三幕 spring 错峰迁徙（stiffness 150、错峰 8f），终幕点阵拼数字。原片约 6.4 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/unit-dot-swarm-regroup.mp4?v=1790980736786",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/axis-rescale-shock.webp",
+      "caption": "数据与指标 · chart-live-moves · axis-rescale-shock：冲出框 220px + 重标三联动（刻度换/网格密/旧线压扁）+ 震 8px。原片约 5.6 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/axis-rescale-shock.mp4?v=1790980736787",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/needle-sweep-selftest.webp",
+      "caption": "数据与指标 · gauge-readout-moves · needle-sweep-selftest：指针去程 ~12f ease-out 甩满弧，回程 ~20f 带 5-8° 过冲回摆落真值；多表错峰 3-5f；落定同帧盘下数值弹出。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/needle-sweep-selftest.mp4?v=1790980736806",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/tape-scroll-fixed-pointer.webp",
+      "caption": "数据与指标 · gauge-readout-moves · tape-scroll-fixed-pointer：长刻度带 translate：慢爬段→45px/f 冲刺 ~25f→spring 刹车过冲回摆停位；窗内读数同步刷新。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/tape-scroll-fixed-pointer.mp4?v=1790980736807",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/changelog-scroll-brake.webp",
+      "caption": "数据与指标 · scroll-brake-moves · changelog-scroll-brake：translateY 扫 ~2400px（out exp 指数减速 ~50f），blur 由帧间位移差分驱动（0-6px 自动清零）；停点行 scale 1.03 抬升+阴影+3px 描边，其余 opacity 退 0.38。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/changelog-scroll-brake.mp4?v=1790980736862",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/brake-reticle-lock.webp",
+      "caption": "数据与指标 · scroll-brake-moves · brake-reticle-lock：滚动三段：sin-in 加速→cubic-out 猛减速冲过头 +30px→回弹落定；blur=v×0.12 封顶 24px；角标从 ±620/±320 画外 Easing.back(2.4) 飞入咬合，高亮 6f 内完成、标签 back(2.6) 弹出。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/brake-reticle-lock.mp4?v=1790980736863",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/timeline-travel.webp",
+      "caption": "数据与指标 · timeline-travel：时间轴横移——镜头沿水平刻度轴加速掠过版本刻度，每过一格卡片弹立短停，末刻度急停推近。原片约 5.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/timeline-travel.mp4?v=1790980736887",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/autolayout-gap-dial.webp",
+      "caption": "交互与功能演示 · autolayout-gap-dial：间距拨盘驱动布局——一排链接块带框选描边+缝隙间距标注，徽章数字逐格跳动、块被参数实时推开再弹簧回弹归位；\"参数驱动布局\"的可视化。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/autolayout-gap-dial.mp4?v=1790980736767",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/panel-to-canvas.webp",
+      "caption": "交互与功能演示 · canvas-materialize-moves · panel-to-canvas 行倒卡：复选框逐个自动打勾→按钮按下→三行沿上抛弧线错峰飞出，途中行形态与卡形态交叉淡化，落位带随机倾角；面板行槽塌陷成虚线留白。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/panel-to-canvas.mp4?v=1790980736779",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/diagram-cascade.webp",
+      "caption": "交互与功能演示 · canvas-materialize-moves · diagram-cascade 级联生成树：prompt 逐字敲出（敲完描边变深确认）→根（深色）→2 子→4 孙逐层弹出，折角连线描线先行 8f，成树后整棵呼吸一拍。原片约 6.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/diagram-cascade.mp4?v=1790980736780",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/chip-grid-single-select-blackout.webp",
+      "caption": "交互与功能演示 · chip-grid-single-select-blackout：五个选项 chip 以 3+2 居中排布逐个淡入；选中帧先插一帧灰色按压块，紧接数帧内底色变墨黑、文字变白并做 1→1.04→1 极轻回弹，其余 chip 淡到 18% 但位置锁死；随后余项归零，黑 chip 上移收窄，下方升起结算价格。原片约 5.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/chip-grid-single-select-blackout.mp4?v=1790980736788",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/cast-ensemble.webp",
+      "caption": "交互与功能演示 · collab-cursor-moves · cast-ensemble：协作光标当演员——cast-ensemble 五光标群演氛围层（错峰飞入+正弦漂移+打字 cameo+聚拢围观）。原片约 5.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/cast-ensemble.mp4?v=1790980736791",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/glass-pill-dictation-typing.webp",
+      "caption": "交互与功能演示 · glass-pill-dictation-typing：一条定宽玻璃胶囊以约 1.25 倍略大弹出后缓落到位，内部自左淡到右浓铺一层强调色暖光；光标先行、随后匀速打出听写句，光（连同胶囊背后的环境光）随打字进度渐渐退去，收尾成一条中性的磨砂玻璃条。原片约 3.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/glass-pill-dictation-typing.mp4?v=1790980736808",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/hashtag-to-pill-materialize.webp",
+      "caption": "交互与功能演示 · hashtag-to-pill-materialize：话题词打字实体化——居中打出 \"#word\"（红实心光标恒亮），1 帧硬切变成宽大胶囊标签，hold 后缩小左移落到页面标签位，再 1 帧硬切揭示成品页；\"两次硬切一次滑动\"的节奏骨架。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/hashtag-to-pill-materialize.mp4?v=1790980736817",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/picker-carousel-feature-cycle.webp",
+      "caption": "交互与功能演示 · picker-carousel-feature-cycle：移动端风竖向选择器——焦点药丸不动、内容穿过它，每项带明显 outQuint 减速吸附后完全静止，按到中心距离分层控制透明度/字号/灰度，落定时药丸做 scaleY 极轻呼吸。原片约 3.6 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/picker-carousel-feature-cycle.mp4?v=1790980736846",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/segmented-thumb-hero.webp",
+      "caption": "交互与功能演示 · segmented-thumb-hero：分段控件 thumb 位移当主角特写——超大胶囊 segmented control 弹簧浮入，描边箭头光标画外滑入按下，白 thumb 8f ease-out 滑到另一段，到位瞬间新图标 spring 弹出、旧图标收起。原片约 3.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/segmented-thumb-hero.mp4?v=1790980736864",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/theme-sweep-toggle.webp",
+      "caption": "交互与功能演示 · theme-switch-moves · theme-sweep-toggle：深色版 clip-path polygon 15° 斜边扫场（out poly3 先快后缓 ~38f），边界 4px 白亮线+18px 辉光，扫完 2f 淡出；深版 scale 1→0.995→1 坐实。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/theme-sweep-toggle.mp4?v=1790980736885",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/palette-theme-ripple.webp",
+      "caption": "交互与功能演示 · theme-switch-moves · palette-theme-ripple：面板 back(1.9) 弹落→逐字输入→回车面板 ease-in 收缩到 0 + 白色高光核钉住位置→圆形 clip 半径 12→1250px cubic-out 荡开，边缘 5px 白环双向辉光。原片约 5.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/palette-theme-ripple.mp4?v=1790980736886",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/type-and-filter.webp",
+      "caption": "交互与功能演示 · type-and-filter：真实 UI 上打字搜索、网格自己收敛成一张卡、点击穿透进详情页。原片约 2.4 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/type-and-filter.mp4?v=1790980736894",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/voice-waveform-live.webp",
+      "caption": "交互与功能演示 · voice-waveform-live：录音胶囊实时声纹——64 根细竖条随\"说话\"起伏，说话时中部高耸、停顿缩成点线，波形从右往左滚动；说→停→说→提交塌缩的完整表演。原片约 5.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/voice-waveform-live.mp4?v=1790980736907",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/bottom-push-stack-wipe.webp",
+      "caption": "转场 · bottom-push-stack-wipe：底边上推换章——新场景连底色整屏从底边向上推入，把旧场景物理顶出画外，连推数章各配一种饱和底色，内容钉死在各自色底坐标系里随底色走。原片约 5.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/bottom-push-stack-wipe.mp4?v=1790980736775",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/card-flip-reveal.webp",
+      "caption": "转场 · card-flip-reveal：功能卡 3D 翻面揭示——卡片沿 Y 轴翻 180°，正面 UI 翻到侧棱最薄处掠过一道随角度移动的受光，背面揭出大号结论数字，逐张错峰扫过整排。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/card-flip-reveal.mp4?v=1790980736781",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/card-flock-tumble.webp",
+      "caption": "转场 · card-flock-tumble：三张 UI 页卡从侧棱薄边 3D 翻飞成阶梯站定（全程清晰、样条连续丝滑），站定后保持慢转不停，快速收束吸入中心，炸出单个湍流烟雾环扩散，巨字横贯收场。原片约 4.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/card-flock-tumble.mp4?v=1790980736782",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/circle-match-iris.webp",
+      "caption": "转场 · circle-match-iris：圆心匹配光圈切——光圈从页面上圆形元素的圆心炸开，圈内新页的圆形图表接在同一个圆上；匹配剪辑给光圈一个语义锚点。原片约 5.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/circle-match-iris.mp4?v=1790980736789",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/gradient-transition.webp",
+      "caption": "转场 · gradient-transition：背景在 linear、radial、conic 三类 CSS 渐变间平滑过渡——角度、色标、中心、半径逐参数插值，段间交叉淡化换类型。原片约 6.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/gradient-transition.mp4?v=1790980736813",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/line-carry-transition.webp",
+      "caption": "转场 · line-carry-transition：线条接力横移转场——场景 A 的进度条延伸出画，镜头跟线横移，线在移动中拐角围出场景 B 的卡框，全程无剪切。原片约 6.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/line-carry-transition.mp4?v=1790980736827",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/mosaic-reframe.webp",
+      "caption": "转场 · mosaic-reframe：12 张瓦片在规则网格、feature mosaic、对角瀑布串三种排版间连续变形，位置宽高各自插值、逐片微错峰，段间留 hold。原片约 7.1 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/mosaic-reframe.mp4?v=1790980736833",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/barn-door-split.webp",
+      "caption": "转场 · page-turn-transitions · barn-door-split：整页体块转场——barn-door-split 对开门裂幕（旧页裂两半滑出、新页迎上）。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/barn-door-split.mp4?v=1790980736842",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/ink-bleed-reveal.webp",
+      "caption": "转场 · print-texture-transitions · ink-bleed-reveal 墨渗揭示：印刷质感转场——ink-bleed-reveal 墨渗揭示（须状渗边洇开吃掉旧景）。原片约 4.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/ink-bleed-reveal.mp4?v=1790980736849",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/flash-cut.webp",
+      "caption": "转场 · shot-transitions · 推进流白 flash-cut：前镜相机推进，切点跨骑一层白闪盖住换页。原片约 1.4 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/flash-cut.mp4?v=1784437314733",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/whip-pan.webp",
+      "caption": "转场 · shot-transitions · whip-pan 甩镜：机位一拍横甩到下一场景，中段运动模糊糊到不可辨，借糊帧换景。原片约 4.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/whip-pan.mp4?v=1790980736865",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/mask-wipe.webp",
+      "caption": "转场 · shot-transitions · mask-wipe 穿窗：页面内真实元素（卡片）放大成全屏窗口，新场景从窗内长出接管。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/mask-wipe.mp4?v=1790980736866",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/glitch-displace.webp",
+      "caption": "转场 · tear-streak-transitions · glitch-displace：撕裂转场——glitch-displace 噪声撕裂（16 横条错位抖动中硬切），数字故障语义的条带级撕裂。原片约 4.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/glitch-displace.mp4?v=1790980736879",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/invisible-cut.webp",
+      "caption": "转场 · transition-hidden-cut · invisible-cut 前景遮挡隐形切：一张超画幅卡片带重运动模糊贴脸横扫，糊满全屏的遮挡帧内背景 A→B 硬切，卡片飞出观众以为还是同一镜。原片约 3.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/invisible-cut.mp4?v=1790980736890",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/versus-slam.webp",
+      "caption": "转场 · transition-hidden-cut · versus-slam 对撞开屏：左右两半屏带斜切边从画外加速对冲撞合，撞击帧白闪+震屏+VS 盖章，切点就是撞击本身。原片约 3.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/versus-slam.mp4?v=1790980736891",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/light-leak-burn.webp",
+      "caption": "转场 · transition-hidden-cut · light-leak-burn 琥珀漏光：三团琥珀柔光沿对角线斜扫，光峰帧吞掉旧页约七成时硬切新页，光退散时新页已就位。原片约 4.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/light-leak-burn.mp4?v=1790980736892",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/letterform-zoom.webp",
+      "caption": "转场 · transition-travel · 字腔穿越 letterform-zoom：穿越式转场——字腔穿越：巨型章节标题的字形就是一扇窗，镜头钻进字形笔画完成换景。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/letterform-zoom.mp4?v=1790980736893",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/white-flash-logo-simplify-cut.webp",
+      "caption": "转场 · white-flash-logo-simplify-cut：液态金属质感的彩色词标静置流光，蓄力后从字心炸出一记白闪过曝，曝光回落时同一位置已是扁平版字标——一次闪白完成质感降维。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/white-flash-logo-simplify-cut.mp4?v=1790980736910",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/blinds-slice.webp",
+      "caption": "转场 · wipe-transitions · blinds-slice：几何擦除转场——blinds-slice 百叶窗切条（12 根 3D 叶片错峰翻面成波，波扫过后整页由 A 换成 B）。原片约 4.4 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/blinds-slice.mp4?v=1790980736911",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/paparazzi-flash.webp",
+      "caption": "节奏与蒙太奇 · beat-cut-moves · paparazzi-flash 连闪定格：硬切当节拍乐器——连闪定格：三次白闪各硬切同一画面的一个裁切（全景→卡片→特写），快门余韵沉降后停在特写收束。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/paparazzi-flash.mp4?v=1790980736770",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/beat-step-list-theme-cycle.webp",
+      "caption": "节奏与蒙太奇 · beat-step-list-theme-cycle：三通道节拍器——深色场形容词列表逐拍上移一行，视口中央固定胶囊\"接住\"下一个词并换色，整场底色同拍跟换；行、色、场三通道锁死同一拍点。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/beat-step-list-theme-cycle.mp4?v=1790980736771",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/comic-panel-split.webp",
+      "caption": "节奏与蒙太奇 · panel-grid-moves · comic-panel-split：分格节奏——comic-panel-split 漫画斜格劈出同一主体的三个机位，咔咔咔三格定格后末格斜边吃屏成海报。原片约 5.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/comic-panel-split.mp4?v=1790980736844",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/quad-split-parallel-scenes.webp",
+      "caption": "节奏与蒙太奇 · quad-split-parallel-scenes：画面硬切 2×2 四宫格，四个象限并行跑各自的微场景（打字、急推、逐词、交互链），关键节拍错开 3–6 帧制造信息轰炸。原片约 3.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/quad-split-parallel-scenes.mp4?v=1790980736851",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/jump-cut-punch-in.webp",
+      "caption": "节奏与蒙太奇 · rhythm-interrupt-moves · jump-cut-punch-in：打断节奏——jump-cut-punch-in 三级跳切推近：同构图三次无补间硬跳放大，逐级逼近目标。原片约 4.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/jump-cut-punch-in.mp4?v=1790980736855",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/sakuga-timing-shift.webp",
+      "caption": "节奏与蒙太奇 · sakuga-timing-shift：一拍三转一拍一——元素先以每 3 帧一步的手翻书顿挫移动，高潮瞬间切成逐帧丝滑冲刺，帧率量化的突变本身就是看点。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/sakuga-timing-shift.mp4?v=1790980736858",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/freeze-annotate.webp",
+      "caption": "节奏与蒙太奇 · speed-ramp-freeze · freeze-annotate：帧号非线性 remap 的节奏手法——定格标注（流动→定格圈注→解冻）。原片约 5.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/freeze-annotate.mp4?v=1790980736872",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/trailer-bumper.webp",
+      "caption": "节奏与蒙太奇 · trailer-grammar-moves · trailer-bumper：预告片语法一式——trailer-bumper 前置速剪钩子：三镜 9f 速剪 + 黑场静默一拍，再开场标题。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/trailer-bumper.mp4?v=1790980736889",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/assemble-then-type-flyin.webp",
+      "caption": "光效与强调 · assemble-then-type-flyin：空的暗底网格上，无文字的组件骨架先从四面八方飞入贴合；随后各处文字逐字从 3D 空间旋转着飞来落位，先大标题后小标注，全部落位后页面成形。原片约 5.6 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/assemble-then-type-flyin.mp4?v=1790980736765",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/aurora-bloom-bg-flip.webp",
+      "caption": "光效与强调 · aurora-bloom-bg-flip：浅灰底从底部升起紫橙柔焦 blob，随后整个底色在约 0.36s 内压暗到近黑、blob 压成余晖；文案同步 blur-out 换句 blur-in，换句间留空档不 cross-fade。原片约 5.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/aurora-bloom-bg-flip.mp4?v=1790980736766",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/brand-frame-snap.webp",
+      "caption": "光效与强调 · brand-frame-snap：品牌色画框语法——一圈粗纯色画框先于内容长出包住全屏，录屏窗口落进框内；模式切换时整圈画框同帧硬翻色+窗内布局同帧换，一个 borderColor 干完章节导航/状态提示/品牌露出三件事。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/brand-frame-snap.mp4?v=1790980736777",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/reticle-lock-on.webp",
+      "caption": "光效与强调 · fui-hud-moves · reticle-lock-on：FUI/HUD 准星咬合——reticle-lock-on 四个 L 形角标组成的取景框从画外飞入、超调回弹后咬合锁定目标。原片约 3.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/reticle-lock-on.mp4?v=1790980736805",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/glow-orb-ambient.webp",
+      "caption": "光效与强调 · glow-flyline-moves · glow-orb-ambient：三团 500-700px radial 光斑 + blur(100px)，双正弦漂移；卡缘辉光按光斑距离 [180,720]px→[1,0] 加权取 max 驱动。原片约 5.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/glow-orb-ambient.mp4?v=1790980736810",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/flyline-arc.webp",
+      "caption": "光效与强调 · glow-flyline-moves · flyline-arc：手写 bezier 100 段采样，22f out-cubic 生长；光头条件挂载领跑，段 opacity 按离头距离渐隐；落点描边脉冲，可接力。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/flyline-arc.mp4?v=1790980736811",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/orb-flyline-relay.webp",
+      "caption": "光效与强调 · glow-flyline-moves · orb-flyline-relay：A+B 焊接：光斑 surge 与卡脉冲共用落点帧，涨亮 1+1.6×surge、5f 起升 15f 消散。原片约 5.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/orb-flyline-relay.mp4?v=1790980736812",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/attention-bounce.webp",
+      "caption": "光效与强调 · icon-performance-moves · attention-bounce：图标表演——attention-bounce 求关注弹跳（图标连跳递增+落地压扁+镜头被吸引）。原片约 5.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/attention-bounce.mp4?v=1790980736819",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/hit-counter.webp",
+      "caption": "光效与强调 · impact-feedback · hit-counter 连招计数：三卡接连砸入，每命中 = 顿帧 2f + 伤害数字上浮 + ×N 计数跳字逐次加码。原片约 5.9 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/hit-counter.mp4?v=1790980736820",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/anime-impact.webp",
+      "caption": "光效与强调 · impact-feedback · anime-impact 打击帧：crash-zoom 撞停的 3f 整幅负片反色 + 放射集中线 + 红青色散，第 4f 全撤。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/anime-impact.mp4?v=1790980736821",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/spotlight-sweep.webp",
+      "caption": "光效与强调 · light-play-moves · spotlight-sweep：双层同文本：暗版 0.07 常驻，亮版 radial mask 随光斑走，锥形光摆两个来回后全亮定格。原片约 5.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/spotlight-sweep.mp4?v=1790980736825",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/sheen-sweep.webp",
+      "caption": "光效与强调 · light-play-moves · sheen-sweep：深墨卡上 45° 高光带 translateX 扫一次，overflow hidden 圆角裁剪。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/sheen-sweep.mp4?v=1790980736826",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/radial-ripple-phone-chips.webp",
+      "caption": "光效与强调 · radial-ripple-phone-chips：暖沙底四层同心圆错相呼吸如水波，中央手机 mockup 屏内 feed 自动缓滚，两侧白色 chip 先后 spring pop 入场并悬浮。原片约 5.6 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/radial-ripple-phone-chips.mp4?v=1790980736852",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/misregistration-hit.webp",
+      "caption": "光效与强调 · riso-print-hits · misregistration-hit 单发：套印错位冲击帧——riso-misregistration-hit 单发：标题撞停瞬间裂成双色 riso 印版，抖两下\"啪\"地套准。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/misregistration-hit.mp4?v=1790980736856",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/scan-bracket-sweep.webp",
+      "caption": "光效与强调 · scan-bracket-sweep：文档弹到中央，四角落下 L 形取景括号，一条扫描光带拖着渐变尾迹在文档上往复扫 5 趟——文档全程静止，只有光在读它。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/scan-bracket-sweep.mp4?v=1790980736859",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/scanline-annotate-focus.webp",
+      "caption": "光效与强调 · scanline-annotate-focus：一条扫描线自上而下匀速掠过已存在的页面，越过哪块区块的下缘，哪块就被四角取景框从外扩处弹簧收拢对准（一次过冲），随后贴出一枚逐字打出的机器标签，顶部状态行同步计数 00/06→06/06。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/scanline-annotate-focus.mp4?v=1790980736860",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/scanline-assemble-flyin.webp",
+      "caption": "光效与强调 · scanline-assemble-flyin：页面开场是一张只有网格与虚线槽位的蓝图画板，一条亮扫描线自上而下掠过；扫到每个槽位，该处组件就从画外飞入过冲贴合，带方向性残影模糊与落位咬合角标——扫完整页恰好装配完成。原片约 5.2 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/scanline-assemble-flyin.mp4?v=1790980736861",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/kanada-perspective-snap.webp",
+      "caption": "光效与强调 · slam-entrance-moves · kanada-perspective-snap：perspective 300→1500px + rotate3d 58°→0 + scale 1.7→1 甩入 18f，末 4f 过冲 +5° 弹平，长斜影收正。原片约 4.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/kanada-perspective-snap.mp4?v=1790980736867",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/score-slam.webp",
+      "caption": "光效与强调 · slam-entrance-moves · score-slam：卡从 scale 2.5/rotate 5° 六帧 Easing.in(quad) 砸落，落点帧圆环扩散+尘点飞散+震屏同帧。原片约 4.5 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/score-slam.mp4?v=1790980736868",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/impact-burst-kit.webp",
+      "caption": "光效与强调 · slam-entrance-moves · impact-burst-kit：B 三件套 + 冲击波前沿按半径-距离精算扫过邻卡帧，邻卡外推 30px + rotate ±3° 阻尼弹回。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/impact-burst-kit.mp4?v=1790980736869",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/glow-wake-sleep-panel.webp",
+      "caption": "光效与强调 · spotlight-sweep-moves · glow-wake-sleep-panel：醒睡扫过：radial 显影罩跟随光头从左向右匀速移动，贴顶边紫色光线三层辉光同行，经过 logo 描光、到右缘点亮竖直残光，尾段面板沉回黑暗。原片约 4.7 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/glow-wake-sleep-panel.mp4?v=1790980736874",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/slide-spotlight-pan.webp",
+      "caption": "光效与强调 · spotlight-sweep-moves · slide-spotlight-pan：贴边泛光横摇：光线先绕左上角竖缘、转角后沿顶边横走，紫光晕染渗入 UI 顶部内侧；聚光头匀速右移显影 + 面板匀速左滑＝相机右摇感。原片约 4.4 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/slide-spotlight-pan.mp4?v=1790980736875",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/corner-spotlight-reveal.webp",
+      "caption": "光效与强调 · spotlight-sweep-moves · corner-spotlight-reveal：角落匀速显影：左上角径向聚光半径严格 linear 扩张，照到显影照不到沉黑，最终全屏亮起——光即转场。原片约 4.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/corner-spotlight-reveal.mp4?v=1790980736876",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/grain-dissolve.webp",
+      "caption": "收尾 · grain-dissolve：整行字爆裂成沸腾颗粒噪点并浮现斜纹选区框，噪点云急速凝聚成更大号发光短字标，位移衰减归零定格。原片约 2.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/grain-dissolve.mp4?v=1790980736815",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/logo-shrink-wordmark-lockup.webp",
+      "caption": "收尾 · logo-shrink-wordmark-lockup：霓虹切口大环快速收束成中央实心小白 O、过冲刹车时换成 video-shotcraft 标志，图标左移让位，字标字母逐个滑入完成 lockup，强调色标语收尾。原片约 4.4 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/logo-shrink-wordmark-lockup.mp4?v=1790980736830",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/neon-triple-marquee.webp",
+      "caption": "收尾 · neon-triple-marquee：三行对向霓虹跑马灯 recap——三连词空心霓虹灯管巨字上中下排满一面斜拍的砖墙，奇偶行反向匀速无限横滚，三行按 1/3 相位轮流点亮，结尾逐行断电。原片约 5.0 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/neon-triple-marquee.mp4?v=1790980736836",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/outro-group-photo-launch.webp",
+      "caption": "收尾 · outro-group-photo-launch：全片元素从四面八方飞来围住字标合影，crane 落机位+舞台光+金尘做成发布会收场。原片约 4.8 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/outro-group-photo-launch.mp4?v=1790980736839",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/ui-strip-away-outro.webp",
+      "caption": "收尾 · ui-strip-away-outro：减法式收尾——点击 Publish 后整个编辑器 UI 从外围到中心层层错峰蒸发，黑场上只剩那颗按钮滑到屏心放大，按钮再淡出交棒字标定版。原片约 4.8 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/ui-strip-away-outro.mp4?v=1790980736902",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/icon-flip-bloom.webp",
+      "caption": "收尾 · ui-to-brand-morph · icon-flip-bloom：图标 anticipation 晃两下→Y 轴 scaleX 压扁成竖线（双层拖影+blur）→最薄处实体交换、spring 展开成 video-shotcraft「镜刻」标志、琥珀斜切第二拍划入→标志左移让位、字标逐字落定。原片约 4.3 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/icon-flip-bloom.mp4?v=1790980736903",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    },
+    {
+      "path": "previews/materials/video-shotcraft/input-morph-assemble.webp",
+      "caption": "收尾 · ui-to-brand-morph · input-morph-assemble：光标点发送→文字飞走→输入框 x/y/w/h/r 五量 spring 插值成标志的竖框→上下横条与琥珀斜切从虚线构造框里依次落位拼成「镜刻」标志→左移让位、字标逐字落定。原片约 5.6 秒，此处为完整片段的无声动画 WebP。",
+      "kind": "work",
+      "sourceUrl": "https://vincentwei1021.github.io/video-shotcraft/media/input-morph-assemble.mp4?v=1790980736904",
+      "license": "作者在新版 Gallery 发布的镜头预览，代码与作者自制素材采用 Apache-2.0；公开作品手法的重新实现来源见快照内 references/shots/ATTRIBUTION.md；外部素材许可按各自来源记录。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "README",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/README.md"
+    },
+    {
+      "title": "SKILL.md",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/SKILL.md"
+    },
+    {
+      "title": "Ink Press 模板",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/template/TEMPLATE.md"
+    },
+    {
+      "title": "Freesound 音效选材",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/references/sfx-sourcing.md"
+    },
+    {
+      "title": "Gallery",
+      "url": "https://vincentwei1021.github.io/video-shotcraft/"
+    },
+    {
+      "title": "新版 Gallery 视频包",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft/releases/download/gallery-media/gallery-media.zip"
+    }
+  ]
+}

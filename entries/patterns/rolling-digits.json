@@ -1,0 +1,94 @@
+{
+  "id": "rolling-digits",
+  "order": 14,
+  "title": "滚动数字与文字",
+  "types": [
+    "type-motion",
+    "feedback"
+  ],
+  "carriers": [
+    "console",
+    "video"
+  ],
+  "summary": "编号与文字按字符滚动 460ms。连按时，临界阻尼滚轮读取当前位置与速度，再向最新目标接续滚动。",
+  "mechanism": "直接提取当前案例内的滚动库。为每个字符独立建立 slot、reel 和 face；数字按输入方向滚动，direct 文字通过逐字符 wheel 更新，使用默认正向。49 点临界阻尼轨迹包含 exp(-10h)，重定向时读取当前动画位置与速度后接续，持续 460ms。SVG Gaussian blur 随字高和运动速度变化，数字系数为 0.35、文字为 0.2；不采用整行滑入淡出。上下方向键选档，左右方向键切列，字符保留语义文字；减少动态时直接显示最终字符。",
+  "trigger": "选档、切列导致编号与文字发生变化时。",
+  "effect": "X-001 等编号、行列计数、档案标题、权限与列名在同一次选择中逐字符滚动；快速连按保留中途运动状态。",
+  "timing": [
+    {
+      "name": "方向",
+      "value": "编号、行号与列号按导航方向；文字默认正向"
+    }
+  ],
+  "useCases": [
+    "档案编号",
+    "计数器与页码",
+    "时钟",
+    "分类标题切换"
+  ],
+  "avoid": [
+    "大段文字",
+    "每秒变化很多次的实时数据（改为直接替换）"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "wave-array",
+      "boot-typing",
+      "corner-hud"
+    ],
+    "conflicts": [],
+    "notes": "在档案阵列的同一次选择中更新编号、行列计数、标题、权限与列名；共享 460ms 时长，数字方向由导航决定，文字保持默认正向。机械里程表同样把每位数字拆成可滚动的字轮，通过竖向位移、裁切与速度模糊表达读数变化；digitsAt 按十进制进位，年与公里数仅在来源数值处停驻。"
+  },
+  "prompt": "实现当前 archive-os 的逐字符滚动：直接裁出案例 bundle 中的滚动库，使用 createRollingNumber/createRollingText，duration:460、motionBlur:true，文字 transition:direct、stagger:none。每个字符建独立 slot/reel/face，临界阻尼使用 49 点及 exp(-10h)；连续更新必须先通过 Bs.read 读取当前动画位置和速度，再向最新目标接续。数字按照上下、左右输入方向滚动；文字使用默认正向。数字 --rn-blur 为 0.35，文字为 0.2，SVG Gaussian blur 随字高和速度变化。档案数据保存在 mechanism/archives.json，字体引用 ../../cases/archive-os/film/app/fonts/，声音引用 ../../cases/archive-os/audio/film-audio.ogg。自动驾驶复用案例 62.6 秒后的四向输入，9 秒及 9.35 秒连续切列；真实输入接管，seek 恢复自动驾驶；默认静音并支持减少动态。",
+  "demo": "demos/patterns/rolling-digits/index.html",
+  "kit": true,
+  "previewAt": 9.5,
+  "sources": [
+    {
+      "caseId": "archive-os"
+    },
+    {
+      "caseId": "lemo-transit-map"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "滚动时长",
+      "value": "460ms；motionBlur:true",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/main.ts:228-257"
+    },
+    {
+      "name": "文字模式",
+      "value": "transition:'direct'；stagger:'none'；逐字符 reel",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/main.ts:252-277（textOptions、createRollingText）；demos/cases/archive-os/film/app/assets/index-s-1i48S1.js:2（makeColumn：rn-slot / rn-reel）"
+    },
+    {
+      "name": "轨迹",
+      "value": "49 点临界阻尼；e+(r+(v×s+10r)×h)×exp(-10h)；读取当前 position/velocity",
+      "source": "demos/cases/archive-os/film/app/assets/index-s-1i48S1.js:1（gn、yf、Bs.read）；:2（commit：读取当前 position / velocity 后接续）"
+    },
+    {
+      "name": "模糊系数",
+      "value": "SVG Gaussian blur 随字高与实时速度变化；数字 --rn-blur:0.35；文字 0.2；--rn-edge-fade:0.08em",
+      "source": "demos/cases/archive-os/source/rhinelabui/src/style.css:574-579,2126-2134"
+    },
+    {
+      "name": "自动输入",
+      "value": "从案例 62.6s 开始的 13s 四向浏览；9s 与 9.35s 接连切列，第二次从未完成动画的位置和速度接续",
+      "source": "demos/cases/archive-os/film/app/film/sequence.js:31-33"
+    },
+    {
+      "name": "内容与声音",
+      "value": "档案数据读取 mechanism/archives.json，音轨读取 ../../cases/archive-os/audio/film-audio.ogg；自动声音读取案例 62.6–75.6s 片段",
+      "source": "demos/cases/archive-os/source/rhinelabui/content/archives.json；demos/cases/archive-os/audio/film-audio.ogg"
+    },
+    {
+      "name": "里程表字轮",
+      "value": "digitsAt逐位计算整数与进位小数；drum裁切38×60px窗口，把floor(pos)邻位按分数偏移；过渡中加模糊，odometer按年份落定6.0／16.1／420.0／906.0。",
+      "source": "demos/cases/lemo-transit-map/film/timeline.js:digitsAt / drum / odometer"
+    }
+  ],
+  "videoPrompt": "制作档案 HUD 的 13 秒滚轮片段，时间与 archive-os 的 62.6–75.6 秒对应。显示当前 RHINE LAB 档案的 X- 编号、行列号、中文标题、权限和列名；每次选择以 460ms 临界阻尼逐字符翻动，9 秒与 9.35 秒连续切列时保持当前位置和速度。保留 MiSans、浅灰底、字高相关速度模糊与案例原声音片段。",
+  "negativePrompt": "不要 outCubic，不要整行文字滑入淡出，不要从上一次目标重启，不要固定像素正弦模糊，不要让文字与数字强制共用方向，不要 LUMEN 或固定 X-017 旧档案，不要跨目录读取案例。"
+}

@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "wax-resist-wash-reveal",
+  "pattern": {
+    "id": "wax-resist-wash-reveal",
+    "order": 109,
+    "title": "蜡笔防染显形",
+    "types": [
+      "transition",
+      "texture"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "白蜡笔星星先画入蜡覆盖场，水彩密度经过时按蜡覆盖量降低染色；三道宽刷交错扫过纸面，星星因为防染而从夜色中显出。",
+    "mechanism": "白蜡笔星星先画入蜡覆盖场，水彩密度经过时按蜡覆盖量降低染色；三道宽刷交错扫过纸面，星星因为防染而从夜色中显出。",
+    "trigger": "女孩坐下唱歌，27.9秒开始刷入群青水彩。",
+    "effect": "画页上已存在的白蜡图形在刷色后变亮，绘画材料完成故事高潮。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "26.8–35.3秒；1倍速，总时长8.500000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "白蜡星星",
+        "value": "film/world.js:STARS以mulberry(4242)固定生成250颗，drawStars绘入K.white；film/film.js在p.hf>=1时画入蜡层。"
+      },
+      {
+        "name": "三道宽刷",
+        "value": "film/world.js:BANDS：27.9–29.9秒向右，30–32.1秒向左，32.5–34.7秒向右；覆盖y=-120到1655，重叠100/110px。"
+      },
+      {
+        "name": "防染着色",
+        "value": "film/gl.js:wash：resist=.93，edge=1.6，gran=.6；水彩密度乘(1-.93*smoothstep(.12,.55,waxCoverage))。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-crayon-book/film/world.js",
+      "demos/cases/lemo-crayon-book/film/film.js",
+      "demos/cases/lemo-crayon-book/film/gl.js",
+      "demos/cases/lemo-crayon-book/film/crayon.js"
+    ],
+    "locator": "STARS / drawStars / BANDS / wash",
+    "useCases": [
+      "画页上已存在的白蜡图形在刷色后变亮，绘画材料完成故事高潮。"
+    ],
+    "avoid": [
+      "同时叠加遮住主要动作的画面层"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "复用来源案例lemo-crayon-book的原作render(t)，实现“蜡笔防染显形”：白蜡笔星星先画入蜡覆盖场，水彩密度经过时按蜡覆盖量降低染色；三道宽刷交错扫过纸面，星星因为防染而从夜色中显出。参数与源码：film/world.js:STARS以mulberry(4242)固定生成250颗，drawStars绘入K.white；film/film.js在p.hf>=1时画入蜡层。；film/world.js:BANDS：27.9–29.9秒向右，30–32.1秒向左，32.5–34.7秒向右；覆盖y=-120到1655，重叠100/110px。；film/gl.js:wash：resist=.93，edge=1.6，gran=.6；水彩密度乘(1-.93*smoothstep(.12,.55,waxCoverage))。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。",
+    "demo": "demos/patterns/wax-resist-wash-reveal/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-crayon-book"
+      }
+    ],
+    "previewAt": 5.1,
+    "markers": [
+      {
+        "t": 0,
+        "label": "蜡笔防染显形"
+      }
+    ],
+    "renderer": "gpu",
+    "preview": "previews/patterns/wax-resist-wash-reveal.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-crayon-book",
+      "bundle": "agent/cases/lemo-crayon-book.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 蜡笔防染显形\n\n## 实现 Prompt\n\n复用来源案例lemo-crayon-book的原作render(t)，实现“蜡笔防染显形”：白蜡笔星星先画入蜡覆盖场，水彩密度经过时按蜡覆盖量降低染色；三道宽刷交错扫过纸面，星星因为防染而从夜色中显出。参数与源码：film/world.js:STARS以mulberry(4242)固定生成250颗，drawStars绘入K.white；film/film.js在p.hf>=1时画入蜡层。；film/world.js:BANDS：27.9–29.9秒向右，30–32.1秒向左，32.5–34.7秒向右；覆盖y=-120到1655，重叠100/110px。；film/gl.js:wash：resist=.93，edge=1.6，gran=.6；水彩密度乘(1-.93*smoothstep(.12,.55,waxCoverage))。。按入口segments映射原片时刻，画面、字体与音轨沿用同一映射，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：26.8–35.3秒；1倍速，总时长8.500000秒。\n\n[打开 Demo](../../demos/patterns/wax-resist-wash-reveal/index.html) · [在库中查看](../../patterns.html#pattern/wax-resist-wash-reveal)\n"
+  },
+  "entrypoint": "demos/patterns/wax-resist-wash-reveal/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-crayon-book/LICENSES.md",
+      "bytes": 1116,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/CREDITS",
+      "bytes": 1034,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/audio/film.m4a",
+      "bytes": 1685306,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fidelity.md",
+      "bytes": 7740,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/chars.js",
+      "bytes": 32010,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/crayon.js",
+      "bytes": 13323,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/end.js",
+      "bytes": 15113,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/film.js",
+      "bytes": 16611,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/gl.js",
+      "bytes": 12352,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/index.html",
+      "bytes": 460,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/main.js",
+      "bytes": 904,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/pal.js",
+      "bytes": 899,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/rig.js",
+      "bytes": 2840,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/film/world.js",
+      "bytes": 12758,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/caveatbrush_CaveatBrush-Regular.ttf",
+      "bytes": 295568,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/caveatbrush_OFL.txt",
+      "bytes": 4351,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/fonts.css",
+      "bytes": 757,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gaegu_Gaegu-Bold.ttf",
+      "bytes": 2962664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gaegu_Gaegu-Regular.ttf",
+      "bytes": 3165816,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gaegu_OFL.txt",
+      "bytes": 4344,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gochihand_GochiHand-Regular.ttf",
+      "bytes": 37352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/gochihand_OFL.txt",
+      "bytes": 4423,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/patrickhand_OFL.txt",
+      "bytes": 4376,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/patrickhand_PatrickHand-Regular.ttf",
+      "bytes": 214772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/shortstack_OFL.txt",
+      "bytes": 4401,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/shortstack_ShortStack-Regular.ttf",
+      "bytes": 68152,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/sniglet_OFL.txt",
+      "bytes": 4499,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/fonts/sniglet_Sniglet-Regular.ttf",
+      "bytes": 75212,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/index.html",
+      "bytes": 2270,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/CREDITS",
+      "bytes": 1034,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/README.md",
+      "bytes": 4028,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/build.sh",
+      "bytes": 1223,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/events.json",
+      "bytes": 8635,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/lines.json",
+      "bytes": 723,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/mix.py",
+      "bytes": 14959,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/music/score.json",
+      "bytes": 404,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/music/score.py",
+      "bytes": 13914,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/sheet.js",
+      "bytes": 7994,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/subs.json",
+      "bytes": 583,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/subs.mjs",
+      "bytes": 702,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/test.js",
+      "bytes": 2713,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/tools/mux.sh",
+      "bytes": 1240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/voices/dur.json",
+      "bytes": 98,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-crayon-book/source/voices/words.json",
+      "bytes": 1164,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/wax-resist-wash-reveal/index.html",
+      "bytes": 808,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/wax-resist-wash-reveal/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-crayon-book.json",
+      "bytes": 9634,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/wax-resist-wash-reveal.json",
+      "bytes": 3039,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/wax-resist-wash-reveal.jpg",
+      "bytes": 221794,
+      "role": "preview"
+    }
+  ]
+}

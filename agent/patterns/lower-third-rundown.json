@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "lower-third-rundown",
+  "pattern": {
+    "id": "lower-third-rundown",
+    "order": 161,
+    "title": "串联单与标题条",
+    "types": [
+      "hud",
+      "type-motion"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "串联单各行按拍在竖向遮罩中翻入，回顾时同一列表逐行打勾。报道的分类签、标题条和来源行与所属画面一起在带状转场的裁切区内绘制，新旧文字在同一帧交接。",
+    "mechanism": "串联单各行按拍在竖向遮罩中翻入，回顾时同一列表逐行打勾。报道的分类签、标题条和来源行与所属画面一起在带状转场的裁切区内绘制，新旧文字在同一帧交接。",
+    "trigger": "开场列出四条报道、报道换镜及片尾回顾。",
+    "effect": "用稳定的节目包装标明当前议题，并让串联单的内容和完成状态形成呼应。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "1.5–9秒；23.7–24.3秒；45–47.5秒；1倍速，总时长10.6秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "串联单",
+        "value": "film/main.js:rundown；四行2.3/2.7/3.1/3.5秒翻入，回顾45.8/46.2/46.6/47.0秒打勾。"
+      },
+      {
+        "name": "标题条",
+        "value": "film/main.js:strap；x=96，y=904，宽1250、高104，分类签y=856，中文50px、英文27px。"
+      },
+      {
+        "name": "随图交接",
+        "value": "film/main.js:layer / wipe；WIPES各侧通过layer先绘制自己的strap、credit、cornerTag，再由带状遮罩交接。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-news-package/film/main.js"
+    ],
+    "locator": "rundown / strap / layer / scene / WIPES",
+    "useCases": [
+      "每周新闻汇总",
+      "市场简报",
+      "产品规格报道"
+    ],
+    "avoid": [
+      "同一时刻叠加争夺主动作的多组信息"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例lemo-news-package的原作render(t)重放“串联单与标题条”。串联单各行按拍在竖向遮罩中翻入，回顾时同一列表逐行打勾；报道的分类签、标题条和来源行与所属画面一起在带状转场裁切区内绘制，新旧文字在同一帧交接。保留参数：film/main.js:rundown；四行2.3/2.7/3.1/3.5秒翻入，回顾45.8/46.2/46.6/47.0秒打勾。；film/main.js:strap；x=96，y=904，宽1250、高104，分类签y=856，中文50px、英文27px。；film/main.js:layer / wipe；WIPES各侧通过layer先绘制自己的strap、credit、cornerTag，再由带状遮罩交接。。重放区间由入口segments配置，来源素材与音轨直接复用。",
+    "demo": "demos/patterns/lower-third-rundown/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-news-package"
+      }
+    ],
+    "previewAt": 4.8,
+    "markers": [
+      {
+        "t": 0,
+        "label": "串联单与标题条"
+      }
+    ],
+    "preview": "previews/patterns/lower-third-rundown.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-news-package",
+      "bundle": "agent/cases/lemo-news-package.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 串联单与标题条\n\n## 实现 Prompt\n\n用来源案例lemo-news-package的原作render(t)重放“串联单与标题条”。串联单各行按拍在竖向遮罩中翻入，回顾时同一列表逐行打勾；报道的分类签、标题条和来源行与所属画面一起在带状转场裁切区内绘制，新旧文字在同一帧交接。保留参数：film/main.js:rundown；四行2.3/2.7/3.1/3.5秒翻入，回顾45.8/46.2/46.6/47.0秒打勾。；film/main.js:strap；x=96，y=904，宽1250、高104，分类签y=856，中文50px、英文27px。；film/main.js:layer / wipe；WIPES各侧通过layer先绘制自己的strap、credit、cornerTag，再由带状遮罩交接。。重放区间由入口segments配置，来源素材与音轨直接复用。\n\n## 参数\n\n- **原片重放区间**：1.5–9秒；23.7–24.3秒；45–47.5秒；1倍速，总时长10.6秒。\n\n[打开 Demo](../../demos/patterns/lower-third-rundown/index.html) · [在库中查看](../../patterns.html#pattern/lower-third-rundown)\n"
+  },
+  "entrypoint": "demos/patterns/lower-third-rundown/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-news-package/LICENSES.md",
+      "bytes": 1897,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/europe.json",
+      "bytes": 374556,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/meta.json",
+      "bytes": 67,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/plate_datacenter.jpg",
+      "bytes": 280650,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/plate_wafer.jpg",
+      "bytes": 299860,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/plates/plate_datacenter.jpg",
+      "bytes": 298341,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/assets/plates/plate_wafer.jpg",
+      "bytes": 344139,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/CREDITS",
+      "bytes": 2857,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/VOICE-LICENSE.md",
+      "bytes": 359,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/audio/film.m4a",
+      "bytes": 1775588,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fidelity.md",
+      "bytes": 2074,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/film/index.html",
+      "bytes": 1038,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/film/main.js",
+      "bytes": 61754,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/OFL-barlowcondensed.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/barlow600.woff2",
+      "bytes": 9764,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/barlow600i.woff2",
+      "bytes": 11064,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/barlow800.woff2",
+      "bytes": 9720,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/fonts.css",
+      "bytes": 673,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/plexmono500.woff2",
+      "bytes": 6128,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/sanssc700.woff2",
+      "bytes": 41124,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/fonts/sanssc900.woff2",
+      "bytes": 41324,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/index.html",
+      "bytes": 2336,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/CREDITS",
+      "bytes": 2857,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/FACTS.md",
+      "bytes": 15270,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/README.md",
+      "bytes": 2656,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/SOURCES.md",
+      "bytes": 3633,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/build.sh",
+      "bytes": 2747,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/data/kospi_daily.csv",
+      "bytes": 10472,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/data/kospi_raw_naver_api.json",
+      "bytes": 18376,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/data/kospi_raw_naver_mobile.json",
+      "bytes": 15605,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/events.json",
+      "bytes": 3678,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/mix.py",
+      "bytes": 13556,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/fonts.sh",
+      "bytes": 1101,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/footage.py",
+      "bytes": 12614,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/gen_image.py",
+      "bytes": 5915,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/gen_plates.sh",
+      "bytes": 1540,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/prep.py",
+      "bytes": 5942,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/subs.py",
+      "bytes": 1230,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/tools/tts_doubao.py",
+      "bytes": 4170,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/vendor/LICENSE-world-atlas",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/vo/dur.json",
+      "bytes": 113,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/vo/lines.json",
+      "bytes": 2028,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-news-package/source/vo/words.json",
+      "bytes": 4374,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/lower-third-rundown/index.html",
+      "bytes": 1317,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/lower-third-rundown/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-news-package.json",
+      "bytes": 10131,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/lower-third-rundown.json",
+      "bytes": 2922,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/lower-third-rundown.jpg",
+      "bytes": 90197,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "id": "lemo-white-model",
+  "order": 64,
+  "title": "被炸平的城市怎样长回来 · 白模投影",
+  "subtitle": "How a Flattened City Grew Back",
+  "carriers": [
+    "video"
+  ],
+  "style": "evidence",
+  "purpose": "data",
+  "tech": [
+    "canvas2d",
+    "threejs"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "白模投影",
+    "实证影像",
+    "代码影片"
+  ],
+  "summary": "投影把鹿特丹白模按建成年代逐层点亮，高度光层升到203米，冬至阴影越过16个屋顶后展厅重新亮起。",
+  "focus": "白色建筑保持真实几何，年代、高度和阴影都通过投影与测量线呈现；同一数据同时决定模型、读数与屋顶标记。",
+  "accent": "#FFA13D",
+  "background": "#030304",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 30.4,
+  "rhythm": {
+    "duration": 40,
+    "beats": [
+      {
+        "t": 0,
+        "label": "白模屋顶",
+        "note": "0–1.8秒，白模屋顶。"
+      },
+      {
+        "t": 1.8,
+        "label": "展厅熄灯",
+        "note": "1.8–2.4秒，展厅熄灯。"
+      },
+      {
+        "t": 2.4,
+        "label": "战前投影",
+        "note": "2.4–6秒，战前投影。"
+      },
+      {
+        "t": 6,
+        "label": "轰炸日期与市政厅",
+        "note": "6–11.6秒，轰炸日期与市政厅。"
+      },
+      {
+        "t": 11.6,
+        "label": "年代逐层点亮",
+        "note": "11.6–17.1秒，年代逐层点亮。"
+      },
+      {
+        "t": 18,
+        "label": "高度光层",
+        "note": "18–21.6秒，高度光层。"
+      },
+      {
+        "t": 21.6,
+        "label": "投影静默",
+        "note": "21.6–22.8秒，投影静默。"
+      },
+      {
+        "t": 22.8,
+        "label": "冬至太阳",
+        "note": "22.8–27秒，冬至太阳。"
+      },
+      {
+        "t": 27,
+        "label": "阴影量程与屋顶",
+        "note": "27–35.4秒，阴影量程与屋顶。"
+      },
+      {
+        "t": 35.4,
+        "label": "展厅亮灯与片尾",
+        "note": "35.4–40秒，展厅亮灯与片尾。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 1.8,
+      "from": 0.2,
+      "to": 0.25,
+      "label": "白模屋顶"
+    },
+    {
+      "t0": 1.8,
+      "t1": 2.4,
+      "from": 0.25,
+      "to": 0.35,
+      "label": "展厅熄灯"
+    },
+    {
+      "t0": 2.4,
+      "t1": 6,
+      "from": 0.35,
+      "to": 0.4,
+      "label": "战前投影"
+    },
+    {
+      "t0": 6,
+      "t1": 11.6,
+      "from": 0.4,
+      "to": 0.45,
+      "label": "轰炸日期与市政厅"
+    },
+    {
+      "t0": 11.6,
+      "t1": 17.1,
+      "from": 0.45,
+      "to": 0.6,
+      "label": "年代逐层点亮"
+    },
+    {
+      "t0": 18,
+      "t1": 21.6,
+      "from": 0.6,
+      "to": 0.5,
+      "label": "高度光层"
+    },
+    {
+      "t0": 21.6,
+      "t1": 22.8,
+      "from": 0.5,
+      "to": 0.7,
+      "label": "投影静默"
+    },
+    {
+      "t0": 22.8,
+      "t1": 27,
+      "from": 0.7,
+      "to": 0.75,
+      "label": "冬至太阳"
+    },
+    {
+      "t0": 27,
+      "t1": 35.4,
+      "from": 0.75,
+      "to": 0.55,
+      "label": "阴影量程与屋顶"
+    },
+    {
+      "t0": 35.4,
+      "t1": 40,
+      "from": 0.55,
+      "to": 0.55,
+      "label": "展厅亮灯与片尾"
+    }
+  ],
+  "energyNote": "时段取自上游DEMO.md的Shots；0–1为依据画面密度、配乐与旁白作出的相对编辑标注。",
+  "observations": [
+    "白色建筑保持真实几何，年代、高度和阴影都通过投影与测量线呈现；同一数据同时决定模型、读数与屋顶标记。",
+    "连续轨道镜头与景深，投影按年代错峰点亮，立面高度光层向上扫描，太阳推进到冬至正午。",
+    "3DBAG LOD1.3建筑、Kadaster BAG建成年份、BGT水面与桥面，1:1000白模和实算冬至阴影。"
+  ],
+  "composition": {
+    "color": "#F3F3F1、#17181A、#FFA13D、#2A46FF、#2F98FF、#6FDCFF、#E6FBFF、#FFD9AD",
+    "typography": "Noto Sans SC 300/500；Inter Tight 200/400；IBM Plex Mono 400，按上游字符集生成OFL子集。",
+    "layout": "1920×1080、24fps；主画面、读数和字幕按原作时间线组织。",
+    "imagery": "3DBAG LOD1.3建筑、Kadaster BAG建成年份、BGT水面与桥面，1:1000白模和实算冬至阴影。",
+    "motion": "连续轨道镜头与景深，投影按年代错峰点亮，立面高度光层向上扫描，太阳推进到冬至正午。",
+    "sound": "100 BPM原配乐、采样管弦与玻璃音、投影机与继电器拟音、Kokoro bm_george旁白。",
+    "rhythm": "连续时间线按Shots的段落与声音节点推进。",
+    "coherence": "白色建筑保持真实几何，年代、高度和阴影都通过投影与测量线呈现；同一数据同时决定模型、读数与屋顶标记。"
+  },
+  "layers": [
+    {
+      "name": "原作画面",
+      "role": "3DBAG LOD1.3建筑、Kadaster BAG建成年份、BGT水面与桥面，1:1000白模和实算冬至阴影。"
+    },
+    {
+      "name": "测量与文字",
+      "role": "白色建筑保持真实几何，年代、高度和阴影都通过投影与测量线呈现；同一数据同时决定模型、读数与屋顶标记。"
+    },
+    {
+      "name": "声音",
+      "role": "100 BPM原配乐、采样管弦与玻璃音、投影机与继电器拟音、Kokoro bm_george旁白。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#F3F3F1",
+      "#17181A",
+      "#FFA13D",
+      "#2A46FF",
+      "#2F98FF",
+      "#6FDCFF",
+      "#E6FBFF",
+      "#FFD9AD"
+    ],
+    "type": "Noto Sans SC 300/500；Inter Tight 200/400；IBM Plex Mono 400，按上游字符集生成OFL子集。",
+    "motion": [
+      {
+        "name": "源码时间线",
+        "value": "film/timeline.js的T/HIT/BUILD；段落见rhythm.beats。"
+      }
+    ]
+  },
+  "useCases": [
+    "城市规划展陈",
+    "建筑数据短片",
+    "日照解说"
+  ],
+  "avoid": [
+    "需要观看者自行决定节奏的网页交互"
+  ],
+  "constraints": [
+    "素材、数据、字体与时间线由原作文件直接驱动。"
+  ],
+  "migration": [
+    {
+      "field": "film/main.js",
+      "how": "修改画面、时间线或对应数据；参数位置见该文件。"
+    },
+    {
+      "field": "film/studio.js",
+      "how": "修改画面、时间线或对应数据；参数位置见该文件。"
+    },
+    {
+      "field": "film/overlay.js",
+      "how": "修改画面、时间线或对应数据；参数位置见该文件。"
+    },
+    {
+      "field": "film/timeline.js",
+      "how": "修改画面、时间线或对应数据；参数位置见该文件。"
+    }
+  ],
+  "prompt": "制作“被炸平的城市怎样长回来 · 白模投影”：投影把鹿特丹白模按建成年代逐层点亮，高度光层升到203米，冬至阴影越过16个屋顶后展厅重新亮起。白色建筑保持真实几何，年代、高度和阴影都通过投影与测量线呈现；同一数据同时决定模型、读数与屋顶标记。画面：3DBAG LOD1.3建筑、Kadaster BAG建成年份、BGT水面与桥面，1:1000白模和实算冬至阴影。运动：连续轨道镜头与景深，投影按年代错峰点亮，立面高度光层向上扫描，太阳推进到冬至正午。声音：100 BPM原配乐、采样管弦与玻璃音、投影机与继电器拟音、Kokoro bm_george旁白。实现文件为film/main.js、film/studio.js、film/overlay.js、film/timeline.js，保留真实数据、素材署名和原片音轨，按1920×1080舞台的原作render(t)逐帧定位。",
+  "demo": "demos/cases/lemo-white-model/index.html",
+  "patternIds": [
+    "projection-layers-by-time",
+    "sun-clock-shadow-trace"
+  ],
+  "fidelity": "demos/cases/lemo-white-model/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/white-model",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/white-model/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原成片与静帧CC BY 4.0，署名LemoLab；第三方素材沿用CREDITS的许可。"
+  },
+  "sources": [
+    {
+      "label": "风格、示范与固定源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/white-model"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/white-model.mp4"
+    },
+    {
+      "label": "原始署名与素材许可",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/white-model/demo/CREDITS"
+    },
+    {
+      "label": "事实与测量依据",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/white-model/demo/FACTS.md"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/white-model)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "第三方素材与声音",
+      "notes": "3DBAG LOD1.3建筑、Kadaster BAG建成年份、BGT水面与桥面，1:1000白模和实算冬至阴影。 100 BPM原配乐、采样管弦与玻璃音、投影机与继电器拟音、Kokoro bm_george旁白。 原始记录见[source/CREDITS](source/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Noto Sans SC 300/500；Inter Tight 200/400；IBM Plex Mono 400，按上游字符集生成OFL子集。 许可原文在fonts/。"
+    }
+  ],
+  "renderer": "gpu"
+}

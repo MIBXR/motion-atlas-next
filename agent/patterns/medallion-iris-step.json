@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "medallion-iris-step",
+  "pattern": {
+    "id": "medallion-iris-step",
+    "order": 138,
+    "title": "圆章开圈换步",
+    "types": [
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "步骤编号圆章盖在上镜主体上；圆心移到画面中心，圆章扩大成开圈，露出下一步。启动按钮开圈接俯视镜头，片尾圆形收拢在产品上。",
+    "mechanism": "步骤编号圆章盖在上镜主体上；圆心移到画面中心，圆章扩大成开圈，露出下一步。启动按钮开圈接俯视镜头，片尾圆形收拢在产品上。",
+    "trigger": "来源案例的时间轴进入所列动作区间。",
+    "effect": "步骤编号圆章盖在上镜主体上；圆心移到画面中心，圆章扩大成开圈，露出下一步。启动按钮开圈接俯视镜头，片尾圆形收拢在产品上。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-midcentury-toon 6.800000–7.600000秒；lemo-midcentury-toon 12.200000–13.100000秒；lemo-midcentury-toon 21.600000–22.300000秒；lemo-midcentury-toon 36.200000–37.500000秒；1倍速，总时长3.700000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "编号开圈",
+        "value": "film/film.js:821–841，边界−.5拍至+.4拍，共.9拍，半径104→1250px；按钮40→1250px、.28秒。"
+      },
+      {
+        "name": "片尾",
+        "value": "film/film.js:sceneEnd，半径2300→70px、圆心[1680,880]，随后居中圆卡展开。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/lemo-midcentury-toon/film/film.js"
+    ],
+    "locator": "film/film.js:821–841，边界−.5拍至+.4拍，共.9拍，半径104→1250px；按钮40→1250px、.28秒。；film/film.js:sceneEnd，半径2300→70px、圆心[1680,880]，随后居中圆卡展开。",
+    "useCases": [
+      "步骤编号圆章盖在上镜主体上；圆心移到画面中心，圆章扩大成开圈，露出下一步。启动按钮开圈接俯视镜头，片尾圆形收拢在产品上。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "调用来源案例原作render(t)重放“圆章开圈换步”。步骤编号圆章盖在上镜主体上，圆心移到画面中心并扩大成开圈，露出下一步；启动按钮开圈接俯视，片尾圆收在产品上。 参数：film/film.js:821–841，边界−.5拍至+.4拍，共.9拍，半径104→1250px；按钮40→1250px、.28秒。 film/film.js:sceneEnd，半径2300→70px、圆心[1680,880]，随后居中圆卡展开。 使用index.html的segments映射原片时刻，复用来源素材、字体与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/medallion-iris-step/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-midcentury-toon"
+      }
+    ],
+    "previewAt": 0.5,
+    "markers": [
+      {
+        "t": 0,
+        "label": "圆章开圈换步"
+      },
+      {
+        "t": 0.7999999999999998,
+        "label": "圆章开圈换步"
+      },
+      {
+        "t": 1.7000000000000002,
+        "label": "圆章开圈换步"
+      },
+      {
+        "t": 2.3999999999999995,
+        "label": "圆章开圈换步"
+      }
+    ],
+    "preview": "previews/patterns/medallion-iris-step.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-midcentury-toon",
+      "bundle": "agent/cases/lemo-midcentury-toon.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 圆章开圈换步\n\n## 实现 Prompt\n\n调用来源案例原作render(t)重放“圆章开圈换步”。步骤编号圆章盖在上镜主体上，圆心移到画面中心并扩大成开圈，露出下一步；启动按钮开圈接俯视，片尾圆收在产品上。 参数：film/film.js:821–841，边界−.5拍至+.4拍，共.9拍，半径104→1250px；按钮40→1250px、.28秒。 film/film.js:sceneEnd，半径2300→70px、圆心[1680,880]，随后居中圆卡展开。 使用index.html的segments映射原片时刻，复用来源素材、字体与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-midcentury-toon 6.800000–7.600000秒；lemo-midcentury-toon 12.200000–13.100000秒；lemo-midcentury-toon 21.600000–22.300000秒；lemo-midcentury-toon 36.200000–37.500000秒；1倍速，总时长3.700000秒。\n\n[打开 Demo](../../demos/patterns/medallion-iris-step/index.html) · [在库中查看](../../patterns.html#pattern/medallion-iris-step)\n"
+  },
+  "entrypoint": "demos/patterns/medallion-iris-step/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-midcentury-toon/LICENSES.md",
+      "bytes": 920,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/CREDITS",
+      "bytes": 1268,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/CREDITS-music.txt",
+      "bytes": 391,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/audio/film.m4a",
+      "bytes": 1282461,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fidelity.md",
+      "bytes": 4283,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/content.json",
+      "bytes": 3105,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/engine/chars.js",
+      "bytes": 18546,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/engine/icons.js",
+      "bytes": 7542,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/engine/toon.js",
+      "bytes": 20249,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/film.js",
+      "bytes": 61963,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/index.html",
+      "bytes": 447,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/main.js",
+      "bytes": 904,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/film/voices/dur.json",
+      "bytes": 99,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/AlfaSlabOne-Regular.ttf",
+      "bytes": 97376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/Jost.ttf",
+      "bytes": 134996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OFL-alfaslabone.txt",
+      "bytes": 4430,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OFL-jost.txt",
+      "bytes": 4384,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OFL-oleoscript.txt",
+      "bytes": 4419,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OleoScript-Bold.ttf",
+      "bytes": 34628,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/OleoScript-Regular.ttf",
+      "bytes": 34980,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/fonts/fonts.css",
+      "bytes": 482,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/index.html",
+      "bytes": 2261,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/CREDITS",
+      "bytes": 1268,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/README.md",
+      "bytes": 3552,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/build.sh",
+      "bytes": 2170,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/content_alt.json",
+      "bytes": 3073,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/events.json",
+      "bytes": 2432,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/lines.json",
+      "bytes": 911,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/mix.py",
+      "bytes": 9717,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/music/CREDITS_music.txt",
+      "bytes": 391,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/music/hits.json",
+      "bytes": 1809,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/music/score.py",
+      "bytes": 21185,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/sheet.js",
+      "bytes": 4661,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/tools/cuecheck.py",
+      "bytes": 1150,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/tools/cues.mjs",
+      "bytes": 596,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/tools/lines.py",
+      "bytes": 689,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-midcentury-toon/source/voices/words.json",
+      "bytes": 928,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/medallion-iris-step/index.html",
+      "bytes": 1892,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/medallion-iris-step/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-midcentury-toon.json",
+      "bytes": 8576,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/medallion-iris-step.json",
+      "bytes": 3189,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/medallion-iris-step.jpg",
+      "bytes": 72438,
+      "role": "preview"
+    }
+  ]
+}

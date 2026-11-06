@@ -1,0 +1,359 @@
+{
+  "id": "butterfly-garden-score",
+  "order": 84,
+  "title": "蝶の舞う庭 · 曲式赏析滚动总谱",
+  "subtitle": "The Garden Where Butterflies Dance",
+  "carriers": [
+    "video"
+  ],
+  "style": "graphic-type",
+  "purpose": "explainer",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "accent": "#e80827",
+  "background": "#ffffff",
+  "timeline": true,
+  "kit": true,
+  "tags": [
+    "少女歌剧",
+    "Revue Starlight",
+    "配乐可视化",
+    "曲式分析",
+    "滚动总谱",
+    "红白反色",
+    "动机",
+    "7135"
+  ],
+  "summary": "把剧场版《少女歌剧》配乐《蝶の舞う庭》前 57 小节画成一张向左滚动的总谱：每件乐器一行，动机 7135 九次入场逐个点亮，调性转换时全画面红白反色，场次与调名采用类似戏单的排版。",
+  "focus": "音乐结构直接决定画面：卷轴匀速，节奏全部来自音符本身；转调、高潮和呼吸用反色、巨型场次标题和镜头聚焦来标记。",
+  "observations": [
+    {
+      "at": 4.8,
+      "what": "第一場 ヘ長調：调名用日文伊吕波音名，场次写法来自戏单。"
+    },
+    {
+      "at": 7.65,
+      "what": "双簧管吹出第一次 7135，括号 M¹ 展开，数字随音符发声逐个点亮，底部图标条同步推进。"
+    },
+    {
+      "at": 8.4,
+      "what": "镜头聚焦到 Ob. 与 Va. 两行，把呼应关系单独拎出来。"
+    },
+    {
+      "at": 20.1,
+      "what": "F 转 D，全画面经粉色过渡变成红底，巨型「第二場 ニ長調」压在总谱上。"
+    },
+    {
+      "at": 60,
+      "what": "华尔兹全奏，反色再次到红底，和第二場形成呼应。"
+    },
+    {
+      "at": 76.3,
+      "what": "♩.=53 的一次呼吸，红底退回白底。"
+    },
+    {
+      "at": 88.2,
+      "what": "单簧管的 hook 倒影：聚焦放大并用空心轮廓对照音程翻转。"
+    },
+    {
+      "at": 117.2,
+      "what": "片尾调性梯子把全曲 F→D→B♭→A→E 的路线逐级画出来。"
+    }
+  ],
+  "useCases": [
+    "配乐、曲式或编曲的讲解视频",
+    "需要“声音看得见”的片头或音乐专题",
+    "用强品牌色和戏单版式做的知识短片"
+  ],
+  "avoid": [
+    "没有分轨或总谱信息的音乐",
+    "主要靠解说词推进的视频"
+  ],
+  "constraints": [
+    "画面数据来自逐帧提取，换曲需要重新制作 notes.json。"
+  ],
+  "composition": {
+    "color": "白底 #ffffff、红栏与反色 #e80827、墨黑、铜管金色与弦乐红色，转调经过粉色。",
+    "typography": "Shippori Mincho Bold；Cormorant Garamond Italic；Noto Serif SC 400/700。",
+    "layout": "1920×1080、60fps；左侧1620px总谱，右侧300px固定竖栏；播放头x=880。",
+    "imagery": "Canvas 2D 音符横条、圆点、注释路径、真实字体与4K透明徽章/标志/图标。",
+    "motion": "190px/s卷轴、三段声部聚焦、四次反色、三个巨型标题、两组调性梯子。",
+    "sound": "NAS原曲切片，偏移1.409691s，末尾实测淡出；声音默认关闭。",
+    "rhythm": "6/8为主，3/8插入，末段5/4转4/4；节奏由小节和音符数据决定。",
+    "coherence": "同一时刻t驱动谱面、动机、字幕、镜头与音轨。"
+  },
+  "layers": [
+    {
+      "name": "背景与竖栏",
+      "role": "红白反色、竖排曲名和作曲署名。"
+    },
+    {
+      "name": "总谱",
+      "role": "16个乐器行、音符三态、播放头与十字指针。"
+    },
+    {
+      "name": "注释",
+      "role": "动机括号、数字、连弧、leggiero曲线、力度与调性梯子。"
+    },
+    {
+      "name": "场次与字幕",
+      "role": "场次、调性、小节计数和20组字幕过渡。"
+    },
+    {
+      "name": "镜头",
+      "role": "逐字片头、声部聚焦与巨型标题。"
+    },
+    {
+      "name": "声音",
+      "role": "原曲切片与mountFilm时间轴同步。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#ffffff",
+      "#e80827",
+      "#181818",
+      "#a8945b",
+      "#e6e6e6",
+      "#f7c3cc"
+    ],
+    "type": "Shippori Mincho Bold；Noto Sans JP 900 轮廓；Cormorant Garamond Italic 400–600；Noto Serif SC 400/500/700。",
+    "motion": [
+      {
+        "name": "卷轴",
+        "value": "卷轴速度 190px/s"
+      },
+      {
+        "name": "播放头",
+        "value": "播放头 x=880"
+      },
+      {
+        "name": "音高",
+        "value": "半音步长 0.8px"
+      }
+    ]
+  },
+  "rhythm": {
+    "duration": 122.005,
+    "beats": [
+      {
+        "t": 0,
+        "label": "序幕",
+        "note": "序幕"
+      },
+      {
+        "t": 4.8,
+        "label": "第一場",
+        "note": "第一場"
+      },
+      {
+        "t": 7.65,
+        "label": "M¹",
+        "note": "Ob. 动机入场"
+      },
+      {
+        "t": 9.566666666666666,
+        "label": "M²",
+        "note": "Va. 动机入场"
+      },
+      {
+        "t": 15.316666666666666,
+        "label": "M³",
+        "note": "Hn. 动机入场"
+      },
+      {
+        "t": 20.1,
+        "label": "第二場",
+        "note": "第二場"
+      },
+      {
+        "t": 22.966666666666665,
+        "label": "M⁴",
+        "note": "Cl. 动机入场"
+      },
+      {
+        "t": 24.883333333333333,
+        "label": "M⁵",
+        "note": "Hn. 动机入场"
+      },
+      {
+        "t": 27.8,
+        "label": "間奏",
+        "note": "間奏"
+      },
+      {
+        "t": 30.65,
+        "label": "M⁶",
+        "note": "Fl. 动机入场"
+      },
+      {
+        "t": 43.5,
+        "label": "第三場",
+        "note": "第三場"
+      },
+      {
+        "t": 60,
+        "label": "华尔兹全奏",
+        "note": "华尔兹全奏"
+      },
+      {
+        "t": 62.25,
+        "label": "M⁷",
+        "note": "Ob. 动机入场"
+      },
+      {
+        "t": 64.2,
+        "label": "M⁸",
+        "note": "Cl. 动机入场"
+      },
+      {
+        "t": 81,
+        "label": "第四場",
+        "note": "第四場"
+      },
+      {
+        "t": 89.25,
+        "label": "M⁹",
+        "note": "Cl. 动机入场"
+      },
+      {
+        "t": 117.2,
+        "label": "调性梯子",
+        "note": "调性梯子"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 4.8,
+      "to": 0.2660548502654991,
+      "label": "序幕",
+      "from": 0
+    },
+    {
+      "t0": 4.8,
+      "t1": 20.1,
+      "to": 0.7333574353916805,
+      "label": "第一場",
+      "from": 0.2660548502654991
+    },
+    {
+      "t0": 20.1,
+      "t1": 27.8,
+      "to": 0.41267171139227915,
+      "label": "第二場",
+      "from": 0.7333574353916805
+    },
+    {
+      "t0": 27.8,
+      "t1": 43.5,
+      "to": 0.10612498258550244,
+      "label": "間奏",
+      "from": 0.41267171139227915
+    },
+    {
+      "t0": 43.5,
+      "t1": 60,
+      "to": 0.4426814472801674,
+      "label": "第三場",
+      "from": 0.10612498258550244
+    },
+    {
+      "t0": 60,
+      "t1": 81,
+      "to": 0.0490616471621805,
+      "label": "华尔兹全奏",
+      "from": 0.4426814472801674
+    },
+    {
+      "t0": 81,
+      "t1": 117.2,
+      "to": 0,
+      "label": "第四場",
+      "from": 0.0490616471621805
+    },
+    {
+      "t0": 117.2,
+      "t1": 122.005,
+      "to": 0,
+      "label": "调性梯子",
+      "from": 0
+    }
+  ],
+  "energyNote": "按音轨 RMS 归一化，分段取自场次边界。",
+  "migration": [
+    {
+      "field": "音符数据",
+      "how": "film/data/notes.json：每行一个音符，横坐标按 190px/s 换算时间。"
+    },
+    {
+      "field": "字幕与场次",
+      "how": "film/data/timeline.json。"
+    },
+    {
+      "field": "配色",
+      "how": "film/scene.js 顶部的颜色常量。"
+    },
+    {
+      "field": "乐器行",
+      "how": "film/scene.js 的 ROWS 与 film/data/notes.json 的 row。"
+    }
+  ],
+  "patternIds": [
+    "scrolling-score-timeline",
+    "motif-entry-focus",
+    "key-change-color-flip",
+    "perspective-scene-title"
+  ],
+  "prompt": "做一部 1920×1080、60fps 的配乐可视化短片。左侧是向左匀速滚动的总谱：每件乐器一行，音符画成圆头横条，厚度和透明度区分未来、发声、已过去三态，播放头竖线固定。右侧是一条红色竖栏，放竖排曲名和标志。顶部写场次、调名和小节数，底部写当前段落的解说。用括号和数字标出主动机每次入场；转调和高潮时全画面红白反色，并压上巨型场次标题；重要呼应时把镜头聚焦到相关的几行。画面只由时刻 t 决定，声音用原曲。",
+  "demo": "demos/cases/butterfly-garden-score/index.html",
+  "fidelity": "demos/cases/butterfly-garden-score/fidelity.md",
+  "research": "docs/cases/butterfly-garden-score.md",
+  "previewAt": 66,
+  "upstream": {
+    "url": "https://www.bilibili.com/video/BV15xn868EoM/",
+    "title": "「曲式赏析/少女歌剧」蝶の舞う庭",
+    "author": "魔芋苏打",
+    "type": "video"
+  },
+  "license": {
+    "name": "原作与音乐保留权利；字体 SIL OFL 1.1",
+    "notes": "版权归原权利人，个人学习研究收录；字体许可原文在fonts/。"
+  },
+  "sources": [
+    {
+      "label": "参考作品：魔芋苏打「曲式赏析/少女歌剧」蝶の舞う庭",
+      "url": "https://www.bilibili.com/video/BV15xn868EoM/"
+    },
+    {
+      "label": "固定版本字体：Google Fonts",
+      "url": "https://github.com/google/fonts/tree/8c3ea249848f15b7ff6092b3e16d44ef91771cad"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "[「曲式赏析/少女歌剧」蝶の舞う庭](https://www.bilibili.com/video/BV15xn868EoM/)，魔芋苏打；徽章、官方标志与乐器图标取自原作。"
+    },
+    {
+      "scope": "音乐",
+      "notes": "《蝶の舞う庭》，藤澤慶昌，剧场版《少女☆歌劇 レヴュースタァライト》劇中歌アルバム Vol.1；版权归原权利人，个人学习研究收录。音频为NAS原曲切片。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Shippori Mincho Bold、Noto Sans JP 900（巨型标题轮廓）、Cormorant Garamond Italic、Noto Serif SC；SIL OFL 1.1，许可原文见[LICENSES.md](LICENSES.md)。"
+    }
+  ],
+  "relatedEntries": [
+    {
+      "kind": "material",
+      "id": "starlight-bceg-motif",
+      "note": "《少女歌剧》TV 原声带的 7135 动机片段与节奏型，本曲 hook 的同一音型"
+    }
+  ]
+}

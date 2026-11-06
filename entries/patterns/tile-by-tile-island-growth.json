@@ -1,0 +1,73 @@
+{
+  "id": "tile-by-tile-island-growth",
+  "order": 139,
+  "title": "逐块长岛配音符",
+  "types": [
+    "composition",
+    "rhythm",
+    "sound"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "海中地块按节拍从水下升起并带起水花，随后树和房屋按部件生长；每个落定事件都连同音高导出给配乐，转台镜头在同一世界里展示建造过程。",
+  "mechanism": "海中地块按节拍从水下升起并带起水花，随后树和房屋按部件生长；每个落定事件都连同音高导出给配乐，转台镜头在同一世界里展示建造过程。",
+  "trigger": "来源时间线进入逐块长岛配音符段。",
+  "effect": "海中地块按节拍从水下升起并带起水花，随后树和房屋按部件生长；每个落定事件都连同音高导出给配乐，转台镜头在同一世界里展示建造过程。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "lemo-lowpoly-island：6.000000–21.250000秒，1倍速，总时长15.250000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "建造与音符",
+      "value": "film/world.js:213–229的ev(t,rise,{note})、253的floor/roof、270的pop；source/music/score.py读取events.json合成旋律。"
+    },
+    {
+      "name": "水中生长",
+      "value": "film/world.js:415–430：地块水下上升、弹性回落、六边形浪圈和14滴水花；film/main.js:cam的grow/grow2使用单调正交转台。"
+    }
+  ],
+  "sourceFiles": [
+    "demos\\cases\\lemo-lowpoly-island\\film\\story.js",
+    "demos\\cases\\lemo-lowpoly-island\\film\\world.js",
+    "demos\\cases\\lemo-lowpoly-island\\film\\main.js",
+    "demos\\cases\\lemo-lowpoly-island\\source\\music\\score.py"
+  ],
+  "locator": "film/story.js / film/world.js / film/main.js / source/music/score.py",
+  "useCases": [
+    "游戏世界预告",
+    "场景生成短片",
+    "安静的微缩叙事"
+  ],
+  "avoid": [
+    "在关键动作和证据上叠加争夺注意的运动"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "用来源案例的原作render(t)实现“逐块长岛配音符”。海中地块按节拍由水下升起并带水花，随后树和房屋按部件生长；每个落定事件携带音高导出给配乐，转台镜头在同一世界里展示建造。参数：film/world.js:213–229的ev(t,rise,{note})、253的floor/roof、270的pop；source/music/score.py读取events.json合成旋律。；film/world.js:415–430：地块水下上升、弹性回落、六边形浪圈和14滴水花；film/main.js:cam的grow/grow2使用单调正交转台。。复用来源字体、素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/tile-by-tile-island-growth/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-lowpoly-island"
+    }
+  ],
+  "previewAt": 7,
+  "markers": [
+    {
+      "t": 0,
+      "label": "逐块长岛配音符"
+    }
+  ],
+  "renderer": "gpu"
+}

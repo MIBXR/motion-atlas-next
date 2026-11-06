@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "core-ignition-wave",
+  "pattern": {
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "kit": true,
+    "timeline": true,
+    "avoid": [],
+    "sound": {
+      "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#DAD3F7",
+        "#B7ECD6",
+        "#FFC4AC",
+        "#A8D2FF",
+        "#FBFAFF",
+        "#62F0F2",
+        "#2C2960"
+      ],
+      "type": "HarmonyOS Sans SC 500、700；JetBrains Mono 500；Unbounded 800。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置重放原片的起止时刻，画面与音轨使用同一映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴的中文节点与减少动态时刻。"
+      }
+    ],
+    "id": "core-ignition-wave",
+    "order": 36,
+    "title": "核心激活全城",
+    "types": [
+      "rhythm",
+      "composition",
+      "camera"
+    ],
+    "summary": "核心下蹲蓄力后在主拍放光，方形激活波联动地块翻面、载物跳起和建筑由灰模扫描着色。",
+    "mechanism": "核心下蹲蓄力，镜头拉回、画面压暗；主拍时核心放光，镜头冲近。按切比雪夫距离传播的激活波让空地翻面、载物跳起、建筑由灰模向上扫描着色。",
+    "trigger": "5.9秒预备段与6秒城市激活主拍到达。",
+    "effect": "核心、镜头、曝光、地块和建筑随同一方形波前联动，灰模城市进入彩色运行状态。",
+    "timing": [
+      {
+        "name": "预备",
+        "value": "A.smooth(A.inv(5.90,5.967,T))；核心Y-6%、XZ+3%；镜头缩小2%；曝光-0.15EV。"
+      },
+      {
+        "name": "波前",
+        "value": "PULSE_T=cues.drop-.015；drop=6；PULSE_V=15；PULSE_R0=1；r=max(abs(x),abs(z))。"
+      },
+      {
+        "name": "地块翻面",
+        "value": "FLIP_D=5/30；Math.PI*A.easeOutBack(u,1.4)；中段抬升.15*sin(πu)。"
+      },
+      {
+        "name": "核心冲量",
+        "value": "exp(-(T-PULSE_T)*6)*cos((T-PULSE_T)*26)*.07；载物顶点波抬升.25*y。"
+      },
+      {
+        "name": "镜头与曝光",
+        "value": "镜头2帧冲近6%，.4秒easeOutExpo回定；曝光主击+.3EV，exp(-max(0,t-drop)*30)衰减。"
+      },
+      {
+        "name": "时长",
+        "value": "1.65s；原片5.7–7.35s。"
+      }
+    ],
+    "useCases": [
+      "城市或设备启动主拍",
+      "由中心波前联动的模型着色与跳动"
+    ],
+    "prompt": "复用等距 2.5D 来源案例的原作 window.renderAt(t)，重放原片5.7–7.35秒，时长1.65秒。核心在5.90–5.967秒下蹲蓄力，Y缩6%、XZ扩3%，镜头缩小2%、曝光压低.15EV。PULSE_T=cues.drop-.015，drop=6，PULSE_V=15，PULSE_R0=1；按r=max(abs(x),abs(z))的切比雪夫距离传播方形波。空地以FLIP_D=5/30和Math.PI*A.easeOutBack(u,1.4)翻到彩色面，载物地块由顶点着色器携模型跳起.25*y，建筑沿立面扫描着色。核心冲量exp(-(T-PULSE_T)*6)*cos((T-PULSE_T)*26)*.07，镜头两帧冲近6%后.4秒回定，主拍曝光+.3EV衰减；保留光柱、光环、冲击和扫过音。1920×1080、30fps，画面和原片同区间音轨使用同一时间映射，声音默认关闭。",
+    "markers": [
+      {
+        "t": 0,
+        "label": "光环预热"
+      },
+      {
+        "t": 0.2,
+        "label": "下蹲预备"
+      },
+      {
+        "t": 0.285,
+        "label": "波前启动"
+      },
+      {
+        "t": 0.3,
+        "label": "主拍激活"
+      },
+      {
+        "t": 0.4,
+        "label": "地块翻面"
+      },
+      {
+        "t": 0.6,
+        "label": "着色展开"
+      },
+      {
+        "t": 1.45,
+        "label": "余波落定"
+      }
+    ],
+    "previewAt": 0.6,
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "demo": "demos/patterns/core-ignition-wave/index.html",
+    "sources": [
+      {
+        "caseId": "mg-isometric"
+      }
+    ],
+    "preview": "previews/patterns/core-ignition-wave.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-isometric",
+      "bundle": "agent/cases/mg-isometric.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 核心激活全城\n\n## 实现 Prompt\n\n复用等距 2.5D 来源案例的原作 window.renderAt(t)，重放原片5.7–7.35秒，时长1.65秒。核心在5.90–5.967秒下蹲蓄力，Y缩6%、XZ扩3%，镜头缩小2%、曝光压低.15EV。PULSE_T=cues.drop-.015，drop=6，PULSE_V=15，PULSE_R0=1；按r=max(abs(x),abs(z))的切比雪夫距离传播方形波。空地以FLIP_D=5/30和Math.PI*A.easeOutBack(u,1.4)翻到彩色面，载物地块由顶点着色器携模型跳起.25*y，建筑沿立面扫描着色。核心冲量exp(-(T-PULSE_T)*6)*cos((T-PULSE_T)*26)*.07，镜头两帧冲近6%后.4秒回定，主拍曝光+.3EV衰减；保留光柱、光环、冲击和扫过音。1920×1080、30fps，画面和原片同区间音轨使用同一时间映射，声音默认关闭。\n\n## 参数\n\n- **预备**：A.smooth(A.inv(5.90,5.967,T))；核心Y-6%、XZ+3%；镜头缩小2%；曝光-0.15EV。\n- **波前**：PULSE_T=cues.drop-.015；drop=6；PULSE_V=15；PULSE_R0=1；r=max(abs(x),abs(z))。\n- **地块翻面**：FLIP_D=5/30；Math.PI*A.easeOutBack(u,1.4)；中段抬升.15*sin(πu)。\n- **核心冲量**：exp(-(T-PULSE_T)*6)*cos((T-PULSE_T)*26)*.07；载物顶点波抬升.25*y。\n- **镜头与曝光**：镜头2帧冲近6%，.4秒easeOutExpo回定；曝光主击+.3EV，exp(-max(0,t-drop)*30)衰减。\n- **时长**：1.65s；原片5.7–7.35s。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。\n\n[打开 Demo](../../demos/patterns/core-ignition-wave/index.html) · [在库中查看](../../patterns.html#pattern/core-ignition-wave)\n"
+  },
+  "entrypoint": "demos/patterns/core-ignition-wave/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-isometric/LICENSES.md",
+      "bytes": 984,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/audio/film.m4a",
+      "bytes": 423677,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fidelity.md",
+      "bytes": 6117,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/anim.js",
+      "bytes": 3953,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/cues.json",
+      "bytes": 1240,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/main.js",
+      "bytes": 9777,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/render.js",
+      "bytes": 9205,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/setup.js",
+      "bytes": 216,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/style.css",
+      "bytes": 423,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/title.js",
+      "bytes": 8519,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/ui.js",
+      "bytes": 9547,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/film/world.js",
+      "bytes": 80534,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS-Sans-LICENSE.txt",
+      "bytes": 32768,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS_Sans_SC_Bold.ttf",
+      "bytes": 8158996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/HarmonyOS_Sans_SC_Medium.ttf",
+      "bytes": 8227312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/JetBrainsMono-OFL.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/JetBrainsMono[wght].ttf",
+      "bytes": 187208,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded-800-static.ttf",
+      "bytes": 423680,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded-OFL.txt",
+      "bytes": 4392,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/Unbounded[wght].ttf",
+      "bytes": 778272,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/fonts/fonts.css",
+      "bytes": 700,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-isometric/index.html",
+      "bytes": 2932,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-isometric/source/audio.py",
+      "bytes": 14263,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-isometric/source/cues.json",
+      "bytes": 1240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/build/three.core.js",
+      "bytes": 1458113,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/build/three.module.js",
+      "bytes": 662772,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/environments/RoomEnvironment.js",
+      "bytes": 4960,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "bytes": 6470,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/postprocessing/Pass.js",
+      "bytes": 4218,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 15397,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/shaders/CopyShader.js",
+      "bytes": 729,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1291,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-isometric/vendor/three@0.186.1/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 37712,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/core-ignition-wave/index.html",
+      "bytes": 1559,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/core-ignition-wave/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-isometric.json",
+      "bytes": 24989,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/core-ignition-wave.json",
+      "bytes": 3846,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/core-ignition-wave.jpg",
+      "bytes": 111381,
+      "role": "preview"
+    }
+  ]
+}

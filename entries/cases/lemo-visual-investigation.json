@@ -1,0 +1,288 @@
+{
+  "id": "lemo-visual-investigation",
+  "order": 70,
+  "title": "兴登堡号：四分钟与三十二秒 · 视觉调查",
+  "subtitle": "The Hindenburg: Four Minutes, 32 Seconds",
+  "carriers": [
+    "video"
+  ],
+  "style": "documentary",
+  "purpose": "news",
+  "tech": [
+    "canvas2d",
+    "footage"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "视觉调查",
+    "剪辑与纪实",
+    "代码影片"
+  ],
+  "summary": "以兴登堡号最后的四分钟与燃烧的三十二秒为线索，将新闻片、海军照片、证词、调查报告和气象记录按事件时刻交叉对照，最后合为证据地图。",
+  "focus": "时间读数属于证据本身：电报与风图按分钟运行，三列材料按同一秒表亮起，五路来源的红线汇向同一舱段。",
+  "accent": "#FF4A2E",
+  "background": "#0B0C0E",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 30.9,
+  "rhythm": {
+    "duration": 60,
+    "beats": [
+      {
+        "t": 0,
+        "label": "火点冷开场",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 2.4,
+        "label": "片名",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 6.3,
+        "label": "分钟里的等待",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 12.3,
+        "label": "地图定位",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 14.8,
+        "label": "平面与机位",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 18.6,
+        "label": "四分钟",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 23.8,
+        "label": "五路来源汇聚",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 31.8,
+        "label": "三十二秒同步",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 38.6,
+        "label": "调查结论",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 45.6,
+        "label": "人数核对",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 52.4,
+        "label": "证据地图",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      },
+      {
+        "t": 55.6,
+        "label": "片尾",
+        "note": "原作DEMO.md镜头表与绘制时间线中的段落。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2.4,
+      "to": 0.7,
+      "label": "定格与倒放",
+      "from": 0.85
+    },
+    {
+      "t0": 2.4,
+      "t1": 12.3,
+      "to": 0.5,
+      "label": "等待",
+      "from": 0.3
+    },
+    {
+      "t0": 12.3,
+      "t1": 23.8,
+      "to": 0.6,
+      "label": "定位与四分钟",
+      "from": 0.4
+    },
+    {
+      "t0": 23.8,
+      "t1": 31.8,
+      "to": 0.65,
+      "label": "来源汇聚",
+      "from": 0.7
+    },
+    {
+      "t0": 31.8,
+      "t1": 38.6,
+      "to": 0.9,
+      "label": "三十二秒",
+      "from": 0.6
+    },
+    {
+      "t0": 38.6,
+      "t1": 45.6,
+      "to": 0.3,
+      "label": "调查",
+      "from": 0.15
+    },
+    {
+      "t0": 45.6,
+      "t1": 52.4,
+      "to": 0.35,
+      "label": "人数核对",
+      "from": 0.25
+    },
+    {
+      "t0": 52.4,
+      "t1": 60,
+      "to": 0.05,
+      "label": "证据地图与片尾",
+      "from": 0.4
+    }
+  ],
+  "energyNote": "段落与时刻取自上游DEMO.md镜头表及原作绘制函数；0–1为按配乐、原声和画面密度作出的相对编辑标注。",
+  "observations": [
+    "冷开场先定格、圈出火点，证词和照片补入后，火灾影像倒放回到调查起点。",
+    "分钟尺度的电报卡通过引线连接风图时间轴；秒尺度的报告、照片、新闻片各自在实际覆盖时刻出现。",
+    "展示板上，扫描证词、火点特写、海军照片、原声波形和报告这五路来源共同指向4–5号气囊。",
+    "地图切成独立平面示意，测距圈、方位角和摄影机视锥说明位置关系；片尾地图再汇合各来源。"
+  ],
+  "composition": {
+    "color": "#0B0C0E、#141619、#2E3238、#ECEAE4、#8B9097、#FF4A2E、#E4E0D4",
+    "typography": "Noto Sans SC 400/500/700、Noto Serif SC 500、IBM Plex Mono 400/600、Source Serif 4 Italic 400；SIL OFL 1.1子集。",
+    "layout": "1920×1080横屏；沿用原作各镜的画面分区与文字位置。",
+    "imagery": "Universal Newsreel 1937年原片、美国海军与NARA照片、FBI案卷页、USGS 1947年地形图及商务部调查报告文字。",
+    "motion": "硬切、短闪、顺时针圈注、逐行高亮、波形游标和按同一事件时钟依次亮起的证据列。",
+    "sound": "Release原混音：Kokoro am_michael旁白、两段1937年原声、低音弦乐与拨奏、事件秒针、纸张和电报声。",
+    "rhythm": "冷开场后从分钟缩到秒，再切到调查日期；冲击后近乎静默，人数核对后证据汇总。",
+    "coherence": "时间读数属于证据本身：电报与风图按分钟运行，三列材料按同一秒表亮起，五路来源的红线汇向同一舱段。"
+  },
+  "layers": [
+    {
+      "name": "深色调查台",
+      "role": "硬边框与少量红色指向标记。"
+    },
+    {
+      "name": "档案证据",
+      "role": "新闻片、扫描页、照片和地图。"
+    },
+    {
+      "name": "事件时钟",
+      "role": "电报时间、风图游标与T+秒表。"
+    },
+    {
+      "name": "示意与链接",
+      "role": "16气囊侧视图、平面位置与汇聚引线。"
+    },
+    {
+      "name": "原声波形与字幕",
+      "role": "逐词原声、平静旁白与双语字幕。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#0B0C0E",
+      "#141619",
+      "#2E3238",
+      "#ECEAE4",
+      "#8B9097",
+      "#FF4A2E",
+      "#E4E0D4"
+    ],
+    "type": "Noto Sans SC 400/500/700、Noto Serif SC 500、IBM Plex Mono 400/600、Source Serif 4 Italic 400；SIL OFL 1.1子集。",
+    "motion": [
+      {
+        "name": "事件时钟",
+        "value": "film/index.html:playhead / sWait / sRun；分钟尺度15:40–18:14；秒尺度T+0–32，新闻片约T+7才进入。"
+      },
+      {
+        "name": "五路汇聚",
+        "value": "film/index.html:sOrigin；29秒起红线汇向16舱侧视图中的4–5号区域。"
+      }
+    ]
+  },
+  "useCases": [
+    "事件重建",
+    "事实核对",
+    "事故报告"
+  ],
+  "avoid": [
+    "把灾难画面作为慢动作奇观的剪辑",
+    "来源时间和机位无法定位的同步叙事"
+  ],
+  "constraints": [
+    "替换影像、字体和数据后，同步调整原作取帧与文字时间表。",
+    "声音与画面沿用同一来源时间，音轨默认关闭。"
+  ],
+  "migration": [
+    {
+      "field": "film/film.json → sections / subs / vo",
+      "how": "修改段落、字幕和旁白时刻。"
+    },
+    {
+      "field": "film/index.html → TG / playhead / sRun",
+      "how": "修改事件时钟、来源起点和同步区间。"
+    },
+    {
+      "field": "source/tools/prep.sh",
+      "how": "替换档案片段、文件页和地图裁片。"
+    }
+  ],
+  "prompt": "制作一支视觉调查影片。时间读数属于证据本身：电报与风图按分钟运行，三列材料按同一秒表亮起，五路来源的红线汇向同一舱段。硬切、短闪、顺时针圈注、逐行高亮、波形游标和按同一事件时钟依次亮起的证据列。沿用以下制作方法：Universal Newsreel 1937年原片、美国海军与NARA照片、FBI案卷页、USGS 1947年地形图及商务部调查报告文字。声音采用Release原混音：Kokoro am_michael旁白、两段1937年原声、低音弦乐与拨奏、事件秒针、纸张和电报声。可编辑入口：film/film.json → sections / subs / vo；film/index.html → TG / playhead / sRun；source/tools/prep.sh。",
+  "demo": "demos/cases/lemo-visual-investigation/index.html",
+  "patternIds": [
+    "multi-source-timeline"
+  ],
+  "fidelity": "demos/cases/lemo-visual-investigation/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/visual-investigation",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/visual-investigation/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原作影片及静帧CC BY 4.0，署名LemoLab；第三方素材和旁白按CREDITS各自许可。"
+  },
+  "sources": [
+    {
+      "label": "固定版本风格与制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/visual-investigation"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/visual-investigation.mp4"
+    },
+    {
+      "label": "原始素材与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/visual-investigation/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）。固定源码接入MotionKit，原作画面按时间绘制；音轨从Release流复制。"
+    },
+    {
+      "scope": "影像与声音",
+      "notes": "原始作者、素材链接和许可见[LICENSES.md](LICENSES.md)及[audio/CREDITS](audio/CREDITS)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "字体、字重与子集见tokens.type；OFL原文位于fonts/，取得与重建方法见[source/README.md](source/README.md)。"
+    }
+  ]
+}

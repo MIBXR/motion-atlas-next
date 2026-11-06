@@ -1,0 +1,238 @@
+{
+  "id": "lemo-hologram-hud",
+  "order": 79,
+  "title": "伏特·规格扫描 · 科幻全息界面",
+  "subtitle": "Volt · Spec Scan",
+  "carriers": [
+    "video"
+  ],
+  "style": "interface",
+  "purpose": "brand",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "科幻全息界面",
+    "信息与发布",
+    "代码影片"
+  ],
+  "summary": "电助力车从扫描线中长成发光线框，依次锁定电池、电机和刹车，通过局部爆炸、引线与乱数读数展示规格；归拢后点亮实体全息，并以转台旋转展示一圈。",
+  "focus": "用三维投影线框、目标锁定、局部拆件和左侧停驻的读数讲解产品规格。",
+  "accent": "#42e3ee",
+  "background": "#01070a",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 25.5,
+  "rhythm": {
+    "duration": 39,
+    "bpm": 120,
+    "beats": [
+      {
+        "t": 0,
+        "label": "扫描入场",
+        "note": "原作 Shots：0.000—2.600秒。"
+      },
+      {
+        "t": 8,
+        "label": "电池",
+        "note": "原作 Shots：8.000—14.000秒。"
+      },
+      {
+        "t": 14,
+        "label": "电机",
+        "note": "原作 Shots：14.000—18.000秒。"
+      },
+      {
+        "t": 18,
+        "label": "刹车放大镜",
+        "note": "原作 Shots：18.000—22.000秒。"
+      },
+      {
+        "t": 22,
+        "label": "归拢",
+        "note": "原作 Shots：22.000—24.000秒。"
+      },
+      {
+        "t": 24,
+        "label": "实体全息转台",
+        "note": "原作 Shots：24.000—28.000秒。"
+      },
+      {
+        "t": 28,
+        "label": "规格落版",
+        "note": "原作 Shots：28.000—34.000秒。"
+      },
+      {
+        "t": 34,
+        "label": "扫描擦除与片尾",
+        "note": "原作 Shots：34.000—39.000秒。"
+      }
+    ]
+  },
+  "energy": [
+    0.3,
+    0.45,
+    0.55,
+    0.65,
+    0.8,
+    0.65,
+    0.5,
+    0.2
+  ],
+  "energyNote": "依据原作镜头密度、信息量和配乐段落作的相对编辑标注。",
+  "observations": [
+    "原作 Canvas2D 三维投影；volt.json 提供车架、车轮、电池、电机与刹车的顶点、边和面。",
+    "框线随扫描生长，从1.9倍缩回并由45°回正，配合轴向局部爆炸、五子帧急摇、读数归栏与实体转台。",
+    "原作合成配乐、机械拟音与 Kokoro af_heart 旁白。"
+  ],
+  "composition": {
+    "color": "近黑舞台，188°青色光线，38°琥珀规格值。",
+    "typography": "Rajdhani 300／400／500／600，Share Tech Mono 400。",
+    "layout": "1920×1080横屏；构图、字幕与边距由原作render(t)直接绘制。",
+    "imagery": "原作 Canvas2D 三维投影；volt.json 提供车架、车轮、电池、电机与刹车的顶点、边和面。",
+    "motion": "框线随扫描生长，从1.9倍缩回并由45°回正，配合轴向局部爆炸、五子帧急摇、读数归栏与实体转台。",
+    "sound": "原作合成配乐、机械拟音与 Kokoro af_heart 旁白。",
+    "rhythm": "120 BPM，39.0秒；镜头节点取原作Shots与时间表。",
+    "coherence": "用三维投影线框、目标锁定、局部拆件和左侧停驻的读数讲解产品规格。"
+  },
+  "layers": [
+    {
+      "name": "场景",
+      "role": "原作 Canvas2D 三维投影；volt.json 提供车架、车轮、电池、电机与刹车的顶点、边和面。"
+    },
+    {
+      "name": "信息层",
+      "role": "Rajdhani 300／400／500／600，Share Tech Mono 400。"
+    },
+    {
+      "name": "声音",
+      "role": "原作合成配乐、机械拟音与 Kokoro af_heart 旁白。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#01070a",
+      "#42e3ee",
+      "#ffc247"
+    ],
+    "type": "Rajdhani 300／400／500／600，Share Tech Mono 400。",
+    "motion": [
+      {
+        "name": "扫描入场",
+        "value": "0.000—2.600秒"
+      },
+      {
+        "name": "电池",
+        "value": "8.000—14.000秒"
+      },
+      {
+        "name": "电机",
+        "value": "14.000—18.000秒"
+      },
+      {
+        "name": "刹车放大镜",
+        "value": "18.000—22.000秒"
+      },
+      {
+        "name": "归拢",
+        "value": "22.000—24.000秒"
+      },
+      {
+        "name": "实体全息转台",
+        "value": "24.000—28.000秒"
+      },
+      {
+        "name": "规格落版",
+        "value": "28.000—34.000秒"
+      },
+      {
+        "name": "扫描擦除与片尾",
+        "value": "34.000—39.000秒"
+      }
+    ]
+  },
+  "useCases": [
+    "硬件规格讲解",
+    "产品发布短片",
+    "展会循环画面"
+  ],
+  "avoid": [],
+  "constraints": [
+    "规格卡与模型分居两侧，读数在侧栏继续保留。",
+    "改变模型时同步修改 content.json 的 part 引用与相机目标。"
+  ],
+  "migration": [
+    {
+      "field": "film/film.js",
+      "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+    },
+    {
+      "field": "film/engine/holo.js",
+      "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+    },
+    {
+      "field": "film/engine/hud.js",
+      "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+    }
+  ],
+  "prompt": "以伏特·规格扫描 · 科幻全息界面的原作源码实现完整时间线影片。电助力车从扫描线中长成发光线框，依次锁定电池、电机和刹车，局部爆炸、引线与乱数读数给出规格；归拢后点亮实体全息并完成一圈转台。原作 Canvas2D 三维投影；volt.json 提供车架、车轮、电池、电机与刹车的顶点、边和面。扫描生长，框线由1.9倍与45°回正，轴向局部爆炸，五子帧急摇，读数归栏与实体转台。近黑舞台，188°青色光线，38°琥珀规格值。Rajdhani 300／400／500／600，Share Tech Mono 400。原作合成配乐、机械拟音与 Kokoro af_heart 旁白。画面直接执行film/中的原作render(t)，按24fps定位，声音默认关闭。",
+  "demo": "demos/cases/lemo-hologram-hud/index.html",
+  "patternIds": [
+    "scan-in-wireframe-to-solid",
+    "spec-dock-rail",
+    "seeded-digit-scramble-settle",
+    "explode-parts-leaders"
+  ],
+  "fidelity": "demos/cases/lemo-hologram-hud/fidelity.md",
+  "sourceFiles": [
+    "demos/cases/lemo-hologram-hud/film/film.js",
+    "demos/cases/lemo-hologram-hud/film/engine/holo.js",
+    "demos/cases/lemo-hologram-hud/film/engine/hud.js",
+    "demos/cases/lemo-hologram-hud/film/content.json",
+    "demos/cases/lemo-hologram-hud/film/models/volt.json"
+  ],
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hologram-hud",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/hologram-hud/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档 MIT，原成片 CC BY 4.0、署名 LemoLab；第三方素材沿用原作 CREDITS 的许可。"
+  },
+  "sources": [
+    {
+      "label": "固定源码与制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hologram-hud"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/hologram-hud.mp4"
+    },
+    {
+      "label": "原作署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hologram-hud/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者 Lemomo（lemomo-ai）。代码 MIT、成片 CC BY 4.0。来源固定于 bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00。"
+    },
+    {
+      "scope": "资源与声音",
+      "notes": "原作合成配乐、机械拟音与 Kokoro af_heart 旁白。原始资源和署名见 [audio/CREDITS](audio/CREDITS)，许可原文见 [LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Rajdhani 300／400／500／600，Share Tech Mono 400。字体及SIL OFL 1.1原文在fonts/。"
+    }
+  ]
+}

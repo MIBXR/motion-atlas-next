@@ -1,0 +1,549 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "plan-elevation-projection",
+  "pattern": {
+    "id": "plan-elevation-projection",
+    "order": 145,
+    "title": "平面图与立面图投影对位",
+    "types": [
+      "composition",
+      "hud"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "上方平面河道的两岸沿蓝色虚线投影到下方桥梁立面，判断各种桥型时采用同一跨距；同一条船先在平面受阻，再在立面穿过答案。",
+    "mechanism": "上方平面河道的两岸沿蓝色虚线投影到下方桥梁立面，判断各种桥型时采用同一跨距；同一条船先在平面受阻，再在立面穿过答案。",
+    "trigger": "来源时间线进入平面图与立面图投影对位段。",
+    "effect": "上方平面河道的两岸沿蓝色虚线投影到下方桥梁立面，判断各种桥型时采用同一跨距；同一条船先在平面受阻，再在立面穿过答案。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "lemo-briefing-board：14.100000–18.450000秒，1倍速，总时长4.350000秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "投影线",
+        "value": "source/scenes/_gen_film.py:PROJ_T=14.4；proj0/proj1从BANK_L/BANK_R、RIV_B+40投到BH−70，lw7、dash[26,22]，间隔.05秒。"
+      },
+      {
+        "name": "共享基准",
+        "value": "film/scenes/film.json的ship/ship_side、proj0/proj1与四桥立面；source/scenes/_gen_film.py:rows使用L/R锚点、SPANS和KPM计算等比例跨距。"
+      }
+    ],
+    "sourceFiles": [
+      "demos\\cases\\lemo-briefing-board\\film\\scenes\\film.json",
+      "demos\\cases\\lemo-briefing-board\\film\\kit\\board.js",
+      "demos\\cases\\lemo-briefing-board\\source\\scenes\\_gen_film.py"
+    ],
+    "locator": "film/scenes/film.json / film/kit/board.js / source/scenes/_gen_film.py",
+    "useCases": [
+      "工程方案比较",
+      "实物简报",
+      "条件驱动的科普"
+    ],
+    "avoid": [
+      "在关键动作和证据上叠加争夺注意力的运动"
+    ],
+    "composition": {
+      "role": "foundation",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "用来源案例的原作render(t)实现“平面图与立面图投影对位”。上方平面河道的两岸沿蓝色虚线投影到下方桥梁立面，各种桥型用同一跨距作判断；同一条船先在平面受阻，再在立面穿过答案。参数：source/scenes/_gen_film.py:PROJ_T=14.4；proj0/proj1从BANK_L/BANK_R、RIV_B+40投到BH−70，lw7、dash[26,22]，间隔.05秒。；film/scenes/film.json的ship/ship_side、proj0/proj1与四桥立面；source/scenes/_gen_film.py:rows使用L/R锚点、SPANS和KPM计算等比例跨距。。复用来源字体、素材和同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/plan-elevation-projection/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "lemo-briefing-board"
+      }
+    ],
+    "previewAt": 2.4,
+    "markers": [
+      {
+        "t": 0,
+        "label": "平面图与立面图投影对位"
+      }
+    ],
+    "preview": "previews/patterns/plan-elevation-projection.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "lemo-briefing-board",
+      "bundle": "agent/cases/lemo-briefing-board.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 平面图与立面图投影对位\n\n## 实现 Prompt\n\n用来源案例的原作render(t)实现“平面图与立面图投影对位”。上方平面河道的两岸沿蓝色虚线投影到下方桥梁立面，各种桥型用同一跨距作判断；同一条船先在平面受阻，再在立面穿过答案。参数：source/scenes/_gen_film.py:PROJ_T=14.4；proj0/proj1从BANK_L/BANK_R、RIV_B+40投到BH−70，lw7、dash[26,22]，间隔.05秒。；film/scenes/film.json的ship/ship_side、proj0/proj1与四桥立面；source/scenes/_gen_film.py:rows使用L/R锚点、SPANS和KPM计算等比例跨距。。复用来源字体、素材和同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：lemo-briefing-board：14.100000–18.450000秒，1倍速，总时长4.350000秒。\n\n[打开 Demo](../../demos/patterns/plan-elevation-projection/index.html) · [在库中查看](../../patterns.html#pattern/plan-elevation-projection)\n"
+  },
+  "entrypoint": "demos/patterns/plan-elevation-projection/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-briefing-board/LICENSES.md",
+      "bytes": 1362,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/CREDITS",
+      "bytes": 4769,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/audio/film.m4a",
+      "bytes": 1316981,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fidelity.md",
+      "bytes": 5641,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/index.html",
+      "bytes": 2401,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/board.js",
+      "bytes": 48158,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/CC-BY-2.0.html",
+      "bytes": 34724,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/arch.json",
+      "bytes": 802,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/arch.png",
+      "bytes": 20684157,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/beam.json",
+      "bytes": 701,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/beam.png",
+      "bytes": 893543,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/cable.json",
+      "bytes": 878,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/cable.png",
+      "bytes": 6454921,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_arch.json",
+      "bytes": 257,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_arch.png",
+      "bytes": 924570,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_cable.json",
+      "bytes": 260,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_cable.png",
+      "bytes": 880382,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_ship.json",
+      "bytes": 259,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_ship.png",
+      "bytes": 532431,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_susp.json",
+      "bytes": 269,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/print_susp.png",
+      "bytes": 783339,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/ship.json",
+      "bytes": 774,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/ship.png",
+      "bytes": 2604044,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/ship_side.json",
+      "bytes": 718,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/ship_side.png",
+      "bytes": 2748717,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/suspension.json",
+      "bytes": 965,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/kit/objects/suspension.png",
+      "bytes": 5438280,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/film/scenes/film.json",
+      "bytes": 54692,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/Archivo-VF.ttf",
+      "bytes": 658596,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/IBMPlexMono-SemiBold.ttf",
+      "bytes": 140216,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/LXGWMarkerGothic-sub.woff2",
+      "bytes": 13052,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/NotoSansSC-500-sub.woff2",
+      "bytes": 22536,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/NotoSansSC-700-sub.woff2",
+      "bytes": 22708,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/NotoSansSC-900-sub.woff2",
+      "bytes": 22744,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/OFL-Archivo.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/OFL-IBMPlexMono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/OFL-LXGWMarkerGothic.txt",
+      "bytes": 4401,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/OFL-NotoSansSC.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/chars.txt",
+      "bytes": 378,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/fonts/fonts.css",
+      "bytes": 834,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/index.html",
+      "bytes": 3290,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/CREDITS",
+      "bytes": 4769,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/FACTS.md",
+      "bytes": 9064,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/README.md",
+      "bytes": 4677,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/cues.json",
+      "bytes": 1127,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/lines.json",
+      "bytes": 1261,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/mix.py",
+      "bytes": 20544,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/vo/dur.json",
+      "bytes": 127,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/audio/vo/words.json",
+      "bytes": 1573,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/build.sh",
+      "bytes": 3009,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/events.json",
+      "bytes": 4061,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/README.md",
+      "bytes": 6894,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/batch.mjs",
+      "bytes": 2073,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/objects/cable_half.json",
+      "bytes": 794,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/objects/susp_raw.json",
+      "bytes": 742,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/clean_lettering.py",
+      "bytes": 892,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/fetch_fonts.py",
+      "bytes": 3477,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/fetch_sources.py",
+      "bytes": 2362,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/kit_env.sh",
+      "bytes": 1972,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/make_print.py",
+      "bytes": 1464,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/mirror_span.py",
+      "bytes": 1590,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/prep_object.py",
+      "bytes": 11588,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/rebuild_objects.sh",
+      "bytes": 5194,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/redraw_stays.py",
+      "bytes": 5986,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/redraw_suspension.py",
+      "bytes": 6228,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/repair_hangers.py",
+      "bytes": 3646,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/ship_anchors.py",
+      "bytes": 979,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/sky_key.py",
+      "bytes": 2598,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/kit/tools/stretch_span.py",
+      "bytes": 2174,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/scenes/_gen_film.py",
+      "bytes": 29816,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/sources/candidates/candidates.json",
+      "bytes": 45898,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/camcheck.mjs",
+      "bytes": 8139,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/camplot.py",
+      "bytes": 1725,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/cuecheck.py",
+      "bytes": 1359,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/final_asr.py",
+      "bytes": 1804,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/rescheck.mjs",
+      "bytes": 1730,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/rhythm_report.py",
+      "bytes": 4894,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-briefing-board/source/tools/subcheck.mjs",
+      "bytes": 2358,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/plan-elevation-projection/index.html",
+      "bytes": 878,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/plan-elevation-projection/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-briefing-board\\film\\kit\\board.js",
+      "bytes": 48158,
+      "role": "source"
+    },
+    {
+      "path": "demos\\cases\\lemo-briefing-board\\film\\scenes\\film.json",
+      "bytes": 54692,
+      "role": "asset"
+    },
+    {
+      "path": "demos\\cases\\lemo-briefing-board\\source\\scenes\\_gen_film.py",
+      "bytes": 29816,
+      "role": "asset"
+    },
+    {
+      "path": "entries/cases/lemo-briefing-board.json",
+      "bytes": 13466,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/plan-elevation-projection.json",
+      "bytes": 2967,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/plan-elevation-projection.jpg",
+      "bytes": 58144,
+      "role": "preview"
+    }
+  ]
+}

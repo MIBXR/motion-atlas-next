@@ -1,0 +1,286 @@
+{
+  "id": "lemo-halftone-dossier",
+  "order": 38,
+  "title": "胖橘案卷 · 复古半调案卷",
+  "subtitle": "Case File: Chubby",
+  "carriers": [
+    "video"
+  ],
+  "style": "print-craft",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "dom"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "复古半调案卷",
+    "印刷与版画",
+    "代码影片"
+  ],
+  "summary": "胖橘被立案调查：推杯测试重力、凌晨四点跑酷、把周报踩成乱码；三项证据汇总后却盖下“无罪释放”，理由只有“太可爱了”，最后趴在案卷上睡着。",
+  "focus": "以档案编号、嫌疑人照、三项罪状和盖章节拍组织喜剧情节，用半调网点密度场与印刷错影统一纸面风格。",
+  "accent": "#ff5a87",
+  "background": "#f7efd9",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 9,
+  "rhythm": {
+    "duration": 30,
+    "beats": [
+      {
+        "t": 0,
+        "label": "片名",
+        "note": "0–2秒，片名。"
+      },
+      {
+        "t": 2,
+        "label": "指控与惯犯印章",
+        "note": "2–4秒，指控与惯犯印章。"
+      },
+      {
+        "t": 4,
+        "label": "嫌疑人档案照",
+        "note": "4–8秒，嫌疑人档案照。"
+      },
+      {
+        "t": 8,
+        "label": "罪状一测试重力",
+        "note": "8–12秒，罪状一测试重力。"
+      },
+      {
+        "t": 12,
+        "label": "罪状二凌晨跑酷",
+        "note": "12–16秒，罪状二凌晨跑酷。"
+      },
+      {
+        "t": 16,
+        "label": "罪状三周报乱码",
+        "note": "16–20秒，罪状三周报乱码。"
+      },
+      {
+        "t": 20,
+        "label": "综上所述",
+        "note": "20–22秒，综上所述。"
+      },
+      {
+        "t": 22,
+        "label": "无罪释放",
+        "note": "22–24秒，无罪释放。"
+      },
+      {
+        "t": 24,
+        "label": "太可爱了",
+        "note": "24–26秒，太可爱了。"
+      },
+      {
+        "t": 26,
+        "label": "结案与片尾",
+        "note": "26–30秒，结案与片尾。"
+      }
+    ],
+    "bpm": 120
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "to": 0.65,
+      "label": "片名",
+      "from": 0.65
+    },
+    {
+      "t0": 2,
+      "t1": 4,
+      "to": 0.6,
+      "label": "指控与惯犯印章",
+      "from": 0.6
+    },
+    {
+      "t0": 4,
+      "t1": 8,
+      "to": 0.4,
+      "label": "嫌疑人档案照",
+      "from": 0.4
+    },
+    {
+      "t0": 8,
+      "t1": 12,
+      "to": 0.7,
+      "label": "罪状一测试重力",
+      "from": 0.7
+    },
+    {
+      "t0": 12,
+      "t1": 16,
+      "to": 0.8,
+      "label": "罪状二凌晨跑酷",
+      "from": 0.8
+    },
+    {
+      "t0": 16,
+      "t1": 20,
+      "to": 0.7,
+      "label": "罪状三周报乱码",
+      "from": 0.7
+    },
+    {
+      "t0": 20,
+      "t1": 22,
+      "to": 0.9,
+      "label": "综上所述",
+      "from": 0.9
+    },
+    {
+      "t0": 22,
+      "t1": 24,
+      "to": 0.95,
+      "label": "无罪释放",
+      "from": 0.95
+    },
+    {
+      "t0": 24,
+      "t1": 26,
+      "to": 0.7,
+      "label": "太可爱了",
+      "from": 0.7
+    },
+    {
+      "t0": 26,
+      "t1": 30,
+      "to": 0.2,
+      "label": "结案与片尾",
+      "from": 0.2
+    }
+  ],
+  "energyNote": "段落取自DEMO.md的Shots与源码场景时间表，0–1能量数值是根据画面与声音密度所作的相对编辑标注。",
+  "observations": [
+    "每2–4秒一张卡片，只放一个大标题、一个视觉笑点和一条关键词字幕。",
+    "???????radial?edge?????????????????????????????????????????????",
+    "印章在.09秒内从2.6倍缩到1倍，落下后5%阻尼回弹，并叠加镜震、闪白与印章声音。"
+  ],
+  "composition": {
+    "color": "奶油纸、海军蓝#1D2340、钴蓝、粉#FF5A87、亮黄与橘红；夜间段切到深蓝纸面。",
+    "typography": "Noto Serif SC 900标题、Noto Sans SC 500/900字幕与印章、Bagel Fat One大字及数字、ZCOOL KuaiLe语气字、JetBrains Mono 500/800档案数据。",
+    "layout": "1920×1080、30fps，正面平面印页，大标题左上、猫在右中，底部关键词胶囊、四角案号与REC。",
+    "imagery": "单文件SVG场景图加两层Canvas2D纸纹与颗粒；胖橘、道具、网点和印章全部代码绘制。",
+    "motion": "逐字弹入、字母坠落压扁、印章冲击、猫腿跑圈、10fps线条沸腾；80px网点阵列扩张遮住剪辑点。",
+    "sound": "无旁白；music.py用NumPy与SciPy合成原创配乐与全部音效，120BPM每小节2秒。",
+    "rhythm": "标题—指控—嫌疑照—三罪状—证据堆高—23秒下拍无罪印章—可爱理由—结案。",
+    "coherence": "官僚案卷的严肃格式与胖橘琐事相撞，字体、编号、印章和每两秒剪辑始终共用节拍。"
+  },
+  "layers": [
+    {
+      "name": "底材与空间",
+      "role": "奶油纸、海军蓝#1D2340、钴蓝、粉#FF5A87、亮黄与橘红；夜间段切到深蓝纸面。"
+    },
+    {
+      "name": "主体与绘制",
+      "role": "单文件SVG场景图加两层Canvas2D纸纹与颗粒；胖橘、道具、网点和印章全部代码绘制。"
+    },
+    {
+      "name": "镜头与时间",
+      "role": "逐字弹入、字母坠落压扁、印章冲击、猫腿跑圈、10fps线条沸腾；80px网点阵列扩张遮住剪辑点。"
+    },
+    {
+      "name": "文字与声音",
+      "role": "Noto Serif SC 900标题、Noto Sans SC 500/900字幕与印章、Bagel Fat One大字及数字、ZCOOL KuaiLe语气字、JetBrains Mono 500/800档案数据。 无旁白；music.py用NumPy与SciPy合成原创配乐与全部音效，120BPM每小节2秒。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#1D2340",
+      "#FF5A87",
+      "#FFD34E",
+      "#EB8247",
+      "#F7EED9",
+      "#3060C4"
+    ],
+    "type": "Noto Serif SC 900；Noto Sans SC 500/900；ZCOOL KuaiLe 400；Bagel Fat One 400；JetBrains Mono 500/800，原Google Fonts unicode-range分片。",
+    "motion": [
+      {
+        "name": "盖章",
+        "value": "film/index.html:183–189：p=seg(t,t0−.09,t0)，s=lerp(2.6,1,E.in(p))×[1+.05sin(30a)exp(−9a)]。"
+      },
+      {
+        "name": "网点密度",
+        "value": "film/index.html:135–150：r=clamp(f(x,y))×step×maxK；radial为中心光晕，edge为画边密度，创建后路径固定。"
+      },
+      {
+        "name": "网点擦场",
+        "value": "film/index.html:wipeUpdate：80px网格、最大r=62、剪辑点两侧.44秒，22/24秒用硬切。"
+      }
+    ]
+  },
+  "useCases": [
+    "宠物短片",
+    "幽默内容",
+    "社交短视频"
+  ],
+  "avoid": [
+    "以观众滚动阅读为主的页面"
+  ],
+  "constraints": [
+    "预载字体和全部绘制输入后，用原作render(t)按原帧率定位画面。",
+    "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+  ],
+  "migration": [
+    {
+      "field": "film/index.html → buildAll / scenes / caption / HUD",
+      "how": "更改标题、三个罪状、道具、猫表演与结案文案。"
+    },
+    {
+      "field": "film/index.html → C / F / stampAnim / WIPES",
+      "how": "更改印色、字体层次、印章冲击与转场。"
+    }
+  ],
+  "prompt": "制作一支复古半调案卷时间线影片。以档案编号、嫌疑人照、三项罪状和盖章节拍组织喜剧，半调网点密度场与印刷错影统一纸面。奶油纸、海军蓝#1D2340、钴蓝、粉#FF5A87、亮黄与橘红；夜间段切到深蓝纸面。Noto Serif SC 900标题、Noto Sans SC 500/900字幕与印章、Bagel Fat One大字及数字、ZCOOL KuaiLe语气字、JetBrains Mono 500/800档案数据。1920×1080、30fps，正面平面印页，大标题左上、猫在右中，底部关键词胶囊、四角案号与REC。逐字弹入、字母坠落压扁、印章冲击、猫腿跑圈、10fps线条沸腾；80px网点阵列扩张遮住剪辑点。标题—指控—嫌疑照—三罪状—证据堆高—23秒下拍无罪印章—可爱理由—结案。无旁白；music.py用NumPy与SciPy合成原创配乐与全部音效，120BPM每小节2秒。实现入口位于demos/cases/lemo-halftone-dossier/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+  "demo": "demos/cases/lemo-halftone-dossier/index.html",
+  "patternIds": [
+    "split-compare-stamp"
+  ],
+  "fidelity": "demos/cases/lemo-halftone-dossier/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/halftone-dossier",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/halftone-dossier/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；成片和静帧CC BY 4.0，署名LemoLab；各字体、采样与语音来源见CREDITS及LICENSES.md。"
+  },
+  "sources": [
+    {
+      "label": "固定风格与制作源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/halftone-dossier"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/halftone-dossier.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/halftone-dossier/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/halftone-dossier)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "无旁白；music.py用NumPy与SciPy合成原创配乐与全部音效，120BPM每小节2秒。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Noto Serif SC 900；Noto Sans SC 500/900；ZCOOL KuaiLe 400；Bagel Fat One 400；JetBrains Mono 500/800，原Google Fonts unicode-range分片。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+    }
+  ]
+}

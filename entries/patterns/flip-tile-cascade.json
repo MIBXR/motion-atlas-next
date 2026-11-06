@@ -1,0 +1,111 @@
+{
+  "id": "flip-tile-cascade",
+  "order": 23,
+  "title": "方片翻牌级联波",
+  "types": [
+    "transition",
+    "composition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "方片按空间延迟翻转，以梯形与明暗表现卡面，切到背面三原色图形后向心归位。",
+  "mechanism": "方片按对角延迟逐片翻转，翻转中以梯形与明暗表现透视，背面换成新图形后向心归位。",
+  "trigger": "原片的方片自转、对角翻牌、背面复位与向心归牌节点依次到达。",
+  "effect": "正面网格先径向自转，再翻到黑底三原色构成；卡片转动时出现透视压窄与阴影，最后从外圈翻回正面。",
+  "timing": [
+    {
+      "name": "径向自转",
+      "value": "R1.start=6秒；中心(840,300)；dur=0.25，span=0.25，size=120，angle=90；s=1/(abs(cosθ)+abs(sinθ))。"
+    },
+    {
+      "name": "对角翻牌",
+      "value": "R2.start=6.5秒；dur=0.2，span=0.3，size=240；sc=cos(π*ease(u))；sc<0为背面。"
+    },
+    {
+      "name": "翻牌透视",
+      "value": "sn=sqrt(1-sc²)；xs=1-0.22*sn*(0.5+0.5*fs*ca/120)；gShade=cov*sn；col*=1-0.2*shd。"
+    },
+    {
+      "name": "黑床衔接",
+      "value": "board=mix(isK?1:0,back?fB:fF,smoothstep(0.72,0.96,abs(sc)))；abs(sc)<0.002时返回board。"
+    },
+    {
+      "name": "遮挡复位",
+      "value": "frontReset=7.1秒；rotTile在tt>=resetT时返回原q与coverage=1。"
+    },
+    {
+      "name": "背面三元",
+      "value": "reveal=7–7.2秒；黄色三角[(120,780),(600,780),(360,300)]；红方块(720,300,480,480)；蓝圆(1560,540,r240)。"
+    },
+    {
+      "name": "向心归牌",
+      "value": "R4.start=7.5秒；dur=0.2，span=0.3，size=240，中心(960,540)；delay=(maxRadius-distance)*span/(maxRadius-minRadius)；sc=-cos(π*ease(u))；8秒归位。"
+    }
+  ],
+  "useCases": [
+    "网格海报的双面图形切换",
+    "几何方片级联转场"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [],
+    "conflicts": [],
+    "notes": "lemo-paper-popup的昼夜天空采用同一空间延迟翻牌机制；定位见parameters。"
+  },
+  "prompt": "用来源案例的原作renderAt(t)重放方片翻牌级联波。6秒开始R1，120px方片按距(840,300)的径向延迟自转90°，dur=0.25、span=0.25，并用s=1/(abs(cosθ)+abs(sinθ))内缩。6.5秒开始R2，240px卡片按对角延迟绕横轴翻面，dur=0.2、span=0.3、sc=cos(π*ease(u))。保留xs=1-0.22*sn*(0.5+0.5*fs*ca/120)的梯形透视、col*=1-0.2*shd的明暗与黑床衔接。背面显示黄色三角、红色方块与蓝色圆形；7.1秒在背面遮挡时复位正面映射。7.5秒开始R4，卡片按距(960,540)的向心延迟绕竖轴翻回正面，dur=0.2、span=0.3、sc=-cos(π*ease(u))，8秒归位。按index.html 内联配置的segments映射时间，保留原作字体、素材和同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/flip-tile-cascade/index.html",
+  "kit": true,
+  "timeline": true,
+  "renderer": "gpu",
+  "sources": [
+    {
+      "caseId": "mg-bauhaus"
+    },
+    {
+      "caseId": "lemo-paper-popup"
+    }
+  ],
+  "previewAt": 1,
+  "markers": [
+    {
+      "t": 0,
+      "label": "几何包豪斯"
+    },
+    {
+      "t": 0.2,
+      "label": "方片自转"
+    },
+    {
+      "t": 0.7,
+      "label": "对角翻牌"
+    },
+    {
+      "t": 1.2,
+      "label": "背面三元"
+    },
+    {
+      "t": 1.3,
+      "label": "遮挡复位"
+    },
+    {
+      "t": 1.7,
+      "label": "向心归牌"
+    },
+    {
+      "t": 2.2,
+      "label": "正面定格"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "纸片立体书天空翻板",
+      "value": "lemo-paper-popup：film/sets.js:buildSlats生成4块双面天空卡，宽(BW−.006)/4、高BD−.03；film/main.js:EX.slats在81.8+i*.28至82.5+i*.28秒，以rotation.y=π*eio(seg(...))从昼面翻到夜面。"
+    }
+  ]
+}

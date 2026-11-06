@@ -1,0 +1,813 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "perspective-scene-title",
+  "pattern": {
+    "id": "perspective-scene-title",
+    "order": 179,
+    "title": "透视场次标题",
+    "types": [
+      "type-motion",
+      "composition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "场次与调名两组字各在一张透视平面上，外侧大、向中央收拢，每组共用一条单应轨迹；字形投影后填充，音符与网格叠在上面。",
+    "mechanism": "每个标题镜头（shots.giants）含两组文字：场次（第二場）与调名（ニ長調），每组带一条逐帧的 3×3 单应轨迹（homography）。字形轮廓取自 titleGlyphs（Noto Sans JP 900，190px），每个轮廓点以 (u,v)=(x+dx, baseline+dy) 经 w=m6·u+m7·v+m8、x=(m0·u+m1·v+m2)/w、y=(m3·u+m4·v+m5)/w 投影，再用 fillRule 填充，所以一组字内共用同一平面，不会出现各字独立变形。两组矩阵的透视项符号相反（21.7 秒 m6=0.000766 与 −0.00052），于是两组字外侧大、向中央收拢。标题先于乐谱绘制，音符、网格与播放线叠在字面之上；字形的 opacity 曲线单独控制淡入淡出。",
+    "trigger": "转调之后的场次切换：第二場 20.033 秒、第三場 43.6 秒、第四場 81.15 秒。",
+    "effect": "整幅巨字压在总谱下方：第二場为不透明白字压在红底上，第三場为透明度 0.16 的红字压在白底上；音符与网格仍从字面上穿过，随后标题淡出。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "butterfly-garden-score：20.03–23.55秒；butterfly-garden-score：43.6–47.33秒；1倍速，总时长7.25秒。"
+      },
+      {
+        "name": "标题镜头",
+        "value": "giants[0] 20.033–23.55 秒白字；giants[1] 43.6–47.333 秒红字；giants[2] 81.15–84.917 秒红字。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "单应轨迹",
+        "value": "butterfly-garden-score film/data/shots.json:giants[].groups[].homography，两组各 107（第二場）或 113（第三場）个采样；第二場 21.7 秒场次组 [1.539466,0,265.772,0.414004,1.233647,313.576,0.000766,0,1]，调名组 [0.134870,0,938.131,−0.280410,0.840538,385.663,−0.000520,0,1]。"
+      },
+      {
+        "name": "字形与排版",
+        "value": "butterfly-garden-score film/data/titleGlyphs.json 与 shots.json:giants[].groups[]，fontSize 190、baseline 260、字 x 为 20/210/400；fillRule nonzero。"
+      },
+      {
+        "name": "透明度",
+        "value": "butterfly-garden-score film/data/shots.json:giants[].groups[].glyphs[].opacity，第二場 20.03–22.9 秒为 1，至 23.55 秒淡出；第三場 43.7–47 秒为 0.16，至 47.3 秒淡出。"
+      },
+      {
+        "name": "投影填充",
+        "value": "butterfly-garden-score film/scene.js:giants，逐轮廓点做单应投影后 ctx.fill(titleGlyphs.fillRule)，globalAlpha 取 g.opacity；先于 scoreRows 绘制。"
+      }
+    ],
+    "sourceFiles": [
+      "demos/cases/butterfly-garden-score/film/scene.js",
+      "demos/cases/butterfly-garden-score/film/data/shots.json",
+      "demos/cases/butterfly-garden-score/film/data/titleGlyphs.json"
+    ],
+    "locator": "butterfly-garden-score film/scene.js:giants；film/data/shots.json:giants",
+    "useCases": [
+      "章节、场次或调性切换时的巨型标题",
+      "需要让标题有空间感又不遮住下层信息图的片段"
+    ],
+    "avoid": [
+      "标题字数很多、投影后外侧字形过大会越出画幅",
+      "下层内容必须清晰可读、不能被标题色块干扰的画面"
+    ],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [
+        "scrolling-score-timeline",
+        "key-change-color-flip"
+      ],
+      "conflicts": [],
+      "notes": "标题画在乐谱下层，音符与网格从字面上方穿过；标题颜色随底色取白或红（红底用白字，白底用红字）。"
+    },
+    "prompt": "用来源案例 butterfly-garden-score 的原作 renderAt(t) 重放“透视场次标题”。保留场次与调名两组字各一条逐帧单应轨迹、Noto Sans JP 900 字形轮廓逐点投影后填充、两组透视项符号相反使外侧大而向中央收拢，并先于乐谱绘制让音符与网格叠在字上。按 index.html 内联配置的 segments 定位 20.03–23.55、43.6–47.33 秒，复用原作数据、字体与同区间音轨，声音默认关闭。",
+    "demo": "demos/patterns/perspective-scene-title/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "butterfly-garden-score"
+      }
+    ],
+    "previewAt": 1.8,
+    "markers": [
+      {
+        "t": 1.5,
+        "label": "第二場 ニ長調"
+      },
+      {
+        "t": 3.52,
+        "label": "第三場淡入"
+      },
+      {
+        "t": 4.9,
+        "label": "第三場 イ長調"
+      }
+    ],
+    "preview": "previews/patterns/perspective-scene-title.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "butterfly-garden-score",
+      "bundle": "agent/cases/butterfly-garden-score.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 透视场次标题\n\n## 实现 Prompt\n\n用来源案例 butterfly-garden-score 的原作 renderAt(t) 重放“透视场次标题”。保留场次与调名两组字各一条逐帧单应轨迹、Noto Sans JP 900 字形轮廓逐点投影后填充、两组透视项符号相反使外侧大而向中央收拢，并先于乐谱绘制让音符与网格叠在字上。按 index.html 内联配置的 segments 定位 20.03–23.55、43.6–47.33 秒，复用原作数据、字体与同区间音轨，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：butterfly-garden-score：20.03–23.55秒；butterfly-garden-score：43.6–47.33秒；1倍速，总时长7.25秒。\n- **标题镜头**：giants[0] 20.033–23.55 秒白字；giants[1] 43.6–47.333 秒红字；giants[2] 81.15–84.917 秒红字。\n\n[打开 Demo](../../demos/patterns/perspective-scene-title/index.html) · [在库中查看](../../patterns.html#pattern/perspective-scene-title)\n"
+  },
+  "entrypoint": "demos/patterns/perspective-scene-title/index.html",
+  "files": [
+    {
+      "path": "demos/cases/butterfly-garden-score/.gitignore",
+      "bytes": 56,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/LICENSES.md",
+      "bytes": 1327,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/giraffe-medallion-black.png",
+      "bytes": 11130,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/giraffe-medallion-white.png",
+      "bytes": 12534,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/index.json",
+      "bytes": 4327,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-01-ob-black.png",
+      "bytes": 1313,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-01-ob-red.png",
+      "bytes": 1348,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-01-ob-white.png",
+      "bytes": 1372,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-02-va-black.png",
+      "bytes": 1411,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-02-va-red.png",
+      "bytes": 1524,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-02-va-white.png",
+      "bytes": 1533,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-03-hn-black.png",
+      "bytes": 1861,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-03-hn-red.png",
+      "bytes": 2238,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-03-hn-white.png",
+      "bytes": 2191,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-04-cl-black.png",
+      "bytes": 970,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-04-cl-red.png",
+      "bytes": 1056,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-04-cl-white.png",
+      "bytes": 1059,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-05-hn-black.png",
+      "bytes": 1849,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-05-hn-red.png",
+      "bytes": 2222,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-05-hn-white.png",
+      "bytes": 2149,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-06-fl-black.png",
+      "bytes": 875,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-06-fl-red.png",
+      "bytes": 1029,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-06-fl-white.png",
+      "bytes": 1052,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-07-ob-black.png",
+      "bytes": 1124,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-07-ob-red.png",
+      "bytes": 1182,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-07-ob-white.png",
+      "bytes": 1203,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-08-cl-black.png",
+      "bytes": 1125,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-08-cl-red.png",
+      "bytes": 1211,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-08-cl-white.png",
+      "bytes": 1247,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-09-cl-black.png",
+      "bytes": 1029,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-09-cl-red.png",
+      "bytes": 1128,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/instrument-09-cl-white.png",
+      "bytes": 1139,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/official-intro-red.png",
+      "bytes": 213791,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/assets/official-white.png",
+      "bytes": 25037,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/audio/film.m4a",
+      "bytes": 3717616,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/fidelity.md",
+      "bytes": 5061,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/film/data/annotations.json",
+      "bytes": 1269837,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/film/data/bars.json",
+      "bytes": 19391,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/film/data/notes.json",
+      "bytes": 421747,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/film/data/rowStates.json",
+      "bytes": 274388,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/film/data/shots.json",
+      "bytes": 593801,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/film/data/timeline.json",
+      "bytes": 48131,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/film/data/titleGlyphs.json",
+      "bytes": 20240,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/film/scene.js",
+      "bytes": 33070,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/film/style.css",
+      "bytes": 660,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/fonts/CormorantGaramond-Italic.ttf",
+      "bytes": 715644,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/fonts/NotoSerifSC.ttf",
+      "bytes": 25125512,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/fonts/OFL-cormorantgaramond.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/fonts/OFL-notoserifsc.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/fonts/OFL-shipporimincho.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/fonts/ShipporiMincho-Bold.ttf",
+      "bytes": 8563788,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/index.html",
+      "bytes": 1296,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/README.md",
+      "bytes": 2518,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/bars.json",
+      "bytes": 26765,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/candidate-classification.json",
+      "bytes": 74555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/caption-transition-fits.json",
+      "bytes": 70732,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/endpoint-repairs.json",
+      "bytes": 62409,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/fidelity-result.json",
+      "bytes": 497,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/fixed-layout-measurement.json",
+      "bytes": 1231,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/focus-b-fits.json",
+      "bytes": 25553,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/font-comparison.json",
+      "bytes": 99336,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/font-sources.json",
+      "bytes": 8510,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/active-row-events.json",
+      "bytes": 21566,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/annotations.json",
+      "bytes": 30150,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/audio-analysis.json",
+      "bytes": 33042,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/barframes.json",
+      "bytes": 449,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/caption-transcripts.json",
+      "bytes": 12568,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/coverage.json",
+      "bytes": 2631,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/cross-motion.json",
+      "bytes": 1222725,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/footer-selection.json",
+      "bytes": 2454,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/intro-samples.json",
+      "bytes": 70467,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/note-observations.json",
+      "bytes": 4509058,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/opacity-samples.json",
+      "bytes": 4746312,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/panorama-extra-rectangles.json",
+      "bytes": 46081,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/pitch-geometry.json",
+      "bytes": 2152,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/progress-measurements.json",
+      "bytes": 7981,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/scan.json",
+      "bytes": 1538360,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/uncertain-notes.json",
+      "bytes": 4188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/frames/uncertainties.json",
+      "bytes": 1510,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/hp-paths.json",
+      "bytes": 456,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/icon-state-samples.json",
+      "bytes": 17632,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/leggiero-paths.json",
+      "bytes": 8864,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/motion-fits.json",
+      "bytes": 346222,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/note-duplicates.json",
+      "bytes": 130,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/note-state-fits.json",
+      "bytes": 265407,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/notes.json",
+      "bytes": 5256671,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/red-logo-fit.json",
+      "bytes": 240,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/render-rules.md",
+      "bytes": 11574,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/report.md",
+      "bytes": 2537,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/rework/candidate-decisions.json",
+      "bytes": 1989,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/rework/note-input/annotations.json",
+      "bytes": 1074282,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/rework/note-input/notes.json",
+      "bytes": 410783,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/rework/note-input/rowStates.json",
+      "bytes": 280490,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/rework/note-input/scene.js",
+      "bytes": 29814,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/rework/note-input/shots.json",
+      "bytes": 732334,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/rework/note-model-measurements.json",
+      "bytes": 390599,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/rework/thin-element-measurements.json",
+      "bytes": 150816,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/rowStates.json",
+      "bytes": 105012,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/selected-track-interpolations.json",
+      "bytes": 854,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/shots.json",
+      "bytes": 744746,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/state-fits.json",
+      "bytes": 2586,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/timeline.json",
+      "bytes": 48131,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/title-contour-boundaries.json",
+      "bytes": 34087,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/title-font-comparison.json",
+      "bytes": 40519,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/title-font-sources.json",
+      "bytes": 315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/title-phase-sampling.json",
+      "bytes": 5115,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/title-planes.json",
+      "bytes": 547012,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/analysis/tokens.json",
+      "bytes": 39863,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/fonts/NotoSansJP[wght].ttf",
+      "bytes": 9589900,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/fonts/OFL-notosansjp.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/build-audio.sh",
+      "bytes": 322,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/assets_extract.py",
+      "bytes": 3886,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/build_structure.py",
+      "bytes": 6579,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/derive.py",
+      "bytes": 1246,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/extract.py",
+      "bytes": 3916,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/finalize.py",
+      "bytes": 15237,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/font_compare.py",
+      "bytes": 4700,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/fonts.py",
+      "bytes": 1328,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/glyph_track.py",
+      "bytes": 2921,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/ladder_refine.py",
+      "bytes": 2053,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/measure_rules.py",
+      "bytes": 12503,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/notes_extract.py",
+      "bytes": 9022,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/package_tracks.py",
+      "bytes": 4329,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/panorama_extra.py",
+      "bytes": 2412,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/panorama_notes.py",
+      "bytes": 1472,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/scan.py",
+      "bytes": 2616,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/second_scan.py",
+      "bytes": 2555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/extraction/shots_extract.py",
+      "bytes": 10497,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/measure-motion.py",
+      "bytes": 10264,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/refine-data.py",
+      "bytes": 8644,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/rework/apply-note-model.py",
+      "bytes": 1454,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/rework/apply-thin-elements.py",
+      "bytes": 1194,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/butterfly-garden-score/source/scripts/rework/extract-title-glyphs.py",
+      "bytes": 2792,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/perspective-scene-title/index.html",
+      "bytes": 1379,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/perspective-scene-title/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/butterfly-garden-score.md",
+      "bytes": 1998,
+      "role": "doc"
+    },
+    {
+      "path": "entries/cases/butterfly-garden-score.json",
+      "bytes": 10449,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/perspective-scene-title.json",
+      "bytes": 4714,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/perspective-scene-title.jpg",
+      "bytes": 105380,
+      "role": "preview"
+    }
+  ]
+}

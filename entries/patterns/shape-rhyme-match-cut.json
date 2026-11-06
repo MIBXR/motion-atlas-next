@@ -1,0 +1,74 @@
+{
+  "id": "shape-rhyme-match-cut",
+  "order": 100,
+  "title": "形状押韵硬切",
+  "types": [
+    "transition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "保持圆形的屏幕位置与交接尺度，在时间阈值直接切换轮子、轮盘、瞳孔和月亮；场内推进衔接下一次硬切，匹配段间隔逐步缩短。",
+  "mechanism": "保持圆形的屏幕位置与交接尺度，在时间阈值直接切换轮子、轮盘、瞳孔和月亮；场内推进衔接下一次硬切，匹配段间隔逐步缩短。",
+  "trigger": "renderFilm依次越过T.roulette、HIT.pupil与HIT.moon的时间阈值。",
+  "effect": "同位圆形跨场押韵，地点改变而视觉焦点延续，剪辑加速追逐。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "21.590909–26.609091秒；1倍速，总时长5.018182秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "硬切定位",
+      "value": "film/film.js:renderFilm的互斥else-if：t<T.roulette画wheelShot，t<HIT.pupil画sCasino，t<HIT.moon画sPupil，随后画sRoof；阈值处无轮廓插值或遮罩。"
+    },
+    {
+      "name": "时间与尺度",
+      "value": "film/story.js：roulette=B(13)，pupil=B(14,3)，moon=B(15)；轮盘段6拍=2.727273秒，瞳孔段2拍=.909091秒。scenes.js:RW共用圆形位置，film.js:sRoof在切点从RW.r / RW.y过渡到r=330、y=430。"
+    },
+    {
+      "name": "锁孔回环",
+      "value": "film/scenes.js:KH_SCREEN={x:960,y:430,h:560}；sTitle把片名锁孔推到该位置，最终bongoEnd硬切全片名。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-spy-titles/film/film.js",
+    "demos/cases/lemo-spy-titles/film/scenes.js",
+    "demos/cases/lemo-spy-titles/film/story.js"
+  ],
+  "locator": "renderFilm / wheelShot / sCasino / sPupil / sRoof / KH_SCREEN",
+  "useCases": [
+    "同位圆形跨场押韵，地点改变而视觉焦点延续，剪辑加速追逐。"
+  ],
+  "avoid": [
+    "在关键动作或留白上叠加争夺注意的主动作"
+  ],
+  "composition": {
+    "role": "accent",
+    "pairsWellWith": [
+      "type-as-architecture"
+    ],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-spy-titles的原作render(t)重放“形状押韵硬切”。保持圆形的屏幕位置与交接尺度，在时间阈值直接切换轮子、轮盘、瞳孔和月亮；场内推进衔接下一次硬切，匹配段间隔逐步缩短。保留参数：film/film.js:renderFilm的互斥else-if：t<T.roulette画wheelShot，t<HIT.pupil画sCasino，t<HIT.moon画sPupil，随后画sRoof；阈值处无轮廓插值或遮罩。；film/story.js：roulette=B(13)，pupil=B(14,3)，moon=B(15)；轮盘段6拍=2.727273秒，瞳孔段2拍=.909091秒。scenes.js:RW共用圆形位置，film.js:sRoof在切点从RW.r / RW.y过渡到r=330、y=430。；film/scenes.js:KH_SCREEN={x:960,y:430,h:560}；sTitle把片名锁孔推到该位置，最终bongoEnd硬切全片名。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/shape-rhyme-match-cut/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-spy-titles"
+    }
+  ],
+  "previewAt": 3.05,
+  "markers": [
+    {
+      "t": 0,
+      "label": "形状押韵硬切"
+    }
+  ]
+}

@@ -1,0 +1,981 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "shared-cue-sheet",
+  "pattern": {
+    "id": "shared-cue-sheet",
+    "order": 29,
+    "title": "画音共用节拍表",
+    "types": [
+      "rhythm",
+      "sound"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "summary": "依次重放三片的密集节点段，在画面上用中文标出当前节点，并沿用原片音轨。重放内容还包括逐帧手绘的旋转、爆炸与逐笔书写，以及线条艺术的停笔续笔段。",
+    "mechanism": "画面与配乐读取同一份 film/cues.json，将动作和对应音效定位在同一时间轴；三个来源依次重放，说明层显示当前节点的中文名称。 逐帧手绘共用划火、跳跃、爆炸与书写节点；线条艺术额外从同一路径导出笔尖速度与转角，供笔触响度和结构音使用。",
+    "trigger": "共享时间表中的画面与声音节点到达时。",
+    "effect": "同一节点同时决定原片画面的动作位置与对应音轨时刻，节点说明随来源和时间更新。",
+    "timing": [
+      {
+        "name": "画面时间基准",
+        "value": "1920×1080、30fps；原作帧号除以30换算为秒。"
+      },
+      {
+        "name": "扁平矢量落点",
+        "value": "180、195、210、225帧；6、6.5、7、7.5秒。"
+      },
+      {
+        "name": "包豪斯级联",
+        "value": "120BPM；R1=6、R2=6.5、R3=7.2、R4=7.5秒，8秒定格。"
+      },
+      {
+        "name": "像素开箱节点",
+        "value": "6秒震箱；6.2、6.3秒箱盖跳动；6.4秒开箱；6.8秒接物；7.2秒片名。"
+      },
+      {
+        "name": "逐帧手绘节点",
+        "value": "120BPM、24fps；6.5秒爆炸，7.25–8.5秒每0.125秒一笔。"
+      },
+      {
+        "name": "线条路径数据",
+        "value": "速度差分dt=1/600；按120Hz采样，CORN[i]>0.05且TD[i]-lastT>0.05时导出转角。"
+      },
+      {
+        "name": "总时长",
+        "value": "12.892秒；保留原三段，末尾追加逐帧手绘和线条艺术。"
+      }
+    ],
+    "useCases": [
+      "原片动作与音效节点对照",
+      "多来源节拍表展示",
+      "用逐帧手绘的动作表和线条艺术共享的笔尖速度、转角数据同步画面与声音。"
+    ],
+    "avoid": [
+      "片段边界无缝循环"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 引用五个来源案例的原作、字体、素材与成品音轨，以 index.html 内联配置 的 segments 依次重放密集节点段。保持1920×1080、30fps；画面调用原作 renderAt(t)，音轨使用同一时刻映射。扁平矢量保留180、195、210、225帧四个图标落点；包豪斯保留120BPM与6–8秒的级联；像素片保留6.4秒开箱、6.8秒接物和7.2秒片名。说明层使用中文显示当前 cue 名，声音默认关闭。 总时长12.892秒；末尾依次追加逐帧手绘5.3–9.075秒、线条艺术1.883–5.100秒，原有三段保持。逐帧手绘沿用同一film/cues.json的旋转、爆炸和逐笔书写时刻；线条艺术同时共享笔尖速度与转角数据，中文节点显示停笔和续笔。",
+    "demo": "demos/patterns/shared-cue-sheet/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-flat-vector"
+      },
+      {
+        "caseId": "mg-bauhaus"
+      },
+      {
+        "caseId": "mg-pixel"
+      },
+      {
+        "caseId": "mg-cel-boil"
+      },
+      {
+        "caseId": "mg-line-art"
+      },
+      {
+        "caseId": "lemo-swiss-motion"
+      }
+    ],
+    "previewAt": 1.7,
+    "markers": [
+      {
+        "t": 0,
+        "label": "扁平矢量"
+      },
+      {
+        "t": 1.9,
+        "label": "几何包豪斯"
+      },
+      {
+        "t": 4.3,
+        "label": "像素艺术"
+      },
+      {
+        "t": 5.9,
+        "label": "逐帧手绘"
+      },
+      {
+        "t": 9.675,
+        "label": "线条艺术"
+      }
+    ],
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / cues",
+        "how": "设置来源片段与中文节点名称，画面和原音轨使用同一时刻映射。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "瑞士动态排版",
+        "value": "lemo-swiss-motion：film/score.json 的列→音高、行→起音、长度→音长由 film/main.js 与 source/music/score.py 共同读取；film/film.js:buildEvents 导出 source/events.json，供 source/mix.py 的拟音使用，32–36秒扫奏。"
+      }
+    ],
+    "preview": "previews/patterns/shared-cue-sheet.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-flat-vector",
+      "bundle": "agent/cases/mg-flat-vector.json"
+    },
+    {
+      "caseId": "mg-bauhaus",
+      "bundle": "agent/cases/mg-bauhaus.json"
+    },
+    {
+      "caseId": "mg-pixel",
+      "bundle": "agent/cases/mg-pixel.json"
+    },
+    {
+      "caseId": "mg-cel-boil",
+      "bundle": "agent/cases/mg-cel-boil.json"
+    },
+    {
+      "caseId": "mg-line-art",
+      "bundle": "agent/cases/mg-line-art.json"
+    },
+    {
+      "caseId": "lemo-swiss-motion",
+      "bundle": "agent/cases/lemo-swiss-motion.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 画音共用节拍表\n\n## 实现 Prompt\n\n通过 MotionKit.replay 引用五个来源案例的原作、字体、素材与成品音轨，以 index.html 内联配置 的 segments 依次重放密集节点段。保持1920×1080、30fps；画面调用原作 renderAt(t)，音轨使用同一时刻映射。扁平矢量保留180、195、210、225帧四个图标落点；包豪斯保留120BPM与6–8秒的级联；像素片保留6.4秒开箱、6.8秒接物和7.2秒片名。说明层使用中文显示当前 cue 名，声音默认关闭。 总时长12.892秒；末尾依次追加逐帧手绘5.3–9.075秒、线条艺术1.883–5.100秒，原有三段保持。逐帧手绘沿用同一film/cues.json的旋转、爆炸和逐笔书写时刻；线条艺术同时共享笔尖速度与转角数据，中文节点显示停笔和续笔。\n\n## 参数\n\n- **画面时间基准**：1920×1080、30fps；原作帧号除以30换算为秒。\n- **扁平矢量落点**：180、195、210、225帧；6、6.5、7、7.5秒。\n- **包豪斯级联**：120BPM；R1=6、R2=6.5、R3=7.2、R4=7.5秒，8秒定格。\n- **像素开箱节点**：6秒震箱；6.2、6.3秒箱盖跳动；6.4秒开箱；6.8秒接物；7.2秒片名。\n- **逐帧手绘节点**：120BPM、24fps；6.5秒爆炸，7.25–8.5秒每0.125秒一笔。\n- **线条路径数据**：速度差分dt=1/600；按120Hz采样，CORN[i]>0.05且TD[i]-lastT>0.05时导出转角。\n- **总时长**：12.892秒；保留原三段，末尾追加逐帧手绘和线条艺术。\n\n## 迁移\n\n- `index.html 内联配置 → segments / cues`：设置来源片段与中文节点名称，画面和原音轨使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/shared-cue-sheet/index.html) · [在库中查看](../../patterns.html#pattern/shared-cue-sheet)\n"
+  },
+  "entrypoint": "demos/patterns/shared-cue-sheet/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-swiss-motion/LICENSES.md",
+      "bytes": 1382,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/CREDITS",
+      "bytes": 1092,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/audio/film.m4a",
+      "bytes": 1438198,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fidelity.md",
+      "bytes": 5264,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/ease.js",
+      "bytes": 1851,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/film.js",
+      "bytes": 30232,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/index.html",
+      "bytes": 355,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/lines.json",
+      "bytes": 967,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/main.js",
+      "bytes": 878,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/score.json",
+      "bytes": 2138,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/voices/dur.json",
+      "bytes": 116,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/film/voices/words_rel.json",
+      "bytes": 301,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/Archivo-VF.ttf",
+      "bytes": 658596,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/DMSerifDisplay-Regular.ttf",
+      "bytes": 76580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/OFL-Archivo.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/OFL-DMSerifDisplay.txt",
+      "bytes": 4512,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/OFL-UnifrakturMaguntia.txt",
+      "bytes": 4417,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/UnifrakturMaguntia-Regular.ttf",
+      "bytes": 88508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/fonts/fonts.css",
+      "bytes": 357,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/index.html",
+      "bytes": 2658,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/CREDITS",
+      "bytes": 1092,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/README.md",
+      "bytes": 3100,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/build.sh",
+      "bytes": 1591,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/events.json",
+      "bytes": 5043,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/mix.py",
+      "bytes": 6334,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/music/score.py",
+      "bytes": 9315,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/music/score_meta.json",
+      "bytes": 778,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/tools/subs.py",
+      "bytes": 724,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/tools/words.py",
+      "bytes": 1150,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-swiss-motion/source/voices/words.json",
+      "bytes": 1021,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/LICENSES.md",
+      "bytes": 765,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/assets/textures/paper/Paper001_4K_color.jpg",
+      "bytes": 3684106,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/audio/film.m4a",
+      "bytes": 426687,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fidelity.md",
+      "bytes": 4011,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/cues.json",
+      "bytes": 3719,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/film.js",
+      "bytes": 35151,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/setup.js",
+      "bytes": 148,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/film/style.css",
+      "bytes": 172,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/NotoSansSC-VF.ttf",
+      "bytes": 17773132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-Black.ttf",
+      "bytes": 153440,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/Poppins-SemiBold.ttf",
+      "bytes": 157312,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/fonts/fonts.css",
+      "bytes": 486,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/index.html",
+      "bytes": 2020,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/audio.py",
+      "bytes": 9344,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-bauhaus/source/cues.json",
+      "bytes": 3719,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/LICENSES.md",
+      "bytes": 1181,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_01.png",
+      "bytes": 28357,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_02.png",
+      "bytes": 28707,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_03.png",
+      "bytes": 25600,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/dust_ink_04.png",
+      "bytes": 27879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_base.jpg",
+      "bytes": 483747,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/assets/paper_tooth.png",
+      "bytes": 1791819,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/audio/film.m4a",
+      "bytes": 415190,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fidelity.md",
+      "bytes": 5403,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/cues.json",
+      "bytes": 2188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/engine.js",
+      "bytes": 13778,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/scene.js",
+      "bytes": 103043,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/setup.js",
+      "bytes": 764,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/film/style.css",
+      "bytes": 137,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Caveat[wght].ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-OFL.txt",
+      "bytes": 4406,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LXGWMarkerGothic-Regular.ttf",
+      "bytes": 3190368,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/LongCang-Regular.ttf",
+      "bytes": 5162508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/Longcang-OFL.txt",
+      "bytes": 4390,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/fonts/fonts.css",
+      "bytes": 509,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/index.html",
+      "bytes": 2718,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_01_3840x2160.png",
+      "bytes": 81508,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_02_3840x2160.png",
+      "bytes": 82662,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_03_3840x2160.png",
+      "bytes": 73739,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/assets/textures/dust/dust_04_3840x2160.png",
+      "bytes": 79891,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/audio.py",
+      "bytes": 24290,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/cues.json",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_dust.py",
+      "bytes": 707,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/gen_paper.py",
+      "bytes": 2360,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/source/tools/hitmax.py",
+      "bytes": 4168,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/LICENSE",
+      "bytes": 1085,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/opentype.js@2.0.0/dist/opentype.mjs",
+      "bytes": 494695,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/LICENSE",
+      "bytes": 1069,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-cel-boil/vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+      "bytes": 18735,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/LICENSES.md",
+      "bytes": 789,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/audio/film.m4a",
+      "bytes": 346596,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fidelity.md",
+      "bytes": 3942,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/cues.json",
+      "bytes": 906,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/scene.js",
+      "bytes": 63477,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/setup.js",
+      "bytes": 206,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/film/style.css",
+      "bytes": 111,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka-OFL.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/Fredoka[wdth,wght].ttf",
+      "bytes": 159184,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRounded-OFL.txt",
+      "bytes": 4504,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/ResourceHanRoundedCN-Bold.ttf",
+      "bytes": 13978508,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/fonts/fonts.css",
+      "bytes": 376,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/index.html",
+      "bytes": 2596,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/audio.py",
+      "bytes": 7610,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-flat-vector/source/cues.json",
+      "bytes": 906,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/LICENSES.md",
+      "bytes": 789,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/audio/film.m4a",
+      "bytes": 401088,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fidelity.md",
+      "bytes": 5828,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/cues.json",
+      "bytes": 3214,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/film.js",
+      "bytes": 33052,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/setup.js",
+      "bytes": 207,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/film/style.css",
+      "bytes": 193,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/CormorantGaramond-OFL.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/CormorantGaramond[wght].ttf",
+      "bytes": 1195560,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/NotoSerifSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/NotoSerifSC-VF.ttf",
+      "bytes": 25125232,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/fonts/fonts.css",
+      "bytes": 352,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-line-art/index.html",
+      "bytes": 2256,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/assets/fonts/fonts.css",
+      "bytes": 9135,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/audio.py",
+      "bytes": 9978,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/cues.json",
+      "bytes": 3214,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/film.js",
+      "bytes": 46982,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/index.html",
+      "bytes": 566,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/out/timing.json",
+      "bytes": 8840,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/tools/dump_timing.mjs",
+      "bytes": 2188,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-line-art/source/tools/retime.py",
+      "bytes": 4430,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-pixel/LICENSES.md",
+      "bytes": 815,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/audio/film.m4a",
+      "bytes": 345394,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fidelity.md",
+      "bytes": 4108,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/cues.json",
+      "bytes": 888,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/film.js",
+      "bytes": 58413,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/setup.js",
+      "bytes": 385,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/film/style.css",
+      "bytes": 100,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/FusionPixel-OFL.txt",
+      "bytes": 4418,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/LICENSES/ark-pixel/OFL.txt",
+      "bytes": 4412,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/LICENSES/cubic-11/OFL.txt",
+      "bytes": 5364,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/LICENSES/galmuri/LICENSE.txt",
+      "bytes": 4360,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/PressStart2P-OFL.txt",
+      "bytes": 4413,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/PressStart2P-Regular.ttf",
+      "bytes": 118204,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/fonts.css",
+      "bytes": 369,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-pixel/fonts/fusion-pixel-12px-proportional-zh_hans.ttf",
+      "bytes": 7295572,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-pixel/index.html",
+      "bytes": 2128,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-pixel/source/audio.py",
+      "bytes": 11101,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-pixel/source/cues.json",
+      "bytes": 888,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/shared-cue-sheet/index.html",
+      "bytes": 6297,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/shared-cue-sheet/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/lemo-swiss-motion.json",
+      "bytes": 11857,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-bauhaus.json",
+      "bytes": 19633,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-cel-boil.json",
+      "bytes": 24679,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-flat-vector.json",
+      "bytes": 21215,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-line-art.json",
+      "bytes": 19614,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-pixel.json",
+      "bytes": 22301,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/shared-cue-sheet.json",
+      "bytes": 4336,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/shared-cue-sheet.jpg",
+      "bytes": 27388,
+      "role": "preview"
+    }
+  ]
+}

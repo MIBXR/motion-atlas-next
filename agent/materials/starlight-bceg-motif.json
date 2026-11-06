@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 1,
+  "kind": "materials",
+  "id": "starlight-bceg-motif",
+  "material": {
+    "id": "starlight-bceg-motif",
+    "order": 10,
+    "type": "sound",
+    "title": "少女歌剧 BCEG（7135）动机 · TV 原声带片段与节奏型",
+    "category": "音乐动机",
+    "tags": [
+      "少女歌剧",
+      "Revue Starlight",
+      "藤澤慶昌",
+      "加藤達也",
+      "配乐",
+      "动机",
+      "7135",
+      "节奏型",
+      "原声带"
+    ],
+    "summary": "《少女歌剧》TV 原声带里反复出现的 7-1-3-5 动机：16 首曲目的音频片段、视频给出的谱例、移调级数和 9 种节奏型，可按曲目回听片段，也可将动机移到任意调试听取用。",
+    "carrierNote": "声音素材。可按曲目查找片段，节奏型可导出 MIDI。",
+    "workflow": [
+      "在“曲目”页按曲号回听片段，对照谱例和级数判断这个动机在该曲里怎么出现。",
+      "在“节奏型”页选调和速度，试听 R01–R09，下载 MIDI。",
+      "把 7-1-3-5 移到目标调，选好节奏型和清亮的钢琴类音色，再写进自己的配乐。",
+      "按“音频候选”的时刻回听原曲，判断是否属于这个动机后再引用。"
+    ],
+    "useCases": [
+      "为舞台、星光、命运主题的配乐写一个可识别的短动机",
+      "研究一个动机如何靠移调和换节奏贯穿整张原声带",
+      "给视频里的高光或转场找一个四音“呼唤”"
+    ],
+    "avoid": [
+      "直接把原声带片段用于公开发布的作品配乐",
+      "把“音频候选”当作作曲者确认过的动机"
+    ],
+    "upstream": {
+      "url": "https://www.bilibili.com/video/BV1w5XfBYEPr/",
+      "author": "栎社大木",
+      "notes": "动机整理来自《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机。音乐为「少女☆歌劇 レヴュースタァライト」オリジナルサウンドトラック，藤澤慶昌・加藤達也，2018。"
+    },
+    "license": {
+      "name": "OST 版权所有；VexFlow MIT；Noto Serif JP SIL OFL 1.1",
+      "url": "demos/materials/starlight-bceg-motif/LICENSES.md",
+      "notes": "OST 各曲名、片段文件与曲号对应见 demo/data/motif.json；音乐与封面版权归原权利人，个人学习研究收录。视频动机整理归栎社大木。VexFlow 固定 4.2.5，采用 MIT；Noto Serif JP 700、900 完整字库采用 SIL OFL 1.1。"
+    },
+    "sources": [
+      {
+        "title": "栎社大木：BCEG（7135）动机视频",
+        "url": "https://www.bilibili.com/video/BV1w5XfBYEPr/"
+      },
+      {
+        "title": "TV 原声带：曲名、曲号及音频片段对应",
+        "url": "demos/materials/starlight-bceg-motif/demo/data/motif.json"
+      },
+      {
+        "title": "VexFlow 4.2.5 npm tarball · MIT",
+        "url": "https://registry.npmjs.org/vexflow/-/vexflow-4.2.5.tgz"
+      },
+      {
+        "title": "Noto Serif JP 完整字体与 OFL",
+        "url": "https://github.com/google/fonts/tree/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notoserifjp"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "音乐",
+        "name": "「少女☆歌劇 レヴュースタァライト」オリジナルサウンドトラック",
+        "author": "藤澤慶昌・加藤達也",
+        "notes": "2018；各曲名与使用时间见 motif.json。版权归原权利人，个人学习研究收录。"
+      },
+      {
+        "scope": "制作来源",
+        "name": "BCEG（7135）动机整理",
+        "author": "栎社大木",
+        "url": "https://www.bilibili.com/video/BV1w5XfBYEPr/",
+        "notes": "谱例与视频使用片段的来源。"
+      },
+      {
+        "scope": "运行库",
+        "name": "VexFlow",
+        "version": "4.2.5",
+        "license": "MIT",
+        "notes": "VexFlow 4.2.5，MIT；运行库与许可原文来自 npm tarball。",
+        "url": "https://registry.npmjs.org/vexflow/-/vexflow-4.2.5.tgz"
+      },
+      {
+        "scope": "字体",
+        "name": "Noto Serif JP",
+        "license": "SIL OFL 1.1",
+        "notes": "700、900 完整字库；固定来源提交 8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5。",
+        "url": "https://github.com/google/fonts/tree/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notoserifjp"
+      }
+    ],
+    "install": "页面直接运行；MIDI 在 `demo/midi/`，音频切片在 `demo/audio/`；重建数据运行 `source/build-data.py`",
+    "relatedEntries": [
+      {
+        "kind": "case",
+        "id": "butterfly-garden-score",
+        "note": "《蝶の舞う庭》总谱可视化复刻，同一配乐世界里的完整曲目案例"
+      }
+    ],
+    "demo": "demos/materials/starlight-bceg-motif/index.html",
+    "research": "docs/materials/starlight-bceg-motif.md",
+    "licenses": "demos/materials/starlight-bceg-motif/LICENSES.md",
+    "preview": "previews/materials/starlight-bceg-motif.jpg"
+  },
+  "documents": {
+    "research": "# 少女歌剧 BCEG（7135）动机\n\n《少女歌剧》TV 原声带里有一组四音反复出现：导音、主音、三音、五音，在 C 大调上就是 B C E G，简谱写作 7 1 3 5。音程固定为上行半音、大三度、小三度，所以换到任何调都听得出同一个形状。栎社大木的视频[《少女歌剧》配乐的灵魂？](https://www.bilibili.com/video/BV1w5XfBYEPr/)把它整理成一条 14 分钟的曲目巡礼，本素材把其中的片段、谱例和节奏提炼出来。\n\n## 怎么听\n\n打开“曲目”页，选一首曲子，点谱例卡上的时刻就从那里开始放。位置条上的白色部分是视频实际用到的段落，空白部分不在素材内。\n\n谱例卡下方的金色数字是级数。同一组 7 1 3 5 在 04 halation 里走 B C E G，转到 A B♭ D F，再转到 E F A C；07 少女たちのプレリュード 用 F♯ G B D 接 E F A C。\n\n## 节奏型\n\n音高形状不变，节奏一直在变。9 种节奏型里，有四个等长音符的呼唤，有 3/4 里“四分、四分、八分、八分”的舞步，有 19 暗転 连续三连音的回旋，也有 34 dawn of the star 的十二音切分。把同一个四音放进不同节奏，就能得到完全不同的情绪位置，同时仍然属于一个世界。\n\n## 证据标签\n\n- 谱面＋音频：视频给了谱例，音频分析也分离出了对应的音。\n- 谱面：视频给了谱例，时刻已对到 OST，但音频里没有单独分离出这串音。\n- 音频候选：视频没给谱例，用音程模板在该时段搜到的位置，阈值 0.821504。\n\n## 怎么用\n\n在“节奏型”页选调和速度试听，下载 MIDI 放进自己的工程。写配乐时先定目标调，把 7 1 3 5 移过去，再选节奏；视频简介提到这个动机多用钢琴等音色清亮的乐器，可以从这个配器开始。\n\n原声带片段只用于对照学习。\n\n## 来源\n\n- 动机整理：栎社大木，[BV1w5XfBYEPr](https://www.bilibili.com/video/BV1w5XfBYEPr/)\n- 音乐：「少女☆歌劇 レヴュースタァライト」オリジナルサウンドトラック，藤澤慶昌・加藤達也，2018\n\n视频画面把一段标为 26 ランチボックス，音频实际匹配 OST 第 25 首 子猫のカーニバル，素材按音频记录，两个名字都保留。\n",
+    "licenses": "# 许可与来源\n\n## 音乐、封面与动机谱例\n\n「少女☆歌劇 レヴュースタァライト」オリジナルサウンドトラック，藤澤慶昌・加藤達也，2018。音乐与封面版权归原权利人，本素材作个人学习研究收录。\n\n动机整理与谱例来源：栎社大木，[《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机](https://www.bilibili.com/video/BV1w5XfBYEPr/)。`source/score-crops/` 保留 45 张谱例原帧裁切。\n\n`demo/data/motif.json` 记录各曲目原名、原始 MP3 文件名、视频曲号与切片时间。视频 26 ランチボックス 对应的音频文件是 OST 25 子猫のカーニバル。\n\n## VexFlow 4.2.5\n\n- 版本：4.2.5。\n- 来源：[npm tarball](https://registry.npmjs.org/vexflow/-/vexflow-4.2.5.tgz)。\n- 运行库：`vendor/vexflow@4.2.5/vexflow.js`。\n- 许可原文：[MIT](vendor/vexflow@4.2.5/LICENSE)。\n\n## Noto Serif JP\n\n- 来源：[Google Fonts 固定提交 8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5](https://github.com/google/fonts/tree/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notoserifjp)。\n- 字体：`fonts/NotoSerifJP-700.woff2`、`fonts/NotoSerifJP-900.woff2`，完整字库，未做字符子集；从该提交的完整可变字体固定 wght 700、900 后保存为 WOFF2。\n- 许可原文：[SIL Open Font License 1.1](fonts/OFL.txt)。\n\n## 数据与音频重建\n\n在本体目录运行 `python source/build-data.py`，由 `source/analysis/` 生成页面数据与 C 大调 MIDI。脚本仅使用 Python 标准库。\n\n安装 FFmpeg 后运行 `python source/cut-audio.py <OST目录>`，按 `source/analysis/edits.json` 使用 `ffmpeg -c copy` 生成 28 个 MP3 切片；`--help` 列出需要的 OST 文件名。\n"
+  },
+  "entrypoint": "demos/materials/starlight-bceg-motif/index.html",
+  "files": [
+    {
+      "path": "demos/materials/starlight-bceg-motif/LICENSES.md",
+      "bytes": 1740,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/assets/cover.jpg",
+      "bytes": 262656,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/02-1.mp3",
+      "bytes": 1383705,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/02-2.mp3",
+      "bytes": 2509060,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/04-1.mp3",
+      "bytes": 1487140,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/04-2.mp3",
+      "bytes": 2044071,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/04-3.mp3",
+      "bytes": 780789,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/05-1.mp3",
+      "bytes": 111027,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/05-2.mp3",
+      "bytes": 157002,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/07-1.mp3",
+      "bytes": 1872732,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/09-1.mp3",
+      "bytes": 131908,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/10-1.mp3",
+      "bytes": 1398327,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/11-1.mp3",
+      "bytes": 590617,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/13-1.mp3",
+      "bytes": 681530,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/13-2.mp3",
+      "bytes": 770345,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/19-1.mp3",
+      "bytes": 1196657,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/20-1.mp3",
+      "bytes": 1589551,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/21-1.mp3",
+      "bytes": 1815260,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/21-2.mp3",
+      "bytes": 1705545,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/24-1.mp3",
+      "bytes": 332542,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/26-1.mp3",
+      "bytes": 795435,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/26-2.mp3",
+      "bytes": 384790,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/26-3.mp3",
+      "bytes": 289704,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/26-4.mp3",
+      "bytes": 727516,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/30-1.mp3",
+      "bytes": 1672113,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/30-2.mp3",
+      "bytes": 1535232,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/31-1.mp3",
+      "bytes": 2322022,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/31-2.mp3",
+      "bytes": 775573,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/31-3.mp3",
+      "bytes": 1309516,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/audio/34-1.mp3",
+      "bytes": 2818349,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/data/motif.json",
+      "bytes": 242102,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/demo.css",
+      "bytes": 9342,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/demo.js",
+      "bytes": 23940,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/midi/R01.mid",
+      "bytes": 78,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/midi/R02.mid",
+      "bytes": 114,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/midi/R03.mid",
+      "bytes": 78,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/midi/R04.mid",
+      "bytes": 194,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/midi/R05.mid",
+      "bytes": 79,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/midi/R06.mid",
+      "bytes": 248,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/midi/R07.mid",
+      "bytes": 275,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/midi/R08.mid",
+      "bytes": 74,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/demo/midi/R09.mid",
+      "bytes": 150,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/fonts/NotoSerifJP-700.woff2",
+      "bytes": 3171216,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/fonts/NotoSerifJP-900.woff2",
+      "bytes": 2832428,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/fonts/OFL.txt",
+      "bytes": 4350,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/index.html",
+      "bytes": 1034,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/analysis/edits.json",
+      "bytes": 37704,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/analysis/film-style.md",
+      "bytes": 3740,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/analysis/motif-instances.json",
+      "bytes": 214191,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/analysis/no-score-tracks.json",
+      "bytes": 16004,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/analysis/rhythm-cells.md",
+      "bytes": 1545,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/analysis/scores.json",
+      "bytes": 130286,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/analysis/tempo.json",
+      "bytes": 18977,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/build-data.py",
+      "bytes": 7658,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/cut-audio.py",
+      "bytes": 1600,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/04-01.png",
+      "bytes": 91110,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/04-02.png",
+      "bytes": 94616,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/04-03.png",
+      "bytes": 96782,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/05-01.png",
+      "bytes": 72282,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/07-01.png",
+      "bytes": 187906,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/07-02.png",
+      "bytes": 87139,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/07-03.png",
+      "bytes": 87819,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/07-04.png",
+      "bytes": 82597,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/07-05.png",
+      "bytes": 86487,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/07-06.png",
+      "bytes": 84402,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/10-01.png",
+      "bytes": 186156,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/19-01.png",
+      "bytes": 251007,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/21-01.png",
+      "bytes": 203244,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-01.png",
+      "bytes": 68599,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-02.png",
+      "bytes": 67001,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-03.png",
+      "bytes": 63814,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-04.png",
+      "bytes": 67942,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-05.png",
+      "bytes": 67904,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-06.png",
+      "bytes": 62526,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-07.png",
+      "bytes": 68399,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-08.png",
+      "bytes": 67650,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-09.png",
+      "bytes": 68183,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-10.png",
+      "bytes": 67588,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-11.png",
+      "bytes": 68717,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-12.png",
+      "bytes": 67201,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-13.png",
+      "bytes": 69509,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/26-14.png",
+      "bytes": 67597,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-01.png",
+      "bytes": 67061,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-02.png",
+      "bytes": 67490,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-03.png",
+      "bytes": 66662,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-04.png",
+      "bytes": 66704,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-05.png",
+      "bytes": 66753,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-06.png",
+      "bytes": 66932,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-07.png",
+      "bytes": 79290,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-08.png",
+      "bytes": 83165,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-09.png",
+      "bytes": 83326,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-10.png",
+      "bytes": 83227,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/30-11.png",
+      "bytes": 84262,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/34-01.png",
+      "bytes": 209373,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/34-02.png",
+      "bytes": 184211,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/34-03.png",
+      "bytes": 173454,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/34-04.png",
+      "bytes": 197225,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/34-05.png",
+      "bytes": 165674,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/intro-01.png",
+      "bytes": 89221,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/source/score-crops/outro-01.png",
+      "bytes": 95396,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/vendor/vexflow@4.2.5/LICENSE",
+      "bytes": 1131,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/vendor/vexflow@4.2.5/vexflow.js",
+      "bytes": 992373,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/starlight-bceg-motif/vendor/vexflow@4.2.5/vexflow.js.map",
+      "bytes": 2276005,
+      "role": "vendor"
+    },
+    {
+      "path": "docs/materials/starlight-bceg-motif.md",
+      "bytes": 2305,
+      "role": "doc"
+    },
+    {
+      "path": "entries/materials/starlight-bceg-motif.json",
+      "bytes": 4229,
+      "role": "entry"
+    },
+    {
+      "path": "previews/materials/starlight-bceg-motif.jpg",
+      "bytes": 80167,
+      "role": "preview"
+    }
+  ]
+}

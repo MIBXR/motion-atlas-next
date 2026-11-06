@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>跳转到文档</title>
+<script>
+  var f = new URLSearchParams(location.search).get("file");
+  var h = decodeURIComponent(location.hash.slice(1));
+  if (h.startsWith("doc/")) {
+    var parts = h.slice(4).split("#");
+    f = parts[0];
+    h = parts.slice(1).join("#");
+  }
+  location.replace("./#/docs" + (f ? "?path=" + encodeURIComponent(f) + (h ? "&h=" + encodeURIComponent(h) : "") : ""));
+</script>

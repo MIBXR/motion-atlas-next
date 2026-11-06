@@ -1,0 +1,700 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-lidar-survey",
+  "entry": {
+    "id": "lemo-lidar-survey",
+    "order": 22,
+    "title": "林下的田 · 点云测绘",
+    "subtitle": "The Fields Under the Forest",
+    "carriers": [
+      "video"
+    ],
+    "style": "evidence",
+    "purpose": "data",
+    "tech": [
+      "canvas2d",
+      "threejs"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "点云测绘",
+      "实证影像",
+      "代码影片"
+    ],
+    "summary": "康涅狄格州阿什福德的一片森林，从夏季航拍转为春季激光点云；切割面剥去树冠，地面凝成受光表面，显出 22 段、合计 3.4 公里的旧农田石墙。",
+    "focus": "真实回波的高度与分类驱动剥层，点云和表面共用世界空间扫描面；一条连续相机路线把发现、测量与历史数字串在一起。",
+    "accent": "#FFB347",
+    "background": "#05080A",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 18.6,
+    "rhythm": {
+      "duration": 40,
+      "beats": [
+        {
+          "t": 0,
+          "label": "夏季航拍",
+          "note": "俯视 2016 年 7 月 NAIP 树冠照片。"
+        },
+        {
+          "t": 3.75,
+          "label": "照片变点云",
+          "note": "扫描线从左向右扫过，镜头下降并倾斜。"
+        },
+        {
+          "t": 6.875,
+          "label": "回波体积",
+          "note": "低斜角显出树冠与地面之间的层次。"
+        },
+        {
+          "t": 7.5,
+          "label": "地面回波读数",
+          "note": "27.6% 的数值落定。"
+        },
+        {
+          "t": 10,
+          "label": "切割树冠",
+          "note": "平面逐拍下降，回波向上抬离。"
+        },
+        {
+          "t": 13.125,
+          "label": "只留地面",
+          "note": "空气底声上的短暂留白。"
+        },
+        {
+          "t": 14.375,
+          "label": "点凝成面",
+          "note": "第二条扫描线生成受光地面，撞击落下。"
+        },
+        {
+          "t": 15.625,
+          "label": "石墙亮起",
+          "note": "22 条描线沿石墙依次展开。"
+        },
+        {
+          "t": 20,
+          "label": "测量总长",
+          "note": "3.4km 在 20.625 秒落定。"
+        },
+        {
+          "t": 24.375,
+          "label": "石墙剖面",
+          "note": "推近 C 墙，显示 1,451 个原始地面回波。"
+        },
+        {
+          "t": 28.75,
+          "label": "历史比较",
+          "note": "镜头升起，1870 与 2006 的土地面积逐条出现。"
+        },
+        {
+          "t": 33.75,
+          "label": "树冠返回",
+          "note": "树冠作为淡淡鬼影从地面重新长起。"
+        },
+        {
+          "t": 35.9375,
+          "label": "片尾",
+          "note": "标题叠在发光墙网与树冠上。"
+        }
+      ],
+      "bpm": 96
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 3.75,
+        "from": 0.15,
+        "to": 0.25,
+        "label": "树冠环境"
+      },
+      {
+        "t0": 3.75,
+        "t1": 10,
+        "from": 0.4,
+        "to": 0.6,
+        "label": "激光扫描"
+      },
+      {
+        "t0": 10,
+        "t1": 13.125,
+        "from": 0.65,
+        "to": 0.85,
+        "label": "剥层细分加速"
+      },
+      {
+        "t0": 13.125,
+        "t1": 14.375,
+        "from": 0.05,
+        "to": 0.12,
+        "label": "空气留白"
+      },
+      {
+        "t0": 14.375,
+        "t1": 15.625,
+        "from": 0.95,
+        "to": 0.6,
+        "label": "凝面撞击"
+      },
+      {
+        "t0": 15.625,
+        "t1": 20,
+        "from": 0.6,
+        "to": 0.75,
+        "label": "木质音色与石墙"
+      },
+      {
+        "t0": 20,
+        "t1": 28.75,
+        "from": 0.55,
+        "to": 0.7,
+        "label": "测量与剖面"
+      },
+      {
+        "t0": 28.75,
+        "t1": 33.75,
+        "from": 0.5,
+        "to": 0.6,
+        "label": "历史数字"
+      },
+      {
+        "t0": 33.75,
+        "t1": 40,
+        "from": 0.45,
+        "to": 0.2,
+        "label": "树冠回归与终止和弦"
+      }
+    ],
+    "energyNote": "起止时刻来自 film/timeline.js:T，声部与强弱依据 DEMO.md 的 Score structure 表（剥层细分、13.125–14.375 秒空气留白、凝面撞击与末段森林底声）；0–1 为相对编排标注。",
+    "observations": [
+      "点的位置保留真实回波关系，uint16 量化坐标和字节高度、分类、强度、种子控制 GPU 点云。",
+      "切割高度按离地高度计算，植被被抬升并淡出，标尺与直方图同步跟随。",
+      "地面表面使用 0.5m 模型、短半径 AO、315° 方位 26° 高度的低角度光，局部起伏显示为 ×2。",
+      "石墙描线与剖面以琥珀细线叠加，读数保持在右侧三分之一。"
+    ],
+    "composition": {
+      "color": "冷黑 #05080A，树冠由 #1F3F35 经 #5C9A7A 到 #E2F3DC；中性石色表面和琥珀 #FFB347 测量层。",
+      "typography": "Barlow Condensed 300 的大读数、IBM Plex Mono 400/500 仪器字、Noto Sans SC 500 中文标签。",
+      "layout": "1920×1080、24fps；WebGL 场景与 2D 仪器层叠合；测量区右置，双语字幕位于左下。",
+      "imagery": "USGS 3DEP 4,789,797 个真实回波、USDA NAIP 2016 航拍、0.5m 地面模型、人工描墙与 C 墙截面。",
+      "motion": "C1 相机样条连续飞越；扫描面、逐拍切割和按路径发亮替代切镜。",
+      "sound": "96BPM，前半 D 小调、凝面后 F 大调；电子扫描、细分滴答、撞击、马林巴与弓奏颤音琴，Kokoro bm_george 旁白。",
+      "rhythm": "航拍提出观察，扫描进入数据，剥层加速后近静音，再用凝面撞击转折，测量与历史各留读数时间。",
+      "coherence": "timeline.js 同时提供相机键、剥层、读数、声音事件和旁白；所有数值和来源保存在 FACTS.md。"
+    },
+    "layers": [
+      {
+        "name": "航拍与树冠面",
+        "role": "夏季航拍贴在 1m 树冠模型上。"
+      },
+      {
+        "name": "真实点云",
+        "role": "按离地高度着色，并受扫描前沿与切割面控制。"
+      },
+      {
+        "name": "受光地面",
+        "role": "0.5m 地面、法线、AO、等高线与石墙距离场。"
+      },
+      {
+        "name": "测量覆盖层",
+        "role": "标尺、直方图、琥珀描线、剖面与双语字幕。"
+      },
+      {
+        "name": "原成片混音",
+        "role": "扫描拟音与采样乐器对齐同一时间表。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#05080A",
+        "#1F3F35",
+        "#5C9A7A",
+        "#E2F3DC",
+        "#C8B38C",
+        "#BDB5A6",
+        "#D4FFF0",
+        "#FFB347",
+        "#83C495"
+      ],
+      "type": "Barlow Condensed 300/400/500；IBM Plex Mono 400/500（Plex Mono）；Noto Sans SC 可变字重，画面使用 500，按 film.js + timeline.js 字符子集化。",
+      "motion": [
+        {
+          "name": "逐层切割",
+          "value": "film/film.js:cutAt；film/timeline.js:PEEL_STEPS：10–13.125 秒按 .625 秒节拍下降，30→24→18→12→6→0，最终插值到 −6m 清除低植被。"
+        },
+        {
+          "name": "连续相机",
+          "value": "film/film.js:camAt / placeCamera；film/timeline.js:CAM：目标、距离、方位、俯角和 fov 的 C1 三次 Hermite 插值。"
+        },
+        {
+          "name": "凝面与墙网",
+          "value": "film/timeline.js:T.turn=14.375、turnEnd=15.625、wallsEnd=20；film/film.js:F2 / uW 控制扫描和描线。"
+        },
+        {
+          "name": "画面处理",
+          "value": "film/film.js:SS=2，ACES 曝光 .92；前沿高阈值 bloom，数据坐标 XY=.02m、Z=.01m。"
+        }
+      ]
+    },
+    "useCases": [
+      "文化遗产影像",
+      "环境主题短片",
+      "场地测绘解说"
+    ],
+    "avoid": [
+      "用虚构点云代替真实测量的证据片",
+      "密集点云始终只以远景俯视呈现"
+    ],
+    "constraints": [
+      "测量使用原始高度；显示夸张时把 ×2 标注保留在画面。",
+      "数据转为本地东、北、上坐标，改地点时重新确认垂直基准与分类。",
+      "切割应低于 0m 清掉低植被，原片最终为 −6m。",
+      "描墙保留 traced 标识、手工输入与原始回波来源；换场地时重新生成地面、墙线和剖面数据。"
+    ],
+    "migration": [
+      {
+        "field": "film/timeline.js → VO / T / CAM",
+        "how": "修改文案、绝对拍点、相机目标与路线。"
+      },
+      {
+        "field": "film/film.js → C / pointVS / surfaceFS",
+        "how": "修改高度色带、受光与切割前沿。"
+      },
+      {
+        "field": "source/data/walls_traced.json；source/tools/",
+        "how": "修改描线与原始区域，再生成 film/assets/raw/build 和 film/data。"
+      },
+      {
+        "field": "film/data/facts.json / profile_C.json；source/FACTS.md",
+        "how": "同步测量结果、剖面与来源事实。"
+      }
+    ],
+    "prompt": "从真实机载激光回波制作点云测绘短片，保持每点的测量位置，用冷黑背景、克制的高度绿阶、暖中性受光地面与唯一琥珀测量强调色。照片被世界空间扫描线变为点云，镜头从俯视下降到低斜角；按离地高度逐拍下降切割面，树冠回波抬离淡出，留下真实地面点，短暂留白后由第二扫描面凝成表面。连续 C1 相机飞过墙网、推到剖面再升起，细线测量与数字来自同一数据。大号窄体读数、等宽仪器、中文标签及左下双语字幕分层；声音使用电子扫描、加速细分、凝面撞击、木质采样乐器与冷静旁白，沿用原片混音。引擎位于 demos/cases/lemo-lidar-survey/film/film.js 与 timeline.js。",
+    "demo": "demos/cases/lemo-lidar-survey/index.html",
+    "patternIds": [
+      "point-cloud-cutting-plane"
+    ],
+    "fidelity": "demos/cases/lemo-lidar-survey/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/lidar-survey",
+      "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+      "path": "styles/lidar-survey/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+      "notes": "代码与文档 MIT；原成片及静帧 CC BY 4.0，署名 LemoLab；第三方资源沿用 CREDITS 的许可。"
+    },
+    "sources": [
+      {
+        "label": "风格与示范制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/lidar-survey"
+      },
+      {
+        "label": "Release 公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/lidar-survey.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/lidar-survey/demo/CREDITS"
+      },
+      {
+        "label": "USGS 3DEP EPT",
+        "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_CT_Statewide_B8_2016/ept.json"
+      },
+      {
+        "label": "USDA NAIP / Planetary Computer",
+        "url": "https://planetarycomputer.microsoft.com/"
+      },
+      {
+        "label": "VSCO 2 CE",
+        "url": "https://github.com/sgossner/VSCO-2-CE"
+      },
+      {
+        "label": "VCSL",
+        "url": "https://github.com/sgossner/VCSL"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者 Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/lidar-survey)，代码 MIT、成片 CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "Versilian Studios的VSCO 2 CE与VCSL采样（CC0），Kokoro bm_george（Apache-2.0）；USGS 3DEP回波与USDA FSA NAIP航拍为公有领域，授权措辞和署名见 [audio/CREDITS](audio/CREDITS)，测量来源见 [source/FACTS.md](source/FACTS.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "字体家族与字重见 tokens.type；SIL OFL 1.1原文在 fonts/，取得方法和字符范围见 [source/README.md](source/README.md)。"
+      }
+    ],
+    "renderer": "gpu",
+    "licenses": "demos/cases/lemo-lidar-survey/LICENSES.md",
+    "preview": "previews/cases/lemo-lidar-survey.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 林下的田 · 点云测绘 · 接入与保真说明\n\n复刻范围为公开成片对应的完整代码影片，来源与固定版本见[条目 JSON](../../../entries/cases/lemo-lidar-survey.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `film/index.html` | 字体 URL 指向案例根目录的 `fonts/`。 | 接入本库的素材目录。 |\n| `film/index.html` | import map 的 `/node_modules/three/` 改为 `../vendor/three@0.170.0/`。 | 将固定版本运行依赖随案例保存。 |\n| `film/assets/raw/build/` | 用原 fetch_ept.py、walls.py、build_data.py、fetch_naip.py 生成页面二进制与航拍；描墙与剖面采用提交中的输入。 | 固定提交不含运行所需的生成数据。 |\n| `audio/film.m4a` | 从 Release 成片流复制音轨。 | 以正式混音同步播放。 |\n| `source/` | 制作脚本、字幕/语音输入、音乐制作文件与 CREDITS 从运行目录移至此处，原字节保留。 | 保存制作依赖。 |\n| `stills/` | 不收录上游调试与风格帧。 | 运行画面不读取；预览由本库 capture 生成。 |\n| `index.html` | 增加MotionKit预载、同源iframe的load／READY等待、按原fps取整的异步renderAt及音轨接入。 | 接入本库时间线。 |\n| `index.html` | 增加MotionKit预载、同源iframe的load／READY等待、按原fps取整的异步renderAt及音轨接入。 | 接入本库时间线。 |\n\n运行引擎、时间轴和数据表保留原代码结构与字节，许可索引见 [LICENSES.md](LICENSES.md)。\n\n## 适配层\n\n`index.html` 使用 `MotionKit.load.prepare` 预载运行资源，等待同源iframe的load事件及 `window.READY === true`，由 `MotionKit.mountFilm` 接入1920×1080横屏舞台。`renderAt(t)` 按24fps取最近帧，执行并等待 `upstream.render(Math.round(t*fps)/fps)`；舞台直接显示上游页面的绘制结果。\n\n`?embed` 隐藏控制条，`?render` 暂停自动播放与声音，`?t=秒` 定位；减少动态时暂停在18.6秒。镜头标记与原Release的AAC流复制音轨由mountFilm同步。\n\n`film/film.js:12/242–254` 自行执行2倍画布渲染、Bloom和合成，WebGL画布与2D覆盖层由上游页面排列。\n\n## 已接受差异\n\n- 切割、凝面段的细点在本库清晰，参考中部分细点融成连续亮纹：`film/film.js:109/123–126` 以屏幕大小绘制圆点，`242–254` 执行Bloom与合成；高频细点经过成片编码后软化。\n- 树冠回归段的密集亮点及地面细纹仍与参考有差别：`film/film.js:98/109/119/129–132/521–524` 让树冠以加法混合回归，`173–210` 绘制地面；这些细纹在第885、936帧的单帧编码测量中仍低于0.95。\n\n## 与原片对照结果\n\n参考按 `round(t×fps)` 的视频帧号精确取PNG。本库在1920×1080、DPR1、Intel Iris Xe／ANGLE D3D11下打开 `?embed=1&render=1&t=秒`，等待MotionKit就绪与定位完成后截取PNG。\n\n**未经编码链**一列直接比较参考PNG与本库原始PNG。**编码链测量**一列先在过程目录用独立CDP页面载入这张原始PNG，按上游捕获质量生成JPEG，再由ffmpeg执行下列x264编码链并解码为PNG。每张采样图独立作为一帧视频执行，因此测量帧是I帧；原成片连续GOP的预测历史与码率分配未进入这项单帧测量。JPEG与视频编解码均发生在过程目录的测量脚本中。\n\n`source/build.sh:39–43` 使用24fps；素材快照的 `core/render/video.mjs:49–57` 捕获JPEG95，编码 `libx264 -preset medium -crf 14 -pix_fmt yuv420p`；`core/render/mux.sh:79–89` 使用 `fps=24,format=yuv420p`、`libx264 -preset slow -crf 19 -r 24`，grain=0；`source/build.sh:43` 再用 `libx264 -preset slow -crf 26 -pix_fmt yuv420p`。\n\nMJPEG输入及后续编码沿用默认色彩处理；共享mux采用grain=0的分支。两幅待比PNG统一转为yuv444p，取ffmpeg `ssim` 的All值。`compare-<序号>.png` 为**左：Release参考帧；右：本库原始PNG**；`compare-encoded-<序号>.png` 为**左：Release参考帧；右：编码链测量PNG**。\n\n原8帧加DEMO.md各Shots段中点，同一实际视频帧去重。\n\n| Shots段 | 起止（秒） | 中点（秒） | 对照视频帧号 |\n| --- | --- | --- | --- |\n| 航拍 | 0–3.75 | 1.875000 | 45 |\n| 航拍转点云 | 3.75–6.9 | 5.325000 | 128 |\n| 点云读数 | 6.9–10 | 8.450000 | 203 |\n| 切割 | 10–13.1 | 11.550000 | 277 |\n| 地面点留白 | 13.1–14.4 | 13.750000 | 330 |\n| 凝面 | 14.4–15.9 | 15.150000 | 364 |\n| 亮墙 | 15.6–20 | 17.800000 | 427 |\n| 总长读数 | 20–24.4 | 22.200000 | 533 |\n| 剖面 | 24.4–28.75 | 26.575000 | 638 |\n| 历史 | 28.75–35.6 | 32.175000 | 772 |\n| 树冠回归 | 33.75–40 | 36.875000 | 885 |\n\n| 序号 | 视频帧号 | 请求时刻（秒） | 实际视频时刻（秒） | 未经编码链 SSIM All | 编码链测量 SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.966528 | 0.952123 | 原8帧 |\n| 2 | 128 | 5.333333 | 5.333333 | 0.950010 | 0.965129 | 原8帧；Shots · 航拍转点云中点 |\n| 3 | 277 | 11.541667 | 11.541667 | 0.853511 | 0.954936 | 原8帧；Shots · 切割中点 |\n| 4 | 364 | 15.166667 | 15.166667 | 0.934970 | 0.981934 | 原8帧；Shots · 凝面中点 |\n| 5 | 446 | 18.600000 | 18.583333 | 0.973123 | 0.973971 | 原8帧 |\n| 6 | 638 | 26.583333 | 26.583333 | 0.987552 | 0.987937 | 原8帧；Shots · 剖面中点 |\n| 7 | 772 | 32.166667 | 32.166667 | 0.972440 | 0.971905 | 原8帧；Shots · 历史中点 |\n| 8 | 936 | 39.000000 | 39.000000 | 0.947135 | 0.946075 | 原8帧 |\n| 9 | 45 | 1.875000 | 1.875000 | 0.966320 | 0.962063 | Shots · 航拍中点 |\n| 10 | 203 | 8.450000 | 8.458333 | 0.850912 | 0.961737 | Shots · 点云读数中点 |\n| 11 | 330 | 13.750000 | 13.750000 | 0.890215 | 0.973901 | Shots · 地面点留白中点 |\n| 12 | 427 | 17.800000 | 17.791667 | 0.976372 | 0.976369 | Shots · 亮墙中点 |\n| 13 | 533 | 22.200000 | 22.208333 | 0.960461 | 0.965488 | Shots · 总长读数中点 |\n| 14 | 885 | 36.875000 | 36.875000 | 0.943120 | 0.941595 | Shots · 树冠回归中点 |\n\n14帧：未经编码链最低 **0.850912**、最高 **0.987552**，8/14达到0.95；编码链测量最低 **0.941595**、最高 **0.987937**，12/14达到0.95。\n\n未达标帧（视频帧号，实际时刻，SSIM）：\n\n- 未经编码链：277（11.541667s，0.853511）、364（15.166667s，0.934970）、936（39.000000s，0.947135）、203（8.458333s，0.850912）、330（13.750000s，0.890215）、885（36.875000s，0.943120）。\n- 编码链测量：936（39.000000s，0.946075）、885（36.875000s，0.941595）。\n\n第203、277、330、364帧的原始低值集中在点云／凝面高频细点：`film/film.js:94–109` 控制剥除、抬升及点尺寸，`123–126` 逐点裁圆，`245` 行加入Bloom；对应编码链测量均超过0.95。第885、936帧处于 `timeline.js:30–31` 的树冠回归后段；`film/film.js:98/119/129–132/521–524` 的加法树冠覆盖地面，地面细纹来自 `173–210`。右侧树冠区域的编码后SSIM分别为0.930674、0.941764，中央地面为0.939776、0.943367，残差覆盖这两类高频细纹。成片 `source/build.sh:43` 对连续视频做CRF26预测编码，本次独立I帧的预测历史不同；剩余差异的全部占比尚未分离。\n\n声音：两条音轨解码为48kHz单声道，每10ms计算RMS包络，在±500ms内互相关；最佳偏移 **0ms**，相关系数 **1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-lidar-survey.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者 Lemomo（@lemomo-ai）。\n- [audio/film.m4a](audio/film.m4a) 流复制自[Release 成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/lidar-survey.mp4)，成片按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 发布，署名 LemoLab 并链接来源；本库接入时未修改混音。\n- 音乐、声音、字体和数据的来源及许可原文记录：[audio/CREDITS](audio/CREDITS)；制作文件保留 [source/CREDITS](source/CREDITS)。\n- VS Chamber Orchestra: Community Edition 与 Versilian Community Sample Library 的马林巴、弓奏颤音琴、定音鼓、大鼓和 gran cassa：[CC0](audio/CC0-1.0.txt)，Versilian Studios。\n- USGS 3DEP 点云、USDA FSA NAIP 航拍为公有领域；原始授权措辞与裁切、地面三角化、描墙、剖面和 ×2 显示的署名记录见 [CREDITS](audio/CREDITS)，数值与论文来源见 [FACTS.md](source/FACTS.md)。\n- Kokoro-82M（hexgrad）旁白 bm_george、speed 1.0：[Apache-2.0 原文](audio/Apache-2.0.txt)；kokoro-onnx 为 MIT。\n- 字体均为 SIL OFL 1.1：[OFL-barlow.txt](fonts/OFL-barlow.txt)、[OFL-ibmplexmono.txt](fonts/OFL-ibmplexmono.txt)、[OFL-notosanssc.txt](fonts/OFL-notosanssc.txt)。\n- Three.js 0.170.0：[vendor/three@0.170.0/LICENSE](vendor/three@0.170.0/LICENSE)，MIT；仅保存入口加载链。\n\n声音声明保留上游 CREDITS 原文；CC 和 Apache 许可全文取自 [SPDX license-list-data](https://github.com/spdx/license-list-data/tree/main/text)。\n",
+    "prompt": "# 林下的田 · 点云测绘\n\n## 实现 Prompt\n\n从真实机载激光回波制作点云测绘短片，保持每点的测量位置，用冷黑背景、克制的高度绿阶、暖中性受光地面与唯一琥珀测量强调色。照片被世界空间扫描线变为点云，镜头从俯视下降到低斜角；按离地高度逐拍下降切割面，树冠回波抬离淡出，留下真实地面点，短暂留白后由第二扫描面凝成表面。连续 C1 相机飞过墙网、推到剖面再升起，细线测量与数字来自同一数据。大号窄体读数、等宽仪器、中文标签及左下双语字幕分层；声音使用电子扫描、加速细分、凝面撞击、木质采样乐器与冷静旁白，沿用原片混音。引擎位于 demos/cases/lemo-lidar-survey/film/film.js 与 timeline.js。\n\n## 动效 Token\n\n- **逐层切割**：film/film.js:cutAt；film/timeline.js:PEEL_STEPS：10–13.125 秒按 .625 秒节拍下降，30→24→18→12→6→0，最终插值到 −6m 清除低植被。\n- **连续相机**：film/film.js:camAt / placeCamera；film/timeline.js:CAM：目标、距离、方位、俯角和 fov 的 C1 三次 Hermite 插值。\n- **凝面与墙网**：film/timeline.js:T.turn=14.375、turnEnd=15.625、wallsEnd=20；film/film.js:F2 / uW 控制扫描和描线。\n- **画面处理**：film/film.js:SS=2，ACES 曝光 .92；前沿高阈值 bloom，数据坐标 XY=.02m、Z=.01m。\n\n## 制作约束\n\n- 测量使用原始高度；显示夸张时把 ×2 标注保留在画面。\n- 数据转为本地东、北、上坐标，改地点时重新确认垂直基准与分类。\n- 切割应低于 0m 清掉低植被，原片最终为 −6m。\n- 描墙保留 traced 标识、手工输入与原始回波来源；换场地时重新生成地面、墙线和剖面数据。\n\n## 迁移\n\n- `film/timeline.js → VO / T / CAM`：修改文案、绝对拍点、相机目标与路线。\n- `film/film.js → C / pointVS / surfaceFS`：修改高度色带、受光与切割前沿。\n- `source/data/walls_traced.json；source/tools/`：修改描线与原始区域，再生成 film/assets/raw/build 和 film/data。\n- `film/data/facts.json / profile_C.json；source/FACTS.md`：同步测量结果、剖面与来源事实。\n\n[打开 Demo](../../demos/cases/lemo-lidar-survey/index.html) · [在库中查看](../../cases.html#case/lemo-lidar-survey)\n"
+  },
+  "entrypoint": "demos/cases/lemo-lidar-survey/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-lidar-survey/LICENSES.md",
+      "bytes": 1672,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/CREDITS",
+      "bytes": 3673,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/audio/film.m4a",
+      "bytes": 1306144,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fidelity.md",
+      "bytes": 7468,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/assets/raw/build/canopy.bin",
+      "bytes": 1491518,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/assets/raw/build/ground.bin",
+      "bytes": 26815429,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/assets/raw/build/naip.jpg",
+      "bytes": 967345,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/assets/raw/build/points.bin",
+      "bytes": 47897974,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/cues.json",
+      "bytes": 1552,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/data/facts.json",
+      "bytes": 2113,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/data/profile_C.json",
+      "bytes": 14705,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/film.js",
+      "bytes": 31233,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/index.html",
+      "bytes": 1197,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/film/timeline.js",
+      "bytes": 4328,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/BarlowCondensed-Light.ttf",
+      "bytes": 101996,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/BarlowCondensed-Medium.ttf",
+      "bytes": 103360,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/BarlowCondensed-Regular.ttf",
+      "bytes": 102480,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/NotoSansSC-sub.woff2",
+      "bytes": 81956,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/OFL-barlow.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/OFL-ibmplexmono.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/fonts/OFL-notosanssc.txt",
+      "bytes": 4388,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/index.html",
+      "bytes": 3604,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/CREDITS",
+      "bytes": 3673,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/FACTS.md",
+      "bytes": 5730,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/README.md",
+      "bytes": 5344,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/build.sh",
+      "bytes": 3940,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/data/walls.json",
+      "bytes": 32093,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/data/walls_traced.json",
+      "bytes": 2069,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/events.json",
+      "bytes": 952,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/mix.py",
+      "bytes": 15019,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/timeline.json",
+      "bytes": 953,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/audiocheck.py",
+      "bytes": 1536,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/build_data.py",
+      "bytes": 7026,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/cuecheck.py",
+      "bytes": 694,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/export.mjs",
+      "bytes": 2155,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/fetch_ept.py",
+      "bytes": 2496,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/fetch_naip.py",
+      "bytes": 895,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/fonts.py",
+      "bytes": 1956,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/load.py",
+      "bytes": 812,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/motioncheck.py",
+      "bytes": 1627,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/profile.py",
+      "bytes": 2654,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/scout_dem.py",
+      "bytes": 1387,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/subcheck.mjs",
+      "bytes": 1154,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/terrain.py",
+      "bytes": 1423,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/trace.py",
+      "bytes": 2609,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/tools/walls.py",
+      "bytes": 2837,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/voice/lines.json",
+      "bytes": 1555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/voice/out/dur.json",
+      "bytes": 157,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/source/voice/out/words.json",
+      "bytes": 1790,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+      "bytes": 2524,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/RenderPass.js",
+      "bytes": 1941,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "bytes": 12410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "bytes": 1147,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/lemo-lidar-survey/vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+      "bytes": 1490,
+      "role": "vendor"
+    },
+    {
+      "path": "entries/cases/lemo-lidar-survey.json",
+      "bytes": 11964,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-lidar-survey.jpg",
+      "bytes": 144021,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-engraving",
+  "entry": {
+    "id": "lemo-engraving",
+    "order": 39,
+    "title": "蜜蜂，第七号图版 · 铜版画",
+    "subtitle": "The Honeybee, Plate VII",
+    "carriers": [
+      "video"
+    ],
+    "style": "print-craft",
+    "purpose": "explainer",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "铜版画",
+      "印刷与版画",
+      "代码影片"
+    ],
+    "summary": "雕刀在铜版上推开第一条蜜蜂腹部曲线，揭印后轮廓、排线和交叉暗线逐层成形；复眼、翅钩与花粉篮的放大镜飞到图版位置，静默后手工淡彩晕开，最后覆上薄护纸。",
+    "focus": "用刻线呈现明暗，用放大镜展示知识，让后加的淡彩成为奖赏；整支影片以一张博物志图版为世界。",
+    "accent": "#bb8539",
+    "background": "#f1e8d2",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 34,
+    "rhythm": {
+      "duration": 40,
+      "beats": [
+        {
+          "t": 0,
+          "label": "铜版跟刀",
+          "note": "0–2.5秒，铜版跟刀。"
+        },
+        {
+          "t": 2.5,
+          "label": "揭印",
+          "note": "2.5–3.2秒，揭印。"
+        },
+        {
+          "t": 3.2,
+          "label": "拉远刻线成形",
+          "note": "3.2–6.2秒，拉远刻线成形。"
+        },
+        {
+          "t": 9.4,
+          "label": "复眼放大圈",
+          "note": "9.4–15秒，复眼放大圈。"
+        },
+        {
+          "t": 15,
+          "label": "翅钩放大圈",
+          "note": "15–19.4秒，翅钩放大圈。"
+        },
+        {
+          "t": 19.4,
+          "label": "花粉篮放大圈",
+          "note": "19.4–23.75秒，花粉篮放大圈。"
+        },
+        {
+          "t": 23.75,
+          "label": "汇拢静默与上色",
+          "note": "23.75–31.25秒，汇拢静默与上色。"
+        },
+        {
+          "t": 31.25,
+          "label": "整版落定",
+          "note": "31.25–35.625秒，整版落定。"
+        },
+        {
+          "t": 35.625,
+          "label": "薄护纸片尾",
+          "note": "35.625–40秒，薄护纸片尾。"
+        }
+      ],
+      "bpm": 96
+    },
+    "energySegments": [
+      {
+        "t0": 0,
+        "t1": 2.5,
+        "to": 0.35,
+        "label": "铜版跟刀",
+        "from": 0.35
+      },
+      {
+        "t0": 2.5,
+        "t1": 3.2,
+        "to": 0.55,
+        "label": "揭印",
+        "from": 0.55
+      },
+      {
+        "t0": 3.2,
+        "t1": 6.2,
+        "to": 0.6,
+        "label": "拉远刻线成形",
+        "from": 0.6
+      },
+      {
+        "t0": 9.4,
+        "t1": 15,
+        "to": 0.45,
+        "label": "复眼放大圈",
+        "from": 0.45
+      },
+      {
+        "t0": 15,
+        "t1": 19.4,
+        "to": 0.5,
+        "label": "翅钩放大圈",
+        "from": 0.5
+      },
+      {
+        "t0": 19.4,
+        "t1": 23.75,
+        "to": 0.55,
+        "label": "花粉篮放大圈",
+        "from": 0.55
+      },
+      {
+        "t0": 23.75,
+        "t1": 31.25,
+        "to": 0.65,
+        "label": "汇拢静默与上色",
+        "from": 0.65
+      },
+      {
+        "t0": 31.25,
+        "t1": 35.625,
+        "to": 0.25,
+        "label": "整版落定",
+        "from": 0.25
+      },
+      {
+        "t0": 35.625,
+        "t1": 40,
+        "to": 0.1,
+        "label": "薄护纸片尾",
+        "from": 0.1
+      }
+    ],
+    "energyNote": "段落取自DEMO.md的Shots与源码场景时间表，0–1能量数值是根据画面与声音密度所作的相对编辑标注。",
+    "observations": [
+      "线条两端细、中部鼓起，明暗由一至三组排线构成；纸白是亮部，深色来自交叉线密度。",
+      "放大圈先在身体部位刻出并擦亮，再重刻细节，沿避障引线飞到固定槽位，随后刻写罗马体与手写注释。",
+      "色区按0.42秒错峰从落笔点扩散，淡彩在纸和黑墨之间以multiply叠加，保留溢色、错位、湿边、回花与纸齿。"
+    ],
+    "composition": {
+      "color": "纸#f1e8d2、黑墨#1c1510、铜褐；腹部琥珀#d9962a、胸部赭#a8743e、翅灰蓝#a9c3cf、花粉#eaa21a。",
+      "typography": "Bodoni Moda罗马大写与斜体，Pinyon Script手写注释和字幕，全部属于图版排版。",
+      "layout": "1920×1080、24fps，图版压痕与双线边框，蜜蜂居中，四角分配放大圈和自然尺寸标本。",
+      "imagery": "Canvas2D生成雕刻、铜版、雕刀、卷屑、纸纹、蜜蜂解剖细节与独立水彩层。",
+      "motion": "开场4.2倍跟刀，揭纸后由4倍拉到整版；放大镜随相机飞排，手工上色时只保留2%呼吸推进。",
+      "sound": "96BPM大调羽管键琴与弦乐，CC0 VSCO/VCSL采样；Kokoro bm_fable旁白、刻刀刮擦、铜屑、压版、揭纸、落水与湿刷。",
+      "rhythm": "刻刀钩子—揭印—逐层排线—三处细节加速—25至26.25秒静默—弓弦首次进入伴随上色—整版落定—薄纸片尾。",
+      "coherence": "刻版的制作顺序就是影片结构，画面排线与配乐拨奏叠层，上色时才出现弓奏。"
+    },
+    "layers": [
+      {
+        "name": "底材与空间",
+        "role": "纸#f1e8d2、黑墨#1c1510、铜褐；腹部琥珀#d9962a、胸部赭#a8743e、翅灰蓝#a9c3cf、花粉#eaa21a。"
+      },
+      {
+        "name": "主体与绘制",
+        "role": "Canvas2D生成雕刻、铜版、雕刀、卷屑、纸纹、蜜蜂解剖细节与独立水彩层。"
+      },
+      {
+        "name": "镜头与时间",
+        "role": "开场4.2倍跟刀，揭纸后由4倍拉到整版；放大镜随相机飞排，手工上色时只保留2%呼吸推进。"
+      },
+      {
+        "name": "文字与声音",
+        "role": "Bodoni Moda罗马大写与斜体，Pinyon Script手写注释和字幕，全部属于图版排版。 96BPM大调羽管键琴与弦乐，CC0 VSCO/VCSL采样；Kokoro bm_fable旁白、刻刀刮擦、铜屑、压版、揭纸、落水与湿刷。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#f1e8d2",
+        "#1c1510",
+        "#94502c",
+        "#d9962a",
+        "#a8743e",
+        "#a9c3cf",
+        "#eaa21a"
+      ],
+      "type": "Bodoni Moda可变字体400–900、正斜体；Pinyon Script 400。",
+      "motion": [
+        {
+          "name": "刻线调度",
+          "value": "film/film.js:42–47：ol0从−2.6到4.2，轮廓/一层/二层/暗部conc=16/70/70/90；burin.js的Ink.schedule分配每线时间。"
+        },
+        {
+          "name": "分区上色",
+          "value": "film/film.js:94–104：26.35秒起每区错峰.42秒，翅1.6秒、其余1.25秒；Wash.draw噪声环裁切湿前沿。"
+        },
+        {
+          "name": "放大圈",
+          "value": "film/film.js:52–91：半径120，飞行弧高30，引线绕主体保留34px间距。"
+        }
+      ]
+    },
+    "useCases": [
+      "博物馆展签",
+      "科学知识短片",
+      "品牌工艺传承"
+    ],
+    "avoid": [
+      "以观众滚动阅读为主的页面"
+    ],
+    "constraints": [
+      "预载字体和全部绘制输入后，用原作render(t)按原帧率定位画面。",
+      "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+    ],
+    "migration": [
+      {
+        "field": "film/content.json",
+        "how": "更改标题、拉丁名、三个知识点、字幕、色区、展厅引导与片尾。"
+      },
+      {
+        "field": "film/film.js / subjects/bee.js / subjects/details.js",
+        "how": "修改图版时间表、雕刻对象与放大细节。"
+      },
+      {
+        "field": "film/engine/burin.js / wash.js / plate.js",
+        "how": "修改刻线宽度、排线、分区淡彩和图版边框排版。"
+      }
+    ],
+    "prompt": "制作一支铜版画时间线影片。让刻线承载明暗、放大镜承载知识、后加淡彩承载奖赏；整支影片以一张博物志图版为世界。纸#f1e8d2、黑墨#1c1510、铜褐；腹部琥珀#d9962a、胸部赭#a8743e、翅灰蓝#a9c3cf、花粉#eaa21a。Bodoni Moda罗马大写与斜体，Pinyon Script手写注释和字幕，全部属于图版排版。1920×1080、24fps，图版压痕与双线边框，蜜蜂居中，四角分配放大圈和自然尺寸标本。开场4.2倍跟刀，揭纸后由4倍拉到整版；放大镜随相机飞排，手工上色时只保留2%呼吸推进。刻刀钩子—揭印—逐层排线—三处细节加速—25至26.25秒静默—弓弦首次进入伴随上色—整版落定—薄纸片尾。96BPM大调羽管键琴与弦乐，CC0 VSCO/VCSL采样；Kokoro bm_fable旁白、刻刀刮擦、铜屑、压版、揭纸、落水与湿刷。实现入口位于demos/cases/lemo-engraving/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+    "demo": "demos/cases/lemo-engraving/index.html",
+    "patternIds": [
+      "carve-cut-by-cut-reveal",
+      "hand-tint-wash"
+    ],
+    "fidelity": "demos/cases/lemo-engraving/fidelity.md",
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/engraving",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/engraving/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档MIT；成片和静帧CC BY 4.0，署名LemoLab；各字体、采样与语音来源见CREDITS及LICENSES.md。"
+    },
+    "sources": [
+      {
+        "label": "固定风格与制作源码",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/engraving"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/engraving.mp4"
+      },
+      {
+        "label": "第三方资源与署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/engraving/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/engraving)，代码MIT、成片CC BY 4.0。"
+      },
+      {
+        "scope": "声音与第三方资源",
+        "notes": "96BPM大调羽管键琴与弦乐，CC0 VSCO/VCSL采样；Kokoro bm_fable旁白、刻刀刮擦、铜屑、压版、揭纸、落水与湿刷。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Bodoni Moda可变字体400–900、正斜体；Pinyon Script 400。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-engraving/LICENSES.md",
+    "preview": "previews/cases/lemo-engraving.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 蜜蜂，第七号图版 · 铜版画 · 接入与保真说明\n\n复刻范围为完整代码影片，来源与固定版本见[条目JSON](../../../entries/cases/lemo-engraving.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | 预载运行源码、字体、音轨，等待iframe的load与READY，以原帧率调用上游render(t)。 | 接入MotionKit舞台、时间线、声音与减少动态暂停。 |\n| `audio/film.m4a` | 从Release成片以-c:a copy流复制。 | 播放原作正式混音。 |\n| `source/` | 保存运行目录之外的上游制作脚本、事件、语音时长与替换示例。 | 保留制作资料。 |\n| `stills/` | 上游风格图与调试静帧留在来源。 | 成品绘制不读取这些静帧。 |\n| `film/index.html、film/core/lib.js` | 字体路径改为../fonts/；import map将/core/lib.js映射到./core/lib.js，lib.js取固定提交原文。 | 接入原字体与共享运行代码。 |\n\n## 适配层\n\n`MotionKit.load.prepare`预载，同源iframe等待`load`与`window.READY === true`，`MotionKit.mountFilm`以1920×1080、24fps、40.000000秒接入。`renderAt(t)`等待`upstream.render(Math.round(t×24)/24)`；画面直接来自上游绘制函数。\n\n`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时停在条目的`previewAt`，声音默认关闭。镜头标记取DEMO.md的Shots与源码场景时间表。\n\n## 与原片对照结果\n\n无头Edge使用`--enable-gpu --ignore-gpu-blocklist --font-render-hinting=none --force-color-profile=srgb`，视口1920×1080、DPR1。等待`__motion.ready`，以`floor(t×fps+.5)`定位；参考PNG按Release成片相同帧号提取。WebGL使用本机Intel Iris Xe / ANGLE Direct3D11。\n\n**原始**列比较参考PNG与本库PNG；**编码链**列把本库PNG在过程目录按原作编码链编解码后比较。两图转yuv444p，取ffmpeg SSIM All。\n\nJPEG95 → libx264 medium CRF14 yuv420p → slow CRF19、fps=24、noise=c0s=4:allf=t、yuv420p。来源source/build.sh与共享core/render/video.mjs、mux.sh。\n\n测量采用单张I帧，颗粒从该测量帧起计算；连续成片的帧间参考和噪声历史由其原编码保留。运行页面直接执行原作render(t)，编码仅用于离线测量。\n\n| 序号 | 视频帧号 | 请求秒 | 实际秒 | 原始SSIM All | 编码链SSIM All | 覆盖 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0.000000 | 0.000000 | 0.985339 | 0.987231 | 开头 |\n| 2 | 816 | 34.000000 | 34.000000 | 0.970331 | 0.968546 | frame_sec |\n| 3 | 30 | 1.250000 | 1.250000 | 0.984989 | 0.981717 | Shots · 铜版跟刀中点 |\n| 4 | 68 | 2.850000 | 2.833333 | 0.980469 | 0.975142 | Shots · 揭印中点 |\n| 5 | 113 | 4.700000 | 4.708333 | 0.977868 | 0.979071 | Shots · 拉远刻线成形中点 |\n| 6 | 293 | 12.200000 | 12.208333 | 0.969848 | 0.980199 | Shots · 复眼放大圈中点 |\n| 7 | 413 | 17.200000 | 17.208333 | 0.972998 | 0.973767 | Shots · 翅钩放大圈中点 |\n| 8 | 518 | 21.575000 | 21.583333 | 0.974260 | 0.972090 | Shots · 花粉篮放大圈中点 |\n| 9 | 660 | 27.500000 | 27.500000 | 0.967141 | 0.973137 | Shots · 汇拢静默与上色中点 |\n| 10 | 803 | 33.437500 | 33.458333 | 0.970331 | 0.968569 | Shots · 整版落定中点 |\n| 11 | 908 | 37.812500 | 37.833333 | 0.984653 | 0.977147 | Shots · 薄护纸片尾中点 |\n| 12 | 936 | 39.000000 | 39.000000 | 0.984819 | 0.977293 | 片尾前1秒 |\n\n12帧：原始最低**0.967141**、最高**0.985339**，12/12达到0.95；编码链最低**0.968546**、最高**0.987231**，12/12达到0.95。\n\n\n声音：Release与本库音轨解码为48kHz单声道，每10ms取RMS包络，在±500ms内互相关；最佳偏移**0ms**，相关系数**1.000000**。\n",
+    "licenses": "# 第三方许可索引\n\n[来源与固定版本](../../../entries/cases/lemo-engraving.json)\n\n- 作品代码：[film/LICENSE](film/LICENSE)，MIT；LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）。\n- [audio/film.m4a](audio/film.m4a)流复制自[Release成片](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/engraving.mp4)，成片按[audio/CC-BY-4.0.txt](audio/CC-BY-4.0.txt)发布，署名LemoLab并链接来源。\n- 音乐、声音与字体的原始署名：[audio/CREDITS](audio/CREDITS)；制作文件中的记录保留于[source/CREDITS](source/CREDITS)。\n- 原创配乐使用CC0乐器采样，原文：[audio/CC0-1.0.txt](audio/CC0-1.0.txt)；采样来自Versilian Studios / Sam Gossner的VSCO 2 CE与VCSL。\n- Kokoro-82M旁白（bm_fable，en-gb、speed .92）：[audio/Apache-2.0.txt](audio/Apache-2.0.txt)，kokoro-onnx为MIT。\n- 字体SIL OFL 1.1原文：[OFL-bodonimoda.txt](fonts/OFL-bodonimoda.txt)、[OFL-pinyonscript.txt](fonts/OFL-pinyonscript.txt)、[OFL.txt](fonts/OFL.txt)。\n",
+    "prompt": "# 蜜蜂，第七号图版 · 铜版画\n\n## 实现 Prompt\n\n制作一支铜版画时间线影片。让刻线承载明暗、放大镜承载知识、后加淡彩承载奖赏；整支影片以一张博物志图版为世界。纸#f1e8d2、黑墨#1c1510、铜褐；腹部琥珀#d9962a、胸部赭#a8743e、翅灰蓝#a9c3cf、花粉#eaa21a。Bodoni Moda罗马大写与斜体，Pinyon Script手写注释和字幕，全部属于图版排版。1920×1080、24fps，图版压痕与双线边框，蜜蜂居中，四角分配放大圈和自然尺寸标本。开场4.2倍跟刀，揭纸后由4倍拉到整版；放大镜随相机飞排，手工上色时只保留2%呼吸推进。刻刀钩子—揭印—逐层排线—三处细节加速—25至26.25秒静默—弓弦首次进入伴随上色—整版落定—薄纸片尾。96BPM大调羽管键琴与弦乐，CC0 VSCO/VCSL采样；Kokoro bm_fable旁白、刻刀刮擦、铜屑、压版、揭纸、落水与湿刷。实现入口位于demos/cases/lemo-engraving/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。\n\n## 动效 Token\n\n- **刻线调度**：film/film.js:42–47：ol0从−2.6到4.2，轮廓/一层/二层/暗部conc=16/70/70/90；burin.js的Ink.schedule分配每线时间。\n- **分区上色**：film/film.js:94–104：26.35秒起每区错峰.42秒，翅1.6秒、其余1.25秒；Wash.draw噪声环裁切湿前沿。\n- **放大圈**：film/film.js:52–91：半径120，飞行弧高30，引线绕主体保留34px间距。\n\n## 制作约束\n\n- 预载字体和全部绘制输入后，用原作render(t)按原帧率定位画面。\n- 声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。\n\n## 迁移\n\n- `film/content.json`：更改标题、拉丁名、三个知识点、字幕、色区、展厅引导与片尾。\n- `film/film.js / subjects/bee.js / subjects/details.js`：修改图版时间表、雕刻对象与放大细节。\n- `film/engine/burin.js / wash.js / plate.js`：修改刻线宽度、排线、分区淡彩和图版边框排版。\n\n[打开 Demo](../../demos/cases/lemo-engraving/index.html) · [在库中查看](../../cases.html#case/lemo-engraving)\n"
+  },
+  "entrypoint": "demos/cases/lemo-engraving/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-engraving/LICENSES.md",
+      "bytes": 1027,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/CC0-1.0.txt",
+      "bytes": 7048,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/CREDITS",
+      "bytes": 1754,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/audio/film.m4a",
+      "bytes": 1324797,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fidelity.md",
+      "bytes": 3759,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/content.json",
+      "bytes": 2353,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/burin.js",
+      "bytes": 33064,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/copper.js",
+      "bytes": 12503,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/index.js",
+      "bytes": 2153,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/plate.js",
+      "bytes": 9974,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/engine/wash.js",
+      "bytes": 7693,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/film.js",
+      "bytes": 27561,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/index.html",
+      "bytes": 462,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/lines.json",
+      "bytes": 914,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/main.js",
+      "bytes": 782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/subjects/bee.js",
+      "bytes": 24894,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/subjects/details.js",
+      "bytes": 16815,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/subjects/scallop.js",
+      "bytes": 6153,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/film/voices/dur.json",
+      "bytes": 78,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/BodoniModa-Italic-VF.ttf",
+      "bytes": 176300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/BodoniModa-VF.ttf",
+      "bytes": 162104,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/OFL-bodonimoda.txt",
+      "bytes": 4400,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/OFL.txt",
+      "bytes": 4384,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/PinyonScript-Regular.ttf",
+      "bytes": 151412,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/fonts/fonts.css",
+      "bytes": 397,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/index.html",
+      "bytes": 2438,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/CREDITS",
+      "bytes": 1754,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/README.md",
+      "bytes": 2897,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/build.sh",
+      "bytes": 1763,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/content_alt.json",
+      "bytes": 1803,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/events.json",
+      "bytes": 2157,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/example/index.html",
+      "bytes": 1830,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/mix.py",
+      "bytes": 10651,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/music/CREDITS_music.txt",
+      "bytes": 347,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/music/cues.json",
+      "bytes": 2555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/music/score.py",
+      "bytes": 26367,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/build_alt.sh",
+      "bytes": 1203,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/cuecheck.py",
+      "bytes": 2158,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/events.mjs",
+      "bytes": 825,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/readcheck/index.html",
+      "bytes": 2138,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/tools/subs.py",
+      "bytes": 869,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-engraving/source/voices/words.json",
+      "bytes": 1498,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-engraving.json",
+      "bytes": 10603,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-engraving.jpg",
+      "bytes": 130242,
+      "role": "preview"
+    }
+  ]
+}

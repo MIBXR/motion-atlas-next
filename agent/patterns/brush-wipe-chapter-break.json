@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "brush-wipe-chapter-break",
+  "pattern": {
+    "id": "brush-wipe-chapter-break",
+    "order": 172,
+    "title": "笔刷横扫换章",
+    "types": [
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "renderer": "gpu",
+    "summary": "五道水彩笔刷在大章边界错峰横扫，边界前 0.3 秒盖住画面，边界后 0.3 秒揭开新章；章内由角色动作接镜。",
+    "mechanism": "WIPES 只列 1.5、38.5、73.0、109.4 秒。drawWorld 在边界前后各 WIPE_TR=.3 秒调用 wipe；五道笔刷带略微倾斜，带有毛边与木炭排线，先以 easeOut 从左盖满，再以 ease 向右拖出。两章在画面完全被盖住的中点切换。",
+    "trigger": "歌曲播放到任一 WIPES 边界前后 0.3 秒内。",
+    "effect": "新旧章节被同一笔刷横扫连接，色对随章界轮换；章内的咬合黑场、穿眼推进等动作继续各自接镜。",
+    "timing": [
+      {
+        "name": "章界",
+        "value": "film/src/timeline.js:11–12：WIPES=[1.5,38.5,73.0,109.4]；WIPE_TR=.3，单次共 .6 秒。"
+      },
+      {
+        "name": "进出缓动",
+        "value": "film/src/timeline.js:40/73–79：p=(t-(b-.3))/.6；p<.5 用 easeOut 盖住，p≥.5 用 ease 揭开。"
+      },
+      {
+        "name": "重放区间",
+        "value": "原片37.9–39.2秒、72.4–73.7秒，巧思总时长2.6秒。"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "笔刷带",
+        "value": "film/src/timeline.js:74–78：n=5，bh=(H+420)/5+40；rotate(-.1)；错峰 d=[0,.14,.06,.18,.1]。"
+      },
+      {
+        "name": "覆盖与质感",
+        "value": "film/src/timeline.js:79–87：横向 -300→W+400；washOp=255，fillOp=70，bleed=.05，tex=.8，border=.6；charcoal hatch d=44、w=.8。"
+      },
+      {
+        "name": "配色",
+        "value": "film/src/timeline.js:72：clayDk/clay、indigo/violet、teal/sap、violet/rose，依次对应四个章界。"
+      }
+    ],
+    "useCases": [
+      "有明确大章分隔的手绘影片",
+      "用颜料覆盖连接不同主色场景"
+    ],
+    "avoid": [
+      "需要无缝循环的片段",
+      "给每次章内接镜都加擦除"
+    ],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [
+        "karaoke-word-fill"
+      ],
+      "conflicts": []
+    },
+    "prompt": "复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“笔刷横扫换章”，总时长2.6秒。WIPES 只列 1.5、38.5、73.0、109.4 秒。drawWorld 在边界两侧各 WIPE_TR=.3 秒调用 wipe；五道有毛边与木炭排线的笔刷带略倾斜，先以 easeOut 从左盖满，再以 ease 向右拖出。两章在全盖住的中点切换。 film/src/timeline.js:74–78：n=5，bh=(H+420)/5+40；rotate(-.1)；错峰 d=[0,.14,.06,.18,.1]。 film/src/timeline.js:79–87：横向 -300→W+400；washOp=255，fillOp=70，bleed=.05，tex=.8，border=.6；charcoal hatch d=44、w=.8。 film/src/timeline.js:72：clayDk/clay、indigo/violet、teal/sap、violet/rose，依次对应四个章界。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。",
+    "demo": "demos/patterns/brush-wipe-chapter-break/index.html",
+    "kit": true,
+    "timeline": true,
+    "sources": [
+      {
+        "caseId": "pdoom-video"
+      }
+    ],
+    "previewAt": 0.75,
+    "markers": [
+      {
+        "t": 0,
+        "label": "P(doom) 手绘 MV · 37.9–39.2秒"
+      },
+      {
+        "t": 1.3,
+        "label": "P(doom) 手绘 MV · 72.4–73.7秒"
+      }
+    ],
+    "sound": {
+      "description": "原始 MP3 按所选原片区间与画面同步播放，声音默认关闭。"
+    },
+    "tokens": {
+      "palette": [
+        "#F3EBDC",
+        "#2B2233",
+        "#D97757",
+        "#A84D33",
+        "#F2A283",
+        "#1F2550",
+        "#2F3C7A",
+        "#E27A92",
+        "#E8AA38",
+        "#6E9F58",
+        "#3A9C98",
+        "#7B5CA8",
+        "#FFF5E2",
+        "#8EC3E6"
+      ],
+      "type": "Permanent Marker 400；Shantell Sans 800。"
+    },
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments",
+        "how": "设置原片起止时刻，画面与音轨使用相同映射。"
+      },
+      {
+        "field": "index.html 内联配置 → markers / reduced",
+        "how": "设置巧思相对时间轴节点与减少动态的停留时刻。"
+      }
+    ],
+    "preview": "previews/patterns/brush-wipe-chapter-break.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "pdoom-video",
+      "bundle": "agent/cases/pdoom-video.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 笔刷横扫换章\n\n## 实现 Prompt\n\n复用 pdoom-video 原作的异步 renderAt(t)，按 index.html 内联 segments 重放“笔刷横扫换章”，总时长2.6秒。WIPES 只列 1.5、38.5、73.0、109.4 秒。drawWorld 在边界两侧各 WIPE_TR=.3 秒调用 wipe；五道有毛边与木炭排线的笔刷带略倾斜，先以 easeOut 从左盖满，再以 ease 向右拖出。两章在全盖住的中点切换。 film/src/timeline.js:74–78：n=5，bh=(H+420)/5+40；rotate(-.1)；错峰 d=[0,.14,.06,.18,.1]。 film/src/timeline.js:79–87：横向 -300→W+400；washOp=255，fillOp=70，bleed=.05，tex=.8，border=.6；charcoal hatch d=44、w=.8。 film/src/timeline.js:72：clayDk/clay、indigo/violet、teal/sap、violet/rose，依次对应四个章界。 保留原画面、固定版本 p5 与 p5.brush、完整字体和同区间 MP3，使用1920×1080、24fps。声音默认关闭，减少动态时暂停在预览帧。\n\n## 参数\n\n- **章界**：film/src/timeline.js:11–12：WIPES=[1.5,38.5,73.0,109.4]；WIPE_TR=.3，单次共 .6 秒。\n- **进出缓动**：film/src/timeline.js:40/73–79：p=(t-(b-.3))/.6；p<.5 用 easeOut 盖住，p≥.5 用 ease 揭开。\n- **重放区间**：原片37.9–39.2秒、72.4–73.7秒，巧思总时长2.6秒。\n\n## 迁移\n\n- `index.html 内联配置 → segments`：设置原片起止时刻，画面与音轨使用相同映射。\n- `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴节点与减少动态的停留时刻。\n\n[打开 Demo](../../demos/patterns/brush-wipe-chapter-break/index.html) · [在库中查看](../../patterns.html#pattern/brush-wipe-chapter-break)\n"
+  },
+  "entrypoint": "demos/patterns/brush-wipe-chapter-break/index.html",
+  "files": [
+    {
+      "path": "demos/cases/pdoom-video/LICENSES.md",
+      "bytes": 1827,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/audio/pdoom.mp3",
+      "bytes": 3437188,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fidelity.md",
+      "bytes": 5347,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/index.html",
+      "bytes": 1565,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/cast.js",
+      "bytes": 9723,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c01_lab.js",
+      "bytes": 40369,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c02_chorus1.js",
+      "bytes": 55643,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c03_takeoff.js",
+      "bytes": 65878,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c04_chorus2.js",
+      "bytes": 68165,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c05_obsolete.js",
+      "bytes": 71664,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c06_chorus3.js",
+      "bytes": 56889,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c07_scale.js",
+      "bytes": 54754,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c08_chorus4.js",
+      "bytes": 64423,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/ch/c09_finale.js",
+      "bytes": 28289,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/clawd.js",
+      "bytes": 18959,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/core.js",
+      "bytes": 14844,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/lyrics.js",
+      "bytes": 2274,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/props.js",
+      "bytes": 7599,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/film/src/timeline.js",
+      "bytes": 6749,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/PermanentMarker-LICENSE.txt",
+      "bytes": 11358,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/PermanentMarker-Regular.ttf",
+      "bytes": 74632,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/ShantellSans-OFL.txt",
+      "bytes": 4397,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/ShantellSans[BNCE,INFM,SPAC,wght].ttf",
+      "bytes": 1284736,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/fonts/fonts.css",
+      "bytes": 361,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/pdoom-video/index.html",
+      "bytes": 3247,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/ANIMATION_GUIDE.md",
+      "bytes": 11677,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/README.md",
+      "bytes": 2836,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/STORYBOARD.md",
+      "bytes": 16064,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/package-lock.json",
+      "bytes": 20492,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/package.json",
+      "bytes": 345,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/render.mjs",
+      "bytes": 7555,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/source/studio.html",
+      "bytes": 1810,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5.brush@2.2.3/LICENSE.md",
+      "bytes": 1084,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5.brush@2.2.3/p5.brush.js",
+      "bytes": 71792,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5@2.3.3/license.txt",
+      "bytes": 24480,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/pdoom-video/vendor/p5@2.3.3/p5.min.js",
+      "bytes": 990372,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/brush-wipe-chapter-break/index.html",
+      "bytes": 1145,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/brush-wipe-chapter-break/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/pdoom-video.md",
+      "bytes": 3611,
+      "role": "doc"
+    },
+    {
+      "path": "entries/cases/pdoom-video.json",
+      "bytes": 13469,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/brush-wipe-chapter-break.json",
+      "bytes": 4261,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/brush-wipe-chapter-break.jpg",
+      "bytes": 124268,
+      "role": "preview"
+    }
+  ]
+}

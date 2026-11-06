@@ -1,0 +1,650 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "sticker-slap-shadow",
+  "pattern": {
+    "id": "sticker-slap-shadow",
+    "order": 47,
+    "title": "抬高旋转拍贴",
+    "types": [
+      "transition",
+      "rhythm"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "贴纸科普"
+    ],
+    "summary": "抬高、放大、倾转的贴纸下落时，阴影同步收紧，落定后通过衰减摆动与挤压回弹消解冲力。拼贴片中的照片、文字纸片和刊名放大后拍下，离纸阴影随高度塌缩，落地后逐格挤压并回到稳定状态。",
+    "mechanism": "抬高、放大、倾转的贴纸下落时，阴影同步收紧，落定后通过衰减摆动与挤压回弹消解冲力。拼贴片中的照片、文字纸片和刊名放大后拍下，离纸阴影随高度塌缩，落地后逐格挤压并回到稳定状态。",
+    "trigger": "手机、部件或产地照片的落点到达时",
+    "effect": "贴纸的离面高度同时控制姿态和阴影，接触后回弹落定。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-paperclip 原片 0–0.8 秒；mg-paperclip 原片 0.98–2.5 秒；mg-paperclip 原片 5.56–6.8 秒；1 倍速，巧思时长 8.73 秒。"
+      },
+      {
+        "name": "抬高旋转拍贴",
+        "value": "L69: const shadow=(lift,a=.26)=>`drop-shadow(0 ${6+34*lift}px ${10+34*lift}px rgba(22,34,46,${a-0.08*lift}))`;；L71: function slap(t,land,dur=.2,amp=.3){const p=(t-(land-dur))/dur;if(p<0)return{o:0,s:1+amp,r:6,lift:1};；L73: const w=wob(t-land,4.5,10);return{o:1,s:1-.035*w,r:-.8*w,lift:0};}；L188: const sl={y:pre?-420*(1-he):0,r:pre?-14*(1-he):-.8*sq,s:pre?1+.18*(1-he):1,sx:1+.04*sq,sy:1-.05*sq,lift:pre?1-he:0};"
+      },
+      {
+        "name": "追加原片区间",
+        "value": "mg-collage 原片 0–1.4 秒；mg-collage 原片 2.05–2.8 秒；mg-collage 原片 5.96–7.54 秒；mg-collage 原片 7.96–9.4 秒；if (k < 0) { const u = -k / pre; return { s: 1 + 0.38 * u * u + 0.05 * u, lift: u, k }; }\nif (k === 0) return { s: 0.972, lift: 0, k, sq: 1 };\nc.shadowBlur = 5 + lift * 34; c.shadowOffsetX = 3 + lift * 24; c.shadowOffsetY = 5 + lift * 34;"
+      }
+    ],
+    "useCases": [
+      "手机照片拍落",
+      "部件与产地照片错峰入场",
+      "拼贴片中的照片、文字纸片和刊名放大后拍下，离纸阴影随高度塌缩，落地后逐格挤压并回到稳定状态。"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "accent",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-paperclip 原片 0–0.8 秒；mg-paperclip 原片 0.98–2.5 秒；mg-paperclip 原片 5.56–6.8 秒；总时长 8.73 秒。抬高、放大、倾转的贴纸下落，阴影同步收紧，落定后以衰减摆动与挤压回弹消力。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。 按 index.html 内联 segments 在原有 3.56 秒之后重放mg-collage 原片 0–1.4 秒；mg-collage 原片 2.05–2.8 秒；mg-collage 原片 5.96–7.54 秒；mg-collage 原片 7.96–9.4 秒，总时长 8.73 秒。拼贴片将照片、文字纸片和刊名放大拍下，离纸阴影随高度塌缩，落地后逐格挤压回定。画面与音轨沿用同一映射，声音默认关闭。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/sticker-slap-shadow/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-paperclip"
+      },
+      {
+        "caseId": "mg-collage"
+      }
+    ],
+    "previewAt": 1.82,
+    "markers": [
+      {
+        "t": 0,
+        "label": "手机拍落"
+      },
+      {
+        "t": 0.1,
+        "label": "机制画面"
+      },
+      {
+        "t": 0.8,
+        "label": "部件拍落"
+      },
+      {
+        "t": 1.62,
+        "label": "机制画面"
+      },
+      {
+        "t": 2.32,
+        "label": "产地贴纸拍落"
+      },
+      {
+        "t": 2.96,
+        "label": "机制画面"
+      },
+      {
+        "t": 3.56,
+        "label": "脑洞拼贴"
+      },
+      {
+        "t": 3.8933333,
+        "label": "人像拍落"
+      },
+      {
+        "t": 4.8933333,
+        "label": "纸偶开口"
+      },
+      {
+        "t": 4.96,
+        "label": "脑洞拼贴"
+      },
+      {
+        "t": 5.2433333,
+        "label": "剪线盖印"
+      },
+      {
+        "t": 5.41,
+        "label": "剪开头盖"
+      },
+      {
+        "t": 5.71,
+        "label": "脑洞拼贴"
+      },
+      {
+        "t": 6.0833333,
+        "label": "黑带拍入"
+      },
+      {
+        "t": 6.4166667,
+        "label": "脑洞大开"
+      },
+      {
+        "t": 7.25,
+        "label": "撕开纸页"
+      },
+      {
+        "t": 7.29,
+        "label": "脑洞拼贴"
+      },
+      {
+        "t": 7.6633333,
+        "label": "刊名拍入"
+      }
+    ],
+    "preview": "previews/patterns/sticker-slap-shadow.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-paperclip",
+      "bundle": "agent/cases/mg-paperclip.json"
+    },
+    {
+      "caseId": "mg-collage",
+      "bundle": "agent/cases/mg-collage.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 抬高旋转拍贴\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速重放以下片段：mg-paperclip 原片 0–0.8 秒；mg-paperclip 原片 0.98–2.5 秒；mg-paperclip 原片 5.56–6.8 秒；总时长 8.73 秒。抬高、放大、倾转的贴纸下落，阴影同步收紧，落定后以衰减摆动与挤压回弹消力。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。 按 index.html 内联 segments 在原有 3.56 秒之后重放mg-collage 原片 0–1.4 秒；mg-collage 原片 2.05–2.8 秒；mg-collage 原片 5.96–7.54 秒；mg-collage 原片 7.96–9.4 秒，总时长 8.73 秒。拼贴片将照片、文字纸片和刊名放大拍下，离纸阴影随高度塌缩，落地后逐格挤压回定。画面与音轨沿用同一映射，声音默认关闭。\n\n## 参数\n\n- **原片重放区间**：mg-paperclip 原片 0–0.8 秒；mg-paperclip 原片 0.98–2.5 秒；mg-paperclip 原片 5.56–6.8 秒；1 倍速，巧思时长 8.73 秒。\n- **抬高旋转拍贴**：L69: const shadow=(lift,a=.26)=>`drop-shadow(0 ${6+34*lift}px ${10+34*lift}px rgba(22,34,46,${a-0.08*lift}))`;；L71: function slap(t,land,dur=.2,amp=.3){const p=(t-(land-dur))/dur;if(p<0)return{o:0,s:1+amp,r:6,lift:1};；L73: const w=wob(t-land,4.5,10);return{o:1,s:1-.035*w,r:-.8*w,lift:0};}；L188: const sl={y:pre?-420*(1-he):0,r:pre?-14*(1-he):-.8*sq,s:pre?1+.18*(1-he):1,sx:1+.04*sq,sy:1-.05*sq,lift:pre?1-he:0};\n- **追加原片区间**：mg-collage 原片 0–1.4 秒；mg-collage 原片 2.05–2.8 秒；mg-collage 原片 5.96–7.54 秒；mg-collage 原片 7.96–9.4 秒；if (k < 0) { const u = -k / pre; return { s: 1 + 0.38 * u * u + 0.05 * u, lift: u, k }; }\nif (k === 0) return { s: 0.972, lift: 0, k, sq: 1 };\nc.shadowBlur = 5 + lift * 34; c.shadowOffsetX = 3 + lift * 24; c.shadowOffsetY = 5 + lift * 34;\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/sticker-slap-shadow/index.html) · [在库中查看](../../patterns.html#pattern/sticker-slap-shadow)\n"
+  },
+  "entrypoint": "demos/patterns/sticker-slap-shadow/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-collage/LICENSES.md",
+      "bytes": 1208,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/bfly_a.png",
+      "bytes": 50435,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/bfly_b.png",
+      "bytes": 27175,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/bird_hawk.png",
+      "bytes": 85054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/earth.png",
+      "bytes": 129389,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/flame0.png",
+      "bytes": 22356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/flame1.png",
+      "bytes": 24003,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/layout.json",
+      "bytes": 1621,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/manicule.png",
+      "bytes": 104212,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/news_a.png",
+      "bytes": 639281,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/news_b.png",
+      "bytes": 513923,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/p_face.png",
+      "bytes": 622680,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/p_jaw.png",
+      "bytes": 615929,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/p_lid.png",
+      "bytes": 617436,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/page_kraft.jpg",
+      "bytes": 505859,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/page_red.jpg",
+      "bytes": 262771,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/rocket.png",
+      "bytes": 60289,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/rose_centi.png",
+      "bytes": 76740,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/rose_purple.png",
+      "bytes": 94054,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/gen/space_wedge.png",
+      "bytes": 1454805,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/dust/dust_01_3840x2160.png",
+      "bytes": 81508,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/dust/dust_03_3840x2160.png",
+      "bytes": 73739,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/grain/grain_film35_2048.png",
+      "bytes": 3168295,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/washi/washi_solid_12.png",
+      "bytes": 645227,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/assets/textures/washi/washi_solid_14.png",
+      "bytes": 458715,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/audio/film.m4a",
+      "bytes": 420363,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/fidelity.md",
+      "bytes": 4792,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/cues.json",
+      "bytes": 1310,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/scene.js",
+      "bytes": 54419,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/setup.js",
+      "bytes": 161,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/film/style.css",
+      "bytes": 145,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/AlimamaShuHeiTi-Bold.ttf",
+      "bytes": 1375772,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/AlimamaShuHeiTi-LICENSE.txt",
+      "bytes": 2016,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/Anton-OFL.txt",
+      "bytes": 4391,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/Anton-Regular.ttf",
+      "bytes": 170812,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/BebasNeue-OFL.txt",
+      "bytes": 4337,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/BebasNeue-Regular.ttf",
+      "bytes": 61400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/IBMPlexMono-OFL.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/NotoSansSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/NotoSansSC-VF.ttf",
+      "bytes": 17773132,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/NotoSerifSC-OFL.txt",
+      "bytes": 4301,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/NotoSerifSC-VF.ttf",
+      "bytes": 25125232,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/fonts/fonts.css",
+      "bytes": 1021,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-collage/index.html",
+      "bytes": 2700,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/clear.wav",
+      "bytes": 842684,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/cough.wav",
+      "bytes": 459780,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/crumple.wav",
+      "bytes": 2257058,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/pages.wav",
+      "bytes": 7483220,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/scissors.wav",
+      "bytes": 2096562,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/assets/sfx/tape.wav",
+      "bytes": 1186248,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/audio.py",
+      "bytes": 10279,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/cues.json",
+      "bytes": 1310,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/work/prep.py",
+      "bytes": 16663,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/work/prep_birds.py",
+      "bytes": 819,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-collage/source/work/prep_hand.py",
+      "bytes": 1788,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/LICENSES.md",
+      "bytes": 911,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/countries-110m.json",
+      "bytes": 107761,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/battery.png",
+      "bytes": 233146,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/cobalt.png",
+      "bytes": 377499,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/lithium.png",
+      "bytes": 291448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/meta.json",
+      "bytes": 351,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/pcb.png",
+      "bytes": 1296815,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/phone.png",
+      "bytes": 2104894,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/rareearth.png",
+      "bytes": 644720,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/assets/stickers/tin.png",
+      "bytes": 538156,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/audio/film.m4a",
+      "bytes": 415520,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fidelity.md",
+      "bytes": 4716,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/cues.json",
+      "bytes": 3076,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/scene.js",
+      "bytes": 50443,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/setup.js",
+      "bytes": 2263,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/film/style.css",
+      "bytes": 2129,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-105-Heavy.ttf",
+      "bytes": 2536300,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-65-Medium.ttf",
+      "bytes": 8429388,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-3-85-Bold.ttf",
+      "bytes": 8371268,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/AlibabaPuHuiTi-LICENSE.md",
+      "bytes": 5216,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/Inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/fonts/fonts.css",
+      "bytes": 698,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/index.html",
+      "bytes": 2456,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/audio.py",
+      "bytes": 10067,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/cues.json",
+      "bytes": 3076,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/source/tools/stickers.py",
+      "bytes": 4468,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/d3@7.9.0/LICENSE",
+      "bytes": 731,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/d3@7.9.0/dist/d3.min.js",
+      "bytes": 279706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/topojson-client@3.1.0/LICENSE",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-paperclip/vendor/topojson-client@3.1.0/dist/topojson-client.min.js",
+      "bytes": 7169,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/patterns/sticker-slap-shadow/index.html",
+      "bytes": 3600,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/sticker-slap-shadow/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-collage.json",
+      "bytes": 19427,
+      "role": "entry"
+    },
+    {
+      "path": "entries/cases/mg-paperclip.json",
+      "bytes": 17924,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/sticker-slap-shadow.json",
+      "bytes": 4945,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/sticker-slap-shadow.jpg",
+      "bytes": 80955,
+      "role": "preview"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "kind": "pattern",
+  "id": "card-depth-arrival-parting",
+  "pattern": {
+    "id": "card-depth-arrival-parting",
+    "order": 55,
+    "title": "卡片穿焦起落",
+    "types": [
+      "camera",
+      "transition"
+    ],
+    "carriers": [
+      "video"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "mg-styles-15",
+      "极光玻璃"
+    ],
+    "summary": "卡片从纵深与下方倾斜进入，回摆逐渐衰减；浮动后沿独立轴向退开，失焦先于离场。",
+    "mechanism": "卡片从纵深与下方倾斜进入，回摆逐渐衰减；浮动后沿独立轴向退开，失焦先于离场。",
+    "trigger": "卡片的进入和分离节点到达时",
+    "effect": "深度位移、倾角回摆、浮动与失焦共同组织三张卡片的入场、停留和离场。",
+    "timing": [
+      {
+        "name": "原片重放区间",
+        "value": "mg-aurora-glass 原片 0–8.8 秒；1 倍速，巧思时长 8.8 秒。"
+      },
+      {
+        "name": "卡片穿焦起落",
+        "value": "L472: const tilt = 20 * Math.exp(-3.2 * tau) * Math.cos(3.6 * tau);；L475: let y = c.base[1] + 70 * (1 - e) + fl[0] + c.drift[1] * eo;；L476: let z = c.base[2] + 560 * (1 - e) + c.drift[2] * eo;；L506: const defocus = 0.5 + 16 * dfk;"
+      }
+    ],
+    "useCases": [
+      "多层卡片从纵深入场",
+      "卡片失焦后分离让出字标"
+    ],
+    "avoid": [],
+    "composition": {
+      "role": "support",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-aurora-glass 原片 0–8.8 秒；总时长 8.8 秒。卡片从纵深与下方倾斜进入并衰减回摆，浮动后沿独立轴向退开，失焦先于离场。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。",
+    "migration": [
+      {
+        "field": "index.html 内联配置 → segments / markers",
+        "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+      }
+    ],
+    "demo": "demos/patterns/card-depth-arrival-parting/index.html",
+    "kit": true,
+    "timeline": true,
+    "renderer": "gpu",
+    "sources": [
+      {
+        "caseId": "mg-aurora-glass"
+      }
+    ],
+    "previewAt": 2.8,
+    "markers": [
+      {
+        "t": 0,
+        "label": "极光玻璃"
+      },
+      {
+        "t": 0.2,
+        "label": "机制画面"
+      },
+      {
+        "t": 2.8,
+        "label": "机制画面"
+      },
+      {
+        "t": 7.7,
+        "label": "机制画面"
+      }
+    ],
+    "preview": "previews/patterns/card-depth-arrival-parting.jpg",
+    "previewPortrait": null
+  },
+  "sourceCases": [
+    {
+      "caseId": "mg-aurora-glass",
+      "bundle": "agent/cases/mg-aurora-glass.json"
+    }
+  ],
+  "documents": {
+    "prompt": "# 卡片穿焦起落\n\n## 实现 Prompt\n\n通过 MotionKit.replay 以 1 倍速重放以下片段：mg-aurora-glass 原片 0–8.8 秒；总时长 8.8 秒。卡片从纵深与下方倾斜进入并衰减回摆，浮动后沿独立轴向退开，失焦先于离场。直接调用来源案例的 renderAt(t)，保留原作参数、画面、字体与成品音轨，声音默认关闭。使用 1920×1080 横屏、30fps，支持播放、暂停、时间定位与减少动态偏好。\n\n## 参数\n\n- **原片重放区间**：mg-aurora-glass 原片 0–8.8 秒；1 倍速，巧思时长 8.8 秒。\n- **卡片穿焦起落**：L472: const tilt = 20 * Math.exp(-3.2 * tau) * Math.cos(3.6 * tau);；L475: let y = c.base[1] + 70 * (1 - e) + fl[0] + c.drift[1] * eo;；L476: let z = c.base[2] + 560 * (1 - e) + c.drift[2] * eo;；L506: const defocus = 0.5 + 16 * dfk;\n\n## 迁移\n\n- `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。\n\n[打开 Demo](../../demos/patterns/card-depth-arrival-parting/index.html) · [在库中查看](../../patterns.html#pattern/card-depth-arrival-parting)\n"
+  },
+  "entrypoint": "demos/patterns/card-depth-arrival-parting/index.html",
+  "files": [
+    {
+      "path": "demos/cases/mg-aurora-glass/LICENSES.md",
+      "bytes": 830,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/assets/textures/grain/grain_fine_2048.png",
+      "bytes": 3554972,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/audio/film.m4a",
+      "bytes": 403616,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fidelity.md",
+      "bytes": 4331,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/LICENSE",
+      "bytes": 1071,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/cues.json",
+      "bytes": 881,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/main.js",
+      "bytes": 46612,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/out/env.json",
+      "bytes": 7901,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/setup.js",
+      "bytes": 153,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/shaders.js",
+      "bytes": 21381,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/film/style.css",
+      "bytes": 138,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/HarmonyOS-Sans-LICENSE.txt",
+      "bytes": 32768,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/HarmonyOS_Sans_SC_Light.ttf",
+      "bytes": 8336364,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/Inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/Inter[opsz,wght].ttf",
+      "bytes": 876576,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/Sora-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/Sora[wght].ttf",
+      "bytes": 111400,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/fonts/fonts.css",
+      "bytes": 497,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/index.html",
+      "bytes": 2091,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/source/audio.py",
+      "bytes": 10545,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/mg-aurora-glass/source/cues.json",
+      "bytes": 881,
+      "role": "process"
+    },
+    {
+      "path": "demos/patterns/card-depth-arrival-parting/index.html",
+      "bytes": 1389,
+      "role": "source"
+    },
+    {
+      "path": "demos/patterns/card-depth-arrival-parting/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "entries/cases/mg-aurora-glass.json",
+      "bytes": 16722,
+      "role": "entry"
+    },
+    {
+      "path": "entries/patterns/card-depth-arrival-parting.json",
+      "bytes": 2458,
+      "role": "entry"
+    },
+    {
+      "path": "previews/patterns/card-depth-arrival-parting.jpg",
+      "bytes": 86887,
+      "role": "preview"
+    }
+  ]
+}

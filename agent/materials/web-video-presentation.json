@@ -1,0 +1,977 @@
+{
+  "schemaVersion": 1,
+  "kind": "materials",
+  "id": "web-video-presentation",
+  "material": {
+    "id": "web-video-presentation",
+    "order": 2,
+    "title": "web-video-presentation · 网页演示录屏",
+    "type": "agent-skill",
+    "summary": "把文章或口播稿变成按步骤推进的横屏网页演示，再通过录屏产出视频。",
+    "workflow": [
+      "识别原始文章或已有口播稿，保留原文；一次产出口播稿 script.md 与开发计划 outline.md，规划章节、节拍、每步内容与章节信息池。",
+      "由用户一次确认口播稿、开发计划、主题、真实素材准备方式与开发模式；大纲用于规划内容与节奏，具体动画留给章节开发。",
+      "按选定主题运行脚手架，构建基于 Vite、React 与 TypeScript 的演示；主线程完成第 1 章的真实素材准备和完整视觉呈现，并等待用户验收。",
+      "按用户选择的方式逐章确认、顺序开发或并行开发后续章节；以统一主题和全局章节、步骤游标组织 1920×1080 舞台。",
+      "网页完成后询问是否合成口播音频；需要时从 narrations.ts 提取每步文案，确认后通过可替换的语音服务合成。",
+      "有音频时使用自动模式连续录屏；没有合成音频时，在录屏过程中手动点击推进，再进行配音与后期。"
+    ],
+    "useCases": [
+      "把文章或口播稿制作成视频平台的讲解内容",
+      "可录屏的产品演示、教程与视觉主题演讲",
+      "每屏聚焦一个观点、每次点击推进一个口播节拍的动态演示",
+      "需要统一主题并可选择合成口播音频的分章内容"
+    ],
+    "avoid": [
+      "把主题预览图当成完整页面源码或已复刻案例",
+      "需要直接交付 MP4、由确定性时间函数逐帧渲染的制作需求",
+      "没有原文、口播稿或素材大纲，却要求该 skill 代为构思全部内容",
+      "一般响应式网站或以自由浏览为主的网页应用"
+    ],
+    "upstream": {
+      "repository": "ConardLi/garden-skills",
+      "url": "https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation",
+      "commit": "2b9a89340b70f632d31c0f1c69fce94a7912423e",
+      "version": "1.2.2"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/LICENSE",
+      "notes": "skill 源码与文档采用 MIT，快照附原 LICENSE。23 张主题图与 1 张总览图来自 ConardLi/assets 的公开 CDN，作者为 ConardLi，图片许可未声明。"
+    },
+    "install": "按来源中文 README 的说明，把 skill 目录复制到 Agent 会扫描的目录，然后让 Agent 把文章或口播稿制作成网页视频演示。手动创建演示项目：\nbash skills/web-video-presentation/scripts/scaffold.sh ./presentation --theme=paper-press\n查看可用主题：\nbash skills/web-video-presentation/scripts/scaffold.sh --list-themes\n生成的 presentation/ 是基于 Vite、React 与 TypeScript 的项目；启动后使用录屏工具录制 16:9 舞台。来源集合 README 也提供单独安装命令：\nnpx skills add ConardLi/garden-skills -s web-video-presentation\n此命令安装上游 main 的当前版本；本库原文快照固定在记录的提交。",
+    "snapshotPath": "demos/materials/web-video-presentation/",
+    "snapshotEntry": "SKILL.md",
+    "relatedEntries": [],
+    "gallery": [
+      {
+        "path": "previews/materials/web-video-presentation/midnight-press.webp",
+        "caption": "暗色印刷（midnight-press）：电影感编辑暗底与暖橙色；适合开发者教程、人工智能或工具评测、技术深度解析。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/midnight-press.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/dark-botanical.webp",
+        "caption": "暗夜植物（dark-botanical）：暖陶、玫粉与鎏金叠层；适合品牌故事、时尚美妆、高端产品发布。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dark-botanical.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/chalk-garden.webp",
+        "caption": "粉笔花园（chalk-garden）：深石板黑板、手写字与粉笔黄；适合科普讲解、教学课堂、面向初学者的亲切讲解。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/chalk-garden.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/blueprint.webp",
+        "caption": "工程蓝图（blueprint）：深海军蓝、制图青与工程网格；适合技术架构、系统拆解、接口或开发工具介绍。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/blueprint.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/terminal-green.webp",
+        "caption": "终端绿（terminal-green）：复古磷光屏、等宽字与扫描线；适合命令行工具教程、黑客或安全话题、复古技术致敬。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/terminal-green.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/neon-cyber.webp",
+        "caption": "霓虹赛博（neon-cyber）：电光青与玫红双霓虹；适合人工智能或大模型评测、去中心化网络与安全、未来主义。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/neon-cyber.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/bold-signal.webp",
+        "caption": "焦点信号（bold-signal）：暗色渐变与大橙色焦点卡；适合路演、产品发布、大字宣言与品牌演讲。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bold-signal.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/creative-voltage.webp",
+        "caption": "电压创意（creative-voltage）：饱和电光蓝、霓虹黄与半色调网点；适合设计周、创意分享、工作室作品集、字体与视觉文化。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/creative-voltage.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/paper-press.webp",
+        "caption": "亮色印刷（paper-press）：暖奶油纸张与火热橙色；适合杂志型内容、生活方式、日常工具评测。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/paper-press.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/newsroom.webp",
+        "caption": "报社（newsroom）：新闻纸奶油底与旗红色；适合纪录片、报道、深度评测、时事热点解读。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/newsroom.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/monochrome-print.webp",
+        "caption": "黑白印刷（monochrome-print）：精炼克制的黑白编辑风格；适合深度阅读改编、学术思想内容、文化艺术评论。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/monochrome-print.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/vintage-editorial.webp",
+        "caption": "复古编辑（vintage-editorial）：俏皮衬线字与圆、线、点几何叠层；适合个人见解、评论、文化随笔、设计与字体话题。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/vintage-editorial.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/sunset-zine.webp",
+        "caption": "日落 Zine（sunset-zine）：孔版印刷拼贴、暖桃与玫红；适合生活视频日志、创意分享、小红书或抖音内容。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/sunset-zine.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/pastel-dream.webp",
+        "caption": "柔光梦（pastel-dream）：柔粉、鼠尾草绿与胶囊色条；适合产品入门、友好教学、心理健康与母婴内容。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/pastel-dream.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/warm-keynote.webp",
+        "caption": "暖色 Keynote（warm-keynote）：玻璃面板、青绿与暖色网格；适合软件服务主题演讲、企业产品发布、团队对外汇报。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/warm-keynote.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/electric-studio.webp",
+        "caption": "电光企业（electric-studio）：净白画布与贴底电光蓝色条；适合企业产品演讲、投资人路演、企业财报与季度更新。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/electric-studio.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/bauhaus-bold.webp",
+        "caption": "包豪斯（bauhaus-bold）：宣言式现代主义、直角与厚边；适合产品发布、观点宣言、品牌主张。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bauhaus-bold.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/swiss-ikb.webp",
+        "caption": "瑞士克莱因蓝（swiss-ikb）：极细无衬线字、克莱因蓝与发丝网格；适合人工智能或科技产品发布、年度数据汇报、信息图。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/swiss-ikb.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/dune.webp",
+        "caption": "沙丘（dune）：炭褐与沙色底、建筑画廊气质；适合建筑、室内空间、艺术展览、高端品牌画册。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dune.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/indigo-porcelain.webp",
+        "caption": "靛蓝瓷（indigo-porcelain）：以靛蓝为墨色、瓷白为底色；适合学术论文解读、人工智能或数据深度内容、严肃技术汇报。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/indigo-porcelain.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/forest-ink.webp",
+        "caption": "森林墨（forest-ink）：森林绿墨色与象牙白、旧版自然杂志气质；适合自然、可持续、纪录与非虚构、慢生活。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/forest-ink.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/kraft-paper.webp",
+        "caption": "牛皮纸（kraft-paper）：深棕墨色、牛皮米与紫铜点缀；适合书评、文学随笔、历史怀旧、手工艺与食物。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/kraft-paper.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/split-canvas.webp",
+        "caption": "双拼画布（split-canvas）：蜜桃与薰衣草各半的双底色；适合双主题对比、辩论、故事讲述、概念对照科普。静态主题预览。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/split-canvas.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      },
+      {
+        "path": "previews/materials/web-video-presentation/gallery.webp",
+        "caption": "23 套主题总览：便于为教程、产品演示与视觉讲解比较主题方向。静态总览图。",
+        "kind": "theme",
+        "sourceUrl": "https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/gallery.webp",
+        "license": "作者 ConardLi 公开发布，许可未声明"
+      }
+    ],
+    "sources": [
+      {
+        "title": "中文 README：主题画廊与快速上手",
+        "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation/README.zh-CN.md"
+      },
+      {
+        "title": "英文 README",
+        "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation/README.md"
+      },
+      {
+        "title": "SKILL.md 原文与工作流",
+        "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation/SKILL.md"
+      },
+      {
+        "title": "集合 README：画廊总览与安装方式",
+        "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/README.zh-CN.md"
+      },
+      {
+        "title": "manifest.json：版本",
+        "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-video-presentation/manifest.json"
+      },
+      {
+        "title": "ConardLi/assets",
+        "url": "https://github.com/ConardLi/assets",
+        "note": "画廊主题图的托管仓库。"
+      }
+    ],
+    "research": "docs/materials/web-video-presentation.md",
+    "preview": "previews/materials/web-video-presentation/midnight-press.webp",
+    "snapshotFiles": [
+      "demos/materials/web-video-presentation/LICENSE",
+      "demos/materials/web-video-presentation/README.md",
+      "demos/materials/web-video-presentation/README.zh-CN.md",
+      "demos/materials/web-video-presentation/SKILL.md",
+      "demos/materials/web-video-presentation/manifest.json",
+      "demos/materials/web-video-presentation/references/AUDIO.md",
+      "demos/materials/web-video-presentation/references/CHAPTER-CRAFT.md",
+      "demos/materials/web-video-presentation/references/EXAMPLES/README.md",
+      "demos/materials/web-video-presentation/references/EXAMPLES/case-tech-review/README.md",
+      "demos/materials/web-video-presentation/references/EXAMPLES/case-tech-review/outline-snippet.md",
+      "demos/materials/web-video-presentation/references/EXAMPLES/hook-chapter/README.md",
+      "demos/materials/web-video-presentation/references/EXAMPLES/hook-chapter/chapter.css",
+      "demos/materials/web-video-presentation/references/EXAMPLES/hook-chapter/chapter.tsx",
+      "demos/materials/web-video-presentation/references/EXAMPLES/list-reveal/README.md",
+      "demos/materials/web-video-presentation/references/EXAMPLES/list-reveal/chapter.css",
+      "demos/materials/web-video-presentation/references/EXAMPLES/list-reveal/chapter.tsx",
+      "demos/materials/web-video-presentation/references/OUTLINE-FORMAT.md",
+      "demos/materials/web-video-presentation/references/RECORDING.md",
+      "demos/materials/web-video-presentation/references/SCRIPT-STYLE.md",
+      "demos/materials/web-video-presentation/references/THEMES.md",
+      "demos/materials/web-video-presentation/scripts/scaffold.sh",
+      "demos/materials/web-video-presentation/templates/index.html",
+      "demos/materials/web-video-presentation/templates/scripts/extract-narrations.ts",
+      "demos/materials/web-video-presentation/templates/scripts/synthesize-audio.sh",
+      "demos/materials/web-video-presentation/templates/scripts/tts-providers/README.md",
+      "demos/materials/web-video-presentation/templates/scripts/tts-providers/minimax.sh",
+      "demos/materials/web-video-presentation/templates/scripts/tts-providers/openai.sh",
+      "demos/materials/web-video-presentation/templates/src/App.tsx",
+      "demos/materials/web-video-presentation/templates/src/chapters/01-example/Example.css",
+      "demos/materials/web-video-presentation/templates/src/chapters/01-example/Example.tsx",
+      "demos/materials/web-video-presentation/templates/src/chapters/01-example/narrations.ts",
+      "demos/materials/web-video-presentation/templates/src/components/AutoStartGate.css",
+      "demos/materials/web-video-presentation/templates/src/components/AutoStartGate.tsx",
+      "demos/materials/web-video-presentation/templates/src/components/AutoToggle.css",
+      "demos/materials/web-video-presentation/templates/src/components/AutoToggle.tsx",
+      "demos/materials/web-video-presentation/templates/src/components/MaskReveal.tsx",
+      "demos/materials/web-video-presentation/templates/src/components/ProgressBar.css",
+      "demos/materials/web-video-presentation/templates/src/components/ProgressBar.tsx",
+      "demos/materials/web-video-presentation/templates/src/components/Stage.tsx",
+      "demos/materials/web-video-presentation/templates/src/hooks/useAudioPlayer.ts",
+      "demos/materials/web-video-presentation/templates/src/hooks/useAutoMode.ts",
+      "demos/materials/web-video-presentation/templates/src/hooks/useStageScale.ts",
+      "demos/materials/web-video-presentation/templates/src/hooks/useStepper.ts",
+      "demos/materials/web-video-presentation/templates/src/main.tsx",
+      "demos/materials/web-video-presentation/templates/src/registry/chapters.ts",
+      "demos/materials/web-video-presentation/templates/src/registry/types.ts",
+      "demos/materials/web-video-presentation/templates/src/styles/animations.css",
+      "demos/materials/web-video-presentation/templates/src/styles/base.css",
+      "demos/materials/web-video-presentation/templates/src/styles/fonts.css",
+      "demos/materials/web-video-presentation/templates/vite.config.ts",
+      "demos/materials/web-video-presentation/themes/bauhaus-bold/theme.json",
+      "demos/materials/web-video-presentation/themes/bauhaus-bold/tokens.css",
+      "demos/materials/web-video-presentation/themes/blueprint/theme.json",
+      "demos/materials/web-video-presentation/themes/blueprint/tokens.css",
+      "demos/materials/web-video-presentation/themes/bold-signal/theme.json",
+      "demos/materials/web-video-presentation/themes/bold-signal/tokens.css",
+      "demos/materials/web-video-presentation/themes/chalk-garden/theme.json",
+      "demos/materials/web-video-presentation/themes/chalk-garden/tokens.css",
+      "demos/materials/web-video-presentation/themes/creative-voltage/theme.json",
+      "demos/materials/web-video-presentation/themes/creative-voltage/tokens.css",
+      "demos/materials/web-video-presentation/themes/dark-botanical/theme.json",
+      "demos/materials/web-video-presentation/themes/dark-botanical/tokens.css",
+      "demos/materials/web-video-presentation/themes/dune/theme.json",
+      "demos/materials/web-video-presentation/themes/dune/tokens.css",
+      "demos/materials/web-video-presentation/themes/electric-studio/theme.json",
+      "demos/materials/web-video-presentation/themes/electric-studio/tokens.css",
+      "demos/materials/web-video-presentation/themes/forest-ink/theme.json",
+      "demos/materials/web-video-presentation/themes/forest-ink/tokens.css",
+      "demos/materials/web-video-presentation/themes/indigo-porcelain/theme.json",
+      "demos/materials/web-video-presentation/themes/indigo-porcelain/tokens.css",
+      "demos/materials/web-video-presentation/themes/kraft-paper/theme.json",
+      "demos/materials/web-video-presentation/themes/kraft-paper/tokens.css",
+      "demos/materials/web-video-presentation/themes/midnight-press/theme.json",
+      "demos/materials/web-video-presentation/themes/midnight-press/tokens.css",
+      "demos/materials/web-video-presentation/themes/monochrome-print/theme.json",
+      "demos/materials/web-video-presentation/themes/monochrome-print/tokens.css",
+      "demos/materials/web-video-presentation/themes/neon-cyber/theme.json",
+      "demos/materials/web-video-presentation/themes/neon-cyber/tokens.css",
+      "demos/materials/web-video-presentation/themes/newsroom/theme.json",
+      "demos/materials/web-video-presentation/themes/newsroom/tokens.css",
+      "demos/materials/web-video-presentation/themes/paper-press/theme.json",
+      "demos/materials/web-video-presentation/themes/paper-press/tokens.css",
+      "demos/materials/web-video-presentation/themes/pastel-dream/theme.json",
+      "demos/materials/web-video-presentation/themes/pastel-dream/tokens.css",
+      "demos/materials/web-video-presentation/themes/split-canvas/theme.json",
+      "demos/materials/web-video-presentation/themes/split-canvas/tokens.css",
+      "demos/materials/web-video-presentation/themes/sunset-zine/theme.json",
+      "demos/materials/web-video-presentation/themes/sunset-zine/tokens.css",
+      "demos/materials/web-video-presentation/themes/swiss-ikb/theme.json",
+      "demos/materials/web-video-presentation/themes/swiss-ikb/tokens.css",
+      "demos/materials/web-video-presentation/themes/terminal-green/theme.json",
+      "demos/materials/web-video-presentation/themes/terminal-green/tokens.css",
+      "demos/materials/web-video-presentation/themes/vintage-editorial/theme.json",
+      "demos/materials/web-video-presentation/themes/vintage-editorial/tokens.css",
+      "demos/materials/web-video-presentation/themes/warm-keynote/theme.json",
+      "demos/materials/web-video-presentation/themes/warm-keynote/tokens.css"
+    ]
+  },
+  "documents": {
+    "research": "# web-video-presentation 使用说明\n\n先在[素材详情](../../materials.html#material/web-video-presentation)查看工作流与主题画廊，再打开[主文档](../../demos/materials/web-video-presentation/SKILL.md)。阅读时把原文稿、大纲和演示页面对应起来：应能指出一个口播节拍对应页面里哪一步的变化。\n\n做第一章时，先用真实内容确认文字密度、素材和主题，再将确认后的排版沿用到其他章节。预览时从头推进一遍，检查每一步留给阅读的时间是否适合要说的话；录屏前把画面推进方式与口播方式一起确定。\n\n[中文原文说明](../../demos/materials/web-video-presentation/README.zh-CN.md)可配合主文档阅读；章节示例、模板和主题沿原文中的相对链接取得。独立取得全部原文的方法见[Agent 取材说明](../agent.md)。\n",
+    "snapshot": "---\nname: web-video-presentation\ndescription: 把一篇文章或口播稿，做成\"看起来像视频\"的点击驱动 16:9 网页演示，可选合成口播音频。流程：原始文章 → **一次产出**口播稿 + outline 开发计划 → 用户**一次对齐** 5 件事（稿子 / outline / 主题 / 素材 / 开发模式）→ 网页开发（逐章 / 顺序 / 并行）→ 可选音频合成（provider-agnostic：内置 MiniMax mmx-cli + OpenAI TTS，可换 ElevenLabs / edge-tts / Azure / 自带 TTS）。**outline 只规划节奏与信息密度，不规划动画** —— 动画由章节开发时按 PRINCIPLES + ANTI-AI 法则即时设计。每次点击推进口播稿的一个节拍，每一步独占整屏，进度条平时隐藏只在悬浮时出现。适用场景：用网页做视频（动态 PPT 但不像 PPT）、把口播稿 / 文章变成可交互的解说、为 B 站 / YouTube / 视频号录屏教程、做有电影感的产品 / talk demo。本 Skill 沉淀的是设计方法论 + 协作流程 —— 不绑定任何特定样式 / 字体 / 颜色 —— 因此能复用到任意主题与美学。\n---\n\n# Web Video Presentation\n\n把一篇文章或口播稿，一步步做成可录屏的\"伪装成视频的网页\"，可选合成\n口播音频。产出物 = Vite + React + TS 项目 + 按章节切分的音频。\n\n## 适用场景\n\n- \"我有口播稿 / 一篇文章，帮我做成视频\" —— 口播驱动的内容\n- 想做 \"动态 PPT\"\n- 16:9 横屏录屏，大字、留白、每屏都要有动效\n- 教学 / 产品演示 / keynote 想要电影感\n- B 站 / YouTube /抖音视频内容\n\n本 Skill **以方法论 + 协作流程为核心**。脚手架模板提供 token 和原语，\n但每个美学决策（配色、字型、动效气质）都应该针对你的主题重新设计 ——\n不要照搬。\n\n---\n\n## 工作流总览\n\n```\nPhase 1   内容编写\n   1.1  识别用户输入\n   1.2  一次产出 script.md + outline.md\n        （口播稿 + 开发计划）\n   ▼\n[Checkpoint Plan]      ← 必须停。一次对齐 5 件事：\n                         稿子 / outline / 主题 / 素材 / 开发模式\n   ▼\nPhase 2   网页开发\n   2.1  脚手架（按选定主题）\n   2.2  第 1 章 = 主线程 + 完整版本（强制 anchor）\n        ▼\n        [硬节点] 用户验收第 1 章 ← 不可跳过\n        ▼\n   2.3  第 2~N 章（按选定模式：A 逐章 / B 顺序 / C 并行）\n   ▼\n[Checkpoint Audio]     ← 必须停。是否合成音频\n   ▼\nPhase 3   音频合成（可选）\n   ▼\nPhase 4   录屏 + 后期\n```\n\n工作目录约定（agent 在用户当前目录下创建 / 编辑）：\n\n```\nmy-video/\n├── article.md          # 用户给原文时必有 —— 不删！开发阶段画面信息源\n├── script.md           # 必有：保持原文语言的平台化口播稿（决定节拍）\n├── outline.md          # 必有：开发计划（章节切分 + 每步内容 + 信息池）\n└── presentation/       # 脚手架产出的 Vite + React + TS 项目\n    ├── src/chapters/<NN>-<id>/\n    │   ├── <Chapter>.tsx     # 视觉实现\n    │   ├── <Chapter>.css\n    │   └── narrations.ts     # ★ step 数 + 口播文本的唯一真相源\n    ├── scripts/\n    │   ├── extract-narrations.ts   # 扫所有 narrations.ts → audio-segments.json\n    │   ├── synthesize-audio.sh     # provider-agnostic runner（循环 segments）\n    │   └── tts-providers/          # 每 provider 一个 .sh（内置 2 个）\n    │       ├── README.md           # 三函数契约 + 5 段现成代码片段（11labs / edge-tts / say / azure / gcloud）\n    │       ├── minimax.sh          # 默认 provider，用 mmx-cli\n    │       └── openai.sh           # 内置 OpenAI TTS（curl + OPENAI_API_KEY）\n    ├── audio-segments.json         # extract 产出（合成前 review）\n    └── public/audio/<id>/<N>.mp3   # 可选：合成的音频\n```\n\n> **关键**：`narrations.ts` 是 step 数和音频合成的**唯一真相源**。\n> 章节 `.tsx` 里的 `if (step === N)` 出现的最大 N + 1 必须等于\n> `narrations.length`。这保证 5 处地方（script / outline / 章节代码 /\n> chapters.ts / 音频文件）永远不会漂。\n\n---\n\n## 硬性自检协议（贯穿整个 Skill）\n\n下面三个产出，每一个**完成后必须走自检 → 修复 → 再汇报 / 推进**：\n\n| 产出 | 自检清单出处 |\n|---|---|\n| `script.md` | [`SCRIPT-STYLE.md`](references/SCRIPT-STYLE.md) 三层自检（形式 / 风骨 / 念出来） |\n| `outline.md` | [`OUTLINE-FORMAT.md`](references/OUTLINE-FORMAT.md) 自检 |\n| 单章实现完成 | [`CHAPTER-CRAFT.md`](references/CHAPTER-CRAFT.md) 完工自检 |\n\n**执行方式**（按能力降级，**优先用更隔离的方式**）：\n\n1. **Agent Teams（最优）**：开一个独立的 reviewer agent，给它\"产出文件\n   路径 + 对应清单 + 关键上下文\"，让它逐项核查并**严格汇报结论**\n   （哪几条 pass / 哪几条 fail + 证据 + 改写建议）。\n2. **subAgent（次优）**：没有 Teams 能力但能开 subagent 就用 subagent\n   走同样流程。\n3. **自检（兜底）**：当前 agent 都没有上述能力，就自己**严格逐项**\n   核查 —— 不允许目测一遍就放行。\n\n**铁律**：拿到结论后**先按 fail 项把产出改完**，再向用户汇报\"做完了\n+ 自检结论 + 改了什么\"。**直接拿原始结论汇报但不修复 = 违规**。\n\n---\n\n## 各阶段文件读取指南\n\n不同阶段读不同的文件。**长会话里 agent 容易遗忘原则**，特别是\nPhase 2.4 的\"实现单章\"会重复 N 次 —— 每次都要回看核心约束。\n\n| 阶段 | 必读（每次都看） | 一次性看完 / 按需查 |\n|---|---|---|\n| Phase 1.1-1.2 内容编写 | `references/SCRIPT-STYLE.md` + `references/OUTLINE-FORMAT.md` + `article.md`（用户原文，如有） | —— |\n| **Checkpoint Plan 选主题** | —— | `themes/*/theme.json`（动态读全部，列清单 + `bestFor` 推荐 + `descriptionZh`）；`references/THEMES.md`（用户想了解主题系统时） |\n| Phase 2.1 脚手架 | —— | SKILL.md 本节看一次 |\n| **Phase 2.4 实现单章（×N 次，被 2.2 / 2.3 调用）** | **`references/CHAPTER-CRAFT.md`** 单一入口 —— Part 0 十条原则 / Part 1 开工 5 问 / Part 2 关系→动作决策树 / Part 3 视觉工具箱 / Part 4 时长参考 / Part 5 反 AI 味反模式 / Part 6 代码硬规则（**含 narrations.ts 强制约束**）/ Part 7 完工自检 / Part 8 反馈速查 + 当前主题的 `themes/<id>/theme.json` + 当前章节的 outline.md 段落 + **`article.md` 本章对应段落** + 素材清单 | `references/EXAMPLES/`（结构示意，不是抄袭模板）；`references/THEMES.md` 完整 token 契约 |\n| Phase 3 音频合成 | `references/AUDIO.md`（含 narrations.ts → segments.json → 任意 provider 流程，内置 minimax + openai） | `templates/scripts/tts-providers/README.md`（换 provider / 自带 TTS 时） |\n| Phase 4 录屏 + 后期 | `references/RECORDING.md`（含 `?auto=1` 自动录屏） | —— |\n| 选 / 造 / 切主题 | —— | `references/THEMES.md` |\n\n> **写章节时只读一份 `CHAPTER-CRAFT.md`**。十条原则 / 开工 self-prompting /\n> 决策树 / 反 AI 味反模式 / 完工自检全部并入这一份单一入口。`EXAMPLES/`\n> **不是必读** —— 先按内容自由设计，卡壳才翻（按 anchor 翻\"形\"，不要照搬）。\n\n---\n\n## Phase 1 —— 内容编写（一次产出）\n\n### 1.1 识别用户输入\n\n| 用户给的东西 | 该做的 |\n|---|---|\n| 原始文章（书面语 / 公众号 / 论文 / 博客） | 一次产出 `script.md` + `outline.md`（1.2），过 Checkpoint Plan |\n| 直接的口播稿 / 视频脚本 | 落盘成 `script.md`，一次产出 `outline.md`（1.2 简化版），过 Checkpoint Plan |\n| 啥都没有，只说\"帮我做个 X 主题的视频\" | **反问**：先给一段素材或大纲。Skill 不替用户构思内容 |\n\n### 1.2 一次产出 script.md + outline.md\n\n**两份产出物在一次思考中完成**：\n\n1. **生成 `script.md`**：按 [`references/SCRIPT-STYLE.md`](references/SCRIPT-STYLE.md)\n   的规则把 article 转成保持原文语言的平台化口播稿。**保留 `article.md` 不删**——它是\n   outline 写信息池和章节实现画面时的细节源（双源原则）。\n2. **生成 `outline.md`**：按 [`references/OUTLINE-FORMAT.md`](references/OUTLINE-FORMAT.md)\n   规则切章节 + 切 step + 每章首段抽**信息池**。\n\n**outline 的边界**（关键）：\n\n| outline 必须写 | outline 不要写 |\n|---|---|\n| 章节切分 / 每章 step 数 / 估时 | 具体动画类型（blur clear / wipe / 弹簧） |\n| 每步屏幕内容（hero / 数据 / 标语 / 列表项） | CSS 实现手段（filter / SVG / clip-path） |\n| 章节级**信息池**：从 article 抽的数字 / 引用 / 案例 / 标签 | 时长数值（不写 ~2.5s / 80~120ms） |\n| 步级关系名前缀（\"反差对照\" / \"递进列表\" / \"金句\" 等可选 hint） | 持续微动 / 错峰量等微观节奏 |\n\n> **outline 不写动画的理由**：写死动画 = chapter agent 退化为翻译机；\n> 留白让 chapter agent 在每步开工时按 [`CHAPTER-CRAFT.md`](references/CHAPTER-CRAFT.md)\n> 的\"内容驱动决策树\"自由设计，才有真正的视频感。详见\n> [`CHAPTER-CRAFT.md`](references/CHAPTER-CRAFT.md) Part 0 原则 7。\n\n**落盘后必须先走自检再进 Checkpoint Plan**：按上文「硬性自检协议」分别\n对 `script.md` / `outline.md` 执行（优先 Agent Teams → subAgent → 自检），\n按结论修复完成后再进入 Checkpoint Plan。\n\n---\n\n## Checkpoint Plan —— 5 件事一次对齐（**硬节点**）\n\n`script.md` + `outline.md` 写完后必须停下来。**用户在这一个节点同时确认\n5 件事**。\n\n### agent 此时要做的预备工作\n\n1. 读所有 `themes/*/theme.json` 拿 `nameZh` / `descriptionZh` / `bestFor`\n   / `mood` —— **不要硬编码清单**\n2. 根据 `script.md` 的内容类型 / 关键词 / 语气，**主动**从主题里挑 2~3\n   套**最匹配的推荐**（匹配 `bestFor` 字段）\n3. 扫一遍 `outline.md` 末尾\"素材清单\"部分\n\n### 总结模板（骨架，agent 按情况填充）\n\n```\n内容计划写完，产出文件：\n  📄 article.md     {若用户给原文则保留}\n  📄 script.md      {X} 字 / ~{T} 分钟\n  📄 outline.md     {N} 章 / {M} 步 + 每章信息池 + 末尾素材清单\n\n章节速览：\n  1. <id>     <章节标题>    <S> 步 ~<T>s\n  2. ...\n\n接下来一次对齐 5 件事：\n\n  1. 稿子 (script.md) 要不要改？\n     可以直接编辑文件，或口头告诉我修改方向。\n\n  2. 开发计划 (outline.md) 要不要改？重点看：\n     - 章节切分 / step 数 / 估时是否合理（合理判断：每章 30~60s）\n     - 每步屏幕内容是否清晰\n     - 每章首段「信息池」是否有足够的 article 细节供画面挂\n     - 末尾素材清单是否完整\n\n  3. 选哪个主题？我的推荐：\n     ★ <推荐 1：nameZh (id)> — 因为 <bestFor 命中>；<descriptionZh 摘要>\n     ★ <推荐 2 / 推荐 3>\n     其它可选：<剩余主题，nameZh + 一句话>\n     也可以让我帮你做新主题（详见 references/THEMES.md）。\n\n  4. 真素材怎么准备？粗看本视频要的图：<列粗略清单>\n     a) 我从 <现有素材路径> 帮你挑   b) 你自己提供   c) 全部 placeholder\n\n  5. 开发模式选哪个？\n\n     **第 1 章无论哪种模式都必须主线程做完 + 用户验收**（强制 anchor）。\n     差异在第 2 章及之后：\n\n     A) 默认 · 逐章确认（推荐）\n        每章做完都暂停验收 → 风险可控 / 节奏最稳\n     B) 第 1 章后顺序开发（不并行）\n        第 2~N 章主线程顺序做完后统一验收 → 速度中 / 适合 agent 不支持并行\n     C) 第 1 章后并行开发（subagent）\n        第 2~N 章用 subagent 并行 → 最快 / 用户控并行数（一次几章）\n        ⚠️ 风格各章会有差异（这是预期，主题禁区兜底）\n```\n\n收到反馈后：\n- 稿子 / outline 要改：直接编辑文件，编辑完 ping 一次（或口头描述 agent 改）\n- **主题必须明确**才进入 Phase 2。用户说\"主题你帮我选\" → 取你推荐的第 1 个，\n  **告诉用户你选了什么、为什么**，给反悔机会\n- 模式选定 → 进 Phase 2\n\n---\n\n## Phase 2 —— 网页开发\n\n### 2.1 脚手架\n\n```bash\nbash <path-to-web-video-presentation>/scripts/scaffold.sh \\\n  ./presentation \\\n  --theme=<用户选的主题 id>\n\nbash <path-to-web-video-presentation>/scripts/scaffold.sh --list-themes\n```\n\n> 自定义主题 → 先按 [`references/THEMES.md`](references/THEMES.md)\n> \"创作新主题\"流程做一个 `themes/<my-theme>/`，再 `--theme=<my-theme>`。\n\n脚手架带一个 `01-example` demo。在写第一章真实内容前**删掉**：\n\n```bash\nrm -rf presentation/src/chapters/01-example\n```\n\n并把 `presentation/src/registry/chapters.ts` 里 `EXAMPLE_CHAPTER`\n的 import 和数组项移除。\n\n### 2.2 第 1 章 —— 主线程 + 强制验收\n\n**核心**：第 1 章 = 完整版本一次到位（节奏 + 视觉 + 真素材齐全）。\n**没有\"骨架版\"概念** —— 第一章就要做出**用户能直接验收**的样板。\n\n为什么第 1 章必须主线程：\n\n- 它是 [`CHAPTER-CRAFT.md`](references/CHAPTER-CRAFT.md) 这套指引在**当前\n  主题 + 当前题材**下的第一次落地\n- 如果指引有盲区 / 主题颜色 / 字体 token 不够用，第 1 章一定会暴露 ——\n  这时候有人类反馈就能修指引 / 调主题，**早改成本最低**\n- 后续章节（无论顺序 / 并行）都要参考第 1 章的代码模式，所以第 1 章 =\n  当次项目的\"风格锚点（不强求章节间一致，但单章自身得有完整说服力）\"\n\n**做完第 1 章后必须停下来**等用户验收：\n\n```\n第 1 章 <id> 做完了，dev server 在 localhost:5173 运行。\n\n验收重点：\n  □ 视觉气质对不对？符合 <theme nameZh> 的预期吗？\n  □ 节奏对不对？某些步太快 / 太慢 / 信息太薄？\n  □ 内容驱动动画是否到位？还是有几步是无脑入场动画？\n  □ 双源原则：屏幕画面有没有\"口播没念但 article 能挂\"的细节？\n  □ 反 AI 味检查：紫粉渐变 / 圆角彩色边框 / 假插画 / emoji 是否有？\n\n问题告诉我，我针对性改。OK 了告诉我\"继续\"，我按选定模式做第 2 章及之后。\n```\n\n### 2.3 第 2~N 章 —— 按选定模式\n\n**所有模式下的共同规则**：每章独立按 [`CHAPTER-CRAFT.md`](references/CHAPTER-CRAFT.md)\n开发。**风格不强求章节间完全一致** —— 主题颜色 / 字体 token 兜底视觉\n统一，动画 / 节奏 / 视觉演示由章节自由发挥是设计预期。\n\n#### 模式 A · 默认 · 逐章确认\n\n第 2 章做完 → 暂停验收 → OK → 第 3 章 → 暂停 → ... → 第 N 章。**每章\n独立验收**，问题随时改，**风险最低，节奏最稳**。**用户不明确选模式时\n默认走这个**。\n\n#### 模式 B · 第 1 章后顺序开发\n\n第 2 章 → 第 3 章 → ... → 第 N 章 **主线程顺序做完，最后统一验收**。\n速度中等，适合 agent 不支持并行任务的环境。\n\n#### 模式 C · 第 1 章后并行开发（subagent）\n\n用 subagent 把第 2~N 章并行做完，最大并行数由用户控制（\"一次 4 章\"\n/ \"一次 2 章\"）。**最快，但风格各章会有差异** —— 这是预期，因为：\n\n1. 每个 subagent 看不到别的 subagent 产出，无法机械对齐\n2. 章节代码物理分离（每章一个文件夹 / 自己的 CSS 前缀），不会互相\n   破坏\n3. 主题 token 兜底视觉统一（颜色 / 字体 / hero 数字 / 卡片 / 分割线\n   性格 / 装饰），气质不会跑偏\n4. **风格不一致 = 人手写视频的呼吸感**（多 voice / 多视角）\n\n并行 subagent 的 prompt 必须包含：\n\n- 当前章节 outline 段落（含信息池）\n- `references/CHAPTER-CRAFT.md` 的路径（**单一必读** —— 视觉演示要求 +\n  逐步揭示 + 双源原则 + 反 AI 味 + 代码红线 + 完工自检全部在这一份里）\n- 当前主题 `theme.json` 的 `descriptionZh` / `mood` / `bestFor`（参考气质\n  即可，动画 / 时长 / 字号 / emoji 由 chapter agent 自由决定）\n- **第 1 章代码作为\"代码风格\"参考**（不是\"视觉抄袭对象\"）\n- 硬规则：每章独立 CSS 前缀（`.cd-` / `.mg-` / `.pm-` / ...）；\n  不修改 `chapters.ts`；完工跑 `npx tsc --noEmit`\n\n**重要**：无论选哪种模式，**用户随时可以中途切换模式**。第 2 章 OK\n后用户说\"剩下的并行\" / \"剩下的逐章\" 都行。\n\n### 2.4 实现单章（每章必走）\n\n详细指引见 [`references/CHAPTER-CRAFT.md`](references/CHAPTER-CRAFT.md) ——\n**单一必读入口**，覆盖：视觉演示要求 / 逐步揭示 / 内容取舍 / 双源原则\n/ 视频演示基本审美 / 反 AI 味 / 代码红线 / 完工自检。\n\n**核心要点**（CHAPTER-CRAFT.md 详述）：\n\n- **每章必须有 CSS / SVG / Canvas / JS 视觉演示**，禁纯文字章节\n- **逐步揭示**：清单 / 列表必须 1 项 = 1 step，禁一次全展示\n- **双源原则**：节奏跟口播稿（顺序不能乱），细节回原文章抽（信息池 +\n  本章 article 段落）\n- **完工自检逐项过**，不达标回去改 —— 按上文「硬性自检协议」执行\n  （优先 Agent Teams → subAgent → 自检），**改完再向用户汇报本章交付**\n\n### 2.5 大改后 bump STORAGE_KEY\n\n改动 `chapters.ts`（增加 / 删除 / 重排章节，或某章 `narrations.ts`\n长度变化）后，**bump** `presentation/src/hooks/useStepper.ts` 的\n`STORAGE_KEY`（如 `v4` → `v5`），避免持久化游标落到不存在的 step 上。\n\n---\n\n## Checkpoint Audio —— 是否合成音频（**硬节点**）\n\nPhase 2 结束后必须停下来，问用户：\n\n```\n网页做完，{N} 章 {M} 步，dev server 在 localhost:5173 跑着。\n\n要不要合成音频做\"自动播放录屏\"？\n  ✓ 合成 → 扫所有章节的 narrations.ts 出 audio-segments.json，\n           调 TTS provider 合成每步一个 mp3 到 public/audio/。\n           合成完后用 ?auto=1 模式可以一镜到底录屏（音视频天然同步）。\n           内置两个 provider：\n             • minimax (mmx-cli)    —— 默认，中文音色稳\n             • openai  (OPENAI_API_KEY) —— curl-based，多数已有 key\n           其它后端 (ElevenLabs / edge-tts 免费 / macOS say 离线 /\n           Azure / Google) 见 scripts/tts-providers/README.md 的现成片段。\n  ✗ 不合成 → 跳过 Phase 3，直接 Phase 4 用手动录屏 + 后期配音。\n```\n\n要合成 → Phase 3。不合成 → 直接 Phase 4。\n\n---\n\n## Phase 3 —— 音频合成（可选）\n\n详细流程见 [`references/AUDIO.md`](references/AUDIO.md)。简版：\n\n```bash\ncd presentation\nnpm run extract-narrations   # 扫所有 narrations.ts → audio-segments.json\n# 让用户扫一眼 audio-segments.json 确认文本对\nnpm run synthesize-audio                       # 默认 minimax provider，增量\n# 或用内置 openai (要 OPENAI_API_KEY):\nPRESENTATION_TTS=openai npm run synthesize-audio\n# 或自定义：写一个 scripts/tts-providers/<name>.sh，见该目录的 README.md\n```\n\n合成完告诉用户：输出位置 / 总段数 / 哪些段时长异常（太长 = 该 step 拆\n分；太短 = 文案太薄）—— 给最后一次校准节奏的机会。然后进入 Phase 4。\n\n---\n\n## Phase 4 —— 录屏 + 后期\n\n详见 [`references/RECORDING.md`](references/RECORDING.md)。两种路径：\n\n| 场景 | 推荐路径 |\n|---|---|\n| Phase 3 已合成音频 | **Auto 模式一镜到底**：浏览器开 `localhost:5173/?auto=1` → 按 SPACE → 整片自动播完 → 停录 → 裁头尾即成片，**无需后期对音轨** |\n| Phase 3 跳过 | 默认 Manual 模式手动点击推进 → 后期任意剪辑工具配音 |\n\n> agent 在 Phase 3 / Checkpoint Audio 后**主动告诉用户**适合的录屏路径。\n\n---\n\n## 十条原则（一句话清单）\n\n完整展开见 [`references/CHAPTER-CRAFT.md`](references/CHAPTER-CRAFT.md)\nPart 0 —— **写章节时回那里查**，下面只是索引。\n\n| # | 原则 | 一句话 |\n|---|---|---|\n| 1 | 16:9 固定舞台 | 内容 1920×1080 + transform scale，没有响应式 |\n| 2 | 全局 step 计数器 | 章节是 step 的纯函数，无定时器 |\n| 3 | 每步独占整屏 | `if (step === N) return <FullScene />` |\n| 4 | 口播节拍 = step | 一节拍 = 一 step = 一聚焦想法 |\n| 5 | 隐藏的边角控件 | 进度条 / 翻页器默认 opacity 0 |\n| 6 | 舞台无 chrome | 没有 header / footer / 页码 / 品牌条 |\n| 7 | **内容驱动动画** | 先找内在动作，找不到才入场动画兜底；持续微动慎用 |\n| 8 | 多点逐个揭示 | 1 项 = 1 step，禁同步 stagger 上 N 项 |\n| 9 | 整片同一主题 | 章节间不翻表面色；**颜色 / 字体走 token**，其它尺度章节自由 |\n| 10 | 双源原则 | script 定节拍，**article 定画面密度**（落到信息池） |\n\n---\n\n## 常见用户反馈速查\n\n简化表见 [`references/CHAPTER-CRAFT.md`](references/CHAPTER-CRAFT.md)\nPart 8「常见反馈速查」。**关键**：先定位是哪一层（节奏 / 视觉 / 内容\n/ 代码），再改最小切片，**不要重做整章**。\n\n---\n\n## 相关资源\n\n按\"何时读\"标注，避免一次性全读：\n\n| 文件 | 何时读 | 内容 |\n|---|---|---|\n| [`references/SCRIPT-STYLE.md`](references/SCRIPT-STYLE.md) | Phase 1.2 必读 | 文章 → 口播稿规则、平台变体 |\n| [`references/OUTLINE-FORMAT.md`](references/OUTLINE-FORMAT.md) | Phase 1.2 必读 | outline.md 字段 spec、命名约定、章节切分、信息池 |\n| [`references/CHAPTER-CRAFT.md`](references/CHAPTER-CRAFT.md) | **Phase 2.4 每章单一必读入口** | Part 0 十条原则 / Part 1 开工 5 问 / Part 2 关系→动作决策树 / Part 3 视觉工具箱 / Part 4 时长 / Part 5 反 AI 味反模式 / Part 6 代码硬规则 / Part 7 完工自检 / Part 8 反馈速查 |\n| [`references/EXAMPLES/`](references/EXAMPLES/) | **可选** —— 看结构 | 章节结构示意（hook / list-reveal / case-tech-review）；**不是抄袭模板** |\n| [`references/THEMES.md`](references/THEMES.md) | 选 / 造 / 切主题时 | 完整 token 契约 + 内置主题清单 + 创作流程 |\n| [`references/AUDIO.md`](references/AUDIO.md) | Phase 3 才读 | provider-agnostic 音频合成流程、内置 minimax 用法、换 provider 路径、故障排查 |\n| [`templates/scripts/tts-providers/README.md`](templates/scripts/tts-providers/README.md) | 换 / 加 TTS provider 时 | 三函数契约 + 内置 2 个 (minimax / openai) + 5 种现成代码片段（ElevenLabs / edge-tts / macOS say / Azure / Google） |\n| [`references/RECORDING.md`](references/RECORDING.md) | Phase 4 才读 | 录屏工具 + 后期合成 |\n| [`themes/`](themes) | Checkpoint Plan / Phase 1.2 时翻 | 内置主题（每个含 `theme.json` + `tokens.css`） |\n| [`scripts/scaffold.sh`](scripts/scaffold.sh) | Phase 2.1 跑一次 | 一键项目脚手架 |\n",
+    "references": {
+      "demos/materials/web-video-presentation/README.md": "# Web Video Presentation Skill\n\n**A method-driven agent skill for turning scripts and articles into click-driven 16:9 web presentations that can be screen-recorded as cinematic videos.**\n\n[中文文档](./README.zh-CN.md) · [Back to collection root](../../README.md)\n\n![Web Video Presentation Skill](../../dist/imgs/covers/web-video-presentation.webp)\n\n---\n\n## What Is This?\n\n`web-video-presentation` helps an agent build a Vite + React + TypeScript presentation that behaves like a video production surface rather than a slide deck. Each click advances one narration beat, each step owns the whole 1920×1080 stage, and the progress UI stays hidden unless hovered so the output is clean for screen recording.\n\nIt is designed for:\n\n- Turning a written article into a Bilibili / YouTube / video-channel narration script\n- Turning an existing voiceover script into a cinematic web presentation\n- Building product demos, tutorials, keynote-style explainers, and visual talks\n- Creating “dynamic PPT, but not PPT” experiences with strong motion and pacing\n- Optionally synthesizing narration audio after the visual outline is approved\n\nThe skill is primarily a **methodology and collaboration workflow**. The scaffold supplies reusable tokens, stage primitives, themes, and examples, but each project should still choose a visual language that fits the topic.\n\n---\n\n## Core Ideas\n\n- **Fixed 16:9 stage** — content is authored in a stable 1920×1080 coordinate system and scaled to the viewport.\n- **One global step cursor** — click or keyboard advances `(chapter, step)`, with the cursor persisted locally.\n- **One step, one idea** — every beat gets a focused full-screen scene instead of accumulating slide bullets.\n- **Script beats drive structure** — narration rhythm maps directly to visual steps.\n- **Hidden chrome** — progress controls are hover-only, keeping recordings clean.\n- **Motion first** — each scene needs a moving visual anchor; static paragraphs are treated as a smell.\n- **Theme tokens** — visual decisions flow through semantic tokens so themes can change the whole feel.\n- **Pluggable TTS** — provider-agnostic audio runner ships **two built-in providers** (MiniMax `mmx-cli` and OpenAI TTS via curl); swap to ElevenLabs / edge-tts / Azure / Google Cloud / macOS `say` / any self-hosted TTS by dropping a single shell file into `tts-providers/`.\n- **Hard checkpoints** — the agent pauses after script/theme alignment, after outline approval, and before optional audio synthesis.\n\n---\n\n## Workflow\n\n```text\nPhase 1.1  Identify input\nPhase 1.2  Article -> narration script\n   |\nCheckpoint A1  Script, theme, and rough asset plan\n   |\nPhase 1.3  Script + article -> outline.md\n   |\nCheckpoint A2  Outline approval + development mode\n   |\nPhase 2    Build the Vite / React / TS presentation\n   |\nCheckpoint B   Ask whether to synthesize audio\n   |\nPhase 3    Optional audio synthesis\nPhase 4    Recording and post-production\n```\n\nThe checkpoints are part of the skill contract: the agent should not silently rush from raw article to finished code. Theme choice influences motion design, and outline approval keeps chapter pacing from drifting.\n\n---\n\n## What It Ships\n\n```text\nskills/web-video-presentation/\n├── SKILL.md\n├── README.md / README.zh-CN.md\n├── references/\n│   ├── PRINCIPLES.md\n│   ├── CHAPTER-CRAFT.md\n│   ├── OUTLINE-FORMAT.md\n│   ├── SCRIPT-STYLE.md\n│   ├── THEMES.md\n│   ├── AUDIO.md\n│   └── RECORDING.md\n├── scripts/\n│   └── scaffold.sh\n├── templates/\n│   ├── index.html\n│   ├── vite.config.ts\n│   ├── scripts/\n│   │   ├── extract-narrations.ts\n│   │   ├── synthesize-audio.sh       # provider-agnostic runner\n│   │   └── tts-providers/            # 1 file = 1 TTS backend\n│   │       ├── README.md             # contract + ready-to-paste ElevenLabs / edge-tts / Azure / Google / say snippets\n│   │       ├── minimax.sh            # default — uses mmx-cli\n│   │       └── openai.sh             # built-in — uses OPENAI_API_KEY via curl\n│   └── src/\n└── themes/                    # 23 themes, each with its own signature\n    ├── midnight-press/\n    ├── warm-keynote/\n    ├── newsroom/\n    ├── bauhaus-bold/\n    └── ...                     # full list in references/THEMES.md\n```\n\n---\n\n## Quick Start\n\nCopy the skill into the directory your agent scans, then ask it to turn a script or article into a web-video presentation.\n\nTo scaffold manually from inside a project:\n\n```bash\nbash skills/web-video-presentation/scripts/scaffold.sh ./presentation --theme=paper-press\n```\n\nList available themes:\n\n```bash\nbash skills/web-video-presentation/scripts/scaffold.sh --list-themes\n```\n\nThe generated `presentation/` project is a normal Vite + React + TypeScript app. Run it like any other Vite project, then record the 16:9 stage with your screen recorder.\n\n---\n\n## Theme Gallery\n\nThe skill ships **23 themes**, each with its own design DNA — not a simple color swap. Browse the gallery below by canvas tone, pick one that fits the topic, or use any tile as a starting point for a derived theme. Click any preview to open the full-size 1920×1080 frame.\n\n> Frames are real 16:9 stages rendered by the live demo gallery at [`demo/web-video-presentation-demo`](../../demo/web-video-presentation-demo/).\n\n### Dark · 8 themes\n\n> Cinematic dark canvases — for focus, drama, and high-contrast storytelling.\n\n<table>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/midnight-press.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/midnight-press.webp\" alt=\"midnight-press preview\" /></a>\n<br /><strong><code>midnight-press</code></strong>\n<br /><sub>Cinematic editorial dark · warm espresso + hot orange</sub>\n<br /><sub><b>Best for</b> · developer tutorials · AI &amp; tool reviews · technical deep dives</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dark-botanical.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dark-botanical.webp\" alt=\"dark-botanical preview\" /></a>\n<br /><strong><code>dark-botanical</code></strong>\n<br /><sub>Premium editorial dark · terracotta / blush / gold glow</sub>\n<br /><sub><b>Best for</b> · brand films · fashion &amp; beauty · premium product launches</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/chalk-garden.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/chalk-garden.webp\" alt=\"chalk-garden preview\" /></a>\n<br /><strong><code>chalk-garden</code></strong>\n<br /><sub>Slate chalkboard · handwritten Patrick Hand + chalk-yellow</sub>\n<br /><sub><b>Best for</b> · explainers · classroom teaching · beginner-friendly walk-throughs</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/blueprint.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/blueprint.webp\" alt=\"blueprint preview\" /></a>\n<br /><strong><code>blueprint</code></strong>\n<br /><sub>Drafting board · deep navy + cyan + 60 px grid</sub>\n<br /><sub><b>Best for</b> · tech architecture · system breakdowns · API / SDK intros</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/terminal-green.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/terminal-green.webp\" alt=\"terminal-green preview\" /></a>\n<br /><strong><code>terminal-green</code></strong>\n<br /><sub>80s phosphor CRT · mono-only + scanlines</sub>\n<br /><sub><b>Best for</b> · CLI tutorials · hacker / security topics · retro-tech homages</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/neon-cyber.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/neon-cyber.webp\" alt=\"neon-cyber preview\" /></a>\n<br /><strong><code>neon-cyber</code></strong>\n<br /><sub>Cyberpunk future · cyan + magenta double-neon</sub>\n<br /><sub><b>Best for</b> · AI / LLM reviews · web3 &amp; security · futuristic / cyberpunk topics</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bold-signal.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bold-signal.webp\" alt=\"bold-signal preview\" /></a>\n<br /><strong><code>bold-signal</code></strong>\n<br /><sub>Hero pitch deck · dark gradient + orange focal card</sub>\n<br /><sub><b>Best for</b> · pitch decks · product launches · brand keynote opens</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/creative-voltage.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/creative-voltage.webp\" alt=\"creative-voltage preview\" /></a>\n<br /><strong><code>creative-voltage</code></strong>\n<br /><sub>Saturated electric blue + neon yellow halftone</sub>\n<br /><sub><b>Best for</b> · design week · studio showcases · type / visual-culture talks</sub>\n</td>\n</tr>\n</table>\n\n### Light · 15 themes\n\n> Bright editorial canvases — for clarity, restraint, and the warmth of printed paper.\n\n<table>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/paper-press.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/paper-press.webp\" alt=\"paper-press preview\" /></a>\n<br /><strong><code>paper-press</code></strong>\n<br /><sub>Editorial paper · warm cream + hot orange</sub>\n<br /><sub><b>Best for</b> · magazine pieces · lifestyle · everyday tool reviews</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/newsroom.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/newsroom.webp\" alt=\"newsroom preview\" /></a>\n<br /><strong><code>newsroom</code></strong>\n<br /><sub>NYT broadsheet · newsprint cream + banner red</sub>\n<br /><sub><b>Best for</b> · documentary reporting · deep reviews · current-affairs commentary</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/monochrome-print.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/monochrome-print.webp\" alt=\"monochrome-print preview\" /></a>\n<br /><strong><code>monochrome-print</code></strong>\n<br /><sub>Refined Monocle / Wallpaper print restraint</sub>\n<br /><sub><b>Best for</b> · long-read adaptations · academic / opinion · arts criticism</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/vintage-editorial.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/vintage-editorial.webp\" alt=\"vintage-editorial preview\" /></a>\n<br /><strong><code>vintage-editorial</code></strong>\n<br /><sub>Witty Fraunces + geometric overlay (circle / line / dot)</sub>\n<br /><sub><b>Best for</b> · personal essays · culture columns · type / design talks</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/sunset-zine.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/sunset-zine.webp\" alt=\"sunset-zine preview\" /></a>\n<br /><strong><code>sunset-zine</code></strong>\n<br /><sub>Risograph zine · peach + magenta + dashed cut lines</sub>\n<br /><sub><b>Best for</b> · lifestyle vlogs · creative shares · short-video / zine-style</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/pastel-dream.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/pastel-dream.webp\" alt=\"pastel-dream preview\" /></a>\n<br /><strong><code>pastel-dream</code></strong>\n<br /><sub>Soft pastel + sage + right-edge pill ribbon</sub>\n<br /><sub><b>Best for</b> · product onboarding · friendly tutorials · wellness &amp; parenting</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/warm-keynote.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/warm-keynote.webp\" alt=\"warm-keynote preview\" /></a>\n<br /><strong><code>warm-keynote</code></strong>\n<br /><sub>Modern SaaS keynote · glass slab + teal + warm grid</sub>\n<br /><sub><b>Best for</b> · SaaS keynotes · B2B launches · team-facing roll-ups</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/electric-studio.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/electric-studio.webp\" alt=\"electric-studio preview\" /></a>\n<br /><strong><code>electric-studio</code></strong>\n<br /><sub>Corporate clarity · crisp white + electric-blue base bar</sub>\n<br /><sub><b>Best for</b> · B2B product talks · investor decks · quarterly updates</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bauhaus-bold.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bauhaus-bold.webp\" alt=\"bauhaus-bold preview\" /></a>\n<br /><strong><code>bauhaus-bold</code></strong>\n<br /><sub>Manifesto modernist · 0 radius + 4 px thick frame</sub>\n<br /><sub><b>Best for</b> · product launches · manifestos · brand statements</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/swiss-ikb.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/swiss-ikb.webp\" alt=\"swiss-ikb preview\" /></a>\n<br /><strong><code>swiss-ikb</code></strong>\n<br /><sub>Extra-light 200 Helvetica + IKB + 1 px hairline grid</sub>\n<br /><sub><b>Best for</b> · AI / tech launches · year-in-review data · info-graphics</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dune.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dune.webp\" alt=\"dune preview\" /></a>\n<br /><strong><code>dune</code></strong>\n<br /><sub>Charcoal + sand · near-zero accent (architecture brochure)</sub>\n<br /><sub><b>Best for</b> · architecture &amp; interior · art exhibitions · premium brand books</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/indigo-porcelain.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/indigo-porcelain.webp\" alt=\"indigo-porcelain preview\" /></a>\n<br /><strong><code>indigo-porcelain</code></strong>\n<br /><sub>Indigo <em>is</em> the ink (not an accent) + porcelain white</sub>\n<br /><sub><b>Best for</b> · academic research · AI / data deep dives · serious tech briefings</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/forest-ink.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/forest-ink.webp\" alt=\"forest-ink preview\" /></a>\n<br /><strong><code>forest-ink</code></strong>\n<br /><sub>Forest green <em>is</em> the ink + ivory (vintage National Geographic)</sub>\n<br /><sub><b>Best for</b> · nature &amp; sustainability · documentary non-fiction · slow living</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/kraft-paper.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/kraft-paper.webp\" alt=\"kraft-paper preview\" /></a>\n<br /><strong><code>kraft-paper</code></strong>\n<br /><sub>Deep brown <em>is</em> the ink + kraft beige + copper accent</sub>\n<br /><sub><b>Best for</b> · book reviews · history &amp; nostalgia · craft &amp; food storytelling</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/split-canvas.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/split-canvas.webp\" alt=\"split-canvas preview\" /></a>\n<br /><strong><code>split-canvas</code></strong>\n<br /><sub>Dual-tone · peach left + lavender right</sub>\n<br /><sub><b>Best for</b> · A/B comparisons · dialogue stories · concept-contrast explainers</sub>\n</td>\n<td align=\"center\" width=\"50%\" valign=\"middle\">\n<br />\n<strong>+ derive your own</strong>\n<br /><sub>See <a href=\"./references/THEMES.md\">THEMES.md</a> for the token contract,<br />theme signatures, and Swiss yellow / green / orange variants.</sub>\n<br /><br />\n</td>\n</tr>\n</table>\n\n---\n\n## Reference Map\n\n- [PRINCIPLES.md](./references/PRINCIPLES.md) — core rules for video-like web presentations\n- [CHAPTER-CRAFT.md](./references/CHAPTER-CRAFT.md) — chapter implementation rules and visual checklist\n- [OUTLINE-FORMAT.md](./references/OUTLINE-FORMAT.md) — required outline structure\n- [SCRIPT-STYLE.md](./references/SCRIPT-STYLE.md) — article-to-narration rewrite guidance\n- [PATTERNS.md](./references/PATTERNS.md) — optional visual primitive recipes\n- [AUDIO.md](./references/AUDIO.md) — optional narration synthesis workflow (provider-agnostic)\n- [tts-providers/README.md](./templates/scripts/tts-providers/README.md) — TTS provider contract + 2 built-ins (minimax / openai) + ready-to-paste snippets for ElevenLabs / edge-tts / Azure / Google Cloud / macOS say\n- [RECORDING.md](./references/RECORDING.md) — screen recording and post-production notes\n\n",
+      "demos/materials/web-video-presentation/README.zh-CN.md": "# Web Video Presentation Skill\n\n**把文章或口播稿做成点击驱动的 16:9 网页演示，并通过录屏产出有电影感视频的 Agent Skill。**\n\n[English](./README.md) · [返回集合首页](../../README.zh-CN.md)\n\n![Web Video Presentation Skill](../../dist/imgs/covers/web-video-presentation.webp)\n\n---\n\n## 这是什么？\n\n`web-video-presentation` 帮 Agent 构建一种 Vite + React + TypeScript 演示：它看起来不是传统幻灯片，而更像为录屏设计的视频舞台。每次点击推进一个口播节拍，每一步独占 1920×1080 舞台，进度 UI 平时隐藏，只有悬浮时出现，方便录出干净画面。\n\n它适合：\n\n- 把文章改写成 B 站 / YouTube / 视频号风格口播稿\n- 把已有口播稿做成有节奏的网页演示\n- 做产品演示、教程、keynote 式讲解、视觉 talk\n- 做“动态 PPT，但不要像 PPT”的演示体验\n- 在视觉 outline 对齐后，可选合成口播音频\n\n这个 Skill 的核心是**方法论 + 协作流程**。脚手架提供 token、舞台原语、主题和示例，但每个项目仍然应该根据主题重新选择视觉语言。\n\n---\n\n## 核心理念\n\n- **固定 16:9 舞台**：内容写在稳定的 1920×1080 坐标系里，再按视口缩放。\n- **一个全局 step 游标**：点击或键盘推进 `(chapter, step)`，游标本地持久化。\n- **一步一个想法**：每个节拍独占整屏，不堆叠项目符号。\n- **口播节拍驱动结构**：讲述节奏直接映射为视觉 step。\n- **隐藏 chrome**：进度控制悬浮才出现，录屏画面保持干净。\n- **动效优先**：每一步都需要一个移动的视觉锚点，静态正文是坏味道。\n- **主题 token**：视觉属性通过语义 token 驱动，换主题不只是换颜色。\n- **可插拔 TTS**：provider-agnostic 音频 runner，**内置 2 个 provider**（MiniMax `mmx-cli` + OpenAI TTS via curl）；往 `tts-providers/` 丢一个 `.sh` 就能换成 ElevenLabs / edge-tts / Azure / Google Cloud / macOS `say` / 任何自部署 TTS。\n- **硬 checkpoint**：稿子/主题、outline、音频合成前都必须停下来与用户确认。\n\n---\n\n## 工作流\n\n```text\nPhase 1.1  识别用户输入\nPhase 1.2  文章 -> 口播稿\n   |\nCheckpoint A1  稿子、主题、粗略素材计划\n   |\nPhase 1.3  口播稿 + 原文 -> outline.md\n   |\nCheckpoint A2  outline 确认 + 开发模式选择\n   |\nPhase 2    构建 Vite / React / TS 演示\n   |\nCheckpoint B   询问是否合成音频\n   |\nPhase 3    可选音频合成\nPhase 4    录屏与后期\n```\n\n这些 checkpoint 是 Skill 契约的一部分：Agent 不应该从原文一路闷头做到成品。主题选择会影响动效气质，outline 确认能避免章节节奏跑偏。\n\n---\n\n## 内含内容\n\n```text\nskills/web-video-presentation/\n├── SKILL.md\n├── README.md / README.zh-CN.md\n├── references/\n│   ├── PRINCIPLES.md\n│   ├── CHAPTER-CRAFT.md\n│   ├── OUTLINE-FORMAT.md\n│   ├── SCRIPT-STYLE.md\n│   ├── THEMES.md\n│   ├── AUDIO.md\n│   └── RECORDING.md\n├── scripts/\n│   └── scaffold.sh\n├── templates/\n│   ├── index.html\n│   ├── vite.config.ts\n│   ├── scripts/\n│   │   ├── extract-narrations.ts\n│   │   ├── synthesize-audio.sh       # provider-agnostic runner\n│   │   └── tts-providers/            # 一个文件 = 一个 TTS 后端\n│   │       ├── README.md             # 三函数契约 + ElevenLabs / edge-tts / Azure / Google / say 的现成片段\n│   │       ├── minimax.sh            # 默认 provider（mmx-cli）\n│   │       └── openai.sh             # 内置：OpenAI TTS（curl + OPENAI_API_KEY）\n│   └── src/\n└── themes/                    # 23 套主题，每套独立设计签名\n    ├── midnight-press/\n    ├── warm-keynote/\n    ├── newsroom/\n    ├── bauhaus-bold/\n    └── ...                     # 完整列表见 references/THEMES.md\n```\n\n---\n\n## 快速上手\n\n把这个 Skill 复制到你的 Agent 会扫描的目录，然后让 Agent 把一篇文章或口播稿做成网页视频演示。\n\n如果要手动脚手架：\n\n```bash\nbash skills/web-video-presentation/scripts/scaffold.sh ./presentation --theme=paper-press\n```\n\n查看可用主题：\n\n```bash\nbash skills/web-video-presentation/scripts/scaffold.sh --list-themes\n```\n\n生成的 `presentation/` 是普通 Vite + React + TypeScript 项目。启动后用录屏工具录制 16:9 舞台即可。\n\n---\n\n## 主题画廊\n\nSkill 内置 **23 套**主题，每套都有独立的设计 DNA —— 不是简单换色版。下面按底色分两组浏览，挑一套接近目标气质的，或者把任意一格当作派生新主题的起点。点击任意预览图可放大查看 1920×1080 原帧。\n\n> 所有截图都是真实的 16:9 舞台，来自 [`demo/web-video-presentation-demo`](../../demo/web-video-presentation-demo/) 现场画廊。\n\n### 深色 · 8 套\n\n> 电影感深色画布 —— 适合需要聚焦、戏剧张力、强对比的叙事。\n\n<table>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/midnight-press.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/midnight-press.webp\" alt=\"midnight-press 预览\" /></a>\n<br /><strong><code>midnight-press</code> · 暗色印刷</strong>\n<br /><sub>电影感编辑暗底 · 暖暗底 + 火热橙</sub>\n<br /><sub><b>适合</b> · 开发者教程 · AI / 工具评测 · 技术 deep dive</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dark-botanical.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dark-botanical.webp\" alt=\"dark-botanical 预览\" /></a>\n<br /><strong><code>dark-botanical</code> · 暗夜植物</strong>\n<br /><sub>高级时尚刊物 · 暖陶 / 玫粉 / 鎏金叠层</sub>\n<br /><sub><b>适合</b> · 品牌故事 · 时尚 / 美妆 · 高端产品发布</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/chalk-garden.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/chalk-garden.webp\" alt=\"chalk-garden 预览\" /></a>\n<br /><strong><code>chalk-garden</code> · 粉笔花园</strong>\n<br /><sub>深石板黑板 · 手写 Patrick Hand + 粉笔黄</sub>\n<br /><sub><b>适合</b> · 科普讲解 · 教学课堂 · 面向初学者的亲切口吻</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/blueprint.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/blueprint.webp\" alt=\"blueprint 预览\" /></a>\n<br /><strong><code>blueprint</code> · 工程蓝图</strong>\n<br /><sub>制图工作台 · 深海军 + 制图青 + 60 px 网格</sub>\n<br /><sub><b>适合</b> · 技术架构 · 系统拆解 · API / SDK 介绍</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/terminal-green.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/terminal-green.webp\" alt=\"terminal-green 预览\" /></a>\n<br /><strong><code>terminal-green</code> · 终端绿</strong>\n<br /><sub>80 年代磷光 CRT · 纯等宽 + 扫描线</sub>\n<br /><sub><b>适合</b> · CLI 工具教程 · 黑客 / 安全话题 · 复古技术致敬</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/neon-cyber.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/neon-cyber.webp\" alt=\"neon-cyber 预览\" /></a>\n<br /><strong><code>neon-cyber</code> · 霓虹赛博</strong>\n<br /><sub>赛博朋克未来 · 电光青 + 玫红双霓虹</sub>\n<br /><sub><b>适合</b> · AI / 大模型评测 · web3 / 安全 · 未来主义与赛博朋克</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bold-signal.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bold-signal.webp\" alt=\"bold-signal 预览\" /></a>\n<br /><strong><code>bold-signal</code> · 焦点信号</strong>\n<br /><sub>Pitch Deck 主舞台 · 暗渐变 + 大橙焦点卡</sub>\n<br /><sub><b>适合</b> · pitch deck / 路演 · 产品发布 · 大字宣言 / brand keynote</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/creative-voltage.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/creative-voltage.webp\" alt=\"creative-voltage 预览\" /></a>\n<br /><strong><code>creative-voltage</code> · 电压创意</strong>\n<br /><sub>饱和电光蓝 + 霓虹黄 + halftone 网点</sub>\n<br /><sub><b>适合</b> · 设计周 / 创意分享 · 工作室作品集 · 字体 / 视觉文化</sub>\n</td>\n</tr>\n</table>\n\n### 浅色 · 15 套\n\n> 明亮编辑画布 —— 适合清晰、克制、带纸感温度的内容。\n\n<table>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/paper-press.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/paper-press.webp\" alt=\"paper-press 预览\" /></a>\n<br /><strong><code>paper-press</code> · 亮色印刷</strong>\n<br /><sub>编辑纸张 · 暖奶油 + 火热橙</sub>\n<br /><sub><b>适合</b> · 杂志型内容 · 生活方式 · 日常工具评测</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/newsroom.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/newsroom.webp\" alt=\"newsroom 预览\" /></a>\n<br /><strong><code>newsroom</code> · 报社</strong>\n<br /><sub>NYT 大报 · 新闻纸奶油 + 旗红</sub>\n<br /><sub><b>适合</b> · 纪录片 / 报道 · 深度评测 · 时事 / 热点解读</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/monochrome-print.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/monochrome-print.webp\" alt=\"monochrome-print 预览\" /></a>\n<br /><strong><code>monochrome-print</code> · 黑白印刷</strong>\n<br /><sub>精炼克制 · Monocle / Wallpaper 气质</sub>\n<br /><sub><b>适合</b> · 深度阅读改编 · 学术 / 思想型内容 · 文化艺术评论</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/vintage-editorial.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/vintage-editorial.webp\" alt=\"vintage-editorial 预览\" /></a>\n<br /><strong><code>vintage-editorial</code> · 复古编辑</strong>\n<br /><sub>俏皮 Fraunces + 几何叠层（圆 / 线 / 点）</sub>\n<br /><sub><b>适合</b> · 个人见解 / 评论 · 文化随笔 · 设计 / 字体话题</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/sunset-zine.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/sunset-zine.webp\" alt=\"sunset-zine 预览\" /></a>\n<br /><strong><code>sunset-zine</code> · 日落 Zine</strong>\n<br /><sub>Risograph 拼贴 · 暖桃 + 玫红 + 虚线剪贴</sub>\n<br /><sub><b>适合</b> · 生活向 vlog · 创意分享 · 小红书 / 抖音风</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/pastel-dream.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/pastel-dream.webp\" alt=\"pastel-dream 预览\" /></a>\n<br /><strong><code>pastel-dream</code> · 柔光梦</strong>\n<br /><sub>柔粉 + 鼠尾草绿 + 右侧 pill 色条</sub>\n<br /><sub><b>适合</b> · 产品 onboarding · 友好教学 · 心理 / 健康 / 母婴</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/warm-keynote.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/warm-keynote.webp\" alt=\"warm-keynote 预览\" /></a>\n<br /><strong><code>warm-keynote</code> · 暖色 Keynote</strong>\n<br /><sub>现代 SaaS Keynote · glass slab + 青绿 + 暖色网格</sub>\n<br /><sub><b>适合</b> · SaaS keynote · B 端产品发布 · 团队对外汇报</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/electric-studio.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/electric-studio.webp\" alt=\"electric-studio 预览\" /></a>\n<br /><strong><code>electric-studio</code> · 电光企业</strong>\n<br /><sub>企业级清晰 · 净白 + 贴底电光蓝色条</sub>\n<br /><sub><b>适合</b> · B2B 产品演讲 · 投资人路演 · 企业财报 / 季度更新</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bauhaus-bold.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/bauhaus-bold.webp\" alt=\"bauhaus-bold 预览\" /></a>\n<br /><strong><code>bauhaus-bold</code> · 包豪斯</strong>\n<br /><sub>宣言式现代主义 · 0 圆角 + 4 px 厚边</sub>\n<br /><sub><b>适合</b> · 产品发布 · 观点宣言 · 品牌主张</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/swiss-ikb.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/swiss-ikb.webp\" alt=\"swiss-ikb 预览\" /></a>\n<br /><strong><code>swiss-ikb</code> · 瑞士克莱因蓝</strong>\n<br /><sub>极细 200 Helvetica + IKB + 1 px 发丝网格</sub>\n<br /><sub><b>适合</b> · AI / 科技产品发布 · 年度数据汇报 · 信息图</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dune.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/dune.webp\" alt=\"dune 预览\" /></a>\n<br /><strong><code>dune</code> · 沙丘</strong>\n<br /><sub>炭褐 + 沙底 · 近乎零 accent，建筑画廊感</sub>\n<br /><sub><b>适合</b> · 建筑 / 室内 / 空间 · 艺术展览 · 高端品牌画册</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/indigo-porcelain.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/indigo-porcelain.webp\" alt=\"indigo-porcelain 预览\" /></a>\n<br /><strong><code>indigo-porcelain</code> · 靛蓝瓷</strong>\n<br /><sub>靛蓝<em>本身即墨</em>（不是 accent）+ 瓷白</sub>\n<br /><sub><b>适合</b> · 学术 / 论文解读 · AI / 数据深度 · 严肃技术汇报</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/forest-ink.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/forest-ink.webp\" alt=\"forest-ink 预览\" /></a>\n<br /><strong><code>forest-ink</code> · 森林墨</strong>\n<br /><sub>森林绿<em>本身即墨</em> + 象牙 · 旧版国家地理</sub>\n<br /><sub><b>适合</b> · 自然 / 可持续 · 纪录 / 非虚构 · 慢生活</sub>\n</td>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/kraft-paper.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/kraft-paper.webp\" alt=\"kraft-paper 预览\" /></a>\n<br /><strong><code>kraft-paper</code> · 牛皮纸</strong>\n<br /><sub>深棕<em>本身即墨</em> + 牛皮米 + 紫铜 accent</sub>\n<br /><sub><b>适合</b> · 书评 / 文学随笔 · 历史 / 怀旧 · 手工艺 / 食物</sub>\n</td>\n</tr>\n<tr>\n<td align=\"center\" width=\"50%\">\n<a href=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/split-canvas.webp\"><img src=\"https://cdn.jsdelivr.net/gh/ConardLi/assets@main/imgs/web-video/split-canvas.webp\" alt=\"split-canvas 预览\" /></a>\n<br /><strong><code>split-canvas</code> · 双拼画布</strong>\n<br /><sub>50/50 双底色 · 蜜桃左 + 薰衣草右</sub>\n<br /><sub><b>适合</b> · 双主题对比 / 辩论 · 故事讲述 · 概念对照科普</sub>\n</td>\n<td align=\"center\" width=\"50%\" valign=\"middle\">\n<br />\n<strong>+ 派生你自己的</strong>\n<br /><sub>完整 token 契约、每套设计签名、<br />以及怎么派生新主题（Swiss 黄 / 绿 / 橙变体等），<br />见 <a href=\"./references/THEMES.md\">THEMES.md</a>。</sub>\n<br /><br />\n</td>\n</tr>\n</table>\n\n---\n\n## Reference Map\n\n- [PRINCIPLES.md](./references/PRINCIPLES.md)：视频感网页演示的核心原则\n- [CHAPTER-CRAFT.md](./references/CHAPTER-CRAFT.md)：章节实现规则与视觉 checklist\n- [OUTLINE-FORMAT.md](./references/OUTLINE-FORMAT.md)：outline 必须遵循的结构\n- [SCRIPT-STYLE.md](./references/SCRIPT-STYLE.md)：文章转口播稿规则\n- [PATTERNS.md](./references/PATTERNS.md)：可选视觉 primitive 配方\n- [AUDIO.md](./references/AUDIO.md)：可选口播音频合成流程（provider-agnostic）\n- [tts-providers/README.md](./templates/scripts/tts-providers/README.md)：TTS provider 三函数契约 + 内置 2 个 (minimax / openai) + ElevenLabs / edge-tts / Azure / Google / macOS say 的现成代码片段\n- [RECORDING.md](./references/RECORDING.md)：录屏与后期注意事项\n\n",
+      "demos/materials/web-video-presentation/references/AUDIO.md": "# 音频合成\n\n把每个章节 `narrations.ts` 里的口播文字按 **step 颗粒度**合成 mp3，\n落到 `presentation/public/audio/<chapter-id>/<step-N>.mp3`。运行时\nAuto 模式会自动按 step 播放并自动推进——录屏可以一镜到底。\n\n> **真相源**：每个章节的 `src/chapters/<NN>-<id>/narrations.ts` 是 step\n> 数 + 口播文本的**唯一来源**。`outline.md` 不再参与音频合成，章节代码\n> 也不再手写 `totalSteps`。这一改根除了\"网页 step 和音频文件数对不上\"\n> 这个老问题。\n\n合成器是 **provider-agnostic** 的：runner 本身不绑定任何 TTS 后端，每个\n后端是 `scripts/tts-providers/<name>.sh` 一个文件。**内置 2 个 provider**：\n\n| Provider | 默认 | 何时用 |\n|---|---|---|\n| `minimax` | ✓ | 中文口播首选（用 `mmx-cli`，要 MiniMax API key） |\n| `openai`  | —— | 多数 agent 已有 `OPENAI_API_KEY`；curl-based、响应快 |\n\n换 / 加 provider 见\n[`scripts/tts-providers/README.md`](../templates/scripts/tts-providers/README.md)\n（脚手架跑完后路径是 `presentation/scripts/tts-providers/README.md`）。\nREADME 里还附了 5 套**可粘贴**的现成片段（ElevenLabs / edge-tts / macOS say /\nAzure / Google Cloud）和写自定义 provider 的三函数契约。\n\n---\n\n## 文件命名约定\n\n```\npresentation/public/audio/\n├── coldopen/\n│   ├── 1.mp3\n│   ├── 2.mp3\n│   └── ...\n├── hook/\n│   └── ...\n└── ...\n```\n\n- 章节子目录名 = `chapters.ts` 里的 `id`\n- 文件名 = `<step-N>.mp3`（**1-indexed**，对齐 narrations 数组的 index + 1）\n- 格式默认 mp3。如果你写的 provider 只能出 wav，在函数里加一步 `ffmpeg`\n  转 mp3（参见 `tts-providers/README.md` 的 `say.sh` 示例）\n\n---\n\n## 标准流程\n\n### 1. 抽取 segments\n\n```bash\ncd presentation\nnpm run extract-narrations\n```\n\n这会扫所有章节的 `narrations.ts`，按 `chapters.ts` 注册顺序生成\n`audio-segments.json`：\n\n```json\n[\n  { \"chapter\": \"coldopen\", \"step\": 1, \"text\": \"...\", \"audio\": \"coldopen/1.mp3\" },\n  { \"chapter\": \"coldopen\", \"step\": 2, \"text\": \"...\", \"audio\": \"coldopen/2.mp3\" },\n  ...\n]\n```\n\n让用户**先扫一眼这个 json**，确认文本和切分都对，再开始烧 token 合成。\n\n> 空字符串的 narration 会被自动跳过（不烧 TTS token）——运行时 Auto 模式\n> 按字数估时撑过这种\"无声过场\"step。\n\n### 2. 选 provider\n\n```bash\nls scripts/tts-providers/    # 看本项目带了哪些\n```\n\n- 用默认 `minimax` → 走 [2.A](#2a-用内置-minimax-合成)\n- 用内置 `openai` → 走 [2.B](#2b-用内置-openai-合成)\n- 想用别的 TTS / 自带 TTS → 走 [2.C](#2c-换-provider--加自定义-provider)\n- 一个都没装好 → 走 [2.D](#2d-退化路径)\n\n#### 2.A 用内置 minimax 合成\n\n```bash\nnpm run synthesize-audio              # 增量：跳过已存在的 mp3\nnpm run synthesize-audio -- --force   # 全部重合成\nnpm run synthesize-audio -- --voice=<voice-id>  # 指定音色\n```\n\n启动时 runner 会先调 provider 的 `tts_check`：\n\n- mmx 未安装 → 报 `mmx CLI not found in PATH`，并打印安装说明\n- mmx 未登录 → 报 `mmx is not authenticated`，并提示登录命令\n\n修完再跑。每条段打印进度：\n\n```\n[  3/24] coldopen/3.mp3   ✓ 4s\n[  4/24] coldopen/4.mp3   skip (exists)\n```\n\n合成串行（避免 rate limit），**自动跳过已存在文件**（断点续合，不烧\n重复 token）。\n\n#### 2.B 用内置 openai 合成\n\n```bash\nexport OPENAI_API_KEY=sk-...                   # 在 platform.openai.com 拿\nPRESENTATION_TTS=openai npm run synthesize-audio\n# 换音色 + HD 模型\nOPENAI_TTS_MODEL=tts-1-hd PRESENTATION_TTS=openai \\\n  npm run synthesize-audio -- --voice=nova\n```\n\n可选 env：\n\n| 变量 | 默认 | 作用 |\n|---|---|---|\n| `OPENAI_API_KEY` | —— **必须** | API key |\n| `OPENAI_BASE_URL` | `https://api.openai.com/v1` | 切代理 / Azure-OpenAI |\n| `OPENAI_TTS_MODEL` | `tts-1` | `tts-1` 快 / `tts-1-hd` 高质量约 2× 价 |\n| `--voice=` / `PRESENTATION_TTS_VOICE` | `alloy` | 可选 alloy / echo / fable / onyx / nova / shimmer |\n\n`tts_check` 会检查 curl / jq / `OPENAI_API_KEY` 三件套，缺哪个报哪个。\n\n#### 2.C 换 provider / 加自定义 provider\n\n内置之外的常见后端在 `scripts/tts-providers/README.md` 里有 5 段\n**可粘贴**代码片段（ElevenLabs / edge-tts / macOS `say` / Azure / Google\nCloud）。\n\n挑一个 → 复制 README 里的代码块 → 保存为\n`scripts/tts-providers/<name>.sh` → 设好环境变量 → 切换 provider 跑：\n\n```bash\nPRESENTATION_TTS=elevenlabs npm run synthesize-audio\n# 或\nnpm run synthesize-audio -- --provider=edge-tts\n```\n\n如果用户的 TTS 完全自研，**按三函数契约**写一个 `<name>.sh` 即可：\n\n| 函数 | 必需 | 作用 |\n|---|---|---|\n| `tts_synthesize <text> <out_path> [<voice>]` | ✓ | 把一段文字写成 mp3 到指定路径 |\n| `tts_check` | 可选 | 启动时校验环境（CLI / key / auth），未就绪 return 非零 |\n| `tts_install_help` | 可选 | `tts_check` 失败时打印怎么修 |\n\n抄 `openai.sh`（HTTP-based）或 `minimax.sh`（CLI-based）起手最快。\n详细规范在 `scripts/tts-providers/README.md`。\n\n#### 2.D 退化路径\n\n如果两个内置 provider 都没就绪（没装 mmx 也没有 OpenAI key）告诉用户：\n\n```\n我可以：\n\n  1. 用内置 openai provider（如果你已有 OpenAI key）\n     export OPENAI_API_KEY=sk-...\n     PRESENTATION_TTS=openai npm run synthesize-audio\n\n  2. 帮你装 MiniMax CLI（默认 provider，中文音色更稳）\n     npm install -g mmx-cli && mmx auth login --api-key sk-xxxxx\n     API key 在 https://platform.minimaxi.com 获取\n\n  3. 换其它 provider\n     scripts/tts-providers/README.md 里有 5 种现成代码片段：\n       • ElevenLabs  (要 ELEVENLABS_API_KEY，英文音色最佳)\n       • edge-tts    (免费 / 无 key / pip install edge-tts)\n       • macOS say   (零依赖离线，质量一般，适合预览)\n       • Azure       (要 AZURE_SPEECH_KEY)\n       • Google      (要 gcloud auth)\n     复制一段保存成 tts-providers/<name>.sh，\n     再 PRESENTATION_TTS=<name> npm run synthesize-audio\n\n  4. 暂时跳过\n     稿子和 narrations 都在，你自己用任意 TTS 录制即可——文件\n     按 audio-segments.json 的 audio 字段命名就行。\n```\n\n不要假装合成成功。\n\n---\n\n## 校验时长\n\n合成完后跑：\n\n```bash\nfor f in public/audio/*/*.mp3; do\n  d=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 \"$f\")\n  echo \"$f  ${d}s\"\ndone\n```\n\n把每条的实际秒数汇总告诉用户。**重点关注 ≥ 15s 的条目**——口播太长意味\n着该 step 的 narration 写得过密，或者 step 没拆够。让用户决定**改稿子\n重合**还是**回章节代码拆 step**。\n\n---\n\n## 运行时如何使用合成的音频\n\n合成完成后，**不需要任何额外配置**——脚手架的 `App.tsx` 已经接好：\n\n| 模式 | 触发方式 | 行为 |\n|---|---|---|\n| **Manual**（默认） | 直接打开页面 | 不播音频，点击 / 方向键推进 |\n| **Audio**（半自动） | URL `?audio=1` 或按 `M` 键 | 进入 step 自动播音频，但你手动推进（点鼠标） |\n| **Auto**（全自动） | URL `?auto=1` 或按两次 `M` 键 | 进入 step 播音频 → 播完自动 next() → 进下个 step → ... |\n\nAuto 模式首次需要按一次 `Space` 启动（绕过浏览器自动播放限制），之后\n全自动跑。**录屏时打开屏幕录制 → 按 Space → 整片自动跑完 → stop**。\n\n> **Auto 模式的推进规则就一句话**：每段音频播完 + 200ms 缓冲 → 自动 next。\n> **没有\"等动画跑完\"的兜底**——如果你写的视觉动画比口播长，会被当场切。\n> 解决办法：写更长口播 / 拆 step / 调动画速度（详见\n> [`CHAPTER-CRAFT.md`](CHAPTER-CRAFT.md) 「代码层最小约束」）。\n>\n> 音频文件缺失（还没合成 / 404）或 narration 是空串 → 退化到字数估时\n> （`max(1500ms, 字数 × 250ms)`），保证预览也能整片跑通。\n\n---\n\n## 故障排查\n\n通用：\n\n| 现象 | 原因 / 修法 |\n|---|---|\n| `chapter id \"X\" registered but no matching folder found` | 章节文件夹应命名为 `NN-<id>`；id 必须等于 chapters.ts 里注册的 |\n| `narrations.ts in X must export an array named \"narrations\"` | 该章节的 narrations.ts 没 export 名为 narrations 的数组 |\n| `TTS provider 'X' not found` | `scripts/tts-providers/X.sh` 不存在；列出来看哪些可用，或抄 README 加一个 |\n| `provider 'X' does not define tts_synthesize` | 你的 `<X>.sh` 没定义必需的函数。看 README 的契约部分 |\n| 中间断了几条没合成 | `npm run synthesize-audio` 重跑 —— 已存在文件会跳过 |\n| 浏览器没播音频 | Auto / Audio 模式下首次需要用户手势——确认你按了 SPACE 启动 Auto，或者点过页面 |\n| 音频 404 但 Auto 模式还能跑 | 找不到 mp3 时 useAudioPlayer 退化到字数估时（4 字/秒），保证预览不中断 |\n\nminimax 专属：\n\n| 现象 | 原因 / 修法 |\n|---|---|\n| `mmx: command not found` | `npm install -g mmx-cli`；npm 全局 bin 不在 PATH 时 `npm config get prefix` 看一下 |\n| `mmx is not authenticated` | `mmx auth login --api-key sk-xxxxx` 重新登录 |\n| 中文音色不自然 | mmx 默认音色未必最佳；查 `mmx speech --help` 看 `--voice` 可选项，传 `--voice=<id>` |\n| 整段合成被截断 | 单段过长（mmx 默认上限约 5000 字符）。在 narrations.ts 里把这条拆成两条（也意味着该 step 应该拆成两个 step） |\n\nopenai 专属：\n\n| 现象 | 原因 / 修法 |\n|---|---|\n| `OPENAI_API_KEY is not set` | `export OPENAI_API_KEY=sk-...`，或者把它加到 shell rc / `.env` |\n| 全部段 FAILED + key 是对的 | 多半 model / voice 名字错。`--voice=alloy` 试默认值；`OPENAI_TTS_MODEL=tts-1` 试默认模型；用 `bash -x scripts/synthesize-audio.sh` 看请求体 |\n| 走代理 / 走 Azure-OpenAI | `export OPENAI_BASE_URL=https://your-proxy/v1` |\n| HD 太慢 | 改成 `OPENAI_TTS_MODEL=tts-1`（默认）；HD 大约慢 2 倍 |\n| 中文音色不像真人 | OpenAI 6 种音色都是英语偏向；中文角色用 `minimax` 更合适 |\n\n换其它（自定义）provider 之后：\n\n| 现象 | 原因 / 修法 |\n|---|---|\n| `<X>_API_KEY not set` | 你的 provider 需要 API key，但 env 里没设。`export <X>_API_KEY=...` 或写到 `.env` 再 `set -a; source .env; set +a` |\n| 合成的 mp3 浏览器播不了 | 检查 provider 是否真的出了 mp3（不是 wav / opus / aac）。`file public/audio/*/*.mp3` 看 magic header |\n| 一切看起来都对，但全部 FAILED | `bash -x scripts/synthesize-audio.sh` 看每段实际调了什么 |\n\n---\n\n## 相关链接\n\n- Provider 契约 + 现成片段：[`scripts/tts-providers/README.md`](../templates/scripts/tts-providers/README.md)\n- mmx-cli 仓库：<https://github.com/MiniMax-AI/cli>\n- mmx 官方文档：<https://platform.minimaxi.com/docs/token-plan/minimax-cli>\n- mmx 参数 / 音色查询：`mmx speech --help`\n",
+      "demos/materials/web-video-presentation/references/CHAPTER-CRAFT.md": "# 章节开发指引（每章开发必读）\n\n---\n\n## 这是视频，不是 PPT\n\n正在做的是**视频网页** —— 讲者点击 + 口播 + 录屏发出去给观众看。\n判断每一步做对没有，标准非常朴素：\n\n- **不像 PPT** —— 观众感觉是在看视频，不是在看翻页幻灯（页面中不得包含页眉页脚，突出主视觉元素）\n- **看起来舒服** —— 配色、字体、节奏都让人放松，不得出现大量的纯文字、不得出现字体太小的文字\n- **有视觉冲击** —— 画面在演事情，不只是文字堆砌，不得一次性全部罗列所有元素，关键元素随进度逐步推进展现\n\n---\n\n## 必须用 CSS / SVG / Canvas / JS 大胆绘制视觉演示\n\n> **这是底线。**\n>\n> 每一章都至少要有 1~2 处\"动起来的图 / 演示元素\"。\n> **整章只有纯文字 = 验收不过 = 回去重做。**\n\n视频感最强的来源 —— 用户**看见**了被讲解的东西在屏幕上演给他看：\n\n- 数字在递增 / 横条在生长 / 排名在交换\n- 流程节点依次点亮 / 连线自绘\n- 对比被一刀切开 / 聚光灯扫过 / 形状在变形\n- 粒子聚拢成形 / 噪声背景流动 / 字符雨下落\n- 模拟终端交互\n- 模拟 AI 对话窗口\n- 模拟文件目录树\n\n**怎么组合发挥都行 —— 但每章必须用，不允许整章纯文字。**\n\n---\n\n## 逐步揭示，禁止一次全展示\n\n整页内容由**全局 `step` 计数器**驱动 —— 点击空白处或按 → 键推进\n一步。设计每一步时心里要默念：**这一步演什么，下一步演什么**。\n\n**最重要的一条**：\n\n> 当口播在说\"第一是 X、第二是 Y、第三是 Z\"这种**清单 / 列表**时，\n> **严禁**一个 step 把 X / Y / Z 全部 stagger 上来。\n\n正确做法：\n\n- 一项 = 一个 step\n- X 只在它自己的 step 里独自亮起\n- 讲到 Y 时，X 灰化保留作上下文 + Y 亮起\n- 讲到 Z 时，X / Y 都灰化 + Z 亮起\n\n**判断标准**：讲者会一个一个念出来吗？会 → 必须逐个揭示。\n\n---\n\n## 内容取舍：抓重点，不要原文搬运\n\n视频是**音 + 画**：\n\n- **口播**负责把信息线性讲清楚\n- **画面**负责把节拍重点放大、节奏感拉出来\n\n每个 step 屏幕上只挂这个节拍**最值得放大的 1~3 个东西** —— 一个\nhero 标语 / 一个数字 / 一组对比 + 必要的视觉演示。\n\n不要试图把原文每个字都搬上去。那是论文阅读，不是视频。\n\n---\n\n## 双源：节奏跟口播稿，细节回原文章\n\n> **节奏 / 顺序 / 节拍切分** 跟 **`script.md` 口播稿** —— **关键顺序不能乱**。\n> **画面细节 / 数据 / 引用 / 案例** 回 **`article.md` 原文章**抽。\n\n`outline.md` 已经在每章首段抽了「信息池」做参考。但**实现章节时\n也必须回去翻 `article.md` 本章对应段落** —— 那里有比口播稿多得多的\n细节（具体数字、引用原话、案例维度、出处时间）。把这些挂到画面上，\n让**画面信息密度 > 口播信息密度**。\n\n> **如果你只用了口播稿的内容做章节** —— 屏幕等于把口播打字打了一遍\n> —— 那就是 PPT，不是视频。\n>\n> 章节实现一定要回原始文章抽细节，不要嫌麻烦。\n\n---\n\n## 字体 / 配色 / 动画 / 留白 —— 视频演示基本审美\n\n视频观众离屏幕远、注意力浮动，所以：\n\n- **字号要大** —— hero 文字至少 80px 起，远观也能看清\n- **留白要多** —— 舞台四边都要让出大留白，画面不要塞满\n- **配色要舒服** —— **颜色和字体家族必须用主题 token**（保证换主题不破）；\n  字号 / 间距 / 时长这些章节按内容自由发挥（详见下方「代码层最小约束」）\n- **动画要舒服 + 炫酷** —— 出现得干净利落，停下来不抢戏；炫酷靠\n  **设计巧思**（内容驱动的演示动画），不靠**速度暴力**或**密集闪烁**\n\n---\n\n## 避免 AI 味\n\nAI 生成的网页有几种共有的\"视觉指纹\"，**全部不要**：\n\n- 紫粉 / 蓝紫对角渐变背景\n- 圆角卡片 + 彩色左边框装饰\n- 渐变按钮 + 大圆角药丸\n- emoji 当图标用\n- 假数据 / 假 logo / 假\"X 万用户\"\n- 整章 N 步用同一种入场动画（全场 fade / 全场 blur）\n- 每步都挂 ken burns / 光晕呼吸 / 持续闪烁\n- 每屏右下角都挂 mono 角标 / 序号\n\n缺的东西**承认缺** —— 用 placeholder 占位卡（一张写着\"image · 16:9\n描述\"的卡片，按真实比例留位）。**不要**用 emoji 凑、不要找无关图凑、\n不要编数字。**没有就承认没有**，比 fake 强一百倍。\n\n---\n\n## 框架已经搭好的部分（理解就好，不需重写）\n\n- **16:9 固定舞台**：内容设计在 1920×1080 上，外层 transform scale\n  缩到任何视口，外围 letterbox 留黑 —— **没有响应式断点**\n- **舞台居中 + 大留白**：上下左右四边都让出至少 80px 的安全区\n- **隐形进度条**：屏幕底部默认完全透明，鼠标悬到底部边缘才出现，\n  支持点击跳转章节（录屏时摄像头看不到任何 chrome 控件）\n- **全局 step 驱动**：点击舞台空白处 / 键盘 ←/→ 推进；章节是 `step`\n  的纯函数，没有定时器、没有命令式状态\n\n---\n\n## 代码层最小约束\n\n不能踩的红线，其它怎么写都行：\n\n### 必须用 token（换主题不破的底线）\n\n- **颜色**：`--shell` / `--surface` / `--surface-2` / `--surface-3` /\n  `--text` / `--text-2` / `--text-mute` / `--text-faint` / `--rule` /\n  `--accent` / `--accent-soft` / `--accent-glow` ——\n  **禁硬编码 hex / rgb / 颜色名**\n- **字体家族**：`--font-display-cn` / `--font-display-en` / `--font-body`\n  / `--font-mono` —— **禁硬编码字体名**\n- **主题性格签名**通过 primitive class 自动接入，**不要在章节 CSS 里\n  重定义它们**：\n  - `.hero-num`（hero 数字风格 —— 主题决定衬线 / 等宽 / 粗黑）\n  - `.rule`（分割线 —— 主题决定 1px 实线 / 4px 实线 / 2px 虚线）\n  - `.card`（卡片 —— 主题决定圆角 + 阴影性格）\n  - `.stage-frame`（舞台底色 / 圆角 / 阴影 / 装饰图案 / vignette\n    全自动，章节什么都不用做）\n\n### 可硬编码 / 可 token，按内容自由（解锁章节自由设计）\n\n- **字号**：想要 80px 就写 80px，想用 `var(--t-h1)` 也行\n- **间距 / padding / margin**：按画面节奏写具体值\n- **动画时长 / 缓动 / keyframe**：按动画意图写具体值\n  （**节奏气质**参考 `theme.json` 的 `mood` —— 慢主题别写 200ms 的快动画）\n- **边框宽度 / 非性格圆角 / 字距**：随手写\n- **gap / grid 布局尺寸**：按画面构图写\n\n### 其它工程红线\n\n- 不用 `setTimeout` / `setInterval` 驱动动画 —— 用 CSS keyframes\n- 章节内的可交互元素（按钮 / 自定义控件）加 `data-no-advance`，\n  否则点了会被舞台误推进 step\n- 章节代码物理隔离：每章独立文件夹、独立 CSS 类前缀，不跨章 import\n- **每章必须有 `narrations.ts`**（与 `<Chapter>.tsx` 同目录）：\n  - 数组长度 **=** 章节代码里 `if (step === N)` 出现的最大 N + 1\n  - 每个元素 = 一个 string，该 step 要播的口播文本（来自 `script.md`\n    对应段，**语义一致**——可微调标点 / 断句以适配 TTS，但不能漏关键短语）\n  - 完全无音频的过场 step 用空串 `\"\"`，Auto 模式会按字数估时撑过\n  - 这是**音频合成 + Auto 模式自动推进的唯一真相源**，写错或漏写\n    会让录屏对不上嘴\n- **动画时长必须 ≤ 该 step 的口播时长**——Auto 模式严格按音频结束推进，\n  没有\"等动画跑完\"的兜底。动画太长 → 三选一：**写更长口播 / 拆 step\n  / 调动画速度**。详细机制见 [`AUDIO.md`](AUDIO.md)\n\n---\n\n## 完工自检（写完每章**强制**执行，不可跳过）\n\n> ⚠️ **硬性流程**：章节实现完成后**必须**走完下面的自检 → 修复 → 汇报\n> 三步。**禁止**\"实现完成 → 直接汇报给用户\"。\n>\n> **执行方式**（按能力降级）：\n>\n> 1. **优先 Agent Teams**：开一个独立的 reviewer agent，传入本章代码路径\n>    + 本文件 Part「完工自检」清单，让它**逐项核查 + 出结论**（哪几条\n>    pass / 哪几条 fail + 证据）。\n> 2. **其次 subAgent**：当前 agent 没有 Teams 能力但能开 subagent，用 subagent\n>    走同样的流程。\n> 3. **都没有**：当前 agent 自己**严格逐项**核查，不允许目测一遍就放行。\n>\n> **拿到自检结论后**：先按 fail 项**改完代码**，然后再向用户汇报\"做完\n> 了 + 自检结论 + 改了什么\"。**直接拿原始结论汇报但不修复 = 违规**。\n\n写完一章 + 在浏览器点完一遍后逐项过：\n\n- [ ] **每章至少 1~2 处 CSS / SVG / Canvas / JS 视觉演示** —— 没有 = 回去补\n- [ ] **不同 step 的主导动作不一样** —— 全章一种动画 = 回去重做\n- [ ] 字号大、留白舒服、配色舒服\n- [ ] 清单 / 列表逐个揭示，**1 项 = 1 step**\n- [ ] 画面信息比口播稿多（回了原文章抽细节挂上来）\n- [ ] 没有紫粉渐变 / 圆角彩色边框 / emoji / 假数据 / 假 logo\n- [ ] 缺的素材用 placeholder，不是 fake\n- [ ] **颜色和字体家族全部走 token**（无硬编码 hex / 字体名）；hero 数字\n      / 卡片 / 分割线 / 舞台用 primitive class 接入主题性格 —— 这两条不\n      达标 = 换主题就破\n- [ ] 章节交付时**主动告诉用户**：\"本章还缺这些素材\"\n- [ ] 禁止出现小号字体，大量纯文字（出现后必须回去改）\n- [ ] 禁止出现任何形式的页眉页脚，仅展示关键内容（出现后必须回去改）\n- [ ] **`npx tsc --noEmit` 通过** —— 不通过禁止汇报\"做完了\"\n- [ ] 章节代码物理隔离：独立 CSS 类前缀（`.cd-` / `.mg-` / ...），\n      未跨章 import，未修改 `chapters.ts` 之外的共享文件\n- [ ] **`narrations.ts` 存在**且 `narrations.length` === 章节代码里\n      `if (step === N)` 用到的最大 N + 1（不一致 = Auto 模式录屏会错位）\n- [ ] **每条 narration 文本与 `script.md` 对应段落语义一致**（关键短语 /\n      数字 / 引用全部保留，可为 TTS 微调标点断句）—— 录屏画外音应当能被\n      观众听成同一段稿子\n- [ ] **每个 step 的视觉动画时长 ≤ 口播时长**（口播 `字数 ÷ 4` ≈ 秒数）—— \n      超出会被 Auto 模式当场切断，动画演到一半就跳下一步\n\n任一未过 → 回去改。**不要**\"先放着以后修\"。\n",
+      "demos/materials/web-video-presentation/references/EXAMPLES/README.md": "# EXAMPLES —— 完整章节 / 题材 anchor\n\n> ## ⚠️ 这是**结构示意**，不是抄袭模板\n>\n> 这些 example **不是给你照抄的**。它们的角色是\"看一个完整章节大概\n> 什么形状、动画怎么分层、CSS 用了哪些 token、outline 长什么样\"。\n>\n> **正确使用流程**：\n>\n> 1. 走完 [`../CHAPTER-CRAFT.md`](../CHAPTER-CRAFT.md) Part 0 五问\n> 2. 实在卡壳\"我这一章的整体结构应该是什么\"才翻 EXAMPLES\n> 3. **保留它的\"形\"**（step 切分逻辑、字号关系、布局原则），**按本\n>    项目的主题 + 内容换动作选型**\n>\n> 倒过来——先翻 EXAMPLES 选一个照搬到底 = [`../CHAPTER-CRAFT.md`](../CHAPTER-CRAFT.md)\n> Part 5 第 8 条「整章只用一种入场动画」同质化反模式（每个用户的视频\n> 看起来像同一个模板的 N 个变奏）。\n\n两类参考资源，让 agent 在写章节时**有具体形状可参考**，不用从零设计。\n\n> **不是必须按这个写**。卡壳时翻一翻；用力发挥时大胆偏离。\n\n## 目录\n\n### A. 章节结构 anchor（与题材无关）\n\n| 例子 | 适用场景 | 文件 |\n|---|---|---|\n| [`hook-chapter/`](hook-chapter/) | **钩子型开场** —— 多张图片逐张揭示后 hero takeover | `chapter.tsx` + `chapter.css` |\n| [`list-reveal/`](list-reveal/) | **列举型** —— 口播说\"三件事 / N 个特性\"，每项 1 step | `chapter.tsx` + `chapter.css` |\n\n每个 example 都是**完整章节**：**内容驱动主导动作** + 必要的伴随动作\n（**不强求挂持续微动**，按 [`../CHAPTER-CRAFT.md`](../CHAPTER-CRAFT.md)\nPart 0 原则 7 节制使用）、真素材（不是占位卡）、字号狠对比、绑了\n`newsroom` 主题作为示范。\n\n### B. 题材 case anchor（与题材相关）\n\n| 例子 | 题材 | 文件 |\n|---|---|---|\n| [`case-tech-review/`](case-tech-review/) | 科技测评 / 实测对比 / 跑分类视频 | README + outline 节选 |\n\n> 题材 case 展示**真实 outline 的样子**（含 article 补字段如何填、\n> 章节切分如何决策）。拿到与某个 case 题材相似的需求时，先翻它再\n> 写自己的 outline。\n\n## 怎么用\n\n### 写章节卡壳时\n\n1. 看哪个 anchor 跟你这一章**结构最像**（钩子型 vs 列举型 vs 其它）\n2. 翻 `README.md` 看这个例子的设计思路 + 节奏\n3. 翻 `chapter.tsx` 看实现：JSX 结构、`step` 切分、用了哪些组件 / 类名\n4. 翻 `chapter.css` 看动画用了哪些 keyframes、token、`infinite` 持续\n   微动写在哪\n5. 写自己这一章时**保留 anchor 的\"形\"，按本章内容 + 本主题气质换动画选型**\n\n### 切换主题时\n\n每个 example 的 README 末尾有\"切到其它主题怎么换\"的提示 —— 通常只需要\n**换主导动作的形式**（newsroom 印章砸下 → terminal 打字机 → chalk\n粉笔自绘），**结构、step 切分、字号关系不动**。\n\n---\n\n## ⚠️ 这两个 anchor 是\"地板\"，不是\"天花板\"\n\n这两个例子已经引入印章砸下、stagger、accent 红条 —— 但**仍然是相对克\n制的版本**。**鼓励你做得更狂、更\"视频感\"**：\n\n### 进阶玩法（任选搭配）\n\n| 维度 | 这俩 anchor 给的（地板） | 可以升级到（无上限） |\n|---|---|---|\n| 背景层 | 纯色 surface | + SVG turbulence filter 纸纹永不停斜向漂移 |\n| 主导动作 | mask reveal + 印章砸下 | + Canvas 粒子从屏幕外汇聚成 hero 字 |\n| 伴随动作 | accent 红条 scaleX | + SVG path stroke-dashoffset 自绘下划线 / 装饰花纹 |\n| 持续微动 | accent 光晕呼吸 | + 多层粒子漂移 / scanline / ken burns 缓推 |\n| 数字 hero | 直接显示 | + JS 数字滚动（`requestAnimationFrame` + easeOutQuart） |\n| 流程 / 架构 | 仅文字列 | + SVG path 自绘流程图（每条线 stroke-dashoffset 错峰） |\n| 对比图 | 两段文字 | + SVG 双柱图自绘 + 差值数字滚动 |\n| 转场 | 章节边界硬切 | + clip-path inset 横向擦除转场 |\n\n→ 详细工具箱见 [`../CHAPTER-CRAFT.md`](../CHAPTER-CRAFT.md) Part 2\n\"视觉手段全栈工具箱\"（CSS / SVG / Canvas / JS 四层）。\n\n### 实测原则\n\n写章节时，**先实现 anchor 同等的地板版本**（按 [`../CHAPTER-CRAFT.md`](../CHAPTER-CRAFT.md)\nPart 0 五问选好主导动作），跑起来确认气质对，**再决定要不要加伴随\n动作 / 持续微动**。\n\n**判断标准**：\n- 如果不同 step 的主导动作够多样（PPT 警报通过 [`../CHAPTER-CRAFT.md`](../CHAPTER-CRAFT.md)\n  Part 0 原则 7 自检）= 不需要再加持续微动\n- 如果整章主导动作太单一 = 不要靠\"加持续微动\"补救，**回 [`../CHAPTER-CRAFT.md`](../CHAPTER-CRAFT.md)\n  Part 1 五问换主导动作**才是正解（参 Part 5 第 8 条「整章只用一种入场动画」）\n\n## 不在 EXAMPLES 里出现的章节类型\n\n- **数字型 hero**（\"+47%\"  → \"几乎快了一倍\"）\n- **对比型**（前后对照 / 双柱图）\n- **链接卡片收尾**\n\n这些场景的视觉原语已经在 [`../CHAPTER-CRAFT.md`](../CHAPTER-CRAFT.md)\nPart 3 视觉工具箱（CSS / SVG / Canvas / JS 全栈）里覆盖了；按 anchor\n的\"形\"组合即可。\n",
+      "demos/materials/web-video-presentation/references/EXAMPLES/case-tech-review/README.md": "# Case: 科技测评类（tech review）\n\n一篇 AI / 工具 / 产品**实测对比**类文章 → 7 章 36 步、6 分 30 秒视频\n的真实案例。\n\n> ## ⚠️ 这是结构示意 / 历史案例，不是抄袭模板\n>\n> 这个目录的角色是让 agent 看：\"**测评类视频章节怎么切、信息池怎么\n> 抽、章长怎么定**\"。**它包含的具体动画描述（如\"慢速 blur clear\n> 1.5s ease-out / 打字机每字 80~100ms\"）属于历史版本** —— 新版\n> outline 已经**不写动画 / 不写时长**（见 [`../../OUTLINE-FORMAT.md`](../../OUTLINE-FORMAT.md)）。\n> 新写 outline 时只写\"屏幕内容 + 关系名前缀 + 章节级信息池\"，动画\n> 选型留给章节实现阶段按 [`../../CHAPTER-CRAFT.md`](../../CHAPTER-CRAFT.md)\n> Part 0 五问决定。\n>\n> **看这个 case 学的应该是**：\n> 1. 测评类怎么切 7 章（钩子 → 优点 → 场景 → 进阶 → 收束）\n> 2. 章长怎么定（每章 4~6 step 防疲劳）\n> 3. 双源原则怎么落地（hero 来自 script / 数据角标来自 article）\n>\n> **不应该学**：动画选型、CSS 实现、时长数值（这些已下放到 chapter\n> 阶段）。\n\n## 适用场景\n\n- AI 模型 / 产品 / 工具的实测体验文\n- 多家产品对比（A vs B vs C）\n- 跑分 / benchmark / 用户投票数据驱动的内容\n- \"强在哪 / 怎么用 / 怎么用得好\"型结构\n\n## 关键决策\n\n| 维度 | 这个案例的选择 | 通用启发 |\n|---|---|---|\n| 主题 | `midnight-press`（电影感慢镜、blur clear、暖橙 accent、scanline） | 科技测评类适合\"克制、有重量\"的暗色调；避开俏皮 / 糖果色 |\n| 章节切分 | 7 章：开场悬念 / 强在哪 / 哪能用 / 怎么用好 / Skill 介绍 / Skill 模式 / 收尾 | 测评类的标准结构：钩子 → 优点 → 场景 → 进阶 → 收束 |\n| 章长 | 每章 4~6 step | 测评类信息密度高，每章不超过 6 step 防止观众疲劳 |\n| 双源应用 | hero 标语来自 script、画面密度（具体分数 / 投票数 / 时间戳）来自 article | 测评类 article 数据极多 —— 用 mono cue / 角标 / 数据浮层挂出来 |\n| 动画风格 | 慢速 blur clear / 打字机 / ken burns 缓推 | midnight-press 暗色印刷气质，章节实现时按主题氛围自由发挥 |\n\n## 文件\n\n- [`outline-snippet.md`](outline-snippet.md) —— 前 2 章完整节选（5 + 5 step），\n  展示双源原则在 outline 里怎么落地\n\n> 完整 7 章 outline 在调用此 Skill 的具体项目里（`gpt-image2-video/outline.md`），\n> 不放进 Skill 仓库 —— 避免 Skill spec 被某一个项目内容污染。\n\n## 不在这个 case 出现的情形\n\n测评类**通常不需要**：\n- 慢节奏长镜头（电影感片头 / 旅行 vlog 才需要）\n- 手写温暖感（教育 / 亲子 / 食谱才需要）\n- 大量插画（设计稿 / 工艺品类才需要）\n\n→ 选别的 case anchor 或自由发挥。\n",
+      "demos/materials/web-video-presentation/references/EXAMPLES/case-tech-review/outline-snippet.md": "# Outline 节选 · 科技测评类 case\n\n> **节选**：前 2 章（10 step），用来展示 outline 在科技测评题材里的\n> 形状。完整版 7 章 36 步在调用此 Skill 的具体项目里，不进 spec。\n\n> **主题**：`midnight-press`（电影感慢镜、blur clear、暖橙 accent、\n> scanline；克制有重量。**禁**砸下 shake / 弹簧 / emoji）\n>\n> **总时长**：约 6 分 30 秒\n\n---\n\n## 1. coldopen — 登顶悬念（5 steps · ~30s）\n\n- **step 1** (~5s) — 暗场远景粒子云 + 钩子字幕\"我刷到一张图，愣了三秒\"\n  · 动画：屏幕从纯黑慢速 fade 到暗暖底（1.5s ease-out）→ 远景光尘粒子云慢漂浮入（1.0s 错峰）→ 字幕 mono 打字机逐字打出（每字 100ms）；持续微动：粒子云永不停 brownian 漂移 + 暖橙暗角光晕 6s 周期慢呼吸 + ken burns 缓推\n  · 手段：CSS background 慢 fade + Canvas 粒子云慢漂 + JS typewriter + filter: drop-shadow 暖橙呼吸 + transform: scale 永动 ken burns\n\n- **step 2** (~7s) — 排行榜慢镜景深聚焦 + 主分数 hero 数字 blur clear 浮出\n  · 动画：截图从 blur(12px) + scale(1.05) 慢速景深聚焦（1.5s ease-out）→ 主分数从 blur(20px) 慢慢锐化（1.2s 错峰 400ms）→ 王冠 SVG 沿数字外圈慢速 mask reveal（1.5s）；持续微动：主分数暖橙光晕 5s 呼吸 + ken burns 缓推\n  · 手段：filter: blur 反向 + transform scale 慢推 + clip-path 沿 path mask reveal + filter: drop-shadow 呼吸\n  · article 补：主分数（来自 article §1，具体数字）+ 测评窗口（\"X 月 N 日 ~ Y 日\"）+ 投票数（mono cue 角标）—— 口播只说\"换榜首\"，画面把\"领先多少 / 多少票投出来的\"全挂上\n\n- **step 3** (~6s) — 第 2 名对比横条 + \"+差距分\"慢浮锐化\n  · 动画：第一条从左向右慢速 mask reveal 拉到 100%（1.2s ease-out）→ 第二条同向 mask reveal 但只到 ~70%（错峰 600ms）→ 中间空缺区差距分从 blur(15px) 慢慢锐化进场（错峰）；持续微动：差距区暖橙光晕慢呼吸 + accent 横线 8s 缓延展永动 + scanline 极淡 overlay 慢移\n  · 手段：clip-path inset 慢 reveal + filter: blur 反向 + linear-gradient 暖光晕 + linear-gradient scanline 永动\n  · article 补：第 2 名具体名字（article §1）+ 差距分（具体数字 vs 模糊\"低很多\"）+ 趋势注释（\"过去 N 周首次反超\"）\n\n- **step 4** (~6s) — 官方原话 pull-quote 慢镜入场（电影感引文）\n  · 动画：左右两枚巨大引号 SVG 从 opacity 0 + blur(15px) 慢速锐化进场（1.0s 错峰 200ms，**无砸下**）→ 引文文字 mono 打字机逐字打出（每字 80ms）→ 落款慢速 blur clear 浮出（0.8s）；持续微动：引号暖橙慢光晕呼吸 + 镜头 ken burns 缓推\n  · 手段：filter: blur 反向锐化 + JS typewriter + transform translateY 慢推 + filter: drop-shadow 呼吸\n  · article 补：原话直引（来自 article §1，1~2 句）+ 落款来源（\"— 出处.AI\"）—— 引文是 article 里口播完全省略的\"权威背书\"\n\n- **step 5** (~5s) — 主持人介绍 + 4 件事预告速览\n  · 动画：第一行自我介绍 blur clear 慢入场（1.2s ease-out）→ 4 张占位卡分别从 blur(15px) 慢速景深聚焦 stagger 出现（每张 250ms 错峰，每张 1.0s 慢镜），卡内 mono 数字 01/02/03/04 + 关键词；持续微动：每张卡暖橙边线慢光晕呼吸（错峰 400ms）+ 远景粒子永漂\n  · 手段：filter: blur 反向 + opacity 慢 fade + transform scale 慢推 + filter: drop-shadow 多 instance 错峰呼吸\n  · article 补：4 件事的关键词（来自 article 章节标题，简化）\n\n口播节选：\n> 我刷到一张图，愣了三秒……今天讲清楚四件事。\n\n---\n\n## 2. why-strong — 强在哪（5 steps · ~80s）\n\n- **step 1** (~6s) — hero\"强在哪 · 四个方向\" + 4 个 ghost 占位卡\n  · 动画：hero 字符整体从 blur(20px) + opacity 0 慢速景深聚焦（1.5s ease-out）→ 下方暖橙长横线从中心向两侧慢延展（0.8s）→ 4 张 ghost 卡片同步从 blur 慢镜出现（保持 opacity 0.3 占位状态）；持续微动：暖橙下划线 8s 周期慢光晕脉冲 + ghost 卡片暖暗边线慢闪\n  · 手段：filter: blur 反向 + transform scaleX 慢延展 + opacity 阶梯填充 + filter: drop-shadow 永动呼吸\n  · article 补：4 个方向各自的关键词（mono cue 标签，\"01 X / 02 Y / 03 Z / 04 W\"）\n\n- **step 2** (~16s) — 第 1/4 项填实 + 大图慢镜 takeover\n  · 动画：卡片 1 从 ghost 状态慢速 mask 填实（0.8s 暖暗底色 + 边线慢光晕亮起）→ 中央 hero 大图从 blur(15px) 慢速景深聚焦（1.5s ease-out）→ mono cue 标签从暗角慢速 blur clear 入场（0.8s）→ 副标打字机逐字打出（每字 80ms）；持续微动：暖橙 accent 高亮条永动呼吸 + 大图 ken burns 缓推（0.5% scale 12s 周期）+ scanline 慢移\n  · 手段：filter: blur 反向 + clip-path 慢 reveal + JS typewriter + transform scale 永动 ken burns + linear-gradient scanline 永动\n  · article 补：本项的具体表现（article §2 抽 1~2 个数据点 / 案例标签）—— 口播只说\"它强在 X\"，画面挂\"具体强到 N% / 跑赢 M / 测评分数 K\"\n\n- **step 3** (~16s) — 第 2/4 项填实 + 列表/演示\n  · 动画：卡片 2 慢速 mask 填实（0.8s）→ mono cue 标签 blur clear 慢入场（0.8s）→ 4 行具体细则 typewriter 逐行打出（每行 0.8s 错峰 350ms）→ 每行末尾 mono 光标闪烁后追加暖橙对勾 SVG path stroke 慢绘制；持续微动：mono 光标永闪烁（800ms blink）+ scanline 慢移\n  · 手段：JS typewriter + opacity blink 光标 + SVG path stroke-dashoffset 慢绘 + linear-gradient scanline overlay 永动\n  · article 补：4 行细则的具体内容（来自 article §2 第 N 段子列表）—— 口播只说\"指令遵循好\"，画面把 article 列出来的 4 个具体维度\"主体放哪 / 背景怎么搭 / ...\"逐行打出来\n\n- **step 4** (~16s) — 第 3/4 项填实 + before/after 慢镜对照 + 永动 cross-fade\n- **step 5** (~16s) — 第 4/4 项填实 + 多参数预览 + redacted 注释\n\n口播节选：\n> 实测下来强在四个方向 ……\n\n---\n\n> **观察**：每个 step 的画面都做到\"口播说一件事，画面挂多件事\"。比如\n> step 2 口播只是\"第一项很强\"，画面同时呈现：本项关键词 / 大图实例 /\n> 具体数据点 / 副标补充 —— 这是双源原则的具象落地。\n",
+      "demos/materials/web-video-presentation/references/EXAMPLES/hook-chapter/README.md": "# Anchor: hook-chapter（钩子型开场）\n\n> ⚠️ **这是结构示意，不是抄袭模板**。先走 [`../../CHAPTER-CRAFT.md`](../../CHAPTER-CRAFT.md)\n> Part 0 五问。本 anchor 给的是\"钩子型开场的结构骨架\"——你要保留它的\n> step 切分逻辑、字号关系、布局原则，**按本项目的主题 + 内容换动作\n> 选型**。倒过来照抄 = [`../../CHAPTER-CRAFT.md`](../../CHAPTER-CRAFT.md)\n> Part 5 第 8 条「整章只用一种入场动画」同质化反模式。\n\n## 定位\n\n视频开头最常用的章节类型：**抛 N 张可疑图 / 反例 / 截图 → 引出主题 →\n切大字 hero takeover**。\n\n## 适用场景\n\n- 悬念型开头：先甩 3~4 张让人怀疑 / 困惑的图，再揭示原因\n- \"今天聊聊 X 的几个翻车现场\"：先看翻车，再切主题\n- 产品发布的\"问题感\"开场：先看痛点截图，再揭示新功能\n\n## 假设的 outline.md 章节段（抽象）\n\n```markdown\n## 2. hook — <章节标题>（6 steps）\n\n- **step 1** (~4s) — N 张可疑图片占位（虚线 ghost 卡片）\n- **step 2** (~5s) — 第 1 张露出：<反例 1 描述>（独占视觉）\n- **step 3** (~5s) — 第 2 张露出：<反例 2 描述>（独占视觉）\n- **step 4** (~5s) — 第 3 张露出：<反例 3 描述>（独占视觉）\n- **step 5** (~4s) — 三张图同时缩入侧栏，中间出 <主题大字> takeover\n- **step 6** (~3s) — 切到下一句钩子（被 brush 划掉）\n```\n\n## 关键节奏决策\n\n| step | 节奏意图 | 视觉 |\n|---|---|---|\n| 1 | 抛悬念 —— N 张未知 | 虚线 ghost 卡片，1/3 屏一张 |\n| 2-N | **每张图独占视觉** —— 重点不是\"凑数\"，是让观众盯着每张图想\"这是真的吗\" | 大图占据 ~70% 屏幕，旁边小字标注图源 |\n| N+1 | takeover —— 揭示主题 | 三张缩成左侧迷你卡，中间巨字 |\n| 末 | 钩子收束 | brush 划掉旧概念，引下一章 |\n\n## 为什么 2-N 不能 stagger 同时上\n\n口播会**逐个念出来** —— 必须 1 项 = 1 step（[CHAPTER-CRAFT.md Part 0 原则 8](../../CHAPTER-CRAFT.md#8-多点内容必须逐个揭示绝不同时上)）。\n同时 stagger 上 = 观众扫一眼看完，讲者还在念第一张 = PPT 直觉。\n\n## 文件结构\n\n```\nhook-chapter/\n├── README.md       ← 本文件\n├── chapter.tsx     ← 完整章节示例 —— 默认绑 newsroom 主题\n└── chapter.css\n```\n\n## 关键手段（地板线）\n\n| 维度 | 这个 anchor 怎么实现 |\n|---|---|\n| 素材 | `<img src=\"/hook/<asset>.png\" />` 真截图 |\n| 字号 | hero = 144px serif (`var(--t-display-1)`) |\n| 主导动作 | brush-stroke + 印章砸下（newsroom 气质） |\n| 伴随动作 | accent 红条 scaleX + 副标 stagger 200ms |\n| 持续微动 | accent 红条光晕 `infinite` 呼吸；图片 ken burns 缓推 |\n| 卡片样式 | drop-shadow + 微旋转 1deg |\n| takeover | 三张图缩入 + hero 巨字爆出 + accent 红条贯穿 |\n\n> **新写章节时**：抄结构和字号关系，按本章内容 + 本主题气质自由\n> 设计动画形式。**持续微动按需挂**，不强求 —— 详见\n> [`../../CHAPTER-CRAFT.md`](../../CHAPTER-CRAFT.md)「避免 AI 味」一节\n> 关于「每步都挂 ken burns / 持续闪烁」的反模式。\n\n## 切到其它主题时\n\n- `bauhaus-bold` → brush 划掉换 hard-cut 大色块；hero 字体换 Archivo Black\n- `terminal-green` → 三张图换\"FILE_001/002/003\"占位框；hero 用打字机\n- `chalk-garden` → 粉笔感虚线 + 慢速 wiggle 入场\n- `midnight-press` → blur clear 慢镜入场 + ken burns + scanline；\n  takeover 改\"主标 blur 锐化 + 暖橙光晕呼吸\"\n\n**结构（N+2 步、独占节奏、takeover、收束）保持不变。**\n\n## 想看具象题材应用\n\n- 科技测评 / 实测对比类视频用这个 anchor 开场长什么样 →\n  [`../case-tech-review/`](../case-tech-review/)\n",
+      "demos/materials/web-video-presentation/references/EXAMPLES/list-reveal/README.md": "# Anchor: list-reveal（列举型逐个揭示）\n\n> ⚠️ **这是结构示意，不是抄袭模板**。先走 [`../../CHAPTER-CRAFT.md`](../../CHAPTER-CRAFT.md)\n> Part 0 五问。本 anchor 给的是\"列举型章节的结构骨架\"（单网格 N 槽位 +\n> 每 step 只填一个槽位 + 位置不重排）——保留这个**结构**，**按本项目的\n> 主题 + 内容换动作选型**。倒过来照抄 = [`../../CHAPTER-CRAFT.md`](../../CHAPTER-CRAFT.md)\n> Part 5 第 8 条「整章只用一种入场动画」同质化反模式。\n\n## 定位\n\n口播说\"三件事 / 四个原因 / N 个特性\"时，**每项 1 step 逐个揭示**。\n视频中段最常用的章节类型，**最容易翻车成 PPT** —— 这是为什么需要 anchor。\n\n## 适用场景\n\n- \"<主体> 强在哪 → 三件事\"\n- \"选购 <X> → 四个角度\"\n- \"为什么我喜欢 <X> → 五个理由\"\n- 任何\"主题 + N 个并列子项\"的结构\n\n## 假设的 outline.md 章节段（抽象）\n\n```markdown\n## 4. <chapter-id> — <主题 N 件事>（N+1 steps）\n\n- **step 1** (~3s) — masthead 引子\"<N 件事>\"\n- **step 2** (~6s) — 第 1 件：<标题> + <article 抽来的细节>\n- **step 3** (~6s) — 第 2 件：<标题>\n- ...\n- **step N+1** (~6s) — 第 N 件：<标题>\n```\n\n## 关键节奏决策\n\n| step | 视觉布局 |\n|---|---|\n| 1 | 中心引子大字 + 序号 01/02/.../N 占位（**不显示内容**，纯占位） |\n| 2 | \"01\" 槽位填充：标题 + 简短说明 + accent 编号；其余仍是 ghost |\n| 3 | \"02\" 填充；01 已激活变次级；其余仍 ghost |\n| ... | 当前槽位填充；之前的激活降级；之后的 ghost |\n\n## CHAPTER-CRAFT.md Part 0 原则 8 的核心实现\n\n> \"布局不重排，只是单元格内容变化\"\n\n整个章节只有**一个网格布局**，N 个槽位的 React 节点位置完全不变。\n变的只是每个槽位的内容状态（ghost / active / past）。这样：\n- 单元格不会重排 → 视觉稳\n- 每点一次只有\"一个槽位变化\" → 观众视线明确锁定新揭示的项\n\n**反模式**：每点一次重新渲染整个布局 → 已揭示的项也跟着抖动 / 重新\n入场 → 观众不知道该看哪。\n\n## 文件结构\n\n```\nlist-reveal/\n├── README.md\n├── chapter.tsx     ← 完整章节示例 —— 默认绑 newsroom 主题\n└── chapter.css\n```\n\n## 关键手段（地板线）\n\n| 维度 | 这个 anchor 怎么实现 |\n|---|---|\n| 字号 | 标题 64px / 巨号 144px serif |\n| 槽位状态 | dashed → 巨号红色高亮 → 灰化数字（**位置不重排**） |\n| 序号 | hero-num 字体（衬线大数字） |\n| 主导动作 | mask reveal（标题）+ 数字砸下（accent 红） |\n| 伴随动作 | 副标 stagger 200ms + accent 横线 scaleX |\n| 持续微动 | active 槽位的数字 accent 光晕 `infinite` 呼吸 |\n| 引子 | masthead 双线规则 + serif 大字 |\n\n> **新写章节时**：抄结构（单网格 N 槽位、每 step 只填一个槽位、位置\n> 不重排），按本章内容 + 本主题气质自由设计主导动作的形式。\n\n## 切到其它主题时\n\n- `bauhaus-bold` → 序号换 Archivo Black + 大色块；用 hard-cut 砸下\n- `terminal-green` → 序号 `[01]` `[02]` `[03]` 风格；打字机入场\n- `chalk-garden` → 粉笔下划线手绘 + wiggle 入场\n- `midnight-press` → 数字 blur clear 慢锐化 + 暖橙光晕慢呼吸\n\n**结构不变**：N+1 step、单网格 N 槽位、每 step 只填一个槽位。\n\n## 想看具象题材应用\n\n- 科技测评 / 实测对比类视频用这个 anchor 长什么样 →\n  [`../case-tech-review/outline-snippet.md`](../case-tech-review/outline-snippet.md)\n  里 `## 2. why-strong` 章节\n",
+      "demos/materials/web-video-presentation/references/OUTLINE-FORMAT.md": "# `outline.md` 格式 spec\n\n视频章节规划的产出文件。**用户可以直接编辑**，所以格式必须人类友好\n（用 markdown 不用 JSON / YAML）。\n\n!重要：阅读此文件后必须继续阅读 [`CHAPTER-CRAFT.md`](CHAPTER-CRAFT.md) 的全部内容，了解对网页效果的真实需求，然后再开始编写 outline\n\n> ## ⚠️ outline 是开发计划，不是视觉规划\n>\n> outline 只规划**节奏 + 内容 + 信息密度**：\n>\n> - 章节切分 / 每章 step 数 / 每步估时\n> - 每步屏幕内容（hero / 标语 / 数据 / 列表项）\n> - 章节级**信息池**（从 article 抽的数字 / 引用 / 案例 / 标签）\n>\n> **outline 里的 step 数是初始预估**。最终 step 数以章节实现时的\n> `narrations.ts` 为准——后者既是 step 数源，也是音频合成源\n> （详见 [`CHAPTER-CRAFT.md`](CHAPTER-CRAFT.md) 「代码层最小约束」+\n> [`AUDIO.md`](AUDIO.md)）。如果实现时章节 step 数和 outline 不一致，\n> 回过来同步 outline 即可，不需要纠结\"对得严丝合缝\"。\n\n> **写 outline 前必读**（双源原则，[CHAPTER-CRAFT.md Part 0 原则 10](CHAPTER-CRAFT.md#10-双源原则scriptmd-定节拍--articlemd-定画面密度)）：\n>\n> - **`script.md`** —— 决定**节拍**：按 `---` 切节拍，每节拍 1~2 step、估时\n> - **`article.md`**（如有）—— 决定**画面信息密度**：每章首段抽**信息池**\n\n---\n\n## 抽象示例（看格式）\n\n````markdown\n# Video Outline\n\n> **主题**：`<theme-id>`（Checkpoint Plan 已选定）—— <一句话风格描述>\n> **总时长**：约 <T> 分 <S> 秒（口播 ~<X> 字 ÷ 4 字/秒）\n> **章节数**：<N> 章 / <M> 步\n\n---\n\n## 1. <chapter-id> — <章节标题>（<S> steps · ~<T>s）\n\n**信息池**（chapter agent 按需挂角标 / 副标 / pull-quote / mono cue）：\n- <类型：数字 / 引用 / 出处 / 案例 / 词义 / 时间 / 对比 / ...>：<内容> —— <来源 article §X / Lxx>\n- ...\n\n**开发计划**：\n\n- step 1 (~Ts) — <屏幕内容>\n- ...\n\n口播节选：\n> <1~3 句节选，对应到 script.md 完整文本>\n\n---\n\n## 2. <chapter-id> — ...\n````\n\n> **关于时长**：outline 里**只**写 step 的 `(~Ts)` 口播估时（音画对齐\n> 用），**绝对不写**动画时长 / 错峰量 / keyframe 数值。这些都在章节开发\n> 阶段决定（[`CHAPTER-CRAFT.md`](CHAPTER-CRAFT.md) Part 3 时长参考）。\n\n> **想看具象示例**：\n> - 钩子型开场结构 → [`EXAMPLES/hook-chapter/`](EXAMPLES/hook-chapter/)\n> - 列举型章节结构 → [`EXAMPLES/list-reveal/`](EXAMPLES/list-reveal/)\n> - 科技测评类（实测 / 对比 / 跑分） → [`EXAMPLES/case-tech-review/`](EXAMPLES/case-tech-review/)\n\n---\n\n## 字段约定\n\n### 顶部 metadata block\n\n用引用块（`>`）形式，方便扫一眼整体规模：\n\n| 字段 | 必填 | 说明 |\n|---|---|---|\n| **主题** | ✓ | Checkpoint Plan 必须已选定。chapter agent 实现时按主题颜色 / 字体 token 走，动画 / 节奏 / 视觉演示由章节自由发挥 |\n| **总时长** | ✓ | 估算口播时长（中文 ~ 250 字 / 分钟） |\n| **章节数** | ✓ | `N 章 / M 步` |\n\n### 章节标题：`## N. <id> — <title>（<S> steps · ~<T>s）`\n\n| 部分 | 规则 |\n|---|---|\n| `N` | 1-indexed 顺序，对齐 `chapters.ts` 的注册顺序 |\n| `<id>` | **小写 + 连字符**。会成为 React `key` / 文件夹名 (`src/chapters/0N-<id>/`) / 音频子目录 (`public/audio/<id>/`) |\n| `<title>` | 给人看的中文标题。**不会**进 React 代码 |\n| `<S> steps` | 该章 step 总数 |\n| `~<T>s` | 该章口播总估时（中文 ~ 4 字/秒） |\n\n合法 id：`coldopen`、`hook`、`why-good`、`why-good-text-render`。\n不合法：`why_good`（用连字符）、`Hook`（小写）、`第一章`（拉丁字符）。\n\n### 章节首段「信息池」（**双源原则核心落地**）\n\n每章独立列出从 `article.md` 抽的细节集合，**让 chapter agent 实现每步\n画面时按需取用**——可能挂成右下角 mono 角标 / 副标小字 /\npull-quote 引用 / 数据浮层。\n\n#### 信息池条目格式\n\n```\n- <类型>：<具体内容> —— <来源 article §X / Lxx 或简注>\n```\n\n> **没 article（用户直接给 script）**：信息池退化为\"主动设计画面信息\n> 密度\"——靠数字 / 对比 / 元数据等让画面比口播信息密。可以列\"画面\n> 装饰元素池\"而非\"article 抽取池\"。\n\n### Step 列表：每步 **1 行**\n\n```\n- step N (~Ts) — <屏幕内容>\n```\n\n| 规则 | 原因 |\n|---|---|\n| `step N` 1-indexed | agent 实现时 `if (step === N - 1) ...`（注意零基偏移） |\n| **`(~Ts)`** 必填 | 按 script.md 本步对应口播段字数 ÷ 4 估算（中文 ~ 4 字/秒）。范围 3~10s |\n| **屏幕内容** | 一句话讲清楚这一步舞台上有什么：hero / 标语 / 数据 / 装饰元素。**≤ 1 行**，再多就该拆 step |\n| **不写动画** | 写死 = 翻译机化（详见本文件顶部框） |\n| **不写时长数值 / 错峰量** | 这些在章节开发阶段决定 |\n| **不写实现手段** | filter / SVG / Canvas 选型留给 chapter agent |\n\n\n### 口播节选（每章末尾，可选但推荐）\n\n精炼 1~3 句，**不是完整稿子**，仅供章节规划阶段对照\"这章在讲什么\"。\n完整文本回 `script.md`。`outline.md` 章节 = `script.md` 中两个明显\n主题切换之间的段落。\n\n> 音频合成（[`AUDIO.md`](AUDIO.md)）会**回到 `script.md`** 切分完整\n> 文本，**不**用 outline 节选。\n\n---\n\n## 命名规则速查\n\n| 对象 | 规则 | 示例 |\n|---|---|---|\n| 章节 id | 小写 + 连字符 | `coldopen`, `why-good` |\n| 章节文件夹 | `0N-<id>` | `src/chapters/01-coldopen/` |\n| 章节组件 | PascalCase | `Coldopen.tsx`, `WhyGood.tsx` |\n| 章节 CSS 类前缀 | 章节缩写（避免跨章冲突） | `.cd-` / `.wg-` / `.mg-` |\n| 音频子目录 | `<id>/` | `public/audio/coldopen/` |\n| 音频文件 | `<step-N>.mp3` (1-indexed) | `public/audio/coldopen/1.mp3` |\n\n---\n\n## 章节切分的经验法则\n\n- **每章 3~8 步**。少于 3 步太薄；多于 8 步观众会忘记这章在讲啥\n- **总时长 ÷ 30 秒** ≈ 章节数（一章约 30~60 秒讲完）\n- **每章 = 一个聚焦主题**。\"为什么强 + 怎么用\" 是两章，不是一章\n- **章节边界 = 口播稿里讲者会换语气 / 换主题的位置**。读 `script.md`\n  时哪里你下意识想\"咳一声接下一段\"，那里就是章节边界\n- **慢节奏 / 长镜头风主题**（midnight-press / 电影感片头）每章可少到\n  2~3 step；**信息密集型**（科技测评 / 对比表）每章可放宽到 8~10 step\n\n---\n\n## 素材清单（outline.md 末尾）\n\n```markdown\n## 素材清单\n\n### 1. coldopen\n- ✓ <资源 1 描述> （<已就位路径>）\n- ⚠️ <资源 2 描述>（待提供）\n- ⚠️ <资源 3 描述>（待提供）\n\n---\n\n## 自检（写完 outline **强制**执行，不可跳过）\n\n> ⚠️ **硬性流程**：outline 写完后**必须**走自检 → 修改 → 提交 三步。\n> **禁止**写完直接进入 Checkpoint Plan 让用户对齐。\n>\n> **执行方式**（按能力降级）：\n>\n> 1. **优先 Agent Teams**：开一个独立 reviewer agent，传入 `outline.md`\n>    + 本节自检清单 + `script.md` / `article.md` 路径，让它**逐项核查 +\n>    出结论**（哪几条 fail + 证据）。\n> 2. **其次 subAgent**：当前 agent 没 Teams 但能开 subagent，用 subagent\n>    走同样流程。\n> 3. **都没有**：自己**严格逐项**核查。\n>\n> 拿到结论后**先按 fail 项改 outline，再进入 Checkpoint Plan**。\n\n- [ ] 每个 step 都是**单一句屏幕内容描述**，没有\"动画\"行 / \"手段\"行\n- [ ] 没有任何 step 写了具体毫秒 / 秒数（除 `(~Ts)` 口播估时）\n- [ ] 每章首段都有「信息池」block，至少 3 条 article 抽取项，**每条\n      必带来源标注**（`—— 来源 article §X / Lxx`）—— 没标注 chapter agent\n      回不到原文\n- [ ] **所有 step `(~Ts)` 累加 ≈ 顶部声明的总时长**（误差 < 10%）—— 不\n      一致说明节奏规划失真\n- [ ] 章节切分符合\"每章 3~8 步 / 30~60s 一聚焦主题\"经验\n- [ ] 末尾「素材清单」分章节列出，✓ / ⚠️ 标注清楚\n- [ ] 脚本不得包含标题、序号等非口播内容，仅包含人类正常可读的内容\n\n写完看一眼：**outline 是不是干净到 chapter agent 看了能立刻开工 + 还有\n设计空间**？是 = 合格。如果你看了都觉得\"太空，agent 不知道动画选什么\"\n",
+      "demos/materials/web-video-presentation/references/RECORDING.md": "# 录制与后期合成\n\n网页做完 + 音频合成完之后，**Auto 模式 + 屏幕录制可以一镜到底**——\n不需要手动点击推进 step、也不需要后期对音频。\n\n如果你不打音频，仍可走\"手动点击 + 后期配\"的传统路径（在文档末尾）。\n\n---\n\n## 推荐流程：Auto 模式一镜到底\n\n### 前置\n\n- 章节代码做完，每章都有 `narrations.ts`\n- 已经跑过 `npm run extract-narrations` + `npm run synthesize-audio`，\n  `public/audio/<id>/<step>.mp3` 全部就位\n- `npm run dev` 跑着，浏览器能打开页面\n\n### 录制步骤\n\n1. **浏览器全屏**（F11 / Ctrl+Cmd+F），URL 改成\n   `http://localhost:5173/?auto=1`\n2. 看到 \"Press SPACE to start\" 蒙层 = Auto 模式就绪\n3. **打开屏幕录制**（QuickTime / OBS / Cmd+Shift+5），开始录\n4. **按一次 Space** → 蒙层消失 → step 0 出现，1.mp3 自动播 →\n   播完自动推进到 step 1 → 2.mp3 → … → 最后一个 step 播完 → 停在终态\n5. **停止录制** → 后期裁掉头尾（Space 那一下、最后停在终态的尾巴）就是\n   成品\n\n整个过程**完全不用点鼠标**。音视频天然同步，不需要后期对轨。\n\n> **Auto 模式严格按音频结束推进**（+ 200ms 缓冲），没有\"等动画跑完\"\n> 的兜底。如果你看到某步动画被切了一半 → 说明该 step 动画长于口播，\n> 回章节代码改：写更长口播 / 拆 step / 调动画速度。\n\n### 录屏工具\n\n| 平台 | 工具 | 设置 |\n|---|---|---|\n| macOS | Cmd+Shift+5 → 录制选定窗口 | 选浏览器窗口；浏览器全屏后输出就是 1920×1080 |\n| macOS | QuickTime → 文件 → 新建屏幕录制 | 同上 |\n| 跨平台 | OBS Studio | 窗口捕获，Canvas 1920×1080，60fps |\n\n### 模式速查\n\n| URL / 快捷键 | 行为 |\n|---|---|\n| 直接打开（默认） | Manual：点击 / ←→ 推进，不播音频 |\n| `?audio=1` 或按 `M` | Audio：进入 step 自动播音频，但**手动点鼠标推进** |\n| `?audio=1` + 再按 `M` | Auto：进入 step 自动播 + 自动推进（录制用） |\n| Auto 模式下首次按 `Space` | 启动 Auto 播放（绕过浏览器自动播放限制） |\n\n也可以鼠标移到右上角，会出现一个隐藏的模式切换按钮。\n\n---\n\n## 备用流程：没合成音频时手动录屏\n\n如果你跳过了音频合成（`Checkpoint Audio` 选了\"不合成\"），按老方法：\n\n1. 浏览器全屏 → 打开 `localhost:5173`（默认 Manual 模式）\n2. **刷新一次**清空历史 step\n3. 开始录屏 → 按口播节奏点击空白推进 step\n4. 后期用任何剪辑软件配音 + 调时间线\n\n### 后期工具\n\n| 工具 | 适合 |\n|---|---|\n| **DaVinci Resolve** | 跨平台免费、能处理多段音频拼接 |\n| **iMovie** | macOS 简单场景 |\n| **CapCut / 剪映** | B 站 / 抖音风加字幕 |\n\n---\n\n> agent 在 Checkpoint Audio 后**主动告诉用户**上面 Auto 模式录屏的\n> 路径，让用户知道下一步怎么把网页变成 mp4。\n",
+      "demos/materials/web-video-presentation/references/SCRIPT-STYLE.md": "# 文章 → 口播稿风格指南\n\n把书面文章转成\"说出来不别扭\"的口播稿，默认 **B 站风格**。其他平台风格\n变体见末尾。\n\n> **三条底线**（任一不过，整稿重写）：\n>\n> 1. **信息保留度 ≥ 60%**（详见下一节）—— 口播稿是\"换说法\"，不是\n>    \"摘要\"。删冗余 / 修饰可以，删事实 / 数据 / 案例 / 论证链不行。\n> 2. **去 AI 味** —— 即使句子已经短句化、口语化、第二人称，AI 的腔调\n>    （假共情 / 假深刻 / 自我标榜 / 万能模板 / 排比堆砌）念出来仍然\n>    一耳朵是机器。**口播比文字更怕 AI 味**。\n> 3. **保持原文语言** —— 除非用户明确要求翻译，`script.md` 必须保持\n>    用户输入的主语言。英文文章生成英文口播稿，中文文章生成中文口播稿；\n>    中英混排时保留原文中的术语、引用、产品名、代码和专有名词。\n>    \"B 站风格 / YouTube 风格 / 口语化\"只调整节奏、结构和表达自然度，\n>    **不改变语言**。\n>\n> 8 条原则讲**形式**，「去 AI 味五类」讲**风骨**。两者都建立在\n> 「信息保留度」这一最高约束之上。\n\n---\n\n## 最高原则：信息保留度 ≥ 60%（删减不得超过 40%）\n\n> 这条**优先于**下面所有 8 条原则和去 AI 味五类。先保证信息没丢，\n> 再调形式 / 风骨。\n\n**判定标准**：\n\n- `len(script.md) ÷ len(article.md) ≥ 0.6`（中文按字符数计；代码块 /\n  Markdown 标记 / 引用源不计入）\n- 关键事实（数字 / 名称 / 时间 / 论断）**逐项对得上**，不能整段消失\n- 文章里的**论证链**（前提 → 结论 / 因果 / 对比）必须保留，可以换说\n  法但不能跳步\n\n**允许大幅压缩的**：套话开场 / 重复总结 / 学术性铺垫 / 引文出处的\n完整书目格式 / 客套结语。\n\n**禁止压缩的**：\n\n- 关键数据和数字（哪怕\"翻译成感受\"也要保留原始数字本身作旁注）\n- 具体案例 / 例子 / 故事\n- 多步论证里的中间步骤\n- 反方观点 / 限制条件 / 例外情况（最容易被 AI 一刀切掉）\n\n**如果原文确实太长**（比如 5000+ 字 article 做 3 分钟视频）→ 不要靠\n压缩硬塞，**告诉用户**：\"原文 X 字，按 60% 留存最少需要 ~Y 分钟视频，\n要么拉长视频要么拆成多集\"。**不要**自作主张缩到 30% 然后假装做完了。\n\n---\n\n## B 站风格的 8 条原则（形式层面）\n\n### 1. 口语化：所有书面语换成\"说出来不会别扭\"的句子\n\n| 书面语 | 口播 |\n|---|---|\n| 综上所述 | 所以你看 |\n| 具有非凡的意义 | 这件事真的挺重要 |\n| 在……方面有显著提升 | 在……上明显变强了 |\n| 该工具旨在 | 这玩意是用来 |\n| 笔者认为 | 我觉得 |\n| 由此可见 | 你看吧 / 这就是为啥 |\n| 与之相反 | 反过来 |\n| 据相关资料显示 | 我查了下 |\n| 详情请参阅 | 想看细节自己去翻 |\n\n判断标准：**把它念出来，会不会觉得\"这人怎么这么端着\"**？会就改。\n\n### 2. 短句：每句 ≤ 20 字\n\n长句拆短句，逗号优先于复合句。\n\n| 原文 | 改写 |\n|---|---|\n| \"尽管它在文字渲染方面有了显著的提升，但在某些复杂场景下仍然会出现错误。\" | \"文字渲染确实变强了。但复杂场景下，它还是会翻车。\" |\n| \"我们通过对比测试发现该模型在指令遵循能力上明显优于上一代。\" | \"我做了一组对比测试。指令遵循这一项，比上一代强太多了。\" |\n\n讲话的人不会喘不上气。屏幕前的人也不会。\n\n### 3. 第二人称：多用\"你 / 我们\"，少用\"用户 / 读者\"\n\n| 原文 | 改写 |\n|---|---|\n| 用户可以通过该接口实现 | 你只要调一下这个接口 |\n| 读者将会发现 | 你会发现 |\n| 开发者需要注意 | 你写的时候要小心 |\n| 本文将介绍 | 我们来看一下 |\n\n让屏幕前的人感觉**你在跟他说话**，而不是宣读公告。\n\n### 4. 开头有钩子（cold open）\n\n第一句必须**抓住人**。三种通用钩子：\n\n- **悬念**：\"这是真的吗？\" / \"你猜怎么着\" / \"我以为是 bug，结果……\"\n- **反差**：\"这玩意以前要 3 小时，现在 30 秒。\" / \"上周还人人吹爆，今天就翻车了。\"\n- **利益**：\"看完这条，你就能省下买插件的钱。\" / \"学会这一招，开会再也不怕被点名。\"\n\n**禁止**（前两个是 PPT 感，后两个是 AI 味假共情）：\n\n- ❌\"大家好今天我们来讲讲\" 这种自我介绍开场\n- ❌\"本期视频我们将探讨\" 这种 PPT 标题感\n- ❌\"在开始之前，让我们先了解一下背景\" 这种先讲一堆铺垫\n- ❌\"我知道你最近肯定很纠结 X / 你是不是也有这种感觉\" 假共情钩子\n- ❌\"接下来我说的，可能会颠覆你的认知\" 自我加权钩子\n\n钩子要在 **3 秒内**砸到观众脸上。亲不亲是观众听完判断的，不是你一\n开口就宣布的。\n\n### 5. 节奏停顿：用 `---` 分隔每个完整想法\n\n每讲完一个聚焦的想法 = 一个 step 边界 = 一个 `---`。一行一个 idea，\n不堆叠。\n\n```markdown\n所以呢，这玩意儿真的挺夸张的。\n\n---\n\n举个例子。前几天我让它画一张海报，三秒就出。\n\n---\n\n但你知道最离谱的是啥吗？连里面的中文字都对了。\n```\n\n`---` 之间的内容就是后面 `outline.md` 里的一个 step。\n\n### 6. 数字翻译成感受\n\n观众听到具体百分比和大数字会**走神**。除非数字本身就是核心内容\n（比如\"涨了 20 倍\"作为冲击点），否则翻译成感受。\n\n| 原文 | 改写 |\n|---|---|\n| 准确率提升了 47% | 几乎快了一倍 |\n| 覆盖 120 个国家 / 地区 | 全世界基本到处都用 |\n| 用户数突破 1.2 亿 | 现在已经是国民级应用了 |\n| 推理速度提升 3.4 倍 | 比以前快多了，不用等 |\n\n例外：**核心冲击数字**保留并强调（\"前后差了 100 倍\"、\"3 秒 vs 3 小时\"）。\n\n### 7. 不堆结构词 / 不堆万能模板\n\n口播稿一旦堆\"首先 / 其次 / 最后\"或\"说白了 / 本质上 / 底层逻辑\"，\n机器味就直接溢出。\n\n**禁止**（结构词类）：\n\n- ❌\"首先 / 其次 / 最后\"\n- ❌\"接下来我们看下面三点\"\n- ❌\"总结一下，本期视频我们讲了什么什么\"\n- ❌\"下面进入第二部分\"\n\n**禁止**（万能模板类，AI 高频指纹 —— 详见去 AI 味第 4 类）：\n\n- ❌\"说白了 ……\" / \"本质上 ……\" / \"底层逻辑是 ……\"\n- ❌\"一句话总结 ……\" / \"归根结底 ……\" / \"换句话说 ……\"\n\n**做法**：把这些词融进自然过渡，**或者直接砍掉**。\n\n- \"首先，文字渲染\" → \"先说文字渲染\"\n- \"接下来看第二点\" → \"再看一个\"\n- \"总结一下\" → \"所以你看\"\n- \"说白了它就是 X\" → \"它就是 X\"\n- \"一句话总结：Y\" → 直接说 Y\n\n观众不需要知道你的视频是几段式 outline。**结构感从内容节奏来，不是\n从指令来**。\n\n### 8. 具体例子优先\n\n**抽象**会让人走神，**具体**会让人坐住。\n\n| 抽象 | 具体 |\n|---|---|\n| 它有很强的能力 | 你给它一张猫的照片，让它换成赛博朋克风，3 秒就出 |\n| 性能优越 | 我那台 5 年前的旧电脑跑得动 |\n| 用户体验良好 | 我妈第一次用，5 分钟就上手了 |\n| 应用场景广泛 | 海报、PPT、表情包、PR 套图都能整 |\n\n**举例规则：从\"我\"出发**。\"我做了一个测试\"、\"我让它画\"、\"我那台电脑\"\n比\"用户可以\"、\"通常情况下\"亲切 100 倍。\n\n---\n\n## 去 AI 味：五类必清的腔调（风骨层面）\n\n形式做到了 ≠ 没 AI 味。下面五类是 AI 写口播稿时最稳定的\"指纹\"。\n**写完一遍后专门扫一次，逐条砍掉**。\n\n> 唯一判断标准：**这话念出来，一个真人会这么说吗**？不会就改。\n\n### 一、假共情：开口就演\"我懂你\"\n\nAI 特别喜欢在开头先做一轮情绪按摩，再进入正题。但口播一开口就装亲\n密 = 油腻；观众还不认识你，你就宣布\"我懂你\"，听起来更像销售。\n\n❌ 典型句式：\n\n- \"我知道你最近肯定很纠结 X\"\n- \"你是不是也有这种感觉\"\n- \"今天这条视频，是给那些一直在……的朋友\"\n- \"我能理解你的心情\"\n- \"你的感受是被看见的\"\n\n✓ 怎么改：直接抛事实 / 钩子（见原则 4）。亲不亲是观众听完判断的，\n不是你一开口就宣布的。如果原文确实需要表达共情，用具体的、有信息\n量的方式 ——\"这个坑我也踩过\"比\"我懂你的感受\"真实十倍。\n\n### 二、假深刻：用\"恰恰 / 反而 / 正是\"包装平庸观点\n\nAI 很擅长用转折词制造\"顿悟感\"。但仔细一看，去掉这些词，意思一样，\n甚至更清楚。\n\n❌ 典型句式：\n\n- \"你以为它强是因为模型大，恰恰相反 ……\"\n- \"这反而是它真正可怕的地方\"\n- \"正是因为它够简单，所以才 ……\"\n- \"你想得太对了\"\n- \"不是因为 X，是因为你太 Y 了\"\n\n✓ 怎么改：去掉转折包装直接说结论。**自检方法**：\"恰恰 / 反而 / 正\n是\"那句去掉之后，意思变了吗？没变就删。如果去掉后观点变得平淡 ——\n**它本来就平淡**，删掉换内容，不要用修辞补救。\n\n### 三、自我标榜：说正事前先给自己加权\n\nAI 在说重点之前喜欢先清嗓子，让观众觉得\"接下来这话特别重要\"。这\n在**口播里更刺耳** —— 观众正在被推销时间。\n\n❌ 典型句式：\n\n- \"我必须很认真地说一句\"\n- \"这件事我得展开讲\"\n- \"接下来我说的，可能会颠覆你的认知\"\n- \"这一段你一定要听完\"\n- \"我讲一句可能会让你冷静一点的话\"\n- \"不躲不藏不绕不逃，今天就把 X 说透\"\n\n✓ 怎么改：**直接说**。好观点不需要预热。担心观众划走，靠节奏（短句\n+ 钩子）把人留住，不靠\"加权\"。\n\n### 四、万能模板：一听就是 AI 写的口头禅\n\n这些是 AI 生成口播稿的指纹，出现频率高到观众闭着眼都能猜下一句。\n\n| 位置 | ❌ AI 模板 | ✓ 口播版 |\n|---|---|---|\n| 开头 | \"说白了 ……\" / \"本质上 ……\" / \"底层逻辑是 ……\" | 直接说\"它就是 X\" |\n| 过渡 | \"一句话总结 ……\" / \"换句话说 ……\" / \"归根结底 ……\" | 直接说那句话，不预告 |\n| 包装 | \"在某种意义上\" / \"从某种程度上来讲\" | 删掉，没意义 |\n| 结尾 | \"以上就是本期内容\" / \"希望对你有帮助\" / \"感谢观看\" | 具体 CTA：\"链接评论区置顶\" / \"下期见\" |\n| 互动 | \"你想让我继续讲 X 吗？\" / \"评论区告诉我\" | 给具体动作：\"去 GitHub 搜 X\" / \"评论区聊聊你踩过哪个坑\" |\n\n> **注意**：这一类和原则 7「不堆结构词」有重叠 —— 原则 7 在形式层\n> 警告，这里在风骨层警告，**两层都要过**。\n\n### 五、排比堆砌：连续三句结构一样\n\nAI 写中文时有强迫症式的整齐感。**口播比文字更怕排比** —— 念三个一\n样结构的短句，观众脑子直接关机。\n\n**判断标准**：连续 ≥ 3 个结构相同的短句，且去掉几个意思不变。\n\n❌ 例子：\n\n- \"不躲，不藏，不绕，不逃\"\n- \"它会画图，会写字，会做海报，会做 PPT\"\n- \"你的痛我懂，你的累我看到，你的努力我记得\"\n- \"高效，精准，强大\"\n\n✓ 怎么改：保留最有信息量的一两个，其余砍掉；或换成一个具体例子。\n\n- \"它会画图，会写字，会做海报，会做 PPT\" →\n  \"它会画图，重点是 —— 你昨天那张猫的赛博朋克版就是它出的\"\n\n> 真人讲话不会追求每段像对联。允许粗糙，过渡句就让它过渡。\n\n---\n\n## 几个**不要做**的细节\n\n- ❌ **emoji**：除非用户明确要求，口播稿里不要 emoji。emoji 是文字\n  弹幕，不是讲话\n- ❌ **括号补充**：\"这个模型（一种基于 transformer 的架构）很厉害\" ——\n  括号里的话讲不出来，要么并入正文要么删\n- ❌ **罗列书名号 / 引号**：\"《XX 报告》指出，XX\" —— 改成\"我看到一份报告说\"\n- ❌ **\"哈哈哈\"等口头语堆砌**：偶尔一次效果好，每段一个就成抽搐\n- ❌ **过度网络梗**：梗有半年保鲜期；半年后看就尴尬。除非主题就是网络梗\n\n---\n\n## 平台风格变体\n\n如果用户指定了别的平台，按下表调（\"去 AI 味五类\"对所有平台都适用）：\n\n| 平台 | 风格基调 | 单句长度 | 钩子节奏 | 信息密度 |\n|---|---|---|---|---|\n| **B 站**（默认） | 自来熟、有段子、节奏快 | ≤ 20 字 | 3 秒钩子 | 中（5 秒/idea） |\n| **抖音 / 视频号** | 更燃、更短、更冲击 | ≤ 12 字 | 1 秒钩子 | 高（3 秒/idea） |\n| **YouTube long-form** | 舒缓、详细、可铺垫 | ≤ 30 字 | 30 秒铺垫可以 | 低（10 秒/idea） |\n| **知乎视频** | 严谨一点、有逻辑感 | ≤ 25 字 | 5 秒可铺一点背景 | 中（5~7 秒/idea） |\n| **小红书** | 闺蜜分享感、有情绪 | ≤ 15 字 | 直接讲结论 | 中（5 秒/idea） |\n\n> **小红书闺蜜感 ≠ 假共情**。\"姐妹们听我说，这个真的踩雷了\" 是闺蜜\n> 感（具体 + 有情绪）；\"我知道你最近肯定很纠结\" 是 AI 假共情（空泛\n> + 上来就装熟）。区别在**有没有具体场景**。\n\n## 主题类型微调\n\n不同主题类型，有不同的语气基线：\n\n- **技术 / 教程**：可以稍微\"端着\"一点，但仍然口语化。多用\"我们试一下\"\n  而不是\"假设我们……\"\n- **测评 / 对比**：要\"敢说\"。\"这个不行\"、\"那个吹过头了\"。中立测评\n  会让人睡着 —— 但**敢说 ≠ 自我标榜**，\"我用了一周觉得不行\" 是敢\n  说，\"我必须很认真地说它不行\" 是自我标榜\n- **新闻 / 资讯**：节奏要快，金句要硬。开头第一句必须给最炸的点\n- **产品 / 营销**：忌\"吹\"。不说\"完美\"、\"颠覆\"，说\"我用了一周，确实\n  顺手\"\n- **文化 / 历史 / 科普**：可以放慢节奏，多用\"你想象一下\"开场\n\n---\n\n## 转写完之后做什么\n\n### 1. 落盘 + 切节拍\n\n落到 `script.md`，原文保留为 `article.md`。每段 ≥ 5 句没用 `---`\n切？切一下 ——`---` 是后面 step 边界，多切总比少切好（合并步骤比拆\n步骤容易）。\n\n> ⚠️ **自检是硬性流程**：下面的三层自检（形式 / 风骨 / 念出来）写完\n> `script.md` 后**必须**全部走完 → 修改 → 再继续。**禁止**写完直接进\n> 入\"产出 outline\"环节。\n>\n> **执行方式**（按能力降级）：\n>\n> 1. **优先 Agent Teams**：开一个独立 reviewer agent，传入 `script.md`\n>    + 本节三层清单，让它**逐项核查 + 出结论**（哪几条 fail + 证据 +\n>    改写建议）。\n> 2. **其次 subAgent**：当前 agent 没 Teams 但能开 subagent，用 subagent\n>    走同样流程。\n> 3. **都没有**：自己**严格逐项**核查，特别是「念出来」一定要按字面\n>    执行。\n>\n> 拿到结论后**先按 fail 项改稿子，再产出 outline**。\n\n### 2. 形式层自检（8 条原则）\n\n- [ ] **信息保留度 ≥ 60%**（**最高优先级**，不过整稿重写）—— 用\n      `wc -m script.md` / `wc -m article.md` 算比例；关键数字 / 案例 /\n      论证链逐项对照原文，不能整段消失\n- [ ] 没出现 emoji / 原文书名号《》 / 括号补充 /「据 XX 报告显示」类\n      引文格式（口播念不出来）\n- [ ] 每句 ≤ 20 字（B 站基准）？\n- [ ] 第二人称？\n- [ ] 开头 3 秒钩子？\n- [ ] 数字翻译成感受了？（**核心冲击数字必须保留原值**）\n- [ ] 没\"首先 / 其次 / 最后\"结构词？\n- [ ] 都是具体例子，不是抽象描述？\n\n### 3. 风骨层自检（去 AI 味五类）—— **最重要**\n\n逐条扫一次，**任何一条没通过就回去改**：\n\n- [ ] 全文还有 \"说白了 / 本质上 / 底层逻辑 / 恰恰 / 反而 / 正是因为\n      / 归根结底 / 在某种程度上\" 等 **AI 高频词**吗？\n- [ ] 开头第一句是钩子，**不是**\"我知道你 / 你是不是也\"假共情？\n- [ ] 有 \"我必须认真说 / 我得展开说 / 可能会颠覆你的认知 / 这段你一\n      定要听完\" 等**自我加权**吗？\n- [ ] 有连续 ≥ 3 句结构一样的**排比**吗？念到第三句你自己烦不烦？\n- [ ] 结尾是具体 CTA，**不是** \"希望对你有帮助 / 以上就是本期内容\n      / 感谢观看\" 套话？\n- [ ] 全文是否有用 \"恰恰 / 反而 / 正是\" 包装的句子？**去掉这些词\n      意思变了吗**？没变就删。\n\n### 4. 念出来测试（终极标准）\n\n随便挑 3 段念出来 —— 不要在心里默读，**真的张嘴念**。\n\n- 念到哪句你觉得\"这话我说不出口\" → 那句是 AI 味\n- 念到哪句你想跳过 → 那段是排比 / 自我标榜\n- 念到哪句你想笑出声（不是因为内容好笑，是因为油腻）→ 那句是假共情\n\n**改完再念。直到三段念下来都自然为止**。\n\n### 5. 在同一次工作里产出 outline\n\n`script.md` 落盘 + 自检通过后，**不要立即停下来等用户**——按\n[`OUTLINE-FORMAT.md`](OUTLINE-FORMAT.md) 在**同一次思考**里继续产出\n`outline.md`（章节切分 + 每步屏幕内容 + 章节级信息池），然后再进入\nCheckpoint Plan 让用户一次对齐 5 件事（稿子 / outline / 主题 / 素材\n/ 开发模式）。\n\n> **流程变化提醒**：旧流程把 script / outline 切成两个 checkpoint，\n> 新版合并为一个（详见 SKILL.md「Phase 1.2 一次产出」）。理由是 outline\n> 不再写动画后，它的依赖只剩\"稿子切节拍 + article 抽信息池\"，可以\n> 和稿子一起做完。\n\n---\n\n> **核心提醒**：去 AI 味不是降质。把\"AI 在朗诵\"换成\"人在聊天\"，信\n> 息量一个不少，腔调全部换掉。如果换了之后内容变蠢 —— **它本来就\n> 蠢**，不是去 AI 味的锅，是该补内容了。\n",
+      "demos/materials/web-video-presentation/references/THEMES.md": "# 主题系统\n\n每个演示从头到尾跑**一个主题**。我们**不**在章节间翻转明暗 —— 那会\n打断视频的视觉连贯性，录屏时看起来像很硬的剪辑。如果想要\"暗一点的氛围\"\n段落，请在**同一调色板内**降对比、收聚光，而不是翻转表面色。\n\n主题 = 一组 CSS 设计 token + 一个 `theme.json` 元数据。\n\n**章节对 token 的消费分两层**：\n\n1. **必须用 token 的**（换主题不破的底线）—— 颜色 + 字体家族\n2. **章节自由发挥的**（按内容设计）—— 字号 / 间距 / 动画时长 / 缓动 /\n   边框宽度 / 一般圆角 / 字距等都可硬编码\n\n主题**不只管**颜色和字体，但其他维度（hero 数字、分割线、卡片、舞台\n装饰）通过 **primitive class**（`.hero-num` / `.rule` / `.card` /\n`.stage-frame`）自动接入，章节用 class 即可，不需要手动 `var()`。\n\n主题管的维度：\n\n| 维度                       | 主题怎么管                                                        |\n| -------------------------- | ----------------------------------------------------------------- |\n| **调色板**                 | shell / surface 阶梯、text 阶梯、accent + 透明度衍生              |\n| **字型**                   | 中文 / 英文 / body / 等宽家族 + OpenType 特性集                     |\n| **舞台 padding 密度**      | `--stage-pad-x/y` —— 精炼主题 140×100，密集主题 80×60              |\n| **圆角性格**               | `--r-card` —— sharp (0) / refined (4) / soft (16) / keynote (32)  |\n| **分割线性格**             | `--rule-w` + `--rule-style` —— 细/粗 × 实/虚                       |\n| **hero 数字风格**          | `--hero-num-*` —— 编辑级斜体 / 终端等宽 / 粗黑 / 手写              |\n| **舞台 / 卡片阴影**        | `--shadow-stage` / `--card-shadow` —— 纸浮 / 偏移实色 / 内阴影     |\n| **装饰层**                 | `--surface-pattern*` / `--surface-vignette` / `--text-shadow`     |\n| **动效基线**               | `theme.json` 的 `mood` —— 电影感慢 / 弹簧 / 利落 / 安静            |\n\n> **`mood` 不写时长数值**。具体 ms / 缓动由 chapter agent 看 `mood`\n> 自己拍板（慢主题别写 200ms 快动画，仅此而已）。\n\n每个主题约 25~35 个 token。完整契约见下方。\n\n---\n\n## 内置主题\n\n23 套主题，每个都有**独立的设计 DNA** —— 不是简单的换色版。挑一个\n匹配你主题情绪的，或者作为你自己主题的起点。\n\n### 深色主题\n\n| id                | 性格                                                                                                                                                                                                            |\n| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `midnight-press`  | 电影感编辑级深色。暖色 espresso（不是纯黑）+ 火热橙。Instrument Serif italic 英文 vs Noto Serif SC 中文。hero 数字：斜体衬线。慢速电影感节奏（1.6s 揭示）。140×100 padding。只有 vignette，没有颗粒。            |\n| `chalk-garden`    | 深石板黑板。Patrick Hand 全场手写，粉笔黄 accent。**2px 虚线 rule** 是签名。film grain（overlay）+ vignette。衬线带 chalk text-shadow。手绘节奏。                                                                |\n| `terminal-green`  | 80 年代磷光终端。纯黑 + JetBrains Mono only + 0px 直角。**CRT 扫描线**贴在舞台上。文字带磷光 text-shadow。利落线性动效（180/400/650ms）。hero 数字：等宽带发光。                                                  |\n| `blueprint`       | 工程蓝图。深海军蓝 + 绘图青 + IBM Plex Mono。**2px 虚线青色 rule + 60px 制图网格**是签名。hero 数字：等宽青色。等宽配对营造技术 / 蓝图感。                                                                       |\n| `dark-botanical`  | 高级感编辑暗底 —— 时尚刊物 / 博物馆图录。近黑 + 暖陶 / 玫粉 / 鎏金叠层。Cormorant italic + IBM Plex Sans。**柔光晕染（blurred light pool）作为签名**。慢速电影感节奏（1.7s）。140×100 padding。              |\n| `neon-cyber`      | 赛博朋克未来派。深海军底 + 电光青 + 玫红双霓虹。Clash Display + Satoshi。**青色发光网格 + 双色霓虹描边（cyan + magenta text-shadow）**是签名。snappy 节奏（380/650ms）。                                       |\n| `bold-signal`     | hero pitch-deck 暗底。Archivo Black + Space Grotesk。大橙色焦点色卡 + 制表数编号。**对角线深色渐变 + 大字标语**是签名。punchy 节奏（420/680ms）。                                                                |\n| `creative-voltage`| 复古朋克创意工作室。饱和电光蓝底 + 霓虹黄强调。Syne + Space Mono。**halftone 网点 + 偏移霓黄阴影**是签名。punchy + 能量节奏（450/720ms）。                                                                       |\n\n### 浅色主题\n\n| id                   | 性格                                                                                                                                                                                                            |\n| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `paper-press`        | midnight-press 的白天孪生兄弟。暖奶油 + 纸纹（multiply blend）。火热橙。hero 数字：斜体编辑级衬线。慢速电影感节奏。140×100 padding。                                                                              |\n| `warm-keynote`       | 现代 SaaS keynote。奶油 + 棕褐墨 + 青绿 + Inter。**大圆角（32px）glass slab** 配 backdrop blur。**粗黑 font-black hero 数字**。舞台上 40px 暖色网格。弹簧动效。                                                  |\n| `newsroom`           | NYT 报刊。报纸奶油 + 墨黑衬线 + 旗红。Playfair Display + Noto Serif SC。**0 圆角**（报纸不会圆角）。hero 数字：超大斜体显示衬线。安静的印刷节奏。淡纸纹。                                                        |\n| `bauhaus-bold`       | 现代主义宣言。米白 + 墨黑 + 原色蓝。Archivo Black + Inter。**0 圆角 + 4px 实色厚边 + 4px 黑色画框包住舞台 + 偏移实色阴影**。hero 数字：font-weight 900 巨字。利落快速动效。无装饰。                              |\n| `sunset-zine`        | 独立 risograph zine。暖桃 + riso 洋红 + Fraunces。**虚线剪贴线 + 偏移桃色阴影**。hero 数字：斜体 Fraunces。粗 riso 纸纹。弹簧 overshoot 动效。                                                                  |\n| `monochrome-print`   | 安静精炼的印刷杂志 —— Monocle / Wallpaper / MIT Press。米白 + 墨黑衬线 + 墨蓝 accent。Source Serif。**只有 1px 实线发丝、4px 精炼圆角**。hero 数字：斜体 tabular figures。**无装饰** —— 极简纯粹。极静节奏（1.7s 揭示）。 |\n| `vintage-editorial`  | 俏皮编辑奶油底。Fraunces italic + Work Sans + 暖陶 accent。**细线几何叠层（圆 + 线 + 点）**是签名。有性格、会说话，像专栏作家。中速带轻微 overshoot。                                                            |\n| `pastel-dream`       | 友好柔光。柔粉蓝灰底 + 奶油卡 + 鼠尾草绿。Plus Jakarta Sans。**大圆角（20px）+ 右侧多色 pill 色条**是签名。soft springy（520/820ms）。                                                                          |\n| `split-canvas`       | 双拼画布 —— 蜜桃 + 薰衣草 50/50 硬切分。Outfit + 玫红 accent。**屏幕本身就是双色底**，章节自由在哪一侧落内容。playful 中速（480/780ms）。                                                                       |\n| `electric-studio`    | 企业电光蓝。净白底 + 单一电光蓝 + Manrope。**贴底 4px 电蓝条**作为签名，B2B / 路演 / 财报场景的清晰自信。punchy 节奏（420/700ms）。                                                                              |\n| `indigo-porcelain`   | 靛蓝瓷 —— **靛蓝当墨**（不是 accent，是字色本身）+ 瓷白纸。Playfair Display italic + Noto Serif SC + IBM Plex Sans 正文。学术 / 研究气质，像一本当代思想期刊。无装饰 —— 纯粹。慢速（1.55s）。                       |\n| `forest-ink`         | 森林墨 —— **森林绿当墨** + 象牙暖纸。Source Serif 正文 + Playfair Display。旧版《国家地理》感，沉稳、文献感。faint warm grain。慢速（1.65s）。                                                                  |\n| `kraft-paper`        | 牛皮纸 —— **深棕当墨** + 牛皮米。Fraunces + Source Serif + 紫铜 accent。老笔记本 / 老信封感。**粗暖纸纹**是签名。慢速 tactile（1.55s）。                                                                       |\n| `dune`               | 沙丘 —— **炭褐当墨** + 沙底 + 几乎无 accent（muted clay）。Inter display + Source Serif 正文。**无装饰 + 极宽 padding（140×100）**是签名。建筑手册 / 画廊感。最慢节奏（1.75s）。                                |\n| `swiss-ikb`          | 瑞士国际主义。**极细 200 weight Inter / Helvetica** + 净暖白底 + IKB 克莱因蓝 + **1px 发丝网格 (64px)**。`r-card: 0` 直角。Massimo Vignelli / Helvetica Forever 能量。punchy + linear（400/650ms）。           |\n\n\n随时列出可用主题：\n\n```bash\nbash <path-to-web-video-presentation>/scripts/scaffold.sh --list-themes\n```\n\n---\n\n## 脚手架时挑一个主题\n\n```bash\n# 默认（midnight-press）\nbash scripts/scaffold.sh ./presentation\n\n# 显式指定\nbash scripts/scaffold.sh ./talk --theme=newsroom\n```\n\n脚手架会把所选主题的 `tokens.css` 拷到 `<project>/src/styles/tokens.css`，\n并把主题 id 写到 `<project>/.theme`，方便以后看是从哪个主题开始的。\n\n---\n\n## 之后切换主题\n\n切换 = 一次文件覆盖：\n\n```bash\ncp <path-to-web-video-presentation>/themes/newsroom/tokens.css \\\n   presentation/src/styles/tokens.css\n```\n\n刷新 dev server。完成。章节代码一行没动。\n\n如果切换后某章节看起来有问题，那是该章节在某处硬编码了颜色 / 字体 /\n尺寸，而不是用语义 token。去找出来 —— bug 在章节里，不在主题里。\n\n---\n\n## 完整 token 契约\n\n`base.css` 给**性格 token 都准备了合理的默认值**。主题的 `tokens.css`\n只需要覆盖**调色板 + 字体 + 性格旋钮 + 装饰**这四类。\n\n> **base.css 里的字号 / 间距 / 时长尺度只供 primitive class 自己用**\n> （`.label-mono` / `.kicker` / `.scene-pad` 等）。**不是**章节必须消费\n> 的契约——章节这一层要不要 `var(--t-h1)` 还是直接写 `font-size: 96px`\n> 完全自由。\n\n### 必填（主题必须定义）\n\n#### 表面色（4 个）\n\n| token         | 作用                                                |\n| ------------- | --------------------------------------------------- |\n| `--shell`     | letterbox / 舞台外的页面背景                        |\n| `--surface`   | 舞台主背景                                          |\n| `--surface-2` | 凸起 —— 卡片、代码块、嵌入面板                      |\n| `--surface-3` | 最里层 —— surface-2 里再嵌一层时用                  |\n\n#### 文字（4 个）\n\n| token          | 作用                                  |\n| -------------- | ------------------------------------- |\n| `--text`       | 主                                    |\n| `--text-2`     | 次（副标题、正文）                    |\n| `--text-mute`  | 静音 —— 标签 / 元数据                 |\n| `--text-faint` | 三级 —— 提示 / 禁用                   |\n\n#### 线条（1 个）\n\n| token    | 作用              |\n| -------- | ----------------- |\n| `--rule` | 发丝分割线颜色    |\n\n#### Accent（3 个）\n\n| token           | 作用                                          |\n| --------------- | --------------------------------------------- |\n| `--accent`      | accent 本体（一个品牌强色）                   |\n| `--accent-soft` | 低透明度叠层 —— pill 背景、悬浮光晕            |\n| `--accent-glow` | 中透明度叠层 —— text shadow、圆点发光          |\n\n#### 字型家族（4 个）\n\n| token               | 作用                                       |\n| ------------------- | ------------------------------------------ |\n| `--font-display-cn` | 中文显示家族                               |\n| `--font-display-en` | 拉丁显示家族（斜体强调声音）               |\n| `--font-body`       | 正文 / 段落家族                            |\n| `--font-mono`       | 等宽家族（终端、mono caps、badge）          |\n\n### 可选的性格覆盖（主题应该定义来表达自己的性格）\n\n这些有 base 默认值；主题重新定义来表达性格。\n\n| token              | base 默认           | 作用                                                  |\n| ------------------ | ------------------- | ----------------------------------------------------- |\n| `--font-features`  | `\"tnum\",\"ss01\"`     | body 上的 OpenType 特性栈                             |\n| `--r-card`         | `--r-md`            | 默认卡片圆角（sharp / refined / keynote）              |\n| `--r-stage`        | `0`                 | 直接加在舞台本身的圆角                                 |\n| `--rule-w`         | `1px`               | rule 粗细（1=发丝，2=中等，4=厚重）                    |\n| `--rule-style`     | `solid`             | rule 样式（`solid` / `dashed` / `dotted`）             |\n| `--hero-num-font`  | `--font-display-en` | `.hero-num` 用什么字体（主题决定性格）                 |\n| `--hero-num-style` | `italic`            | `italic` / `normal`                                   |\n| `--hero-num-weight`| `400`               | 400（编辑级）/ 500（等宽）/ 900（粗黑）                |\n| `--hero-num-track` | `--track-tight`     | hero 数字的字距                                       |\n| `--stage-pad-x`    | `96px`              | 舞台横向内边距（密度旋钮）                            |\n| `--stage-pad-y`    | `80px`              | 舞台纵向内边距                                        |\n| `--card-shadow`    | none                | `.card` 的 box-shadow                                 |\n| `--card-glass-bg`  | `rgba(255,255,255,0.06)` | `.card-glass` 的背景                            |\n| `--card-glass-border` | `rgba(255,255,255,0.12)` | `.card-glass` 的边框                            |\n| `--shadow-stage`   | dark drop           | 舞台的 box-shadow                                     |\n| `--stage-border`   | `none`              | 舞台的可选边框（Bauhaus 用 `4px solid black`）         |\n\n### 可选的装饰层（主题可选用，给质感加签名）\n\n这些默认是 no-op；主题选择性启用。装饰画**在舞台上**（pattern 用\n`stage-frame::after`，vignette 用 `stage-frame::before`），所以会被屏幕\n录制器捕捉到。\n\n| token                        | 作用                                                                                                       |\n| ---------------------------- | ---------------------------------------------------------------------------------------------------------- |\n| `--surface-pattern`          | 叠在舞台上的 `background-image`。SVG 噪声 / 网格 / 扫描线。                                                |\n| `--surface-pattern-size`     | 配套的 `background-size`。可平铺渐变必填。                                                                  |\n| `--surface-pattern-blend`    | pattern 层的 `mix-blend-mode`（`normal` / `multiply` / `overlay`）。                                       |\n| `--surface-pattern-opacity`  | pattern 层的整体透明度乘子。                                                                                |\n| `--surface-vignette`         | vignette 叠层的 `background`（黑板 / 电影感边角的径向渐变）。                                              |\n| `--text-shadow`              | 应用在 `.serif-cn` / `.serif-it` / `.display-en` 上。如粉笔晕 / 磷光辉。                                    |\n\n如果你需要的装饰找不到对应槽位，那就跨过\"主题契约\"边界进入\"章节自定义\nCSS\"领域 —— 在那里解决，别扩主题契约。\n\n---\n\n## 创作新主题\n\n### 1. 复制一个最接近的作为起点\n\n挑一个**最接近**你目标气质的：\n\n| 目标情绪                                | 起点                  |\n| --------------------------------------- | --------------------- |\n| 阴郁、电影感、编辑级                    | `midnight-press`      |\n| 编辑级 - 浅色                           | `paper-press`         |\n| 现代 keynote / SaaS                     | `warm-keynote`        |\n| 教室 / 解说                             | `chalk-garden`        |\n| 终端 / 黑客 / 复古 CRT                  | `terminal-green`      |\n| 纪录片 / 严肃 / 新闻                    | `newsroom`            |\n| 工程 / 蓝图 / 技术                      | `blueprint`           |\n| 现代主义 / 布鲁塔利斯特 / 宣言          | `bauhaus-bold`        |\n| 独立 / 玩味 / zine                      | `sunset-zine`         |\n| 精炼 / 安静 / 印刷                      | `monochrome-print`    |\n| 高级感暗底 / 时尚 / 博物馆图录          | `dark-botanical`      |\n| 赛博朋克 / 未来感 / AI / web3           | `neon-cyber`          |\n| 俏皮编辑 / 有声音的博主 / 文化随笔      | `vintage-editorial`   |\n| 柔粉 / 友好 / onboarding / 女性向       | `pastel-dream`        |\n| 双色分屏 / 对照 / 辩论                  | `split-canvas`        |\n| pitch deck / 大字宣言 / 焦点色卡         | `bold-signal`         |\n| B2B / 企业 / 投资人路演                 | `electric-studio`     |\n| 复古朋克 / 创意工作室 / 设计周          | `creative-voltage`    |\n| 学术 / 研究 / 中国当代文化              | `indigo-porcelain`    |\n| 自然 / 可持续 / 户外 / 纪录             | `forest-ink`          |\n| 文学 / 怀旧 / 书评 / 手工艺             | `kraft-paper`         |\n| 建筑 / 艺术展览 / 高端画廊              | `dune`                |\n| 瑞士国际主义 / Helvetica / 信息驱动设计 | `swiss-ikb`           |\n\n```bash\ncd <path-to-web-video-presentation>/themes\ncp -r monochrome-print my-theme\n```\n\n### 2. 改 `my-theme/tokens.css`\n\n按契约自上而下走一遍：调色板 → 字体 → 性格旋钮（`--r-card` /\n`--rule-*` / `--hero-num-*` / `--stage-pad-*`）→ 阴影 → 装饰。\n**不要**碰字号 / 间距 / 时长尺度 —— 那些是 base.css 给 primitive class\n用的内部默认值，不是主题契约的一部分。\n\n**几条不那么显而易见的规则：**\n\n- 深色主题里 `--shell` **比 `--surface` 更深 / 更饱和**；浅色主题里\n  `--shell` **比 `--surface` 略灰一点** —— 这样舞台读起来是\"主体\"，\n  外围会退后。\n- 维持 `--text` 与 `--surface` **至少 4.5:1 对比度**。96px+ 的标题\n  可以放宽到 3:1，body / cue 必须 ≥ 4.5:1。\n- `--accent` 是**唯一的**饱和色。第二个饱和色会跟第一个打架。\n- `--accent-glow` 和 `--accent-soft` 是 `--accent` **同色相的透明度\n  叠层**，永远不要用别的色相。\n- `--text-faint` 在 `--surface` 上 13px 大写时**仍然要可读**。\n- 挑**一个设计签名**重重发力：虚线 rule、粗黑边、扫描线、纸纹、glass\n  slab。别同时叠三个。\n\n### 3. 改 `my-theme/theme.json`\n\n```json\n{\n  \"id\": \"my-theme\",\n  \"name\": \"My Theme\",\n  \"nameZh\": \"我的主题\",\n  \"description\": \"一句英文描述它的气质。\",\n  \"descriptionZh\": \"一句中文描述它的气质。\",\n  \"mood\": [\"dark\", \"moody\", \"futuristic\"],\n  \"bestFor\": [\"<匹配场景 1>\", \"<匹配场景 2>\"],\n  \"preview\": {\n    \"shell\": \"#080808\",\n    \"surface\": \"#101010\",\n    \"text\": \"#f0f0f0\",\n    \"accent\": \"#ffd54a\"\n  }\n}\n```\n\n`id` 必须等于目录名。\n\n### 主题元数据字段说明\n\n| 字段 | 必填 | 取值 | 决定什么 |\n|---|---|---|---|\n| `id` / `name` / `nameZh` | ✓ | 字符串 | 主题标识 |\n| `description` / `descriptionZh` | ✓ | 一句话 | Checkpoint Plan 列清单时的简介 |\n| `mood` | ✓ | 标签数组 | 模糊匹配用 |\n| `bestFor` | ✓ | 场景数组 | Checkpoint Plan 智能推荐时的命中点 |\n| `preview` | ✓ | 4 色对象 | Checkpoint Plan 列清单时的视觉预览 |\n\n> **主题不再约束动画选型 / 时长 / 字号 / emoji**。视觉风格由 `tokens.css`\n> 的颜色 / 字体 / 字号 token 决定，动画 / 节奏 / 视觉演示完全交给 chapter\n> agent 在每章实现时按内容自由发挥，避免主题字段过早限制创造力。\n>\n> 风格审美约束（不要紫粉渐变、不要 emoji 装饰、不要假数据等）由\n> [`CHAPTER-CRAFT.md`](CHAPTER-CRAFT.md) 统一规定，与具体主题无关。\n\n### 4. 用所有 demo 章节测试一遍\n\n```bash\nbash scripts/scaffold.sh /tmp/test-theme --theme=my-theme\ncd /tmp/test-theme\nnpm run dev\n```\n\n把 demo 每一步点完。检查：\n\n- 标题衬线在舞台上很清晰。\n- accent 圆点在发光但不爆。\n- 斜体强调有可读的背景。\n- 进度条（悬浮底边）能看到，是 accent 色。\n- masthead 行（`.masthead`）读起来像编辑 chrome，不像 navbar。\n- hero 数字（`.hero-num`）感觉**和整体字型同源**，不像贴上去的。\n- 卡片（`.card`）感觉是合适的材质（纸 / 玻璃 / cell）。\n- 装饰**被注意到一次然后被忘掉** —— 永远不打扰。\n\n哪里不对就改 `tokens.css`，刷新即可。无需重新构建。\n\n### 5. 加到文档里\n\n在本文件顶部\"内置主题\"表里追加一行。\n\n---\n\n## 反模式\n\n- **章节 CSS 硬编码 hex 颜色 / 字体名** —— 缺哪个色彩 / 字体语义就在\n  契约里补一个，给所有主题加上（注意：**字号 / 间距 / 时长**硬编码不算\n  反模式，章节按内容自由设计）\n- **演示中途切换主题** —— 选一个，一以贯之\n- **第二个 accent 色** —— 只能有一个。用尺度 + 字重做层级\n- **在组件层 override 主题 token**（颜色 / 字体 / 性格签名）—— 只在\n  `:root` 里覆盖。一次性的颜色需求 = 提一个派生 token，让所有主题都\n  提供自己的值\n- **依赖主题的 TSX 条件分支** —— 章节必须主题无关。布局依赖明 vs 暗\n  = 布局脆弱，修布局\n- **一个主题叠三个设计签名** —— 选 ONE 个（虚线 rule / 扫描线 /\n  glass slab / 纸纹 / 粗边），三个会自己打架\n",
+      "demos/materials/web-video-presentation/templates/scripts/tts-providers/README.md": "# TTS Providers\n\n`synthesize-audio.sh` 是 provider-agnostic 的 runner —— 它自己不知道\n怎么调任何 TTS，只知道循环 `audio-segments.json`、跳过已存在文件、\n打印进度。\n\n**每个 provider 是这个目录下的一个 `.sh` 文件**，定义一个\n`tts_synthesize` 函数（必需），以及可选的 `tts_check` 和\n`tts_install_help`。runner 根据 `PRESENTATION_TTS` 环境变量加载对应文件。\n\n---\n\n## 怎么用\n\n```bash\n# 默认（minimax）\nnpm run synthesize-audio\n\n# 换 provider\nPRESENTATION_TTS=openai npm run synthesize-audio\nnpm run synthesize-audio -- --provider=elevenlabs\n\n# 指定音色（每个 provider 自己解析）\nPRESENTATION_TTS_VOICE=alloy npm run synthesize-audio\nnpm run synthesize-audio -- --voice=zh-CN-YunxiNeural\n\n# 强制全部重合成\nnpm run synthesize-audio -- --force\n```\n\n`--provider` 和 `--voice` 的命令行参数会覆盖 env var。\n\n---\n\n## 内置 provider\n\n| 文件 | 后端 | 鉴权 | 备注 |\n|---|---|---|---|\n| `minimax.sh` | MiniMax `mmx` CLI | `mmx auth login --api-key` | **默认**；中文口播质量稳 |\n| `openai.sh` | OpenAI Audio Speech API | `OPENAI_API_KEY` env var | curl-based；多数 agent 已有 key |\n\n只内置这两个 —— 我们不替你做更多技术选型。其它后端的代码片段在下面，\n复制到 `tts-providers/<name>.sh` 即可启用。\n\n---\n\n## 怎么加你自己的 TTS\n\n1. 在这个目录建 `<name>.sh`（小写、kebab-case）\n2. 实现 `tts_synthesize text out_path [voice]`（必需）\n3. 可选实现 `tts_check`（启动前校验环境）和 `tts_install_help`（失败时打印怎么修）\n4. `PRESENTATION_TTS=<name> npm run synthesize-audio`\n\n---\n\n## 三函数契约\n\n### `tts_synthesize <text> <out_path> [<voice>]` （required）\n\n把一段文字写成 mp3 / 任意 web 可播的音频文件到 `<out_path>`。\n\n| 参数 | 说明 |\n|---|---|\n| `$1` | 要合成的文本（已是 UTF-8 字符串，可能包含中英文混排和标点） |\n| `$2` | 目标文件绝对路径（runner 已 `mkdir -p` 它的父目录），扩展名 `.mp3` |\n| `$3` | 音色 id（可能为空字符串，provider 自行决定默认） |\n\n成功 → exit 0 并把音频写到 `$2`。失败 → 非零退出（runner 会标 FAILED 继续下一段，不会终止全局合成）。\n\n> 如果 backend 只能出 wav / ogg，自己在函数末尾用 `ffmpeg` 转一下：\n> `ffmpeg -y -i tmp.wav -codec:a libmp3lame -qscale:a 2 \"$out\" >/dev/null 2>&1`\n\n### `tts_check` （optional）\n\n启动时被 runner 调一次（不是每段）。检查 CLI 是否装、API key 是否设、auth 是否通。\n未就绪 return 非零，runner 会立刻终止并打印 `tts_install_help`。\n\n### `tts_install_help` （optional）\n\n`tts_check` 失败时被 runner 调，往 stderr 打印怎么装 / 怎么登录 / 在哪拿 key。\n\n---\n\n## 常见 TTS 后端的现成片段\n\n下面**不是**内置 provider —— 是你自己写 `tts-providers/<name>.sh` 时\n可以**直接抄过去**的代码片段。复制 → 保存为 `<name>.sh` → 调通了\n就 `PRESENTATION_TTS=<name>` 用。\n\n> 大多数云 TTS 的 API key 通过环境变量传入（例如 `OPENAI_API_KEY`、\n> `ELEVENLABS_API_KEY`）。把 `export` 加到你的 shell rc，或在\n> 同目录放一个 git-ignored 的 `.env` 文件并 `set -a; source .env; set +a`。\n\n### OpenAI TTS\n\n**已内置** —— 直接看 [`openai.sh`](./openai.sh)。\n该文件也是写 HTTP-based provider 的**官方参考实现**：jq 构造 JSON\npayload、curl `-fsS` 提交、可选 base URL（接 Azure-OpenAI / 代理）、\n可选 model env var、空音色 fallback 到默认值。新接 REST API 的\nprovider 直接抄它起手最快。\n\n启用：\n\n```bash\nexport OPENAI_API_KEY=sk-...\nPRESENTATION_TTS=openai npm run synthesize-audio\n# 用 HD 模型 + 别的音色\nOPENAI_TTS_MODEL=tts-1-hd npm run synthesize-audio -- --provider=openai --voice=nova\n```\n\n### ElevenLabs — `tts-providers/elevenlabs.sh`\n\n```bash\n# Docs:   https://elevenlabs.io/docs/api-reference/text-to-speech\n# Env:    ELEVENLABS_API_KEY=...\n# Voice:  pass voice ID; \"Rachel\" default is 21m00Tcm4TlvDq8ikWAM\n# Model:  eleven_multilingual_v2 supports Chinese; eleven_turbo_v2_5 cheaper\n\ntts_check() {\n  command -v curl >/dev/null || { echo \"✗ curl not found\" >&2; return 1; }\n  command -v jq   >/dev/null || { echo \"✗ jq not found\"   >&2; return 1; }\n  [[ -n \"${ELEVENLABS_API_KEY:-}\" ]] || { echo \"✗ ELEVENLABS_API_KEY not set\" >&2; return 1; }\n}\n\ntts_install_help() {\n  cat <<'EOF' >&2\nSet your ElevenLabs key first:\n  export ELEVENLABS_API_KEY=...       # get one at https://elevenlabs.io\nEOF\n}\n\ntts_synthesize() {\n  local text=\"$1\" out=\"$2\" voice=\"${3:-21m00Tcm4TlvDq8ikWAM}\"\n  local payload\n  payload=$(jq -n --arg t \"$text\" \\\n    '{text:$t, model_id:\"eleven_multilingual_v2\"}')\n\n  curl -fsS -o \"$out\" -X POST \\\n    \"https://api.elevenlabs.io/v1/text-to-speech/$voice\" \\\n    -H \"xi-api-key: $ELEVENLABS_API_KEY\" \\\n    -H \"Content-Type: application/json\" \\\n    -d \"$payload\"\n}\n```\n\n### edge-tts — `tts-providers/edge-tts.sh`（免费 / 无 API key）\n\n```bash\n# Docs:   https://github.com/rany2/edge-tts\n# Install: pip install edge-tts\n# Voices: edge-tts --list-voices\n#   zh-CN-YunxiNeural     (男声)\n#   zh-CN-XiaoxiaoNeural  (女声)\n#   en-US-AriaNeural      (英文女声)\n#   en-US-GuyNeural       (英文男声)\n\ntts_check() {\n  command -v edge-tts >/dev/null || { echo \"✗ edge-tts not found\" >&2; return 1; }\n}\n\ntts_install_help() {\n  cat <<'EOF' >&2\nInstall edge-tts (free, uses Microsoft Edge's TTS backend, no API key):\n  pip install edge-tts\nList available voices:\n  edge-tts --list-voices | less\nEOF\n}\n\ntts_synthesize() {\n  local text=\"$1\" out=\"$2\" voice=\"${3:-zh-CN-YunxiNeural}\"\n  edge-tts --text \"$text\" --voice \"$voice\" --write-media \"$out\" >/dev/null 2>&1\n}\n```\n\n### macOS `say` — `tts-providers/say.sh`（离线 / 兜底）\n\n```bash\n# 系统自带，零依赖，适合 CI 跑通流程 / 离线预览。\n# 中文音色：Tingting / Sinji / Meijia（看 `say -v ?` 全列表）\n# 输出是 aiff，要 ffmpeg 转 mp3（Auto 模式 audio 标签默认认 mp3）。\n\ntts_check() {\n  command -v say     >/dev/null || { echo \"✗ 'say' not available (macOS only)\" >&2; return 1; }\n  command -v ffmpeg  >/dev/null || { echo \"✗ ffmpeg not found (brew install ffmpeg)\" >&2; return 1; }\n}\n\ntts_install_help() {\n  cat <<'EOF' >&2\nmacOS-only provider. Needs ffmpeg for aiff→mp3:\n  brew install ffmpeg\nList voices:  say -v ?\nEOF\n}\n\ntts_synthesize() {\n  local text=\"$1\" out=\"$2\" voice=\"${3:-Tingting}\"\n  local tmp\n  tmp=$(mktemp -t tts).aiff\n  say -v \"$voice\" -o \"$tmp\" \"$text\" \\\n    && ffmpeg -y -i \"$tmp\" -codec:a libmp3lame -qscale:a 2 \"$out\" >/dev/null 2>&1\n  local code=$?\n  rm -f \"$tmp\"\n  return $code\n}\n```\n\n### Azure Speech — `tts-providers/azure.sh`\n\n```bash\n# Docs:    https://learn.microsoft.com/azure/ai-services/speech-service/rest-text-to-speech\n# Env:     AZURE_SPEECH_KEY=...   AZURE_SPEECH_REGION=eastus\n# SSML payload — Azure requires SSML, not plain JSON\n\ntts_check() {\n  command -v curl >/dev/null || { echo \"✗ curl not found\" >&2; return 1; }\n  [[ -n \"${AZURE_SPEECH_KEY:-}\"    ]] || { echo \"✗ AZURE_SPEECH_KEY not set\"    >&2; return 1; }\n  [[ -n \"${AZURE_SPEECH_REGION:-}\" ]] || { echo \"✗ AZURE_SPEECH_REGION not set\" >&2; return 1; }\n}\n\ntts_install_help() {\n  cat <<'EOF' >&2\nSet Azure Speech credentials:\n  export AZURE_SPEECH_KEY=...\n  export AZURE_SPEECH_REGION=eastus   # or your resource's region\nEOF\n}\n\ntts_synthesize() {\n  local text=\"$1\" out=\"$2\" voice=\"${3:-zh-CN-YunxiNeural}\"\n  local lang=\"${voice%%-*}-${voice#*-}\"; lang=\"${lang%%-*}-${lang#*-}\"  # \"zh-CN\"\n  local ssml=\"<speak version='1.0' xml:lang='$lang'><voice xml:lang='$lang' name='$voice'>$(printf '%s' \"$text\" | sed 's/&/\\&amp;/g; s/</\\&lt;/g; s/>/\\&gt;/g')</voice></speak>\"\n\n  curl -fsS -o \"$out\" -X POST \\\n    \"https://${AZURE_SPEECH_REGION}.tts.speech.microsoft.com/cognitiveservices/v1\" \\\n    -H \"Ocp-Apim-Subscription-Key: $AZURE_SPEECH_KEY\" \\\n    -H \"Content-Type: application/ssml+xml\" \\\n    -H \"X-Microsoft-OutputFormat: audio-24khz-48kbitrate-mono-mp3\" \\\n    -H \"User-Agent: web-video-presentation\" \\\n    --data-binary \"$ssml\"\n}\n```\n\n### Google Cloud TTS — `tts-providers/gcloud.sh`\n\n```bash\n# Docs:   https://cloud.google.com/text-to-speech/docs/reference/rest\n# Auth:   easiest is `gcloud auth application-default login`\n#         (or set GOOGLE_APPLICATION_CREDENTIALS to a service-account json)\n# Voices: zh-CN-Wavenet-A / zh-CN-Neural2-A / en-US-Neural2-J etc.\n\ntts_check() {\n  command -v curl   >/dev/null || { echo \"✗ curl not found\" >&2; return 1; }\n  command -v jq     >/dev/null || { echo \"✗ jq not found\" >&2; return 1; }\n  command -v base64 >/dev/null || { echo \"✗ base64 not found\" >&2; return 1; }\n  command -v gcloud >/dev/null || { echo \"✗ gcloud not found\" >&2; return 1; }\n  gcloud auth application-default print-access-token >/dev/null 2>&1 || {\n    echo \"✗ gcloud is not authenticated (run: gcloud auth application-default login)\" >&2\n    return 1\n  }\n}\n\ntts_install_help() {\n  cat <<'EOF' >&2\nInstall gcloud SDK and authenticate:\n  https://cloud.google.com/sdk/docs/install\n  gcloud auth application-default login\n  gcloud services enable texttospeech.googleapis.com\nEOF\n}\n\ntts_synthesize() {\n  local text=\"$1\" out=\"$2\" voice=\"${3:-zh-CN-Wavenet-A}\"\n  local lang=\"${voice%-*}\"; lang=\"${lang%-*}\"  # \"zh-CN\"\n  local token\n  token=$(gcloud auth application-default print-access-token)\n\n  local payload\n  payload=$(jq -n --arg t \"$text\" --arg v \"$voice\" --arg l \"$lang\" \\\n    '{input:{text:$t}, voice:{languageCode:$l, name:$v}, audioConfig:{audioEncoding:\"MP3\"}}')\n\n  curl -fsS -X POST https://texttospeech.googleapis.com/v1/text:synthesize \\\n    -H \"Authorization: Bearer $token\" \\\n    -H \"Content-Type: application/json\" \\\n    -d \"$payload\" \\\n    | jq -r '.audioContent' | base64 -d > \"$out\"\n}\n```\n\n---\n\n## 设计要点（自己写 provider 时记住）\n\n1. **`set -e` 友好**：runner 用 `set -euo pipefail`，所以你的函数里要么明确处理失败，要么让命令自然非零退出。不要吞错误。\n\n2. **静默成功，喧闹失败**：成功时不打印任何东西到 stdout（runner 自己打进度条）；失败时往 stderr 打详细原因。把 CLI 工具的 stdout 重定向到 `/dev/null`，stderr 留着看。\n\n3. **mp3 输出**：浏览器里 `<audio>` 标签最稳吃 mp3。能直接出 mp3 就出 mp3；非 mp3 后端在函数末尾加一步 ffmpeg。\n\n4. **音色 fallback**：`$3` 可能是空字符串。给一个合理的默认值（你最常用的中文音色 / 英文音色），不要因为没传音色就报错。\n\n5. **不要做并发**：runner 是串行的（避免 rate limit）。provider 函数也别在内部 fork 多线程。\n\n6. **不要修改全局状态**：provider 文件被 `source` 进 runner 的 shell。别 `cd`、别改 `IFS`、别 `set -e/+e` 切换，否则会污染 runner。把局部变量都 `local`。\n\n   ⚠️ 一个坑：runner 用 `set -u`，**macOS 默认 bash 3.2 在 `\"${arr[@]}\"` 展开空数组时会炸 `unbound variable`**。如果你的 provider 需要\"可选 --voice 参数\"，**不要**用 `local args=(); [[ -n $voice ]] && args=(--voice $v); cmd \"${args[@]}\"` —— 直接写两个 if 分支调命令（看 `minimax.sh` 的写法）。\n\n7. **API 长度上限**：单段大多数 API 都有上限（OpenAI ~4096 chars / MiniMax ~5000 / ElevenLabs ~5000）。Skill 的 narrations 单段一般 < 200 字符，正常不会撞到。如果你的 narration 撞到了，**先回去拆 step**——一个 step 的口播本来就不该这么长。\n\n---\n\n## 调试\n\n```bash\n# 看 runner 怎么调你的 provider\nbash -x scripts/synthesize-audio.sh\n\n# 跑单段试试，不动 audio-segments.json\nsource scripts/tts-providers/<name>.sh\ntts_check && tts_synthesize \"测试一下\" /tmp/test.mp3 \"\"\nafplay /tmp/test.mp3   # macOS 播一下听听\n```\n\n跑通了再 `npm run synthesize-audio`。\n"
+    }
+  },
+  "entrypoint": "demos/materials/web-video-presentation/SKILL.md",
+  "files": [
+    {
+      "path": "demos/materials/web-video-presentation/LICENSE",
+      "bytes": 1056,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/README.md",
+      "bytes": 17939,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/README.zh-CN.md",
+      "bytes": 17563,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/SKILL.md",
+      "bytes": 23239,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/manifest.json",
+      "bytes": 629,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/AUDIO.md",
+      "bytes": 11126,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/CHAPTER-CRAFT.md",
+      "bytes": 10676,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/EXAMPLES/README.md",
+      "bytes": 5155,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/EXAMPLES/case-tech-review/README.md",
+      "bytes": 2917,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/EXAMPLES/case-tech-review/outline-snippet.md",
+      "bytes": 6516,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/EXAMPLES/hook-chapter/README.md",
+      "bytes": 3863,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/EXAMPLES/hook-chapter/chapter.css",
+      "bytes": 4882,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/EXAMPLES/hook-chapter/chapter.tsx",
+      "bytes": 4529,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/EXAMPLES/list-reveal/README.md",
+      "bytes": 3660,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/EXAMPLES/list-reveal/chapter.css",
+      "bytes": 3508,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/EXAMPLES/list-reveal/chapter.tsx",
+      "bytes": 3549,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/OUTLINE-FORMAT.md",
+      "bytes": 8523,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/RECORDING.md",
+      "bytes": 2988,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/SCRIPT-STYLE.md",
+      "bytes": 17950,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/references/THEMES.md",
+      "bytes": 23359,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/scripts/scaffold.sh",
+      "bytes": 9537,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/index.html",
+      "bytes": 302,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/scripts/extract-narrations.ts",
+      "bytes": 4717,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/scripts/synthesize-audio.sh",
+      "bytes": 5119,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/scripts/tts-providers/README.md",
+      "bytes": 11950,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/scripts/tts-providers/minimax.sh",
+      "bytes": 1771,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/scripts/tts-providers/openai.sh",
+      "bytes": 2636,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/App.tsx",
+      "bytes": 2487,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/chapters/01-example/Example.css",
+      "bytes": 1990,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/chapters/01-example/Example.tsx",
+      "bytes": 3878,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/chapters/01-example/narrations.ts",
+      "bytes": 1280,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/components/AutoStartGate.css",
+      "bytes": 1209,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/components/AutoStartGate.tsx",
+      "bytes": 1014,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/components/AutoToggle.css",
+      "bytes": 1062,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/components/AutoToggle.tsx",
+      "bytes": 898,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/components/MaskReveal.tsx",
+      "bytes": 797,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/components/ProgressBar.css",
+      "bytes": 2501,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/components/ProgressBar.tsx",
+      "bytes": 3837,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/components/Stage.tsx",
+      "bytes": 1507,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/hooks/useAudioPlayer.ts",
+      "bytes": 3768,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/hooks/useAutoMode.ts",
+      "bytes": 2473,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/hooks/useStageScale.ts",
+      "bytes": 843,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/hooks/useStepper.ts",
+      "bytes": 5192,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/main.tsx",
+      "bytes": 209,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/registry/chapters.ts",
+      "bytes": 833,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/registry/types.ts",
+      "bytes": 704,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/styles/animations.css",
+      "bytes": 2320,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/styles/base.css",
+      "bytes": 15271,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/src/styles/fonts.css",
+      "bytes": 2129,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/templates/vite.config.ts",
+      "bytes": 196,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/bauhaus-bold/theme.json",
+      "bytes": 750,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/bauhaus-bold/tokens.css",
+      "bytes": 2767,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/blueprint/theme.json",
+      "bytes": 744,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/blueprint/tokens.css",
+      "bytes": 2957,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/bold-signal/theme.json",
+      "bytes": 956,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/bold-signal/tokens.css",
+      "bytes": 3184,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/chalk-garden/theme.json",
+      "bytes": 705,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/chalk-garden/tokens.css",
+      "bytes": 2917,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/creative-voltage/theme.json",
+      "bytes": 970,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/creative-voltage/tokens.css",
+      "bytes": 3087,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/dark-botanical/theme.json",
+      "bytes": 911,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/dark-botanical/tokens.css",
+      "bytes": 3211,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/dune/theme.json",
+      "bytes": 879,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/dune/tokens.css",
+      "bytes": 2920,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/electric-studio/theme.json",
+      "bytes": 885,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/electric-studio/tokens.css",
+      "bytes": 3013,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/forest-ink/theme.json",
+      "bytes": 902,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/forest-ink/tokens.css",
+      "bytes": 3337,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/indigo-porcelain/theme.json",
+      "bytes": 953,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/indigo-porcelain/tokens.css",
+      "bytes": 2931,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/kraft-paper/theme.json",
+      "bytes": 869,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/kraft-paper/tokens.css",
+      "bytes": 3241,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/midnight-press/theme.json",
+      "bytes": 623,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/midnight-press/tokens.css",
+      "bytes": 2455,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/monochrome-print/theme.json",
+      "bytes": 818,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/monochrome-print/tokens.css",
+      "bytes": 2754,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/neon-cyber/theme.json",
+      "bytes": 874,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/neon-cyber/tokens.css",
+      "bytes": 3451,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/newsroom/theme.json",
+      "bytes": 734,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/newsroom/tokens.css",
+      "bytes": 3052,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/paper-press/theme.json",
+      "bytes": 637,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/paper-press/tokens.css",
+      "bytes": 2920,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/pastel-dream/theme.json",
+      "bytes": 908,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/pastel-dream/tokens.css",
+      "bytes": 3415,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/split-canvas/theme.json",
+      "bytes": 888,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/split-canvas/tokens.css",
+      "bytes": 3100,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/sunset-zine/theme.json",
+      "bytes": 745,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/sunset-zine/tokens.css",
+      "bytes": 3120,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/swiss-ikb/theme.json",
+      "bytes": 1048,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/swiss-ikb/tokens.css",
+      "bytes": 3735,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/terminal-green/theme.json",
+      "bytes": 780,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/terminal-green/tokens.css",
+      "bytes": 3098,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/vintage-editorial/theme.json",
+      "bytes": 970,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/vintage-editorial/tokens.css",
+      "bytes": 3274,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/warm-keynote/theme.json",
+      "bytes": 681,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/web-video-presentation/themes/warm-keynote/tokens.css",
+      "bytes": 2849,
+      "role": "source"
+    },
+    {
+      "path": "docs/materials/web-video-presentation.md",
+      "bytes": 878,
+      "role": "doc"
+    },
+    {
+      "path": "entries/materials/web-video-presentation.json",
+      "bytes": 15718,
+      "role": "entry"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/bauhaus-bold.webp",
+      "bytes": 64892,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/blueprint.webp",
+      "bytes": 116986,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/bold-signal.webp",
+      "bytes": 91040,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/chalk-garden.webp",
+      "bytes": 97478,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/creative-voltage.webp",
+      "bytes": 190626,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/dark-botanical.webp",
+      "bytes": 82580,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/dune.webp",
+      "bytes": 69214,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/electric-studio.webp",
+      "bytes": 49714,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/forest-ink.webp",
+      "bytes": 75994,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/gallery.webp",
+      "bytes": 134380,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/indigo-porcelain.webp",
+      "bytes": 82474,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/kraft-paper.webp",
+      "bytes": 97714,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/midnight-press.webp",
+      "bytes": 73554,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/monochrome-print.webp",
+      "bytes": 47752,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/neon-cyber.webp",
+      "bytes": 61892,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/newsroom.webp",
+      "bytes": 102810,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/paper-press.webp",
+      "bytes": 60980,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/pastel-dream.webp",
+      "bytes": 43722,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/split-canvas.webp",
+      "bytes": 77860,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/sunset-zine.webp",
+      "bytes": 111806,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/swiss-ikb.webp",
+      "bytes": 67714,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/terminal-green.webp",
+      "bytes": 120092,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/vintage-editorial.webp",
+      "bytes": 58304,
+      "role": "preview"
+    },
+    {
+      "path": "previews/materials/web-video-presentation/warm-keynote.webp",
+      "bytes": 78722,
+      "role": "preview"
+    }
+  ]
+}

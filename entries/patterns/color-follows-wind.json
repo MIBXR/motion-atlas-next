@@ -1,0 +1,69 @@
+{
+  "id": "color-follows-wind",
+  "order": 114,
+  "title": "风过处上色",
+  "types": [
+    "texture",
+    "composition"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "草帽沿风的路径飞过无彩钢笔公园，每隔0.04秒留下颜色扩散源；每个像素读取最早到达时刻，湿前沿铺上淡彩，树冠与天空源补足大色区。",
+  "mechanism": "草帽沿风的路径飞过无彩钢笔公园，每隔0.04秒留下颜色扩散源；每个像素读取最早到达时刻，湿前沿铺上淡彩，树冠与天空源补足大色区。",
+  "trigger": "6秒时，草帽飞离女孩头顶，路径持续到24秒接帽时。",
+  "effect": "颜色跟随可见事件到达，原先静止的线稿人物着色后开始行动。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "4.4–19.2秒；1倍速，总时长14.800000秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "沿帽采样",
+      "value": "film/film.js:143–159：t=6…24、步长.04，源延迟.12秒、速度900，R=360/520/760/400，GW/GH=640/360。"
+    },
+    {
+      "name": "湿前沿与人物",
+      "value": "film/engine.js:arrivalField / sampleField / compositor；film.js:315–326从人物起点读取颜色，防止跑到未着色区失色。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-urban-sketch/film/film.js",
+    "demos/cases/lemo-urban-sketch/film/engine.js",
+    "demos/cases/lemo-urban-sketch/film/world.js"
+  ],
+  "locator": "沿帽采样 / 湿前沿与人物",
+  "useCases": [
+    "颜色跟随可见事件到达，原先静止的线稿人物着色后开始行动。"
+  ],
+  "avoid": [
+    "同时安排遮挡书写或湿边的主动作"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "复用来源案例lemo-urban-sketch的原作render(t)，重放“风过处上色”。草帽沿风的路径飞过无彩钢笔公园，每隔0.04秒留下颜色扩散源；每个像素读取最早到达时刻，湿前沿铺上淡彩，树冠与天空源补足大色区。参数与源码：film/film.js:143–159：t=6…24、步长.04，源延迟.12秒、速度900，R=360/520/760/400，GW/GH=640/360。；film/engine.js:arrivalField / sampleField / compositor；film.js:315–326从人物起点读取颜色，防止跑到未着色区失色。按入口segments映射原片时刻，保留原作字体、画面与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/color-follows-wind/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-urban-sketch"
+    }
+  ],
+  "previewAt": 8.8,
+  "markers": [
+    {
+      "t": 0,
+      "label": "风过处上色"
+    }
+  ],
+  "renderer": "gpu"
+}

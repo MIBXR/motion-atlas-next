@@ -1,0 +1,2431 @@
+{
+  "schemaVersion": 1,
+  "kind": "materials",
+  "id": "hyperframes-registry",
+  "material": {
+    "id": "hyperframes-registry",
+    "order": 9,
+    "title": "HyperFrames Registry · 视频模块与模板精选",
+    "type": "component-library",
+    "category": "视频制作",
+    "tags": [
+      "HyperFrames",
+      "HTML 视频",
+      "模块",
+      "模板",
+      "转场",
+      "字幕",
+      "3D",
+      "逐帧渲染"
+    ],
+    "summary": "HyperFrames Registry 的 55 个精选模块与 8 个模板，提供可编辑的标题、字幕、转场、数据图表、三维场景、相机与质感源码。本地播放器预览精选项，完整索引覆盖 22 个官方分类的 448 个模块及 8 个模板。",
+    "workflow": [
+      "用 /hyperframes-registry 或 catalog 搜索所需的视觉模块。",
+      "用 npx hyperframes add <名字> 安装 block 或 component；模板用 npx hyperframes init <项目> --example <模板>。",
+      "block 以 data-composition-src 挂入时间线；component 的标记、样式和脚本合并进场景。",
+      "保留模块的 id 前缀，调整变量、文案、颜色与字体，再运行 lint、预览和渲染。"
+    ],
+    "useCases": [
+      "在视频项目中复用标题、动态字幕、转场、社交卡片与图表",
+      "以可编辑源码组合三维画面、镜头运动、纹理和效果",
+      "从完整模板开始搭建视频，再替换文案、变量与媒体"
+    ],
+    "avoid": [
+      "把 component 当作自带完整时间线的独立 block 安装",
+      "用 hyperframes add 安装完整项目模板",
+      "用实时网络或不可定位动画驱动逐帧视频"
+    ],
+    "upstream": {
+      "repository": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3",
+      "commit": "f0b2dd0cdbd926e32cb11435c53819933fcc1ef3",
+      "version": "0.8.231",
+      "verifiedAt": "2026-11-02"
+    },
+    "license": {
+      "name": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/LICENSE"
+    },
+    "install": "npx hyperframes add <名字>\nnpx hyperframes init <项目> --example <模板>",
+    "demo": "demos/materials/hyperframes-registry/index.html",
+    "research": "docs/materials/hyperframes-registry.md",
+    "fidelity": "demos/materials/hyperframes-registry/fidelity.md",
+    "relatedEntries": [
+      {
+        "kind": "material",
+        "id": "hyperframes-skills",
+        "note": "同一上游的 Agent Skill，/hyperframes-registry 负责安装这些模块与模板"
+      }
+    ],
+    "sources": [
+      {
+        "title": "上游 README：视频制作与可复用模块",
+        "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/README.md"
+      },
+      {
+        "title": "Registry 技能：查找、安装与接入",
+        "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/skills/hyperframes-registry/SKILL.md"
+      },
+      {
+        "title": "固定版本 registry 清单",
+        "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/registry.json"
+      },
+      {
+        "title": "官方分类与页面顺序",
+        "url": "https://github.com/heygen-com/hyperframes/blob/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/docs/docs.json"
+      },
+      {
+        "title": "素材卡封面 · 上游原图",
+        "url": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/canopy-part-title.png"
+      }
+    ],
+    "sourceFiles": [
+      "site/runtime/demo-scrollbars.css"
+    ],
+    "preview": "previews/materials/hyperframes-registry.png",
+    "licenses": "demos/materials/hyperframes-registry/LICENSES.md"
+  },
+  "documents": {
+    "research": "# HyperFrames Registry 使用说明\n\nHyperFrames Registry 把可复用的视频画面作为可编辑源码安装进项目。本库保存 55 个精选模块与 8 个完整模板；[样例页](../../demos/materials/hyperframes-registry/index.html)可播放本地项，按 22 个官方分类浏览全部 448 个模块与 8 个模板。\n\n## block、component 与模板\n\n- **block** 是自带时间线的场景，安装到 `compositions/<名字>.html`，用 `data-composition-src`、合成 id、起点与时长挂入项目。\n- **component** 是合并到场景的片段，安装到 `compositions/components/<名字>.html`，按源码中的接入说明复用标记、样式与脚本。\n- **模板** 是项目起点，通过 `init --example` 创建，包含根合成、场景与可替换媒体位置。\n\n## 安装与接入\n\n先用 `/hyperframes-registry` 或 `npx hyperframes catalog --query \"<英文视觉描述>\" --json` 查找模块，再从样例页复制对应安装命令。block 与 component 使用 `npx hyperframes add <名字>`；模板使用 `npx hyperframes init <项目> --example <模板>`。\n\nblock 从 `add` 输出的挂载片段开始接入，component 按其注释合并进场景。保留条目的 id 前缀，为单次挂载设置 `data-variable-values`，再调整文案、颜色、字体与媒体。完成后按 [Agent Skills 流程](hyperframes-skills.md#常用流程)检查、预览和渲染。\n\n## 精选口径\n\n每个官方子类选 1–4 个互不重复的代表。在素材详情与独立页的侧栏切换精选、模板或全部条目，展开分类并点击作品即可播放。“精选”和“全部”支持按中文标题、分类或原名过滤；过滤和切换范围时保留当前作品，点击条目后切换播放。未入库项标注“官网”。在手机上通过“作品目录”展开同一目录树。`?demo=<名字>` 可直接定位条目。播放器默认静音，遵循系统减少动态设置。\n\n从样例页的官网链接查看未入库项，通过上游 CLI 安装；固定版本源码与版本信息见[素材条目](../../materials.html#material/hyperframes-registry)。完整目录索引与本地项尺寸、时长分别在样例的 `demo/catalog-index.json` 和 `demo/local-items.json`，重建命令见 [source/USAGE.md](../../demos/materials/hyperframes-registry/source/USAGE.md)。\n\n## 官方分类\n\n| 分类 | 用途 |\n| --- | --- |\n| 3D motion | 以空间运动呈现标题与画面。 |\n| 3D objects | 展示产品旋转、分层与三维物体。 |\n| Carousels | 让图像或文字沿轨道和空间队列运动。 |\n| Captions | 以节奏、逐词高亮和排版呈现字幕。 |\n| Typography & Text | 以字体切换、翻牌和字符重组呈现文字。 |\n| Lower Thirds | 放置字幕条、身份信息与新闻滚动条。 |\n| Code Animations | 展示代码差异、变形与终端过程。 |\n| Code Snippets | 把代码片段排成视频画面。 |\n| Shader Transitions | 以着色器完成溶解、漏光与甩镜转场。 |\n| CSS Transitions | 以网格和节拍组织切换。 |\n| Data | 呈现图表、排名变化与地图数据。 |\n| Showcases | 展示应用、画廊与对话。 |\n| Product Demo | 组合浏览器设备、输入提示与编辑器演示。 |\n| Social Overlays | 呈现社交帖子与关注信息。 |\n| Motion Scenes | 组合卡片、标志与白板笔迹场景。 |\n| Cursors | 编排光标点击、移动与拖拽。 |\n| Motion Primitives | 复用数字轮、流式文字和滚动数字等运动单元。 |\n| Effects | 以拼贴、撕纸和视差扩展画面效果。 |\n| Camera | 实现拉远揭示与镜头震动。 |\n| Texture | 叠加颗粒与墨迹质感。 |\n| HTML-in-Canvas | `liquid-glass-widgets` 需要开启 `chrome://flags/#canvas-draw-element`；`vfx-shatter` 在样例页不实时播放，原因见 [fidelity.md](../../demos/materials/hyperframes-registry/fidelity.md)。 |\n| Blocks | 提供流程图、硬件管线、液态金属与标志收尾等场景。 |\n\n源码适配与 5 项官网对照结论见 [fidelity.md](../../demos/materials/hyperframes-registry/fidelity.md)，运行库和媒体的许可见 [LICENSES.md](../../demos/materials/hyperframes-registry/LICENSES.md)。\n",
+    "fidelity": "# HyperFrames Registry 对照\n\n## 本地适配\n\n- 实际加载的 CDN 运行库、字体和纹理地址改为 `vendor/`；第三方模块内的导入地址指向相应本地文件。\n- 按 `registry-item.json` 的 `url` 把图片下载到模块的 `path`，保留元数据与 HTML 中的图片引用。\n- `code-snippet-dark-modern` 保留根目录的 `background.jpeg`，另存一份到 HTML 使用的 `assets/background.jpeg`。\n- `play-mode`、`swiss-grid`、`vignelli`、`warm-grain` 的 `demo/examples/` 保留上游原文，播放器加载 `demo/examples-preview/`；预览副本对全部 HTML 应用上游 `patchMediaPlaceholders(html, { durationSeconds: 10 })`，并本地化运行库地址。\n- `kinetic-type` 主视频原字节保存为 `vendor/kinetic-type-a-roll/a-roll.mp4`，对应 `<video>` 只改 `src`。\n- 样例页用播放器的 `srcdoc` 入口和指向本地入口文件的 `base` 加载合成；`runtime-src` 指向本地 0.8.231 运行时，在合成脚本前加载。\n- 15 个 component 使用官网 catalog JSON 的包装页，将内嵌 base64 合成改为本地同名 HTML、将 GSAP 地址改为 vendor 路径。`code-snippet-dark-modern` 按上游 `renderWrapperHtml` 生成包装页，使用官网的白色背景、11 秒时长与 1920×1080 尺寸，挂载本地合成。16 份包装原文保存在 `source/catalog-previews.json`，播放入口为各模块的 `catalog-preview.html`；上游 `demo.html` 保留。\n- `camera-shake` 的播放入口为 `camera-shake.html`。\n- `demo/modules/caption-pill-karaoke/caption-overrides.json` 与 `demo/examples-preview/vignelli/caption-overrides.json` 的内容为 `[]`。\n\n## HTML-in-Canvas\n\n`vfx-shatter` 在带 `CanvasDrawElement` 参数的 Edge 中启动时抛出 `No cached paint record for element`，`currentTime` 停在 0。官网标记 `unsupported: canvas-draw-element`，只放录好的视频。本库保留原文件与索引中的入库标记，样例页只提供安装命令和官网链接，不建立播放器，`local-items.json` 不包含这一项。\n\n## 官网同名模块对照\n\n在 1440×900 视口和启用 `CanvasDrawElement` 的 Edge 155.0.4283.62 中，以下 5 个模块在播放中点的合成画面与官网一致。共同差异是播放器工具栏的显示尺寸随舞台缩放。\n\n| 模块 | 对照时刻 |\n| --- | ---: |\n| kinetic-type-swap | 2 秒 |\n| typed-prompt | 2 秒 |\n| terminal-simulator | 2.5 秒 |\n| product-turntable | 3 秒 |\n| liquid-glass-widgets | 4 秒 |\n",
+    "licenses": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to the Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by the Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding any notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   Copyright 2026 HeyGen, Inc.\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n\n\n## 第三方库、字体与媒体\n\n| 名称 | 版本 | 来源 | 许可 | 许可原文路径 |\n| --- | --- | --- | --- | --- |\n| @hyperframes/player | 0.8.231 | [npm](https://www.npmjs.com/package/@hyperframes/player/v/0.8.231) | undefined | [LICENSE](vendor/@hyperframes/player@0.8.231/LICENSE) |\n| @hyperframes/core | 0.8.231 | [npm](https://www.npmjs.com/package/@hyperframes/core/v/0.8.231) | undefined | [LICENSE](vendor/@hyperframes/core@0.8.231/LICENSE) |\n| gsap | 3.14.2 | [npm](https://www.npmjs.com/package/gsap/v/3.14.2) | Standard 'no charge' license: https://gsap.com/standard-license. | [LICENSE.html](vendor/gsap@3.14.2/LICENSE.html) |\n| three | 0.170.0 | [npm](https://www.npmjs.com/package/three/v/0.170.0) | MIT | [LICENSE](vendor/three@0.170.0/LICENSE) |\n| three | 0.184.0 | [npm](https://www.npmjs.com/package/three/v/0.184.0) | MIT | [LICENSE](vendor/three@0.184.0/LICENSE) |\n| three | 0.147.0 | [npm](https://www.npmjs.com/package/three/v/0.147.0) | MIT | [LICENSE](vendor/three@0.147.0/LICENSE) |\n| three | 0.128.0 | [npm](https://www.npmjs.com/package/three/v/0.128.0) | MIT | [LICENSE](vendor/three@r128/LICENSE) |\n| d3-delaunay | 6.0.4 | [npm](https://www.npmjs.com/package/d3-delaunay/v/6.0.4) | ISC | [LICENSE](vendor/d3-delaunay@6.0.4/LICENSE) |\n| d3 | 7.9.0 | [npm](https://www.npmjs.com/package/d3/v/7.9.0) | ISC | [LICENSE](vendor/d3@7.9.0/LICENSE) |\n| topojson-client | 3.1.0 | [npm](https://www.npmjs.com/package/topojson-client/v/3.1.0) | ISC | [LICENSE](vendor/topojson-client@3.1.0/LICENSE) |\n| world-atlas | 2.0.2 | [npm](https://www.npmjs.com/package/world-atlas/v/2.0.2) | ISC | [LICENSE](vendor/world-atlas@2.0.2/LICENSE) |\n| @fontsource/inter | 5.3.0 | [npm](https://www.npmjs.com/package/@fontsource/inter/v/5.3.0) | OFL-1.1 | [LICENSE](vendor/fontsource-inter@5.3.0/LICENSE) |\n| Anton | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/anton) | OFL-1.1 | [Anton-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Anton-OFL.txt) |\n| Bebas Neue | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/bebasneue) | OFL-1.1 | [Bebas-Neue-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Bebas-Neue-OFL.txt) |\n| DM Sans | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/dmsans) | OFL-1.1 | [DM-Sans-OFL.txt](vendor/google-fonts@2026-11-02/licenses/DM-Sans-OFL.txt) |\n| Gelasio | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/gelasio) | OFL-1.1 | [Gelasio-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Gelasio-OFL.txt) |\n| Inter | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/inter) | OFL-1.1 | [Inter-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Inter-OFL.txt) |\n| JetBrains Mono | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/jetbrainsmono) | OFL-1.1 | [JetBrains-Mono-OFL.txt](vendor/google-fonts@2026-11-02/licenses/JetBrains-Mono-OFL.txt) |\n| Lato | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/lato) | OFL-1.1 | [Lato-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Lato-OFL.txt) |\n| Libre Baskerville | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/librebaskerville) | OFL-1.1 | [Libre-Baskerville-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Libre-Baskerville-OFL.txt) |\n| Libre Franklin | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/librefranklin) | OFL-1.1 | [Libre-Franklin-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Libre-Franklin-OFL.txt) |\n| Nunito | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/nunito) | OFL-1.1 | [Nunito-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Nunito-OFL.txt) |\n| Playfair Display | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/playfairdisplay) | OFL-1.1 | [Playfair-Display-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Playfair-Display-OFL.txt) |\n| Poppins | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/poppins) | OFL-1.1 | [Poppins-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Poppins-OFL.txt) |\n| Space Mono | 2026-11-02 | [google/fonts](https://github.com/google/fonts/tree/main/ofl/spacemono) | OFL-1.1 | [Space-Mono-OFL.txt](vendor/google-fonts@2026-11-02/licenses/Space-Mono-OFL.txt) |\n| Natural Paper / Mihaela Hinayon | 2026-11-02 | [Transparent Textures](https://www.transparenttextures.com/patterns/natural-paper.png) | 随上游 registry 分发 | 上游未附许可原文 |\n| kinetic-type 主视频 | 固定 URL | [原视频](https://gen-os-static.s3.us-east-2.amazonaws.com/astral_assets/uploaded_assets/67cf5a05_e134ec83a57042b38776c952da595870.mp4) | 随上游 registry 分发 | 上游未附许可原文 |\n| matcap-1.png | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/8a4ba0deaf2bafb4.png) | 随上游 registry 分发 | 上游未附许可原文 |\n| artist-bob-seger.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/223d162eed10f08f.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| artist-dire-straits.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/5964f78a6c7c55f7.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| artist-faces.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/e402bbb823b45122.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| artist-little-feat.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/25fe4d416b4e318e.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| artist-north-mississippi-allstars.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/5360277ad88fe1d4.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| artist-sea-level.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/2726d9a6cdc429df.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| artist-taj-mahal.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/9e4c4f735ff68582.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| artist-tool.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/76ac64af4487c9f1.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| artist-van-morrison.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/f21ff2ce3281c61a.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| pl-10-songs.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/4361229f4648df3d.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| pl-bangers.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/636f8577be7b9849.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| pl-bhindi-bhagee.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/74d11304a8ac596c.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| pl-chb-2.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/dc265f0c99df9596.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| pl-chb.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/830389dd85314cef.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| pl-homework.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/bba30166a86960c3.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| pl-sleeping.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/5cd0712a041701c7.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| pl-y2k.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/e92ca3af976fb9bf.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| track-back-together.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/9e4f27a7562be618.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| track-bitter-with-the-sweet.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/4d4530bd67c951b4.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| track-dweller-on-the-threshold.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/28b5685774692ce0.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| track-dixie-chicken-live-at-the-rainbow-theatre-london-u.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/368947470dbc62d2.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| track-far-east-man.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/c7e4be702908c77a.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n| track-funky-shit.jpg | 固定 URL | [原图片](https://static.heygen.ai/hyperframes-oss/registry-assets/4ddd90caa12fe2bd.jpg) | 随上游 registry 分发 | 上游未附许可原文 |\n\n目录预览使用固定上游 [docs/logo](https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/docs/logo) 的明暗字标，界面色彩取自同版本 docs/custom.css。\n"
+  },
+  "entrypoint": "demos/materials/hyperframes-registry/index.html",
+  "files": [
+    {
+      "path": "demos/materials/hyperframes-registry/LICENSES.md",
+      "bytes": 20223,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/brand-dark.svg",
+      "bytes": 7245,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/brand-light.svg",
+      "bytes": 7245,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/catalog-index.json",
+      "bytes": 87199,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/demo.css",
+      "bytes": 5658,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/demo.js",
+      "bytes": 7995,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/play-mode/compositions/captions.html",
+      "bytes": 5818,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/play-mode/compositions/intro.html",
+      "bytes": 3010,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/play-mode/compositions/stats.html",
+      "bytes": 12028,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/play-mode/index.html",
+      "bytes": 5543,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/play-mode/registry-item.json",
+      "bytes": 827,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/swiss-grid/assets/swiss-grid.svg",
+      "bytes": 6208,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/swiss-grid/compositions/captions.html",
+      "bytes": 5699,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/swiss-grid/compositions/graphics.html",
+      "bytes": 5710,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/swiss-grid/compositions/intro.html",
+      "bytes": 3480,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/swiss-grid/index.html",
+      "bytes": 4935,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/swiss-grid/registry-item.json",
+      "bytes": 958,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/vignelli/caption-overrides.json",
+      "bytes": 3,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/vignelli/compositions/captions.html",
+      "bytes": 6658,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/vignelli/compositions/overlays.html",
+      "bytes": 11016,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/vignelli/index.html",
+      "bytes": 4773,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/vignelli/registry-item.json",
+      "bytes": 700,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/warm-grain/compositions/captions.html",
+      "bytes": 5840,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/warm-grain/compositions/graphics.html",
+      "bytes": 4749,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/warm-grain/compositions/intro.html",
+      "bytes": 2350,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/warm-grain/index.html",
+      "bytes": 6251,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples-preview/warm-grain/registry-item.json",
+      "bytes": 843,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/decision-tree/compositions/decision_tree.html",
+      "bytes": 13079,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/decision-tree/index.html",
+      "bytes": 1354,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/decision-tree/registry-item.json",
+      "bytes": 584,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/kinetic-type/compositions/main-graphics.html",
+      "bytes": 16882,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/kinetic-type/index.html",
+      "bytes": 3327,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/kinetic-type/registry-item.json",
+      "bytes": 572,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/nyt-graph/compositions/nyt-chart.html",
+      "bytes": 13499,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/nyt-graph/index.html",
+      "bytes": 1171,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/nyt-graph/registry-item.json",
+      "bytes": 573,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/play-mode/compositions/captions.html",
+      "bytes": 5844,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/play-mode/compositions/intro.html",
+      "bytes": 3033,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/play-mode/compositions/stats.html",
+      "bytes": 12044,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/play-mode/index.html",
+      "bytes": 5952,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/play-mode/registry-item.json",
+      "bytes": 827,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/product-promo/assets/figma-cursors.svg",
+      "bytes": 1477,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/product-promo/assets/figma-logo-pieces.svg",
+      "bytes": 771,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/product-promo/assets/figma-logo-pills.svg",
+      "bytes": 446,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/product-promo/compositions/scene1-logo-intro.html",
+      "bytes": 5617,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/product-promo/compositions/scene2-4-canvas.html",
+      "bytes": 16236,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/product-promo/compositions/scene5-logo-outro.html",
+      "bytes": 7305,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/product-promo/index.html",
+      "bytes": 4558,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/product-promo/registry-item.json",
+      "bytes": 1328,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/swiss-grid/assets/swiss-grid.svg",
+      "bytes": 6208,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/swiss-grid/compositions/captions.html",
+      "bytes": 5725,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/swiss-grid/compositions/graphics.html",
+      "bytes": 5720,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/swiss-grid/compositions/intro.html",
+      "bytes": 3490,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/swiss-grid/index.html",
+      "bytes": 5218,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/swiss-grid/registry-item.json",
+      "bytes": 958,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/vignelli/compositions/captions.html",
+      "bytes": 6684,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/vignelli/compositions/overlays.html",
+      "bytes": 11026,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/vignelli/index.html",
+      "bytes": 5049,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/vignelli/registry-item.json",
+      "bytes": 700,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/warm-grain/compositions/captions.html",
+      "bytes": 5866,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/warm-grain/compositions/graphics.html",
+      "bytes": 4759,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/warm-grain/compositions/intro.html",
+      "bytes": 2360,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/warm-grain/index.html",
+      "bytes": 6541,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/examples/warm-grain/registry-item.json",
+      "bytes": 843,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/initial.js",
+      "bytes": 20429,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/labels.json",
+      "bytes": 3406,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/local-items.json",
+      "bytes": 9018,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/agent-cursor/agent-cursor.html",
+      "bytes": 15194,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/agent-cursor/catalog-preview.html",
+      "bytes": 962,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/agent-cursor/demo.html",
+      "bytes": 7472,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/agent-cursor/registry-item.json",
+      "bytes": 1654,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/app-showcase/app-showcase.html",
+      "bytes": 32349,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/app-showcase/registry-item.json",
+      "bytes": 742,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/bar-chart-race/bar-chart-race.html",
+      "bytes": 21692,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/bar-chart-race/registry-item.json",
+      "bytes": 4036,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/beat-freeze-cut/beat-freeze-cut.html",
+      "bytes": 27483,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/beat-freeze-cut/registry-item.json",
+      "bytes": 848,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/browser-device-stage/README.md",
+      "bytes": 5528,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/browser-device-stage/browser-device-stage.html",
+      "bytes": 24667,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/browser-device-stage/catalog-preview.html",
+      "bytes": 974,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/browser-device-stage/demo.html",
+      "bytes": 2227,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/browser-device-stage/registry-item.json",
+      "bytes": 2532,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/camera-shake/camera-shake.html",
+      "bytes": 30301,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/camera-shake/demo.html",
+      "bytes": 30558,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/camera-shake/registry-item.json",
+      "bytes": 1997,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/canopy-part-title/SKILL.md",
+      "bytes": 4019,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/canopy-part-title/assets/leaf-surface-color.webp",
+      "bytes": 65826,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/canopy-part-title/assets/leaf-surface-normal.webp",
+      "bytes": 138878,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/canopy-part-title/canopy-part-title.html",
+      "bytes": 58388,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/canopy-part-title/registry-item.json",
+      "bytes": 1370,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/caption-kinetic-slam/caption-kinetic-slam.html",
+      "bytes": 6406,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/caption-kinetic-slam/demo.html",
+      "bytes": 6336,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/caption-kinetic-slam/registry-item.json",
+      "bytes": 769,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/caption-pill-karaoke/caption-overrides.json",
+      "bytes": 3,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/caption-pill-karaoke/caption-pill-karaoke.html",
+      "bytes": 13113,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/caption-pill-karaoke/demo.html",
+      "bytes": 13035,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/caption-pill-karaoke/registry-item.json",
+      "bytes": 746,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/artist-bob-seger.jpg",
+      "bytes": 24504,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/artist-dire-straits.jpg",
+      "bytes": 50615,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/artist-faces.jpg",
+      "bytes": 84026,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/artist-little-feat.jpg",
+      "bytes": 154010,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/artist-north-mississippi-allstars.jpg",
+      "bytes": 59975,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/artist-sea-level.jpg",
+      "bytes": 45134,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/artist-taj-mahal.jpg",
+      "bytes": 35356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/artist-tool.jpg",
+      "bytes": 60496,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/artist-van-morrison.jpg",
+      "bytes": 74716,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/pl-10-songs.jpg",
+      "bytes": 76079,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/pl-bangers.jpg",
+      "bytes": 92921,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/pl-bhindi-bhagee.jpg",
+      "bytes": 68527,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/pl-chb-2.jpg",
+      "bytes": 73104,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/pl-chb.jpg",
+      "bytes": 64202,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/pl-homework.jpg",
+      "bytes": 64720,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/pl-sleeping.jpg",
+      "bytes": 55608,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/pl-y2k.jpg",
+      "bytes": 74365,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/track-back-together.jpg",
+      "bytes": 113353,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/track-bitter-with-the-sweet.jpg",
+      "bytes": 76753,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/track-cleaning-windows.jpg",
+      "bytes": 25367,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/track-dixie-chicken-live-at-the-rainbow-theatre-london-u.jpg",
+      "bytes": 90190,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/track-dweller-on-the-threshold.jpg",
+      "bytes": 25367,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/track-far-east-man.jpg",
+      "bytes": 105079,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/assets/carousel-images/track-funky-shit.jpg",
+      "bytes": 81956,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/carousel-orbit-1.html",
+      "bytes": 41824,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-orbit-1/registry-item.json",
+      "bytes": 14980,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/artist-bob-seger.jpg",
+      "bytes": 24504,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/artist-dire-straits.jpg",
+      "bytes": 50615,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/artist-faces.jpg",
+      "bytes": 84026,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/artist-little-feat.jpg",
+      "bytes": 154010,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/artist-north-mississippi-allstars.jpg",
+      "bytes": 59975,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/artist-sea-level.jpg",
+      "bytes": 45134,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/artist-taj-mahal.jpg",
+      "bytes": 35356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/artist-tool.jpg",
+      "bytes": 60496,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/artist-van-morrison.jpg",
+      "bytes": 74716,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/pl-10-songs.jpg",
+      "bytes": 76079,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/pl-bangers.jpg",
+      "bytes": 92921,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/assets/carousel-images/pl-bhindi-bhagee.jpg",
+      "bytes": 68527,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/carousel-text-circle-1.html",
+      "bytes": 39837,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-text-circle-1/registry-item.json",
+      "bytes": 8578,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/artist-bob-seger.jpg",
+      "bytes": 24504,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/artist-dire-straits.jpg",
+      "bytes": 50615,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/artist-faces.jpg",
+      "bytes": 84026,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/artist-little-feat.jpg",
+      "bytes": 154010,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/artist-north-mississippi-allstars.jpg",
+      "bytes": 59975,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/artist-sea-level.jpg",
+      "bytes": 45134,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/artist-taj-mahal.jpg",
+      "bytes": 35356,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/artist-tool.jpg",
+      "bytes": 60496,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/artist-van-morrison.jpg",
+      "bytes": 74716,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/pl-10-songs.jpg",
+      "bytes": 76079,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/pl-bangers.jpg",
+      "bytes": 92921,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/assets/carousel-images/pl-bhindi-bhagee.jpg",
+      "bytes": 68527,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/carousel-vision-1.html",
+      "bytes": 38123,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/carousel-vision-1/registry-item.json",
+      "bytes": 7998,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/TEMPLATE.md",
+      "bytes": 1461,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/assets/fonts/eb-garamond-LICENSE.txt",
+      "bytes": 4519,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/assets/fonts/eb-garamond-latin-400-normal.woff2",
+      "bytes": 21704,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/assets/fonts/eb-garamond-latin-700-normal.woff2",
+      "bytes": 23076,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/assets/fonts/inter-LICENSE.txt",
+      "bytes": 4477,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/assets/fonts/inter-latin-400-normal.woff2",
+      "bytes": 23664,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/assets/fonts/inter-latin-500-normal.woff2",
+      "bytes": 24272,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/assets/fonts/inter-latin-600-normal.woff2",
+      "bytes": 24452,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/claude-exchange.html",
+      "bytes": 61809,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/claude-exchange/registry-item.json",
+      "bytes": 2248,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/code-diff/code-diff.html",
+      "bytes": 26923,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/code-diff/registry-item.json",
+      "bytes": 772,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/code-morph/code-morph.html",
+      "bytes": 41325,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/code-morph/registry-item.json",
+      "bytes": 857,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/code-snippet-dark-modern/assets/background.jpeg",
+      "bytes": 436888,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/code-snippet-dark-modern/background.jpeg",
+      "bytes": 436888,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/code-snippet-dark-modern/catalog-preview.html",
+      "bytes": 839,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/code-snippet-dark-modern/code-snippet-dark-modern.html",
+      "bytes": 39985,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/code-snippet-dark-modern/registry-item.json",
+      "bytes": 800,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/cursor-drag-drop/catalog-preview.html",
+      "bytes": 970,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/cursor-drag-drop/cursor-drag-drop.html",
+      "bytes": 16814,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/cursor-drag-drop/demo.html",
+      "bytes": 1707,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/cursor-drag-drop/registry-item.json",
+      "bytes": 1398,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/data-chart/data-chart.html",
+      "bytes": 13851,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/data-chart/registry-item.json",
+      "bytes": 1013,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/domain-warp-dissolve/domain-warp-dissolve.html",
+      "bytes": 13367,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/domain-warp-dissolve/registry-item.json",
+      "bytes": 771,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/exploded-stack/exploded-stack.html",
+      "bytes": 15228,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/exploded-stack/registry-item.json",
+      "bytes": 724,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/flowchart/flowchart.html",
+      "bytes": 13873,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/flowchart/registry-item.json",
+      "bytes": 774,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/gallery-tunnel/gallery-tunnel.html",
+      "bytes": 18029,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/gallery-tunnel/registry-item.json",
+      "bytes": 4554,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/SKILL.md",
+      "bytes": 5382,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/Three-LICENSE.txt",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/ferndale_studio_01_1k.hdr",
+      "bytes": 1632708,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/fonts/CormorantGaramond-OFL.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/fonts/Geist-Bold.ttf",
+      "bytes": 66588,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/fonts/Geist-OFL.txt",
+      "bytes": 4368,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/fonts/Geist-Regular.ttf",
+      "bytes": 66584,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/fonts/Geist-SemiBold.ttf",
+      "bytes": 66620,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/fonts/cormorant-garamond.woff2",
+      "bytes": 37640,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/glass-main.js",
+      "bytes": 562335,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/glass-main.mjs",
+      "bytes": 38052,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/assets/matcap-1.png",
+      "bytes": 3150042,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/build-bundle.mjs",
+      "bytes": 1274,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/glass-shard-title.html",
+      "bytes": 16413,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/glass-shard-title/registry-item.json",
+      "bytes": 2795,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/grain-overlay/demo.html",
+      "bytes": 3966,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/grain-overlay/grain-overlay.html",
+      "bytes": 1818,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/grain-overlay/registry-item.json",
+      "bytes": 639,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/grid-card-assemble/README.md",
+      "bytes": 5379,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/grid-card-assemble/catalog-preview.html",
+      "bytes": 974,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/grid-card-assemble/demo.html",
+      "bytes": 2214,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/grid-card-assemble/grid-card-assemble.html",
+      "bytes": 21444,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/grid-card-assemble/registry-item.json",
+      "bytes": 2841,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/hw-pipeline/assets/fonts/Caveat-700-latin.woff2",
+      "bytes": 74932,
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/hw-pipeline/demo.html",
+      "bytes": 11325,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/hw-pipeline/hw-pipeline.html",
+      "bytes": 11089,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/hw-pipeline/registry-item.json",
+      "bytes": 741,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/ink-bleed-reveal/README.md",
+      "bytes": 3880,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/ink-bleed-reveal/catalog-preview.html",
+      "bytes": 966,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/ink-bleed-reveal/demo.html",
+      "bytes": 3186,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/ink-bleed-reveal/ink-bleed-reveal.html",
+      "bytes": 20174,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/ink-bleed-reveal/registry-item.json",
+      "bytes": 2051,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/instagram-follow/assets/avatar.jpg",
+      "bytes": 5010,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/instagram-follow/instagram-follow.html",
+      "bytes": 7104,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/instagram-follow/registry-item.json",
+      "bytes": 896,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/kinetic-type-swap/README.md",
+      "bytes": 3027,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/kinetic-type-swap/catalog-preview.html",
+      "bytes": 968,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/kinetic-type-swap/demo.html",
+      "bytes": 2986,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/kinetic-type-swap/kinetic-type-swap.html",
+      "bytes": 16210,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/kinetic-type-swap/registry-item.json",
+      "bytes": 2524,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/light-leak/light-leak.html",
+      "bytes": 12626,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/light-leak/registry-item.json",
+      "bytes": 711,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/liquid-glass-widgets/assets/hyperframes-logo-dark.svg",
+      "bytes": 7245,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/liquid-glass-widgets/lib/liquid-glass.iife.js",
+      "bytes": 35008,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/liquid-glass-widgets/liquid-glass-widgets.html",
+      "bytes": 26061,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/liquid-glass-widgets/registry-item.json",
+      "bytes": 1182,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/liquid-metal/lib/shaders.THIRD-PARTY-LICENSES.txt",
+      "bytes": 16426,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/liquid-metal/lib/shaders.iife.js",
+      "bytes": 1444793,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/liquid-metal/liquid-metal.html",
+      "bytes": 775,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/liquid-metal/registry-item.json",
+      "bytes": 1085,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/logo-outro/logo-outro.html",
+      "bytes": 6879,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/logo-outro/registry-item.json",
+      "bytes": 1014,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/logo-sting/catalog-preview.html",
+      "bytes": 958,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/logo-sting/demo.html",
+      "bytes": 1918,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/logo-sting/logo-sting.html",
+      "bytes": 6299,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/logo-sting/registry-item.json",
+      "bytes": 1322,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/lt-mask-reveal/lt-mask-reveal.html",
+      "bytes": 3869,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/lt-mask-reveal/registry-item.json",
+      "bytes": 605,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/news-ticker/news-ticker.html",
+      "bytes": 11390,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/news-ticker/registry-item.json",
+      "bytes": 568,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/number-wheel/demo.html",
+      "bytes": 8480,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/number-wheel/number-wheel.html",
+      "bytes": 5136,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/number-wheel/registry-item.json",
+      "bytes": 2244,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/paper-collage-reveal/catalog-preview.html",
+      "bytes": 978,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/paper-collage-reveal/demo.html",
+      "bytes": 5866,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/paper-collage-reveal/paper-collage-reveal.html",
+      "bytes": 17527,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/paper-collage-reveal/registry-item.json",
+      "bytes": 1714,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/parallax-device-dive/catalog-preview.html",
+      "bytes": 978,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/parallax-device-dive/demo.html",
+      "bytes": 2112,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/parallax-device-dive/parallax-device-dive.html",
+      "bytes": 14569,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/parallax-device-dive/registry-item.json",
+      "bytes": 1299,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/product-turntable/product-turntable.html",
+      "bytes": 13418,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/product-turntable/registry-item.json",
+      "bytes": 672,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/pull-back-reveal/catalog-preview.html",
+      "bytes": 970,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/pull-back-reveal/demo.html",
+      "bytes": 2343,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/pull-back-reveal/pull-back-reveal.html",
+      "bytes": 12069,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/pull-back-reveal/registry-item.json",
+      "bytes": 1535,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/scramble-reveal/README.md",
+      "bytes": 2018,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/scramble-reveal/catalog-preview.html",
+      "bytes": 964,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/scramble-reveal/demo.html",
+      "bytes": 2502,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/scramble-reveal/registry-item.json",
+      "bytes": 2172,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/scramble-reveal/scramble-reveal.html",
+      "bytes": 12397,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/slot-machine-roll/demo.html",
+      "bytes": 7780,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/slot-machine-roll/registry-item.json",
+      "bytes": 2353,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/slot-machine-roll/slot-machine-roll.html",
+      "bytes": 5896,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/split-flap-board/registry-item.json",
+      "bytes": 1669,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/split-flap-board/split-flap-board.html",
+      "bytes": 13203,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/streaming-text/demo.html",
+      "bytes": 15733,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/streaming-text/registry-item.json",
+      "bytes": 1279,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/streaming-text/streaming-text.html",
+      "bytes": 11529,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/terminal-simulator/demo.html",
+      "bytes": 4701,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/terminal-simulator/registry-item.json",
+      "bytes": 588,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/terminal-simulator/terminal-simulator.html",
+      "bytes": 2880,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/torn-paper-rip/catalog-preview.html",
+      "bytes": 966,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/torn-paper-rip/demo.html",
+      "bytes": 11622,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/torn-paper-rip/registry-item.json",
+      "bytes": 1693,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/torn-paper-rip/torn-paper-rip.html",
+      "bytes": 16093,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/transitions-grid/registry-item.json",
+      "bytes": 738,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/transitions-grid/transitions-grid.html",
+      "bytes": 8653,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/typed-prompt/README.md",
+      "bytes": 3211,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/typed-prompt/catalog-preview.html",
+      "bytes": 958,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/typed-prompt/demo.html",
+      "bytes": 2334,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/typed-prompt/registry-item.json",
+      "bytes": 3336,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/typed-prompt/typed-prompt.html",
+      "bytes": 17011,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/vector-editor-rig/catalog-preview.html",
+      "bytes": 972,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/vector-editor-rig/demo.html",
+      "bytes": 2854,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/vector-editor-rig/registry-item.json",
+      "bytes": 1410,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/vector-editor-rig/vector-editor-rig.html",
+      "bytes": 29933,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/vfx-shatter/registry-item.json",
+      "bytes": 718,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/vfx-shatter/vfx-shatter.html",
+      "bytes": 38011,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/whip-pan/registry-item.json",
+      "bytes": 699,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/whip-pan/whip-pan.html",
+      "bytes": 12582,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/whiteboard-ink/README.md",
+      "bytes": 4859,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/whiteboard-ink/catalog-preview.html",
+      "bytes": 962,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/whiteboard-ink/demo.html",
+      "bytes": 2506,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/whiteboard-ink/registry-item.json",
+      "bytes": 2657,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/whiteboard-ink/whiteboard-ink.html",
+      "bytes": 23145,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/world-map/registry-item.json",
+      "bytes": 812,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/world-map/world-map.html",
+      "bytes": 12855,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/x-post/registry-item.json",
+      "bytes": 709,
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/demo/modules/x-post/x-post.html",
+      "bytes": 13266,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/fidelity.md",
+      "bytes": 2473,
+      "role": "doc"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/index.html",
+      "bytes": 744,
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/source/USAGE.md",
+      "bytes": 1252,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/source/build-catalog-index.mjs",
+      "bytes": 2930,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/source/catalog-previews.json",
+      "bytes": 368542,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/source/cdn-map.json",
+      "bytes": 21758,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/source/docs/docs.json",
+      "bytes": 52721,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/source/initMedia.ts",
+      "bytes": 3176,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/source/rebuild-demo.mjs",
+      "bytes": 5486,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/source/registry/registry.json",
+      "bytes": 37569,
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/@hyperframes/core@0.8.231/LICENSE",
+      "bytes": 10763,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/@hyperframes/core@0.8.231/dist/hyperframe.runtime.iife.js",
+      "bytes": 616568,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/@hyperframes/core@0.8.231/package.json",
+      "bytes": 17646,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/@hyperframes/player@0.8.231/LICENSE",
+      "bytes": 10763,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/@hyperframes/player@0.8.231/dist/hyperframes-player.global.js",
+      "bytes": 114331,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/@hyperframes/player@0.8.231/package.json",
+      "bytes": 1702,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/d3-delaunay@6.0.4/LICENSE",
+      "bytes": 757,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/d3-delaunay@6.0.4/dist/d3-delaunay.min.js",
+      "bytes": 19071,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/d3-delaunay@6.0.4/package.json",
+      "bytes": 1410,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/d3@7.9.0/LICENSE",
+      "bytes": 731,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/d3@7.9.0/dist/d3.min.js",
+      "bytes": 279706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/d3@7.9.0/package.json",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/fontsource-inter@5.3.0/LICENSE",
+      "bytes": 4477,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/fontsource-inter@5.3.0/latin-500-normal.woff2",
+      "bytes": 24272,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/fontsource-inter@5.3.0/latin-700-normal.woff2",
+      "bytes": 24356,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/fontsource-inter@5.3.0/latin-800-normal.woff2",
+      "bytes": 24400,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/fontsource-inter@5.3.0/package.json",
+      "bytes": 1446,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Anton--swap.css",
+      "bytes": 1155,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/DM-Sans-wght@400_500_700--swap.css",
+      "bytes": 2499,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/DM-Sans-wght@400_700--block.css",
+      "bytes": 1670,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Gelasio-wght@500_600--swap.css",
+      "bytes": 2348,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Inter-ital_wght@0_400_0_700_0_900_1_400--Playfair-Display-ital_wght@0_400_0_700_1_400--block.css",
+      "bytes": 12866,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Inter-wght@300_400_500_600_700--block.css",
+      "bytes": 11725,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Inter-wght@300_400_500_600_700_800_900--swap.css",
+      "bytes": 16366,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Inter-wght@400_500_600--block.css",
+      "bytes": 7035,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Inter-wght@400_500_600_700--block.css",
+      "bytes": 9380,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Inter-wght@400_500_600_800--block.css",
+      "bytes": 9380,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Inter-wght@400_700--block.css",
+      "bytes": 4690,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Inter-wght@500_600_700_800_900--block.css",
+      "bytes": 11725,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Inter-wght@700--swap.css",
+      "bytes": 2458,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Libre-Baskerville-wght@400_700--Libre-Franklin-wght@300_400_600--block.css",
+      "bytes": 7317,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Nunito-wght@900--swap.css",
+      "bytes": 1812,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Poppins-wght@700--swap.css",
+      "bytes": 1157,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/css/Space-Mono-wght@400_700--Bebas-Neue--JetBrains-Mono-wght@400_700--Lato-wght@400_700--block.css",
+      "bytes": 9568,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/-l-font",
+      "bytes": 61628,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/anton-v27-1Ptgg87LROyAm3K8-C8QSw.woff2",
+      "bytes": 8680,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/anton-v27-1Ptgg87LROyAm3K9-C8QSw.woff2",
+      "bytes": 31356,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/anton-v27-1Ptgg87LROyAm3Kz-C8.woff2",
+      "bytes": 18612,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/bebasneue-v16-JTUSjIg69CK48gW7PXoo9Wdhyzbi.woff2",
+      "bytes": 8928,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/bebasneue-v16-JTUSjIg69CK48gW7PXoo9Wlhyw.woff2",
+      "bytes": 13768,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/dmsans-v17-rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+      "bytes": 36932,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/dmsans-v17-rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6h9Q.woff2",
+      "bytes": 18228,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/gelasio-v14-cIf9MaFfvUQxTTqS9C6hYQ.woff2",
+      "bytes": 34832,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/gelasio-v14-cIf9MaFfvUQxTTqS9CChYVkH.woff2",
+      "bytes": 40592,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/gelasio-v14-cIf9MaFfvUQxTTqS9CGhYVkH.woff2",
+      "bytes": 10700,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2",
+      "bytes": 18748,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "bytes": 48256,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2",
+      "bytes": 18996,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2",
+      "bytes": 85068,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2",
+      "bytes": 25960,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2",
+      "bytes": 11232,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2",
+      "bytes": 10252,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dtRh5WFo-4.woff2",
+      "bytes": 10804,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dtRhJWFo-4.woff2",
+      "bytes": 37592,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dtRhZWFo-4.woff2",
+      "bytes": 5132,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dtRhpWFo-4.woff2",
+      "bytes": 5528,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dtRiZWFo-4.woff2",
+      "bytes": 8444,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dtRipWF.woff2",
+      "bytes": 25040,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dtRjpWFo-4.woff2",
+      "bytes": 8216,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZ9hiA.woff2",
+      "bytes": 24356,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZBhiI2B.woff2",
+      "bytes": 5104,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZFhiI2B.woff2",
+      "bytes": 36244,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZJhiI2B.woff2",
+      "bytes": 10496,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZNhiI2B.woff2",
+      "bytes": 5444,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZthiI2B.woff2",
+      "bytes": 7904,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/inter-v20-UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZxhiI2B.woff2",
+      "bytes": 7920,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/jetbrainsmono-v24-tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx3cwhsk.woff2",
+      "bytes": 1640,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/jetbrainsmono-v24-tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx7cwhsk.woff2",
+      "bytes": 11624,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/jetbrainsmono-v24-tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2",
+      "bytes": 31432,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/jetbrainsmono-v24-tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxPcwhsk.woff2",
+      "bytes": 6836,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/jetbrainsmono-v24-tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxTcwhsk.woff2",
+      "bytes": 8872,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/jetbrainsmono-v24-tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx_cwhsk.woff2",
+      "bytes": 5888,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/lato-v25-S6u9w4BMUTPHh6UVSwaPGR_p.woff2",
+      "bytes": 5552,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/lato-v25-S6u9w4BMUTPHh6UVSwiPGQ.woff2",
+      "bytes": 23040,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/lato-v25-S6uyw4BMUTPHjx4wXg.woff2",
+      "bytes": 23580,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/lato-v25-S6uyw4BMUTPHjxAwXjeu.woff2",
+      "bytes": 5612,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/librebaskerville-v24-kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNXaxMICA.woff2",
+      "bytes": 35468,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/librebaskerville-v24-kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxM.woff2",
+      "bytes": 33872,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/librefranklin-v20-jizDREVItHgc8qDIbSTKq4XkRiUQ2zcLig.woff2",
+      "bytes": 7588,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/librefranklin-v20-jizDREVItHgc8qDIbSTKq4XkRiUR2zcLig.woff2",
+      "bytes": 25692,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/librefranklin-v20-jizDREVItHgc8qDIbSTKq4XkRiUS2zcLig.woff2",
+      "bytes": 21616,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/librefranklin-v20-jizDREVItHgc8qDIbSTKq4XkRiUb2zcLig.woff2",
+      "bytes": 15860,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/librefranklin-v20-jizDREVItHgc8qDIbSTKq4XkRiUf2zc.woff2",
+      "bytes": 29292,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/nunito-v32-XRXI3I6Li01BKofiOc5wtlZ2di8HDBImdTA3j77e.woff2",
+      "bytes": 8596,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/nunito-v32-XRXI3I6Li01BKofiOc5wtlZ2di8HDBImdTQ3jw.woff2",
+      "bytes": 16676,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/nunito-v32-XRXI3I6Li01BKofiOc5wtlZ2di8HDBImdTk3j77e.woff2",
+      "bytes": 11252,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/nunito-v32-XRXI3I6Li01BKofiOc5wtlZ2di8HDBImdTo3j77e.woff2",
+      "bytes": 16268,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/nunito-v32-XRXI3I6Li01BKofiOc5wtlZ2di8HDBImdTs3j77e.woff2",
+      "bytes": 6328,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/playfairdisplay-v40-nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt7A-W2r.woff2",
+      "bytes": 5800,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/playfairdisplay-v40-nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-Q.woff2",
+      "bytes": 21884,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/playfairdisplay-v40-nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtXA-W2r.woff2",
+      "bytes": 12664,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/playfairdisplay-v40-nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt_A-W2r.woff2",
+      "bytes": 13668,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/poppins-v24-pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2",
+      "bytes": 39252,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/poppins-v24-pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2",
+      "bytes": 5432,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/poppins-v24-pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2",
+      "bytes": 7816,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/spacemono-v17-i7dMIFZifjKcF5UAWdDRaPpZUFWaHg.woff2",
+      "bytes": 16724,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/spacemono-v17-i7dMIFZifjKcF5UAWdDRaPpZUFqaHjyV.woff2",
+      "bytes": 7332,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/spacemono-v17-i7dMIFZifjKcF5UAWdDRaPpZUFuaHjyV.woff2",
+      "bytes": 15808,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/spacemono-v17-i7dPIFZifjKcF5UAWdDRYE58RWq7.woff2",
+      "bytes": 7272,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/spacemono-v17-i7dPIFZifjKcF5UAWdDRYE98RWq7.woff2",
+      "bytes": 15832,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/fonts/spacemono-v17-i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2",
+      "bytes": 16520,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Anton-OFL.txt",
+      "bytes": 4484,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Bebas-Neue-OFL.txt",
+      "bytes": 4337,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/DM-Sans-OFL.txt",
+      "bytes": 4482,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Gelasio-OFL.txt",
+      "bytes": 4387,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Inter-OFL.txt",
+      "bytes": 4377,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/JetBrains-Mono-OFL.txt",
+      "bytes": 4399,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Lato-OFL.txt",
+      "bytes": 4407,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Libre-Baskerville-OFL.txt",
+      "bytes": 4542,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Libre-Franklin-OFL.txt",
+      "bytes": 4495,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Nunito-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Playfair-Display-OFL.txt",
+      "bytes": 4449,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Poppins-OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/google-fonts@2026-11-02/licenses/Space-Mono-OFL.txt",
+      "bytes": 4392,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/gsap@3.14.2/LICENSE.html",
+      "bytes": 76095,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/gsap@3.14.2/dist/gsap.min.js",
+      "bytes": 72779,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/gsap@3.14.2/package.json",
+      "bytes": 2550,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/kinetic-type-a-roll/a-roll.mp4",
+      "bytes": 9671596,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.147.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.147.0/build/three.min.js",
+      "bytes": 607784,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.147.0/package.json",
+      "bytes": 4721,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/build/three.module.js",
+      "bytes": 1314681,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/examples/jsm/postprocessing/BokehPass.js",
+      "bytes": 3394,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+      "bytes": 4651,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+      "bytes": 2231,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+      "bytes": 1706,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/examples/jsm/postprocessing/RenderPass.js",
+      "bytes": 1941,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+      "bytes": 1576,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/examples/jsm/shaders/BokehShader.js",
+      "bytes": 5769,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+      "bytes": 571,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.170.0/package.json",
+      "bytes": 4373,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.184.0/+esm.js",
+      "bytes": 732935,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.184.0/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.184.0/examples/jsm/environments/RoomEnvironment.js/+esm.js",
+      "bytes": 2534,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.184.0/examples/jsm/geometries/RoundedBoxGeometry.js/+esm.js",
+      "bytes": 2123,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.184.0/examples/jsm/loaders/GLTFLoader.js/+esm.js",
+      "bytes": 45920,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@0.184.0/package.json",
+      "bytes": 3574,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@r128/LICENSE",
+      "bytes": 1081,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@r128/package.json",
+      "bytes": 3506,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/three@r128/three.min.js",
+      "bytes": 603445,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/topojson-client@3.1.0/LICENSE",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/topojson-client@3.1.0/dist/topojson-client.min.js",
+      "bytes": 7169,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/topojson-client@3.1.0/package.json",
+      "bytes": 1292,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/transparenttextures@2026-11-02/natural-paper.png",
+      "bytes": 101491,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/world-atlas@2.0.2/LICENSE",
+      "bytes": 734,
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/world-atlas@2.0.2/countries-110m.json",
+      "bytes": 107761,
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/hyperframes-registry/vendor/world-atlas@2.0.2/package.json",
+      "bytes": 783,
+      "role": "vendor"
+    },
+    {
+      "path": "docs/materials/hyperframes-registry.md",
+      "bytes": 4190,
+      "role": "doc"
+    },
+    {
+      "path": "entries/materials/hyperframes-registry.json",
+      "bytes": 3506,
+      "role": "entry"
+    },
+    {
+      "path": "previews/materials/hyperframes-registry.png",
+      "bytes": 506961,
+      "role": "preview"
+    },
+    {
+      "path": "site/runtime/demo-scrollbars.css",
+      "bytes": 201,
+      "role": "source"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "hang-slam-capsule-crown",
+  "order": 70,
+  "title": "悬球砸落冠波",
+  "types": [
+    "rhythm",
+    "camera"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "mg-styles-15"
+  ],
+  "summary": "金属球进入并减速悬停后，急砸软床触发镜震和径向胶囊翻跳，冠波顶点放慢后追上时钟，最后沉降。",
+  "mechanism": "金属球进入并减速悬停 → 急砸软床触发镜震和径向胶囊翻跳，冠波顶点放慢后追上时钟，最后沉降。",
+  "trigger": "金属球进入并减速悬停时",
+  "effect": "急砸软床触发镜震和径向胶囊翻跳，冠波顶点放慢后追上时钟，最后沉降。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "mg-3d-render 原片 4.8–8.2 秒；1 倍速，总时长 3.4 秒。"
+    },
+    {
+      "name": "悬球砸落冠波",
+      "value": "herm(ts, HB, TC, 0.80, 0.0, -1.4, -30.0)\nt_launch = TC + rr_ / CS\nk_spin = np.where(v0 > 4.2, 3, 1)\n_w = 1 - 0.65 * _plateau(_tt, 6.42, 6.48, 6.70, 6.76)\nconst pun = df >= 0 ? 0.035 * (1 - expoOut(df / 6)) : 0;\nconst shk = [2, -1.5, 1, -0.5][df] || 0;"
+    }
+  ],
+  "useCases": [
+    "主角重击触发径向翻跳的品牌主拍。"
+  ],
+  "avoid": [],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "prompt": "通过 MotionKit.replay 以 1 倍速重放以下片段：mg-3d-render 原片 4.8–8.2 秒；总时长 3.4 秒。金属球进入并减速悬停 → 急砸软床触发镜震和径向胶囊翻跳，冠波顶点放慢后追上时钟，最后沉降。直接调用来源案例的 renderAt(t)，保留原画面、字体、素材、时刻映射和同段音轨，声音默认关闭。参数：herm(ts, HB, TC, 0.80, 0.0, -1.4, -30.0)\nt_launch = TC + rr_ / CS\nk_spin = np.where(v0 > 4.2, 3, 1)\n_w = 1 - 0.65 * _plateau(_tt, 6.42, 6.48, 6.70, 6.76)\nconst pun = df >= 0 ? 0.035 * (1 - expoOut(df / 6)) : 0;\nconst shk = [2, -1.5, 1, -0.5][df] || 0;。使用 1920×1080 横屏。",
+  "migration": [
+    {
+      "field": "index.html 内联配置 → segments / markers",
+      "how": "调整来源片段和标记；画面与音轨使用同一时刻映射。"
+    }
+  ],
+  "demo": "demos/patterns/hang-slam-capsule-crown/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "mg-3d-render"
+    }
+  ],
+  "previewAt": 1.8,
+  "markers": [
+    {
+      "t": 0,
+      "label": "三维软床"
+    },
+    {
+      "t": 0.5,
+      "label": "金属球入场"
+    },
+    {
+      "t": 1,
+      "label": "金属球悬停"
+    },
+    {
+      "t": 1.2,
+      "label": "砸落主拍"
+    },
+    {
+      "t": 1.62,
+      "label": "冠状波悬停"
+    },
+    {
+      "t": 3.2,
+      "label": "标语入场"
+    }
+  ],
+  "sound": {
+    "description": "成品音轨按所选原片区间与画面同步播放，声音默认关闭。"
+  },
+  "tokens": {
+    "palette": [
+      "#EFE2EA",
+      "#4A2E4E",
+      "#FF8FC0"
+    ],
+    "type": "Fredoka 700；DM Sans 600；Noto Sans SC 500。"
+  }
+}

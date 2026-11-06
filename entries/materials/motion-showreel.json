@@ -1,0 +1,284 @@
+{
+  "id": "motion-showreel",
+  "order": 1,
+  "title": "motion-showreel · 代码渲染短视频",
+  "type": "agent-skill",
+  "summary": "把图形、文字与界面动画编排为确定性时间线，逐帧渲染并交付 MP4 与可编辑源码。",
+  "workflow": [
+    "检查 Node 18+、ffmpeg 与渲染环境；明确主题、内容、时长、画幅、配乐和音效来源、口播方式，并由用户确认需求。",
+    "选择对标作品，提出三个候选结构，编写 brief.md，规划分镜、视觉风格、声音与共同时间表。",
+    "制作风格帧；风格已定时提供三张关键帧，未定时提供三个不同方向，并等待用户确认。依赖连续运动的方向同时展示小样。",
+    "有口播时先取得真实音频和时间戳，再编写确定性的 render(t)，让画面、口播、配乐与音效共用 timeline.js。",
+    "逐镜头制作和预览，按已确定的来源准备配乐与音效；混音以人声优先，长片按章制作。",
+    "主动打开剪辑工作区，让用户查看真实画面与声音；根据反馈修改，预览确认后再导出。",
+    "逐帧渲染并合成 MP4，完成来源要求的技术验收和成片复核，交付视频、海报、brief 与可编辑源码。"
+  ],
+  "useCases": [
+    "动效作品集、产品宣传片与发布预告",
+    "动态图文、界面动效演示和卡点排版",
+    "标志演绎、片头、频道短片与生成艺术循环",
+    "使用用户口播稿或录音制作最长 20 分钟的分章讲解视频"
+  ],
+  "avoid": [
+    "实拍制作、写实人物表演或一般视频剪辑",
+    "需要真实物理精度、复杂毛发或布料的写实场景",
+    "把点击推进的现场演示或普通网页当作本工具的主要产物",
+    "把效果图当成已提供源码的可复刻案例"
+  ],
+  "upstream": {
+    "repository": "ConardLi/garden-skills",
+    "url": "https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/motion-showreel",
+    "commit": "2b9a89340b70f632d31c0f1c69fce94a7912423e",
+    "version": "0.2.0"
+  },
+  "license": {
+    "name": "MIT",
+    "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/LICENSE",
+    "notes": "skill 目录与仓库内图片按固定提交保存，并附原 LICENSE。UMBRA 的 Salamander 钢琴采样在来源中标为 CC BY，本库未收录采样或音轨。"
+  },
+  "install": "按来源集合 README，可使用 skills CLI 安装单个 skill：\nnpx skills add ConardLi/garden-skills -s motion-showreel\n此命令安装上游 main 的当前版本；本库原文快照固定在记录的提交。安装后在 skill 目录执行一次：\nsh scripts/setup.sh\n需要 Node 18+ 与 PATH 中的 ffmpeg；初始化脚本不安装系统软件。也可按来源 README，将 skill 目录复制到 Agent 会扫描的技能目录。",
+  "snapshotPath": "demos/materials/motion-showreel/",
+  "snapshotEntry": "SKILL.md",
+  "relatedEntries": [
+    {
+      "kind": "case",
+      "id": "keeling-curve",
+      "note": "用本 skill 按其完整工作流实际制作的 20 秒数据短片，配乐与音效来自公开素材库"
+    }
+  ],
+  "gallery": [
+    {
+      "path": "previews/materials/motion-showreel/afterglow.webp",
+      "caption": "AFTERGLOW：合成波霓虹专辑片头，原片 19 秒；镜头穿过霓虹门，镀铬标题随重拍弹起。此处为约 4 秒的无声动画 WebP 节选，原片时长依据作者说明。",
+      "kind": "work",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/afterglow.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/boink.webp",
+      "caption": "boink：软萌三维玩具风格，原片 18 秒；一镜到底呈现多米诺与果冻的连锁反应。此处为约 4 秒的无声动画 WebP 节选，原片时长依据作者说明。",
+      "kind": "work",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/boink.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/last-stroke.webp",
+      "caption": "最后一笔 LAST STROKE：自定义墨线火柴人风格，原片 30 秒；横穿敌人、静音一拍后墨点爆散成片名。此处为约 4 秒的无声动画 WebP 节选，原片时长依据作者说明。",
+      "kind": "work",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/last-stroke.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/umbra.webp",
+      "caption": "UMBRA 本影：电影片头风格，原片 27 秒；以日全食、钻石环和宽银幕黑边构成片名显影。此处为约 4 秒的无声动画 WebP 节选，原片时长依据作者说明。",
+      "kind": "work",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/umbra.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/promo.webp",
+      "caption": "Motion Showreel 宣传片：多媒介混搭，原片 80 秒；橙点逐拍切换水墨、剪纸、孔版印刷等媒介，收束为 22 种风格墙。此处为约 4 秒的无声动画 WebP 节选，原片时长依据作者说明。",
+      "kind": "work",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/promo.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-ukiyo-e.webp",
+      "caption": "浮世绘木版（ukiyo-e）风格样张；约 4 秒的无声动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-ukiyo-e.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-glass-material.webp",
+      "caption": "玻璃金属材质（glass-material）风格样张；约 4 秒的无声动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-glass-material.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-kinetic-brutalist.webp",
+      "caption": "粗野动态排版（kinetic-brutalist）风格样张；约 4 秒的无声动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-kinetic-brutalist.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-swiss-editorial.webp",
+      "caption": "瑞士编辑（swiss-editorial）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-swiss-editorial.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-ink-wash.webp",
+      "caption": "水墨（ink-wash）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-ink-wash.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-risograph-print.webp",
+      "caption": "孔版印刷（risograph-print）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-risograph-print.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-editorial-collage.webp",
+      "caption": "杂志拼贴（editorial-collage）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-editorial-collage.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-isometric-infographic.webp",
+      "caption": "等距信息图（isometric-infographic）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-isometric-infographic.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-liquid-shader.webp",
+      "caption": "液态着色器（liquid-shader）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-liquid-shader.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-data-motion.webp",
+      "caption": "数据动效（data-motion）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-data-motion.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-generative-geometry.webp",
+      "caption": "生成几何（generative-geometry）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-generative-geometry.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-pixel-game.webp",
+      "caption": "像素游戏（pixel-game）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-pixel-game.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-synthwave-neon.webp",
+      "caption": "合成波霓虹（synthwave-neon）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-synthwave-neon.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-paper-cut.webp",
+      "caption": "剪纸（paper-cut）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-paper-cut.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-minimal-ui.webp",
+      "caption": "极简界面（minimal-ui）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-minimal-ui.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-comic-pop.webp",
+      "caption": "漫画分格（comic-pop）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-comic-pop.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-flat-vector.webp",
+      "caption": "扁平插画（flat-vector）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-flat-vector.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-guochao.webp",
+      "caption": "国潮纹样（guochao）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-guochao.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-painterly.webp",
+      "caption": "油画笔触（painterly）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-painterly.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-glitch-digital.webp",
+      "caption": "数字故障（glitch-digital）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-glitch-digital.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-soft-organic.webp",
+      "caption": "柔光有机（soft-organic）风格样张；单帧 WebP 静帧预览，未提供该样张的时间线源码。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-soft-organic.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-hologram-hud.webp",
+      "caption": "全息空间界面（hologram-hud）风格样张；约 4 秒的无声动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-hologram-hud.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-particle-field.webp",
+      "caption": "粒子场（particle-field）风格样张；约 4 秒的无声动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-particle-field.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/style-art-deco.webp",
+      "caption": "装饰艺术（art-deco）风格样张；约 4 秒的无声动画 WebP。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-art-deco.webp",
+      "license": "MIT"
+    },
+    {
+      "path": "previews/materials/motion-showreel/banner.webp",
+      "caption": "Motion Showreel 宣传总览横幅，静帧预览。",
+      "kind": "style",
+      "sourceUrl": "https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/banner.webp",
+      "license": "MIT"
+    }
+  ],
+  "sources": [
+    {
+      "title": "中文 README：作品、风格与快速开始",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/motion-showreel/README.zh-CN.md"
+    },
+    {
+      "title": "英文 README",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/motion-showreel/README.md"
+    },
+    {
+      "title": "SKILL.md 原文与工作流",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/motion-showreel/SKILL.md"
+    },
+    {
+      "title": "集合 README：安装方式",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/README.zh-CN.md"
+    },
+    {
+      "title": "manifest.json：版本",
+      "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/motion-showreel/manifest.json"
+    }
+  ],
+  "research": "docs/materials/motion-showreel.md"
+}

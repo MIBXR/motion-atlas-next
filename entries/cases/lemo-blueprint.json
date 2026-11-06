@@ -1,0 +1,285 @@
+{
+  "id": "lemo-blueprint",
+  "order": 43,
+  "title": "专利申请中：接云机器 · 蓝图 / 工程制图",
+  "subtitle": "Patent Pending: The Cloud Catcher",
+  "carriers": [
+    "video"
+  ],
+  "style": "graphic-type",
+  "purpose": "story",
+  "tech": [
+    "canvas2d",
+    "webgl"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "蓝图 / 工程制图",
+    "图形与排版",
+    "代码影片"
+  ],
+  "summary": "发明家的蓝图自行画出接云机器，机器展开、装回并运转；发现纸上没有云后，手影补上修订云线。云线变成雨云，落雨让画中的花盛开。",
+  "focus": "用工程制图顺序组织信息；斜投影系数让立面获得厚度，只有情绪高点的修订云线离开线稿语言。",
+  "accent": "#E7F0F9",
+  "background": "#18336B",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 33.62,
+  "rhythm": {
+    "duration": 46.666666666666664,
+    "bpm": 108,
+    "beats": [
+      {
+        "t": 0,
+        "label": "纸卷铺开",
+        "note": "纸卷铺开"
+      },
+      {
+        "t": 2.222222,
+        "label": "表头题字",
+        "note": "表头题字"
+      },
+      {
+        "t": 4.444444,
+        "label": "制图顺序",
+        "note": "制图顺序"
+      },
+      {
+        "t": 11.111111,
+        "label": "斜投影与爆炸图",
+        "note": "斜投影与爆炸图"
+      },
+      {
+        "t": 17.777778,
+        "label": "沿传动链跟拍",
+        "note": "沿传动链跟拍"
+      },
+      {
+        "t": 22.222222,
+        "label": "无云的缺陷",
+        "note": "无云的缺陷"
+      },
+      {
+        "t": 25,
+        "label": "修订云线",
+        "note": "修订云线"
+      },
+      {
+        "t": 28.888889,
+        "label": "图符成真",
+        "note": "图符成真"
+      },
+      {
+        "t": 31.111111,
+        "label": "接云落雨与开花",
+        "note": "接云落雨与开花"
+      },
+      {
+        "t": 39.2,
+        "label": "全图盖章与标题栏",
+        "note": "全图盖章与标题栏"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 2.222222,
+      "from": 0.15,
+      "to": 0.65,
+      "label": "纸卷铺开"
+    },
+    {
+      "t0": 2.222222,
+      "t1": 4.444444,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "表头题字"
+    },
+    {
+      "t0": 4.444444,
+      "t1": 11.111111,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "制图顺序"
+    },
+    {
+      "t0": 11.111111,
+      "t1": 17.777778,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "斜投影与爆炸图"
+    },
+    {
+      "t0": 17.777778,
+      "t1": 22.222222,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "沿传动链跟拍"
+    },
+    {
+      "t0": 22.222222,
+      "t1": 25,
+      "from": 0.15,
+      "to": 0.05,
+      "label": "无云的缺陷"
+    },
+    {
+      "t0": 25,
+      "t1": 28.888889,
+      "from": 0.2,
+      "to": 0.35,
+      "label": "修订云线"
+    },
+    {
+      "t0": 28.888889,
+      "t1": 31.111111,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "图符成真"
+    },
+    {
+      "t0": 31.111111,
+      "t1": 39.2,
+      "from": 0.5,
+      "to": 0.65,
+      "label": "接云落雨与开花"
+    },
+    {
+      "t0": 39.2,
+      "t1": 46.666666666666664,
+      "from": 0.5,
+      "to": 0.12,
+      "label": "全图盖章与标题栏"
+    }
+  ],
+  "energyNote": "段落取上游DEMO.md Shots与作品时间表；0–1数值按画面密度、配乐与静默作相对编辑标注。",
+  "observations": [
+    "用工程制图顺序组织信息；斜投影系数让立面获得厚度，只有情绪高点的修订云线离开线稿语言。",
+    "中心线、轮廓、细节、剖线、尺寸、球标、标签按拍画入；沿传动链跟拍，修订云团从纸面升起。",
+    "字幕是NOTE制图注释，标题与片尾都在图纸字段里；修订、结构动作和声音共用一张蓝图。"
+  ],
+  "composition": {
+    "color": "普鲁士蓝#18336B→#2A58A6、蓝白线#E7F0F9与暗桌面#0D1116；红#C23B2E只用于结论章。",
+    "layout": "3200×2200蓝晒纸映入1920×1080；图形居左中，部件表和GENERAL NOTES居右，结论在标题栏。",
+    "imagery": "Canvas2D线段按长度绘出，WebGL2合成纸纤维、折痕、水渍、阴影与印章；斜投影由二维坐标计算。",
+    "motion": "中心线、轮廓、细节、剖线、尺寸、球标、标签按拍画入；沿传动链跟拍，修订云团从纸面升起。",
+    "sound": "Kokoro bm_daniel低调旁白；108BPM大键琴与巴松二声部创意曲，弦乐、竖琴，纸笔、齿轮、雨滴和印章拟音。",
+    "rhythm": "108BPM、24fps；装配按八分音符点击，失败后抽空配乐，图符成真段无旁白，雨与花逐拍回应。",
+    "coherence": "字幕是NOTE制图注释，标题与片尾都在图纸字段里；修订、结构动作和声音共用一张蓝图。",
+    "typography": "Architects Daughter手写标题、标签与注释；B612 400/700、B612 Mono技术字段；Allura签名。"
+  },
+  "layers": [
+    {
+      "name": "蓝晒纸",
+      "role": "纸面坐标噪声、折痕、边缘漂白与水渍。"
+    },
+    {
+      "name": "制图线稿",
+      "role": "墨线缓冲中的机器、尺寸、球标和图号。"
+    },
+    {
+      "name": "物理效果与注释",
+      "role": "fx缓冲中的阴影、湿度和印章，独立字幕层，以及唯一的实体雨云。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#18336B",
+      "#2A58A6",
+      "#E7F0F9",
+      "#0D1116",
+      "#C23B2E"
+    ],
+    "type": "Architects Daughter手写标题、标签与注释；B612 400/700、B612 Mono技术字段；Allura签名。",
+    "motion": [
+      {
+        "name": "线宽与斜投影",
+        "value": "film/draw.js:10–24：proj.k和π/4；screen width=sheet width×zoom^.65；film/film.js:125让k从0到.5。"
+      },
+      {
+        "name": "图符成真",
+        "value": "film/sheet.js:143–211的revCloud从scalloped轮廓转为union整体渐变与阴影；film/film.js的REV与PF驱动升起、接住和落雨。"
+      }
+    ]
+  },
+  "useCases": [
+    "工程与硬件发布",
+    "发明故事",
+    "技术解释短片"
+  ],
+  "avoid": [
+    "需要真人实拍或摄影素材作为主画面的作品"
+  ],
+  "constraints": [
+    "改字体与文案时按原作字体载入和子集范围同步取得资源。",
+    "图形、着色器与时间线通过film内原作render(t)绘制，音轨沿用成片混音。"
+  ],
+  "migration": [
+    {
+      "field": "film/machine.js",
+      "how": "修改机器零件、尺寸、齿轮和分解路径。"
+    },
+    {
+      "field": "film/film.js → CAMS / drawn / figLabel",
+      "how": "修改镜头、制图先后、图号与叙事节点。"
+    },
+    {
+      "field": "film/sheet.js",
+      "how": "修改纸张字段、修订符号、雨与印章。"
+    }
+  ],
+  "prompt": "制作一支蓝图 / 工程制图代码影片。发明家的蓝图自行画出接云机器，展开、装回并运转；发现纸上没有云后，手影补上修订云线，云线变成雨云，落雨让画中的花盛开。用工程制图顺序组织信息；斜投影系数让立面获得厚度，只有情绪高点的修订云线离开线稿语言。普鲁士蓝#18336B→#2A58A6、蓝白线#E7F0F9与暗桌面#0D1116；红#C23B2E只用于结论章。3200×2200蓝晒纸映入1920×1080；图形居左中，部件表和GENERAL NOTES居右，结论在标题栏。中心线、轮廓、细节、剖线、尺寸、球标、标签按拍画入；沿传动链跟拍，修订云团从纸面升起。字体：Architects Daughter手写标题、标签与注释；B612 400/700、B612 Mono技术字段；Allura签名。声音：Kokoro bm_daniel低调旁白；108BPM大键琴与巴松二声部创意曲，弦乐、竖琴，纸笔、齿轮、雨滴和印章拟音。按film目录的原作render(t)组织镜头与动作，采用MotionKit时间线逐帧定位，声音默认关闭。",
+  "demo": "demos/cases/lemo-blueprint/index.html",
+  "patternIds": [
+    "oblique-projection-camera",
+    "symbol-becomes-real",
+    "drafting-order-build",
+    "write-wipe-rewrite"
+  ],
+  "fidelity": "demos/cases/lemo-blueprint/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/blueprint",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/blueprint/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；原成片及静帧CC BY 4.0，署名LemoLab；第三方资源与配音按audio/CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "固定源码与风格说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/blueprint"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/blueprint.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/blueprint/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/blueprint)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "Kokoro bm_daniel低调旁白；108BPM大键琴与巴松二声部创意曲，弦乐、竖琴，纸笔、齿轮、雨滴和印章拟音。署名与许可见[audio/CREDITS](audio/CREDITS)及[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "Architects Daughter手写标题、标签与注释；B612 400/700、B612 Mono技术字段；Allura签名。SIL OFL 1.1原文在fonts/，获取与重建见[source/README.md](source/README.md)。"
+    }
+  ],
+  "renderer": "gpu"
+}

@@ -1,0 +1,324 @@
+{
+  "id": "lemo-whiteboard",
+  "order": 34,
+  "title": "口袋里的爱因斯坦 · 白板讲解",
+  "subtitle": "Einstein in Your Pocket",
+  "carriers": [
+    "video"
+  ],
+  "style": "hand-drawn",
+  "purpose": "explainer",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "白板讲解",
+    "手绘与绘画",
+    "代码影片"
+  ],
+  "summary": "从手机地图上的定位磁铁讲到GPS卫星、原子钟与相对论；每日38微秒的差别把定位推入海里，板擦倒抹轨迹，校准后拉远看见整堂课在同一块白板上。",
+  "focus": "以真实单线笔顺承载讲解，用旁白词级时间安排书写窗口；笔迹、相机、磁铁和板擦共用一张8000×4500白板。",
+  "accent": "#d56129",
+  "background": "#f5f6f4",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 55.5,
+  "rhythm": {
+    "duration": 111,
+    "beats": [
+      {
+        "t": 0,
+        "label": "手机地图",
+        "note": "0–10秒，手机地图。"
+      },
+      {
+        "t": 10,
+        "label": "板上片名",
+        "note": "10–14.5秒，板上片名。"
+      },
+      {
+        "t": 14.5,
+        "label": "卫星与原子钟",
+        "note": "14.5–24.6秒，卫星与原子钟。"
+      },
+      {
+        "t": 24.6,
+        "label": "信号与测距公式",
+        "note": "24.6–34.9秒，信号与测距公式。"
+      },
+      {
+        "t": 34.9,
+        "label": "三点定位",
+        "note": "34.9–44.4秒，三点定位。"
+      },
+      {
+        "t": 44.4,
+        "label": "便宜时钟的难题",
+        "note": "44.4–46.6秒，便宜时钟的难题。"
+      },
+      {
+        "t": 46.6,
+        "label": "双速刻度",
+        "note": "46.6–56.3秒，双速刻度。"
+      },
+      {
+        "t": 56.3,
+        "label": "相对论的两项修正",
+        "note": "56.3–70秒，相对论的两项修正。"
+      },
+      {
+        "t": 70,
+        "label": "每天十一公里",
+        "note": "70–76.5秒，每天十一公里。"
+      },
+      {
+        "t": 76.5,
+        "label": "七日漂移",
+        "note": "76.5–87秒，七日漂移。"
+      },
+      {
+        "t": 87,
+        "label": "倒抹与校准",
+        "note": "87–96.2秒，倒抹与校准。"
+      },
+      {
+        "t": 96.2,
+        "label": "整板拉远",
+        "note": "96.2–103.3秒，整板拉远。"
+      },
+      {
+        "t": 103.3,
+        "label": "片尾署名",
+        "note": "103.3–111秒，片尾署名。"
+      }
+    ],
+    "bpm": 120
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 10,
+      "to": 0.25,
+      "label": "手机地图",
+      "from": 0.25
+    },
+    {
+      "t0": 10,
+      "t1": 14.5,
+      "to": 0.45,
+      "label": "板上片名",
+      "from": 0.45
+    },
+    {
+      "t0": 14.5,
+      "t1": 24.6,
+      "to": 0.4,
+      "label": "卫星与原子钟",
+      "from": 0.4
+    },
+    {
+      "t0": 24.6,
+      "t1": 34.9,
+      "to": 0.45,
+      "label": "信号与测距公式",
+      "from": 0.45
+    },
+    {
+      "t0": 34.9,
+      "t1": 44.4,
+      "to": 0.45,
+      "label": "三点定位",
+      "from": 0.45
+    },
+    {
+      "t0": 44.4,
+      "t1": 46.6,
+      "to": 0.25,
+      "label": "便宜时钟的难题",
+      "from": 0.25
+    },
+    {
+      "t0": 46.6,
+      "t1": 56.3,
+      "to": 0.55,
+      "label": "双速刻度",
+      "from": 0.55
+    },
+    {
+      "t0": 56.3,
+      "t1": 70,
+      "to": 0.5,
+      "label": "相对论的两项修正",
+      "from": 0.5
+    },
+    {
+      "t0": 70,
+      "t1": 76.5,
+      "to": 0.5,
+      "label": "每天十一公里",
+      "from": 0.5
+    },
+    {
+      "t0": 76.5,
+      "t1": 87,
+      "to": 0.7,
+      "label": "七日漂移",
+      "from": 0.7
+    },
+    {
+      "t0": 87,
+      "t1": 96.2,
+      "to": 0.6,
+      "label": "倒抹与校准",
+      "from": 0.6
+    },
+    {
+      "t0": 96.2,
+      "t1": 103.3,
+      "to": 0.35,
+      "label": "整板拉远",
+      "from": 0.35
+    },
+    {
+      "t0": 103.3,
+      "t1": 111,
+      "to": 0.12,
+      "label": "片尾署名",
+      "from": 0.12
+    }
+  ],
+  "energyNote": "段落取自DEMO.md的Shots与源码场景时间表；0–1能量数值为依据画面与声音密度作出的相对编辑标注。",
+  "observations": [
+    "黑、蓝、橙分别承担结构、信号和时间重点；记号笔浮动书写，落笔墨点、干擦条纹与残影留在板面。",
+    "镜头沿新画轨道和信号线移到下一概念，读式时保持稳定，结束后露出铝框与笔槽。",
+    "两把尺以不同节拍画刻度，板擦逆着七天轨迹回走，再重画轨道钟刻度，使其同步。"
+  ],
+  "composition": {
+    "color": "暖白板#fbfbf9 / #eeede9，墨黑#23262c、信号蓝#2a5cb3、重点橙#d97757，旧课残迹为低透明灰与淡蓝。",
+    "typography": "板面采用逐笔绘制的EMS Tech单线字形；字幕使用Architects Daughter 44px，标题与署名也写在板上。",
+    "layout": "1920×1080、24fps，镜头在8000×4500板面内移动；底部12%留给字幕，最后拉远到墙面。",
+    "imagery": "Canvas2D代码绘制白板、手机、卫星、时钟、浮动记号笔、磁铁与板擦。",
+    "motion": "相机以1/z插值推拉，沿线横移和甩镜；移动超过14px/帧时，以最多12个子帧合成180°快门运动模糊。",
+    "sound": "Kokoro bm_george英语旁白，120BPM时钟式配乐、每笔干擦声、磁铁碰击、板擦摩擦和倒放压缩的回溯声音。",
+    "rhythm": "地图开场后沿空间推导GPS测距，以双速刻度和七日漂移给出冲突，静默后擦回校准，整板拉远收束。",
+    "coherence": "距离、时间和笔画共享词级旁白时刻；同一块板上的空间关系保留全部推导。"
+  },
+  "layers": [
+    {
+      "name": "底材与空间",
+      "role": "暖白板#fbfbf9 / #eeede9，墨黑#23262c、信号蓝#2a5cb3、重点橙#d97757，旧课残迹为低透明灰与淡蓝。"
+    },
+    {
+      "name": "主体与绘制",
+      "role": "Canvas2D代码绘制白板、手机、卫星、时钟、浮动记号笔、磁铁与板擦。"
+    },
+    {
+      "name": "镜头与时间",
+      "role": "相机以1/z插值推拉，沿线横移和甩镜；移动超过14px/帧时，以最多12个子帧合成180°快门运动模糊。"
+    },
+    {
+      "name": "文字与声音",
+      "role": "板面采用逐笔绘制的EMS Tech单线字形；字幕使用Architects Daughter 44px，标题与署名也写在板上。 Kokoro bm_george英语旁白，120BPM时钟式配乐、每笔干擦声、磁铁碰击、板擦摩擦和倒放压缩的回溯声音。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#fbfbf9",
+      "#eeede9",
+      "#23262c",
+      "#2a5cb3",
+      "#d97757",
+      "#d8d3ca"
+    ],
+    "type": "EMS Tech单线JSON；Architects Daughter 400。",
+    "motion": [
+      {
+        "name": "按词书写",
+        "value": "film/film.js:20–24的atS/atE查voices/words.json；D把各笔限制在a–b时间窗口。"
+      },
+      {
+        "name": "倒抹回溯",
+        "value": "film/film.js:230–232：87–89秒倒序trailSegs，宽230、擦除强度0.9。"
+      },
+      {
+        "name": "相机快门",
+        "value": "film/film.js:387–395：dt=1/24，sp>14时N=min(12,ceil(sp*.5/4))。"
+      }
+    ]
+  },
+  "useCases": [
+    "科学解说",
+    "在线课程",
+    "概念推导"
+  ],
+  "avoid": [
+    "以观众滚动阅读为主的页面"
+  ],
+  "constraints": [
+    "画面以原作render(t)按原帧率定位，字体和全部绘制输入预载后开始。",
+    "声音使用Release成片原混音，修改叙事时同步调整旁白、配乐与画面时间表。"
+  ],
+  "migration": [
+    {
+      "field": "film/film.js → VO / atS / atE / EQ / cam",
+      "how": "更改旁白时刻、词级锚点、板面布局与相机键；词级输入在film/voices/words.json。"
+    },
+    {
+      "field": "film/engine/wb.js → Timeline / Pen / Camera",
+      "how": "调整笔顺调度、笔触材质、浮笔和白板相机。"
+    }
+  ],
+  "prompt": "制作一支白板讲解时间线影片。以真实单线笔顺承载讲解，用旁白词级时间安排书写窗口；笔迹、相机、磁铁和板擦共用一张8000×4500白板。暖白板#fbfbf9 / #eeede9，墨黑#23262c、信号蓝#2a5cb3、重点橙#d97757，旧课残迹为低透明灰与淡蓝。板面EMS Tech单线字形逐笔绘制；字幕Architects Daughter 44px，标题与署名也写在板上。1920×1080、24fps，镜头在8000×4500板面内移动；底部12%留给字幕，最后拉远到墙面。相机以1/z插值推拉，沿线横移和甩镜；移动超过14px/帧时最多12个子帧合成180°快门运动模糊。地图开场后沿空间推导GPS测距，以双速刻度和七日漂移给出冲突，静默后擦回校准，整板拉远收束。Kokoro bm_george英语旁白，120BPM时钟式配乐、每笔干擦声、磁铁碰击、板擦摩擦和倒放压缩的回溯声音。实现入口位于demos/cases/lemo-whiteboard/film/，保留原作render(t)、原始素材与字体；通过MotionKit.mountFilm接入播放、定位、减少动态暂停和默认关闭的声音。",
+  "demo": "demos/cases/lemo-whiteboard/index.html",
+  "patternIds": [
+    "stroke-order-equation-sync",
+    "eraser-rewind",
+    "pen-led-camera",
+    "magnet-pieces-on-board"
+  ],
+  "fidelity": "demos/cases/lemo-whiteboard/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/whiteboard",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "path": "styles/whiteboard/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+    "notes": "代码与文档MIT；成片和静帧CC BY 4.0，署名LemoLab；各字体、采样与语音来源见CREDITS及LICENSES.md。"
+  },
+  "sources": [
+    {
+      "label": "固定风格与制作源码",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/whiteboard"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/whiteboard.mp4"
+    },
+    {
+      "label": "第三方资源与署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/whiteboard/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（@lemomo-ai）；[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/whiteboard)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "Kokoro bm_george英语旁白，120BPM时钟式配乐、每笔干擦声、磁铁碰击、板擦摩擦和倒放压缩的回溯声音。 原始来源保留在[audio/CREDITS](audio/CREDITS)，许可索引见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "EMS Tech单线JSON；Architects Daughter 400。 OFL原文在fonts/，来源与重建方式见[source/README.md](source/README.md)。"
+    }
+  ]
+}

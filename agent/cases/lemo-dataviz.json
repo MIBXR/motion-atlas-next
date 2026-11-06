@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 1,
+  "kind": "case",
+  "id": "lemo-dataviz",
+  "entry": {
+    "id": "lemo-dataviz",
+    "order": 81,
+    "title": "一百个夏天 · 数据叙事",
+    "subtitle": "A Hundred Summers",
+    "carriers": [
+      "video"
+    ],
+    "style": "interface",
+    "purpose": "data",
+    "tech": [
+      "canvas2d"
+    ],
+    "orients": [
+      "landscape"
+    ],
+    "tags": [
+      "lemo-opuscar",
+      "数据叙事",
+      "信息与发布",
+      "代码影片"
+    ],
+    "summary": "铅笔把1926—2026年的夏季温度逐点画成一位女性的一生：蓝色人生批注进入后，红色记录批注随升温变得密集，数据破框、铅笔翻到红头，点线最后化为温度条纹。",
+    "focus": "同一数据表同时决定点的位置、颜色、音高与落点节奏；手写批注把人生尺度固定在真实年份上。",
+    "accent": "#A8283A",
+    "background": "#F6F3EC",
+    "timeline": true,
+    "kit": true,
+    "previewAt": 42,
+    "rhythm": {
+      "duration": 50,
+      "bpm": 90,
+      "beats": [
+        {
+          "t": 0,
+          "label": "第一个点",
+          "note": "原作 Shots：0.000—2.667秒。"
+        },
+        {
+          "t": 2.6666666666666665,
+          "label": "标题与坐标轴",
+          "note": "原作 Shots：2.667—5.333秒。"
+        },
+        {
+          "t": 5.333333333333333,
+          "label": "人生逐点描绘",
+          "note": "原作 Shots：5.333—20.167秒。"
+        },
+        {
+          "t": 20.166666666666668,
+          "label": "升温攀爬",
+          "note": "原作 Shots：20.167—26.667秒。"
+        },
+        {
+          "t": 26.666666666666668,
+          "label": "破框翻笔",
+          "note": "原作 Shots：26.667—28.667秒。"
+        },
+        {
+          "t": 28.666666666666668,
+          "label": "密集记录",
+          "note": "原作 Shots：28.667—31.000秒。"
+        },
+        {
+          "t": 31,
+          "label": "静默硬切",
+          "note": "原作 Shots：31.000—32.000秒。"
+        },
+        {
+          "t": 32,
+          "label": "最后一点",
+          "note": "原作 Shots：32.000—34.000秒。"
+        },
+        {
+          "t": 34,
+          "label": "全图展开",
+          "note": "原作 Shots：34.000—37.333秒。"
+        },
+        {
+          "t": 37.333333333333336,
+          "label": "点线转条纹",
+          "note": "原作 Shots：37.333—40.000秒。"
+        },
+        {
+          "t": 40,
+          "label": "拉入更长记录",
+          "note": "原作 Shots：40.000—42.667秒。"
+        },
+        {
+          "t": 42.666666666666664,
+          "label": "下一格与片尾",
+          "note": "原作 Shots：42.667—50.000秒。"
+        }
+      ]
+    },
+    "energy": [
+      0.3,
+      0.45,
+      0.55,
+      0.65,
+      0.8,
+      0.65,
+      0.5,
+      0.2
+    ],
+    "energyNote": "依据原作镜头密度、信息量和配乐段落作的相对编辑标注。",
+    "observations": [
+      "Canvas2D 原作纸纹、铅笔、逐点图表与手写批注；GISTEMP v4 JJA 原始表和提取数据。",
+      "逐点描图与跟笔，破框急推和翻笔，静默后末点独奏，101个点按年份扫过并伸展为条纹。",
+      "原作90BPM数据音高映射、从四分音符到三十二分音符的节奏加密、环境拟音和 Kokoro af_alloy 旁白。"
+    ],
+    "composition": {
+      "color": "暖纸、石墨、蓝红双头铅笔和以0.22°C为中心的冷暖色坡。",
+      "typography": "Newsreader 正体与斜体可变字重，Caveat 500，IBM Plex Mono 400／500。",
+      "layout": "1920×1080横屏；构图、字幕与边距由原作render(t)直接绘制。",
+      "imagery": "Canvas2D 原作纸纹、铅笔、逐点图表与手写批注；GISTEMP v4 JJA 原始表和提取数据。",
+      "motion": "逐点描图与跟笔，破框急推和翻笔，静默后末点独奏，101个点按年份扫过并伸展为条纹。",
+      "sound": "原作90BPM数据音高映射、从四分音符到三十二分音符的节奏加密、环境拟音和 Kokoro af_alloy 旁白。",
+      "rhythm": "90 BPM，50.0秒；镜头节点取原作Shots与时间表。",
+      "coherence": "同一数据表同时决定点的位置、颜色、音高与落点节奏；手写批注把人生尺度固定在真实年份上。"
+    },
+    "layers": [
+      {
+        "name": "场景",
+        "role": "Canvas2D 原作纸纹、铅笔、逐点图表与手写批注；GISTEMP v4 JJA 原始表和提取数据。"
+      },
+      {
+        "name": "信息层",
+        "role": "Newsreader 正体与斜体可变字重，Caveat 500，IBM Plex Mono 400／500。"
+      },
+      {
+        "name": "声音",
+        "role": "原作90BPM数据音高映射、从四分音符到三十二分音符的节奏加密、环境拟音和 Kokoro af_alloy 旁白。"
+      }
+    ],
+    "tokens": {
+      "palette": [
+        "#F6F3EC",
+        "#2B2723",
+        "#2F5D8A",
+        "#A8283A"
+      ],
+      "type": "Newsreader 正体与斜体可变字重，Caveat 500，IBM Plex Mono 400／500。",
+      "motion": [
+        {
+          "name": "第一个点",
+          "value": "0.000—2.667秒"
+        },
+        {
+          "name": "标题与坐标轴",
+          "value": "2.667—5.333秒"
+        },
+        {
+          "name": "人生逐点描绘",
+          "value": "5.333—20.167秒"
+        },
+        {
+          "name": "升温攀爬",
+          "value": "20.167—26.667秒"
+        },
+        {
+          "name": "破框翻笔",
+          "value": "26.667—28.667秒"
+        },
+        {
+          "name": "密集记录",
+          "value": "28.667—31.000秒"
+        },
+        {
+          "name": "静默硬切",
+          "value": "31.000—32.000秒"
+        },
+        {
+          "name": "最后一点",
+          "value": "32.000—34.000秒"
+        },
+        {
+          "name": "全图展开",
+          "value": "34.000—37.333秒"
+        },
+        {
+          "name": "点线转条纹",
+          "value": "37.333—40.000秒"
+        },
+        {
+          "name": "拉入更长记录",
+          "value": "40.000—42.667秒"
+        },
+        {
+          "name": "下一格与片尾",
+          "value": "42.667—50.000秒"
+        }
+      ]
+    },
+    "useCases": [
+      "数据新闻",
+      "气候科学短片",
+      "带人生批注的时间序列"
+    ],
+    "avoid": [],
+    "constraints": [
+      "数据位置、色坡和音高共用真实数值；修改数据后同步生成乐谱。",
+      "逐字批注保留世界坐标，点线转条纹时继续保持年份对应。"
+    ],
+    "migration": [
+      {
+        "field": "film/timeline.js",
+        "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+      },
+      {
+        "field": "film/film.js",
+        "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+      },
+      {
+        "field": "film/engine.js",
+        "how": "在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。"
+      }
+    ],
+    "prompt": "以一百个夏天 · 数据叙事的原作源码实现完整时间线影片。铅笔把1926—2026年的夏季温度逐点画成一位女性的一生：蓝色人生批注进入后，红色记录批注随升温加密，数据破框、铅笔翻到红头，点线最后化为温度条纹。Canvas2D 原作纸纹、铅笔、逐点图表与手写批注；GISTEMP v4 JJA 原始表和提取数据。逐点描图与跟笔，破框急推和翻笔，静默后末点独奏，101个点按年份扫过并伸展为条纹。暖纸、石墨、蓝红双头铅笔和以0.22°C为中心的冷暖色坡。Newsreader 正体与斜体可变字重，Caveat 500，IBM Plex Mono 400／500。原作90BPM数据音高映射、从四分至三十二分音符的加密、环境拟音和 Kokoro af_alloy 旁白。画面直接执行film/中的原作render(t)，按24fps定位，声音默认关闭。",
+    "demo": "demos/cases/lemo-dataviz/index.html",
+    "patternIds": [
+      "data-points-to-pitch",
+      "pencil-plot-with-notes",
+      "dots-morph-to-stripes"
+    ],
+    "fidelity": "demos/cases/lemo-dataviz/fidelity.md",
+    "sourceFiles": [
+      "demos/cases/lemo-dataviz/film/timeline.js",
+      "demos/cases/lemo-dataviz/film/film.js",
+      "demos/cases/lemo-dataviz/film/engine.js",
+      "demos/cases/lemo-dataviz/film/data/jja.json",
+      "demos/cases/lemo-dataviz/source/music/score.py"
+    ],
+    "upstream": {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dataviz",
+      "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+      "path": "styles/dataviz/",
+      "version": "0.1.0"
+    },
+    "license": {
+      "name": "MIT · CC BY 4.0",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/LICENSE",
+      "notes": "代码与文档 MIT，原成片 CC BY 4.0、署名 LemoLab；第三方素材沿用原作 CREDITS 的许可。"
+    },
+    "sources": [
+      {
+        "label": "固定源码与制作说明",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dataviz"
+      },
+      {
+        "label": "Release公开成片",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/dataviz.mp4"
+      },
+      {
+        "label": "原作署名",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dataviz/demo/CREDITS"
+      }
+    ],
+    "attribution": [
+      {
+        "scope": "作品",
+        "notes": "LemoLab × Claude Opus 5.5，作者 Lemomo（lemomo-ai）。代码 MIT、成片 CC BY 4.0。来源固定于 bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00。"
+      },
+      {
+        "scope": "资源与声音",
+        "notes": "原作90BPM数据音高映射、从四分至三十二分音符的加密、环境拟音和 Kokoro af_alloy 旁白。原始资源和署名见 [audio/CREDITS](audio/CREDITS)，许可原文见 [LICENSES.md](LICENSES.md)。"
+      },
+      {
+        "scope": "字体",
+        "notes": "Newsreader 正体与斜体可变字重，Caveat 500，IBM Plex Mono 400／500。字体及SIL OFL 1.1原文在fonts/。"
+      }
+    ],
+    "licenses": "demos/cases/lemo-dataviz/LICENSES.md",
+    "preview": "previews/cases/lemo-dataviz.jpg",
+    "previewPortrait": null
+  },
+  "documents": {
+    "fidelity": "# 一百个夏天 · 数据叙事 · 接入与保真说明\n\n完整代码影片，固定来源见[条目JSON](../../../entries/cases/lemo-dataviz.json)。\n\n## 相对原作的删改\n\n| 文件 | 删改内容 | 原因 |\n| --- | --- | --- |\n| `index.html` | MotionKit.load.prepare预载，iframe等待READY，以24fps执行并等待原作render(t)。 | 接入舞台、定位、播放与默认静音。 |\n| `film/index.html` | 字体改为../fonts/；依赖指向本条目的固定路径。 | 本库目录接入。 |\n| `audio/film.m4a` | 从Release成片以-c:a copy流复制。 | 原作声音同步。 |\n| `source/` | 保存原作制作文件、原始数据与依赖说明。 | 可编辑制作资料。 |\n| `stills/` | 静帧留在上游，本库预览由capture生成。 | 成品运行不读取原静帧。 |\n| `film/内core引用` | /core/lib.js改为条目film/core/lib.js；文件按固定提交保留。 | 本库相对路径接入。 |\n\n## 适配层\n\n1920×1080、24fps、50.0秒；原作画面由render(t)直接绘制。`?embed`隐藏控制条，`?render`暂停自动播放与声音，`?t=秒`定位；减少动态时停在42.0秒。镜头标记取Shots与原作时间表。\n\n许可入口见[LICENSES.md](LICENSES.md)。\n\n## 与原片对照结果\n\n无头Edge：1920×1080、DPR1，启用GPU、忽略GPU黑名单、font-render-hinting=none、sRGB。等待`__motion.ready`后定位到同一视频帧。参考PNG从Release按帧号精确提取。\n\n原始列直接比较参考与本库PNG；编码链列在过程目录把本库PNG捕获为JPEG95，再依原作`core/render/video.mjs`以libx264 medium CRF14 yuv420p编码，依`source/build.sh`与`core/render/mux.sh`以slow CRF19再编码。本条mux的grain=0。全部测量为yuv444p的ffmpeg SSIM All；编码与左右拼图保留在过程目录。\n\n| 取样 | 视频帧 | 原片秒 | 原始SSIM | 编码链SSIM |\n| --- | --- | --- | --- | --- |\n| 开头 | 0 | 0.000000 | 0.997453 | 0.996626 |\n| frame_sec | 1008 | 42.000000 | 0.987416 | 0.988519 |\n| 第一个点中点 | 32 | 1.333333 | 0.994497 | 0.994446 |\n| 标题与坐标轴中点 | 96 | 4.000000 | 0.991354 | 0.990960 |\n| 人生逐点描绘中点 | 306 | 12.750000 | 0.991297 | 0.992014 |\n| 升温攀爬中点 | 562 | 23.416667 | 0.991928 | 0.992636 |\n| 破框翻笔中点 | 664 | 27.666667 | 0.991693 | 0.992391 |\n| 密集记录中点 | 716 | 29.833333 | 0.990809 | 0.991743 |\n| 静默硬切中点 | 756 | 31.500000 | 0.994137 | 0.993251 |\n| 最后一点中点 | 792 | 33.000000 | 0.993952 | 0.994083 |\n| 全图展开中点 | 856 | 35.666667 | 0.989749 | 0.991408 |\n| 点线转条纹中点 | 928 | 38.666667 | 0.990942 | 0.990700 |\n| 拉入更长记录中点 | 992 | 41.333333 | 0.989064 | 0.990147 |\n| 下一格与片尾中点 | 1112 | 46.333333 | 0.989015 | 0.991647 |\n| 片尾前1秒 | 1176 | 49.000000 | 0.988637 | 0.987807 |\n\n15帧：原始最低0.987416、最高0.997453；编码链最低0.987807、最高0.996626；两列全部达到0.95。\n\n音轨解码为48kHz单声道，以每10ms的RMS包络在±500ms内互相关，最佳偏移0ms，相关系数1.000000。\n\n画面直接运行原作的绘制、字形布局与时间表；成片的JPEG95及两次H.264编码改变高频细节。WebGL对照使用Intel Iris Xe／ANGLE Direct3D11，Canvas和字体按本机Edge栅格化。\n",
+    "licenses": "# 许可与署名\n\n- 作品：LemoLab × Claude Opus 5.5，作者Lemomo（lemomo-ai）；代码与文档MIT、成片CC BY 4.0，[作品许可原文](film/LICENSE)、[CC BY 4.0原文](audio/CC-BY-4.0.txt)。\n- 原作资源、音乐、拟音与语音逐项署名：[audio/CREDITS](audio/CREDITS)。\n- 合成音乐与拟音：原作代码；Kokoro语音与模型采用Apache-2.0，原文见[audio/Apache-2.0.txt](audio/Apache-2.0.txt)。\n\n- NASA GISTEMP v4 JJA：美国政府公有领域数据，原始CSV在source/data/。\n- ColorBrewer RdBu色坡：Cynthia Brewer，Apache-2.0，许可原文在audio/Apache-2.0.txt。\n\n字体采用SIL OFL 1.1，原文：\n\n- [caveat_OFL.txt](fonts/caveat_OFL.txt)\n- [ibmplexmono_OFL.txt](fonts/ibmplexmono_OFL.txt)\n- [newsreader_OFL.txt](fonts/newsreader_OFL.txt)\n",
+    "prompt": "# 一百个夏天 · 数据叙事\n\n## 实现 Prompt\n\n以一百个夏天 · 数据叙事的原作源码实现完整时间线影片。铅笔把1926—2026年的夏季温度逐点画成一位女性的一生：蓝色人生批注进入后，红色记录批注随升温加密，数据破框、铅笔翻到红头，点线最后化为温度条纹。Canvas2D 原作纸纹、铅笔、逐点图表与手写批注；GISTEMP v4 JJA 原始表和提取数据。逐点描图与跟笔，破框急推和翻笔，静默后末点独奏，101个点按年份扫过并伸展为条纹。暖纸、石墨、蓝红双头铅笔和以0.22°C为中心的冷暖色坡。Newsreader 正体与斜体可变字重，Caveat 500，IBM Plex Mono 400／500。原作90BPM数据音高映射、从四分至三十二分音符的加密、环境拟音和 Kokoro af_alloy 旁白。画面直接执行film/中的原作render(t)，按24fps定位，声音默认关闭。\n\n## 动效 Token\n\n- **第一个点**：0.000—2.667秒\n- **标题与坐标轴**：2.667—5.333秒\n- **人生逐点描绘**：5.333—20.167秒\n- **升温攀爬**：20.167—26.667秒\n- **破框翻笔**：26.667—28.667秒\n- **密集记录**：28.667—31.000秒\n- **静默硬切**：31.000—32.000秒\n- **最后一点**：32.000—34.000秒\n- **全图展开**：34.000—37.333秒\n- **点线转条纹**：37.333—40.000秒\n- **拉入更长记录**：40.000—42.667秒\n- **下一格与片尾**：42.667—50.000秒\n\n## 制作约束\n\n- 数据位置、色坡和音高共用真实数值；修改数据后同步生成乐谱。\n- 逐字批注保留世界坐标，点线转条纹时继续保持年份对应。\n\n## 迁移\n\n- `film/timeline.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。\n- `film/film.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。\n- `film/engine.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。\n\n[打开 Demo](../../demos/cases/lemo-dataviz/index.html) · [在库中查看](../../cases.html#case/lemo-dataviz)\n"
+  },
+  "entrypoint": "demos/cases/lemo-dataviz/index.html",
+  "files": [
+    {
+      "path": "demos/cases/lemo-dataviz/LICENSES.md",
+      "bytes": 796,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/Apache-2.0.txt",
+      "bytes": 10280,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/CREDITS",
+      "bytes": 1338,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/audio/film.m4a",
+      "bytes": 1616589,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fidelity.md",
+      "bytes": 3291,
+      "role": "doc"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/LICENSE",
+      "bytes": 1064,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/core/lib.js",
+      "bytes": 2782,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/data/jja.json",
+      "bytes": 1966,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/engine.js",
+      "bytes": 25179,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/film.js",
+      "bytes": 31998,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/index.html",
+      "bytes": 349,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/lines.json",
+      "bytes": 852,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/main.js",
+      "bytes": 2391,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/timeline.js",
+      "bytes": 2288,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/voices/dur.json",
+      "bytes": 72,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/film/voices/words_rel.json",
+      "bytes": 1448,
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/Caveat-VF.ttf",
+      "bytes": 403648,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/Newsreader-Italic-VF.ttf",
+      "bytes": 495684,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/Newsreader-VF.ttf",
+      "bytes": 451664,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/caveat_OFL.txt",
+      "bytes": 4385,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/fonts.css",
+      "bytes": 569,
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/ibmplexmono_OFL.txt",
+      "bytes": 4363,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/fonts/newsreader_OFL.txt",
+      "bytes": 4394,
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/index.html",
+      "bytes": 2641,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/motion-kit.js",
+      "bytes": 134537,
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/CREDITS",
+      "bytes": 1338,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/README.md",
+      "bytes": 1633,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/build.sh",
+      "bytes": 1932,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/data/GLB.Ts+dSST.csv",
+      "bytes": 12887,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/events.json",
+      "bytes": 18365,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/mix.py",
+      "bytes": 10036,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/music/score.json",
+      "bytes": 8433,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/music/score.py",
+      "bytes": 11863,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/cuecheck.py",
+      "bytes": 1608,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/extract_data.py",
+      "bytes": 1769,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/final_asr.py",
+      "bytes": 1192,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/subs.py",
+      "bytes": 839,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/tools/words.py",
+      "bytes": 1174,
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/lemo-dataviz/source/voices/words.json",
+      "bytes": 1195,
+      "role": "process"
+    },
+    {
+      "path": "entries/cases/lemo-dataviz.json",
+      "bytes": 9775,
+      "role": "entry"
+    },
+    {
+      "path": "previews/cases/lemo-dataviz.jpg",
+      "bytes": 80055,
+      "role": "preview"
+    }
+  ]
+}

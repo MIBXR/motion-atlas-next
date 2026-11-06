@@ -1,0 +1,138 @@
+{
+  "id": "outro-stat-stack",
+  "order": 10,
+  "title": "结尾数据堆叠与计数",
+  "types": [
+    "type-motion",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "summary": "收尾时统计数字逐行堆叠，最后以 fin. 收束。",
+  "mechanism": "统计行依次堆叠，数值逐项计数。fin.随后出现，让旅程在读完结果后结束。",
+  "trigger": "旅程结束、回顾收获时",
+  "effect": "把旅程收获汇成一张能读完的结果页。",
+  "timing": [
+    {
+      "name": "时长",
+      "value": "5.2s"
+    },
+    {
+      "name": "声音 voice",
+      "value": "blip、tick、bell、shimmer、sub"
+    }
+  ],
+  "useCases": [
+    "影像片尾",
+    "年度回顾",
+    "活动战报",
+    "陈列界面结束页"
+  ],
+  "avoid": [
+    "数字没有实际意义时（会显得空洞）"
+  ],
+  "composition": {
+    "role": "support",
+    "pairsWellWith": [
+      "collect-counter",
+      "corner-hud"
+    ],
+    "conflicts": []
+  },
+  "prompt": "收尾时统计数字逐行堆叠，最后以 fin. 收束。复用地图巡礼的 drawOutro、blurIn 与对应 CSS。drawOutro 的统计行、数值计数与 fin.。片段：caseT 55.6→60；时长 5.2s。使用横屏 1920×1080 与竖屏 1080×1920 的案例布局；按 mechanism/config.js 的 segments / markers 重放，使用固定底图与屏幕锚点，声音由 mechanism/score.json 挂接。",
+  "demo": "demos/patterns/outro-stat-stack/index.html",
+  "kit": true,
+  "sources": [
+    {
+      "caseId": "map-pilgrimage"
+    }
+  ],
+  "previewAt": 4.2,
+  "markers": [
+    {
+      "t": 0.65,
+      "label": "统计"
+    },
+    {
+      "t": 2.4,
+      "label": "fin."
+    }
+  ],
+  "sound": {
+    "voices": [
+      "blip",
+      "tick",
+      "bell",
+      "shimmer",
+      "sub"
+    ],
+    "score": "demos/patterns/outro-stat-stack/mechanism/score.json",
+    "description": "声音随画面事件播放，音色与时刻由乐谱设置。"
+  },
+  "tokens": {
+    "palette": [
+      "#f1eee7",
+      "#16171a",
+      "#d9562c",
+      "#e23b3b"
+    ],
+    "type": "案例 CSS 的 --f-sans / --f-display / --f-mono / --f-ja / --f-zh / --f-mincho / --f-serif / --f-hand / --f-hand-ja；舞台字号按设计决定，不设下限；网站界面 ≥ 12px。",
+    "css": {
+      "--f-sans": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Helvetica Neue\", \"Yu Gothic UI\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-display": "\"Bahnschrift\", \"DIN Alternate\", \"Barlow\", \"Segoe UI\", sans-serif",
+      "--f-mono": "\"Cascadia Mono\", \"JetBrains Mono\", \"SF Mono\", Consolas, monospace",
+      "--f-ja": "\"Yu Gothic UI\", \"Yu Gothic\", \"YuGothic\", \"Hiragino Kaku Gothic ProN\", \"Noto Sans JP\", \"Microsoft YaHei UI\", sans-serif",
+      "--f-zh": "\"Microsoft YaHei UI\", \"PingFang SC\", \"Noto Sans SC\", \"Source Han Sans SC\", sans-serif",
+      "--f-mincho": "\"Yu Mincho\", \"YuMincho\", \"Hiragino Mincho ProN\", \"Noto Serif JP\", \"SimSun\", serif",
+      "--f-serif": "\"Georgia\", \"Yu Mincho\", \"Noto Serif JP\", serif",
+      "--f-hand": "\"Ink Free\", \"Segoe Print\", \"Bradley Hand\", cursive",
+      "--f-hand-ja": "\"UD Digi Kyokasho N-R\", \"UD デジタル 教科書体 N-R\", \"Yu Mincho\", serif",
+      "--paper": "#f1eee7",
+      "--ink": "#16171a",
+      "--ink-map": "#16171a",
+      "--muted": "rgba(22, 23, 26, .62)",
+      "--line": "rgba(22, 23, 26, .26)",
+      "--accent": "#d9562c",
+      "--accent-soft": "rgba(217, 86, 44, .22)",
+      "--surface": "rgba(250, 249, 245, .94)",
+      "--alert": "#e23b3b"
+    },
+    "motion": [
+      {
+        "name": "统计",
+        "value": "0.65s"
+      },
+      {
+        "name": "fin.",
+        "value": "2.4s"
+      },
+      {
+        "name": "时长",
+        "value": "5.2s"
+      }
+    ]
+  },
+  "migration": [
+    {
+      "field": "../../cases/map-pilgrimage/film/script.js → drawOutro",
+      "how": "修改统计行、数值计数与fin.入场的实现。"
+    },
+    {
+      "field": "index.html → script 与样式加载；../../cases/map-pilgrimage/film/script.js → layout、startPattern",
+      "how": "入口加载 MotionKit、来源案例的 ../../cases/map-pilgrimage/film/config.js、../../cases/map-pilgrimage/film/paths.js、../../cases/map-pilgrimage/film/scenes.js，以及本巧思配置；地图依赖地址在 ../../cases/map-pilgrimage/film/config.js → map，初始化在 ../../cases/map-pilgrimage/film/script.js → initMap。"
+    },
+    {
+      "field": "../../cases/map-pilgrimage/film/config.js → tracks.outro → t、stats、fin、credits；meta.handle；layout",
+      "how": "修改统计值、结尾文案与横竖布局；逐行时序在 ../../cases/map-pilgrimage/film/script.js → drawOutro。"
+    },
+    {
+      "field": "mechanism/config.js → segments / markers",
+      "how": "设置本巧思片段映射与标记；地图来源时刻：55.6→60。"
+    },
+    {
+      "field": "mechanism/score.json",
+      "how": "调整声音事件，按巧思时间对齐，保留音色参数。"
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "id": "lemo-papercut-red",
+  "order": 30,
+  "title": "年兽进城 · 红色窗花剪纸",
+  "subtitle": "Nian Comes to Town",
+  "carriers": [
+    "video"
+  ],
+  "style": "print-craft",
+  "purpose": "story",
+  "tech": [
+    "canvas2d"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "tags": [
+    "lemo-opuscar",
+    "红色窗花剪纸",
+    "东方传统",
+    "代码影片"
+  ],
+  "summary": "年兽进村，灯火逐盏熄灭；女孩把红纸折三次、剪出楔形图案，展开后八盏灯笼飞向八扇窗，窗花镂空的光落在雪地与年兽脸上。",
+  "focus": "折、剪、展开直接推动故事；同一个楔形图案既用来复制灯笼，也成为照亮村落与驱散年兽的孔洞光。",
+  "accent": "#d2201f",
+  "background": "#f2e8d0",
+  "timeline": true,
+  "kit": true,
+  "previewAt": 35.28,
+  "rhythm": {
+    "duration": 49,
+    "beats": [
+      {
+        "t": 0,
+        "label": "剪刀特写",
+        "note": "0–3秒，剪刀特写。"
+      },
+      {
+        "t": 3,
+        "label": "剪字标题",
+        "note": "3–7秒，剪字标题。"
+      },
+      {
+        "t": 7,
+        "label": "夜村横移",
+        "note": "7–12秒，夜村横移。"
+      },
+      {
+        "t": 12,
+        "label": "年兽起身",
+        "note": "12–17秒，年兽起身。"
+      },
+      {
+        "t": 17,
+        "label": "窗内对视",
+        "note": "17–19.5秒，窗内对视。"
+      },
+      {
+        "t": 19.5,
+        "label": "三物决心",
+        "note": "19.5–24秒，三物决心。"
+      },
+      {
+        "t": 24,
+        "label": "折纸剪刻",
+        "note": "24–30秒，折纸剪刻。"
+      },
+      {
+        "t": 30,
+        "label": "展开成花",
+        "note": "30–31秒，展开成花。"
+      },
+      {
+        "t": 31,
+        "label": "镂空发光与八窗",
+        "note": "31–38秒，镂空发光与八窗。"
+      },
+      {
+        "t": 38,
+        "label": "黎明揭纸",
+        "note": "38–42.5秒，黎明揭纸。"
+      },
+      {
+        "t": 42.5,
+        "label": "窗花实物",
+        "note": "42.5–46秒，窗花实物。"
+      },
+      {
+        "t": 46,
+        "label": "片尾",
+        "note": "46–49秒，片尾。"
+      }
+    ]
+  },
+  "energySegments": [
+    {
+      "t0": 0,
+      "t1": 3,
+      "to": 0.5,
+      "label": "剪刀特写",
+      "from": 0.3
+    },
+    {
+      "t0": 3,
+      "t1": 7,
+      "to": 0.35,
+      "label": "剪字标题",
+      "from": 0.5
+    },
+    {
+      "t0": 7,
+      "t1": 12,
+      "to": 0.7,
+      "label": "夜村横移",
+      "from": 0.35
+    },
+    {
+      "t0": 12,
+      "t1": 17,
+      "to": 0.08,
+      "label": "年兽起身",
+      "from": 0.7
+    },
+    {
+      "t0": 17,
+      "t1": 19.5,
+      "to": 0.35,
+      "label": "窗内对视",
+      "from": 0.08
+    },
+    {
+      "t0": 19.5,
+      "t1": 24,
+      "to": 0.65,
+      "label": "三物决心",
+      "from": 0.35
+    },
+    {
+      "t0": 24,
+      "t1": 30,
+      "to": 0.95,
+      "label": "折纸剪刻",
+      "from": 0.65
+    },
+    {
+      "t0": 30,
+      "t1": 31,
+      "to": 0.9,
+      "label": "展开成花",
+      "from": 0.95
+    },
+    {
+      "t0": 31,
+      "t1": 38,
+      "to": 0.25,
+      "label": "镂空发光与八窗",
+      "from": 0.9
+    },
+    {
+      "t0": 38,
+      "t1": 42.5,
+      "to": 0.2,
+      "label": "黎明揭纸",
+      "from": 0.25
+    },
+    {
+      "t0": 42.5,
+      "t1": 46,
+      "to": 0.1,
+      "label": "窗花实物",
+      "from": 0.2
+    },
+    {
+      "t0": 46,
+      "t1": 49,
+      "to": 0.05,
+      "label": "片尾",
+      "from": 0.1
+    }
+  ],
+  "energyNote": "时段划分依据DEMO.md的Shots与源码镜头表；0–1是按画面动作、音乐密度和静默作出的相对编辑标注。",
+  "observations": [
+    "45°楔形经D4旋转与镜像复制成八瓣团花。",
+    "折页分成16条带，越过90°显示浅红背面。",
+    "镂空蒙版经仿射投到雪地，并用年兽层alpha限制脸部投光。",
+    "人物12fps换姿，相机、光照与飞散纸片24fps连续运动。"
+  ],
+  "composition": {
+    "color": "红纸 #d2201f、年兽深红 #b00f26、米纸 #f2e8d0、夜纸 #1c2446与结尾金箔 #d9a93f。",
+    "typography": "Fraunces可变衬线与Ma Shan Zheng 400；镂空标题、锯齿横批字幕与年字印。",
+    "layout": "1920×1080横屏、24fps；构图与字幕沿用原作。",
+    "imagery": "Canvas2D纸片、阴刻与阳刻孔洞、关节纸偶、夜景光图和背光窗花。",
+    "motion": "三次折纸、剪刀轨迹遮罩、三次展开、八盏灯笼飞出、昼夜纸张揭离与结尾窗花拉远。",
+    "sound": "原作琵琶、筝、二胡、笛和锣鼓配乐，Kokoro af_sarah旁白，剪纸、折痕、蜡烛与鞭炮拟音。",
+    "rhythm": "折、剪、展开直接推动故事；同一个楔形图案既用来复制灯笼，也成为照亮村落与驱散年兽的孔洞光。",
+    "coherence": "材质、动作和声音共用原作时间表。"
+  },
+  "layers": [
+    {
+      "name": "材料与场景",
+      "role": "Canvas2D纸片、阴刻与阳刻孔洞、关节纸偶、夜景光图和背光窗花。"
+    },
+    {
+      "name": "角色与动作",
+      "role": "三次折纸、剪刀轨迹遮罩、三次展开、八盏灯笼飞出、昼夜纸张揭离与结尾窗花拉远。"
+    },
+    {
+      "name": "文字与声音",
+      "role": "Fraunces可变衬线与Ma Shan Zheng 400；镂空标题、锯齿横批字幕与年字印。 原作琵琶、筝、二胡、笛和锣鼓配乐，Kokoro af_sarah旁白，剪纸、折痕、蜡烛与鞭炮拟音。"
+    }
+  ],
+  "tokens": {
+    "palette": [
+      "#d2201f",
+      "#b00f26",
+      "#f2e8d0",
+      "#1c2446",
+      "#d9a93f"
+    ],
+    "type": "Fraunces可变衬线与Ma Shan Zheng 400；镂空标题、锯齿横批字幕与年字印。",
+    "motion": [
+      {
+        "name": "镜头与节拍",
+        "value": "三次折纸、剪刀轨迹遮罩、三次展开、八盏灯笼飞出、昼夜纸张揭离与结尾窗花拉远。"
+      }
+    ]
+  },
+  "useCases": [
+    "新年节庆影像",
+    "传统手工叙事",
+    "民俗品牌短片"
+  ],
+  "avoid": [
+    "需要写实摄影或自由三维转面的画面"
+  ],
+  "constraints": [
+    "夜景背景使用靛蓝纸，红纸主体保留轮廓。",
+    "镂空使用不透明蒙版，折叠厚度只画在未剪区域。",
+    "图案投光读取团花孔洞与人物alpha。"
+  ],
+  "migration": [
+    {
+      "field": "film/story.js → T / SHOTS",
+      "how": "修改折剪、点窗、年兽与镜头时刻。"
+    },
+    {
+      "field": "film/tuanhua.js → wedgeCuts / D4；film/fold.js → drawFold",
+      "how": "修改楔形图案、对称复制与剪刀路线。"
+    }
+  ],
+  "prompt": "制作“年兽进城 · 红色窗花剪纸”对应的时间线影片。年兽进村，灯火逐盏熄灭；女孩把红纸折三次、剪出楔形图案，展开后八盏灯笼飞向八扇窗，窗花镂空的光落在雪地与年兽脸上。折、剪、展开直接推动故事；同一个楔形图案既复制灯笼，也成为照亮村落与驱散年兽的孔洞光。视觉与动作：Canvas2D纸片、阴刻与阳刻孔洞、关节纸偶、夜景光图和背光窗花。三次折纸、剪刀轨迹遮罩、三次展开、八盏灯笼飞出、昼夜纸张揭离与结尾窗花拉远。配色：红纸 #d2201f、年兽深红 #b00f26、米纸 #f2e8d0、夜纸 #1c2446与结尾金箔 #d9a93f。文字：Fraunces可变衬线与Ma Shan Zheng 400；镂空标题、锯齿横批字幕与年字印。声音：原作琵琶、筝、二胡、笛和锣鼓配乐，Kokoro af_sarah旁白，剪纸、折痕、蜡烛与鞭炮拟音。直接使用demos/cases/lemo-papercut-red/film/中的原作绘制与时间表，按源码迁移字段修改，支持MotionKit播放、暂停和逐帧定位，声音默认关闭。",
+  "demo": "demos/cases/lemo-papercut-red/index.html",
+  "patternIds": [
+    "fold-cut-unfold-replicate",
+    "holes-are-light"
+  ],
+  "fidelity": "demos/cases/lemo-papercut-red/fidelity.md",
+  "upstream": {
+    "repository": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/papercut-red",
+    "commit": "f17136060781a0068a7951245a3aa7835a7230de",
+    "path": "styles/papercut-red/",
+    "version": "0.1.0"
+  },
+  "license": {
+    "name": "MIT · CC BY 4.0",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/LICENSE",
+    "notes": "代码与文档MIT；成片与静帧CC BY 4.0，署名LemoLab；第三方资源沿用CREDITS许可。"
+  },
+  "sources": [
+    {
+      "label": "风格与示范制作说明",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/papercut-red"
+    },
+    {
+      "label": "Release公开成片",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/papercut-red.mp4"
+    },
+    {
+      "label": "素材与声音署名",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/styles/papercut-red/demo/CREDITS"
+    }
+  ],
+  "attribution": [
+    {
+      "scope": "作品",
+      "notes": "LemoLab × Claude Opus 5.5，作者Lemomo（[@lemomo-ai](https://github.com/lemomo-ai)）。[固定源码](https://github.com/lemomo-ai/lemo-opuscar/tree/f17136060781a0068a7951245a3aa7835a7230de/styles/papercut-red)，代码MIT、成片CC BY 4.0。"
+    },
+    {
+      "scope": "声音与第三方资源",
+      "notes": "原作配乐、采样、拟音与旁白来源见[audio/CREDITS](audio/CREDITS)，许可原文见[LICENSES.md](LICENSES.md)。"
+    },
+    {
+      "scope": "字体",
+      "notes": "家族与字重见tokens.type，字体与OFL原文在fonts/，取得方法见[source/README.md](source/README.md)。"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "carve-cut-by-cut-reveal",
+  "order": 96,
+  "title": "逐刀刻出画面",
+  "types": [
+    "texture",
+    "composition",
+    "rhythm"
+  ],
+  "carriers": [
+    "video"
+  ],
+  "orients": [
+    "landscape"
+  ],
+  "summary": "每条刻痕都有起始时刻、持续时间和刀宽，并沿刀路逐步显露；形体的reveal key用于分配粗细刀次，高潮处的光线由放射刻痕爆开。",
+  "mechanism": "每条刻痕都有起始时刻、持续时间和刀宽，并沿刀路逐步显露；形体的reveal key用于分配粗细刀次，高潮处的光线由放射刻痕爆开。",
+  "trigger": "首刀开始，随后reveal时刻按粗刀、村庄、细线推进；第二次浇铸触发放射刻痕。",
+  "effect": "时间可由刻刀读出，亮面随着木材被削去而显露，放射光成为真实刀痕。",
+  "timing": [
+    {
+      "name": "原片重放区间",
+      "value": "0.000000–7.000000秒；39.000000–41.666700秒；1倍速，总时长9.666700秒。"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "单刀进度",
+      "value": "film/engine/knife.js:progOf：u=clamp((t−s.t0)/s.dur)，进度u*(.55+.45*u)；hatch.js:hatch依据key、speed和jit分配t0/dur。"
+    },
+    {
+      "name": "造出世界",
+      "value": "film/world.js:buildWorld：field在3–4.8秒，village从4+i*.08秒，sky在5–6.1秒；shots.js:buildOpen标题6–6.85秒，sp=3.2、wmax=4.4。"
+    },
+    {
+      "name": "刻光",
+      "value": "film/shots2.js:第二次浇铸的rays：39.3333秒起，t1=t0+.5，n=60、r0=62、r1=[700,1500]、w=22、jit=.8、bend=.03。"
+    },
+    {
+      "name": "铜版逐线雕刻",
+      "value": "lemo-engraving：film/film.js:42–47的Ink.schedule按ol0/ol/h1/h2/h3分配每条线的s0/s1；engine/burin.js的Ink.build / draw按单线进度显露鼓起并收尖的刻线，conc=1/16/70/70/90。"
+    }
+  ],
+  "sourceFiles": [
+    "demos/cases/lemo-woodcut/film/engine/knife.js",
+    "demos/cases/lemo-woodcut/film/engine/hatch.js",
+    "demos/cases/lemo-woodcut/film/world.js",
+    "demos/cases/lemo-woodcut/film/shots.js",
+    "demos/cases/lemo-woodcut/film/shots2.js"
+  ],
+  "locator": "progOf / hatch / buildWorld / buildOpen / rays2",
+  "useCases": [
+    "时间可由刻刀读出，亮面随着木材被削去而显露，放射光成为真实刀痕。"
+  ],
+  "avoid": [
+    "在关键动作或留白上叠加争夺注意的主动作"
+  ],
+  "composition": {
+    "role": "foundation",
+    "pairsWellWith": [
+      "mirrored-block-pull-print"
+    ],
+    "conflicts": []
+  },
+  "prompt": "用来源案例lemo-woodcut的原作render(t)重放“逐刀刻出画面”。每条刻痕持有起始时刻、持续时间和刀宽，沿刀路逐步显露；形体的reveal key分配粗细刀次，高潮光线由放射刻痕爆开。保留参数：film/engine/knife.js:progOf：u=clamp((t−s.t0)/s.dur)，进度u*(.55+.45*u)；hatch.js:hatch依据key、speed和jit分配t0/dur。；film/world.js:buildWorld：field在3–4.8秒，village从4+i*.08秒，sky在5–6.1秒；shots.js:buildOpen标题6–6.85秒，sp=3.2、wmax=4.4。；film/shots2.js:第二次浇铸的rays：39.3333秒起，t1=t0+.5，n=60、r0=62、r1=[700,1500]、w=22、jit=.8、bend=.03。。按index.html内联segments映射原片时刻，复用原作字体、素材与同区间音轨，声音默认关闭。",
+  "demo": "demos/patterns/carve-cut-by-cut-reveal/index.html",
+  "kit": true,
+  "timeline": true,
+  "sources": [
+    {
+      "caseId": "lemo-woodcut"
+    },
+    {
+      "caseId": "lemo-engraving"
+    }
+  ],
+  "previewAt": 4.5,
+  "markers": [
+    {
+      "t": 0,
+      "label": "逐刀刻出画面"
+    },
+    {
+      "t": 7,
+      "label": "来源片段2"
+    }
+  ],
+  "renderer": "gpu"
+}
