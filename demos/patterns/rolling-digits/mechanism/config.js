@@ -1,0 +1,1 @@
+const CONFIG = window.CONFIG = { duration: 13, durationMs: 460, numberBlur: .35, textBlur: .2, caseStart: 62.6, soundGain: 1, events: [[0,'ArrowDown'],[1,'ArrowDown'],[2,'ArrowRight'],[3,'ArrowRight'],[4,'ArrowRight'],[5,'ArrowUp'],[6,'ArrowUp'],[7,'ArrowDown'],[8,'ArrowDown'],[9,'ArrowLeft'],[9.35,'ArrowLeft'],[10.4,'ArrowLeft'],[11.4,'ArrowUp'],[12.4,'ArrowUp']] };

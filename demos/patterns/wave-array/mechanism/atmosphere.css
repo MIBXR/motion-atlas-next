@@ -1,0 +1,60 @@
+.scene-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(234, 231, 226, 0.35), transparent 38%),
+    radial-gradient(
+      ellipse at 42% 47%,
+      transparent 32%,
+      rgba(232, 229, 225, 0.19) 85%
+    );
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+[data-boot="array"] .scene-atmosphere,
+[data-boot="select"] .scene-atmosphere,
+[data-boot="inspect"] .scene-atmosphere,
+[data-boot="done"] .scene-atmosphere {
+  opacity: 1;
+}
+.archive-atmosphere {
+  background: none;
+}
+.archive-atmosphere::before,
+.archive-atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.archive-atmosphere::before {
+  opacity: calc(1 - var(--detail-shade, 0));
+  background:
+    linear-gradient(180deg, rgba(234, 231, 226, 0.35), transparent 38%),
+    radial-gradient(ellipse at 42% 47%, transparent 32%, rgba(232, 229, 225, 0.19) 85%);
+}
+.archive-atmosphere::after {
+  opacity: var(--detail-shade, 0);
+  background: linear-gradient(
+    90deg,
+    transparent 40%,
+    rgba(232, 229, 225, 0.2) 59%,
+    rgba(232, 229, 225, 0.92) 68%,
+    #e8e5e1 100%
+  );
+}
+.scene-atmosphere {
+  background:
+    linear-gradient(
+      180deg,
+      #eae5e1 0%,
+      rgba(234, 229, 225, 0.82) 11%,
+      transparent 40%
+    ),
+    linear-gradient(0deg, rgba(234, 229, 225, 0.94) 0%, transparent 19%),
+    radial-gradient(
+      ellipse at 48% 48%,
+      transparent 35%,
+      rgba(234, 229, 225, 0.38) 85%
+    );
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>录屏式相机</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "录屏式相机",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "lemo-living-screencast",
+      "source": "../../cases/lemo-living-screencast/index.html",
+      "audio": "../../cases/lemo-living-screencast/audio/film.m4a",
+      "label": "录屏式相机",
+      "from": 9,
+      "to": 18.6
+    },
+    {
+      "caseId": "lemo-living-screencast",
+      "source": "../../cases/lemo-living-screencast/index.html",
+      "audio": "../../cases/lemo-living-screencast/audio/film.m4a",
+      "label": "录屏式相机",
+      "from": 28.8,
+      "to": 32.4
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "录屏式相机"
+    }
+  ],
+  "reduced": 4
+});
+  </script>
+</body>
+</html>

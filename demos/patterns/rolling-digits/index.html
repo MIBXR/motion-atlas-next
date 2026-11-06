@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"><meta name="viewport" content="width=device-width,initial-scale=1"><title>滚动数字与文字 — Motion Atlas 巧思</title>
+</head><body><main id="stage"></main><script src="motion-kit.js"></script><script type="module">
+const load=MotionKit.load;
+load.register(['mechanism/config.js','mechanism/host.css','mechanism/script.js','mechanism/frame.html','mechanism/frame.js','mechanism/rolling.js','mechanism/archives.json','mechanism/fonts.css','mechanism/rolling.css','mechanism/style.css','../../cases/archive-os/film/app/film/clock-shim.js','../../cases/archive-os/audio/film-audio.ogg']);
+await load.script('mechanism/config.js');
+await load.prepare({styles:['mechanism/host.css'],modules:['mechanism/script.js'],data:['mechanism/frame.html','mechanism/frame.js','mechanism/rolling.js','mechanism/archives.json','mechanism/fonts.css','mechanism/rolling.css','mechanism/style.css','../../cases/archive-os/film/app/film/clock-shim.js'],audio:['../../cases/archive-os/audio/film-audio.ogg']});
+await load.module('mechanism/script.js');
+</script></body></html>

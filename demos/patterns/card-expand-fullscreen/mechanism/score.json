@@ -1,0 +1,35 @@
+[
+  {
+    "t": 0.2,
+    "voice": "shutter",
+    "vel": 0.7
+  },
+  {
+    "t": 0.22,
+    "voice": "paper",
+    "dur": 0.35,
+    "vel": 0.35
+  },
+  {
+    "t": 2.35,
+    "voice": "whoosh",
+    "dur": 0.7,
+    "dir": "up",
+    "vel": 0.75,
+    "peak": 0.6
+  },
+  {
+    "t": 3.1,
+    "voice": "impact",
+    "vel": 0.4,
+    "dur": 1.2,
+    "crack": 0.3
+  },
+  {
+    "t": 5.3,
+    "voice": "whoosh",
+    "dur": 0.6,
+    "dir": "down",
+    "vel": 0.6
+  }
+]

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>嵌套电路板拉远</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "嵌套电路板拉远",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "lemo-circuit-board",
+      "source": "../../cases/lemo-circuit-board/index.html",
+      "audio": "../../cases/lemo-circuit-board/audio/film.m4a",
+      "label": "嵌套电路板拉远",
+      "from": 52.5,
+      "to": 55.5
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "嵌套电路板拉远"
+    }
+  ],
+  "reduced": 1.4
+});
+  </script>
+</body>
+</html>

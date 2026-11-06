@@ -1,0 +1,38 @@
+[
+  {
+    "t": 0.3,
+    "voice": "bell",
+    "note": "D5",
+    "vel": 0.5
+  },
+  {
+    "t": 0.4,
+    "voice": "confirm",
+    "note": "A5",
+    "steps": [
+      0,
+      5,
+      7
+    ],
+    "vel": 0.45,
+    "gap": 0.09
+  },
+  {
+    "t": 2.75,
+    "voice": "bell",
+    "note": "A4",
+    "vel": 0.5
+  },
+  {
+    "t": 2.85,
+    "voice": "confirm",
+    "note": "A5",
+    "steps": [
+      0,
+      5,
+      7
+    ],
+    "vel": 0.45,
+    "gap": 0.09
+  }
+]

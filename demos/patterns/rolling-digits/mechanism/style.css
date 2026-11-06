@@ -1,0 +1,246 @@
+@import './fonts.css';
+* {
+  box-sizing: border-box;
+}
+:root {
+  font-family:
+    "MiSans", "Mi Sans", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: #080a08;
+  background: #e8e5e1;
+  font-synthesis: none;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  border: 0;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #a67d48;
+  outline-offset: 7px;
+}
+button:disabled {
+  cursor: default;
+}
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  touch-action: manipulation;
+}
+::selection {
+  background: #cbb397;
+  color: #151713;
+}
+.archive-ui {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s 0.3s;
+  position: absolute;
+  inset: 0;
+}
+.archive-callout {
+  position: absolute;
+  left: 970px;
+  top: 487px;
+  width: 950px;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.3px;
+  margin-bottom: 22px;
+  color: #77756d;
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.eyebrow > span {
+  margin-left: 16px;
+}
+.file-title {
+  font-size: 28px;
+  font-weight: 750;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+  letter-spacing: 0.2px;
+}
+.file-open {
+  font-size: 25px;
+  margin-left: 48px;
+  opacity: 0;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+.file-title:hover .file-open {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+.callout-rule {
+  height: 1px;
+  background: #504b41;
+  margin-left: 57px;
+  margin-top: 55px;
+  position: relative;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.callout-rule i {
+  position: absolute;
+  left: -61px;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  background: #282a24;
+  opacity: 0;
+}
+.file-summary {
+  margin-left: 58px;
+  margin-top: 22px;
+  width: 652px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.7s 0.4s,
+    transform 0.7s 0.4s;
+}
+.file-summary > span:last-child {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #666257;
+}
+.read-file {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  margin-left: 58px;
+  margin-top: 58px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.7s 0.4s;
+}
+.read-file > span {
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+.read-file:hover > span {
+  transform: translateX(9px);
+}
+.archive-counter {
+  position: absolute;
+  bottom: 115px;
+  left: 60px;
+}
+.tiny-label {
+  font-size: 11px;
+  letter-spacing: 1.7px;
+}
+.archive-counter > div {
+  font-size: 58px;
+  line-height: 1.1;
+  margin-top: 16px;
+  display: flex;
+  gap: 21px;
+  align-items: baseline;
+}
+.archive-counter i {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  color: #8f8a80;
+}
+.count-total {
+  font-size: 22px;
+  color: #726f67;
+}
+.archive-navigation {
+  position: absolute;
+  left: 504px;
+  bottom: 131px;
+  display: flex;
+  align-items: center;
+  gap: 33px;
+}
+.archive-navigation > button {
+  width: 46px;
+  height: 46px;
+  font-size: 28px;
+  transition: background 0.3s;
+}
+.archive-navigation > button:hover {
+  background: #e4d5c1;
+}
+.column-navigation {
+  position: absolute;
+  left: 1005px;
+  bottom: 131px;
+  display: none;
+  align-items: center;
+  gap: 24px;
+}
+[data-mode="archive"] .column-navigation {
+  display: flex;
+}
+.column-navigation button {
+  width: 46px;
+  height: 46px;
+  font-size: 24px;
+}
+.column-navigation button:hover {
+  background: #e4d5c1;
+}
+.column-navigation button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+.column-navigation > div {
+  display: grid;
+  gap: 7px;
+  min-width: 140px;
+}
+.column-navigation > div > span {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: #726f67;
+}
+.column-navigation strong {
+  font-size: 15px;
+  font-weight: 400;
+}
+#selected-number,
+#column-index {
+  min-width: 2ch;
+  font-variant-numeric: tabular-nums;
+  --rn-blur: 0.35;
+  --rn-edge-fade: 0.08em;
+}
+
+/* Use the same rolling engine as archive numbers, with quieter text blur. */
+#selected-title,
+#column-name,
+#hover-title,
+#archive-category,
+#selected-clearance {
+  flex: none;
+  --rn-blur: 0.2;
+  --rn-edge-fade: 0.08em;
+}
+#stage{width:1920px;height:1080px;position:relative;background:#e8e5e1;overflow:hidden} .archive-ui,.eyebrow,.file-summary,.column-navigation{opacity:1;transform:none} .callout-rule{transform:scaleX(1)} .column-navigation{display:flex} .archive-callout{top:471px} .archive-navigation button svg,.column-navigation button svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5} .archive-ui{pointer-events:auto} *{transition:none!important} #selected-code{--rn-blur:.35;--rn-edge-fade:.08em}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "形状擦除转场",
+      "segments": [
+        {
+          "caseId": "mg-flat-vector",
+          "label": "扁平矢量",
+          "from": 4.6,
+          "to": 5.833333333333333
+        },
+        {
+          "caseId": "mg-morph",
+          "label": "形状变形",
+          "from": 1.42,
+          "to": 8.82
+        },
+        {
+          "caseId": "mg-hanazi",
+          "label": "综艺花字 · 糖果斜带擦除",
+          "source": "../../cases/mg-hanazi/index.html",
+          "from": 3.57,
+          "to": 4.43
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "室内气泡"
+        },
+        {
+          "t": 0.20000000000000018,
+          "label": "气泡预备"
+        },
+        {
+          "t": 0.40000000000000036,
+          "label": "彗星擦除"
+        },
+        {
+          "t": 0.5333333333333341,
+          "label": "胶囊擦除"
+        },
+        {
+          "t": 0.666666666666667,
+          "label": "半圆砸落"
+        },
+        {
+          "t": 0.8666666666666671,
+          "label": "砸落余震"
+        },
+        {
+          "t": 1.233333333,
+          "label": "形状变形"
+        },
+        {
+          "t": 8.633333333,
+          "label": "综艺花字"
+        },
+        {
+          "t": 9.063333333,
+          "label": "糖果擦除"
+        },
+        {
+          "t": 9.263333333,
+          "label": "嘉宾名牌"
+        }
+      ],
+      "reduced": 0.7333333333333334,
+      "root": "#stage",
+      "fps": 30,
+      "orients": [
+        "landscape",
+        "portrait"
+      ]
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

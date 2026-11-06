@@ -1,0 +1,708 @@
+{
+  "tracks": [
+    {
+      "track": "02",
+      "trackFile": "02. 星のおどり場.mp3",
+      "sourceTrack": "02",
+      "windows": [
+        {
+          "trackT0": 13.031203,
+          "trackT1": 47.548203
+        },
+        {
+          "trackT0": 52.099875,
+          "trackT1": 114.767875
+        }
+      ],
+      "tempoBpm": 172.266,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.732,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 172.266,
+          "autocorrelation": 0.7317
+        },
+        {
+          "tempoBpm": 48.754,
+          "autocorrelation": 0.6308
+        },
+        {
+          "tempoBpm": 38.0,
+          "autocorrelation": 0.6195
+        },
+        {
+          "tempoBpm": 86.133,
+          "autocorrelation": 0.5819
+        },
+        {
+          "tempoBpm": 68.0,
+          "autocorrelation": 0.5421
+        }
+      ],
+      "ostDuration": 137.2
+    },
+    {
+      "track": "04",
+      "trackFile": "04. halation.mp3",
+      "sourceTrack": "04",
+      "windows": [
+        {
+          "trackT0": 0.610375,
+          "trackT1": 37.738875
+        },
+        {
+          "trackT0": 52.523625,
+          "trackT1": 103.568125
+        },
+        {
+          "trackT0": 109.443453,
+          "trackT1": 128.909703
+        }
+      ],
+      "tempoBpm": 109.957,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.338,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 54.978,
+          "autocorrelation": 0.3761
+        },
+        {
+          "tempoBpm": 44.171,
+          "autocorrelation": 0.3761
+        },
+        {
+          "tempoBpm": 36.394,
+          "autocorrelation": 0.3692
+        },
+        {
+          "tempoBpm": 109.957,
+          "autocorrelation": 0.338
+        },
+        {
+          "tempoBpm": 49.219,
+          "autocorrelation": 0.3113
+        }
+      ],
+      "ostDuration": 135.626667
+    },
+    {
+      "track": "05",
+      "trackFile": "05. pied a pied：一歩ずつ.mp3",
+      "sourceTrack": "05",
+      "windows": [
+        {
+          "trackT0": 0.381375,
+          "trackT1": 3.094375
+        },
+        {
+          "trackT0": 18.415047,
+          "trackT1": 22.267797
+        }
+      ],
+      "tempoBpm": 126.048,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.197,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 191.406,
+          "autocorrelation": 0.4964
+        },
+        {
+          "tempoBpm": 62.265,
+          "autocorrelation": 0.4012
+        },
+        {
+          "tempoBpm": 93.963,
+          "autocorrelation": 0.3574
+        },
+        {
+          "tempoBpm": 46.982,
+          "autocorrelation": 0.2567
+        },
+        {
+          "tempoBpm": 31.321,
+          "autocorrelation": 0.2463
+        }
+      ],
+      "ostDuration": 141.92
+    },
+    {
+      "track": "07",
+      "trackFile": "07. 少女たちのプレリュード.mp3",
+      "sourceTrack": "07",
+      "windows": [
+        {
+          "trackT0": 64.388297,
+          "trackT1": 111.150797
+        }
+      ],
+      "tempoBpm": 139.675,
+      "beatUnit": "quarter-note",
+      "meter": "3/4",
+      "meterMethod": "visible score",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.619,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 46.143,
+          "autocorrelation": 0.7197
+        },
+        {
+          "tempoBpm": 68.906,
+          "autocorrelation": 0.6328
+        },
+        {
+          "tempoBpm": 34.453,
+          "autocorrelation": 0.6197
+        },
+        {
+          "tempoBpm": 139.675,
+          "autocorrelation": 0.6194
+        },
+        {
+          "tempoBpm": 54.978,
+          "autocorrelation": 0.5922
+        }
+      ],
+      "ostDuration": 137.026667
+    },
+    {
+      "track": "09",
+      "trackFile": "09. starhood.mp3",
+      "sourceTrack": "09",
+      "windows": [
+        {
+          "trackT0": 19.273203,
+          "trackT1": 22.516703
+        }
+      ],
+      "tempoBpm": 101.333,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.575,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 101.333,
+          "autocorrelation": 0.5751
+        },
+        {
+          "tempoBpm": 198.768,
+          "autocorrelation": 0.5325
+        },
+        {
+          "tempoBpm": 67.116,
+          "autocorrelation": 0.395
+        },
+        {
+          "tempoBpm": 50.174,
+          "autocorrelation": 0.3038
+        },
+        {
+          "tempoBpm": 40.062,
+          "autocorrelation": 0.212
+        }
+      ],
+      "ostDuration": 129.413333
+    },
+    {
+      "track": "10",
+      "trackFile": "10. dot to dot.mp3",
+      "sourceTrack": "10",
+      "windows": [
+        {
+          "trackT0": 68.375875,
+          "trackT1": 103.273375
+        }
+      ],
+      "tempoBpm": 139.675,
+      "beatUnit": "quarter-note",
+      "meter": "3/4",
+      "meterMethod": "visible score",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.542,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 46.143,
+          "autocorrelation": 0.7854
+        },
+        {
+          "tempoBpm": 139.675,
+          "autocorrelation": 0.5416
+        },
+        {
+          "tempoBpm": 68.906,
+          "autocorrelation": 0.5239
+        },
+        {
+          "tempoBpm": 34.453,
+          "autocorrelation": 0.4991
+        },
+        {
+          "tempoBpm": 39.45,
+          "autocorrelation": 0.3785
+        }
+      ],
+      "ostDuration": 146.533333
+    },
+    {
+      "track": "11",
+      "trackFile": "11. 歯車.mp3",
+      "sourceTrack": "11",
+      "windows": [
+        {
+          "trackT0": 103.203453,
+          "trackT1": 117.892703
+        }
+      ],
+      "tempoBpm": 123.047,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.206,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 191.406,
+          "autocorrelation": 0.2993
+        },
+        {
+          "tempoBpm": 97.509,
+          "autocorrelation": 0.2769
+        },
+        {
+          "tempoBpm": 126.048,
+          "autocorrelation": 0.2058
+        },
+        {
+          "tempoBpm": 143.555,
+          "autocorrelation": 0.2
+        },
+        {
+          "tempoBpm": 49.692,
+          "autocorrelation": 0.1772
+        }
+      ],
+      "ostDuration": 143.24
+    },
+    {
+      "track": "13",
+      "trackFile": "13. anti daydream.mp3",
+      "sourceTrack": "13",
+      "windows": [
+        {
+          "trackT0": 52.750297,
+          "trackT1": 69.724797
+        },
+        {
+          "trackT0": 105.482875,
+          "trackT1": 124.680375
+        }
+      ],
+      "tempoBpm": 95.703,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.602,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 95.703,
+          "autocorrelation": 0.602
+        },
+        {
+          "tempoBpm": 47.852,
+          "autocorrelation": 0.5461
+        },
+        {
+          "tempoBpm": 32.099,
+          "autocorrelation": 0.509
+        },
+        {
+          "tempoBpm": 191.406,
+          "autocorrelation": 0.5059
+        },
+        {
+          "tempoBpm": 63.802,
+          "autocorrelation": 0.4897
+        }
+      ],
+      "ostDuration": 128.253333
+    },
+    {
+      "track": "19",
+      "trackFile": "19. 暗転.mp3",
+      "sourceTrack": "19",
+      "windows": [
+        {
+          "trackT0": 104.811875,
+          "trackT1": 134.670875
+        }
+      ],
+      "tempoBpm": 105.469,
+      "beatUnit": "quarter-note",
+      "meter": "4/4",
+      "meterMethod": "visible score",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.513,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 103.359,
+          "autocorrelation": 0.5396
+        },
+        {
+          "tempoBpm": 206.719,
+          "autocorrelation": 0.5036
+        },
+        {
+          "tempoBpm": 52.202,
+          "autocorrelation": 0.4657
+        },
+        {
+          "tempoBpm": 34.684,
+          "autocorrelation": 0.4048
+        },
+        {
+          "tempoBpm": 68.906,
+          "autocorrelation": 0.4016
+        }
+      ],
+      "ostDuration": 154.48
+    },
+    {
+      "track": "20",
+      "trackFile": "20. カタストロフ.mp3",
+      "sourceTrack": "20",
+      "windows": [
+        {
+          "trackT0": 0.548547,
+          "trackT1": 40.228297
+        }
+      ],
+      "tempoBpm": 147.656,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.205,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 151.999,
+          "autocorrelation": 0.2364
+        },
+        {
+          "tempoBpm": 76.0,
+          "autocorrelation": 0.1672
+        },
+        {
+          "tempoBpm": 50.666,
+          "autocorrelation": 0.1532
+        },
+        {
+          "tempoBpm": 38.0,
+          "autocorrelation": 0.0444
+        },
+        {
+          "tempoBpm": 32.099,
+          "autocorrelation": 0.0392
+        }
+      ],
+      "ostDuration": 137.266667
+    },
+    {
+      "track": "21",
+      "trackFile": "21. Elle est belle：美しい人.mp3",
+      "sourceTrack": "21",
+      "windows": [
+        {
+          "trackT0": 0.533297,
+          "trackT1": 45.861547
+        },
+        {
+          "trackT0": 78.258047,
+          "trackT1": 120.834797
+        }
+      ],
+      "tempoBpm": 139.675,
+      "beatUnit": "quarter-note",
+      "meter": "4/4",
+      "meterMethod": "visible score",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.562,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 143.555,
+          "autocorrelation": 0.5802
+        },
+        {
+          "tempoBpm": 93.963,
+          "autocorrelation": 0.5611
+        },
+        {
+          "tempoBpm": 70.794,
+          "autocorrelation": 0.5509
+        },
+        {
+          "tempoBpm": 56.791,
+          "autocorrelation": 0.5432
+        },
+        {
+          "tempoBpm": 31.512,
+          "autocorrelation": 0.5152
+        }
+      ],
+      "ostDuration": 124.573333
+    },
+    {
+      "track": "24",
+      "trackFile": "24. 夢を振りまいて.mp3",
+      "sourceTrack": "24",
+      "windows": [
+        {
+          "trackT0": 85.273547,
+          "trackT1": 93.543047
+        }
+      ],
+      "tempoBpm": 92.285,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.201,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 60.8,
+          "autocorrelation": 0.3741
+        },
+        {
+          "tempoBpm": 30.4,
+          "autocorrelation": 0.2872
+        },
+        {
+          "tempoBpm": 184.57,
+          "autocorrelation": 0.2022
+        },
+        {
+          "tempoBpm": 92.285,
+          "autocorrelation": 0.2006
+        },
+        {
+          "tempoBpm": 45.734,
+          "autocorrelation": 0.2002
+        }
+      ],
+      "ostDuration": 150.506667
+    },
+    {
+      "track": "26",
+      "trackFile": "25. 子猫のカーニバル.mp3",
+      "sourceTrack": "25",
+      "windows": [
+        {
+          "trackT0": 13.147453,
+          "trackT1": 32.971953
+        },
+        {
+          "trackT0": 58.433453,
+          "trackT1": 67.985453
+        },
+        {
+          "trackT0": 86.822875,
+          "trackT1": 94.007125
+        },
+        {
+          "trackT0": 106.899375,
+          "trackT1": 125.023125
+        }
+      ],
+      "tempoBpm": 114.844,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.386,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 72.788,
+          "autocorrelation": 0.5376
+        },
+        {
+          "tempoBpm": 36.14,
+          "autocorrelation": 0.5313
+        },
+        {
+          "tempoBpm": 114.844,
+          "autocorrelation": 0.3859
+        },
+        {
+          "tempoBpm": 41.344,
+          "autocorrelation": 0.3828
+        },
+        {
+          "tempoBpm": 58.067,
+          "autocorrelation": 0.3763
+        }
+      ],
+      "ostDuration": 127.586667
+    },
+    {
+      "track": "30",
+      "trackFile": "30. ロンド・ロンド・ロンド.mp3",
+      "sourceTrack": "30",
+      "windows": [
+        {
+          "trackT0": 13.754297,
+          "trackT1": 55.505297
+        },
+        {
+          "trackT0": 75.534297,
+          "trackT1": 113.853297
+        }
+      ],
+      "tempoBpm": 92.285,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.642,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 92.285,
+          "autocorrelation": 0.6425
+        },
+        {
+          "tempoBpm": 46.558,
+          "autocorrelation": 0.6182
+        },
+        {
+          "tempoBpm": 30.946,
+          "autocorrelation": 0.5788
+        },
+        {
+          "tempoBpm": 184.57,
+          "autocorrelation": 0.251
+        },
+        {
+          "tempoBpm": 62.265,
+          "autocorrelation": 0.2233
+        }
+      ],
+      "ostDuration": 142.28
+    },
+    {
+      "track": "31",
+      "trackFile": "31. 星摘みの塔.mp3",
+      "sourceTrack": "31",
+      "windows": [
+        {
+          "trackT0": 0.566797,
+          "trackT1": 58.557797
+        },
+        {
+          "trackT0": 76.115953,
+          "trackT1": 95.447453
+        },
+        {
+          "trackT0": 115.465453,
+          "trackT1": 148.167203
+        }
+      ],
+      "tempoBpm": 107.666,
+      "beatUnit": "estimated-pulse",
+      "meter": null,
+      "meterMethod": "not specified in video; audio meter not resolved",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.449,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 35.889,
+          "autocorrelation": 0.5373
+        },
+        {
+          "tempoBpm": 71.777,
+          "autocorrelation": 0.4977
+        },
+        {
+          "tempoBpm": 107.666,
+          "autocorrelation": 0.4495
+        },
+        {
+          "tempoBpm": 53.833,
+          "autocorrelation": 0.4012
+        },
+        {
+          "tempoBpm": 215.332,
+          "autocorrelation": 0.3449
+        }
+      ],
+      "ostDuration": 205.973333
+    },
+    {
+      "track": "34",
+      "trackFile": "34. dawn of the star.mp3",
+      "sourceTrack": "34",
+      "windows": [
+        {
+          "trackT0": 5.653703,
+          "trackT1": 76.060953
+        }
+      ],
+      "tempoBpm": 156.605,
+      "beatUnit": "quarter-note",
+      "meter": "4/4",
+      "meterMethod": "visible score",
+      "method": "Onset-strength envelope, autocorrelation, and dynamic-programming beat tracking within the used OST windows.",
+      "confidence": 0.655,
+      "confidenceDefinition": "Normalized onset-envelope autocorrelation at the selected pulse lag.",
+      "alternatives": [
+        {
+          "tempoBpm": 161.499,
+          "autocorrelation": 0.7101
+        },
+        {
+          "tempoBpm": 79.507,
+          "autocorrelation": 0.6246
+        },
+        {
+          "tempoBpm": 53.278,
+          "autocorrelation": 0.6225
+        },
+        {
+          "tempoBpm": 40.062,
+          "autocorrelation": 0.5963
+        },
+        {
+          "tempoBpm": 32.099,
+          "autocorrelation": 0.5654
+        }
+      ],
+      "ostDuration": 82.4
+    }
+  ]
+}

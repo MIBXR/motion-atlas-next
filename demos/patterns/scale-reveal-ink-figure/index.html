@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>拉远显微小人物</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "拉远显微小人物",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-ink-wash",
+      "source": "../../cases/lemo-ink-wash/index.html",
+      "audio": "../../cases/lemo-ink-wash/audio/film.m4a",
+      "label": "拉远显微小人物",
+      "from": 40.4,
+      "to": 48
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "拉远显微小人物"
+    }
+  ],
+  "reduced": 4.2
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "核心激活全城",
+      "segments": [
+        {
+          "caseId": "mg-isometric",
+          "label": "核心激活全城",
+          "from": 5.7,
+          "to": 7.35
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "光环预热"
+        },
+        {
+          "t": 0.2,
+          "label": "下蹲预备"
+        },
+        {
+          "t": 0.285,
+          "label": "波前启动"
+        },
+        {
+          "t": 0.3,
+          "label": "主拍激活"
+        },
+        {
+          "t": 0.4,
+          "label": "地块翻面"
+        },
+        {
+          "t": 0.6,
+          "label": "着色展开"
+        },
+        {
+          "t": 1.45,
+          "label": "余波落定"
+        }
+      ],
+      "reduced": 0.6,
+      "root": "#stage",
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "夹纸裂页翻卷",
+      "segments": [
+        {
+          "caseId": "mg-collage",
+          "label": "脑洞拼贴 · 夹纸裂页翻卷",
+          "source": "../../cases/mg-collage/index.html",
+          "from": 7.21,
+          "to": 8.37
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "脑洞拼贴"
+        },
+        {
+          "t": 0.29,
+          "label": "撕开纸页"
+        },
+        {
+          "t": 1.1233333,
+          "label": "刊名拍入"
+        }
+      ],
+      "reduced": 0.64,
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

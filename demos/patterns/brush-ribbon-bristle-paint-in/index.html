@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>色带飞白逐笔画入</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "色带飞白逐笔画入",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 60,
+  "segments": [
+    {
+      "caseId": "lemo-watercolor",
+      "source": "../../cases/lemo-watercolor/index.html",
+      "audio": "../../cases/lemo-watercolor/audio/film.m4a",
+      "label": "色带飞白逐笔画入",
+      "from": 10.2,
+      "to": 22.8
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "色带飞白逐笔画入"
+    },
+    {
+      "t": 6,
+      "label": "机制展开"
+    }
+  ],
+  "reduced": 6
+});
+  </script>
+</body>
+</html>

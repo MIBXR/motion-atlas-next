@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>拼搭、崩塌、用零件重建 · Motion Atlas</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    MotionKit.replay({
+  "title": "拼搭、崩塌、用零件重建",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-brick-toy",
+      "source": "../../cases/lemo-brick-toy/index.html",
+      "audio": "../../cases/lemo-brick-toy/audio/film.m4a",
+      "label": "用零件造火箭 · 积木玩具",
+      "from": 12,
+      "to": 20
+    },
+    {
+      "caseId": "lemo-brick-toy",
+      "source": "../../cases/lemo-brick-toy/index.html",
+      "audio": "../../cases/lemo-brick-toy/audio/film.m4a",
+      "label": "用零件造火箭 · 积木玩具",
+      "from": 29.8,
+      "to": 32.6
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "拼搭、崩塌、用零件重建"
+    },
+    {
+      "t": 8,
+      "label": "拼搭、崩塌、用零件重建"
+    }
+  ],
+  "reduced": 8.5
+});
+  </script>
+</body>
+</html>

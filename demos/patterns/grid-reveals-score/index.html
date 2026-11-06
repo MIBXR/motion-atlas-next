@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>网格即乐谱</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "网格即乐谱",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-swiss-motion",
+      "source": "../../cases/lemo-swiss-motion/index.html",
+      "audio": "../../cases/lemo-swiss-motion/audio/film.m4a",
+      "label": "网格即乐谱",
+      "from": 29.25,
+      "to": 36.25
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "网格即乐谱"
+    },
+    {
+      "t": 4.25,
+      "label": "机制展开"
+    }
+  ],
+  "reduced": 4.25
+});
+  </script>
+</body>
+</html>

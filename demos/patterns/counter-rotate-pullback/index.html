@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>反旋拉远 · Motion Atlas</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    MotionKit.replay({
+  "title": "反旋拉远",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-midcentury-toon",
+      "source": "../../cases/lemo-midcentury-toon/index.html",
+      "audio": "../../cases/lemo-midcentury-toon/audio/film.m4a",
+      "label": "认识皮普 · 50s 扁平卡通",
+      "from": 21.8,
+      "to": 24.5
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "反旋拉远"
+    }
+  ],
+  "reduced": 1.8
+});
+  </script>
+</body>
+</html>

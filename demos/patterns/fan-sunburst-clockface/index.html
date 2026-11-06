@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>对称扇面成钟</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "对称扇面成钟",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-art-deco",
+      "source": "../../cases/lemo-art-deco/index.html",
+      "audio": "../../cases/lemo-art-deco/audio/film.m4a",
+      "label": "对称扇面成钟",
+      "from": 42.06689655172414,
+      "to": 48.273793103448284
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "对称扇面成钟"
+    }
+  ],
+  "reduced": 4.7
+});
+  </script>
+</body>
+</html>

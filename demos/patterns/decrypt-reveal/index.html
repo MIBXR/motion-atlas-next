@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>对角解密与磨砂转清</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
+</head>
+<body>
+<main id="stage">
+  <div id="three-scene" aria-label="档案模型由磨砂转清"></div>
+  <div class="scene-atmosphere archive-atmosphere" aria-hidden="true"></div>
+  <svg id="inspection-marks" aria-hidden="true"><path id="inspection-lines"></path><g id="inspection-corners"></g><circle id="inspection-point" r="3"></circle></svg>
+  <div id="inspection-text" aria-hidden="true">解密状态<strong>读取权限已确认</strong></div>
+  <article id="detail-content" class="detail-content" aria-label="档案正文"></article>
+</main>
+<script src="motion-kit.js"></script>
+<script type="module">
+const load=MotionKit.load, styles=["mechanism/fonts.css","mechanism/style.css","mechanism/document-decryption.css","mechanism/decryption.css"];
+load.register(["mechanism/config.js",...styles,"mechanism/runtime.js"]);
+await load.script("mechanism/config.js");
+load.register([CONFIG.modelAsset]);
+const fontText=(await (await load.fetch('mechanism/runtime.js')).text().then(text=>text.replace(/\\(?:u([0-9a-f]{4})|x([0-9a-f]{2}))/gi,(_,unicode,hex)=>String.fromCharCode(parseInt(unicode||hex,16)))) + JSON.stringify(CONFIG)) + (await Promise.all(["mechanism/style.css","mechanism/document-decryption.css","mechanism/decryption.css"].map(src=>load.fetch(src).then(r=>r.text())))).join("\n");
+await load.prepare({styles,modules:['mechanism/runtime.js'],data:[CONFIG.modelAsset],fontText});
+await load.module('mechanism/runtime.js');
+</script>
+</body>
+</html>

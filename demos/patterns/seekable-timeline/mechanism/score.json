@@ -1,0 +1,84 @@
+[
+  {
+    "t": 0,
+    "voice": "shutter",
+    "vel": 0.7
+  },
+  {
+    "t": 0.02,
+    "voice": "paper",
+    "dur": 0.35,
+    "vel": 0.35
+  },
+  {
+    "t": 0.8,
+    "voice": "confirm",
+    "note": "E6",
+    "steps": [
+      0,
+      7
+    ],
+    "vel": 0.55
+  },
+  {
+    "t": 1.2,
+    "voice": "stamp",
+    "vel": 0.85,
+    "weight": 0.8
+  },
+  {
+    "t": 1.23,
+    "voice": "sparkle",
+    "vel": 0.3,
+    "dur": 0.4
+  },
+  {
+    "t": 2,
+    "voice": "tick",
+    "vel": 0.4
+  },
+  {
+    "t": 2.8,
+    "voice": "confirm",
+    "note": "E6",
+    "steps": [
+      0,
+      7
+    ],
+    "vel": 0.55
+  },
+  {
+    "t": 3.2,
+    "voice": "stamp",
+    "vel": 0.85,
+    "weight": 0.8
+  },
+  {
+    "t": 3.23,
+    "voice": "sparkle",
+    "vel": 0.3,
+    "dur": 0.4
+  },
+  {
+    "t": 3.4,
+    "voice": "tick",
+    "vel": 0.4
+  },
+  {
+    "t": 5,
+    "voice": "tick",
+    "vel": 0.4
+  },
+  {
+    "t": 5.8,
+    "voice": "stamp",
+    "vel": 0.85,
+    "weight": 0.8
+  },
+  {
+    "t": 5.83,
+    "voice": "sparkle",
+    "vel": 0.3,
+    "dur": 0.4
+  }
+]

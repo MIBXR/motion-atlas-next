@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>主树蹲起换季波</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "主树蹲起换季波",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 60,
+  "segments": [
+    {
+      "caseId": "lemo-memphis-diorama",
+      "source": "../../cases/lemo-memphis-diorama/index.html",
+      "audio": "../../cases/lemo-memphis-diorama/audio/film.m4a",
+      "label": "主树蹲起换季波",
+      "from": 18.8,
+      "to": 22.4
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "主树蹲起换季波"
+    },
+    {
+      "t": 1.5,
+      "label": "机制展开"
+    }
+  ],
+  "reduced": 1.5
+});
+  </script>
+</body>
+</html>

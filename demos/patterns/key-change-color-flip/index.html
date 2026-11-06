@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>转调红白反色</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    MotionKit.replay({
+      "title": "转调红白反色",
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 60,
+      "segments": [
+        {
+          "caseId": "butterfly-garden-score",
+          "source": "../../cases/butterfly-garden-score/index.html",
+          "audio": "../../cases/butterfly-garden-score/audio/film.m4a",
+          "label": "F → D 红白反色",
+          "from": 19.8,
+          "to": 21.5
+        },
+        {
+          "caseId": "butterfly-garden-score",
+          "source": "../../cases/butterfly-garden-score/index.html",
+          "audio": "../../cases/butterfly-garden-score/audio/film.m4a",
+          "label": "D → B♭ 退回白底",
+          "from": 27.2,
+          "to": 29.2
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "F → D 转调线滚入"
+        },
+        {
+          "t": 0.9,
+          "label": "白底经粉色反为红底"
+        },
+        {
+          "t": 1.7,
+          "label": "D → B♭ 转调线滚入"
+        },
+        {
+          "t": 3,
+          "label": "红底经粉色退回白底"
+        }
+      ],
+      "reduced": 0.9
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>阵列选择波浪 — Motion Atlas 巧思</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
+<script>
+const CONFIG = {
+  duration: 15,
+  sourceStart: 62.6,
+  quality: null,
+  model: '../../../cases/archive-os/film/app/assets/archive-cassette.glb',
+  wave: { amplitude: 0.8, attack: 0.2, decay: 1.15, speed: 8, frequency: 0.58, width: 3.4, lifetime: 3.2 },
+  events: [
+    { t: 0, axis: 'row', direction: 1 }, { t: 1, axis: 'row', direction: 1 },
+    { t: 2, axis: 'lane', direction: 1 }, { t: 3, axis: 'lane', direction: 1 },
+    { t: 4, axis: 'lane', direction: 1 }, { t: 5, axis: 'row', direction: -1 },
+    { t: 6, axis: 'row', direction: -1 }, { t: 7, axis: 'row', direction: 1 },
+    { t: 8, axis: 'row', direction: 1 }, { t: 9, axis: 'lane', direction: -1 },
+    { t: 9.35, axis: 'lane', direction: -1 }, { t: 10.4, axis: 'lane', direction: -1 },
+    { t: 11.4, axis: 'row', direction: -1 }, { t: 12.4, axis: 'row', direction: -1 }
+  ]
+};
+window.WAVE_CONFIG = CONFIG;
+</script>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#eae5e1}
+iframe{display:block;border:0;width:100%;height:100%}
+</style>
+</head>
+<body>
+<main id="stage"><iframe id="array" title="GLB 档案阵列，方向键切列与选档，点击模型选择" allow="autoplay"></iframe></main>
+<script src="../motion-kit.js"></script>
+<script>
+const MK = MotionKit, stage = MK.stage(), frame = document.getElementById('array');
+const probe = document.createElement('canvas'), gl = probe.getContext('webgl2') || probe.getContext('webgl');
+const debug = gl?.getExtension('WEBGL_debug_renderer_info');
+const renderer = gl ? gl.getParameter(debug ? debug.UNMASKED_RENDERER_WEBGL : gl.RENDERER) : '';
+gl?.getExtension('WEBGL_lose_context')?.loseContext();
+const quality = new URLSearchParams(location.search).get('quality') ?? CONFIG.quality ?? (/swiftshader|llvmpipe|software|microsoft basic render/i.test(renderer) ? 'performance' : 'original');
+frame.width = stage.width; frame.height = stage.height;
+const initial = new Promise((resolve, reject) => frame.addEventListener('load', async () => {
+  while (!frame.contentWindow.waveDemo) await new Promise(resolve => setTimeout(resolve, 0));
+  frame.contentWindow.waveDemo.ready.then(async () => {
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    await frame.contentWindow.waveDemo.seek(0);
+  }).then(resolve, reject);
+}, { once: true }));
+MK.load.register(['array.html', CONFIG.model]);
+MK.preload([MK.load.fetch('array.html'), MK.load.fetch(CONFIG.model)]);
+frame.src = `array.html?quality=${encodeURIComponent(quality)}`;
+MK.preload([{ label: '档案模型与材质', run: () => initial }]);
+let target = 0, running;
+const tl = MK.timeline({ duration: CONFIG.duration, markers: CONFIG.events.map((e, i) => ({ t: e.t, label: `选择 ${i + 1}` })), render: t => {
+  target = t;
+  if (running) return running;
+  running = (async () => {
+    await initial;
+    for (;;) {
+      const at = target;
+      await frame.contentWindow.waveDemo.seek(at);
+      if (at === target) return at;
+    }
+  })().finally(() => { running = null; });
+  return running;
+} });
+const rawSeek = tl.seek;
+const rawPlay = tl.play;
+tl.seek = t => {
+  frame.contentWindow.waveDemo?.resetInput();
+  audioScore.set(score);
+  return rawSeek(t);
+};
+tl.play = () => { frame.contentWindow.waveDemo?.resetInput(); audioScore.set(score); return rawPlay(); };
+window.WAVE_MANUAL = event => {
+  if (document.documentElement.dataset.motionReady !== '1' || MK.params().render && parent !== window && parent.document.documentElement.dataset.motionReady !== '1') return;
+  if (tl.time >= tl.duration) tl.seek(0);
+  frame.contentWindow.waveDemo.addInput(tl.time, event);
+  audioScore.set([]);
+  MK.audio.play('archive-selection', { event });
+  rawPlay();
+};
+const arrows = { ArrowLeft: ['lane', -1], ArrowRight: ['lane', 1], ArrowUp: ['row', -1], ArrowDown: ['row', 1] };
+addEventListener('keydown', event => {
+  const move = arrows[event.key]; if (!move) return;
+  event.preventDefault(); event.stopImmediatePropagation();
+  window.WAVE_MANUAL({ axis: move[0], direction: move[1] });
+}, true);
+stage.on('orient', () => { frame.width = stage.width; frame.height = stage.height; frame.contentWindow.waveDemo?.resize(); });
+MK.audio.define('archive-selection', (ctx, out, when, p) => frame.contentWindow.waveDemo.sound(ctx, out, when, p.event), { bus: 'ui', send: 0 });
+const score = CONFIG.events.map(event => ({ t: event.t, voice: 'archive-selection', event }));
+const audioScore = MK.audio.attach(tl, score);
+MK.expose(tl, { title: '阵列选择波浪', sourceTime: t => CONFIG.sourceStart + t });
+MK.controls(tl, { accent: '#171713' });
+MK.start(tl, { reduced: CONFIG.duration });
+</script>
+</body>
+</html>

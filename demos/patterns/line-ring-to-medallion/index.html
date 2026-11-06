@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "线环熔成金章",
+      "segments": [
+        {
+          "caseId": "mg-line-art",
+          "label": "线条艺术",
+          "from": 7.2,
+          "to": 10
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "圆环闭合前"
+        },
+        {
+          "t": 0.20000000000000018,
+          "label": "线环蓄势"
+        },
+        {
+          "t": 0.2999999999999998,
+          "label": "金章填面"
+        },
+        {
+          "t": 0.34999999999999964,
+          "label": "光脉回溯"
+        },
+        {
+          "t": 0.5999999999999996,
+          "label": "外缘过冲"
+        },
+        {
+          "t": 0.7329999999999997,
+          "label": "回声消散"
+        },
+        {
+          "t": 1.2499999999999991,
+          "label": "回溯落定"
+        },
+        {
+          "t": 1.7499999999999991,
+          "label": "光脉回流"
+        },
+        {
+          "t": 1.9999999999999991,
+          "label": "金属扫光"
+        },
+        {
+          "t": 2.3,
+          "label": "光脉到达"
+        }
+      ],
+      "reduced": 2.55,
+      "root": "#stage",
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

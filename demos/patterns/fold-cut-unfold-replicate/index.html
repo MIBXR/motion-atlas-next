@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>折剪展开复制</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "折剪展开复制",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-papercut-red",
+      "source": "../../cases/lemo-papercut-red/index.html",
+      "audio": "../../cases/lemo-papercut-red/audio/film.m4a",
+      "label": "折剪展开复制",
+      "from": 23.8,
+      "to": 34
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "折剪展开复制"
+    }
+  ],
+  "reduced": 7
+});
+  </script>
+</body>
+</html>

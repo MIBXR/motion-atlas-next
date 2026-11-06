@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>逐块长岛配音符</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "逐块长岛配音符",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-lowpoly-island",
+      "source": "../../cases/lemo-lowpoly-island/index.html",
+      "audio": "../../cases/lemo-lowpoly-island/audio/film.m4a",
+      "label": "逐块长岛配音符",
+      "from": 6.0,
+      "to": 21.25
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "逐块长岛配音符"
+    }
+  ],
+  "reduced": 7
+});
+  </script>
+</body>
+</html>

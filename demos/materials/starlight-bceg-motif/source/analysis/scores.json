@@ -1,0 +1,5423 @@
+{
+  "scores": [
+    {
+      "id": "intro-01",
+      "track": null,
+      "firstVisibleVideoT": 0.0,
+      "lastVisibleVideoT": 17.667,
+      "firstFrame": 0,
+      "lastFrame": 424,
+      "notationType": "intro",
+      "section": "intro",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 3
+      },
+      "barlines": [
+        {
+          "afterNote": 3,
+          "type": "single"
+        }
+      ],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E6",
+          "writtenPitch": "E5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G6",
+          "writtenPitch": "G5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "animationStages": [
+        {
+          "section": "intro",
+          "letters": "B",
+          "firstVideoT": 1.917,
+          "lastVideoT": 2.875,
+          "firstFrame": 46,
+          "lastFrame": 69,
+          "visibleNoteCount": 1,
+          "remainingRests": [
+            {
+              "duration": 1,
+              "type": "quarter-rest"
+            },
+            {
+              "duration": 2,
+              "type": "half-rest"
+            }
+          ]
+        },
+        {
+          "section": "intro",
+          "letters": "BC",
+          "firstVideoT": 2.917,
+          "lastVideoT": 3.875,
+          "firstFrame": 70,
+          "lastFrame": 93,
+          "visibleNoteCount": 2,
+          "remainingRests": [
+            {
+              "duration": 2,
+              "type": "half-rest"
+            }
+          ]
+        },
+        {
+          "section": "intro",
+          "letters": "BCE",
+          "firstVideoT": 3.917,
+          "lastVideoT": 4.875,
+          "firstFrame": 94,
+          "lastFrame": 117,
+          "visibleNoteCount": 3,
+          "remainingRests": [
+            {
+              "duration": 1,
+              "type": "quarter-rest"
+            }
+          ]
+        },
+        {
+          "section": "intro",
+          "letters": "BCEG",
+          "firstVideoT": 4.917,
+          "lastVideoT": 6.0,
+          "firstFrame": 118,
+          "lastFrame": 144,
+          "visibleNoteCount": 4,
+          "remainingRests": []
+        },
+        {
+          "section": "intro",
+          "letters": "B",
+          "firstVideoT": 6.042,
+          "lastVideoT": 6.458,
+          "firstFrame": 145,
+          "lastFrame": 155,
+          "visibleNoteCount": 1,
+          "remainingRests": [
+            {
+              "duration": 1,
+              "type": "quarter-rest"
+            },
+            {
+              "duration": 2,
+              "type": "half-rest"
+            }
+          ]
+        },
+        {
+          "section": "intro",
+          "letters": "BC",
+          "firstVideoT": 6.5,
+          "lastVideoT": 7.0,
+          "firstFrame": 156,
+          "lastFrame": 168,
+          "visibleNoteCount": 2,
+          "remainingRests": [
+            {
+              "duration": 2,
+              "type": "half-rest"
+            }
+          ]
+        },
+        {
+          "section": "intro",
+          "letters": "BCE",
+          "firstVideoT": 7.042,
+          "lastVideoT": 7.458,
+          "firstFrame": 169,
+          "lastFrame": 179,
+          "visibleNoteCount": 3,
+          "remainingRests": [
+            {
+              "duration": 1,
+              "type": "quarter-rest"
+            }
+          ]
+        },
+        {
+          "section": "intro",
+          "letters": "BCEG",
+          "firstVideoT": 7.5,
+          "lastVideoT": 17.667,
+          "firstFrame": 180,
+          "lastFrame": 424,
+          "visibleNoteCount": 4,
+          "remainingRests": []
+        }
+      ],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 240,
+        "videoT": 10.0,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/intro-01.png",
+        "cropBoxXYXY": [
+          1200,
+          710,
+          2650,
+          1170
+        ]
+      }
+    },
+    {
+      "id": "04-01",
+      "track": "04",
+      "firstVisibleVideoT": 114.708,
+      "lastVisibleVideoT": 152.459,
+      "firstFrame": 2753,
+      "lastFrame": 3659,
+      "notationType": "04-A",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 7
+      },
+      "barlines": [
+        {
+          "afterNote": 7,
+          "type": "single"
+        }
+      ],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E6",
+          "writtenPitch": "E5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G6",
+          "writtenPitch": "G5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B6",
+          "writtenPitch": "B5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G6",
+          "writtenPitch": "G5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E6",
+          "writtenPitch": "E5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 3200,
+        "videoT": 133.334,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/04-01.png",
+        "cropBoxXYXY": [
+          1476,
+          1601,
+          2263,
+          1911
+        ]
+      }
+    },
+    {
+      "id": "04-02",
+      "track": "04",
+      "firstVisibleVideoT": 151.5,
+      "lastVisibleVideoT": 171.709,
+      "firstFrame": 3636,
+      "lastFrame": 4121,
+      "notationType": "04-B",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 7
+      },
+      "barlines": [
+        {
+          "afterNote": 7,
+          "type": "single"
+        }
+      ],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "A5",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "Bb5",
+          "writtenPitch": "Bb4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "flat"
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F6",
+          "writtenPitch": "F5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "Bb5",
+          "writtenPitch": "Bb4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F6",
+          "writtenPitch": "F5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 3884,
+        "videoT": 161.834,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/04-02.png",
+        "cropBoxXYXY": [
+          1474,
+          1617,
+          2292,
+          1913
+        ]
+      }
+    },
+    {
+      "id": "04-03",
+      "track": "04",
+      "firstVisibleVideoT": 173.5,
+      "lastVisibleVideoT": 202.959,
+      "firstFrame": 4164,
+      "lastFrame": 4871,
+      "notationType": "04-C",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 7
+      },
+      "barlines": [
+        {
+          "afterNote": 7,
+          "type": "single"
+        }
+      ],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "E5",
+          "writtenPitch": "E4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E6",
+          "writtenPitch": "E5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 4517,
+        "videoT": 188.209,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/04-03.png",
+        "cropBoxXYXY": [
+          1478,
+          1591,
+          2369,
+          1929
+        ]
+      }
+    },
+    {
+      "id": "05-01",
+      "track": "05",
+      "firstVisibleVideoT": 222.459,
+      "lastVisibleVideoT": 229.834,
+      "firstFrame": 5339,
+      "lastFrame": 5516,
+      "notationType": "05-A",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 3
+      },
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 5421,
+        "videoT": 225.875,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/05-01.png",
+        "cropBoxXYXY": [
+          1563,
+          1575,
+          2266,
+          1899
+        ]
+      }
+    },
+    {
+      "id": "07-01",
+      "track": "07",
+      "firstVisibleVideoT": 228.875,
+      "lastVisibleVideoT": 247.542,
+      "firstFrame": 5493,
+      "lastFrame": 5940,
+      "notationType": "07-long",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": "3/4",
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 15
+      },
+      "barlines": [
+        {
+          "afterNote": 3,
+          "type": "single"
+        },
+        {
+          "afterNote": 7,
+          "type": "single"
+        },
+        {
+          "afterNote": 11,
+          "type": "single"
+        },
+        {
+          "afterNote": 15,
+          "type": "single"
+        }
+      ],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 5723,
+        "videoT": 238.459,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/07-01.png",
+        "cropBoxXYXY": [
+          937,
+          1653,
+          2936,
+          1937
+        ]
+      }
+    },
+    {
+      "id": "07-02",
+      "track": "07",
+      "firstVisibleVideoT": 251.5,
+      "lastVisibleVideoT": 252.75,
+      "firstFrame": 6035,
+      "lastFrame": 6065,
+      "notationType": "07-G",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 3
+      },
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 6050,
+        "videoT": 252.125,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/07-02.png",
+        "cropBoxXYXY": [
+          1564,
+          1575,
+          2266,
+          1899
+        ]
+      }
+    },
+    {
+      "id": "07-03",
+      "track": "07",
+      "firstVisibleVideoT": 256.834,
+      "lastVisibleVideoT": 258.084,
+      "firstFrame": 6163,
+      "lastFrame": 6193,
+      "notationType": "07-G",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 3
+      },
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 6178,
+        "videoT": 257.459,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/07-03.png",
+        "cropBoxXYXY": [
+          1564,
+          1575,
+          2266,
+          1899
+        ]
+      }
+    },
+    {
+      "id": "07-04",
+      "track": "07",
+      "firstVisibleVideoT": 262.084,
+      "lastVisibleVideoT": 263.209,
+      "firstFrame": 6289,
+      "lastFrame": 6316,
+      "notationType": "07-Bb",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 3
+      },
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "A5",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "Bb5",
+          "writtenPitch": "Bb4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "flat"
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F6",
+          "writtenPitch": "F5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 6302,
+        "videoT": 262.625,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/07-04.png",
+        "cropBoxXYXY": [
+          1593,
+          1572,
+          2205,
+          1870
+        ]
+      }
+    },
+    {
+      "id": "07-05",
+      "track": "07",
+      "firstVisibleVideoT": 267.209,
+      "lastVisibleVideoT": 268.417,
+      "firstFrame": 6412,
+      "lastFrame": 6441,
+      "notationType": "07-Eb",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 3
+      },
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "D5",
+          "writtenPitch": "D4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "Eb5",
+          "writtenPitch": "Eb4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "flat"
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "Bb5",
+          "writtenPitch": "Bb4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "flat"
+        }
+      ],
+      "rests": [
+        {
+          "afterNote": 3,
+          "duration": 2,
+          "type": "half-rest"
+        }
+      ],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 6426,
+        "videoT": 267.792,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/07-05.png",
+        "cropBoxXYXY": [
+          1606,
+          1609,
+          2223,
+          1897
+        ]
+      }
+    },
+    {
+      "id": "07-06",
+      "track": "07",
+      "firstVisibleVideoT": 272.417,
+      "lastVisibleVideoT": 276.292,
+      "firstFrame": 6537,
+      "lastFrame": 6630,
+      "notationType": "07-Eb",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 3
+      },
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "D5",
+          "writtenPitch": "D4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "Eb5",
+          "writtenPitch": "Eb4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "flat"
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "Bb5",
+          "writtenPitch": "Bb4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "flat"
+        }
+      ],
+      "rests": [
+        {
+          "afterNote": 3,
+          "duration": 2,
+          "type": "half-rest"
+        }
+      ],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 6583,
+        "videoT": 274.334,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/07-06.png",
+        "cropBoxXYXY": [
+          1606,
+          1609,
+          2223,
+          1897
+        ]
+      }
+    },
+    {
+      "id": "10-01",
+      "track": "10",
+      "firstVisibleVideoT": 279.5,
+      "lastVisibleVideoT": 294.834,
+      "firstFrame": 6707,
+      "lastFrame": 7075,
+      "notationType": "07-long",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": "3/4",
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 15
+      },
+      "barlines": [
+        {
+          "afterNote": 3,
+          "type": "single"
+        },
+        {
+          "afterNote": 7,
+          "type": "single"
+        },
+        {
+          "afterNote": 11,
+          "type": "single"
+        },
+        {
+          "afterNote": 15,
+          "type": "single"
+        }
+      ],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D6",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 6891,
+        "videoT": 287.167,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/10-01.png",
+        "cropBoxXYXY": [
+          937,
+          1645,
+          2936,
+          1928
+        ]
+      }
+    },
+    {
+      "id": "19-01",
+      "track": "19",
+      "firstVisibleVideoT": 365.584,
+      "lastVisibleVideoT": 395.167,
+      "firstFrame": 8772,
+      "lastFrame": 9482,
+      "notationType": "19-A",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": "4/4",
+      "ottava": null,
+      "barlines": [
+        {
+          "afterNote": 11,
+          "type": "single"
+        },
+        {
+          "afterNote": 21,
+          "type": "single"
+        }
+      ],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B3",
+          "writtenPitch": "B3",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 1
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "C4",
+          "writtenPitch": "C4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 1
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 1
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 2
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 2
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "C4",
+          "writtenPitch": "C4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 2
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "B3",
+          "writtenPitch": "B3",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 3
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "C4",
+          "writtenPitch": "C4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 3
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 3
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 4
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 4
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "C4",
+          "writtenPitch": "C4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 4
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "B3",
+          "writtenPitch": "B3",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 5
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "C4",
+          "writtenPitch": "C4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 5
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 5
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 6
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 6
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "C4",
+          "writtenPitch": "C4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 6
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "B3",
+          "writtenPitch": "B3",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 7
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "C4",
+          "writtenPitch": "C4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 7
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.3333333333333333,
+          "tuplet": {
+            "actual": 3,
+            "normal": 2,
+            "writtenDuration": 0.5,
+            "group": 7
+          },
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null,
+          "durationFraction": "1/3"
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 9127,
+        "videoT": 380.375,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/19-01.png",
+        "cropBoxXYXY": [
+          899,
+          1637,
+          3008,
+          1965
+        ]
+      }
+    },
+    {
+      "id": "21-01",
+      "track": "21",
+      "firstVisibleVideoT": 436.5,
+      "lastVisibleVideoT": 510.625,
+      "firstFrame": 10474,
+      "lastFrame": 12252,
+      "notationType": "21-A",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": "4/4",
+      "ottava": null,
+      "barlines": [
+        {
+          "afterNote": 6,
+          "type": "single"
+        },
+        {
+          "afterNote": 13,
+          "type": "single"
+        },
+        {
+          "afterNote": 20,
+          "type": "single"
+        },
+        {
+          "afterNote": 27,
+          "type": "end-repeat"
+        }
+      ],
+      "repeatSigns": [
+        {
+          "type": "end-repeat",
+          "afterNote": 27
+        }
+      ],
+      "notes": [
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": true
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": true,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": true
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": true,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": true
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": true,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G4",
+          "writtenPitch": "G4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 11363,
+        "videoT": 473.542,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/21-01.png",
+        "cropBoxXYXY": [
+          790,
+          1681,
+          3084,
+          1901
+        ]
+      }
+    },
+    {
+      "id": "26-01",
+      "track": "26",
+      "firstVisibleVideoT": 533.334,
+      "lastVisibleVideoT": 534.25,
+      "firstFrame": 12797,
+      "lastFrame": 12819,
+      "notationType": "26-up",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 12808,
+        "videoT": 533.792,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-01.png",
+        "cropBoxXYXY": [
+          1659,
+          1569,
+          2235,
+          1856
+        ]
+      }
+    },
+    {
+      "id": "26-02",
+      "track": "26",
+      "firstVisibleVideoT": 536.75,
+      "lastVisibleVideoT": 537.5,
+      "firstFrame": 12879,
+      "lastFrame": 12897,
+      "notationType": "26-down",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 12888,
+        "videoT": 537.125,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-02.png",
+        "cropBoxXYXY": [
+          1645,
+          1577,
+          2229,
+          1865
+        ]
+      }
+    },
+    {
+      "id": "26-03",
+      "track": "26",
+      "firstVisibleVideoT": 540.084,
+      "lastVisibleVideoT": 541.0,
+      "firstFrame": 12959,
+      "lastFrame": 12981,
+      "notationType": "26-up",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 12970,
+        "videoT": 540.542,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-03.png",
+        "cropBoxXYXY": [
+          1659,
+          1569,
+          2235,
+          1856
+        ]
+      }
+    },
+    {
+      "id": "26-04",
+      "track": "26",
+      "firstVisibleVideoT": 543.417,
+      "lastVisibleVideoT": 544.167,
+      "firstFrame": 13039,
+      "lastFrame": 13057,
+      "notationType": "26-down",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13048,
+        "videoT": 543.792,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-04.png",
+        "cropBoxXYXY": [
+          1645,
+          1577,
+          2229,
+          1865
+        ]
+      }
+    },
+    {
+      "id": "26-05",
+      "track": "26",
+      "firstVisibleVideoT": 546.542,
+      "lastVisibleVideoT": 547.459,
+      "firstFrame": 13114,
+      "lastFrame": 13136,
+      "notationType": "26-up",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13125,
+        "videoT": 547.0,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-05.png",
+        "cropBoxXYXY": [
+          1659,
+          1569,
+          2235,
+          1856
+        ]
+      }
+    },
+    {
+      "id": "26-06",
+      "track": "26",
+      "firstVisibleVideoT": 550.084,
+      "lastVisibleVideoT": 550.834,
+      "firstFrame": 13199,
+      "lastFrame": 13217,
+      "notationType": "26-down",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13208,
+        "videoT": 550.459,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-06.png",
+        "cropBoxXYXY": [
+          1645,
+          1577,
+          2229,
+          1865
+        ]
+      }
+    },
+    {
+      "id": "26-07",
+      "track": "26",
+      "firstVisibleVideoT": 554.167,
+      "lastVisibleVideoT": 555.084,
+      "firstFrame": 13297,
+      "lastFrame": 13319,
+      "notationType": "26-up",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13308,
+        "videoT": 554.625,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-07.png",
+        "cropBoxXYXY": [
+          1659,
+          1569,
+          2235,
+          1856
+        ]
+      }
+    },
+    {
+      "id": "26-08",
+      "track": "26",
+      "firstVisibleVideoT": 557.625,
+      "lastVisibleVideoT": 558.375,
+      "firstFrame": 13380,
+      "lastFrame": 13398,
+      "notationType": "26-down",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13389,
+        "videoT": 558.0,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-08.png",
+        "cropBoxXYXY": [
+          1645,
+          1577,
+          2229,
+          1865
+        ]
+      }
+    },
+    {
+      "id": "26-09",
+      "track": "26",
+      "firstVisibleVideoT": 563.667,
+      "lastVisibleVideoT": 564.584,
+      "firstFrame": 13525,
+      "lastFrame": 13547,
+      "notationType": "26-up",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13536,
+        "videoT": 564.125,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-09.png",
+        "cropBoxXYXY": [
+          1659,
+          1569,
+          2235,
+          1856
+        ]
+      }
+    },
+    {
+      "id": "26-10",
+      "track": "26",
+      "firstVisibleVideoT": 566.875,
+      "lastVisibleVideoT": 567.625,
+      "firstFrame": 13602,
+      "lastFrame": 13620,
+      "notationType": "26-down",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13611,
+        "videoT": 567.25,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-10.png",
+        "cropBoxXYXY": [
+          1645,
+          1577,
+          2229,
+          1865
+        ]
+      }
+    },
+    {
+      "id": "26-11",
+      "track": "26",
+      "firstVisibleVideoT": 570.709,
+      "lastVisibleVideoT": 571.625,
+      "firstFrame": 13694,
+      "lastFrame": 13716,
+      "notationType": "26-up",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13705,
+        "videoT": 571.167,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-11.png",
+        "cropBoxXYXY": [
+          1659,
+          1569,
+          2235,
+          1856
+        ]
+      }
+    },
+    {
+      "id": "26-12",
+      "track": "26",
+      "firstVisibleVideoT": 573.834,
+      "lastVisibleVideoT": 574.584,
+      "firstFrame": 13769,
+      "lastFrame": 13787,
+      "notationType": "26-down",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13778,
+        "videoT": 574.209,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-12.png",
+        "cropBoxXYXY": [
+          1645,
+          1577,
+          2229,
+          1865
+        ]
+      }
+    },
+    {
+      "id": "26-13",
+      "track": "26",
+      "firstVisibleVideoT": 577.25,
+      "lastVisibleVideoT": 578.167,
+      "firstFrame": 13851,
+      "lastFrame": 13873,
+      "notationType": "26-up",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13862,
+        "videoT": 577.709,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-13.png",
+        "cropBoxXYXY": [
+          1659,
+          1569,
+          2235,
+          1856
+        ]
+      }
+    },
+    {
+      "id": "26-14",
+      "track": "26",
+      "firstVisibleVideoT": 580.792,
+      "lastVisibleVideoT": 581.542,
+      "firstFrame": 13936,
+      "lastFrame": 13954,
+      "notationType": "26-down",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "G5",
+          "writtenPitch": "G5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 13945,
+        "videoT": 581.167,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/26-14.png",
+        "cropBoxXYXY": [
+          1645,
+          1577,
+          2229,
+          1865
+        ]
+      }
+    },
+    {
+      "id": "30-01",
+      "track": "30",
+      "firstVisibleVideoT": 592.875,
+      "lastVisibleVideoT": 593.542,
+      "firstFrame": 14226,
+      "lastFrame": 14242,
+      "notationType": "30-F",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F4",
+          "writtenPitch": "F4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 14234,
+        "videoT": 593.209,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-01.png",
+        "cropBoxXYXY": [
+          1635,
+          1528,
+          2205,
+          1826
+        ]
+      }
+    },
+    {
+      "id": "30-02",
+      "track": "30",
+      "firstVisibleVideoT": 598.084,
+      "lastVisibleVideoT": 598.75,
+      "firstFrame": 14351,
+      "lastFrame": 14367,
+      "notationType": "30-F",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F4",
+          "writtenPitch": "F4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 14359,
+        "videoT": 598.417,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-02.png",
+        "cropBoxXYXY": [
+          1635,
+          1528,
+          2205,
+          1826
+        ]
+      }
+    },
+    {
+      "id": "30-03",
+      "track": "30",
+      "firstVisibleVideoT": 603.209,
+      "lastVisibleVideoT": 603.875,
+      "firstFrame": 14473,
+      "lastFrame": 14489,
+      "notationType": "30-F",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F4",
+          "writtenPitch": "F4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 14481,
+        "videoT": 603.542,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-03.png",
+        "cropBoxXYXY": [
+          1635,
+          1528,
+          2205,
+          1826
+        ]
+      }
+    },
+    {
+      "id": "30-04",
+      "track": "30",
+      "firstVisibleVideoT": 613.542,
+      "lastVisibleVideoT": 614.209,
+      "firstFrame": 14721,
+      "lastFrame": 14737,
+      "notationType": "30-F",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F4",
+          "writtenPitch": "F4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 14729,
+        "videoT": 613.875,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-04.png",
+        "cropBoxXYXY": [
+          1635,
+          1528,
+          2205,
+          1826
+        ]
+      }
+    },
+    {
+      "id": "30-05",
+      "track": "30",
+      "firstVisibleVideoT": 618.625,
+      "lastVisibleVideoT": 619.292,
+      "firstFrame": 14843,
+      "lastFrame": 14859,
+      "notationType": "30-F",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F4",
+          "writtenPitch": "F4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 14851,
+        "videoT": 618.959,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-05.png",
+        "cropBoxXYXY": [
+          1635,
+          1528,
+          2205,
+          1826
+        ]
+      }
+    },
+    {
+      "id": "30-06",
+      "track": "30",
+      "firstVisibleVideoT": 623.875,
+      "lastVisibleVideoT": 624.542,
+      "firstFrame": 14969,
+      "lastFrame": 14985,
+      "notationType": "30-F",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "E4",
+          "writtenPitch": "E4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F4",
+          "writtenPitch": "F4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C5",
+          "writtenPitch": "C5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 14977,
+        "videoT": 624.209,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-06.png",
+        "cropBoxXYXY": [
+          1635,
+          1528,
+          2205,
+          1826
+        ]
+      }
+    },
+    {
+      "id": "30-07",
+      "track": "30",
+      "firstVisibleVideoT": 635.125,
+      "lastVisibleVideoT": 635.709,
+      "firstFrame": 15239,
+      "lastFrame": 15253,
+      "notationType": "30-D",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "C#4",
+          "writtenPitch": "C#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "D4",
+          "writtenPitch": "D4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 15246,
+        "videoT": 635.417,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-07.png",
+        "cropBoxXYXY": [
+          1588,
+          1538,
+          2251,
+          1849
+        ]
+      }
+    },
+    {
+      "id": "30-08",
+      "track": "30",
+      "firstVisibleVideoT": 640.25,
+      "lastVisibleVideoT": 640.834,
+      "firstFrame": 15362,
+      "lastFrame": 15376,
+      "notationType": "30-D",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "C#4",
+          "writtenPitch": "C#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "D4",
+          "writtenPitch": "D4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 15369,
+        "videoT": 640.542,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-08.png",
+        "cropBoxXYXY": [
+          1588,
+          1539,
+          2251,
+          1849
+        ]
+      }
+    },
+    {
+      "id": "30-09",
+      "track": "30",
+      "firstVisibleVideoT": 645.459,
+      "lastVisibleVideoT": 646.042,
+      "firstFrame": 15487,
+      "lastFrame": 15501,
+      "notationType": "30-D",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "C#4",
+          "writtenPitch": "C#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "D4",
+          "writtenPitch": "D4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 15494,
+        "videoT": 645.75,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-09.png",
+        "cropBoxXYXY": [
+          1588,
+          1539,
+          2251,
+          1849
+        ]
+      }
+    },
+    {
+      "id": "30-10",
+      "track": "30",
+      "firstVisibleVideoT": 655.834,
+      "lastVisibleVideoT": 656.417,
+      "firstFrame": 15736,
+      "lastFrame": 15750,
+      "notationType": "30-D",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "C#4",
+          "writtenPitch": "C#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "D4",
+          "writtenPitch": "D4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 15743,
+        "videoT": 656.125,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-10.png",
+        "cropBoxXYXY": [
+          1588,
+          1539,
+          2251,
+          1849
+        ]
+      }
+    },
+    {
+      "id": "30-11",
+      "track": "30",
+      "firstVisibleVideoT": 660.792,
+      "lastVisibleVideoT": 661.375,
+      "firstFrame": 15855,
+      "lastFrame": 15869,
+      "notationType": "30-D",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": null,
+      "barlines": [],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "C#4",
+          "writtenPitch": "C#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "D4",
+          "writtenPitch": "D4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#4",
+          "writtenPitch": "F#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": "sharp"
+        },
+        {
+          "pitch": "A4",
+          "writtenPitch": "A4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 15862,
+        "videoT": 661.084,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/30-11.png",
+        "cropBoxXYXY": [
+          1588,
+          1539,
+          2251,
+          1849
+        ]
+      }
+    },
+    {
+      "id": "34-01",
+      "track": "34",
+      "firstVisibleVideoT": 785.292,
+      "lastVisibleVideoT": 791.625,
+      "firstFrame": 18842,
+      "lastFrame": 18994,
+      "notationType": "34-B",
+      "clef": "treble",
+      "keySignature": {
+        "fifths": 5,
+        "accidentals": [
+          "F#",
+          "C#",
+          "G#",
+          "D#",
+          "A#"
+        ]
+      },
+      "timeSignature": "4/4",
+      "ottava": null,
+      "barlines": [
+        {
+          "beforeNote": 0,
+          "type": "start-repeat"
+        },
+        {
+          "afterNote": 11,
+          "type": "end-repeat"
+        }
+      ],
+      "repeatSigns": [
+        {
+          "type": "start-repeat",
+          "beforeNote": 0
+        },
+        {
+          "type": "end-repeat",
+          "afterNote": 11
+        }
+      ],
+      "notes": [
+        {
+          "pitch": "A#4",
+          "writtenPitch": "A#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D#5",
+          "writtenPitch": "D#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D#5",
+          "writtenPitch": "D#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A#4",
+          "writtenPitch": "A#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D#5",
+          "writtenPitch": "D#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D#5",
+          "writtenPitch": "D#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 18918,
+        "videoT": 788.459,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/34-01.png",
+        "cropBoxXYXY": [
+          1223,
+          1677,
+          2739,
+          1968
+        ]
+      }
+    },
+    {
+      "id": "34-02",
+      "track": "34",
+      "firstVisibleVideoT": 797.5,
+      "lastVisibleVideoT": 803.667,
+      "firstFrame": 19135,
+      "lastFrame": 19283,
+      "notationType": "34-B",
+      "clef": "treble",
+      "keySignature": {
+        "fifths": 5,
+        "accidentals": [
+          "F#",
+          "C#",
+          "G#",
+          "D#",
+          "A#"
+        ]
+      },
+      "timeSignature": "4/4",
+      "ottava": null,
+      "barlines": [
+        {
+          "beforeNote": 0,
+          "type": "start-repeat"
+        },
+        {
+          "afterNote": 11,
+          "type": "end-repeat"
+        }
+      ],
+      "repeatSigns": [
+        {
+          "type": "start-repeat",
+          "beforeNote": 0
+        },
+        {
+          "type": "end-repeat",
+          "afterNote": 11
+        }
+      ],
+      "notes": [
+        {
+          "pitch": "A#4",
+          "writtenPitch": "A#4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D#5",
+          "writtenPitch": "D#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D#5",
+          "writtenPitch": "D#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A#4",
+          "writtenPitch": "A#4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D#5",
+          "writtenPitch": "D#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D#5",
+          "writtenPitch": "D#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "B4",
+          "writtenPitch": "B4",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 19208,
+        "videoT": 800.542,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/34-02.png",
+        "cropBoxXYXY": [
+          1223,
+          1677,
+          2739,
+          1968
+        ]
+      }
+    },
+    {
+      "id": "34-03",
+      "track": "34",
+      "firstVisibleVideoT": 809.5,
+      "lastVisibleVideoT": 815.709,
+      "firstFrame": 19423,
+      "lastFrame": 19572,
+      "notationType": "34-D",
+      "clef": "treble",
+      "keySignature": {
+        "fifths": 2,
+        "accidentals": [
+          "F#",
+          "C#"
+        ]
+      },
+      "timeSignature": "4/4",
+      "ottava": null,
+      "barlines": [
+        {
+          "beforeNote": 0,
+          "type": "start-repeat"
+        },
+        {
+          "afterNote": 11,
+          "type": "end-repeat"
+        }
+      ],
+      "repeatSigns": [
+        {
+          "type": "start-repeat",
+          "beforeNote": 0
+        },
+        {
+          "type": "end-repeat",
+          "afterNote": 11
+        }
+      ],
+      "notes": [
+        {
+          "pitch": "C#5",
+          "writtenPitch": "C#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C#5",
+          "writtenPitch": "C#5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 19497,
+        "videoT": 812.584,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/34-03.png",
+        "cropBoxXYXY": [
+          1279,
+          1687,
+          2658,
+          1966
+        ]
+      }
+    },
+    {
+      "id": "34-04",
+      "track": "34",
+      "firstVisibleVideoT": 821.542,
+      "lastVisibleVideoT": 827.5,
+      "firstFrame": 19712,
+      "lastFrame": 19855,
+      "notationType": "34-D",
+      "clef": "treble",
+      "keySignature": {
+        "fifths": 2,
+        "accidentals": [
+          "F#",
+          "C#"
+        ]
+      },
+      "timeSignature": "4/4",
+      "ottava": null,
+      "barlines": [
+        {
+          "beforeNote": 0,
+          "type": "start-repeat"
+        },
+        {
+          "afterNote": 11,
+          "type": "end-repeat"
+        }
+      ],
+      "repeatSigns": [
+        {
+          "type": "start-repeat",
+          "beforeNote": 0
+        },
+        {
+          "type": "end-repeat",
+          "afterNote": 11
+        }
+      ],
+      "notes": [
+        {
+          "pitch": "C#5",
+          "writtenPitch": "C#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C#5",
+          "writtenPitch": "C#5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F#5",
+          "writtenPitch": "F#5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "D5",
+          "writtenPitch": "D5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 19783,
+        "videoT": 824.5,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/34-04.png",
+        "cropBoxXYXY": [
+          1279,
+          1687,
+          2658,
+          1966
+        ]
+      }
+    },
+    {
+      "id": "34-05",
+      "track": "34",
+      "firstVisibleVideoT": 833.209,
+      "lastVisibleVideoT": 839.459,
+      "firstFrame": 19992,
+      "lastFrame": 20142,
+      "notationType": "34-F",
+      "clef": "treble",
+      "keySignature": {
+        "fifths": -1,
+        "accidentals": [
+          "Bb"
+        ]
+      },
+      "timeSignature": "4/4",
+      "ottava": null,
+      "barlines": [
+        {
+          "beforeNote": 0,
+          "type": "start-repeat"
+        },
+        {
+          "afterNote": 11,
+          "type": "end-repeat"
+        }
+      ],
+      "repeatSigns": [
+        {
+          "type": "start-repeat",
+          "beforeNote": 0
+        },
+        {
+          "type": "end-repeat",
+          "afterNote": 11
+        }
+      ],
+      "notes": [
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C6",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E5",
+          "writtenPitch": "E5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C6",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "A5",
+          "writtenPitch": "A5",
+          "duration": 0.25,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "F5",
+          "writtenPitch": "F5",
+          "duration": 0.5,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 20067,
+        "videoT": 836.334,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/34-05.png",
+        "cropBoxXYXY": [
+          1241,
+          1657,
+          2660,
+          1966
+        ]
+      }
+    },
+    {
+      "id": "outro-01",
+      "track": null,
+      "firstVisibleVideoT": 848.959,
+      "lastVisibleVideoT": 862.375,
+      "firstFrame": 20369,
+      "lastFrame": 20691,
+      "notationType": "intro",
+      "section": "outro",
+      "clef": "treble",
+      "keySignature": null,
+      "timeSignature": null,
+      "ottava": {
+        "type": "8va",
+        "octaveShift": 1,
+        "firstNote": 0,
+        "lastNote": 3
+      },
+      "barlines": [
+        {
+          "afterNote": 3,
+          "type": "single"
+        }
+      ],
+      "repeatSigns": [],
+      "notes": [
+        {
+          "pitch": "B5",
+          "writtenPitch": "B4",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "C6",
+          "writtenPitch": "C5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "E6",
+          "writtenPitch": "E5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        },
+        {
+          "pitch": "G6",
+          "writtenPitch": "G5",
+          "duration": 1,
+          "tuplet": null,
+          "tie": {
+            "fromPrevious": false,
+            "toNext": false
+          },
+          "accidentalShown": null
+        }
+      ],
+      "rests": [],
+      "animationStages": [
+        {
+          "section": "outro",
+          "letters": "B",
+          "firstVideoT": 850.709,
+          "lastVideoT": 851.667,
+          "firstFrame": 20411,
+          "lastFrame": 20434,
+          "visibleNoteCount": 1,
+          "remainingRests": [
+            {
+              "duration": 1,
+              "type": "quarter-rest"
+            },
+            {
+              "duration": 2,
+              "type": "half-rest"
+            }
+          ]
+        },
+        {
+          "section": "outro",
+          "letters": "BC",
+          "firstVideoT": 851.709,
+          "lastVideoT": 852.667,
+          "firstFrame": 20435,
+          "lastFrame": 20458,
+          "visibleNoteCount": 2,
+          "remainingRests": [
+            {
+              "duration": 2,
+              "type": "half-rest"
+            }
+          ]
+        },
+        {
+          "section": "outro",
+          "letters": "BCE",
+          "firstVideoT": 852.709,
+          "lastVideoT": 853.667,
+          "firstFrame": 20459,
+          "lastFrame": 20482,
+          "visibleNoteCount": 3,
+          "remainingRests": [
+            {
+              "duration": 1,
+              "type": "quarter-rest"
+            }
+          ]
+        },
+        {
+          "section": "outro",
+          "letters": "BCEG",
+          "firstVideoT": 853.709,
+          "lastVideoT": 854.792,
+          "firstFrame": 20483,
+          "lastFrame": 20509,
+          "visibleNoteCount": 4,
+          "remainingRests": []
+        },
+        {
+          "section": "outro",
+          "letters": "B",
+          "firstVideoT": 854.834,
+          "lastVideoT": 855.25,
+          "firstFrame": 20510,
+          "lastFrame": 20520,
+          "visibleNoteCount": 1,
+          "remainingRests": [
+            {
+              "duration": 1,
+              "type": "quarter-rest"
+            },
+            {
+              "duration": 2,
+              "type": "half-rest"
+            }
+          ]
+        },
+        {
+          "section": "outro",
+          "letters": "BC",
+          "firstVideoT": 855.292,
+          "lastVideoT": 855.792,
+          "firstFrame": 20521,
+          "lastFrame": 20533,
+          "visibleNoteCount": 2,
+          "remainingRests": [
+            {
+              "duration": 2,
+              "type": "half-rest"
+            }
+          ]
+        },
+        {
+          "section": "outro",
+          "letters": "BCE",
+          "firstVideoT": 855.834,
+          "lastVideoT": 856.25,
+          "firstFrame": 20534,
+          "lastFrame": 20544,
+          "visibleNoteCount": 3,
+          "remainingRests": [
+            {
+              "duration": 1,
+              "type": "quarter-rest"
+            }
+          ]
+        },
+        {
+          "section": "outro",
+          "letters": "BCEG",
+          "firstVideoT": 856.292,
+          "lastVideoT": 862.375,
+          "firstFrame": 20545,
+          "lastFrame": 20691,
+          "visibleNoteCount": 4,
+          "remainingRests": []
+        }
+      ],
+      "sourceFrame": {
+        "videoFile": "《少女歌剧》配乐的灵魂？藏在TV原声带里的BCEG（7135）动机.mp4",
+        "frameNumber": 20634,
+        "videoT": 860.0,
+        "nativeWidth": 3840,
+        "nativeHeight": 2160,
+        "cropFile": "score-crops/outro-01.png",
+        "cropBoxXYXY": [
+          1200,
+          710,
+          2650,
+          1170
+        ]
+      }
+    }
+  ],
+  "count": 45,
+  "trackScoreCount": 43,
+  "nonOstScoreCount": 2,
+  "timeConvention": "Times are original video presentation timestamps. firstFrame/lastFrame and sourceFrame.frameNumber are zero-based decoded native-frame indices; do not divide them by 24. lastVisibleVideoT is inclusive.",
+  "notationConvention": "Scientific pitch notation with C4=middle C. writtenPitch includes the effective accidental before ottava; pitch includes ottava. Missing key/time signatures are null. duration is in quarter notes, including actual tuplet duration; ties retain written segments.",
+  "detection": {
+    "halfSecondScan": "_work/half-second-score-scan.json",
+    "nativeFrameScan": "_work/frame-score-scan.npz",
+    "criterion": "Notation ink above the score-free 99.9th percentile plus 200 grayscale-sum units, on a 1/8-scale native-frame ROI.",
+    "threshold": 205.0,
+    "frameRate": 24,
+    "handoffCriterion": "Unique-ink template projection >2 green-channel units for uninterrupted A/B and short/long notation changes.",
+    "nativePresentationTimestamps": "_work/frame-pts.csv"
+  },
+  "rhythm21Reading": {
+    "quarterNoteUnitsPerBar": [
+      0.5,
+      0.5,
+      0.5,
+      1,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "bars": 4,
+    "ties": [
+      [
+        6,
+        7
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        20,
+        21
+      ]
+    ],
+    "explanation": "Each bar has three eighths, one quarter, and three eighths. The first three bar-end F#4 eighths tie into the next bar-start F#4 eighths. No tuplets or augmentation dots are visible."
+  }
+}

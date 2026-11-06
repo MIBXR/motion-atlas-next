@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>字号即镜头</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "字号即镜头",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-ascii-crt",
+      "source": "../../cases/lemo-ascii-crt/index.html",
+      "audio": "../../cases/lemo-ascii-crt/audio/film.m4a",
+      "label": "字号即镜头",
+      "from": 40,
+      "to": 47.8
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "字号即镜头"
+    }
+  ],
+  "reduced": 4.5
+});
+  </script>
+</body>
+</html>

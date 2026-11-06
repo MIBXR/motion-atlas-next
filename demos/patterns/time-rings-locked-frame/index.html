@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>锁定画面里的时间环</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "锁定画面里的时间环",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-satellite-briefing",
+      "source": "../../cases/lemo-satellite-briefing/index.html",
+      "audio": "../../cases/lemo-satellite-briefing/audio/film.m4a",
+      "label": "锁定画面里的时间环",
+      "from": 7.8,
+      "to": 15.3
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "锁定画面里的时间环"
+    }
+  ],
+  "reduced": 5.8
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文档打字机自写</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "文档打字机自写",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "ink-press",
+      "source": "../../../demos/cases/ink-press/index.html",
+      "audio": "../../../demos/cases/ink-press/audio/film.m4a",
+      "label": "文档打字机自写",
+      "from": 25.833333333333332,
+      "to": 29.5
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "周报页显现"
+    },
+    {
+      "t": 0.2,
+      "label": "正文自写"
+    },
+    {
+      "t": 1.5166666666666666,
+      "label": "正文揭示完成"
+    },
+    {
+      "t": 1.5333333333333334,
+      "label": "左栏揭示"
+    },
+    {
+      "t": 1.8,
+      "label": "右栏揭示"
+    },
+    {
+      "t": 1.9333333333333333,
+      "label": "历史条目1弹入"
+    },
+    {
+      "t": 2.1,
+      "label": "历史条目2弹入"
+    },
+    {
+      "t": 2.2666666666666666,
+      "label": "历史条目3弹入"
+    },
+    {
+      "t": 2.433333333333333,
+      "label": "历史条目4弹入"
+    },
+    {
+      "t": 2.6,
+      "label": "历史条目5弹入"
+    },
+    {
+      "t": 2.7666666666666666,
+      "label": "历史条目6弹入"
+    },
+    {
+      "t": 3.033333333333333,
+      "label": "历史条目全部落位"
+    }
+  ],
+  "reduced": 3.3333333333333335
+});
+  </script>
+</body>
+</html>

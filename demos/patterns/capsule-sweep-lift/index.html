@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "扫浪托起字母",
+      "segments": [
+        {
+          "caseId": "mg-3d-render",
+          "label": "三维软床 · 扫浪托起字母",
+          "source": "../../cases/mg-3d-render/index.html",
+          "from": 0,
+          "to": 4.3
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "三维软床"
+        },
+        {
+          "t": 0.5,
+          "label": "首字落地"
+        },
+        {
+          "t": 1.5,
+          "label": "第二字落地"
+        },
+        {
+          "t": 2,
+          "label": "第三字落地"
+        },
+        {
+          "t": 2.5,
+          "label": "第四字落地"
+        },
+        {
+          "t": 3.375,
+          "label": "字母再起"
+        }
+      ],
+      "reduced": 3.8,
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 24
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

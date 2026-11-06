@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "剪影弧线飞出",
+      "segments": [
+        {
+          "caseId": "mg-collage",
+          "label": "脑洞拼贴 · 弧线飞出振翅",
+          "source": "../../cases/mg-collage/index.html",
+          "from": 4.46,
+          "to": 7.7
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "脑洞拼贴"
+        },
+        {
+          "t": 1.8733333,
+          "label": "黑带拍入"
+        },
+        {
+          "t": 2.2066667,
+          "label": "脑洞大开"
+        },
+        {
+          "t": 3.04,
+          "label": "撕开纸页"
+        }
+      ],
+      "reduced": 1.34,
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "抬高旋转拍贴",
+      "segments": [
+        {
+          "caseId": "mg-paperclip",
+          "label": "手机拍落",
+          "from": 0,
+          "to": 0.8
+        },
+        {
+          "caseId": "mg-paperclip",
+          "label": "部件拍落",
+          "from": 0.98,
+          "to": 2.5
+        },
+        {
+          "caseId": "mg-paperclip",
+          "label": "产地贴纸拍落",
+          "from": 5.56,
+          "to": 6.8
+        },
+        {
+          "caseId": "mg-collage",
+          "label": "脑洞拼贴 · 纸片拍贴塌影",
+          "source": "../../cases/mg-collage/index.html",
+          "from": 0,
+          "to": 1.4
+        },
+        {
+          "caseId": "mg-collage",
+          "label": "脑洞拼贴 · 纸片拍贴塌影",
+          "source": "../../cases/mg-collage/index.html",
+          "from": 2.05,
+          "to": 2.8
+        },
+        {
+          "caseId": "mg-collage",
+          "label": "脑洞拼贴 · 纸片拍贴塌影",
+          "source": "../../cases/mg-collage/index.html",
+          "from": 5.96,
+          "to": 7.54
+        },
+        {
+          "caseId": "mg-collage",
+          "label": "脑洞拼贴 · 纸片拍贴塌影",
+          "source": "../../cases/mg-collage/index.html",
+          "from": 7.96,
+          "to": 9.4
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "手机拍落"
+        },
+        {
+          "t": 0.1,
+          "label": "机制画面"
+        },
+        {
+          "t": 0.8,
+          "label": "部件拍落"
+        },
+        {
+          "t": 1.62,
+          "label": "机制画面"
+        },
+        {
+          "t": 2.32,
+          "label": "产地贴纸拍落"
+        },
+        {
+          "t": 2.96,
+          "label": "机制画面"
+        },
+        {
+          "t": 3.56,
+          "label": "脑洞拼贴"
+        },
+        {
+          "t": 3.8933333,
+          "label": "人像拍落"
+        },
+        {
+          "t": 4.8933333,
+          "label": "纸偶开口"
+        },
+        {
+          "t": 4.96,
+          "label": "脑洞拼贴"
+        },
+        {
+          "t": 5.2433333,
+          "label": "剪线盖印"
+        },
+        {
+          "t": 5.41,
+          "label": "剪开头盖"
+        },
+        {
+          "t": 5.71,
+          "label": "脑洞拼贴"
+        },
+        {
+          "t": 6.0833333,
+          "label": "黑带拍入"
+        },
+        {
+          "t": 6.4166667,
+          "label": "脑洞大开"
+        },
+        {
+          "t": 7.25,
+          "label": "撕开纸页"
+        },
+        {
+          "t": 7.29,
+          "label": "脑洞拼贴"
+        },
+        {
+          "t": 7.6633333,
+          "label": "刊名拍入"
+        }
+      ],
+      "reduced": 1.82,
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>逐词卡拉 OK 歌词</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "逐词卡拉 OK 歌词",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "pdoom-video",
+      "label": "P(doom) 手绘 MV",
+      "source": "../../cases/pdoom-video/index.html",
+      "audio": "../../cases/pdoom-video/audio/pdoom.mp3",
+      "from": 23,
+      "to": 30
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "P(doom) 手绘 MV · 23–30秒"
+    }
+  ],
+  "reduced": 1,
+  "accent": "#c8322b"
+});
+  </script>
+</body>
+</html>

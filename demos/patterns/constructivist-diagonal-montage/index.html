@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>构成主义斜线蒙太奇</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "构成主义斜线蒙太奇",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-kino-montage",
+      "source": "../../cases/lemo-kino-montage/index.html",
+      "audio": "../../cases/lemo-kino-montage/audio/film.m4a",
+      "label": "构成主义斜线蒙太奇",
+      "to": 5,
+      "from": 0
+    },
+    {
+      "caseId": "lemo-kino-montage",
+      "source": "../../cases/lemo-kino-montage/index.html",
+      "audio": "../../cases/lemo-kino-montage/audio/film.m4a",
+      "label": "构成主义斜线蒙太奇",
+      "to": 16,
+      "from": 14.5
+    },
+    {
+      "caseId": "lemo-kino-montage",
+      "source": "../../cases/lemo-kino-montage/index.html",
+      "audio": "../../cases/lemo-kino-montage/audio/film.m4a",
+      "label": "构成主义斜线蒙太奇",
+      "to": 48.25,
+      "from": 43.25
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "构成主义斜线蒙太奇"
+    }
+  ],
+  "reduced": 2.5
+});
+  </script>
+</body>
+</html>

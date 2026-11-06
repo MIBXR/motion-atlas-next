@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "蓝图落块波",
+      "segments": [
+        {
+          "caseId": "mg-isometric",
+          "label": "蓝图落块波",
+          "from": 0,
+          "to": 2.1
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "蓝图起绘"
+        },
+        {
+          "t": 0.25,
+          "label": "首环落位"
+        },
+        {
+          "t": 0.5,
+          "label": "第二环"
+        },
+        {
+          "t": 0.75,
+          "label": "第三环"
+        },
+        {
+          "t": 1,
+          "label": "第四环"
+        },
+        {
+          "t": 1.25,
+          "label": "第五环"
+        },
+        {
+          "t": 1.5,
+          "label": "末环落位"
+        },
+        {
+          "t": 1.9,
+          "label": "地块成形"
+        }
+      ],
+      "reduced": 1,
+      "root": "#stage",
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

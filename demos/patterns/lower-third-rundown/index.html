@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>串联单与标题条</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "串联单与标题条",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "lemo-news-package",
+      "source": "../../cases/lemo-news-package/index.html",
+      "audio": "../../cases/lemo-news-package/audio/film.m4a",
+      "label": "串联单与标题条",
+      "to": 9,
+      "from": 1.5
+    },
+    {
+      "caseId": "lemo-news-package",
+      "source": "../../cases/lemo-news-package/index.html",
+      "audio": "../../cases/lemo-news-package/audio/film.m4a",
+      "label": "串联单与标题条",
+      "to": 24.3,
+      "from": 23.7
+    },
+    {
+      "caseId": "lemo-news-package",
+      "source": "../../cases/lemo-news-package/index.html",
+      "audio": "../../cases/lemo-news-package/audio/film.m4a",
+      "label": "串联单与标题条",
+      "to": 47.5,
+      "from": 45
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "串联单与标题条"
+    }
+  ],
+  "reduced": 4.8
+});
+  </script>
+</body>
+</html>

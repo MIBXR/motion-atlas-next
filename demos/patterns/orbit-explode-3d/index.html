@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>环绕中逐层爆炸再合拢</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "环绕中逐层爆炸再合拢",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-teardown",
+      "source": "../../cases/lemo-teardown/index.html",
+      "audio": "../../cases/lemo-teardown/audio/film.m4a",
+      "label": "环绕中逐层爆炸再合拢",
+      "from": 4.4,
+      "to": 27.6
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "环绕中逐层爆炸再合拢"
+    }
+  ],
+  "reduced": 11.6
+});
+  </script>
+</body>
+</html>

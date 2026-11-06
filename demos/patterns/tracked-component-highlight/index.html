@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>部件追色</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "部件追色",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "lemo-chalkboard",
+      "source": "../../cases/lemo-chalkboard/index.html",
+      "audio": "../../cases/lemo-chalkboard/audio/film.m4a",
+      "label": "部件追色",
+      "to": 28.7,
+      "from": 18.5
+    },
+    {
+      "caseId": "lemo-chalkboard",
+      "source": "../../cases/lemo-chalkboard/index.html",
+      "audio": "../../cases/lemo-chalkboard/audio/film.m4a",
+      "label": "部件追色",
+      "to": 33.5,
+      "from": 28.7
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "部件追色"
+    },
+    {
+      "t": 10.2,
+      "label": "继续追踪"
+    }
+  ],
+  "reduced": 8.2
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+const CONFIG = { count: 9, idleAfter: 2.5, enterRate: 0.8, exitRate: 4, periods: [8, 13], amplitudes: [0.075, 0.027], phase: [[0.3, -0.45], [-0.17, 0.3]], pixelsPerUnit: 50, inputs: [0.2, 9.5], duration: 16 };

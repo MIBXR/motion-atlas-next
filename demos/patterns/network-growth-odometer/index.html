@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>线网按年生长</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "线网按年生长",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "lemo-transit-map",
+      "source": "../../cases/lemo-transit-map/index.html",
+      "audio": "../../cases/lemo-transit-map/audio/film.m4a",
+      "label": "线网按年生长",
+      "from": 13.0,
+      "to": 21.7
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "线网按年生长"
+    }
+  ],
+  "reduced": 6.9
+});
+  </script>
+</body>
+</html>

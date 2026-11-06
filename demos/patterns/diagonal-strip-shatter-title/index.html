@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>斜切条带退场与字形入场</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "斜切条带退场与字形入场",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-spy-titles",
+      "source": "../../cases/lemo-spy-titles/index.html",
+      "audio": "../../cases/lemo-spy-titles/audio/film.m4a",
+      "label": "斜切条带退场与字形入场",
+      "from": 31.0,
+      "to": 34.2
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "屋顶旧景"
+    },
+    {
+      "t": 0.36363636363635976,
+      "label": "斜切退场与字形入场"
+    },
+    {
+      "t": 2.18181818181818,
+      "label": "片名落定"
+    }
+  ],
+  "reduced": 1.2
+});
+  </script>
+</body>
+</html>

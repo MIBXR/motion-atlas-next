@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>图符成真</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "图符成真",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-blueprint",
+      "source": "../../cases/lemo-blueprint/index.html",
+      "audio": "../../cases/lemo-blueprint/audio/film.m4a",
+      "label": "图符成真",
+      "from": 27.5,
+      "to": 31.7
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "图符成真"
+    }
+  ],
+  "reduced": 2.0
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>加速发牌飞入</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "加速发牌飞入",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "ink-press",
+      "source": "../../../demos/cases/ink-press/index.html",
+      "audio": "../../../demos/cases/ink-press/audio/film.m4a",
+      "label": "加速发牌飞入",
+      "from": 9.166666666666666,
+      "to": 12.5
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "牌堆旋转特写"
+    },
+    {
+      "t": 1.1333333333333333,
+      "label": "相机拉远"
+    },
+    {
+      "t": 1.2,
+      "label": "加速发牌"
+    },
+    {
+      "t": 2.066666666666667,
+      "label": "网格显露"
+    },
+    {
+      "t": 2.7333333333333334,
+      "label": "追随滚动"
+    },
+    {
+      "t": 3.2666666666666666,
+      "label": "底部落定"
+    }
+  ],
+  "reduced": 2.6666666666666665
+});
+  </script>
+</body>
+</html>

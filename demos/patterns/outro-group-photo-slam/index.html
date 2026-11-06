@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>合影组装与字标砸落</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "合影组装与字标砸落",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "ink-press",
+      "source": "../../../demos/cases/ink-press/index.html",
+      "audio": "../../../demos/cases/ink-press/audio/film.m4a",
+      "label": "合影组装与字标砸落",
+      "from": 31.333333333333332,
+      "to": 36.166666666666664
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "虚焦"
+    },
+    {
+      "t": 0.13333333333333333,
+      "label": "合影组装"
+    },
+    {
+      "t": 0.16666666666666666,
+      "label": "riser 蓄力"
+    },
+    {
+      "t": 1.3333333333333333,
+      "label": "组装落定与 impact"
+    },
+    {
+      "t": 1.4,
+      "label": "字标砸落"
+    },
+    {
+      "t": 2.1666666666666665,
+      "label": "sparkle 揭示"
+    },
+    {
+      "t": 2.6666666666666665,
+      "label": "字标与副标落定停留"
+    },
+    {
+      "t": 4.433333333333334,
+      "label": "收尾淡出"
+    }
+  ],
+  "reduced": 4.166666666666667
+});
+  </script>
+</body>
+</html>

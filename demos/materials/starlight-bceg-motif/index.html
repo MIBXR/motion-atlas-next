@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>少女歌剧 BCEG（7135）动机</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="demo/demo.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="?demo=tracks"><strong>BCEG</strong><span>7 · 1 · 3 · 5</span></a>
+    <nav aria-label="素材页面"><a href="?demo=tracks" data-mode="tracks">曲目</a><a href="?demo=rhythms" data-mode="rhythms">节奏型</a></nav>
+  </header>
+  <main id="app" aria-label="BCEG 动机素材"></main>
+  <audio id="audio" preload="metadata"></audio>
+  <script src="motion-kit.js"></script>
+  <script src="vendor/vexflow@4.2.5/vexflow.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({ styles: ['demo/demo.css'], modules: ['demo/demo.js'], data: ['demo/data/motif.json'], images: ['demo/assets/cover.jpg'] });
+    await MotionKit.load.module('demo/demo.js');
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "中轴散字收拢",
+      "segments": [
+        {
+          "caseId": "mg-line-art",
+          "label": "线条艺术",
+          "from": 8.133,
+          "to": 9.85
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "字标入场前"
+        },
+        {
+          "t": 0.20000000000000107,
+          "label": "中轴起字"
+        },
+        {
+          "t": 0.6170000000000009,
+          "label": "标语抬入"
+        },
+        {
+          "t": 1.1170000000000009,
+          "label": "细线签章"
+        },
+        {
+          "t": 1.4670000000000005,
+          "label": "细线落定"
+        },
+        {
+          "t": 1.5170000000000012,
+          "label": "标语齐备"
+        }
+      ],
+      "reduced": 1.6170000000000009,
+      "root": "#stage",
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

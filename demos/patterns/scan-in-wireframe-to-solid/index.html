@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>扫描成线框再实体化</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "扫描成线框再实体化",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-hologram-hud",
+      "source": "../../cases/lemo-hologram-hud/index.html",
+      "audio": "../../cases/lemo-hologram-hud/audio/film.m4a",
+      "label": "扫描成线框再实体化",
+      "from": 0.0,
+      "to": 2.7
+    },
+    {
+      "caseId": "lemo-hologram-hud",
+      "source": "../../cases/lemo-hologram-hud/index.html",
+      "audio": "../../cases/lemo-hologram-hud/audio/film.m4a",
+      "label": "扫描成线框再实体化",
+      "from": 22.0,
+      "to": 28.0
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "扫描成线框再实体化"
+    }
+  ],
+  "reduced": 6.7
+});
+  </script>
+</body>
+</html>

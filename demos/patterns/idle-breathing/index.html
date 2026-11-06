@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>空闲呼吸 — Motion Atlas 巧思</title>
+</head>
+<body>
+<main class="stage">
+  <div class="cards" id="cards" aria-hidden="true"></div>
+  <div class="meter"><span id="label" aria-live="polite"></span><div class="track"><i id="idleBar"></i><b id="thresh"></b></div><canvas id="wave" width="620" height="90" aria-label="两个周期叠加的呼吸曲线"></canvas></div>
+  <button type="button" id="poke">模拟一次操作</button>
+</main>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({ styles: ['mechanism/style.css'], modules: ['mechanism/script.js'], data: ['mechanism/config.js'] });
+await MotionKit.load.script('mechanism/config.js');
+await MotionKit.load.module('mechanism/script.js');
+</script>
+</body>
+</html>

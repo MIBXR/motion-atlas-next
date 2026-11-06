@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>光照到哪格哪格动</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "光照到哪格哪格动",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-stained-glass",
+      "source": "../../cases/lemo-stained-glass/index.html",
+      "audio": "../../cases/lemo-stained-glass/audio/film.m4a",
+      "label": "光照到哪格哪格动",
+      "from": 14.8,
+      "to": 23.8
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "光照到哪格哪格动"
+    }
+  ],
+  "reduced": 3.0
+});
+  </script>
+</body>
+</html>

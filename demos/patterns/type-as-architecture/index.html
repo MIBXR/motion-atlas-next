@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>字即布景</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "字即布景",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-spy-titles",
+      "source": "../../cases/lemo-spy-titles/index.html",
+      "audio": "../../cases/lemo-spy-titles/audio/film.m4a",
+      "label": "字即布景",
+      "from": 9.545454545454545,
+      "to": 25.0
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "字即布景"
+    }
+  ],
+  "reduced": 2
+});
+  </script>
+</body>
+</html>

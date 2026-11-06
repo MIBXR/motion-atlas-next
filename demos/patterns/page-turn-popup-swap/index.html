@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>翻页立体书换景</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "翻页立体书换景",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 60,
+  "segments": [
+    {
+      "caseId": "lemo-paper-popup",
+      "source": "../../cases/lemo-paper-popup/index.html",
+      "audio": "../../cases/lemo-paper-popup/audio/film.m4a",
+      "label": "翻页立体书换景",
+      "from": 48.6,
+      "to": 52.5
+    },
+    {
+      "caseId": "lemo-paper-popup",
+      "source": "../../cases/lemo-paper-popup/index.html",
+      "audio": "../../cases/lemo-paper-popup/audio/film.m4a",
+      "label": "翻页立体书换景",
+      "from": 71.6,
+      "to": 75.5
+    },
+    {
+      "caseId": "lemo-paper-popup",
+      "source": "../../cases/lemo-paper-popup/index.html",
+      "audio": "../../cases/lemo-paper-popup/audio/film.m4a",
+      "label": "翻页立体书换景",
+      "from": 86.8,
+      "to": 90.7
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "翻页立体书换景"
+    },
+    {
+      "t": 3.8999999999999986,
+      "label": "来源片段2"
+    },
+    {
+      "t": 7.800000000000004,
+      "label": "来源片段3"
+    }
+  ],
+  "reduced": 1.4
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>纸雾洗白转地图</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "纸雾洗白转地图",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 60,
+  "segments": [
+    {
+      "caseId": "lemo-watercolor",
+      "source": "../../cases/lemo-watercolor/index.html",
+      "audio": "../../cases/lemo-watercolor/audio/film.m4a",
+      "label": "纸雾洗白转地图",
+      "from": 70.3,
+      "to": 80.8
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "纸雾洗白转地图"
+    },
+    {
+      "t": 5,
+      "label": "机制展开"
+    }
+  ],
+  "reduced": 5
+});
+  </script>
+</body>
+</html>

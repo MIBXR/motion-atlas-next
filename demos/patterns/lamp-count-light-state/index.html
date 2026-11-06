@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>灯数即光照</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "灯数即光照",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-shadow-puppet",
+      "source": "../../cases/lemo-shadow-puppet/index.html",
+      "audio": "../../cases/lemo-shadow-puppet/audio/film.m4a",
+      "label": "灯数即光照",
+      "from": 7.2,
+      "to": 11.3
+    },
+    {
+      "caseId": "lemo-shadow-puppet",
+      "source": "../../cases/lemo-shadow-puppet/index.html",
+      "audio": "../../cases/lemo-shadow-puppet/audio/film.m4a",
+      "label": "灯数即光照",
+      "from": 27.2,
+      "to": 34.2
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "灯数即光照"
+    },
+    {
+      "t": 4.1,
+      "label": "灯数即光照"
+    }
+  ],
+  "reduced": 10.2
+});
+  </script>
+</body>
+</html>

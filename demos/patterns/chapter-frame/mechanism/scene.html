@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>chapter-frame — Motion Atlas Demo</title>
+  <!-- 地图资源尽早开始下载（与 config.js 的 map.lib / map.style 保持一致）：与页面脚本并行，缩短可播放前的等待 -->
+</head>
+<body>
+  <!--
+    固定画幅舞台：MotionKit.stage() 把 #stage 设为 1920×1080 / 1080×1920 并整体等比缩放，内部一律用舞台像素。
+    层级（下 → 上）：太空 / 底图 → 地图降级遮罩 → 色调层 → 地图锚定图形（SVG：航线、节点、引线）→ 地图标签 →
+    卡片 → 全屏回忆 / 对比 → 压暗层 → 章节装饰 → 事件文字 → HUD → 收尾 → 颗粒与暗角
+  -->
+  <main id="stage" class="stage" aria-label="地图巡礼影像：关西三日">
+    <div id="plates" class="plates" aria-hidden="true"></div>
+    <canvas id="space" class="space" aria-hidden="true"></canvas>
+    <div id="map" class="map" aria-hidden="true"></div>
+    <div id="fallback" class="map-fallback" aria-hidden="true"></div>
+    <div id="veil" class="veil" aria-hidden="true"><span class="veil-tag">SYNCING MAP</span></div>
+    <div id="wash" class="wash" aria-hidden="true"></div>
+
+    <svg id="geo" class="geo" aria-hidden="true"></svg>
+    <i class="hud-fade top" aria-hidden="true"></i><i class="hud-fade bottom" aria-hidden="true"></i>
+    <div id="labels" class="labels" aria-hidden="true"></div>
+
+    <div id="cards" class="cards" aria-hidden="true"></div>
+
+    <section id="flashback" class="flashback" aria-hidden="true">
+      <div class="fb-media"></div>
+      <i class="fb-frame"></i>
+      <span class="fb-tag"></span>
+      <div class="fb-vtext"></div>
+      <p class="fb-en"><span class="fb-en-text"></span><i class="fb-caret"></i></p>
+      <p class="fb-caption"></p>
+    </section>
+
+    <section id="compare" class="compare" aria-hidden="true">
+      <div class="cmp-a"><div class="cmp-media"></div><span class="cmp-label"></span></div>
+      <div class="cmp-b"><div class="cmp-media"></div><span class="cmp-label"></span></div>
+      <i class="cmp-divider"><i class="cmp-knob"></i></i>
+      <i class="cmp-frame"></i>
+      <span class="cmp-stamp"></span>
+    </section>
+
+    <div id="scrim" class="scrim" aria-hidden="true"></div>
+
+    <div id="decor" class="decor" aria-hidden="true">
+      <svg class="frame-svg"><path class="fr-line"/></svg>
+      <i class="fr-c tl"></i><i class="fr-c tr"></i><i class="fr-c bl"></i><i class="fr-c br"></i>
+      <canvas class="halftone"></canvas>
+      <div class="tape"><i></i></div>
+    </div>
+
+    <section id="intro" class="intro-title" aria-hidden="true">
+      <div class="it-cjk"></div>
+      <div class="it-side">
+        <i class="it-rule"></i>
+        <h1 class="it-en"></h1>
+        <p class="it-sub"></p>
+      </div>
+    </section>
+
+    <section id="loc" class="loc-title" aria-hidden="true">
+      <div class="lt-cjk"></div>
+      <div class="lt-side"><i class="lt-rule"></i><h2 class="lt-en"></h2><p class="lt-sub"></p></div>
+    </section>
+
+    <section id="daycard" class="daycard" aria-hidden="true">
+      <div class="dc-row"><span class="dc-day">DAY</span><span class="dc-num"><i></i></span></div>
+      <p class="dc-date"></p>
+    </section>
+
+    <div id="chapter" class="chapter-tag" aria-hidden="true"><span class="ct-chip"></span><b class="ct-title"></b></div>
+
+    <div id="alert" class="alert" aria-hidden="true">
+      <div class="al-bar">
+        <svg class="al-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 10v5M12 17.6v.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <b class="al-title"></b><span class="al-detail"></span>
+      </div>
+      <span class="al-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 6l-7 6 7 6zM20 6l-7 6 7 6z" fill="currentColor"/></svg><span class="al-chip-text"></span></span>
+    </div>
+
+    <div id="toast" class="toast" aria-hidden="true">
+      <span class="ts-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 11h8M8 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <span class="ts-body"><b class="ts-text"></b><span class="ts-sub"></span></span>
+    </div>
+
+    <figure id="note" class="note" aria-hidden="true">
+      <svg class="nt-doodle" viewBox="0 0 360 150" aria-hidden="true"></svg>
+      <p class="nt-text"></p>
+      <figcaption class="nt-sign"></figcaption>
+    </figure>
+
+    <header class="hud hud-top" aria-hidden="true">
+      <div class="hud-day">
+        <p class="hd-title"><b>DAY</b> <span class="hd-n"><i>01</i></span> <small>/ <span class="hd-total"></span></small></p>
+        <p class="hd-date"></p>
+      </div>
+      <svg class="compass" viewBox="-30 -30 60 60" aria-hidden="true">
+        <circle class="cp-ring" r="26"/>
+        <g class="cp-ticks"></g>
+        <g class="cp-needle"><path class="cp-n" d="M0 -20 L5 0 L-5 0Z"/><path class="cp-s" d="M0 20 L5 0 L-5 0Z"/></g>
+        <circle class="cp-hub" r="2.6"/>
+      </svg>
+      <div class="hud-geo"><p class="hg-coord"></p><p class="hg-elev"></p></div>
+      <div class="hud-clock"><span class="hc-time">00:00</span><span class="hc-tz"></span></div>
+    </header>
+    <svg id="hudgfx" class="hudgfx" aria-hidden="true"></svg>
+
+    <div id="badge" class="badge" aria-hidden="true">
+      <span class="bd-avatar"><svg viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M8 13l5 5h14l5-5v15a9 9 0 0 1-9 9h-6a9 9 0 0 1-9-9z" fill="#f2a94b"/>
+        <path d="M8 13l5 5h-5zM32 13l-5 5h5z" fill="#d9792c"/>
+        <circle cx="15.5" cy="25" r="1.9" fill="#16171a"/><circle cx="24.5" cy="25" r="1.9" fill="#16171a"/>
+        <path d="M18.4 29h3.2l-1.6 1.5z" fill="#c9452e"/>
+        <path d="M5 27h6M5 30.5h6M29 27h6M29 30.5h6" stroke="#16171a" stroke-width="1.2" stroke-linecap="round"/>
+      </svg></span>
+      <span class="bd-label"></span>
+      <b class="bd-n"><i>×0</i></b>
+    </div>
+
+    <footer class="hud hud-bottom" aria-hidden="true">
+      <div class="np">
+        <p class="np-head"><svg class="np-eq" viewBox="0 0 30 22" aria-hidden="true"><rect x="0" width="4" y="8" height="14"/><rect x="6.5" width="4" y="3" height="19"/><rect x="13" width="4" y="10" height="12"/><rect x="19.5" width="4" y="5" height="17"/><rect x="26" width="4" y="12" height="10"/></svg><span>NOW PLAYING</span></p>
+        <p class="np-track"><b class="np-title"></b> — <span class="np-artist"></span></p>
+        <p class="np-lyric"><span class="np-lyric-text"></span></p>
+        <p class="np-sub"></p>
+      </div>
+      <div class="scale" aria-hidden="true"><i class="sc-bar"><i></i><i></i></i><span class="sc-text"></span></div>
+    </footer>
+    <p class="attrib"></p>
+
+    <i class="outro-bg" aria-hidden="true"></i>
+    <section id="outro" class="outro" aria-hidden="true">
+      <ul class="ou-stats"></ul>
+      <p class="ou-fin"><span class="ou-fin-text"></span> <small class="ou-handle"></small></p>
+      <div class="ou-credits"></div>
+    </section>
+
+    <i id="grain" class="grain" aria-hidden="true"></i>
+    <i class="vignette" aria-hidden="true"></i>
+  </main>
+
+  <script src="../motion-kit.js"></script>
+  <script type="module">
+    const scripts = ['../../../cases/map-pilgrimage/film/config.js', 'config.js', '../../../cases/map-pilgrimage/film/paths.js', '../../../cases/map-pilgrimage/film/scenes.js', '../../../cases/map-pilgrimage/film/script.js'];
+    await MotionKit.load.prepare({ styles: ['style.css'], data: [...scripts, 'score.json'] });
+    for (const src of scripts) await MotionKit.load.script(src);
+  </script>
+</body>
+</html>

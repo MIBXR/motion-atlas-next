@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>随身灯即情绪 · Motion Atlas</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    MotionKit.replay({
+  "title": "随身灯即情绪",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-hd-2d",
+      "source": "../../cases/lemo-hd-2d/index.html",
+      "audio": "../../cases/lemo-hd-2d/audio/film.m4a",
+      "label": "提灯人 · HD-2D",
+      "from": 15.2,
+      "to": 17.4
+    },
+    {
+      "caseId": "lemo-hd-2d",
+      "source": "../../cases/lemo-hd-2d/index.html",
+      "audio": "../../cases/lemo-hd-2d/audio/film.m4a",
+      "label": "提灯人 · HD-2D",
+      "from": 40.6,
+      "to": 47.6
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "随身灯即情绪"
+    },
+    {
+      "t": 2.1999999999999993,
+      "label": "随身灯即情绪"
+    }
+  ],
+  "reduced": 6
+});
+  </script>
+</body>
+</html>

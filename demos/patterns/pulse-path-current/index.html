@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电流沿走线奔跑</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "电流沿走线奔跑",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "lemo-circuit-board",
+      "source": "../../cases/lemo-circuit-board/index.html",
+      "audio": "../../cases/lemo-circuit-board/audio/film.m4a",
+      "label": "电流沿走线奔跑",
+      "from": 4.7,
+      "to": 10.1
+    },
+    {
+      "caseId": "lemo-circuit-board",
+      "source": "../../cases/lemo-circuit-board/index.html",
+      "audio": "../../cases/lemo-circuit-board/audio/film.m4a",
+      "label": "电流沿走线奔跑",
+      "from": 14.4,
+      "to": 23.5
+    },
+    {
+      "caseId": "lemo-circuit-board",
+      "source": "../../cases/lemo-circuit-board/index.html",
+      "audio": "../../cases/lemo-circuit-board/audio/film.m4a",
+      "label": "电流沿走线奔跑",
+      "from": 38.4,
+      "to": 41.5
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "电流沿走线奔跑"
+    }
+  ],
+  "reduced": 8.5
+});
+  </script>
+</body>
+</html>

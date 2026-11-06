@@ -1,0 +1,90 @@
+[
+  {
+    "t": 1,
+    "voice": "confirm",
+    "note": "E6",
+    "steps": [
+      0,
+      7
+    ],
+    "vel": 0.55
+  },
+  {
+    "t": 1.4,
+    "voice": "stamp",
+    "vel": 0.85,
+    "weight": 0.8
+  },
+  {
+    "t": 1.43,
+    "voice": "sparkle",
+    "vel": 0.3,
+    "dur": 0.4
+  },
+  {
+    "t": 2.4,
+    "voice": "confirm",
+    "note": "E6",
+    "steps": [
+      0,
+      7
+    ],
+    "vel": 0.55
+  },
+  {
+    "t": 2.8,
+    "voice": "stamp",
+    "vel": 0.85,
+    "weight": 0.8
+  },
+  {
+    "t": 2.83,
+    "voice": "sparkle",
+    "vel": 0.3,
+    "dur": 0.4
+  },
+  {
+    "t": 3.6,
+    "voice": "confirm",
+    "note": "E6",
+    "steps": [
+      0,
+      7
+    ],
+    "vel": 0.55
+  },
+  {
+    "t": 4,
+    "voice": "stamp",
+    "vel": 0.85,
+    "weight": 0.8
+  },
+  {
+    "t": 4.03,
+    "voice": "sparkle",
+    "vel": 0.3,
+    "dur": 0.4
+  },
+  {
+    "t": 4.8,
+    "voice": "confirm",
+    "note": "E6",
+    "steps": [
+      0,
+      7
+    ],
+    "vel": 0.55
+  },
+  {
+    "t": 5.2,
+    "voice": "stamp",
+    "vel": 0.85,
+    "weight": 0.8
+  },
+  {
+    "t": 5.23,
+    "voice": "sparkle",
+    "vel": 0.3,
+    "dur": 0.4
+  }
+]

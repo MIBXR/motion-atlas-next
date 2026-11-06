@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>风过处上色</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "风过处上色",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-urban-sketch",
+      "source": "../../cases/lemo-urban-sketch/index.html",
+      "audio": "../../cases/lemo-urban-sketch/audio/film.m4a",
+      "label": "风过处上色",
+      "to": 19.2,
+      "from": 4.4
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "风过处上色"
+    }
+  ],
+  "reduced": 8.8
+});
+  </script>
+</body>
+</html>

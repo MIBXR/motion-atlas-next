@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>聚光主角卡</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "聚光主角卡",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "ink-press",
+      "source": "../../../demos/cases/ink-press/index.html",
+      "audio": "../../../demos/cases/ink-press/audio/film.m4a",
+      "label": "聚光主角卡",
+      "from": 2.7333333333333334,
+      "to": 7.333333333333333
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "看板显现"
+    },
+    {
+      "t": 0.13333333333333333,
+      "label": "聚光游走"
+    },
+    {
+      "t": 1.0666666666666667,
+      "label": "锁定与推近"
+    },
+    {
+      "t": 1.6,
+      "label": "卡片弹起"
+    },
+    {
+      "t": 1.9333333333333333,
+      "label": "悬浮"
+    },
+    {
+      "t": 2,
+      "label": "第一圈扫光"
+    },
+    {
+      "t": 2.6666666666666665,
+      "label": "第二圈扫光"
+    },
+    {
+      "t": 3.7333333333333334,
+      "label": "压缩归位"
+    },
+    {
+      "t": 4.333333333333333,
+      "label": "卡片落定"
+    }
+  ],
+  "reduced": 2.2666666666666666
+});
+  </script>
+</body>
+</html>

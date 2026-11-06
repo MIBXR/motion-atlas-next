@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>随旁白按笔顺写式</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "随旁白按笔顺写式",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-whiteboard",
+      "source": "../../cases/lemo-whiteboard/index.html",
+      "audio": "../../cases/lemo-whiteboard/audio/film.m4a",
+      "label": "随旁白按笔顺写式",
+      "to": 70,
+      "from": 56.3
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "随旁白按笔顺写式"
+    }
+  ],
+  "reduced": 10.0
+});
+  </script>
+</body>
+</html>

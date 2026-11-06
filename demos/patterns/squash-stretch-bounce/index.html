@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>预备、拉伸与压扁回弹 · Motion Atlas</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "预备、拉伸与压扁回弹",
+      "segments": [
+        {
+          "caseId": "mg-flat-vector",
+          "label": "扁平矢量",
+          "from": 0,
+          "to": 1.5333333333333334
+        },
+        {
+          "caseId": "mg-flat-vector",
+          "label": "扁平矢量",
+          "from": 5.5,
+          "to": 7.2
+        },
+        {
+          "caseId": "mg-cel-boil",
+          "label": "逐帧线条抖动",
+          "from": 1.05,
+          "to": 5.7
+        },
+        {
+          "caseId": "mg-liquid",
+          "label": "液态流动",
+          "from": 0,
+          "to": 2.15
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "落球拉伸"
+        },
+        {
+          "t": 0.5,
+          "label": "触地压扁"
+        },
+        {
+          "t": 0.9,
+          "label": "起跳预备"
+        },
+        {
+          "t": 1.0333333333333334,
+          "label": "弧线弹射"
+        },
+        {
+          "t": 1.5333333333333334,
+          "label": "接力片段"
+        },
+        {
+          "t": 1.7333333333333334,
+          "label": "接力蓄力"
+        },
+        {
+          "t": 2.033333333333333,
+          "label": "落地回弹"
+        },
+        {
+          "t": 2.533333333333333,
+          "label": "再次回弹"
+        },
+        {
+          "t": 2.700000000000001,
+          "label": "下一跳蓄力"
+        },
+        {
+          "t": 3.2333333333333334,
+          "label": "火苗舞步"
+        },
+        {
+          "t": 3.9333333333333336,
+          "label": "下蹲预备"
+        },
+        {
+          "t": 4.183333333333334,
+          "label": "火苗拉伸"
+        },
+        {
+          "t": 4.683333333333334,
+          "label": "触地压扁"
+        },
+        {
+          "t": 5.183333333333334,
+          "label": "连续小跳"
+        },
+        {
+          "t": 5.933333333333334,
+          "label": "转身跳跃"
+        },
+        {
+          "t": 6.683333333333334,
+          "label": "亮相落定"
+        },
+        {
+          "t": 7.883333333,
+          "label": "液态流动"
+        }
+      ],
+      "reduced": 0.5333333333333333,
+      "root": "#stage",
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

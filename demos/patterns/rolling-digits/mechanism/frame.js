@@ -1,0 +1,20 @@
+import {createRollingNumber,createRollingText} from './rolling.js';
+const CONFIG=parent.CONFIG, $=s=>document.querySelector(s);
+const {records,columns}=await parent.MotionKit.load.fetch(new URL('archives.json',document.baseURI).href).then(r=>r.json());
+const columnFiles=lane=>records.map((record,index)=>({record,index})).filter(({record})=>record.category===columns[lane]).map(({index})=>index);
+const memory=columns.map((_,lane)=>columnFiles(lane)[0]);let selected=0;
+const motion={duration:CONFIG.durationMs,motionBlur:true,animated:true};
+const number={...motion,animated:false,locales:'en-US',format:{minimumIntegerDigits:2,useGrouping:false}};
+const fileCounter=createRollingNumber($('#selected-number'),{...number,value:1});
+const columnCounter=createRollingNumber($('#column-index'),{...number,value:3});
+const code=createRollingNumber($('#selected-code'),{...number,format:{minimumIntegerDigits:3,useGrouping:false},value:1});
+const text={...motion,transition:'direct',stagger:'none'};
+const texts=[['#selected-title','莱茵生命'],['#selected-clearance','REFERENCE AREA'],['#archive-category','机构档案'],['#column-name','机构档案']].map(([selector,textValue])=>createRollingText($(selector),{...text,text:textValue}));
+for(const selector of ['#selected-number','#column-index','#selected-code'])$(selector).style.setProperty('--rn-blur',CONFIG.numberBlur);
+for(const selector of ['#selected-title','#selected-clearance','#archive-category','#column-name'])$(selector).style.setProperty('--rn-blur',CONFIG.textBlur);
+const wrap=(n,count)=>((n%count)+count)%count;
+function navigate(key){const lane=columns.indexOf(records[selected].category),files=columnFiles(lane),row=key==='ArrowUp'||key==='ArrowDown',direction=key==='ArrowDown'||key==='ArrowRight'?1:-1;selected=row?files[wrap(files.indexOf(selected)+direction,files.length)]:memory[wrap(lane+direction,columns.length)];const record=records[selected],nextLane=columns.indexOf(record.category),nextFiles=columnFiles(nextLane);memory[nextLane]=selected;const dir=direction>0?'up':'down';texts[0].update({text:record.title});texts[1].update({text:record.clearance});texts[2].update({text:record.category});code.update({animated:true,value:Number(record.id.slice(2)),direction:dir});fileCounter.update({animated:true,value:nextFiles.indexOf(selected)+1,direction:row?dir:'auto'});columnCounter.update({animated:true,value:nextLane+1,direction:row?'auto':dir});texts[3].update({text:columns[nextLane]});$('.count-total').textContent=String(nextFiles.length).padStart(2,'0');}
+await Promise.all([document.fonts.load('400 16px MiSans',JSON.stringify(records)),document.fonts.load('750 28px MiSans',JSON.stringify(records)),document.fonts.ready]);
+window.__rollingReady=true;window.__navigate=navigate;
+window.addEventListener('keydown',event=>{if(event.key.startsWith('Arrow')){event.preventDefault();parent.__rollingInput(event.key);}});
+document.querySelectorAll('[data-key]').forEach(button=>button.addEventListener('click',()=>parent.__rollingInput(button.dataset.key)));

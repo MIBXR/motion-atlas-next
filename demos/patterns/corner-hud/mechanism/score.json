@@ -1,0 +1,46 @@
+[
+  {
+    "t": 0.5,
+    "voice": "click",
+    "vel": 0.5,
+    "pan": -0.5
+  },
+  {
+    "t": 0.62,
+    "voice": "click",
+    "vel": 0.5,
+    "pan": 0.5
+  },
+  {
+    "t": 0.74,
+    "voice": "click",
+    "vel": 0.5,
+    "pan": -0.5
+  },
+  {
+    "t": 0.86,
+    "voice": "click",
+    "vel": 0.5,
+    "pan": 0.5
+  },
+  {
+    "t": 1,
+    "voice": "kick",
+    "vel": 1
+  },
+  {
+    "t": 1,
+    "voice": "sub",
+    "note": "D1",
+    "dur": 1.2,
+    "vel": 0.65
+  },
+  {
+    "t": 1,
+    "voice": "kick",
+    "gain": 0.75,
+    "duck": 0.22,
+    "vel": 1,
+    "step": 64
+  }
+]

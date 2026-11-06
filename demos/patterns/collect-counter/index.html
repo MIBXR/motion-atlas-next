@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({ styles: ['mechanism/replay.css'], modules: ['./mechanism/replay.js'] });
+    await MotionKit.load.module('./mechanism/replay.js');
+  </script>
+</body>
+</html>

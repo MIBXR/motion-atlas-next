@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>贝塞尔极光漂移 · Motion Atlas</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "贝塞尔极光漂移",
+      "segments": [
+        {
+          "caseId": "mg-aurora-glass",
+          "label": "极光玻璃",
+          "from": 0,
+          "to": 10
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "极光玻璃"
+        },
+        {
+          "t": 1,
+          "label": "机制画面"
+        },
+        {
+          "t": 5,
+          "label": "机制画面"
+        },
+        {
+          "t": 9.5,
+          "label": "机制画面"
+        }
+      ],
+      "reduced": 9.5,
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

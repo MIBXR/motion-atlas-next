@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>副歌计量表逐拍递增</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "副歌计量表逐拍递增",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "pdoom-video",
+      "label": "P(doom) 手绘 MV",
+      "source": "../../cases/pdoom-video/index.html",
+      "audio": "../../cases/pdoom-video/audio/pdoom.mp3",
+      "from": 23,
+      "to": 27
+    },
+    {
+      "caseId": "pdoom-video",
+      "label": "P(doom) 手绘 MV",
+      "source": "../../cases/pdoom-video/index.html",
+      "audio": "../../cases/pdoom-video/audio/pdoom.mp3",
+      "from": 123.5,
+      "to": 132
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "P(doom) 手绘 MV · 23–27秒"
+    },
+    {
+      "t": 4,
+      "label": "P(doom) 手绘 MV · 123.5–132秒"
+    }
+  ],
+  "reduced": 1.2,
+  "accent": "#c8322b"
+});
+  </script>
+</body>
+</html>

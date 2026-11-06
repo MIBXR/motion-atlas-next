@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "软床触地回弹",
+      "segments": [
+        {
+          "caseId": "mg-3d-render",
+          "label": "三维软床 · 软字触地回弹",
+          "source": "../../cases/mg-3d-render/index.html",
+          "from": 0.05,
+          "to": 3.2
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "三维软床"
+        },
+        {
+          "t": 0.45,
+          "label": "首字落地"
+        },
+        {
+          "t": 1.45,
+          "label": "第二字落地"
+        },
+        {
+          "t": 1.95,
+          "label": "第三字落地"
+        },
+        {
+          "t": 2.45,
+          "label": "第四字落地"
+        }
+      ],
+      "reduced": 2.85,
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 24
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

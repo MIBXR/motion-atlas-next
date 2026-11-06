@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>显微俯冲</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    MotionKit.replay({
+  "title": "显微俯冲",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-microscope",
+      "source": "../../cases/lemo-microscope/index.html",
+      "audio": "../../cases/lemo-microscope/audio/film.m4a",
+      "label": "玻片到组织与结节",
+      "from": 2.67,
+      "to": 10.67
+    },
+    {
+      "caseId": "lemo-microscope",
+      "source": "../../cases/lemo-microscope/index.html",
+      "audio": "../../cases/lemo-microscope/audio/film.m4a",
+      "label": "结节到细胞核",
+      "from": 26.67,
+      "to": 32.67
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "玻片到组织与结节"
+    },
+    {
+      "t": 8.0,
+      "label": "结节到细胞核"
+    }
+  ],
+  "reduced": 12
+});
+  </script>
+</body>
+</html>

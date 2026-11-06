@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>逐行点亮原文</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    MotionKit.replay({
+  "title": "逐行点亮原文",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-archive-lighttable",
+      "source": "../../cases/lemo-archive-lighttable/index.html",
+      "audio": "../../cases/lemo-archive-lighttable/audio/film.m4a",
+      "label": "电报逐行点亮",
+      "from": 2.5,
+      "to": 9.3
+    },
+    {
+      "caseId": "lemo-archive-lighttable",
+      "source": "../../cases/lemo-archive-lighttable/index.html",
+      "audio": "../../cases/lemo-archive-lighttable/audio/film.m4a",
+      "label": "剪报原句点亮",
+      "from": 11.5,
+      "to": 13.3
+    },
+    {
+      "caseId": "lemo-caption-news",
+      "source": "../../cases/lemo-caption-news/index.html",
+      "audio": "../../cases/lemo-caption-news/audio/film.m4a",
+      "label": "报告标题高亮",
+      "from": 13,
+      "to": 16
+    },
+    {
+      "caseId": "lemo-caption-news",
+      "source": "../../cases/lemo-caption-news/index.html",
+      "audio": "../../cases/lemo-caption-news/audio/film.m4a",
+      "label": "报告句子高亮",
+      "from": 27.5,
+      "to": 30
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "电报逐行点亮"
+    },
+    {
+      "t": 6.8,
+      "label": "剪报原句点亮"
+    },
+    {
+      "t": 8.6,
+      "label": "报告标题高亮"
+    },
+    {
+      "t": 11.6,
+      "label": "报告句子高亮"
+    }
+  ],
+  "reduced": 4.8
+});
+  </script>
+</body>
+</html>

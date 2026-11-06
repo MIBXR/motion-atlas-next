@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>字按墨度排成图</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "字按墨度排成图",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-ascii-crt",
+      "source": "../../cases/lemo-ascii-crt/index.html",
+      "audio": "../../cases/lemo-ascii-crt/audio/film.m4a",
+      "label": "字按墨度排成图",
+      "from": 33.2,
+      "to": 40.2
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "字按墨度排成图"
+    }
+  ],
+  "reduced": 4.6
+});
+  </script>
+</body>
+</html>

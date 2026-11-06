@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>逐版套印成画</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "逐版套印成画",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-ukiyoe",
+      "source": "../../cases/lemo-ukiyoe/index.html",
+      "audio": "../../cases/lemo-ukiyoe/audio/film.m4a",
+      "label": "逐版套印成画",
+      "from": 0,
+      "to": 3.1
+    },
+    {
+      "caseId": "lemo-ukiyoe",
+      "source": "../../cases/lemo-ukiyoe/index.html",
+      "audio": "../../cases/lemo-ukiyoe/audio/film.m4a",
+      "label": "逐版套印成画",
+      "from": 30.4,
+      "to": 34.5
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "逐版套印成画"
+    },
+    {
+      "t": 3.1,
+      "label": "逐版套印成画"
+    }
+  ],
+  "reduced": 5.6
+});
+  </script>
+</body>
+</html>

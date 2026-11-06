@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>笔刷横扫换章</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "笔刷横扫换章",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "pdoom-video",
+      "label": "P(doom) 手绘 MV",
+      "source": "../../cases/pdoom-video/index.html",
+      "audio": "../../cases/pdoom-video/audio/pdoom.mp3",
+      "from": 37.9,
+      "to": 39.2
+    },
+    {
+      "caseId": "pdoom-video",
+      "label": "P(doom) 手绘 MV",
+      "source": "../../cases/pdoom-video/index.html",
+      "audio": "../../cases/pdoom-video/audio/pdoom.mp3",
+      "from": 72.4,
+      "to": 73.7
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "P(doom) 手绘 MV · 37.9–39.2秒"
+    },
+    {
+      "t": 1.3,
+      "label": "P(doom) 手绘 MV · 72.4–73.7秒"
+    }
+  ],
+  "reduced": 0.75,
+  "accent": "#c8322b"
+});
+  </script>
+</body>
+</html>

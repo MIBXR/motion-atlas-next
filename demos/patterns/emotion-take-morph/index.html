@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>表情过渡：闭眼、挤压、冒符号再睁眼</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "表情过渡：闭眼、挤压、冒符号再睁眼",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "pdoom-video",
+      "label": "P(doom) 手绘 MV",
+      "source": "../../cases/pdoom-video/index.html",
+      "audio": "../../cases/pdoom-video/audio/pdoom.mp3",
+      "from": 3.6,
+      "to": 5.9
+    },
+    {
+      "caseId": "pdoom-video",
+      "label": "P(doom) 手绘 MV",
+      "source": "../../cases/pdoom-video/index.html",
+      "audio": "../../cases/pdoom-video/audio/pdoom.mp3",
+      "from": 6,
+      "to": 8.95
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "P(doom) 手绘 MV · 3.6–5.9秒"
+    },
+    {
+      "t": 2.3,
+      "label": "P(doom) 手绘 MV · 6–8.95秒"
+    }
+  ],
+  "reduced": 0.5,
+  "accent": "#c8322b"
+});
+  </script>
+</body>
+</html>

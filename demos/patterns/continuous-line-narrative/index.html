@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "一线连续成景",
+      "segments": [
+        {
+          "caseId": "mg-line-art",
+          "label": "线条艺术",
+          "from": 0,
+          "to": 7.7
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "墨线起笔"
+        },
+        {
+          "t": 0.2,
+          "label": "种子成形"
+        },
+        {
+          "t": 0.75,
+          "label": "幼苗生长"
+        },
+        {
+          "t": 2.063,
+          "label": "卷须展开"
+        },
+        {
+          "t": 2.223,
+          "label": "屋梁落定"
+        },
+        {
+          "t": 3.85,
+          "label": "天际延伸"
+        },
+        {
+          "t": 5.393,
+          "label": "浪花卷起"
+        },
+        {
+          "t": 6.458,
+          "label": "圆环描绘"
+        },
+        {
+          "t": 7.5,
+          "label": "连续线闭合"
+        }
+      ],
+      "reduced": 7.5,
+      "root": "#stage",
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

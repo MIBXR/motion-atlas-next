@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小人只站界面上沿</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "小人只站界面上沿",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "lemo-living-screencast",
+      "source": "../../cases/lemo-living-screencast/index.html",
+      "audio": "../../cases/lemo-living-screencast/audio/film.m4a",
+      "label": "小人只站界面上沿",
+      "from": 10.5,
+      "to": 18.5
+    },
+    {
+      "caseId": "lemo-living-screencast",
+      "source": "../../cases/lemo-living-screencast/index.html",
+      "audio": "../../cases/lemo-living-screencast/audio/film.m4a",
+      "label": "小人只站界面上沿",
+      "from": 22.2,
+      "to": 27.8
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "小人只站界面上沿"
+    }
+  ],
+  "reduced": 3.5
+});
+  </script>
+</body>
+</html>

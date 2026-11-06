@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>滚动总谱</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    MotionKit.replay({
+      "title": "滚动总谱",
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 60,
+      "segments": [
+        {
+          "caseId": "butterfly-garden-score",
+          "source": "../../cases/butterfly-garden-score/index.html",
+          "audio": "../../cases/butterfly-garden-score/audio/film.m4a",
+          "label": "第一場音符三态",
+          "from": 3.8,
+          "to": 8.3
+        },
+        {
+          "caseId": "butterfly-garden-score",
+          "source": "../../cases/butterfly-garden-score/index.html",
+          "audio": "../../cases/butterfly-garden-score/audio/film.m4a",
+          "label": "全奏织体对照",
+          "from": 61,
+          "to": 65
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "序幕弦乐长音"
+        },
+        {
+          "t": 2.2,
+          "label": "音符三态"
+        },
+        {
+          "t": 4.5,
+          "label": "全奏织体对照"
+        }
+      ],
+      "reduced": 2.2
+    });
+  </script>
+</body>
+</html>

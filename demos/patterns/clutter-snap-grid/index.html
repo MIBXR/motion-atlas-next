@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>杂物一拍归格</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "杂物一拍归格",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-dark-keynote",
+      "source": "../../cases/lemo-dark-keynote/index.html",
+      "audio": "../../cases/lemo-dark-keynote/audio/film.m4a",
+      "label": "杂物一拍归格",
+      "from": 15.7,
+      "to": 19.3
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "杂物一拍归格"
+    }
+  ],
+  "reduced": 1.7
+});
+  </script>
+</body>
+</html>

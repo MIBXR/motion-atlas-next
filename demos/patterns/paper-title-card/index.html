@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>纸墨逐词字卡</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "纸墨逐词字卡",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 30,
+  "segments": [
+    {
+      "caseId": "ink-press",
+      "source": "../../../demos/cases/ink-press/index.html",
+      "audio": "../../../demos/cases/ink-press/audio/film.m4a",
+      "label": "纸墨逐词字卡",
+      "from": 18.833333333333332,
+      "to": 20.666666666666668
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "字卡与 swoosh"
+    },
+    {
+      "t": 0.13333333333333333,
+      "label": "逐词入场"
+    },
+    {
+      "t": 0.3333333333333333,
+      "label": "副标显现"
+    },
+    {
+      "t": 0.4,
+      "label": "数字滚动"
+    },
+    {
+      "t": 0.5333333333333333,
+      "label": "下划线伸展"
+    },
+    {
+      "t": 1.1333333333333333,
+      "label": "数字与下划线落定"
+    },
+    {
+      "t": 1.2333333333333334,
+      "label": "全部词落定"
+    },
+    {
+      "t": 1.5666666666666667,
+      "label": "字卡淡出"
+    }
+  ],
+  "reduced": 1.4666666666666666
+});
+  </script>
+</body>
+</html>

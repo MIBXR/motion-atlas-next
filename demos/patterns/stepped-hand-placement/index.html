@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "抽帧手摆抖动",
+      "segments": [
+        {
+          "caseId": "mg-collage",
+          "label": "脑洞拼贴 · 抽帧手摆抖动",
+          "source": "../../cases/mg-collage/index.html",
+          "from": 0,
+          "to": 10
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "脑洞拼贴"
+        },
+        {
+          "t": 0.3333333,
+          "label": "人像拍落"
+        },
+        {
+          "t": 1.3333333,
+          "label": "纸偶开口"
+        },
+        {
+          "t": 2.3333333,
+          "label": "剪线盖印"
+        },
+        {
+          "t": 2.5,
+          "label": "剪开头盖"
+        },
+        {
+          "t": 3.6666667,
+          "label": "动作悬停"
+        },
+        {
+          "t": 4,
+          "label": "脑洞弹开"
+        },
+        {
+          "t": 4.3333333,
+          "label": "火箭飞出"
+        },
+        {
+          "t": 6.3333333,
+          "label": "黑带拍入"
+        },
+        {
+          "t": 6.6666667,
+          "label": "脑洞大开"
+        },
+        {
+          "t": 7.5,
+          "label": "撕开纸页"
+        },
+        {
+          "t": 8.3333333,
+          "label": "刊名拍入"
+        },
+        {
+          "t": 9.5,
+          "label": "头盖合拢"
+        }
+      ],
+      "reduced": 7.2,
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

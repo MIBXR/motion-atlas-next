@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>逐刀刻出画面</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "逐刀刻出画面",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-woodcut",
+      "source": "../../cases/lemo-woodcut/index.html",
+      "audio": "../../cases/lemo-woodcut/audio/film.m4a",
+      "label": "逐刀刻出画面",
+      "from": 0,
+      "to": 7
+    },
+    {
+      "caseId": "lemo-woodcut",
+      "source": "../../cases/lemo-woodcut/index.html",
+      "audio": "../../cases/lemo-woodcut/audio/film.m4a",
+      "label": "逐刀刻出画面",
+      "from": 39,
+      "to": 41.6667
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "逐刀刻出画面"
+    },
+    {
+      "t": 7,
+      "label": "来源片段2"
+    }
+  ],
+  "reduced": 4.5
+});
+  </script>
+</body>
+</html>

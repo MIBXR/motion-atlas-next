@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>海面遮罩吞日 · Motion Atlas</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "海面遮罩吞日",
+      "segments": [
+        {
+          "caseId": "mg-morph",
+          "label": "形状变形",
+          "from": 2.2,
+          "to": 4.6
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "形状变形"
+        },
+        {
+          "t": 0.5,
+          "label": "机制画面"
+        },
+        {
+          "t": 1.0,
+          "label": "机制画面"
+        },
+        {
+          "t": 1.9,
+          "label": "机制画面"
+        }
+      ],
+      "reduced": 0.8,
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

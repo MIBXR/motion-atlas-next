@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>透视场次标题</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    MotionKit.replay({
+      "title": "透视场次标题",
+      "root": "#stage",
+      "orients": [
+        "landscape"
+      ],
+      "fps": 60,
+      "segments": [
+        {
+          "caseId": "butterfly-garden-score",
+          "source": "../../cases/butterfly-garden-score/index.html",
+          "audio": "../../cases/butterfly-garden-score/audio/film.m4a",
+          "label": "第二場 ニ長調",
+          "from": 20.03,
+          "to": 23.55
+        },
+        {
+          "caseId": "butterfly-garden-score",
+          "source": "../../cases/butterfly-garden-score/index.html",
+          "audio": "../../cases/butterfly-garden-score/audio/film.m4a",
+          "label": "第三場 イ長調",
+          "from": 43.6,
+          "to": 47.33
+        }
+      ],
+      "markers": [
+        {
+          "t": 1.5,
+          "label": "第二場 ニ長調"
+        },
+        {
+          "t": 3.52,
+          "label": "第三場淡入"
+        },
+        {
+          "t": 4.9,
+          "label": "第三場 イ長調"
+        }
+      ],
+      "reduced": 1.8
+    });
+  </script>
+</body>
+</html>

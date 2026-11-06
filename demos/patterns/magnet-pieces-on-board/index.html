@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>磁贴在板上移动</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "磁贴在板上移动",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-briefing-board",
+      "source": "../../cases/lemo-briefing-board/index.html",
+      "audio": "../../cases/lemo-briefing-board/audio/film.m4a",
+      "label": "磁贴在板上移动",
+      "from": 3.8,
+      "to": 13.8
+    },
+    {
+      "caseId": "lemo-whiteboard",
+      "source": "../../cases/lemo-whiteboard/index.html",
+      "audio": "../../cases/lemo-whiteboard/audio/film.m4a",
+      "label": "磁铁沿地图漂移",
+      "from": 77.5,
+      "to": 89.3
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "磁贴在板上移动"
+    },
+    {
+      "t": 10.0,
+      "label": "磁铁沿地图漂移"
+    }
+  ],
+  "reduced": 1.7
+});
+  </script>
+</body>
+</html>

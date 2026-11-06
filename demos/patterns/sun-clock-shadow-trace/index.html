@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>日晷与投影阴影轨迹</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    MotionKit.replay({
+  "title": "日晷与投影阴影轨迹",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-white-model",
+      "source": "../../cases/lemo-white-model/index.html",
+      "audio": "../../cases/lemo-white-model/audio/film.m4a",
+      "label": "太阳、阴影与量程",
+      "from": 22.8,
+      "to": 35.4
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "太阳、阴影与量程"
+    }
+  ],
+  "reduced": 7.6
+});
+  </script>
+</body>
+</html>

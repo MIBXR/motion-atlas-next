@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "集中线炸字主拍",
+      "segments": [
+        {
+          "caseId": "mg-hanazi",
+          "label": "综艺花字 · 集中线炸字主拍",
+          "source": "../../cases/mg-hanazi/index.html",
+          "from": 5.8,
+          "to": 7.833
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "综艺花字"
+        },
+        {
+          "t": 0.2,
+          "label": "炸毛主拍"
+        },
+        {
+          "t": 1.2,
+          "label": "发量爆表"
+        },
+        {
+          "t": 1.7,
+          "label": "定格收框"
+        }
+      ],
+      "reduced": 0.45,
+      "root": "#stage",
+      "orients": [
+        "portrait"
+      ],
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>蜡笔防染显形</title>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.replay({
+  "title": "蜡笔防染显形",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "fps": 24,
+  "segments": [
+    {
+      "caseId": "lemo-crayon-book",
+      "source": "../../cases/lemo-crayon-book/index.html",
+      "audio": "../../cases/lemo-crayon-book/audio/film.m4a",
+      "label": "蜡笔防染显形",
+      "from": 26.8,
+      "to": 35.3
+    }
+  ],
+  "markers": [
+    {
+      "t": 0,
+      "label": "蜡笔防染显形"
+    }
+  ],
+  "reduced": 5.1
+});
+  </script>
+</body>
+</html>

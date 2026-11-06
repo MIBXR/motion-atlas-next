@@ -1,0 +1,30 @@
+[
+  {
+    "t": 0.2,
+    "voice": "whoosh",
+    "dur": 0.5,
+    "vel": 0.45
+  },
+  {
+    "t": 0.7,
+    "voice": "whoosh",
+    "dur": 0.75,
+    "dir": "up",
+    "from": 700,
+    "to": 3000,
+    "vel": 0.5,
+    "sweep": 0.9
+  },
+  {
+    "t": 1.65,
+    "voice": "stamp",
+    "vel": 1
+  },
+  {
+    "t": 1.65,
+    "voice": "sub",
+    "note": "B0",
+    "dur": 0.6,
+    "vel": 0.5
+  }
+]

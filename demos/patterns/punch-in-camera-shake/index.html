@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>巧思原片重放</title>
+  <style>
+    html,body{margin:0;background:#000;overflow:hidden}
+    #stage{background:#000}
+    #cue{position:absolute;left:24px;top:24px;z-index:2;padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font:22px/1.4 "Microsoft YaHei",sans-serif;pointer-events:none}
+    #cue[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <main id="stage"><output id="cue" hidden></output></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    const config = {
+      "title": "分级急推镜震",
+      "segments": [
+        {
+          "caseId": "mg-collage",
+          "label": "脑洞拼贴 · 逐格俯拍冲镜",
+          "source": "../../cases/mg-collage/index.html",
+          "from": 1.13,
+          "to": 7.7
+        },
+        {
+          "caseId": "mg-hanazi",
+          "label": "综艺花字 · 预警三连推",
+          "source": "../../cases/mg-hanazi/index.html",
+          "from": 4.7,
+          "to": 6.2
+        }
+      ],
+      "markers": [
+        {
+          "t": 0,
+          "label": "脑洞拼贴"
+        },
+        {
+          "t": 0.2033333,
+          "label": "纸偶开口"
+        },
+        {
+          "t": 1.2033333,
+          "label": "剪线盖印"
+        },
+        {
+          "t": 1.37,
+          "label": "剪开头盖"
+        },
+        {
+          "t": 2.5366667,
+          "label": "动作悬停"
+        },
+        {
+          "t": 2.87,
+          "label": "脑洞弹开"
+        },
+        {
+          "t": 3.2033333,
+          "label": "火箭飞出"
+        },
+        {
+          "t": 5.2033333,
+          "label": "黑带拍入"
+        },
+        {
+          "t": 5.5366667,
+          "label": "脑洞大开"
+        },
+        {
+          "t": 6.37,
+          "label": "撕开纸页"
+        },
+        {
+          "t": 6.57,
+          "label": "综艺花字"
+        },
+        {
+          "t": 6.77,
+          "label": "高能预警"
+        },
+        {
+          "t": 7.12,
+          "label": "三连推近"
+        },
+        {
+          "t": 7.87,
+          "label": "炸毛主拍"
+        }
+      ],
+      "reduced": 2.92,
+      "root": "#stage",
+      "orients": [
+        "landscape",
+        "portrait"
+      ],
+      "fps": 30
+    };
+    await MotionKit.replay(config);
+  </script>
+</body>
+</html>
