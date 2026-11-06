@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>05 · 手作 — cel animation / line boil</title>
+<script type="importmap">{"imports":{
+  "simplex-noise":"./vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js",
+  "opentype":"./vendor/opentype.js@2.0.0/dist/opentype.mjs"}}</script>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: ["assets/paper_base.jpg","assets/paper_tooth.png","assets/dust_ink_01.png","assets/dust_ink_02.png","assets/dust_ink_03.png","assets/dust_ink_04.png"],
+  data: ["film/cues.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const labels = {
+  "anticip": "动作预备",
+  "strike_start": "火柴划动",
+  "strike_scrape": "摩擦火花",
+  "ignite": "点火闪光",
+  "match_land": "火柴落定",
+  "eyes_open": "眼睛睁开",
+  "blink": "角色眨眼",
+  "look_left": "向左看",
+  "look_right": "向右看",
+  "crouch": "蹲下预备",
+  "jump": "火苗起跳",
+  "land": "火苗落地",
+  "hops": "舞步落点",
+  "twirl": "转身跳跃",
+  "shimmy": "摆动肩膀",
+  "tada": "亮相定格",
+  "sparkles": "亮相闪光",
+  "bounce": "聚力下蹲",
+  "spin_start": "旋转蓄力",
+  "squash": "压缩蓄力",
+  "burst": "爆炸开始",
+  "impact_frames": "冲击画格",
+  "box_blown": "道具吹飞",
+  "strokes": "火花写字",
+  "title_settle": "标题落定",
+  "letters": "英文入场",
+  "tagline": "标语擦入",
+  "spirit_pop": "火苗重生",
+  "wink": "火苗眨眼",
+  "end": "影片结束",
+  "burst_debris": "爆炸碎片",
+  "pullback": "镜头拉回",
+  "loop": "红笔圈注",
+  "riffle": "纸页翻阅",
+  "arrow": "箭头画出"
+};
+const markers = Object.entries(labels).flatMap(([key, label]) => {
+  const times = Array.isArray(cues[key]) ? cues[key] : [cues[key]];
+  return times.map((t, i) => ({ t, label: label + (times.length > 1 ? i + 1 : '') }));
+}).sort((a, b) => a.t - b.t);
+
+document.querySelector('#c').style.background = getComputedStyle(document.body).backgroundColor;
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title,
+  root: '#c', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#F5B730',
+  start: { t: 0, reduced: 9.75 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

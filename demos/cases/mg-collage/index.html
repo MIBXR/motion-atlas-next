@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>拼贴剪贴 · NOGGIN Quarterly</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: ["assets/gen/p_lid.png","assets/gen/p_jaw.png","assets/gen/p_face.png","assets/gen/space_wedge.png","assets/gen/earth.png","assets/gen/bird_hawk.png","assets/gen/rose_purple.png","assets/gen/rose_centi.png","assets/gen/bfly_a.png","assets/gen/bfly_b.png","assets/gen/rocket.png","assets/gen/flame0.png","assets/gen/flame1.png","assets/gen/news_a.png","assets/gen/news_b.png","assets/gen/manicule.png","assets/gen/page_kraft.jpg","assets/gen/page_red.jpg","assets/textures/grain/grain_film35_2048.png","assets/textures/dust/dust_01_3840x2160.png","assets/textures/dust/dust_03_3840x2160.png","assets/textures/washi/washi_solid_14.png","assets/textures/washi/washi_solid_12.png"],
+  data: ["film/cues.json","assets/gen/layout.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const names = {"slap_portrait": "人像拍落", "slap_circle": "圆纸拍落", "slap_news": "报纸拍落", "jaw": "纸偶开口", "stamp_cut": "剪线盖印", "snips": "剪刀推进", "rattle": "头盖抖动", "gap": "动作悬停", "pop": "脑洞弹开", "burst": "碎纸爆开", "rocket": "火箭飞出", "earth": "地球飞出", "birds": "飞鸟展开", "roses": "玫瑰生长", "butterflies": "蝴蝶展开", "manicules": "手指入场", "band": "黑带拍入", "hero": "脑洞大开", "tear": "撕开纸页", "end_masthead": "刊名拍入", "end_jaw": "落版开口", "end_button": "赠品贴纸", "lid_land": "头盖回落", "end_snip": "剪刀剪动", "chip06": "刊号拍入", "end_lid": "头盖合拢", "tear_hand": "手指夹纸"};
+const markers = Object.entries(names).flatMap(([key, label]) => {
+  const cue = cues[key];
+  return (typeof cue === 'object' ? Object.values(cue) : [cue]).map(t => ({ t, label }));
+}).filter(({ t }) => t >= 0 && t < duration).sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title, bpm: cues.bpm,
+  root: '#stage', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#E0A355',
+  start: { t: 0, reduced: 7.2 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

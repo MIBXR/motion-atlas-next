@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>年兽进城 · 红色窗花剪纸</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/fold.js",
+    "film/girl.js",
+    "film/hud.js",
+    "film/index.html",
+    "film/light.js",
+    "film/main.js",
+    "film/motifs.js",
+    "film/nian.js",
+    "film/paper.js",
+    "film/rig.js",
+    "film/story.js",
+    "film/tuanhua.js",
+    "film/village.js",
+    "film/world.js",
+    "film/core/lib.js",
+    "film/voices/dur.json"
+  ],
+  "images": [],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Nian Comes to Town";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 49.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "年兽进城 · 红色窗花剪纸",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#f2e8d0",
+  "accent": "#d2201f",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 35.28
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "剪刀特写"
+  },
+  {
+    "t": 3,
+    "label": "剪字标题"
+  },
+  {
+    "t": 7,
+    "label": "夜村横移"
+  },
+  {
+    "t": 12,
+    "label": "年兽起身"
+  },
+  {
+    "t": 17,
+    "label": "窗内对视"
+  },
+  {
+    "t": 19.5,
+    "label": "三物决心"
+  },
+  {
+    "t": 24,
+    "label": "折纸剪刻"
+  },
+  {
+    "t": 30,
+    "label": "展开成花"
+  },
+  {
+    "t": 31,
+    "label": "镂空发光与八窗"
+  },
+  {
+    "t": 38,
+    "label": "黎明揭纸"
+  },
+  {
+    "t": 42.5,
+    "label": "窗花实物"
+  },
+  {
+    "t": 46,
+    "label": "片尾"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

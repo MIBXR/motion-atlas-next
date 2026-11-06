@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>80 年代合成波 · NEON DRIVE — Midnight 1986</title>
+<script type="importmap">{"imports":{"three":"./vendor/three@0.186.1/build/three.module.js","three/addons/":"./vendor/three@0.186.1/examples/jsm/","simplex-noise":"./vendor/simplex-noise@4.0.3/dist/esm/simplex-noise.js","opentype":"./vendor/opentype.js@2.0.0/dist/opentype.mjs"}}</script>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: [],
+  data: ["film/cues.json","fonts/MrDafoe-Regular.ttf"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const labels = { osd_play: '磁带播放', track_lock: '追踪锁定', lane_change: '跑车换道', mask_open: '画幅展开', sun_rise: '落日升起', build_ramp: '公路加速', tape_rewind: '磁带倒带', tape_hold: '磁带拖慢', slam: '镀铬落版', car_vanish: '跑车消失', glint: '镀铬扫光', neon_trace: '霓虹描写', ignite: '霓虹点亮', tagline: '标语展开', glint_end: '落版扫光', stop: '磁带停止', crt_off: '显像管关机' };
+const markers = Object.entries(labels).flatMap(([key, label]) => (Array.isArray(cues[key]) ? cues[key] : [cues[key]]).map(t => ({ t, label }))).sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title, bpm: cues.bpm,
+  root: '#stage', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#FF3DA8',
+  start: { t: 0, reduced: 9.5 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

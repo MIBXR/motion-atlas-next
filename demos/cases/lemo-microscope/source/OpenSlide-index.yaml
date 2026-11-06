@@ -1,0 +1,17 @@
+format: Ventana BIF
+slides:
+  OS-1.bif:
+    description: H&E stain, brightfield, joint direction RIGHT
+    license: distributable
+    sha256: c07e2f98d7653639ed7e064531648bc44f2aa4bb021f79253cec9d5b018fbdd4
+
+  OS-2.bif:
+    description: Ki-67 stain, brightfield, joint direction RIGHT
+    license: distributable
+    sha256: 8c0bcfe258574e1ec5640d280f9c5b664b76840f52b9cdcd321ec690c113dbd2
+
+  Ventana-1.bif:
+    credit: PathAI
+    description: Human liver, trichrome stain, brightfield, joint direction LEFT, scanned on Ventana DP 200
+    license: CC0-1.0
+    sha256: 2eb05cd8f628c36408c3fde09beeeebaaae90181c4f840d5475ec7594bdcbbb6

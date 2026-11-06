@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Noto Serif SC';
+  src: url('NotoSerifSC-VF.ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('CormorantGaramond[wght].ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: block;
+}

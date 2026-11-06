@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATELIER LINEA — one line</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: ["assets/textures/grain/grain_fine_2048.png"],
+  data: ["film/cues.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const drawLabels = {
+  'ground0@0.7': '墨线开场', seed: '种子成形', stem1: '茎节生长', leaf1: '首叶展开',
+  stem2: '茎节延伸', leaf2: '次叶展开', stem3: '树梢生长', leaf3: '三叶展开',
+  shoot: '枝梢伸展', tendril: '卷须生长', roof: '屋梁展开', pavilion: '亭阁成形',
+  tower: '高塔生长', tower2: '塔身落笔', sky: '天际展开', sky2: '尖塔落笔',
+  horizon: '地平延伸', wave: '海浪翻起', curl: '浪花卷曲', lift: '光线抬升',
+  ring: '圆环描绘', foot: '圆环接续', arch: '拱门描绘', 'arch>': '轮廓闭合',
+};
+const markers = [
+  ...cues.draw.map(([t, key], i, draw) => ({ t, label: i > 0 && draw[i - 1][1] === key ? '停顿续笔' : drawLabels[key] })),
+  { t: cues.morph[0], label: '卷须成梁' },
+  { t: cues.fill.start, label: '线环成面' },
+  { t: cues.pulse.start, label: '光脉回溯' },
+  { t: cues.camera.poster_from, label: '海报拉远' },
+  { t: cues.wordmark.start, label: '字标入场' },
+  { t: cues.wordmark.tagline, label: '标语入场' },
+  { t: cues.breath.start, label: '光脉回流' },
+  { t: cues.camera.poster_to, label: '海报落定' },
+  { t: cues.rules[0], label: '细线签章' },
+].sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title,
+  root: '#c', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#E6CB8E',
+  start: { t: 0, reduced: 9.75 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

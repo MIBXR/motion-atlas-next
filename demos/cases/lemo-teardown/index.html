@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>二十一键 · 产品拆解</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/index.html",
+    "film/LICENSE",
+    "film/core/lib.js",
+    "film/data/case.bin",
+    "film/data/pcb.json",
+    "film/src/comps.js",
+    "film/src/main.js",
+    "film/src/overlay.js",
+    "film/src/parts.js",
+    "film/src/pcbtex.js",
+    "film/src/timeline.js",
+    "film/core/three/post.js",
+    "film/voice/out/dur.json",
+    "film/voice/out/words.json",
+    "assets/photo_studio_loft_hall_2k.hdr",
+    "vendor/three@0.170.0/LICENSE",
+    "vendor/three@0.170.0/build/three.module.js",
+    "vendor/three@0.170.0/examples/jsm/geometries/RoundedBoxGeometry.js",
+    "vendor/three@0.170.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+    "vendor/three@0.170.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+    "vendor/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+    "vendor/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+    "vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+    "vendor/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "21 Keys, Opened";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: { duration: 38.75, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "二十一键 · 产品拆解",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#0d0e10",
+  "accent": "#ff6b3d",
+  "bpm": 96,
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 9.75
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+    {
+      "t": 0,
+      "label": "键帽微距"
+    },
+    {
+      "t": 2.5,
+      "label": "真实按键"
+    },
+    {
+      "t": 4.4,
+      "label": "留白"
+    },
+    {
+      "t": 5,
+      "label": "逐层升起"
+    },
+    {
+      "t": 6.9,
+      "label": "六层引线"
+    },
+    {
+      "t": 12.5,
+      "label": "进入缝隙"
+    },
+    {
+      "t": 15,
+      "label": "主控"
+    },
+    {
+      "t": 18.1,
+      "label": "灯珠"
+    },
+    {
+      "t": 21.3,
+      "label": "穿过定位板"
+    },
+    {
+      "t": 22.3,
+      "label": "热插拔"
+    },
+    {
+      "t": 25,
+      "label": "合拢"
+    },
+    {
+      "t": 27.5,
+      "label": "实物尺寸"
+    },
+    {
+      "t": 33.75,
+      "label": "片尾"
+    }
+  ]
+}
+    });
+  </script>
+</body>
+</html>

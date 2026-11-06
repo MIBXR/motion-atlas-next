@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>09-bauhaus — KONSTRUKTION</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: ["assets/textures/paper/Paper001_4K_color.jpg","assets/textures/grain/grain_fine_2048.png"],
+  data: ["film/cues.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const labels = {
+  marks: '定位标记', circle_land: '圆形落位', bar_land: '黑条落位',
+  target1: '定位一', tri_in: '三角入场', target2: '定位二', tri_flip: '三角翻转',
+  target3: '定位三', sq_scale: '方形缩放', target4: '定位四', circle_slide: '圆形滑动',
+  pivot: '轴心落点', group_turn: '组合转向', semi_slide: '半圆滑动', qd_sweep: '扇形扫入',
+  rule: '横线绘制', ticker_in: '拍数入场', red_in: '红块入场', red_split: '红块分割',
+  drop: '重拍级联', reveal: '三原色显现', freeze: '海报定格', type_small: '小字入场', lock: '套印锁定',
+  R1: '旋转波', R2: '横向翻牌', R3: '列对滑动', R4: '向心翻牌',
+};
+const markers = [
+  { t: cues.grid.land0, label: '网格落笔' },
+  ...cues.events.map(cue => ({ t: cue.t, label: labels[cue.id] })),
+  ...cues.ripples.map(cue => ({ t: cue.start, label: labels[cue.id] })),
+].sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title,
+  root: '#out', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#E03C31',
+  start: { t: 0, reduced: 9.75 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

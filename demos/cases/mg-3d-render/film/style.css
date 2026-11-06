@@ -1,0 +1,36 @@
+html, body { margin: 0; padding: 0; background: #000; }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #efe2ea; }
+  #plate { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+  /* finishing: soft vignette + filmic grain (boiled per frame) */
+  #vig { position: absolute; inset: 0; pointer-events: none;
+         background: radial-gradient(ellipse 72% 70% at 50% 47%, rgba(0,0,0,0) 55%, rgba(58,30,66,0.20) 100%);
+         mix-blend-mode: multiply; }
+  #grain { position: absolute; inset: -64px; pointer-events: none; opacity: .09; mix-blend-mode: overlay;
+           background: url('../assets/textures/grain/grain_fine_2048.png'); background-size: 1024px 1024px; }
+  /* tagline lockup */
+  #lock { position: absolute; left: 0; right: 0; top: 792px; text-align: center; color: #4a2e4e; }
+  .en { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 32px; letter-spacing: .26em;
+        text-transform: uppercase; font-variation-settings: 'opsz' 14; line-height: 1; white-space: nowrap; }
+  .en .w { display: inline-block; will-change: transform, filter, opacity; }
+  .rule { width: 64px; height: 2px; margin: 22px auto 21px; background: #4a2e4e; opacity: .55; transform-origin: 50% 50%; }
+  .zh { font-family: 'Noto Sans SC', sans-serif; font-weight: 500; font-size: 30px; letter-spacing: .36em;
+        line-height: 1; white-space: nowrap; }
+  .trail { margin-right: -.26em; }      /* cancel trailing tracking so lines are optically centred */
+  .zh .trail2 { margin-right: -.36em; }
+  .zh .gap { display: inline-block; width: .9em; }
+  
+  #scrim { position: absolute; left: 400px; top: 722px; width: 1120px; height: 250px; pointer-events: none;
+           background: radial-gradient(closest-side, rgba(239,230,248,.55) 62%, rgba(239,230,248,0) 100%);
+           filter: blur(14px); opacity: 0; }
+  
+  .dofl { position: absolute; left: 0; width: 1920px; bottom: 0; pointer-events: none; opacity: 0; }
+  #dof1 { top: 700px; backdrop-filter: blur(2.5px); -webkit-backdrop-filter: blur(2.5px);
+          -webkit-mask-image: linear-gradient(#0000 0, #000 50px); mask-image: linear-gradient(#0000 0, #000 50px); }
+  #dof2 { top: 730px; backdrop-filter: blur(2.6px); -webkit-backdrop-filter: blur(2.6px);
+          -webkit-mask-image: linear-gradient(#0000 0, #000 50px); mask-image: linear-gradient(#0000 0, #000 50px); }
+  #dof3 { top: 765px; backdrop-filter: blur(4.9px); -webkit-backdrop-filter: blur(4.9px);
+          -webkit-mask-image: linear-gradient(#0000 0, #000 55px); mask-image: linear-gradient(#0000 0, #000 55px); }
+  
+  #plate { filter: url(#grade) saturate(1.08); transform-origin: 1280px 640px; }
+  #plate2 { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; opacity: 0;
+            filter: url(#opengrade) saturate(1.08); transform-origin: 1280px 640px; }

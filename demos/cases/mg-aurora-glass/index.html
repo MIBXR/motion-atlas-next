@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>极光与玻璃拟态 · Aurora — Think in Light</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: ["assets/textures/grain/grain_fine_2048.png"],
+  data: ["film/cues.json","film/out/env.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const labels = { cardA_in: '对话卡入场', cardB_in: '声波卡入场', cardC_in: '控件卡入场', cardA_land: '对话卡落定', user_bubble: '用户气泡', typing: '输入提示', reply: '回复流入', chips: '操作标签', voice_on: '声波启动', toggle_on: '专注开启', slider: '亮度调整', knob_press: '控钮按压', knob_glass: '控钮玻璃化', drop: '金光主拍', word: '字标入场', orb_settle: '透镜落字', tagline: '标语入场', part: '卡片分离', bead: '玻璃珠升起', lens_full: '透镜展开', glide: '透镜滑行', lens_free: '透镜脱离', snap: '玻璃珠脱离', gold: '透镜金光', a_hold: '对话卡停留', a_clear: '对话卡让开', ring_open: '透镜开环', wave: '折射光波', ring_glint: '玻璃环扫光', final_note: '尾音落点' };
+const markers = Object.entries(labels).flatMap(([key, label]) => (Array.isArray(cues[key]) ? cues[key] : [cues[key]]).map(t => ({ t, label }))).filter(marker => marker.t >= 0).sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title, bpm: cues.bpm,
+  root: '#stage', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#86A6FF',
+  start: { t: 0, reduced: 9.8 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

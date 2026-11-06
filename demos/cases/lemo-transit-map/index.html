@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>6 公里 · 地铁线路图</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/film.js",
+    "film/gl.js",
+    "film/index.html",
+    "film/LICENSE",
+    "film/net.js",
+    "film/timeline.js",
+    "film/core/lib.js"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "6 Kilometres";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: { duration: 47.0, width: 1920, height: 1080, fps: 30,
+        async renderAt(t) { await upstream.render(Math.round(t * 30) / 30); },
+      },
+      ...{
+  "title": "6 公里 · 地铁线路图",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#F2EEE5",
+  "accent": "#E3002B",
+  "bpm": 120,
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 36.2
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+    {
+      "t": 0,
+      "label": "隧道"
+    },
+    {
+      "t": 1.4,
+      "label": "1993 首段"
+    },
+    {
+      "t": 6.2,
+      "label": "1995 延伸"
+    },
+    {
+      "t": 9,
+      "label": "1999 换乘与过江"
+    },
+    {
+      "t": 13,
+      "label": "2000 新线"
+    },
+    {
+      "t": 14.3,
+      "label": "十年线网生长"
+    },
+    {
+      "t": 21.7,
+      "label": "滑向时间线"
+    },
+    {
+      "t": 24.95,
+      "label": "双城对比"
+    },
+    {
+      "t": 30.5,
+      "label": "完整线网"
+    },
+    {
+      "t": 32.4,
+      "label": "低角度掠过"
+    },
+    {
+      "t": 37.1,
+      "label": "回到首段"
+    },
+    {
+      "t": 44,
+      "label": "片尾"
+    }
+  ]
+}
+    });
+  </script>
+</body>
+</html>

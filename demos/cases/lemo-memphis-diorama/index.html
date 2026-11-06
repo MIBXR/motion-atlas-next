@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>柚子城的四季 · 孟菲斯微缩景</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/main.js",
+    "film/memphis.js",
+    "film/people.js",
+    "film/index.html",
+    "vendor/three@0.170.0/build/three.module.js"
+  ],
+  "images": [],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Four Seasons in Pomelo Town";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 45.0, width: 1920, height: 1080, fps: 60,
+        async renderAt(t) { await upstream.render(Math.round(t * 60) / 60); },
+      },
+      ...{
+  "title": "柚子城的四季 · 孟菲斯微缩景",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#FFFCF6",
+  "accent": "#FF7EB3",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 25.0
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+    {
+      "t": 0,
+      "label": "春景开框"
+    },
+    {
+      "t": 1.2,
+      "label": "春日河湾"
+    },
+    {
+      "t": 8.8,
+      "label": "主树下蹲"
+    },
+    {
+      "t": 9.3,
+      "label": "入夏波"
+    },
+    {
+      "t": 11.2,
+      "label": "夏雨与荷花"
+    },
+    {
+      "t": 18.8,
+      "label": "再次下蹲"
+    },
+    {
+      "t": 19.3,
+      "label": "入秋波"
+    },
+    {
+      "t": 21.2,
+      "label": "秋日微动"
+    },
+    {
+      "t": 28.8,
+      "label": "第三次下蹲"
+    },
+    {
+      "t": 29.3,
+      "label": "入冬波"
+    },
+    {
+      "t": 32.6,
+      "label": "雪人弹入"
+    },
+    {
+      "t": 33.8,
+      "label": "暮色与窗灯"
+    },
+    {
+      "t": 39.3,
+      "label": "模型上的片尾"
+    },
+    {
+      "t": 44,
+      "label": "边框收回"
+    }
+  ],
+  "bpm": 96
+}
+    });
+  </script>
+</body>
+</html>

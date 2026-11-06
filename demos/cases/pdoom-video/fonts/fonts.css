@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Permanent Marker';
+  src: url('PermanentMarker-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Shantell Sans';
+  src: url('ShantellSans[BNCE,INFM,SPAC,wght].ttf') format('truetype');
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+}

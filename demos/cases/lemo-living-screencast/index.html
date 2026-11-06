@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clawd 搬进来 · 活体实机录屏</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/clawd.js",
+    "film/core/lib.js",
+    "film/film.js",
+    "film/index.html",
+    "film/main.js",
+    "film/ui.js",
+    "film/voices/dur.json",
+    "film/voices/words.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Clawd Moves In";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 59.4, width: 1920, height: 1080, fps: 30,
+        async renderAt(t) { await upstream.render(Math.round(t * 30) / 30); },
+      },
+      ...{
+  "title": "Clawd 搬进来 · 活体实机录屏",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#F5F1E9",
+  "accent": "#D97757",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 5.94
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "从终端标志诞生"
+  },
+  {
+    "t": 5,
+    "label": "落在应用标题"
+  },
+  {
+    "t": 9,
+    "label": "输入与发送"
+  },
+  {
+    "t": 14,
+    "label": "沿文件树阅读"
+  },
+  {
+    "t": 19,
+    "label": "选择Plan"
+  },
+  {
+    "t": 23,
+    "label": "计划与冻结聚光"
+  },
+  {
+    "t": 29,
+    "label": "审阅diff"
+  },
+  {
+    "t": 32,
+    "label": "逐行评论"
+  },
+  {
+    "t": 37,
+    "label": "改写与复查"
+  },
+  {
+    "t": 42,
+    "label": "深色主题扩散"
+  },
+  {
+    "t": 50,
+    "label": "并行会话"
+  },
+  {
+    "t": 56,
+    "label": "逐词落版"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

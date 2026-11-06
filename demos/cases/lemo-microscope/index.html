@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>量出来的蓝 · 显微叙事</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/cues.json",
+    "film/film.js",
+    "film/index.html",
+    "film/timeline.js",
+    "film/core/lib.js",
+    "assets/plates/nucleus.json",
+    "assets/plates/plates.json"
+  ],
+  "images": [
+    "assets/plates/a2.png",
+    "assets/plates/a4.png",
+    "assets/plates/a8.png",
+    "assets/plates/c025.jpg",
+    "assets/plates/c05.jpg",
+    "assets/plates/c1.jpg",
+    "assets/plates/roiA.png",
+    "assets/plates/roiB.png",
+    "assets/plates/slide.png"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Measured Blue";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 39.5, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "量出来的蓝 · 显微叙事",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#0B0D0F",
+  "accent": "#78F0CD",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 24.6
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "玻片与标本"
+  },
+  {
+    "t": 2.67,
+    "label": "俯冲组织"
+  },
+  {
+    "t": 5.33,
+    "label": "组织尺寸"
+  },
+  {
+    "t": 9.33,
+    "label": "推到结节A"
+  },
+  {
+    "t": 10.67,
+    "label": "圆A逐像素计数"
+  },
+  {
+    "t": 15.33,
+    "label": "横移到圆B"
+  },
+  {
+    "t": 16.67,
+    "label": "圆B逐像素计数"
+  },
+  {
+    "t": 20.67,
+    "label": "并排读数与倍数"
+  },
+  {
+    "t": 26.67,
+    "label": "俯冲细胞核"
+  },
+  {
+    "t": 29.33,
+    "label": "焦面与核膜圆环"
+  },
+  {
+    "t": 32.67,
+    "label": "拉回玻片"
+  },
+  {
+    "t": 35.33,
+    "label": "玻片题字"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

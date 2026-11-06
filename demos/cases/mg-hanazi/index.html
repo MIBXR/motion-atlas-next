@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>综艺花字 · 喵呜日记 EP.07</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: ["assets/white_dof.jpg","assets/white_ear6.png","assets/white_ear11.png","assets/white_ear16.png","assets/grey_r2.jpg","assets/tux_r1.jpg","assets/hero_L06.png","assets/hero_L12.png","assets/hero_B0.png","assets/hero_B1.png","assets/hero_B2.png","assets/hero_L135.png"],
+  data: ["film/cues.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const names = {"badge": "节目徽章", "title": "快乐花字", "sparkle1": "闪光入场", "aside": "小声旁白", "scratch": "凝视切镜", "qmarks": "问号弹入", "punch2": "凝视推近", "quiet": "空气安静", "sweat": "汗滴滑落", "wipe": "糖果擦除", "warn": "高能预警", "warn_beeps": "预警闪动", "slide": "滑哨上扬", "drop": "炸毛主拍", "shock": "震惊花字", "subline": "发量提问", "freeze": "定格收框", "jue": "绝绝子", "stamp": "猫主认证", "bye": "下期见", "battery": "快乐电池", "charge": "逐格充电", "tag": "嘉宾名牌", "push": "三连推近", "tagOut": "名牌退场", "sting": "徽章扑镜", "meter": "发量爆表", "needle": "指针扫过", "bao": "爆表花字", "ear": "耳朵轻动"};
+const markers = Object.entries(names).flatMap(([key, label]) => {
+  const cue = cues[key];
+  return (typeof cue === 'object' ? Object.values(cue) : [cue]).map(t => ({ t, label }));
+}).filter(({ t }) => t >= 0 && t < duration).sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title, bpm: cues.bpm,
+  root: '#stage', orients: ['portrait'], sizes: { portrait: [width, height] }, background: '#000',
+  markers, accent: '#FF6FB5',
+  start: { t: 0, reduced: 7.25 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

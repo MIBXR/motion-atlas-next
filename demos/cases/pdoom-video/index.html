@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I'm Upping My P(doom) · 手绘卡通音乐录像</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/index.html",
+    "film/src/cast.js",
+    "film/src/ch/c01_lab.js",
+    "film/src/ch/c02_chorus1.js",
+    "film/src/ch/c03_takeoff.js",
+    "film/src/ch/c04_chorus2.js",
+    "film/src/ch/c05_obsolete.js",
+    "film/src/ch/c06_chorus3.js",
+    "film/src/ch/c07_scale.js",
+    "film/src/ch/c08_chorus4.js",
+    "film/src/ch/c09_finale.js",
+    "film/src/clawd.js",
+    "film/src/core.js",
+    "film/src/lyrics.js",
+    "film/src/props.js",
+    "film/src/timeline.js",
+    "vendor/p5@2.3.3/p5.min.js",
+    "vendor/p5.brush@2.2.3/p5.brush.js"
+  ],
+  "audio": [
+    "audio/pdoom.mp3"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "I'm Upping My P(doom)";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html?render=1';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.ready !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 156.6, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.renderAt(Math.round(t * 24) / 24, 'image/jpeg', .92); },
+      },
+      ...{
+  "title": "I'm Upping My P(doom) · 手绘卡通音乐录像",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#F3EBDC",
+  "accent": "#c8322b",
+  "step": "frames",
+  "bpm": 88,
+  "start": {
+    "t": 0,
+    "reduced": 24
+  },
+  "audio": {
+    "src": "audio/pdoom.mp3",
+    "mime": "audio/mpeg"
+  },
+  "markers": [
+    {
+      "t": 0,
+      "label": "幕启",
+      "note": "红色幕布拉开，Clawd 从活板门冒出"
+    },
+    {
+      "t": 1.5,
+      "label": "实验室",
+      "note": "显示器里的小 Clawd 醒来"
+    },
+    {
+      "t": 23,
+      "label": "副歌一 · P(doom) 秀",
+      "note": "打气筒把计量表从 8 推到 34"
+    },
+    {
+      "t": 38.5,
+      "label": "升空",
+      "note": "天空到太空的追逐"
+    },
+    {
+      "t": 59,
+      "label": "副歌二 · 更大的秀",
+      "note": "竞技场与太空紫金"
+    },
+    {
+      "t": 73,
+      "label": "过时",
+      "note": "博物馆与公路"
+    },
+    {
+      "t": 95.4,
+      "label": "副歌三 · 回形针",
+      "note": "回形针淹没舞台"
+    },
+    {
+      "t": 109.4,
+      "label": "扩张",
+      "note": "数据中心，Clawd 长到行星大小"
+    },
+    {
+      "t": 123.5,
+      "label": "副歌四 · 红色警报",
+      "note": "计量表推到 99.9"
+    },
+    {
+      "t": 140.5,
+      "label": "谢幕",
+      "note": "拉远揭示一切是演出，全员鞠躬"
+    }
+  ]
+}
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>贴纸科普 · How Many Elements Hide in a Phone?</title>
+<script src="vendor/d3@7.9.0/dist/d3.min.js"></script>
+<script src="vendor/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: ["assets/stickers/battery.png","assets/stickers/cobalt.png","assets/stickers/lithium.png","assets/stickers/pcb.png","assets/stickers/phone.png","assets/stickers/rareearth.png","assets/stickers/tin.png"],
+  data: ["film/cues.json","assets/stickers/meta.json","assets/countries-110m.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const labels = { phone_land: '手机落定', title1: '首行标题', title2: '次行标题', kicker: '栏目入场', marker: '标题划线', sub_en: '英文入场', phone_fly: '拆解推进', parts: '部件展开', leaders: '引线绘制', table_in: '周期表入场', counter_in: '计数入场', first_lit: '首格点亮', cascade: '元素级联', chips: '分类飞行', axis_in: '柱图坐标', map_in: '地图入场', stickers: '产地贴纸', routes: '路线绘制', pin: '定位落点', pull: '拉远揭示', slam: '数字落版', slash: '分母入场', headline: '结论入场', caption: '说明入场', endline: '数字飞出', chip_lift: '元素揭起', aha: '屏幕揭示', lift: '整机抬起', peel: '数字揭起', marker_end: '结论划线', badge_peel: '徽章揭起', re_pill: '稀土标签', badge_land: '徽章落格', slots: '标题占位' };
+const markers = Object.entries(labels).flatMap(([key, label]) => (Array.isArray(cues.ev[key]) ? cues.ev[key] : [cues.ev[key]]).map(t => ({ t, label }))).sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title, bpm: cues.bpm,
+  root: '#stage', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#FF8A1F',
+  start: { t: 0, reduced: 9.5 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

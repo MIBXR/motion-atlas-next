@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>东窗之龙 · 彩色玻璃窗</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/comp.js",
+    "film/core/lib.js",
+    "film/dragon.js",
+    "film/glass.js",
+    "film/index.html",
+    "film/knight.js",
+    "film/main.js",
+    "film/scene.js",
+    "film/story.js",
+    "film/subs.js",
+    "film/window.js"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "The Dragon of the East Window";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 56.5, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "东窗之龙 · 彩色玻璃窗",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#0d0e12",
+  "accent": "#dc9a22",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 40.68
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "第一道晨光"
+  },
+  {
+    "t": 4.8,
+    "label": "全窗显规则"
+  },
+  {
+    "t": 9.6,
+    "label": "骑士领命"
+  },
+  {
+    "t": 15.6,
+    "label": "移光换格"
+  },
+  {
+    "t": 17.2,
+    "label": "正午旅途"
+  },
+  {
+    "t": 22.6,
+    "label": "光束引向地面"
+  },
+  {
+    "t": 24,
+    "label": "地面光斑决斗"
+  },
+  {
+    "t": 30,
+    "label": "暮色举剑"
+  },
+  {
+    "t": 31.8,
+    "label": "裂后静默"
+  },
+  {
+    "t": 33.8,
+    "label": "发现余烬"
+  },
+  {
+    "t": 41.3,
+    "label": "按拍重嵌铅"
+  },
+  {
+    "t": 44.6,
+    "label": "余响与修补痕"
+  },
+  {
+    "t": 47.2,
+    "label": "夜窗自持光"
+  },
+  {
+    "t": 52.9,
+    "label": "石刻片尾"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

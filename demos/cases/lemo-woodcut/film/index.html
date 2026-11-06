@@ -1,0 +1,14 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>The Bell Founder</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{position:absolute;left:0;top:0;display:block}</style>
+<script type="importmap">{"imports":{"/core/lib.js":"./core/lib.js"}}</script>
+</head><body><canvas id="cv" width="1920" height="1080"></canvas>
+<script>
+const imageSrc = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src');
+Object.defineProperty(HTMLImageElement.prototype, 'src', {
+  get: imageSrc.get,
+  set(url) { imageSrc.set.call(this, url === '/core/assets/polyhaven/walnut_diff.jpg' ? '../assets/walnut_diff.jpg' : url); }
+});
+</script>
+<script type="module" src="main.js"></script></body></html>

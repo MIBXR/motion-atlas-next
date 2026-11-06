@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>popwise — One Dot</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: [],
+  data: ["film/cues.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const labels = {
+  impact1: '首次落地', impact2: '再次碰撞', antic: '弹射预备', launch: '圆点弹射',
+  sunLand: '太阳落定', rays: '光芒展开', farRise: '远景升起', bldStart: '建筑入场',
+  clouds: '云朵入场', birds: '飞鸟入场', trees: '树木入场', winStart: '窗户点亮',
+  winEnd: '窗户齐备', heroWin: '主角窗口', camAntic: '推进预备', push: '镜头推进',
+  glass: '穿过玻璃', arrive: '镜头到达', blink: '人物眨眼', ping: '手机提示',
+  reactAntic: '反应预备', headSnap: '人物转头', exclaim: '惊叹出现', bubbleAntic: '气泡预备',
+  wipe: '圆形擦除', wipe2: '胶囊擦除', wipe3: '半圆擦除', coreDot: '圆点回归',
+  burst1: '柱图落点', burst2: '对勾落点', burst3: '爱心落点', burst4: '金币落点',
+  collapseAntic: '汇合预备', merge: '图形汇合', logoWipe: '标志擦入', letters: '字母入场',
+  dotLand2: '圆点落字', tagCN: '中文标语', tagEN: '英文标语', beatBob1: '首次律动',
+  beatBob2: '再次律动', slam: '图形落定', dotRise: '圆点上升', dotApex: '圆点顶点',
+  dotDrop: '圆点下落', cnFlip: '标语翻动', coreHit: '圆点撞击', matchStart: '匹配开始',
+  matchEnd: '匹配结束',
+};
+const markers = [
+  ...Object.entries(labels).map(([key, label]) => ({ t: cues.frames[key] / cues.fps, label })),
+  { t: cues.build, label: '音乐构建' },
+  { t: cues.drop, label: '音乐落点' },
+  { t: cues.outro, label: '音乐尾声' },
+].sort((a, b) => a.t - b.t);
+
+document.querySelector('#S').style.background = getComputedStyle(document.body).backgroundColor;
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title,
+  root: '#S', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#FF5A4E',
+  start: { t: 0, reduced: 9.5 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

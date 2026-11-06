@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>液态动效 · drop. — It All Starts with a Drop</title>
+
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: [],
+  data: ["film/cues.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const labels = { pour_snap: '落滴断颈', leap: '液团跃起', thread_snap: '细颈断裂', apex: '跃起顶点', flood_in: '液浪入画', flood_full: '液浪满屏', reveal_start: '液浪退去', reveal_end: '液滴释放', logo_snap: '液体成字', letter_bridge_snap: '字间断颈', glint: '高光扫字', drip_land: '滴落涟漪', tagline_start: '标语显现', outro: '音乐尾声' };
+const markers = [...Object.entries(labels).map(([key, label]) => ({ t: cues[key], label })), ...cues.landings.map((d, i) => ({ t: d.t, label: ['首滴落地', '次滴落地', '三滴落地', '四滴落地'][i] })), ...cues.merges.map(t => ({ t, label: '跳滴融合' }))].sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: t => window.renderAt(Math.min(t, duration - 1 / fps)), duration, width, height, fps },
+  title: document.title, bpm: cues.bpm,
+  root: '#stage', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#B45CFF',
+  start: { t: 0, reduced: 9.5 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

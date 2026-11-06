@@ -1,0 +1,7 @@
+@font-face{font-family:SansSC;src:url(sans400.woff2) format('woff2');font-weight:400}
+@font-face{font-family:SansSC;src:url(sans500.woff2) format('woff2');font-weight:500}
+@font-face{font-family:SansSC;src:url(sans700.woff2) format('woff2');font-weight:700}
+@font-face{font-family:SerifSC;src:url(serif500.woff2) format('woff2');font-weight:500}
+@font-face{font-family:Mono;src:url(mono400.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Mono;src:url(mono600.woff2) format('woff2');font-weight:600}
+@font-face{font-family:SerifI;src:url(serifi.woff2) format('woff2');font-style:italic;font-weight:400}

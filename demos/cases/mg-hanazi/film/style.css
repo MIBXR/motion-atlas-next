@@ -1,0 +1,15 @@
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#1b1b22}
+.shot{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;transform-origin:540px 960px}
+.shot img{position:absolute;left:0;top:0;transform-origin:0 0;max-width:none}
+.ear{visibility:hidden}
+#cardwrap{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0}
+#cardborder{position:absolute;background:#fff;border-radius:36px}
+#vig{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none;
+  background:radial-gradient(ellipse 80% 62% at 50% 46%, rgba(0,0,0,0) 58%, rgba(28,8,30,.42) 100%)}
+#flash{position:absolute;left:0;top:0;width:1080px;height:1920px;background:#fff;opacity:0}
+#grain{position:absolute;left:0;top:0;width:1080px;height:1920px;background:url(../assets/textures/grain/grain_fine_2048.png);
+  mix-blend-mode:overlay;opacity:.09;pointer-events:none}
+#stage svg{position:absolute;left:0;top:0;overflow:visible}
+#sun{position:absolute;left:0;top:0;width:1080px;height:1920px;mix-blend-mode:screen;background:radial-gradient(circle at 92% 6%, rgba(255,236,170,.85) 0, rgba(255,196,110,.35) 22%, rgba(255,170,90,0) 55%)}
+#cutw{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 1420px}

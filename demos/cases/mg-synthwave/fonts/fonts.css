@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Archivo';
+  src: url('./Archivo-Italic[wdth,wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-stretch: 62% 125%;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Michroma';
+  src: url('./Michroma-Regular.ttf') format('truetype');
+  font-weight: 1 1000;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'VT323';
+  src: url('./VT323-Regular.ttf') format('truetype');
+  font-weight: 1 1000;
+  font-style: normal;
+  font-display: block;
+}
+@font-face{font-family:'Mr Dafoe';src:url('./MrDafoe-Regular.ttf') format('truetype');font-display:block}

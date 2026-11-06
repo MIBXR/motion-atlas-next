@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>走向远山 · 浮世绘</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/index.html",
+    "film/lines.json",
+    "film/main.js",
+    "film/nature.js",
+    "film/print.js",
+    "film/story.js",
+    "film/traveler.js",
+    "film/views.js",
+    "film/wave.js",
+    "film/core/lib.js",
+    "film/voices/dur.json"
+  ],
+  "images": [],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Toward the Mountain";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 44.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "走向远山 · 浮世绘",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#eee2c6",
+  "accent": "#b8412f",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 26.4
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "空纸套印"
+  },
+  {
+    "t": 2.64,
+    "label": "稻田早景"
+  },
+  {
+    "t": 10.5,
+    "label": "手卷转雨桥"
+  },
+  {
+    "t": 11.5,
+    "label": "雨桥"
+  },
+  {
+    "t": 16.4,
+    "label": "手卷转茶屋"
+  },
+  {
+    "t": 17.3,
+    "label": "圆窗缓推"
+  },
+  {
+    "t": 22.3,
+    "label": "手卷转海"
+  },
+  {
+    "t": 22.9,
+    "label": "海边旅人"
+  },
+  {
+    "t": 25.4,
+    "label": "巨浪高潮"
+  },
+  {
+    "t": 30.4,
+    "label": "留白重印"
+  },
+  {
+    "t": 34.04,
+    "label": "远山脱笠"
+  },
+  {
+    "t": 38.9,
+    "label": "画轴拉远"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

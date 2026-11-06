@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D 渲染 · soft. — Soft Landing</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: Array.from({ length: 240 }, (_, i) => `assets/frames/${String(i).padStart(4, '0')}.webp`),
+  data: ["film/cues.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const names = {"camA": "首段运镜", "sweep1": "胶囊扫波", "ping": "首字落地", "drops": "字母落地", "lifts": "字母再起", "build": "音乐构建", "counter_sweep": "反向扫波", "camB": "靠近金属球", "tremble": "字母颤动", "ball_enter": "金属球入场", "hang": "金属球悬停", "ball_contact": "金属球接触", "hero": "砸落主拍", "camC": "结尾运镜", "crown_hang": "冠状波悬停", "tagline": "标语入场", "outro": "音乐尾声", "end_hold": "落版停留"};
+const markers = Object.entries(names).flatMap(([key, label]) => {
+  const cue = cues[key];
+  return (typeof cue === 'object' ? Object.values(cue) : [cue]).map(t => ({ t, label }));
+}).filter(({ t }) => t >= 0 && t < duration).sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title, bpm: cues.bpm,
+  root: '#stage', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#FF8FC0',
+  start: { t: 0, reduced: 9.5 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

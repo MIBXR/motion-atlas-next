@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'Alimama ShuHeiTi';
+  src: url('./AlimamaShuHeiTi-Bold.ttf') format('truetype');
+  font-weight: 1 1000;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Douyin Sans';
+  src: url('./DouyinSansBold.ttf') format('truetype');
+  font-weight: 1 1000;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'LXGW Marker Gothic';
+  src: url('./LXGWMarkerGothic-Regular.ttf') format('truetype');
+  font-weight: 1 1000;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Resource Han Rounded';
+  src: url('./ResourceHanRoundedCN-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'ZCOOL KuaiLe';
+  src: url('./ZCOOLKuaiLe-Regular.ttf') format('truetype');
+  font-weight: 1 1000;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Luckiest Guy';
+  src: url('./LuckiestGuy-Regular.ttf') format('truetype');
+  font-weight: 1 1000;
+  font-style: normal;
+  font-display: block;
+}

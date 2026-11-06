@@ -1,0 +1,374 @@
+{
+  "canopy-part-title": {
+    "src": "demo/modules/canopy-part-title/canopy-part-title.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 12
+  },
+  "glass-shard-title": {
+    "src": "demo/modules/glass-shard-title/glass-shard-title.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 12.16
+  },
+  "exploded-stack": {
+    "src": "demo/modules/exploded-stack/exploded-stack.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5
+  },
+  "product-turntable": {
+    "src": "demo/modules/product-turntable/product-turntable.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 6
+  },
+  "carousel-orbit-1": {
+    "src": "demo/modules/carousel-orbit-1/carousel-orbit-1.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 6
+  },
+  "carousel-text-circle-1": {
+    "src": "demo/modules/carousel-text-circle-1/carousel-text-circle-1.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5
+  },
+  "carousel-vision-1": {
+    "src": "demo/modules/carousel-vision-1/carousel-vision-1.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 6
+  },
+  "caption-kinetic-slam": {
+    "src": "demo/modules/caption-kinetic-slam/demo.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 8
+  },
+  "caption-pill-karaoke": {
+    "src": "demo/modules/caption-pill-karaoke/demo.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 8
+  },
+  "kinetic-type-swap": {
+    "src": "demo/modules/kinetic-type-swap/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4
+  },
+  "scramble-reveal": {
+    "src": "demo/modules/scramble-reveal/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 3
+  },
+  "split-flap-board": {
+    "src": "demo/modules/split-flap-board/split-flap-board.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 3.5
+  },
+  "lt-mask-reveal": {
+    "src": "demo/modules/lt-mask-reveal/lt-mask-reveal.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4.8
+  },
+  "news-ticker": {
+    "src": "demo/modules/news-ticker/news-ticker.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 7
+  },
+  "code-diff": {
+    "src": "demo/modules/code-diff/code-diff.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 6
+  },
+  "code-morph": {
+    "src": "demo/modules/code-morph/code-morph.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 7
+  },
+  "terminal-simulator": {
+    "src": "demo/modules/terminal-simulator/demo.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5
+  },
+  "code-snippet-dark-modern": {
+    "src": "demo/modules/code-snippet-dark-modern/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 11
+  },
+  "domain-warp-dissolve": {
+    "src": "demo/modules/domain-warp-dissolve/domain-warp-dissolve.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4
+  },
+  "light-leak": {
+    "src": "demo/modules/light-leak/light-leak.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4
+  },
+  "whip-pan": {
+    "src": "demo/modules/whip-pan/whip-pan.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4
+  },
+  "beat-freeze-cut": {
+    "src": "demo/modules/beat-freeze-cut/beat-freeze-cut.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 6
+  },
+  "transitions-grid": {
+    "src": "demo/modules/transitions-grid/transitions-grid.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 11
+  },
+  "bar-chart-race": {
+    "src": "demo/modules/bar-chart-race/bar-chart-race.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 12
+  },
+  "data-chart": {
+    "src": "demo/modules/data-chart/data-chart.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 15
+  },
+  "world-map": {
+    "src": "demo/modules/world-map/world-map.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 14
+  },
+  "app-showcase": {
+    "src": "demo/modules/app-showcase/app-showcase.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5.5
+  },
+  "claude-exchange": {
+    "src": "demo/modules/claude-exchange/claude-exchange.html",
+    "width": 1080,
+    "height": 1920,
+    "duration": 21.4
+  },
+  "gallery-tunnel": {
+    "src": "demo/modules/gallery-tunnel/gallery-tunnel.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 12
+  },
+  "browser-device-stage": {
+    "src": "demo/modules/browser-device-stage/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5
+  },
+  "typed-prompt": {
+    "src": "demo/modules/typed-prompt/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4
+  },
+  "vector-editor-rig": {
+    "src": "demo/modules/vector-editor-rig/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4.5
+  },
+  "instagram-follow": {
+    "src": "demo/modules/instagram-follow/instagram-follow.html",
+    "width": 1080,
+    "height": 1920,
+    "duration": 4.5
+  },
+  "x-post": {
+    "src": "demo/modules/x-post/x-post.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5
+  },
+  "grid-card-assemble": {
+    "src": "demo/modules/grid-card-assemble/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4.5
+  },
+  "logo-sting": {
+    "src": "demo/modules/logo-sting/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 2.2
+  },
+  "whiteboard-ink": {
+    "src": "demo/modules/whiteboard-ink/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5
+  },
+  "agent-cursor": {
+    "src": "demo/modules/agent-cursor/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4.8
+  },
+  "cursor-drag-drop": {
+    "src": "demo/modules/cursor-drag-drop/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 3.6
+  },
+  "number-wheel": {
+    "src": "demo/modules/number-wheel/demo.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5
+  },
+  "slot-machine-roll": {
+    "src": "demo/modules/slot-machine-roll/demo.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5
+  },
+  "streaming-text": {
+    "src": "demo/modules/streaming-text/demo.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5.5
+  },
+  "paper-collage-reveal": {
+    "src": "demo/modules/paper-collage-reveal/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 2.6
+  },
+  "parallax-device-dive": {
+    "src": "demo/modules/parallax-device-dive/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4.5
+  },
+  "torn-paper-rip": {
+    "src": "demo/modules/torn-paper-rip/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 2.4
+  },
+  "camera-shake": {
+    "src": "demo/modules/camera-shake/camera-shake.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 6
+  },
+  "pull-back-reveal": {
+    "src": "demo/modules/pull-back-reveal/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4.5
+  },
+  "grain-overlay": {
+    "src": "demo/modules/grain-overlay/demo.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 5
+  },
+  "ink-bleed-reveal": {
+    "src": "demo/modules/ink-bleed-reveal/catalog-preview.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 4
+  },
+  "liquid-glass-widgets": {
+    "src": "demo/modules/liquid-glass-widgets/liquid-glass-widgets.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 8
+  },
+  "flowchart": {
+    "src": "demo/modules/flowchart/flowchart.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 12
+  },
+  "hw-pipeline": {
+    "src": "demo/modules/hw-pipeline/demo.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 7
+  },
+  "liquid-metal": {
+    "src": "demo/modules/liquid-metal/liquid-metal.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 2
+  },
+  "logo-outro": {
+    "src": "demo/modules/logo-outro/logo-outro.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 6
+  },
+  "decision-tree": {
+    "src": "demo/examples/decision-tree/index.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 10
+  },
+  "kinetic-type": {
+    "src": "demo/examples/kinetic-type/index.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 15
+  },
+  "nyt-graph": {
+    "src": "demo/examples/nyt-graph/index.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 15
+  },
+  "play-mode": {
+    "src": "demo/examples-preview/play-mode/index.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 10
+  },
+  "product-promo": {
+    "src": "demo/examples/product-promo/index.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 20
+  },
+  "swiss-grid": {
+    "src": "demo/examples-preview/swiss-grid/index.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 10
+  },
+  "vignelli": {
+    "src": "demo/examples-preview/vignelli/index.html",
+    "width": 1080,
+    "height": 1920,
+    "duration": 10
+  },
+  "warm-grain": {
+    "src": "demo/examples-preview/warm-grain/index.html",
+    "width": 1920,
+    "height": 1080,
+    "duration": 10
+  }
+}

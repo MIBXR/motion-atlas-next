@@ -1,0 +1,3 @@
+Microsoft edge-tts在线语音，英语en-US-AvaNeural、中文zh-CN-XiaoxiaoNeural。CREDITS将字体标为SIL OFL、采样标为CC0，旁白列为Microsoft在线语音；旁白按Microsoft服务条款使用。
+来源：https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/printed-long-take/demo/CREDITS
+服务条款：https://www.microsoft.com/servicesagreement

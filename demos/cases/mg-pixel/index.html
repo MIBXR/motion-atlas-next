@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PIXEL QUEST 像素冒险</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: [],
+  data: ["film/cues.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const labels = [
+  ['crt_on', '显像管开机'], ['jumps', '跳跃'], ['coins', '收集金币'], ['lands', '落地'],
+  ['stomp', '踩踏史莱姆'], ['skid', '滑步'], ['stop', '停步'], ['alert', '发现宝箱'],
+  ['box_open', '对话框展开'], ['type', '逐字显示'], ['box_close', '对话框收起'],
+  ['zoom', '阶梯推近'], ['chest_shake', '宝箱抖动'], ['question', '疑问气泡'],
+  ['lid_hops', '箱盖跳动'], ['chest_open', '宝箱打开'], ['cheer', '欢呼'],
+  ['item_get', '获得水晶'], ['logo', '片名落下'], ['shine', '高光扫过'],
+  ['subtitle', '副标题出现'], ['press_start', '开始提示'], ['rays_off', '光芒收束'],
+  ['night_wave', '夜色推进'], ['flinch', '后缩蓄势'], ['end', '结束'],
+];
+const markers = labels.flatMap(([key, label]) => [].concat(cues[key]).map(t => ({ t, label })));
+for (const [key, label] of [
+  ['day', '白昼'], ['afternoon', '午后'], ['golden', '金色时刻'], ['sunset', '日落'],
+  ['flash', '开箱闪光'], ['dusk', '暮色'], ['night', '夜色'],
+]) markers.push({ t: cues.palette[key], label });
+markers.sort((a, b) => a.t - b.t);
+
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title,
+  bpm: cues.bpm,
+  root: '#c', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#4FB0FF',
+  start: { t: 0, reduced: 9.5 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

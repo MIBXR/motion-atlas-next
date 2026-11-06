@@ -1,0 +1,3194 @@
+[
+  {
+    "name": "canopy-part-title",
+    "kind": "block",
+    "category": "3D motion",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/canopy-part-title",
+    "local": true
+  },
+  {
+    "name": "code-slice-hero",
+    "kind": "block",
+    "category": "3D motion",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-slice-hero",
+    "local": false
+  },
+  {
+    "name": "cuboid-carousel",
+    "kind": "block",
+    "category": "3D motion",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/cuboid-carousel",
+    "local": false
+  },
+  {
+    "name": "frost-sequence-camera-orbit",
+    "kind": "block",
+    "category": "3D motion",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/frost-sequence-camera-orbit",
+    "local": false
+  },
+  {
+    "name": "glass-shard-title",
+    "kind": "block",
+    "category": "3D motion",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/glass-shard-title",
+    "local": true
+  },
+  {
+    "name": "orbit-card",
+    "kind": "block",
+    "category": "3D motion",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/orbit-card",
+    "local": false
+  },
+  {
+    "name": "wireframe-portal-title",
+    "kind": "block",
+    "category": "3D motion",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/wireframe-portal-title",
+    "local": false
+  },
+  {
+    "name": "exploded-stack",
+    "kind": "block",
+    "category": "3D objects",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/exploded-stack",
+    "local": true
+  },
+  {
+    "name": "extruded-logo",
+    "kind": "block",
+    "category": "3D objects",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/extruded-logo",
+    "local": false
+  },
+  {
+    "name": "glass-hero",
+    "kind": "block",
+    "category": "3D objects",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/glass-hero",
+    "local": false
+  },
+  {
+    "name": "product-turntable",
+    "kind": "block",
+    "category": "3D objects",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/product-turntable",
+    "local": true
+  },
+  {
+    "name": "carousel-circle-1",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-circle-1",
+    "local": false
+  },
+  {
+    "name": "carousel-circle-2",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-circle-2",
+    "local": false
+  },
+  {
+    "name": "carousel-circle-3",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-circle-3",
+    "local": false
+  },
+  {
+    "name": "carousel-circle-4",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-circle-4",
+    "local": false
+  },
+  {
+    "name": "carousel-circle-5",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-circle-5",
+    "local": false
+  },
+  {
+    "name": "carousel-orbit-1",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-orbit-1",
+    "local": true
+  },
+  {
+    "name": "carousel-orbit-2",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-orbit-2",
+    "local": false
+  },
+  {
+    "name": "carousel-orbit-3",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-orbit-3",
+    "local": false
+  },
+  {
+    "name": "carousel-orbit-4",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-orbit-4",
+    "local": false
+  },
+  {
+    "name": "carousel-orbit-5",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-orbit-5",
+    "local": false
+  },
+  {
+    "name": "carousel-path-1",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-path-1",
+    "local": false
+  },
+  {
+    "name": "carousel-path-2",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-path-2",
+    "local": false
+  },
+  {
+    "name": "carousel-path-3",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-path-3",
+    "local": false
+  },
+  {
+    "name": "carousel-path-4",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-path-4",
+    "local": false
+  },
+  {
+    "name": "carousel-path-5",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-path-5",
+    "local": false
+  },
+  {
+    "name": "carousel-text-circle-1",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-text-circle-1",
+    "local": true
+  },
+  {
+    "name": "carousel-text-circle-2",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-text-circle-2",
+    "local": false
+  },
+  {
+    "name": "carousel-text-circle-3",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-text-circle-3",
+    "local": false
+  },
+  {
+    "name": "carousel-text-circle-4",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-text-circle-4",
+    "local": false
+  },
+  {
+    "name": "carousel-text-circle-5",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-text-circle-5",
+    "local": false
+  },
+  {
+    "name": "carousel-vision-1",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-vision-1",
+    "local": true
+  },
+  {
+    "name": "carousel-vision-2",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-vision-2",
+    "local": false
+  },
+  {
+    "name": "carousel-vision-3",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-vision-3",
+    "local": false
+  },
+  {
+    "name": "carousel-vision-4",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-vision-4",
+    "local": false
+  },
+  {
+    "name": "carousel-vision-5",
+    "kind": "block",
+    "category": "Carousels",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/carousel-vision-5",
+    "local": false
+  },
+  {
+    "name": "caption-camera-follow",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-camera-follow",
+    "local": false
+  },
+  {
+    "name": "caption-clip-wipe",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-clip-wipe",
+    "local": false
+  },
+  {
+    "name": "caption-editorial-emphasis",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-editorial-emphasis",
+    "local": false
+  },
+  {
+    "name": "caption-emoji-pop",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-emoji-pop",
+    "local": false
+  },
+  {
+    "name": "caption-glitch-rgb",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-glitch-rgb",
+    "local": false
+  },
+  {
+    "name": "caption-gradient-fill",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-gradient-fill",
+    "local": false
+  },
+  {
+    "name": "caption-highlight",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-highlight",
+    "local": false
+  },
+  {
+    "name": "caption-kinetic-slam",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-kinetic-slam",
+    "local": true
+  },
+  {
+    "name": "caption-matrix-decode",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-matrix-decode",
+    "local": false
+  },
+  {
+    "name": "caption-neon-accent",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-neon-accent",
+    "local": false
+  },
+  {
+    "name": "caption-neon-glow",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-neon-glow",
+    "local": false
+  },
+  {
+    "name": "caption-parallax-layers",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-parallax-layers",
+    "local": false
+  },
+  {
+    "name": "caption-particle-burst",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-particle-burst",
+    "local": false
+  },
+  {
+    "name": "caption-pill-karaoke",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-pill-karaoke",
+    "local": true
+  },
+  {
+    "name": "caption-texture",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-texture",
+    "local": false
+  },
+  {
+    "name": "caption-weight-shift",
+    "kind": "component",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-weight-shift",
+    "local": false
+  },
+  {
+    "name": "mk-callout-highlight",
+    "kind": "block",
+    "category": "Captions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/mk-callout-highlight",
+    "local": false
+  },
+  {
+    "name": "blur-out-up",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/blur-out-up",
+    "local": false
+  },
+  {
+    "name": "bottom-up-letters",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/bottom-up-letters",
+    "local": false
+  },
+  {
+    "name": "caption-blend-difference",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/caption-blend-difference",
+    "local": false
+  },
+  {
+    "name": "caret-swap",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/caret-swap",
+    "local": false
+  },
+  {
+    "name": "char-slam-explode",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/char-slam-explode",
+    "local": false
+  },
+  {
+    "name": "colorama-wipe",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/colorama-wipe",
+    "local": false
+  },
+  {
+    "name": "extended-keyframe",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/extended-keyframe",
+    "local": false
+  },
+  {
+    "name": "focus-blur-resolve",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/focus-blur-resolve",
+    "local": false
+  },
+  {
+    "name": "headline-slam",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/headline-slam",
+    "local": false
+  },
+  {
+    "name": "hw-path-text",
+    "kind": "block",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/hw-path-text",
+    "local": false
+  },
+  {
+    "name": "hw-title",
+    "kind": "block",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/hw-title",
+    "local": false
+  },
+  {
+    "name": "hw-write-title",
+    "kind": "block",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/hw-write-title",
+    "local": false
+  },
+  {
+    "name": "inline-highlight",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/inline-highlight",
+    "local": false
+  },
+  {
+    "name": "kinetic-center-build",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/kinetic-center-build",
+    "local": false
+  },
+  {
+    "name": "kinetic-type-swap",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/kinetic-type-swap",
+    "local": true
+  },
+  {
+    "name": "line-by-line-slide",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/line-by-line-slide",
+    "local": false
+  },
+  {
+    "name": "line-swap",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/line-swap",
+    "local": false
+  },
+  {
+    "name": "logo-brand-close",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/logo-brand-close",
+    "local": false
+  },
+  {
+    "name": "marker-highlight",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/marker-highlight",
+    "local": false
+  },
+  {
+    "name": "matrix-decode",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/matrix-decode",
+    "local": false
+  },
+  {
+    "name": "mk-emphasis-type",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/mk-emphasis-type",
+    "local": false
+  },
+  {
+    "name": "morph-text",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/morph-text",
+    "local": false
+  },
+  {
+    "name": "particle-text-dissolve",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/particle-text-dissolve",
+    "local": false
+  },
+  {
+    "name": "per-word-crossfade",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/per-word-crossfade",
+    "local": false
+  },
+  {
+    "name": "per-word-rise",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/per-word-rise",
+    "local": false
+  },
+  {
+    "name": "perspective-marquee",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/perspective-marquee",
+    "local": false
+  },
+  {
+    "name": "rgb-glitch-text",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/rgb-glitch-text",
+    "local": false
+  },
+  {
+    "name": "scan-band",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/scan-band",
+    "local": false
+  },
+  {
+    "name": "scramble-reveal",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/scramble-reveal",
+    "local": true
+  },
+  {
+    "name": "shared-axis-y",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/shared-axis-y",
+    "local": false
+  },
+  {
+    "name": "shared-axis-z",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/shared-axis-z",
+    "local": false
+  },
+  {
+    "name": "shimmer-sweep",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/shimmer-sweep",
+    "local": false
+  },
+  {
+    "name": "soft-blur-in",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/soft-blur-in",
+    "local": false
+  },
+  {
+    "name": "split-flap-board",
+    "kind": "block",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/split-flap-board",
+    "local": true
+  },
+  {
+    "name": "strikethrough-replace",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/strikethrough-replace",
+    "local": false
+  },
+  {
+    "name": "text-shimmer",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/text-shimmer",
+    "local": false
+  },
+  {
+    "name": "ticker-takeover",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/ticker-takeover",
+    "local": false
+  },
+  {
+    "name": "titlecard-calm",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/titlecard-calm",
+    "local": false
+  },
+  {
+    "name": "titlecard-lockup",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/titlecard-lockup",
+    "local": false
+  },
+  {
+    "name": "tracking-in",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/tracking-in",
+    "local": false
+  },
+  {
+    "name": "variable-axis-type",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/variable-axis-type",
+    "local": false
+  },
+  {
+    "name": "vox-annotate",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/vox-annotate",
+    "local": false
+  },
+  {
+    "name": "weight-wave",
+    "kind": "block",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/weight-wave",
+    "local": false
+  },
+  {
+    "name": "wordmark-tiles",
+    "kind": "component",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/components/wordmark-tiles",
+    "local": false
+  },
+  {
+    "name": "yt-prism-title",
+    "kind": "block",
+    "category": "Typography & Text",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/yt-prism-title",
+    "local": false
+  },
+  {
+    "name": "lower-third-bild",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lower-third-bild",
+    "local": false
+  },
+  {
+    "name": "lt-accent-underline",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-accent-underline",
+    "local": false
+  },
+  {
+    "name": "lt-bold-block",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-bold-block",
+    "local": false
+  },
+  {
+    "name": "lt-clean-bar",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-clean-bar",
+    "local": false
+  },
+  {
+    "name": "lt-color-block",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-color-block",
+    "local": false
+  },
+  {
+    "name": "lt-dark-card",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-dark-card",
+    "local": false
+  },
+  {
+    "name": "lt-kicker-name",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-kicker-name",
+    "local": false
+  },
+  {
+    "name": "lt-mask-reveal",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-mask-reveal",
+    "local": true
+  },
+  {
+    "name": "lt-side-rule",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-side-rule",
+    "local": false
+  },
+  {
+    "name": "lt-soft-pill",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-soft-pill",
+    "local": false
+  },
+  {
+    "name": "lt-stack-bars",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-stack-bars",
+    "local": false
+  },
+  {
+    "name": "news-ticker",
+    "kind": "block",
+    "category": "Lower Thirds",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/news-ticker",
+    "local": true
+  },
+  {
+    "name": "code-3d-extrude",
+    "kind": "block",
+    "category": "Code Animations",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-3d-extrude",
+    "local": false
+  },
+  {
+    "name": "code-diff",
+    "kind": "block",
+    "category": "Code Animations",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-diff",
+    "local": true
+  },
+  {
+    "name": "code-highlight",
+    "kind": "block",
+    "category": "Code Animations",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-highlight",
+    "local": false
+  },
+  {
+    "name": "code-morph",
+    "kind": "block",
+    "category": "Code Animations",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-morph",
+    "local": true
+  },
+  {
+    "name": "code-particle-assemble",
+    "kind": "block",
+    "category": "Code Animations",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-particle-assemble",
+    "local": false
+  },
+  {
+    "name": "code-scroll",
+    "kind": "block",
+    "category": "Code Animations",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-scroll",
+    "local": false
+  },
+  {
+    "name": "code-shader-dissolve",
+    "kind": "block",
+    "category": "Code Animations",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-shader-dissolve",
+    "local": false
+  },
+  {
+    "name": "code-typing",
+    "kind": "block",
+    "category": "Code Animations",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-typing",
+    "local": false
+  },
+  {
+    "name": "terminal-simulator",
+    "kind": "component",
+    "category": "Code Animations",
+    "url": "https://hyperframes.heygen.com/catalog/components/terminal-simulator",
+    "local": true
+  },
+  {
+    "name": "code-snippet-apple-terminal-pro",
+    "kind": "block",
+    "category": "Code Snippets",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-snippet-apple-terminal-pro",
+    "local": false
+  },
+  {
+    "name": "code-snippet-dark-2026",
+    "kind": "block",
+    "category": "Code Snippets",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-snippet-dark-2026",
+    "local": false
+  },
+  {
+    "name": "code-snippet-dark-modern",
+    "kind": "block",
+    "category": "Code Snippets",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/code-snippet-dark-modern",
+    "local": true
+  },
+  {
+    "name": "chromatic-radial-split",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/chromatic-radial-split",
+    "local": false
+  },
+  {
+    "name": "cinematic-zoom",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/cinematic-zoom",
+    "local": false
+  },
+  {
+    "name": "cross-warp-morph",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/cross-warp-morph",
+    "local": false
+  },
+  {
+    "name": "domain-warp-dissolve",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/domain-warp-dissolve",
+    "local": true
+  },
+  {
+    "name": "flash-through-white",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/flash-through-white",
+    "local": false
+  },
+  {
+    "name": "glitch",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/glitch",
+    "local": false
+  },
+  {
+    "name": "gravitational-lens",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/gravitational-lens",
+    "local": false
+  },
+  {
+    "name": "light-leak",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/light-leak",
+    "local": true
+  },
+  {
+    "name": "ridged-burn",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/ridged-burn",
+    "local": false
+  },
+  {
+    "name": "ripple-waves",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/ripple-waves",
+    "local": false
+  },
+  {
+    "name": "sdf-iris",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/sdf-iris",
+    "local": false
+  },
+  {
+    "name": "swirl-vortex",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/swirl-vortex",
+    "local": false
+  },
+  {
+    "name": "thermal-distortion",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/thermal-distortion",
+    "local": false
+  },
+  {
+    "name": "whip-pan",
+    "kind": "block",
+    "category": "Shader Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/whip-pan",
+    "local": true
+  },
+  {
+    "name": "beat-freeze-cut",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/beat-freeze-cut",
+    "local": true
+  },
+  {
+    "name": "hw-scribble-transition",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/hw-scribble-transition",
+    "local": false
+  },
+  {
+    "name": "mk-clone-wall-transition",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/mk-clone-wall-transition",
+    "local": false
+  },
+  {
+    "name": "organic-light-leak-overlay",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/organic-light-leak-overlay",
+    "local": false
+  },
+  {
+    "name": "transitions-3d",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-3d",
+    "local": false
+  },
+  {
+    "name": "transitions-blur",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-blur",
+    "local": false
+  },
+  {
+    "name": "transitions-cover",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-cover",
+    "local": false
+  },
+  {
+    "name": "transitions-destruction",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-destruction",
+    "local": false
+  },
+  {
+    "name": "transitions-dissolve",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-dissolve",
+    "local": false
+  },
+  {
+    "name": "transitions-distortion",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-distortion",
+    "local": false
+  },
+  {
+    "name": "transitions-grid",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-grid",
+    "local": true
+  },
+  {
+    "name": "transitions-light",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-light",
+    "local": false
+  },
+  {
+    "name": "transitions-mechanical",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-mechanical",
+    "local": false
+  },
+  {
+    "name": "transitions-other",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-other",
+    "local": false
+  },
+  {
+    "name": "transitions-push",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-push",
+    "local": false
+  },
+  {
+    "name": "transitions-radial",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-radial",
+    "local": false
+  },
+  {
+    "name": "transitions-scale",
+    "kind": "block",
+    "category": "CSS Transitions",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/transitions-scale",
+    "local": false
+  },
+  {
+    "name": "animated-bar-chart",
+    "kind": "component",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/components/animated-bar-chart",
+    "local": false
+  },
+  {
+    "name": "ascii-render-pass",
+    "kind": "component",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/components/ascii-render-pass",
+    "local": false
+  },
+  {
+    "name": "ascii-trail-reveal",
+    "kind": "component",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/components/ascii-trail-reveal",
+    "local": false
+  },
+  {
+    "name": "bar-chart-race",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/bar-chart-race",
+    "local": true
+  },
+  {
+    "name": "chart-story",
+    "kind": "component",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/components/chart-story",
+    "local": false
+  },
+  {
+    "name": "conic-progress-ring",
+    "kind": "component",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/components/conic-progress-ring",
+    "local": false
+  },
+  {
+    "name": "data-chart",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/data-chart",
+    "local": true
+  },
+  {
+    "name": "decline-chart",
+    "kind": "component",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/components/decline-chart",
+    "local": false
+  },
+  {
+    "name": "logo-wall",
+    "kind": "component",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/components/logo-wall",
+    "local": false
+  },
+  {
+    "name": "mk-line-graph",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/mk-line-graph",
+    "local": false
+  },
+  {
+    "name": "spain-map",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/spain-map",
+    "local": false
+  },
+  {
+    "name": "star-rating-fill",
+    "kind": "component",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/components/star-rating-fill",
+    "local": false
+  },
+  {
+    "name": "us-map",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/us-map",
+    "local": false
+  },
+  {
+    "name": "us-map-bubble",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/us-map-bubble",
+    "local": false
+  },
+  {
+    "name": "us-map-flow",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/us-map-flow",
+    "local": false
+  },
+  {
+    "name": "us-map-hex",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/us-map-hex",
+    "local": false
+  },
+  {
+    "name": "week-in-merges",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/week-in-merges",
+    "local": false
+  },
+  {
+    "name": "world-map",
+    "kind": "block",
+    "category": "Data",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/world-map",
+    "local": true
+  },
+  {
+    "name": "ai-chat-reveal",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/ai-chat-reveal",
+    "local": false
+  },
+  {
+    "name": "app-showcase",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/app-showcase",
+    "local": true
+  },
+  {
+    "name": "apple-money-count",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/apple-money-count",
+    "local": false
+  },
+  {
+    "name": "blue-sweater-intro-video",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/blue-sweater-intro-video",
+    "local": false
+  },
+  {
+    "name": "camera-dolly-zoom",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/camera-dolly-zoom",
+    "local": false
+  },
+  {
+    "name": "chatgpt-exchange",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/chatgpt-exchange",
+    "local": false
+  },
+  {
+    "name": "claude-exchange",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/claude-exchange",
+    "local": true
+  },
+  {
+    "name": "cosmic-orb",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/cosmic-orb",
+    "local": false
+  },
+  {
+    "name": "gallery-tunnel",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/gallery-tunnel",
+    "local": true
+  },
+  {
+    "name": "goo",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/goo",
+    "local": false
+  },
+  {
+    "name": "heygen-avatar-promo-card",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/heygen-avatar-promo-card",
+    "local": false
+  },
+  {
+    "name": "message-thread-reveal",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/message-thread-reveal",
+    "local": false
+  },
+  {
+    "name": "north-korea-locked-down",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/north-korea-locked-down",
+    "local": false
+  },
+  {
+    "name": "notes-reveal",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/notes-reveal",
+    "local": false
+  },
+  {
+    "name": "notification-cascade",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/notification-cascade",
+    "local": false
+  },
+  {
+    "name": "nyc-paris-flight",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/nyc-paris-flight",
+    "local": false
+  },
+  {
+    "name": "oscilloscope-trace",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/oscilloscope-trace",
+    "local": false
+  },
+  {
+    "name": "rack-focus",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/rack-focus",
+    "local": false
+  },
+  {
+    "name": "share-sheet-carousel",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/share-sheet-carousel",
+    "local": false
+  },
+  {
+    "name": "slack-notification-ad",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/slack-notification-ad",
+    "local": false
+  },
+  {
+    "name": "ui-3d-reveal",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/ui-3d-reveal",
+    "local": false
+  },
+  {
+    "name": "vfx-anamorphic-flare",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/vfx-anamorphic-flare",
+    "local": false
+  },
+  {
+    "name": "vpn-youtube-spot",
+    "kind": "block",
+    "category": "Showcases",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/vpn-youtube-spot",
+    "local": false
+  },
+  {
+    "name": "browser-device-stage",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/browser-device-stage",
+    "local": true
+  },
+  {
+    "name": "code-terminal-run",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/code-terminal-run",
+    "local": false
+  },
+  {
+    "name": "echo-trail",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/echo-trail",
+    "local": false
+  },
+  {
+    "name": "focus-swap",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/focus-swap",
+    "local": false
+  },
+  {
+    "name": "icon-morph-beat",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/icon-morph-beat",
+    "local": false
+  },
+  {
+    "name": "native-notification-pop",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/native-notification-pop",
+    "local": false
+  },
+  {
+    "name": "notification-stack",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/notification-stack",
+    "local": false
+  },
+  {
+    "name": "offset-path-traveler",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/offset-path-traveler",
+    "local": false
+  },
+  {
+    "name": "pull-to-refresh",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/pull-to-refresh",
+    "local": false
+  },
+  {
+    "name": "screen-flow-carousel",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/screen-flow-carousel",
+    "local": false
+  },
+  {
+    "name": "segmentation-flood",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/segmentation-flood",
+    "local": false
+  },
+  {
+    "name": "soft-blob-touch",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/soft-blob-touch",
+    "local": false
+  },
+  {
+    "name": "spring-stack-shuffle",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/spring-stack-shuffle",
+    "local": false
+  },
+  {
+    "name": "state-chip-rail",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/state-chip-rail",
+    "local": false
+  },
+  {
+    "name": "sticky-mock-swap",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/sticky-mock-swap",
+    "local": false
+  },
+  {
+    "name": "telemetry-hud",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/telemetry-hud",
+    "local": false
+  },
+  {
+    "name": "toggle-flip",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/toggle-flip",
+    "local": false
+  },
+  {
+    "name": "tracing-beam",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/tracing-beam",
+    "local": false
+  },
+  {
+    "name": "typed-prompt",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/typed-prompt",
+    "local": true
+  },
+  {
+    "name": "vector-editor-rig",
+    "kind": "component",
+    "category": "Product Demo",
+    "url": "https://hyperframes.heygen.com/catalog/components/vector-editor-rig",
+    "local": true
+  },
+  {
+    "name": "editorial-flash-overlay",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/editorial-flash-overlay",
+    "local": false
+  },
+  {
+    "name": "freeze-frame-dressing",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/freeze-frame-dressing",
+    "local": false
+  },
+  {
+    "name": "instagram-follow",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/instagram-follow",
+    "local": true
+  },
+  {
+    "name": "macos-notification",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/macos-notification",
+    "local": false
+  },
+  {
+    "name": "reddit-post",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/reddit-post",
+    "local": false
+  },
+  {
+    "name": "spotify-card",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/spotify-card",
+    "local": false
+  },
+  {
+    "name": "thread-message-stack",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/thread-message-stack",
+    "local": false
+  },
+  {
+    "name": "tiktok-follow",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/tiktok-follow",
+    "local": false
+  },
+  {
+    "name": "x-post",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/x-post",
+    "local": true
+  },
+  {
+    "name": "yt-comment-card",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/yt-comment-card",
+    "local": false
+  },
+  {
+    "name": "yt-lower-third",
+    "kind": "block",
+    "category": "Social Overlays",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/yt-lower-third",
+    "local": false
+  },
+  {
+    "name": "aurora-drift",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/aurora-drift",
+    "local": false
+  },
+  {
+    "name": "beat-accent",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/beat-accent",
+    "local": false
+  },
+  {
+    "name": "beat-pulse-background",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/beat-pulse-background",
+    "local": false
+  },
+  {
+    "name": "chat-thread",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/chat-thread",
+    "local": false
+  },
+  {
+    "name": "constellation-hub",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/constellation-hub",
+    "local": false
+  },
+  {
+    "name": "count-up",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/count-up",
+    "local": false
+  },
+  {
+    "name": "cta-close",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/cta-close",
+    "local": false
+  },
+  {
+    "name": "cta-lockup",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/cta-lockup",
+    "local": false
+  },
+  {
+    "name": "facet-morph",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/facet-morph",
+    "local": false
+  },
+  {
+    "name": "gesture-tap",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/gesture-tap",
+    "local": false
+  },
+  {
+    "name": "gloss-sweep",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/gloss-sweep",
+    "local": false
+  },
+  {
+    "name": "grade-split-reveal",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/grade-split-reveal",
+    "local": false
+  },
+  {
+    "name": "grid-card-assemble",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/grid-card-assemble",
+    "local": true
+  },
+  {
+    "name": "light-sweep-pass",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/light-sweep-pass",
+    "local": false
+  },
+  {
+    "name": "locked-nucleus-orbit",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/locked-nucleus-orbit",
+    "local": false
+  },
+  {
+    "name": "logo-sting",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/logo-sting",
+    "local": true
+  },
+  {
+    "name": "marker-checklist-card",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/marker-checklist-card",
+    "local": false
+  },
+  {
+    "name": "modal-morph",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/modal-morph",
+    "local": false
+  },
+  {
+    "name": "multi-device-splay",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/multi-device-splay",
+    "local": false
+  },
+  {
+    "name": "notes-typing",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/notes-typing",
+    "local": false
+  },
+  {
+    "name": "outline-draw",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/outline-draw",
+    "local": false
+  },
+  {
+    "name": "particle-image-reveal",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/particle-image-reveal",
+    "local": false
+  },
+  {
+    "name": "pendulum-swing",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/pendulum-swing",
+    "local": false
+  },
+  {
+    "name": "physical-exit",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/physical-exit",
+    "local": false
+  },
+  {
+    "name": "radial-surround",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/radial-surround",
+    "local": false
+  },
+  {
+    "name": "scroll-feed",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/scroll-feed",
+    "local": false
+  },
+  {
+    "name": "slit-scan-reveal",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/slit-scan-reveal",
+    "local": false
+  },
+  {
+    "name": "social-proof-card",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/social-proof-card",
+    "local": false
+  },
+  {
+    "name": "split-tilt-cards",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/split-tilt-cards",
+    "local": false
+  },
+  {
+    "name": "spring-pop",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/spring-pop",
+    "local": false
+  },
+  {
+    "name": "stitched-text-draw",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/stitched-text-draw",
+    "local": false
+  },
+  {
+    "name": "stop-motion-cadence",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/stop-motion-cadence",
+    "local": false
+  },
+  {
+    "name": "svg-stroke-trace",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/svg-stroke-trace",
+    "local": false
+  },
+  {
+    "name": "swipe-rail",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/swipe-rail",
+    "local": false
+  },
+  {
+    "name": "testimonial-proof-card",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/testimonial-proof-card",
+    "local": false
+  },
+  {
+    "name": "trust-strip",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/trust-strip",
+    "local": false
+  },
+  {
+    "name": "variable-font-flex",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/variable-font-flex",
+    "local": false
+  },
+  {
+    "name": "velocity-throw-snap",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/velocity-throw-snap",
+    "local": false
+  },
+  {
+    "name": "whiteboard-ink",
+    "kind": "component",
+    "category": "Motion Scenes",
+    "url": "https://hyperframes.heygen.com/catalog/components/whiteboard-ink",
+    "local": true
+  },
+  {
+    "name": "agent-cursor",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/agent-cursor",
+    "local": true
+  },
+  {
+    "name": "cursor-annotate",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/cursor-annotate",
+    "local": false
+  },
+  {
+    "name": "cursor-context-menu",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/cursor-context-menu",
+    "local": false
+  },
+  {
+    "name": "cursor-drag-drop",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/cursor-drag-drop",
+    "local": true
+  },
+  {
+    "name": "cursor-glyph-trail",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/cursor-glyph-trail",
+    "local": false
+  },
+  {
+    "name": "cursor-marquee-select",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/cursor-marquee-select",
+    "local": false
+  },
+  {
+    "name": "cursor-text-select",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/cursor-text-select",
+    "local": false
+  },
+  {
+    "name": "cursor-zoom-follow",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/cursor-zoom-follow",
+    "local": false
+  },
+  {
+    "name": "dart-cursor",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/dart-cursor",
+    "local": false
+  },
+  {
+    "name": "magnetic-cursor",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/magnetic-cursor",
+    "local": false
+  },
+  {
+    "name": "multiplayer-cursors",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/multiplayer-cursors",
+    "local": false
+  },
+  {
+    "name": "oversized-cursor",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/oversized-cursor",
+    "local": false
+  },
+  {
+    "name": "press-ripple",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/press-ripple",
+    "local": false
+  },
+  {
+    "name": "touch-indicator",
+    "kind": "component",
+    "category": "Cursors",
+    "url": "https://hyperframes.heygen.com/catalog/components/touch-indicator",
+    "local": false
+  },
+  {
+    "name": "arc-motion-path",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/arc-motion-path",
+    "local": false
+  },
+  {
+    "name": "avatar-group-hover",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/avatar-group-hover",
+    "local": false
+  },
+  {
+    "name": "badge-pop",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/badge-pop",
+    "local": false
+  },
+  {
+    "name": "blur-in",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/blur-in",
+    "local": false
+  },
+  {
+    "name": "card-resize",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/card-resize",
+    "local": false
+  },
+  {
+    "name": "chat-message",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/chat-message",
+    "local": false
+  },
+  {
+    "name": "chromatic-aberration-wipe",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/chromatic-aberration-wipe",
+    "local": false
+  },
+  {
+    "name": "dynamic-grid",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/dynamic-grid",
+    "local": false
+  },
+  {
+    "name": "icon-swap",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/icon-swap",
+    "local": false
+  },
+  {
+    "name": "lt-neon-border",
+    "kind": "block",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lt-neon-border",
+    "local": false
+  },
+  {
+    "name": "menu-morph",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/menu-morph",
+    "local": false
+  },
+  {
+    "name": "number-pop-in",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/number-pop-in",
+    "local": false
+  },
+  {
+    "name": "number-wheel",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/number-wheel",
+    "local": true
+  },
+  {
+    "name": "page-slide",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/page-slide",
+    "local": false
+  },
+  {
+    "name": "separator",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/separator",
+    "local": false
+  },
+  {
+    "name": "sheet-spring-up",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/sheet-spring-up",
+    "local": false
+  },
+  {
+    "name": "skeleton-reveal",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/skeleton-reveal",
+    "local": false
+  },
+  {
+    "name": "slot-machine-roll",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/slot-machine-roll",
+    "local": true
+  },
+  {
+    "name": "staggered-fade-up",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/staggered-fade-up",
+    "local": false
+  },
+  {
+    "name": "streaming-text",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/streaming-text",
+    "local": true
+  },
+  {
+    "name": "success-check",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/success-check",
+    "local": false
+  },
+  {
+    "name": "svg-line-draw-loader",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/svg-line-draw-loader",
+    "local": false
+  },
+  {
+    "name": "text-stagger",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/text-stagger",
+    "local": false
+  },
+  {
+    "name": "text-state-swap",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/text-state-swap",
+    "local": false
+  },
+  {
+    "name": "three-orbiting-cards",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/three-orbiting-cards",
+    "local": false
+  },
+  {
+    "name": "tilt-card",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/tilt-card",
+    "local": false
+  },
+  {
+    "name": "top-down-letters",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/top-down-letters",
+    "local": false
+  },
+  {
+    "name": "typewriter",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/typewriter",
+    "local": false
+  },
+  {
+    "name": "typing-indicator",
+    "kind": "component",
+    "category": "Motion Primitives",
+    "url": "https://hyperframes.heygen.com/catalog/components/typing-indicator",
+    "local": false
+  },
+  {
+    "name": "avatar-cloud",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/avatar-cloud",
+    "local": false
+  },
+  {
+    "name": "beat-timeline",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/beat-timeline",
+    "local": false
+  },
+  {
+    "name": "before-after-wipe",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/before-after-wipe",
+    "local": false
+  },
+  {
+    "name": "camera-rig-depth-stack",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/camera-rig-depth-stack",
+    "local": false
+  },
+  {
+    "name": "comparison-split",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/comparison-split",
+    "local": false
+  },
+  {
+    "name": "confetti",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/confetti",
+    "local": false
+  },
+  {
+    "name": "curtain-reveal",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/curtain-reveal",
+    "local": false
+  },
+  {
+    "name": "cut-the-curve",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/cut-the-curve",
+    "local": false
+  },
+  {
+    "name": "device-frame-stage",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/device-frame-stage",
+    "local": false
+  },
+  {
+    "name": "directional-wipe",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/directional-wipe",
+    "local": false
+  },
+  {
+    "name": "echo-smear",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/echo-smear",
+    "local": false
+  },
+  {
+    "name": "fade-through",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/fade-through",
+    "local": false
+  },
+  {
+    "name": "grid-pixelate-wipe",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/grid-pixelate-wipe",
+    "local": false
+  },
+  {
+    "name": "halftone-dissolve",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/halftone-dissolve",
+    "local": false
+  },
+  {
+    "name": "hw-arrow",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/hw-arrow",
+    "local": false
+  },
+  {
+    "name": "hw-boil",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/hw-boil",
+    "local": false
+  },
+  {
+    "name": "hw-box-label",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/hw-box-label",
+    "local": false
+  },
+  {
+    "name": "hw-callout-circle",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/hw-callout-circle",
+    "local": false
+  },
+  {
+    "name": "hw-underline",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/hw-underline",
+    "local": false
+  },
+  {
+    "name": "input-feedback",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/input-feedback",
+    "local": false
+  },
+  {
+    "name": "iris-reveal",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/iris-reveal",
+    "local": false
+  },
+  {
+    "name": "keyframe-scrub-stack",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/keyframe-scrub-stack",
+    "local": false
+  },
+  {
+    "name": "match-cut",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/match-cut",
+    "local": false
+  },
+  {
+    "name": "mesh-gradient-bg",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/mesh-gradient-bg",
+    "local": false
+  },
+  {
+    "name": "micro-transitions",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/micro-transitions",
+    "local": false
+  },
+  {
+    "name": "mk-usage-arc",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/mk-usage-arc",
+    "local": false
+  },
+  {
+    "name": "morph-swap",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/morph-swap",
+    "local": false
+  },
+  {
+    "name": "motion-blur",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/motion-blur",
+    "local": false
+  },
+  {
+    "name": "notification-pileup",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/notification-pileup",
+    "local": false
+  },
+  {
+    "name": "onboarding-stepper-flow",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/onboarding-stepper-flow",
+    "local": false
+  },
+  {
+    "name": "ordered-dither-pass",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/ordered-dither-pass",
+    "local": false
+  },
+  {
+    "name": "overwhelm-surround",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/overwhelm-surround",
+    "local": false
+  },
+  {
+    "name": "panel-reveal",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/panel-reveal",
+    "local": false
+  },
+  {
+    "name": "paper-collage-reveal",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/paper-collage-reveal",
+    "local": true
+  },
+  {
+    "name": "parallax-device-dive",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/parallax-device-dive",
+    "local": true
+  },
+  {
+    "name": "parallax-unzoom",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/parallax-unzoom",
+    "local": false
+  },
+  {
+    "name": "parallax-zoom",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/parallax-zoom",
+    "local": false
+  },
+  {
+    "name": "rubber-band-bumper",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/rubber-band-bumper",
+    "local": false
+  },
+  {
+    "name": "settings-toggle-flow",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/settings-toggle-flow",
+    "local": false
+  },
+  {
+    "name": "shutter-slam",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/shutter-slam",
+    "local": false
+  },
+  {
+    "name": "signup-flow",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/signup-flow",
+    "local": false
+  },
+  {
+    "name": "spotlight-card",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/spotlight-card",
+    "local": false
+  },
+  {
+    "name": "stagger-cascade",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/stagger-cascade",
+    "local": false
+  },
+  {
+    "name": "stagger-lattice",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/stagger-lattice",
+    "local": false
+  },
+  {
+    "name": "store-badge-lockup",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/store-badge-lockup",
+    "local": false
+  },
+  {
+    "name": "svg-mask-reveal",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/svg-mask-reveal",
+    "local": false
+  },
+  {
+    "name": "tabs-slide-indicator",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/tabs-slide-indicator",
+    "local": false
+  },
+  {
+    "name": "testimonial-card",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/testimonial-card",
+    "local": false
+  },
+  {
+    "name": "text-match-cut",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/text-match-cut",
+    "local": false
+  },
+  {
+    "name": "torn-paper-rip",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/torn-paper-rip",
+    "local": true
+  },
+  {
+    "name": "type-match-cut",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/type-match-cut",
+    "local": false
+  },
+  {
+    "name": "vignette",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/vignette",
+    "local": false
+  },
+  {
+    "name": "whip-pan-cut",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/whip-pan-cut",
+    "local": false
+  },
+  {
+    "name": "x-follow-card",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/x-follow-card",
+    "local": false
+  },
+  {
+    "name": "yt-circle-pointer",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/yt-circle-pointer",
+    "local": false
+  },
+  {
+    "name": "yt-feather-highlight",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/yt-feather-highlight",
+    "local": false
+  },
+  {
+    "name": "zoom-through-transition",
+    "kind": "component",
+    "category": "Effects",
+    "url": "https://hyperframes.heygen.com/catalog/components/zoom-through-transition",
+    "local": false
+  },
+  {
+    "name": "camcorder-hud",
+    "kind": "block",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/camcorder-hud",
+    "local": false
+  },
+  {
+    "name": "camera-scan-gate",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/camera-scan-gate",
+    "local": false
+  },
+  {
+    "name": "camera-shake",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/camera-shake",
+    "local": true
+  },
+  {
+    "name": "drift-hold",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/drift-hold",
+    "local": false
+  },
+  {
+    "name": "focus-rack",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/focus-rack",
+    "local": false
+  },
+  {
+    "name": "pan-stations",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/pan-stations",
+    "local": false
+  },
+  {
+    "name": "pull-back-reveal",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/pull-back-reveal",
+    "local": true
+  },
+  {
+    "name": "push-in",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/push-in",
+    "local": false
+  },
+  {
+    "name": "scroll-camera-story",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/scroll-camera-story",
+    "local": false
+  },
+  {
+    "name": "ui-focus-zoom",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/ui-focus-zoom",
+    "local": false
+  },
+  {
+    "name": "yt-camera-move",
+    "kind": "component",
+    "category": "Camera",
+    "url": "https://hyperframes.heygen.com/catalog/components/yt-camera-move",
+    "local": false
+  },
+  {
+    "name": "falling-lines",
+    "kind": "block",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/falling-lines",
+    "local": false
+  },
+  {
+    "name": "fractal-noise",
+    "kind": "block",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/fractal-noise",
+    "local": false
+  },
+  {
+    "name": "gabor-noise",
+    "kind": "block",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/gabor-noise",
+    "local": false
+  },
+  {
+    "name": "grain-field",
+    "kind": "component",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/components/grain-field",
+    "local": false
+  },
+  {
+    "name": "grain-overlay",
+    "kind": "component",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/components/grain-overlay",
+    "local": true
+  },
+  {
+    "name": "halftone-field",
+    "kind": "block",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/halftone-field",
+    "local": false
+  },
+  {
+    "name": "ink-bleed-reveal",
+    "kind": "component",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/components/ink-bleed-reveal",
+    "local": true
+  },
+  {
+    "name": "marble",
+    "kind": "block",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/marble",
+    "local": false
+  },
+  {
+    "name": "plasma",
+    "kind": "block",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/plasma",
+    "local": false
+  },
+  {
+    "name": "ripples",
+    "kind": "block",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/ripples",
+    "local": false
+  },
+  {
+    "name": "texture-mask-text",
+    "kind": "component",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/components/texture-mask-text",
+    "local": false
+  },
+  {
+    "name": "worley-noise",
+    "kind": "block",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/worley-noise",
+    "local": false
+  },
+  {
+    "name": "yt-lcd-background",
+    "kind": "block",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/yt-lcd-background",
+    "local": false
+  },
+  {
+    "name": "yt-screen-warp",
+    "kind": "component",
+    "category": "Texture",
+    "url": "https://hyperframes.heygen.com/catalog/components/yt-screen-warp",
+    "local": false
+  },
+  {
+    "name": "filmed-screen",
+    "kind": "component",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/components/filmed-screen",
+    "local": false
+  },
+  {
+    "name": "ios26-liquid-glass",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/ios26-liquid-glass",
+    "local": false
+  },
+  {
+    "name": "liquid-glass-notification",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/liquid-glass-notification",
+    "local": false
+  },
+  {
+    "name": "liquid-glass-widgets",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/liquid-glass-widgets",
+    "local": true
+  },
+  {
+    "name": "macos-tahoe-liquid-glass",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/macos-tahoe-liquid-glass",
+    "local": false
+  },
+  {
+    "name": "vfx-iphone-device",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/vfx-iphone-device",
+    "local": false
+  },
+  {
+    "name": "vfx-liquid-background",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/vfx-liquid-background",
+    "local": false
+  },
+  {
+    "name": "vfx-liquid-glass",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/vfx-liquid-glass",
+    "local": false
+  },
+  {
+    "name": "vfx-magnetic",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/vfx-magnetic",
+    "local": false
+  },
+  {
+    "name": "vfx-portal",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/vfx-portal",
+    "local": false
+  },
+  {
+    "name": "vfx-shatter",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/vfx-shatter",
+    "local": true
+  },
+  {
+    "name": "vfx-text-cursor",
+    "kind": "block",
+    "category": "HTML-in-Canvas",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/vfx-text-cursor",
+    "local": false
+  },
+  {
+    "name": "ai-answer-rank",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/ai-answer-rank",
+    "local": false
+  },
+  {
+    "name": "aurora",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/aurora",
+    "local": false
+  },
+  {
+    "name": "blob",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/blob",
+    "local": false
+  },
+  {
+    "name": "chrome-orb",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/chrome-orb",
+    "local": false
+  },
+  {
+    "name": "cinemagraph",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/cinemagraph",
+    "local": false
+  },
+  {
+    "name": "color-wheel",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/color-wheel",
+    "local": false
+  },
+  {
+    "name": "flowchart",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/flowchart",
+    "local": true
+  },
+  {
+    "name": "flowchart-vertical",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/flowchart-vertical",
+    "local": false
+  },
+  {
+    "name": "flowing-gradient",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/flowing-gradient",
+    "local": false
+  },
+  {
+    "name": "frost",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/frost",
+    "local": false
+  },
+  {
+    "name": "godrays",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/godrays",
+    "local": false
+  },
+  {
+    "name": "gooey-split",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/gooey-split",
+    "local": false
+  },
+  {
+    "name": "heatmap",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/heatmap",
+    "local": false
+  },
+  {
+    "name": "hologram",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/hologram",
+    "local": false
+  },
+  {
+    "name": "holographic",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/holographic",
+    "local": false
+  },
+  {
+    "name": "hw-frame",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/hw-frame",
+    "local": false
+  },
+  {
+    "name": "hw-pipeline",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/hw-pipeline",
+    "local": true
+  },
+  {
+    "name": "hw-text-cloud",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/hw-text-cloud",
+    "local": false
+  },
+  {
+    "name": "lens-flare",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lens-flare",
+    "local": false
+  },
+  {
+    "name": "light-edge",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/light-edge",
+    "local": false
+  },
+  {
+    "name": "liquid-metal",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/liquid-metal",
+    "local": true
+  },
+  {
+    "name": "logo-outro",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/logo-outro",
+    "local": true
+  },
+  {
+    "name": "lottie-character-walk",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/lottie-character-walk",
+    "local": false
+  },
+  {
+    "name": "mesh-gradient",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/mesh-gradient",
+    "local": false
+  },
+  {
+    "name": "mk-background",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/mk-background",
+    "local": false
+  },
+  {
+    "name": "mk-placeholder-grid",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/mk-placeholder-grid",
+    "local": false
+  },
+  {
+    "name": "mk-progress-stat",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/mk-progress-stat",
+    "local": false
+  },
+  {
+    "name": "mk-specs-list",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/mk-specs-list",
+    "local": false
+  },
+  {
+    "name": "nebula",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/nebula",
+    "local": false
+  },
+  {
+    "name": "obsidian",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/obsidian",
+    "local": false
+  },
+  {
+    "name": "plastic",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/plastic",
+    "local": false
+  },
+  {
+    "name": "prism",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/prism",
+    "local": false
+  },
+  {
+    "name": "sine-wave",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/sine-wave",
+    "local": false
+  },
+  {
+    "name": "snow",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/snow",
+    "local": false
+  },
+  {
+    "name": "spiral",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/spiral",
+    "local": false
+  },
+  {
+    "name": "spiral-galaxy",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/spiral-galaxy",
+    "local": false
+  },
+  {
+    "name": "starfield",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/starfield",
+    "local": false
+  },
+  {
+    "name": "strands",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/strands",
+    "local": false
+  },
+  {
+    "name": "stripes",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/stripes",
+    "local": false
+  },
+  {
+    "name": "sun-burst",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/sun-burst",
+    "local": false
+  },
+  {
+    "name": "swirl",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/swirl",
+    "local": false
+  },
+  {
+    "name": "thin-film",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/thin-film",
+    "local": false
+  },
+  {
+    "name": "voronoi",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/voronoi",
+    "local": false
+  },
+  {
+    "name": "water",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/water",
+    "local": false
+  },
+  {
+    "name": "waveform",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/waveform",
+    "local": false
+  },
+  {
+    "name": "yt-logo-intro",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/yt-logo-intro",
+    "local": false
+  },
+  {
+    "name": "yt-vertical-fill",
+    "kind": "block",
+    "category": "Blocks",
+    "url": "https://hyperframes.heygen.com/catalog/blocks/yt-vertical-fill",
+    "local": false
+  },
+  {
+    "name": "decision-tree",
+    "kind": "template",
+    "category": "模板",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/examples/decision-tree",
+    "local": true
+  },
+  {
+    "name": "kinetic-type",
+    "kind": "template",
+    "category": "模板",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/examples/kinetic-type",
+    "local": true
+  },
+  {
+    "name": "nyt-graph",
+    "kind": "template",
+    "category": "模板",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/examples/nyt-graph",
+    "local": true
+  },
+  {
+    "name": "play-mode",
+    "kind": "template",
+    "category": "模板",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/examples/play-mode",
+    "local": true
+  },
+  {
+    "name": "product-promo",
+    "kind": "template",
+    "category": "模板",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/examples/product-promo",
+    "local": true
+  },
+  {
+    "name": "swiss-grid",
+    "kind": "template",
+    "category": "模板",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/examples/swiss-grid",
+    "local": true
+  },
+  {
+    "name": "vignelli",
+    "kind": "template",
+    "category": "模板",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/examples/vignelli",
+    "local": true
+  },
+  {
+    "name": "warm-grain",
+    "kind": "template",
+    "category": "模板",
+    "url": "https://github.com/heygen-com/hyperframes/tree/f0b2dd0cdbd926e32cb11435c53819933fcc1ef3/registry/examples/warm-grain",
+    "local": true
+  }
+]

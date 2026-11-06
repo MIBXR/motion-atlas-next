@@ -1,0 +1,6 @@
+"Jaunty Gumption" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0
+https://creativecommons.org/licenses/by/4.0/
+Source: https://incompetech.com/music/royalty-free/
+15.4–104.22秒纸世界；原曲73.21→102.79秒作拍对齐跳接，交叉淡化.42秒。
+剪辑参数：source/music/edit.py。完整许可原文：CC-BY-4.0.txt。

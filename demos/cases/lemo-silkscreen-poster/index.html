@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>绕远路回家 · 丝印旅行海报</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/engine/poster.js",
+    "film/engine/scenes.js",
+    "film/engine/silk.js",
+    "film/film.js",
+    "film/index.html",
+    "film/main.js",
+    "film/voice/cues.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "The Long Way Home";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 50.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "绕远路回家 · 丝印旅行海报",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#F3EAD8",
+  "accent": "#D8432B",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 44.5
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "首色太阳"
+  },
+  {
+    "t": 3.3333,
+    "label": "叠色成北京"
+  },
+  {
+    "t": 5.5556,
+    "label": "票根与离家距离"
+  },
+  {
+    "t": 10,
+    "label": "伊斯坦布尔"
+  },
+  {
+    "t": 14.1667,
+    "label": "巴黎吊臂"
+  },
+  {
+    "t": 17.7778,
+    "label": "布宜诺斯艾利斯"
+  },
+  {
+    "t": 21.9444,
+    "label": "推入网点与静默"
+  },
+  {
+    "t": 27.7778,
+    "label": "夜海归程"
+  },
+  {
+    "t": 33.3333,
+    "label": "北京暮色"
+  },
+  {
+    "t": 36.6667,
+    "label": "锁版归家"
+  },
+  {
+    "t": 42.2222,
+    "label": "夜色与片尾票根"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

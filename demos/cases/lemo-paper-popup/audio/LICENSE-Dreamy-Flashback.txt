@@ -1,0 +1,6 @@
+"Dreamy Flashback" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0
+https://creativecommons.org/licenses/by/4.0/
+Source: https://incompetech.com/music/royalty-free/
+0–16.2秒，开场桌面，1.6秒淡出。
+剪辑参数：source/music/edit.py。完整许可原文：CC-BY-4.0.txt。

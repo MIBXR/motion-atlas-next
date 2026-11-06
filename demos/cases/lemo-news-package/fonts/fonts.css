@@ -1,0 +1,6 @@
+@font-face{font-family:'SansSC';font-weight:900;src:url(sanssc900.woff2) format('woff2');font-display:block}
+@font-face{font-family:'SansSC';font-weight:700;src:url(sanssc700.woff2) format('woff2');font-display:block}
+@font-face{font-family:'Barlow';font-weight:800;src:url(barlow800.woff2) format('woff2');font-display:block}
+@font-face{font-family:'Barlow';font-weight:600;src:url(barlow600.woff2) format('woff2');font-display:block}
+@font-face{font-family:'Barlow';font-weight:600;font-style:italic;src:url(barlow600i.woff2) format('woff2');font-display:block}
+@font-face{font-family:'Plex';font-weight:500;src:url(plexmono500.woff2) format('woff2');font-display:block}

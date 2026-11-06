@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>被炸平的城市怎样长回来 · 白模投影</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/cues.json",
+    "film/index.html",
+    "film/main.js",
+    "film/overlay.js",
+    "film/studio.js",
+    "film/timeline.js",
+    "film/core/lib.js",
+    "film/core/three/post.js",
+    "vendor/three@0.170.0/build/three.module.js",
+    "vendor/three@0.170.0/examples/jsm/environments/RoomEnvironment.js",
+    "vendor/three@0.170.0/examples/jsm/math/SimplexNoise.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/GTAOPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/GTAOShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/PoissonDenoiseShader.js",
+    "assets/data/model.json",
+    "assets/data/stats.json"
+  ],
+  "images": [
+    "assets/data/water.png",
+    "assets/data/zshadow.png"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "How a Flattened City Grew Back";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 40.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "被炸平的城市怎样长回来 · 白模投影",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#030304",
+  "accent": "#FFA13D",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 30.4
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "白模屋顶"
+  },
+  {
+    "t": 1.8,
+    "label": "展厅熄灯"
+  },
+  {
+    "t": 2.4,
+    "label": "战前投影"
+  },
+  {
+    "t": 6,
+    "label": "轰炸日期与市政厅"
+  },
+  {
+    "t": 11.6,
+    "label": "年代逐层点亮"
+  },
+  {
+    "t": 18,
+    "label": "高度光层"
+  },
+  {
+    "t": 21.6,
+    "label": "投影静默"
+  },
+  {
+    "t": 22.8,
+    "label": "冬至太阳"
+  },
+  {
+    "t": 27,
+    "label": "阴影量程与屋顶"
+  },
+  {
+    "t": 35.4,
+    "label": "展厅亮灯与片尾"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

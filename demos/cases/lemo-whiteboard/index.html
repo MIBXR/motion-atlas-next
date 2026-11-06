@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>口袋里的爱因斯坦 · 白板讲解</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/film.js",
+    "film/index.html",
+    "film/lines.json",
+    "film/main.js",
+    "film/core/lib.js",
+    "film/engine/wb.js",
+    "film/voices/words.json",
+    "fonts/EMSTech.json"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Einstein in Your Pocket";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 111.0, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "口袋里的爱因斯坦 · 白板讲解",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#f5f6f4",
+  "accent": "#d56129",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 55.5
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "手机地图"
+  },
+  {
+    "t": 10,
+    "label": "板上片名"
+  },
+  {
+    "t": 14.5,
+    "label": "卫星与原子钟"
+  },
+  {
+    "t": 24.6,
+    "label": "信号与测距公式"
+  },
+  {
+    "t": 34.9,
+    "label": "三点定位"
+  },
+  {
+    "t": 44.4,
+    "label": "便宜时钟的难题"
+  },
+  {
+    "t": 46.6,
+    "label": "双速刻度"
+  },
+  {
+    "t": 56.3,
+    "label": "相对论的两项修正"
+  },
+  {
+    "t": 70,
+    "label": "每天十一公里"
+  },
+  {
+    "t": 76.5,
+    "label": "七日漂移"
+  },
+  {
+    "t": 87,
+    "label": "倒抹与校准"
+  },
+  {
+    "t": 96.2,
+    "label": "整板拉远"
+  },
+  {
+    "t": 103.3,
+    "label": "片尾署名"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

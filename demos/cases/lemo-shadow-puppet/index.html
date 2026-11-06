@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>后羿射日 · 皮影戏</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/backstage.js",
+    "film/carve.js",
+    "film/gl.js",
+    "film/houyi.js",
+    "film/hud.js",
+    "film/index.html",
+    "film/main.js",
+    "film/poses.js",
+    "film/scenery.js",
+    "film/stage.js",
+    "film/story.js",
+    "film/suns.js",
+    "film/core/lib.js",
+    "film/voices/dur.json"
+  ],
+  "images": [],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Hou Yi Shoots the Suns";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 54.375, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "后羿射日 · 皮影戏",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#1a100a",
+  "accent": "#b8211a",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 21.76
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "观众席开场"
+  },
+  {
+    "t": 7.2,
+    "label": "推入十日"
+  },
+  {
+    "t": 12,
+    "label": "灾地横移"
+  },
+  {
+    "t": 18,
+    "label": "英雄跟拍"
+  },
+  {
+    "t": 21.6,
+    "label": "亮相急推"
+  },
+  {
+    "t": 25.2,
+    "label": "张弓甩镜"
+  },
+  {
+    "t": 28.3,
+    "label": "第二箭"
+  },
+  {
+    "t": 30,
+    "label": "锁镜连射"
+  },
+  {
+    "t": 34.8,
+    "label": "静默抉择"
+  },
+  {
+    "t": 37.2,
+    "label": "复苏拉回"
+  },
+  {
+    "t": 43.2,
+    "label": "柱后绕幕"
+  },
+  {
+    "t": 44.5,
+    "label": "幕后一灯"
+  },
+  {
+    "t": 50.8,
+    "label": "幕上片尾"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

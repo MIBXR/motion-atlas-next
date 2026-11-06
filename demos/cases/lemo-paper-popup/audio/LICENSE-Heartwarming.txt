@@ -1,0 +1,6 @@
+"Heartwarming" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0
+https://creativecommons.org/licenses/by/4.0/
+Source: https://incompetech.com/music/royalty-free/
+104.8–133秒真实世界及片尾，从原曲39.38秒开始，增益1.15。
+剪辑参数：source/music/edit.py。完整许可原文：CC-BY-4.0.txt。

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  src: url('HarmonyOS_Sans_SC_Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('IBMPlexMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face{font-family:'Outfit Morph';src:url('Outfit-SemiBold.ttf') format('truetype');font-weight:1 1000;font-display:block}

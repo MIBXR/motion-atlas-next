@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>形状变形 · morphe. — One Shape, Every Story</title>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: ["assets/textures/paper/Paper001_4K_color.jpg"],
+  data: ["film/cues.json","film/glyphs.json"],
+  audio: ["audio/film.m4a"],
+});
+
+await MotionKit.load.module('./film/setup.js');
+const { width, height, fps, duration } = window.DEMO;
+const cues = await (await MotionKit.load.fetch('./film/cues.json')).json();
+const names = { cup: '咖啡落定', sun: '太阳落定', sunset: '落日成景', gull: '海鸥展开', plane: '纸机成形', pin: '定位落点', heart: '爱心成形', m: '字标成形' };
+const markers = [
+  ...Object.entries(cues.land).map(([key, t]) => ({ t, label: names[key] })),
+  ...cues.captions.map((t, i) => ({ t, label: ['早安', '日出', '日落', '海风', '远行', '抵达', '心动'][i] })),
+  ...Object.entries(cues.wipes).map(([key, t]) => ({ t, label: { sun: '金黄色域', sky: '朱红色域', sea: '海面升起', flood: '海面满屏', cream: '奶油色域', heart: '心动色域', ink: '墨色色域' }[key] })),
+  ...cues.heartbeat.map(t => ({ t, label: '爱心搏动' })),
+  ...cues.enddots.arrive.map(t => ({ t, label: '圆点归位' })),
+  { t: cues.flight.launch, label: '纸机起飞' }, { t: cues.flight.apex, label: '回环顶点' },
+  { t: cues.shock, label: '接触扩圈' }, { t: cues.letters.t0, label: '字母展开' },
+  { t: cues.tagline, label: '标语入场' }, { t: cues.build, label: '音乐构建' },
+  { t: cues.drop, label: '音乐落点' }, { t: cues.outro, label: '音乐尾声' },
+].sort((a, b) => a.t - b.t);
+MotionKit.mountFilm({
+  film: { renderAt: window.renderAt, duration, width, height, fps },
+  title: document.title, bpm: cues.bpm,
+  root: '#stage', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#3D5BFF',
+  start: { t: 0, reduced: 9.8 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

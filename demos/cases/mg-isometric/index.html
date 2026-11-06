@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISOPOLIS — 03-isometric</title>
+<script type="importmap">{"imports":{
+  "three":"./vendor/three@0.186.1/build/three.module.js","three/addons/":"./vendor/three@0.186.1/examples/jsm/",
+  "opentype":"./vendor/opentype.js@2.0.0/dist/opentype.mjs"}}</script>
+</head>
+<body>
+<script src="motion-kit.js"></script>
+<script type="module">
+await MotionKit.load.prepare({
+  styles: ["fonts/fonts.css","film/style.css"],
+  modules: ["./film/setup.js"],
+  images: [],
+  data: ["film/cues.json","fonts/Unbounded-800-static.ttf"],
+  audio: ["audio/film.m4a"],
+});
+
+const { ready: filmReady } = await MotionKit.load.module('./film/setup.js');
+const cuesReady = MotionKit.load.fetch('./film/cues.json').then(response => response.json());
+MotionKit.preload([{ label: '原作画面与时间表', run: () => Promise.all([filmReady, cuesReady]) }]);
+const width = 1920, height = 1080, fps = 30, duration = 10;
+const cues = await cuesReady;
+const labels = {
+  rings: '地块环', soil: '土层伸展', roads: '道路描出', houses: '住宅',
+  turbines: '风机', rail: '轨道构建', downtown: '楼房', cars: '车辆入场',
+  train: '列车启程', drop: '城市激活', drones: '无人机', callouts: '数据卡',
+  whoosh: '拉远风声', plate: '标题落版', letters_start: '字母起落', final: '标语揭示', end: '结束',
+};
+const towerLabels = { base: '核心基座', seg1: '核心一段', seg2: '核心二段', seg3: '核心三段', antenna: '核心天线', ring: '核心光环' };
+const markers = [
+  ...['rings', 'turbines', 'drones', 'callouts'].flatMap(key => cues[key].map((t, i) => ({ t, label: `${labels[key]}${i + 1}` }))),
+  ...['houses', 'downtown'].flatMap(key => Object.values(cues[key]).map((t, i) => ({ t, label: `${labels[key]}${i + 1}` }))),
+  ...Object.entries(cues.tower).map(([key, t]) => ({ t, label: towerLabels[key] })),
+  ...['soil', 'roads', 'rail', 'cars', 'train', 'drop', 'whoosh', 'plate', 'letters_start', 'final', 'end'].map(key => ({ t: cues[key], label: labels[key] })),
+  ...cues.pullback.map((t, i) => ({ t, label: ['拉远开始', '拉远到位'][i] })),
+  ...cues.blueprint.map((t, i) => ({ t, label: ['蓝图起绘', '蓝图成形'][i] })),
+  ...cues.sweep.map(([, t], i) => ({ t, label: `生长前沿${i + 1}` })),
+].sort((a, b) => a.t - b.t);
+document.querySelector('#stage').style.background = getComputedStyle(document.body).backgroundColor;
+MotionKit.mountFilm({
+  film: { renderAt: async t => { await filmReady; return window.renderAt(t); }, duration, width, height, fps },
+  title: document.title,
+  root: '#stage', orients: ['landscape'], sizes: { landscape: [width, height] }, background: '#000',
+  markers, accent: '#A08CFF',
+  start: { t: 0, reduced: 9.75 },
+  audio: { src: 'audio/film.m4a', mime: 'audio/mp4' },
+});
+</script>
+</body>
+</html>

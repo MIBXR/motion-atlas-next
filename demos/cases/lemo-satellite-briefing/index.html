@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>地图上还写着海 · 卫星简报</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/assets/plates/plates.json",
+    "film/assets/vectors.json",
+    "film/core/lib.js",
+    "film/cues.json",
+    "film/engine.js",
+    "film/film.js",
+    "film/index.html",
+    "film/overlay.js",
+    "film/timeline.js"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ],
+  "images": [
+    "film/assets/plates/world.jpg",
+    "film/assets/plates/ca.jpg",
+    "film/assets/plates/r1977.jpg",
+    "film/assets/plates/r1989.jpg",
+    "film/assets/plates/r2000.jpg",
+    "film/assets/plates/r2009.jpg",
+    "film/assets/plates/r2014.jpg",
+    "film/assets/plates/r2025.jpg",
+    "film/assets/plates/la2025.jpg",
+    "film/assets/plates/mu2025.jpg",
+    "film/assets/plates/ko2001.jpg",
+    "film/assets/plates/ko2009.jpg",
+    "film/assets/plates/ko2025.jpg",
+    "film/assets/plates/ko2001_w.png",
+    "film/assets/plates/ko2009_w.png",
+    "film/assets/plates/ko2025_w.png",
+    "film/assets/plates/r2025_w.png",
+    "film/assets/plates/mapfield.png",
+    "film/assets/plates/ko_grow.png"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "The Map Still Says Sea";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 37.791666666666664, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "地图上还写着海 · 卫星简报",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#030507",
+  "accent": "#dae4d5",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 13.6
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "轨道锁定"
+  },
+  {
+    "t": 1.8,
+    "label": "俯冲地图"
+  },
+  {
+    "t": 5.36,
+    "label": "扫描揭开盐地"
+  },
+  {
+    "t": 6.6,
+    "label": "回卷年份"
+  },
+  {
+    "t": 7.8,
+    "label": "海岸时间环"
+  },
+  {
+    "t": 13.2,
+    "label": "旧港口锁定"
+  },
+  {
+    "t": 15.3,
+    "label": "推近莫伊纳克"
+  },
+  {
+    "t": 17.4,
+    "label": "量出九十五公里"
+  },
+  {
+    "t": 23.4,
+    "label": "甩向北方"
+  },
+  {
+    "t": 24,
+    "label": "北咸海回水"
+  },
+  {
+    "t": 28.8,
+    "label": "重贴海名与爬升"
+  },
+  {
+    "t": 34.2,
+    "label": "轨道片尾"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

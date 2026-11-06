@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>跟着雨走 · 水彩笔刷</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/aus.js",
+    "film/engine.js",
+    "film/main.js",
+    "film/plants.js",
+    "film/scene.js",
+    "film/index.html"
+  ],
+  "images": [
+    "film/paper.jpg"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Follow the Rain";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 113.6, width: 1920, height: 1080, fps: 60,
+        async renderAt(t) { await upstream.render(Math.round(t * 60) / 60); },
+      },
+      ...{
+  "title": "跟着雨走 · 水彩笔刷",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#f1e9da",
+  "accent": "#cf4f2c",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 68.16
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+    {
+      "t": 0,
+      "label": "纸上开场"
+    },
+    {
+      "t": 10.3,
+      "label": "沿雨量出发"
+    },
+    {
+      "t": 23,
+      "label": "穆加引雨"
+    },
+    {
+      "t": 41.6,
+      "label": "火与新芽"
+    },
+    {
+      "t": 54.2,
+      "label": "仰看王桉"
+    },
+    {
+      "t": 61.2,
+      "label": "雨林齐绘"
+    },
+    {
+      "t": 70.3,
+      "label": "纸雾洗白"
+    },
+    {
+      "t": 73.2,
+      "label": "大陆地图"
+    },
+    {
+      "t": 80.8,
+      "label": "回到深时"
+    },
+    {
+      "t": 101.6,
+      "label": "片尾题字"
+    }
+  ]
+}
+    });
+  </script>
+</body>
+</html>

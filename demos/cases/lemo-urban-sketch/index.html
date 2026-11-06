@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>风去了哪里 · 钢笔淡彩</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage" class="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/engine.js",
+    "film/film.js",
+    "film/index.html",
+    "film/main.js",
+    "film/poses.js",
+    "film/sheet.js",
+    "film/world.js"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Where the Wind Went";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 32.375, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "风去了哪里 · 钢笔淡彩",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#f5eede",
+  "accent": "#d6a65a",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 16.2
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+  {
+    "t": 0,
+    "label": "钢笔与唯一彩帽"
+  },
+  {
+    "t": 2.4,
+    "label": "公园与风来"
+  },
+  {
+    "t": 6,
+    "label": "追帽与失手"
+  },
+  {
+    "t": 10.8,
+    "label": "路灯上跃起"
+  },
+  {
+    "t": 12,
+    "label": "树冠着色"
+  },
+  {
+    "t": 15.6,
+    "label": "抬升天际线"
+  },
+  {
+    "t": 19.2,
+    "label": "帽子最高点与静默"
+  },
+  {
+    "t": 21.6,
+    "label": "急落与扑接"
+  },
+  {
+    "t": 24,
+    "label": "接住草帽"
+  },
+  {
+    "t": 25.2,
+    "label": "拉远整页"
+  },
+  {
+    "t": 29.8,
+    "label": "页边题字"
+  }
+]
+}
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Noto Serif SC';
+  src: url('./NotoSerifSC[wght].ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('./Inter[opsz,wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face { font-family: 'Fraunces Liquid'; src: url('./Fraunces-Liquid-72-900-Soft.ttf') format('truetype'); font-weight: 1 1000; font-display: block; }

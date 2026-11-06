@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>铸钟人 · 木刻版画</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/chars.js",
+    "film/core/lib.js",
+    "film/engine/filter.js",
+    "film/engine/hatch.js",
+    "film/engine/index.js",
+    "film/engine/knife.js",
+    "film/engine/print.js",
+    "film/film.js",
+    "film/fx.js",
+    "film/hands.js",
+    "film/index.html",
+    "film/interior.js",
+    "film/main.js",
+    "film/rig.js",
+    "film/shots.js",
+    "film/shots2.js",
+    "film/stage.js",
+    "film/timeline.json",
+    "film/trans.js",
+    "film/views.js",
+    "film/voices/dur.json",
+    "film/world.js"
+  ],
+  "images": [
+    "assets/walnut_diff.jpg"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "The Bell Founder";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 58.5, width: 1920, height: 1080, fps: 24,
+        async renderAt(t) { await upstream.render(Math.round(t * 24) / 24); },
+      },
+      ...{
+  "title": "铸钟人 · 木刻版画",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#EFE8D8",
+  "accent": "#C8502A",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 49.14
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+    {
+      "t": 0,
+      "label": "黑版与首刀"
+    },
+    {
+      "t": 3,
+      "label": "逐刀造出村庄"
+    },
+    {
+      "t": 7,
+      "label": "第一次揭印"
+    },
+    {
+      "t": 9,
+      "label": "空钟楼"
+    },
+    {
+      "t": 15,
+      "label": "手的工作"
+    },
+    {
+      "t": 19,
+      "label": "村民献物"
+    },
+    {
+      "t": 23,
+      "label": "第一炉铜光"
+    },
+    {
+      "t": 28.3333,
+      "label": "钟壁开裂"
+    },
+    {
+      "t": 29.6667,
+      "label": "门内沉默"
+    },
+    {
+      "t": 32.3333,
+      "label": "学徒的礼物"
+    },
+    {
+      "t": 36.3333,
+      "label": "再次开炉"
+    },
+    {
+      "t": 39.3333,
+      "label": "刻出光"
+    },
+    {
+      "t": 44.3333,
+      "label": "数字静默"
+    },
+    {
+      "t": 47.3333,
+      "label": "首次钟声"
+    },
+    {
+      "t": 55,
+      "label": "新印片尾"
+    }
+  ]
+}
+    });
+  </script>
+</body>
+</html>

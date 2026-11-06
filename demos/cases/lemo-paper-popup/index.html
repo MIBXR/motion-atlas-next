@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小精灵冒险记 · 纸片立体书</title>
+  <style>html,body{margin:0;overflow:hidden}#film{display:block;width:1920px;height:1080px;border:0}</style>
+</head>
+<body>
+  <main id="stage"></main>
+  <script src="motion-kit.js"></script>
+  <script type="module">
+    await MotionKit.load.prepare({
+  "styles": [
+    "fonts/fonts.css"
+  ],
+  "data": [
+    "film/actors.js",
+    "film/art.js",
+    "film/book.js",
+    "film/cutmesh.js",
+    "film/hud.js",
+    "film/index.html",
+    "film/lib.js",
+    "film/main.js",
+    "film/paper.js",
+    "film/post.js",
+    "film/sets.js",
+    "film/story.js",
+    "film/voices/dur.json",
+    "vendor/three@0.170.0/build/three.module.js",
+    "vendor/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+    "vendor/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/MaskPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/OutputPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/Pass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/ShaderPass.js",
+    "vendor/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/CopyShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/LuminosityHighPassShader.js",
+    "vendor/three@0.170.0/examples/jsm/shaders/OutputShader.js",
+    "vendor/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "assets/alarm_clock_01/alarm_clock_01.bin",
+    "assets/alarm_clock_01/alarm_clock_01.gltf",
+    "assets/desk_lamp_arm_01/desk_lamp_arm_01.bin",
+    "assets/desk_lamp_arm_01/desk_lamp_arm_01.gltf",
+    "assets/lythwood_lounge_2k.hdr",
+    "assets/potted_plant_04/potted_plant_04.bin",
+    "assets/potted_plant_04/potted_plant_04.gltf",
+    "assets/tea_set_01/tea_set_01.bin",
+    "assets/tea_set_01/tea_set_01.gltf"
+  ],
+  "images": [
+    "assets/alarm_clock_01/textures/alarm_clock_01_arm_1k.jpg",
+    "assets/alarm_clock_01/textures/alarm_clock_01_diff_1k.jpg",
+    "assets/alarm_clock_01/textures/alarm_clock_01_nor_gl_1k.jpg",
+    "assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_arm_1k.jpg",
+    "assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_diff_1k.jpg",
+    "assets/desk_lamp_arm_01/textures/desk_lamp_arm_01_nor_gl_1k.jpg",
+    "assets/potted_plant_04/textures/potted_plant_04_arm_1k.jpg",
+    "assets/potted_plant_04/textures/potted_plant_04_diff_1k.jpg",
+    "assets/potted_plant_04/textures/potted_plant_04_nor_gl_1k.jpg",
+    "assets/tea_set_01/textures/tea_set_01_arm_1k.jpg",
+    "assets/tea_set_01/textures/tea_set_01_diff_1k.jpg",
+    "assets/tea_set_01/textures/tea_set_01_nor_gl_1k.jpg",
+    "assets/walnut_diff.jpg",
+    "assets/walnut_nor.jpg",
+    "assets/walnut_rough.jpg"
+  ],
+  "audio": [
+    "audio/film.m4a"
+  ]
+});
+    const frame = document.createElement('iframe');
+    frame.id = 'film';
+    frame.title = "Pip's Paper Adventure";
+    const loaded = new Promise(resolve => frame.addEventListener('load', resolve, { once: true }));
+    frame.src = 'film/index.html';
+    document.querySelector('#stage').append(frame);
+    await loaded;
+    const upstream = frame.contentWindow;
+    while (upstream.READY !== true) await new Promise(requestAnimationFrame);
+    MotionKit.mountFilm({
+      film: {
+        duration: 133.0, width: 1920, height: 1080, fps: 60,
+        async renderAt(t) { await upstream.render(Math.round(t * 60) / 60); },
+      },
+      ...{
+  "title": "小精灵冒险记 · 纸片立体书",
+  "root": "#stage",
+  "orients": [
+    "landscape"
+  ],
+  "background": "#1f5566",
+  "accent": "#ffcf3f",
+  "step": "frames",
+  "start": {
+    "t": 0,
+    "reduced": 26.6
+  },
+  "audio": {
+    "src": "audio/film.m4a",
+    "mime": "audio/mp4"
+  },
+  "markers": [
+    {
+      "t": 0,
+      "label": "真实书桌"
+    },
+    {
+      "t": 10,
+      "label": "打开书"
+    },
+    {
+      "t": 15.2,
+      "label": "纸片谷"
+    },
+    {
+      "t": 39.2,
+      "label": "另一束光"
+    },
+    {
+      "t": 48.6,
+      "label": "翻向森林"
+    },
+    {
+      "t": 61.55,
+      "label": "抚平坏脾气"
+    },
+    {
+      "t": 71.6,
+      "label": "翻向大海"
+    },
+    {
+      "t": 81.8,
+      "label": "天空翻夜"
+    },
+    {
+      "t": 86.8,
+      "label": "最后一页"
+    },
+    {
+      "t": 96.4,
+      "label": "书内反打"
+    },
+    {
+      "t": 104.8,
+      "label": "飞出书外"
+    },
+    {
+      "t": 111,
+      "label": "落上桌面"
+    },
+    {
+      "t": 123.4,
+      "label": "新的开始"
+    }
+  ]
+}
+    });
+  </script>
+</body>
+</html>
