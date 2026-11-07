@@ -1,3 +1,4 @@
+import { StageToolbar } from "@/ui/StageToolbar";
 import { LinkButton } from "@/ui/LinkButton";
 import { Button } from "@/registry/components/button/button";
 // Motion Demo 播放器：通过同源 iframe 的 window.__motion 与 motion:* 消息控制时间轴（CONTENT.md 6.2）。
@@ -317,11 +318,10 @@ export function MaterialFrame({ src, title, tools }: { src: string; title: strin
   const [reload, setReload] = useState(0);
   return (
     <div className="stage">
-      <div className="stage-toolbar">
-        {tools}
-        <Button variant="secondary" size="sm" className="arc-button" onClick={() => setReload(n => n + 1)} aria-label="重新加载" title="重新加载"><RotateCcw /><span className="stage-button-label">重新加载</span></Button>
-        <LinkButton variant="secondary" size="sm" href={src} target="_blank" rel="noopener" aria-label="在新标签页打开" title="在新标签页打开"><ExternalLink /><span className="stage-button-label">新标签页</span></LinkButton>
-      </div>
+      <StageToolbar content={tools} items={[
+        { id: "replay", label: "重新加载", icon: <RotateCcw aria-hidden="true" />, onSelect: () => setReload(n => n + 1) },
+        { id: "open", label: "新标签页", icon: <ExternalLink aria-hidden="true" />, onSelect: () => window.open(src, "_blank", "noopener") },
+      ]} />
       <div className="material-frame"><iframe key={src + reload} src={src} title={title} allow="autoplay; fullscreen" /></div>
     </div>
   );

@@ -121,17 +121,17 @@ export function ListPage({ kind }: { kind: Kind }) {
           onValueChange={v => set({ q: v }, true)}
         /></div>
         <div className="toolbar-row">
-          <Button variant="secondary" size="sm" className="only-narrow" onClick={() => setDrawer(true)}><Filter /><span>筛选{active.length ? ` ${active.length}` : ""}</span></Button>
+          <Button variant="secondary" size="md" className="only-narrow" onClick={() => setDrawer(true)}><Filter /><span>筛选{active.length ? ` ${active.length}` : ""}</span></Button>
           <SegmentedControl label="排序" value={s.sort} onValueChange={v => set({ sort: v === "order" ? null : v })} options={[{ value: "order", label: "编号" }, { value: "title", label: "名称" }]} />
-          <Button variant="secondary" size="sm" aria-label={s.dir === "asc" ? "正序，点按切换为反序" : "反序，点按切换为正序"} title={s.dir === "asc" ? "正序" : "反序"} onClick={() => set({ dir: s.dir === "asc" ? "desc" : null })}>
+          <Button variant="secondary" size="md" aria-label={s.dir === "asc" ? "正序，点按切换为反序" : "反序，点按切换为正序"} title={s.dir === "asc" ? "正序" : "反序"} onClick={() => set({ dir: s.dir === "asc" ? "desc" : null })}>
             {s.dir === "asc" ? <ArrowUpNarrowWide /> : <ArrowDownWideNarrow />}
           </Button>
-          <Button variant={s.favOnly ? "primary" : "secondary"} size="sm" aria-pressed={s.favOnly} onClick={() => set({ fav: s.favOnly ? null : "1" })}><Star fill={s.favOnly ? "currentColor" : "none"} /><span>只看收藏</span></Button>
+          <Button variant={s.favOnly ? "primary" : "secondary"} size="md" aria-pressed={s.favOnly} onClick={() => set({ fav: s.favOnly ? null : "1" })}><Star fill={s.favOnly ? "currentColor" : "none"} /><span>只看收藏</span></Button>
           <span className="toolbar-spacer" />
-          <div className="view-toggle" role="group" aria-label="布局">
-            <Button variant={view === "grid" ? "primary" : "secondary"} size="sm" aria-pressed={view === "grid"} aria-label="卡片" onClick={() => set({ view: null })}><LayoutGrid /></Button>
-            <Button variant={view === "list" ? "primary" : "secondary"} size="sm" aria-pressed={view === "list"} aria-label="列表" onClick={() => set({ view: "list" })}><List /></Button>
-          </div>
+          <SegmentedControl className="view-switch" label="布局" value={view} onValueChange={v => set({ view: v === "grid" ? null : "list" })} options={[
+            { value: "grid", label: "", accessory: <><LayoutGrid aria-hidden="true" /><span className="visually-hidden">网格</span></> },
+            { value: "list", label: "", accessory: <><List aria-hidden="true" /><span className="visually-hidden">列表</span></> },
+          ]} />
         </div>
         {active.length ? (
           <FilterToolbar label="已选筛选条件" filters={active} onRemove={id => { const filter = active.find(item => item.id === id)!; toggle(filter.key, filter.raw); }} onClearAll={() => set(Object.fromEntries(facets[kind].map(f => [f.key, null])))} />

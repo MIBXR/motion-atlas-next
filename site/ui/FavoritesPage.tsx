@@ -1,4 +1,4 @@
-import { Button } from "@/registry/components/button/button";
+import { ButtonGroup } from "@/registry/components/button-group/button-group";
 import { LinkButton } from "@/ui/LinkButton";
 import { useRef } from "react";
 import { EmptyState } from "@/registry/components/empty-state/empty-state";
@@ -28,8 +28,10 @@ export function FavoritesPage() {
       <header className="page-head">
         <div><h1>收藏 <span className="muted">{total}</span></h1></div>
         <div className="head-actions">
-          <Button variant="secondary" size="sm"  onClick={exportFavorites} disabled={!total}><Download /><span>导出收藏配置</span></Button>
-          <Button variant="secondary" size="sm"  onClick={() => file.current?.click()}><Upload /><span>导入收藏配置</span></Button>
+          <ButtonGroup label="收藏配置" size="sm" items={[
+            { id: "export", label: "导出收藏配置", icon: <Download aria-hidden="true" />, onSelect: exportFavorites, disabled: !total },
+            { id: "import", label: "导入收藏配置", icon: <Upload aria-hidden="true" />, onSelect: () => file.current?.click() },
+          ]} />
           <input ref={file} type="file" accept="application/json,.json" hidden onChange={ev => { const f = ev.target.files?.[0]; if (f) onFile(f); ev.target.value = ""; }} />
         </div>
       </header>
