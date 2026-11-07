@@ -138,7 +138,7 @@ export function buildAll() {
     for (const e of list) if (e.prompt) files[`prompts/${kind}/${e.id}.md`] = promptDoc(kind, e);
   }
 
-  files['docs/cases/README.md'] = ['# 案例研究', '', '| 案例 | 资料 |', '| --- | --- |', ...cases.map(c => `| [${c.title}](../../cases.html#case/${c.id}) | ${c.research ? `[研究](${c.id}.md)` : `[条目](../../entries/cases/${c.id}.json)`} |`), ''].join('\n');
+  files['docs/cases/README.md'] = ['# 案例研究', '', '| 案例 | 资料 |', '| --- | --- |', ...cases.map(c => `| [${c.title}](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/${c.id}) | ${c.research ? `[研究](${c.id}.md)` : `[条目](../../entries/cases/${c.id}.json)`} |`), ''].join('\n');
   files['data/asset-sources.js'] = '/* 由 scripts/build.mjs 生成，请勿手改 */\nglobalThis.MotionAtlasAssetSources = {"assets":{}};\n';
   // README 计数块
   if (exists('README.md')) {
