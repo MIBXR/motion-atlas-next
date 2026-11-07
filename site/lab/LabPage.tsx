@@ -40,7 +40,7 @@ export function LabPage() {
     return () => { disconnect(); ro.disconnect(); Reflect.deleteProperty(window, '__lab'); };
   }, [lab]);
   return <LabContext.Provider value={lab}><div className="page lab-page" ref={page} onMouseDown={e => { if ((e.target as HTMLElement).closest('button')) e.preventDefault(); }}>
-    <header className="page-head"><div><p className="crumbs">节奏实验室</p><h1>把“手感”调成数字。</h1><p className="detail-sub">先用节拍器感受速度、拍号与细分，再比较事件吸附前后的差别。把曲线、时长和错峰对齐拍子，导出代码、Prompt 或 WAV。</p></div></header>
+    <header className="page-head"><div><h1>节奏实验室</h1><p className="muted">先用节拍器感受速度、拍号与细分，再比较事件吸附前后的差别。把曲线、时长和错峰对齐拍子，导出代码、Prompt 或 WAV。</p></div></header>
     <div className="lab-layout"><div className="lab-main"><Transport /><div className="lab-toc-inline"><Accordion defaultOpen={-1} items={[{ title: '实验室目录', content: <Contents /> }]} /></div><div className="lab-sections"><BeatSection /><QuantSection /><EaseSection /><ExportSection /></div></div>
       <aside className="doc-toc-column lab-toc"><ScrollArea orientation="vertical" maxHeight="calc(100dvh - var(--sticky-top) - 48px)" label="实验室目录" fade={24}><Contents /></ScrollArea></aside>
     </div><Feedback />
