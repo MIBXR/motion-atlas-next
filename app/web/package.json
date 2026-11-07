@@ -1,0 +1,9 @@
+{
+  "name": "@atlas/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5211 --strictPort",
+    "build": "vite build"
+  }
+}

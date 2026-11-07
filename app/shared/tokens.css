@@ -1,0 +1,61 @@
+/* Hallmark v2.0.0 | shape: app screen | theme: archive green | scope: app */
+/* Critique: reference imagery and readable breakdowns define the workbench. */
+:root {
+  --font-body: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: var(--font-body);
+  --font-mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  --background: #f5f6f2;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-muted: #edf0e9;
+  --sidebar: #eef0e9;
+  --foreground: #242b24;
+  --text-secondary: #5a645a;
+  --text-muted: #707a6e;
+  --border: #dce1d5;
+  --border-subtle: #e6e9e1;
+  --border-strong: #aab5a1;
+  --accent: #496b31;
+  --accent-strong: #355321;
+  --accent-subtle: #e0e9cf;
+  --accent-foreground: #ffffff;
+  --selection: #dbe8c4;
+  --stage: #171b18;
+  --stage-ink: #eff2e9;
+  --stage-muted: #a9b1a5;
+  --stage-border: #41483c;
+  --stage-accent: #c7e394;
+  --focus-color: #749c47;
+  --overlay: #182214ae;
+  --danger: #b13e32;
+  --success: #496b31;
+  --warning: #94651f;
+  --radius-control: 7px;
+  --radius-panel: 10px;
+  --radius-surface: 12px;
+  --shadow-panel: 0 8px 30px #26341e0b;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #1a1e1b;
+  --surface: #222823;
+  --surface-raised: #2b322b;
+  --surface-muted: #2a312a;
+  --sidebar: #171b18;
+  --foreground: #e8eddf;
+  --text-secondary: #b3bead;
+  --text-muted: #929e8b;
+  --border: #374035;
+  --border-subtle: #2d352d;
+  --border-strong: #69755e;
+  --accent: #c1df82;
+  --accent-strong: #d2eca2;
+  --accent-subtle: #354529;
+  --accent-foreground: #1d2b15;
+  --selection: #35452c;
+  --focus-color: #c1df82;
+  --danger: #f29482;
+  --success: #c1df82;
+  --warning: #dfbd80;
+  --shadow-panel: 0 8px 30px #0000001a;
+}
