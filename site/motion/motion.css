@@ -7,8 +7,8 @@
 .player-loading { display: grid; gap: var(--space-2); width: min(320px, 70%); font-size: 13px; text-align: center; }
 .player-loading [role="progressbar"], .player-loading > div { --foreground: #fff; }
 .player-error { display: grid; justify-items: center; gap: var(--space-2); max-width: 80%; text-align: center; font-size: 13px; }
-.player-error svg.lucide { width: 28px; height: 28px; color: oklch(75% .17 60); }
-.player-error .pill-button { margin-top: var(--space-2); }
+.player-error > svg.lucide { width: 28px; height: 28px; color: oklch(75% .17 60); }
+.player-error .arc-button { margin-top: var(--space-2); }
 
 .timeline { position: relative; height: 48px; border-radius: 10px; background: var(--surface-muted); border: 1px solid var(--border); cursor: pointer; touch-action: none; overflow: hidden; }
 .timeline svg { position: absolute; inset: 4px 0 0; width: 100%; height: calc(100% - 4px); }
@@ -23,8 +23,7 @@
 .timeline:focus-visible { outline-offset: 2px; }
 
 .player-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.player-bar .icon-button[data-pending] { border-style: dashed; }
-.player-play { background: var(--foreground) !important; color: var(--background) !important; border-color: var(--foreground) !important; }
+.player-bar .icon-only[data-pending] { border-style: dashed; }
 .player-time { font-size: 13px; color: var(--text-secondary); font-variant-numeric: tabular-nums; padding: 0 6px; }
 .player-beat { font-size: var(--ui-xs); padding: 2px 10px; border-radius: 99px; background: var(--accent-subtle); color: var(--accent-strong); max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .shortcuts { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 4px 16px; margin: 0; padding: var(--space-3) var(--space-4); border: 1px solid var(--border); border-radius: 12px; font-size: var(--ui-xs); }
@@ -48,5 +47,5 @@
 @media (max-width: 640px) {
   .player-screen { max-height: none; }
   .player-screen[data-orient="portrait"] { height: 70dvh; }
-  .player-bar .icon-button { width: 34px; height: 34px; }
+  .player-bar .icon-only { width: 34px; height: 34px; min-height: 34px; }
 }

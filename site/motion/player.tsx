@@ -1,3 +1,5 @@
+import { LinkButton } from "@/ui/LinkButton";
+import { Button } from "@/registry/components/button/button";
 // Motion Demo 播放器：通过同源 iframe 的 window.__motion 与 motion:* 消息控制时间轴（CONTENT.md 6.2）。
 import { useCallback, useEffect, useMemo, useRef, useState, type PointerEvent as RPointerEvent, type ReactNode } from "react";
 import { Progress } from "@/registry/components/progress/progress";
@@ -220,7 +222,7 @@ export function MotionPlayer({ demo, title, beats: entryBeats, fallbackBeats, en
                 <TriangleAlert aria-hidden="true" />
                 <strong>Demo 加载失败</strong>
                 <span>{error}</span>
-                <button className="pill-button" onClick={() => setReload(n => n + 1)}><RotateCcw /><span>重试</span></button>
+                <Button variant="secondary" size="sm" className="arc-button" onClick={() => setReload(n => n + 1)}><RotateCcw /><span>重试</span></Button>
               </div>
             )}
           </div>
@@ -228,24 +230,24 @@ export function MotionPlayer({ demo, title, beats: entryBeats, fallbackBeats, en
       </div>
       <Timeline duration={duration} time={time} beats={beats} current={current} energy={energy} onSeek={seek} />
       <div className="player-bar">
-        <button className="icon-button player-play" onClick={toggle} disabled={phase !== "ready"} aria-label={playing ? "暂停（空格）" : "播放（空格）"} title={playing ? "暂停" : "播放"}>{playing ? <Pause /> : <Play />}</button>
-        <button className="icon-button" onClick={() => jumpBeat(-1)} disabled={!beats.length || phase !== "ready"} aria-label="上一个节拍（[）" title="上一个节拍"><SkipBack /></button>
-        <button className="icon-button" onClick={() => jumpBeat(1)} disabled={!beats.length || phase !== "ready"} aria-label="下一个节拍（]）" title="下一个节拍"><SkipForward /></button>
+        <Button variant="secondary" size="sm" className="arc-button icon-only player-play" onClick={toggle} disabled={phase !== "ready"} aria-label={playing ? "暂停（空格）" : "播放（空格）"} title={playing ? "暂停" : "播放"}>{playing ? <Pause /> : <Play />}</Button>
+        <Button variant="secondary" size="sm" className="arc-button icon-only" onClick={() => jumpBeat(-1)} disabled={!beats.length || phase !== "ready"} aria-label="上一个节拍（[）" title="上一个节拍"><SkipBack /></Button>
+        <Button variant="secondary" size="sm" className="arc-button icon-only" onClick={() => jumpBeat(1)} disabled={!beats.length || phase !== "ready"} aria-label="下一个节拍（]）" title="下一个节拍"><SkipForward /></Button>
         <span className="player-time mono">{fmt(time)} / {fmt(duration)}</span>
         {current >= 0 && beats[current] ? <span className="player-beat">{beats[current]!.label}</span> : null}
         <span className="toolbar-spacer" />
         {multi ? (
           <div className="view-toggle" role="group" aria-label="画幅">
-            <button className="icon-button" aria-pressed={!portrait} aria-label="横屏" title="横屏（O）" onClick={() => setOrientTo("landscape")}><RectangleHorizontal /></button>
-            <button className="icon-button" aria-pressed={portrait} aria-label="竖屏" title="竖屏（O）" onClick={() => setOrientTo("portrait")}><RectangleVertical /></button>
+            <Button variant="secondary" size="sm" className="arc-button icon-only" aria-pressed={!portrait} aria-label="横屏" title="横屏（O）" onClick={() => setOrientTo("landscape")}><RectangleHorizontal /></Button>
+            <Button variant="secondary" size="sm" className="arc-button icon-only" aria-pressed={portrait} aria-label="竖屏" title="竖屏（O）" onClick={() => setOrientTo("portrait")}><RectangleVertical /></Button>
           </div>
         ) : null}
-        <button className="icon-button" onClick={toggleSound} disabled={sound === "none" || sound === "pending"} aria-pressed={sound === "on" || sound === "blocked"} aria-label={sound === "none" ? "此 Demo 无声音" : sound === "off" ? "打开声音（M）" : "关闭声音（M）"} data-pending={sound === "blocked" || undefined} title={sound === "blocked" ? "声音已开启，等待浏览器允许播放：点按画面或任意控件后出声" : sound === "none" ? "无声音" : "声音"}>
+        <Button variant="secondary" size="sm" className="arc-button icon-only" onClick={toggleSound} disabled={sound === "none" || sound === "pending"} aria-pressed={sound === "on" || sound === "blocked"} aria-label={sound === "none" ? "此 Demo 无声音" : sound === "off" ? "打开声音（M）" : "关闭声音（M）"} data-pending={sound === "blocked" || undefined} title={sound === "blocked" ? "声音已开启，等待浏览器允许播放：点按画面或任意控件后出声" : sound === "none" ? "无声音" : "声音"}>
           {sound === "on" || sound === "blocked" ? <Volume2 /> : <VolumeX />}
-        </button>
-        <button className="icon-button" onClick={toggleFull} aria-label={full ? "退出全屏（F）" : "全屏（F）"} title="全屏">{full ? <Minimize /> : <Maximize />}</button>
-        <button className="icon-button" aria-pressed={help} onClick={() => setHelp(!help)} aria-label="键盘快捷键" title="键盘快捷键（?）"><Keyboard /></button>
-        <a className="icon-button" href={demo} target="_blank" rel="noopener" aria-label="新标签页打开" title="新标签页打开"><ExternalLink /></a>
+        </Button>
+        <Button variant="secondary" size="sm" className="arc-button icon-only" onClick={toggleFull} aria-label={full ? "退出全屏（F）" : "全屏（F）"} title="全屏">{full ? <Minimize /> : <Maximize />}</Button>
+        <Button variant="secondary" size="sm" className="arc-button icon-only" aria-pressed={help} onClick={() => setHelp(!help)} aria-label="键盘快捷键" title="键盘快捷键（?）"><Keyboard /></Button>
+        <LinkButton variant="secondary" size="sm" className="icon-only" href={demo} target="_blank" rel="noopener" aria-label="新标签页打开" title="新标签页打开"><ExternalLink /></LinkButton>
       </div>
       {help ? (
         <dl className="shortcuts">
@@ -317,8 +319,8 @@ export function MaterialFrame({ src, title, tools }: { src: string; title: strin
     <div className="stage">
       <div className="stage-toolbar">
         {tools}
-        <button className="pill-button" onClick={() => setReload(n => n + 1)} aria-label="重新加载" title="重新加载"><RotateCcw /><span>重新加载</span></button>
-        <a className="pill-button" href={src} target="_blank" rel="noopener" aria-label="在新标签页打开" title="在新标签页打开"><ExternalLink /><span>新标签页</span></a>
+        <Button variant="secondary" size="sm" className="arc-button" onClick={() => setReload(n => n + 1)} aria-label="重新加载" title="重新加载"><RotateCcw /><span className="stage-button-label">重新加载</span></Button>
+        <LinkButton variant="secondary" size="sm" href={src} target="_blank" rel="noopener" aria-label="在新标签页打开" title="在新标签页打开"><ExternalLink /><span className="stage-button-label">新标签页</span></LinkButton>
       </div>
       <div className="material-frame"><iframe key={src + reload} src={src} title={title} allow="autoplay; fullscreen" /></div>
     </div>

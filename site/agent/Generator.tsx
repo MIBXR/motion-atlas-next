@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { SearchField } from "@/registry/components/search-field/search-field";
 import SegmentedControl from "@/registry/components/segmented-control/segmented-control";
 import { Checkbox } from "@/registry/components/checkbox/checkbox";
@@ -6,7 +6,6 @@ import { Input } from "@/registry/components/input/input";
 import { CodeBlock } from "@/registry/components/code-block/code-block";
 import { ScrollArea } from "@/registry/components/scroll-area/scroll-area";
 import { Badge } from "@/registry/components/badge/badge";
-import Toast from "@/registry/components/toast/toast";
 import { useAtlas } from "@/ui/context";
 import { createItems, filterItems, ordered, ROLE_NAME } from "./engine/catalog";
 import { readState, saveState } from "./engine/state";
@@ -16,15 +15,9 @@ import type { AgentState } from "./engine/types";
 export function Generator() {
   const { data } = useAtlas();
   const items = useMemo(() => createItems(data), [data]), byId = useMemo(() => new Map(items.map(x => [x.e.id, x])), [items]);
-  const [S, setState] = useState(() => readState(new Set(byId.keys()))), [query, setQuery] = useState(''), [copied, setCopied] = useState(false);
-  const output = useRef<HTMLDivElement>(null);
+  const [S, setState] = useState(() => readState(new Set(byId.keys()))), [query, setQuery] = useState('');
   const list = filterItems(items, S.kind, query), result = createPrompts(S, byId).generate(ordered(S, byId));
   function update(patch: Partial<AgentState>) { const next = { ...S, ...patch }; saveState(next); setState(next); }
-  useEffect(() => {
-    const observer = new MutationObserver(records => { if (records.some(r => (r.target as HTMLElement).dataset.copyState === 'copied')) setCopied(true); });
-    observer.observe(output.current!, { attributes: true, attributeFilter: ['data-copy-state'], subtree: true });
-    return () => observer.disconnect();
-  }, []);
   return <section className="section agent-section" id="agent-generator">
     <header className="section-head"><h2>指令生成器</h2></header>
     <p className="prose">勾选条目，生成一段可以直接交给编码 Agent 或视频模型的任务说明。</p>
@@ -40,13 +33,12 @@ export function Generator() {
           {!list.length ? <p className="muted">没有匹配的条目</p> : null}
         </ScrollArea>
       </div>
-      <div className="agent-pane agent-output" ref={output}>
+      <div className="agent-pane agent-output">
         <SegmentedControl label="生成目标" value={S.target} options={[{ value: 'code', label: '代码实现' }, { value: 'video', label: '视频生成' }]} onValueChange={target => update({ target: target as AgentState['target'] })} />
         <Input label="你的主题（可选）" placeholder="例如：上海一日城市漫游、新品发布倒计时" value={S.brief} onChange={e => update({ brief: e.currentTarget.value })} />
         <div data-agent-output><ScrollArea orientation="vertical" maxHeight={520} label="生成的指令" fade={16}><CodeBlock code={result.text} language="text" /></ScrollArea></div>
         <p className="agent-warning muted" role="status">{result.warning}</p>
       </div>
     </div>
-    <div className="agent-toast"><Toast title="Prompt 已复制" open={copied} onOpenChange={setCopied} /></div>
   </section>;
 }

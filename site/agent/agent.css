@@ -24,7 +24,6 @@
 .agent-table code { overflow-wrap: anywhere; }
 .agent-page pre { white-space: pre-wrap; overflow-wrap: anywhere; overflow: visible; }
 .agent-page pre code { font-size: inherit; }
-.agent-toast { position: fixed; z-index: 60; bottom: var(--space-6); left: 50%; transform: translateX(-50%); width: min(calc(100vw - var(--space-8)), 26rem); }
 @media (max-width: 1100px) {
   .agent-generator, .agent-reference-grid { grid-template-columns: minmax(0, 1fr); }
   .agent-output { position: static; }

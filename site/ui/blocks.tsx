@@ -2,10 +2,13 @@
 import { Children, isValidElement, useEffect, useRef, type ReactNode } from "react";
 import { allowScroll } from "../core/scroll-guard";
 import { CopyButton } from "@/registry/components/copy-button/copy-button";
+import { Button } from "@/registry/components/button/button";
+import { LinkButton } from "./LinkButton";
 import Badge from "@/registry/components/badge/badge";
 import { ExternalLink, GitCompareArrows, Star } from "./icons";
 import { href } from "../core/router";
-import { toggleCompare, toggleFavorite, useCompare, useFavorites } from "../core/store";
+import { COMPARE_MAX, toggleCompare, toggleFavorite, useCompare, useFavorites } from "../core/store";
+import { useToast } from "./Toast";
 import { KIND_NAME, KIND_SINGULAR, type Entry, type Kind } from "../core/types";
 import { byId, useAtlas } from "./context";
 
@@ -163,7 +166,7 @@ export function DocLinks({ docs }: { docs: { label: string; path?: string }[] })
   if (!list.length) return null;
   return (
     <div className="doc-links">
-      {list.map(d => <a key={d.path} className="chip-link" href={href("/docs", { path: d.path })}>{d.label}</a>)}
+      {list.map(d => <LinkButton key={d.path} variant="secondary" size="sm" href={href("/docs", { path: d.path })}>{d.label}</LinkButton>)}
     </div>
   );
 }
@@ -178,7 +181,7 @@ export function SourceList({ items }: { items: SourceItem[] }) {
     <ul className="sources" data-tagged={tagged || undefined}>
       {items.map((s, i) => (
         <li key={i}>
-          {tagged ? <span className="source-tag">{s.tag ?? "—"}</span> : null}
+          {tagged ? <Badge size="md">{s.tag ?? "—"}</Badge> : null}
           <div className="source-body">
             <div className="source-line">
               {s.url ? <a className="source-title" href={s.url} target={s.internal ? undefined : "_blank"} rel={s.internal ? undefined : "noopener"}>{s.title}{s.internal ? null : <ExternalLink aria-hidden="true" />}</a> : <strong className="source-title">{s.title}</strong>}
@@ -208,36 +211,40 @@ export function Sources({ items }: { items?: Record<string, any>[] }) {
 }
 
 export function FavButton({ kind, id, compact }: { kind: Kind; id: string; compact?: boolean }) {
+  const { toast } = useToast();
   const fav = useFavorites();
   const on = fav[kind].includes(id);
   return (
-    <button
-      className={compact ? "icon-button fav" : "pill-button fav"}
+    <Button
+      variant="secondary" size="sm"
+      className={compact ? "arc-button icon-only fav" : "arc-button fav"}
       aria-pressed={on}
       aria-label={on ? "取消收藏" : "收藏"}
       title={on ? "取消收藏" : "收藏"}
-      onClick={ev => { ev.preventDefault(); ev.stopPropagation(); toggleFavorite(kind, id); }}
+      onClick={ev => { ev.preventDefault(); ev.stopPropagation(); toggleFavorite(kind, id); toast({ type: "success", title: on ? "已取消收藏" : "已收藏" }); }}
     >
       <Star fill={on ? "currentColor" : "none"} />
       {compact ? null : <span>{on ? "已收藏" : "收藏"}</span>}
-    </button>
+    </Button>
   );
 }
 
 export function CompareButton({ id, compact }: { id: string; compact?: boolean }) {
+  const { toast } = useToast();
   const list = useCompare();
   const on = list.includes(id);
   return (
-    <button
-      className={compact ? "icon-button" : "pill-button"}
+    <Button
+      variant="secondary" size="sm"
+      className={compact ? "arc-button icon-only" : "arc-button"}
       aria-pressed={on}
       aria-label={on ? "移出比较" : "加入比较"}
       title={on ? "移出比较" : "加入比较（最多 3 个）"}
-      onClick={ev => { ev.preventDefault(); ev.stopPropagation(); toggleCompare(id); }}
+      onClick={ev => { ev.preventDefault(); ev.stopPropagation(); if (!on && list.length >= COMPARE_MAX) { toast({ type: "warning", title: `最多比较 ${COMPARE_MAX} 个案例`, description: "移出一个案例后再添加。" }); return; } toggleCompare(id); }}
     >
       <GitCompareArrows />
       {compact ? null : <span>{on ? "已加入比较" : "加入比较"}</span>}
-    </button>
+    </Button>
   );
 }
 
@@ -254,7 +261,7 @@ export function EntryCard({ kind, e, layout }: { kind: Kind; e: Entry; layout: "
         <h3>{e.title}</h3>
         {meta.subtitle ? <p className="card-sub">{meta.subtitle}</p> : null}
         <p className="card-summary">{e.summary}</p>
-        <div className="card-chips">{meta.chips.slice(0, 4).map(c => <span key={c} className="tag">{c}</span>)}</div>
+        <div className="card-chips">{meta.chips.slice(0, 4).map(c => <Badge key={c} size="md">{c}</Badge>)}</div>
       </div>
       <div className="card-actions">
         <FavButton kind={kind} id={e.id} compact />

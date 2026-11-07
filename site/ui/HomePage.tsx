@@ -1,4 +1,6 @@
+import { LinkButton } from "@/ui/LinkButton";
 import { useMemo } from "react";
+import { Badge } from "@/registry/components/badge/badge";
 import { SearchField } from "@/registry/components/search-field/search-field";
 import { BookOpen, ChevronRight } from "./icons";
 import { href, navigate, useRoute, withParams } from "../core/router";
@@ -37,7 +39,7 @@ export function HomePage() {
             <section key={r.kind} className="home-block">
               <header className="block-head">
                 <h2>{KIND_NAME[r.kind]} <span className="muted">{r.items.length}</span></h2>
-                {r.items.length ? <a className="text-button" href={href(`/${r.kind}`, { q })}>在{KIND_NAME[r.kind]}中查看全部 <ChevronRight aria-hidden="true" /></a> : null}
+                {r.items.length ? <LinkButton variant="ghost" size="sm" href={href(`/${r.kind}`, { q })}>在{KIND_NAME[r.kind]}中查看全部 <ChevronRight aria-hidden="true" /></LinkButton> : null}
               </header>
               {r.items.length ? <div className="card-grid">{r.items.slice(0, 4).map(e => <EntryCard key={e.id} kind={r.kind} e={e} layout="grid" />)}</div> : <p className="muted">没有匹配项。</p>}
             </section>
@@ -59,7 +61,7 @@ export function HomePage() {
                   </a>
                   <p className="muted">按{f.label}</p>
                   <div className="tile-chips">
-                    {values.slice(0, 8).map(v => <a key={v} className="tag" href={href(`/${k}`, { [f.key]: v })}>{f.display(v)}</a>)}
+                    {values.slice(0, 8).map(v => <a key={v} className="badge-link" href={href(`/${k}`, { [f.key]: v })}><Badge size="md">{f.display(v)}</Badge></a>)}
                   </div>
                 </article>
               );
@@ -68,14 +70,14 @@ export function HomePage() {
 
           {favEntries.length ? (
             <section className="home-block">
-              <header className="block-head"><h2>最近收藏</h2><a className="text-button" href="#/favorites">全部收藏 <ChevronRight aria-hidden="true" /></a></header>
+              <header className="block-head"><h2>最近收藏</h2><LinkButton variant="ghost" size="sm" href="#/favorites">全部收藏 <ChevronRight aria-hidden="true" /></LinkButton></header>
               <div className="card-grid">{favEntries.map(({ kind, e }) => <EntryCard key={kind + e!.id} kind={kind} e={e!} layout="grid" />)}</div>
             </section>
           ) : null}
 
           <div className="home-split">
             <section className="home-block">
-              <header className="block-head"><h2>指南</h2><a className="text-button" href="#/docs">全部文档 <ChevronRight aria-hidden="true" /></a></header>
+              <header className="block-head"><h2>指南</h2><LinkButton variant="ghost" size="sm" href="#/docs">全部文档 <ChevronRight aria-hidden="true" /></LinkButton></header>
               <ul className="link-list">
                 {guides.map(d => <li key={d.path}><a href={href("/docs", { path: d.path })}><BookOpen aria-hidden="true" /> <span>{d.title}</span></a></li>)}
               </ul>

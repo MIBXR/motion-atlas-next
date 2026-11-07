@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ScrollArea } from "@/registry/components/scroll-area/scroll-area";
 import { Accordion } from "@/registry/components/accordion/accordion";
-import Toast from "@/registry/components/toast/toast";
+import { useToast } from "@/ui/Toast";
 import { ListTree } from "lucide-react";
 import { allowScroll } from "@/core/scroll-guard";
 import { LabContext, useLab } from "./context";
@@ -14,7 +14,7 @@ import { ExportSection } from "./ExportSection";
 import "./lab.css";
 import "./visuals.css";
 
-const sections = [['s-beat', '感受节拍'], ['s-quant', '理解吸附'], ['s-ease', '曲线 × 时长 × 拍子'], ['s-export', '导出']];
+const sections = [['s-beat', '节拍器'], ['s-quant', '事件量化'], ['s-ease', '缓动曲线与时长'], ['s-export', '导出']];
 function Contents() {
   const [active, setActive] = useState('s-beat');
   useEffect(() => {
@@ -26,7 +26,9 @@ function Contents() {
 }
 function Feedback() {
   const lab = useLab();
-  return <div className="lab-toast"><Toast title={lab.message} open={!!lab.message} onOpenChange={open => { if (!open) lab.dismissToast(); }} /></div>;
+  const { toast } = useToast();
+  useEffect(() => { if (lab.message) { toast({ title: lab.message }); lab.dismissToast(); } }, [lab, lab.message, toast]);
+  return null;
 }
 export function LabPage() {
   const [lab] = useState(createLab), page = useRef<HTMLDivElement>(null);
