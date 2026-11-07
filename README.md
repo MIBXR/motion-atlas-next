@@ -12,7 +12,13 @@
 
 [打开首页](https://motion-atlas-library.mibxranime.chatgpt.site/#/) · [案例库](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases) · [巧思库](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns) · [素材库](https://motion-atlas-library.mibxranime.chatgpt.site/#/materials) · [节奏实验室](https://motion-atlas-library.mibxranime.chatgpt.site/#/tools/rhythm-lab) · [Agent 工作流](https://motion-atlas-library.mibxranime.chatgpt.site/#/tools/workflow) · [文档中心](https://motion-atlas-library.mibxranime.chatgpt.site/#/docs)
 
-![Motion Atlas 实际 Demo 全景](docs/readme/cover.webp)
+<table>
+<tr>
+<td width="33%" align="center"><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/map-pilgrimage"><img src="previews/cases/map-pilgrimage.jpg" alt="地图巡礼 · 旅行影像" width="100%"></a><br><sub>地图巡礼 · 旅行影像</sub></td>
+<td width="33%" align="center"><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/archive-os"><img src="previews/cases/archive-os.jpg" alt="莱茵生命 · 档案终端" width="100%"></a><br><sub>莱茵生命 · 档案终端</sub></td>
+<td width="33%" align="center"><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-watercolor"><img src="previews/cases/lemo-watercolor.jpg" alt="跟着雨走 · 水彩笔刷" width="100%"></a><br><sub>跟着雨走 · 水彩笔刷</sub></td>
+</tr>
+</table>
 
 </div>
 
@@ -30,14 +36,14 @@
 
 <table>
 <tr>
-<td width="33%" valign="top"><img src="previews/cases/keeling-curve.jpg" alt="基林曲线季节锯齿近景" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/keeling-curve">基林曲线</a></strong><br>用同一条真实曲线解释长期趋势与季节起伏。<br><br><a href="prompts/cases/keeling-curve.md">Prompt</a> · <a href="docs/cases/keeling-curve.md">研究</a> · <a href="demos/cases/keeling-curve/">代码</a></td>
-<td width="33%" valign="top"><img src="previews/cases/map-pilgrimage.jpg" alt="地图巡礼京都鸟居与地图" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/map-pilgrimage">地图巡礼</a></strong><br>地图镜头、照片与四角信息层串起三日旅行。<br><br><a href="prompts/cases/map-pilgrimage.md">Prompt</a> · <a href="docs/cases/map-pilgrimage.md">研究</a> · <a href="demos/cases/map-pilgrimage/">代码</a></td>
-<td width="33%" valign="top"><img src="previews/cases/archive-os.jpg" alt="莱茵生命档案终端开场" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/archive-os">莱茵生命档案终端</a></strong><br>时间线驱动档案阵列、解密读取与模型拆解。<br><br><a href="prompts/cases/archive-os.md">Prompt</a> · <a href="docs/cases/archive-os.md">研究</a> · <a href="demos/cases/archive-os/">代码</a></td>
+<td width="33%" valign="top"><img src="previews/cases/map-pilgrimage.jpg" alt="地图巡礼 · 游戏过场式旅行影像" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/map-pilgrimage">地图巡礼</a></strong><br>地图镜头、照片与四角信息层串起三日旅行。<br><br><a href="prompts/cases/map-pilgrimage.md">Prompt</a> · <a href="docs/cases/map-pilgrimage.md">研究</a> · <a href="demos/cases/map-pilgrimage/">代码</a></td>
+<td width="33%" valign="top"><img src="previews/cases/archive-os.jpg" alt="莱茵生命档案终端" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/archive-os">莱茵生命档案终端</a></strong><br>五列档案循环展开，对角解密与 360° 模型。<br><br><a href="prompts/cases/archive-os.md">Prompt</a> · <a href="docs/cases/archive-os.md">研究</a> · <a href="demos/cases/archive-os/">代码</a></td>
+<td width="33%" valign="top"><img src="previews/cases/lemo-watercolor.jpg" alt="跟着雨走 · 水彩笔刷" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-watercolor">跟着雨走</a></strong><br>水彩笔刷沿降雨梯度逐笔画出大陆。<br><br><a href="prompts/cases/lemo-watercolor.md">Prompt</a> · <a href="demos/cases/lemo-watercolor/">代码</a></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><img src="previews/cases/pdoom-video.jpg" alt="P(doom) 手绘卡通音乐录像" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/pdoom-video">I'm Upping My P(doom)</a></strong><br>水彩笔触、线条沸腾与逐次升级的副歌舞台。<br><br><a href="prompts/cases/pdoom-video.md">Prompt</a> · <a href="docs/cases/pdoom-video.md">研究</a> · <a href="demos/cases/pdoom-video/">代码</a></td>
-<td width="33%" valign="top"><img src="previews/cases/mg-3d-render.jpg" alt="Soft Landing 充气字母与胶囊阵列" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-3d-render">soft. — Soft Landing</a></strong><br>充气字母、胶囊碰撞与镜头景深组成三维短片。<br><br><a href="prompts/cases/mg-3d-render.md">Prompt</a> · <a href="docs/cases/mg-3d-render.md">研究</a> · <a href="demos/cases/mg-3d-render/">代码</a></td>
-<td width="33%" valign="top"><img src="previews/cases/butterfly-garden-score.jpg" alt="蝶の舞う庭红白滚动总谱" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/butterfly-garden-score">蝶の舞う庭</a></strong><br>滚动总谱、动机高亮与红白反色呈现曲式变化。<br><br><a href="prompts/cases/butterfly-garden-score.md">Prompt</a> · <a href="docs/cases/butterfly-garden-score.md">研究</a> · <a href="demos/cases/butterfly-garden-score/">代码</a></td>
+<td width="33%" valign="top"><img src="previews/cases/mg-3d-render.jpg" alt="3D 渲染 · soft. — Soft Landing" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-3d-render">Soft Landing</a></strong><br>充气字母落上胶囊阵列，金属球砸出冠状波。<br><br><a href="prompts/cases/mg-3d-render.md">Prompt</a> · <a href="docs/cases/mg-3d-render.md">研究</a> · <a href="demos/cases/mg-3d-render/">代码</a></td>
+<td width="33%" valign="top"><img src="previews/cases/butterfly-garden-score.jpg" alt="蝶の舞う庭 · 曲式赏析滚动总谱" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/butterfly-garden-score">蝶の舞う庭</a></strong><br>《少女歌剧》配乐前 57 小节化为滚动总谱。<br><br><a href="prompts/cases/butterfly-garden-score.md">Prompt</a> · <a href="docs/cases/butterfly-garden-score.md">研究</a> · <a href="demos/cases/butterfly-garden-score/">代码</a></td>
+<td width="33%" valign="top"><img src="previews/cases/lemo-memphis-diorama.jpg" alt="柚子城的四季 · 孟菲斯微缩景" width="100%"><br><strong><a href="https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-memphis-diorama">柚子城的四季</a></strong><br>孟菲斯微缩河湾在一个镜头里走过四季。<br><br><a href="prompts/cases/lemo-memphis-diorama.md">Prompt</a> · <a href="demos/cases/lemo-memphis-diorama/">代码</a></td>
 </tr>
 </table>
 
