@@ -1,0 +1,23 @@
+{
+  "name": "atlas-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "web",
+    "motion"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace web-atlas-workbench",
+    "dev:motion": "npm run dev --workspace motion-atlas-workbench",
+    "build:web": "npm run build --workspace web-atlas-workbench",
+    "build:motion": "npm run build --workspace motion-atlas-workbench",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.65.0"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  }
+}
