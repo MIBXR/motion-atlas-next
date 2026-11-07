@@ -20,4 +20,4 @@
 - `source/tools/prep.sh`：修改各机位源时刻到影片帧号的同步表。
 - `film/index.html → CUES / CHECK / SYNC`：修改原声转写、计划节点与机位同步徽章。
 
-[打开 Demo](../../demos/cases/lemo-countdown/index.html) · [在库中查看](../../cases.html#case/lemo-countdown)
+[打开 Demo](../../demos/cases/lemo-countdown/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-countdown)

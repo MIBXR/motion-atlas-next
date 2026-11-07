@@ -20,4 +20,4 @@
 - `film/film.js → SHOTS / TRANS / EV`：修改故事、镜头、转场与画音事件。
 - `film/voice/cues.js`：修改双语字幕与旁白时刻。
 
-[打开 Demo](../../demos/cases/lemo-pictogram-motion/index.html) · [在库中查看](../../cases.html#case/lemo-pictogram-motion)
+[打开 Demo](../../demos/cases/lemo-pictogram-motion/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-pictogram-motion)

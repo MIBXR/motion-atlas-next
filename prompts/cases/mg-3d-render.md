@@ -119,4 +119,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `film/cues.json、film/style.css`：调整落点、标语时刻和页面后期。
 - `index.html → MotionKit.mountFilm`：接入时间轴、原片音轨与窗口等比缩放。
 
-[打开 Demo](../../demos/cases/mg-3d-render/index.html) · [在库中查看](../../cases.html#case/mg-3d-render)
+[打开 Demo](../../demos/cases/mg-3d-render/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-3d-render)

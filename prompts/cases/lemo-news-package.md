@@ -20,4 +20,4 @@
 - `film/main.js → KDATA / EUT / S4`：修改行情序列、地图与规格卡时刻。
 - `source/vo/lines.json / source/mix.py`：修改旁白与原作采样配乐。
 
-[打开 Demo](../../demos/cases/lemo-news-package/index.html) · [在库中查看](../../cases.html#case/lemo-news-package)
+[打开 Demo](../../demos/cases/lemo-news-package/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-news-package)

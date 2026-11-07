@@ -35,4 +35,4 @@ A Rhine Lab archive terminal with a white opening, Rhine Lab identity, a five-co
 - `film/app/；source/rhinelabui/art/`：film/app/ 保存模型、字体与声音；art/build_archive.py、art/build_assembly.py 和两个 Blender 工程用于制作模型，用法见 art/README.md。
 - `film/config.js → ARCHIVE_FILM；film/script.js → loadFrame、seekFrame`：film/config.js 设置开场锚点 A、array；film/script.js 接入舞台、时间轴、定位、手动操作与完整音轨。
 
-[打开 Demo](../../demos/cases/archive-os/index.html) · [在库中查看](../../cases.html#case/archive-os)
+[打开 Demo](../../demos/cases/archive-os/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/archive-os)

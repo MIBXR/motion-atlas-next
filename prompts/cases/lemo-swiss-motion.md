@@ -25,4 +25,4 @@
 - `film/score.json → stiff / final / timeline`：修改音符格点、红圆位置、乐句与绝对时间。
 - `film/film.js → C；film/ease.js → BPM`：修改色板与节拍，制作配乐时同步 source/music/score.py。
 
-[打开 Demo](../../demos/cases/lemo-swiss-motion/index.html) · [在库中查看](../../cases.html#case/lemo-swiss-motion)
+[打开 Demo](../../demos/cases/lemo-swiss-motion/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-swiss-motion)

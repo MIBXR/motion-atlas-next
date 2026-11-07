@@ -19,4 +19,4 @@
 - `film/story.js → T / KILL / SHOTS`：修改灯的点亮、命中、静默与镜头时刻。
 - `film/main.js → lampI / renderBack；film/houyi.js`：修改灯场、幕后构图与角色骨骼。
 
-[打开 Demo](../../demos/cases/lemo-shadow-puppet/index.html) · [在库中查看](../../cases.html#case/lemo-shadow-puppet)
+[打开 Demo](../../demos/cases/lemo-shadow-puppet/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-shadow-puppet)

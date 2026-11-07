@@ -30,4 +30,4 @@
 - `film/film.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。
 - `film/timeline.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。
 
-[打开 Demo](../../demos/cases/lemo-transit-map/index.html) · [在库中查看](../../cases.html#case/lemo-transit-map)
+[打开 Demo](../../demos/cases/lemo-transit-map/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-transit-map)

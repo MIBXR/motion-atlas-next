@@ -25,4 +25,4 @@
 - `film/chars.js / title.js → GLYPH`：修改角色剪影、钥匙与自绘片名。
 - `film/paper.js → C / rough / paperFinish`：修改四墨、剪边和纸纹。
 
-[打开 Demo](../../demos/cases/lemo-spy-titles/index.html) · [在库中查看](../../cases.html#case/lemo-spy-titles)
+[打开 Demo](../../demos/cases/lemo-spy-titles/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-spy-titles)

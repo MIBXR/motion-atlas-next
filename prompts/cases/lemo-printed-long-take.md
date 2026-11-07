@@ -20,4 +20,4 @@
 - `film/timeline.js / scene.js → WARP / ERA_N`：修改长镜关键点、年代数量与慢镜时段。
 - `film/props.js`：修改桥铭、告示板与印章。
 
-[打开 Demo](../../demos/cases/lemo-printed-long-take/index.html) · [在库中查看](../../cases.html#case/lemo-printed-long-take)
+[打开 Demo](../../demos/cases/lemo-printed-long-take/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-printed-long-take)

@@ -20,4 +20,4 @@
 - `film/film.js`：按原作数据与函数修改故事内容、画面和物件。
 - `film/timeline.js`：按原作数据与函数修改时间表、镜头和节拍。
 
-[打开 Demo](../../demos/cases/lemo-satellite-briefing/index.html) · [在库中查看](../../cases.html#case/lemo-satellite-briefing)
+[打开 Demo](../../demos/cases/lemo-satellite-briefing/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-satellite-briefing)

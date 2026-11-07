@@ -102,4 +102,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `source/audio.py`：读取同目录 source/cues.json 合成极简点击电子节拍与落点音效；调整节点时同步修改画面使用的 film/cues.json。
 - `index.html → MotionKit.mountFilm`：接入本库的时间轴、中文控制条、固定横屏缩放与原片音轨同步。
 
-[打开 Demo](../../demos/cases/mg-bauhaus/index.html) · [在库中查看](../../cases.html#case/mg-bauhaus)
+[打开 Demo](../../demos/cases/mg-bauhaus/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-bauhaus)

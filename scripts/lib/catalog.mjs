@@ -114,7 +114,8 @@ function promptDoc(kind, e) {
   if (e.constraints?.length) L.push('## 制作约束', '', ...e.constraints.map((c) => `- ${c}`), '');
   if (e.migration?.length) L.push('## 迁移', '', ...e.migration.map((m) => `- \`${m.field}\`：${m.how}`), '');
   const hash = { cases: 'case', patterns: 'pattern', materials: 'material' }[kind];
-  L.push(`[${e.snapshotPath ? '打开原文' : '打开 Demo'}](../../${e.snapshotPath ? e.snapshotPath + e.snapshotEntry : e.demo}) · [在库中查看](../../${kind}.html#${hash}/${e.id})`, '');
+  const libraryLink = kind === 'cases' ? `https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/${e.id}` : `../../${kind}.html#${hash}/${e.id}`;
+  L.push(`[${e.snapshotPath ? '打开原文' : '打开 Demo'}](../../${e.snapshotPath ? e.snapshotPath + e.snapshotEntry : e.demo}) · [在库中查看](${libraryLink})`, '');
   return L.join('\n');
 }
 
@@ -138,7 +139,7 @@ export function buildAll() {
     for (const e of list) if (e.prompt) files[`prompts/${kind}/${e.id}.md`] = promptDoc(kind, e);
   }
 
-  files['docs/cases/README.md'] = ['# 案例研究', '', '| 案例 | 资料 |', '| --- | --- |', ...cases.map(c => `| [${c.title}](../../cases.html#case/${c.id}) | ${c.research ? `[研究](${c.id}.md)` : `[条目](../../entries/cases/${c.id}.json)`} |`), ''].join('\n');
+  files['docs/cases/README.md'] = ['# 案例研究', '', '| 案例 | 资料 |', '| --- | --- |', ...cases.map(c => `| [${c.title}](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/${c.id}) | ${c.research ? `[研究](${c.id}.md)` : `[条目](../../entries/cases/${c.id}.json)`} |`), ''].join('\n');
   files['data/asset-sources.js'] = '/* 由 scripts/build.mjs 生成，请勿手改 */\nglobalThis.MotionAtlasAssetSources = {"assets":{}};\n';
   // README 计数块
   if (exists('README.md')) {

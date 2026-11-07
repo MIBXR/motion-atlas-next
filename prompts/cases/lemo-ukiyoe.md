@@ -19,4 +19,4 @@
 - `film/story.js → T / SLOT / SW`：修改五景时刻、转场、套印和画卷间距。
 - `film/views.js / wave.js / traveler.js`：修改景物、浪形与旅人姿势。
 
-[打开 Demo](../../demos/cases/lemo-ukiyoe/index.html) · [在库中查看](../../cases.html#case/lemo-ukiyoe)
+[打开 Demo](../../demos/cases/lemo-ukiyoe/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-ukiyoe)

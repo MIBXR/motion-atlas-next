@@ -20,4 +20,4 @@
 - `film/js/film.js → SUB / VO / build`：更改中英字幕、配音时长、镜头与书写安排。
 - `film/js/hz.js / ancient.js`：修改中文笔顺数据与历史字形，原始依据在source/FACTS.md。
 
-[打开 Demo](../../demos/cases/lemo-chalkboard/index.html) · [在库中查看](../../cases.html#case/lemo-chalkboard)
+[打开 Demo](../../demos/cases/lemo-chalkboard/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-chalkboard)

@@ -20,4 +20,4 @@
 - `source/tools/prep.py → CLIPS / CUTS`：更换档案片段、双色处理及人物裁片。
 - `film/index.html → TH / FLOORS / S9`：修改斜线角度与人物叠塔顺序。
 
-[打开 Demo](../../demos/cases/lemo-kino-montage/index.html) · [在库中查看](../../cases.html#case/lemo-kino-montage)
+[打开 Demo](../../demos/cases/lemo-kino-montage/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-kino-montage)

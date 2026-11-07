@@ -25,4 +25,4 @@
 - `source/data/walls_traced.json；source/tools/`：修改描线与原始区域，再生成 film/assets/raw/build 和 film/data。
 - `film/data/facts.json / profile_C.json；source/FACTS.md`：同步测量结果、剖面与来源事实。
 
-[打开 Demo](../../demos/cases/lemo-lidar-survey/index.html) · [在库中查看](../../cases.html#case/lemo-lidar-survey)
+[打开 Demo](../../demos/cases/lemo-lidar-survey/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-lidar-survey)

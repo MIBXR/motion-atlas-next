@@ -25,4 +25,4 @@
 - `film/engine/knife.js / hatch.js / print.js`：修改刀宽、排线、木纹、纸白和错版。
 - `film/chars.js / hands.js / world.js`：修改人物、手部高度场和村庄。
 
-[打开 Demo](../../demos/cases/lemo-woodcut/index.html) · [在库中查看](../../cases.html#case/lemo-woodcut)
+[打开 Demo](../../demos/cases/lemo-woodcut/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-woodcut)

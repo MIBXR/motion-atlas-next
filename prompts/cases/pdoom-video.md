@@ -34,4 +34,4 @@
 - `film/src/cast.js`：修改 Researcher 等配角与舞步。
 - `film/src/props.js`：修改幕布、舞台、打气筒与计量表道具。
 
-[打开 Demo](../../demos/cases/pdoom-video/index.html) · [在库中查看](../../cases.html#case/pdoom-video)
+[打开 Demo](../../demos/cases/pdoom-video/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/pdoom-video)

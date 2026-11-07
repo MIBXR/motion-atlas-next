@@ -48,4 +48,4 @@
 - `film/scenes.js → paintScene；film/config.js → tracks.cards[]`：在 paintScene 修改程序绘制的照片、明信片与插画；tracks.cards[] 的 scene、caption、t、until、expand 设置场景、标签、时刻与展开。
 - `film/script.js → BUF_CFG`：设置开头门槛、解析与下载范围、内存预算、暂停与继续阈值。
 
-[打开 Demo](../../demos/cases/map-pilgrimage/index.html) · [在库中查看](../../cases.html#case/map-pilgrimage)
+[打开 Demo](../../demos/cases/map-pilgrimage/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/map-pilgrimage)

@@ -22,4 +22,4 @@
 - `film/src/world.js → world / car；film/src/shots.js → s2–s6`：修改列车、车站、景色和各段相机。
 - `source/mix.py → UP / speed / score`：修改亮灭音高、车速轮声与配乐，保持读取同一时间表。
 
-[打开 Demo](../../demos/cases/lemo-paper-lantern/index.html) · [在库中查看](../../cases.html#case/lemo-paper-lantern)
+[打开 Demo](../../demos/cases/lemo-paper-lantern/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-paper-lantern)

@@ -23,4 +23,4 @@
 - `字幕`：修改 film/src/aifl/Main.tsx 的 CAPTIONS 文案与绝对帧号；在 source/ 运行 npm run build。
 - `运镜`：修改各 film/src/aifl/live/Scene*.tsx 中 PageCam 的 keys；在 source/ 运行 npm run build。
 
-[打开 Demo](../../demos/cases/ink-press/index.html) · [在库中查看](../../cases.html#case/ink-press)
+[打开 Demo](../../demos/cases/ink-press/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/ink-press)

@@ -22,4 +22,4 @@
 - `film/main.js:fractalCW / sFractal`：修改该处的字内镜头参数。
 - `film/crt.js:COMP；film/main.js:T`：修改该处的显像管参数。
 
-[打开 Demo](../../demos/cases/lemo-ascii-crt/index.html) · [在库中查看](../../cases.html#case/lemo-ascii-crt)
+[打开 Demo](../../demos/cases/lemo-ascii-crt/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-ascii-crt)

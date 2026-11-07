@@ -20,4 +20,4 @@
 - `film/index.html → TRK / GOALS / overlayAnalysis / overlayG1`：修改球员脚底追踪、进球帧与分析图层。
 - `source/tools/pitch.json / source/tools/homography.py`：修改球场标线测点并重建战术板矩阵。
 
-[打开 Demo](../../demos/cases/lemo-telestrator/index.html) · [在库中查看](../../cases.html#case/lemo-telestrator)
+[打开 Demo](../../demos/cases/lemo-telestrator/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-telestrator)

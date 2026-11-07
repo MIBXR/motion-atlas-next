@@ -19,4 +19,4 @@
 - `film/timeline.js → A / B / T / POPS`：修改音乐网格、镜头与逐拍撑伞。
 - `film/film.js → DANCE / dancePos / shotTop`：修改群伞队形、轨迹累积和俯拍镜头。
 
-[打开 Demo](../../demos/cases/lemo-impasto/index.html) · [在库中查看](../../cases.html#case/lemo-impasto)
+[打开 Demo](../../demos/cases/lemo-impasto/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-impasto)

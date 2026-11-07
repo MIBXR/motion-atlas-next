@@ -20,4 +20,4 @@
 - `film/engine/deco.js / chars.js`：修改配色、金属质感和人物。
 - `film/engine/bulbs.js / scenes/roof.js`：修改灯牌文字、灯泡与点亮顺序。
 
-[打开 Demo](../../demos/cases/lemo-art-deco/index.html) · [在库中查看](../../cases.html#case/lemo-art-deco)
+[打开 Demo](../../demos/cases/lemo-art-deco/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-art-deco)

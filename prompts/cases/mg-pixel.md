@@ -101,4 +101,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `source/audio.py 与 audio/film.m4a`：为新作品合成芯片配乐与音效；本案例播放从原片抽取的音轨。
 - `index.html → MotionKit.mountFilm`：连接 Motion Atlas 时间轴、横屏缩放、中文控制条与音轨同步。
 
-[打开 Demo](../../demos/cases/mg-pixel/index.html) · [在库中查看](../../cases.html#case/mg-pixel)
+[打开 Demo](../../demos/cases/mg-pixel/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-pixel)

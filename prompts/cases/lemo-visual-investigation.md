@@ -20,4 +20,4 @@
 - `film/index.html → TG / playhead / sRun`：修改事件时钟、来源起点和同步区间。
 - `source/tools/prep.sh`：替换档案片段、文件页和地图裁片。
 
-[打开 Demo](../../demos/cases/lemo-visual-investigation/index.html) · [在库中查看](../../cases.html#case/lemo-visual-investigation)
+[打开 Demo](../../demos/cases/lemo-visual-investigation/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-visual-investigation)

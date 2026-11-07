@@ -25,4 +25,4 @@
 - `film/scene.js → ZCOL；film/plants.js → COL`：修改环境与植物色板。
 - `film/main.js → STN / MSTOP / drawMap`：修改地图雨量站、色带与深时插值。
 
-[打开 Demo](../../demos/cases/lemo-watercolor/index.html) · [在库中查看](../../cases.html#case/lemo-watercolor)
+[打开 Demo](../../demos/cases/lemo-watercolor/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-watercolor)

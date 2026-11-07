@@ -20,4 +20,4 @@
 - `film/story.js`：按原作数据与函数修改故事内容、画面和物件。
 - `film/world.js`：按原作数据与函数修改时间表、镜头和节拍。
 
-[打开 Demo](../../demos/cases/lemo-lowpoly-island/index.html) · [在库中查看](../../cases.html#case/lemo-lowpoly-island)
+[打开 Demo](../../demos/cases/lemo-lowpoly-island/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-lowpoly-island)
