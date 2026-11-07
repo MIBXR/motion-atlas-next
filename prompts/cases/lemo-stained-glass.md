@@ -20,4 +20,4 @@
 - `film/window.js / knight.js / dragon.js`：修改花窗布局、人物剪片和姿态。
 - `film/comp.js / glass.js`：修改透光、玻璃纹理、石地与投影。
 
-[打开 Demo](../../demos/cases/lemo-stained-glass/index.html) · [在库中查看](../../cases.html#case/lemo-stained-glass)
+[打开 Demo](../../demos/cases/lemo-stained-glass/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-stained-glass)

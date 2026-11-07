@@ -17,4 +17,4 @@
 - `film/film.js`：修改画面、时间线或对应数据；参数位置见该文件。
 - `film/timeline.js`：修改画面、时间线或对应数据；参数位置见该文件。
 
-[打开 Demo](../../demos/cases/lemo-archive-lighttable/index.html) · [在库中查看](../../cases.html#case/lemo-archive-lighttable)
+[打开 Demo](../../demos/cases/lemo-archive-lighttable/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-archive-lighttable)

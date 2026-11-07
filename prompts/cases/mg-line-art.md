@@ -100,4 +100,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `film/cues.json → draw、zoom、camera、fill、wordmark`：调整描绘、镜头、线面转换与文字节点，配乐读取同一时间表。
 - `index.html → MotionKit.mountFilm`：接入 Motion Kit 时间轴、原片音轨与窗口缩放。
 
-[打开 Demo](../../demos/cases/mg-line-art/index.html) · [在库中查看](../../cases.html#case/mg-line-art)
+[打开 Demo](../../demos/cases/mg-line-art/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-line-art)

@@ -26,4 +26,4 @@
 - `film/art.js / actors.js`：修改角色、道具图和可折叠纸飞机。
 - `film/main.js → pipState / SH / lightsAt`：修改表演、行走距离、相机与灯光。
 
-[打开 Demo](../../demos/cases/lemo-paper-popup/index.html) · [在库中查看](../../cases.html#case/lemo-paper-popup)
+[打开 Demo](../../demos/cases/lemo-paper-popup/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-paper-popup)

@@ -114,7 +114,8 @@ function promptDoc(kind, e) {
   if (e.constraints?.length) L.push('## 制作约束', '', ...e.constraints.map((c) => `- ${c}`), '');
   if (e.migration?.length) L.push('## 迁移', '', ...e.migration.map((m) => `- \`${m.field}\`：${m.how}`), '');
   const hash = { cases: 'case', patterns: 'pattern', materials: 'material' }[kind];
-  L.push(`[${e.snapshotPath ? '打开原文' : '打开 Demo'}](../../${e.snapshotPath ? e.snapshotPath + e.snapshotEntry : e.demo}) · [在库中查看](../../${kind}.html#${hash}/${e.id})`, '');
+  const libraryLink = kind === 'cases' ? `https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/${e.id}` : `../../${kind}.html#${hash}/${e.id}`;
+  L.push(`[${e.snapshotPath ? '打开原文' : '打开 Demo'}](../../${e.snapshotPath ? e.snapshotPath + e.snapshotEntry : e.demo}) · [在库中查看](${libraryLink})`, '');
   return L.join('\n');
 }
 

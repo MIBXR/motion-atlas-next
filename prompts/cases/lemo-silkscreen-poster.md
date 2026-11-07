@@ -19,4 +19,4 @@
 - `film/engine/scenes.js`：修改地标轮廓与各色版parts。
 - `film/film.js → PAL / PAR / BA / HOME`：修改城市色板、换景时刻、距离与归程。
 
-[打开 Demo](../../demos/cases/lemo-silkscreen-poster/index.html) · [在库中查看](../../cases.html#case/lemo-silkscreen-poster)
+[打开 Demo](../../demos/cases/lemo-silkscreen-poster/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-silkscreen-poster)

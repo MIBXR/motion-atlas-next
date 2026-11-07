@@ -20,4 +20,4 @@
 - `film/index.html → buildAll / scenes / caption / HUD`：更改标题、三个罪状、道具、猫表演与结案文案。
 - `film/index.html → C / F / stampAnim / WIPES`：更改印色、字体层次、印章冲击与转场。
 
-[打开 Demo](../../demos/cases/lemo-halftone-dossier/index.html) · [在库中查看](../../cases.html#case/lemo-halftone-dossier)
+[打开 Demo](../../demos/cases/lemo-halftone-dossier/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-halftone-dossier)

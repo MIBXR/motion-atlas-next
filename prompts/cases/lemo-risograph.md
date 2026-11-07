@@ -20,4 +20,4 @@
 - `film/film.js → SHOTS / plates / regist`：更改镜头、加版时刻、套版节拍与圆盘交接。
 - `film/riso.js / draw.js / rider.js`：更改专色、网点、纸面与骑车人造型。
 
-[打开 Demo](../../demos/cases/lemo-risograph/index.html) · [在库中查看](../../cases.html#case/lemo-risograph)
+[打开 Demo](../../demos/cases/lemo-risograph/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-risograph)

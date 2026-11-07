@@ -24,4 +24,4 @@
 - `film/world.js / cross.js / passage.js`：修改山水、相机与装裱收尾。
 - `film/comp.js → paper / inkD / inkCol`：修改宣纸、墨色和渗化参数。
 
-[打开 Demo](../../demos/cases/lemo-ink-wash/index.html) · [在库中查看](../../cases.html#case/lemo-ink-wash)
+[打开 Demo](../../demos/cases/lemo-ink-wash/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-ink-wash)

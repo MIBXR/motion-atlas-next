@@ -31,4 +31,4 @@
 - `film/src/timeline.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。
 - `film/src/overlay.js`：在原作文件内修改对应内容与参数；时间表同时用于画面与配乐。
 
-[打开 Demo](../../demos/cases/lemo-teardown/index.html) · [在库中查看](../../cases.html#case/lemo-teardown)
+[打开 Demo](../../demos/cases/lemo-teardown/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-teardown)

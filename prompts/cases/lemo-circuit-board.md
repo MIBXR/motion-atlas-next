@@ -22,4 +22,4 @@
 - `film/src/levels.js:toChild / toParent / baseOf / drawLevel；四级局部坐标与递归裁切。`：修改该处的嵌套参数。
 - `film/src/main.js:camPull`：修改该处的拉远参数。
 
-[打开 Demo](../../demos/cases/lemo-circuit-board/index.html) · [在库中查看](../../cases.html#case/lemo-circuit-board)
+[打开 Demo](../../demos/cases/lemo-circuit-board/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-circuit-board)

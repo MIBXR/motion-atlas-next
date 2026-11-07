@@ -22,4 +22,4 @@
 - `film/film.js:camAt`：修改该处的相机参数。
 - `film/main.js:render`：修改该处的急摇模糊参数。
 
-[打开 Demo](../../demos/cases/lemo-living-screencast/index.html) · [在库中查看](../../cases.html#case/lemo-living-screencast)
+[打开 Demo](../../demos/cases/lemo-living-screencast/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-living-screencast)

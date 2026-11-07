@@ -20,4 +20,4 @@
 - `film/film.js → hatPath / src / extras / camera`：更改帽子轨迹、着色源、人物调度与镜头。
 - `film/world.js → buildWorld`：更改公园、建筑、树冠与纸页边界。
 
-[打开 Demo](../../demos/cases/lemo-urban-sketch/index.html) · [在库中查看](../../cases.html#case/lemo-urban-sketch)
+[打开 Demo](../../demos/cases/lemo-urban-sketch/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-urban-sketch)

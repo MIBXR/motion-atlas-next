@@ -16,4 +16,4 @@
 
 - `film/main.js`：修改画面、时间线或对应数据；参数位置见该文件。
 
-[打开 Demo](../../demos/cases/lemo-caption-news/index.html) · [在库中查看](../../cases.html#case/lemo-caption-news)
+[打开 Demo](../../demos/cases/lemo-caption-news/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-caption-news)

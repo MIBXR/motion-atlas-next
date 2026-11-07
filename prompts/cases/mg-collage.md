@@ -118,4 +118,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `film/cues.json`：调整 12fps 网格上的拍点与段落。
 - `index.html → MotionKit.mountFilm`：接入时间轴、原片音轨与窗口等比缩放。
 
-[打开 Demo](../../demos/cases/mg-collage/index.html) · [在库中查看](../../cases.html#case/mg-collage)
+[打开 Demo](../../demos/cases/mg-collage/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-collage)

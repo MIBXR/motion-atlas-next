@@ -103,4 +103,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `film/cues.json → frames、build、drop、outro`：调整画面节点与配乐阶段，保持同一时间表。
 - `index.html → MotionKit.mountFilm`：接入 Motion Kit 时间轴、原片音轨与窗口缩放。
 
-[打开 Demo](../../demos/cases/mg-flat-vector/index.html) · [在库中查看](../../cases.html#case/mg-flat-vector)
+[打开 Demo](../../demos/cases/mg-flat-vector/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-flat-vector)

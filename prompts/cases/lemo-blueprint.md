@@ -20,4 +20,4 @@
 - `film/film.js → CAMS / drawn / figLabel`：修改镜头、制图先后、图号与叙事节点。
 - `film/sheet.js`：修改纸张字段、修订符号、雨与印章。
 
-[打开 Demo](../../demos/cases/lemo-blueprint/index.html) · [在库中查看](../../cases.html#case/lemo-blueprint)
+[打开 Demo](../../demos/cases/lemo-blueprint/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-blueprint)

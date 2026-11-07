@@ -22,4 +22,4 @@
 - `film/timeline.js:K.freeze=15、press=16；source/mix.py:193/198将15–16秒清零。`：修改该处的静音参数。
 - `film/film.js:sceneProduct；film/engine.js:lightReveal`：修改该处的光揭示参数。
 
-[打开 Demo](../../demos/cases/lemo-dark-keynote/index.html) · [在库中查看](../../cases.html#case/lemo-dark-keynote)
+[打开 Demo](../../demos/cases/lemo-dark-keynote/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-dark-keynote)

@@ -20,4 +20,4 @@
 - `film/film.js → VO / atS / atE / EQ / cam`：更改旁白时刻、词级锚点、板面布局与相机键；词级输入在film/voices/words.json。
 - `film/engine/wb.js → Timeline / Pen / Camera`：调整笔顺调度、笔触材质、浮笔和白板相机。
 
-[打开 Demo](../../demos/cases/lemo-whiteboard/index.html) · [在库中查看](../../cases.html#case/lemo-whiteboard)
+[打开 Demo](../../demos/cases/lemo-whiteboard/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-whiteboard)

@@ -21,4 +21,4 @@
 - `film/film.js / subjects/bee.js / subjects/details.js`：修改图版时间表、雕刻对象与放大细节。
 - `film/engine/burin.js / wash.js / plate.js`：修改刻线宽度、排线、分区淡彩和图版边框排版。
 
-[打开 Demo](../../demos/cases/lemo-engraving/index.html) · [在库中查看](../../cases.html#case/lemo-engraving)
+[打开 Demo](../../demos/cases/lemo-engraving/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-engraving)

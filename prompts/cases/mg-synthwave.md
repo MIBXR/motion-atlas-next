@@ -100,4 +100,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `film/cues.json`：调整换道、倒带、落版、描写、点亮和关机节点。
 - `index.html → MotionKit.mountFilm`：接入时间轴、原片音轨与窗口等比缩放。
 
-[打开 Demo](../../demos/cases/mg-synthwave/index.html) · [在库中查看](../../cases.html#case/mg-synthwave)
+[打开 Demo](../../demos/cases/mg-synthwave/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-synthwave)

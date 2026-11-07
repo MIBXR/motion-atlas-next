@@ -21,4 +21,4 @@
 - `配色`：film/scene.js 顶部的颜色常量。
 - `乐器行`：film/scene.js 的 ROWS 与 film/data/notes.json 的 row。
 
-[打开 Demo](../../demos/cases/butterfly-garden-score/index.html) · [在库中查看](../../cases.html#case/butterfly-garden-score)
+[打开 Demo](../../demos/cases/butterfly-garden-score/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/butterfly-garden-score)

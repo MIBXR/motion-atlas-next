@@ -19,4 +19,4 @@
 - `film/story.js → T / SHOTS`：修改折剪、点窗、年兽与镜头时刻。
 - `film/tuanhua.js → wedgeCuts / D4；film/fold.js → drawFold`：修改楔形图案、对称复制与剪刀路线。
 
-[打开 Demo](../../demos/cases/lemo-papercut-red/index.html) · [在库中查看](../../cases.html#case/lemo-papercut-red)
+[打开 Demo](../../demos/cases/lemo-papercut-red/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-papercut-red)

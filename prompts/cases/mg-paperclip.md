@@ -102,4 +102,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `assets/stickers/`：替换照片贴纸与尺寸数据；source/tools/stickers.py 保存原作抠图和描边过程。
 - `index.html → MotionKit.mountFilm`：接入时间轴、原片音轨与窗口等比缩放。
 
-[打开 Demo](../../demos/cases/mg-paperclip/index.html) · [在库中查看](../../cases.html#case/mg-paperclip)
+[打开 Demo](../../demos/cases/mg-paperclip/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-paperclip)

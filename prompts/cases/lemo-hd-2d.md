@@ -14,4 +14,4 @@
 - `film/story.js → SHOTS / T / VO`：修改章节、光焰事件与对白；音轨制作起点同步到source/vo_times.json。
 - `film/chars.js / harbor.js / forest.js / cliff.js`：修改像素姿态、场景、灯光与相机轨道。
 
-[打开 Demo](../../demos/cases/lemo-hd-2d/index.html) · [在库中查看](../../cases.html#case/lemo-hd-2d)
+[打开 Demo](../../demos/cases/lemo-hd-2d/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-hd-2d)

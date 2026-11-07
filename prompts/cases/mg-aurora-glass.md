@@ -102,4 +102,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `film/cues.json、film/out/env.json`：调整画音节点和配乐音量包络；source/audio.py 保存原作生成过程。
 - `index.html → MotionKit.mountFilm`：接入时间轴、原片音轨与窗口等比缩放。
 
-[打开 Demo](../../demos/cases/mg-aurora-glass/index.html) · [在库中查看](../../cases.html#case/mg-aurora-glass)
+[打开 Demo](../../demos/cases/mg-aurora-glass/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-aurora-glass)

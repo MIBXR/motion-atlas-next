@@ -19,4 +19,4 @@
 - `film/film.js → LINES / camT / RUNG_T`：修改故事文案、相机与画梯动作。
 - `film/world.js → STARS / BANDS；film/gl.js → wash`：修改隐藏图形、刷色时段与蜡笔防染强度。
 
-[打开 Demo](../../demos/cases/lemo-crayon-book/index.html) · [在库中查看](../../cases.html#case/lemo-crayon-book)
+[打开 Demo](../../demos/cases/lemo-crayon-book/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-crayon-book)

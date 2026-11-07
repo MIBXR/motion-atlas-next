@@ -14,4 +14,4 @@
 - `film/content.json`：修改产品、三步内容、尺寸、配色和路线房间。
 - `film/film.js → setup / payoffCam / renderFilm`：调整节拍、路线镜头与圆章、按钮开圈。
 
-[打开 Demo](../../demos/cases/lemo-midcentury-toon/index.html) · [在库中查看](../../cases.html#case/lemo-midcentury-toon)
+[打开 Demo](../../demos/cases/lemo-midcentury-toon/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-midcentury-toon)

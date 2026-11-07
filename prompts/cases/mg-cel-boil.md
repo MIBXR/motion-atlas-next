@@ -100,4 +100,4 @@ realised; the tech route; check numbers (duration, resolution, fps, loudness, tr
 - `film/cues.json → exposure 与动作节点`：调整曝光节奏和画音节点。
 - `index.html → MotionKit.mountFilm`：接入 Motion Kit 时间轴、原片音轨与窗口缩放。
 
-[打开 Demo](../../demos/cases/mg-cel-boil/index.html) · [在库中查看](../../cases.html#case/mg-cel-boil)
+[打开 Demo](../../demos/cases/mg-cel-boil/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/mg-cel-boil)

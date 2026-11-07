@@ -14,4 +14,4 @@
 - `film/story.js → T / SHOTS`：修改拼搭、崩塌、重建与升空节拍。
 - `film/rockets.js / bricks.js / set.js`：修改积木配色、连接结构、两次火箭造型与桌面道具。
 
-[打开 Demo](../../demos/cases/lemo-brick-toy/index.html) · [在库中查看](../../cases.html#case/lemo-brick-toy)
+[打开 Demo](../../demos/cases/lemo-brick-toy/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-brick-toy)

@@ -42,4 +42,4 @@
 - `audio/；source/AUDIO.md；source/audio/production.json`：在 source/audio/ 更换原曲、音效与混音输入；截取、淡入淡出、播放起点与增益见 production.json，制作命令与署名见 source/AUDIO.md；运行音轨为 audio/final.wav。
 - `index.html → MotionKit.mountFilm`：负责本库时间线、控制条、声音同步和 URL 参数接入，画面继续调用原作品 render(t)。
 
-[打开 Demo](../../demos/cases/keeling-curve/index.html) · [在库中查看](../../cases.html#case/keeling-curve)
+[打开 Demo](../../demos/cases/keeling-curve/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/keeling-curve)
