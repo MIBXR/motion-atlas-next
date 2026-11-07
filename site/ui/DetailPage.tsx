@@ -1,5 +1,8 @@
+import { LinkButton } from "@/ui/LinkButton";
+import { Button } from "@/registry/components/button/button";
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { EmptyState } from "@/registry/components/empty-state/empty-state";
+import { Breadcrumb } from "@/registry/components/breadcrumb/breadcrumb";
 import { ChevronLeft, ChevronRight, Download } from "./icons";
 import { href } from "../core/router";
 import { KIND_NAME, type Entry, type Kind } from "../core/types";
@@ -9,7 +12,7 @@ import { byId, useAtlas } from "./context";
 export function DetailPage({ kind, id }: { kind: Kind; id: string }) {
   const { data, detail } = useAtlas();
   const e = byId(data[kind], id);
-  if (!e) return <div className="page"><EmptyState title="找不到这个条目" description={`${KIND_NAME[kind]}中没有 ${id}。`} action={<a className="pill-button" href={`#/${kind}`}>返回{KIND_NAME[kind]}列表</a>} /></div>;
+  if (!e) return <div className="page"><EmptyState title="找不到这个条目" description={`${KIND_NAME[kind]}中没有 ${id}。`} action={<LinkButton variant="secondary" size="sm" href={`#/${kind}`}>返回{KIND_NAME[kind]}列表</LinkButton>} /></div>;
   return <>{detail[kind](e)}</>;
 }
 
@@ -20,8 +23,8 @@ function Neighbors({ kind, e }: { kind: Kind; e: Entry }) {
   const prev = list[i - 1], next = list[i + 1];
   return (
     <div className="neighbors">
-      {prev ? <a className="icon-button" href={href(`/${kind}/${prev.id}`)} aria-label={`上一条：${prev.title}`} title={prev.title}><ChevronLeft /></a> : <span className="icon-button" aria-hidden="true" data-disabled />}
-      {next ? <a className="icon-button" href={href(`/${kind}/${next.id}`)} aria-label={`下一条：${next.title}`} title={next.title}><ChevronRight /></a> : <span className="icon-button" aria-hidden="true" data-disabled />}
+      {prev ? <LinkButton variant="secondary" size="sm" href={href(`/${kind}/${prev.id}`)} aria-label={`上一条：${prev.title}`} title={prev.title}><ChevronLeft /></LinkButton> : <Button variant="secondary" size="sm" className="neighbor-placeholder" aria-hidden="true" disabled tabIndex={-1}><ChevronLeft /></Button>}
+      {next ? <LinkButton variant="secondary" size="sm" href={href(`/${kind}/${next.id}`)} aria-label={`下一条：${next.title}`} title={next.title}><ChevronRight /></LinkButton> : <Button variant="secondary" size="sm" className="neighbor-placeholder" aria-hidden="true" disabled tabIndex={-1}><ChevronRight /></Button>}
     </div>
   );
 }
@@ -77,11 +80,7 @@ export function DetailLayout({ kind, e, subtitle, meta, actions, stage, children
     <div className="page detail-page" data-has-stage={stage ? "" : undefined}>
       <header className="detail-head">
         <div className="detail-head-main">
-          <nav className="crumbs" aria-label="位置">
-            <a href={`#/${kind}`}>{KIND_NAME[kind]}</a>
-            <ChevronRight aria-hidden="true" />
-            <span className="mono">{String(e.order).padStart(3, "0")}</span>
-          </nav>
+          <Breadcrumb ariaLabel="位置" items={[{ label: KIND_NAME[kind], href: `#/${kind}` }, { label: String(e.order).padStart(3, "0") }]} />
           <h1>{e.title}</h1>
           {subtitle ? <p className="detail-sub">{subtitle}</p> : null}
           {meta ? <div className="detail-meta">{meta}</div> : null}
@@ -91,7 +90,7 @@ export function DetailLayout({ kind, e, subtitle, meta, actions, stage, children
           <div className="detail-actions">
             <FavButton kind={kind} id={e.id} />
             {kind === "cases" ? <CompareButton id={e.id} /> : null}
-            {e.$.agent ? <a className="pill-button" href={e.$.agent} download={`${e.id}.json`}><Download /><span>Agent 资料包</span></a> : null}
+            {e.$.agent ? <LinkButton variant="secondary" size="sm" href={e.$.agent} download={`${e.id}.json`}><Download /><span>Agent 资料包</span></LinkButton> : null}
             {actions}
           </div>
         </div>

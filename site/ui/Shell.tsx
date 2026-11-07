@@ -1,3 +1,4 @@
+import { Button } from "@/registry/components/button/button";
 import { useEffect, useState, type ReactNode } from "react";
 import { BookOpen, Boxes, GitCompareArrows, House, Lightbulb, Menu, Monitor, PanelLeftClose, PanelLeftOpen, Star, Swatch } from "./icons";
 import { Drawer, DrawerContent } from "@/registry/components/drawer/drawer";
@@ -51,9 +52,9 @@ function ThemeControl({ compact }: { compact: boolean }) {
   const pref = useTheme();
   const theme = pref === "system" ? effectiveTheme() : pref;
   const system = (
-    <button className="icon-button theme-system" aria-pressed={pref === "system"} aria-label="跟随系统主题" onClick={() => switchTheme(pref === "system" ? theme : "system")}>
+    <Button variant={pref === "system" ? "primary" : "secondary"} size="sm" className="theme-system" aria-pressed={pref === "system"} aria-label="跟随系统主题" onClick={() => switchTheme(pref === "system" ? theme : "system")}>
       <Monitor />
-    </button>
+    </Button>
   );
   return (
     <div className="theme-control">
@@ -79,9 +80,9 @@ export function Shell({ children }: { children: ReactNode }) {
   const route = useRoute();
   useEffect(() => setOpen(false), [route]);
   const toggle = (
-    <button className="icon-button sidebar-toggle" aria-label={collapsed ? "展开侧栏" : "收起侧栏"} aria-expanded={!collapsed} onClick={() => setSidebarCollapsed(!collapsed)}>
+    <Button variant="secondary" size="sm" className="sidebar-toggle" aria-label={collapsed ? "展开侧栏" : "收起侧栏"} aria-expanded={!collapsed} onClick={() => setSidebarCollapsed(!collapsed)}>
       {collapsed ? <PanelLeftOpen /> : <PanelLeftClose />}
-    </button>
+    </Button>
   );
   return (
     <div className="shell" data-collapsed={collapsed || undefined}>
@@ -96,7 +97,7 @@ export function Shell({ children }: { children: ReactNode }) {
         </div>
       </aside>
       <header className="topbar">
-        <button className="icon-button" aria-label="打开导航" onClick={() => setOpen(true)}><Menu /></button>
+        <Button variant="secondary" size="sm" aria-label="打开导航" onClick={() => setOpen(true)}><Menu /></Button>
         <Brand />
       </header>
       <Drawer open={open} onOpenChange={setOpen}>

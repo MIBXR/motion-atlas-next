@@ -21,7 +21,7 @@ function PlaybackLabel() {
 export function QuantSection() {
   const lab = useLab(), { S } = lab, ex = EXAMPLES[S.example], c = lab.clip();
   return <section className="section lab-section" id="s-quant" aria-labelledby="h-quant">
-    <header className="section-head"><h2 id="h-quant">理解吸附</h2></header>
+    <header className="section-head"><h2 id="h-quant">事件量化</h2></header>
     <p className="prose">剪辑点、动作落点这些事件很少正好落在拍上。吸附会把它们移到最近的网格点：网格越细，保留的节奏越多；网格太粗会把切分抹平。选择 A/B 交替播放，听事件吸附前后的差别。</p>
     <div className="lab-quant-controls"><div className="lab-stack"><GridControls /></div><div className="lab-stack"><Range label="首拍偏移" value={S.offset} max={1000} step={5} format={v => `${v}ms`} onChange={offset => lab.update({ offset })} /><Range label="量化强度" value={S.strength} format={v => `${v}%`} onChange={strength => lab.update({ strength })} /></div><div className="lab-row"><Segments label="循环" value={S.bars} items={[[1, '1 小节'], [2, '2 小节'], [4, '4 小节']]} onChange={v => lab.update({ bars: +v })} /><span className="small mono muted">= {c.L.toFixed(2)} 秒</span></div></div>
     <Segments label="示例" value={S.example} items={Object.entries(EXAMPLES).map(([k, v]) => [k, v.name])} onChange={example => lab.update({ example })} />

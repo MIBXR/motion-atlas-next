@@ -1,3 +1,4 @@
+import { Button } from "@/registry/components/button/button";
 import { useEffect } from "react";
 import { EmptyState } from "@/registry/components/empty-state/empty-state";
 import { Combobox } from "@/registry/components/combobox/combobox";
@@ -43,7 +44,7 @@ export function ComparePage() {
                     <div className="compare-head">
                       {c.$.preview ? <img src={c.$.preview} alt="" /> : null}
                       <a href={href(`/cases/${c.id}`)}>{c.title}</a>
-                      <button className="icon-button" aria-label={`移除 ${c.title}`} onClick={() => remove(c.id)}><X /></button>
+                      <Button variant="secondary" size="sm" aria-label={`移除 ${c.title}`} onClick={() => remove(c.id)}><X /></Button>
                     </div>
                   </th>
                 ))}

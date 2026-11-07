@@ -15,6 +15,7 @@ export interface CopyButtonProps {
   variant?: "outline" | "plain";
   disabled?: boolean;
   onCopied?: () => void;
+  onCopyError?: () => void;
 }
 
 /** Copy feedback is quick and quiet: the old icon and word fade out fast while the new ones fade in, with no blur and no
@@ -33,7 +34,7 @@ function DrawnCheck({ reduced }: { reduced: boolean }) {
   </svg>;
 }
 
-export function CopyButton({ value, label = "复制", className, iconOnly = false, variant = "outline", disabled, onCopied }: CopyButtonProps) {
+export function CopyButton({ value, label = "复制", className, iconOnly = false, variant = "outline", disabled, onCopied, onCopyError }: CopyButtonProps) {
   const { state, copy } = useCopyFeedback();
   const reduced = useReducedMotion() ?? false;
   const text = state === "copied" ? "已复制" : state === "error" ? "复制失败" : label;
@@ -57,6 +58,7 @@ export function CopyButton({ value, label = "复制", className, iconOnly = fals
 
   async function handleCopy() {
     if (await copy(value)) onCopied?.();
+    else onCopyError?.();
   }
 
   return <><button

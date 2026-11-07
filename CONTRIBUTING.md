@@ -135,7 +135,7 @@
 | 第三方许可原文与索引 | 条目本体内的许可原文与 `LICENSES.md` |
 | Prompt 文档、Agent 资料包、站点数据、案例索引 | 构建生成 |
 
-文档目录扫描 `docs/`、`prompts/`、`demos/` 下的 Markdown，分组依据 `scripts/lib/labels.json` 的 `DOC_GROUPS.path`：指南、案例研究、巧思研究、素材说明、案例 Prompt、巧思 Prompt、条目文档与素材原文。条目本体与素材原文分组默认折叠；站内指向仓库 Markdown 的链接在文档页打开。标题取正文一级标题，缺失时依次取 frontmatter 的 title、name 与文件名。条目本体的 `fidelity.md`、`LICENSES.md` 由条目详情与资料包提供。
+文档目录使用 `site/ui/DocumentDirectory.tsx` 和 Arc tree-view 样式，扫描 `docs/`、`prompts/`、`demos/` 下的 Markdown，分组依据 `scripts/lib/labels.json` 的 `DOC_GROUPS.path`：指南、案例研究、巧思研究、素材说明、案例 Prompt、巧思 Prompt、条目文档与素材原文。条目本体与素材原文分组默认折叠；目录随当前文档展开分组并在目录容器内定位，分组标题吸顶，手机端通过“返回目录”进入目录。站内指向仓库 Markdown 的链接在文档页打开。标题取正文一级标题，缺失时依次取 frontmatter 的 title、name 与文件名。条目本体的 `fidelity.md`、`LICENSES.md` 由条目详情与资料包提供。
 
 `README.md` 介绍项目并提供入口；本文件集中说明收录规则、目录规范、新增流程与字段；`AGENTS.md` 规定仓库修改操作。
 
@@ -270,12 +270,12 @@ git ls-files --others --ignored --exclude-standard
 - **URL 状态**：hash 路由保存搜索、筛选、排序、收藏筛选、布局与详情参数。列表使用 `#/cases?q=地图&style=documentary&carriers=video&purpose=story&tech=canvas2d&sort=title&dir=desc&fav=1&view=list`、`#/patterns?types=hud&carriers=console&source=archive-os`、`#/materials?type=agent-skill`；详情使用 `#/cases/map-pilgrimage?orient=portrait&t=12`、`#/materials/hyperframes-registry?demo=product-turntable`；文档使用 `#/docs?path=docs/guide.md&h=站点入口&dq=使用`；收藏为 `#/favorites`，比较使用 `#/compare?ids=archive-os,map-pilgrimage`。搜索输入使用 replace，前进后退恢复筛选与页面滚动位置。
 - **导航与工具**：左侧顺序为总览，参考库（案例、巧思、素材、文档），我的（收藏、比较），工具（节奏实验室、Agent 工作流）。两个工具入口为 `#/tools/rhythm-lab`、`#/tools/workflow`。节奏实验室：节拍器、A/B 吸附对比、打拍录入、曲线、时长与错峰；Agent 工作流：选条目、生成任务说明、获取结构化资料。
 - **详情布局**：详情页由头部与“舞台 + 拆解”组成。视口宽于 1280px 时，左侧 Demo 舞台吸顶，右侧拆解；1280px 及以下上下排列。只有画廊的素材在左栏展示画廊并随页面滚动。头部左侧放标题、副标题和标签，右侧放上一条／下一条、收藏、案例的加入比较、Agent 资料包下载。正文标题使用名称，编号显示在位置导航中。
-- **内容呈现**：可选字段为空时省略整节及小标题，参数表仅在有参数时显示；明确无声、静态等事实可作为机制信息，Agent 取材字段可以独立于页面保留。展示区在加载前预留空间，交互素材按[初始布局](#交互素材的初始布局)接入；画廊按比例预留空间，点开查看原图，逐图出处与许可随图呈现。
+- **内容呈现**：可选字段为空时省略整节及小标题，参数表仅在有参数时显示；明确无声、静态等事实可作为机制信息，Agent 取材字段可以独立于页面保留。展示区在加载前预留空间，交互素材按[初始布局](#交互素材的初始布局)接入；画廊按比例预留空间，点击图片在弹窗中浏览，用左右按钮或方向键切换，原图、原帖与许可随图呈现。
 - **列表与筛选**：每个取值按其余筛选条件计数；固定顺序采用标签字典或数据顺序，其余按中文名称排列，不随计数重排。来源案例按案例编号排列。列表提供卡片与紧凑列表两种布局，手机筛选收进底部抽屉，清除筛选保留排序方式与方向。Registry 样例和比较案例通过 Combobox 按名称搜索。
 - **滚动与章节**：整页由文档滚动，侧栏、工具栏、详情 Demo 舞台与章节条用 sticky 吸附；侧栏、筛选、文档目录与章节目录采用 Arc ScrollArea。`site/core/scroll-guard.ts` 放行用户输入和网站跳转引起的滚动，撤回 iframe 内定位、聚焦引起的父页面滚动。详情章节条随阅读位置高亮，并在条内横向滚到可见位置。
 - **播放与加载**：案例与巧思使用时间轴播放器，提供播放暂停、拖动定位、节拍跳转、横竖屏、声音、全屏和键盘快捷键。声音偏好保存在本地；浏览器尚未允许播放时显示虚线的“已开启、待激活”状态，工作台内点按或按键后再次请求出声。加载进度在总字节未知时按已完成文件数计算，加载失败提供重试。素材 Demo 使用自身播放器，宿主提供样例选择、重载与新标签页打开。
 - **侧栏**：侧栏可收起为图标，悬停显示 Tooltip，收起状态保存在本地；手机导航使用抽屉。
-- **设计语言**：使用 Arc UI foundation token 定义颜色、圆角、间距和阴影，提供浅色、深色、跟随系统三种主题；浅深切换采用 split 变体，由页面正中的细缝向两侧展开，减少动态时直接切换。使用 Button、Theme switch、Tooltip、Scroll area、Combobox、Segmented control、Search field、Drawer、Badge、Copy button、Empty state、Skeleton、Progress、Slider、Switch、Number field、Code block、Toast、Textarea、Accordion、Checkbox、Input；页面无原生下拉，网站图标来自 lucide-react。网站正文、导航、标签、辅助信息与控件的最终字号至少 12px，Demo 画面文字按作品需要确定。
+- **设计语言**：使用 Arc UI foundation token 定义颜色、圆角、间距和阴影，提供浅色、深色、跟随系统三种主题；浅深切换采用 split 变体，由页面正中的细缝向两侧展开，减少动态时直接切换。使用 Button、Theme switch、Tooltip、Scroll area、Combobox、Segmented control、Search field、Drawer、Badge、Empty state、Skeleton、Progress、Slider、Switch、Number field、Code block、Toast stack、Textarea、Accordion、Checkbox、Input、Breadcrumb、Filter toolbar、Dialog、Carousel；站点链接和复制操作使用 `site/ui/LinkButton.tsx`、`site/ui/CopyButton.tsx`。复制成功由按钮显示“已复制”，复制失败和其他操作反馈通过 `site/ui/notifications.tsx` 显示在页面根部的 Toast stack。页面无原生下拉，网站图标来自 lucide-react。网站正文、导航、标签、辅助信息与控件的最终字号至少 12px，Demo 画面文字按作品需要确定。
 - **组件源码**：Arc UI 按 registry 复制在 `site/registry/`、`site/lib/`，只改过界面中文文字，MIT 许可证随附于 `site/registry/ARC-UI-LICENSE`；更新组件时同样整文件复制。
 - **说明与资料**：自有说明写机制、用法与实际条件，收录判断用于选库。研究和复刻文档保留设计分析与当前对照结论；临时调试和阶段过程留在工作区或提交说明。版权、许可与实际能力说明按事实保留。
 

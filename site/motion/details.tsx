@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react";
+import { LinkButton } from "@/ui/LinkButton";
+import { Button } from "@/registry/components/button/button";
+import { useEffect, useRef, useState } from "react";
 import Badge from "@/registry/components/badge/badge";
 import { Combobox } from "@/registry/components/combobox/combobox";
+import { Dialog, DialogContent } from "@/registry/components/dialog/dialog";
+import { Carousel } from "@/registry/components/carousel/carousel";
 import { ExternalLink, Play } from "@/ui/icons";
 import { href, navigate, useRoute, withParams } from "@/core/router";
 import type { Entry } from "@/core/types";
@@ -42,7 +46,7 @@ function BeatTable({ beats }: { beats: Beat[] }) {
         <tbody>
           {beats.map((b, i) => (
             <tr key={i}>
-              <td><button className="text-button mono" onClick={() => seekPlayer(b.t)} aria-label={`跳到 ${b.t} 秒`}><Play aria-hidden="true" /> {b.t.toFixed(2)}s</button></td>
+              <td><Button variant="ghost" size="sm" className="arc-button mono" onClick={() => seekPlayer(b.t)} aria-label={`跳到 ${b.t} 秒`}><Play aria-hidden="true" /> {b.t.toFixed(2)}s</Button></td>
               <td>{b.label}</td>
               <td>{b.note ?? "—"}</td>
             </tr>
@@ -88,7 +92,7 @@ export function CaseDetail({ e }: { e: Entry }) {
       <Section id="overview" title="概览">
         <Prose text={e.summary} />
         <KV data={{ focus: e.focus, accent: e.accent, background: e.background, renderer: ENUM[e.renderer] ?? e.renderer }} labels={{ focus: "信息重点", accent: "强调色", background: "背景色", renderer: "渲染方式" }} />
-        {has(e.tags) ? <div className="tag-row">{e.tags.map((t: string) => <a key={t} className="tag" href={href("/cases", { q: t })}>{t}</a>)}</div> : null}
+        {has(e.tags) ? <div className="badge-row">{e.tags.map((t: string) => <a key={t} className="badge-link" href={href("/cases", { q: t })}><Badge size="md">{t}</Badge></a>)}</div> : null}
       </Section>
       <Section id="rhythm" title="节奏结构">
         <KV data={{ duration: e.rhythm?.duration ? `${e.rhythm.duration} 秒` : null, bpm: e.rhythm?.bpm, energyNote: e.energyNote }} labels={{ duration: "总时长", bpm: "名义 BPM", energyNote: "能量口径" }} />
@@ -208,7 +212,15 @@ function RegistryStage({ e }: { e: Entry }) {
 
 function Gallery({ e }: { e: Entry }) {
   const { data } = useAtlas();
+  const [index, setIndex] = useState<number | null>(null);
+  const [settled, setSettled] = useState(false);
+  const carousel = useRef<HTMLDivElement>(null);
   const kinds = [...new Set((e.gallery as L[]).map(g => g.kind))];
+  const galleryAnimation = { onAnimationComplete: () => {
+    if (index === null || settled) return;
+    setSettled(true);
+    requestAnimationFrame(() => carousel.current?.querySelector<HTMLElement>('[role="group"]')?.focus({ preventScroll: true }));
+  } };
   return (
     <>
       {kinds.map(k => (
@@ -217,15 +229,25 @@ function Gallery({ e }: { e: Entry }) {
           <ul className="gallery" style={{ ["--ratio" as string]: "16/9", ["--fit" as string]: "cover" }}>
             {(e.gallery as L[]).filter(g => g.kind === k).map(g => (
               <li key={g.path}>
-                <a href={g.path} target="_blank" rel="noopener"><img src={g.path} alt={g.caption} loading="lazy" /></a>
+                <button type="button" className="gallery-image" aria-label={`查看图片：${g.caption}`} onClick={() => { setSettled(false); setIndex(e.gallery.indexOf(g)); }}><img src={g.path} alt={g.caption} loading="lazy" /></button>
                 <p>{g.caption}</p>
-                {g.sourceUrl ? <div className="gallery-actions"><a className="text-button" href={g.sourceUrl} target="_blank" rel="noopener">出处 <ExternalLink aria-hidden="true" /></a></div> : null}
+                {g.sourceUrl ? <div className="gallery-actions"><LinkButton variant="ghost" size="sm" href={g.sourceUrl} target="_blank" rel="noopener">出处 <ExternalLink aria-hidden="true" /></LinkButton></div> : null}
                 {g.license ? <p className="muted small">{g.license}</p> : null}
               </li>
             ))}
           </ul>
         </div>
       ))}
+      <Dialog open={index !== null} onOpenChange={open => { if (!open) setIndex(null); }}>
+        <DialogContent {...galleryAnimation} title="素材画廊" description={e.title} className="gallery-dialog" onOpenAutoFocus={event => { event.preventDefault(); carousel.current?.querySelector<HTMLElement>('[role="group"]')?.focus({ preventScroll: true }); }}>
+          <div ref={carousel} className="gallery-content">{index !== null ? <Carousel key={settled ? "ready" : "opening"} label="素材图片" className="gallery-carousel" index={index} onIndexChange={setIndex} slideSize="100cqw" slideLabel={(i, count) => `第 ${i + 1} 张，共 ${count} 张`}>
+            {(e.gallery as L[]).map(g => <figure key={g.path}>
+              <img src={g.path} alt={g.caption} loading="lazy" />
+              <figcaption><p>{g.caption}</p><div className="gallery-modal-links"><LinkButton variant="ghost" size="sm" href={g.path} target="_blank" rel="noopener">原图 <ExternalLink aria-hidden="true" /></LinkButton>{g.sourceUrl ? <LinkButton variant="ghost" size="sm" href={g.sourceUrl} target="_blank" rel="noopener">原帖 <ExternalLink aria-hidden="true" /></LinkButton> : null}</div>{g.license ? <p className="muted small">{g.license}</p> : null}</figcaption>
+            </figure>)}
+          </Carousel> : null}</div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

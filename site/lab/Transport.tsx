@@ -20,9 +20,9 @@ export function Transport() {
   const label = audio.state === 'on' ? '声音 开' : audio.state === 'blocked' ? '声音 待启用' : '声音 关';
   return <>
     <div className="lab-transport" role="group" aria-label="走带：播放、速度与声音">
-      <Button className="lab-play" aria-label={T.run ? '停止（空格）' : '播放（空格）'} aria-pressed={T.run} onClick={lab.toggle}>{T.run ? <Square size={16} /> : <Play size={16} />}{T.run ? '停止' : '播放'}</Button>
+      <Button size="sm" variant={T.run ? "primary" : "secondary"} className="arc-button lab-play" aria-label={T.run ? '停止（空格）' : '播放（空格）'} aria-pressed={T.run} onClick={lab.toggle}>{T.run ? <Square size={16} /> : <Play size={16} />}{T.run ? '停止' : '播放'}</Button>
       <div className="lab-bpm" onKeyDown={e => { if (e.key === 'Enter' && e.target instanceof HTMLInputElement) e.target.blur(); }}><NumberField label="速度（BPM）" value={S.bpm} min={40} max={240} step={1} size="sm" limitHint={false} onValueChange={bpm => lab.update({ bpm })} /></div>
-      <Button className="lab-tempo" variant="secondary" aria-label="打拍测速（T）" onPointerDown={e => { if (e.button === 0) { e.preventDefault(); lab.tapTempo(e.timeStamp); } }} onClick={e => { if (e.detail === 0) lab.tapTempo(e.timeStamp); }}><Hand size={16} /><span><span className="lab-tempo-long">打拍</span>测速</span><kbd className="lab-key">T</kbd></Button>
+      <Button size="sm" className="arc-button lab-tempo" variant="secondary" aria-label="打拍测速（T）" onPointerDown={e => { if (e.button === 0) { e.preventDefault(); lab.tapTempo(e.timeStamp); } }} onClick={e => { if (e.detail === 0) lab.tapTempo(e.timeStamp); }}><Hand size={16} /><span><span className="lab-tempo-long">打拍</span>测速</span><kbd className="lab-key">T</kbd></Button>
       <span className="lab-tap-info mono small muted" aria-live="polite">{lab.tapInfo}</span>
       <Position />
       <div className="lab-sound" data-state={audio.state}><Switch label={label} checked={audio.enabled} onCheckedChange={lab.sound} /><div className="lab-volume"><Slider label="音量" value={S.vol} showValue={false} format={v => `${v}%`} onValueChange={vol => lab.update({ vol })} /></div></div>

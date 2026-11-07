@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
+import { Accordion } from "@/registry/components/accordion/accordion";
 import { SearchField } from "@/registry/components/search-field/search-field";
 import { ScrollArea } from "@/registry/components/scroll-area/scroll-area";
 import { Skeleton } from "@/registry/components/skeleton/skeleton";
@@ -10,6 +11,8 @@ import { allowScroll } from "../core/scroll-guard";
 import { terms } from "../core/search";
 import type { DocInfo } from "../core/types";
 import { useAtlas } from "./context";
+import { DocumentDirectory } from "./DocumentDirectory";
+import { LinkButton } from "./LinkButton";
 
 function useGroups() {
   const { data } = useAtlas();
@@ -27,39 +30,21 @@ function useGroups() {
   }, [data]);
 }
 
-function Directory({ current, query }: { current?: string; query: string }) {
+function Directory({ current, query, viewportRef }: { current?: string; query: string; viewportRef: RefObject<HTMLDivElement | null> }) {
   const groups = useGroups();
   const { data } = useAtlas();
-  const ts = terms(query);
-  if (ts.length) {
-    const hits = data.docs.filter(d => ts.every(t => (d.title + "\n" + d.path).toLowerCase().includes(t)));
-    return (
-      <div className="doc-dir">
-        <p className="muted doc-dir-count">找到 {hits.length} 份文档</p>
-        <ul>{hits.slice(0, 300).map(d => <DocItem key={d.path} d={d} current={current} showPath />)}</ul>
-      </div>
-    );
-  }
+  const hits = useMemo(() => {
+    const ts = terms(query);
+    return ts.length ? data.docs.filter(d => ts.every(t => (d.title + "\n" + d.path).toLowerCase().includes(t))) : null;
+  }, [data.docs, query]);
+  const nodes = useMemo(() => hits
+    ? hits.slice(0, 300).map(d => ({ id: d.path, label: `${d.title} · ${d.path}` }))
+    : groups.map(g => ({ id: g.name, label: `${g.name}（${g.docs.length}）`, children: g.docs.map(d => ({ id: d.path, label: d.title })) })), [groups, hits]);
   return (
     <div className="doc-dir">
-      {groups.map(g => (
-        <details key={g.name} open={!g.hidden || g.docs.some(d => d.path === current)}>
-          <summary><span>{g.name}</span><span className="nav-count">{g.docs.length}</span></summary>
-          <ul>{g.docs.map(d => <DocItem key={d.path} d={d} current={current} showPath={g.hidden} />)}</ul>
-        </details>
-      ))}
+      {hits ? <p className="muted doc-dir-count">找到 {hits.length} 份文档</p> : null}
+      <DocumentDirectory nodes={nodes} defaultExpandedIds={groups.filter(g => !g.hidden).map(g => g.name)} selectedId={current} viewportRef={viewportRef} onSelect={node => { if (!node.children) navigate(href("/docs", { path: node.id, dq: query })); }} />
     </div>
-  );
-}
-
-function DocItem({ d, current, showPath }: { d: DocInfo; current?: string; showPath?: boolean }) {
-  return (
-    <li>
-      <a href={href("/docs", { path: d.path })} aria-current={d.path === current ? "page" : undefined}>
-        <span>{d.title}</span>
-        {showPath ? <span className="doc-path">{d.path}</span> : null}
-      </a>
-    </li>
   );
 }
 
@@ -98,15 +83,12 @@ function Article({ path, anchor }: { path: string; anchor: string | null }) {
     <div className="doc-reader">
       <article className="doc-article">
         <div className="doc-article-head">
-          <a className="text-button only-narrow" href="#/docs">返回目录</a>
+          <LinkButton variant="ghost" size="sm" className="only-narrow" href="#/docs">返回目录</LinkButton>
           <span className="doc-path"><FileText aria-hidden="true" /> {path}{info ? ` · ${info.group}` : ""}</span>
-          <a className="text-button" href={path} target="_blank" rel="noopener">原文 <ExternalLink aria-hidden="true" /></a>
+          <LinkButton variant="ghost" size="sm" href={path} target="_blank" rel="noopener">原文 <ExternalLink aria-hidden="true" /></LinkButton>
         </div>
         {state.toc.length > 1 ? (
-          <details className="toc-inline">
-            <summary>章节目录（{state.toc.length}）</summary>
-            <Toc toc={state.toc} path={path} />
-          </details>
+          <div className="toc-inline"><Accordion key={path} defaultOpen={-1} items={[{ title: `章节目录（${state.toc.length}）`, content: <Toc toc={state.toc} path={path} /> }]} /></div>
         ) : null}
         <div className="markdown" dangerouslySetInnerHTML={{ __html: state.html }} />
       </article>
@@ -120,13 +102,16 @@ export function DocsPage() {
   const path = route.params.get("path");
   const query = route.params.get("dq") ?? "";
   const { data } = useAtlas();
+  const directoryViewport = useRef<HTMLDivElement>(null);
+  const lastPath = useRef(path);
+  useEffect(() => { if (path) lastPath.current = path; }, [path]);
   return (
     <div className="page docs-page" data-reading={path ? "" : undefined}>
       <header className="page-head"><div><h1>文档 <span className="muted">{data.docs.length}</span></h1></div></header>
       <div className="docs-layout">
       <aside className="doc-sidebar">
         <div className="search-wrap"><SearchField label="搜索文档标题与路径" placeholder="搜索文档" value={query} onValueChange={v => navigate(withParams(route, { dq: v }), { replace: true })} /></div>
-        <ScrollArea orientation="vertical" className="doc-dir-scroll" label="文档目录" fade={24}><Directory current={path ?? undefined} query={query} /></ScrollArea>
+        <ScrollArea orientation="vertical" className="doc-dir-scroll" label="文档目录" fade={0} viewportRef={directoryViewport}><Directory key={path ? "reading" : "directory"} current={path ?? lastPath.current ?? undefined} query={query} viewportRef={directoryViewport} /></ScrollArea>
       </aside>
       <div className="doc-main">
         {path ? <Article path={path} anchor={route.params.get("h")} /> : (

@@ -1,6 +1,7 @@
 // 本地状态：主题、收藏、比较篮。都放在 localStorage，并在同源页面之间同步。
 import { useSyncExternalStore } from "react";
 import type { FavSets, FavoritesFormat, Kind } from "./types";
+import { notify } from "../ui/notifications";
 
 function makeStore<T>(read: () => T, keys: () => string[]) {
   const listeners = new Set<() => void>();
@@ -76,8 +77,10 @@ function writeFav(next: FavSets) {
 export const useFavorites = favStore.use;
 export function toggleFavorite(kind: Kind, id: string) {
   const cur = favStore.get();
-  const list = cur[kind].includes(id) ? cur[kind].filter(x => x !== id) : [...cur[kind], id];
+  const on = cur[kind].includes(id);
+  const list = on ? cur[kind].filter(x => x !== id) : [...cur[kind], id];
   writeFav({ ...cur, [kind]: list });
+  notify(on ? "已取消收藏" : "已加入收藏", "success");
 }
 export function exportFavorites() {
   const blob = new Blob([JSON.stringify(favFormat.exportJson(favStore.get()), null, 2)], { type: "application/json" });
@@ -86,6 +89,7 @@ export function exportFavorites() {
   a.download = favFormat.fileName;
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  notify("收藏配置已导出", "success");
 }
 /** 只合并本库已知的 id，保留已有收藏。返回新增数量。 */
 export function importFavorites(text: string): number {
@@ -101,6 +105,7 @@ export function importFavorites(text: string): number {
     }
   }
   writeFav(next);
+  notify(`收藏配置已导入，新增 ${added} 项`, "success");
   return added;
 }
 
@@ -114,5 +119,9 @@ export const COMPARE_MAX = 3;
 export function setCompare(ids: string[]) { localStorage.setItem(COMPARE_KEY, JSON.stringify(ids.slice(0, COMPARE_MAX))); compareStore.emit(); }
 export function toggleCompare(id: string) {
   const cur = compareStore.get();
-  setCompare(cur.includes(id) ? cur.filter(x => x !== id) : [...cur, id].slice(-COMPARE_MAX));
+  if (!cur.includes(id) && cur.length >= COMPARE_MAX) {
+    notify(`最多比较 ${COMPARE_MAX} 个案例`, "warning");
+    return;
+  }
+  setCompare(cur.includes(id) ? cur.filter(x => x !== id) : [...cur, id]);
 }
