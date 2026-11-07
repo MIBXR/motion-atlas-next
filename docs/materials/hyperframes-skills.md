@@ -1,6 +1,6 @@
 # HyperFrames Agent Skills 使用说明
 
-HyperFrames 把 HTML、CSS、媒体与可定位动画逐帧渲染为 MP4。技能包为编码 Agent 提供合成约定、制作流程和按任务查阅的参考。本库保存的 8 个技能目录及固定版本见[素材条目](../../materials.html#material/hyperframes-skills)，原文入口为 [hyperframes/SKILL.md](../../demos/materials/hyperframes-skills/skills/hyperframes/SKILL.md)。
+HyperFrames 把 HTML、CSS、媒体与可定位动画逐帧渲染为 MP4。技能包为编码 Agent 提供合成约定、制作流程和按任务查阅的参考。本库保存的 8 个技能目录及固定版本见[素材条目](https://motion-atlas-library.mibxranime.chatgpt.site/#/materials/hyperframes-skills)，原文入口为 [hyperframes/SKILL.md](../../demos/materials/hyperframes-skills/skills/hyperframes/SKILL.md)。
 
 ## 总入口
 
@@ -35,4 +35,4 @@ HyperFrames 把 HTML、CSS、媒体与可定位动画逐帧渲染为 MP4。技�
 5. **预览**：用 `npx hyperframes preview` 打开 Studio 预览，查看画面与时间线。
 6. **渲染**：确认预览结果或需要成片时，用 `npx hyperframes render` 导出 MP4。
 
-模块与模板的本地预览见 [HyperFrames Registry](../../materials.html#material/hyperframes-registry)。
+模块与模板的本地预览见 [HyperFrames Registry](https://motion-atlas-library.mibxranime.chatgpt.site/#/materials/hyperframes-registry)。

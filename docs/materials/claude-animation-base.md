@@ -1,6 +1,6 @@
 # Claude Animation Base · 手绘卡通动画套件
 
-JohnHeibel 将 [P(doom) 手绘 MV](../../cases.html#case/pdoom-video) 的代码与对模型表现的分析整理为 p5.js + p5.brush 入门套件。快照包含绘制引擎、角色设定、场景时间轴、逐帧渲染入口和给模型阅读的 [ANIMATION_GUIDE.md](../../demos/materials/claude-animation-base/ANIMATION_GUIDE.md)；入口为[上游主文档](../../demos/materials/claude-animation-base/README.md)。
+JohnHeibel 将 [P(doom) 手绘 MV](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/pdoom-video) 的代码与对模型表现的分析整理为 p5.js + p5.brush 入门套件。快照包含绘制引擎、角色设定、场景时间轴、逐帧渲染入口和给模型阅读的 [ANIMATION_GUIDE.md](../../demos/materials/claude-animation-base/ANIMATION_GUIDE.md)；入口为[上游主文档](../../demos/materials/claude-animation-base/README.md)。
 
 ## 怎么用
 
