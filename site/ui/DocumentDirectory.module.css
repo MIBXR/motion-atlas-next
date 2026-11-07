@@ -1,3 +1,2 @@
 .tree { border: 0; border-radius: 0; background: transparent; overflow: visible; }
-.group { position: sticky; top: 0; z-index: 2; background: var(--background); }
-@media (max-width: 1023px) { .group { top: var(--sticky-top); } }
+.group { position: sticky; top: var(--doc-dir-sticky-top, 0px); z-index: 2; background: var(--doc-dir-bg, var(--background)); }

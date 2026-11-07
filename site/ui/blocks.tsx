@@ -7,6 +7,7 @@ import { LinkButton } from "./LinkButton";
 import Badge from "@/registry/components/badge/badge";
 import { ExternalLink, GitCompareArrows, Star } from "./icons";
 import { href } from "../core/router";
+import { openText, TEXT_FILE } from "../core/open-text";
 import { toggleCompare, toggleFavorite, useCompare, useFavorites } from "../core/store";
 import { notify } from "./notifications";
 import { KIND_NAME, KIND_SINGULAR, type Entry, type Kind } from "../core/types";
@@ -77,8 +78,8 @@ export function ColorValue({ value }: { value: string }) {
 export function renderValue(v: unknown): ReactNode {
   if (isValidElement(v)) return v;
   if (typeof v === "string" && COLOR.test(v.trim())) return <ColorValue value={v.trim()} />;
-  if (typeof v === "string" && /^https?:\/\/\S+$/.test(v)) return <a href={v} target="_blank" rel="noopener" className="break">{v}</a>;
-  if (typeof v === "string" && /^(demos|docs|prompts|previews|agent)\/\S+\.\w+$/.test(v)) return <a href={v.endsWith(".md") ? href("/docs", { path: v }) : v} target={v.endsWith(".md") ? undefined : "_blank"} className="break">{v}</a>;
+  if (typeof v === "string" && /^https?:\/\/\S+$/.test(v)) return <a href={v} target="_blank" rel="noopener" className="break" onClick={new URL(v).origin === location.origin && TEXT_FILE.test(new URL(v).pathname) ? openText : undefined}>{v}</a>;
+  if (typeof v === "string" && /^(demos|docs|prompts|previews|agent)\/\S+\.\w+$/.test(v)) return <a href={v.endsWith(".md") ? href("/docs", { path: v }) : v} target={v.endsWith(".md") ? undefined : "_blank"} className="break" onClick={!v.endsWith(".md") && TEXT_FILE.test(v) ? openText : undefined}>{v}</a>;
   if (typeof v === "string" || typeof v === "number") return String(v);
   if (typeof v === "boolean") return v ? "是" : "否";
   if (Array.isArray(v)) return v.every(x => typeof x === "string") ? v.join("、") : <ul>{v.map((x, i) => <li key={i}><ObjectLine value={x} /></li>)}</ul>;
@@ -184,7 +185,7 @@ export function SourceList({ items }: { items: SourceItem[] }) {
           {tagged ? <Badge size="md">{s.tag ?? "—"}</Badge> : null}
           <div className="source-body">
             <div className="source-line">
-              {s.url ? <a className="source-title" href={s.url} target={s.internal ? undefined : "_blank"} rel={s.internal ? undefined : "noopener"}>{s.title}{s.internal ? null : <ExternalLink aria-hidden="true" />}</a> : <strong className="source-title">{s.title}</strong>}
+              {s.url ? <a className="source-title" href={s.url} target={s.internal ? undefined : "_blank"} rel={s.internal ? undefined : "noopener"} onClick={!s.internal && new URL(s.url, location.href).origin === location.origin && TEXT_FILE.test(new URL(s.url, location.href).pathname) ? openText : undefined}>{s.title}{s.internal ? null : <ExternalLink aria-hidden="true" />}</a> : <strong className="source-title">{s.title}</strong>}
               {s.meta ? <span className="muted source-meta">{s.meta}</span> : null}
               {s.actions}
             </div>

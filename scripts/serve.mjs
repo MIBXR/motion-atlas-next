@@ -24,7 +24,7 @@ http.createServer((req, res) => {
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
   if (!fs.existsSync(file)) { res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' }); res.end('not found'); return; }
   const stat = fs.statSync(file);
-  const type = TYPES[path.extname(file).toLowerCase()] || 'application/octet-stream';
+  const type = TYPES[path.extname(file).toLowerCase()] || (/^(README|LICENSE|LICENCE|COPYING|NOTICE|AUTHORS|PATENTS|COPYRIGHT)(?:[-_][^/.]+)?$/i.test(path.basename(file)) ? 'text/plain; charset=utf-8' : 'application/octet-stream');
   const range = req.headers.range;
   if (range && /^(video|audio)\//.test(type)) {
     const [s, e] = range.replace('bytes=', '').split('-');
