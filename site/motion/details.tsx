@@ -199,7 +199,6 @@ function RegistryStage({ e }: { e: Entry }) {
       .catch(() => setNames([]));
   }, [base]);
   const cur = route.params.get("demo") ?? "product-turntable";
-  // 样例选择与“重新加载”“新标签页”放在同一行工具条里。
   const tools = names.length ? (
     <>
       <div className="picker picker-demo">
