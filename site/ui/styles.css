@@ -13,7 +13,8 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 /* 页面只有一个滚动容器：文档本身。横向一律裁掉，不出现横向滚动条。 */
-html { overflow-x: clip; scrollbar-gutter: stable; }
+html { scrollbar-gutter: stable; }
+#root { overflow-x: clip; }
 /* 全站细滚动条：平时很淡，和界面同色系。 */
 * { scrollbar-width: thin; scrollbar-color: color-mix(in oklab, var(--foreground) 22%, transparent) transparent; }
 body { background: var(--background); color: var(--foreground); font-family: var(--font-body); font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
