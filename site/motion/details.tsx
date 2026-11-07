@@ -7,6 +7,7 @@ import { Dialog, DialogContent } from "@/registry/components/dialog/dialog";
 import { Carousel } from "@/registry/components/carousel/carousel";
 import { ExternalLink, Play } from "@/ui/icons";
 import { href, navigate, useRoute, withParams } from "@/core/router";
+import { openText, TEXT_FILE } from "@/core/open-text";
 import type { Entry } from "@/core/types";
 import { Bullets, CodeLine, DocLinks, EntryLinks, has, KV, Palette, ParamTable, PromptBlock, Prose, RelatedEntries, Section, Sources } from "@/ui/blocks";
 import { DetailLayout, GalleryStage } from "@/ui/DetailPage";
@@ -32,7 +33,7 @@ function FileList({ files }: { files?: string[] }) {
     <ul className="file-list">
       {files!.map(f => {
         const p = f.replace(/\\/g, "/");
-        return <li key={f}>{p.endsWith(".md") ? <a className="mono" href={href("/docs", { path: p })}>{p}</a> : <a className="mono" href={p} target="_blank" rel="noopener">{p}</a>}</li>;
+        return <li key={f}>{p.endsWith(".md") ? <a className="mono" href={href("/docs", { path: p })}>{p}</a> : <a className="mono" href={p} target="_blank" rel="noopener" onClick={TEXT_FILE.test(p) ? openText : undefined}>{p}</a>}</li>;
       })}
     </ul>
   );

@@ -14,6 +14,7 @@ import { useFavorites } from "../core/store";
 import { KIND_NAME, type Entry, type Facet, type Kind } from "../core/types";
 import { EntryCard } from "./blocks";
 import { useAtlas } from "./context";
+import { useFitTop } from "./use-fit-top";
 
 const collator = new Intl.Collator("zh-CN");
 
@@ -66,7 +67,7 @@ function FacetGroup({ facet, counts, selected, onToggle }: { facet: Facet; count
         const n = counts.get(v)!;
         const on = selected.includes(v);
         return (
-          <div key={v} className="facet-option" data-empty={!n && !on || undefined}>
+          <div key={v} className="facet-option" data-empty={!n && !on || undefined} onClick={ev => { if (!(ev.target as Element).closest("button, label")) onToggle(v); }}>
             <Checkbox checked={on} label={facet.display(v)} onCheckedChange={() => onToggle(v)} />
             <span className="facet-count">{n}</span>
           </div>
@@ -83,6 +84,7 @@ export function ListPage({ kind }: { kind: Kind }) {
   const [drawer, setDrawer] = useState(false);
   const page = useRef<HTMLDivElement>(null);
   const bar = useRef<HTMLDivElement>(null);
+  const facetColumn = useRef<HTMLElement>(null);
   // 筛选栏吸附在工具栏下方，工具栏高度随已选条件变化，量出来交给 CSS。
   useLayoutEffect(() => {
     const el = bar.current!;
@@ -90,6 +92,7 @@ export function ListPage({ kind }: { kind: Kind }) {
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
+  useFitTop(facetColumn);
   const view = s.route.params.get("view") === "list" ? "list" : "grid";
   const set = (patch: Record<string, string | string[] | null>, replace = false) => navigate(withParams(s.route, patch), { replace });
   const toggle = (key: string, v: string) => {
@@ -135,7 +138,7 @@ export function ListPage({ kind }: { kind: Kind }) {
         ) : null}
       </div>
       <div className="list-layout">
-        <aside className="facet-column" aria-label="筛选"><ScrollArea orientation="vertical" className="facet-scroll" label="筛选条件" fade={24}>{filterPanel}</ScrollArea></aside>
+        <aside ref={facetColumn} className="facet-column" aria-label="筛选"><ScrollArea orientation="vertical" className="facet-scroll" label="筛选条件" fade={24}>{filterPanel}</ScrollArea></aside>
         <div>
           {s.items.length ? (
             <div className={view === "list" ? "card-list" : "card-grid"}>

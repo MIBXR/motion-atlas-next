@@ -75,6 +75,8 @@ export function DocumentDirectory({ nodes, defaultExpandedIds = [], selectedId, 
   const [focusedId, setFocusedId] = useState<string | null>(selectedId ?? nodes[0]?.id ?? null);
   const [openedId, setOpenedId] = useState<string | null>(null);
   const refs = useRef(new Map<string, HTMLButtonElement>());
+  const tree = useRef<HTMLDivElement>(null);
+  const pendingReveal = useRef<string | null>(null);
   const visible = flatten(nodes, expanded);
   const focusableId = visible.some(({ node }) => node.id === focusedId) ? focusedId : (visible[0]?.node.id ?? null);
   const openedIndex = visible.findIndex(({ node }) => node.id === openedId);
@@ -84,14 +86,18 @@ export function DocumentDirectory({ nodes, defaultExpandedIds = [], selectedId, 
     if (!viewport?.clientHeight || !row) return;
     const pageScroll = getComputedStyle(viewport).overflowY === "visible";
     const bounds = pageScroll ? { top: parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--sticky-top")), bottom: window.innerHeight } : viewport.getBoundingClientRect();
-    const rect = row.getBoundingClientRect();
+    const index = visible.findIndex(v => v.node.id === id);
+    const treeTop = tree.current!.getBoundingClientRect().top + parseFloat(getComputedStyle(tree.current!).paddingTop);
+    const rowTop = treeTop + index * rowHeight, rowBottom = rowTop + rowHeight;
     const top = bounds.top + (row.getAttribute("aria-level") === "2" ? rowHeight : 0);
     const bottom = Math.min(bounds.bottom, window.innerHeight);
     const container = pageScroll ? document.documentElement : viewport;
     if (pageScroll) allowScroll();
-    if (rect.top < top) container.scrollTop += rect.top - top;
-    else if (rect.bottom > bottom) container.scrollTop += rect.bottom - bottom;
-  }, [viewportRef]);
+    if (rowTop < top) container.scrollTop += rowTop - top;
+    else if (rowBottom > bottom) container.scrollTop += rowBottom - bottom + 1;
+  }, [viewportRef, visible]);
+  const revealRef = useRef(reveal);
+  revealRef.current = reveal;
 
   useLayoutEffect(() => {
     if (selectedGroup) setExpanded(previous => previous.has(selectedGroup) ? previous : new Set(previous).add(selectedGroup));
@@ -99,9 +105,17 @@ export function DocumentDirectory({ nodes, defaultExpandedIds = [], selectedId, 
 
   useLayoutEffect(() => {
     if (!selectedId) return;
-    const frame = requestAnimationFrame(() => reveal(selectedId));
-    return () => cancelAnimationFrame(frame);
-  }, [selectedId, nodes, expanded, reveal]);
+    pendingReveal.current = selectedId;
+    let observer: ResizeObserver | null = null;
+    const frame = requestAnimationFrame(() => {
+      revealRef.current(selectedId);
+      const viewport = viewportRef.current;
+      observer = viewport ? new ResizeObserver(() => { if (pendingReveal.current === selectedId) revealRef.current(selectedId); }) : null;
+      observer?.observe(viewport!);
+    });
+    const timeout = setTimeout(() => { if (pendingReveal.current === selectedId) pendingReveal.current = null; observer?.disconnect(); }, 1000);
+    return () => { cancelAnimationFrame(frame); clearTimeout(timeout); observer?.disconnect(); };
+  }, [selectedId]);
 
   function focusRow(id: string) {
     refs.current.get(id)?.focus({ preventScroll: true });
@@ -151,7 +165,7 @@ export function DocumentDirectory({ nodes, defaultExpandedIds = [], selectedId, 
     }
   }
 
-  return <div className={`${styles.tree} ${directoryStyles.tree}`} role="tree" aria-label="文档目录" aria-multiselectable="false">
+  return <div ref={tree} className={`${styles.tree} ${directoryStyles.tree}`} role="tree" aria-label="文档目录" aria-multiselectable="false">
     <AnimatePresence initial={false} mode="sync">
       {visible.map((item, index) => {
         const hasChildren = Boolean(item.node.children?.length);
@@ -162,11 +176,12 @@ export function DocumentDirectory({ nodes, defaultExpandedIds = [], selectedId, 
           key={item.node.id}
           className={[styles.row, hasChildren && directoryStyles.group].filter(Boolean).join(" ")}
           layout={reduced ? false : "position"}
+          layoutDependency={expanded}
           initial={reduced ? false : { height: 0, opacity: 0, x: -6, overflow: "hidden" }}
           animate={{ height: rowHeight, opacity: 1, x: 0, pointerEvents: "auto", transitionEnd: { overflow: "visible" }, transition: reduced ? still : { height: motionTokens.spring.smooth, opacity: { ...fadeIn, delay }, x: { ...motionTokens.spring.smooth, delay } } }}
           exit={reduced ? { opacity: 0, transition: still } : { height: 0, opacity: 0, x: -4, overflow: "hidden", pointerEvents: "none", transition: { height: motionTokens.spring.smooth, opacity: fadeOut, x: fadeOut } }}
           transition={reduced ? still : { layout: motionTokens.spring.smooth }}
-          onAnimationComplete={() => { if (isSelected) reveal(item.node.id); }}
+          onAnimationComplete={() => { if (pendingReveal.current === item.node.id) revealRef.current(item.node.id); }}
         >
           <button
             ref={element => { if (element) refs.current.set(item.node.id, element); else refs.current.delete(item.node.id); }}
