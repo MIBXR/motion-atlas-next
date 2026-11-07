@@ -1,6 +1,6 @@
 # mg-styles-15 使用说明
 
-从[素材详情](../../materials.html#material/mg-styles-15)选择风格，打开对应提示词，把「提示词」整段交给能够写代码、运行命令的 AI。套件把导演输入、制作约束和独立评审分开：`prompts/` 提供完整范例，`template.md` 用于写新风格，`rubric.md` 用于审片，`lib/audio/` 负责配乐与音效。
+从[素材详情](https://motion-atlas-library.mibxranime.chatgpt.site/#/materials/mg-styles-15)选择风格，打开对应提示词，把「提示词」整段交给能够写代码、运行命令的 AI。套件把导演输入、制作约束和独立评审分开：`prompts/` 提供完整范例，`template.md` 用于写新风格，`rubric.md` 用于审片，`lib/audio/` 负责配乐与音效。
 
 填写模板时，先用 Style 命名风格，再填写四段导演输入。Output 写画幅、帧率、时长与声音规格；Suggested technical route 选择画面实现手段；Creative seed 把故事写成有秒数的钩子、升级、高潮和落版，同时交代色彩、字体与声音；Signature features 写出可观察的视觉特征和可执行技法，突出风格的辨识度。角色设定、How to work、Rules、Craft checklist、自评和 Deliver 等通用部分从现有提示词照抄。
 
@@ -51,4 +51,4 @@ Set-Location ../..
 
 画面采用按给定时刻绘制一帧的协议。上游的 `harness/render.mjs` 对应本库的 `scripts/render.mjs`：原作 `window.renderAt(t)` 由 MotionKit 接到 `window.__motion.seek(t)`，先导出画面，再用 ffmpeg 将配乐 WAV 与画面合成。三维画面先由 Blender 输出帧序列，再由案例页面叠加文字和颗粒，页面仍通过同一个逐帧入口导出。具体命令见[渲染管线](../pipeline.md)。
 
-本库收录该套件的14个案例。HUD风格提示词保留在快照中，HUD案例见[伏特·规格扫描 · 科幻全息界面](../../cases.html#case/lemo-hologram-hud)。
+本库收录该套件的14个案例。HUD风格提示词保留在快照中，HUD案例见[伏特·规格扫描 · 科幻全息界面](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/lemo-hologram-hud)。

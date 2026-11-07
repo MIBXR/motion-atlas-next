@@ -6,15 +6,15 @@ Motion Atlas 提供完整案例、独立巧思和制作素材。案例与巧思�
 
 | 页面 | 用途 |
 | --- | --- |
-| [总览](../index.html) | 搜索全部条目，浏览三类内容、指南和工具入口。 |
-| [案例](../cases.html) | 按画面风格、载体、用途与技术筛选完整作品，查看节奏、分层与 Prompt。 |
-| [巧思](../patterns.html) | 按类型、载体与所属案例筛选机制，查看触发、参数及组合关系。 |
-| [素材](../materials.html) | 按类型查找制作资源，阅读工作流、安装方式、原文与画廊。 |
-| [文档](../docs.html) | 按分组浏览 Markdown，搜索文档标题与路径并跳转章节。 |
-| [收藏](../index.html#/favorites) | 查看三类收藏，导入或导出收藏配置。 |
-| [比较](../index.html#/compare) | 选择最多三个案例，按字段并排比较。 |
-| [节奏实验室](../lab.html) | 节拍器、A/B 吸附对比、打拍录入、曲线、时长与错峰。 |
-| [Agent 工作流](../agent.html) | 选条目、生成任务说明、获取结构化资料。 |
+| [总览](https://motion-atlas-library.mibxranime.chatgpt.site/#/) | 搜索全部条目，浏览三类内容、指南和工具入口。 |
+| [案例](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases) | 按画面风格、载体、用途与技术筛选完整作品，查看节奏、分层与 Prompt。 |
+| [巧思](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns) | 按类型、载体与所属案例筛选机制，查看触发、参数及组合关系。 |
+| [素材](https://motion-atlas-library.mibxranime.chatgpt.site/#/materials) | 按类型查找制作资源，阅读工作流、安装方式、原文与画廊。 |
+| [文档](https://motion-atlas-library.mibxranime.chatgpt.site/#/docs) | 按分组浏览 Markdown，搜索文档标题与路径并跳转章节。 |
+| [收藏](https://motion-atlas-library.mibxranime.chatgpt.site/#/favorites) | 查看三类收藏，导入或导出收藏配置。 |
+| [比较](https://motion-atlas-library.mibxranime.chatgpt.site/#/compare) | 选择最多三个案例，按字段并排比较。 |
+| [节奏实验室](https://motion-atlas-library.mibxranime.chatgpt.site/#/tools/rhythm-lab) | 节拍器、A/B 吸附对比、打拍录入、曲线、时长与错峰。 |
+| [Agent 工作流](https://motion-atlas-library.mibxranime.chatgpt.site/#/tools/workflow) | 选条目、生成任务说明、获取结构化资料。 |
 
 搜索覆盖条目中的文字字段，多个词需全部命中；列表支持只看收藏、按编号或名称排序以及正序／反序。收录边界与规则见[贡献指南](../CONTRIBUTING.md#收录边界)。
 

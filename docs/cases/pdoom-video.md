@@ -24,11 +24,11 @@
 ## 机制
 
 - 每个镜头是只取决于歌曲时刻 t 的纯函数；`film/src/timeline.js:7–8/29–43` 用 `chapter(name,start,end,shots)` 注册章节并选择镜头，镜头函数接收歌曲时刻、镜头内时刻和镜头时长。
-- [笔刷横扫换章](../../patterns.html#pattern/brush-wipe-chapter-break)：`film/src/timeline.js:11–12/73–89` 只在四个大章边界，用五道错峰笔刷先覆盖画面，再揭开。
-- [逐词卡拉 OK 歌词](../../patterns.html#pattern/karaoke-word-fill)：`film/src/lyrics.js` 保存逐句区间，`film/src/timeline.js:93–118` 生成底板并按字符长度推进每词的赭黄填色。
-- [副歌计量表逐拍递增](../../patterns.html#pattern/escalating-chorus-meter)：`film/src/timeline.js:14–23/52–68` 按四段 METER 窗口步进，`film/src/props.js:75–76` 用 METER_SHOWN 隐藏角落中重复的计量表。
-- [表情过渡](../../patterns.html#pattern/emotion-take-morph)：`film/src/clawd.js:211–218` 的 mood 在换脸前后挤眼、拉伸和回弹，`emote()` 在头部旁边绘制反应符号。
-- [12fps 线条沸腾](../../patterns.html#pattern/cel-line-boil)：`film/src/core.js:3/195` 以 BOIL=12 和 `randomSeed(1000+floor(T*BOIL))` 更新笔触随机种子。
+- [笔刷横扫换章](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/brush-wipe-chapter-break)：`film/src/timeline.js:11–12/73–89` 只在四个大章边界，用五道错峰笔刷先覆盖画面，再揭开。
+- [逐词卡拉 OK 歌词](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/karaoke-word-fill)：`film/src/lyrics.js` 保存逐句区间，`film/src/timeline.js:93–118` 生成底板并按字符长度推进每词的赭黄填色。
+- [副歌计量表逐拍递增](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/escalating-chorus-meter)：`film/src/timeline.js:14–23/52–68` 按四段 METER 窗口步进，`film/src/props.js:75–76` 用 METER_SHOWN 隐藏角落中重复的计量表。
+- [表情过渡](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/emotion-take-morph)：`film/src/clawd.js:211–218` 的 mood 在换脸前后挤眼、拉伸和回弹，`emote()` 在头部旁边绘制反应符号。
+- [12fps 线条沸腾](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/cel-line-boil)：`film/src/core.js:3/195` 以 BOIL=12 和 `randomSeed(1000+floor(T*BOIL))` 更新笔触随机种子。
 
 ## 怎么改
 

@@ -18,7 +18,7 @@ block 从 `add` 输出的挂载片段开始接入，component 按其注释合并
 
 每个官方子类选 1–4 个互不重复的代表。在素材详情与独立页的侧栏切换精选、模板或全部条目，展开分类并点击作品即可播放。“精选”和“全部”支持按中文标题、分类或原名过滤；过滤和切换范围时保留当前作品，点击条目后切换播放。未入库项标注“官网”。在手机上通过“作品目录”展开同一目录树。`?demo=<名字>` 可直接定位条目。播放器默认静音，遵循系统减少动态设置。
 
-从样例页的官网链接查看未入库项，通过上游 CLI 安装；固定版本源码与版本信息见[素材条目](../../materials.html#material/hyperframes-registry)。完整目录索引与本地项尺寸、时长分别在样例的 `demo/catalog-index.json` 和 `demo/local-items.json`，重建命令见 [source/USAGE.md](../../demos/materials/hyperframes-registry/source/USAGE.md)。
+从样例页的官网链接查看未入库项，通过上游 CLI 安装；固定版本源码与版本信息见[素材条目](https://motion-atlas-library.mibxranime.chatgpt.site/#/materials/hyperframes-registry)。完整目录索引与本地项尺寸、时长分别在样例的 `demo/catalog-index.json` 和 `demo/local-items.json`，重建命令见 [source/USAGE.md](../../demos/materials/hyperframes-registry/source/USAGE.md)。
 
 ## 官方分类
 
