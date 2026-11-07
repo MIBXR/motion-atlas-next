@@ -43,8 +43,8 @@ gh skill install remotion-dev/skills
 
 ## 与本库的关系
 
-- [Ink Press 纸墨宣传片](../../cases.html#case/ink-press)用 Remotion 4.0.484 制作，可对照 `remotion-markup` 的写法。
-- [video-shotcraft · 镜头配方卡宣传片](../../materials.html#material/video-shotcraft)的镜头配方卡以 Remotion 组件为参考实现。
+- [Ink Press 纸墨宣传片](https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/ink-press)用 Remotion 4.0.484 制作，可对照 `remotion-markup` 的写法。
+- [video-shotcraft · 镜头配方卡宣传片](https://motion-atlas-library.mibxranime.chatgpt.site/#/materials/video-shotcraft)的镜头配方卡以 Remotion 组件为参考实现。
 
 ## 社区作品
 

@@ -89,4 +89,4 @@ No [风格最容易跑偏的方向 1], no [2], no [3]; no off-beat random motion
 
 ## 七、节奏实验室导出的片段
 
-[节奏实验室](../lab.html) 的“Prompt 片段”标签会把拍号、BPM、细分网格、首拍偏移、摇摆、量化强度、吸附后的事件时刻，以及曲线、时长、错峰和声音安排写成约束文本，可直接粘贴到实现 Prompt 的“动效”一节。先用 A/B 对比或打拍录入确认落点，再导出；CSS、MotionKit 乐谱代码与 WAV 也使用当前参数。
+[节奏实验室](https://motion-atlas-library.mibxranime.chatgpt.site/#/tools/rhythm-lab) 的“Prompt 片段”标签会把拍号、BPM、细分网格、首拍偏移、摇摆、量化强度、吸附后的事件时刻，以及曲线、时长、错峰和声音安排写成约束文本，可直接粘贴到实现 Prompt 的“动效”一节。先用 A/B 对比或打拍录入确认落点，再导出；CSS、MotionKit 乐谱代码与 WAV 也使用当前参数。
