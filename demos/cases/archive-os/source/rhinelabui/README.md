@@ -4,9 +4,9 @@
 
 **[在线体验 → rhine.lubeiluchen.cc](https://rhine.lubeiluchen.cc/)**
 
-iPhone 可用 Safari 打开在线版，通过“分享 → 添加到主屏幕”安装；从主屏幕图标进入可使用独立窗口。首次联网后，设置中显示“离线资源已就绪”即可离线浏览档案和模型。支持桌面不同比例、手机横竖屏和触摸操作。[安装与更新说明](docs/PWA.md)
+iPhone 可用 Safari 打开在线版，通过“分享 → 添加到主屏幕”安装；从主屏幕图标进入可使用独立窗口。首次联网后，设置中显示“离线资源已就绪”即可离线浏览档案和模型。支持桌面不同比例、手机横竖屏和触摸操作。[安装与更新说明](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/PWA.md)
 
-![莱茵生命终端：由透明档案盒构成的三维阵列](docs/media/archive.jpg)
+![莱茵生命终端：由透明档案盒构成的三维阵列](https://raw.githubusercontent.com/LBEILC/RhineLabUI/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/archive.jpg)
 
 这是对《明日方舟》特别映像「莱茵生命：访问」终端界面的非官方复刻。从白底开场进入五列循环档案阵列，抽取一份档案，等待玻璃与正文解密，再进入独立查看器观察内部结构。
 
@@ -22,7 +22,7 @@ iPhone 可用 Safari 打开在线版，通过“分享 → 添加到主屏幕”
 
 **[在 Steam 创意工坊订阅壁纸 → Rhine Lab · 莱茵生命交互桌面](https://steamcommunity.com/sharedfiles/filedetails/?id=3799142774)**
 
-![Wallpaper Engine 工作台预览](wallpaper/preview.gif)
+![Wallpaper Engine 工作台预览](https://raw.githubusercontent.com/LBEILC/RhineLabUI/12cc5e4013acb9408f753ff71de6b8492299b7c8/wallpaper/preview.gif)
 
 - **两种工作模式**：三维档案展示与桌面工作台，可显示时间日期、今日事项、日程倒计时、系统媒体信息和专注计时。
 - **壁纸交互**：音乐律动、呼吸效果、波纹接力小游戏，以及亮暗配色、玻璃模糊、HUD 曲面与视差。
@@ -39,7 +39,7 @@ npm ci
 npm run build:wallpaper
 ```
 
-输出目录为 `release/wallpaper`，在 Wallpaper Engine 编辑器中打开其中的 `index.html`。系统媒体信息取决于播放器支持及 WE 媒体集成设置。更多细节见 [壁纸使用与开发说明](docs/WALLPAPER-ENGINE.md) 和 [创意工坊发布说明](docs/WORKSHOP-PUBLISH.md)。
+输出目录为 `release/wallpaper`，在 Wallpaper Engine 编辑器中打开其中的 `index.html`。系统媒体信息取决于播放器支持及 WE 媒体集成设置。更多细节见 [壁纸使用与开发说明](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/WALLPAPER-ENGINE.md) 和 [创意工坊发布说明](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/WORKSHOP-PUBLISH.md)。
 
 以下为项目共用的网页与三维档案功能介绍。
 
@@ -51,7 +51,7 @@ npm run build:wallpaper
 - **超级性能模式**：设置中独立开启，降低三维渲染负担并保留动效，关闭恢复之前的画质。
 - **数字时钟**：页脚时、分、秒独立滚动，修复变换布局下部分数字动画中断。
 
-整合范围与验证见 [主分支整合记录](verification/WEB-INTEGRATION.md)。
+整合范围与验证见 [主分支整合记录](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/verification/WEB-INTEGRATION.md)。
 
 - **模型与正文同步解密**：对角解密线合拢、保持并收束，盖板自上而下由磨砂变清晰；右侧文档的遮挡条随之退开，露出标题、资料字段与正文。
 - **可看清的双环内构**：双环、连接带与白色／橙色部件封装在盖板与基板之间。顶边黄色方块、两处螺丝和盖板后的刻线补全了外壳细节。
@@ -62,17 +62,17 @@ npm run build:wallpaper
 
 ## 界面与动效
 
-以下截图与动图于 **2026-09-09** 重新采集，均来自当前版本的实际浏览器运行。截图为 **1600 × 900**，GIF 为 **8–12 fps**、原速播放；压缩后的帧率与颜色不代表实时渲染质量。采集版本与复现步骤见 [素材说明](docs/media/README.md)。
+以下截图与动图于 **2026-09-09** 重新采集，均来自当前版本的实际浏览器运行。截图为 **1600 × 900**，GIF 为 **8–12 fps**、原速播放；压缩后的帧率与颜色不代表实时渲染质量。采集版本与复现步骤见 [素材说明](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/README.md)。
 
 ### 抽取、解密与阅读
 
 档案竖直升起，镜头靠近并转向详情构图。解密时玻璃与文档一起揭示；完成后可阅读概述、研究记录及访问日志，也可以收藏或导出 UTF-8 文本。
 
-![档案抽取与同步解密：对角线收束，玻璃从上向下变清晰，正文遮挡退开](docs/media/decryption.gif)
+![档案抽取与同步解密：对角线收束，玻璃从上向下变清晰，正文遮挡退开](https://raw.githubusercontent.com/LBEILC/RhineLabUI/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/decryption.gif)
 
 | 解密完成 · 清晰内构与档案概述 | 研究记录 · 正文阅读 |
 | --- | --- |
-| [![解密后的档案：左侧可见双环内构，右侧显示机构资料](docs/media/detail.jpg)](docs/media/detail.jpg) | [![档案研究记录页签](docs/media/research.jpg)](docs/media/research.jpg) |
+| [![解密后的档案：左侧可见双环内构，右侧显示机构资料](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/detail.jpg)](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/detail.jpg) | [![档案研究记录页签](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/research.jpg)](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/research.jpg) |
 
 ### 清晰内构与磨砂玻璃
 
@@ -80,12 +80,12 @@ npm run build:wallpaper
 
 | 清晰 · 双环与连接带 | 磨砂 · 轻柔折射 |
 | --- | --- |
-| [![清晰玻璃下的档案内部结构](docs/media/viewer-clear.jpg)](docs/media/viewer-clear.jpg) | [![相同视角下的磨砂玻璃](docs/media/viewer-frosted.jpg)](docs/media/viewer-frosted.jpg) |
+| [![清晰玻璃下的档案内部结构](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/viewer-clear.jpg)](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/viewer-clear.jpg) | [![相同视角下的磨砂玻璃](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/viewer-frosted.jpg)](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/viewer-frosted.jpg) |
 
 <details>
 <summary><strong>查看动图：清晰／磨砂连续切换</strong></summary>
 
-![玻璃由清晰过渡到磨砂，再恢复清晰](docs/media/glass-motion.gif)
+![玻璃由清晰过渡到磨砂，再恢复清晰](https://raw.githubusercontent.com/LBEILC/RhineLabUI/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/glass-motion.gif)
 
 </details>
 
@@ -93,12 +93,12 @@ npm run build:wallpaper
 
 紧固件、透明盖板、折射环组、光学核心、信息基板、背板与框架按六组展开。拆解后仍可旋转、平移和缩放，观察部件之间的关系，再一键重组。
 
-[![新版档案模型：六组结构分层展开](docs/media/assembly.jpg)](docs/media/assembly.jpg)
+[![新版档案模型：六组结构分层展开](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/assembly.jpg)](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/assembly.jpg)
 
 <details>
 <summary><strong>查看动图：模型拆解、旋转与重组</strong></summary>
 
-![操作动图：档案盒从完整状态拆开，旋转观察后连续重组](docs/media/assembly-motion.gif)
+![操作动图：档案盒从完整状态拆开，旋转观察后连续重组](https://raw.githubusercontent.com/LBEILC/RhineLabUI/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/assembly-motion.gif)
 
 </details>
 
@@ -109,7 +109,7 @@ npm run build:wallpaper
 <details>
 <summary><strong>查看动图：切列、翻阅与连续文字滚动</strong></summary>
 
-![循环切换档案，标题、编号、分类及刻度同步更新](docs/media/browse.gif)
+![循环切换档案，标题、编号、分类及刻度同步更新](https://raw.githubusercontent.com/LBEILC/RhineLabUI/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/browse.gif)
 
 </details>
 
@@ -117,12 +117,12 @@ npm run build:wallpaper
 
 从终端逐字输入到圆环、Logo 绘制，再进入身份接入与权限验证。可以重播，也可以跳过开场直接进入阵列。
 
-[![白底开场中的莱茵生命标志与身份接入文字](docs/media/boot.jpg)](docs/media/boot.jpg)
+[![白底开场中的莱茵生命标志与身份接入文字](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/boot.jpg)](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/boot.jpg)
 
 <details>
 <summary><strong>查看动图：新版开场片段</strong></summary>
 
-![新版白底开场：逐字输入、圆环和连续标志绘制、身份验证与欢迎转场](docs/media/boot-motion.gif)
+![新版白底开场：逐字输入、圆环和连续标志绘制、身份验证与欢迎转场](https://raw.githubusercontent.com/LBEILC/RhineLabUI/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/boot-motion.gif)
 
 </details>
 
@@ -132,9 +132,9 @@ npm run build:wallpaper
 
 | 档案索引 · 关键词与分类筛选 | 系统设置 · 声音与画质 |
 | --- | --- |
-| [![输入莱茵关键词后的档案检索结果](docs/media/search.jpg)](docs/media/search.jpg) | [![独立音效和音乐音量、减少动态效果与画质预设](docs/media/settings.jpg)](docs/media/settings.jpg) |
+| [![输入莱茵关键词后的档案检索结果](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/search.jpg)](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/search.jpg) | [![独立音效和音乐音量、减少动态效果与画质预设](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/settings.jpg)](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media/settings.jpg) |
 
-GIF 不含声音。可单独[试听原创配乐「观测室」](public/audio/observatory-preview.mp3)，完整声音效果请启动应用体验。浏览器可能需要一次点击或按键才允许播放音频。
+GIF 不含声音。可单独[试听原创配乐「观测室」](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/public/audio/observatory-preview.mp3)，完整声音效果请启动应用体验。浏览器可能需要一次点击或按键才允许播放音频。
 
 ## 快速运行
 
@@ -158,7 +158,7 @@ npm run dev
 
 打开终端显示的地址，通常为 `http://127.0.0.1:5173/`。如果端口被占用，以终端实际输出为准。
 
-Windows 用户安装 Node.js 并解压项目后，也可以双击 [`启动终端.cmd`](启动终端.cmd)：首次运行会安装依赖，然后启动本地服务并打开浏览器。
+Windows 用户安装 Node.js 并解压项目后，也可以双击 [`启动终端.cmd`](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/%E5%90%AF%E5%8A%A8%E7%BB%88%E7%AB%AF.cmd)：首次运行会安装依赖，然后启动本地服务并打开浏览器。
 
 ### 构建与预览
 
@@ -214,17 +214,17 @@ npm run preview
 | [`src/scene.ts`](src/scene.ts)、[`src/archive-loop.ts`](src/archive-loop.ts) | Three.js 场景、循环阵列、抽取与归位 |
 | [`src/model-viewer.ts`](src/model-viewer.ts) | 独立模型查看器与拆解动画 |
 | [`src/decryption.ts`](src/decryption.ts)、[`src/document-decryption.ts`](src/document-decryption.ts) | 模型解密轨迹与正文同步揭示 |
-| [`src/audio.ts`](src/audio.ts)、[`public/audio/`](public/audio/) | 交互音效、三轨配乐与音源记录 |
+| [`src/audio.ts`](src/audio.ts)、[`public/audio/`](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/public/audio) | 交互音效、三轨配乐与音源记录 |
 | [`src/render-quality.ts`](src/render-quality.ts)、[`src/quality-renderer.ts`](src/quality-renderer.ts) | 画质预设与渲染管线 |
 | [`content/archives.json`](content/archives.json) | 页面与下载共用的五类、40 份档案数据 |
 | [`src/data.ts`](src/data.ts) | 档案类型与阵列位置映射 |
-| [`public/assets/`](public/assets/) | 运行所需的 GLB 模型 |
-| [`public/archives/`](public/archives/) | 导出的档案文本；启动和构建前自动生成 |
+| [`public/assets/`](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/public/assets) | 运行所需的 GLB 模型 |
+| [`public/archives/`](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/public/archives) | 导出的档案文本；启动和构建前自动生成 |
 | [`art/`](art/) | Blender 源文件、建模与审阅脚本 |
 | [`scripts/`](scripts/) | 档案导出与行为检查 |
-| [`reference/`](reference/)、[`verification/`](verification/) | 开发对照工具与分阶段验证记录 |
-| [`docs/media/`](docs/media/) | README 截图与动图 |
-| [`DESIGN.md`](DESIGN.md) | 视觉、相机、材质与运动约束 |
+| [`reference/`](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/reference)、[`verification/`](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/verification) | 开发对照工具与分阶段验证记录 |
+| [`docs/media/`](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/docs/media) | README 截图与动图 |
+| [`DESIGN.md`](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/DESIGN.md) | 视觉、相机、材质与运动约束 |
 
 原片时间轴使用 160 个阵列位置；交互模式使用固定的可见窗口与外围卡片补位，让有限的档案内容可以持续循环。
 
@@ -264,9 +264,9 @@ npm run preview
 
 模型为重新制作；实时折射、景深、灯光与局部细节和原 PV 仍有差异。身份验证画面是演示状态机，不连接真实身份或业务服务。
 
-- **MiSans**：使用小米官方字体文件，保留[字体许可](public/fonts/MiSans-license.pdf)及字体目录内的版权说明，设置页也提供署名与许可入口。
-- **Rolling Number**：用于编号和文字滚动，许可见 [`public/licenses/rolling-number.txt`](public/licenses/rolling-number.txt)。
-- **声音**：三轨配乐为本项目程序编配；逐字输入使用原 PV 的三个 38ms 短音，来源与处理记录见 [音频说明](public/audio/README.md)。原片短音及其衍生片段不纳入原创配乐的 MIT 授权声明。
+- **MiSans**：使用小米官方字体文件，保留[字体许可](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/public/fonts/MiSans-license.pdf)及字体目录内的版权说明，设置页也提供署名与许可入口。
+- **Rolling Number**：用于编号和文字滚动，许可见 [`public/licenses/rolling-number.txt`](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/public/licenses/rolling-number.txt)。
+- **声音**：三轨配乐为本项目程序编配；逐字输入使用原 PV 的三个 38ms 短音，来源与处理记录见 [音频说明](https://github.com/LBEILC/RhineLabUI/blob/12cc5e4013acb9408f753ff71de6b8492299b7c8/public/audio/README.md)。原片短音及其衍生片段不纳入原创配乐的 MIT 授权声明。
 - **其他依赖**：各自遵循其原有许可。源码公开不改变第三方资源的权利。
 
 源码包包含运行代码、模型、Blender 工程、说明与验证脚本，不包含依赖目录、本机缓存、原 PV 或完整录制素材。

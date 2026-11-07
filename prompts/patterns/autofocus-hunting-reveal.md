@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-backrooms：31.900000–35.900000秒，1倍速，总时长4.000000秒。
 
-[打开 Demo](../../demos/patterns/autofocus-hunting-reveal/index.html) · [在库中查看](../../patterns.html#pattern/autofocus-hunting-reveal)
+[打开 Demo](../../demos/patterns/autofocus-hunting-reveal/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/autofocus-hunting-reveal)

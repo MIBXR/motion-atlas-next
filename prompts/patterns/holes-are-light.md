@@ -8,4 +8,4 @@
 
 - **原片重放区间**：31.25–35.3秒；1倍速，总时长4.050000秒。
 
-[打开 Demo](../../demos/patterns/holes-are-light/index.html) · [在库中查看](../../patterns.html#pattern/holes-are-light)
+[打开 Demo](../../demos/patterns/holes-are-light/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/holes-are-light)

@@ -2,7 +2,7 @@
 
 **原片**：KONSTRUKTION · 20 SCHLÄGE「二十拍构成」 · 1920×1080 · 30 fps · 10 秒 · AI 评审终评 7.71 / 10
 
-**源码**：[demos/09-bauhaus/](../demos/09-bauhaus/)
+**源码**：[demos/09-bauhaus/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/09-bauhaus)
 
 ## 怎么用
 

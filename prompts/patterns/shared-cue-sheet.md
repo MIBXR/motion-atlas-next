@@ -18,4 +18,4 @@
 
 - `index.html 内联配置 → segments / cues`：设置来源片段与中文节点名称，画面和原音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/shared-cue-sheet/index.html) · [在库中查看](../../patterns.html#pattern/shared-cue-sheet)
+[打开 Demo](../../demos/patterns/shared-cue-sheet/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/shared-cue-sheet)

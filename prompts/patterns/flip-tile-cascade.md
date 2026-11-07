@@ -14,4 +14,4 @@
 - **背面三元**：reveal=7–7.2秒；黄色三角[(120,780),(600,780),(360,300)]；红方块(720,300,480,480)；蓝圆(1560,540,r240)。
 - **向心归牌**：R4.start=7.5秒；dur=0.2，span=0.3，size=240，中心(960,540)；delay=(maxRadius-distance)*span/(maxRadius-minRadius)；sc=-cos(π*ease(u))；8秒归位。
 
-[打开 Demo](../../demos/patterns/flip-tile-cascade/index.html) · [在库中查看](../../patterns.html#pattern/flip-tile-cascade)
+[打开 Demo](../../demos/patterns/flip-tile-cascade/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/flip-tile-cascade)

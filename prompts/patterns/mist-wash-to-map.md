@@ -8,4 +8,4 @@
 
 - **来源片段**：70.3–80.8 秒，洗白 70.3–73.6 秒，地图从 73.2 秒开始。
 
-[打开 Demo](../../demos/patterns/mist-wash-to-map/index.html) · [在库中查看](../../patterns.html#pattern/mist-wash-to-map)
+[打开 Demo](../../demos/patterns/mist-wash-to-map/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/mist-wash-to-map)

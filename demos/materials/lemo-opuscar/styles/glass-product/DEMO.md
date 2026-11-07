@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Aura — Hear the Light* (32 s) · `glass-product.mp4` · source in [`demo/`](demo/)
+Demo: *Aura — Hear the Light* (32 s) · `glass-product.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/glass-product/demo)
 
 
 ## Story & structure

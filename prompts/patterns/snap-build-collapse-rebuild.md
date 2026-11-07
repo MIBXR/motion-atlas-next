@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-brick-toy 12.000000–20.000000秒；lemo-brick-toy 29.800000–32.600000秒；1倍速，总时长10.800000秒。
 
-[打开 Demo](../../demos/patterns/snap-build-collapse-rebuild/index.html) · [在库中查看](../../patterns.html#pattern/snap-build-collapse-rebuild)
+[打开 Demo](../../demos/patterns/snap-build-collapse-rebuild/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/snap-build-collapse-rebuild)

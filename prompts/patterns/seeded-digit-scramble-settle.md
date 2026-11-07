@@ -8,4 +8,4 @@
 
 - **原片重放区间**：9.800—11.300秒；15.300—16.300秒；19.300—20.300秒，1倍速。
 
-[打开 Demo](../../demos/patterns/seeded-digit-scramble-settle/index.html) · [在库中查看](../../patterns.html#pattern/seeded-digit-scramble-settle)
+[打开 Demo](../../demos/patterns/seeded-digit-scramble-settle/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/seeded-digit-scramble-settle)

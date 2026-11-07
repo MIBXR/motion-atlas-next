@@ -2,13 +2,13 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *叮之前 · Before the Ding* (59.95 s) · `desktop-flythrough.mp4` · source in [`demo/`](demo/)
+Demo: *叮之前 · Before the Ding* (59.95 s) · `desktop-flythrough.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/desktop-flythrough/demo)
 
 ## Story & structure
 
 You send a friend a cat photo and their phone dings at once, but the photo did not fly straight there. The film follows it: step 1, the app shrinks it (4.2 MB → 300 KB, an illustrative figure); stop 2, it waits on the chat app's server; step 3, the server sends a notification; then the friend's phone fetches the photo, and on a slow connection it shows up blurry before it turns sharp. The ending: unless you ticked "Original", your friend has a compressed copy; the original never left your phone.
 
-Four stops on one desk: your phone, the compress card, the server tower, your friend's phone (小林, fictional), joined by a cobalt dotted route. The hero is the cat photo itself, a 16×16 voxel toy that blinks, waits on the beat, gets squashed into its 8×8 copy and hops the whole route. The opening and closing titles are objects on the desk. Every claim and its source is in [`demo/FACTS.md`](demo/FACTS.md); no app or company is named.
+Four stops on one desk: your phone, the compress card, the server tower, your friend's phone (小林, fictional), joined by a cobalt dotted route. The hero is the cat photo itself, a 16×16 voxel toy that blinks, waits on the beat, gets squashed into its 8×8 copy and hops the whole route. The opening and closing titles are objects on the desk. Every claim and its source is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/desktop-flythrough/demo/FACTS.md); no app or company is named.
 
 ## Shots
 
@@ -31,7 +31,7 @@ Four stops on one desk: your phone, the compress card, the server tower, your fr
 
 ## Voice-over
 
-Fourteen lines, Chinese, voiced with edge-tts `zh-CN-XiaoxiaoNeural` at `+15 %` (line 5 at `+8 %`), checked line by line with Whisper; 0.8 s lead, 0.3–0.6 s between lines. Subtitles: one cue per line, Chinese over English ([`desktop-flythrough.srt`](desktop-flythrough.srt)).
+Fourteen lines, Chinese, voiced with edge-tts `zh-CN-XiaoxiaoNeural` at `+15 %` (line 5 at `+8 %`), checked line by line with Whisper; 0.8 s lead, 0.3–0.6 s between lines. Subtitles: one cue per line, Chinese over English ([`desktop-flythrough.srt`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/desktop-flythrough/desktop-flythrough.srt)).
 
 | # | Start | 中文 | English |
 |---|---|---|---|

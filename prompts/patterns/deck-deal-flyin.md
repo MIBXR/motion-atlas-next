@@ -10,4 +10,4 @@
 - **镜头阶段**：CAM_KEYS：0→34 旋转特写，34→62 拉远，62→82→98 加速滚动。
 - **发牌节奏**：DEAL_START=36；cue=36+4*k-0.0792*k*(k-1)；飞行 cue→cue+8，归位 cue+8→cue+12。
 
-[打开 Demo](../../demos/patterns/deck-deal-flyin/index.html) · [在库中查看](../../patterns.html#pattern/deck-deal-flyin)
+[打开 Demo](../../demos/patterns/deck-deal-flyin/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/deck-deal-flyin)

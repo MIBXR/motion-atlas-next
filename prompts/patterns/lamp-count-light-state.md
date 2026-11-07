@@ -8,4 +8,4 @@
 
 - **原片重放区间**：7.2–11.3秒；27.2–34.2秒；1倍速，总时长11.100000秒。
 
-[打开 Demo](../../demos/patterns/lamp-count-light-state/index.html) · [在库中查看](../../patterns.html#pattern/lamp-count-light-state)
+[打开 Demo](../../demos/patterns/lamp-count-light-state/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/lamp-count-light-state)

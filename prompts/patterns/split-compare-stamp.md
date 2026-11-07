@@ -26,4 +26,4 @@ kick(t, C.stamp, 14, 10, 13)
 - `mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers`：mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 地图片段。地图来源时刻：29→33.4。
 - `mechanism/score.json`：调整声音事件，按巧思时间对齐，保留音色参数。
 
-[打开 Demo](../../demos/patterns/split-compare-stamp/index.html) · [在库中查看](../../patterns.html#pattern/split-compare-stamp)
+[打开 Demo](../../demos/patterns/split-compare-stamp/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/split-compare-stamp)

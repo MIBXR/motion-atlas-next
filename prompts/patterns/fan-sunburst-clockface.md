@@ -8,4 +8,4 @@
 
 - **原片重放区间**：42.066897–48.273793秒；1倍速，共6.206897秒。
 
-[打开 Demo](../../demos/patterns/fan-sunburst-clockface/index.html) · [在库中查看](../../patterns.html#pattern/fan-sunburst-clockface)
+[打开 Demo](../../demos/patterns/fan-sunburst-clockface/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/fan-sunburst-clockface)

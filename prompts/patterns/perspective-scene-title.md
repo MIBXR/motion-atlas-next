@@ -9,4 +9,4 @@
 - **原片重放区间**：butterfly-garden-score：20.03–23.55秒；butterfly-garden-score：43.6–47.33秒；1倍速，总时长7.25秒。
 - **标题镜头**：giants[0] 20.033–23.55 秒白字；giants[1] 43.6–47.333 秒红字；giants[2] 81.15–84.917 秒红字。
 
-[打开 Demo](../../demos/patterns/perspective-scene-title/index.html) · [在库中查看](../../patterns.html#pattern/perspective-scene-title)
+[打开 Demo](../../demos/patterns/perspective-scene-title/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/perspective-scene-title)

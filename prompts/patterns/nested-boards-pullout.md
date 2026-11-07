@@ -8,4 +8,4 @@
 
 - **原片重放区间**：52.500000–55.500000秒；1倍速，总时长3.000000秒。
 
-[打开 Demo](../../demos/patterns/nested-boards-pullout/index.html) · [在库中查看](../../patterns.html#pattern/nested-boards-pullout)
+[打开 Demo](../../demos/patterns/nested-boards-pullout/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/nested-boards-pullout)

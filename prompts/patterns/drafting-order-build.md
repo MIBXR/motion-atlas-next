@@ -8,4 +8,4 @@
 
 - **原片重放区间**：4.300000–11.100000秒；1倍速，共6.800000秒。
 
-[打开 Demo](../../demos/patterns/drafting-order-build/index.html) · [在库中查看](../../patterns.html#pattern/drafting-order-build)
+[打开 Demo](../../demos/patterns/drafting-order-build/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/drafting-order-build)

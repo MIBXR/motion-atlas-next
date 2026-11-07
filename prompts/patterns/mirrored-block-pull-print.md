@@ -8,4 +8,4 @@
 
 - **原片重放区间**：5.800000–10.500000秒；39.000000–41.666700秒；54.400000–58.500000秒；1倍速，总时长11.466700秒。
 
-[打开 Demo](../../demos/patterns/mirrored-block-pull-print/index.html) · [在库中查看](../../patterns.html#pattern/mirrored-block-pull-print)
+[打开 Demo](../../demos/patterns/mirrored-block-pull-print/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/mirrored-block-pull-print)

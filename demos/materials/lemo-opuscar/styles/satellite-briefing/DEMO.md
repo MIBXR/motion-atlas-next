@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Map Still Says Sea* 《地图上还写着海》 (37.8 s) · `satellite-briefing.mp4` · source in [`demo/`](demo/)
+Demo: *The Map Still Says Sea* 《地图上还写着海》 (37.8 s) · `satellite-briefing.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/satellite-briefing/demo)
 
 A satellite follows the map to a sea and finds a desert; the only part that came back is the part someone dammed. The Aral Sea, 1977–2025, on public-domain Landsat imagery. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English line below). This is an unofficial film made from public-domain imagery; the U.S. Geological Survey and NASA did not make or endorse it.
 
@@ -14,7 +14,7 @@ Arc: a claim (a printed atlas page of the 1960 sea, its serif name 咸海) → t
 
 Native moves spent: *the map against the photograph* at the reveal; *time rings in a locked frame* as the signature shot; *the range line* for the human scale; *colour returns where the story turns* for the North Aral; *the dive and the climb* as bookends; *the reticle becomes the frame* for the end card.
 
-Measured values are labelled as measured on screen; every number and its source is in [`demo/FACTS.md`](demo/FACTS.md).
+Measured values are labelled as measured on screen; every number and its source is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/satellite-briefing/demo/FACTS.md).
 
 ## Shots
 

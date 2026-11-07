@@ -2,9 +2,9 @@
 
 **Code-rendered motion videos, from logo stings to chapter-based films up to 20 minutes, with independent music/SFX sources, supplied narration or TTS, and editable source.**
 
-[中文文档](./README.zh-CN.md) · [Back to collection root](../../README.md)
+[中文文档](./README.zh-CN.md) · [Back to collection root](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/README.md)
 
-![Motion Showreel Skill](../../dist/imgs/covers/motion-showreel.webp)
+![Motion Showreel Skill](https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/covers/motion-showreel.webp)
 
 ---
 
@@ -22,7 +22,7 @@ It is designed for:
 - Generative-art loops and data "number drops"
 - Era-spanning retrospectives that change medium as they go (pixel → vector → 3D …)
 
-Short pieces typically run 5–60 s; chapter-based videos can run up to **20 minutes**, with or without narration. Use [`web-video-presentation`](../web-video-presentation) for click-driven talks or article-to-script work, and [`web-design-engineer`](../web-design-engineer) for websites/prototypes. Photoreal people, filming and general video editing remain outside this skill.
+Short pieces typically run 5–60 s; chapter-based videos can run up to **20 minutes**, with or without narration. Use [`web-video-presentation`](../web-video-presentation) for click-driven talks or article-to-script work, and [`web-design-engineer`](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer) for websites/prototypes. Photoreal people, filming and general video editing remain outside this skill.
 
 Required before production: **topic/content, duration, landscape or portrait, music source, SFX source, and narration mode**. Music and SFX independently use AI synthesis, user files or an explicit off choice. Narration can be absent, user audio, or TTS; **TTS must read a script supplied by the user**, with a configured API (Gemini, MiniMax or a custom adapter). Duration conflicts require confirmation; speech is never silently cut, sped up or rewritten.
 
@@ -36,15 +36,15 @@ Every clip below was made by an agent with this skill from a short request. For 
 
 <table>
 <tr>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/promo.webp" alt="Motion Showreel trailer: a new medium every beat" width="100%"><br/><strong>Motion Showreel trailer</strong> · 80 s<br/><sub>The skill's own trailer. One orange dot is redrawn in a new medium every beat (ink, paper, risograph, CRT, collage, glass, clay …), then bursts into a wall of 22 live styles. The synthesized score changes instruments with the medium.</sub></td>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/afterglow.webp" alt="AFTERGLOW synthwave title" width="100%"><br/><strong>AFTERGLOW</strong> · 19 s · <code>synthwave-neon</code><br/><sub>Title sequence for a fictional album. The camera drives through neon gates; after the last gate there is half a beat of black, then the chrome title springs up from the horizon on the drop.</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/promo.webp" alt="Motion Showreel trailer: a new medium every beat" width="100%"><br/><strong>Motion Showreel trailer</strong> · 80 s<br/><sub>The skill's own trailer. One orange dot is redrawn in a new medium every beat (ink, paper, risograph, CRT, collage, glass, clay …), then bursts into a wall of 22 live styles. The synthesized score changes instruments with the medium.</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/afterglow.webp" alt="AFTERGLOW synthwave title" width="100%"><br/><strong>AFTERGLOW</strong> · 19 s · <code>synthwave-neon</code><br/><sub>Title sequence for a fictional album. The camera drives through neon gates; after the last gate there is half a beat of black, then the chrome title springs up from the horizon on the drop.</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/boink.webp" alt="boink soft 3D chain reaction" width="100%"><br/><strong>boink</strong> · 18 s · <code>soft-3d-toy</code><br/><sub>A one-take chain reaction (after Honda's "Cog"). Every domino plays a marimba note; the jelly's slam sends a squash wave through the world, and the opening ball lands as the dot of the <i>i</i>.</sub></td>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/last-stroke.webp" alt="LAST STROKE ink stick-figure game trailer" width="100%"><br/><strong>LAST STROKE</strong> · 30 s · custom "stick ink" style<br/><sub>Trailer for a fictional game where every line you draw becomes real. The single stroke through 40 enemies is followed by the film's only beat of total silence; then the enemies burst into ink and the stroke becomes the title.</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/boink.webp" alt="boink soft 3D chain reaction" width="100%"><br/><strong>boink</strong> · 18 s · <code>soft-3d-toy</code><br/><sub>A one-take chain reaction (after Honda's "Cog"). Every domino plays a marimba note; the jelly's slam sends a squash wave through the world, and the opening ball lands as the dot of the <i>i</i>.</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/last-stroke.webp" alt="LAST STROKE ink stick-figure game trailer" width="100%"><br/><strong>LAST STROKE</strong> · 30 s · custom "stick ink" style<br/><sub>Trailer for a fictional game where every line you draw becomes real. The single stroke through 40 enemies is followed by the film's only beat of total silence; then the enemies burst into ink and the stroke becomes the title.</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/umbra.webp" alt="UMBRA cinematic eclipse title" width="100%"><br/><strong>UMBRA</strong> · 27 s · <code>cinematic-title</code><br/><sub>Opening titles for a fictional film about a total eclipse, letterboxed at 2.39:1. A beat of absolute silence, then the last Baily's bead flares into the diamond ring and the title develops inside the moon. The piano is a sampled Salamander grand (tier 2) with synthesized trailer sound design (booms, braam) layered on top.</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/umbra.webp" alt="UMBRA cinematic eclipse title" width="100%"><br/><strong>UMBRA</strong> · 27 s · <code>cinematic-title</code><br/><sub>Opening titles for a fictional film about a total eclipse, letterboxed at 2.39:1. A beat of absolute silence, then the last Baily's bead flares into the diamond ring and the title develops inside the moon. The piano is a sampled Salamander grand (tier 2) with synthesized trailer sound design (booms, braam) layered on top.</sub></td>
 <td width="50%" valign="top"><br/><strong>What you get for every piece</strong><br/><sub>
 The exported MP4 (<code>out/editor-&lt;task-id&gt;.mp4</code> from the workspace) + <code>out/poster.png</code><br/>
 <code>brief.md</code>: a reusable structured prompt<br/>
@@ -98,40 +98,40 @@ See [`references/editor.md`](./references/editor.md) for the default review work
 
 <table>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-ukiyo-e.webp" alt="ukiyo-e" /><br /><sub><code>ukiyo-e</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-glass-material.webp" alt="glass-material" /><br /><sub><code>glass-material</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-kinetic-brutalist.webp" alt="kinetic-brutalist" /><br /><sub><code>kinetic-brutalist</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-swiss-editorial.webp" alt="swiss-editorial" /><br /><sub><code>swiss-editorial</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-ukiyo-e.webp" alt="ukiyo-e" /><br /><sub><code>ukiyo-e</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-glass-material.webp" alt="glass-material" /><br /><sub><code>glass-material</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-kinetic-brutalist.webp" alt="kinetic-brutalist" /><br /><sub><code>kinetic-brutalist</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-swiss-editorial.webp" alt="swiss-editorial" /><br /><sub><code>swiss-editorial</code></sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-ink-wash.webp" alt="ink-wash" /><br /><sub><code>ink-wash</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-risograph-print.webp" alt="risograph-print" /><br /><sub><code>risograph-print</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-editorial-collage.webp" alt="editorial-collage" /><br /><sub><code>editorial-collage</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-isometric-infographic.webp" alt="isometric-infographic" /><br /><sub><code>isometric-infographic</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-ink-wash.webp" alt="ink-wash" /><br /><sub><code>ink-wash</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-risograph-print.webp" alt="risograph-print" /><br /><sub><code>risograph-print</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-editorial-collage.webp" alt="editorial-collage" /><br /><sub><code>editorial-collage</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-isometric-infographic.webp" alt="isometric-infographic" /><br /><sub><code>isometric-infographic</code></sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-liquid-shader.webp" alt="liquid-shader" /><br /><sub><code>liquid-shader</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-data-motion.webp" alt="data-motion" /><br /><sub><code>data-motion</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-generative-geometry.webp" alt="generative-geometry" /><br /><sub><code>generative-geometry</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-pixel-game.webp" alt="pixel-game" /><br /><sub><code>pixel-game</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-liquid-shader.webp" alt="liquid-shader" /><br /><sub><code>liquid-shader</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-data-motion.webp" alt="data-motion" /><br /><sub><code>data-motion</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-generative-geometry.webp" alt="generative-geometry" /><br /><sub><code>generative-geometry</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-pixel-game.webp" alt="pixel-game" /><br /><sub><code>pixel-game</code></sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-synthwave-neon.webp" alt="synthwave-neon" /><br /><sub><code>synthwave-neon</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-paper-cut.webp" alt="paper-cut" /><br /><sub><code>paper-cut</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-minimal-ui.webp" alt="minimal-ui" /><br /><sub><code>minimal-ui</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-comic-pop.webp" alt="comic-pop" /><br /><sub><code>comic-pop</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-synthwave-neon.webp" alt="synthwave-neon" /><br /><sub><code>synthwave-neon</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-paper-cut.webp" alt="paper-cut" /><br /><sub><code>paper-cut</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-minimal-ui.webp" alt="minimal-ui" /><br /><sub><code>minimal-ui</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-comic-pop.webp" alt="comic-pop" /><br /><sub><code>comic-pop</code></sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-flat-vector.webp" alt="flat-vector" /><br /><sub><code>flat-vector</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-guochao.webp" alt="guochao" /><br /><sub><code>guochao</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-painterly.webp" alt="painterly" /><br /><sub><code>painterly</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-glitch-digital.webp" alt="glitch-digital" /><br /><sub><code>glitch-digital</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-flat-vector.webp" alt="flat-vector" /><br /><sub><code>flat-vector</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-guochao.webp" alt="guochao" /><br /><sub><code>guochao</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-painterly.webp" alt="painterly" /><br /><sub><code>painterly</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-glitch-digital.webp" alt="glitch-digital" /><br /><sub><code>glitch-digital</code></sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-soft-organic.webp" alt="soft-organic" /><br /><sub><code>soft-organic</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-hologram-hud.webp" alt="hologram-hud" /><br /><sub><code>hologram-hud</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-particle-field.webp" alt="particle-field" /><br /><sub><code>particle-field</code></sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-art-deco.webp" alt="art-deco" /><br /><sub><code>art-deco</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-soft-organic.webp" alt="soft-organic" /><br /><sub><code>soft-organic</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-hologram-hud.webp" alt="hologram-hud" /><br /><sub><code>hologram-hud</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-particle-field.webp" alt="particle-field" /><br /><sub><code>particle-field</code></sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-art-deco.webp" alt="art-deco" /><br /><sub><code>art-deco</code></sub></td>
 </tr>
 </table>
 
@@ -192,7 +192,7 @@ skills/motion-showreel/
 
 ## Quick Start
 
-Install the skill (see the [collection README](../../README.md#install)), then run the one-time setup from the skill folder:
+Install the skill (see the [collection README](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/README.md#install)), then run the one-time setup from the skill folder:
 
 ```bash
 sh scripts/setup.sh        # Playwright + Chromium + Tone.js, then an environment check

@@ -2,9 +2,9 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *6 Kilometres* 《6 公里》 (47.0 s) · `transit-map.mp4` · source in [`demo/`](demo/)
+Demo: *6 Kilometres* 《6 公里》 (47.0 s) · `transit-map.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/transit-map/demo)
 
-In 1993 the Shanghai Metro was one 6 km section of Line 1 with five stations. On a printed schematic the network grows year by year to 21 lines and 906 km; halfway through, London and Shanghai are drawn as two lines on one time axis. No narration and so no subtitles: everything the viewer reads is printed on the sheet or on the counter, a Chinese line above an English line. **Unofficial fan film, not affiliated with the operator.** Line colours and station names are public facts; no operator logo or branded bullet appears, and the schematic is our own drawing. Every number and its source is in [`demo/FACTS.md`](demo/FACTS.md).
+In 1993 the Shanghai Metro was one 6 km section of Line 1 with five stations. On a printed schematic the network grows year by year to 21 lines and 906 km; halfway through, London and Shanghai are drawn as two lines on one time axis. No narration and so no subtitles: everything the viewer reads is printed on the sheet or on the counter, a Chinese line above an English line. **Unofficial fan film, not affiliated with the operator.** Line colours and station names are public facts; no operator logo or branded bullet appears, and the schematic is our own drawing. Every number and its source is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/transit-map/demo/FACTS.md).
 
 ## Story & structure
 

@@ -15,4 +15,4 @@ const tc = t - 8.4, crp = tc <= 0 ? 0 : 0.0092 * (tc < 0.6 ? tc * tc / 1.2 : tc 
 
 - `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/macro-hero-focus-relay/index.html) · [在库中查看](../../patterns.html#pattern/macro-hero-focus-relay)
+[打开 Demo](../../demos/patterns/macro-hero-focus-relay/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/macro-hero-focus-relay)

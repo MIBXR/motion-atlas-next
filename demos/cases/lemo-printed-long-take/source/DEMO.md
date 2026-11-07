@@ -2,11 +2,11 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Thirty-Three Cranes* 《三十三只》 (60.0 s) · `printed-long-take.mp4` (English narration) · source in [`demo/`](demo/)
+Demo: *Thirty-Three Cranes* 《三十三只》 (60.0 s) · `printed-long-take.mp4` (English narration) · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/printed-long-take/demo)
 
 ## Story & structure
 
-A January dawn at minus twenty on the Setsuri river at Tsurui, in the wetlands of eastern Hokkaido. The river is spring-fed and does not freeze; red-crowned cranes sleep standing in it. The crowns wake one by one, the flock lifts off over the cleared marsh to a feeding field, where a board says that in the winter of 1952 only 33 cranes were found in all of Hokkaido. Feeding began that year; the same field is printed again as the numbers grow; the board is cut with the January 2025 count, 1,927, and "Vulnerable" is struck and sealed "Near Threatened" (Ministry of the Environment, March 2026). A narrator tells it in eleven short lines; every line has a subtitle bar, Chinese above English. Every fact is in [`demo/FACTS.md`](demo/FACTS.md). The bridge name 音羽橋 on the plate is the real bridge's name; the plate, thermometer, board, notice and seal are our own drawing.
+A January dawn at minus twenty on the Setsuri river at Tsurui, in the wetlands of eastern Hokkaido. The river is spring-fed and does not freeze; red-crowned cranes sleep standing in it. The crowns wake one by one, the flock lifts off over the cleared marsh to a feeding field, where a board says that in the winter of 1952 only 33 cranes were found in all of Hokkaido. Feeding began that year; the same field is printed again as the numbers grow; the board is cut with the January 2025 count, 1,927, and "Vulnerable" is struck and sealed "Near Threatened" (Ministry of the Environment, March 2026). A narrator tells it in eleven short lines; every line has a subtitle bar, Chinese above English. Every fact is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/printed-long-take/demo/FACTS.md). The bridge name 音羽橋 on the plate is the real bridge's name; the plate, thermometer, board, notice and seal are our own drawing.
 
 Why it fits: the crane is already ink, paper and one red, so the single red needs no excuse; the steaming river, rimed trees and volcano row are what knife cuts draw well. Native moves spent: the sky carved open and one red waking (dawn), through the steam (takeoff into the air), the same place printed again (the four prints, the red as a second plate), words cut into the world (plate, board, seal), a plate of type in the sky (title and end card).
 

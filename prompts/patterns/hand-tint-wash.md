@@ -8,4 +8,4 @@
 
 - **原片重放区间**：25–31.25秒；1倍速，总时长6.250000秒。
 
-[打开 Demo](../../demos/patterns/hand-tint-wash/index.html) · [在库中查看](../../patterns.html#pattern/hand-tint-wash)
+[打开 Demo](../../demos/patterns/hand-tint-wash/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/hand-tint-wash)

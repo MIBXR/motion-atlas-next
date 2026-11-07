@@ -2,7 +2,7 @@
 
 **原片**：ISOPOLIS「让城市自己生长」 · 1920×1080 · 30 fps · 10 秒 · AI 评审终评 8.00 / 10
 
-**源码**：[demos/03-isometric/](../demos/03-isometric/)
+**源码**：[demos/03-isometric/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/03-isometric)
 
 ## 怎么用
 

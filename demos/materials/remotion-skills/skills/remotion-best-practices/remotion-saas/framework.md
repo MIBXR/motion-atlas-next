@@ -16,4 +16,4 @@ We offer the following templates:
 
 These can be cloned directly, or used as a reference.
 
-For an existing app, see https://www.remotion.dev/docs/brownfield-installation.md.
+For an existing app, see https://www.remotion.dev/docs/brownfield.

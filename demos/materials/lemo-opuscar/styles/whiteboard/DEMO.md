@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Einstein in Your Pocket* (111 s) · `whiteboard.mp4` · source in [`demo/`](demo/)
+Demo: *Einstein in Your Pocket* (111 s) · `whiteboard.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/whiteboard/demo)
 
 
 The demo's original one-line pitch: A science explainer drawn live on one glossy dry-erase board: single-line handwriting that is actually *written* stroke by stroke, floating markers with no hand, a magnet that can move, an eraser that can rewind time — and a camera that never leaves the board until the final pull-back shows the whole lesson hanging on the wall.

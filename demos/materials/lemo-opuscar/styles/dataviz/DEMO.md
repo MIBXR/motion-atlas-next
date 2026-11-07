@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *A Hundred Summers* (50.0 s) · `dataviz.mp4` · source in [`demo/`](demo/)
+Demo: *A Hundred Summers* (50.0 s) · `dataviz.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dataviz/demo)
 
 
 A hundred and one summers of real global temperature (NASA GISTEMP v4, June–August), told as one woman's life from 1926 to 2026.

@@ -16,4 +16,4 @@
 
 - **方向**：编号、行号与列号按导航方向；文字默认正向
 
-[打开 Demo](../../demos/patterns/rolling-digits/index.html) · [在库中查看](../../patterns.html#pattern/rolling-digits)
+[打开 Demo](../../demos/patterns/rolling-digits/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/rolling-digits)

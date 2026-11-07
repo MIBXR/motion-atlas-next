@@ -2,13 +2,13 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Seventy-Two Seats* 《七十二个座位》 (59.8 s, Chinese narration, bilingual subtitles) · `isometric-picture-book.mp4` · `isometric-picture-book.srt` · source in [`demo/`](demo/)
+Demo: *Seventy-Two Seats* 《七十二个座位》 (59.8 s, Chinese narration, bilingual subtitles) · `isometric-picture-book.mp4` · `isometric-picture-book.srt` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/isometric-picture-book/demo)
 
 ## Story & structure
 
 Boarding a plane always takes ages, even when rows are called in order. The film shows why (one aisle: one person stopping to stow a bag stops everyone behind, and everyone called is heading for the same few rows), then a different order (window seats first, each person one row apart from the next in line) in which six people stow bags at once, and the cabin fills in nearly half the time.
 
-The two orders and both times come from a real test: Steffen & Hotchkiss (2012), a 12-row, six-abreast mock cabin with one 21-inch aisle and 72 passengers; back rows first in blocks took 6:54, window first and every other row 3:36 (sources and quotes in [`demo/FACTS.md`](demo/FACTS.md)). Gate B12, the aircraft and its livery are fictional; no airline appears.
+The two orders and both times come from a real test: Steffen & Hotchkiss (2012), a 12-row, six-abreast mock cabin with one 21-inch aisle and 72 passengers; back rows first in blocks took 6:54, window first and every other row 3:36 (sources and quotes in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/isometric-picture-book/demo/FACTS.md)). Gate B12, the aircraft and its livery are fictional; no airline appears.
 
 Arc: the question (why so long?) → the usual answer (back rows first) → why it jams (one aisle; one person stops, all wait; everyone heads for the same stretch) → 6:54 → what if the order changes? → window first, one row apart → six at once → 3:36 → the two times side by side → the real test and its 72 passengers → the answer: not crowds, one stretch of aisle → sign-off.
 

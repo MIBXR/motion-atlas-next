@@ -8,4 +8,4 @@
 
 - **原片重放区间**：0–5秒；14.5–16秒；43.25–48.25秒；1倍速，总时长11.5秒。
 
-[打开 Demo](../../demos/patterns/constructivist-diagonal-montage/index.html) · [在库中查看](../../patterns.html#pattern/constructivist-diagonal-montage)
+[打开 Demo](../../demos/patterns/constructivist-diagonal-montage/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/constructivist-diagonal-montage)

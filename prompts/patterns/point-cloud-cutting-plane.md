@@ -8,4 +8,4 @@
 
 - **来源片段**：3.75–20 秒；10–13.125 秒剥层，13.125–14.375 秒留白，14.375–15.625 秒凝面，15.625–20 秒亮墙。
 
-[打开 Demo](../../demos/patterns/point-cloud-cutting-plane/index.html) · [在库中查看](../../patterns.html#pattern/point-cloud-cutting-plane)
+[打开 Demo](../../demos/patterns/point-cloud-cutting-plane/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/point-cloud-cutting-plane)

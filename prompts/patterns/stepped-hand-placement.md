@@ -17,4 +17,4 @@ const boil = (moving) => moving ? { amp: 2, fps: 12 } : { amp: 1.1, fps: 6 };
 
 - `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/stepped-hand-placement/index.html) · [在库中查看](../../patterns.html#pattern/stepped-hand-placement)
+[打开 Demo](../../demos/patterns/stepped-hand-placement/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/stepped-hand-placement)

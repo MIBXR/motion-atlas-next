@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Velvet Cipher* (44 s) · `spy-titles.mp4` · source in [`demo/`](demo/)
+Demo: *The Velvet Cipher* (44 s) · `spy-titles.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/spy-titles/demo)
 
 
 A 30–60 second film: an agent chases a courier and a stolen key through sets built from the credits, and the key turns out to open the film's title.

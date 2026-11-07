@@ -8,4 +8,4 @@
 
 - **原片重放区间**：14.6–16.5秒；17.5–19.3秒；31.2–33.5秒；1倍速，总时长6.000000秒。
 
-[打开 Demo](../../demos/patterns/palette-knife-recolor/index.html) · [在库中查看](../../patterns.html#pattern/palette-knife-recolor)
+[打开 Demo](../../demos/patterns/palette-knife-recolor/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/palette-knife-recolor)

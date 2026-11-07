@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-microscope：2.67–10.67秒；lemo-microscope：26.67–32.67秒；1倍速，总时长14.000000秒。
 
-[打开 Demo](../../demos/patterns/microscope-dive/index.html) · [在库中查看](../../patterns.html#pattern/microscope-dive)
+[打开 Demo](../../demos/patterns/microscope-dive/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/microscope-dive)

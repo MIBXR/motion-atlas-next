@@ -9,4 +9,4 @@
 - **原片重放区间**：butterfly-garden-score：3.8–8.3秒；butterfly-garden-score：61–65秒；1倍速，总时长8.5秒。
 - **卷轴**：190px/s 匀速，播放线 x=880；音符发声窗为 [x0/190, (x1+6)/190] 秒。
 
-[打开 Demo](../../demos/patterns/scrolling-score-timeline/index.html) · [在库中查看](../../patterns.html#pattern/scrolling-score-timeline)
+[打开 Demo](../../demos/patterns/scrolling-score-timeline/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/scrolling-score-timeline)

@@ -2,9 +2,9 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Last Night Train* 《末班夜车》 (51.0 s, 1920×1080, 30 fps) · `paper-lantern.mp4` · source in [`demo/`](demo/) · engine: three.js 0.170 (WebGL, SSAA 2×, VSM soft shadows, custom DoF + bloom compositor), Canvas2D-drawn paper layers, headless Chrome frame capture.
+Demo: *The Last Night Train* 《末班夜车》 (51.0 s, 1920×1080, 30 fps) · `paper-lantern.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/paper-lantern/demo) · engine: three.js 0.170 (WebGL, SSAA 2×, VSM soft shadows, custom DoF + bloom compositor), Canvas2D-drawn paper layers, headless Chrome frame capture.
 
-An old night train makes its last run. At a snowy mountain halt its windows light up car by car and it pulls away over a curved viaduct; it runs alongside a pine forest past three small halts; it goes into a long tunnel and the picture blinks to black; it comes out in a river valley where the town lights its windows as it passes; it slows along the sea cliffs; at the seaside terminus its windows go out one by one, the last one last, and the station lamp stays on. No figures: the story is told by the train, its lit windows, the stations and the light. English narration (Kokoro `bm_george`) with Chinese and English subtitles. The line and its stations are fiction ([`demo/FACTS.md`](demo/FACTS.md)).
+An old night train makes its last run. At a snowy mountain halt its windows light up car by car and it pulls away over a curved viaduct; it runs alongside a pine forest past three small halts; it goes into a long tunnel and the picture blinks to black; it comes out in a river valley where the town lights its windows as it passes; it slows along the sea cliffs; at the seaside terminus its windows go out one by one, the last one last, and the station lamp stays on. No figures: the story is told by the train, its lit windows, the stations and the light. English narration (Kokoro `bm_george`) with Chinese and English subtitles. The line and its stations are fiction ([`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/paper-lantern/demo/FACTS.md)).
 
 ## Story & structure
 

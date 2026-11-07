@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *From Bean to Cup* (58.8 s) · `iso-infographic.mp4` · source in [`demo/`](demo/)
+Demo: *From Bean to Cup* (58.8 s) · `iso-infographic.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/iso-infographic/demo)
 
 
 The demo follows one coffee bean from a farm to a cup in a 45–60 s film: one isometric map, one camera take, a Z-shaped route across a square board.
@@ -95,7 +95,7 @@ Frame so the subject is at least 1/3 of the frame height at key moments (the han
 - **Stations** that must be found in the wide shot get a **pale cream plate with a dashed ink outline** and an accent colour (brick-red roastery, red-and-cream awning café). Keep buildings around them low.
 - **People:** Monument-Valley-minimal billboards with a round head, a tapered body in two tones, a thick arm stroke and a hat or hair shape for identity. No faces. They step at 12 fps.
 - **Hero close-ups (hands):** flat faceted shapes in three skin tones (light palm facing up, mid sides, dark underside), a sleeve in the character's colour, and fingers as rounded two-segment capsules curling toward the viewer. The opening and closing hands share **the same pose, camera, zoom and tag position.** Only the skin tone, the sleeve and the object change.
-  The pair side by side: [`demo/stills/frame_v2_hands.jpg`](demo/stills/frame_v2_hands.jpg) (3.4 s and 50.9 s).
+  The pair side by side: [`demo/stills/frame_v2_hands.jpg`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/iso-infographic/demo/stills/frame_v2_hands.jpg) (3.4 s and 50.9 s).
 - **Labels (pins):** a dot (ink ring, cream fill) → a vertical leader → a horizontal rule → text. Titles are Jost 600, all caps, tracking 0.12 em. Numbers are Jost 400 at 44 px, and units Jost 500 at half size. Text has a 7 px cream halo so it reads over any colour. Pins can point up or down and left or right; choose per station so labels never cover the subject.
 - **Title:** Jost 700 words extruded as isometric blocks on a cream plate lying on the ground plane (cream face, coffee-red sides), one word per eighth note.
 - **Clouds:** flat isometric clouds with fake parallax (1.25× the ground's motion). They fade out above k ≈ 40.

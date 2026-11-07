@@ -20,4 +20,4 @@
 
 - `index.html 内联配置 → segments / markers`：调整来源片段与中文节点，画面和声音使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/drip-ripple-glyph-reveal/index.html) · [在库中查看](../../patterns.html#pattern/drip-ripple-glyph-reveal)
+[打开 Demo](../../demos/patterns/drip-ripple-glyph-reveal/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/drip-ripple-glyph-reveal)

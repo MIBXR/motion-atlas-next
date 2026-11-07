@@ -10,4 +10,4 @@
 - **正文揭示**：cueFor(i)=6+floor(i/2)*3.5，WIPE=8；20 块正文的最后一组在 45.5 帧完成。
 - **侧栏与声音**：左栏 46→56、右栏 54→64；WEEK_CUE(i)=58+i*5，8 帧弹入；pop 绝对帧 840,845,850,855,860,865，volume=0.4-0.03*i。
 
-[打开 Demo](../../demos/patterns/document-typewriter-reveal/index.html) · [在库中查看](../../patterns.html#pattern/document-typewriter-reveal)
+[打开 Demo](../../demos/patterns/document-typewriter-reveal/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/document-typewriter-reveal)

@@ -8,4 +8,4 @@
 
 - **原片重放区间**：36.600—39.400秒，1倍速。
 
-[打开 Demo](../../demos/patterns/dots-morph-to-stripes/index.html) · [在库中查看](../../patterns.html#pattern/dots-morph-to-stripes)
+[打开 Demo](../../demos/patterns/dots-morph-to-stripes/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/dots-morph-to-stripes)

@@ -23,4 +23,4 @@
 - `mechanism/config.js → segments / markers`：设置本巧思片段映射与标记；地图来源时刻：55.6→60。
 - `mechanism/score.json`：调整声音事件，按巧思时间对齐，保留音色参数。
 
-[打开 Demo](../../demos/patterns/outro-stat-stack/index.html) · [在库中查看](../../patterns.html#pattern/outro-stat-stack)
+[打开 Demo](../../demos/patterns/outro-stat-stack/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/outro-stat-stack)

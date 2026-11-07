@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *City Lights, 1987* (59 s) · `cel-anime-80s.mp4` · source in [`demo/`](demo/)
+Demo: *City Lights, 1987* (59 s) · `cel-anime-80s.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/cel-anime-80s/demo)
 
 
 ## Story & structure

@@ -13,4 +13,4 @@
 - **读完提示**：f>=fType+27 且 ((f>>2)&1)===0 时绘 3 行三角，顶宽 5；默认绘制 f171，f172–173 隐藏
 - **阶梯收起**：原片 5.8 秒起，高度按 [20,10,4] 逐帧收起；f177，即 5.9 秒起停止显示
 
-[打开 Demo](../../demos/patterns/rpg-dialog-box/index.html) · [在库中查看](../../patterns.html#pattern/rpg-dialog-box)
+[打开 Demo](../../demos/patterns/rpg-dialog-box/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/rpg-dialog-box)

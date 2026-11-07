@@ -10,4 +10,4 @@
 - **相机键**：DETAIL_CAM：[0,cx=960,cy=300,zoom=1.1] → [75,cx=960,cy=760,zoom=1.0]。
 - **行嵌入**：cue=12+i*9，land=cue+12，patch 在 land+2 消失，seam 在 land+8 消失。
 
-[打开 Demo](../../demos/patterns/page-cam-25d/index.html) · [在库中查看](../../patterns.html#pattern/page-cam-25d)
+[打开 Demo](../../demos/patterns/page-cam-25d/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/page-cam-25d)

@@ -8,4 +8,4 @@
 
 - **原片重放区间**：24.9–26.5秒；1倍速，共1.600000秒。
 
-[打开 Demo](../../demos/patterns/tunnel-blink-black/index.html) · [在库中查看](../../patterns.html#pattern/tunnel-blink-black)
+[打开 Demo](../../demos/patterns/tunnel-blink-black/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/tunnel-blink-black)

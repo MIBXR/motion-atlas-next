@@ -41130,6 +41130,7 @@
         "$": {
           "preview": "previews/materials/motion-showreel/afterglow.webp",
           "research": "docs/materials/motion-showreel.md",
+          "licenses": "demos/materials/motion-showreel/LICENSES.md",
           "agent": "agent/materials/motion-showreel.json",
           "snapshot": "demos/materials/motion-showreel/SKILL.md"
         }
@@ -41376,6 +41377,7 @@
         "$": {
           "preview": "previews/materials/web-video-presentation/midnight-press.webp",
           "research": "docs/materials/web-video-presentation.md",
+          "licenses": "demos/materials/web-video-presentation/LICENSES.md",
           "agent": "agent/materials/web-video-presentation.json",
           "snapshot": "demos/materials/web-video-presentation/SKILL.md"
         }
@@ -41635,6 +41637,7 @@
         "$": {
           "preview": "previews/materials/mg-styles-15/01-flat-vector.webp",
           "research": "docs/materials/mg-styles-15.md",
+          "licenses": "demos/materials/mg-styles-15/LICENSES.md",
           "agent": "agent/materials/mg-styles-15.json",
           "snapshot": "demos/materials/mg-styles-15/README.zh-CN.md"
         }
@@ -42768,6 +42771,7 @@
         "$": {
           "preview": "previews/materials/video-shotcraft/brand-ink-open.webp",
           "research": "docs/materials/video-shotcraft.md",
+          "licenses": "demos/materials/video-shotcraft/LICENSES.md",
           "agent": "agent/materials/video-shotcraft.json",
           "snapshot": "demos/materials/video-shotcraft/SKILL.md"
         }
@@ -43571,6 +43575,7 @@
         "$": {
           "preview": "previews/materials/lemo-opuscar/opuscar98.webp",
           "research": "docs/materials/lemo-opuscar.md",
+          "licenses": "demos/materials/lemo-opuscar/LICENSES.md",
           "agent": "agent/materials/lemo-opuscar.json",
           "snapshot": "demos/materials/lemo-opuscar/plugin/skills/lemo-opuscar/SKILL.md"
         }
@@ -49390,6 +49395,36 @@
     },
     {
       "path": "demos/materials/hyperframes-registry/LICENSES.md",
+      "title": "LICENSES",
+      "group": "素材原文",
+      "hidden": true
+    },
+    {
+      "path": "demos/materials/lemo-opuscar/LICENSES.md",
+      "title": "LICENSES",
+      "group": "素材原文",
+      "hidden": true
+    },
+    {
+      "path": "demos/materials/mg-styles-15/LICENSES.md",
+      "title": "LICENSES",
+      "group": "素材原文",
+      "hidden": true
+    },
+    {
+      "path": "demos/materials/motion-showreel/LICENSES.md",
+      "title": "LICENSES",
+      "group": "素材原文",
+      "hidden": true
+    },
+    {
+      "path": "demos/materials/video-shotcraft/LICENSES.md",
+      "title": "LICENSES",
+      "group": "素材原文",
+      "hidden": true
+    },
+    {
+      "path": "demos/materials/web-video-presentation/LICENSES.md",
       "title": "LICENSES",
       "group": "素材原文",
       "hidden": true

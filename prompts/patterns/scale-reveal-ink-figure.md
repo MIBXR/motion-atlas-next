@@ -8,4 +8,4 @@
 
 - **原片重放区间**：40.400000–48.000000秒；1倍速，总时长7.600000秒。
 
-[打开 Demo](../../demos/patterns/scale-reveal-ink-figure/index.html) · [在库中查看](../../patterns.html#pattern/scale-reveal-ink-figure)
+[打开 Demo](../../demos/patterns/scale-reveal-ink-figure/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/scale-reveal-ink-figure)

@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Four Seasons in Pomelo Town* (柚子城的四季, 45 s) · `memphis-diorama.mp4` · source in [`demo/`](demo/)
+Demo: *Four Seasons in Pomelo Town* (柚子城的四季, 45 s) · `memphis-diorama.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/memphis-diorama/demo)
 
 ## Story & structure
 
@@ -17,8 +17,8 @@ Every change of season is the same gesture, so the film reads as one piece: **th
 | Autumn | 20–30 s | rice gold, grass yellow-green, crowns red, orange and yellow | haystacks pop up field by field, leaves fall, a V of geese flies south-west, swallows leave, lotus wilts |
 | Winter | 30–39 s | snow ground, white roofs and haystack caps, pastel crowns with white dots, lilac field ridges | snow, chimney smoke, a snowman appears; from 34 s dusk turns the picture pink-violet and every window and door lamp lights up at its own moment |
 
-![Spring](demo/stills/frame_spring.jpg) ![Summer](demo/stills/frame_summer.jpg)
-![The tree squatting before autumn](demo/stills/frame_squat.jpg) ![Winter dusk](demo/stills/frame_winter.jpg)
+![Spring](https://raw.githubusercontent.com/lemomo-ai/lemo-opuscar/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/memphis-diorama/demo/stills/frame_spring.jpg) ![Summer](https://raw.githubusercontent.com/lemomo-ai/lemo-opuscar/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/memphis-diorama/demo/stills/frame_summer.jpg)
+![The tree squatting before autumn](https://raw.githubusercontent.com/lemomo-ai/lemo-opuscar/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/memphis-diorama/demo/stills/frame_squat.jpg) ![Winter dusk](https://raw.githubusercontent.com/lemomo-ai/lemo-opuscar/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/memphis-diorama/demo/stills/frame_winter.jpg)
 
 ## Shots
 

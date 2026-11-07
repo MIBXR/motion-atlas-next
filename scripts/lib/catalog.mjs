@@ -106,15 +106,15 @@ export function entryFiles(e) {
 function promptDoc(kind, e) {
   const L = [];
   L.push(`# ${e.title}`, '');
-  L.push('## 实现 Prompt', '', e.prompt, '');
+  const prompt = e.prompt.replaceAll('](../rubric.md)', '](../../demos/materials/mg-styles-15/rubric.md)').replace(/\]\(\.\.\/demos\/[^)]+\)/g, `](../../${e.demo})`);
+  L.push('## 实现 Prompt', '', prompt, '');
   if (e.videoPrompt) L.push('## 视频生成 Prompt', '', e.videoPrompt, '');
   if (e.negativePrompt) L.push('## 负向约束', '', e.negativePrompt, '');
   if (e.timing?.length) L.push('## 参数', '', ...e.timing.map((t) => `- **${t.name}**：${t.value}${t.note ? `（${t.note}）` : ''}`), '');
   if (e.tokens?.motion?.length) L.push('## 动效 Token', '', ...e.tokens.motion.map((t) => `- **${t.name}**：${t.value}`), '');
   if (e.constraints?.length) L.push('## 制作约束', '', ...e.constraints.map((c) => `- ${c}`), '');
   if (e.migration?.length) L.push('## 迁移', '', ...e.migration.map((m) => `- \`${m.field}\`：${m.how}`), '');
-  const hash = { cases: 'case', patterns: 'pattern', materials: 'material' }[kind];
-  const libraryLink = kind === 'cases' ? `https://motion-atlas-library.mibxranime.chatgpt.site/#/cases/${e.id}` : `../../${kind}.html#${hash}/${e.id}`;
+  const libraryLink = `https://motion-atlas-library.mibxranime.chatgpt.site/#/${kind}/${e.id}`;
   L.push(`[${e.snapshotPath ? '打开原文' : '打开 Demo'}](../../${e.snapshotPath ? e.snapshotPath + e.snapshotEntry : e.demo}) · [在库中查看](${libraryLink})`, '');
   return L.join('\n');
 }

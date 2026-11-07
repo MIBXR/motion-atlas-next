@@ -8,4 +8,4 @@
 
 - **原片重放区间**：56.3–70秒；1倍速，总时长13.700000秒。
 
-[打开 Demo](../../demos/patterns/stroke-order-equation-sync/index.html) · [在库中查看](../../patterns.html#pattern/stroke-order-equation-sync)
+[打开 Demo](../../demos/patterns/stroke-order-equation-sync/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/stroke-order-equation-sync)

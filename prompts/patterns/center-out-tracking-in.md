@@ -17,4 +17,4 @@
 - `index.html 内联配置 → segments`：设置重放原片的起止时刻，画面与音轨使用同一映射。
 - `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴的中文节点与减少动态时刻。
 
-[打开 Demo](../../demos/patterns/center-out-tracking-in/index.html) · [在库中查看](../../patterns.html#pattern/center-out-tracking-in)
+[打开 Demo](../../demos/patterns/center-out-tracking-in/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/center-out-tracking-in)

@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *How a Flattened City Grew Back* 《被炸平的城市怎样长回来》 (40.0 s) · `white-model.mp4` · source in [`demo/`](demo/)
+Demo: *How a Flattened City Grew Back* 《被炸平的城市怎样长回来》 (40.0 s) · `white-model.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/white-model/demo)
 
 Rotterdam's centre as a 1:1000 white model (2.3 × 2.6 km: 3,887 buildings, 8,860 roof parts, 108 bridge decks). Chinese on screen, English narration, bilingual subtitles (Chinese line above, English line below). This is an unofficial film made from open data (3DBAG, Kadaster BAG, BGT); 3DGI, TU Delft, Kadaster and the City of Rotterdam did not make or endorse it.
 
@@ -14,7 +14,7 @@ Arc: the white model under gallery light → lights out, the lamp strikes, the p
 
 Native moves spent: *lights out, lamp on* at 1.8–2.4 s; *the hole* for 1940; *layers by time* for the growth; *the rising level* for heights; *the sun clock* plus a projected shadow trace and a range line as the signature; *the pick-out* for the roofs; *lights up* as the bookend.
 
-Every number on screen is computed by `demo/tools/prep.py` into `demo/data/stats.json`; every claim and its source is in [`demo/FACTS.md`](demo/FACTS.md).
+Every number on screen is computed by `demo/tools/prep.py` into `demo/data/stats.json`; every claim and its source is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/white-model/demo/FACTS.md).
 
 ## Shots
 

@@ -8,4 +8,4 @@
 
 - **原片重放区间**：23.8–34秒；1倍速，总时长10.200000秒。
 
-[打开 Demo](../../demos/patterns/fold-cut-unfold-replicate/index.html) · [在库中查看](../../patterns.html#pattern/fold-cut-unfold-replicate)
+[打开 Demo](../../demos/patterns/fold-cut-unfold-replicate/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/fold-cut-unfold-replicate)

@@ -14,4 +14,4 @@
 - **定格松版**：8.5–9.4667秒；u=io2(prog(q,FREEZE+0.5,lock-1/30))；reg=1+0.4*u；spread=4.5*u。
 - **末拍锁版**：9.5秒；reg=0.12，dens=0.985；fl=0加0.10，fl=1加0.04；spread回0。
 
-[打开 Demo](../../demos/patterns/misregistration-lock/index.html) · [在库中查看](../../patterns.html#pattern/misregistration-lock)
+[打开 Demo](../../demos/patterns/misregistration-lock/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/misregistration-lock)

@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-satellite-briefing：7.800000–15.300000秒，1倍速，总时长7.500000秒。
 
-[打开 Demo](../../demos/patterns/time-rings-locked-frame/index.html) · [在库中查看](../../patterns.html#pattern/time-rings-locked-frame)
+[打开 Demo](../../demos/patterns/time-rings-locked-frame/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/time-rings-locked-frame)

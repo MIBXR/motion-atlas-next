@@ -2,11 +2,11 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Knock-Knee Alert* (膝盖警报, 54.6 s) · `newsreel.mp4` · source in [`demo/`](demo/)
+Demo: *Knock-Knee Alert* (膝盖警报, 54.6 s) · `newsreel.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/newsreel/demo)
 
 March 1926: a Texas newspaper warns that the Charleston will make Americans knock-kneed and pigeon-toed. The newsreel traces the dance from a 1923 Broadway show across the map, lets a Hollywood star teach it in nine steps, then brings on the opposition: Henry Ford, whose orchestra plays the dances of his youth and whose 1926 dance book says the jazzy new dances "are losing vogue everywhere". Old-time against Charleston in a split screen; the verdict comes from Ford's own workers' picnic, where a 1925 record of "Charleston" takes over the soundtrack and the kids are doing the dance. Knock-kneed? Who cares.
 
-All pictures are real archive material: U.S. National Archives films (Ford Motor Company Film Collection, 1924–27), *The Austin Statesman* (5 March 1926), *Photoplay* (October 1925), the Fords' book "Good Morning" (1926), and the Golden Gate Orchestra's 1925 Edison record of "Charleston" (UC Santa Barbara Library transfer). "THE SPOTLIGHT NEWS" is an invented newsreel; this is an unofficial film, not affiliated with any archive, museum, newspaper, publisher or company shown. Facts and quotations: [`demo/FACTS.md`](demo/FACTS.md).
+All pictures are real archive material: U.S. National Archives films (Ford Motor Company Film Collection, 1924–27), *The Austin Statesman* (5 March 1926), *Photoplay* (October 1925), the Fords' book "Good Morning" (1926), and the Golden Gate Orchestra's 1925 Edison record of "Charleston" (UC Santa Barbara Library transfer). "THE SPOTLIGHT NEWS" is an invented newsreel; this is an unofficial film, not affiliated with any archive, museum, newspaper, publisher or company shown. Facts and quotations: [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/newsreel/demo/FACTS.md).
 
 ## Story & structure
 

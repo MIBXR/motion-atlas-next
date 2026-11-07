@@ -7,7 +7,7 @@ metadata:
 
 # Displaying captions in Remotion
 
-This guide explains how to display captions in Remotion, assuming you already have captions in the [`Caption`](https://www.remotion.dev/docs/captions/caption.md) format.
+This guide explains how to display captions in Remotion, assuming you already have captions in the [`Caption`](https://www.remotion.dev/docs/captions/caption) format.
 
 ## Prerequisites
 

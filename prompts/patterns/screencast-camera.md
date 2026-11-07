@@ -8,4 +8,4 @@
 
 - **原片重放区间**：9.000000–18.600000秒；28.800000–32.400000秒；1倍速，总时长13.200000秒。
 
-[打开 Demo](../../demos/patterns/screencast-camera/index.html) · [在库中查看](../../patterns.html#pattern/screencast-camera)
+[打开 Demo](../../demos/patterns/screencast-camera/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/screencast-camera)

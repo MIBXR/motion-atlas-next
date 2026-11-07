@@ -8,4 +8,4 @@
 
 - **原片重放区间**：15.700000–19.300000秒；1倍速，总时长3.600000秒。
 
-[打开 Demo](../../demos/patterns/clutter-snap-grid/index.html) · [在库中查看](../../patterns.html#pattern/clutter-snap-grid)
+[打开 Demo](../../demos/patterns/clutter-snap-grid/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/clutter-snap-grid)

@@ -8,4 +8,4 @@
 
 - **原片重放区间**：27.500—33.650秒，1倍速。
 
-[打开 Demo](../../demos/patterns/dimensions-drawn-on-object/index.html) · [在库中查看](../../patterns.html#pattern/dimensions-drawn-on-object)
+[打开 Demo](../../demos/patterns/dimensions-drawn-on-object/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/dimensions-drawn-on-object)

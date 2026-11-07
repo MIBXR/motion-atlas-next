@@ -8,4 +8,4 @@
 
 - **原片重放区间**：23.48–31.66秒；1倍速，总时长8.180000秒。
 
-[打开 Demo](../../demos/patterns/motion-trails-paint-mandala/index.html) · [在库中查看](../../patterns.html#pattern/motion-trails-paint-mandala)
+[打开 Demo](../../demos/patterns/motion-trails-paint-mandala/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/motion-trails-paint-mandala)

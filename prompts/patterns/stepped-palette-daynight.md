@@ -13,4 +13,4 @@
 - **星点闪烁**：每 4 帧轮换 [8,31,29,31] 色阶；#ffffff、#b8c2d9、#4a5270、#b8c2d9
 - **夜色径向收拢**：8.0、8.1、8.2、8.3 秒依次取半径 150、110、70、36；边界按 (d-wv)/12+0.5 与 Bayer 阈值切换暮色、中间色、夜色
 
-[打开 Demo](../../demos/patterns/stepped-palette-daynight/index.html) · [在库中查看](../../patterns.html#pattern/stepped-palette-daynight)
+[打开 Demo](../../demos/patterns/stepped-palette-daynight/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/stepped-palette-daynight)

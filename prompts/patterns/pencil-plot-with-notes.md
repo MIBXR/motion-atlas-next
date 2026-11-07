@@ -8,4 +8,4 @@
 
 - **原片重放区间**：0.000—10.600秒；18.700—31.000秒；32.000—34.700秒，1倍速。
 
-[打开 Demo](../../demos/patterns/pencil-plot-with-notes/index.html) · [在库中查看](../../patterns.html#pattern/pencil-plot-with-notes)
+[打开 Demo](../../demos/patterns/pencil-plot-with-notes/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/pencil-plot-with-notes)

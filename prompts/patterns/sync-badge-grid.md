@@ -8,4 +8,4 @@
 
 - **原片重放区间**：2.5–7.4秒；22.42–26.2秒；1倍速，总时长8.68秒。
 
-[打开 Demo](../../demos/patterns/sync-badge-grid/index.html) · [在库中查看](../../patterns.html#pattern/sync-badge-grid)
+[打开 Demo](../../demos/patterns/sync-badge-grid/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/sync-badge-grid)

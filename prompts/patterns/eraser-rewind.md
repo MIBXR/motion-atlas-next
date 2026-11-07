@@ -8,4 +8,4 @@
 
 - **原片重放区间**：84.5–90秒；1倍速，总时长5.500000秒。
 
-[打开 Demo](../../demos/patterns/eraser-rewind/index.html) · [在库中查看](../../patterns.html#pattern/eraser-rewind)
+[打开 Demo](../../demos/patterns/eraser-rewind/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/eraser-rewind)

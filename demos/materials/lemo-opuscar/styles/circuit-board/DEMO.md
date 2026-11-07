@@ -2,11 +2,11 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Seven Milliseconds · 七毫秒* (60 s, Chinese voice-over, bilingual subtitles) · `circuit-board.mp4` · source in [`demo/`](demo/)
+Demo: *Seven Milliseconds · 七毫秒* (60 s, Chinese voice-over, bilingual subtitles) · `circuit-board.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board/demo)
 
 ## Story & structure
 
-Power made deep in the mountains of Sichuan reaches Jiangsu, 2,000 km away, in seven milliseconds. A Chinese voice (edge-tts Xiaoxiao, +20%) tells it as a friend would: household power swings back and forth (alternating current); sent that far it would be lost on the way; so a converter station turns it into one-way direct current; it races 2,080 km in 7 ms; at the other end it is turned back, stepped down level by level and sent to a wall socket; inside a phone charger a tiny bridge rectifier does the same job as the giant in the converter station, on the same circuit principle, with 400 million times less power. Every line has a subtitle (Chinese over English, bottom safe area); the board itself only prints the voice's key words and numbers (交流电 / AC, 损耗 / LOSS, 换流站, 直流电, 2,080 公里, 7 毫秒, 降压, 充电器, 整流桥, 同一个电路原理, 功率差 4 亿倍). Facts: [`demo/FACTS.md`](demo/FACTS.md).
+Power made deep in the mountains of Sichuan reaches Jiangsu, 2,000 km away, in seven milliseconds. A Chinese voice (edge-tts Xiaoxiao, +20%) tells it as a friend would: household power swings back and forth (alternating current); sent that far it would be lost on the way; so a converter station turns it into one-way direct current; it races 2,080 km in 7 ms; at the other end it is turned back, stepped down level by level and sent to a wall socket; inside a phone charger a tiny bridge rectifier does the same job as the giant in the converter station, on the same circuit principle, with 400 million times less power. Every line has a subtitle (Chinese over English, bottom safe area); the board itself only prints the voice's key words and numbers (交流电 / AC, 损耗 / LOSS, 换流站, 直流电, 2,080 公里, 7 毫秒, 降压, 充电器, 整流桥, 同一个电路原理, 功率差 4 亿倍). Facts: [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/circuit-board/demo/FACTS.md).
 
 Native moves spent: flow becomes current (dam), pulse-path explainer (the whole film), AC vs DC told by the shape of the light (bus close-up, loss board, Butuo), the map is a board (corridor), matched step-down (four cuts), plunge through a hole (socket → charger), detail callout (verdict), nested boards (closing pull-out).
 

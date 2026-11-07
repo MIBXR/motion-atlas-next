@@ -10,4 +10,4 @@
 - **逐词**：delay=4+i*4；每词 delay→delay+9；本张 7 词，最后一词 37 帧落定。
 - **副标与退出**：subT=10→22；DigitRoll delay=12、滚动 22 帧；underline=16→34；fadeOut=duration-8→duration，即 47→55。
 
-[打开 Demo](../../demos/patterns/paper-title-card/index.html) · [在库中查看](../../patterns.html#pattern/paper-title-card)
+[打开 Demo](../../demos/patterns/paper-title-card/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/paper-title-card)

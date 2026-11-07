@@ -9,4 +9,4 @@
 - **来源片段**：18.8–22.4 秒，夏至秋；主树18.8–19.3秒下蹲，秋波19.3–21.9秒扩散。
 - **重复节拍**：film/main.js:WAVES：另两次波为9.3–11.9、29.3–31.9秒；source/music.py 在每个 T−.42 秒低击、T 时回弹并上行。
 
-[打开 Demo](../../demos/patterns/season-ripple-wave/index.html) · [在库中查看](../../patterns.html#pattern/season-ripple-wave)
+[打开 Demo](../../demos/patterns/season-ripple-wave/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/season-ripple-wave)

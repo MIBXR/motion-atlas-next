@@ -8,4 +8,4 @@
 
 - **原片重放区间**：13.700000–15.100000秒；1倍速，共1.400000秒。
 
-[打开 Demo](../../demos/patterns/blade-sweep-print-next/index.html) · [在库中查看](../../patterns.html#pattern/blade-sweep-print-next)
+[打开 Demo](../../demos/patterns/blade-sweep-print-next/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/blade-sweep-print-next)

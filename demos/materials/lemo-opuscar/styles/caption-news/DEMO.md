@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Bee Ledger* (蜜蜂账本, 59.5 s) · `caption-news.mp4` · source in [`demo/`](demo/)
+Demo: *The Bee Ledger* (蜜蜂账本, 59.5 s) · `caption-news.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/caption-news/demo)
 
 In 2025 America's beekeepers lost 1.3 million honey bee colonies, nearly half of what they started the year with. So are the bees running out? No: on January 1, 2026 there were 6 % more colonies than a year before, because the same beekeepers added 1.45 million. The film keeps the books in two columns — what died, what was rebuilt — and then explains the turn one fact per shot: how they rebuild, what hurts the colonies, the worst quarter, where it hit, and that they are still rebuilding. Every number is from one public report, USDA NASS *Honey Bee Colonies* (August 3, 2026), shown on screen.
 

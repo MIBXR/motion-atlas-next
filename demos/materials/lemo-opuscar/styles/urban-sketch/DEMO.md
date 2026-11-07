@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Where the Wind Went* (32.4 s, 1920×1080, 24 fps, no voice-over) · `urban-sketch.mp4` · source in [`demo/`](demo/)
+Demo: *Where the Wind Went* (32.4 s, 1920×1080, 24 fps, no voice-over) · `urban-sketch.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/urban-sketch/demo)
 
 
 The original header: a sketchbook page from the park bench: fine sepia fineliner lines that wobble, overshoot and never quite close, with loose transparent watercolour dropped on top. The colour sits slightly off the lines, spills over them, and dissolves into cream cold-press paper at the page edge.

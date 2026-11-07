@@ -8,4 +8,4 @@
 
 - **原片重放区间**：4.400—27.600秒，1倍速。
 
-[打开 Demo](../../demos/patterns/orbit-explode-3d/index.html) · [在库中查看](../../patterns.html#pattern/orbit-explode-3d)
+[打开 Demo](../../demos/patterns/orbit-explode-3d/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/orbit-explode-3d)

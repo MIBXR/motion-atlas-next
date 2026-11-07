@@ -2,9 +2,9 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *21 Keys, Opened* 《二十一键》 (38.75 s) · `teardown.mp4` · source in [`demo/`](demo/)
+Demo: *21 Keys, Opened* 《二十一键》 (38.75 s) · `teardown.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/teardown/demo)
 
-One half of the open-source Corne v4 split keyboard (foostan/crkbd, CC BY 4.0 / MIT), built from the project's own KiCad board, switch-plate file, case STEP, bill of materials and build guide. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English below). Every number on screen and in the voice is in [`demo/FACTS.md`](demo/FACTS.md). The project's name and logo are not shown in the picture (only in the end-card credit line); the chip and part numbers are component designations from the BOM, and no package top carries a marking. This is an unofficial film made from the project's published files; the Corne project and its author (foostan) did not make or endorse it.
+One half of the open-source Corne v4 split keyboard (foostan/crkbd, CC BY 4.0 / MIT), built from the project's own KiCad board, switch-plate file, case STEP, bill of materials and build guide. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English below). Every number on screen and in the voice is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/teardown/demo/FACTS.md). The project's name and logo are not shown in the picture (only in the end-card credit line); the chip and part numbers are component designations from the BOM, and no package top carries a marking. This is an unofficial film made from the project's published files; the Corne project and its author (foostan) did not make or endorse it.
 
 ## Story & structure
 

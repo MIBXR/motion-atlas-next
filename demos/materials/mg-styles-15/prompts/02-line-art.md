@@ -2,7 +2,7 @@
 
 **原片**：ATELIER LINEA「一笔画 One Line」 · 1920×1080 · 30 fps · 10 秒 · AI 评审终评 7.64 / 10
 
-**源码**：[demos/02-line-art/](../demos/02-line-art/)
+**源码**：[demos/02-line-art/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/02-line-art)
 
 ## 怎么用
 

@@ -8,4 +8,4 @@
 
 - **原片重放区间**：0.4–5.25秒；41–46.5秒；1倍速，共10.350000秒。
 
-[打开 Demo](../../demos/patterns/windows-light-car-by-car/index.html) · [在库中查看](../../patterns.html#pattern/windows-light-car-by-car)
+[打开 Demo](../../demos/patterns/windows-light-car-by-car/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/windows-light-car-by-car)

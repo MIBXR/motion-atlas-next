@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-midcentury-toon 21.800000–24.500000秒；1倍速，总时长2.700000秒。
 
-[打开 Demo](../../demos/patterns/counter-rotate-pullback/index.html) · [在库中查看](../../patterns.html#pattern/counter-rotate-pullback)
+[打开 Demo](../../demos/patterns/counter-rotate-pullback/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/counter-rotate-pullback)

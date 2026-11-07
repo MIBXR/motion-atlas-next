@@ -2,9 +2,9 @@
 
 **用代码制作动效视频：从几秒的 Logo 演绎到最长 20 分钟的分章内容，支持配乐、音效、用户口播和 TTS，交付 MP4 与可编辑源码。**
 
-[English](./README.md) · [返回集合首页](../../README.zh-CN.md)
+[English](./README.md) · [返回集合首页](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/README.zh-CN.md)
 
-![Motion Showreel Skill](../../dist/imgs/covers/motion-showreel.webp)
+![Motion Showreel Skill](https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/covers/motion-showreel.webp)
 
 ---
 
@@ -22,7 +22,7 @@
 - 生成艺术循环、数据爆点
 - 年代回顾：随段落切换媒介（像素 → 矢量 → 3D……）
 
-短片常见 5–60 秒，也支持最长 **20 分钟**的分章视频，以及根据用户原稿或录音制作的口播讲解。需要点击推进的演示或文章转口播稿，用 [`web-video-presentation`](../web-video-presentation)；网页和原型用 [`web-design-engineer`](../web-design-engineer)。不生成写实人物、不拍摄实景，也不承担一般视频剪辑。
+短片常见 5–60 秒，也支持最长 **20 分钟**的分章视频，以及根据用户原稿或录音制作的口播讲解。需要点击推进的演示或文章转口播稿，用 [`web-video-presentation`](../web-video-presentation)；网页和原型用 [`web-design-engineer`](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer)。不生成写实人物、不拍摄实景，也不承担一般视频剪辑。
 
 开始前需要明确：**核心主题与内容、时长、横屏或竖屏、BGM 来源、音效来源、口播方式**。BGM 与音效分别选择 AI 合成、用户提供，也可关闭。口播可选无口播、TTS 或用户录音；**使用 TTS 时，口播稿必须由用户提供**，并配置相应服务的 API（支持 Gemini、MiniMax 和自定义适配器）。已有配置可复用。指定时长与真实口播冲突时会先确认，不会自动截断、变速或改稿。
 
@@ -36,15 +36,15 @@
 
 <table>
 <tr>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/promo.webp" alt="Motion Showreel 宣传片：每一拍换一种媒介" width="100%"><br/><strong>Motion Showreel 宣传片</strong> · 80 秒<br/><sub>Skill 自己的宣传片。一个橙色的点每拍换一种媒介重画一遍（水墨、剪纸、孔版印刷、CRT、拼贴、玻璃、黏土……），最后炸成 22 种风格同时运行的一面墙；合成配乐的配器跟着媒介一起换。</sub></td>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/afterglow.webp" alt="AFTERGLOW 合成波片头" width="100%"><br/><strong>AFTERGLOW</strong> · 19 秒 · <code>synthwave-neon</code><br/><sub>一张虚构专辑的片头。镜头贴地穿过一道道霓虹门，穿过最后一道之后黑半拍，镀铬大字在 drop 上从地平线里弹起来。</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/promo.webp" alt="Motion Showreel 宣传片：每一拍换一种媒介" width="100%"><br/><strong>Motion Showreel 宣传片</strong> · 80 秒<br/><sub>Skill 自己的宣传片。一个橙色的点每拍换一种媒介重画一遍（水墨、剪纸、孔版印刷、CRT、拼贴、玻璃、黏土……），最后炸成 22 种风格同时运行的一面墙；合成配乐的配器跟着媒介一起换。</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/afterglow.webp" alt="AFTERGLOW 合成波片头" width="100%"><br/><strong>AFTERGLOW</strong> · 19 秒 · <code>synthwave-neon</code><br/><sub>一张虚构专辑的片头。镜头贴地穿过一道道霓虹门，穿过最后一道之后黑半拍，镀铬大字在 drop 上从地平线里弹起来。</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/boink.webp" alt="boink 软萌 3D 连锁反应" width="100%"><br/><strong>boink</strong> · 18 秒 · <code>soft-3d-toy</code><br/><sub>一镜到底的连锁反应（对标本田「Cog」广告）。每块多米诺骨牌是一个马林巴音；果冻砸地后，一圈挤压冲击波扫过整个世界，开场那颗小球最后落成字母 i 上的点。</sub></td>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/last-stroke.webp" alt="最后一笔 墨线火柴人游戏预告" width="100%"><br/><strong>最后一笔 LAST STROKE</strong> · 30 秒 · 自定义「墨线火柴人」风格<br/><sub>一款虚构小游戏的预告：你画下的每一笔都会成真。主角一笔横穿 40 个敌人，之后是全片唯一一拍完全静音，然后所有敌人炸成墨点，那一笔变成片名。</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/boink.webp" alt="boink 软萌 3D 连锁反应" width="100%"><br/><strong>boink</strong> · 18 秒 · <code>soft-3d-toy</code><br/><sub>一镜到底的连锁反应（对标本田「Cog」广告）。每块多米诺骨牌是一个马林巴音；果冻砸地后，一圈挤压冲击波扫过整个世界，开场那颗小球最后落成字母 i 上的点。</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/last-stroke.webp" alt="最后一笔 墨线火柴人游戏预告" width="100%"><br/><strong>最后一笔 LAST STROKE</strong> · 30 秒 · 自定义「墨线火柴人」风格<br/><sub>一款虚构小游戏的预告：你画下的每一笔都会成真。主角一笔横穿 40 个敌人，之后是全片唯一一拍完全静音，然后所有敌人炸成墨点，那一笔变成片名。</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><img src="../../dist/imgs/motion-showreel/umbra.webp" alt="UMBRA 本影 日全食电影片头" width="100%"><br/><strong>UMBRA 本影</strong> · 27 秒 · <code>cinematic-title</code><br/><sub>一部虚构的日全食电影的片头，2.39:1 黑边。一拍绝对静音之后，最后一颗贝利珠炸成钻石环，片名在月亮的黑盘里显影。钢琴用 Salamander 采样（第 2 档），上面叠第 1 档合成的预告片音效（boom、braam）。</sub></td>
+<td width="50%" valign="top"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/umbra.webp" alt="UMBRA 本影 日全食电影片头" width="100%"><br/><strong>UMBRA 本影</strong> · 27 秒 · <code>cinematic-title</code><br/><sub>一部虚构的日全食电影的片头，2.39:1 黑边。一拍绝对静音之后，最后一颗贝利珠炸成钻石环，片名在月亮的黑盘里显影。钢琴用 Salamander 采样（第 2 档），上面叠第 1 档合成的预告片音效（boom、braam）。</sub></td>
 <td width="50%" valign="top"><br/><strong>每支片子交付什么</strong><br/><sub>
 实际导出的 MP4（工作区版为 <code>out/editor-&lt;task-id&gt;.mp4</code>）+ <code>out/poster.png</code><br/>
 <code>brief.md</code>：可以复用的结构化提示词<br/>
@@ -98,40 +98,40 @@
 
 <table>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-ukiyo-e.webp" alt="ukiyo-e" /><br /><sub><code>ukiyo-e</code> 浮世绘木版</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-glass-material.webp" alt="glass-material" /><br /><sub><code>glass-material</code> 玻璃金属材质</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-kinetic-brutalist.webp" alt="kinetic-brutalist" /><br /><sub><code>kinetic-brutalist</code> 粗野动态排版</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-swiss-editorial.webp" alt="swiss-editorial" /><br /><sub><code>swiss-editorial</code> 瑞士编辑</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-ukiyo-e.webp" alt="ukiyo-e" /><br /><sub><code>ukiyo-e</code> 浮世绘木版</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-glass-material.webp" alt="glass-material" /><br /><sub><code>glass-material</code> 玻璃金属材质</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-kinetic-brutalist.webp" alt="kinetic-brutalist" /><br /><sub><code>kinetic-brutalist</code> 粗野动态排版</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-swiss-editorial.webp" alt="swiss-editorial" /><br /><sub><code>swiss-editorial</code> 瑞士编辑</sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-ink-wash.webp" alt="ink-wash" /><br /><sub><code>ink-wash</code> 水墨</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-risograph-print.webp" alt="risograph-print" /><br /><sub><code>risograph-print</code> 孔版印刷</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-editorial-collage.webp" alt="editorial-collage" /><br /><sub><code>editorial-collage</code> 杂志拼贴</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-isometric-infographic.webp" alt="isometric-infographic" /><br /><sub><code>isometric-infographic</code> 等距信息图</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-ink-wash.webp" alt="ink-wash" /><br /><sub><code>ink-wash</code> 水墨</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-risograph-print.webp" alt="risograph-print" /><br /><sub><code>risograph-print</code> 孔版印刷</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-editorial-collage.webp" alt="editorial-collage" /><br /><sub><code>editorial-collage</code> 杂志拼贴</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-isometric-infographic.webp" alt="isometric-infographic" /><br /><sub><code>isometric-infographic</code> 等距信息图</sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-liquid-shader.webp" alt="liquid-shader" /><br /><sub><code>liquid-shader</code> 液态着色器</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-data-motion.webp" alt="data-motion" /><br /><sub><code>data-motion</code> 数据动效</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-generative-geometry.webp" alt="generative-geometry" /><br /><sub><code>generative-geometry</code> 生成几何</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-pixel-game.webp" alt="pixel-game" /><br /><sub><code>pixel-game</code> 像素游戏</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-liquid-shader.webp" alt="liquid-shader" /><br /><sub><code>liquid-shader</code> 液态着色器</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-data-motion.webp" alt="data-motion" /><br /><sub><code>data-motion</code> 数据动效</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-generative-geometry.webp" alt="generative-geometry" /><br /><sub><code>generative-geometry</code> 生成几何</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-pixel-game.webp" alt="pixel-game" /><br /><sub><code>pixel-game</code> 像素游戏</sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-synthwave-neon.webp" alt="synthwave-neon" /><br /><sub><code>synthwave-neon</code> 合成波霓虹</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-paper-cut.webp" alt="paper-cut" /><br /><sub><code>paper-cut</code> 剪纸</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-minimal-ui.webp" alt="minimal-ui" /><br /><sub><code>minimal-ui</code> 极简界面</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-comic-pop.webp" alt="comic-pop" /><br /><sub><code>comic-pop</code> 漫画分格</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-synthwave-neon.webp" alt="synthwave-neon" /><br /><sub><code>synthwave-neon</code> 合成波霓虹</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-paper-cut.webp" alt="paper-cut" /><br /><sub><code>paper-cut</code> 剪纸</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-minimal-ui.webp" alt="minimal-ui" /><br /><sub><code>minimal-ui</code> 极简界面</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-comic-pop.webp" alt="comic-pop" /><br /><sub><code>comic-pop</code> 漫画分格</sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-flat-vector.webp" alt="flat-vector" /><br /><sub><code>flat-vector</code> 扁平插画</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-guochao.webp" alt="guochao" /><br /><sub><code>guochao</code> 国潮纹样</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-painterly.webp" alt="painterly" /><br /><sub><code>painterly</code> 油画笔触</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-glitch-digital.webp" alt="glitch-digital" /><br /><sub><code>glitch-digital</code> 数字故障</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-flat-vector.webp" alt="flat-vector" /><br /><sub><code>flat-vector</code> 扁平插画</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-guochao.webp" alt="guochao" /><br /><sub><code>guochao</code> 国潮纹样</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-painterly.webp" alt="painterly" /><br /><sub><code>painterly</code> 油画笔触</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-glitch-digital.webp" alt="glitch-digital" /><br /><sub><code>glitch-digital</code> 数字故障</sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-soft-organic.webp" alt="soft-organic" /><br /><sub><code>soft-organic</code> 柔光有机</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-hologram-hud.webp" alt="hologram-hud" /><br /><sub><code>hologram-hud</code> 全息空间界面</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-particle-field.webp" alt="particle-field" /><br /><sub><code>particle-field</code> 粒子场</sub></td>
-<td align="center" width="25%"><img src="../../dist/imgs/motion-showreel/style-art-deco.webp" alt="art-deco" /><br /><sub><code>art-deco</code> 装饰艺术</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-soft-organic.webp" alt="soft-organic" /><br /><sub><code>soft-organic</code> 柔光有机</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-hologram-hud.webp" alt="hologram-hud" /><br /><sub><code>hologram-hud</code> 全息空间界面</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-particle-field.webp" alt="particle-field" /><br /><sub><code>particle-field</code> 粒子场</sub></td>
+<td align="center" width="25%"><img src="https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/motion-showreel/style-art-deco.webp" alt="art-deco" /><br /><sub><code>art-deco</code> 装饰艺术</sub></td>
 </tr>
 </table>
 
@@ -192,7 +192,7 @@ skills/motion-showreel/
 
 ## 快速开始
 
-先安装 Skill（见[集合首页](../../README.zh-CN.md#安装)），然后在 Skill 目录里跑一次初始化：
+先安装 Skill（见[集合首页](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/README.zh-CN.md#安装)），然后在 Skill 目录里跑一次初始化：
 
 ```bash
 sh scripts/setup.sh        # 安装 Playwright + Chromium + Tone.js，再做环境检查

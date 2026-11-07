@@ -2,7 +2,7 @@
 
 **原片**：喵呜日记 EP.07「今日份快乐」 · 1080×1920 · 30 fps · 10 秒 · AI 评审终评 7.64 / 10
 
-**源码**：[demos/18-hanazi/](../demos/18-hanazi/)
+**源码**：[demos/18-hanazi/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/18-hanazi)
 
 ## 怎么用
 

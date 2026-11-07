@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Colour of Rain* (39.7 s) · `impasto.mp4` · source in [`demo/`](demo/)
+Demo: *The Colour of Rain* (39.7 s) · `impasto.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/impasto/demo)
 
 
 ## Story & structure

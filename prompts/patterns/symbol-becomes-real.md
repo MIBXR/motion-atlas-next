@@ -8,4 +8,4 @@
 
 - **原片重放区间**：27.500000–31.700000秒；1倍速，共4.200000秒。
 
-[打开 Demo](../../demos/patterns/symbol-becomes-real/index.html) · [在库中查看](../../patterns.html#pattern/symbol-becomes-real)
+[打开 Demo](../../demos/patterns/symbol-becomes-real/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/symbol-becomes-real)

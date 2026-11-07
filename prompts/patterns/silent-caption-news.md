@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-caption-news：0–5秒；lemo-caption-news：13–23.5秒；lemo-caption-news：50–54.5秒；1倍速，总时长20.000000秒。
 
-[打开 Demo](../../demos/patterns/silent-caption-news/index.html) · [在库中查看](../../patterns.html#pattern/silent-caption-news)
+[打开 Demo](../../demos/patterns/silent-caption-news/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/silent-caption-news)

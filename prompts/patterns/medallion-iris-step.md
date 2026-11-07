@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-midcentury-toon 6.800000–7.600000秒；lemo-midcentury-toon 12.200000–13.100000秒；lemo-midcentury-toon 21.600000–22.300000秒；lemo-midcentury-toon 36.200000–37.500000秒；1倍速，总时长3.700000秒。
 
-[打开 Demo](../../demos/patterns/medallion-iris-step/index.html) · [在库中查看](../../patterns.html#pattern/medallion-iris-step)
+[打开 Demo](../../demos/patterns/medallion-iris-step/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/medallion-iris-step)

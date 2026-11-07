@@ -2,7 +2,7 @@
 
 **原片**：PIXEL QUEST 像素冒险 · 1920×1080 · 30 fps · 10 秒 · AI 评审终评 8.07 / 10
 
-**源码**：[demos/20-pixel/](../demos/20-pixel/)
+**源码**：[demos/20-pixel/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/20-pixel)
 
 ## 怎么用
 

@@ -2,7 +2,7 @@
 
 **原片**：隼眼-9 · 目标锁定 KESTREL-9 TARGET ACQUIRED · 1920×1080 · 30 fps · 10 秒 · AI 评审终评 7.93 / 10
 
-**源码**：[demos/22-hud/](../demos/22-hud/)
+**源码**：[demos/22-hud/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/22-hud)
 
 ## 怎么用
 

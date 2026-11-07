@@ -13,4 +13,4 @@
 - **追拍与定机**：r=hx-96；相机末段从 254 到 260，f100–106 每帧一步，f106/30=3.5333 秒定机
 - **远山续移**：floor(max(0,f-F_CAMSTOP)/16)，定机后每 16 帧增加一逻辑像素
 
-[打开 Demo](../../demos/patterns/integer-pixel-parallax/index.html) · [在库中查看](../../patterns.html#pattern/integer-pixel-parallax)
+[打开 Demo](../../demos/patterns/integer-pixel-parallax/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/integer-pixel-parallax)

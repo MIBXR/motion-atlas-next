@@ -10,4 +10,4 @@
 - **聚光与推近**：spotX/spotY 键=86,90,98,104,110,130；CAM_KEYS 在 114→130 帧完成推近。
 - **卡片动作弧**：rise=130→140；hover=140→194；beam1=142→156；beam2=162→182；reseat=194→212。
 
-[打开 Demo](../../demos/patterns/spotlight-hero-card/index.html) · [在库中查看](../../patterns.html#pattern/spotlight-hero-card)
+[打开 Demo](../../demos/patterns/spotlight-hero-card/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/spotlight-hero-card)

@@ -17,4 +17,4 @@
 - **对角线**：参考34.24→36.04秒接通，36.04→37.72秒保持，37.72→38.84秒收束；互动时间分别约1.2秒、1.12秒、0.7467秒，使用测量结点的单调三次Hermite插值
 - **转清**：参考38.84→39.56秒，互动时间约0.48秒
 
-[打开 Demo](../../demos/patterns/decrypt-reveal/index.html) · [在库中查看](../../patterns.html#pattern/decrypt-reveal)
+[打开 Demo](../../demos/patterns/decrypt-reveal/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/decrypt-reveal)

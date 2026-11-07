@@ -2,9 +2,9 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Two Seconds Short* 《差两秒》 (40.0 s) · `archive-lighttable.mp4` · source in [`demo/`](demo/)
+Demo: *Two Seconds Short* 《差两秒》 (40.0 s) · `archive-lighttable.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/archive-lighttable/demo)
 
-The Wright brothers' flights of 17 December 1903 on a light table, told through five Library of Congress items: two glass negatives, a telegram, a newspaper clipping, and a third negative as a prop. It is an unofficial film about a real event, made only from public-domain scans. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English below). Every fact and its source is in [`demo/FACTS.md`](demo/FACTS.md).
+The Wright brothers' flights of 17 December 1903 on a light table, told through five Library of Congress items: two glass negatives, a telegram, a newspaper clipping, and a third negative as a prop. It is an unofficial film about a real event, made only from public-domain scans. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English below). Every fact and its source is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/archive-lighttable/demo/FACTS.md).
 
 ## Story & structure
 

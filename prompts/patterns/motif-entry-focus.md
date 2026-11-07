@@ -10,4 +10,4 @@
 - **聚焦**：focus-ob-va 8.317–12.183 秒（Ob.、Va.）；focus-clarinet 88.017–93.283 秒（Cl.）。
 - **空心框与虚线弧**：M² 空心框 9.2–11.617 秒；M⁹ 空心框 88.9–92.617 秒；Va.→Hn. 虚线弧 15.4–18.6 秒可见。
 
-[打开 Demo](../../demos/patterns/motif-entry-focus/index.html) · [在库中查看](../../patterns.html#pattern/motif-entry-focus)
+[打开 Demo](../../demos/patterns/motif-entry-focus/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/motif-entry-focus)

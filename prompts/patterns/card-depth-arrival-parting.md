@@ -13,4 +13,4 @@
 
 - `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/card-depth-arrival-parting/index.html) · [在库中查看](../../patterns.html#pattern/card-depth-arrival-parting)
+[打开 Demo](../../demos/patterns/card-depth-arrival-parting/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/card-depth-arrival-parting)

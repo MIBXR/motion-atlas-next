@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-archive-lighttable：13.3–22.7秒；1倍速，总时长9.400000秒。
 
-[打开 Demo](../../demos/patterns/negative-to-positive-loupe/index.html) · [在库中查看](../../patterns.html#pattern/negative-to-positive-loupe)
+[打开 Demo](../../demos/patterns/negative-to-positive-loupe/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/negative-to-positive-loupe)

@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-briefing-board：3.800000–13.800000秒；lemo-whiteboard：77.500000–89.300000秒，1倍速，总时长21.800000秒。
 
-[打开 Demo](../../demos/patterns/magnet-pieces-on-board/index.html) · [在库中查看](../../patterns.html#pattern/magnet-pieces-on-board)
+[打开 Demo](../../demos/patterns/magnet-pieces-on-board/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/magnet-pieces-on-board)

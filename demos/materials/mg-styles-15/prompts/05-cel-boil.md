@@ -2,7 +2,7 @@
 
 **原片**：手作 HAND MADE · 1920×1080 · 24 fps · 10 秒 · AI 评审终评 8.07 / 10
 
-**源码**：[demos/05-cel-boil/](../demos/05-cel-boil/)
+**源码**：[demos/05-cel-boil/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/05-cel-boil)
 
 ## 怎么用
 

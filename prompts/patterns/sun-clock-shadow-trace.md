@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-white-model：22.8–35.4秒；1倍速，总时长12.600000秒。
 
-[打开 Demo](../../demos/patterns/sun-clock-shadow-trace/index.html) · [在库中查看](../../patterns.html#pattern/sun-clock-shadow-trace)
+[打开 Demo](../../demos/patterns/sun-clock-shadow-trace/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/sun-clock-shadow-trace)

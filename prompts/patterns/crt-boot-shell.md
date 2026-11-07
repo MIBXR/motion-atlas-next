@@ -14,4 +14,4 @@
 - **扫描线**：亮度权重 (0.3,0.59,0.11)，宽度 mix(0.30,0.47,lum)，强度 0.64–1，输出色乘 1.10
 - **磷光辉光**：两圈各 8 方向，角步 0.785398，半径 1.6、3.4 源像素，第二圈权重 0.6，归一化除 12.8，再用 max(g-0.30,0)*0.55
 
-[打开 Demo](../../demos/patterns/crt-boot-shell/index.html) · [在库中查看](../../patterns.html#pattern/crt-boot-shell)
+[打开 Demo](../../demos/patterns/crt-boot-shell/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/crt-boot-shell)

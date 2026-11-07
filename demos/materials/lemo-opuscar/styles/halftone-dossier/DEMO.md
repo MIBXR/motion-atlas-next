@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *胖橘案卷 Case File: Chubby* (30.0 s) · `halftone-dossier.mp4` · source in [`demo/`](demo/) · engine: one self-contained `demo/index.html` (SVG scene graph + two Canvas 2D overlays), rendered frame by frame by Playwright headless Chromium at 1920×1080 / 30 fps; score and SFX synthesized in `demo/music.py`.
+Demo: *胖橘案卷 Case File: Chubby* (30.0 s) · `halftone-dossier.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/halftone-dossier/demo) · engine: one self-contained `demo/index.html` (SVG scene graph + two Canvas 2D overlays), rendered frame by frame by Playwright headless Chromium at 1920×1080 / 30 fps; score and SFX synthesized in `demo/music.py`.
 
 
 **The demo's on-screen text is Chinese** (title cards, captions, stamps). There is no narration. See "Making an English version" below.

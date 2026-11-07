@@ -2,7 +2,7 @@
 
 **原片**：一部手机里，藏着多少种元素？ 70/118 · 1920×1080 · 30 fps · 10 秒 · AI 评审终评 7.71 / 10
 
-**源码**：[demos/19-paperclip/](../demos/19-paperclip/)
+**源码**：[demos/19-paperclip/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/19-paperclip)
 
 ## 怎么用
 
