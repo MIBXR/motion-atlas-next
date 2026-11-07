@@ -3,7 +3,7 @@ import { SearchField } from "@/registry/components/search-field/search-field";
 import SegmentedControl from "@/registry/components/segmented-control/segmented-control";
 import { Checkbox } from "@/registry/components/checkbox/checkbox";
 import { Input } from "@/registry/components/input/input";
-import { CodeBlock } from "@/registry/components/code-block/code-block";
+import { CodeLine } from "@/ui/blocks";
 import { ScrollArea } from "@/registry/components/scroll-area/scroll-area";
 import { Badge } from "@/registry/components/badge/badge";
 import { useAtlas } from "@/ui/context";
@@ -36,7 +36,7 @@ export function Generator() {
       <div className="agent-pane agent-output">
         <SegmentedControl label="生成目标" value={S.target} options={[{ value: 'code', label: '代码实现' }, { value: 'video', label: '视频生成' }]} onValueChange={target => update({ target: target as AgentState['target'] })} />
         <Input label="你的主题（可选）" placeholder="例如：上海一日城市漫游、新品发布倒计时" value={S.brief} onChange={e => update({ brief: e.currentTarget.value })} />
-        <div data-agent-output><ScrollArea orientation="vertical" maxHeight={520} label="生成的指令" fade={16}><CodeBlock code={result.text} language="text" /></ScrollArea></div>
+        <div data-agent-output><ScrollArea orientation="vertical" maxHeight={520} label="生成的指令" fade={16}><CodeLine text={result.text} label="复制指令" /></ScrollArea></div>
         <p className="agent-warning muted" role="status">{result.warning}</p>
       </div>
     </div>

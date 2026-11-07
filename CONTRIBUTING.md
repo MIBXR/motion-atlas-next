@@ -135,7 +135,7 @@
 | 第三方许可原文与索引 | 条目本体内的许可原文与 `LICENSES.md` |
 | Prompt 文档、Agent 资料包、站点数据、案例索引 | 构建生成 |
 
-文档目录扫描 `docs/`、`prompts/`、`demos/` 下的 Markdown，分组依据 `scripts/lib/labels.json` 的 `DOC_GROUPS.path`：指南、案例研究、巧思研究、素材说明、案例 Prompt、巧思 Prompt、条目文档与素材原文。条目本体与素材原文分组默认折叠；目录随当前文档展开分组并在目录容器内定位，分组标题吸顶，手机端通过“返回目录”进入目录。站内指向仓库 Markdown 的链接在文档页打开。标题取正文一级标题，缺失时依次取 frontmatter 的 title、name 与文件名。条目本体的 `fidelity.md`、`LICENSES.md` 由条目详情与资料包提供。
+文档目录使用 `site/ui/DocumentDirectory.tsx` 和 Arc tree-view 样式，扫描 `docs/`、`prompts/`、`demos/` 下的 Markdown，分组依据 `scripts/lib/labels.json` 的 `DOC_GROUPS.path`：指南、案例研究、巧思研究、素材说明、案例 Prompt、巧思 Prompt、条目文档与素材原文。条目本体与素材原文分组默认折叠；目录随当前文档展开分组并在目录容器内定位，分组标题吸顶，手机端通过“返回目录”进入目录。站内指向仓库 Markdown 的链接在文档页打开。标题取正文一级标题，缺失时依次取 frontmatter 的 title、name 与文件名。条目本体的 `fidelity.md`、`LICENSES.md` 由条目详情与资料包提供。
 
 `README.md` 介绍项目并提供入口；本文件集中说明收录规则、目录规范、新增流程与字段；`AGENTS.md` 规定仓库修改操作。
 
@@ -275,7 +275,7 @@ git ls-files --others --ignored --exclude-standard
 - **滚动与章节**：整页由文档滚动，侧栏、工具栏、详情 Demo 舞台与章节条用 sticky 吸附；侧栏、筛选、文档目录与章节目录采用 Arc ScrollArea。`site/core/scroll-guard.ts` 放行用户输入和网站跳转引起的滚动，撤回 iframe 内定位、聚焦引起的父页面滚动。详情章节条随阅读位置高亮，并在条内横向滚到可见位置。
 - **播放与加载**：案例与巧思使用时间轴播放器，提供播放暂停、拖动定位、节拍跳转、横竖屏、声音、全屏和键盘快捷键。声音偏好保存在本地；浏览器尚未允许播放时显示虚线的“已开启、待激活”状态，工作台内点按或按键后再次请求出声。加载进度在总字节未知时按已完成文件数计算，加载失败提供重试。素材 Demo 使用自身播放器，宿主提供样例选择、重载与新标签页打开。
 - **侧栏**：侧栏可收起为图标，悬停显示 Tooltip，收起状态保存在本地；手机导航使用抽屉。
-- **设计语言**：使用 Arc UI foundation token 定义颜色、圆角、间距和阴影，提供浅色、深色、跟随系统三种主题；浅深切换采用 split 变体，由页面正中的细缝向两侧展开，减少动态时直接切换。使用 Button、Theme switch、Tooltip、Scroll area、Combobox、Segmented control、Search field、Drawer、Badge、Copy button、Empty state、Skeleton、Progress、Slider、Switch、Number field、Code block、Toast stack、Textarea、Accordion、Checkbox、Input、Breadcrumb、Filter toolbar、Dialog、Carousel；操作反馈统一显示在页面根部的 Toast stack。页面无原生下拉，网站图标来自 lucide-react。网站正文、导航、标签、辅助信息与控件的最终字号至少 12px，Demo 画面文字按作品需要确定。
+- **设计语言**：使用 Arc UI foundation token 定义颜色、圆角、间距和阴影，提供浅色、深色、跟随系统三种主题；浅深切换采用 split 变体，由页面正中的细缝向两侧展开，减少动态时直接切换。使用 Button、Theme switch、Tooltip、Scroll area、Combobox、Segmented control、Search field、Drawer、Badge、Empty state、Skeleton、Progress、Slider、Switch、Number field、Code block、Toast stack、Textarea、Accordion、Checkbox、Input、Breadcrumb、Filter toolbar、Dialog、Carousel；站点链接和复制操作使用 `site/ui/LinkButton.tsx`、`site/ui/CopyButton.tsx`。复制成功由按钮显示“已复制”，复制失败和其他操作反馈通过 `site/ui/notifications.tsx` 显示在页面根部的 Toast stack。页面无原生下拉，网站图标来自 lucide-react。网站正文、导航、标签、辅助信息与控件的最终字号至少 12px，Demo 画面文字按作品需要确定。
 - **组件源码**：Arc UI 按 registry 复制在 `site/registry/`、`site/lib/`，只改过界面中文文字，MIT 许可证随附于 `site/registry/ARC-UI-LICENSE`；更新组件时同样整文件复制。
 - **说明与资料**：自有说明写机制、用法与实际条件，收录判断用于选库。研究和复刻文档保留设计分析与当前对照结论；临时调试和阶段过程留在工作区或提交说明。版权、许可与实际能力说明按事实保留。
 

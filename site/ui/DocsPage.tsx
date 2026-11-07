@@ -11,7 +11,7 @@ import { allowScroll } from "../core/scroll-guard";
 import { terms } from "../core/search";
 import type { DocInfo } from "../core/types";
 import { useAtlas } from "./context";
-import { DocTree, type TreeNode } from "./DocTree";
+import { DocumentDirectory } from "./DocumentDirectory";
 import { LinkButton } from "./LinkButton";
 
 function useGroups() {
@@ -30,18 +30,20 @@ function useGroups() {
   }, [data]);
 }
 
-function Directory({ current, query, scrollRef }: { current?: string; query: string; scrollRef: RefObject<HTMLDivElement | null> }) {
+function Directory({ current, query, viewportRef }: { current?: string; query: string; viewportRef: RefObject<HTMLDivElement | null> }) {
   const groups = useGroups();
   const { data } = useAtlas();
-  const ts = terms(query);
-  const hits = useMemo(() => data.docs.filter(d => ts.every(t => (d.title + "\n" + d.path).toLowerCase().includes(t))), [data.docs, query]);
-  const nodes = useMemo<TreeNode[]>(() => ts.length
+  const hits = useMemo(() => {
+    const ts = terms(query);
+    return ts.length ? data.docs.filter(d => ts.every(t => (d.title + "\n" + d.path).toLowerCase().includes(t))) : null;
+  }, [data.docs, query]);
+  const nodes = useMemo(() => hits
     ? hits.slice(0, 300).map(d => ({ id: d.path, label: `${d.title} · ${d.path}` }))
-    : groups.map(g => ({ id: `group:${g.name}`, label: `${g.name} ${g.docs.length}`, children: g.docs.map(d => ({ id: d.path, label: d.title })) })), [groups, hits, query]);
+    : groups.map(g => ({ id: g.name, label: `${g.name}（${g.docs.length}）`, children: g.docs.map(d => ({ id: d.path, label: d.title })) })), [groups, hits]);
   return (
     <div className="doc-dir">
-      {ts.length ? <p className="muted doc-dir-count">找到 {hits.length} 份文档</p> : null}
-      <DocTree nodes={nodes} selectedId={current} scrollRef={scrollRef} defaultExpandedIds={groups.filter(g => !g.hidden).map(g => `group:${g.name}`)} onSelect={node => { if (!node.children) navigate(href("/docs", { path: node.id })); }} />
+      {hits ? <p className="muted doc-dir-count">找到 {hits.length} 份文档</p> : null}
+      <DocumentDirectory nodes={nodes} defaultExpandedIds={groups.filter(g => !g.hidden).map(g => g.name)} selectedId={current} viewportRef={viewportRef} onSelect={node => { if (!node.children) navigate(href("/docs", { path: node.id, dq: query })); }} />
     </div>
   );
 }
@@ -86,7 +88,7 @@ function Article({ path, anchor }: { path: string; anchor: string | null }) {
           <LinkButton variant="ghost" size="sm" href={path} target="_blank" rel="noopener">原文 <ExternalLink aria-hidden="true" /></LinkButton>
         </div>
         {state.toc.length > 1 ? (
-          <div className="toc-inline"><Accordion defaultOpen={-1} items={[{ title: `章节目录（${state.toc.length}）`, content: <Toc toc={state.toc} path={path} /> }]} /></div>
+          <div className="toc-inline"><Accordion key={path} defaultOpen={-1} items={[{ title: `章节目录（${state.toc.length}）`, content: <Toc toc={state.toc} path={path} /> }]} /></div>
         ) : null}
         <div className="markdown" dangerouslySetInnerHTML={{ __html: state.html }} />
       </article>
@@ -96,18 +98,20 @@ function Article({ path, anchor }: { path: string; anchor: string | null }) {
 }
 
 export function DocsPage() {
-  const directoryScroll = useRef<HTMLDivElement>(null);
   const route = useRoute();
   const path = route.params.get("path");
   const query = route.params.get("dq") ?? "";
   const { data } = useAtlas();
+  const directoryViewport = useRef<HTMLDivElement>(null);
+  const lastPath = useRef(path);
+  useEffect(() => { if (path) lastPath.current = path; }, [path]);
   return (
     <div className="page docs-page" data-reading={path ? "" : undefined}>
       <header className="page-head"><div><h1>文档 <span className="muted">{data.docs.length}</span></h1></div></header>
       <div className="docs-layout">
       <aside className="doc-sidebar">
         <div className="search-wrap"><SearchField label="搜索文档标题与路径" placeholder="搜索文档" value={query} onValueChange={v => navigate(withParams(route, { dq: v }), { replace: true })} /></div>
-        <ScrollArea orientation="vertical" className="doc-dir-scroll" viewportRef={directoryScroll} label="文档目录" fade={24}><Directory current={path ?? undefined} query={query} scrollRef={directoryScroll} /></ScrollArea>
+        <ScrollArea orientation="vertical" className="doc-dir-scroll" label="文档目录" fade={0} viewportRef={directoryViewport}><Directory key={path ? "reading" : "directory"} current={path ?? lastPath.current ?? undefined} query={query} viewportRef={directoryViewport} /></ScrollArea>
       </aside>
       <div className="doc-main">
         {path ? <Article path={path} anchor={route.params.get("h")} /> : (

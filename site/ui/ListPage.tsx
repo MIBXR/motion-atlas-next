@@ -72,7 +72,7 @@ function FacetGroup({ facet, counts, selected, onToggle }: { facet: Facet; count
           </div>
         );
       })}
-      {values.length > limit ? <Button variant="ghost" size="sm" className="arc-button" onClick={() => setMore(!more)}>{more ? "收起" : `展开全部 ${values.length} 项`}</Button> : null}
+      {values.length > limit ? <Button variant="ghost" size="sm" onClick={() => setMore(!more)}>{more ? "收起" : `展开全部 ${values.length} 项`}</Button> : null}
     </fieldset>
   );
 }
@@ -96,7 +96,7 @@ export function ListPage({ kind }: { kind: Kind }) {
     const cur = s.selected[key]!;
     set({ [key]: cur.includes(v) ? cur.filter(x => x !== v) : [...cur, v] });
   };
-  const active = facets[kind].flatMap(f => s.selected[f.key]!.map(v => ({ f, v })));
+  const active = facets[kind].flatMap(f => s.selected[f.key]!.map(v => ({ id: JSON.stringify([f.key, v]), label: f.label, value: f.display(v), key: f.key, raw: v })));
   const filterPanel = (
     <div className="facets">
       {facets[kind].map(f => <FacetGroup key={f.key} facet={f} counts={s.counts[f.key]!} selected={s.selected[f.key]!} onToggle={v => toggle(f.key, v)} />)}
@@ -118,20 +118,20 @@ export function ListPage({ kind }: { kind: Kind }) {
           onValueChange={v => set({ q: v }, true)}
         /></div>
         <div className="toolbar-row">
-          <Button variant="secondary" size="sm" className="arc-button only-narrow" onClick={() => setDrawer(true)}><Filter /><span>筛选{active.length ? ` ${active.length}` : ""}</span></Button>
+          <Button variant="secondary" size="sm" className="only-narrow" onClick={() => setDrawer(true)}><Filter /><span>筛选{active.length ? ` ${active.length}` : ""}</span></Button>
           <SegmentedControl label="排序" value={s.sort} onValueChange={v => set({ sort: v === "order" ? null : v })} options={[{ value: "order", label: "编号" }, { value: "title", label: "名称" }]} />
-          <Button variant="secondary" size="sm" className="arc-button icon-only" aria-label={s.dir === "asc" ? "正序，点按切换为反序" : "反序，点按切换为正序"} title={s.dir === "asc" ? "正序" : "反序"} onClick={() => set({ dir: s.dir === "asc" ? "desc" : null })}>
+          <Button variant="secondary" size="sm" aria-label={s.dir === "asc" ? "正序，点按切换为反序" : "反序，点按切换为正序"} title={s.dir === "asc" ? "正序" : "反序"} onClick={() => set({ dir: s.dir === "asc" ? "desc" : null })}>
             {s.dir === "asc" ? <ArrowUpNarrowWide /> : <ArrowDownWideNarrow />}
           </Button>
-          <Button variant="secondary" size="sm" className="arc-button" aria-pressed={s.favOnly} onClick={() => set({ fav: s.favOnly ? null : "1" })}><Star fill={s.favOnly ? "currentColor" : "none"} /><span>只看收藏</span></Button>
+          <Button variant={s.favOnly ? "primary" : "secondary"} size="sm" aria-pressed={s.favOnly} onClick={() => set({ fav: s.favOnly ? null : "1" })}><Star fill={s.favOnly ? "currentColor" : "none"} /><span>只看收藏</span></Button>
           <span className="toolbar-spacer" />
           <div className="view-toggle" role="group" aria-label="布局">
-            <Button variant="secondary" size="sm" className="arc-button icon-only" aria-pressed={view === "grid"} aria-label="卡片" onClick={() => set({ view: null })}><LayoutGrid /></Button>
-            <Button variant="secondary" size="sm" className="arc-button icon-only" aria-pressed={view === "list"} aria-label="列表" onClick={() => set({ view: "list" })}><List /></Button>
+            <Button variant={view === "grid" ? "primary" : "secondary"} size="sm" aria-pressed={view === "grid"} aria-label="卡片" onClick={() => set({ view: null })}><LayoutGrid /></Button>
+            <Button variant={view === "list" ? "primary" : "secondary"} size="sm" aria-pressed={view === "list"} aria-label="列表" onClick={() => set({ view: "list" })}><List /></Button>
           </div>
         </div>
         {active.length ? (
-          <FilterToolbar filters={active.map(({ f, v }) => ({ id: JSON.stringify([f.key, v]), label: f.label, value: f.display(v) }))} onRemove={id => { const [key, value] = JSON.parse(id) as [string, string]; toggle(key, value); }} onClearAll={() => set(Object.fromEntries(facets[kind].map(f => [f.key, null])))} />
+          <FilterToolbar label="已选筛选条件" filters={active} onRemove={id => { const filter = active.find(item => item.id === id)!; toggle(filter.key, filter.raw); }} onClearAll={() => set(Object.fromEntries(facets[kind].map(f => [f.key, null])))} />
         ) : null}
       </div>
       <div className="list-layout">

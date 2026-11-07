@@ -44,7 +44,7 @@ export function ComparePage() {
                     <div className="compare-head">
                       {c.$.preview ? <img src={c.$.preview} alt="" /> : null}
                       <a href={href(`/cases/${c.id}`)}>{c.title}</a>
-                      <Button variant="secondary" size="sm" className="arc-button icon-only" aria-label={`移除 ${c.title}`} onClick={() => remove(c.id)}><X /></Button>
+                      <Button variant="secondary" size="sm" aria-label={`移除 ${c.title}`} onClick={() => remove(c.id)}><X /></Button>
                     </div>
                   </th>
                 ))}

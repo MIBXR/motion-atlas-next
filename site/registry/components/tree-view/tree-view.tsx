@@ -1,11 +1,11 @@
 "use client";
 
-import { useId, useLayoutEffect, useRef, useState } from "react";
-import type { CSSProperties, KeyboardEvent, ReactNode, RefObject } from "react";
+import { useId, useRef, useState } from "react";
+import type { CSSProperties, KeyboardEvent, ReactNode } from "react";
 import { ChevronRight, File, Folder, FolderOpen } from "lucide-react";
 import { AnimatePresence, motion, useIsPresent, useReducedMotion } from "motion/react";
 import { motionTokens } from "@/lib/motion-tokens";
-import styles from "./DocTree.module.css";
+import styles from "./tree-view.module.css";
 
 export interface TreeNode {
   id: string;
@@ -14,10 +14,8 @@ export interface TreeNode {
   icon?: ReactNode;
 }
 
-interface DocTreeProps {
+export interface TreeViewProps {
   nodes: TreeNode[];
-  selectedId?: string;
-  scrollRef: RefObject<HTMLDivElement | null>;
   defaultExpandedIds?: string[];
   expandedIds?: string[];
   onExpandedChange?: (expandedIds: string[]) => void;
@@ -47,15 +45,6 @@ function flatten(nodes: TreeNode[], expanded: ReadonlySet<string>, depth = 1, pa
   ]);
 }
 
-function ancestors(nodes: TreeNode[], id: string): string[] | null {
-  for (const node of nodes) {
-    if (node.id === id) return [];
-    const path = node.children && ancestors(node.children, id);
-    if (path) return [node.id, ...path];
-  }
-  return null;
-}
-
 function fileTone(label: string, classNames: Record<string, string>) {
   const name = label.toLowerCase();
   if (name.endsWith(".tsx") || name.endsWith(".ts")) return classNames.typescript;
@@ -79,17 +68,23 @@ function FolderIcon({ open, reduced }: { open: boolean; reduced: boolean }) {
   </AnimatePresence>;
 }
 
+/**
+ * The selection fill glides between rows through a shared layoutId. A row that is leaving drops its fill at once: left
+ * in place, it held the row's exit open, so the row stayed in the tree with pointer events off and the next click on it
+ * after reopening its folder did nothing.
+ */
 function Selection({ layoutId, reduced }: { layoutId: string; reduced: boolean }) {
   const present = useIsPresent();
   if (!present) return null;
   return <motion.span aria-hidden="true" layoutId={layoutId} className={styles.selection} transition={reduced ? still : motionTokens.spring.morph} />;
 }
 
-export function DocTree({ nodes, selectedId, scrollRef, defaultExpandedIds = [], expandedIds, onExpandedChange, onSelect, "aria-label": ariaLabel = "文档目录" }: DocTreeProps) {
+export function TreeView({ nodes, defaultExpandedIds = [], expandedIds, onExpandedChange, onSelect, "aria-label": ariaLabel = "文档目录" }: TreeViewProps) {
   const reduced = useReducedMotion() ?? false;
   const selectionLayoutId = `tree-selection-${useId()}`;
   const [internalExpanded, setInternalExpanded] = useState(() => new Set(defaultExpandedIds));
   const [focusedId, setFocusedId] = useState<string | null>(nodes[0]?.id ?? null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
   /** The folder that opened last; its new children fade in one after another, then everything else stays still. */
   const [openedId, setOpenedId] = useState<string | null>(null);
   const refs = useRef(new Map<string, HTMLButtonElement>());
@@ -97,32 +92,6 @@ export function DocTree({ nodes, selectedId, scrollRef, defaultExpandedIds = [],
   const visible = flatten(nodes, expanded);
   const focusableId = visible.some(({ node }) => node.id === focusedId) ? focusedId : (visible[0]?.node.id ?? null);
   const openedIndex = visible.findIndex(({ node }) => node.id === openedId);
-
-  useLayoutEffect(() => {
-    if (!selectedId) return;
-    const path = ancestors(nodes, selectedId);
-    if (!path) return;
-    setFocusedId(selectedId);
-    if (path.some(id => !expanded.has(id))) {
-      setOpenedId(path.at(-1) ?? null);
-      setExpanded(new Set([...expanded, ...path]));
-    }
-  }, [nodes, selectedId]);
-
-  function reveal(id: string) {
-    const viewport = scrollRef.current, row = refs.current.get(id);
-    if (!viewport?.clientHeight || !row) return;
-    const top = row.getBoundingClientRect().top - viewport.getBoundingClientRect().top + viewport.scrollTop;
-    const inset = row.getAttribute("aria-level") === "1" ? 24 : rowHeight + 24;
-    if (top < viewport.scrollTop + inset) viewport.scrollTop = top - inset;
-    else if (top + rowHeight > viewport.scrollTop + viewport.clientHeight - 24) viewport.scrollTop = top + rowHeight - viewport.clientHeight + 24;
-  }
-
-  const expandedKey = [...expanded].join("\n");
-  useLayoutEffect(() => {
-    const frame = requestAnimationFrame(() => { if (selectedId) reveal(selectedId); });
-    return () => cancelAnimationFrame(frame);
-  }, [nodes, selectedId, expandedKey]);
 
   function setExpanded(next: Set<string>) {
     if (!expandedIds) setInternalExpanded(next);
@@ -139,11 +108,12 @@ export function DocTree({ nodes, selectedId, scrollRef, defaultExpandedIds = [],
   function focus(id: string) {
     setFocusedId(id);
     const row = refs.current.get(id);
-    if (row) { row.focus({ preventScroll: true }); reveal(id); }
-    else requestAnimationFrame(() => { refs.current.get(id)?.focus({ preventScroll: true }); reveal(id); });
+    if (row) row.focus();
+    else requestAnimationFrame(() => refs.current.get(id)?.focus());
   }
 
   function select(node: TreeNode) {
+    setSelectedId(node.id);
     onSelect?.(node);
   }
 
@@ -182,14 +152,12 @@ export function DocTree({ nodes, selectedId, scrollRef, defaultExpandedIds = [],
         const delay = openedIndex >= 0 && index > openedIndex ? Math.min(index - openedIndex - 1, 7) * motionTokens.stagger.item : 0;
         return <motion.div
           key={item.node.id}
-          className={[styles.row, hasChildren ? styles.groupRow : ""].filter(Boolean).join(" ")}
+          className={styles.row}
           layout={reduced ? false : "position"}
           initial={reduced ? false : { height: 0, opacity: 0, x: -6, overflow: "hidden" }}
           animate={{ height: rowHeight, opacity: 1, x: 0, pointerEvents: "auto", transitionEnd: { overflow: "visible" }, transition: reduced ? still : { height: motionTokens.spring.smooth, opacity: { ...fadeIn, delay }, x: { ...motionTokens.spring.smooth, delay } } }}
           exit={reduced ? { opacity: 0, transition: still } : { height: 0, opacity: 0, x: -4, overflow: "hidden", pointerEvents: "none", transition: { height: motionTokens.spring.smooth, opacity: fadeOut, x: fadeOut } }}
           transition={reduced ? still : { layout: motionTokens.spring.smooth }}
-          onAnimationComplete={() => { if (isSelected) reveal(item.node.id); }}
-          onLayoutAnimationComplete={() => { if (isSelected) reveal(item.node.id); }}
         >
           <button
             ref={element => { if (element) refs.current.set(item.node.id, element); else refs.current.delete(item.node.id); }}
@@ -201,7 +169,6 @@ export function DocTree({ nodes, selectedId, scrollRef, defaultExpandedIds = [],
             aria-setsize={item.setSize}
             aria-expanded={hasChildren ? isExpanded : undefined}
             aria-selected={isSelected}
-            title={hasChildren ? undefined : item.node.id}
             tabIndex={focusableId === item.node.id ? 0 : -1}
             style={{ "--tree-depth": item.depth } as CSSProperties}
             onFocus={() => setFocusedId(item.node.id)}
@@ -234,4 +201,4 @@ export function DocTree({ nodes, selectedId, scrollRef, defaultExpandedIds = [],
   </div>;
 }
 
-export default DocTree;
+export default TreeView;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useToast } from "@/ui/Toast";
+import { notify } from "@/ui/notifications";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/registry/components/tabs/tabs";
 import { CodeBlock } from "@/registry/components/code-block/code-block";
 import { ScrollArea } from "@/registry/components/scroll-area/scroll-area";
@@ -12,19 +12,17 @@ import { wavFilename } from "./engine/wav";
 
 export function ExportSection() {
   const lab = useLab(), { S } = lab, c = lab.clip(), [rendering, setRendering] = useState(false), [result, setResult] = useState('');
-  const { toast } = useToast();
   const tabs = [['css', 'CSS 变量', 'css'], ['js', 'MotionKit', 'javascript'], ['prompt', 'Prompt 片段', 'text']];
   async function download() {
     setRendering(true); setResult('');
-    toast({ id: 'lab-wav', type: 'loading', title: '正在导出 WAV' });
     try {
       const r = await lab.renderWav(S.wavCycles), a = document.createElement('a');
       a.href = URL.createObjectURL(new Blob([r.wav()], { type: 'audio/wav' }));
       a.download = wavFilename(S); a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 2000);
       setResult(`${a.download} · ${r.duration.toFixed(2)}s · ${r.events} 个声音事件 · 峰值 ${r.peakDb.toFixed(1)} dBFS · RMS ${r.rmsDb.toFixed(1)} dBFS${r.clipped ? ` · 削波 ${r.clipped}` : ' · 无削波'}`);
-      toast({ id: 'lab-wav', type: 'success', title: 'WAV 已导出' });
-    } catch (err) { toast({ id: 'lab-wav', type: 'error', title: 'WAV 导出失败', description: (err as Error).message }); }
+      notify('WAV 已导出', 'success');
+    } catch (err) { notify(`WAV 导出失败：${(err as Error).message}`, 'error'); }
     finally { setRendering(false); }
   }
   return <section className="section lab-section" id="s-export" aria-labelledby="h-export">

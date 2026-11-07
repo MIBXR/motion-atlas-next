@@ -1,14 +1,14 @@
 // 详情页与列表共用的展示块。字段缺失时组件返回 null，调用方无需判断。
 import { Children, isValidElement, useEffect, useRef, type ReactNode } from "react";
 import { allowScroll } from "../core/scroll-guard";
-import { CopyButton } from "@/registry/components/copy-button/copy-button";
+import { CopyButton } from "./CopyButton";
 import { Button } from "@/registry/components/button/button";
 import { LinkButton } from "./LinkButton";
 import Badge from "@/registry/components/badge/badge";
 import { ExternalLink, GitCompareArrows, Star } from "./icons";
 import { href } from "../core/router";
-import { COMPARE_MAX, toggleCompare, toggleFavorite, useCompare, useFavorites } from "../core/store";
-import { useToast } from "./Toast";
+import { toggleCompare, toggleFavorite, useCompare, useFavorites } from "../core/store";
+import { notify } from "./notifications";
 import { KIND_NAME, KIND_SINGULAR, type Entry, type Kind } from "../core/types";
 import { byId, useAtlas } from "./context";
 
@@ -119,7 +119,7 @@ export function PromptBlock({ title, text, note }: { title: string; text?: strin
       <div className="prompt-head">
         <h3>{title}</h3>
         {note ? <span className="muted">{note}</span> : null}
-        <CopyButton value={text!} label="复制" />
+        <CopyButton value={text!} label="复制" onCopyError={() => notify("复制失败", "error")} />
       </div>
       <pre className="prompt-body">{text}</pre>
     </div>
@@ -131,7 +131,7 @@ export function CodeLine({ text, label = "复制" }: { text?: string; label?: st
   return (
     <div className="codeline">
       <pre>{text}</pre>
-      <CopyButton value={text!} label={label} />
+      <CopyButton value={text!} label={label} onCopyError={() => notify("复制失败", "error")} />
     </div>
   );
 }
@@ -211,17 +211,15 @@ export function Sources({ items }: { items?: Record<string, any>[] }) {
 }
 
 export function FavButton({ kind, id, compact }: { kind: Kind; id: string; compact?: boolean }) {
-  const { toast } = useToast();
   const fav = useFavorites();
   const on = fav[kind].includes(id);
   return (
     <Button
-      variant="secondary" size="sm"
-      className={compact ? "arc-button icon-only fav" : "arc-button fav"}
+      variant={on ? "primary" : "secondary"} size="sm"
       aria-pressed={on}
       aria-label={on ? "取消收藏" : "收藏"}
       title={on ? "取消收藏" : "收藏"}
-      onClick={ev => { ev.preventDefault(); ev.stopPropagation(); toggleFavorite(kind, id); toast({ type: "success", title: on ? "已取消收藏" : "已收藏" }); }}
+      onClick={ev => { ev.preventDefault(); ev.stopPropagation(); toggleFavorite(kind, id); }}
     >
       <Star fill={on ? "currentColor" : "none"} />
       {compact ? null : <span>{on ? "已收藏" : "收藏"}</span>}
@@ -230,17 +228,15 @@ export function FavButton({ kind, id, compact }: { kind: Kind; id: string; compa
 }
 
 export function CompareButton({ id, compact }: { id: string; compact?: boolean }) {
-  const { toast } = useToast();
   const list = useCompare();
   const on = list.includes(id);
   return (
     <Button
-      variant="secondary" size="sm"
-      className={compact ? "arc-button icon-only" : "arc-button"}
+      variant={on ? "primary" : "secondary"} size="sm"
       aria-pressed={on}
       aria-label={on ? "移出比较" : "加入比较"}
       title={on ? "移出比较" : "加入比较（最多 3 个）"}
-      onClick={ev => { ev.preventDefault(); ev.stopPropagation(); if (!on && list.length >= COMPARE_MAX) { toast({ type: "warning", title: `最多比较 ${COMPARE_MAX} 个案例`, description: "移出一个案例后再添加。" }); return; } toggleCompare(id); }}
+      onClick={ev => { ev.preventDefault(); ev.stopPropagation(); toggleCompare(id); }}
     >
       <GitCompareArrows />
       {compact ? null : <span>{on ? "已加入比较" : "加入比较"}</span>}
@@ -261,7 +257,7 @@ export function EntryCard({ kind, e, layout }: { kind: Kind; e: Entry; layout: "
         <h3>{e.title}</h3>
         {meta.subtitle ? <p className="card-sub">{meta.subtitle}</p> : null}
         <p className="card-summary">{e.summary}</p>
-        <div className="card-chips">{meta.chips.slice(0, 4).map(c => <Badge key={c} size="md">{c}</Badge>)}</div>
+        <div className="card-chips">{meta.chips.slice(0, 4).map(c => <Badge key={c}>{c}</Badge>)}</div>
       </div>
       <div className="card-actions">
         <FavButton kind={kind} id={e.id} compact />

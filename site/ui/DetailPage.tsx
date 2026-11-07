@@ -1,4 +1,5 @@
 import { LinkButton } from "@/ui/LinkButton";
+import { Button } from "@/registry/components/button/button";
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { EmptyState } from "@/registry/components/empty-state/empty-state";
 import { Breadcrumb } from "@/registry/components/breadcrumb/breadcrumb";
@@ -22,8 +23,8 @@ function Neighbors({ kind, e }: { kind: Kind; e: Entry }) {
   const prev = list[i - 1], next = list[i + 1];
   return (
     <div className="neighbors">
-      {prev ? <LinkButton variant="secondary" size="sm" className="icon-only" href={href(`/${kind}/${prev.id}`)} aria-label={`上一条：${prev.title}`} title={prev.title}><ChevronLeft /></LinkButton> : <span className="neighbor-placeholder" aria-hidden="true" />}
-      {next ? <LinkButton variant="secondary" size="sm" className="icon-only" href={href(`/${kind}/${next.id}`)} aria-label={`下一条：${next.title}`} title={next.title}><ChevronRight /></LinkButton> : <span className="neighbor-placeholder" aria-hidden="true" />}
+      {prev ? <LinkButton variant="secondary" size="sm" href={href(`/${kind}/${prev.id}`)} aria-label={`上一条：${prev.title}`} title={prev.title}><ChevronLeft /></LinkButton> : <Button variant="secondary" size="sm" className="neighbor-placeholder" aria-hidden="true" disabled tabIndex={-1}><ChevronLeft /></Button>}
+      {next ? <LinkButton variant="secondary" size="sm" href={href(`/${kind}/${next.id}`)} aria-label={`下一条：${next.title}`} title={next.title}><ChevronRight /></LinkButton> : <Button variant="secondary" size="sm" className="neighbor-placeholder" aria-hidden="true" disabled tabIndex={-1}><ChevronRight /></Button>}
     </div>
   );
 }

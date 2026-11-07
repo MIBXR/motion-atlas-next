@@ -1,7 +1,6 @@
-.tree { display: block; width: 100%; min-width: 0; box-sizing: border-box; padding: 6px 8px 8px; color: var(--foreground); }
+.tree { display: block; width: 100%; min-width: 0; box-sizing: border-box; padding: 6px 8px 8px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); color: var(--foreground); overflow: hidden; }
 /* Rows clip only while their height animates (Motion sets overflow), so the selection can glide between them unclipped. */
 .row { position: relative; display: flow-root; min-width: 0; height: 38px; }
-.groupRow { position: sticky; top: 0; z-index: 2; background: var(--background); }
 .item { position: relative; display: flex; width: 100%; min-width: 0; height: 36px; margin-top: 2px; align-items: center; gap: 8px; padding: 0 10px; padding-left: calc(10px + (var(--tree-depth) - 1) * 18px); border: 0; border-radius: 10px; background: transparent; color: var(--text-secondary); font: inherit; font-size: var(--text-sm); line-height: 1; text-align: left; cursor: pointer; outline: none; transition: color var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard); }
 /* Selection changes color only; a heavier weight would reflow the label. */
 .item[aria-selected="true"] { color: var(--foreground); }

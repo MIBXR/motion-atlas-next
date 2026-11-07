@@ -23,7 +23,7 @@
 .timeline:focus-visible { outline-offset: 2px; }
 
 .player-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.player-bar .icon-only[data-pending] { border-style: dashed; }
+.player-bar button[data-pending] { border-style: dashed; }
 .player-time { font-size: 13px; color: var(--text-secondary); font-variant-numeric: tabular-nums; padding: 0 6px; }
 .player-beat { font-size: var(--ui-xs); padding: 2px 10px; border-radius: 99px; background: var(--accent-subtle); color: var(--accent-strong); max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .shortcuts { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 4px 16px; margin: 0; padding: var(--space-3) var(--space-4); border: 1px solid var(--border); border-radius: 12px; font-size: var(--ui-xs); }
@@ -47,5 +47,4 @@
 @media (max-width: 640px) {
   .player-screen { max-height: none; }
   .player-screen[data-orient="portrait"] { height: 70dvh; }
-  .player-bar .icon-only { width: 34px; height: 34px; min-height: 34px; }
 }

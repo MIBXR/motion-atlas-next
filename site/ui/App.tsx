@@ -17,7 +17,7 @@ import { FavoritesPage } from "./FavoritesPage";
 import { LabPage } from "../lab/LabPage";
 import { AgentPage } from "../agent/AgentPage";
 import { ToastStackProvider } from "@/registry/components/toast-stack/toast-stack";
-import { ToastViewport } from "./Toast";
+import { Notifications } from "./notifications";
 
 function Router() {
   const route = useRoute();
@@ -45,7 +45,7 @@ export function mountAtlas(config: AtlasConfig) {
   installScrollGuard();
   function Root() {
     const value = useMemo(() => config, []);
-    return <AtlasContext.Provider value={value}><ToastStackProvider><Shell><Router /></Shell><ToastViewport /></ToastStackProvider></AtlasContext.Provider>;
+    return <AtlasContext.Provider value={value}><ToastStackProvider><Shell><Router /></Shell><Notifications /></ToastStackProvider></AtlasContext.Provider>;
   }
   createRoot(document.getElementById("root")!).render(<Root />);
 }

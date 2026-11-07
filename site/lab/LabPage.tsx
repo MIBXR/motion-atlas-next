@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ScrollArea } from "@/registry/components/scroll-area/scroll-area";
 import { Accordion } from "@/registry/components/accordion/accordion";
-import { useToast } from "@/ui/Toast";
+import { notify } from "@/ui/notifications";
 import { ListTree } from "lucide-react";
 import { allowScroll } from "@/core/scroll-guard";
 import { LabContext, useLab } from "./context";
@@ -26,8 +26,7 @@ function Contents() {
 }
 function Feedback() {
   const lab = useLab();
-  const { toast } = useToast();
-  useEffect(() => { if (lab.message) { toast({ title: lab.message }); lab.dismissToast(); } }, [lab, lab.message, toast]);
+  useEffect(() => { if (lab.message) { notify(lab.message); lab.dismissToast(); } }, [lab, lab.message]);
   return null;
 }
 export function LabPage() {

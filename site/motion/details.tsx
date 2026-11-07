@@ -1,6 +1,6 @@
 import { LinkButton } from "@/ui/LinkButton";
 import { Button } from "@/registry/components/button/button";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Badge from "@/registry/components/badge/badge";
 import { Combobox } from "@/registry/components/combobox/combobox";
 import { Dialog, DialogContent } from "@/registry/components/dialog/dialog";
@@ -213,7 +213,14 @@ function RegistryStage({ e }: { e: Entry }) {
 function Gallery({ e }: { e: Entry }) {
   const { data } = useAtlas();
   const [index, setIndex] = useState<number | null>(null);
+  const [settled, setSettled] = useState(false);
+  const carousel = useRef<HTMLDivElement>(null);
   const kinds = [...new Set((e.gallery as L[]).map(g => g.kind))];
+  const galleryAnimation = { onAnimationComplete: () => {
+    if (index === null || settled) return;
+    setSettled(true);
+    requestAnimationFrame(() => carousel.current?.querySelector<HTMLElement>('[role="group"]')?.focus({ preventScroll: true }));
+  } };
   return (
     <>
       {kinds.map(k => (
@@ -222,7 +229,7 @@ function Gallery({ e }: { e: Entry }) {
           <ul className="gallery" style={{ ["--ratio" as string]: "16/9", ["--fit" as string]: "cover" }}>
             {(e.gallery as L[]).filter(g => g.kind === k).map(g => (
               <li key={g.path}>
-                <button type="button" className="gallery-image" aria-label={`查看图片：${g.caption}`} onClick={() => setIndex(e.gallery.indexOf(g))}><img src={g.path} alt={g.caption} loading="lazy" /></button>
+                <button type="button" className="gallery-image" aria-label={`查看图片：${g.caption}`} onClick={() => { setSettled(false); setIndex(e.gallery.indexOf(g)); }}><img src={g.path} alt={g.caption} loading="lazy" /></button>
                 <p>{g.caption}</p>
                 {g.sourceUrl ? <div className="gallery-actions"><LinkButton variant="ghost" size="sm" href={g.sourceUrl} target="_blank" rel="noopener">出处 <ExternalLink aria-hidden="true" /></LinkButton></div> : null}
                 {g.license ? <p className="muted small">{g.license}</p> : null}
@@ -232,13 +239,13 @@ function Gallery({ e }: { e: Entry }) {
         </div>
       ))}
       <Dialog open={index !== null} onOpenChange={open => { if (!open) setIndex(null); }}>
-        <DialogContent title="素材画廊" description={e.title} className="gallery-dialog" onOpenAutoFocus={event => { event.preventDefault(); document.querySelector<HTMLElement>('.gallery-dialog .gallery-carousel [role="group"]')!.focus({ preventScroll: true }); }}>
-          {index !== null ? <Carousel label="素材图片" className="gallery-carousel" index={index} onIndexChange={setIndex} slideSize="100cqw" slideLabel={(i, count) => `第 ${i + 1} 张，共 ${count} 张`}>
+        <DialogContent {...galleryAnimation} title="素材画廊" description={e.title} className="gallery-dialog" onOpenAutoFocus={event => { event.preventDefault(); carousel.current?.querySelector<HTMLElement>('[role="group"]')?.focus({ preventScroll: true }); }}>
+          <div ref={carousel} className="gallery-content">{index !== null ? <Carousel key={settled ? "ready" : "opening"} label="素材图片" className="gallery-carousel" index={index} onIndexChange={setIndex} slideSize="100cqw" slideLabel={(i, count) => `第 ${i + 1} 张，共 ${count} 张`}>
             {(e.gallery as L[]).map(g => <figure key={g.path}>
-              <img src={g.path} alt={g.caption} />
+              <img src={g.path} alt={g.caption} loading="lazy" />
               <figcaption><p>{g.caption}</p><div className="gallery-modal-links"><LinkButton variant="ghost" size="sm" href={g.path} target="_blank" rel="noopener">原图 <ExternalLink aria-hidden="true" /></LinkButton>{g.sourceUrl ? <LinkButton variant="ghost" size="sm" href={g.sourceUrl} target="_blank" rel="noopener">原帖 <ExternalLink aria-hidden="true" /></LinkButton> : null}</div>{g.license ? <p className="muted small">{g.license}</p> : null}</figcaption>
             </figure>)}
-          </Carousel> : null}
+          </Carousel> : null}</div>
         </DialogContent>
       </Dialog>
     </>
