@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-hd-2d 5.500000–10.000000秒；1倍速，总时长4.500000秒。
 
-[打开 Demo](../../demos/patterns/tilt-shift-focus-band/index.html) · [在库中查看](../../patterns.html#pattern/tilt-shift-focus-band)
+[打开 Demo](../../demos/patterns/tilt-shift-focus-band/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/tilt-shift-focus-band)

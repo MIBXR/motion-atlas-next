@@ -8,4 +8,4 @@
 
 - **原片重放区间**：21.900000–25.000000秒；1倍速，共3.100000秒。
 
-[打开 Demo](../../demos/patterns/count-up-slam/index.html) · [在库中查看](../../patterns.html#pattern/count-up-slam)
+[打开 Demo](../../demos/patterns/count-up-slam/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/count-up-slam)

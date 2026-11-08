@@ -2,9 +2,9 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Measured Blue* 《量出来的蓝》 (39.5 s) · `microscope.mp4` · source in [`demo/`](demo/)
+Demo: *Measured Blue* 《量出来的蓝》 (39.5 s) · `microscope.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/microscope/demo)
 
-One continuous camera takes a stained slice of human liver from the glass slide in the hand down to a single nucleus and back. On the way it counts the blue (collagen) inside two 1 mm circles 1.4 mm apart: 13.5 % and 32.6 %. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English line below). One public whole-slide scan (Ventana-1.bif, PathAI, CC0); every number is measured from the file and listed with its method in [`demo/FACTS.md`](demo/FACTS.md). The film describes measurements only; it makes no diagnosis.
+One continuous camera takes a stained slice of human liver from the glass slide in the hand down to a single nucleus and back. On the way it counts the blue (collagen) inside two 1 mm circles 1.4 mm apart: 13.5 % and 32.6 %. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English line below). One public whole-slide scan (Ventana-1.bif, PathAI, CC0); every number is measured from the file and listed with its method in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/microscope/demo/FACTS.md). The film describes measurements only; it makes no diagnosis.
 
 ## Story & structure
 

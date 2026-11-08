@@ -2,7 +2,7 @@
 
 **原片**：drop.「万物始于一滴」 · 1920×1080 · 30 fps · 10 秒 · AI 评审终评 7.57 / 10
 
-**源码**：[demos/07-liquid/](../demos/07-liquid/)
+**源码**：[demos/07-liquid/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/07-liquid)
 
 ## 怎么用
 

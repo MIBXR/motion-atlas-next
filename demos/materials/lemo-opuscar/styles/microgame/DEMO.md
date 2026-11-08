@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Five-Second Astronaut* (59.8 s) · `microgame.mp4` · source in [`demo/`](demo/)
+Demo: *Five-Second Astronaut* (59.8 s) · `microgame.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/microgame/demo)
 
 
 ## Story & structure
@@ -66,7 +66,7 @@ Motion as used in the demo:
 - *Host* = a gold **stopwatch head**. The dial is the face, the red second hand is his pointer and nose, and he **slaps his own crown button** to start every game. His hand ticks every beat, spins when he is excited, and stops dead on the last life.
 - *Hero* = a 2.3-head-tall cadet: bubble helmet, spring antenna with an orange ball (the **mood meter**, which boings on every action), and the number "05".
 - **Translation rule:** in every microgame style the hero is redrawn from scratch, but **three silhouette marks always survive**: round helmet, antenna ball, "05". See `demo/stills/modelsheet_v2_styles.jpg` for 8 renderings of one character.
-- **Model sheet:** [`demo/stills/modelsheet_v2.jpg`](demo/stills/modelsheet_v2.jpg) has both characters in the home style: turnarounds (front, 3/4, side, back), expressions, key poses and palette swatches (`?scene=frames.modelSheet`).
+- **Model sheet:** [`demo/stills/modelsheet_v2.jpg`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/microgame/demo/stills/modelsheet_v2.jpg) has both characters in the home style: turnarounds (front, 3/4, side, back), expressions, key poses and palette swatches (`?scene=frames.modelSheet`).
 
 **Microgame media (simplified re-drawings, each about 100–200 lines of code):**
 | Style | How it is made |

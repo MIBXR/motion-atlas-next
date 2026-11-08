@@ -24,4 +24,4 @@
 - `mechanism/config.js → segments / markers`：设置本巧思片段映射与标记；地图来源时刻：31.3→35.8/36.6→39.1/镜头34.5，全部 HUD 按片段求值。
 - `mechanism/score.json`：调整声音事件，按巧思时间对齐，保留音色参数。
 
-[打开 Demo](../../demos/patterns/day-night-flip/index.html) · [在库中查看](../../patterns.html#pattern/day-night-flip)
+[打开 Demo](../../demos/patterns/day-night-flip/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/day-night-flip)

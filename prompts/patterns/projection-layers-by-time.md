@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-white-model：1.8–21.6秒；1倍速，总时长19.800000秒。
 
-[打开 Demo](../../demos/patterns/projection-layers-by-time/index.html) · [在库中查看](../../patterns.html#pattern/projection-layers-by-time)
+[打开 Demo](../../demos/patterns/projection-layers-by-time/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/projection-layers-by-time)

@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Long Way Home 绕远路回家* (50 s) · `silkscreen-poster.mp4` · subtitles `silkscreen-poster.srt` · source in [`demo/`](demo/)
+Demo: *The Long Way Home 绕远路回家* (50 s) · `silkscreen-poster.mp4` · subtitles `silkscreen-poster.srt` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/silkscreen-poster/demo)
 
 ## Story & structure
 
@@ -84,7 +84,7 @@ At 46.2 s a wider ticket (560×600) is pulled over the right side of the night p
 
 `sh styles/silkscreen-poster/demo/build.sh` (or `LIB=<library> sh demo/build.sh`) rebuilds everything: fonts (`tools/fetch_fonts.sh`), narration if missing (`core/tts/tts.py` → `demo/out/voice/`) and the speech-to-text check, subtitles (`tools/cues.py` → `voice/cues.json` and `../silkscreen-poster.srt`), events, score (`music/compose.py`), mix (`mix.py`), picture (`--workers 2`), master (−14 LUFS), readcheck, `poster.jpg` and `demo/stills/styleframe.jpg`. `sh demo/build.sh 28 36` renders a span. About one minute on Apple silicon.
 
-Facts on the stubs (distances by the haversine formula, landmark years) and their sources: [`demo/FACTS.md`](demo/FACTS.md). Third-party material: [`demo/CREDITS`](demo/CREDITS).
+Facts on the stubs (distances by the haversine formula, landmark years) and their sources: [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/silkscreen-poster/demo/FACTS.md). Third-party material: [`demo/CREDITS`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/silkscreen-poster/demo/CREDITS).
 
 Rules the build follows:
 - A knocked-out shape (`knock`) is filled even-odd together with its parent, so its sub-paths must not overlap; to cut one layer out of another use `cut`, which clips with the inverse.

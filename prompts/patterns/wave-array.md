@@ -26,4 +26,4 @@
         for (const [tk, ak, dk] of JELLY_HITS) jelly += ak * wob(t - tk - (dk > 0 ? i : 3 - i) * 0.04, 3.4, 0.22);
         const sxJ = 1 + 0.12 * sq + jelly + breathe, syJ = 1 - 0.08 * sq + breathe - jelly * 0.6;
 
-[打开 Demo](../../demos/patterns/wave-array/index.html) · [在库中查看](../../patterns.html#pattern/wave-array)
+[打开 Demo](../../demos/patterns/wave-array/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/wave-array)

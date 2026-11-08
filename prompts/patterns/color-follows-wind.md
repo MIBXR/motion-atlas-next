@@ -8,4 +8,4 @@
 
 - **原片重放区间**：4.4–19.2秒；1倍速，总时长14.800000秒。
 
-[打开 Demo](../../demos/patterns/color-follows-wind/index.html) · [在库中查看](../../patterns.html#pattern/color-follows-wind)
+[打开 Demo](../../demos/patterns/color-follows-wind/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/color-follows-wind)

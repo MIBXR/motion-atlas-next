@@ -8,4 +8,4 @@
 
 - **原片重放区间**：0–3.1秒；30.4–34.5秒；1倍速，总时长7.200000秒。
 
-[打开 Demo](../../demos/patterns/block-by-block-print-reveal/index.html) · [在库中查看](../../patterns.html#pattern/block-by-block-print-reveal)
+[打开 Demo](../../demos/patterns/block-by-block-print-reveal/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/block-by-block-print-reveal)

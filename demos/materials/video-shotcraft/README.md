@@ -13,7 +13,7 @@
 [![Gallery](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/)
 [![Showcase](https://img.shields.io/badge/Showcase-community%20videos-7c3aed)](https://vincentwei1021.github.io/video-shotcraft/showcase.html)
 
-[![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)](https://github.com/Vincentwei1021/video-shotcraft/stargazers)
+![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-skill-d97757)](SKILL.md)
 [![Codex](https://img.shields.io/badge/Codex-skill-10a37f)](SKILL.md)
@@ -166,9 +166,9 @@ After delivery the skill opens a CapCut-style editor in your browser
 exactly as authored. Select any shot to edit its copy, font sizes and colours, move, trim or speed-ramp clips,
 drag in any of the 150 library shots, then export with Remotion. Preview and render are frame-identical.
 
-![Motion Workbench](workbench/docs/overview.png)
+![Motion Workbench](https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/1266a3ec4831289c4d893d42dd5102723658039a/workbench/docs/overview.png)
 
-[Workbench guide, every panel with screenshots](workbench/GUIDE.md) (Chinese) ·
+[Workbench guide, every panel with screenshots](https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/workbench/GUIDE.md) (Chinese) ·
 [Integration contract](references/workbench.md)
 
 ## What you get
@@ -179,7 +179,7 @@ drag in any of the 150 library shots, then export with Remotion. Preview and ren
 | Remotion project | The full source of your film: every shot is a React component you or the agent can change |
 | Motion Workbench | Opens after delivery: tracks, inspector, retime, swap shots, export ([details](#motion-workbench)) |
 | JianYing draft | Optional: an editable JianYing (CapCut CN) project with per-shot clips, captions and audio tracks |
-| Social publishing | Optional, when you ask: publish the finished film via Upload-Post to TikTok, Instagram, YouTube, LinkedIn, X and more. Confirm caption and platforms, then dry-run before posting ([guide](references/publish-upload-post.md)) |
+| Social publishing | Optional, when you ask: publish the finished film via Upload-Post to TikTok, Instagram, YouTube, LinkedIn, X and more. Confirm caption and platforms, then dry-run before posting ([guide](https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/references/publish-upload-post.md)) |
 
 Also in the box: reusable Remotion components (2.5D page camera, captions, flash cuts, digit rolls), Freesound SFX search/download tools and
 5 BGM tracks, page-capture scripts, and the production method itself (capture, visual direction, storyboarding,

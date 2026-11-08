@@ -8,4 +8,4 @@
 
 - **原片重放区间**：10.500000–18.500000秒；22.200000–27.800000秒；1倍速，总时长13.600000秒。
 
-[打开 Demo](../../demos/patterns/mascot-on-ui-edges/index.html) · [在库中查看](../../patterns.html#pattern/mascot-on-ui-edges)
+[打开 Demo](../../demos/patterns/mascot-on-ui-edges/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/mascot-on-ui-edges)

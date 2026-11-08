@@ -8,4 +8,4 @@
 
 - **原片重放区间**：21.590909–26.609091秒；1倍速，总时长5.018182秒。
 
-[打开 Demo](../../demos/patterns/shape-rhyme-match-cut/index.html) · [在库中查看](../../patterns.html#pattern/shape-rhyme-match-cut)
+[打开 Demo](../../demos/patterns/shape-rhyme-match-cut/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/shape-rhyme-match-cut)

@@ -2,9 +2,9 @@
 
 **A method-driven agent skill for turning scripts and articles into click-driven 16:9 web presentations that can be screen-recorded as cinematic videos.**
 
-[中文文档](./README.zh-CN.md) · [Back to collection root](../../README.md)
+[中文文档](./README.zh-CN.md) · [Back to collection root](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/README.md)
 
-![Web Video Presentation Skill](../../dist/imgs/covers/web-video-presentation.webp)
+![Web Video Presentation Skill](https://raw.githubusercontent.com/ConardLi/garden-skills/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/covers/web-video-presentation.webp)
 
 ---
 
@@ -123,7 +123,7 @@ The generated `presentation/` project is a normal Vite + React + TypeScript app.
 
 The skill ships **23 themes**, each with its own design DNA — not a simple color swap. Browse the gallery below by canvas tone, pick one that fits the topic, or use any tile as a starting point for a derived theme. Click any preview to open the full-size 1920×1080 frame.
 
-> Frames are real 16:9 stages rendered by the live demo gallery at [`demo/web-video-presentation-demo`](../../demo/web-video-presentation-demo/).
+> Frames are real 16:9 stages rendered by the live demo gallery at `demo/web-video-presentation-demo`.
 
 ### Dark · 8 themes
 
@@ -311,11 +311,11 @@ The skill ships **23 themes**, each with its own design DNA — not a simple col
 
 ## Reference Map
 
-- [PRINCIPLES.md](./references/PRINCIPLES.md) — core rules for video-like web presentations
+- PRINCIPLES.md — core rules for video-like web presentations
 - [CHAPTER-CRAFT.md](./references/CHAPTER-CRAFT.md) — chapter implementation rules and visual checklist
 - [OUTLINE-FORMAT.md](./references/OUTLINE-FORMAT.md) — required outline structure
 - [SCRIPT-STYLE.md](./references/SCRIPT-STYLE.md) — article-to-narration rewrite guidance
-- [PATTERNS.md](./references/PATTERNS.md) — optional visual primitive recipes
+- PATTERNS.md — optional visual primitive recipes
 - [AUDIO.md](./references/AUDIO.md) — optional narration synthesis workflow (provider-agnostic)
 - [tts-providers/README.md](./templates/scripts/tts-providers/README.md) — TTS provider contract + 2 built-ins (minimax / openai) + ready-to-paste snippets for ElevenLabs / edge-tts / Azure / Google Cloud / macOS say
 - [RECORDING.md](./references/RECORDING.md) — screen recording and post-production notes

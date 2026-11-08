@@ -7,4 +7,4 @@
 - 音乐、声音与字体的原始署名：[audio/CREDITS](audio/CREDITS)；制作文件中的记录保留于[source/CREDITS](source/CREDITS)。
 - 原创配乐使用CC0乐器采样，原文：[audio/CC0-1.0.txt](audio/CC0-1.0.txt)；采样来自Versilian Studios / Sam Gossner的VSCO 2 CE与VCSL。
 - Kokoro-82M旁白（bm_fable，en-gb、speed .92）：[audio/Apache-2.0.txt](audio/Apache-2.0.txt)，kokoro-onnx为MIT。
-- 字体SIL OFL 1.1原文：[OFL-bodonimoda.txt](fonts/OFL-bodonimoda.txt)、[OFL-pinyonscript.txt](fonts/OFL-pinyonscript.txt)、[OFL.txt](fonts/OFL.txt)。
+- 字体SIL OFL 1.1原文：[OFL-bodonimoda.txt](fonts/OFL-bodonimoda.txt)、[OFL-pinyonscript.txt](fonts/OFL.txt)、[OFL.txt](fonts/OFL.txt)。

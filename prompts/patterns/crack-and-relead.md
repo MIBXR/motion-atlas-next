@@ -8,4 +8,4 @@
 
 - **原片重放区间**：30.800000–45.200000秒；1倍速，共14.400000秒。
 
-[打开 Demo](../../demos/patterns/crack-and-relead/index.html) · [在库中查看](../../patterns.html#pattern/crack-and-relead)
+[打开 Demo](../../demos/patterns/crack-and-relead/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/crack-and-relead)

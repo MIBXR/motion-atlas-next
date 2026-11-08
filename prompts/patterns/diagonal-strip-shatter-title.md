@@ -8,4 +8,4 @@
 
 - **原片重放区间**：31.0–34.2秒；1倍速，总时长3.2秒。
 
-[打开 Demo](../../demos/patterns/diagonal-strip-shatter-title/index.html) · [在库中查看](../../patterns.html#pattern/diagonal-strip-shatter-title)
+[打开 Demo](../../demos/patterns/diagonal-strip-shatter-title/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/diagonal-strip-shatter-title)

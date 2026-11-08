@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Volt · Spec Scan* (39 s: a 34 s scene plus a 5 s end card) · `hologram-hud.mp4` · source in [`demo/`](demo/)
+Demo: *Volt · Spec Scan* (39 s: a 34 s scene plus a 5 s end card) · `hologram-hud.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/hologram-hud/demo)
 
 
 ## Story & structure

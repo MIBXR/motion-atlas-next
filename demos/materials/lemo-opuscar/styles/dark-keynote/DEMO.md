@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Room to Think* (42 s) · `dark-keynote.mp4` · source in [`demo/`](demo/) · a launch film for **Tidy**, a fictional app that sorts your desktop, photos and inbox in one press.
+Demo: *Room to Think* (42 s) · `dark-keynote.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dark-keynote/demo) · a launch film for **Tidy**, a fictional app that sorts your desktop, photos and inbox in one press.
 
 
 ## Story & structure

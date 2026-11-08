@@ -12,4 +12,4 @@
 - **反拍准星**：target1：1.25–1.5秒；target2：1.75–2秒；target3：2.25–2.5秒；target4：2.75–3秒；环半径21–25，中心点半径4，十字短线32×4。
 - **一格接触**：sl=io2(prog(t,2.75,3))；圆心局部y=300-120*(1-sl)。
 
-[打开 Demo](../../demos/patterns/grid-beat-construction/index.html) · [在库中查看](../../patterns.html#pattern/grid-beat-construction)
+[打开 Demo](../../demos/patterns/grid-beat-construction/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/grid-beat-construction)

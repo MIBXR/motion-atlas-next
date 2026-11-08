@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Coffee Run* (57.5 s) · `scifi-toon.mp4` · source in [`demo/`](demo/)
+Demo: *Coffee Run* (57.5 s) · `scifi-toon.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/scifi-toon/demo)
 
 
 The original brief: a 30–60 second film in this style; the director decides premise, jokes, cast, shots, timing, music and sound and delivers without asking for approval.

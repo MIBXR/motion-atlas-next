@@ -17,4 +17,4 @@ const fmap = (d, R) => d <= PI * R ? R * Math.sin(d / R) : PI * R - d;
 
 - `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/pinch-rip-cylinder-peel/index.html) · [在库中查看](../../patterns.html#pattern/pinch-rip-cylinder-peel)
+[打开 Demo](../../demos/patterns/pinch-rip-cylinder-peel/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/pinch-rip-cylinder-peel)

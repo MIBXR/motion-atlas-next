@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-lowpoly-island：6.000000–21.250000秒，1倍速，总时长15.250000秒。
 
-[打开 Demo](../../demos/patterns/tile-by-tile-island-growth/index.html) · [在库中查看](../../patterns.html#pattern/tile-by-tile-island-growth)
+[打开 Demo](../../demos/patterns/tile-by-tile-island-growth/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/tile-by-tile-island-growth)

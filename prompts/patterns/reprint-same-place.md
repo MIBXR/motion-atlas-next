@@ -8,4 +8,4 @@
 
 - **原片重放区间**：37.900000–42.000000秒；1倍速，共4.100000秒。
 
-[打开 Demo](../../demos/patterns/reprint-same-place/index.html) · [在库中查看](../../patterns.html#pattern/reprint-same-place)
+[打开 Demo](../../demos/patterns/reprint-same-place/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/reprint-same-place)

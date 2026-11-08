@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-archive-lighttable：2.5–9.3秒；lemo-archive-lighttable：11.5–13.3秒；lemo-caption-news：13–16秒；lemo-caption-news：27.5–30秒；1倍速，总时长14.100000秒。
 
-[打开 Demo](../../demos/patterns/line-lights-up/index.html) · [在库中查看](../../patterns.html#pattern/line-lights-up)
+[打开 Demo](../../demos/patterns/line-lights-up/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/line-lights-up)

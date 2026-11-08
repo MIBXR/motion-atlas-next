@@ -10,4 +10,4 @@
 - **堆叠**：CUES=[18,30,42,54,66]；DUR=22；最后一条在 88 帧落位。
 - **压入与收束**：stackPress：[cue,cue+4,cue+8]→[0,6,0]；glazeVis 在 81,86,92,95 帧取 0,1,1,0。
 
-[打开 Demo](../../demos/patterns/list-stack-press/index.html) · [在库中查看](../../patterns.html#pattern/list-stack-press)
+[打开 Demo](../../demos/patterns/list-stack-press/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/list-stack-press)

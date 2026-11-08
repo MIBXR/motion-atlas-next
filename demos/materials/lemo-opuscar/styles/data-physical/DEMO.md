@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Two Spirals* 《两条螺旋》 (39.4 s) · `data-physical.mp4` · source in [`demo/`](demo/)
+Demo: *Two Spirals* 《两条螺旋》 (39.4 s) · `data-physical.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/data-physical/demo)
 
 Twelve years of global wind and solar capacity (IRENA 2026, via Our World in Data, CC BY 4.0), built as two spirals of real plates on a walnut dial: one plate is 10 GW for both, aluminium for solar, teal acrylic for wind, a brass plate every 100 GW. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English line below). This is an unofficial film made from published data; IRENA and Our World in Data did not make or endorse it.
 
@@ -12,7 +12,7 @@ Logline: in 2014 the world had almost twice as much wind as solar; in 2021 solar
 
 Arc: the pair (2014, wind and solar side by side, held, then the verdict ×1.95) → the rule (a macro of one plate and one brass plate) → growth (2015–2020 pairs assemble as the camera tracks along the spiral) → the turn (2020 and 2021 pairs held still with four readings, a suck-out, then "2021 · solar passed wind") → the climax (2025: last year's level cascades in, then 52 new plates are fed one by one while the counter rolls to 2,396.7 GW) → the reveal (the crane pulls back to near top view: two spirals and the inlaid ticks become one dial) → the ending (a brass puck engraved ×1.86 falls onto the centre; end card).
 
-Native moves spent: *the unit close-up* for the rule; *the paired climb* through the decade; *the feed* for 2025; *chart to installation* as the signature pull-back; *the last object* for the final number. Every number and its source is in [`demo/FACTS.md`](demo/FACTS.md).
+Native moves spent: *the unit close-up* for the rule; *the paired climb* through the decade; *the feed* for 2025; *chart to installation* as the signature pull-back; *the last object* for the final number. Every number and its source is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/data-physical/demo/FACTS.md).
 
 ## Shots
 

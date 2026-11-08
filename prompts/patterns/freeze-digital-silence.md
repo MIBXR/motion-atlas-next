@@ -8,4 +8,4 @@
 
 - **原片重放区间**：14.600000–16.250000秒；1倍速，总时长1.650000秒。
 
-[打开 Demo](../../demos/patterns/freeze-digital-silence/index.html) · [在库中查看](../../patterns.html#pattern/freeze-digital-silence)
+[打开 Demo](../../demos/patterns/freeze-digital-silence/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/freeze-digital-silence)

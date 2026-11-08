@@ -29,4 +29,4 @@ const h = addK(hand(t, 1, .8), kick(t, C.charge[2], 7, 12, 14))
 - `mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers`：mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 地图片段。地图来源时刻：8.1→8.9/12.6→14/19.2→20.4/41.8→43/51.2→52.6。
 - `mechanism/score.json`：调整声音事件，按巧思时间对齐，保留音色参数。
 
-[打开 Demo](../../demos/patterns/collect-counter/index.html) · [在库中查看](../../patterns.html#pattern/collect-counter)
+[打开 Demo](../../demos/patterns/collect-counter/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/collect-counter)

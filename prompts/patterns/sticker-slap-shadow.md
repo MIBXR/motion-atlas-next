@@ -16,4 +16,4 @@ c.shadowBlur = 5 + lift * 34; c.shadowOffsetX = 3 + lift * 24; c.shadowOffsetY =
 
 - `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/sticker-slap-shadow/index.html) · [在库中查看](../../patterns.html#pattern/sticker-slap-shadow)
+[打开 Demo](../../demos/patterns/sticker-slap-shadow/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/sticker-slap-shadow)

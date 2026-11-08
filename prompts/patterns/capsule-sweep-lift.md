@@ -17,4 +17,4 @@ V_LIFT = 1.55
 
 - `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/capsule-sweep-lift/index.html) · [在库中查看](../../patterns.html#pattern/capsule-sweep-lift)
+[打开 Demo](../../demos/patterns/capsule-sweep-lift/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/capsule-sweep-lift)

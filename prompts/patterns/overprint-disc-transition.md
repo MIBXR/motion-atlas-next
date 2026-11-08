@@ -8,4 +8,4 @@
 
 - **原片重放区间**：23.5–26秒，1倍速，总时长2.5秒。
 
-[打开 Demo](../../demos/patterns/overprint-disc-transition/index.html) · [在库中查看](../../patterns.html#pattern/overprint-disc-transition)
+[打开 Demo](../../demos/patterns/overprint-disc-transition/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/overprint-disc-transition)

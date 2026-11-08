@@ -8,4 +8,4 @@
 
 - **原片重放区间**：0.000000–7.000000秒；39.000000–41.666700秒；1倍速，总时长9.666700秒。
 
-[打开 Demo](../../demos/patterns/carve-cut-by-cut-reveal/index.html) · [在库中查看](../../patterns.html#pattern/carve-cut-by-cut-reveal)
+[打开 Demo](../../demos/patterns/carve-cut-by-cut-reveal/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/carve-cut-by-cut-reveal)

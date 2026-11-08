@@ -8,4 +8,4 @@
 
 - **原片重放区间**：40.000000–47.800000秒；1倍速，总时长7.800000秒。
 
-[打开 Demo](../../demos/patterns/font-size-zoom/index.html) · [在库中查看](../../patterns.html#pattern/font-size-zoom)
+[打开 Demo](../../demos/patterns/font-size-zoom/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/font-size-zoom)

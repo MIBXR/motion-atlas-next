@@ -8,4 +8,4 @@
 
 - **原片重放区间**：4.700000–10.100000秒；14.400000–23.500000秒；38.400000–41.500000秒；1倍速，总时长17.600000秒。
 
-[打开 Demo](../../demos/patterns/pulse-path-current/index.html) · [在库中查看](../../patterns.html#pattern/pulse-path-current)
+[打开 Demo](../../demos/patterns/pulse-path-current/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/pulse-path-current)

@@ -15,4 +15,4 @@ const LIDF = [[-70, 10, -230, 1.3], [-200, -30, -660, 1.8], [-300, -70, -700, 1.
 
 - `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/snip-rattle-pop-lid/index.html) · [在库中查看](../../patterns.html#pattern/snip-rattle-pop-lid)
+[打开 Demo](../../demos/patterns/snip-rattle-pop-lid/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/snip-rattle-pop-lid)

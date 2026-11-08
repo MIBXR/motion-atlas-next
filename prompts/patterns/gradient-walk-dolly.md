@@ -9,4 +9,4 @@
 - **来源片段**：10.3–70.3 秒；长镜头至 73 秒抵达世界 x=9800。
 - **事件减速**：film/scene.js:camXf：41→45 秒 x=5500→5850；54→58.5 秒 x=7300→7550。
 
-[打开 Demo](../../demos/patterns/gradient-walk-dolly/index.html) · [在库中查看](../../patterns.html#pattern/gradient-walk-dolly)
+[打开 Demo](../../demos/patterns/gradient-walk-dolly/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/gradient-walk-dolly)

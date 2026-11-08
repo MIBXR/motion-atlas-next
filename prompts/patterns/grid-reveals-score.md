@@ -8,4 +8,4 @@
 
 - **来源片段**：29.25–36.25 秒；29.25–30 秒旋转，30.5 秒标签开始，32–36 秒两小节扫奏。
 
-[打开 Demo](../../demos/patterns/grid-reveals-score/index.html) · [在库中查看](../../patterns.html#pattern/grid-reveals-score)
+[打开 Demo](../../demos/patterns/grid-reveals-score/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/grid-reveals-score)

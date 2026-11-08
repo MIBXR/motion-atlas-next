@@ -2,7 +2,7 @@
 
 **原片**：soft.「Soft Landing 柔软着陆」 · 1920×1080 · 24 fps · 10 秒 · AI 评审终评 7.71 / 10
 
-**源码**：[demos/04-3d-render/](../demos/04-3d-render/)
+**源码**：[demos/04-3d-render/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/04-3d-render)
 
 ## 怎么用
 

@@ -11,4 +11,4 @@
 - **二维相位**：0.3row−0.45lane / −0.17row+0.3lane；总幅度上限0.102世界单位
 - **退出**：模式切换、选档、阵列拖拽及惯性更新最后操作时间，按速率4指数退出
 
-[打开 Demo](../../demos/patterns/idle-breathing/index.html) · [在库中查看](../../patterns.html#pattern/idle-breathing)
+[打开 Demo](../../demos/patterns/idle-breathing/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/idle-breathing)

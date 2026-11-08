@@ -13,7 +13,7 @@
 [![Gallery](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/)
 [![Showcase](https://img.shields.io/badge/Showcase-community%20videos-7c3aed)](https://vincentwei1021.github.io/video-shotcraft/showcase.html)
 
-[![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)](https://github.com/Vincentwei1021/video-shotcraft/stargazers)
+![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-skill-d97757)](SKILL.md)
 [![Codex](https://img.shields.io/badge/Codex-skill-10a37f)](SKILL.md)
@@ -153,9 +153,9 @@ ln -s "$(pwd)" ~/.codex/skills/video-shotcraft    # Codex
 文言・フォントサイズ・色を編集、クリップの移動・トリム・速度変更、ライブラリの 150 ショットのドラッグ追加、
 Remotion での書き出しができます。プレビューとレンダリングはフレーム単位で一致します。
 
-![モーションワークベンチ](workbench/docs/overview.png)
+![モーションワークベンチ](https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/1266a3ec4831289c4d893d42dd5102723658039a/workbench/docs/overview.png)
 
-[ワークベンチガイド（各パネルをスクリーンショット付きで）](workbench/GUIDE.md)（中国語）·
+[ワークベンチガイド（各パネルをスクリーンショット付きで）](https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/workbench/GUIDE.md)（中国語）·
 [連携コントラクト](references/workbench.md)
 
 ## 納品物
@@ -166,7 +166,7 @@ Remotion での書き出しができます。プレビューとレンダリン�
 | Remotion プロジェクト | 映像のソース一式。各ショットは React コンポーネントで、あなたもエージェントも変更できます |
 | モーションワークベンチ | 納品後に自動で開く：トラック、インスペクタ、速度変更、ショット差し替え、書き出し（[詳細](#モーションワークベンチ)） |
 | 剪映ドラフト | 任意：ショット単位のクリップ・字幕・音声トラックを編集できる剪映プロジェクト |
-| SNS 投稿 | 任意、依頼があれば：Upload-Post で完成映像を TikTok・Instagram・YouTube・LinkedIn・X などへ投稿。キャプションと投稿先を確認し、dry-run の後に投稿（[ガイド](references/publish-upload-post.md)） |
+| SNS 投稿 | 任意、依頼があれば：Upload-Post で完成映像を TikTok・Instagram・YouTube・LinkedIn・X などへ投稿。キャプションと投稿先を確認し、dry-run の後に投稿（[ガイド](https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/references/publish-upload-post.md)） |
 
 ほかにも、再利用できる Remotion コンポーネント（2.5D ページカメラ、字幕、フラッシュカット、数字ロール）、
 Freesound の SFX 検索・ダウンロードツールと BGM 5 曲、ページキャプチャスクリプト、そして制作手法そのもの（素材キャプチャ、ビジュアルの方向付け、

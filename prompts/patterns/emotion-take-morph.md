@@ -16,4 +16,4 @@
 - `index.html 内联配置 → segments`：设置原片起止时刻，画面与音轨使用相同映射。
 - `index.html 内联配置 → markers / reduced`：设置巧思相对时间轴节点与减少动态的停留时刻。
 
-[打开 Demo](../../demos/patterns/emotion-take-morph/index.html) · [在库中查看](../../patterns.html#pattern/emotion-take-morph)
+[打开 Demo](../../demos/patterns/emotion-take-morph/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/emotion-take-morph)

@@ -2,9 +2,9 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Story of Chinese Characters* 《汉字的故事》 (49.3 s) · `chalkboard.mp4` · `chalkboard.srt` · source in [`demo/`](demo/)
+Demo: *The Story of Chinese Characters* 《汉字的故事》 (49.3 s) · `chalkboard.mp4` · `chalkboard.srt` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard/demo)
 
-A child has left a question in the corner of a freshly wiped classroom board: are 射 (shoot) and 矮 (short) swapped? A teacher's voice in Chinese tells the story; a subtitle plate carries each line in Chinese and English. Every fact and its source is in [`demo/FACTS.md`](demo/FACTS.md).
+A child has left a question in the corner of a freshly wiped classroom board: are 射 (shoot) and 矮 (short) swapped? A teacher's voice in Chinese tells the story; a subtitle plate carries each line in Chinese and English. Every fact and its source is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/chalkboard/demo/FACTS.md).
 
 ## Story & structure
 

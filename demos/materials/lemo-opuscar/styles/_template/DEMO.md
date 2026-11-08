@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Title of the Demo Film* (NN s) · `<slug>.mp4` · source in [`demo/`](demo/)
+Demo: *Title of the Demo Film* (NN s) · `<slug>.mp4` · source in `demo/`
 
 <!--
 How to fill this template (delete this comment):

@@ -23,4 +23,4 @@
 - `mechanism/config.js → segments / markers`：设置本巧思片段映射与标记；地图来源时刻：7→13.6/35.8→42.4。
 - `mechanism/score.json`：调整声音事件，按巧思时间对齐，保留音色参数。
 
-[打开 Demo](../../demos/patterns/corner-hud/index.html) · [在库中查看](../../patterns.html#pattern/corner-hud)
+[打开 Demo](../../demos/patterns/corner-hud/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/corner-hud)

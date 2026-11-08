@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Five Rules for a Poster* (44 s) · `swiss-motion.mp4` · source in [`demo/`](demo/)
+Demo: *Five Rules for a Poster* (44 s) · `swiss-motion.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/swiss-motion/demo)
 
 
 A 30–60 second film: five rules build one concert poster on a grid; a red circle breaks the grid, and the poster turns out to be the score of the music. The demo sets Archivo as its one family.

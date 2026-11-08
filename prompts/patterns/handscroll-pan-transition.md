@@ -8,4 +8,4 @@
 
 - **原片重放区间**：10.1–11.9秒；16–17.7秒；21.95–23.3秒；1倍速，总时长4.850000秒。
 
-[打开 Demo](../../demos/patterns/handscroll-pan-transition/index.html) · [在库中查看](../../patterns.html#pattern/handscroll-pan-transition)
+[打开 Demo](../../demos/patterns/handscroll-pan-transition/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/handscroll-pan-transition)

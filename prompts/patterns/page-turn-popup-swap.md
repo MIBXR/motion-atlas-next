@@ -8,4 +8,4 @@
 
 - **原片重放区间**：48.600000–52.500000秒；71.600000–75.500000秒；86.800000–90.700000秒；1倍速，总时长11.700000秒。
 
-[打开 Demo](../../demos/patterns/page-turn-popup-swap/index.html) · [在库中查看](../../patterns.html#pattern/page-turn-popup-swap)
+[打开 Demo](../../demos/patterns/page-turn-popup-swap/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/page-turn-popup-swap)

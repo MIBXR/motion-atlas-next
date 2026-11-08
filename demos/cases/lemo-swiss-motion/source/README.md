@@ -39,7 +39,7 @@ sh core/render/mux.sh $D/out/video24.mp4 $D/mix.wav styles/swiss-motion/swiss-mo
 
 ## 外部输入
 
-- 采样由上游 `tools/fetch.sh instruments freepats` / `instruments vcsl` 取得：MuldjordKit <https://freepats.zenvoid.org/Percussion/muldjordkit.html>（CC BY 4.0）；FreePats 电贝斯 <https://freepats.zenvoid.org/>（CC0）；VCSL 钟琴 <https://github.com/sgossner/VCSL>（CC0）。`music/score.py` 经共享 sampler 读取。
+- 采样由上游 `tools/fetch.sh instruments freepats` / `instruments vcsl` 取得：MuldjordKit <https://freepats.zenvoid.org/Percussion/acoustic-drum-kit.html>（CC BY 4.0）；FreePats 电贝斯 <https://freepats.zenvoid.org/>（CC0）；VCSL 钟琴 <https://github.com/sgossner/VCSL>（CC0）。`music/score.py` 经共享 sampler 读取。
 - Kokoro af_sarah 模型和声音包：<https://github.com/lemomo-ai/lemo-opuscar/releases/download/assets/voice.tar>，由 `tools/fetch.sh voice` 取得。
 - 字体来自 Google Fonts 的 `ofl/archivo`、`ofl/unifrakturmaguntia`、`ofl/dmserifdisplay`；UnifrakturMaguntia 的官方 Book 文件以原页面要求的 `UnifrakturMaguntia-Regular.ttf` 文件名保存。
 

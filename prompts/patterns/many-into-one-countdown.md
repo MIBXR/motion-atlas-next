@@ -8,4 +8,4 @@
 
 - **原片重放区间**：19.6–36.36秒；1倍速，总时长16.76秒。
 
-[打开 Demo](../../demos/patterns/many-into-one-countdown/index.html) · [在库中查看](../../patterns.html#pattern/many-into-one-countdown)
+[打开 Demo](../../demos/patterns/many-into-one-countdown/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/many-into-one-countdown)

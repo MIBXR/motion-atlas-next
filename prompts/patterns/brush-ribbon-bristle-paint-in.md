@@ -9,4 +9,4 @@
 - **来源片段**：10.2–22.8 秒，覆盖刷边揭景与沙漠标本入场。
 - **逐笔份额**：film/engine.js:drawList：dur=clamp(4/N,.12,.5)，第 j 笔从 j/N*(1−dur) 起。
 
-[打开 Demo](../../demos/patterns/brush-ribbon-bristle-paint-in/index.html) · [在库中查看](../../patterns.html#pattern/brush-ribbon-bristle-paint-in)
+[打开 Demo](../../demos/patterns/brush-ribbon-bristle-paint-in/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/brush-ribbon-bristle-paint-in)

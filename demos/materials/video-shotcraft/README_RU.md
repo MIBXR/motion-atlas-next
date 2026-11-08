@@ -13,7 +13,7 @@
 [![Галерея](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/)
 [![Витрина](https://img.shields.io/badge/Showcase-community%20videos-7c3aed)](https://vincentwei1021.github.io/video-shotcraft/showcase.html)
 
-[![Звёзды GitHub](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)](https://github.com/Vincentwei1021/video-shotcraft/stargazers)
+![Звёзды GitHub](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)
 [![Лицензия](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-skill-d97757)](SKILL.md)
 [![Codex](https://img.shields.io/badge/Codex-skill-10a37f)](SKILL.md)
@@ -166,9 +166,9 @@ ln -s "$(pwd)" ~/.codex/skills/video-shotcraft    # Codex
 точно по исходному монтажу. Выберите план, чтобы изменить текст, размеры шрифтов и цвета, перемещайте, обрезайте клипы и плавно меняйте скорость,
 добавляйте любой из 150 планов библиотеки и экспортируйте через Remotion. Превью и рендер совпадают покадрово. Языки интерфейса: English / 中文 / Русский.
 
-![Монтажный стол Motion Workbench](workbench/docs/overview.png)
+![Монтажный стол Motion Workbench](https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/1266a3ec4831289c4d893d42dd5102723658039a/workbench/docs/overview.png)
 
-[Руководство по монтажному столу: все панели со скриншотами](workbench/GUIDE.md) (на китайском) ·
+[Руководство по монтажному столу: все панели со скриншотами](https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/workbench/GUIDE.md) (на китайском) ·
 [Контракт интеграции](references/workbench.md)
 
 ## Что вы получите
@@ -179,7 +179,7 @@ ln -s "$(pwd)" ~/.codex/skills/video-shotcraft    # Codex
 | Проект Remotion | Полный исходный код ролика: каждый план — React-компонент, который можете изменить вы или агент |
 | Motion Workbench | Открывается после сдачи: дорожки, панель свойств, изменение тайминга, замена планов, экспорт ([подробнее](#motion-workbench)) |
 | Черновик JianYing | По желанию: редактируемый проект JianYing (CapCut CN) с отдельными клипами для каждого плана, субтитрами и аудиодорожками |
-| Публикация в соцсетях | По запросу: публикация готового ролика через Upload-Post в TikTok, Instagram, YouTube, LinkedIn, X и других сервисах. Подтвердите подпись и платформы, затем выполните пробный запуск без публикации ([руководство](references/publish-upload-post.md)) |
+| Публикация в соцсетях | По запросу: публикация готового ролика через Upload-Post в TikTok, Instagram, YouTube, LinkedIn, X и других сервисах. Подтвердите подпись и платформы, затем выполните пробный запуск без публикации ([руководство](https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/references/publish-upload-post.md)) |
 
 Также в комплекте: переиспользуемые компоненты Remotion (2.5D-камера для страниц, субтитры, переходы-вспышки, прокрутка цифр), инструменты поиска и загрузки звуков Freesound и
 5 музыкальных треков, скрипты захвата страниц и сам производственный процесс (захват, визуальная концепция, раскадровка,

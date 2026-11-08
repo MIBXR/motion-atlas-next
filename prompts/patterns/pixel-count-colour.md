@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-microscope：10.67–26.67秒；1倍速，总时长16.000000秒。
 
-[打开 Demo](../../demos/patterns/pixel-count-colour/index.html) · [在库中查看](../../patterns.html#pattern/pixel-count-colour)
+[打开 Demo](../../demos/patterns/pixel-count-colour/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/pixel-count-colour)

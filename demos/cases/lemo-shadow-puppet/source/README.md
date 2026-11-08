@@ -43,5 +43,5 @@
 - Kokoro模型与声音包：[voice.tar](https://github.com/lemomo-ai/lemo-opuscar/releases/download/assets/voice.tar)，使用上游 `tools/fetch.sh voice` 放入 `core/tts/`。
 - 采样库由上游 `tools/fetch.sh instruments` 安装至 `core/audio/instruments/`；[固定素材清单](https://github.com/lemomo-ai/lemo-opuscar/blob/f17136060781a0068a7951245a3aa7835a7230de/tools/assets.json)提供FreePats、Karoryfer、VSCO2CE与VCSL的Release包地址。`music/score.py` 读取所用乐器。
 - 字体 `MaShanZheng-Regular.ttf`：[原始文件](https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/mashanzheng/MaShanZheng-Regular.ttf)。
-- 字体 `CormorantGaramond-*.ttf`：[原始文件](https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/cormorantgaramond/)；wght=500/600/700，斜体600；固定字重实例。。
+- 字体 `CormorantGaramond-*.ttf`：[原始文件](https://github.com/google/fonts/tree/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/cormorantgaramond)；wght=500/600/700，斜体600；固定字重实例。。
 - 字体家族、字重与字符范围见 `../fonts/fonts.css`；OFL原文随字体保存。

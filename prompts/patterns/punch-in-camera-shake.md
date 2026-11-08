@@ -30,4 +30,4 @@ os = 1 + .03 * Math.exp(-Math.pow((u - 1.6 * FR) / (.9 * FR), 2))
 
 - `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/punch-in-camera-shake/index.html) · [在库中查看](../../patterns.html#pattern/punch-in-camera-shake)
+[打开 Demo](../../demos/patterns/punch-in-camera-shake/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/punch-in-camera-shake)

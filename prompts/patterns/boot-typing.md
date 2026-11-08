@@ -20,4 +20,4 @@
 - **扫描与欢迎**：14.48s 扫描；17.76s 欢迎；21.56–21.92s 缩小、失焦并淡出
 - **总时长**：21.92秒
 
-[打开 Demo](../../demos/patterns/boot-typing/index.html) · [在库中查看](../../patterns.html#pattern/boot-typing)
+[打开 Demo](../../demos/patterns/boot-typing/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/boot-typing)

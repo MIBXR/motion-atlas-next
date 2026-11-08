@@ -11,4 +11,4 @@
 - **声音句式**：SFX：945 riser-cine.mp3 volume=0.5；980 impact-cine.mp3 volume=0.55；1005 sparkle.mp3 volume=0.3。
 - **收尾**：tag=68→80；fadeOut=duration-12→duration，即 133→145；字标完整后保留至少 30 帧。
 
-[打开 Demo](../../demos/patterns/outro-group-photo-slam/index.html) · [在库中查看](../../patterns.html#pattern/outro-group-photo-slam)
+[打开 Demo](../../demos/patterns/outro-group-photo-slam/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/outro-group-photo-slam)

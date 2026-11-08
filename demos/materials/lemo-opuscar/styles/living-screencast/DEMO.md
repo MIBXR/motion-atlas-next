@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Clawd Moves In* (59.4 s) · `living-screencast.mp4` · source in [`demo/`](demo/) · Claude Code in the Claude app, with Clawd (the Claude Code pixel mascot) as the protagonist. Unofficial fan film; Anthropic did not make or endorse it.
+Demo: *Clawd Moves In* (59.4 s) · `living-screencast.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/living-screencast/demo) · Claude Code in the Claude app, with Clawd (the Claude Code pixel mascot) as the protagonist. Unofficial fan film; Anthropic did not make or endorse it.
 
 
 ## Story & structure

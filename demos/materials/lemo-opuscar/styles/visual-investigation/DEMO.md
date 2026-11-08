@@ -2,9 +2,9 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Hindenburg: Four Minutes, 32 Seconds* (兴登堡号：四分钟与三十二秒, 60.0 s) · `visual-investigation.mp4` · source in [`demo/`](demo/)
+Demo: *The Hindenburg: Four Minutes, 32 Seconds* (兴登堡号：四分钟与三十二秒, 60.0 s) · `visual-investigation.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/visual-investigation/demo)
 
-An unofficial film. Every picture, page, map and sound in it comes from real archives and public institutions (the U.S. National Archives' Universal Newsreels, the U.S. Navy and the Naval History and Heritage Command, the FBI file, the U.S. Department of Commerce accident report, the U.S. Geological Survey); none of them made or endorsed it. All facts and their sources are in [`demo/FACTS.md`](demo/FACTS.md); every inference is marked on screen.
+An unofficial film. Every picture, page, map and sound in it comes from real archives and public institutions (the U.S. National Archives' Universal Newsreels, the U.S. Navy and the Naval History and Heritage Command, the FBI file, the U.S. Department of Commerce accident report, the U.S. Geological Survey); none of them made or endorsed it. All facts and their sources are in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/visual-investigation/demo/FACTS.md); every inference is marked on screen.
 
 ## Story & structure
 

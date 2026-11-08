@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Week in AI* (本周 AI 四件事, 53.5 s) · `news-package.mp4` · subtitles `news-package.srt` (external only, Chinese + English) · source in [`demo/`](demo/)
+Demo: *The Week in AI* (本周 AI 四件事, 53.5 s) · `news-package.mp4` · subtitles `news-package.srt` (external only, Chinese + English) · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/news-package/demo)
 
 LEMO AI NEWS, LemoLab's own channel, reports four stories from the week of 12–18 October 2026, with a Chinese anchor voice:
 
@@ -11,7 +11,7 @@ LEMO AI NEWS, LemoLab's own channel, reports four stories from the week of 12–
 3. The EU's AI Office sends questions to OpenAI and Anthropic (as reported by Euronews). In Dublin, the Commission's Executive Vice-President says the office "has started enforcing these rules".
 4. Meta releases the weights of Muse Spark Open: 816B parameters, 42B active per token, running on two Mac Studios.
 
-Every number and sentence is checked against the sources in [`demo/FACTS.md`](demo/FACTS.md). The Kospi line is drawn from real daily closes.
+Every number and sentence is checked against the sources in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/news-package/demo/FACTS.md). The Kospi line is drawn from real daily closes.
 
 This is an unofficial film made from public information: company pages, exchange data, news reports and a European Commission speech. None of Google, Meta, OpenAI, Anthropic, Samsung, SK hynix, Apple, Euronews or the European Commission made or endorsed it. Their names are set in type, never as logos. Two background plates (a server aisle, a silicon wafer) are AI-generated illustrations and carry an "ILLUSTRATION / 示意" tag whenever they are on screen.
 

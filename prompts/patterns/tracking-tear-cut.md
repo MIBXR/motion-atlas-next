@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-backrooms：35.600000–38.400000秒，1倍速，总时长2.800000秒。
 
-[打开 Demo](../../demos/patterns/tracking-tear-cut/index.html) · [在库中查看](../../patterns.html#pattern/tracking-tear-cut)
+[打开 Demo](../../demos/patterns/tracking-tear-cut/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/tracking-tear-cut)

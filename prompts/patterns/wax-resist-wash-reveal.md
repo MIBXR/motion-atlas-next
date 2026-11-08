@@ -8,4 +8,4 @@
 
 - **原片重放区间**：26.8–35.3秒；1倍速，总时长8.500000秒。
 
-[打开 Demo](../../demos/patterns/wax-resist-wash-reveal/index.html) · [在库中查看](../../patterns.html#pattern/wax-resist-wash-reveal)
+[打开 Demo](../../demos/patterns/wax-resist-wash-reveal/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/wax-resist-wash-reveal)

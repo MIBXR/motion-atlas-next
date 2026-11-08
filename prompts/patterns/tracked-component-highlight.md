@@ -8,4 +8,4 @@
 
 - **原片重放区间**：18.5–28.7秒；28.7–33.5秒；1倍速，总时长15.000000秒。
 
-[打开 Demo](../../demos/patterns/tracked-component-highlight/index.html) · [在库中查看](../../patterns.html#pattern/tracked-component-highlight)
+[打开 Demo](../../demos/patterns/tracked-component-highlight/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/tracked-component-highlight)

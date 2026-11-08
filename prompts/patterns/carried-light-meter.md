@@ -8,4 +8,4 @@
 
 - **原片重放区间**：lemo-hd-2d 15.200000–17.400000秒；lemo-hd-2d 40.600000–47.600000秒；1倍速，总时长9.200000秒。
 
-[打开 Demo](../../demos/patterns/carried-light-meter/index.html) · [在库中查看](../../patterns.html#pattern/carried-light-meter)
+[打开 Demo](../../demos/patterns/carried-light-meter/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/carried-light-meter)

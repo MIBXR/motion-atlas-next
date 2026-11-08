@@ -8,4 +8,4 @@
 
 - **原片重放区间**：6.3–12.3秒；23.8–38.6秒；1倍速，总时长20.8秒。
 
-[打开 Demo](../../demos/patterns/multi-source-timeline/index.html) · [在库中查看](../../patterns.html#pattern/multi-source-timeline)
+[打开 Demo](../../demos/patterns/multi-source-timeline/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/multi-source-timeline)

@@ -2,11 +2,11 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *410 Days* (410 天, 60.0 s) · `kino-montage.mp4` · subtitles `kino-montage.srt` · source in [`demo/`](demo/)
+Demo: *410 Days* (410 天, 60.0 s) · `kino-montage.mp4` · subtitles `kino-montage.srt` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/kino-montage/demo)
 
 The Empire State Building went from first steel (17 March 1930) to opening day (1 May 1931) in 410 days. Its own 1931 brochure has a column headed "The Men Who Did the Job" that lists owners, directors and contractors. The film asks that heading as a question and answers it with the construction film and Lewis Hine's photographs: 2,500 men a day, up to about 4,000.
 
-It is an unofficial film made entirely from public archives and real documents: a 1930–31 construction film by the steel fabricator (American Bridge Company / U.S. Steel, *Empires of Steel*), three Lewis Hine photographs (U.S. National Archives; The Metropolitan Museum of Art, CC0), and the 1931 brochure *What Everybody Wants to Know About Empire State* (Columbia University Libraries). It is not affiliated with or endorsed by the building or any company named in it. Every fact is sourced in [`demo/FACTS.md`](demo/FACTS.md), every asset in [`demo/CREDITS`](demo/CREDITS) and [`demo/SOURCES.md`](demo/SOURCES.md).
+It is an unofficial film made entirely from public archives and real documents: a 1930–31 construction film by the steel fabricator (American Bridge Company / U.S. Steel, *Empires of Steel*), three Lewis Hine photographs (U.S. National Archives; The Metropolitan Museum of Art, CC0), and the 1931 brochure *What Everybody Wants to Know About Empire State* (Columbia University Libraries). It is not affiliated with or endorsed by the building or any company named in it. Every fact is sourced in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/kino-montage/demo/FACTS.md), every asset in [`demo/CREDITS`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/kino-montage/demo/CREDITS) and [`demo/SOURCES.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/kino-montage/demo/SOURCES.md).
 
 ## Story & structure
 

@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Fields Under the Forest* 《林下的田》 (40.0 s) · `lidar-survey.mp4` · source in [`demo/`](demo/)
+Demo: *The Fields Under the Forest* 《林下的田》 (40.0 s) · `lidar-survey.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/lidar-survey/demo)
 
 From the air, a patch of Ashford, Connecticut is only forest. A laser survey turns the photo into points, a cutting plane strips the canopy layer by layer, and the ground that is left condenses into a surface with stone walls on it: the field system of farms that were here, 3.4 km of wall traced in 0.74 km². One wall is cut and measured; the town's history comes in two numbers; the forest grows back over the walls. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English line below). This is an unofficial film made from public-domain survey data and imagery; the U.S. Geological Survey, the USDA and the town of Ashford did not make or endorse it.
 
@@ -14,7 +14,7 @@ Arc: a claim (a July 2016 aerial photo, nothing but canopy) → the medium chang
 
 Native moves spent: *photo to points* at the opening; *the canopy peel* as the signature shot; *points condense* at the turn; *the section* for the detail; *the window* (the survey area as a stage inside the dim, unpeeled cloud) throughout; *the regrowth* as the ending.
 
-Every number and its source is in [`demo/FACTS.md`](demo/FACTS.md); measured values are labelled as measured or traced on screen.
+Every number and its source is in [`demo/FACTS.md`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/lidar-survey/demo/FACTS.md); measured values are labelled as measured or traced on screen.
 
 ## Shots
 

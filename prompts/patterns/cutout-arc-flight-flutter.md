@@ -17,4 +17,4 @@ if (it.mode === 'flutter') sx = k < fl ? [1, 0.35][K(tl) % 2] : [1, 0.58][Math.f
 
 - `index.html 内联配置 → segments / markers`：调整来源片段和标记；画面与音轨使用同一时刻映射。
 
-[打开 Demo](../../demos/patterns/cutout-arc-flight-flutter/index.html) · [在库中查看](../../patterns.html#pattern/cutout-arc-flight-flutter)
+[打开 Demo](../../demos/patterns/cutout-arc-flight-flutter/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/cutout-arc-flight-flutter)

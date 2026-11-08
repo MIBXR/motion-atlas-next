@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Counting Itself Down* (自己倒数, 59.5 s) · `countdown.mp4` · source in [`demo/`](demo/)
+Demo: *Counting Itself Down* (自己倒数, 59.5 s) · `countdown.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/countdown/demo)
 
 The last minute of the Artemis II launch (1 April 2026, Launch Complex 39B), in real time from T−32.5 to T+27.0 with no cut in time. Everything on screen is NASA's own launch-day material: the live broadcast and its audio, the Firing Room, a camera on the rocket, a camera on Orion, a drone, two ground cameras, a crew photo and the mission fact sheet. This is an unofficial film; NASA did not make or endorse it.
 

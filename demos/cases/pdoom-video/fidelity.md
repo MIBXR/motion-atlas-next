@@ -60,3 +60,5 @@ ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0
 ```
 
 `?render=1&sound=1` 下等待就绪并尝试开启声音，`soundEnabled=false`、`soundState="off"`；减少动态时为 `time=24`、`playing=false`、`data-motion-ready="1"`。
+
+快照中的相对链接已改为指向上游固定提交。

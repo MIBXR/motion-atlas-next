@@ -23,3 +23,5 @@
 ## 自行实现
 
 本库实现外层 `index.html`、`film/script.js`、舞台样式与完整音轨接入，以及 `source/rhinelabui/film/` 的虚拟时钟、输入序列和离线音频桥接、`build.mjs` 的资源路径与产物组织。上游源码中的接入修改及逐文件职责列在 [UPSTREAM.md](source/rhinelabui/UPSTREAM.md)。
+
+快照中的相对链接已改为指向上游固定提交。

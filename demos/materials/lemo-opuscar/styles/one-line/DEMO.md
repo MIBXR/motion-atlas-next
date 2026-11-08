@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Line That Never Lifted* (47.5 s) · `one-line.mp4` · source in [`demo/`](demo/)
+Demo: *The Line That Never Lifted* (47.5 s) · `one-line.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/one-line/demo)
 
 
 A 30–60 second film: one man's life drawn as one line that, in the final pull-back, turns out to be his own face as an old man.

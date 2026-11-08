@@ -10,4 +10,4 @@
 - **反色曲线**：backgrounds[0]：20.083–21.133 秒 q→1；backgrounds[1]：27.667–28.9 秒 q→0。
 - **转调线**：mod-0 globalX 3827.15，19.2–25.217 秒；mod-1 globalX 5274.325，26.8–32.817 秒。
 
-[打开 Demo](../../demos/patterns/key-change-color-flip/index.html) · [在库中查看](../../patterns.html#pattern/key-change-color-flip)
+[打开 Demo](../../demos/patterns/key-change-color-flip/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/key-change-color-flip)

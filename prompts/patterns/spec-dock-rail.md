@@ -8,4 +8,4 @@
 
 - **原片重放区间**：10.000—22.200秒；28.000—34.000秒，1倍速。
 
-[打开 Demo](../../demos/patterns/spec-dock-rail/index.html) · [在库中查看](../../patterns.html#pattern/spec-dock-rail)
+[打开 Demo](../../demos/patterns/spec-dock-rail/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/spec-dock-rail)

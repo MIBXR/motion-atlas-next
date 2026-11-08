@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Left Behind* 《被落下的伞》 (50.0 s, 1920×1080, 24 fps) · `pictogram-motion.mp4` · source in [`demo/`](demo/)
+Demo: *Left Behind* 《被落下的伞》 (50.0 s, 1920×1080, 24 fps) · `pictogram-motion.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/pictogram-motion/demo)
 
 A yellow umbrella is left on a city bus on a rainy morning. All day in the sun nobody needs it; at the end of the line it joins 312 other lost umbrellas on the depot's shelf. At rush hour the storm comes back, the depot opens every shelf, and 313 umbrellas go back out into the rain. The hero is an object, not a person: the cast is an umbrella, a bus, doors, stop signs, a clock, clouds, sun, moon, lightning, a lost-property sign and footprints, all built from the same round-capped geometry as the grid pattern. English narration (Kokoro `bf_emma`) with Chinese and English subtitles. Line 4, the street names, the depot and the number 313 are fiction.
 

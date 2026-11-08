@@ -8,4 +8,4 @@
 
 - **原片重放区间**：9.545455–25.000000秒；1倍速，总时长15.454545秒。
 
-[打开 Demo](../../demos/patterns/type-as-architecture/index.html) · [在库中查看](../../patterns.html#pattern/type-as-architecture)
+[打开 Demo](../../demos/patterns/type-as-architecture/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/type-as-architecture)

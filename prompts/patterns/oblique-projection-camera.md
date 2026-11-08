@@ -8,4 +8,4 @@
 
 - **原片重放区间**：10.700000–13.000000秒；1倍速，共2.300000秒。
 
-[打开 Demo](../../demos/patterns/oblique-projection-camera/index.html) · [在库中查看](../../patterns.html#pattern/oblique-projection-camera)
+[打开 Demo](../../demos/patterns/oblique-projection-camera/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/oblique-projection-camera)

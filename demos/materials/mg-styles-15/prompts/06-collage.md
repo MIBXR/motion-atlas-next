@@ -2,7 +2,7 @@
 
 **原片**：NOGGIN 脑洞季刊「脑洞大开 The Mind Is a Collage」 · 1920×1080 · 30 fps · 10 秒 · AI 评审终评 8.14 / 10
 
-**源码**：[demos/06-collage/](../demos/06-collage/)
+**源码**：[demos/06-collage/](https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/demos/06-collage)
 
 ## 怎么用
 

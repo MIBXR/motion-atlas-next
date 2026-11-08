@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Little Sprite's Adventure* (*Pip's Paper Adventure*, 小精灵冒险记) (133.0 s, 1920×1080, 60 fps) · `paper-popup.mp4` · source in [`demo/`](demo/) · engine: three.js r170 (WebGL2) rendered frame by frame in headless Chrome, Canvas2D for all paper art, Python for score editing and mixing
+Demo: *The Little Sprite's Adventure* (*Pip's Paper Adventure*, 小精灵冒险记) (133.0 s, 1920×1080, 60 fps) · `paper-popup.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/paper-popup/demo) · engine: three.js r170 (WebGL2) rendered frame by frame in headless Chrome, Canvas2D for all paper art, Python for score editing and mixing
 
 
 ## Story & structure

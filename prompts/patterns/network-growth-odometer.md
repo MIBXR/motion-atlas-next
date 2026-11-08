@@ -8,4 +8,4 @@
 
 - **原片重放区间**：13.000—21.700秒，1倍速。
 
-[打开 Demo](../../demos/patterns/network-growth-odometer/index.html) · [在库中查看](../../patterns.html#pattern/network-growth-odometer)
+[打开 Demo](../../demos/patterns/network-growth-odometer/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/network-growth-odometer)

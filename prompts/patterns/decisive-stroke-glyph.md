@@ -8,4 +8,4 @@
 
 - **原片重放区间**：26.800000–35.000000秒；1倍速，总时长8.200000秒。
 
-[打开 Demo](../../demos/patterns/decisive-stroke-glyph/index.html) · [在库中查看](../../patterns.html#pattern/decisive-stroke-glyph)
+[打开 Demo](../../demos/patterns/decisive-stroke-glyph/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/decisive-stroke-glyph)

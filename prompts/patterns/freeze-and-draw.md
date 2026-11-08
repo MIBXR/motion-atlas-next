@@ -8,4 +8,4 @@
 
 - **原片重放区间**：5.2–10.6秒；22.4–33.2秒；1倍速，总时长16.2秒。
 
-[打开 Demo](../../demos/patterns/freeze-and-draw/index.html) · [在库中查看](../../patterns.html#pattern/freeze-and-draw)
+[打开 Demo](../../demos/patterns/freeze-and-draw/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/freeze-and-draw)

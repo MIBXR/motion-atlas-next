@@ -8,4 +8,4 @@
 
 - **原片重放区间**：9–13秒；1倍速，总时长4秒。
 
-[打开 Demo](../../demos/patterns/flap-board-price-table/index.html) · [在库中查看](../../patterns.html#pattern/flap-board-price-table)
+[打开 Demo](../../demos/patterns/flap-board-price-table/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/flap-board-price-table)

@@ -2,7 +2,7 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *The Ship Decides* (船说了算, 40.0 s) · `briefing-board.mp4` · source in [`demo/`](demo/)
+Demo: *The Ship Decides* (船说了算, 40.0 s) · `briefing-board.mp4` · source in [`demo/`](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/briefing-board/demo)
 
 A river 1,000 m wide needs a bridge. The first instinct, piers all the way across, is stamped out the moment a container ship sails into one of them. The new rule: no piers in the channel, one span. Four bridge types are tested against the river's width, drawn to one scale. The river set the question; the ship sets the span.
 

@@ -8,4 +8,4 @@
 
 - **原片重放区间**：36.200000–40.500000秒；1倍速，共4.300000秒。
 
-[打开 Demo](../../demos/patterns/icon-wall-pattern/index.html) · [在库中查看](../../patterns.html#pattern/icon-wall-pattern)
+[打开 Demo](../../demos/patterns/icon-wall-pattern/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/icon-wall-pattern)

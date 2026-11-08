@@ -24,4 +24,4 @@
 - `mechanism/replay.js → config.segments / markers；mechanism/config.js → segments / markers`：mechanism/replay.js 设置地图与追加案例的重放区间、顺序和标记；mechanism/config.js 设置 mechanism/scene.html 地图片段。地图来源时刻：24.2→25.85/33→33.8/40.6→44.8。
 - `mechanism/score.json`：调整声音事件，按巧思时间对齐，保留音色参数。
 
-[打开 Demo](../../demos/patterns/chapter-frame/index.html) · [在库中查看](../../patterns.html#pattern/chapter-frame)
+[打开 Demo](../../demos/patterns/chapter-frame/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/chapter-frame)

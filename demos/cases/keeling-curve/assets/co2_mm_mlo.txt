@@ -26,7 +26,7 @@
 # of the Scripps Institution of Oceanography (SIO) and were obtained from the
 # Scripps website (scrippsco2.ucsd.edu).
 # Monthly mean CO2 constructed from daily mean values.
-# Scripps data downloaded from http://scrippsco2.ucsd.edu/data/atmospheric_co2
+# Scripps data downloaded from https://scrippsco2.ucsd.edu/data/primary-mauna-loa-co2-record/
 # Monthly values are corrected to center of month based on average seasonal
 # cycle. Missing days can be asymmetric which would produce a high or low bias.
 # Missing months have been interpolated, for NOAA data indicated by negative stdev

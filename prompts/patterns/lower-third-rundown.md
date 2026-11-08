@@ -8,4 +8,4 @@
 
 - **原片重放区间**：1.5–9秒；23.7–24.3秒；45–47.5秒；1倍速，总时长10.6秒。
 
-[打开 Demo](../../demos/patterns/lower-third-rundown/index.html) · [在库中查看](../../patterns.html#pattern/lower-third-rundown)
+[打开 Demo](../../demos/patterns/lower-third-rundown/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/lower-third-rundown)

@@ -13,7 +13,7 @@
 [![Gallery](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/)
 [![Showcase](https://img.shields.io/badge/Showcase-community%20videos-7c3aed)](https://vincentwei1021.github.io/video-shotcraft/showcase.html)
 
-[![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)](https://github.com/Vincentwei1021/video-shotcraft/stargazers)
+![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-skill-d97757)](SKILL.md)
 [![Codex](https://img.shields.io/badge/Codex-skill-10a37f)](SKILL.md)
@@ -161,9 +161,9 @@ ln -s "$(pwd)" ~/.codex/skills/video-shotcraft    # Codex
 拆成镜头 / 转场 / 字幕 / 音效多轨；选中任意镜头可以改文案、字号和颜色，镜头可挪、可裁、可变速，镜头库里的
 150 个镜头都能直接拖上轨，改完用 Remotion 导出。预览与渲染逐帧一致。
 
-![动效工作台](workbench/docs/overview.png)
+![动效工作台](https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/1266a3ec4831289c4d893d42dd5102723658039a/workbench/docs/overview.png)
 
-[工作台图文指南：各区域与功能](workbench/GUIDE.md) · [成片接入契约](references/workbench.md)
+[工作台图文指南：各区域与功能](https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/workbench/GUIDE.md) · [成片接入契约](references/workbench.md)
 
 ## 你会拿到什么
 
@@ -173,7 +173,7 @@ ln -s "$(pwd)" ~/.codex/skills/video-shotcraft    # Codex
 | Remotion 工程 | 整支片的源码：每个镜头都是一个 React 组件，你或 agent 都能改 |
 | 动效工作台 | 交付后自动打开：多轨时间线、属性面板、变速、换镜头、导出（[详情](#动效工作台)） |
 | 剪映工程 | 可选：可编辑的剪映草稿，镜头分段、字幕和音轨都能改 |
-| 社交平台发布 | 可选，用户要求时：通过 Upload-Post 把成片发到 TikTok / Instagram / YouTube / LinkedIn / X 等；先确认文案与平台、dry-run 后再发（[说明](references/publish-upload-post.md)） |
+| 社交平台发布 | 可选，用户要求时：通过 Upload-Post 把成片发到 TikTok / Instagram / YouTube / LinkedIn / X 等；先确认文案与平台、dry-run 后再发（[说明](https://github.com/Vincentwei1021/video-shotcraft/blob/1266a3ec4831289c4d893d42dd5102723658039a/references/publish-upload-post.md)） |
 
 另外还附带：可复用的 Remotion 组件（2.5D 页面相机、字幕、闪切、数字滚动）、Freesound 音效搜索下载工具和 5 首 BGM、
 页面素材采集脚本，以及整套制作方法（素材采集、风格定调、分镜、声音设计、节奏卡点、最终验收），

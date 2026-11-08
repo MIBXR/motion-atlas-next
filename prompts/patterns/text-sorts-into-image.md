@@ -8,4 +8,4 @@
 
 - **原片重放区间**：33.200000–40.200000秒；1倍速，总时长7.000000秒。
 
-[打开 Demo](../../demos/patterns/text-sorts-into-image/index.html) · [在库中查看](../../patterns.html#pattern/text-sorts-into-image)
+[打开 Demo](../../demos/patterns/text-sorts-into-image/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/text-sorts-into-image)

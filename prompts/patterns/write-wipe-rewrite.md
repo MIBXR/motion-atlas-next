@@ -8,4 +8,4 @@
 
 - **原片重放区间**：33.5–39.7秒；1倍速，总时长6.200000秒。
 
-[打开 Demo](../../demos/patterns/write-wipe-rewrite/index.html) · [在库中查看](../../patterns.html#pattern/write-wipe-rewrite)
+[打开 Demo](../../demos/patterns/write-wipe-rewrite/index.html) · [在库中查看](https://motion-atlas-library.mibxranime.chatgpt.site/#/patterns/write-wipe-rewrite)
