@@ -2,8 +2,6 @@
 // 用户输入（滚轮、触摸、按键、指针）或工作台自己的跳转之后的短时间内，滚动照常生效。
 const WINDOW_MS = 1200;
 let allowUntil = 0;
-let y = 0;
-let pressed = false;
 
 export function allowScroll(ms = WINDOW_MS) { allowUntil = Math.max(allowUntil, performance.now() + ms); }
 
@@ -22,18 +20,43 @@ export function installScrollGuard() {
   // 点链接或按键离开前立刻记下当前位置，避免停止滚动后 150ms 内跳转时丢失。
   window.addEventListener("pointerdown", flush, { capture: true, passive: true });
   window.addEventListener("keydown", flush, { capture: true, passive: true });
-  y = window.scrollY;
+  let y = window.scrollY;
+  let pressed = false;
+  const capture = { capture: true, passive: true };
   const intent = () => allowScroll();
-  for (const type of ["wheel", "touchstart", "touchmove", "keydown", "pointerdown", "popstate", "hashchange"]) {
-    window.addEventListener(type, intent, { capture: true, passive: true });
+  const onInput = (event: Event) => { if (event.isTrusted) intent(); };
+  const watchInput = (target: Window | Document) => {
+    for (const type of ["wheel", "touchstart", "touchmove", "touchend", "keydown", "pointerdown"]) {
+      target.addEventListener(type, onInput, capture);
+    }
+  };
+  watchInput(window);
+  document.addEventListener("load", ({ target }) => {
+    if (target instanceof HTMLIFrameElement && target.contentDocument) watchInput(target.contentDocument);
+  }, true);
+  for (const type of ["popstate", "hashchange", "resize"]) {
+    window.addEventListener(type, intent, capture);
   }
+  window.visualViewport?.addEventListener("resize", intent, { passive: true });
   // 拖动滚动条或选择文字时指针一直按着，按住期间都算用户滚动。
   window.addEventListener("pointerdown", () => { pressed = true; }, { capture: true, passive: true });
   for (const type of ["pointerup", "pointercancel", "blur"]) window.addEventListener(type, () => { if (pressed) { pressed = false; allowScroll(); } }, { capture: true, passive: true });
   window.addEventListener("scroll", () => {
-    if (pressed || performance.now() < allowUntil) { y = window.scrollY; return; }
-    if (Math.abs(window.scrollY - y) > 1) window.scrollTo({ top: y, behavior: "instant" as ScrollBehavior });
+    const current = window.scrollY;
+    if (pressed || performance.now() < allowUntil) {
+      y = current;
+      // 惯性滚动仍在进行时延长放行时间。
+      allowScroll();
+      return;
+    }
+    if (!document.querySelector("iframe")?.contentDocument) {
+      y = current;
+      return;
+    }
+    const { scrollHeight, clientHeight } = document.documentElement;
+    const max = Math.max(0, scrollHeight - clientHeight);
+    y = Math.max(0, Math.min(y, max));
+    const top = Math.max(0, Math.min(current, max));
+    if (Math.abs(top - y) > 1) window.scrollTo({ top: y, behavior: "instant" as ScrollBehavior });
   }, { passive: true });
-  // 页面变短时浏览器会自行收回滚动位置，记下新位置，避免反复拉回。
-  new ResizeObserver(() => { if (window.scrollY !== y && performance.now() >= allowUntil) y = Math.min(y, document.documentElement.scrollHeight - window.innerHeight); }).observe(document.documentElement);
 }
