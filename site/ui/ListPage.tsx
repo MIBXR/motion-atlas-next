@@ -6,7 +6,7 @@ import { FilterToolbar } from "@/registry/components/filter-toolbar/filter-toolb
 import { SearchField } from "@/registry/components/search-field/search-field";
 import SegmentedControl from "@/registry/components/segmented-control/segmented-control";
 import { EmptyState } from "@/registry/components/empty-state/empty-state";
-import { Drawer, DrawerContent } from "@/registry/components/drawer/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/registry/components/drawer/drawer";
 import { ArrowDownWideNarrow, ArrowUpNarrowWide, Filter, LayoutGrid, List, Star } from "./icons";
 import { navigate, paramList, useRoute, withParams } from "../core/router";
 import { matches, terms } from "../core/search";
@@ -81,7 +81,6 @@ function FacetGroup({ facet, counts, selected, onToggle }: { facet: Facet; count
 export function ListPage({ kind }: { kind: Kind }) {
   const { facets, data } = useAtlas();
   const s = useListState(kind);
-  const [drawer, setDrawer] = useState(false);
   const page = useRef<HTMLDivElement>(null);
   const bar = useRef<HTMLDivElement>(null);
   const facetColumn = useRef<HTMLElement>(null);
@@ -100,6 +99,35 @@ export function ListPage({ kind }: { kind: Kind }) {
     set({ [key]: cur.includes(v) ? cur.filter(x => x !== v) : [...cur, v] });
   };
   const active = facets[kind].flatMap(f => s.selected[f.key]!.map(v => ({ id: JSON.stringify([f.key, v]), label: f.label, value: f.display(v), key: f.key, raw: v })));
+  const filterCount = active.length + Number(Boolean(s.q.trim())) + Number(s.favOnly);
+  const search = (
+    <SearchField
+      label={`搜索${KIND_NAME[kind]}`}
+      placeholder="多个词用空格分隔，需全部命中"
+      value={s.q}
+      onValueChange={v => set({ q: v }, true)}
+    />
+  );
+  const sortControls = <>
+    <SegmentedControl label="排序" value={s.sort} onValueChange={v => set({ sort: v === "order" ? null : v })} options={[{ value: "order", label: "编号" }, { value: "title", label: "名称" }]} />
+    <Button variant="secondary" size="md" aria-label={s.dir === "asc" ? "正序，点按切换为反序" : "反序，点按切换为正序"} title={s.dir === "asc" ? "正序" : "反序"} onClick={() => set({ dir: s.dir === "asc" ? "desc" : null })}>
+      {s.dir === "asc" ? <ArrowUpNarrowWide /> : <ArrowDownWideNarrow />}
+    </Button>
+  </>;
+  const favoritesButton = (
+    <Button variant={s.favOnly ? "primary" : "secondary"} size="md" aria-pressed={s.favOnly} onClick={() => set({ fav: s.favOnly ? null : "1" })}>
+      <Star fill={s.favOnly ? "currentColor" : "none"} /><span>只看收藏</span>
+    </Button>
+  );
+  const viewSwitch = (
+    <SegmentedControl className="view-switch" label="布局" value={view} onValueChange={v => set({ view: v === "grid" ? null : "list" })} options={[
+      { value: "grid", label: "", accessory: <><LayoutGrid aria-hidden="true" /><span className="visually-hidden">网格</span></> },
+      { value: "list", label: "", accessory: <><List aria-hidden="true" /><span className="visually-hidden">列表</span></> },
+    ]} />
+  );
+  const selectedFilters = active.length ? (
+    <FilterToolbar label="已选筛选条件" filters={active} onRemove={id => { const filter = active.find(item => item.id === id)!; toggle(filter.key, filter.raw); }} onClearAll={() => set(Object.fromEntries(facets[kind].map(f => [f.key, null])))} />
+  ) : null;
   const filterPanel = (
     <div className="facets">
       {facets[kind].map(f => <FacetGroup key={f.key} facet={f} counts={s.counts[f.key]!} selected={s.selected[f.key]!} onToggle={v => toggle(f.key, v)} />)}
@@ -109,33 +137,33 @@ export function ListPage({ kind }: { kind: Kind }) {
   return (
     <div ref={page} className="page list-page">
       <header className="page-head">
-        <div>
-          <h1>{KIND_NAME[kind]} <span className="muted">{s.items.length} / {data[kind].length}</span></h1>
-        </div>
+        <h1>{KIND_NAME[kind]} <span className="muted">{s.items.length} / {data[kind].length}</span></h1>
+        <Drawer>
+          <DrawerTrigger asChild>
+            <Button variant="secondary" size="md" className="only-narrow list-filter-trigger" aria-label={filterCount ? `筛选，已启用 ${filterCount} 项` : "筛选"}>
+              <Filter aria-hidden="true" /><span>筛选{filterCount ? ` ${filterCount}` : ""}</span>
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent title={`筛选${KIND_NAME[kind]}`} side="right" className="list-filter-drawer" aria-describedby={undefined}>
+            <div className="list-filter-body">
+              {search}
+              {selectedFilters}
+              <div className="toolbar-row">{sortControls}</div>
+              <div className="toolbar-row">{favoritesButton}<span className="toolbar-spacer" />{viewSwitch}</div>
+              {filterPanel}
+            </div>
+          </DrawerContent>
+        </Drawer>
       </header>
       <div ref={bar} className="toolbar">
-        <div className="search-wrap"><SearchField
-          label={`搜索${KIND_NAME[kind]}`}
-          placeholder="多个词用空格分隔，需全部命中"
-          value={s.q}
-          onValueChange={v => set({ q: v }, true)}
-        /></div>
+        <div className="search-wrap">{search}</div>
         <div className="toolbar-row">
-          <Button variant="secondary" size="md" className="only-narrow" onClick={() => setDrawer(true)}><Filter /><span>筛选{active.length ? ` ${active.length}` : ""}</span></Button>
-          <SegmentedControl label="排序" value={s.sort} onValueChange={v => set({ sort: v === "order" ? null : v })} options={[{ value: "order", label: "编号" }, { value: "title", label: "名称" }]} />
-          <Button variant="secondary" size="md" aria-label={s.dir === "asc" ? "正序，点按切换为反序" : "反序，点按切换为正序"} title={s.dir === "asc" ? "正序" : "反序"} onClick={() => set({ dir: s.dir === "asc" ? "desc" : null })}>
-            {s.dir === "asc" ? <ArrowUpNarrowWide /> : <ArrowDownWideNarrow />}
-          </Button>
-          <Button variant={s.favOnly ? "primary" : "secondary"} size="md" aria-pressed={s.favOnly} onClick={() => set({ fav: s.favOnly ? null : "1" })}><Star fill={s.favOnly ? "currentColor" : "none"} /><span>只看收藏</span></Button>
+          {sortControls}
+          {favoritesButton}
           <span className="toolbar-spacer" />
-          <SegmentedControl className="view-switch" label="布局" value={view} onValueChange={v => set({ view: v === "grid" ? null : "list" })} options={[
-            { value: "grid", label: "", accessory: <><LayoutGrid aria-hidden="true" /><span className="visually-hidden">网格</span></> },
-            { value: "list", label: "", accessory: <><List aria-hidden="true" /><span className="visually-hidden">列表</span></> },
-          ]} />
+          {viewSwitch}
         </div>
-        {active.length ? (
-          <FilterToolbar label="已选筛选条件" filters={active} onRemove={id => { const filter = active.find(item => item.id === id)!; toggle(filter.key, filter.raw); }} onClearAll={() => set(Object.fromEntries(facets[kind].map(f => [f.key, null])))} />
-        ) : null}
+        {selectedFilters}
       </div>
       <div className="list-layout">
         <aside ref={facetColumn} className="facet-column" aria-label="筛选"><ScrollArea orientation="vertical" className="facet-scroll" label="筛选条件" fade={24}>{filterPanel}</ScrollArea></aside>
@@ -149,9 +177,6 @@ export function ListPage({ kind }: { kind: Kind }) {
           )}
         </div>
       </div>
-      <Drawer open={drawer} onOpenChange={setDrawer}>
-        <DrawerContent title={`筛选${KIND_NAME[kind]}`} side="bottom" className="filter-drawer"><ScrollArea orientation="vertical" maxHeight="70dvh" label="筛选条件" fade={24}>{filterPanel}</ScrollArea></DrawerContent>
-      </Drawer>
     </div>
   );
 }
