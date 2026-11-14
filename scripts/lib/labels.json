@@ -86,14 +86,7 @@
       "docs/": "指南",
       "docs/cases/": "案例研究",
       "docs/patterns/": "巧思研究",
-      "docs/materials/": "素材说明",
-      "prompts/cases/": "案例 Prompt",
-      "prompts/patterns/": "巧思 Prompt",
-      "README.md": "项目说明",
-      "CONTRIBUTING.md": "项目说明",
-      "AGENTS.md": "项目说明",
-      "demos/": "条目文档",
-      "demos/materials/": "素材原文"
+      "docs/materials/": "素材说明"
     }
   },
   "ROLE_NAME": {

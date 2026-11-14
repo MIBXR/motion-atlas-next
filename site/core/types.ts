@@ -14,12 +14,13 @@ export interface Derived {
   prompt?: string;
   agent?: string;
   snapshot?: string;
+  references?: { path: string; label: string }[];
 }
 
 /** 条目保持原 JSON 结构，派生字段放在 $。详情组件按 CONTENT.md 读取。 */
 export type Entry = { id: string; order: number; title: string; $: Derived } & Record<string, any>;
 
-export interface DocInfo { path: string; title: string; group: string; hidden?: boolean }
+export interface DocInfo { path: string; title: string; group: string }
 
 export interface AtlasData {
   labels: Record<string, any>;

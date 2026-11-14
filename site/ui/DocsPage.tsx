@@ -10,7 +10,7 @@ import { Skeleton } from "@/registry/components/skeleton/skeleton";
 import { EmptyState } from "@/registry/components/empty-state/empty-state";
 import { ChevronDown, ExternalLink, FileText, FolderTree, ListTree } from "./icons";
 import { href, navigate, useRoute, withParams } from "../core/router";
-import { renderMarkdown, type TocItem } from "../core/markdown";
+import { renderMarkdown, repositoryDocumentUrl, type TocItem } from "../core/markdown";
 import { allowScroll } from "../core/scroll-guard";
 import { openText, TEXT_FILE } from "../core/open-text";
 import { terms } from "../core/search";
@@ -29,10 +29,9 @@ function useGroups() {
     for (const d of data.docs) map.set(d.group, [...(map.get(d.group) ?? []), d]);
     const names = [...map.keys()].sort((a, b) => {
       const ia = order.indexOf(a), ib = order.indexOf(b);
-      const ha = map.get(a)!.every(d => d.hidden), hb = map.get(b)!.every(d => d.hidden);
-      return Number(ha) - Number(hb) || (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
     });
-    return names.map(name => ({ name, docs: map.get(name)!, hidden: map.get(name)!.every(d => d.hidden) }));
+    return names.map(name => ({ name, docs: map.get(name)! }));
   }, [data]);
 }
 
@@ -44,12 +43,12 @@ const Directory = memo(function Directory({ current, query, viewportRef }: { cur
     return ts.length ? data.docs.filter(d => ts.every(t => (d.title + "\n" + d.path).toLowerCase().includes(t))) : null;
   }, [data.docs, query]);
   const nodes = useMemo(() => hits
-    ? hits.slice(0, 300).map(d => ({ id: d.path, label: `${d.title} · ${d.path}` }))
+    ? hits.map(d => ({ id: d.path, label: `${d.title} · ${d.path}` }))
     : groups.map(g => ({ id: g.name, label: `${g.name}（${g.docs.length}）`, children: g.docs.map(d => ({ id: d.path, label: d.title })) })), [groups, hits]);
   return (
     <div className="doc-dir">
       {hits ? <p className="muted doc-dir-count">找到 {hits.length} 份文档</p> : null}
-      <DocumentDirectory nodes={nodes} defaultExpandedIds={groups.filter(g => !g.hidden).map(g => g.name)} selectedId={current} viewportRef={viewportRef} onSelect={node => { if (!node.children) navigate(href("/docs", { path: node.id, dq: query })); }} />
+      <DocumentDirectory nodes={nodes} defaultExpandedIds={groups.map(g => g.name)} selectedId={current} viewportRef={viewportRef} onSelect={node => { if (!node.children) navigate(href("/docs", { path: node.id, dq: query })); }} />
     </div>
   );
 });
@@ -79,7 +78,8 @@ function Article({ path, anchor, query, onShown }: { path: string; anchor: strin
   const { data } = useAtlas();
   const route = useRoute();
   const info = data.docs.find(d => d.path === path);
-  const [state, setState] = useState<{ path: string; html: string; toc: TocItem[] } | { path: string; error: string } | null>(null);
+  const repositoryUrl = repositoryDocumentUrl(path, anchor);
+  const [state, setState] = useState<({ path: string } & ReturnType<typeof renderMarkdown>) | { path: string; error: string } | null>(null);
   const [active, setActive] = useState<string>();
   const tocViewport = useRef<HTMLDivElement>(null);
   const positioned = useRef<string | null>(null);
@@ -102,12 +102,16 @@ function Article({ path, anchor, query, onShown }: { path: string; anchor: strin
   }
   function pickFromPanel(id: string) { pending.current = id; setTocOpen(false); }
   useEffect(() => {
+    if (repositoryUrl) {
+      location.replace(repositoryUrl);
+      return;
+    }
     let live = true;
     fetch(path).then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.text(); })
       .then(text => { if (live) setState({ path, ...renderMarkdown(text, path) }); })
       .catch(err => { if (live) setState({ path, error: String(err.message ?? err) }); });
     return () => { live = false; };
-  }, [path]);
+  }, [path, repositoryUrl]);
   useEffect(() => {
     if (!state || state.path !== path || "error" in state) return;
     const same = positioned.current === path;
@@ -147,7 +151,7 @@ function Article({ path, anchor, query, onShown }: { path: string; anchor: strin
       <article className="doc-article">
         <div className="doc-bar">
           <Button variant="secondary" size="sm" aria-label="文档目录" title="文档目录" onClick={() => setDocsOpen(true)}><FolderTree /></Button>
-          <span className="doc-bar-title" title={path}>{info?.title ?? path}</span>
+          <span className="doc-bar-title" title={path}>{info?.title || state.title || path.split("/").at(-1)?.replace(/\.md$/i, "")}</span>
           {state.toc.length > 1 ? <Button variant="secondary" size="sm" className="doc-bar-toc" aria-label={`本节目录：${currentText}`} onClick={() => setTocOpen(true)}><ListTree /><span>{currentText}</span><ChevronDown /></Button> : null}
           <LinkButton variant="ghost" size="sm" href={path} target="_blank" rel="noopener" aria-label="原文" title="原文" onClick={openText}><ExternalLink /></LinkButton>
         </div>
@@ -187,7 +191,6 @@ export function DocsPage() {
   const route = useRoute();
   const path = route.params.get("path");
   const query = route.params.get("dq") ?? "";
-  const { data } = useAtlas();
   const directoryViewport = useRef<HTMLDivElement>(null);
   const directoryColumn = useRef<HTMLElement>(null);
   useFitTop(directoryColumn);
@@ -196,7 +199,7 @@ export function DocsPage() {
   useEffect(() => { if (path) lastPath.current = path; }, [path]);
   return (
     <div className="page docs-page" data-reading={path ? "" : undefined}>
-      <header className="page-head"><div><h1>文档 <span className="muted">{data.docs.length}</span></h1></div></header>
+      <header className="page-head"><div><h1>文档</h1></div></header>
       <div className="docs-layout">
       <aside ref={directoryColumn} className="doc-sidebar">
         <div className="search-wrap"><SearchField label="搜索文档标题与路径" placeholder="搜索文档" value={query} onValueChange={v => navigate(withParams(route, { dq: v }), { replace: true })} /></div>
@@ -205,7 +208,7 @@ export function DocsPage() {
       <div className="doc-main">
         {path ? <Article path={path} anchor={route.params.get("h")} query={query} onShown={setShownPath} /> : (
           <div className="doc-welcome">
-            <EmptyState title="选择一份文档" description="左侧按分组列出研究、Prompt、复刻说明与素材原文；Demo 目录里的文档默认折叠。" />
+            <EmptyState title="选择一份文档" description="从目录选择使用指南、设计研究或素材用法。" />
           </div>
         )}
       </div>

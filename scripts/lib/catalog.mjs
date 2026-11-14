@@ -255,7 +255,12 @@ function buildAtlas(entries, files) {
       $.licenses = exists(demoDir + 'LICENSES.md') ? demoDir + 'LICENSES.md' : undefined;
       $.prompt = exists(`prompts/${kind}/${e.id}.md`) ? `prompts/${kind}/${e.id}.md` : undefined;
       $.agent = `agent/${kind}/${e.id}.json`;
-      if (e.snapshotPath && e.snapshotEntry) $.snapshot = e.snapshotPath + e.snapshotEntry;
+      if (e.snapshotPath && e.snapshotEntry) {
+        $.snapshot = e.snapshotPath + e.snapshotEntry;
+        $.references = Object.entries(labels.references.path)
+          .filter(([file]) => file.endsWith('.md') && exists(e.snapshotPath + file))
+          .map(([file, label]) => ({ path: e.snapshotPath + file, label }));
+      }
       return { ...e, $ };
     });
   }
@@ -294,13 +299,13 @@ function docTitle(text, file) {
 
 function buildDocs(generated) {
   const files = [];
-  for (const top of ['docs', 'demos']) walkMd(top, files);
-  for (const p of Object.keys(generated)) if (/^(?:docs|prompts)\/.+\.md$/i.test(p) && !files.includes(p)) files.push(p);
+  walkMd('docs', files);
+  for (const p of Object.keys(generated)) if (/^docs\/.+\.md$/i.test(p) && !files.includes(p)) files.push(p);
   const rules = labels.DOC_GROUPS.path;
-  const docs = files.map(p => {
+  const docs = files.filter(p => p !== 'docs/review.md').map(p => {
     let group = '其他';
     for (const [key, name] of Object.entries(rules)) if (key.endsWith('/') ? p.startsWith(key) : p === key) group = name;
-    return { path: p, title: docTitle(generated[p] ?? read(p), p), group, hidden: p.startsWith('demos/') || undefined };
+    return { path: p, title: docTitle(generated[p] ?? read(p), p), group };
   });
   const coll = new Intl.Collator('zh-CN');
   const pinned = ['docs/guide.md', 'docs/rhythm.md', 'docs/prompting.md', 'docs/methodology.md', 'docs/pipeline.md'];

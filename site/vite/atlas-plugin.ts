@@ -6,7 +6,6 @@ const CONTENT_PATHS = [
   "agent/catalog.json", "agent/cases/", "agent/patterns/", "agent/materials/",
   "data/", "demos/", "docs/", "entries/", "kit/", "previews/", "prompts/",
   "scripts/templates/", "site/runtime/", "site/icons/", "asset-cache-worker.js",
-  "README.md", "CONTRIBUTING.md", "AGENTS.md",
 ];
 
 export function atlasContent(root: string): Plugin {
