@@ -28,7 +28,7 @@ export function HomePage() {
         <p className="eyebrow">{tagline}</p>
         <h1>{name}</h1>
         <p className="home-lede">
-          {KINDS.map(k => `${data[k].length} 个${KIND_NAME[k]}`).join(" · ")} · {data.docs.length} 份文档
+          {KINDS.map(k => `${data[k].length} 个${KIND_NAME[k]}`).join(" · ")}
         </p>
         <div className="search-wrap home-search"><SearchField label="搜索全部条目" placeholder="搜索标题、摘要、标签与拆解，多个词用空格分隔" value={q} onValueChange={v => navigate(withParams(route, { q: v }), { replace: true })} /></div>
       </header>

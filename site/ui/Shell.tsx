@@ -37,7 +37,7 @@ function Nav({ collapsed }: { collapsed: boolean }) {
       <NavLink collapsed={c} to="#/cases" icon={<Swatch />} label="案例" count={data.cases.length} active={at === "cases"} />
       <NavLink collapsed={c} to="#/patterns" icon={<Lightbulb />} label="巧思" count={data.patterns.length} active={at === "patterns"} />
       <NavLink collapsed={c} to="#/materials" icon={<Boxes />} label="素材" count={data.materials.length} active={at === "materials"} />
-      <NavLink collapsed={c} to="#/docs" icon={<BookOpen />} label="文档" count={data.docs.length} active={at === "docs"} />
+      <NavLink collapsed={c} to="#/docs" icon={<BookOpen />} label="文档" active={at === "docs"} />
       <p className="nav-heading">我的</p>
       <NavLink collapsed={c} to="#/favorites" icon={<Star />} label="收藏" count={favCount} active={at === "favorites"} />
       <NavLink collapsed={c} to={href("/compare", { ids: compare })} icon={<GitCompareArrows />} label="比较" count={compare.length} active={at === "compare"} />

@@ -135,7 +135,9 @@
 | 第三方许可原文与索引 | 条目本体内的许可原文与 `LICENSES.md` |
 | Prompt 文档、Agent 资料包、站点数据、案例索引 | 构建生成 |
 
-文档目录使用 `site/ui/DocumentDirectory.tsx` 和 Arc tree-view 样式，扫描 `docs/`、`prompts/`、`demos/` 下的 Markdown，分组依据 `scripts/lib/labels.json` 的 `DOC_GROUPS.path`：指南、案例研究、巧思研究、素材说明、案例 Prompt、巧思 Prompt、条目文档与素材原文。条目本体与素材原文分组默认折叠；目录随当前文档展开分组并在目录容器内定位，分组标题吸顶，手机端通过“返回目录”进入目录。站内指向仓库 Markdown 的链接在文档页打开。标题取正文一级标题，缺失时依次取 frontmatter 的 title、name 与文件名。条目本体的 `fidelity.md`、`LICENSES.md` 由条目详情与资料包提供。
+文档中心的目录和搜索共用 `docs/` 中的使用指南、设计研究、索引和素材用法。`docs/review.md` 从本指南的[验收与交付](#验收与交付)进入。Prompt、复刻对照、许可和素材原文通过对应条目打开，相对路径随资料包保留。
+
+文档目录使用 Arc tree-view，按 `scripts/lib/labels.json` 的 `DOC_GROUPS.path` 分组。标题取正文一级标题、frontmatter 的 `title/name` 或文件名。阅读目录中的文档时自动展开所在分组并定位。分组标题吸顶，手机端通过“返回目录”进入目录。站内 Markdown 链接使用阅读器，三份根目录文档的链接指向 GitHub。
 
 `README.md` 介绍项目并提供入口；本文件集中说明收录规则、目录规范、新增流程与字段；`AGENTS.md` 规定仓库修改操作。
 

@@ -11,6 +11,11 @@ export function slugify(text: string): string {
   return text.trim().toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu, "").replace(/\s+/g, "-");
 }
 
+export function repositoryDocumentUrl(path: string, anchor?: string | null) {
+  if (!/^(README|CONTRIBUTING|AGENTS)\.md$/.test(path)) return;
+  return `https://github.com/MIBXR/motion-atlas-next/blob/main/${path}${anchor ? "#" + encodeURIComponent(anchor) : ""}`;
+}
+
 /** 把内容根相对路径转换成工作台里的目标：文档、条目或直接打开的文件。 */
 export function resolveLocal(target: string, fromDoc: string): { kind: "doc" | "entry" | "file" | "external"; url: string } {
   if (/^(mailto:|tel:|javascript:)/i.test(target)) return { kind: "external", url: target };
@@ -18,6 +23,8 @@ export function resolveLocal(target: string, fromDoc: string): { kind: "doc" | "
   if (u.origin + "/" !== BASE) return { kind: "external", url: u.href };
   let p = decodeURIComponent(u.pathname.slice(1));
   const hash = decodeURIComponent(u.hash.slice(1));
+  const repositoryUrl = repositoryDocumentUrl(p, hash);
+  if (repositoryUrl) return { kind: "external", url: repositoryUrl };
   if (p === "docs.html" && u.searchParams.get("file")) return { kind: "doc", url: href("/docs", { path: u.searchParams.get("file")!, h: hash }) };
   if (/\.md$/i.test(p)) return { kind: "doc", url: href("/docs", { path: p, h: hash }) };
   const entry = /^entries\/(cases|patterns|materials)\/([^/]+)\.json$/.exec(p);
@@ -26,8 +33,10 @@ export function resolveLocal(target: string, fromDoc: string): { kind: "doc" | "
   return { kind: "file", url: p + u.search + u.hash };
 }
 
-export function renderMarkdown(md: string, docPath: string): { html: string; toc: TocItem[] } {
-  const body = md.replace(/^[﻿​-‍⁠]+/, "").replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "");
+export function renderMarkdown(md: string, docPath: string): { html: string; toc: TocItem[]; title?: string } {
+  const text = md.replace(/^[﻿​-‍⁠]+/, "");
+  const frontmatter = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(text);
+  const body = frontmatter ? text.slice(frontmatter[0].length) : text;
   const raw = marked.parse(body, { async: false, gfm: true }) as string;
   const doc = new DOMParser().parseFromString(`<div>${raw}</div>`, "text/html");
   const root = doc.body.firstElementChild!;
@@ -60,7 +69,10 @@ export function renderMarkdown(md: string, docPath: string): { html: string; toc
     t.replaceWith(wrap);
     wrap.appendChild(t);
   });
-  return { html: root.innerHTML, toc };
+  const meta = frontmatter?.[1] ?? "";
+  const title = root.querySelector("h1")?.textContent?.trim()
+    || (/^title:\s*(.+)$/m.exec(meta) ?? /^name:\s*(.+)$/m.exec(meta))?.[1]?.trim().replace(/^["']|["']$/g, "");
+  return { html: root.innerHTML, toc, title };
 }
 
 export function kindLabel(kind: Kind) { return KIND_NAME[kind]; }

@@ -255,8 +255,6 @@ function Gallery({ e }: { e: Entry }) {
 export function MaterialDetail({ e }: { e: Entry }) {
   const { data } = useAtlas();
   const L = data.labels;
-  const refs: Record<string, string> = L.references.path;
-  const snapshotDocs = e.snapshotPath ? Object.entries(refs).filter(([p]) => !p.endsWith("/")).map(([p, label]) => ({ label, path: data.docs.some(d => d.path === e.snapshotPath + p) ? e.snapshotPath + p : undefined })) : [];
   return (
     <DetailLayout
       kind="materials"
@@ -298,7 +296,7 @@ export function MaterialDetail({ e }: { e: Entry }) {
       <Section id="sources" title="来源"><Sources items={e.sources} /></Section>
       <Section id="related" title="关联条目"><RelatedEntries items={e.relatedEntries} /></Section>
       <Section id="docs" title="文档与原文">
-        <DocLinks docs={[{ label: L.documentLinks.field.research, path: e.$.research }, { label: "原文主文档", path: e.$.snapshot }, ...snapshotDocs, { label: L.documentLinks.field.fidelity, path: e.$.fidelity }, { label: L.documentLinks.field.licenses, path: e.$.licenses }]} />
+        <DocLinks docs={[{ label: L.documentLinks.field.research, path: e.$.research }, { label: "原文主文档", path: e.$.snapshot }, ...(e.$.references ?? []), { label: L.documentLinks.field.fidelity, path: e.$.fidelity }, { label: L.documentLinks.field.licenses, path: e.$.licenses }]} />
         <FileList files={e.sourceFiles} />
       </Section>
     </DetailLayout>

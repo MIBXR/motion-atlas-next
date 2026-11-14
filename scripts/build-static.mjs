@@ -20,9 +20,7 @@ await build({ configFile: path.join(ROOT, 'vite.config.ts') });
 for (const directory of directories) {
   fs.cpSync(path.join(ROOT, directory), path.join(output, directory), { recursive: true, filter: file => !sources.assets[path.relative(ROOT, file).split(path.sep).join('/')] });
 }
-for (const file of ['README.md', 'CONTRIBUTING.md', 'AGENTS.md', 'asset-cache-worker.js']) {
-  if (fs.existsSync(path.join(ROOT, file))) fs.copyFileSync(path.join(ROOT, file), path.join(output, file));
-}
+fs.copyFileSync(path.join(ROOT, 'asset-cache-worker.js'), path.join(output, 'asset-cache-worker.js'));
 
 const files = [], names = new Set();
 function collect(directory) {
